@@ -9,7 +9,7 @@ import Dissertation.WellPosedness.Spec.Assumptions
 /-!
 # Section 2 of the well-posedness paper: the setting
 
-Statement and equation numbers refer to the well-posedness paper at `e939294`. The setting of §2
+Statement and equation numbers refer to arXiv 2608.23203v1. The setting of §2
 is a Lévy driver `D` (a `d`-dimensional Brownian motion and an independent Poisson random measure
 with intensity `dt ⊗ ν(de)`, `ν` σ-finite) on `(Ω, P)`, and the usual augmentation `(ℱ_t)` of the
 filtration of the driver enlarged at time `0` by a σ-algebra `ℱ₀` independent of it.

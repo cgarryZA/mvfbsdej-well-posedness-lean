@@ -1,11 +1,11 @@
 {
- "note": "The frozen inventory of the claims of the manuscript. Edit only the scope and clause fields; the source fields are checked against the pinned revision.",
+ "note": "The frozen inventory of the claims of the manuscript. Edit only the scope and clause fields; the source fields are checked against the pinned version (arXiv 2608.23203v1, vendored in manuscript/paper/).",
  "papers": {
   "A": {
    "key": "WP",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "title": "well-posedness",
-   "source": "https://github.com/cgarryZA/mvfbsdej-aposteriori/tree/well-posed",
+   "source": "https://arxiv.org/abs/2608.23203v1",
    "path": "paper/wellposedness.tex"
   }
  },
@@ -13,11 +13,11 @@
   {
    "id": "A:def:diag",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "definition",
    "number": "Definition 2.1",
    "title": "Diagonal input",
-   "location": "paper/sections/02-model-assumptions.tex",
+   "location": "paper/wellposedness.tex",
    "source_sha256": "952765bd095132205c2a2ed30a292f5a88840f96e56d5a877f906f6a21524a94",
    "scope": "definition",
    "scope_note": "",
@@ -35,11 +35,11 @@
   {
    "id": "A:ass:integ",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "assumption",
    "number": "Assumption 2.2",
    "title": "Integrability at the origin",
-   "location": "paper/sections/02-model-assumptions.tex",
+   "location": "paper/wellposedness.tex",
    "source_sha256": "ef9a3acbfb5b5d7c874f4f8a54ca3a7d5a23e6dce6483f2e6391407799f2925e",
    "scope": "definition",
    "scope_note": "",
@@ -57,11 +57,11 @@
   {
    "id": "A:ass:lip",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "assumption",
    "number": "Assumption 2.3",
    "title": "Lipschitz coefficients",
-   "location": "paper/sections/02-model-assumptions.tex",
+   "location": "paper/wellposedness.tex",
    "source_sha256": "9c7bbbc5ca7a20286ef27d4eb7edb07d33d9787563041cadef820d833345f085",
    "scope": "definition",
    "scope_note": "",
@@ -79,11 +79,11 @@
   {
    "id": "A:ass:G",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "assumption",
    "number": "Assumption 2.4",
    "title": "Coupling matrix",
-   "location": "paper/sections/02-model-assumptions.tex",
+   "location": "paper/wellposedness.tex",
    "source_sha256": "0ca63278064f162ffc77480e11f78f5fba3573556a22730b0bd4ca763ba1886f",
    "scope": "formal",
    "scope_note": "the assumption is the full rank of G (the hypothesis G.rank = min m n of every statement using it); the bounds printed after \"Then\" are a claim, stated as ass_G",
@@ -100,11 +100,11 @@
   {
    "id": "A:ass:mono",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "assumption",
    "number": "Assumption 2.5",
    "title": "Terminal and interior jump-extended $G$-monotonicity",
-   "location": "paper/sections/02-model-assumptions.tex",
+   "location": "paper/wellposedness.tex",
    "source_sha256": "a60a526e8cdd9d0ae4441e25895e5af1cc39a45df41a9028fe0f60371ce998ff",
    "scope": "definition",
    "scope_note": "",
@@ -122,11 +122,11 @@
   {
    "id": "A:remark-2.6",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "remark",
    "number": "Remark 2.6",
    "title": "Wasserstein bounds",
-   "location": "paper/sections/02-model-assumptions.tex",
+   "location": "paper/wellposedness.tex",
    "source_sha256": "a8c8906e45bdcd6591c7751bd3186ea3b83dd382cd95543acb4edcabc2093661",
    "scope": "formal",
    "scope_note": "",
@@ -158,11 +158,11 @@
   {
    "id": "A:rem:G-pairing",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "remark",
    "number": "Remark 2.7",
    "title": "The coupling matrix $G$",
-   "location": "paper/sections/02-model-assumptions.tex",
+   "location": "paper/wellposedness.tex",
    "source_sha256": "be0e5f3df25ec2abc69bf27152a283d58fcd77f478e5fc28b8e3fd3c3f3e5b25",
    "scope": "duplicate",
    "scope_note": "A:ass:G",
@@ -172,11 +172,11 @@
   {
    "id": "A:rem:diag-mono",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "remark",
    "number": "Remark 2.8",
    "title": "Expected diagonal monotonicity",
-   "location": "paper/sections/02-model-assumptions.tex",
+   "location": "paper/wellposedness.tex",
    "source_sha256": "7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a",
    "scope": "formal",
    "scope_note": "",
@@ -199,11 +199,11 @@
   {
    "id": "A:rem:intrinsic",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "remark",
    "number": "Remark 2.9",
    "title": "Coupling formulation",
-   "location": "paper/sections/02-model-assumptions.tex",
+   "location": "paper/wellposedness.tex",
    "source_sha256": "f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166",
    "scope": "formal",
    "scope_note": "",
@@ -232,77 +232,39 @@
   {
    "id": "A:rem:beta1-dich",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "remark",
    "number": "Remark 2.10",
    "title": "The $\\beta_1$ dichotomy in the jump channel",
-   "location": "paper/sections/02-model-assumptions.tex",
-   "source_sha256": "20e41bdfd1e0996ebf1050ab15273a783631b8c503a6635284298cc387eea4f4",
+   "location": "paper/wellposedness.tex",
+   "source_sha256": "ce35242e5c61dc248a5bf9b36f678223d523cf9e6c42793d8e5d2fd12e1df0ea",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "The printed text of arXiv 2608.23203v1 differs from the authors' later revision, from which this claim's clauses were written; the propositions of the v1 text are not yet stated.",
    "scope_reviewed": false,
-   "clauses": [
-    {
-     "name": "nu nonzero gives L2(nu) nonzero; nu = 0 gives L2(nu) = {0}",
-     "spec": "Dissertation.PaperSpec.A.rem_beta1_fibre",
-     "accept": "Dissertation.Acceptance.A.rem_beta1_fibre",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
-    },
-    {
-     "name": "the reduction to the jump channel and the beta1 dichotomy",
-     "spec": "Dissertation.PaperSpec.A.rem_beta1_dich",
-     "accept": "Dissertation.Acceptance.A.rem_beta1_dich",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
-    },
-    {
-     "name": "at nu = 0 an additive jump coefficient allows beta1 > 0",
-     "spec": "Dissertation.PaperSpec.A.rem_beta1_zero",
-     "accept": "Dissertation.Acceptance.A.rem_beta1_zero",
-     "witness": "Dissertation.Acceptance.A.ex_brownian_hypotheses"
-    }
-   ]
+   "clauses": []
   },
   {
    "id": "A:rem:margin",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "remark",
    "number": "Remark 2.11",
    "title": "Dissipativity margin",
-   "location": "paper/sections/02-model-assumptions.tex",
-   "source_sha256": "f098128a01b0fc8e2f2ddbb98e80be357bf141638ca4f28a2161fd38cb98a896",
+   "location": "paper/wellposedness.tex",
+   "source_sha256": "818715d0c102417894d7fdc0dd695f91b0ee288c7ecc02af05c10a95821a090a",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "The printed text of arXiv 2608.23203v1 differs from the authors' later revision, from which this claim's clauses were written; the propositions of the v1 text are not yet stated.",
    "scope_reviewed": false,
-   "clauses": [
-    {
-     "name": "(2.7) with the constants beta is (2.12) with beta - c and margin c",
-     "spec": "Dissertation.PaperSpec.A.rem_margin_reduce",
-     "accept": "Dissertation.Acceptance.A.rem_margin_reduce",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
-    },
-    {
-     "name": "m = n: the weighted margin c gives the unweighted margin c / c_G",
-     "spec": "Dissertation.PaperSpec.A.rem_margin_unweighted",
-     "accept": "Dissertation.Acceptance.A.rem_margin_unweighted",
-     "witness": "Dissertation.Acceptance.A.rem_margin_hypotheses"
-    },
-    {
-     "name": "the unweighted margin c itself fails in general",
-     "spec": "Dissertation.PaperSpec.A.rem_margin_sharp",
-     "accept": "Dissertation.Acceptance.A.rem_margin_sharp",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses"
-    }
-   ]
+   "clauses": []
   },
   {
    "id": "A:thm:stab",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "theorem",
    "number": "Theorem 3.1",
    "title": "Stability under coefficient and data perturbation",
-   "location": "paper/sections/03-main-results.tex",
+   "location": "paper/wellposedness.tex",
    "source_sha256": "381ba74c22961e597927279a40c3d1204009169a635d33ce49e1a5962c04d6b8",
    "scope": "formal",
    "scope_note": "",
@@ -319,11 +281,11 @@
   {
    "id": "A:rem:cwp-class",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "remark",
    "number": "Remark 3.2",
    "title": "Solution class",
-   "location": "paper/sections/03-main-results.tex",
+   "location": "paper/wellposedness.tex",
    "source_sha256": "391a3db056fefb35dea3e08d03c460ac0787411fb1d02916f36e10dbfe0f733a",
    "scope": "formal",
    "scope_note": "",
@@ -340,11 +302,11 @@
   {
    "id": "A:thm:uniq",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "theorem",
    "number": "Theorem 3.3",
    "title": "Uniqueness",
-   "location": "paper/sections/03-main-results.tex",
+   "location": "paper/wellposedness.tex",
    "source_sha256": "03292da4be100aa38ea90d55eff64159cf4e923c05926fa169ebba6ed2985189",
    "scope": "formal",
    "scope_note": "",
@@ -361,48 +323,25 @@
   {
    "id": "A:rem:uniq-no-integ",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "remark",
    "number": "Remark 3.4",
    "title": "Uniqueness without origin integrability",
-   "location": "paper/sections/03-main-results.tex",
-   "source_sha256": "867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798",
+   "location": "paper/wellposedness.tex",
+   "source_sha256": "16ace776485cb414a0ad39fba869a577ec053811b32b39e09709fb01a4e0f75e",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "The printed text of arXiv 2608.23203v1 differs from the authors' later revision, from which this claim's clauses were written; the propositions of the v1 text are not yet stated.",
    "scope_reviewed": false,
-   "clauses": [
-    {
-     "name": "the uniqueness only requires Assumptions 2.3-2.5 (Theorem 3.3)",
-     "spec": "Dissertation.PaperSpec.A.thm_uniq",
-     "accept": "Dissertation.Acceptance.A.thm_uniq",
-     "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses"
-    },
-    {
-     "name": "xi_0 in L2 is necessary for a solution in H",
-     "spec": "Dissertation.PaperSpec.A.rem_uniq_initial",
-     "accept": "Dissertation.Acceptance.A.rem_uniq_initial",
-     "witness": "Dissertation.Acceptance.A.rem_uniq_hypotheses"
-    },
-    {
-     "name": "the origin-value conditions are not necessary: the drift t^(-1/2) added to one system of Example 5.1(i)",
-     "spec": "Dissertation.PaperSpec.A.rem_uniq_singular",
-     "accept": "Dissertation.Acceptance.A.rem_uniq_singular",
-     "witness": "Dissertation.Acceptance.A.rem_uniq_hypotheses"
-    },
-    {
-     "name": "for every system satisfying Assumptions 2.2-2.5, the drift t^(-1/2) added, a solution exists (by the shift X -> X - 2 sqrt t)",
-     "spec": "Dissertation.PaperSpec.A.rem_uniq_translation"
-    }
-   ]
+   "clauses": []
   },
   {
    "id": "A:thm:cwp",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "theorem",
    "number": "Theorem 3.5",
    "title": "Global well-posedness",
-   "location": "paper/sections/03-main-results.tex",
+   "location": "paper/wellposedness.tex",
    "source_sha256": "0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3",
    "scope": "formal",
    "scope_note": "",
@@ -425,11 +364,11 @@
   {
    "id": "A:cor:robust",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "corollary",
    "number": "Corollary 3.6",
    "title": "Robustness of well-posedness",
-   "location": "paper/sections/03-main-results.tex",
+   "location": "paper/wellposedness.tex",
    "source_sha256": "3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757",
    "scope": "formal",
    "scope_note": "",
@@ -458,11 +397,11 @@
   {
    "id": "A:rem:generalrank",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "remark",
    "number": "Remark 3.7",
    "title": "General rank",
-   "location": "paper/sections/03-main-results.tex",
+   "location": "paper/wellposedness.tex",
    "source_sha256": "d7d2976d856eb17cca4f2ce81183317ed11c078bb8c7bf4a7d4da20f32b3da6d",
    "scope": "formal",
    "scope_note": "",
@@ -485,11 +424,11 @@
   {
    "id": "A:prop:strict",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "proposition",
    "number": "Proposition 3.8",
    "title": "Strictness of expected diagonal monotonicity",
-   "location": "paper/sections/03-main-results.tex",
+   "location": "paper/wellposedness.tex",
    "source_sha256": "b18b8a1407fec705caed58f7f0bb7604c994a084d50703fdd8cc68b071003604",
    "scope": "formal",
    "scope_note": "",
@@ -506,11 +445,11 @@
   {
    "id": "A:lem:bpbsde",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "lemma",
    "number": "Lemma 4.1",
    "title": "Brownian--Poisson $L^2$ estimate",
-   "location": "paper/sections/04-proof-wellposedness.tex",
+   "location": "paper/wellposedness.tex",
    "source_sha256": "d62094248f27ce8bc15117e3e39b9ea5169bf86a1af04e994e8c82a5ec2ff534",
    "scope": "formal",
    "scope_note": "",
@@ -527,11 +466,11 @@
   {
    "id": "A:lem:small",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "lemma",
    "number": "Lemma 4.2",
    "title": "Small-coupling base case",
-   "location": "paper/sections/04-proof-wellposedness.tex",
+   "location": "paper/wellposedness.tex",
    "source_sha256": "bffd23b982e584c71b1ab55af148dce8ccd1f30bcb7d7cda8b1ed69982efc706",
    "scope": "formal",
    "scope_note": "",
@@ -548,11 +487,11 @@
   {
    "id": "A:lem:pert",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "lemma",
    "number": "Lemma 4.3",
    "title": "Continuous perturbation stability along the homotopy",
-   "location": "paper/sections/04-proof-wellposedness.tex",
+   "location": "paper/wellposedness.tex",
    "source_sha256": "ea2eb3fcdf75fe4c7dccc111e320388b6d82e0967dd051aa673e75f7a5f1c1e9",
    "scope": "formal",
    "scope_note": "",
@@ -569,11 +508,11 @@
   {
    "id": "A:lem:cont",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "lemma",
    "number": "Lemma 4.4",
    "title": "Continuation",
-   "location": "paper/sections/04-proof-wellposedness.tex",
+   "location": "paper/wellposedness.tex",
    "source_sha256": "c383f5951a193b52153def310e145b684712418abdb0ed5c8405a458be4b45de",
    "scope": "formal",
    "scope_note": "",
@@ -590,12 +529,12 @@
   {
    "id": "A:ex:concrete",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "example",
    "number": "Example 5.1",
    "title": "Dissipative models",
-   "location": "paper/sections/05-examples.tex",
-   "source_sha256": "1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633",
+   "location": "paper/wellposedness.tex",
+   "source_sha256": "c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785",
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
@@ -663,11 +602,11 @@
   {
    "id": "A:ex:brownian",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "example",
    "number": "Example 5.2",
    "title": "Brownian reduction",
-   "location": "paper/sections/05-examples.tex",
+   "location": "paper/wellposedness.tex",
    "source_sha256": "73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5",
    "scope": "formal",
    "scope_note": "",
@@ -700,12 +639,12 @@
   {
    "id": "A:ex:expfunc",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "example",
    "number": "Example 5.3",
    "title": "Expectation-functional interactions",
-   "location": "paper/sections/05-examples.tex",
-   "source_sha256": "6ba8e9a8bd4a3a1d756a510bfc8571612af5e4c854e3bd45a28c1b5172afaaad",
+   "location": "paper/wellposedness.tex",
+   "source_sha256": "bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28",
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
@@ -733,275 +672,67 @@
   {
    "id": "A:ex:fulllaw",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "example",
    "number": "Example 5.4",
    "title": "Nonlinear law functionals",
-   "location": "paper/sections/05-examples.tex",
-   "source_sha256": "4176ca3d18b96f9c52b91a364a4ddab7da82df540496d303cc1ccabf2366be8b",
+   "location": "paper/wellposedness.tex",
+   "source_sha256": "c6dac94442298fb91021e9410980558e1c560d7da7bb03b9fe21e4542a37e683",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "The printed text of arXiv 2608.23203v1 differs from the authors' later revision, from which this claim's clauses were written; the propositions of the v1 text are not yet stated.",
    "scope_reviewed": false,
-   "clauses": [
-    {
-     "name": "the law statistics are W2-Lipschitz",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_lip",
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_lip",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses"
-    },
-    {
-     "name": "the perturbation: (3.5), Assumptions 2.2-2.3, (3.4)",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_pert",
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_pert",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses"
-    },
-    {
-     "name": "well-posedness under (5.1)",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_wp",
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_wp",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses"
-    },
-    {
-     "name": "the affine cylindrical term is an expectation functional",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_affineQ",
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_affineQ",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_affineQ_hypotheses"
-    },
-    {
-     "name": "the radial statistic is no expectation functional",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial",
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_radial",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses"
-    },
-    {
-     "name": "the U-marginal radial statistics are no expectation functionals, as printed",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U",
-     "refute": "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_false"
-    },
-    {
-     "name": "the U-marginal radial statistics are no expectation functionals, with L2(nu) nonzero",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr",
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_corr",
-     "corrects": "the U-marginal radial statistics are no expectation functionals, as printed",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses"
-    },
-    {
-     "name": "the cylindrical term is no expectation functional when Q is not affine on the attained range",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q",
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q_hypotheses"
-    }
-   ]
+   "clauses": []
   },
   {
    "id": "A:ex:dealer",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "example",
    "number": "Example 5.5",
    "title": "A non-perturbative full $U$-law model: the mean-field dealer market",
-   "location": "paper/sections/05-examples.tex",
-   "source_sha256": "08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b",
+   "location": "paper/wellposedness.tex",
+   "source_sha256": "3dfd46a5ffe721a5c7560c057227552960a29e63ca7af022a17dd6989f44556c",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "The printed text of arXiv 2608.23203v1 differs from the authors' later revision, from which this claim's clauses were written; the propositions of the v1 text are not yet stated.",
    "scope_reviewed": false,
-   "clauses": [
-    {
-     "name": "the potential: even, convex, its gradient, bounded and 1-Lipschitz",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_potential",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_potential"
-    },
-    {
-     "name": "the crowding correction is jointly Lipschitz",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_crowd",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_crowd"
-    },
-    {
-     "name": "the coefficients: Example 5.1(i) at eps = 0, h_x = 0; the Hamiltonian exposure term",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_coeffs",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_coeffs"
-    },
-    {
-     "name": "Assumptions 2.2-2.4 and (2.3), with L = max{beta1 + eps + |h_x|, beta2 + |h_x|, 1}",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer",
-     "accept": "Dissertation.Acceptance.A.ex_dealer",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
-    },
-    {
-     "name": "monotonicity at every eps >= 0: crowding pairing, exposure cancellation, (2.7)",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_mono",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_mono",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
-    },
-    {
-     "name": "well-posedness at every eps >= 0 (Theorem 3.5)",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_wp",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_wp",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
-    },
-    {
-     "name": "the two-point laws share their mean, with the printed values",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_twopoint",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_twopoint",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses"
-    },
-    {
-     "name": "the crowding correction is no function of the mean and is nonlinear in u, as printed",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_not_mean",
-     "refute": "Dissertation.Acceptance.A.ex_dealer_not_mean_false"
-    },
-    {
-     "name": "the crowding correction is no function of the mean and is nonlinear in u, with L2(nu) nonzero",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_not_mean_corr",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_not_mean_corr",
-     "corrects": "the crowding correction is no function of the mean and is nonlinear in u, as printed",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses"
-    },
-    {
-     "name": "the crowding correction is affine in the law and an expectation kernel",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_affine",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_affine"
-    },
-    {
-     "name": "the mark measure: infinite mass, square-integrable size, h_c in L2(nu)",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_marks",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_marks",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_marks_hypotheses"
-    },
-    {
-     "name": "the interaction is inert without the exposure term",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_inert",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_inert",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
-    },
-    {
-     "name": "the active case: unit profiles, orthogonal",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_active_data",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_active_data",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_active_hypotheses"
-    },
-    {
-     "name": "the active case: the exposure equation has a unique solution in S2",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_active_sde",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_active_sde",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_active_hypotheses"
-    },
-    {
-     "name": "the active case: the explicit tuple solves the system at eps = 0",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_active_sol",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_active_sol",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_active_hypotheses"
-    },
-    {
-     "name": "the active case: mean, second moment, variance of U, Law(U_t) no Dirac mass, A nonzero",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_active_moments",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_active_moments",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_active_hypotheses"
-    },
-    {
-     "name": "the crowding pairing of a law, positive off Dirac masses",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_sym",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_sym"
-    },
-    {
-     "name": "the active case: positive crowding energy at every eps > 0",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_active_pos",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_active_pos",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_active_hypotheses"
-    },
-    {
-     "name": "the active case: no tuple solves the system at two strengths",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_active_dep",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_active_dep",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_active_hypotheses"
-    }
-   ]
+   "clauses": []
   },
   {
    "id": "A:rem:freelaw",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "remark",
    "number": "Remark 5.6",
    "title": "Scope of the measure argument",
-   "location": "paper/sections/05-examples.tex",
-   "source_sha256": "c2b143b44403046035d85f7e9d730c306f0b5cb52b01f72f3a72ded8e56980b7",
+   "location": "paper/wellposedness.tex",
+   "source_sha256": "e2204cd5268c52bf28ead0e1dd0321d0914e8ca0c49f13ab56fa690ca4815fea",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "The printed text of arXiv 2608.23203v1 differs from the authors' later revision, from which this claim's clauses were written; the propositions of the v1 text are not yet stated.",
    "scope_reviewed": false,
-   "clauses": [
-    {
-     "name": "the W2 term is dominated by the synchronous coupling bound (2.8)",
-     "spec": "Dissertation.PaperSpec.A.eq_coupling",
-     "accept": "Dissertation.Acceptance.A.eq_coupling"
-    },
-    {
-     "name": "u enters the coefficients pointwise: h differs at two inputs with one law and the same (X, Y, Z)",
-     "spec": "Dissertation.PaperSpec.A.rem_freelaw",
-     "accept": "Dissertation.Acceptance.A.rem_freelaw",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
-    },
-    {
-     "name": "the pointwise u-dependence is unavoidable when beta1 > 0 and nu != 0 (Remark 2.10)",
-     "spec": "Dissertation.PaperSpec.A.rem_beta1_dich",
-     "accept": "Dissertation.Acceptance.A.rem_beta1_dich",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
-    }
-   ]
+   "clauses": []
   },
   {
    "id": "A:rem:regimes",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "remark",
    "number": "Remark 5.7",
    "title": "Perturbative and non-perturbative law dependence",
-   "location": "paper/sections/05-examples.tex",
-   "source_sha256": "2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5",
+   "location": "paper/wellposedness.tex",
+   "source_sha256": "8628790b3f61760d63f6a1cb8711d6fb055f4a005b160d92c994e6a8185b1c0c",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "The printed text of arXiv 2608.23203v1 differs from the authors' later revision, from which this claim's clauses were written; the propositions of the v1 text are not yet stated.",
    "scope_reviewed": false,
-   "clauses": [
-    {
-     "name": "Example 5.4: the full-tuple law perturbation satisfies (3.4) with c_pert = ||G|| L_p",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_pert",
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_pert",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses"
-    },
-    {
-     "name": "Example 5.4: added below the dissipativity margin, the system stays well-posed",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_wp",
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_wp",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses"
-    },
-    {
-     "name": "Example 5.5: monotone at every interaction strength",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_mono",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_mono",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
-    },
-    {
-     "name": "Example 5.5: well-posed at every interaction strength",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_wp",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_wp",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
-    },
-    {
-     "name": "Example 5.5: the interaction remains active along the solution",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_active_pos",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_active_pos",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_active_hypotheses"
-    }
-   ]
+   "clauses": []
   },
   {
    "id": "A:lem:lawflow",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "lemma",
    "number": "Lemma A.1",
    "title": "Predictable representatives and the full-tuple law flow",
-   "location": "paper/sections/09-appendix.tex",
+   "location": "paper/wellposedness.tex",
    "source_sha256": "b61210309cec8802a77053643f14f17525726292aaf8f26f098a3e85223633b5",
    "scope": "formal",
    "scope_note": "",
@@ -1024,80 +755,25 @@
   {
    "id": "A:abstract",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "prose-claim",
    "number": "abstract",
    "title": "Existence, uniqueness, stability for fully coupled MV-FBSDEJ with W2 full-tuple law dependence, sigma-finite nu (infinite activity), diagonal-only hypotheses; expected diagonal monotonicity strictly weaker than pointwise; dealer-market example monotone at every strength and active in a specialisation",
-   "location": "paper/wellposedness.tex:30",
+   "location": "paper/wellposedness.tex:73",
    "source_sha256": "3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "The printed text of arXiv 2608.23203v1 differs from the authors' later revision, from which this claim's clauses were written; the propositions of the v1 text are not yet stated.",
    "scope_reviewed": true,
-   "clauses": [
-    {
-     "name": "the a priori continuous-dependence estimate (Theorem 3.1)",
-     "spec": "Dissertation.PaperSpec.A.thm_stab",
-     "accept": "Dissertation.Acceptance.A.thm_stab",
-     "witness": "Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses"
-    },
-    {
-     "name": "uniqueness (Theorem 3.3)",
-     "spec": "Dissertation.PaperSpec.A.thm_uniq",
-     "accept": "Dissertation.Acceptance.A.thm_uniq",
-     "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses"
-    },
-    {
-     "name": "existence and uniqueness on every finite horizon (Theorem 3.5)",
-     "spec": "Dissertation.PaperSpec.A.thm_cwp",
-     "accept": "Dissertation.Acceptance.A.thm_cwp",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
-    },
-    {
-     "name": "pointwise monotonicity gives expected diagonal monotonicity (Remark 2.8)",
-     "spec": "Dissertation.PaperSpec.A.rem_diag_mono",
-     "accept": "Dissertation.Acceptance.A.rem_diag_mono",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
-    },
-    {
-     "name": "expected diagonal monotonicity is strictly weaker (Proposition 3.8)",
-     "spec": "Dissertation.PaperSpec.A.prop_strict",
-     "accept": "Dissertation.Acceptance.A.prop_strict",
-     "witness": "Dissertation.Acceptance.A.prop_strict_hypotheses"
-    },
-    {
-     "name": "the dealer interaction is monotone at every strength (Example 5.5)",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_mono",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_mono",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
-    },
-    {
-     "name": "the dealer market is well posed at every strength (Example 5.5)",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_wp",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_wp",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
-    },
-    {
-     "name": "the dealer interaction is active in the specialisation (Example 5.5)",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_active_pos",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_active_pos",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_active_hypotheses"
-    },
-    {
-     "name": "the dealer mark measure has infinite activity (Example 5.5)",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_marks",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_marks",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_marks_hypotheses"
-    }
-   ]
+   "clauses": []
   },
   {
    "id": "A:intro:mvfbsdej",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "definition",
    "number": "(1.1)",
    "title": "The MV-FBSDEJ (1.1): h evaluated at predictable tuple and predictable law flow; coefficients W2-Lipschitz on P2(H) along diagonal pairs",
-   "location": "paper/sections/01-introduction.tex:6",
+   "location": "paper/wellposedness.tex:103",
    "source_sha256": "80f3967ca000449faf2b3c19ea1fb0196f9c775bafcb265a8e45fc53ae802699",
    "scope": "definition",
    "scope_note": "the system (1.1), stated through the solution notion of §3",
@@ -1115,11 +791,11 @@
   {
    "id": "A:intro:limin-comparison",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "literature",
    "number": "§1 ¶3",
    "title": "Li-Min: expectation-functional interactions, jump integrand only pointwise, monotonicity imposes finite total jump mass; the present theorem removes all three restrictions",
-   "location": "paper/sections/01-introduction.tex:58",
+   "location": "paper/wellposedness.tex:155",
    "source_sha256": "90030b2d20a48b0ae1854a8fb2d4053ad1be2da6ece678b13095bd33e99bda43",
    "scope": "literature",
    "scope_note": "a statement about cited work",
@@ -1129,11 +805,11 @@
   {
    "id": "A:intro:rsz-extension",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "literature",
    "number": "§1 ¶7",
    "title": "Assumption 2.5 adjoins a jump term to RSZ (H.1)(1) / BYZ (A1) posed on the joint law of (X,Y,Z) with rectangular full-rank G",
-   "location": "paper/sections/01-introduction.tex:95",
+   "location": "paper/wellposedness.tex:192",
    "source_sha256": "35a0b66664c5c6c37fcab69b46738fb5b9f70798d932ef62a39cf512b2da78af",
    "scope": "literature",
    "scope_note": "a statement about cited work",
@@ -1143,11 +819,11 @@
   {
    "id": "A:sec2:separable-L2nu",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "prose-claim",
    "number": "§2 ¶1",
    "title": "nu sigma-finite on a countably generated (E,E) implies L^2(nu;R^j) separable for every j",
-   "location": "paper/sections/02-model-assumptions.tex:6",
+   "location": "paper/wellposedness.tex:227",
    "source_sha256": "ae53c7fb64bdc4c1d458158131bce4ad8a6101350c43ccc2c48c3c458f6e166e",
    "scope": "formal",
    "scope_note": "",
@@ -1163,11 +839,11 @@
   {
    "id": "A:sec2:infinite-activity-atoms",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "prose-claim",
    "number": "§2 ¶1",
    "title": "If nu(E)=infinity then N has infinitely many atoms on every nondegenerate time interval (a.s.)",
-   "location": "paper/sections/02-model-assumptions.tex:10",
+   "location": "paper/wellposedness.tex:231",
    "source_sha256": "9f39b94445462cf5bd885113323065e33b702bc828630f1707c4ea24b315889e",
    "scope": "formal",
    "scope_note": "",
@@ -1184,11 +860,11 @@
   {
    "id": "A:sec2:prp",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "prose-claim",
    "number": "§2 PRP ¶",
    "title": "Brownian-Poisson predictable representation property, passing to the independent initial enlargement; representing pair unique up to null sets",
-   "location": "paper/sections/02-model-assumptions.tex:47",
+   "location": "paper/wellposedness.tex:268",
    "source_sha256": "4abed1a193ffeafc8c98d073e7c33bcde2f293ba9bb58b16d1a0464060b8dcea",
    "scope": "formal",
    "scope_note": "",
@@ -1205,11 +881,11 @@
   {
    "id": "A:sec2:hborel-derivation",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "prose-claim",
    "number": "(2.3) + ¶",
    "title": "Joint pointwise Borel measurability of (t,theta,e,mu)->h implies Borel measurability of (t,theta,mu)->h(t,theta,.,mu) into L2(nu) (Tonelli + Pettis [HNVW 1.1.6])",
-   "location": "paper/sections/02-model-assumptions.tex:107",
+   "location": "paper/wellposedness.tex:328",
    "source_sha256": "212a07e14afa5d0609973352865fe2ce8ae09c6d715739e9e87b738950e721a8",
    "scope": "formal",
    "scope_note": "",
@@ -1226,11 +902,11 @@
   {
    "id": "A:sec2:fubini-iso",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "prose-claim",
    "number": "(2.4)",
    "title": "Fubini isometry L2(P;L2(nu)) = L2(P x E) with a P x E-measurable representative unique up to null sets; every Poisson integral read through it",
-   "location": "paper/sections/02-model-assumptions.tex:115",
+   "location": "paper/wellposedness.tex:336",
    "source_sha256": "df5f705af90cbf7413924cd5e12daf30a99a199a25fd04a27b157349712d582b",
    "scope": "duplicate",
    "scope_note": "A:eq:fubiniiso",
@@ -1240,11 +916,11 @@
   {
    "id": "A:sec2:coefmeas",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "prose-claim",
    "number": "(2.5)",
    "title": "Along any diagonal input / tuple, b,sigma,f evaluations are progressively measurable and the h evaluation is predictable",
-   "location": "paper/sections/02-model-assumptions.tex:123",
+   "location": "paper/wellposedness.tex:344",
    "source_sha256": "e92807a86fd4018cc3957107d1f31ad54876122aa006e56b1843c215dad28c22",
    "scope": "formal",
    "scope_note": "",
@@ -1267,11 +943,11 @@
   {
    "id": "A:rem2.6",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "remark",
    "number": "Remark 2.6 (no label)",
    "title": "(2.8)-(2.9) synchronous coupling bounds; (2.10) Lipschitz law functionals are W2-Lipschitz with same constant (via an optimal coupling); (2.11) U-marginal projection 1-Lipschitz",
-   "location": "paper/sections/02-model-assumptions.tex:200",
+   "location": "paper/wellposedness.tex:421",
    "source_sha256": "0fdd02c73b15ffac249ca69baf593f4f9cd63e5ecb9a7e0054f998e0924752a6",
    "scope": "duplicate",
    "scope_note": "A:remark-2.6",
@@ -1279,27 +955,13 @@
    "clauses": []
   },
   {
-   "id": "A:rem2.10:domination",
-   "paper": "A",
-   "commit": "e939294765f2",
-   "kind": "literature",
-   "number": "Remark 2.10 last sentence",
-   "title": "Domination-monotonicity results [XuTangMeng] show uniform integrand coercivity is not the only solvability mechanism",
-   "location": "paper/sections/02-model-assumptions.tex:284",
-   "source_sha256": "00fbea456fa264cefbba36acaded92c5695f83c9ceec2e46d68fa22317ec4968",
-   "scope": "literature",
-   "scope_note": "a statement about cited work",
-   "scope_reviewed": false,
-   "clauses": []
-  },
-  {
    "id": "A:sec3:HH-banach",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "prose-claim",
    "number": "§3 \"Solution space\"",
    "title": "Under indistinguishability / a.e. identification, ||.||_HH is a norm and (HH,||.||) is a Banach space; HH subset of Hweak since E int |V|^2 <= T E sup |V|^2",
-   "location": "paper/sections/03-main-results.tex:30",
+   "location": "paper/wellposedness.tex:557",
    "source_sha256": "a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f",
    "scope": "formal",
    "scope_note": "",
@@ -1325,11 +987,11 @@
   {
    "id": "A:sec3:one-null-set",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "prose-claim",
    "number": "§3 solution definition",
    "title": "Both sides of each identity are cadlag in t, so a solution holding a.s. for each t holds off one null set for all t",
-   "location": "paper/sections/03-main-results.tex:37",
+   "location": "paper/wellposedness.tex:564",
    "source_sha256": "14d75cb86a9216c652eee2f0e1f6bebae9651e4f1f55bc1c34aacc8f595b9954",
    "scope": "formal",
    "scope_note": "",
@@ -1346,11 +1008,11 @@
   {
    "id": "A:thm3.1:companion",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "prose-claim",
    "number": "¶ after Thm 3.1",
    "title": "(a) companion bound with roles exchanged; (b) shared interior coefficients give continuous dependence on initial/terminal data; (c) the hypotheses on system 2 only make the RHS finite: the estimate holds whenever the displayed differences are square-integrable",
-   "location": "paper/sections/03-main-results.tex:76",
+   "location": "paper/wellposedness.tex:603",
    "source_sha256": "11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1",
    "scope": "formal",
    "scope_note": "",
@@ -1379,58 +1041,25 @@
   {
    "id": "A:sec3:margin-paragraph",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "prose-claim",
    "number": "¶ after Cor 3.6",
    "title": "Margin forces every baseline channel strictly dissipative; additive h0 cannot be a baseline (nu!=0); finitely many functionals of u supply no margin when L2(nu) infinite-dimensional",
-   "location": "paper/sections/03-main-results.tex:278",
+   "location": "paper/wellposedness.tex:797",
    "source_sha256": "10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "The printed text of arXiv 2608.23203v1 differs from the authors' later revision, from which this claim's clauses were written; the propositions of the v1 text are not yet stated.",
    "scope_reviewed": false,
-   "clauses": [
-    {
-     "name": "a margin in (2.13) makes every channel strictly dissipative",
-     "spec": "Dissertation.PaperSpec.A.cor_margin_channels",
-     "accept": "Dissertation.Acceptance.A.cor_margin_channels",
-     "witness": "Dissertation.Acceptance.A.cor_robust_hypotheses"
-    },
-    {
-     "name": "nu != 0: an additive h0(t, x, e) supplies no margin",
-     "spec": "Dissertation.PaperSpec.A.cor_margin_additive",
-     "accept": "Dissertation.Acceptance.A.cor_margin_additive",
-     "witness": "Dissertation.Acceptance.A.cor_margin_additive_hypotheses"
-    },
-    {
-     "name": "L2(nu) infinite-dimensional: jump feedback through finitely many functionals of u supplies no margin",
-     "spec": "Dissertation.PaperSpec.A.cor_margin_finite",
-     "accept": "Dissertation.Acceptance.A.cor_margin_finite",
-     "witness": "Dissertation.Acceptance.A.cor_margin_finite_hypotheses"
-    },
-    {
-     "name": "L2(nu) finite-dimensional: finitely many functionals determine u and such feedback carries a margin",
-     "spec": "Dissertation.PaperSpec.A.cor_margin_findim",
-     "accept": "Dissertation.Acceptance.A.cor_margin_findim",
-     "witness": "Dissertation.Acceptance.A.cor_margin_findim_hypotheses"
-    },
-    {
-     "name": "L2(nu) infinite-dimensional: jump feedback through finitely many continuous, possibly nonlinear, functionals of u, with any law dependence, supplies no margin",
-     "spec": "Dissertation.PaperSpec.A.cor_margin_continuous"
-    },
-    {
-     "name": "finitely many continuous functionals cannot separate the points of an infinite-dimensional space",
-     "spec": "Dissertation.PaperSpec.A.cor_margin_separate"
-    }
-   ]
+   "clauses": []
   },
   {
    "id": "A:sec4:horizon-not-contractive",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "prose-claim",
    "number": "§4 intro",
    "title": "Continuation must be in the coupling strength: shortening the horizon does not make the frozen-coefficient map contractive because (z,u)-dependence of sigma,h and the full-tuple law enter the contraction constant with no T-factor",
-   "location": "paper/sections/04-proof-wellposedness.tex:13",
+   "location": "paper/wellposedness.tex:886",
    "source_sha256": "3848cfec9527e65f37a2aa7ee50e7c186ffb9d3e89e5d7181ef8045b33f7557a",
    "scope": "formal",
    "scope_note": "",
@@ -1447,11 +1076,11 @@
   {
    "id": "A:sec4:supremum-criterion",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "§4 preamble",
    "title": "A cadlag local martingale whose running supremum is integrable has zero-mean increments (localisation + DCT); BDG at p=1 covers compensated-Poisson martingales",
-   "location": "paper/sections/04-proof-wellposedness.tex:35",
+   "location": "paper/wellposedness.tex:908",
    "source_sha256": "66f9ea22a06a00e8b6aad28172a7820750d9f1d2f2ddeb8475dddc064283e43b",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -1461,11 +1090,11 @@
   {
    "id": "A:sec4:WP-def",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "definition",
    "number": "(4.1) + WP(lambda)",
    "title": "lambda-scaled forced system (4.1) and WP(lambda): unique HH solution for every square-integrable forcing (q^h predictable)",
-   "location": "paper/sections/04-proof-wellposedness.tex:64",
+   "location": "paper/wellposedness.tex:937",
    "source_sha256": "17962fe037ff7de888f26d2b0c9f51427d790ab6422e549a1d661ef69141a32e",
    "scope": "definition",
    "scope_note": "the forced system (4.1) and the property WP(λ) used in the proof of Theorem 3.5",
@@ -1484,11 +1113,11 @@
   {
    "id": "A:sec4:coeffint",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(4.2)-(4.3)",
    "title": "Along any Theta in HH, coefficient processes are square-integrable with the bound (4.2); terminal bound (4.3)",
-   "location": "paper/sections/04-proof-wellposedness.tex:71",
+   "location": "paper/wellposedness.tex:944",
    "source_sha256": "fb2d9936eeb420107ab775d3d6f5f596ace121471c667bed056241cf5805dad6",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -1498,11 +1127,11 @@
   {
    "id": "A:lem4.1:M2-infinite-activity",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "proof of Lemma 4.1",
    "title": "With nu(E)=infinity localisation along jump times fails to exhaust [0,T]; M^2 handled through the compensation formula which needs only integrability",
-   "location": "paper/sections/04-proof-wellposedness.tex:149",
+   "location": "paper/wellposedness.tex:1022",
    "source_sha256": "89a434caa7c84ed5e2143713d1483dde1e7fa2001de1f51afe467a70f3c9fe8f",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -1512,11 +1141,11 @@
   {
    "id": "A:sec4:uniqueness-along-homotopy",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "¶ before Lemma 4.4",
    "title": "Lemma 4.3 with identical sources gives uniqueness on [lambda*,1]; Lemma 4.2 on [0,lambda*]",
-   "location": "paper/sections/04-proof-wellposedness.tex:873",
+   "location": "paper/wellposedness.tex:1746",
    "source_sha256": "518b95da43921c8290496ba8c58a2f74ebe2bce2191c71305e264312b4786bd7",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -1526,11 +1155,11 @@
   {
    "id": "A:sec4:proof-thm35",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "§4.5",
    "title": "Finitely many steps lambda_k=min{lambda*+k zeta0,1} reach WP(1)",
-   "location": "paper/sections/04-proof-wellposedness.tex:946",
+   "location": "paper/wellposedness.tex:1819",
    "source_sha256": "ed713718821e088c6ca09a59f75d22202a9e9960885df259a33fd8f6dd54fcbe",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -1540,11 +1169,11 @@
   {
    "id": "A:sec:examples",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "prose-claim",
    "number": "§5 preamble",
    "title": "Li-Min Ex 3.2 is Lipschitz with no solution at T=3pi/4; dissipativity cannot be traded for Lipschitz continuity",
-   "location": "paper/sections/05-examples.tex:6",
+   "location": "paper/wellposedness.tex:1830",
    "source_sha256": "3f24646e833f5a7b1bfdeb3449b26795f12ebfae2cde62dff93327979908d073",
    "scope": "formal",
    "scope_note": "",
@@ -1561,86 +1190,25 @@
   {
    "id": "A:sec5:overview",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "prose-claim",
    "number": "§5 ¶2",
    "title": "Overview: Ex 5.1 two models at arbitrary activity; Ex 5.2/5.3 recover Brownian and expectation-functional subclasses; Ex 5.4 beyond; Ex 5.5 well-posed at every strength and active",
-   "location": "paper/sections/05-examples.tex:10",
+   "location": "paper/wellposedness.tex:1834",
    "source_sha256": "85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "The printed text of arXiv 2608.23203v1 differs from the authors' later revision, from which this claim's clauses were written; the propositions of the v1 text are not yet stated.",
    "scope_reviewed": true,
-   "clauses": [
-    {
-     "name": "Example 5.1(i) meets every assumption at arbitrary activity",
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_i",
-     "accept": "Dissertation.Acceptance.A.ex_concrete_i",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses"
-    },
-    {
-     "name": "Example 5.1(ii) meets every assumption at arbitrary activity",
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_ii",
-     "accept": "Dissertation.Acceptance.A.ex_concrete_ii",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses"
-    },
-    {
-     "name": "Example 5.2 recovers the Brownian subclass",
-     "spec": "Dissertation.PaperSpec.A.ex_brownian",
-     "accept": "Dissertation.Acceptance.A.ex_brownian",
-     "witness": "Dissertation.Acceptance.A.ex_brownian_hypotheses"
-    },
-    {
-     "name": "Example 5.3 recovers the expectation-functional subclass",
-     "spec": "Dissertation.PaperSpec.A.ex_expfunc",
-     "accept": "Dissertation.Acceptance.A.ex_expfunc",
-     "witness": "Dissertation.Acceptance.A.ex_expfunc_hypotheses"
-    },
-    {
-     "name": "Example 5.4: a nonlinear functional of the full tuple",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial",
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_radial",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses"
-    },
-    {
-     "name": "Example 5.4: nonlinear functionals of the jump integrand, as printed",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U",
-     "refute": "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_false"
-    },
-    {
-     "name": "Example 5.4: nonlinear functionals of the jump integrand, with L2(nu) nonzero",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr",
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_corr",
-     "corrects": "Example 5.4: nonlinear functionals of the jump integrand, as printed",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses"
-    },
-    {
-     "name": "Example 5.5: the crowding operator is monotone",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_mono",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_mono",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
-    },
-    {
-     "name": "Example 5.5: well-posedness at every interaction strength",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_wp",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_wp",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
-    },
-    {
-     "name": "Example 5.5: the interaction is active in the specialisation",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_active_pos",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_active_pos",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_active_hypotheses"
-    }
-   ]
+   "clauses": []
   },
   {
    "id": "A:ex:concrete(i)",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "example",
    "number": "Example 5.1(i)",
    "title": "Affine base (n=m=d=1): Hamiltonian convex with minimiser, SMP [TangLi] gives optimality system = (1.1); L=max{b1,b2,1}; c_G=1; pairings exact; alpha=1; margin; U-dissipative; clamp variant keeps (2.7) with (b1-eps,b2)",
-   "location": "paper/sections/05-examples.tex:23",
+   "location": "paper/wellposedness.tex:1846",
    "source_sha256": "7d4c8ba4878bf88e29152c7147dbe24182a03c7bf03b4b8eb2ddddb6078ed978",
    "scope": "part-of",
    "scope_note": "A:ex:concrete",
@@ -1650,11 +1218,11 @@
   {
    "id": "A:ex:concrete(ii)",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "example",
    "number": "Example 5.1(ii)",
    "title": "Mean-field coefficients: Ass 2.3 at L=2, Ass 2.2 immediate, Ass 2.5 with alpha=beta1=beta2=2; Li-Min Ex 3.1 coefficients carried to arbitrary sigma-finite nu (their (H3.2) bounds total mass)",
-   "location": "paper/sections/05-examples.tex:111",
+   "location": "paper/wellposedness.tex:1934",
    "source_sha256": "5673eb3549b7003ddbd72eaf6be416f492252d49f56d204c2bd32be0cb85d921",
    "scope": "part-of",
    "scope_note": "A:ex:concrete",
@@ -1664,68 +1232,25 @@
   {
    "id": "A:conclusion",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "prose-claim",
    "number": "§6",
    "title": "Summary of Thms 3.1/3.3/3.5, Cor 3.6, Prop 3.8, Remark 2.10",
-   "location": "paper/sections/06-conclusion.tex:3",
+   "location": "paper/wellposedness.tex:2297",
    "source_sha256": "c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "The printed text of arXiv 2608.23203v1 differs from the authors' later revision, from which this claim's clauses were written; the propositions of the v1 text are not yet stated.",
    "scope_reviewed": true,
-   "clauses": [
-    {
-     "name": "the stability estimate (Theorem 3.1)",
-     "spec": "Dissertation.PaperSpec.A.thm_stab",
-     "accept": "Dissertation.Acceptance.A.thm_stab",
-     "witness": "Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses"
-    },
-    {
-     "name": "uniqueness (Theorem 3.3)",
-     "spec": "Dissertation.PaperSpec.A.thm_uniq",
-     "accept": "Dissertation.Acceptance.A.thm_uniq",
-     "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses"
-    },
-    {
-     "name": "global well-posedness (Theorem 3.5)",
-     "spec": "Dissertation.PaperSpec.A.thm_cwp",
-     "accept": "Dissertation.Acceptance.A.thm_cwp",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
-    },
-    {
-     "name": "robustness at m = n below the margin (Corollary 3.6)",
-     "spec": "Dissertation.PaperSpec.A.cor_robust_wp",
-     "accept": "Dissertation.Acceptance.A.cor_robust_wp",
-     "witness": "Dissertation.Acceptance.A.cor_robust_hypotheses"
-    },
-    {
-     "name": "pointwise monotonicity gives expected diagonal monotonicity (Remark 2.8)",
-     "spec": "Dissertation.PaperSpec.A.rem_diag_mono",
-     "accept": "Dissertation.Acceptance.A.rem_diag_mono",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
-    },
-    {
-     "name": "expected diagonal monotonicity is strictly weaker (Proposition 3.8)",
-     "spec": "Dissertation.PaperSpec.A.prop_strict",
-     "accept": "Dissertation.Acceptance.A.prop_strict",
-     "witness": "Dissertation.Acceptance.A.prop_strict_hypotheses"
-    },
-    {
-     "name": "m < n and nu nonzero force strictly U-dissipative jump feedback (Remark 2.10)",
-     "spec": "Dissertation.PaperSpec.A.rem_beta1_dich",
-     "accept": "Dissertation.Acceptance.A.rem_beta1_dich",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
-    }
-   ]
+   "clauses": []
   },
   {
    "id": "A:lemA1:polish",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "proof of Lemma A.1, step 2",
    "title": "(P2(H),W2) inherits Polishness from H [Villani Ch. 6]; law map is 1-Lipschitz from L2(Omega;H)",
-   "location": "paper/sections/09-appendix.tex:55",
+   "location": "paper/wellposedness.tex:2365",
    "source_sha256": "cdf7e5fd3a5753faf4d5aaea2d4e017db124558fd0461ec3b81dd52a3f8527cc",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -1735,11 +1260,11 @@
   {
    "id": "A:lemA1:pettis",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "proof of Lemma A.1, step 1",
    "title": "Fubini isometry L2([0,T]x Omega;H) = L2(0,T;L2(Omega;H)) and Pettis give a Borel version of t->Theta_t^- off a null set",
-   "location": "paper/sections/09-appendix.tex:48",
+   "location": "paper/wellposedness.tex:2358",
    "source_sha256": "4683d66c9de5e151a16b21a1e6cbac952384cffefeb3e0e4b2eb720fb4a0b746",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -1749,11 +1274,11 @@
   {
    "id": "A:eq:mvfbsdej",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(1.1)",
    "title": "equation eq:mvfbsdej [def]",
-   "location": "paper/sections/01-introduction.tex:6",
+   "location": "paper/wellposedness.tex:103",
    "source_sha256": "80f3967ca000449faf2b3c19ea1fb0196f9c775bafcb265a8e45fc53ae802699",
    "scope": "definition",
    "scope_note": "the system (1.1) and its solutions in the space of Section 3",
@@ -1771,11 +1296,11 @@
   {
    "id": "A:eq:compid",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(2.1)",
    "title": "equation eq:compid [claim]",
-   "location": "paper/sections/02-model-assumptions.tex:16",
+   "location": "paper/wellposedness.tex:237",
    "source_sha256": "800f1b72b4840261a386a8c83c9145123c3e5f3915f21629c419af06386fdb4d",
    "scope": "formal",
    "scope_note": "",
@@ -1792,11 +1317,11 @@
   {
    "id": "A:eq:zeromean",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(2.2)",
    "title": "equation eq:zeromean [claim]",
-   "location": "paper/sections/02-model-assumptions.tex:21",
+   "location": "paper/wellposedness.tex:242",
    "source_sha256": "c5812d77e4d5bc3ee384503abd6618caf3308ce50f881037696d6be4f444a9ee",
    "scope": "formal",
    "scope_note": "",
@@ -1813,11 +1338,11 @@
   {
    "id": "A:eq:hborel",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(2.3)",
    "title": "equation eq:hborel [def]",
-   "location": "paper/sections/02-model-assumptions.tex:102",
+   "location": "paper/wellposedness.tex:323",
    "source_sha256": "47d90036113382214fdafc448332ede2c231323868cef98a5bf25445e9740017",
    "scope": "definition",
    "scope_note": "the joint Borel measurability (2.3)",
@@ -1835,11 +1360,11 @@
   {
    "id": "A:eq:fubiniiso",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(2.4)",
    "title": "equation eq:fubiniiso [claim]",
-   "location": "paper/sections/02-model-assumptions.tex:113",
+   "location": "paper/wellposedness.tex:334",
    "source_sha256": "61f84ae00902003b1bc63e71689554d2ccc3e3fe92a885bcfc325675f3b13863",
    "scope": "formal",
    "scope_note": "",
@@ -1855,11 +1380,11 @@
   {
    "id": "A:eq:coefmeas",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(2.5)",
    "title": "equation eq:coefmeas [claim]",
-   "location": "paper/sections/02-model-assumptions.tex:124",
+   "location": "paper/wellposedness.tex:345",
    "source_sha256": "7924cb39f7a28bb67419f823f289ffe9c6c3d00cf2e8c7a19b20c87c5f3ff7d7",
    "scope": "formal",
    "scope_note": "",
@@ -1882,11 +1407,11 @@
   {
    "id": "A:eq:lipT",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(2.6)",
    "title": "equation eq:lipT [stmt:Ass 2.3]",
-   "location": "paper/sections/02-model-assumptions.tex:156",
+   "location": "paper/wellposedness.tex:377",
    "source_sha256": "26000867c0563c5cbf92033eb156bb744fdb9cd4ef31d2116ab1e40cbf2ded35",
    "scope": "part-of",
    "scope_note": "A:ass:lip",
@@ -1896,11 +1421,11 @@
   {
    "id": "A:eq:mono",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(2.7)",
    "title": "equation eq:mono [stmt:Ass 2.5]",
-   "location": "paper/sections/02-model-assumptions.tex:189",
+   "location": "paper/wellposedness.tex:410",
    "source_sha256": "02adff614a721879d5dbecfa1276846e950167cc29a91b51cd366cd0b0407892",
    "scope": "part-of",
    "scope_note": "A:ass:mono",
@@ -1910,11 +1435,11 @@
   {
    "id": "A:eq:coupling",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(2.8)",
    "title": "equation eq:coupling [stmt:Remark 2.6]",
-   "location": "paper/sections/02-model-assumptions.tex:204",
+   "location": "paper/wellposedness.tex:425",
    "source_sha256": "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
    "scope": "part-of",
    "scope_note": "A:remark-2.6",
@@ -1924,11 +1449,11 @@
   {
    "id": "A:eq:couplingT",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(2.9)",
    "title": "equation eq:couplingT [stmt:Remark 2.6]",
-   "location": "paper/sections/02-model-assumptions.tex:204",
+   "location": "paper/wellposedness.tex:425",
    "source_sha256": "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
    "scope": "part-of",
    "scope_note": "A:remark-2.6",
@@ -1938,11 +1463,11 @@
   {
    "id": "A:eq:lipfun",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(2.10)",
    "title": "equation eq:lipfun [stmt:Remark 2.6]",
-   "location": "paper/sections/02-model-assumptions.tex:215",
+   "location": "paper/wellposedness.tex:436",
    "source_sha256": "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
    "scope": "part-of",
    "scope_note": "A:remark-2.6",
@@ -1952,11 +1477,11 @@
   {
    "id": "A:eq:margproj",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(2.11)",
    "title": "equation eq:margproj [stmt:Remark 2.6]",
-   "location": "paper/sections/02-model-assumptions.tex:226",
+   "location": "paper/wellposedness.tex:447",
    "source_sha256": "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
    "scope": "part-of",
    "scope_note": "A:remark-2.6",
@@ -1966,11 +1491,11 @@
   {
    "id": "A:eq:monomargin",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(2.12)",
    "title": "equation eq:monomargin [stmt:Remark 2.11]",
-   "location": "paper/sections/02-model-assumptions.tex:290",
+   "location": "paper/wellposedness.tex:506",
    "source_sha256": "6867b6d6ec817311e74332eaab2da6b80faa99cc43729915f5643802059f3d9e",
    "scope": "part-of",
    "scope_note": "A:rem:margin",
@@ -1980,11 +1505,11 @@
   {
    "id": "A:eq:monomarginu",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(2.13)",
    "title": "equation eq:monomarginu [stmt:Remark 2.11]",
-   "location": "paper/sections/02-model-assumptions.tex:308",
+   "location": "paper/wellposedness.tex:519",
    "source_sha256": "7c818f2a54f2995c3b33a671b0efcda0c8f8a80e07551362d6085a06522b0ed6",
    "scope": "part-of",
    "scope_note": "A:rem:margin",
@@ -1994,11 +1519,11 @@
   {
    "id": "A:eq:stab",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(3.1)",
    "title": "equation eq:stab [stmt:Thm 3.1]",
-   "location": "paper/sections/03-main-results.tex:57",
+   "location": "paper/wellposedness.tex:584",
    "source_sha256": "c4dddf739159e4e400a4c5e45ce3dbae16243514e4a494320285d30867760b23",
    "scope": "part-of",
    "scope_note": "A:thm:stab",
@@ -2008,11 +1533,11 @@
   {
    "id": "A:eq:uniq-coeff",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(3.2)",
    "title": "equation eq:uniq-coeff [proof:Thm 3.3]",
-   "location": "paper/sections/03-main-results.tex:137",
+   "location": "paper/wellposedness.tex:664",
    "source_sha256": "b8ff2e9838043219793ee5e3e2d0c12015348a06f6da0bc20037b93031104413",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2022,11 +1547,11 @@
   {
    "id": "A:eq:uniq-bwd",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(3.3)",
    "title": "equation eq:uniq-bwd [proof:Thm 3.3]",
-   "location": "paper/sections/03-main-results.tex:166",
+   "location": "paper/wellposedness.tex:693",
    "source_sha256": "937e56ed71142a48eaf493db8e817431b0c8769c3e48253e307a850a6d5dc870",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2036,11 +1561,11 @@
   {
    "id": "A:eq:pertpair",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(3.4)",
    "title": "equation eq:pertpair [stmt:Cor 3.6]",
-   "location": "paper/sections/03-main-results.tex:213",
+   "location": "paper/wellposedness.tex:732",
    "source_sha256": "b94f0a4750861f7bc9aa9bfbd4348cb77fc596c40e0d0d62aa588f5f490b4965",
    "scope": "part-of",
    "scope_note": "A:cor:robust",
@@ -2050,11 +1575,11 @@
   {
    "id": "A:eq:pertlip",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(3.5)",
    "title": "equation eq:pertlip [stmt:Cor 3.6]",
-   "location": "paper/sections/03-main-results.tex:228",
+   "location": "paper/wellposedness.tex:747",
    "source_sha256": "bc1a64adcc53f32ca3513646e766d459d78bdc812608e63ce103bae80cd160d6",
    "scope": "part-of",
    "scope_note": "A:cor:robust",
@@ -2064,11 +1589,11 @@
   {
    "id": "A:eq:bmean",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(3.6)",
    "title": "equation eq:bmean [stmt:Prop 3.8]",
-   "location": "paper/sections/03-main-results.tex:300",
+   "location": "paper/wellposedness.tex:814",
    "source_sha256": "84689f8ae1da8e496feca41656fa1bbc6a0891e660a47e6896333f7697a0442e",
    "scope": "part-of",
    "scope_note": "A:prop:strict",
@@ -2078,11 +1603,11 @@
   {
    "id": "A:eq:diagdrift",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(3.7)",
    "title": "equation eq:diagdrift [stmt:Prop 3.8]",
-   "location": "paper/sections/03-main-results.tex:307",
+   "location": "paper/wellposedness.tex:821",
    "source_sha256": "0452cb72286d7896e16340d2c6888629794fff652f758c7dcbee71da8f17513a",
    "scope": "part-of",
    "scope_note": "A:prop:strict",
@@ -2092,11 +1617,11 @@
   {
    "id": "A:eq:forced",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(4.1)",
    "title": "equation eq:forced [def]",
-   "location": "paper/sections/04-proof-wellposedness.tex:52",
+   "location": "paper/wellposedness.tex:925",
    "source_sha256": "6459d481fc91eb02a66f853e83b4c23bce1e5ca1dff0ef93521587c95845c0c0",
    "scope": "definition",
    "scope_note": "the forced system (4.1) and its solutions in the space of Section 3",
@@ -2114,11 +1639,11 @@
   {
    "id": "A:eq:coeffint",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(4.2)",
    "title": "equation eq:coeffint [claim]",
-   "location": "paper/sections/04-proof-wellposedness.tex:73",
+   "location": "paper/wellposedness.tex:946",
    "source_sha256": "99964f49a13228cf4ff98983af9cd5548e95ce839497c0cbc9b456e605c4e606",
    "scope": "formal",
    "scope_note": "",
@@ -2135,11 +1660,11 @@
   {
    "id": "A:eq:termg",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(4.3)",
    "title": "equation eq:termg [claim]",
-   "location": "paper/sections/04-proof-wellposedness.tex:80",
+   "location": "paper/wellposedness.tex:953",
    "source_sha256": "d9e41a50e8147b0d78ae4662fa4a0ea0b13792c0adffdd92178e02bc91f3a077",
    "scope": "formal",
    "scope_note": "",
@@ -2156,11 +1681,11 @@
   {
    "id": "A:eq:dYlin",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(4.4)",
    "title": "equation eq:dYlin [stmt:Lemma 4.1]",
-   "location": "paper/sections/04-proof-wellposedness.tex:90",
+   "location": "paper/wellposedness.tex:963",
    "source_sha256": "4352743d42febbabaf32ef20a893a0457ba44eb5f1c97db13dd5cd420a5d8a32",
    "scope": "part-of",
    "scope_note": "A:lem:bpbsde",
@@ -2170,11 +1695,11 @@
   {
    "id": "A:eq:itoY2",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(4.5)",
    "title": "equation eq:itoY2 [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:126",
+   "location": "paper/wellposedness.tex:999",
    "source_sha256": "efecab9f849df00da61de05cf74326fccbf0779932b8d2aeff894575e2879244",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2184,11 +1709,11 @@
   {
    "id": "A:eq:supE",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(4.6)",
    "title": "equation eq:supE [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:206",
+   "location": "paper/wellposedness.tex:1079",
    "source_sha256": "92a2bc4ba1b90193adee8d79f2769267c5413a5370b0bd03b7e6e4c7469c7880",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2198,11 +1723,11 @@
   {
    "id": "A:eq:frozenfwd",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(4.7)",
    "title": "equation eq:frozenfwd [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:264",
+   "location": "paper/wellposedness.tex:1137",
    "source_sha256": "0865cca4da02a9a6573bfcc686bbde2000bd44117ed5ba6c061fc230c560e761",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2212,11 +1737,11 @@
   {
    "id": "A:eq:frozenbwd",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(4.8)",
    "title": "equation eq:frozenbwd [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:303",
+   "location": "paper/wellposedness.tex:1176",
    "source_sha256": "6fe095bee848af81f9082966d2be4cd8accc4659d4a12f521c9bf832321f7e6a",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2226,11 +1751,11 @@
   {
    "id": "A:eq:coeffdiff",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(4.9)",
    "title": "equation eq:coeffdiff [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:337",
+   "location": "paper/wellposedness.tex:1210",
    "source_sha256": "c26bfe399b8b1c2a051fd7d421e096cfd49479aac965c43535242164b1159c9c",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2240,11 +1765,11 @@
   {
    "id": "A:eq:fwddiff",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(4.10)",
    "title": "equation eq:fwddiff [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:355",
+   "location": "paper/wellposedness.tex:1228",
    "source_sha256": "469b21f5927adabb7fee93e9c2aa10426ee4e11ae8385388c2c9cdadf1b60836",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2254,11 +1779,11 @@
   {
    "id": "A:eq:terdiff",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(4.11)",
    "title": "equation eq:terdiff [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:379",
+   "location": "paper/wellposedness.tex:1252",
    "source_sha256": "7a713a9888a387c7d5461cda8b0e9a690209c1e1f68fc45bc8990a3ad3bf91b1",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2268,11 +1793,11 @@
   {
    "id": "A:eq:bwddiff",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(4.12)",
    "title": "equation eq:bwddiff [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:407",
+   "location": "paper/wellposedness.tex:1280",
    "source_sha256": "8aee0383c039e706daf9b94b5a0408b82c53bea7ebb9e712a8c63d08847a968e",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2282,11 +1807,11 @@
   {
    "id": "A:eq:contract",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(4.13)",
    "title": "equation eq:contract [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:427",
+   "location": "paper/wellposedness.tex:1300",
    "source_sha256": "9911c31b0afc66bb02b8de946d63f88f53b1d71583d816b0c3717a51d7fa1445",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2296,11 +1821,11 @@
   {
    "id": "A:eq:contpert",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(4.14)",
    "title": "equation eq:contpert [stmt:Lemma 4.3]",
-   "location": "paper/sections/04-proof-wellposedness.tex:498",
+   "location": "paper/wellposedness.tex:1371",
    "source_sha256": "f1781896f3410c6e3889036f37c13ff87e0a8e3209085a713880cf494b15721f",
    "scope": "part-of",
    "scope_note": "A:lem:pert",
@@ -2310,11 +1835,11 @@
   {
    "id": "A:eq:dX",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(4.15)",
    "title": "equation eq:dX [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:526",
+   "location": "paper/wellposedness.tex:1399",
    "source_sha256": "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2324,11 +1849,11 @@
   {
    "id": "A:eq:dY",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(4.16)",
    "title": "equation eq:dY [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:526",
+   "location": "paper/wellposedness.tex:1399",
    "source_sha256": "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2338,11 +1863,11 @@
   {
    "id": "A:eq:Gid-path",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(4.17)",
    "title": "equation eq:Gid-path [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:563",
+   "location": "paper/wellposedness.tex:1436",
    "source_sha256": "1b8f9d553f28916e2f54c39b33a2d9c8270af102cdd73d9e420081d45ef2d208",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2352,11 +1877,11 @@
   {
    "id": "A:eq:bdg4",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(4.18)",
    "title": "equation eq:bdg4 [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:579",
+   "location": "paper/wellposedness.tex:1452",
    "source_sha256": "cc119107c0993e2db3aa44ba40139d2e14673d3ecbade95adf57b556559bf4c0",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2366,11 +1891,11 @@
   {
    "id": "A:eq:Gid",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(4.19)",
    "title": "equation eq:Gid [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:624",
+   "location": "paper/wellposedness.tex:1497",
    "source_sha256": "62f3b40810c1c1ad56e0bb47800f386409d756a01bb3bdd6bc510b6f786b760a",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2380,11 +1905,11 @@
   {
    "id": "A:eq:intmono",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(4.20)",
    "title": "equation eq:intmono [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:637",
+   "location": "paper/wellposedness.tex:1510",
    "source_sha256": "fe0258cfec56f0d71d86bfbec12251fbec48d09d25639edb4d296042102ec93d",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2394,11 +1919,11 @@
   {
    "id": "A:eq:termmono",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(4.21)",
    "title": "equation eq:termmono [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:648",
+   "location": "paper/wellposedness.tex:1521",
    "source_sha256": "909d07a537026d305069f258459dc3c52f5bd1bad9e9b98683ae7754a0907ce3",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2408,11 +1933,11 @@
   {
    "id": "A:eq:coerc",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(4.22)",
    "title": "equation eq:coerc [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:681",
+   "location": "paper/wellposedness.tex:1554",
    "source_sha256": "fe489ef4eed4fd89e08a469d28825a305af2936b44592398acd705f7e53ac8bc",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2422,11 +1947,11 @@
   {
    "id": "A:eq:fwd",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(4.23)",
    "title": "equation eq:fwd [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:710",
+   "location": "paper/wellposedness.tex:1583",
    "source_sha256": "b221d93cc08c91cf0d54475fa4a4bbb7b68fe6f5c967f455e5e5107f21268364",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2436,11 +1961,11 @@
   {
    "id": "A:eq:bwdito",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(4.24)",
    "title": "equation eq:bwdito [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:716",
+   "location": "paper/wellposedness.tex:1589",
    "source_sha256": "37a5694c4457487af0725c17ac96b9ef804cb992e2e789b8661706a8ec6a1618",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2450,11 +1975,11 @@
   {
    "id": "A:eq:bwdyoung",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(4.25)",
    "title": "equation eq:bwdyoung [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:726",
+   "location": "paper/wellposedness.tex:1599",
    "source_sha256": "7c2febe0d21bc9699aeba46d61934fd741aba925ca0b495cca48ac284698cf78",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2464,11 +1989,11 @@
   {
    "id": "A:eq:wgt",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(4.26)",
    "title": "equation eq:wgt [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:754",
+   "location": "paper/wellposedness.tex:1627",
    "source_sha256": "c68216407f632038650cfacf86e7655f06ce41acd873e027186e216206c02738",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2478,11 +2003,11 @@
   {
    "id": "A:eq:bwd",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "embedded-in-proof",
    "number": "(4.27)",
    "title": "equation eq:bwd [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:773",
+   "location": "paper/wellposedness.tex:1646",
    "source_sha256": "cca2116d4d0a472a686da1aa3c819b122304999c153475c9552e6a8d8b2a260e",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
@@ -2492,11 +2017,11 @@
   {
    "id": "A:eq:fulllaw-eps",
    "paper": "A",
-   "commit": "e939294765f2",
+   "commit": "2608.23203v1",
    "kind": "equation",
    "number": "(5.1)",
    "title": "equation eq:fulllaw-eps [stmt:Example 5.4]",
-   "location": "paper/sections/05-examples.tex:340",
+   "location": "paper/wellposedness.tex:2157",
    "source_sha256": "420e5aa02e9a408ea8fdae5277b43ff45ee5b84a32654c19dcefeedb0c4a8598",
    "scope": "part-of",
    "scope_note": "A:ex:fulllaw",

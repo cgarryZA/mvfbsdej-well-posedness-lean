@@ -151,8 +151,6 @@ validation and the gate.
 
 ## The manuscript
 
-The manuscript is not part of this repository. It is `paper/wellposedness.tex` on the branch
-[https://github.com/cgarryZA/mvfbsdej-aposteriori/tree/well-posed](https://github.com/cgarryZA/mvfbsdej-aposteriori/tree/well-posed), at the revision pinned in `claims.json` (`e939294765f2`). The check reads it with
-`--paper PATH`: a checkout of that branch (its `paper/` tree is read at the pin with
-`git archive`), or a directory holding that `paper/` tree. Without the manuscript the check still
-runs every Lean check and reports that the source hashes were not checked.
+The manuscript is arXiv 2608.23203v1, the version pinned in `claims.json`; its LaTeX source as
+posted to arXiv is vendored in `manuscript/paper/wellposedness.tex`, and the check reads it there
+(`--paper` names another such `paper/` directory).

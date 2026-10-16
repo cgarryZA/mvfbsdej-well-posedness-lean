@@ -1,7 +1,11 @@
-# Reviews of the statements of paper A (well-posedness, `e939294`)
+# Reviews of the statements of paper A (well-posedness, arXiv 2608.23203v1)
 
 Each entry reads the manuscript passage and the proposition side by side. The marker records the
-hash of the proposition reviewed; a change of the proposition reopens the entry.
+hash of the proposition reviewed; a change of the proposition reopens the entry. The readings were
+made against the authors' revision `e939294`. For every claim of the inventory with clauses, the
+printed text of that revision and of arXiv 2608.23203v1 is the same apart from the wording noted in
+the entries of Examples 5.1 and 5.3, so the reading is a reading of v1; the entries of the claims whose v1 text differs read the revision's text and serve its
+corrected statements.
 
 ## Remark 2.6, (2.8): `Dissertation.PaperSpec.A.eq_coupling`
 
@@ -524,6 +528,9 @@ Correspondence:
 Witness: `Dissertation.Acceptance.A.ex_concrete_hypotheses` (the standing setting with `ν = δ₀`,
 `𝒢₀ = ⊥` and the datum `0`; `T = 1`, `β₁ = β₂ = 1`). `ex_concrete_i_ham` has only `β₁ > 0`.
 
+* arXiv 2608.23203v1 prints "unweighted here because `G = 1`" where the revision adds "with the
+  same constant … `G = 1` gives `c_G = 1`"; the statement is the same, since `c_G = 1`.
+
 Verdict: faithful (the pairings at every `t`, `β₂` arbitrary in `ex_concrete_i_ham`: broader).
 
 <!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_ham ed839d34f480cba1cf9f26355b828c6a by=claude-author -->
@@ -709,7 +716,13 @@ Witnesses: `Dissertation.Acceptance.A.ex_expfunc_hypotheses`, `ex_expfunc_limin_
 `x − x'` (for the jump coefficient through the library's Nemytskii class, with constant
 `max(1, ν(E)^{1/2})`).
 
-Verdict: faithful (the three propositions broader than printed, as listed).
+* arXiv 2608.23203v1 prints "Lipschitz in all arguments except `t`" without naming the norm on
+  the argument blocks; the propositions take the Euclidean norm on each block, the norm the
+  revision names. Another norm on these finite-dimensional blocks changes the Lipschitz constant
+  by a fixed factor: a representation choice.
+
+Verdict: faithful with representation choices (the three propositions broader than printed, as
+listed).
 
 <!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc ed839d34f480cba1c0ebc41bbfe679cc by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc_limin ed839d34f480cba1dc8d682dbdc81fa7 by=claude-author -->

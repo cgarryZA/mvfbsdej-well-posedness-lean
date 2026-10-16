@@ -11,7 +11,7 @@ import Dissertation.WellPosedness.System.FullRank
 /-!
 # Section 4 of the well-posedness paper: the lemmas of the proof
 
-Statement and equation numbers refer to the well-posedness paper at `e939294`.
+Statement and equation numbers refer to arXiv 2608.23203v1.
 
 ## Main definitions
 

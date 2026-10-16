@@ -18,10 +18,10 @@ superseded by the proof of the enclosing result), `part-of` (a clause of another
   proposition's hypotheses by the review; the check verifies that it is a theorem of the
   acceptance layer over the three standard axioms.
 
-The check is mechanical. It reads the manuscript at the pinned revision of its source
-(`PAPER_SOURCE`; `--paper` names a checkout of that branch, read with `git archive` at the pin,
-or a directory holding its `paper/` tree) and compares the hash of every claim's source text
-with the inventory; it asks Lean
+The check is mechanical. It reads the manuscript at the pinned version (`PAPER_SOURCE`, whose
+source is vendored in `manuscript/paper/`; `--paper` names another such `paper/` directory, or a
+git checkout read with `git archive` at the pin) and compares the hash of every claim's source
+text with the inventory; it asks Lean
 (`tools/acceptance_probe.lean`) whether each proposition is a closed `Prop` of the specification
 layer, whether each proof has exactly the proposition (or its negation) as type, which axioms each
 proof depends on (only `propext`, `Classical.choice`, `Quot.sound` pass), and whether a module of
@@ -75,8 +75,9 @@ REVIEW_DIR = os.path.join(ROOT, "acceptance", "review")
 REPORT = os.path.join(ROOT, "ACCEPTANCE.md")
 STATUS = os.path.join(ROOT, "acceptance", "status.json")
 PROBE = os.path.join(ROOT, "tools", "acceptance_probe.lean")
-PAPERS = {"A": ("WP", "e939294765f2", "well-posedness")}
-PAPER_SOURCE = "https://github.com/cgarryZA/mvfbsdej-aposteriori/tree/well-posed"
+PAPERS = {"A": ("WP", "2608.23203v1", "well-posedness")}
+PAPER_SOURCE = "https://arxiv.org/abs/2608.23203v1"
+PAPER_DIR = os.path.join(ROOT, "manuscript", "paper")
 SCOPES = {"formal", "definition", "expository", "literature", "empirical", "proof-step",
           "part-of", "duplicate"}
 OUT_OF_SCOPE = SCOPES - {"formal", "definition"}
@@ -265,7 +266,7 @@ def validate_clauses(e):
 
 
 def check(args):
-    data, failures, status, source_checked = evaluate(args.paper)
+    data, failures, status, source_checked = evaluate(args.paper or PAPER_DIR)
     report = render(data, status, source_checked)
     if args.write:
         with open(REPORT, "w") as _f:
@@ -517,7 +518,7 @@ def release_failures(data, status, consistency, source_checked, paper, comparato
 
 
 def release_gate(args):
-    data, consistency, status, source_checked = evaluate(args.paper)
+    data, consistency, status, source_checked = evaluate(args.paper or PAPER_DIR)
     names = sorted({c["accept"] for e in data["claims"] if e["paper"] == "A"
                     for c in e["clauses"] if c.get("accept")})
     path = args.comparator_result

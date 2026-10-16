@@ -10,7 +10,7 @@ import Dissertation.WellPosedness.Remarks.LiMinSystem
 /-!
 # The preamble of Section 5 of the well-posedness paper
 
-Statement numbers refer to the well-posedness paper at `e939294`, in the standing setting of §2.
+Statement numbers refer to arXiv 2608.23203v1, in the standing setting of §2.
 The dissipativity of Assumption 2.5 cannot be traded for Lipschitz continuity: the linear jump
 system of Example 3.2 of Li and Min (`liMinCoeffs`, `n = m = d = 1`) is Lipschitz and has no
 adapted solution on the horizon `T = 3π/4`.

@@ -8,7 +8,7 @@ import Dissertation.PaperSpec.A.Sec3
 /-!
 # The paragraph after Theorem 3.1 of the well-posedness paper
 
-Statement numbers refer to the well-posedness paper at `e939294`, in the standing setting of §2.
+Statement numbers refer to arXiv 2608.23203v1, in the standing setting of §2.
 The paragraph after Theorem 3.1 draws three consequences of the stability estimate (3.1): the
 companion bound with the roles of the two systems exchanged, continuous dependence on the initial
 and terminal data for systems sharing the interior coefficients, and the estimate without the

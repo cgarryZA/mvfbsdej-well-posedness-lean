@@ -8,7 +8,7 @@ import Dissertation.PaperSpec.A.Sec3
 /-!
 # The paragraph after Corollary 3.6 of the well-posedness paper
 
-Statement and equation numbers refer to the well-posedness paper at `e939294`, in the standing
+Statement and equation numbers refer to arXiv 2608.23203v1, in the standing
 setting of §2. The paragraph after Corollary 3.6 reads the unweighted margin (2.13) along two
 diagonal inputs that differ in one channel: a margin forces every channel to be strictly
 dissipative; an additive jump coefficient `h₀ = h₀(t, x, e)` then supplies no margin when

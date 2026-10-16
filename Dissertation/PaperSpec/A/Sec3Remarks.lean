@@ -9,7 +9,7 @@ import Dissertation.WellPosedness.Spec.Assumptions
 /-!
 # The remarks of Section 3 of the well-posedness paper
 
-Statement numbers refer to the well-posedness paper at `e939294`, in the standing setting of §2.
+Statement numbers refer to arXiv 2608.23203v1, in the standing setting of §2.
 
 ## Main definitions
 
