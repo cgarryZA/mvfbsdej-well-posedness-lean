@@ -98,7 +98,7 @@ The positivity hypotheses `0 < n, m, d, T` hold at `1`. The earlier witness `thm
 (Example 5.1(i) with `β = 1` against `β = 2`, both from the initial datum `0`) remains a theorem
 but is no longer linked: both of its solutions are zero, so the differences evaluated along
 solution 2 and the error vanish and (3.1) reads `0 ≤ 0` there. The statement of this review that
-it was not a trivial instance was wrong (GitHub #247).
+it was not a trivial instance was wrong.
 
 Verdict: faithful.
 
@@ -642,7 +642,7 @@ Correspondence:
   (a statement about cited work). The remark that `h ≡ 0` on a Brownian–Poisson basis is not a
   reduction, which this review earlier set aside as exposition, is a statement about the
   representation property; it is `ex_brownian_not_h0`, and the branch `m > n` is
-  `ex_brownian_rank_gt` (both reviewed below, GitHub #244). The reduction itself (the
+  `ex_brownian_rank_gt` (both reviewed below). The reduction itself (the
   assumptions and the solution notions at `ν = 0` coincide with their Brownian forms) is an open
   clause.
 
@@ -764,8 +764,8 @@ Correspondence:
 
 * The standing setting of §2 admits `ν = 0` (σ-finite), and the example fixes no condition on
   `ν`; its closing sentence of Remark 2.10 treats `ν = 0` as the Brownian case. The refutation is
-  of the `U`-marginal sentence as printed; the manuscript edit is to add `ν ≠ 0` (REMEDIATION
-  A1s). The full-law radial statistic and the cylindrical term are not affected.
+  of the `U`-marginal sentence as printed; the manuscript edit is to add `ν ≠ 0`.
+  The full-law radial statistic and the cylindrical term are not affected.
 * "Lie beyond the expectation … interactions" is read as: not an expectation functional
   `μ ↦ ∫ φ dμ` of the law, the form every such interaction takes at a fixed state. The kernel `φ`
   is only asked to be integrable against every law of finite second moment, which is broader than
@@ -1030,7 +1030,7 @@ Correspondence:
   the proposition assumes (2.3) and Assumption 2.3, which hold wherever Assumption 2.5 is used; for
   a coefficient without them the pairing need not be integrable (`b = −y − y³` along
   `Y ∈ L² \ L⁴`). The minimum manuscript change is to say "under Assumption 2.3 and (2.3)" or to
-  state the extended reading (REMEDIATION A13s).
+  state the extended reading.
 * Remark 2.9's basis independence of Assumption 2.5 is stated given Assumption 2.3 (which supplies
   the integrability of the pairing on both bases); for Assumption 2.3 it is unconditional given
   (2.3). Without (2.3) an integrand on `H × H` need not be measurable for a coupling, which is why
@@ -1172,7 +1172,7 @@ Witnesses: `sec2_infinite_activity_hypotheses` (Lebesgue measure on `ℝ` has in
 carries a Lévy driver). The following witnesses replace, for (2.1), (2.2), the representation
 property and the paragraph after (2.3), the earlier ones
 (`sec2_setting_hypotheses` with the zero martingale and `ψ = 0`, `sec2_hborel_hypotheses` with
-`h = 0`), which exercised only zero conclusions (GitHub #247) and remain theorems; each is over a
+`h = 0`), which exercised only zero conclusions and remain theorems; each is over a
 Lévy driver with `d = 1`, `ν = δ₀` on `ℝ`, `𝒢₀ = ⊥`:
 
 * `sec2_compensation_nonzero_hypotheses` (for `eq_compid` and `eq_zeromean`): the integrand
@@ -1378,7 +1378,7 @@ Assumptions 2.2–2.5 with `L = 1`, `G = 1`, `α = β₁ = β₂ = 1` and system
 Assumptions 2.2–2.3 with `L₁ = 1`. For `thm_stab_data` the two systems share `b, σ, h, f` and the
 initial data differ, the instance the paragraph describes. For `thm_stab_minimal` system 2
 satisfies (2.3). In each the left side, symmetric in the two solutions, is at least `1`. The
-earlier witness `thm_stab_hypotheses` had two zero solutions (GitHub #247) and is no longer
+earlier witness `thm_stab_hypotheses` had two zero solutions and is no longer
 linked.
 
 Verdict: faithful.
@@ -1472,7 +1472,7 @@ Readings:
   functionals" also admits **nonlinear** continuous functionals, and law dependence reading more
   of `u` than `ℓ u` (for example the mean of the `U`-marginal in `L²(ν)`); `cor_margin_finite`
   covers neither, so it is narrower than the printed sentence. The broader case is a separate,
-  open clause of `A:sec3:margin-paragraph` (route in GitHub #243: Borsuk–Ulam on a
+  open clause of `A:sec3:margin-paragraph` (a possible route: Borsuk–Ulam on a
   `(k + 1)`-dimensional sphere for an antipodal collision `F(u) = F(−u)`, and a symmetric
   `ℱ_t`-measurable sign `B` with inputs `U = B u`, `U' = −B u` of equal law). The conclusion
   "supplies no margin" is the failure of (2.13) for every margin `c > 0`, with admissible
@@ -1677,7 +1677,7 @@ Readings:
 * The proof tests two deterministic tuples at a time of positive measure: `δY = 1` with the other
   channels equal gives `β₁' ≤ β₁`; `δX = 1` gives `β₂' ≤ β₂` (`not_diagonalMonotone_affine_of_lt`).
   Constant tuples are diagonal inputs on every basis, so no richness of the noise is used, and
-  `ν = 0` is covered (GitHub #246).
+  `ν = 0` is covered.
 
 Witness: `Dissertation.Acceptance.A.ex_concrete_hypotheses`: at its instance Assumption 2.5 holds
 with the system's own `β₁, β₂`, so (2.7) holds with `β₁' = β₁`, `β₂' = β₂`.
@@ -1720,8 +1720,7 @@ Clauses:
 * The "For instance" sentence for **an arbitrary** system satisfying Assumptions 2.2–2.5 (the
   translated system satisfies Assumptions 2.2–2.5, so a solution exists by Theorem 3.5 and
   translating back) is not proved: `rem_uniq_singular` covers one base system, through an explicit
-  solution rather than the translation. It is a separate, open clause (route in GitHub #243,
-  item 2). "The proof of Theorem 3.5 uses Assumption 2.2" describes a proof and is not a clause.
+  solution rather than the translation. It is a separate, open clause. "The proof of Theorem 3.5 uses Assumption 2.2" describes a proof and is not a clause.
 
 Witness: `Dissertation.Acceptance.A.rem_uniq_hypotheses` for both new propositions: over a
 probability space carrying a Lévy driver with `d = 1`, `ν = δ₀`, `𝒢₀ = ⊥`, `T = 1`, the singular
