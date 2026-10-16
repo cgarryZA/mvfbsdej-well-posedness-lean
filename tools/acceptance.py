@@ -63,6 +63,7 @@ import collections
 import hashlib
 import json
 import os
+import pathlib
 import re
 import subprocess
 import sys
@@ -114,7 +115,7 @@ def extract(path, tmp):
                           src, out], capture_output=True, text=True)
     if run.returncode != 0:
         sys.exit("claim extraction failed:\n" + run.stdout + run.stderr)
-    return json.load(open(os.path.join(out, "claims.json"))), src
+    return json.loads(pathlib.Path(os.path.join(out, "claims.json")).read_text()), src
 
 
 def paper_of(key):
@@ -136,7 +137,7 @@ def line_text(src, paper, location):
     """The source line at `location` (`paper/<file>:<line>`) of a paper's pinned tree."""
     path, _, line = location.rpartition(":")
     full = os.path.join(src, PAPERS[paper][0], path)
-    lines = open(full, encoding="utf-8").read().split("\n")
+    lines = pathlib.Path(full).read_text(encoding="utf-8").split("\n")
     return lines[int(line) - 1]
 
 
@@ -145,7 +146,8 @@ def line_text(src, paper, location):
 
 def run_probe(queries, tmp):
     qpath = os.path.join(tmp, "query.txt")
-    open(qpath, "w").write("\n".join(queries) + "\n")
+    with open(qpath, "w") as _f:
+        _f.write("\n".join(queries) + "\n")
     env = dict(os.environ, ACCEPTANCE_QUERY=qpath)
     run = subprocess.run(["lake", "env", "lean", PROBE], capture_output=True, text=True, env=env,
                          cwd=ROOT)
@@ -189,7 +191,8 @@ def read_reviews():
     for name in sorted(os.listdir(REVIEW_DIR)):
         if not name.endswith(".md"):
             continue
-        for kind, decl, h, who in MARK.findall(open(os.path.join(REVIEW_DIR, name)).read()):
+        text = pathlib.Path(REVIEW_DIR, name).read_text()
+        for kind, decl, h, who in MARK.findall(text):
             (spec if kind == "spec" else defs)[decl] = (h, name, who)
     return spec, defs
 
@@ -265,11 +268,14 @@ def check(args):
     data, failures, status, source_checked = evaluate(args.paper)
     report = render(data, status, source_checked)
     if args.write:
-        open(REPORT, "w").write(report)
-        json.dump(status, open(STATUS, "w"), indent=1, ensure_ascii=False, sort_keys=True)
-        open(STATUS, "a").write("\n")
+        with open(REPORT, "w") as _f:
+            _f.write(report)
+        with open(STATUS, "w") as _f:
+            json.dump(status, _f, indent=1, ensure_ascii=False, sort_keys=True)
+        with open(STATUS, "a") as _f:
+            _f.write("\n")
     else:
-        old = open(REPORT).read() if os.path.exists(REPORT) else ""
+        old = pathlib.Path(REPORT).read_text() if os.path.exists(REPORT) else ""
         if old != report:
             failures.append("ACCEPTANCE.md differs from the generated report (run with --write)")
     for f in failures:
@@ -312,7 +318,7 @@ def source_failures(claims, envs, line_of):
 def evaluate(papers):
     """The inventory, the consistency failures, the status and whether the manuscript sources
     were checked."""
-    data = json.load(open(CLAIMS))
+    data = json.loads(pathlib.Path(CLAIMS).read_text())
     failures = validate(data)
     with tempfile.TemporaryDirectory() as tmp:
         source_checked = False
@@ -358,7 +364,8 @@ BOUND_FILES = ("acceptance/claims.json", "tools/acceptance.py", "tools/acceptanc
 
 
 def file_sha256(path):
-    return hashlib.sha256(open(path, "rb").read()).hexdigest()
+    with open(path, "rb") as f:
+        return hashlib.sha256(f.read()).hexdigest()
 
 
 def tree_digest(root, files):
@@ -383,7 +390,8 @@ def dependency_root():
     """The source directory of the requirement `LevyStochCalc`: its path, or for a git
     requirement its checkout in the package directory."""
     import tomllib
-    cfg = tomllib.load(open(os.path.join(ROOT, "lakefile.toml"), "rb"))
+    with open(os.path.join(ROOT, "lakefile.toml"), "rb") as f:
+        cfg = tomllib.load(f)
     for req in cfg.get("require", []):
         if req.get("name") == "LevyStochCalc":
             if req.get("path"):
@@ -402,7 +410,7 @@ def environment_binding():
                                         if os.path.exists(os.path.join(root, f))]
         return tree_digest(root, files)
     dep = dependency_root()
-    return {"toolchain": open(os.path.join(ROOT, "lean-toolchain")).read().strip(),
+    return {"toolchain": pathlib.Path(os.path.join(ROOT, "lean-toolchain")).read_text().strip(),
             "Dissertation": package(ROOT, "Dissertation", BOUND_FILES),
             "LevyStochCalc": package(dep, "LevyStochCalc") if dep and os.path.isdir(dep)
             else None}
@@ -418,25 +426,29 @@ def comparator_bind(args):
     start = os.path.join(ev, "environment_start.json")
     env = environment_binding()
     if args.stage == "start":
-        json.dump(env, open(start, "w"), indent=1)
+        with open(start, "w") as _f:
+            json.dump(env, _f, indent=1)
         return
 
     def read(name):
         p = os.path.join(ev, name)
-        return open(p).read() if os.path.exists(p) else None
+        return pathlib.Path(p).read_text() if os.path.exists(p) else None
     cfg, challenge, log = (os.path.join(ev, "comparator.json"),
                            os.path.join(ev, "AcceptanceChallenge.lean"), read("comparator.log"))
     result = {
         "exit_code": args.exit_code,
         "kernel_accepts": bool(log) and all(m in log for m in COMPARATOR_OK),
-        "theorem_names": (json.load(open(cfg))["theorem_names"] if os.path.exists(cfg) else []),
+        "theorem_names": (json.loads(pathlib.Path(cfg).read_text())["theorem_names"]
+                          if os.path.exists(cfg) else []),
         "config_sha256": file_sha256(cfg) if os.path.exists(cfg) else None,
         "challenge_sha256": file_sha256(challenge) if os.path.exists(challenge) else None,
         "environment": env,
-        "environment_unchanged": os.path.exists(start) and json.load(open(start)) == env,
+        "environment_unchanged": (os.path.exists(start)
+                                  and json.loads(pathlib.Path(start).read_text()) == env),
         "versions": read("comparator_versions.txt"),
     }
-    json.dump(result, open(os.path.join(ev, COMPARATOR_RESULT), "w"), indent=1)
+    with open(os.path.join(ev, COMPARATOR_RESULT), "w") as _f:
+        json.dump(result, _f, indent=1)
     print(f"comparator result -> {os.path.join(ev, COMPARATOR_RESULT)}")
 
 
@@ -509,7 +521,7 @@ def release_gate(args):
     names = sorted({c["accept"] for e in data["claims"] if e["paper"] == "A"
                     for c in e["clauses"] if c.get("accept")})
     path = args.comparator_result
-    result = json.load(open(path)) if path and os.path.exists(path) else None
+    result = json.loads(pathlib.Path(path).read_text()) if path and os.path.exists(path) else None
     comparator = comparator_failures(result, names, environment_binding(),
                                      os.path.dirname(os.path.abspath(path)) if result else None)
     out = release_failures(data, status, consistency, source_checked, "A", comparator)
@@ -732,7 +744,7 @@ def hashes(args):
 def comparator_inputs(args):
     """Write `AcceptanceChallenge.lean` (each proved statement as a `sorry` theorem under the name of
     its proof, importing only the statements) and the comparator configuration."""
-    data = json.load(open(CLAIMS))
+    data = json.loads(pathlib.Path(CLAIMS).read_text())
     pairs = sorted({(c["accept"], c["spec"]) for e in data["claims"] for c in e["clauses"]
                     if c.get("accept")})
     with tempfile.TemporaryDirectory() as tmp:
@@ -748,12 +760,14 @@ def comparator_inputs(args):
         inst = f".{{{', '.join(lv)}}}" if lv else ""
         lines.append(f"{head}theorem {acc} : {spec}{inst} := sorry\n")
         names.append(acc)
-    open(os.path.join(ROOT, "AcceptanceChallenge.lean"), "w").write("\n".join(lines))
+    with open(os.path.join(ROOT, "AcceptanceChallenge.lean"), "w") as _f:
+        _f.write("\n".join(lines))
     cfg = {"challenge_module": "AcceptanceChallenge", "solution_module": "Dissertation.Acceptance",
            "theorem_names": names,
            "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
            "enable_nanoda": args.nanoda}
-    json.dump(cfg, open(args.out, "w"), indent=1)
+    with open(args.out, "w") as _f:
+        json.dump(cfg, _f, indent=1)
     print(f"{len(names)} theorems -> AcceptanceChallenge.lean, {args.out}")
 
 

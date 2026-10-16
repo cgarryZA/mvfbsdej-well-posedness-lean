@@ -7,6 +7,7 @@
 import argparse
 import json
 import os
+import pathlib
 import sys
 import unittest
 from unittest import mock
@@ -206,9 +207,12 @@ NAME = "Dissertation.Acceptance.A.a"
 def write_evidence(ev, env, names, exit_code=0, log="\n".join(A.COMPARATOR_OK), drift=False):
     """A comparator run in `ev` bound by `comparator_bind`, with the environment `env` (changing
     during the run when `drift`)."""
-    open(os.path.join(ev, "comparator.json"), "w").write(json.dumps({"theorem_names": names}))
-    open(os.path.join(ev, "AcceptanceChallenge.lean"), "w").write("theorem x : True := sorry\n")
-    open(os.path.join(ev, "comparator.log"), "w").write(log)
+    with open(os.path.join(ev, "comparator.json"), "w") as _f:
+        _f.write(json.dumps({"theorem_names": names}))
+    with open(os.path.join(ev, "AcceptanceChallenge.lean"), "w") as _f:
+        _f.write("theorem x : True := sorry\n")
+    with open(os.path.join(ev, "comparator.log"), "w") as _f:
+        _f.write(log)
     with mock.patch.object(A, "environment_binding", return_value=dict(env)), \
             mock.patch("builtins.print"):
         A.comparator_bind(argparse.Namespace(evidence=ev, stage="start", exit_code=None))
@@ -216,7 +220,7 @@ def write_evidence(ev, env, names, exit_code=0, log="\n".join(A.COMPARATOR_OK), 
     with mock.patch.object(A, "environment_binding", return_value=after), \
             mock.patch("builtins.print"):
         A.comparator_bind(argparse.Namespace(evidence=ev, stage=None, exit_code=exit_code))
-    return json.load(open(os.path.join(ev, A.COMPARATOR_RESULT)))
+    return json.loads(pathlib.Path(os.path.join(ev, A.COMPARATOR_RESULT)).read_text())
 
 
 class Sources(unittest.TestCase):
@@ -297,7 +301,8 @@ class ComparatorEvidence(unittest.TestCase):
         import tempfile
         with tempfile.TemporaryDirectory() as ev:
             result = write_evidence(ev, ENV, [NAME])
-            open(os.path.join(ev, "AcceptanceChallenge.lean"), "a").write("-- edited\n")
+            with open(os.path.join(ev, "AcceptanceChallenge.lean"), "a") as _f:
+                _f.write("-- edited\n")
             out = A.comparator_failures(result, [NAME], dict(ENV), ev)
             self.assertTrue(any("AcceptanceChallenge.lean" in m for m in out))
             os.remove(os.path.join(ev, "comparator.json"))
@@ -308,9 +313,11 @@ class ComparatorEvidence(unittest.TestCase):
         import tempfile
         with tempfile.TemporaryDirectory() as d:
             os.makedirs(os.path.join(d, "X"))
-            open(os.path.join(d, "X", "a.lean"), "w").write("theorem a : True := trivial\n")
+            with open(os.path.join(d, "X", "a.lean"), "w") as _f:
+                _f.write("theorem a : True := trivial\n")
             h1 = A.tree_digest(d, A.lean_tree(d, "X"))
-            open(os.path.join(d, "X", "a.lean"), "w").write("theorem a : 1 = 1 := rfl\n")
+            with open(os.path.join(d, "X", "a.lean"), "w") as _f:
+                _f.write("theorem a : 1 = 1 := rfl\n")
             self.assertNotEqual(h1, A.tree_digest(d, A.lean_tree(d, "X")))
 
 if __name__ == "__main__":
