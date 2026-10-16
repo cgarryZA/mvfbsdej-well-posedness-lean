@@ -1,0 +1,70 @@
+# MachineChecked: the audit of this repository against arXiv 2608.23203v1. `machinechecked build`
+# reads the inventory and reviews of acceptance/ (the same inputs as tools/acceptance.py) and
+# writes the reader; `machinechecked export` writes the public audit that CI publishes.
+[project]
+name = "mvfbsdej-well-posedness-lean"
+author = "Christian Garry"
+repository = "cgarryZA/mvfbsdej-well-posedness-lean"
+issues = "cgarryZA/mvfbsdej-well-posedness-lean"
+site_url = "https://cgarryza.github.io/mvfbsdej-well-posedness-lean/"
+lean_root = "."
+modules = [
+  "Dissertation.PaperSpec.A.AppA",
+  "Dissertation.PaperSpec.A.Sec2",
+  "Dissertation.PaperSpec.A.Sec2Basics",
+  "Dissertation.PaperSpec.A.Sec2Measurability",
+  "Dissertation.PaperSpec.A.Sec2Remarks",
+  "Dissertation.PaperSpec.A.Sec3",
+  "Dissertation.PaperSpec.A.Sec3GeneralRank",
+  "Dissertation.PaperSpec.A.Sec3Margin",
+  "Dissertation.PaperSpec.A.Sec3Rem34",
+  "Dissertation.PaperSpec.A.Sec3Remarks",
+  "Dissertation.PaperSpec.A.Sec3Space",
+  "Dissertation.PaperSpec.A.Sec3Stability",
+  "Dissertation.PaperSpec.A.Sec4",
+  "Dissertation.PaperSpec.A.Sec4Coeff",
+  "Dissertation.PaperSpec.A.Sec4Horizon",
+  "Dissertation.PaperSpec.A.Sec5",
+  "Dissertation.PaperSpec.A.Sec5Brownian",
+  "Dissertation.PaperSpec.A.Sec5FreeLaw",
+  "Dissertation.PaperSpec.A.Sec5Preamble",
+  "Dissertation.PaperSpec.A.Sec5Sharp",
+  "Dissertation.PaperSpec.A.Setting",
+  "Dissertation.Acceptance.A.AppA",
+  "Dissertation.Acceptance.A.Dealer",
+  "Dissertation.Acceptance.A.Sec2",
+  "Dissertation.Acceptance.A.Sec2Basics",
+  "Dissertation.Acceptance.A.Sec2Remarks",
+  "Dissertation.Acceptance.A.Sec3",
+  "Dissertation.Acceptance.A.Sec3GeneralRank",
+  "Dissertation.Acceptance.A.Sec3Margin",
+  "Dissertation.Acceptance.A.Sec3Rem34",
+  "Dissertation.Acceptance.A.Sec3Remarks",
+  "Dissertation.Acceptance.A.Sec3Space",
+  "Dissertation.Acceptance.A.Sec3Stability",
+  "Dissertation.Acceptance.A.Sec4",
+  "Dissertation.Acceptance.A.Sec4Coeff",
+  "Dissertation.Acceptance.A.Sec4Horizon",
+  "Dissertation.Acceptance.A.Sec5",
+  "Dissertation.Acceptance.A.Sec5Brownian",
+  "Dissertation.Acceptance.A.Sec5FreeLaw",
+  "Dissertation.Acceptance.A.Sec5Preamble",
+  "Dissertation.Acceptance.A.Sec5Sharp",
+  "Dissertation.Acceptance.A.Witness",
+  "Dissertation.Acceptance.A.WitnessNonzero",
+]
+scope_roots = ["Dissertation", "LevyStochCalc"]
+spec_prefix = "Dissertation.PaperSpec"
+accept_prefix = "Dissertation.Acceptance"
+allowed_axioms = ["propext", "Classical.choice", "Quot.sound"]
+inventory = "acceptance/claims.json"
+reviews = ["acceptance/review"]
+statement_authors = ["claude-author"]
+ai_reviewers = ["claude*"]
+
+[[paper]]
+id = "A"
+title = "Well-posedness of fully coupled McKean-Vlasov FBSDEs with jumps under full-tuple law dependence"
+source = { path = "manuscript" }
+root = "paper/wellposedness.tex"
+publish = { pdf = true, source_text = true, lean = true, reviews = true }

@@ -1,0 +1,16 @@
+# The paper this repository formalises (the mathlib-initiative formalization.yaml format).
+name: mvfbsdej-well-posedness-lean
+description: >-
+  Lean 4 formalisation of the well-posedness of fully coupled McKean-Vlasov forward-backward SDEs
+  with jumps under full-tuple law dependence.
+sources:
+  - id: "arXiv:2608.23203v1"
+    url: "https://arxiv.org/abs/2608.23203v1"
+    title: "Well-posedness of fully coupled McKean-Vlasov FBSDEs with jumps under full-tuple law dependence"
+    authors: ["Chunrong Feng", "Christian Garry"]
+    relationship: formalizes
+review:
+  status: >-
+    Per-claim status in ACCEPTANCE.md and the MachineChecked audit; the statements are reviewed
+    by their author.
+  audit: "https://cgarryza.github.io/mvfbsdej-well-posedness-lean/"

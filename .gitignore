@@ -21,3 +21,4 @@ __pycache__/
 # build-cache archives written by lean_cache.py save
 /.lean-cache/
 /lean_cache.py
+/_audit/

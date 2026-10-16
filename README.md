@@ -1,7 +1,16 @@
 # Well-posedness of fully coupled McKean–Vlasov FBSDEs with jumps, in Lean
 
+[![MachineChecked](https://machinechecked.org/papers/2608.23203/badge.svg)](https://machinechecked.org/papers/2608.23203/)
+
 A Lean 4 + Mathlib formalisation of the paper *Well-posedness of fully coupled McKean–Vlasov
-FBSDEs with jumps under full-tuple law dependence* (Christian Garry).
+FBSDEs with jumps under full-tuple law dependence* (Chunrong Feng and Christian Garry,
+[arXiv:2608.23203v1](https://arxiv.org/abs/2608.23203v1)).
+
+**The audit.** [Open the paper with its Lean beside it](https://cgarryza.github.io/mvfbsdej-well-posedness-lean/):
+every claim of the paper, the Lean statement and proof linked to it, and what is established, in
+[MachineChecked](https://github.com/cgarryZA/MachineChecked)'s reader. The `Audit` workflow
+rebuilds and republishes it after every push to `main` that passes CI. An audit records what its
+author linked, checked and reviewed; it is not an independent certification.
 
 The formalisation is organised in three layers, and only the third decides what counts as proved:
 
@@ -65,16 +74,17 @@ bash tools/comparator_check.sh <dir>               # independent kernel replay (
 python3 tools/test_acceptance.py                   # regression tests of the checker
 ```
 
-The check builds a probe against the built library, so run it after `lake build`. With the
-manuscript available (see below) it also checks the source hash of every claim.
+The check builds a probe against the built library, so run it after `lake build`. It also checks
+the source hash of every claim against the manuscript in `manuscript/paper/`.
 
 ## The paper
 
-The manuscript is kept with its sources on the branch
-[https://github.com/cgarryZA/mvfbsdej-aposteriori/tree/well-posed](https://github.com/cgarryZA/mvfbsdej-aposteriori/tree/well-posed); this repository is formalised against revision `e939294765f2` of
-`paper/wellposedness.tex`. With a checkout of that branch,
-`python3 tools/acceptance.py check --paper <checkout>` also verifies the source hash of every
-claim.
+The paper is [arXiv:2608.23203v1](https://arxiv.org/abs/2608.23203v1), by Chunrong Feng and
+Christian Garry, and this repository formalises that version. Its LaTeX source as posted to arXiv is
+`manuscript/paper/wellposedness.tex`. Where the text printed in v1 differs from the authors' later revision,
+from which some clauses were first written, the claim is listed without clauses until the
+propositions of the v1 text are stated; the revision's clauses wait in
+`acceptance/revision_clauses.json`.
 
 Compiling the manuscript, or an audit that shows it, needs TeX Live with `latexmk` and
 `poppler-utils`. On Debian or Ubuntu:
