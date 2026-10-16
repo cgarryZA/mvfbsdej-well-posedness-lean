@@ -368,7 +368,8 @@ theorem ex_brownian : PaperSpec.A.ex_brownian.{u, v, w} := by
   have h23 : Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T ‖GX G‖ C :=
     ⟨norm_nonneg _, lipInterior_iff_diagonalLipschitzH.mpr (Eventually.of_forall fun t =>
       WellPosedness.diagonalLipschitzHAt_linearGenerator zero_le_one le_rfl hL t),
-      lipTerminal_iff_terminalLipschitz.mpr (WellPosedness.terminalLipschitz_linearGenerator le_rfl)⟩
+      lipTerminal_iff_terminalLipschitz.mpr
+        (WellPosedness.terminalLipschitz_linearGenerator le_rfl)⟩
   have hconst : WellPosedness.Constants n m 1 1 0 :=
     ⟨zero_le_one, zero_le_one, le_rfl, by norm_num, by norm_num, fun _ => one_pos,
       fun h => (lt_asymm hmn h).elim⟩

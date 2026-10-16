@@ -179,7 +179,8 @@ theorem eq_termg : PaperSpec.A.eq_termg.{u} := by
   have hpt := hg XT (fun _ => 0) hXs stronglyMeasurable_const hX h0
   rw [hlaw] at hpt
   have key : ∀ᵐ ω ∂P, ‖g (XT ω) (lawP2 P XT)‖ₑ ^ 2
-      ≤ ENNReal.ofReal (2 * ‖g₀‖ ^ 2 + 4 * L ^ 2 * W ^ 2) + ENNReal.ofReal (4 * L ^ 2) * ‖XT ω‖ₑ ^ 2 := by
+      ≤ ENNReal.ofReal (2 * ‖g₀‖ ^ 2 + 4 * L ^ 2 * W ^ 2)
+        + ENNReal.ofReal (4 * L ^ 2) * ‖XT ω‖ₑ ^ 2 := by
     filter_upwards [hpt] with ω hω
     simp only [sub_zero] at hω
     have hn : ‖g (XT ω) (lawP2 P XT)‖ ≤ ‖g₀‖ + |L| * (‖XT ω‖ + W) := by
@@ -187,7 +188,8 @@ theorem eq_termg : PaperSpec.A.eq_termg.{u} := by
       have h2 : L * (‖XT ω‖ + W) ≤ |L| * (‖XT ω‖ + W) :=
         mul_le_mul_of_nonneg_right (le_abs_self L) (by positivity)
       linarith
-    have hsq : ‖g (XT ω) (lawP2 P XT)‖ ^ 2 ≤ 2 * ‖g₀‖ ^ 2 + 4 * L ^ 2 * W ^ 2 + 4 * L ^ 2 * ‖XT ω‖ ^ 2 := by
+    have hsq : ‖g (XT ω) (lawP2 P XT)‖ ^ 2
+        ≤ 2 * ‖g₀‖ ^ 2 + 4 * L ^ 2 * W ^ 2 + 4 * L ^ 2 * ‖XT ω‖ ^ 2 := by
       have ha : 0 ≤ ‖g (XT ω) (lawP2 P XT)‖ := norm_nonneg _
       have hL2 : |L| ^ 2 = L ^ 2 := sq_abs L
       nlinarith [sq_nonneg (‖g₀‖ - |L| * (‖XT ω‖ + W)), sq_nonneg (‖XT ω‖ - W), abs_nonneg L,

@@ -155,7 +155,8 @@ theorem ex_brownian_rank_gt : PaperSpec.A.ex_brownian_rank_gt.{u, v, w} := by
   have h23 : Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T ‖GX G‖ C :=
     ⟨norm_nonneg _, lipInterior_iff_diagonalLipschitzH.mpr (Eventually.of_forall fun t =>
       WellPosedness.diagonalLipschitzHAt_linearGenerator le_rfl zero_le_one hL t),
-      lipTerminal_iff_terminalLipschitz.mpr (WellPosedness.terminalLipschitz_linearGenerator le_rfl)⟩
+      lipTerminal_iff_terminalLipschitz.mpr
+        (WellPosedness.terminalLipschitz_linearGenerator le_rfl)⟩
   have hconst : WellPosedness.Constants n m 1 0 1 :=
     ⟨zero_le_one, le_rfl, zero_le_one, by norm_num, by norm_num,
       fun h => (lt_asymm hnm h).elim, fun _ => ⟨one_pos, one_pos⟩⟩
