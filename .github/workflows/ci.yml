@@ -57,7 +57,7 @@ jobs:
         run: lake build --rehash
 
       - name: Save and publish the build
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         env:
           PROOFLENS_GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
