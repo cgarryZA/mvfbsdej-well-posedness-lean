@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+# `contents: write` lets a push to main publish its build to the `build-cache` release.
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # The full history: a cached build is used only for an ancestor of the checked-out commit.
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      # The status logic, clause validation and release gate of `tools/acceptance.py`, on
+      # synthetic inventories: no Lean build or manuscript is needed.
+      - name: Acceptance tool regression tests
+        run: python3 tools/test_acceptance.py
+
+      - name: Install elan
+        run: |
+          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | \
+            sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc \
+            /opt/hostedtoolcache/CodeQL /usr/local/share/boost /usr/local/lib/node_modules
+          df -h /
+
+      # The build cache: archives of the Lean build output attached to the `build-cache` release
+      # of this repository by MachineChecked's `lean_cache.py`. Restore takes the nearest archive
+      # of an ancestor commit with the same toolchain, manifest and platform, checks its SHA-256,
+      # and `lake build --rehash` then rebuilds only what changed.
+      - name: Fetch the build-cache tool
+        run: |
+          curl -sSfL -o "$RUNNER_TEMP/lean_cache.py" \
+            https://raw.githubusercontent.com/cgarryZA/MachineChecked/2d577fda5c42713980c3dafe6c46560c02e3330d/scripts/lean_cache.py
+
+      - name: Restore the build
+        env:
+          PROOFLENS_GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          lake exe cache get
+          python3 "$RUNNER_TEMP/lean_cache.py" restore . "${{ github.repository }}" \
+            || echo "no compatible cached build; building from source"
+
+      - name: Build
+        timeout-minutes: 300
+        run: lake build --rehash
+
+      - name: Save and publish the build
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          PROOFLENS_GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 "$RUNNER_TEMP/lean_cache.py" save . --out "$RUNNER_TEMP/lean-cache"
+          python3 "$RUNNER_TEMP/lean_cache.py" publish . "${{ github.repository }}" \
+            --out "$RUNNER_TEMP/lean-cache"
+
+      # Every statement and proof is elaborated afresh by the probe. The manuscript is not in this
+      # repository, so the job reports that source hashes are unchecked and compares the status.
+      - name: Acceptance check
+        run: |
+          python3 tools/acceptance.py check --write
+          git diff --exit-code -- acceptance/status.json

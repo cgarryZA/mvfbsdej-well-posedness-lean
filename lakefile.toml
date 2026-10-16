@@ -1,0 +1,34 @@
+name = "MVFBSDEJWellPosedness"
+version = "0.1.0"
+keywords = ["math", "probability", "FBSDE", "McKean-Vlasov", "jumps"]
+description = "Lean 4 formalisation of the well-posedness of fully coupled McKean-Vlasov FBSDEs with jumps."
+homepage = "https://github.com/cgarryZA/mvfbsdej-well-posedness-lean"
+license = "Apache-2.0"
+licenseFiles = ["LICENSE"]
+readmeFile = "README.md"
+defaultTargets = ["Dissertation"]
+
+[leanOptions]
+pp.unicode.fun = true
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 3
+weak.linter.flexible = false
+weak.linter.unusedSimpArgs = false
+weak.linter.unnecessarySimpa = false
+weak.linter.unusedSectionVars = false
+weak.linter.unusedVariables = false
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "81a5d257c8e410db227a6665ed08f64fea08e997"
+
+[[require]]
+name = "LevyStochCalc"
+git = "https://github.com/cgarryZA/LevyStochCalc"
+rev = "984dbf0b790031eac05d56fe5a84b65e15e1e932"
+
+[[lean_lib]]
+name = "Dissertation"
+globs = ["Dissertation.*"]

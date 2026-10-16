@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, please cite it using the metadata below.
+type: software
+title: mvfbsdej-well-posedness-lean
+version: "0.1.0"
+authors:
+  - family-names: Garry
+    given-names: Christian
+    alias: cgarryZA
+    email: 92284648+cgarryZA@users.noreply.github.com
+repository-code: "https://github.com/cgarryZA/mvfbsdej-well-posedness-lean"
+license: Apache-2.0
+abstract: >-
+  Lean 4 formalisation of the well-posedness of fully coupled McKean-Vlasov
+  forward-backward stochastic differential equations with jumps.
+references:
+  - type: software
+    title: LevyStochCalc
+    authors:
+      - family-names: Garry
+        given-names: Christian
+        alias: cgarryZA
+    repository-code: "https://github.com/cgarryZA/LevyStochCalc"
+    commit: 984dbf0b790031eac05d56fe5a84b65e15e1e932
