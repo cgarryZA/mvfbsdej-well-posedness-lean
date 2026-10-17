@@ -74,6 +74,11 @@ CLAIMS = os.path.join(ROOT, "acceptance", "claims.json")
 REVIEW_DIR = os.path.join(ROOT, "acceptance", "review")
 REPORT = os.path.join(ROOT, "ACCEPTANCE.md")
 STATUS = os.path.join(ROOT, "acceptance", "status.json")
+FORMALIZATION = os.path.join(ROOT, "formalization.yaml")
+ALIGNMENT_HEAD = ("# The alignment below is generated from acceptance/ by "
+                  "`tools/acceptance.py check --write`.")
+NUMBERED = re.compile(r"(Theorem|Lemma|Proposition|Corollary|Definition|Remark|Example|"
+                      r"Assumption|Convention) (?:[A-Z](?:\.\d+)+|[A-Z]?\d+(?:\.\d+)*)")
 PROBE = os.path.join(ROOT, "tools", "acceptance_probe.lean")
 PAPERS = {"A": ("WP", "2608.23203v1", "well-posedness")}
 PAPER_SOURCE = "https://arxiv.org/abs/2608.23203v1"
@@ -265,9 +270,39 @@ def validate_clauses(e):
     return errs
 
 
+def alignment(data, status):
+    """The `alignment` section of `formalization.yaml`: each numbered statement of the paper in
+    the target, with the Lean declarations that prove, refute or (for a definition) carry it, and
+    its status."""
+    st = {r["id"]: r["status"] for r in status["claims"]}
+    out = [ALIGNMENT_HEAD, "alignment:", "  statements:"]
+    for e in data["claims"]:
+        if e["scope"] in OUT_OF_SCOPE or not NUMBERED.fullmatch(e.get("number") or ""):
+            continue
+        names = []
+        for c in e["clauses"]:
+            for n in [c.get("accept"), c.get("refute")] + list(c.get("defs") or []):
+                if n and n not in names:
+                    names.append(n)
+        if names:
+            out += [f'    - source: "{e["number"]}"', "      lean:"]
+            out += [f'        - "{n}"' for n in names]
+            out.append(f'      status: "{st[e["id"]]}"')
+    return "\n".join(out) + "\n"
+
+
+def formalization_text(data, status):
+    """`formalization.yaml` with its alignment regenerated: the hand-written part, kept, then the
+    generated section."""
+    old = pathlib.Path(FORMALIZATION).read_text() if os.path.exists(FORMALIZATION) else ""
+    head = old.split(ALIGNMENT_HEAD)[0].rstrip("\n")
+    return (head + "\n" if head else "") + alignment(data, status)
+
+
 def check(args):
     data, failures, status, source_checked = evaluate(args.paper or PAPER_DIR)
     report = render(data, status, source_checked)
+    formalization = formalization_text(data, status)
     if args.write:
         with open(REPORT, "w") as _f:
             _f.write(report)
@@ -275,10 +310,16 @@ def check(args):
             json.dump(status, _f, indent=1, ensure_ascii=False, sort_keys=True)
         with open(STATUS, "a") as _f:
             _f.write("\n")
+        with open(FORMALIZATION, "w") as _f:
+            _f.write(formalization)
     else:
         old = pathlib.Path(REPORT).read_text() if os.path.exists(REPORT) else ""
         if old != report:
             failures.append("ACCEPTANCE.md differs from the generated report (run with --write)")
+        old = pathlib.Path(FORMALIZATION).read_text() if os.path.exists(FORMALIZATION) else ""
+        if old != formalization:
+            failures.append("the alignment of formalization.yaml differs from the generated one "
+                            "(run with --write)")
     for f in failures:
         print("FAIL", f)
     s = status["summary"]

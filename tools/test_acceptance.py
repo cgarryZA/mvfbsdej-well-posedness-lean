@@ -126,6 +126,28 @@ def status_of(rows):
                        for r in rows], "summary": {}}
 
 
+class Alignment(unittest.TestCase):
+    def test_numbered_statements_in_target(self):
+        data = {"claims": [
+            dict(claim("A:thm", [clause("thm", accept_ok=True)]), number="Theorem 3.3"),
+            dict(claim("A:lem", [clause("lem", refute_ok=True),
+                                 clause("lem_fix", accept_ok=True, corrects="lem")]),
+                 number="Lemma A.1"),
+            dict(claim("A:def", [dict(clause("d", spec=False), defs=["Dissertation.D"])],
+                       scope="definition"), number="Definition 2.1"),
+            dict(claim("A:part", [], scope="part-of", note="A:thm"), number="Example 5.1"),
+            dict(claim("A:eq", [clause("eq", accept_ok=True)]), number="(4.2)")]}
+        status = {"claims": [{"id": c["id"], "status": "s"} for c in data["claims"]]}
+        out = A.alignment(data, status)
+        self.assertIn('source: "Theorem 3.3"', out)
+        self.assertIn('source: "Lemma A.1"', out)
+        self.assertIn('"Dissertation.Acceptance.A.lem_false"', out)
+        self.assertIn('"Dissertation.Acceptance.A.lem_fix"', out)
+        self.assertIn('"Dissertation.D"', out)
+        self.assertNotIn("Example 5.1", out)
+        self.assertNotIn("(4.2)", out)
+
+
 class ReleaseGate(unittest.TestCase):
     def clean_rows(self):
         return [claim("A:a", [clause("a", accept_ok=True)]),

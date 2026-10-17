@@ -26,7 +26,8 @@ with jumps. `README.md` is the overview, `acceptance/README.md` the acceptance p
 
 ```sh
 lake exe cache get && lake build
-python3 tools/acceptance.py check --write    # regenerate ACCEPTANCE.md and acceptance/status.json
+python3 tools/acceptance.py check --write    # regenerate ACCEPTANCE.md, acceptance/status.json and
+                                             # the alignment of formalization.yaml
 python3 tools/test_acceptance.py
 ```
 

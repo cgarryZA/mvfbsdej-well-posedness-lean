@@ -68,7 +68,7 @@ build is trusted as built; the proofs are re-checked by `tools/comparator_check.
 
 ```sh
 python3 tools/acceptance.py check                  # consistency check; regenerates nothing
-python3 tools/acceptance.py check --write          # regenerate ACCEPTANCE.md and the status
+python3 tools/acceptance.py check --write          # regenerate the report, status and alignment
 python3 tools/acceptance.py release-gate --comparator-result <dir>/comparator_result.json
 bash tools/comparator_check.sh <dir>               # independent kernel replay (comparator)
 python3 tools/test_acceptance.py                   # regression tests of the checker
