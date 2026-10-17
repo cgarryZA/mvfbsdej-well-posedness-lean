@@ -191,6 +191,4 @@ theorem PaperSolution.supSize_sub_le (h₁ : PaperSolution D ℱ hℱW hℱN T C
 
 end General
 
-variable {D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν}
-
 end Dissertation.WellPosedness.System

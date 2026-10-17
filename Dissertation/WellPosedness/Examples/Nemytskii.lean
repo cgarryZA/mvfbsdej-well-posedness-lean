@@ -186,7 +186,4 @@ theorem kernelLipschitzH_nemytskii (hL : 0 ≤ L)
         · rw [← toL2_sub]; exact norm_toLp_norm_toL2_pointAt_le _
     _ = L * M * (‖toL2 θ₁ - toL2 θ₂‖ + ‖toL2 θ'₁ - toL2 θ'₂‖) := by ring
 
-variable [MeasurableSpace.CountablyGenerated E] [CompleteSpace HW] [SecondCountableTopology HW]
-  [MeasurableSpace HW] [BorelSpace HW]
-
 end Dissertation.WellPosedness.System

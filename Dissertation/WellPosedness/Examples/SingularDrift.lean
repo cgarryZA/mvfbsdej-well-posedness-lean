@@ -15,8 +15,7 @@ Theorem 3.3 of the paper holds under Assumptions 2.3–2.5 only (Remark 3.4), fo
 solutions in `ℍ²_weak` whose drift and driver are integrable along almost every path. This file
 gives a system that meets Assumptions 2.3 and 2.5 but not Assumption 2.2, together with a
 solution of it from the initial datum `0` in `ℍ²_weak` with pathwise drift and driver integrals,
-over the augmented joint filtration of any Lévy driver; over any filtration it has no solution
-in `ℍ²_weak` whose drift has finite energy.
+over the augmented joint filtration of any Lévy driver.
 
 For `n = m = 1` and any `d`, add the deterministic drift `t ↦ t^{-1/2}` to the affine system of
 Example 5.1(i) with `β₁ = 1`, `β₂ = 0`, `σ_c = 0` and `h_c = 0`:
@@ -28,10 +27,8 @@ Example 5.1(i) with `β₁ = 1`, `β₂ = 0`, `σ_c = 0` and `h_c = 0`:
   with `G = 1`, `α = 1`, `β₁ = 1`, `β₂ = 0`.
   Assumption 2.2 fails: the origin value `b(t, 0, δ₀) = t^{-1/2}` of the drift is not square
   integrable on `[0, T]`.
-* **No solution with a drift of finite energy.** Along a tuple `(X, Y, Z, U)` the drift process
-  on `[0, T]` is `t^{-1/2} − Y_t`. Along any tuple every path of whose `Y` is right-continuous at
-  `0` it has infinite energy on `[0, T]` (`lintegral_sq_inv_sqrt_sub_eq_top`), so neither
-  `PaperWeakSolution` nor `PaperSolution` has a solution.
+* **The drift process.** Along a tuple `(X, Y, Z, U)` the drift process on `[0, T]` is
+  `t^{-1/2} − Y_t`.
 * **The solution.** With `y_T = 2√T / (1 + T)`, the tuple `X_t = 2√t − y_T t`, `Y ≡ y_T`,
   `Z = U = 0` solves the system from `ξ₀ = 0`: `∫_0^t (s^{-1/2} − y_T) ds = 2√t − y_T t`, and
   `X_T = y_T` is the terminal value `g(X_T, Law X_T)`. It solves `SolvesInt` and
@@ -54,9 +51,6 @@ Example 5.1(i) with `β₁ = 1`, `β₂ = 0`, `σ_c = 0` and `h_c = 0`:
   `terminalMonotone_singularCoeffs` — Assumptions 2.3 and 2.5.
 * `not_coeffOrigin_singularCoeffs` — Assumption 2.2 fails.
 * `driftProc_singularCoeffs` — the drift process along a tuple.
-* `energy_driftProc_singularCoeffs_eq_top` — the drift process has infinite energy.
-* `not_paperWeakSolution_singularCoeffs`, `not_paperSolution_singularCoeffs` — no solution with
-  a drift of finite energy.
 * `solvesIntAug_singularCoeffs`, `paperWeakSolutionIntAug_singularCoeffs` — the solution.
 -/
 
@@ -180,45 +174,7 @@ theorem driftProc_singularCoeffs (X : Fin 1 → ℝ → Ω → ℝ) (Y : Fin 1 �
   simp [driftProc, hs, singularCoeffs, Coeffs.addDrift, singularDrift, affineCoeffs, tupleAt]
   ring
 
-/-- **The drift process of `singularCoeffs` has infinite energy** on `[0, T]`, `T > 0`, along any
-tuple every path of whose `Y` is right-continuous at `0`. -/
-theorem energy_driftProc_singularCoeffs_eq_top (hT : 0 < T) {X : Fin 1 → ℝ → Ω → ℝ}
-    {Y : Fin 1 → ℝ → Ω → ℝ} {Z : Fin 1 → ℝ → Ω → Fin d → ℝ} {U : Fin 1 → ℝ → Ω → E → ℝ}
-    (hY : ∀ ω, Tendsto (fun s => Y 0 s ω) (𝓝[>] 0) (𝓝 (Y 0 0 ω))) :
-    Brownian.Ito.energy P T (driftProc P T (singularCoeffs (ν := ν) (d := d)) X Y Z U 0) = ⊤ := by
-  unfold Brownian.Ito.energy
-  have hin : ∀ ω, ∫⁻ s in Icc (0 : ℝ) T,
-      (‖driftProc P T (singularCoeffs (ν := ν) (d := d)) X Y Z U 0 ω s‖₊ : ℝ≥0∞) ^ 2 = ⊤ := by
-    intro ω
-    rw [setLIntegral_congr_fun measurableSet_Icc fun s hs => by
-      rw [driftProc_singularCoeffs X Y Z U ω hs]]
-    exact lintegral_sq_inv_sqrt_sub_eq_top (y := fun s => Y 0 s ω) (hY ω) hT
-  simp only [hin, lintegral_const, measure_univ, mul_one]
-
 variable (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν)
-
-/-- **`singularCoeffs` has no solution in `ℍ²_weak` with a drift of finite energy**, in the sense
-of `PaperWeakSolution`, for `T > 0`, over any filtration and from any initial datum. -/
-theorem not_paperWeakSolution_singularCoeffs (ℱ : Filtration ℝ ‹MeasurableSpace Ω›)
-    (hℱW : ∀ j : Fin d, LevyStochCalc.Brownian.IsBrownianFiltration (D.W.W j) ℱ)
-    (hℱN : LevyStochCalc.Poisson.IsPoissonFiltration D.N ℱ) (hT : 0 < T)
-    (ξ₀ : Fin 1 → Ω → ℝ) (X : Fin 1 → ℝ → Ω → ℝ) (Y : Fin 1 → ℝ → Ω → ℝ)
-    (Z : Fin 1 → ℝ → Ω → Fin d → ℝ) (U : Fin 1 → ℝ → Ω → E → ℝ)
-    (γ : Fin 1 → ℝ → Ω → E → ℝ) :
-    ¬ PaperWeakSolution D ℱ hℱW hℱN T singularCoeffs ξ₀ X Y Z U γ := fun h =>
-  h.b_sq 0 (energy_driftProc_singularCoeffs_eq_top hT fun ω =>
-    h.Y_rightCont 0 ω 0 ⟨le_rfl, hT⟩)
-
-/-- **`singularCoeffs` has no solution in `ℍ²`**, in the sense of `PaperSolution`, for `T > 0`,
-over any filtration and from any initial datum. -/
-theorem not_paperSolution_singularCoeffs (ℱ : Filtration ℝ ‹MeasurableSpace Ω›)
-    (hℱW : ∀ j : Fin d, LevyStochCalc.Brownian.IsBrownianFiltration (D.W.W j) ℱ)
-    (hℱN : LevyStochCalc.Poisson.IsPoissonFiltration D.N ℱ) (hT : 0 < T)
-    (ξ₀ : Fin 1 → Ω → ℝ) (X : Fin 1 → ℝ → Ω → ℝ) (Y : Fin 1 → ℝ → Ω → ℝ)
-    (Z : Fin 1 → ℝ → Ω → Fin d → ℝ) (U : Fin 1 → ℝ → Ω → E → ℝ)
-    (γ : Fin 1 → ℝ → Ω → E → ℝ) :
-    ¬ PaperSolution D ℱ hℱW hℱN T singularCoeffs ξ₀ X Y Z U γ := fun h =>
-  not_paperWeakSolution_singularCoeffs D ℱ hℱW hℱN hT ξ₀ X Y Z U γ h.toWeak
 
 /-! ### The solution -/
 

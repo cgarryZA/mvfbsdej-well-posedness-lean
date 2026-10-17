@@ -81,10 +81,8 @@ the source hash of every claim against the manuscript in `manuscript/paper/`.
 
 The paper is [arXiv:2608.23203v1](https://arxiv.org/abs/2608.23203v1), by Chunrong Feng and
 Christian Garry, and this repository formalises that version. Its LaTeX source as posted to arXiv is
-`manuscript/paper/wellposedness.tex`. Where the text printed in v1 differs from the authors' later revision,
-from which some clauses were first written, the claim is listed without clauses until the
-propositions of the v1 text are stated; the revision's clauses wait in
-`acceptance/revision_clauses.json`.
+`manuscript/paper/wellposedness.tex`. A claim whose propositions are not yet stated is listed
+without clauses.
 
 Compiling the manuscript, or an audit that shows it, needs TeX Live with `latexmk` and
 `poppler-utils`. On Debian or Ubuntu:

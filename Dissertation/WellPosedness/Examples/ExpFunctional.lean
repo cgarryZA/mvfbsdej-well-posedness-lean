@@ -66,11 +66,4 @@ theorem KernelLipschitzH.continuous {F : Type*} [NormedAddCommGroup F] {K : ℝ}
       _ = 4 * K * ‖q - r‖ := by ring
   exact hL.continuous
 
-variable [MeasurableSpace HX] [MeasurableSpace HY] [MeasurableSpace HZY] [MeasurableSpace HUY]
-  [BorelSpace HX] [BorelSpace HY] [BorelSpace HZY] [BorelSpace HUY]
-  [SecondCountableTopology HX] [SecondCountableTopology HY] [SecondCountableTopology HZY]
-  [SecondCountableTopology HUY]
-  {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
-  {φ : ℝ → Tuple HX HY HZY HUY → Tuple HX HY HZY HUY → F} {K : ℝ}
-
 end Dissertation.WellPosedness.System

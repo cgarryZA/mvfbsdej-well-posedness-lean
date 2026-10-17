@@ -212,9 +212,6 @@ theorem exists_injective_functional_dirac (e₀ : E) :
   have hu0 : u e₀ 0 = 0 := (mul_eq_zero.mp hu).resolve_left hw0
   exact inner_self_eq_zero.mp (by rw [inner_Lp_dirac, e1, hu0, zero_mul])
 
-variable [MeasurableSpace.CountablyGenerated E] {Ω : Type*} [MeasurableSpace Ω]
-  {ℱ : Filtration ℝ ‹MeasurableSpace Ω›} {P : Measure Ω} [IsProbabilityMeasure P] {T : ℝ} {d : ℕ}
-
 end Atom
 
 end Dissertation.WellPosedness.System

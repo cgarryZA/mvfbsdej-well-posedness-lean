@@ -210,7 +210,4 @@ noncomputable def dealerJump (c : Bool → ℝ) {ϱ : ℝ} (hϱ : ϱ < 2) :
       (continuous_euclideanSingle_zero.comp_aestronglyMeasurable (memLp_signedSize c hϱ).1)
       (Eventually.of_forall fun _ => (PiLp.norm_single 2 (fun _ : Fin 1 => ℝ) 0 _).symm))
 
-variable {Ω : Type u} [MeasurableSpace Ω] {P : Measure Ω} [IsProbabilityMeasure P] {d : ℕ}
-  {c : Bool → ℝ} {ϱ β₁ β₂ ε : ℝ}
-
 end Dissertation.WellPosedness.Existence

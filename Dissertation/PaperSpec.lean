@@ -28,7 +28,7 @@ import Dissertation.PaperSpec.A.Sec5Preamble
 /-!
 # The statements of the paper
 
-Each result of the manuscript, at the revision formalised against, as a proposition written from
-the manuscript. `Dissertation.Acceptance` holds their proofs, and `acceptance/claims.json` maps
-each claim of the manuscript to its proposition.
+Each result of arXiv 2608.23203v1 as a proposition written from its text.
+`Dissertation.Acceptance` holds their proofs, and `acceptance/claims.json` maps each claim of the
+manuscript to its proposition.
 -/

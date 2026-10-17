@@ -394,8 +394,6 @@ theorem pointwise_monotonicity_fails_on_supports (hβ₁ : 0 < β₁) (hε : 0 <
     exists_mem_support_forall_lt_inner_clampDrift (ν := ν) (d := d) hβ₁ hε t
   exact ⟨θ, θ', μ, μ', hθ, hθ', not_le.mpr (h β hβ)⟩
 
-variable {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω) [IsProbabilityMeasure P]
-
 end Pointwise
 
 end Dissertation.WellPosedness.System

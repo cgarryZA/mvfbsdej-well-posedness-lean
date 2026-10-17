@@ -67,9 +67,4 @@ end Assumptions
 
 universe u v w
 
-variable {Ω : Type u} {𝒢₀ : MeasurableSpace Ω} [mΩ : MeasurableSpace Ω] {E : Type v}
-  [MeasurableSpace E] {ν : Measure E} [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
-  {n d : ℕ} {P : Measure Ω} [IsProbabilityMeasure P] {T β₁ β₂ : ℝ}
-  {σc : EuclideanSpace ℝ (Fin n × Fin d)} {hc : Lp (EuclideanSpace ℝ (Fin n)) 2 ν}
-
 end Dissertation.WellPosedness.Spec

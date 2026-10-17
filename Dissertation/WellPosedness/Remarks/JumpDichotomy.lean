@@ -222,9 +222,6 @@ theorem additive_affine_nu_zero (t : ℝ) (θ θ' : TupleH (0 : Measure E) n n d
     (Existence.affineCoeffs β₁ β₂ σc hc).h t θ μ = (Existence.affineCoeffs β₁ β₂ σc hc).h t θ' μ' :=
   Lp.ext_iff.2 (by simp [Filter.EventuallyEq])
 
-variable {Ω : Type*} [MeasurableSpace Ω] {ℱ : Filtration ℝ ‹MeasurableSpace Ω›}
-  {P : Measure Ω} [IsProbabilityMeasure P] {T : ℝ}
-
 end Zero
 
 end Dissertation.WellPosedness.System

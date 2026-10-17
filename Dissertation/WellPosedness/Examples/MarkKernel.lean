@@ -309,8 +309,6 @@ theorem measurable_pointAt (θ : Tuple HX HY HZY (Lp HV 2 ν)) : Measurable (poi
   measurable_const.prodMk (measurable_const.prodMk
     (measurable_const.prodMk (Lp.stronglyMeasurable θ.2.2.2).measurable))
 
-variable [IsFiniteMeasure ν] [MeasurableSpace.CountablyGenerated E]
-
 end Kernel
 
 end Dissertation.WellPosedness.System

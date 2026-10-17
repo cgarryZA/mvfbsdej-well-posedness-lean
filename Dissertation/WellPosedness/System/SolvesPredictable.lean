@@ -231,9 +231,6 @@ theorem _root_.Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.congr_inte
     hBr (le_refl T), hBr ht.2, hPo (le_refl T), hPo ht.2] with ω e1 e2 e3 e4 e5 e6
   rw [e1, e2, e3, e4, e5, e6]
 
-variable {ξ₁ ξ₂ : Ω → ℝ} {φ₁ φ₂ : Ω → ℝ → ℝ} {Y₁ Y₂ : ℝ → Ω → ℝ}
-  {Z₁ Z₂ : ℝ → Ω → (Fin d → ℝ)} {U₁ U₂ : ℝ → Ω → E → ℝ}
-
 end Backward
 
 /-! ### Predictable versions of a solution -/

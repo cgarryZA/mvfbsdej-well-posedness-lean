@@ -4,7 +4,9 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.System.DiagonalLipschitzH
-import Dissertation.WellPosedness.Analysis.Grid
+import Mathlib.MeasureTheory.Integral.Lebesgue.Basic
+import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
+import Mathlib.Algebra.Order.Floor.Semiring
 /-!
 # The interior hypotheses at a fixed time
 
@@ -61,8 +63,5 @@ def DiagonalMonotoneAt (ℱ : Filtration ℝ ‹MeasurableSpace Ω›) (P : Meas
         (diagDiff C t (Θ ω) (Θ' ω) (lawP2 P Θ) (lawP2 P Θ')) ∂P
       ≤ ∫ ω, dissipation (GX G) (GZ G) (GU G ν) β₁ β₂
         (diagDiff C t (Θ ω) (Θ' ω) (lawP2 P Θ) (lawP2 P Θ')) ∂P
-
-variable {ℱ : Filtration ℝ ‹MeasurableSpace Ω›} {P : Measure Ω} [IsProbabilityMeasure P]
-  {T L α β₁ β₂ : ℝ} {G : Matrix (Fin m) (Fin n) ℝ} {C : Coeffs ν n m d}
 
 end Dissertation.WellPosedness

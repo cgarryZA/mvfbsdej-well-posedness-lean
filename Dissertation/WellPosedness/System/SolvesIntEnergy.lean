@@ -378,6 +378,4 @@ theorem memLp_terminal_sub (hT : 0 ≤ T)
 
 end SolvesForcedInt
 
-variable {C : Coeffs ν n m d} {L : ℝ}
-
 end Dissertation.WellPosedness.System

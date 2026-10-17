@@ -23,8 +23,8 @@ setting is that of §2 (see `Dissertation.PaperSpec.A.thm_cwp`).
 * `Dissertation.PaperSpec.A.rem_intrinsic_uniform`, `rem_intrinsic_coupling`,
   `rem_intrinsic_basis` — Remark 2.9: a uniform variable at positive times, couplings as joint
   laws of inputs, and the diagonal assumptions independent of the basis.
-* `Dissertation.PaperSpec.A.rem_beta1_fibre`, `rem_beta1_dich`, `rem_beta1_zero` — Remark 2.10:
-  the fibre `L²(ν)`, the `β₁` dichotomy, and zero intensity.
+* `Dissertation.PaperSpec.A.rem_beta1_dich`, `rem_beta1_zero` — Remark 2.10: the `β₁` dichotomy,
+  and zero intensity.
 * `Dissertation.PaperSpec.A.Margin212` — (2.12), the weighted margin.
 * `Dissertation.PaperSpec.A.rem_margin_reduce`, `rem_margin_unweighted`, `rem_margin_sharp` —
   Remark 2.11: the reduced constants, the unweighted margin `c / c_G`, and the failure of the
@@ -129,13 +129,6 @@ def rem_intrinsic_basis : Prop :=
     ∧ (Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C →
       (Assumption25 (enlJoint 𝒢₀ D h𝒢₀) P T G α β₁ β₂ C
         ↔ Assumption25 (enlJoint 𝒢₀' D' h𝒢₀') P' T G α β₁ β₂ C))
-
-/-- Remark 2.10, the fibre. For `ν` σ-finite on a countably generated space and `m ≥ 1`:
-`L²(ν; ℝᵐ) ≠ {0}` when `ν ≠ 0`, and `L²(ν; ℝᵐ) = {0}` when `ν = 0`. -/
-def rem_beta1_fibre : Prop :=
-  ∀ {E : Type v} [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] (m : ℕ), 0 < m →
-    (ν ≠ 0 → ∃ u : Lp (EuclideanSpace ℝ (Fin m)) 2 ν, u ≠ 0)
-      ∧ (ν = 0 → ∀ u : Lp (EuclideanSpace ℝ (Fin m)) 2 ν, u = 0)
 
 /-- Remark 2.10, the `β₁` dichotomy. In the standing setting with `n, m ≥ 1`, for `T > 0`,
 `ν ≠ 0` and `G ∈ ℝ^{m×n}` of full rank, let the coefficients satisfy Assumption 2.5 with `G` and

@@ -20,8 +20,8 @@ law of two diagonal inputs at time `t`. So each diagonal condition at time `t` i
 the same condition over all couplings of all pairs of laws in `P₂(H)`, a statement about the
 coefficients alone:
 
-* `CouplingLipschitz`, `CouplingLipschitzH` — for almost every `t ∈ [0, T]`, every pair of laws
-  `μ, μ'` and every coupling `γ`, for `γ`-almost every `(θ, θ')`,
+* `CouplingLipschitzH` — for almost every `t ∈ [0, T]`, every pair of laws `μ, μ'` and every
+  coupling `γ`, for `γ`-almost every `(θ, θ')`,
   `|δb| + |δσ|_F + ‖δh‖_{L²(ν)} + |δf| ≤ L (|δx| + |δy| + |δz|_F + ‖δu‖_{L²(ν)} + W₂(μ, μ'))`;
 * `CouplingMonotone` — (2.7) with the expectations replaced by integrals against `γ`;
 * `CouplingTerminalLipschitz`, `CouplingTerminalMonotone` — the terminal conditions over the
@@ -42,7 +42,7 @@ carrying a Brownian motion satisfies, and no condition on `ℱ_0`.
 
 ## Main definitions
 
-* `CouplingLipschitz`, `CouplingLipschitzH`, `CouplingMonotone` — the interior conditions of
+* `CouplingLipschitzH`, `CouplingMonotone` — the interior conditions of
   Assumptions 2.3 and 2.5 over couplings.
 * `CouplingTerminalLipschitz`, `CouplingTerminalMonotone` — the terminal conditions over
   couplings.
@@ -70,18 +70,6 @@ variable {E : Type*} [MeasurableSpace E] {ν : Measure E} {n m d : ℕ} [SigmaFi
 /-! ### The coupling forms -/
 
 section Defs
-
-/-- **Assumption 2.3, interior, over couplings**: for almost every `t ∈ [0, T]`, every two laws
-`μ, μ'` of finite second moment on `H` and every coupling `γ` of them, for `γ`-almost every
-`(θ, θ')`,
-`|δb| + |δσ|_F + ‖δh‖_{L²(ν)} + |δf| ≤ L (|δx| + |δy| + |δz|_F + ‖δu‖_{L²(ν)} + W₂(μ, μ'))`,
-with `W₂` for the maximum norm of `H`. -/
-def CouplingLipschitz (T L : ℝ) (C : Coeffs ν n m d) : Prop :=
-  ∀ᵐ t ∂(volume.restrict (Set.Icc (0 : ℝ) T)), ∀ (μ μ' : P2 (TupleH ν n m d))
-    (γ : Measure (TupleH ν n m d × TupleH ν n m d)), IsCoupling μ.law μ'.law γ →
-    ∀ᵐ p ∂γ, ‖C.b t p.1 μ - C.b t p.2 μ'‖ + ‖C.σ t p.1 μ - C.σ t p.2 μ'‖
-        + ‖C.h t p.1 μ - C.h t p.2 μ'‖ + ‖C.f t p.1 μ - C.f t p.2 μ'‖
-      ≤ L * (tupleNorm (p.1 - p.2) + w2P μ μ')
 
 /-- **Assumption 2.3, interior, over couplings, with the Hilbert-norm `W₂`**: for almost every
 `t ∈ [0, T]`, every two laws `μ, μ'` of finite second moment on `H` and every coupling `γ` of

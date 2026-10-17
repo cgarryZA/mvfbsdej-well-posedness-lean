@@ -239,7 +239,7 @@
    "location": "paper/wellposedness.tex",
    "source_sha256": "ce35242e5c61dc248a5bf9b36f678223d523cf9e6c42793d8e5d2fd12e1df0ea",
    "scope": "formal",
-   "scope_note": "The printed text of arXiv 2608.23203v1 differs from the authors' later revision, from which this claim's clauses were written; the propositions of the v1 text are not yet stated.",
+   "scope_note": "The propositions of the text of arXiv 2608.23203v1 for this claim are not yet stated.",
    "scope_reviewed": false,
    "clauses": []
   },
@@ -253,7 +253,7 @@
    "location": "paper/wellposedness.tex",
    "source_sha256": "818715d0c102417894d7fdc0dd695f91b0ee288c7ecc02af05c10a95821a090a",
    "scope": "formal",
-   "scope_note": "The printed text of arXiv 2608.23203v1 differs from the authors' later revision, from which this claim's clauses were written; the propositions of the v1 text are not yet stated.",
+   "scope_note": "The propositions of the text of arXiv 2608.23203v1 for this claim are not yet stated.",
    "scope_reviewed": false,
    "clauses": []
   },
@@ -330,7 +330,7 @@
    "location": "paper/wellposedness.tex",
    "source_sha256": "16ace776485cb414a0ad39fba869a577ec053811b32b39e09709fb01a4e0f75e",
    "scope": "formal",
-   "scope_note": "The printed text of arXiv 2608.23203v1 differs from the authors' later revision, from which this claim's clauses were written; the propositions of the v1 text are not yet stated.",
+   "scope_note": "The propositions of the text of arXiv 2608.23203v1 for this claim are not yet stated.",
    "scope_reviewed": false,
    "clauses": []
   },
@@ -679,7 +679,7 @@
    "location": "paper/wellposedness.tex",
    "source_sha256": "c6dac94442298fb91021e9410980558e1c560d7da7bb03b9fe21e4542a37e683",
    "scope": "formal",
-   "scope_note": "The printed text of arXiv 2608.23203v1 differs from the authors' later revision, from which this claim's clauses were written; the propositions of the v1 text are not yet stated.",
+   "scope_note": "The propositions of the text of arXiv 2608.23203v1 for this claim are not yet stated.",
    "scope_reviewed": false,
    "clauses": []
   },
@@ -693,7 +693,7 @@
    "location": "paper/wellposedness.tex",
    "source_sha256": "3dfd46a5ffe721a5c7560c057227552960a29e63ca7af022a17dd6989f44556c",
    "scope": "formal",
-   "scope_note": "The printed text of arXiv 2608.23203v1 differs from the authors' later revision, from which this claim's clauses were written; the propositions of the v1 text are not yet stated.",
+   "scope_note": "The propositions of the text of arXiv 2608.23203v1 for this claim are not yet stated.",
    "scope_reviewed": false,
    "clauses": []
   },
@@ -707,7 +707,7 @@
    "location": "paper/wellposedness.tex",
    "source_sha256": "e2204cd5268c52bf28ead0e1dd0321d0914e8ca0c49f13ab56fa690ca4815fea",
    "scope": "formal",
-   "scope_note": "The printed text of arXiv 2608.23203v1 differs from the authors' later revision, from which this claim's clauses were written; the propositions of the v1 text are not yet stated.",
+   "scope_note": "The propositions of the text of arXiv 2608.23203v1 for this claim are not yet stated.",
    "scope_reviewed": false,
    "clauses": []
   },
@@ -721,7 +721,7 @@
    "location": "paper/wellposedness.tex",
    "source_sha256": "8628790b3f61760d63f6a1cb8711d6fb055f4a005b160d92c994e6a8185b1c0c",
    "scope": "formal",
-   "scope_note": "The printed text of arXiv 2608.23203v1 differs from the authors' later revision, from which this claim's clauses were written; the propositions of the v1 text are not yet stated.",
+   "scope_note": "The propositions of the text of arXiv 2608.23203v1 for this claim are not yet stated.",
    "scope_reviewed": false,
    "clauses": []
   },
@@ -758,11 +758,11 @@
    "commit": "2608.23203v1",
    "kind": "prose-claim",
    "number": "abstract",
-   "title": "Existence, uniqueness, stability for fully coupled MV-FBSDEJ with W2 full-tuple law dependence, sigma-finite nu (infinite activity), diagonal-only hypotheses; expected diagonal monotonicity strictly weaker than pointwise; dealer-market example monotone at every strength and active in a specialisation",
+   "title": "Existence, uniqueness, stability for fully coupled MV-FBSDEJ with W2 full-tuple law dependence, sigma-finite nu (infinite activity), diagonal-only hypotheses; expected diagonal monotonicity strictly weaker than pointwise; dealer-market example monotone at every strength, with infinite-activity marks",
    "location": "paper/wellposedness.tex:73",
    "source_sha256": "3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9",
    "scope": "formal",
-   "scope_note": "The printed text of arXiv 2608.23203v1 differs from the authors' later revision, from which this claim's clauses were written; the propositions of the v1 text are not yet stated.",
+   "scope_note": "The propositions of the text of arXiv 2608.23203v1 for this claim are not yet stated.",
    "scope_reviewed": true,
    "clauses": []
   },
@@ -1044,11 +1044,11 @@
    "commit": "2608.23203v1",
    "kind": "prose-claim",
    "number": "¶ after Cor 3.6",
-   "title": "Margin forces every baseline channel strictly dissipative; additive h0 cannot be a baseline (nu!=0); finitely many functionals of u supply no margin when L2(nu) infinite-dimensional",
+   "title": "Margin forces every baseline channel strictly dissipative; an additive h0 cannot be a baseline; finitely many functionals of u supply no margin",
    "location": "paper/wellposedness.tex:797",
    "source_sha256": "10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17",
    "scope": "formal",
-   "scope_note": "The printed text of arXiv 2608.23203v1 differs from the authors' later revision, from which this claim's clauses were written; the propositions of the v1 text are not yet stated.",
+   "scope_note": "The propositions of the text of arXiv 2608.23203v1 for this claim are not yet stated.",
    "scope_reviewed": false,
    "clauses": []
   },
@@ -1193,11 +1193,11 @@
    "commit": "2608.23203v1",
    "kind": "prose-claim",
    "number": "§5 ¶2",
-   "title": "Overview: Ex 5.1 two models at arbitrary activity; Ex 5.2/5.3 recover Brownian and expectation-functional subclasses; Ex 5.4 beyond; Ex 5.5 well-posed at every strength and active",
+   "title": "Overview: Ex 5.1 two models at arbitrary activity; Ex 5.2/5.3 recover Brownian and expectation-functional subclasses; Ex 5.4 beyond them; Ex 5.5 well-posed at every interaction strength",
    "location": "paper/wellposedness.tex:1834",
    "source_sha256": "85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9",
    "scope": "formal",
-   "scope_note": "The printed text of arXiv 2608.23203v1 differs from the authors' later revision, from which this claim's clauses were written; the propositions of the v1 text are not yet stated.",
+   "scope_note": "The propositions of the text of arXiv 2608.23203v1 for this claim are not yet stated.",
    "scope_reviewed": true,
    "clauses": []
   },
@@ -1239,7 +1239,7 @@
    "location": "paper/wellposedness.tex:2297",
    "source_sha256": "c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829",
    "scope": "formal",
-   "scope_note": "The printed text of arXiv 2608.23203v1 differs from the authors' later revision, from which this claim's clauses were written; the propositions of the v1 text are not yet stated.",
+   "scope_note": "The propositions of the text of arXiv 2608.23203v1 for this claim are not yet stated.",
    "scope_reviewed": true,
    "clauses": []
   },

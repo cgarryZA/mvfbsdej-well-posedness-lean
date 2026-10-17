@@ -401,13 +401,6 @@ theorem memLp_terminal (k : Fin m) : MemLp (terminalVal P T C X k) 2 P := by
     integral_zero_measure]
   ring
 
-/-- **The predictable tuple of a solution is its tuple at almost every time**: for almost every
-`s ∈ [0, T]`, `Θ⁻_s = (X_{s−}, Y_{s−}, Z_s, U_s)` equals `Θ_s` almost surely. -/
-theorem ae_ae_tupleAt_leftLimProc_eq :
-    ∀ᵐ s ∂(volume.restrict (Set.Icc (0 : ℝ) T)),
-      tupleAt ν (leftLimProc X) (leftLimProc Y) Z U s =ᵐ[P] tupleAt ν X Y Z U s :=
-  h.toWeak.toPaperWeakTuple.ae_ae_tupleAt_leftLimProc_eq hT
-
 /-- **The jump coefficient at the tuple**: for a solution in the sense of the paper, `γ` also
 represents `e ↦ h(s, Θ_s(ω), e, μ_s)` in `L²(ν)` for almost every `s ∈ [0, T]` and almost every
 `ω`. -/

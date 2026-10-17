@@ -14,8 +14,6 @@ import LevyStochCalc.Driver.Existence
 
 ## Main statements
 
-* `Dissertation.Acceptance.A.rem_uniq_initial` — `ξ₀ = X₀` almost surely and `X₀` is square
-  integrable by the `S²` bound.
 * `Dissertation.Acceptance.A.rem_uniq_singular` — the singular-drift system: its assumptions,
   the failure of Assumption 2.2, and the solution `X_t = 2√t − y_T t`, `Y ≡ y_T`, `Z = U = 0` with
   `y_T = 2√T / (1 + T)`, transported from the augmented joint filtration to `enlJoint ⊥ D`.
@@ -32,31 +30,6 @@ open Dissertation.WellPosedness.System Dissertation.WellPosedness.Existence
   Dissertation.WellPosedness.Spec LevyStochCalc LevyStochCalc.BSDEJ.Solves
 
 universe u v w
-
-/-- Remark 3.4, the initial datum. -/
-theorem rem_uniq_initial : PaperSpec.A.rem_uniq_initial.{u, v, w} := by
-  intro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ T hT C ξ₀ X Y Z U hW hsup i
-  obtain ⟨⟨γ, h⟩, -, -⟩ := hW
-  obtain ⟨M, hMae, -, hid⟩ := h.fwd i
-  have h0 : (0 : ℝ) ∈ Set.Icc (0 : ℝ) T := ⟨le_rfl, hT⟩
-  have hX0 : MemLp (X i 0) 2 P := memLp_of_lintegral_biSup_esq_lt_top hsup h0 i
-    ((h.X_adapted i 0 h0).mono ((enlJoint 𝒢₀ D h𝒢₀).le 0) le_rfl).aestronglyMeasurable
-  refine hX0.ae_eq ?_
-  filter_upwards [hid, hMae 0 h0,
-    Brownian.Multidim.MultidimBrownianMotion.stochasticIntegral_ae_zero_of_nonpos D.W _
-      (isBrownianFiltration_enlJoint D h𝒢₀ hind₀) _
-      (h.σ_meas i) (h.σ_prog i)
-      (sq_int_global_of_vanishing (fun ω s hs => diffusionProc_of_notMem hs i ω) (h.σ_sq i))
-      le_rfl,
-    Poisson.Compensated.stochasticIntegral_ae_zero_of_nonpos
-      (φ := fun ω s e => jumpProc T γ i s ω e) D.N (isPoissonFiltration_enlJoint D h𝒢₀ hind₀)
-      (h.γ_meas i) (h.γ_prog i)
-      (marked_sq_int_global_of_vanishing (fun ω s e hs => jumpProc_of_notMem hs i ω e)
-        (h.γ_sq i)) le_rfl] with ω hω hM hW hN
-  simp only [Pi.zero_apply] at hW hN
-  rw [hω 0 h0, hM, hW, hN, Set.Icc_self, Measure.restrict_singleton, measure_singleton, zero_smul,
-    integral_zero_measure]
-  ring
 
 /-- `PaperWeakSolutionInt` depends on the filtration only, not on the proofs that it carries the
 driver. -/

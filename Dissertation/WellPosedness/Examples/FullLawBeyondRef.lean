@@ -11,8 +11,8 @@ import Dissertation.WellPosedness.Examples.FullLawBeyond
 /-!
 # Example 5.4: the law statistics with an arbitrary reference law
 
-The law statistics of Example 5.4 of the well-posedness paper are not expectation functionals for
-any reference law, not only for Dirac masses (`FullLawBeyond.lean`).
+The law statistics of Example 5.4 of the well-posedness paper are not expectation functionals,
+for any reference law.
 
 * The radial statistic `μ ↦ 𝔮(W₂(μ, μ₀))` of the full tuple law, `W₂` for the Hilbert norm of
   `H = ℝⁿ × ℝᵐ × ℝ^{m×d} × L²(ν; ℝᵐ)` and `n > 0`, is not affine along mixtures for a bounded

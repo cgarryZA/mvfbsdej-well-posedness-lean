@@ -119,6 +119,4 @@ theorem PaperWeakSolutionInt.uniqueness
 
 end General
 
-variable {D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν}
-
 end Dissertation.WellPosedness.System

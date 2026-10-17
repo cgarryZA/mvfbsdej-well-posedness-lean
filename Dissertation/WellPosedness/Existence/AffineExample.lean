@@ -253,8 +253,6 @@ theorem coeffBorelW2_affine (T : ℝ) : CoeffBorelW2 T (affineCoeffs β₁ β₂
   f_meas := measurable_borelW2_of_measurable (ψ := (affineCoeffs β₁ β₂ σc hc).f) (by
     simp only [affineCoeffs]; fun_prop)
 
-variable {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} [IsProbabilityMeasure P] {T : ℝ}
-
 end Measurability
 
 end Dissertation.WellPosedness.Existence

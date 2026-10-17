@@ -102,9 +102,4 @@ end Law
 
 universe u v w
 
-variable {Ω : Type u} {𝒢₀ : MeasurableSpace Ω} [mΩ : MeasurableSpace Ω] {E : Type v}
-  [MeasurableSpace E] {ν : Measure E} [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
-  {n d : ℕ} {P : Measure Ω} [IsProbabilityMeasure P] {T L₀ Lₚ L'ₚ α β₁ β₂ cdiss : ℝ}
-  {G : Matrix (Fin n) (Fin n) ℝ} {C p : Coeffs ν n n d} {ξ₀ : Ω → EuclideanSpace ℝ (Fin n)}
-
 end Dissertation.WellPosedness.Spec

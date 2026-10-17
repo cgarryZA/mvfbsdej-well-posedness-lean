@@ -33,8 +33,6 @@ the two squared distances because `w2` reads an infinite squared distance back a
 * `Dissertation.Law.w2_triangle`, `Dissertation.Law.w2P_triangle`: the triangle inequality for
   the real-valued distance.
 * `Dissertation.Law.abs_w2P_sub_w2P_le`: the distance to a fixed law is `1`-Lipschitz.
-* `Dissertation.Law.w2P_dirac_dirac`: the distance between two Dirac masses is the distance
-  between their points.
 -/
 
 namespace Dissertation.Law
@@ -197,23 +195,5 @@ theorem abs_w2P_sub_w2P_le (μ ν μ₀ : P2 E) : |w2P μ μ₀ - w2P ν μ₀| 
   exact ⟨by linarith, by linarith⟩
 
 end Triangle
-
-/-! ### The distance of two Dirac masses -/
-
-section Dirac
-
-variable {E : Type*} [NormedAddCommGroup E] [CompleteSpace E] [MeasurableSpace E] [BorelSpace E]
-  [SecondCountableTopology E] [MeasurableSingletonClass E]
-
-omit [CompleteSpace E] in
-/-- The 2-Wasserstein distance between two Dirac masses is the distance between their points. -/
-theorem w2P_dirac_dirac (a b : E) : w2P (P2.dirac a) (P2.dirac b) = ‖a - b‖ := by
-  have h : w2sq (Measure.dirac a) (Measure.dirac b) = ENNReal.ofReal (‖a - b‖ ^ 2) := by
-    rw [w2sq_dirac, lintegral_dirac]
-  rw [w2P, P2.dirac, P2.dirac, w2]
-  simp only
-  rw [h, ENNReal.toReal_ofReal (by positivity), Real.sqrt_sq (norm_nonneg _)]
-
-end Dirac
 
 end Dissertation.Law

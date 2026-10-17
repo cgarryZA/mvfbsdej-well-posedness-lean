@@ -12,14 +12,11 @@ import LevyStochCalc.BSDEJ.CadlagLegs
 /-!
 # The identity coupling matrix
 
-The coupling operator `GX I` of the identity matrix `I ∈ ℝ^{n×n}` is the identity, so `G = I`
-satisfies both branches of Assumption 2.4 with `c_G = 1`.
+The coupling operator `GX I` of the identity matrix `I ∈ ℝ^{n×n}` is the identity.
 
 ## Main statements
 
 * `GX_one` — the coupling operator of the identity matrix is the identity.
-* `gCoerciveForward_GX_one`, `gCoerciveBackward_GX_one` — Assumption 2.4 for `G = I`, with
-  `c_G = 1`.
 -/
 
 open MeasureTheory Filter Topology Dissertation.Law
@@ -45,19 +42,6 @@ theorem GX_one : GX (1 : Matrix (Fin n) (Fin n) ℝ) = ContinuousLinearMap.id �
   ext x : 1
   rw [← WithLp.toLp_ofLp 2 x, GX_toLp, Matrix.one_mulVec]
   rfl
-
-/-- Assumption 2.4, forward branch, for `G = I` with `c_G = 1`. -/
-theorem gCoerciveForward_GX_one : GCoerciveForward (GX (1 : Matrix (Fin n) (Fin n) ℝ)) 1 :=
-  fun x => by rw [GX_one, one_mul]; rfl
-
-/-- Assumption 2.4, backward branch, for `G = I` with `c_G = 1`. -/
-theorem gCoerciveBackward_GX_one : GCoerciveBackward (GX (1 : Matrix (Fin n) (Fin n) ℝ)) 1 :=
-  fun y => by rw [adjoint_GX, Matrix.transpose_one, GX_one, one_mul]; rfl
-
-variable {Ω : Type*} [MeasurableSpace Ω] {ℱ : Filtration ℝ ‹MeasurableSpace Ω›} {P : Measure Ω}
-  [IsProbabilityMeasure P] {T : ℝ}
-
-variable [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
 
 end Coefficients
 

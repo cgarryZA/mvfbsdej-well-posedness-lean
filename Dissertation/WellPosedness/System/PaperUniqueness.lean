@@ -85,6 +85,4 @@ theorem PaperSolution.uniqueness_of_solves_uniqueness (hT : 0 ≤ T)
 
 end General
 
-variable {D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν}
-
 end Dissertation.WellPosedness.System

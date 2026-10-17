@@ -22,7 +22,7 @@ import Dissertation.WellPosedness.Remarks.UniformVariable
 * `Dissertation.Acceptance.A.rem_diag_mono`, `rem_diag_mono_converse` — Remark 2.8.
 * `Dissertation.Acceptance.A.rem_intrinsic_uniform`, `rem_intrinsic_coupling`,
   `rem_intrinsic_basis` — Remark 2.9.
-* `Dissertation.Acceptance.A.rem_beta1_fibre`, `rem_beta1_dich`, `rem_beta1_zero` — Remark 2.10.
+* `Dissertation.Acceptance.A.rem_beta1_dich`, `rem_beta1_zero` — Remark 2.10.
 * `Dissertation.Acceptance.A.rem_margin_reduce`, `rem_margin_unweighted`, `rem_margin_sharp` —
   Remark 2.11.
 * `Dissertation.Acceptance.A.rem_affine_hypotheses`, `rem_margin_hypotheses`,
@@ -39,18 +39,6 @@ open Dissertation.WellPosedness.System Dissertation.WellPosedness.Existence
   Dissertation.WellPosedness.Enlarged Dissertation.WellPosedness.Spec Dissertation.Law
 
 universe u v w
-
-/-- Remark 2.10, the fibre. -/
-theorem rem_beta1_fibre : PaperSpec.A.rem_beta1_fibre.{v} := by
-  intro E _ ν _ m hm
-  refine ⟨fun hν => ?_, fun hν u => ?_⟩
-  · have h1 : (1 : Matrix (Fin m) (Fin m) ℝ) ≠ 0 := fun h => by
-      have := congrFun (congrFun h ⟨0, hm⟩) ⟨0, hm⟩
-      simp at this
-    obtain ⟨u, hu⟩ := exists_adjoint_GU_ne_zero (G := (1 : Matrix (Fin m) (Fin m) ℝ)) hν h1
-    exact ⟨u, fun h0 => hu (by rw [h0, map_zero])⟩
-  · subst hν
-    exact Lp.ext_iff.2 (by simp [Filter.EventuallyEq])
 
 /-- Remark 2.10, the `β₁` dichotomy. -/
 theorem rem_beta1_dich : PaperSpec.A.rem_beta1_dich.{u, v, w} := by

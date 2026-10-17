@@ -1,15 +1,12 @@
 # Reviews of the statements of paper A (well-posedness, arXiv 2608.23203v1)
 
 Each entry reads the manuscript passage and the proposition side by side. The marker records the
-hash of the proposition reviewed; a change of the proposition reopens the entry. The readings were
-made against the authors' revision `e939294`. For every claim of the inventory with clauses, the
-printed text of that revision and of arXiv 2608.23203v1 is the same apart from the wording noted in
-the entries of Examples 5.1 and 5.3, so the reading is a reading of v1; the entries of the claims whose v1 text differs read the revision's text and serve its
-corrected statements.
+hash of the proposition reviewed; a change of the proposition reopens the entry. Each entry reads
+the text of arXiv 2608.23203v1.
 
 ## Remark 2.6, (2.8): `Dissertation.PaperSpec.A.eq_coupling`
 
-Manuscript (`paper/sections/02-model-assumptions.tex`, Remark "Wasserstein bounds"): for two
+Manuscript (§2, Remark "Wasserstein bounds"): for two
 diagonal inputs `(Θ, μ), (Θ', μ')` at the same time on the same probability space, the pair
 `(Θ, Θ')` is a coupling of `(μ, μ')`, so
 `W₂(μ, μ')² ≤ 𝔼[|δX|² + |δY|² + |δZ|²_F + ‖δU‖²_{L²(ν)}]`.
@@ -54,7 +51,7 @@ Verdict: faithful (broader, printed claim an instance).
 
 ## Theorem 3.1: `Dissertation.PaperSpec.A.thm_stab`
 
-Manuscript (`paper/sections/03-main-results.tex`, Theorem `thm:stab`): system 1 satisfies
+Manuscript (§3, Theorem `thm:stab`): system 1 satisfies
 Assumptions 2.2–2.5 with `L, α, β₁, β₂` and `G`; system 2 satisfies Assumptions 2.2–2.3 with its
 own Lipschitz constant; `Θᵏ ∈ ℍ` solves (1.1) for system `k`; then (3.1) holds with `δψ` along
 `(Θ²_t, μ²_t)` for `ψ ∈ {b, σ, f}`, `δh` along `(Θ²⁻_t, μ²⁻_t)` and `δ̂g_T` at `(X²_T, Law X²_T)`,
@@ -110,7 +107,7 @@ Verdict: faithful.
 
 ## Theorem 3.3: `Dissertation.PaperSpec.A.thm_uniq`
 
-Manuscript (`paper/sections/03-main-results.tex`, Theorem `thm:uniq`): under Assumptions 2.3–2.5,
+Manuscript (§3, Theorem `thm:uniq`): under Assumptions 2.3–2.5,
 (1.1) has at most one solution. More precisely, if `Θ¹, Θ² ∈ ℍ_weak` satisfy (1.1) with the same
 initial condition, then `Θ¹ = Θ²`. Furthermore, `Θ¹ − Θ² ∈ ℍ`.
 
@@ -150,7 +147,7 @@ Verdict: faithful, with the reading of "satisfies (1.1)" by `L²` stochastic int
 
 ## Theorem 3.5: `Dissertation.PaperSpec.A.thm_cwp`, and its continuous dependence
 
-Manuscript (`paper/sections/03-main-results.tex`, Theorem `thm:cwp`): for every horizon `T > 0`,
+Manuscript (§3, Theorem `thm:cwp`): for every horizon `T > 0`,
 under Assumptions 2.2–2.5 the system (1.1) admits a solution `Θ = (X, Y, Z, U) ∈ ℍ`, unique by
 Theorem 3.3 and depending continuously on the coefficients and data in the sense of the estimate
 (3.1) of Theorem 3.1.
@@ -190,7 +187,7 @@ Verdict: faithful.
 
 ## Proposition 3.8: `Dissertation.PaperSpec.A.prop_strict`
 
-Manuscript (`paper/sections/03-main-results.tex`, Proposition `prop:strict`): let `n = m = 1`,
+Manuscript (§3, Proposition `prop:strict`): let `n = m = 1`,
 `d ≥ 1`, `G = 1`, fix `β₁ > 0`; for every `0 < ε < β₁` the drift (3.6)
 `b(t, θ, μ) = −β₁ y + ε g₀(y − m_Y(μ))` is free-measure `W₂`-Lipschitz with constant `β₁ + ε`
 and satisfies (3.7), `𝔼⟨δb, δY⟩ ≤ −(β₁ − ε) 𝔼|δY|²`, along all `(Θ, μ), (Θ', μ') ∈ 𝒟_t`; yet for
@@ -230,7 +227,7 @@ Verdict: faithful (clause (ii) broader, printed claim an instance).
 
 ## Corollary 3.6: `Dissertation.PaperSpec.A.cor_robust`, `cor_robust_wp`, `cor_robust_lip`
 
-Manuscript (`paper/sections/03-main-results.tex`, Corollary `cor:robust`): let `m = n`, the
+Manuscript (§3, Corollary `cor:robust`): let `m = n`, the
 baseline `(b₀, σ₀, h₀, f₀, g)` with `ξ₀` satisfy Assumptions 2.2–2.5 with margin `c_diss > 0` in
 the unweighted form (2.13); let the perturbations `p_b, p_σ, p_h, p_f` satisfy the corresponding
 origin-integrability and diagonal Lipschitz conditions of Assumptions 2.2–2.3 and, for some
@@ -290,7 +287,7 @@ clause broader, the printed claim an instance.
 
 ## Assumption 2.4 (the bounds after "Then"): `Dissertation.PaperSpec.A.ass_G`
 
-Manuscript (`paper/sections/02-model-assumptions.tex`, Assumption `ass:G`): `G ∈ ℝ^{m×n}` has
+Manuscript (§2, Assumption `ass:G`): `G ∈ ℝ^{m×n}` has
 full rank; `‖G‖` its operator norm, so `|Gv| ≤ ‖G‖ |v|` and `|G*v| ≤ ‖G‖ |v|`, and `s_min(G) > 0`
 its smallest singular value; `c_G := s_min(G)⁻²`. Then `|x|² ≤ c_G |Gx|²` (`m ≥ n`),
 `|y|² ≤ c_G |G*y|²` (`n ≥ m`); when `G*` is injective the second bound extends to
@@ -356,7 +353,7 @@ Verdict: faithful.
 
 ## Lemma 4.1: `Dissertation.PaperSpec.A.lem_bpbsde`
 
-Manuscript (`paper/sections/04-proof-wellposedness.tex`, Lemma `lem:bpbsde`): let `δY` be a càdlàg
+Manuscript (§4, Lemma `lem:bpbsde`): let `δY` be a càdlàg
 adapted process and `δZ ∈ H²_W`, `δU ∈ H²_N` satisfy
 `δY_t = δξ + ∫_t^T φ_s ds − ∫_t^T δZ_s dW_s − ∫_t^T ∫_E δU_s(e) Ñ(ds, de)` with
 `δξ ∈ L²(ℱ_T)` and `φ ∈ L²(Ω × [0, T])`. Then `δY ∈ S²(ℝᵐ)`, and there is a constant `C_BP`,
@@ -402,7 +399,7 @@ Verdict: faithful.
 
 ## Lemma 4.2: `Dissertation.PaperSpec.A.lem_small`
 
-Manuscript (`paper/sections/04-proof-wellposedness.tex`, Lemma `lem:small`): under Assumptions
+Manuscript (§4, Lemma `lem:small`): under Assumptions
 2.2–2.3 there is `λ* ∈ (0, 1]`, depending only on `T`, `L` and `c_BDG`, such that `WP(λ)` holds
 for every `λ ∈ [0, λ*]`.
 
@@ -475,7 +472,7 @@ Verdict: faithful (broader, printed claim an instance).
 
 ## Example 5.1(i): `Dissertation.PaperSpec.A.ex_concrete_i_ham`, `ex_concrete_i`, `ex_concrete_i_pairing`, `ex_concrete_i_wp`
 
-Manuscript (`paper/sections/05-examples.tex`, Example `ex:concrete`, part (i)): `n = m = d = 1`,
+Manuscript (§5, Example `ex:concrete`, part (i)): `n = m = d = 1`,
 `G = 1`, `ν` σ-finite, `ξ₀ ∈ L²(Ω, ℱ₀; ℝⁿ)`, `σ_c ∈ ℝ`, `h_c ∈ L²(ν)`, `β₁, β₂ > 0`. The
 Hamiltonian `H` of the control problem is strictly convex in the controls with pointwise minimiser
 `a^{b*} = −β₁ y`, `a^{σ*} = −β₁ z`, `a^{h*} = −β₁ u`, "so by the stochastic maximum principle
@@ -484,7 +481,7 @@ for jump diffusions [TangLi]" the optimality system is (1.1) with `b = −β₁ 
 `L = max{β₁, β₂, 1}`; Assumption 2.4 with `c_G = 1`; the interior and terminal pairings of (2.7)
 evaluate exactly to `−β₁ 𝔼[|δY|² + |δZ|²_F + ‖δU‖²] − β₂ 𝔼|δX|²` and `𝔼|δX_T|²`; Assumption 2.5
 holds with equality and `α = 1`, "so Theorem 3.5 yields well-posedness"; the identity carries any
-margin `0 < c < min{β₁, β₂}` (Remark 2.7), unweighted with the same constant since `c_G = 1`; and
+margin `0 < c < min{β₁, β₂}` (Remark 2.11), unweighted with the same constant since `c_G = 1`; and
 `∫_E ⟨δh(e), δU(e)⟩ ν(de) = −β₁ ‖δU‖²`.
 
 Propositions:
@@ -528,8 +525,8 @@ Correspondence:
 Witness: `Dissertation.Acceptance.A.ex_concrete_hypotheses` (the standing setting with `ν = δ₀`,
 `𝒢₀ = ⊥` and the datum `0`; `T = 1`, `β₁ = β₂ = 1`). `ex_concrete_i_ham` has only `β₁ > 0`.
 
-* arXiv 2608.23203v1 prints "unweighted here because `G = 1`" where the revision adds "with the
-  same constant … `G = 1` gives `c_G = 1`"; the statement is the same, since `c_G = 1`.
+* "Unweighted here because `G = 1`": at `G = 1`, `c_G = 1`, so the unweighted margin has the same
+  constant.
 
 Verdict: faithful (the pairings at every `t`, `β₂` arbitrary in `ex_concrete_i_ham`: broader).
 
@@ -617,9 +614,7 @@ generated by `W` and `ℱ₀` and the representation property is the Brownian on
 Brownian–Poisson basis is not a reduction"). The assumptions reduce to `W₂`-Lipschitz joint-law
 dependence of `(X, Y, Z)` under `G`-monotonicity, the condition of [BYZ, (A1)]; with no jump
 channel the `U`-dissipativity constraint of Remark 2.10 is vacuous, so both rank branches of
-Assumption 2.5 are available. Remark 2.10 adds: "When `ν = 0` the fibre `L²(ν)` is trivial,
-`δU = 0` identically, and the restriction disappears: this is the Brownian case of Example 5.2, in
-which both rank branches remain available."
+Assumption 2.5 are available.
 
 Proposition: in the standing setting with `ν = 0` (any `d`, any countably generated `E`):
 (a) `enlJoint 𝒢₀ D = augFiltration (ℱ^W ⊔ 𝒢₀)₊ P`, the usual augmentation of the filtration
@@ -632,8 +627,8 @@ depends on `(t, θ, μ)` only through `(t, x)` (the additive form `h(t, x, e)` o
 
 Correspondence:
 
-* "The Brownian case" is the standing setting at `ν = 0`, the reading of Remark 2.10. Clause (a)
-  shows that it is the Brownian basis of the example: the Poisson measure of intensity `0`
+* "Remove the Poisson channel" is read as the standing setting at `ν = 0`. Clause (a) shows that
+  it is the Brownian basis of the example: the Poisson measure of intensity `0`
   vanishes almost surely, so its natural filtration consists of null and conull sets and
   disappears in the augmentation. Clause (b) is the deletion of the `U`-coordinate: `H` is
   `ℝⁿ × ℝᵐ × ℝ^{m×d} × {0}`, and the Poisson integrals and `U` vanish.
@@ -666,9 +661,8 @@ Manuscript (Example `ex:expfunc`): `φ̄ : [0, T] × H × H → ℝᵏ` measurab
 `(θ, θ')` uniformly in `t`, and `φ(t, θ, μ) = ∫_H φ̄(t, θ, θ') μ(dθ')`: at fixed `t, θ` this is the
 Bochner mean of `φ̄(t, θ, ·)`, whose Lipschitz constant is at most `Lip(φ̄)`, so (2.10) supplies
 the law-dependence component of Assumption 2.3. For the independent-copy interactions of [LiMin],
-with `ψ̄` Lipschitz in all arguments but `t`, for the Euclidean norm on each argument block
-`(x, y, z, u(e))`, `(x', y', z', u'(e))`, and `φ̄(t, θ, θ') = ∫_E ψ̄(t, x, y, z, u(e), x', y', z',
-u'(e)) ν(de)`: the integral is finite at every `(θ, θ')`; with a constant finite when
+with `ψ̄` Lipschitz in all arguments but `t`, and `φ̄(t, θ, θ') = ∫_E ψ̄(t, x, y, z, u(e), x', y',
+z', u'(e)) ν(de)`: the integral is finite at every `(θ, θ')`; with a constant finite when
 `ν(E) < ∞`, `|φ̄(t, θ₁, θ₁') − φ̄(t, θ₂, θ₂')| ≤ Lip(ψ̄) max{ν(E), ν(E)^{1/2}} (|θ₁ − θ₂|_H +
 |θ₁' − θ₂'|_H)`; the functional is well defined on equivalence classes. The jump coefficient
 embeds through the Nemytskii map `[𝐇_t(θ, θ')](e) = h̄(t, x, y, z, u(e), x', y', z', u'(e), e)`,
@@ -698,7 +692,7 @@ Correspondence:
   `|·|_H` the Hilbert norm (`toL2`); `Lip(φ̄)` is any Lipschitz constant, the least one an
   instance. The target `ℝᵏ` is `EuclideanSpace ℝ (Fin k)`; the diffusion kernel with values in
   `ℝ^{n×d}` is the instance `k = nd`.
-* "Lipschitz for the Euclidean norm on each argument block" is written out as the square root
+* The Euclidean norm on each argument block `(x, y, z, u(e))` is written out as the square root
   of the sum of the four squared channel distances. With it the printed constant is exact; for
   the sum of the channel norms it would be twice as large.
 * The finiteness "at every `(θ, θ')`" is the integrability of the integrand; the intermediate
@@ -716,10 +710,9 @@ Witnesses: `Dissertation.Acceptance.A.ex_expfunc_hypotheses`, `ex_expfunc_limin_
 `x − x'` (for the jump coefficient through the library's Nemytskii class, with constant
 `max(1, ν(E)^{1/2})`).
 
-* arXiv 2608.23203v1 prints "Lipschitz in all arguments except `t`" without naming the norm on
-  the argument blocks; the propositions take the Euclidean norm on each block, the norm the
-  revision names. Another norm on these finite-dimensional blocks changes the Lipschitz constant
-  by a fixed factor: a representation choice.
+* "Lipschitz in all arguments except `t`" names no norm on the argument blocks; the propositions
+  take the Euclidean norm on each block. Another norm on these finite-dimensional blocks changes
+  the Lipschitz constant by a fixed factor: a representation choice.
 
 Verdict: faithful with representation choices (the three propositions broader than printed, as
 listed).
@@ -728,268 +721,7 @@ listed).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc_limin ed839d34f480cba1dc8d682dbdc81fa7 by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc_jump ed839d34f480cba1e622a1683bfc9f0d by=claude-author -->
 
-## Example 5.4: `Dissertation.PaperSpec.A.ex_fulllaw_lip`, `ex_fulllaw_pert`, `ex_fulllaw_wp`, `ex_fulllaw_affineQ`, `ex_fulllaw_beyond_radial`, `ex_fulllaw_beyond_U`, `ex_fulllaw_beyond_U_corr`, `ex_fulllaw_beyond_Q`
-
-Manuscript (Example `ex:fulllaw`): fix `μ₀ ∈ P₂(H)`, `Λ₀ ∈ P₂(L²(ν))`, `ε > 0`, bounded Lipschitz
-`𝔮, 𝔮̃, 𝔮̂ : ℝ₊ → ℝ`, `Q : ℝᴶ → ℝ`, `φ_j : L²(ν) → ℝ`, directions `w₀, w₁ ∈ ℝᵐ`, `v₀ ∈ ℝⁿ`,
-`ĥ ∈ L²(ν; ℝⁿ)`; the baseline is as in Corollary 3.6 (`m = n`, Assumptions 2.2–2.5, a margin
-`c_diss > 0` in (2.13); Example 5.1(i) supplies one); perturb `f` by
-`ε 𝔮(W₂(μ, μ₀)) w₀ + ε Q(∫ φ_1 dμ^U, …, ∫ φ_J dμ^U) w₁`, `b` by `ε 𝔮̃(W₂(μ^U, Λ₀)) v₀` and `h` by
-`ε 𝔮̂(W₂(μ^U, Λ₀)) ĥ`. Claims: (a) for nonconstant `𝔮, 𝔮̃, 𝔮̂` the radial statistics lie beyond
-the expectation and two-point-kernel interactions of the preceding examples (and beyond the linear
-jump-integrand expectations of the cited models); (b) the cylindrical term does so when `Q` is
-non-affine on the attained range of the feature vector, and if `Q(s) = a + ∑ c_j s_j` there it is
-the expectation functional `∫ (a + ∑ c_j φ_j(u')) μ(dθ')`; (c) all three statistics are
-`W₂`-Lipschitz with constants `Lip(𝔮)`, `Lip(𝔮̃)`, `Lip(𝔮̂)`, `L_Q = Lip(Q)(∑ Lip(φ_j)²)^{1/2}`;
-(d) the perturbations satisfy the origin integrability of Assumption 2.2, are independent of `θ`,
-satisfy (3.5) with `L_p = ε(|w₀| Lip(𝔮) + |v₀| Lip(𝔮̃) + |w₁| L_Q + ‖ĥ‖ Lip(𝔮̂))`, hence the
-diagonal Lipschitz condition of Assumption 2.3; (e) by Corollary 3.6, (3.4) holds with
-`c_pert = ‖G‖ L_p`, and the perturbed system is well-posed, with margin `c_diss − ‖G‖ L_p`,
-whenever (5.1) `ε ‖G‖ (…) < c_diss`.
-
-Propositions:
-
-* `ex_fulllaw_lip` — (c), for every σ-finite `ν` on a countably generated space, all `n, m, d, J`,
-  Lipschitz data (with nonnegative constants) and all `μ₀, Λ₀, μ, μ'`.
-* `ex_fulllaw_pert` — (d) and (3.4) of (e): in the standing setting with `m = n`, `T > 0`, `G`,
-  `ε > 0` and Lipschitz data, `ex54Pert …` (the printed perturbation, reviewed in
-  `definitions.md`) is `TupleIndep`, has `OriginValues`, satisfies `LawLip35` and `LipInterior`
-  with `L_p` and `PairingBound34` with `‖GX G‖ L_p`.
-* `ex_fulllaw_wp` — (e): under the baseline hypotheses of `cor_robust`, Lipschitz data, `ε > 0`
-  and (5.1), the perturbed system `C.perturb (ex54Pert …)` satisfies (2.3), Assumption 2.2, some
-  Assumption 2.3, Assumption 2.5 with the baseline's `G, α, β₁, β₂`, `Margin213` with margin
-  `c_diss − ‖GX G‖ L_p`, and has a solution unique in `ℍ` (the conclusion of `thm_cwp`).
-* `ex_fulllaw_affineQ` — (b), second half: for Lipschitz features and `Q` affine on the attained
-  range, the `Q`-term equals `∫_H (a + ∑_j c_j φ_j(θ'.u)) μ(dθ')`.
-* `ex_fulllaw_beyond_radial` — (a) for `𝔮`: for `n ≥ 1`, every bounded Lipschitz `𝔮` not constant
-  on `[0, ∞)` and every `μ₀`, no `φ` integrable against every law of `P₂(H)` has
-  `𝔮(W₂(μ, μ₀)) = ∫ φ dμ` for all `μ`.
-* `ex_fulllaw_beyond_U` — (a) for `𝔮̃, 𝔮̂`, as printed: the same for `𝔮̃(W₂(μ^U, Λ₀))` at every
-  σ-finite `ν` and `m ≥ 1`. **Refuted** by `ex_fulllaw_beyond_U_false`: at `ν = 0` the fibre
-  `L²(ν)` is `{0}`, every `U`-marginal is `δ₀ = Λ₀`, and the statistic is the constant
-  `𝔮̃(0)`, the expectation functional of a constant, for the bounded Lipschitz non-constant
-  `𝔮̃(r) = min(|r|, 1)`.
-* `ex_fulllaw_beyond_U_corr` — the corrected statement: the same with `L²(ν; ℝᵐ) ≠ {0}`.
-* `ex_fulllaw_beyond_Q` — (b), first half: for bounded Lipschitz features and Lipschitz `Q` not
-  affine on the attained range, the `Q`-term is no expectation functional.
-
-Correspondence:
-
-* The standing setting of §2 admits `ν = 0` (σ-finite), and the example fixes no condition on
-  `ν`; its closing sentence of Remark 2.10 treats `ν = 0` as the Brownian case. The refutation is
-  of the `U`-marginal sentence as printed; the manuscript edit is to add `ν ≠ 0`.
-  The full-law radial statistic and the cylindrical term are not affected.
-* "Lie beyond the expectation … interactions" is read as: not an expectation functional
-  `μ ↦ ∫ φ dμ` of the law, the form every such interaction takes at a fixed state. The kernel `φ`
-  is only asked to be integrable against every law of finite second moment, which is broader than
-  the Lipschitz kernels of Example 5.3, so the propositions are the stronger reading.
-* The profiles are functions on `ℝ` with a global Lipschitz bound; they are applied to distances,
-  so only their restriction to `[0, ∞)` enters, and "not constant" is asked on `[0, ∞)`. The
-  boundedness of the data is assumed where the printed claim could depend on it (the "beyond"
-  clauses); in `ex_fulllaw_lip`, `ex_fulllaw_pert`, `ex_fulllaw_wp` and `ex_fulllaw_affineQ` it is
-  not assumed, so these are broader.
-* (5.1) is written `ε ‖GX G‖ (…) < c_diss`, `‖GX G‖` the operator norm `‖G‖`.
-* The clauses (a) for general `μ₀`, `Λ₀` and the first half of (b) are proved at the printed
-  generality (2026-10-01): for (a), the mixtures `(1 − t) μ₀ + t δ_{R v}` realise every distance to
-  the reference law by the intermediate value theorem, while affinity along mixtures would keep
-  `𝔮(r)` within `2 t sup |𝔮|` of `𝔮(0)` (`not_affineAlongMixtures_of_radialProfile`, which uses
-  the boundedness of the profile and not its Lipschitz constant); for (b), an expectation
-  functional makes `Q` affine along the segments of the attained range, a convex set, hence equal
-  there to an affine function (`exists_affine_eq_of_affine_segments`, finite dimension). The
-  earlier library results for Dirac reference laws and for a two-point chord condition on `Q`
-  (`radial_ne_integral`, `radialU_ne_integral`, `cylindrical_margU_ne_integral`) are special
-  cases.
-* Not formalised: the comparison with the linear jump-integrand expectations of the cited models,
-  and the sentence on the trade against the weak-coupling route (statements about cited work and
-  exposition).
-
-Witnesses: `Dissertation.Acceptance.A.ex_fulllaw_hypotheses` (the baseline of Corollary 3.6's
-instance, Example 5.1(i) with `β₁ = β₂ = 2`, margin `c_diss = 1`; `ε = 1/4`, profiles
-`min(|r|, 1)`, `Q(s) = min(|s₁|, 1)`, `φ₁(u) = min(‖u‖, 1)`, unit directions, `ĥ = 0`, so
-`L_p = 3/4 < 1`); `ex_fulllaw_affineQ_hypotheses` (`Q(s) = s₁`); `ex_fulllaw_beyond_hypotheses`
-(a unit vector of `L²(δ₀)`, the profile `min(|r|, 1)`, the kernel `0`);
-`ex_fulllaw_beyond_Q_hypotheses` (`Q(s) = min(|s₁|, 1/2)`, `φ₁(u) = min(‖u‖, 1)`, not affine on
-the attained values `0, 1/2, 1`).
-
-Verdict: faithful, with the printed `U`-marginal sentence refuted at `ν = 0` and corrected by
-`ν ≠ 0`.
-
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_lip ed839d34f480cba11fea7903ed24f9f8 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_pert ed839d34f480cba1e9dade95deb0a071 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_wp ed839d34f480cba173d663ff51153197 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_affineQ ed839d34f480cba1b7c4d4b7307e74ea by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial ed839d34f480cba1fc87ff54d30df5ad by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_U ed839d34f480cba1e06f855614a9b4c6 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr ed839d34f480cba193f328d7c8c243ea by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q ed839d34f480cba12be9f13eb8df21c1 by=claude-author -->
-
-## Example 5.5: `Dissertation.PaperSpec.A.ex_dealer_potential`, `ex_dealer_crowd`, `ex_dealer_coeffs`, `ex_dealer`, `ex_dealer_mono`, `ex_dealer_wp`, `ex_dealer_twopoint`, `ex_dealer_not_mean`, `ex_dealer_not_mean_corr`, `ex_dealer_affine`, `ex_dealer_marks`
-
-Manuscript (Example `ex:dealer`): the crowding correction `A_λ(u) = ∫ ∇V(u − v) λ(dv)`,
-`V(w) = √(1 + ‖w‖²) − 1`, `λ ∈ P₂(L²(ν))`. Claims: (a) `V` is even and convex, with
-`∇V(w) = w / √(1 + ‖w‖²)`, `‖∇V(w)‖ ≤ 1`, `Lip(∇V) ≤ 1`; (b) for `ε ≥ 0`, `h_x ∈ L²(ν)`:
-`b = −β₁ y`, `σ = σ_c − β₁ z`, `h = h_c + h_x x − β₁ u − ε A_{μ^U}(u)`, `f = β₂ x + ⟨h_x, u⟩`,
-`g(x, ρ) = x`; the Hamiltonian term `⟨h_x x, u⟩` has `x`-derivative `⟨h_x, u⟩`; at `ε = 0`,
-`h_x = 0` this is Example 5.1(i) verbatim; (c) `h(·, 0, δ₀) = h_c`, Assumption 2.2 as in 5.1(i);
-`‖A_λ(u) − A_λ'(u')‖ ≤ ‖u − u'‖ + W₂(λ, λ')`; with (2.11), Assumption 2.3 with
-`L = max{β₁ + ε + ‖h_x‖, β₂ + ‖h_x‖, 1}`; (2.3); Assumption 2.4 as in 5.1(i); (d) for
-`(Θ, μ), (Θ', μ') ∈ 𝒟_t`, `𝔼⟨A_{μ^U}(U) − A_{μ'^U}(U'), U − U'⟩ ≥ 0`; the exposure terms cancel;
-`𝔼[∫_E ⟨δh, δU⟩ dν + ⟨−δf, δX⟩] ≤ −β₁ 𝔼‖δU‖² − β₂ 𝔼|δX|²`; (2.7) with `α = 1`, `β₁`, `β₂` for every
-`ε ≥ 0`; Theorem 3.5 applies; (e) the crowding correction is no function of `𝔼[U]`: for a unit
-`w`, `λ₁ = ½(δ_{−w} + δ_w)` and `λ₂ = ½(δ_{−2w} + δ_{2w})` share their mean, with
-`A_{λ₁}(w) = w/√5`, `A_{λ₂}(w) = ½(3/√10 − 1/√2) w`; it is nonlinear in the valuation curves and
-affine in their law, and an expectation kernel in the sense of Example 5.3 with `K = L²(ν)`;
-(f) on `E = {−1, +1} × (0, 1]` with `ν(dς, dq) = c_ς q^{−1−ϱ} dq`, `c_ς > 0`, `0 < ϱ < 2`:
-`ν(E) = ∞`, `∫ q² dν < ∞`, `h_c(ς, q) = ς q ∈ L²(ν)`; (g) the interaction is active: the inert
-tuple at `h_x = 0`, the explicit tuple at `ε = 0`, and `𝔼 ∫_0^T ‖ε A_{Law(U^ε_t)}(U^ε_t)‖² dt > 0`.
-
-Propositions:
-
-* `ex_dealer_potential` — (a), on `L²(ν; ℝ¹)` for every measure `ν`.
-* `ex_dealer_crowd` — the joint Lipschitz bound of (c), for all `u, u'` and `λ, λ' ∈ P₂(L²(ν))`.
-* `ex_dealer_coeffs` — (b): `ex55Coeffs ν β₁ β₂ σ_c h_c 0 0 = affineCoeffs β₁ β₂ σ_c h_c`, and
-  `x ↦ ⟨h_x x, u⟩` has gradient `∫ h_x(e) u(e) ν(de)`.
-* `ex_dealer` — (c): for `T > 0`, `β₁, β₂ > 0`, `ε ≥ 0`, every `h_x` and `ξ₀`, the origin value
-  `h(t, 0, δ₀) = h_c`, (2.3), Assumption 2.2, Assumption 2.3 with the printed `L`, and
-  Assumption 2.4 for `G = 1` (`rank 1 = 1`, `c_G = 1`).
-* `ex_dealer_mono` — (d): the crowding pairing, the cancellation (for all `x`, `u`), the printed
-  interior inequality, and Assumption 2.5 with `G = 1`, `α = 1`, `β₁, β₂`.
-* `ex_dealer_wp` — (d), last sentence: the conclusion of Theorem 3.5 (`thm_cwp`).
-* `ex_dealer_twopoint` — (e), the two-point computation, for every unit `w`.
-* `ex_dealer_not_mean` — (e), as printed, at every σ-finite `ν`: no `Φ` with
-  `A_λ(u) = Φ(∫ v dλ, u)` for all `λ, u`, and `u ↦ A_λ(u)` not linear for some `λ`. **Refuted** by
-  `ex_dealer_not_mean_false`: at `ν = 0` the fibre `L²(ν)` is `{0}`, so `A ≡ 0 = Φ(·, ·)`.
-* `ex_dealer_not_mean_corr` — the corrected statement: the same with `L²(ν) ≠ {0}`.
-* `ex_dealer_affine` — (e): `A_{s λ₁ + (1 − s) λ₂} = s A_{λ₁} + (1 − s) A_{λ₂}` for all
-  `λ₁, λ₂ ∈ P₂(L²(ν))`, `s ∈ [0, 1]`; `A_{μ^U}(u) = ∫_H ∇V(u − u') μ(dθ')`; and the kernel
-  `(θ, θ') ↦ ∇V(u − u')` is Lipschitz with constant `1` in the form of `ex_expfunc_jump`.
-* `ex_dealer_marks` — (f).
-
-Correspondence:
-
-* `n = m = d = 1` as in Example 5.1(i), whose hypotheses `β₁, β₂ > 0` are kept; `L²(ν)` is
-  `L²(ν; ℝ¹)`; `h_x` is a real profile in `L²(ν)`, `h_x x` the library `exposureOp` (reviewed in
-  `definitions.md`), and `⟨h_x, u⟩` the Bochner integral `∫ h_x(e) u(e) ν(de)`.
-* The step `W₂(μ^U, μ'^U) ≤ W₂(μ, μ')` is (2.11), `eq_margproj`, not restated. The
-  `π ⊗ π`-integrability of `Φ` and the two double-integral identities of (d) are proof steps.
-  "No smallness condition and no margin" is exposition: the propositions hold at every `ε ≥ 0`.
-* (e) "not a function of `𝔼[U]`" is read as: `(λ, u) ↦ A_λ(u)` does not factor through
-  `(∫ v dλ, u)`; "nonlinear in the valuation curves" as: `u ↦ A_λ(u)` is not linear for some `λ`.
-  The sentence argues "for a unit `w ∈ L²(ν)`", which exists exactly when `L²(ν) ≠ {0}`; the
-  standing setting admits `ν = 0`. The manuscript edit is the one of Example 5.4: add `ν ≠ 0`.
-* The affine clause is stated for arbitrary `λ₁, λ₂`, broader than the printed two-point laws. The
-  pointer "dependence nonlinear in the law itself is that of Example 5.4" is exposition.
-* (f): the sides are `Bool` with `ς = if b then 1 else −1`, and `ν` is counting measure on the
-  sides times Lebesgue measure on `(0, 1]` with density `c_ς q^{−1−ϱ}`. "Infinitely many small
-  tickets", "the small-ticket limit" and the modelling narrative (quotes, routing, the dealer
-  reading) are exposition; the Cont–Xiong comparison is literature.
-* (g) is reviewed in the next section.
-
-Witnesses: `Dissertation.Acceptance.A.ex_dealer_hypotheses` (the mark measure of (f) with
-`c_{±1} = 1/2`, `ϱ = 1`, so `ν(E) = ∞`; a Lévy driver with `d = 1` on it, `𝒢₀ = ⊥`, `ξ₀ = 0`,
-`T = β₁ = ε = 1`, `β₂ = 1/2`); `ex_dealer_unit_hypotheses` (`h_c(ς, q) = ς q` has unit norm
-there); `ex_dealer_marks_hypotheses`.
-
-Verdict: faithful, with the sentence "no function of `𝔼[U]` … nonlinear in the valuation curves"
-refuted at `ν = 0` and corrected by `ν ≠ 0`; (g) in the next section.
-
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_potential ed839d34f480cba1c2e5952133294af3 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_crowd ed839d34f480cba1542ac74da98a0887 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_coeffs ed839d34f480cba1a750d21d05188e99 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer ed839d34f480cba13abeb1f4dcd6b497 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_mono ed839d34f480cba1406bda9cea7a3cfe by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_wp ed839d34f480cba18b17ce1d81ae8449 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_twopoint ed839d34f480cba10e7a45835d5244c0 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_not_mean ed839d34f480cba11a653f42041ca376 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_not_mean_corr ed839d34f480cba1db9bb88356786063 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_affine ed839d34f480cba14f86326a4c8f6eab by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_marks ed839d34f480cba140a65f520ffefa33 by=claude-author -->
-
-## Example 5.5, the interaction is inert or active: `Dissertation.PaperSpec.A.ex_dealer_inert`, `ex_dealer_active_data`, `ex_dealer_active_sde`, `ex_dealer_active_sol`, `ex_dealer_active_moments`, `ex_dealer_sym`, `ex_dealer_active_pos`, `ex_dealer_active_dep`
-
-Manuscript (Example `ex:dealer`, "The interaction is active"): (g1) for `h_x = 0`, with `p` the
-positive solution of `p' = β₁ p² − β₂`, `p(T) = 1`, the tuple `Y = p X`,
-`Z = p σ_c / (1 + β₁ p)`, `U = p h_c / (1 + β₁ p)` solves the system, `Law(U_t)` is a Dirac mass,
-`A_{Law(U_t)}(U_t) = ∇V(0) = 0`, and the same tuple solves it for every `ε`; (g2) with `β₁ = 1`,
-`β₂ = ½`, `σ_c = 1`, `ξ₀ = 0`, `c_{±1} = (2 − ϱ)/2`, `h_c(ς, q) = ς q`, `h_x(ς, q) = q`:
-`‖h_c‖ = ‖h_x‖ = 1`, `⟨h_c, h_x⟩ = 0`; (g3) the linear equation for `X⁰` has Lipschitz
-coefficients, hence a unique solution `X⁰ ∈ S²(ℝ)`; (g4) `(X⁰, X⁰, ½, ½(h_c + h_x X⁰_{t−}))` solves
-the system at `ε = 0`; (g5) `𝔼 X⁰_t = 0`, `v' = −(7/4) v + ½` for `v(t) = 𝔼|X⁰_t|²`,
-`𝔼‖U⁰_t − 𝔼 U⁰_t‖² = ¼ v(t) = (1/14)(1 − e^{−7t/4})`, so `Law(U⁰_t)` is no Dirac mass for
-`t ∈ (0, T]`; (g6) for `λ ∈ P₂(L²(ν))`,
-`∫ ⟨A_λ(u), u⟩ λ(du) = ½ ∬ ‖u − v‖² / √(1 + ‖u − v‖²) λ(du) λ(dv)`, positive unless `λ` is a Dirac
-mass, hence `A_{Law(U⁰_t)}(U⁰_t) ≠ 0` with positive probability for `t ∈ (0, T]`; (g7) for `ε > 0`,
-along the solution `Θ^ε` of Theorem 3.5, `𝔼 ∫_0^T ‖ε A_{Law(U^ε_t)}(U^ε_t)‖² dt > 0`; (g8) the
-solution depends on `ε`: no tuple solves the system at two strengths.
-
-Propositions:
-
-* `ex_dealer_inert` — (g1), in the standing setting with `n = m = d = 1`, `T > 0`, `β₁, β₂ > 0`:
-  some `p` is positive on `[0, T]` with `p' = β₁ p² − β₂` there (derivatives within `[0, T]`),
-  `p(T) = 1`, and equal on `[0, T]` to every such function; with `Z_t = p σ_c / (1 + β₁ p)` on
-  `[0, T]` and `U_t = p h_c / (1 + β₁ p)` on `(0, T]`, there are `X, Y` with `Y = p X` on `[0, T]`
-  almost surely such that `(X, Y, Z, U)` is a `Solution` at `h_x = 0` for every `ε ≥ 0`; and for
-  almost every `t ∈ [0, T]` the `U`-marginal of the law of `Θ⁻_t` is `δ_{p h_c / (1 + β₁ p)}` and
-  `A_{(Law Θ⁻_t)^U}(U_t) = 0` at every sample point.
-* `ex_dealer_active_data` — (g2), for `h_c`, `h_x` given by their printed formulas `ν`-a.e.
-* `ex_dealer_active_sde` — (g3): the exposure equation over `enlJoint 𝒢₀ D h𝒢₀`, in the form
-  `LinearFSDEJ` (reviewed in `definitions.md`), has a solution with `𝔼 sup_{[0, T]} |X|² < ∞`, and
-  two solutions are indistinguishable on `[0, T]`.
-* `ex_dealer_active_sol` — (g4): a `Solution` at `ε = 0` with `ξ₀ = 0` with `Y = X` on `[0, T]`
-  almost surely, `Z = ½` and `U = ½(ς q + q X_{t−})` in energy on `[0, T]`, and `X`
-  indistinguishable on `[0, T]` from every solution of the exposure equation.
-* `ex_dealer_active_moments` — (g5) and the second half of (g6), for every solution `X` of the
-  exposure equation, with `U_t = ½(h_c + h_x X_t)`.
-* `ex_dealer_sym` — (g6), first half, for every σ-finite `ν`.
-* `ex_dealer_active_pos` — (g7), for every `Solution` at `ε > 0` with `ξ₀ = 0`.
-* `ex_dealer_active_dep` — (g8), for `ε ≠ ε'`, both `≥ 0`.
-
-Correspondence:
-
-* Solutions are elements of `ℍ`: the propositions give the printed tuples up to
-  indistinguishability of `X, Y` and up to energy-null sets for `Z, U`. In (g1) `U` is cut to
-  `(0, T]` (`U_0 = 0`, a null set of times), and `Y = p X` holds almost surely on `[0, T]` because
-  the `Solution` predicate asks every path of `Y` to have left limits and the library's `X` has them
-  almost surely; the version is `PaperSolution.exists_cadlag_version`.
-* (g1) The vanishing of the crowding correction is stated for almost every `t`, and for the law of
-  the predictable tuple `Θ⁻_t`, whose `U`-marginal is `Law(U_t)`; the printed claim is for every
-  `t`, where `U_t` is deterministic and the claim is the trivial `A_{δ_u}(u) = ∇V(0) = 0`. "The same
-  tuple solves it for every `ε`" is stated for `ε ≥ 0`, the range the example fixes.
-* (g3) The Poisson integrand of `LinearFSDEJ` is `½(ς q + q X_s)`, read at `X_s` rather than at the
-  printed `X⁰_{s−}`: the two agree for almost every `(ω, s)`, so the compensated integrals are the
-  same. `S²(ℝ)` is read as adapted, right-continuous and `𝔼 sup |X|² < ∞`.
-* (g5) The moments are stated with `U_t = ½(h_c + h_x X_t)`; the printed `U⁰_t` uses `X⁰_{t−}`,
-  which equals `X⁰_t` almost surely at every fixed `t` (the driver has no fixed-time jumps; not
-  formalised) and at almost every `t` along every path. The printed intermediate
-  `v' = −2v + ¼ + ¼(‖h_c‖² + ‖h_x‖² v)` is a proof step; the derivative of `v` is taken within
-  `[0, T]`.
-* (g7) `A_{Law(U^ε_t)}` is read at the `U`-marginal of the law of `Θ⁻_t`, the argument of the jump
-  coefficient in (1.1); it is `Law(U_t)`. The proposition holds for every solution, not only the
-  one of Theorem 3.5 (they coincide by Theorem 3.3).
-* (g8) The printed reason ("subtracting the forward equations and the compensated-Poisson isometry
-  would force the crowding correction to vanish") and the contradiction argument of (g7) are proof
-  steps.
-* Not formalised: "at an event of mark `e` the uncontrolled exposure change is
-  `h_c(e) + h_x(e) X_{t−}`" (modelling).
-
-Witnesses: `Dissertation.Acceptance.A.ex_dealer_hypotheses` for `ex_dealer_inert`;
-`ex_dealer_active_hypotheses` (`ϱ = 1`, so `c_{±1} = 1/2`; a Lévy driver with `d = 1` on the mark
-measure, `𝒢₀ = ⊥`, `T = 1`; `h_c`, `h_x` the library classes `dealerJump`, `dealerSize`, which have
-the printed formulas `ν`-a.e.; `ε = 1 > 0`, `ε' = 0 ≠ ε`) for the active clauses.
-
-Verdict: faithful, with the readings listed (versions, `X_s` for `X_{s−}` in the exposure equation
-and the moments, almost every `t` in (g1)).
-
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_inert ed839d34f480cba143f1c01894aef009 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_active_data ed839d34f480cba10a4d05ba7e77f141 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_active_sde ed839d34f480cba1fc9895add2c05eec by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_active_sol ed839d34f480cba1cbff2238ddd8268c by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_active_moments ed839d34f480cba13301041fc2c96a04 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_sym ed839d34f480cba1b9de62ecc81aebd4 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_active_pos ed839d34f480cba1a5e96fed66ecac37 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_active_dep ed839d34f480cba16856f996f6b4b53e by=claude-author -->
-
-## Remarks 2.7–2.11: `Dissertation.PaperSpec.A.rem_diag_mono`, `rem_diag_mono_converse`, `rem_intrinsic_uniform`, `rem_intrinsic_coupling`, `rem_intrinsic_basis`, `rem_beta1_fibre`, `rem_beta1_dich`, `rem_beta1_zero`, `rem_margin_reduce`, `rem_margin_unweighted`, `rem_margin_sharp`
+## Remarks 2.7–2.9: `Dissertation.PaperSpec.A.rem_diag_mono`, `rem_diag_mono_converse`, `rem_intrinsic_uniform`, `rem_intrinsic_coupling`, `rem_intrinsic_basis`
 
 Manuscript: Remark 2.7 (`rem:G-pairing`) explains the role of the full-rank `G`; its mathematical
 content, `G`-coercivity controlling the forward variables when `m ≥ n` and the backward ones when
@@ -1000,15 +732,7 @@ gives Assumption 2.5 by taking expectations, and the converse fails (Proposition
 `t > 0`, `ℱ_t` supports a uniform variable, a function of `W¹_t`; every coupling of two laws in
 `P₂(H)` is the joint law of two `ℱ_t`-measurable inputs (Kallenberg, Lemma 4.22); so Assumptions
 2.3 and 2.5 are properties of the coefficients, not of the basis; no richness of `ℱ_0` is needed;
-the proofs use only the expected diagonal form. Remark 2.10 (`rem:beta1-dich`): for `ν ≠ 0`,
-`L²(ν) ≠ {0}`; (2.7) with `δX = δY = δZ = 0` reduces to the jump channel; an additive
-`h = h(t, x, e)` forces `β₁ = 0`, hence `m ≥ n` and `α, β₂ > 0`; when `m < n` the jump coefficient
-must be `U`-dissipative; at `ν = 0` the restriction disappears (Example 5.2, both rank branches);
-the theorem does not cover the additive form when `m < n`, `ν ≠ 0`; a comparison with
-domination-monotonicity results (literature, claim `A:rem2.10:domination`). Remark 2.11
-(`rem:margin`): the definition (2.12) of a margin; (2.7) with `β̄₁, β̄₂` is (2.12) with
-`β̄ᵢ − c` and margin `c` for `0 < c < min β̄ᵢ`; for `m = n` a margin `c` in (2.12) gives `c / c_G`,
-"not `c`", in the unweighted form (2.13).
+the proofs use only the expected diagonal form.
 
 Propositions:
 
@@ -1024,15 +748,6 @@ Propositions:
 * `rem_intrinsic_basis` — Remark 2.9, "intrinsic": for two standing bases with the same `ν`, `d ≥ 1`
   and any `𝒢₀, 𝒢₀'` (no condition on `ℱ_0`), coefficients with (2.3) and `T > 0`, Assumption 2.3
   holds over one exactly when over the other, and, Assumption 2.3 holding, so does Assumption 2.5.
-* `rem_beta1_fibre`, `rem_beta1_dich`, `rem_beta1_zero` — Remark 2.10 as listed above, with `n,
-  m ≥ 1`, `T > 0`, `G` of full rank; "additive" read as `h(t, θ, μ) = h(t, θ', μ')` whenever
-  `θ, θ'` have the same forward state; at `ν = 0` the instance is Example 5.1(i) at `n = m`, the
-  `m < n` branch being `ex_brownian` (Example 5.2, whose generator has an additive jump
-  coefficient).
-* `rem_margin_reduce`, `rem_margin_unweighted`, `rem_margin_sharp` — Remark 2.11: the reduction
-  for `0 < c < min β̄ᵢ`; for `m = n`, `G` of full rank, `c_G = s_min(G)⁻²` and `c > 0`, (2.12) with
-  margin `c` gives (2.13) with margin `c / c_G`; and "not `c`": at `n = m = d = 1`, `G = 1/2`, the
-  scaled Example 5.1(i) has (2.12) with margin `1` and fails (2.13) with margin `1`.
 
 Correspondence:
 
@@ -1049,16 +764,10 @@ Correspondence:
   (2.3). Without (2.3) an integrand on `H × H` need not be measurable for a coupling, which is why
   (2.3) is assumed, as it is standing in the paper. "The proofs use only the expected diagonal
   form" is a statement about the proofs, not formalised.
-* Remark 2.10's "so `β₁ > 0` forces `h` to be strictly `U`-dissipative" is the reading of the first
-  conjunct; "the restriction is structural" is exposition.
-* Remark 2.11's "is" (the bound is (2.12)) is stated as the implication used; "recording weaker
-  constants turns the difference into slack, which a perturbation … leaves intact" is the
-  mechanism of Corollary 3.6, reviewed there.
 
 Witnesses: `Dissertation.Acceptance.A.rem_affine_hypotheses` (Example 5.1(i) with `β₁ = β₂ = 1`
 over a Lévy driver with `d = 1`, `ν = δ₀ ≠ 0`, `𝒢₀ = ⊥`, `T = 1`: (2.3), Assumption 2.3, the
-pointwise condition, Assumption 2.5 with `G = 1`, and `0 < 1/2 < 1`); `rem_margin_hypotheses`
-(the same system has (2.12) with constants and margin `1/2`); `rem_coupling_hypotheses`
+pointwise condition, Assumption 2.5 with `G = 1`, and `0 < 1/2 < 1`); `rem_coupling_hypotheses`
 (`δ_{(0,0)}` couples `δ₀` with itself); `ex_concrete_hypotheses`, `ex_brownian_hypotheses`.
 
 Verdict: faithful, with the readings listed (the integrable reading of (2.7) in Remark 2.8, and
@@ -1069,46 +778,8 @@ Assumption 2.3 assumed for the basis independence of Assumption 2.5).
 <!-- spec-review: Dissertation.PaperSpec.A.rem_intrinsic_uniform ed839d34f480cba13b7a9a5f65a5b218 by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.rem_intrinsic_coupling ed839d34f480cba1ff8eb9ca359fa48b by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.rem_intrinsic_basis ed839d34f480cba173243f3338d3fedc by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_beta1_fibre ed839d34f480cba1c9fa0ba4a3588e95 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_beta1_dich ed839d34f480cba1312ac03d25ff8ea1 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_beta1_zero ed839d34f480cba10a600b0e388b329d by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_margin_reduce ed839d34f480cba15843e0ffe4756126 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_margin_unweighted ed839d34f480cba1ba4163c9b3d796bd by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_margin_sharp ed839d34f480cba1f5295e520594119c by=claude-author -->
 
-## The abstract, the overview of Section 5, the conclusion, and the displays (1.1), (2.3), (4.1)
-
-Manuscript: the abstract (`A:abstract`) states existence, uniqueness and stability for the
-system (1.1) with `W₂` dependence on the law of the whole tuple, σ-finite `ν`, Lipschitz and
-monotonicity hypotheses along the diagonal only, that expected diagonal monotonicity is strictly
-weaker than the pointwise form, and that the dealer-market example is monotone at every
-interaction strength, active along the solution in a specialisation, with a mark measure of
-infinite activity. The second paragraph of Section 5 (`A:sec5:overview`) summarises Examples
-5.1–5.5. The conclusion (`A:conclusion`) summarises Theorems 3.1, 3.3, 3.5, Corollary 3.6,
-Proposition 3.8 with Remark 2.8, and Remark 2.10, and names open questions.
-
-Clauses: each sentence of the three passages is the proposition of the result it summarises,
-reviewed in that result's section above; the clauses reuse those propositions, proofs and
-witnesses:
-
-* abstract: `thm_stab`, `thm_uniq`, `thm_cwp`; `rem_diag_mono` and `prop_strict` for "strictly
-  weaker"; `ex_dealer_mono`, `ex_dealer_wp` ("non-perturbatively": well-posed at every strength),
-  `ex_dealer_active_pos`, `ex_dealer_marks`.
-* overview: `ex_concrete_i`, `ex_concrete_ii` ("meeting every assumption exactly, both at
-  arbitrary jump activity"); `ex_brownian`, `ex_expfunc`; `ex_fulllaw_beyond_radial` ("genuinely
-  nonlinear functionals of the full tuple") and `ex_fulllaw_beyond_U` ("and of the jump
-  integrand"), the latter refuted as printed at `ν = 0` and corrected by
-  `ex_fulllaw_beyond_U_corr`, as in Example 5.4; `ex_dealer_mono`, `ex_dealer_wp`,
-  `ex_dealer_active_pos`.
-* conclusion: `thm_stab`, `thm_uniq`, `thm_cwp`, `cor_robust_wp` ("robust, at `m = n`, under
-  full-tuple-law perturbations below the dissipativity margin"), `rem_diag_mono`, `prop_strict`,
-  `rem_beta1_dich` ("in the `m < n` regime with `ν ≠ 0` it forces strictly `U`-dissipative jump
-  feedback").
-
-Readings: the descriptions of the setting in the abstract (the coefficients' arguments, the
-σ-finite intensity, the diagonal form of the hypotheses) are the hypotheses of the propositions
-reused, not separate claims. The conclusion's last sentence (relaxing coercivity, domination
-monotonicity, common noise) names open questions and is not a claim.
+## The displays (1.1), (2.3), (4.1)
 
 The displays (1.1), (2.3) and (4.1) define objects and are recorded with scope `definition`: (1.1)
 is the system whose solutions in the space `ℍ` of Section 3 are `Dissertation.PaperSpec.A.Solution`;
@@ -1116,7 +787,7 @@ is the system whose solutions in the space `ℍ` of Section 3 are `Dissertation.
 forced system whose solutions are `Dissertation.PaperSpec.A.ForcedSolution`. These definitions are
 reviewed in `definitions.md`.
 
-Verdict: faithful, by reuse of the propositions reviewed above.
+Verdict: faithful.
 
 ## Section 2, the setting: `Dissertation.PaperSpec.A.sec2_separable`, `sec2_infinite_activity`, `eq_compid`, `eq_zeromean`, `sec2_prp`, `sec2_hborel`
 
@@ -1256,7 +927,7 @@ Verdict: faithful, at a generality containing the paper's.
 
 ## (2.5), the progressive coefficient processes: `Dissertation.PaperSpec.A.eq_coefmeas`
 
-Manuscript (02-model-assumptions.tex:100–101, 123–131): "All coefficients are jointly Borel
+Manuscript (§2): "All coefficients are jointly Borel
 measurable in their arguments ... Consequently, along any diagonal input, `(s, ω) ↦ ψ(s, Θ_s(ω),
 μ_s)`, `ψ ∈ {b, σ, f}`, progressively measurable, `(s, ω, e) ↦ h(s, Θ_{s−}(ω), e, μ⁻_s)`,
 predictable." The claims `A:sec2:coefmeas` (the paragraph) and `A:eq:coefmeas` (the display) are
@@ -1282,7 +953,7 @@ Verdict: faithful.
 
 ## (2.5), the predictable jump coefficient: `Dissertation.PaperSpec.A.eq_coefmeas_jump`
 
-Manuscript (02-model-assumptions.tex:112–131): the Fubini isometry (2.4) and "every Poisson
+Manuscript (§2): the Fubini isometry (2.4) and "every Poisson
 integral below ... is read through such a representative ... Consequently, along any diagonal
 input, ... `(s, ω, e) ↦ h(s, Θ_{s−}(ω), e, μ⁻_s)`, predictable."
 
@@ -1307,7 +978,7 @@ Verdict: faithful.
 
 ## Remark 3.2, the solution class: `Dissertation.PaperSpec.A.rem_cwp_class`
 
-Manuscript (03-main-results.tex:83–101): "Let `Θ = (X, Y, Z, U) ∈ ℍ_weak` satisfy (1.1). Then
+Manuscript (§3): "Let `Θ = (X, Y, Z, U) ∈ ℍ_weak` satisfy (1.1). Then
 `Θ ∈ ℍ`. Indeed, the coefficients evaluated along `Θ` lie in `L²(dt ⊗ dP)` by
 Assumptions 2.2–2.3, so Doob/BDG applied to the forward equation gives `𝔼 sup_{t≤T} |X_t|² < ∞`
 ... so Cauchy–Schwarz on the drift and Doob/BDG on the two martingales give
@@ -1335,7 +1006,7 @@ Verdict: faithful.
 
 ## The paragraph after Theorem 3.1: `Dissertation.PaperSpec.A.thm_stab_companion`, `thm_stab_data`, `thm_stab_minimal`
 
-Manuscript (03-main-results.tex:76–81): "If system 2 also satisfies Assumptions 2.4–2.5, with its
+Manuscript (§3): "If system 2 also satisfies Assumptions 2.4–2.5, with its
 own coupling matrix and constants, exchanging the roles gives the companion bound with the
 differences evaluated along solution 1 and the constant built from system 2's data. When the two
 systems share the four interior coefficients, the bound gives continuous dependence on the initial
@@ -1402,7 +1073,7 @@ Verdict: faithful.
 
 ## The preamble of Section 5: `Dissertation.PaperSpec.A.sec5_limin`
 
-Manuscript (05-examples.tex:3–7): "the restrictive hypothesis is the dissipativity of
+Manuscript (§5): "the restrictive hypothesis is the dissipativity of
 Assumption 2.5, ... which cannot be traded for Lipschitz continuity alone. The jump system of
 [LiMin, Example 3.2] is linear, hence Lipschitz, and is shown there to admit no adapted solution on
 the horizon `T = 3π/4`."
@@ -1437,127 +1108,16 @@ Verdict: faithful.
 
 <!-- spec-review: Dissertation.PaperSpec.A.sec5_limin ed839d34f480cba132884b458e231942 by=claude-author -->
 
-## The paragraph after Corollary 3.6: `Dissertation.PaperSpec.A.cor_margin_channels`, `cor_margin_additive`, `cor_margin_finite`, `cor_margin_findim`
-
-Manuscript (03-main-results.tex:278–288): "The margin hypothesis is demanding in the jump channel:
-by the reduction of Remark 2.10, a margin in (2.13) forces every channel of the baseline to be
-strictly dissipative. When `ν ≠ 0`, an additive `h₀ = h₀(t, x, e)` therefore cannot serve as a
-baseline. When, moreover, `L²(ν)` is infinite-dimensional, jump feedback entering through finitely
-many functionals of `u` supplies no margin either, since finitely many continuous functionals
-cannot separate the points of an infinite-dimensional space; a margin then needs feedback
-dissipative on the whole of `L²(ν)`, as in Examples 5.1(i) and 5.5. If `L²(ν)` is
-finite-dimensional, as when `ν` is carried by finitely many atoms, finitely many functionals can
-determine `u` and the second obstruction disappears."
-
-Propositions:
-
-* `cor_margin_channels`: in the standing setting, (2.13) (`Margin213`) with `β₁, β₂, c` gives,
-  for almost every `t ∈ [0, T]` and all `(Θ, μ), (Θ', μ') ∈ 𝒟_t` that differ in one channel only,
-  the inequality of that channel: `𝔼⟨−δf, G δX⟩ ≤ −β₂ 𝔼|G δX|² − c 𝔼|δX|²`,
-  `𝔼⟨δb, Gᵀ δY⟩ ≤ −β₁ 𝔼|Gᵀ δY|² − c 𝔼|δY|²`, `𝔼⟨δσ, Gᵀ δZ⟩_F ≤ −β₁ 𝔼|Gᵀ δZ|²_F − c 𝔼|δZ|²_F`
-  and `𝔼∫_E ⟨δh(e), Gᵀ δU(e)⟩ ν(de) ≤ −β₁ 𝔼‖Gᵀ δU‖² − c 𝔼‖δU‖²`.
-* `cor_margin_additive`: for `m ≥ 1`, `T > 0`, `ν ≠ 0`, `β₁ ≥ 0`, `c > 0`, if `h(t, θ, μ)` depends
-  on `t` and `x` only, (2.13) fails.
-* `cor_margin_finite`: for `T > 0`, `L²(ν; ℝᵐ)` infinite dimensional, `β₁ ≥ 0`, `c > 0` and a
-  linear map `ℓ : L²(ν; ℝᵐ) → ℝᵏ`, if `h(t, (x, y, z, u), δ_{(x,y,z,u)})` depends on `u` only
-  through `ℓ u`, (2.13) fails.
-* `cor_margin_findim`: for `m = n ≥ 1`, `L²(ν; ℝⁿ)` finite dimensional, `T > 0`, `β₁, β₂ ≥ 0`,
-  `c > 0`: some injective linear `ℓ : L²(ν; ℝⁿ) → ℝᵏ` exists, and Example 5.1(i) with the
-  constants `β₁ + c, β₂ + c`, whose jump coefficient depends on `u` only through `ℓ u`, satisfies
-  (2.13) at `G = I` with `β₁, β₂` and the margin `c`.
-
-Readings:
-
-* "Strictly dissipative": the channel inequality with the extra `−c 𝔼|δ·|²`, `c > 0`; a strict
-  inequality for nonzero differences follows. "Every channel": the four channels `X, Y, Z, U`.
-  The proposition does not assume `c > 0` or `β₁, β₂ ≥ 0`; it is the reduction, valid for any
-  constants.
-* "An additive `h₀ = h₀(t, x, e)` cannot serve as a baseline": a baseline of Corollary 3.6 is a
-  system with (2.13) for a margin `c_diss > 0` and admissible constants (`β₁ ≥ 0`); the
-  proposition shows (2.13) fails for every such margin. "Additive" is the reading of
-  Remark 2.10 (`rem_beta1_dich`): `h(t, θ, μ)` depends on `t` and `x` only, its value being an
-  element `h₀(t, x, ·)` of `L²(ν)`. Dimensions are general `m, n`; Corollary 3.6 has `m = n`.
-* "Jump feedback entering through finitely many functionals of `u`": `cor_margin_finite` takes
-  `k` **linear** functionals `ℓ = (ℓ₁, …, ℓ_k)` (continuity not assumed), with the jump
-  coefficient depending on `u` only through `ℓ u` along deterministic inputs, where the law is the
-  Dirac mass of the input. This covers coefficients `H(t, x, y, z, ℓ u, π_# μ)` with
-  `π(θ) = (x, y, z, ℓ u)`, law-free ones in particular. The printed "finitely many continuous
-  functionals" also admits **nonlinear** continuous functionals, and law dependence reading more
-  of `u` than `ℓ u` (for example the mean of the `U`-marginal in `L²(ν)`); `cor_margin_finite`
-  covers neither, so it is narrower than the printed sentence. The broader case is a separate,
-  open clause of `A:sec3:margin-paragraph` (a possible route: Borsuk–Ulam on a
-  `(k + 1)`-dimensional sphere for an antipodal collision `F(u) = F(−u)`, and a symmetric
-  `ℱ_t`-measurable sign `B` with inputs `U = B u`, `U' = −B u` of equal law). The conclusion
-  "supplies no margin" is the failure of (2.13) for every margin `c > 0`, with admissible
-  `β₁ ≥ 0`.
-* "A margin then needs feedback dissipative on the whole of `L²(ν)`" summarises the jump
-  inequality of `cor_margin_channels`, which holds for every `δU`; it is not stated separately.
-* "Finitely many functionals can determine `u` and the second obstruction disappears" is read as:
-  an injective `ℓ` into some `ℝᵏ` exists, and a coefficient whose jump feedback enters only
-  through it carries a margin. The proposition exhibits Example 5.1(i), whose jump coefficient
-  `h_c − (β₁ + c) u` is a function of `ℓ u` for injective `ℓ`. "As when `ν` is carried by finitely
-  many atoms" is an instance of the hypothesis and is not restated.
-
-Witnesses:
-
-* `cor_margin_channels`: `Dissertation.Acceptance.A.cor_robust_hypotheses`, whose baseline
-  (Example 5.1(i) with `β₁ = β₂ = 2`, `ν = δ₀`) satisfies (2.13) at `G = 1` with
-  `β₁ = β₂ = c = 1`.
-* `cor_margin_additive`: `Dissertation.Acceptance.A.cor_margin_additive_hypotheses`: a Lévy
-  driver with `ν = δ₀ ≠ 0` and `d = 1`, `𝒢₀ = ⊥`, and Example 5.1(i) with `n = 1`, `β₁ = 0`,
-  `β₂ = 1`, `σ_c = 0`, `h_c = 0`, whose jump coefficient depends on `t, x` only; `m = 1`, `T = 1`,
-  `β₁ = 0`, `c = 1` meet the remaining hypotheses.
-* `cor_margin_finite`: `Dissertation.Acceptance.A.cor_margin_finite_hypotheses`: a Lévy driver
-  with `ν` Lebesgue measure on `ℝ` and `d = 1`, `𝒢₀ = ⊥`; `L²(ν; ℝ¹)` is infinite dimensional
-  (`not_finiteDimensional_Lp_volume`); and `rankOneCoeffs`, with jump coefficient
-  `h = −⟨φ, u⟩ φ` for `φ = 1_{[0,1]}`, depends on `u` only through the single functional
-  `ℓ u = ⟨φ, u⟩`. `T = 1`, `β₁ = 0`, `c = 1` meet the remaining hypotheses.
-* `cor_margin_findim`: `Dissertation.Acceptance.A.cor_margin_findim_hypotheses`: a Lévy driver
-  with `ν = δ₀` and `d = 1`, `𝒢₀ = ⊥`, and `L²(δ₀; ℝ¹)` finite dimensional; `n = 1`, `T = 1`,
-  `β₁ = β₂ = 0`, `c = 1`, `σ_c = 0`, `h_c = 0` meet the remaining hypotheses.
-
-Verdict: faithful for `cor_margin_channels`, `cor_margin_additive` and `cor_margin_findim`;
-`cor_margin_finite` is the linear, Dirac-input case only and is narrower than the printed
-sentence, whose general case is an open clause, so the paragraph is not fully covered.
-
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_channels ed839d34f480cba14127298d8cc156d9 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_additive ed839d34f480cba19075028a95edf84d by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_finite ed839d34f480cba15e05ed8a37017606 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_findim ed839d34f480cba153b1b629e759bb45 by=claude-author -->
-
-## Remark 5.7, perturbative and non-perturbative law dependence
-
-Manuscript (05-examples.tex, Remark `rem:regimes`): "Example 5.4 shows that arbitrary nonlinear
-full-tuple law dependence can be added when it is smaller than the dissipativity margin.
-Example 5.5 shows that a `U`-law interaction nonlinear in the valuation curves can have arbitrary
-strength when its geometry is itself monotone, and remain active along the solution."
-
-Clauses: each sentence summarises an example, reviewed in that example's section above; the
-clauses reuse those propositions, proofs and witnesses:
-
-* "can be added when it is smaller than the dissipativity margin": `ex_fulllaw_pert` (the law
-  perturbation of Example 5.4 satisfies (3.4) with `c_pert = ‖G‖ L_p`) and `ex_fulllaw_wp` (under
-  (5.1), `c_pert < c_diss`, the perturbed system satisfies Assumptions 2.2–2.5 with a margin and
-  is well-posed). "Arbitrary nonlinear full-tuple law dependence" is the class of Example 5.4
-  (Lipschitz profiles of `W₂` distances and Lipschitz functions of feature integrals of the
-  `U`-marginal), as reviewed there; the remark claims no more than that example.
-* "can have arbitrary strength when its geometry is itself monotone": `ex_dealer_mono`
-  (Assumption 2.5 at every `ε ≥ 0`) and `ex_dealer_wp` (well-posedness at every `ε ≥ 0`).
-* "and remain active along the solution": `ex_dealer_active_pos` (positive crowding energy along
-  every solution at every `ε > 0`, in the specialisation of Example 5.5).
-
-Verdict: faithful, by reuse of the propositions reviewed above.
-
 ## Remark 3.7, general rank: `Dissertation.PaperSpec.A.rem_generalrank`, `rem_generalrank_wp`
 
-Manuscript (03-main-results.tex:290–295): "The restriction to `m = n` reflects only the
+Manuscript (§3): "The restriction to `m = n` reflects only the
 unweighted bookkeeping: the same splitting of the pairing into baseline and perturbation
 brackets, run in the weighted quantities of (2.12), gives the identical conclusion for arbitrary
 `m, n` when the margin and (3.4) are both recorded in those quantities."
 
 Propositions: `rem_generalrank` and `rem_generalrank_wp` are `cor_robust` and `cor_robust_wp`
 (reviewed under Corollary 3.6) with `n, m ≥ 1` arbitrary, `G ∈ ℝ^{m×n}` of full rank, the
-baseline's margin taken in (2.12) (`Margin212`, the weighted form, reviewed under Remark 2.11)
+baseline's margin taken in (2.12) (`Margin212`, the weighted form)
 instead of (2.13), the perturbation's pairing bound taken in `PairingBound34W` (the left side of
 (3.4) bounded by `c_pert 𝔼[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²_{L²(ν)} + |G δX|²]`) instead of
 `PairingBound34`, and the margin of the perturbed system concluded in (2.12).
@@ -1589,7 +1149,7 @@ Verdict: faithful.
 
 ## Lemma A.1, the law flows: `Dissertation.PaperSpec.A.lem_lawflow`, `lem_lawflow_invariant`
 
-Manuscript (09-appendix.tex, Lemma `lem:lawflow`): "Let `X, Y` be càdlàg adapted and let `Z, U`
+Manuscript (Appendix A, Lemma `lem:lawflow`): "Let `X, Y` be càdlàg adapted and let `Z, U`
 be fixed predictable versions, with `𝔼 ∫_0^T (|X_t|² + |Y_t|² + |Z_t|²_F + ∫_E |U_t(e)|² ν(de)) dt
 < ∞`. Then the a.e.-defined maps `t ↦ Law(Θ⁻_t)` and `t ↦ Law(Θ_t)` admit Borel representatives,
 unique up to Lebesgue-null sets of times, `μ⁻, μ : [0, T] → (P₂(H), W₂)`, `μ⁻_t = μ_t` for a.e.
@@ -1627,7 +1187,7 @@ Verdict: faithful.
 
 ## (4.2) and (4.3), the coefficient bounds: `Dissertation.PaperSpec.A.eq_coeffint`, `eq_termg`
 
-Manuscript (04-proof-wellposedness.tex:70–82): "By Assumptions 2.2–2.3, the coefficient processes
+Manuscript (§4): "By Assumptions 2.2–2.3, the coefficient processes
 (2.5) along any `Θ ∈ ℍ` are square-integrable: for `ψ ∈ {b, σ, h, f}`, in the norms of
 Assumption 2.3, `𝔼 ∫_0^T |ψ(s, Θ_s, μ_s)|² ds ≤ C 𝔼 ∫_0^T (|X_s|² + |Y_s|² + |Z_s|²_F +
 ‖U_s‖²_{L²(ν)} + |ψ(s, 0, δ_0)|²) ds` (4.2), by that Lipschitz bound together with the coupling
@@ -1674,7 +1234,7 @@ Verdict: faithful.
 
 ## Example 5.1(i), sharpness: `Dissertation.PaperSpec.A.ex_concrete_i_sharp`
 
-Manuscript (05-examples.tex:100–112): Example 5.1(i) states that the displayed identity
+Manuscript (§5): Example 5.1(i) states that the displayed identity
 `𝔼[⟨δb, δY⟩ + ⟨δσ, δZ⟩_F + ⟨−δf, δX⟩ + ∫_E ⟨δh(e), δU(e)⟩ ν(de)]
 = −β₁ 𝔼[|δY|² + |δZ|²_F + ‖δU‖²] − β₂ 𝔼|δX|²` is sharp for the constants `β₁, β₂`.
 
@@ -1698,52 +1258,6 @@ with the system's own `β₁, β₂`, so (2.7) holds with `β₁' = β₁`, `β�
 Verdict: faithful.
 
 <!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_sharp ed839d34f480cba19df1faec1593a821 by=claude-author -->
-
-## Remark 3.4, uniqueness without origin integrability: `Dissertation.PaperSpec.A.rem_uniq_initial`, `rem_uniq_singular`
-
-Manuscript (03-main-results.tex, Remark `rem:uniq-no-integ`): "the uniqueness only requires
-Assumptions 2.3–2.5, as we only need to show that the difference `Θ¹ − Θ²` belongs to `ℍ` ... The
-proof of Theorem 3.5 uses Assumption 2.2. Its initial-data condition `ξ₀ ∈ L²` is necessary for a
-solution in `ℍ`, since `X₀ = ξ₀` and `𝔼 sup_{t≤T} |X_t|² < ∞`; the origin-value conditions are
-sufficient but not necessary. For instance, adding the deterministic drift `t^{-1/2} ∉ L²(0, T)`
-to the `b` of a system satisfying Assumptions 2.2–2.5 violates Assumption 2.2 and leaves
-Assumptions 2.3–2.5 unchanged, yet the shift `X ↦ X − 2√t`, applied to the state and translating
-the law argument accordingly, returns a system satisfying Assumptions 2.2–2.5, so a solution still
-exists."
-
-Clauses:
-
-* "The uniqueness only requires Assumptions 2.3–2.5": `thm_uniq` (Theorem 3.3), whose hypotheses
-  are (2.3) and Assumptions 2.3–2.5, without Assumption 2.2, for tuples of `ℍ_weak` (reused,
-  reviewed under Theorem 3.3).
-* "`ξ₀ ∈ L²` is necessary for a solution in `ℍ`": `rem_uniq_initial`: in the standing setting,
-  `T ≥ 0`, a tuple with `WeakSolution` (a tuple of `ℍ_weak` satisfying (1.1)) whose forward
-  component has `𝔼 sup_{t ≤ T} |X_t|² < ∞` has every coordinate of `ξ₀` in `L²`. A solution in
-  `ℍ` is such a tuple; the proposition needs no assumption on the coefficients, as the printed
-  argument (`X₀ = ξ₀` and the `S²` bound) uses none.
-* "The origin-value conditions are sufficient but not necessary": `rem_uniq_singular`: with
-  `𝒢₀ = ⊥`, `n = m = 1`, any `d`, every Lévy driver and every `T > 0`, the system of
-  Example 5.1(i) (`β₁ = 1`, `β₂ = 0`, `σ_c = 0`, `h_c = 0`, which satisfies Assumptions 2.2–2.5)
-  with `t^{-1/2}` added to `b` satisfies (2.3) and Assumptions 2.3–2.5 (`L = 1`, `G = 1`,
-  `α = β₁ = 1`, `β₂ = 0`), violates Assumption 2.2 for every initial datum, and from `ξ₀ = 0` has a
-  solution in `ℍ`: `WeakSolution` with finite `𝔼 sup |X|²` and `𝔼 sup |Y|²`, the drift integral
-  read pathwise. The solution in the stronger sense `Solution` (finite drift energy) does not
-  exist (`not_paperSolution_singularCoeffs`), so `ℍ` is read as the paper defines it, through
-  `WeakSolution` and the `S²` bounds.
-* The "For instance" sentence for **an arbitrary** system satisfying Assumptions 2.2–2.5 (the
-  translated system satisfies Assumptions 2.2–2.5, so a solution exists by Theorem 3.5 and
-  translating back) is not proved: `rem_uniq_singular` covers one base system, through an explicit
-  solution rather than the translation. It is a separate, open clause. "The proof of Theorem 3.5 uses Assumption 2.2" describes a proof and is not a clause.
-
-Witness: `Dissertation.Acceptance.A.rem_uniq_hypotheses` for both new propositions: over a
-probability space carrying a Lévy driver with `d = 1`, `ν = δ₀`, `𝒢₀ = ⊥`, `T = 1`, the singular
-system has a `WeakSolution` from `0` with both `S²` bounds finite. `rem_uniq_singular` has no
-hypotheses beyond the setting and `T > 0`.
-
-Verdict: faithful for the three clauses stated; the general translation clause is open.
-
-<!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_initial ed839d34f480cba1fa628ed6b5f5989d by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_singular ed839d34f480cba1c331e57f1b4633b6 by=claude-author -->
 
 ## Example 5.2, two further clauses: `Dissertation.PaperSpec.A.ex_brownian_not_h0`, `ex_brownian_rank_gt`
 
@@ -1792,7 +1306,7 @@ notions to their Brownian forms is an open clause.
 
 ## §3, the solution definition and the solution space: `Dissertation.PaperSpec.A.sec3_one_null_set`, `sec3_HH_inclusion`, `sec3_HH_definite`
 
-Manuscript (`03-main-results.tex`, the paragraphs on `ℍ` and on solutions): the elements of `ℍ`
+Manuscript (§3, the paragraphs on `ℍ` and on solutions): the elements of `ℍ`
 are equivalence classes (càdlàg components identified when indistinguishable, `Z` when equal
 `dt ⊗ dP`-a.e., `U` when equal `dt ⊗ dP ⊗ ν`-a.e.); "under this identification `‖·‖_ℍ` is a norm
 rather than a seminorm, and `(ℍ, ‖·‖_ℍ)` is a Banach space. Since
@@ -1847,51 +1361,9 @@ Verdict: faithful for the clauses stated; completeness of `ℍ` is open.
 <!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_inclusion ed839d34f480cba130514b735af5f227 by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_definite ed839d34f480cba12b4c9985cfe528af by=claude-author -->
 
-## Remark 5.6, the scope of the measure argument: `Dissertation.PaperSpec.A.rem_freelaw`
-
-Manuscript (Remark `rem:freelaw`): "The proofs consume the tuple law through a single mechanism:
-the `W₂` term of Assumption 2.3, dominated at every use by the synchronous coupling bound (2.8).
-The right-hand side of (2.8) carries `𝔼‖δU‖²` whether or not the measure argument reads the
-`U`-marginal, because the coefficients depend on `u` pointwise — a dependence Remark 2.10 makes
-unavoidable whenever `β₁ > 0` and `ν ≠ 0`. Nothing is therefore gained by restricting the
-coefficients to the `(X, Y, Z)`-marginal law: with the coupling bound taken in `ℋ`, the estimates
-close at the full tuple law, and Example 5.5 exhibits that scope arising from a routing mechanism
-rather than by construction."
-
-Proposition (`rem_freelaw`): in the standing setting with `n, m, d ≥ 1`, `T > 0`, `ν ≠ 0` and `G`
-of full rank, if the coefficients satisfy Assumption 2.5 with `G` and `β₁ > 0`, then for almost
-every `t ∈ [0, T]` there are `(Θ, μ), (Θ', μ') ∈ 𝒟_t` with `μ = μ'` and the same `(X, Y, Z)` such
-that `h(t, Θ, μ) = h(t, Θ', μ')` fails with positive probability.
-
-Correspondence:
-
-* "The `W₂` term … dominated by (2.8)": clause `eq_coupling` (reused, reviewed under Remark 2.6).
-  "Through a single mechanism" describes the proofs and is not a clause.
-* "Carries `𝔼‖δU‖²` whether or not the measure argument reads the `U`-marginal, because the
-  coefficients depend on `u` pointwise": `rem_freelaw`. At a pair with one law every law term,
-  whichever marginal it reads, vanishes; the coefficient still differs, so the `δU` term of the
-  Lipschitz bound comes from the pointwise argument and cannot be removed by restricting the law.
-  The proof takes `Θ = (0, 0, 0, B u₀)`, `Θ' = (0, 0, 0, −B u₀)` with `B` the Brownian increment
-  `W¹_t − W¹_0` (a centred Gaussian, so `±B` have one law) and `u₀ ∈ L²(ν)` with `Gᵀ u₀ ≠ 0`; if
-  `h` agreed at them, Remark 2.10's inequality would give `0 ≤ −4 β₁ t ‖Gᵀ u₀‖² < 0`. The
-  hypothesis `d ≥ 1` supplies `B`; the standing setting has `d ≥ 1`.
-* "Unavoidable whenever `β₁ > 0` and `ν ≠ 0`": clause `rem_beta1_dich` (reused, reviewed under
-  Remark 2.10).
-* "Nothing is therefore gained … the estimates close at the full tuple law" is the conclusion the
-  remark draws from these clauses; the closing at the full tuple law is Theorems 3.1–3.5
-  (reviewed there). The reference to Example 5.5 points to clauses reviewed under Example 5.5.
-
-Witness: `Dissertation.Acceptance.A.rem_affine_hypotheses` (reused): a Lévy driver with `d = 1`,
-`ν = δ₀ ≠ 0`, `𝒢₀ = ⊥`, `T = 1`, and Example 5.1(i) with Assumption 2.5 for `G = 1`,
-`α = β₁ = β₂ = 1`.
-
-Verdict: faithful for the clauses stated.
-
-<!-- spec-review: Dissertation.PaperSpec.A.rem_freelaw ed839d34f480cba105f02a9629cb6b98 by=claude-author -->
-
 ## §3, completeness of the solution space: `Dissertation.PaperSpec.A.sec3_HH_complete`
 
-Manuscript (`03-main-results.tex` at `e939294`, the paragraph on `ℍ`): "Under this identification
+Manuscript (§3, the paragraph on `ℍ`): "Under this identification
 `‖·‖_ℍ` is a norm rather than a seminorm, and `(ℍ, ‖·‖_ℍ)` is a Banach space."
 
 Proposition `sec3_HH_complete`: in the standing setting, over `enlJoint 𝒢₀ D h𝒢₀`, let
@@ -1918,81 +1390,9 @@ Verdict: faithful. The clause is open (no proof).
 
 <!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_complete ed839d34f480cba140502fce3ed6073c by=claude-author -->
 
-## The paragraph after Corollary 3.6, continuous functionals: `Dissertation.PaperSpec.A.cor_margin_separate`, `cor_margin_continuous`
-
-Manuscript (`03-main-results.tex` at `e939294`, the paragraph after Corollary 3.6): "When,
-moreover, `L²(ν)` is infinite-dimensional, jump feedback entering through finitely many functionals
-of `u` supplies no margin either, since finitely many continuous functionals cannot separate the
-points of an infinite-dimensional space".
-
-Propositions:
-
-* `cor_margin_separate`: for every real normed space `H` that is not finite dimensional, every
-  `k` and every continuous `F : H → ℝᵏ`, `F` is not injective: "finitely many continuous
-  functionals cannot separate the points of an infinite-dimensional space", with `F` the vector of
-  the `k` functionals, possibly nonlinear.
-* `cor_margin_continuous`: in the standing setting with `d ≥ 1`, for `T > 0`, with
-  `L²(ν; ℝᵐ)` not finite dimensional, all `β₁ ≥ 0`, `β₂`, `G`, `c > 0`, coefficients `C`, `k` and
-  maps `F_t : L²(ν; ℝᵐ) → ℝᵏ` continuous for every `t`: if
-  `h(t, θ, μ) = h(t, θ', μ)` whenever `θ, θ'` share `x, y, z` and `F_t u = F_t u'`, for every law
-  `μ`, then (2.13) (`Margin213`) fails.
-
-Correspondence:
-
-* "Jump feedback entering through finitely many functionals of `u`" is read as `h` depending on
-  `u` only through `F_t u`, at each fixed `(t, x, y, z, μ)`; the dependence on `x, y, z`, on the
-  law and on `t` is otherwise arbitrary. The linear, Dirac-law case is `cor_margin_finite`; this is
-  the general reading of the sentence, with "continuous functionals" taken from its justification.
-* `d ≥ 1` is part of the standing setting of Theorem 3.5 (`thm_cwp`); the argument needs one
-  nontrivial event at a positive time, to give two random inputs with one law, which a Brownian
-  coordinate supplies.
-* The constants are those of `cor_margin_finite`: `β₁ ≥ 0`, any `β₂`, any `G`, `c > 0`.
-
-Verdict: faithful. Both clauses are open (no proof; a proof of the first needs the Borsuk–Ulam
-theorem or invariance of domain, which the library does not have).
-
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_separate ed839d34f480cba1b90f9a7b02bff832 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_continuous ed839d34f480cba1bd840ffee2f6a13b by=claude-author -->
-
-## Remark 3.4, the translation for a general system: `Dissertation.PaperSpec.A.rem_uniq_translation`
-
-Manuscript (`03-main-results.tex` at `e939294`, Remark `rem:uniq-no-integ`): "adding the
-deterministic drift `t^{-1/2} ∉ L²(0, T)` to the `b` of a system satisfying Assumptions 2.2–2.5
-violates Assumption 2.2 and leaves Assumptions 2.3–2.5 unchanged, yet the shift `X ↦ X − 2√t`,
-applied to the state and translating the law argument accordingly, returns a system satisfying
-Assumptions 2.2–2.5, so a solution still exists."
-
-Proposition `rem_uniq_translation`: in the standing setting with `n, m, d ≥ 1` (those of
-Theorem 3.5), for `T > 0`, a system `C` with initial datum `ξ₀` satisfying (2.3) and
-Assumptions 2.2–2.5 (`L, α, β₁, β₂`, `G` of full rank) and a nonzero `e ∈ ℝⁿ`:
-
-* `C⁺ = C.addDrift (t ↦ t^{-1/2} e)` satisfies (2.3), Assumption 2.3 with `L` and Assumption 2.5
-  with `G, α, β₁, β₂`, and violates Assumption 2.2 for every initial datum;
-* `C̃ = translatedCoeffs C (t ↦ 2√t e) T` satisfies (2.3) and Assumptions 2.2, 2.3, 2.5 with the
-  same constants and `ξ₀`;
-* there is `(X, Y, Z, U)` with `Solution` for `C̃` from `ξ₀` such that `(X + 2√t e, Y, Z, U)` has
-  `WeakSolution` for `C⁺` from `ξ₀` and finite `𝔼 sup |X + 2√t e|²` and `𝔼 sup |Y|²`.
-
-Correspondence:
-
-* "The deterministic drift `t^{-1/2}`" is a vector drift in `ℝⁿ`; it is read along an arbitrary
-  nonzero direction `e`. `addDrift` is reviewed under `rem_uniq_singular`; `translatedCoeffs` in
-  `definitions.md`.
-* Assumption 2.4 concerns `G` alone and is unchanged by both operations; it is a hypothesis.
-* "So a solution still exists" is read as `rem_uniq_singular` reads it: a solution in `ℍ` of the
-  system with the singular drift, `WeakSolution` with both `S²` bounds, the drift integral read
-  pathwise; the solution in the stronger sense `Solution` would need finite drift energy, which
-  the drift `t^{-1/2}` excludes. The proposition also names the translated solution and states the
-  translation back, which is the printed route.
-
-Verdict: faithful. The clause is open (no proof); the specific system of `rem_uniq_singular` is
-proved separately.
-
-<!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_translation ed839d34f480cba1800e3b89c10396d1 by=claude-author -->
-
 ## §4, the horizon: `Dissertation.PaperSpec.A.sec4_horizon_not_contractive`
 
-Manuscript (`04-proof-wellposedness.tex` at `e939294`, the introduction to §4): "The continuation
+Manuscript (the introduction to §4): "The continuation
 is in the coupling strength, not the horizon: shortening the horizon does not make the
 frozen-coefficient map contractive, since the `(z, u)`-dependence of `σ, h` and the full-tuple law
 coupling enter the contraction constant with no `T`-factor."

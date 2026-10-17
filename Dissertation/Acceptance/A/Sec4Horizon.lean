@@ -6,7 +6,7 @@ Authors: Christian Garry
 import Dissertation.PaperSpec.A.Sec4Horizon
 import Dissertation.WellPosedness.Spec.Examples
 import Dissertation.WellPosedness.Examples.BrownianSolves
-import Dissertation.WellPosedness.Examples.Dealer.InertSDE
+import Dissertation.WellPosedness.Stability.LinearCongr
 import Dissertation.WellPosedness.Enlarged.CrossWitness
 import Dissertation.WellPosedness.BrownianPoisson.SupBound
 import Dissertation.WellPosedness.BrownianPoisson.Example

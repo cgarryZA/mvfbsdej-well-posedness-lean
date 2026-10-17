@@ -268,9 +268,6 @@ theorem not_pointwiseGMonotone_clampAffine (hβ₁ : 0 < β₁) (hε : 0 < ε) (
   norm_num at key
   linarith
 
-variable {Ω : Type*} [MeasurableSpace Ω] {ℱ : Filtration ℝ ‹MeasurableSpace Ω›} {P : Measure Ω}
-  [IsProbabilityMeasure P]
-
 end Examples
 
 end Dissertation.WellPosedness.System

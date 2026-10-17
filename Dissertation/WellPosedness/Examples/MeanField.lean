@@ -338,8 +338,6 @@ theorem coeffBorelW2_meanField (T : ℝ) : CoeffBorelW2 T (meanFieldCoeffs ν n 
         ((hθ.snd.snd.snd.const_smul (2 : ℝ)).neg.sub hm.snd.snd.snd)
       f_meas := Continuous.borel_measurable ((hθ.fst.const_smul (2 : ℝ)).add hm.fst) }
 
-variable {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} [IsProbabilityMeasure P] {T : ℝ}
-
 end Measurability
 
 end Dissertation.WellPosedness.Existence

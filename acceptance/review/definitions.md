@@ -287,11 +287,9 @@ pinned upstream libraries are taken as foundations.
 <!-- def-review: Dissertation.PaperSpec.A.ex54Pert a358f11639418d450e7e870df0a64a0c by=claude-author -->
 <!-- def-review: Dissertation.WellPosedness.System.Coeffs.ofLaw 078c486754be7860fbd98d3584940f30 by=claude-author -->
 
-## The crowding correction and the coefficients of Example 5.5 (`PaperSpec/A/Sec5.lean`, `Examples/Dealer/ExposureCoeffs.lean`)
+## The crowding correction of Example 5.5 (`PaperSpec/A/Sec5.lean`)
 
 <!-- def-review: Dissertation.PaperSpec.A.ex55Crowd 8d3f49063f9d40bd91804eeb64810052 by=claude-author -->
-<!-- def-review: Dissertation.PaperSpec.A.ex55Coeffs 27812db92b9f6ca56f3c507797b09d6e by=claude-author -->
-<!-- def-review: Dissertation.WellPosedness.Existence.exposureOp 3029e746baaeff13a812ce9479e5168f by=claude-author -->
 
 ## The mark space of Example 5.5 and the linear forward equation (`Examples/Dealer/Marks.lean`, `Stability/ForwardEq.lean`)
 
@@ -373,23 +371,22 @@ pinned upstream libraries are taken as foundations.
   one of `PairingBound34`.
   <!-- def-review: Dissertation.PaperSpec.A.PairingBound34W 2b1db421079e9e76f26e2afdddf6a5b4 by=claude-author -->
 
-## the singular drift of Remark 3.4 (`Dissertation/WellPosedness/Examples/SingularDrift.lean`)
+## the singular drift against Remark 3.4 (`Dissertation/WellPosedness/Examples/SingularDrift.lean`)
 
 * `WellPosedness.System.Coeffs.addDrift C c`: the coefficients `C` with the deterministic drift
-  `c(t)` added to `b`, the other coefficients unchanged: "adding the deterministic drift … to the
-  `b`" of Remark 3.4.
+  `c(t)` added to `b`, the other coefficients unchanged.
   <!-- def-review: Dissertation.WellPosedness.System.Coeffs.addDrift ebd318299326fb1ff7058f79aad54724 by=claude-author -->
 * `WellPosedness.System.singularDrift t`: the vector `(√t)⁻¹ ∈ ℝ¹`, which is `t^{-1/2}` for
-  `t > 0` and `0` for `t ≤ 0` (Lean's `√t = 0` and `0⁻¹ = 0`); the manuscript's `t^{-1/2}`, whose
-  value at `t = 0` is not defined and does not affect any integral against `dt`.
+  `t > 0` and `0` for `t ≤ 0` (Lean's `√t = 0` and `0⁻¹ = 0`); the drift `t^{-1/2}`, whose value
+  at `t = 0` is not defined and does not affect any integral against `dt`.
   <!-- def-review: Dissertation.WellPosedness.System.singularDrift 52bed42bcf81ba997be36c4ad7c8d90e by=claude-author -->
 * `WellPosedness.System.singularCoeffs`: Example 5.1(i) (`affineCoeffs`) at `n = m = 1`,
   `β₁ = 1`, `β₂ = 0`, `σ_c = 0`, `h_c = 0` with `singularDrift` added: `b = t^{-1/2} − y`,
-  `σ = −z`, `h = −u`, `f = 0`, `g(x, ρ) = x`. One instance of the manuscript's "a system satisfying
-  Assumptions 2.2–2.5" with the drift added.
+  `σ = −z`, `h = −u`, `f = 0`, `g(x, ρ) = x`: a system satisfying Assumptions 2.2–2.5 with the
+  drift added, which then violates Assumption 2.2.
   <!-- def-review: Dissertation.WellPosedness.System.singularCoeffs 9cbaca3d28850a562cb0f143b2b54981 by=claude-author -->
 
-## the translated system of Remark 3.4 and the frozen step of Lemma 4.2 (`Dissertation/WellPosedness/BrownianPoisson/Hypotheses.lean`, `Dissertation/PaperSpec/A/Sec3Rem34.lean`, `Dissertation/PaperSpec/A/Sec4Horizon.lean`)
+## the linear backward equation and the frozen step of Lemma 4.2 (`Dissertation/WellPosedness/BrownianPoisson/Hypotheses.lean`, `Dissertation/PaperSpec/A/Sec4Horizon.lean`)
 
 * `LinearBSDEJ D ℱ hℱW hℱN T ξ φ Y Z U`: `Y` is adapted to `ℱ` with every path right-continuous;
   `Z`, `U`, `φ` are jointly measurable, progressive (`U` marked progressive), vanish off `[0, T]`
@@ -401,16 +398,6 @@ pinned upstream libraries are taken as foundations.
   state it).
   <!-- def-review: Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ 61bb9f1d9c8aba870000000000000000 by=claude-author -->
   <!-- def-review: Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.mk a259997f09ec23780000000000000000 by=claude-author -->
-* `PaperSpec.A.translateTuple r θ = (θ.1 + r, θ.2)`: the translation `(x, y, z, u) ↦ (x + r, y, z, u)`
-  of the forward coordinate of `H`.
-  <!-- def-review: Dissertation.PaperSpec.A.translateTuple 25b128e1a8bd16214207e456ab04981b by=claude-author -->
-* `PaperSpec.A.translatedCoeffs C r T`: `ψ̃(t, θ, μ) = ψ(t, θ + r_t, lawP2 μ (translateTuple r_t))`
-  for `ψ ∈ {b, σ, h, f}` and `g̃(x, ρ) = g(x + r_T, lawP2 ρ (· + r_T))`. For `μ ∈ P₂` the
-  translation is square integrable under `μ`, so `lawP2` returns the push-forward
-  `μ ∘ (· + r)⁻¹` and not its fallback value: the coefficients of the state `X − r` when `X` solves
-  the system with coefficients `C` and the drift `ṙ` added, the law argument translated
-  accordingly, as the remark describes for `r_t = 2√t e`.
-  <!-- def-review: Dissertation.PaperSpec.A.translatedCoeffs a6d589d1c49f1879976bb03fd33b7999 by=claude-author -->
 * `PaperSpec.A.BrownianFrozenStep 𝒢₀ D h𝒢₀ hind₀ T C X Y Z U X' Y' Z' U'`, for `n = m = d = 1`, `E` a
   point and `ν = 0`, over `enlJoint 𝒢₀ D h𝒢₀`: each coordinate of `X'` solves `LinearFSDEJ` with
   initial value `0`, drift `driftProc` and diffusion `diffusionProc` of `C` along the trial

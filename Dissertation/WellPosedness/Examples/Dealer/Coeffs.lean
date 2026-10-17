@@ -127,9 +127,6 @@ theorem norm_crowdOp_margU_sub_le (θ θ' : TupleH ν n n d) (μ μ' : P2 (Tuple
       ≤ ‖θ.2.2.2 - θ'.2.2.2‖ + w2P μ.margU μ'.margU :=
   norm_crowdOp_sub_le μ.margU μ'.margU θ.2.2.2 θ'.2.2.2
 
-variable {Ω : Type*} [MeasurableSpace Ω] {ℱ : Filtration ℝ ‹MeasurableSpace Ω›} {P : Measure Ω}
-  [IsProbabilityMeasure P] {T : ℝ}
-
 end Coefficients
 
 /-! ### (2.3) -/
