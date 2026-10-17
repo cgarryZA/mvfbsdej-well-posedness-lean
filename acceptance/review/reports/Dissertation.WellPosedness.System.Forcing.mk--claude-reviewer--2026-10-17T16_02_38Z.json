@@ -1,0 +1,60 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.System.Forcing.mk",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.System.Forcing.mk",
+  "lean": [
+   "Dissertation.WellPosedness.System.Forcing.mk"
+  ],
+  "claims": [
+   "A:eq:forced",
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:sec4:WP-def"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-a498a7c0d4ce",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "de3e0249fbf732c50000000000000000",
+  "fingerprint": "pl-fp-v1:2c845628ef564e2ab7a5398fa29edf4ae270d66944ca1f9eeb36f59caba60a1f",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for def:Dissertation.WellPosedness.System.Forcing.mk (locked before seeing Lean).\n\nConstructor of the forcing structure of (4.1): q = (q^b, q^sigma, q^h, q^f, q^g_T) with\n q^b : [0,T] x Omega -> R^n, q^sigma : -> R^{n x d}, q^f : -> R^m progressively measurable and\n square-integrable for dt(x)dP;\n q^h : [0,T] x Omega x E -> R^n (or L^2(nu;R^n)-valued) predictable (P(x)E-measurable),\n square-integrable for dP dt nu;\n q^g_T : Omega -> R^m, F_T-measurable, square-integrable.\nFaithful constructor: these five fields with these types. Measurability/integrability may be\nfields or imposed by a separate predicate where WP quantifies over forcings; if the structure has\nno conditions and WP quantifies over all such structures, WP would range over non-admissible\nforcings (then WP would be a stronger notion). q^h must be a genuine Poisson-integrand\n(predictable) so that int int q^h dNtilde is defined.",
+  "locked_at": "2026-10-17T15:42:32Z"
+ },
+ "comparison": {
+  "text": "Comparison for def:Dissertation.WellPosedness.System.Forcing.mk (constructor of the Prop structure Forcing).\n\nLean fields (System/Coefficients.lean): q^b, q^sigma, q^f (coordinates): jointly measurable, progressively\nmeasurable, 0 off [0,T], finite energy on [0,T]; q^h: jointly measurable in (omega, s, e), marked\nprogressively measurable, 0 off [0,T], finite marked energy E int_0^T int_E |q^h|^2 dnu ds; q^g_T: strongly\nF_T-measurable (source: StronglyMeasurable[F T]) and in L^2(P).\n\nAgainst my reading:\n- the five components with the paper's types (coordinates of R^n, R^{n x d}, R^n-valued mark\n  function, R^m, R^m): yes.\n- q^b, q^sigma, q^f progressive and square integrable on Omega x [0,T]: yes.\n- q^g_T in L^2(Omega, F_T; R^m): yes.\n- q^h: square integrable for dP dt nu: yes; but marked progressive rather than predictable\n  (P(x)E-measurable). Broader than the paper's class. Where the paper's exact class matters (WP\n  quantifies over all forcings) the Lean uses PredForcing = Forcing + q^h marked predictable, which is\n  the paper's class; elsewhere (forcing hypotheses of Lemma 4.3, forcings built in proofs) the\n  broader class only strengthens statements, and Forcing.exists_predForcing gives a predictable\n  version a.e. equal, with the same library integral.\n- extension by 0 off [0,T]: convention (bijective with forcings on [0,T]).\nMy reading's concern (WP must not range over non-admissible forcings) is met by PredForcing.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:58:30Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices: (1) forcings in coordinates and extended by 0 off [0,T]; (2) q^h is\nrequired jointly measurable and marked progressively measurable instead of predictable; the\npaper's predictable class is PredForcing (Forcing plus marked predictability of q^h), which is what\nWP quantifies over, and every Forcing has an a.e.-equal predictable version\n(Forcing.exists_predForcing) with the same L^2 integral; (3) the progressive components are also\nrequired jointly measurable (implied by progressive measurability in the paper's sense)."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T16:02:32Z",
+  "disagreements": "The author's review entry is empty (no recorded reading). It should record that q^h is only marked\nprogressive here (broader than the paper's predictable class), that the paper's class is\nPredForcing (used by WP), and the extension-by-0 convention."
+ },
+ "submitted_at": "2026-10-17T16:02:38Z",
+ "issue_draft": null
+}

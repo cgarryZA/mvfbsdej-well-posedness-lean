@@ -14,26 +14,42 @@ pinned upstream libraries are taken as foundations.
   <!-- def-review: Dissertation.Law.IsCoupling b0bdef6c32a05af44418b437fabafbee by=claude-reviewer -->
 * `transportCostSq γ = ∫⁻ ‖x − y‖² dγ` in `[0, ∞]`: the quadratic transport cost.
   <!-- def-review: Dissertation.Law.transportCostSq 26527e1b01e0a835bf6cd2c0e3b72557 by=claude-author -->
+  Review by claude-reviewer: faithful (report `reports/Dissertation.Law.transportCostSq--claude-reviewer--2026-10-17T15_50_55Z.md`).
+  <!-- def-review: Dissertation.Law.transportCostSq 26527e1b01e0a835bf6cd2c0e3b72557 by=claude-reviewer -->
 * `w2sq μ ν = inf over couplings γ of transportCostSq γ`: the squared 2-Wasserstein distance
   (Villani, Def. 6.1, `p = 2`), in `[0, ∞]`.
   <!-- def-review: Dissertation.Law.w2sq 6e694fea4529496c920fecf03305481e by=claude-author -->
+  Review by claude-reviewer: faithful (report `reports/Dissertation.Law.w2sq--claude-reviewer--2026-10-17T15_50_56Z.md`).
+  <!-- def-review: Dissertation.Law.w2sq 6e694fea4529496c920fecf03305481e by=claude-reviewer -->
 * `w2 μ ν = √(w2sq μ ν).toReal`: the distance as a real number. An infinite squared distance is
   sent to `0`; on laws of finite second moment the squared distance is finite
   (`w2sq_ne_top`), so there `w2` is the 2-Wasserstein distance.
   <!-- def-review: Dissertation.Law.w2 d92ca7948d3f7f2f101d7b3c9f02c50c by=claude-author -->
+  Review by claude-reviewer: faithful (report `reports/Dissertation.Law.w2--claude-reviewer--2026-10-17T15_50_56Z.md`).
+  <!-- def-review: Dissertation.Law.w2 d92ca7948d3f7f2f101d7b3c9f02c50c by=claude-reviewer -->
 * `secondMoment μ = ∫⁻ ‖x‖² dμ`: the second moment about the origin.
   <!-- def-review: Dissertation.Law.secondMoment f576c608076b2c8115cf34b105438676 by=claude-author -->
+  Review by claude-reviewer: faithful (report `reports/Dissertation.Law.secondMoment--claude-reviewer--2026-10-17T15_50_55Z.md`).
+  <!-- def-review: Dissertation.Law.secondMoment f576c608076b2c8115cf34b105438676 by=claude-reviewer -->
 * `P2 E`, with constructor `P2.mk` and projection `P2.law`: a probability measure on `E` with
   finite second moment, i.e. an element of `P₂(E)`.
   <!-- def-review: Dissertation.Law.P2 d98c9fdcb43519180000000000000000 by=claude-author -->
   Review by claude-reviewer: faithful (report `reports/Dissertation.Law.P2--claude-reviewer--2026-10-17T12_05_37Z.md`).
   <!-- def-review: Dissertation.Law.P2 d98c9fdcb43519180000000000000000 by=claude-reviewer -->
   <!-- def-review: Dissertation.Law.P2.mk e023fd4949a53c620000000000000000 by=claude-author -->
+  Review by claude-reviewer: faithful (report `reports/Dissertation.Law.P2.mk--claude-reviewer--2026-10-17T15_50_55Z.md`).
+  <!-- def-review: Dissertation.Law.P2.mk e023fd4949a53c620000000000000000 by=claude-reviewer -->
   <!-- def-review: Dissertation.Law.P2.law 95237fec8092f7fab2f918509fc14ff5 by=claude-author -->
+  Review by claude-reviewer: faithful (report `reports/Dissertation.Law.P2.law--claude-reviewer--2026-10-17T15_50_56Z.md`).
+  <!-- def-review: Dissertation.Law.P2.law 95237fec8092f7fab2f918509fc14ff5 by=claude-reviewer -->
 * `P2.dirac a`: the Dirac mass at `a`, an element of `P₂(E)`.
   <!-- def-review: Dissertation.Law.P2.dirac 75de1c8e6f6e6877f394cd3c14d76536 by=claude-author -->
+  Review by claude-reviewer: faithful (report `reports/Dissertation.Law.P2.dirac--claude-reviewer--2026-10-17T15_50_55Z.md`).
+  <!-- def-review: Dissertation.Law.P2.dirac 75de1c8e6f6e6877f394cd3c14d76536 by=claude-reviewer -->
 * `w2P μ ν = w2 μ.law ν.law`: the 2-Wasserstein distance on `P₂(E)` for the norm of `E`.
   <!-- def-review: Dissertation.Law.w2P 588aff30f5cf1efb222cb5540209de44 by=claude-author -->
+  Review by claude-reviewer: faithful (report `reports/Dissertation.Law.w2P--claude-reviewer--2026-10-17T15_50_56Z.md`).
+  <!-- def-review: Dissertation.Law.w2P 588aff30f5cf1efb222cb5540209de44 by=claude-reviewer -->
 * `lawP2 P Θ`: the law `P ∘ Θ⁻¹` of `Θ` when `Θ ∈ L²(P)`, and `δ₀` otherwise. The manuscripts
   take laws of square-integrable variables only; the value off `L²` is a convention, and a
   statement quantifying over `L²` variables never reaches it (`REPRESENTATION_CHOICES.md` R9).
@@ -321,9 +337,17 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 ## Laws with the Wasserstein topology and the `L²(ν)` representative
 
 <!-- def-review: Dissertation.Law.P2W d98c9fdcb4351918cf1dd08443113a27 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.Law.P2W--claude-reviewer--2026-10-17T15_50_56Z.md`).
+<!-- def-review: Dissertation.Law.P2W d98c9fdcb4351918cf1dd08443113a27 by=claude-reviewer -->
 <!-- def-review: Dissertation.Law.P2.toP2W 0f7eb5b8b5cd79140f4d89429f83896b by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.Law.P2.toP2W--claude-reviewer--2026-10-17T15_50_56Z.md`).
+<!-- def-review: Dissertation.Law.P2.toP2W 0f7eb5b8b5cd79140f4d89429f83896b by=claude-reviewer -->
 <!-- def-review: Dissertation.Law.P2W.toP2 99b2138b782dec9c2e3540286ca704ff by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.Law.P2W.toP2--claude-reviewer--2026-10-17T15_50_56Z.md`).
+<!-- def-review: Dissertation.Law.P2W.toP2 99b2138b782dec9c2e3540286ca704ff by=claude-reviewer -->
 <!-- def-review: Dissertation.Law.P2W.instPseudoMetricSpace d8135c73ef7d5f4d483de4c4ee2c3223 by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.Law.P2W.instPseudoMetricSpace--claude-reviewer--2026-10-17T15_50_56Z.md`).
+<!-- def-review: Dissertation.Law.P2W.instPseudoMetricSpace d8135c73ef7d5f4d483de4c4ee2c3223 by=claude-reviewer -->
 <!-- def-review: Dissertation.Law.P2.mapOfLe eacf22aaa85ca476d2e3ad477d111a93 by=claude-author -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.Law.P2.mapOfLe--claude-reviewer--2026-10-17T12_07_47Z.md`).
 <!-- def-review: Dissertation.Law.P2.mapOfLe eacf22aaa85ca476d2e3ad477d111a93 by=claude-reviewer -->
@@ -331,7 +355,11 @@ Review by claude-reviewer: faithful (report `reports/Dissertation.Law.P2.mapOfLe
 Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.System.lawToL2--claude-reviewer--2026-10-17T15_06_18Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.lawToL2 4034513072b6f988f8b3198000db33c5 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.P2WH 8b570604f2bfe77f0b8346109edf1c66 by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.P2WH--claude-reviewer--2026-10-17T15_50_57Z.md`).
+<!-- def-review: Dissertation.WellPosedness.System.P2WH 8b570604f2bfe77f0b8346109edf1c66 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.P2WH.toP2 b2c514cdcbc3e600531d47474362065f by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.System.P2WH.toP2--claude-reviewer--2026-10-17T16_00_14Z.md`).
+<!-- def-review: Dissertation.WellPosedness.System.P2WH.toP2 b2c514cdcbc3e600531d47474362065f by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.P2WH.instPseudoMetricSpace 82d8357fc285df8b92c2893645916ccb by=claude-author -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.System.P2WH.instPseudoMetricSpace--claude-reviewer--2026-10-17T12_39_50Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.P2WH.instPseudoMetricSpace 82d8357fc285df8b92c2893645916ccb by=claude-reviewer -->
@@ -345,12 +373,26 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 ## The coefficients, the tuple and the coupling matrix (`Dissertation/WellPosedness/System/`)
 
 <!-- def-review: Dissertation.WellPosedness.System.Coeffs fd49e3c7112f41550000000000000000 by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.Coeffs--claude-reviewer--2026-10-17T15_50_55Z.md`).
+<!-- def-review: Dissertation.WellPosedness.System.Coeffs fd49e3c7112f41550000000000000000 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.Coeffs.b dc86c23810efa40cc43dc5c78836ad86 by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.Coeffs.b--claude-reviewer--2026-10-17T15_50_56Z.md`).
+<!-- def-review: Dissertation.WellPosedness.System.Coeffs.b dc86c23810efa40cc43dc5c78836ad86 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.Coeffs.σ b8b7ad45d5043ac9ea56b20d79cc8746 by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.Coeffs.σ--claude-reviewer--2026-10-17T15_50_56Z.md`).
+<!-- def-review: Dissertation.WellPosedness.System.Coeffs.σ b8b7ad45d5043ac9ea56b20d79cc8746 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.Coeffs.h c58d95cc2421d2507fe92427d04f5611 by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.Coeffs.h--claude-reviewer--2026-10-17T15_50_57Z.md`).
+<!-- def-review: Dissertation.WellPosedness.System.Coeffs.h c58d95cc2421d2507fe92427d04f5611 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.Coeffs.f e2af0d025a8b0b0a1f17d136a425c783 by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.Coeffs.f--claude-reviewer--2026-10-17T15_50_56Z.md`).
+<!-- def-review: Dissertation.WellPosedness.System.Coeffs.f e2af0d025a8b0b0a1f17d136a425c783 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.Coeffs.g 0e65b7c74973b4bd44624f07d09771b2 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.System.Coeffs.g--claude-reviewer--2026-10-17T15_50_56Z.md`).
+<!-- def-review: Dissertation.WellPosedness.System.Coeffs.g 0e65b7c74973b4bd44624f07d09771b2 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.Coeffs.mk 53675b51c8cc7afa0000000000000000 by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.Coeffs.mk--claude-reviewer--2026-10-17T15_59_56Z.md`).
+<!-- def-review: Dissertation.WellPosedness.System.Coeffs.mk 53675b51c8cc7afa0000000000000000 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.uLift 20342aeccd26489f2122117451a2a160 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.uLift--claude-reviewer--2026-10-17T15_01_51Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.uLift 20342aeccd26489f2122117451a2a160 by=claude-reviewer -->
@@ -364,8 +406,14 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.System.diagonalInputs--claude-reviewer--2026-10-17T15_06_18Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.diagonalInputs 43fba323e088abc4f9c7fc5ffd25f8a4 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.GX 63e2a9453a1500d8567ae4e516472ab8 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.System.GX--claude-reviewer--2026-10-17T15_50_56Z.md`).
+<!-- def-review: Dissertation.WellPosedness.System.GX 63e2a9453a1500d8567ae4e516472ab8 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.GZ c2eb31a2cb944229321c531fa6d8a32a by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.GZ--claude-reviewer--2026-10-17T15_50_56Z.md`).
+<!-- def-review: Dissertation.WellPosedness.System.GZ c2eb31a2cb944229321c531fa6d8a32a by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.GU af77e6209c5a6f02054d4dc4b9937972 by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.GU--claude-reviewer--2026-10-17T15_50_56Z.md`).
+<!-- def-review: Dissertation.WellPosedness.System.GU af77e6209c5a6f02054d4dc4b9937972 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.sMin 42b2e53d2f710588e25de988c32456ea by=claude-author -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.System.sMin--claude-reviewer--2026-10-17T15_01_50Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.sMin 42b2e53d2f710588e25de988c32456ea by=claude-reviewer -->
@@ -385,10 +433,14 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.terminalVal--claude-reviewer--2026-10-17T15_01_50Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.terminalVal 553a1e2dd57f8bc4ed26c8f55d7a65f7 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.jumpProc bfa4317d32adaf7b2cab0921e18838d1 by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.jumpProc--claude-reviewer--2026-10-17T15_50_56Z.md`).
+<!-- def-review: Dissertation.WellPosedness.System.jumpProc bfa4317d32adaf7b2cab0921e18838d1 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.Existence.coeffJump 90dd30b497d4dd12d6d4dda771a35c05 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Existence.coeffJump--claude-reviewer--2026-10-17T15_04_37Z.md`).
 <!-- def-review: Dissertation.WellPosedness.Existence.coeffJump 90dd30b497d4dd12d6d4dda771a35c05 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.Stability.esq 6cf496fa6f75fac11490c95295dbf617 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.Stability.esq--claude-reviewer--2026-10-17T15_50_55Z.md`).
+<!-- def-review: Dissertation.WellPosedness.Stability.esq 6cf496fa6f75fac11490c95295dbf617 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.Stability.supSize 8d946a220ee9b35c3ccfc7f258215a40 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Stability.supSize--claude-reviewer--2026-10-17T12_33_20Z.md`).
 <!-- def-review: Dissertation.WellPosedness.Stability.supSize 8d946a220ee9b35c3ccfc7f258215a40 by=claude-reviewer -->
@@ -462,6 +514,8 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Existence.PaperSolutionEnl--claude-reviewer--2026-10-17T15_04_37Z.md`).
 <!-- def-review: Dissertation.WellPosedness.Existence.PaperSolutionEnl a03b8b3d0b5b5f35c55bf194cd675c69 by=claude-reviewer -->
 <!-- def-review: Dissertation.PaperSpec.A.Solution bf42c97d226817ae1c792ec3d931211c by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.Solution--claude-reviewer--2026-10-17T16_01_12Z.md`).
+<!-- def-review: Dissertation.PaperSpec.A.Solution bf42c97d226817ae1c792ec3d931211c by=claude-reviewer -->
 
 ## The weak solution notion of §3 (`ℍ_weak`)
 
@@ -487,6 +541,8 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.PaperWeakSolutionIntEnl--claude-reviewer--2026-10-17T12_28_46Z.md`).
 <!-- def-review: Dissertation.WellPosedness.Spec.PaperWeakSolutionIntEnl a03b8b3d0b5b5f35dc54c302d2c70a24 by=claude-reviewer -->
 <!-- def-review: Dissertation.PaperSpec.A.WeakSolution bf42c97d226817ae58445a0e39aa5d15 by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.WeakSolution--claude-reviewer--2026-10-17T16_01_26Z.md`).
+<!-- def-review: Dissertation.PaperSpec.A.WeakSolution bf42c97d226817ae58445a0e39aa5d15 by=claude-reviewer -->
 
 ## The drift (3.6) of Proposition 3.8 (`Dissertation/WellPosedness/ExpectedVsPointwise*.lean`)
 
@@ -515,14 +571,20 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.PairingBound34--claude-reviewer--2026-10-17T15_04_38Z.md`).
 <!-- def-review: Dissertation.WellPosedness.Spec.PairingBound34 2b1db421079e9e767580b40b6b9fa24b by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.Coeffs.TupleIndep bb2f84e84c27fd8b0000000000000000 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.System.Coeffs.TupleIndep--claude-reviewer--2026-10-17T15_50_56Z.md`).
+<!-- def-review: Dissertation.WellPosedness.System.Coeffs.TupleIndep bb2f84e84c27fd8b0000000000000000 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.Coeffs.TupleIndep.mk 54322416b320749b0000000000000000 by=claude-author -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.System.Coeffs.TupleIndep.mk--claude-reviewer--2026-10-17T12_39_50Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.Coeffs.TupleIndep.mk 54322416b320749b0000000000000000 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.Coeffs.perturb 4810e11e4c9f2ac6af25365b8feb2717 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.System.Coeffs.perturb--claude-reviewer--2026-10-17T15_50_57Z.md`).
+<!-- def-review: Dissertation.WellPosedness.System.Coeffs.perturb 4810e11e4c9f2ac6af25365b8feb2717 by=claude-reviewer -->
 
 ## The `U`-marginal of a law (`Dissertation/Law/P2.lean`, `Dissertation/Law/TupleMarginal.lean`)
 
 <!-- def-review: Dissertation.Law.P2.map ea792c02836fa5e80da2ef5c07e4b0e0 by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.Law.P2.map--claude-reviewer--2026-10-17T15_50_57Z.md`).
+<!-- def-review: Dissertation.Law.P2.map ea792c02836fa5e80da2ef5c07e4b0e0 by=claude-reviewer -->
 <!-- def-review: Dissertation.Law.P2.margU 537c6d484c8f0e8b128e7c03175bc3a7 by=claude-author -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.Law.P2.margU--claude-reviewer--2026-10-17T12_08_36Z.md`).
 <!-- def-review: Dissertation.Law.P2.margU 537c6d484c8f0e8b128e7c03175bc3a7 by=claude-reviewer -->
@@ -533,7 +595,11 @@ Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.
 ## The forced system (4.1) and `WP(λ)` of §4
 
 <!-- def-review: Dissertation.WellPosedness.System.Forcing a3ba59f5823fbe6a0000000000000000 by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.Forcing--claude-reviewer--2026-10-17T15_50_57Z.md`).
+<!-- def-review: Dissertation.WellPosedness.System.Forcing a3ba59f5823fbe6a0000000000000000 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.Forcing.mk de3e0249fbf732c50000000000000000 by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.Forcing.mk--claude-reviewer--2026-10-17T16_02_38Z.md`).
+<!-- def-review: Dissertation.WellPosedness.System.Forcing.mk de3e0249fbf732c50000000000000000 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.PredForcing 467cf5000b974ed10000000000000000 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.PredForcing--claude-reviewer--2026-10-17T15_06_16Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.PredForcing 467cf5000b974ed10000000000000000 by=claude-reviewer -->
@@ -553,12 +619,20 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.PaperWeakSolutionForcedInt.mk--claude-reviewer--2026-10-17T15_06_16Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.PaperWeakSolutionForcedInt.mk abbc9a6411f109000000000000000000 by=claude-reviewer -->
 <!-- def-review: Dissertation.PaperSpec.A.ForcedSolution 6d8e8f373c5e26da1ce1add2f80b1ed8 by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ForcedSolution--claude-reviewer--2026-10-17T16_02_16Z.md`).
+<!-- def-review: Dissertation.PaperSpec.A.ForcedSolution 6d8e8f373c5e26da1ce1add2f80b1ed8 by=claude-reviewer -->
 <!-- def-review: Dissertation.PaperSpec.A.WeakForcedSolution 6d8e8f373c5e26dad42e89a4945d5642 by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.WeakForcedSolution--claude-reviewer--2026-10-17T16_02_24Z.md`).
+<!-- def-review: Dissertation.PaperSpec.A.WeakForcedSolution 6d8e8f373c5e26dad42e89a4945d5642 by=claude-reviewer -->
 <!-- def-review: Dissertation.PaperSpec.A.WP 4c83187e460bc5017fcd19712e7de906 by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.WP--claude-reviewer--2026-10-17T16_01_36Z.md`).
+<!-- def-review: Dissertation.PaperSpec.A.WP 4c83187e460bc5017fcd19712e7de906 by=claude-reviewer -->
 
 ## The coefficient systems of Example 5.1 (`Existence/AffineExample.lean`, `Existence/ClampAffine.lean`, `Examples/MeanField.lean`)
 
 <!-- def-review: Dissertation.WellPosedness.Existence.affineCoeffs f17e5fb23dc1dc13867a3e931c8f06af by=claude-author -->
+Review by claude-reviewer: broader (report `reports/Dissertation.WellPosedness.Existence.affineCoeffs--claude-reviewer--2026-10-17T15_50_57Z.md`).
+<!-- def-review: Dissertation.WellPosedness.Existence.affineCoeffs f17e5fb23dc1dc13867a3e931c8f06af by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.Existence.clampAffineCoeffs 5dc0669bb7724f483dd7fd8e2ba08292 by=claude-author -->
 Review by claude-reviewer: broader (report `reports/Dissertation.WellPosedness.Existence.clampAffineCoeffs--claude-reviewer--2026-10-17T15_04_36Z.md`).
 <!-- def-review: Dissertation.WellPosedness.Existence.clampAffineCoeffs 5dc0669bb7724f483dd7fd8e2ba08292 by=claude-reviewer -->
@@ -587,11 +661,17 @@ Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.
 ## The perturbation of Example 5.4 (`PaperSpec/A/Sec5.lean`, `Robustness/Perturb.lean`)
 
 <!-- def-review: Dissertation.PaperSpec.A.ex54Pert a358f11639418d450e7e870df0a64a0c by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex54Pert--claude-reviewer--2026-10-17T16_01_44Z.md`).
+<!-- def-review: Dissertation.PaperSpec.A.ex54Pert a358f11639418d450e7e870df0a64a0c by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.Coeffs.ofLaw 078c486754be7860fbd98d3584940f30 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.System.Coeffs.ofLaw--claude-reviewer--2026-10-17T16_01_31Z.md`).
+<!-- def-review: Dissertation.WellPosedness.System.Coeffs.ofLaw 078c486754be7860fbd98d3584940f30 by=claude-reviewer -->
 
 ## The crowding correction of Example 5.5 (`PaperSpec/A/Sec5.lean`)
 
 <!-- def-review: Dissertation.PaperSpec.A.ex55Crowd 8d3f49063f9d40bd91804eeb64810052 by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex55Crowd--claude-reviewer--2026-10-17T15_50_57Z.md`).
+<!-- def-review: Dissertation.PaperSpec.A.ex55Crowd 8d3f49063f9d40bd91804eeb64810052 by=claude-reviewer -->
 
 ## The coefficients of Example 5.5 (`PaperSpec/A/Sec5Dealer.lean`)
 
@@ -605,6 +685,8 @@ Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.
   `ε ≥ 0`, as printed. Along a solution the jump coefficient is evaluated at `(Θ⁻_t, μ⁻_t)` by the
   solution notion, as for every system. At `ε = 0` it is `affineCoeffs` (`ex_dealer_coeffs`).
   <!-- def-review: Dissertation.PaperSpec.A.ex55Coeffs 1ebbc311cf6da8affd41f08dbb7afff9 by=claude-author -->
+  Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex55Coeffs--claude-reviewer--2026-10-17T15_59_48Z.md`).
+  <!-- def-review: Dissertation.PaperSpec.A.ex55Coeffs 1ebbc311cf6da8affd41f08dbb7afff9 by=claude-reviewer -->
 
 ## The mark space of Example 5.5 and the linear forward equation (`Examples/Dealer/Marks.lean`, `Stability/ForwardEq.lean`)
 
@@ -648,12 +730,18 @@ Review by claude-reviewer: faithful with representation choices (report `reports
   `Z` jointly and progressively measurable, `U` jointly and marked progressively measurable, both
   of finite energy on `[0, T]`.
   <!-- def-review: Dissertation.WellPosedness.Existence.ProgTuple f8659178ce7276550000000000000000 by=claude-author -->
+  Review by claude-reviewer: broader (report `reports/Dissertation.WellPosedness.Existence.ProgTuple--claude-reviewer--2026-10-17T15_50_57Z.md`).
+  <!-- def-review: Dissertation.WellPosedness.Existence.ProgTuple f8659178ce7276550000000000000000 by=claude-reviewer -->
   <!-- def-review: Dissertation.WellPosedness.Existence.ProgTuple.mk e1108dc351d6859c0000000000000000 by=claude-author -->
+  Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Existence.ProgTuple.mk--claude-reviewer--2026-10-17T16_02_09Z.md`).
+  <!-- def-review: Dissertation.WellPosedness.Existence.ProgTuple.mk e1108dc351d6859c0000000000000000 by=claude-reviewer -->
 * `WellPosedness.System.CrossEval ℱ P T C X Y Z U γ`: along the tuple, the drift, diffusion and
   driver processes of `C` are jointly and progressively measurable, and `γ` is a jointly
   measurable, marked progressively measurable representative of `e ↦ h(s, Θ_s, e, μ_s)` in
   `L²(ν)` for a.e. `s ∈ [0, T]`, a.s.
   <!-- def-review: Dissertation.WellPosedness.System.CrossEval c32e743968a018740000000000000000 by=claude-author -->
+  Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.CrossEval--claude-reviewer--2026-10-17T16_00_50Z.md`).
+  <!-- def-review: Dissertation.WellPosedness.System.CrossEval c32e743968a018740000000000000000 by=claude-reviewer -->
   <!-- def-review: Dissertation.WellPosedness.System.CrossEval.mk 73ff8f763f31638d0000000000000000 by=claude-author -->
   Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.CrossEval.mk--claude-reviewer--2026-10-17T12_39_50Z.md`).
   <!-- def-review: Dissertation.WellPosedness.System.CrossEval.mk 73ff8f763f31638d0000000000000000 by=claude-reviewer -->
@@ -678,9 +766,13 @@ Review by claude-reviewer: faithful with representation choices (report `reports
   Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.CadlagPredTuple--claude-reviewer--2026-10-17T12_39_50Z.md`).
   <!-- def-review: Dissertation.WellPosedness.System.CadlagPredTuple 36dfb143d7b151d50000000000000000 by=claude-reviewer -->
   <!-- def-review: Dissertation.WellPosedness.System.CadlagPredTuple.mk b59a6e73ab9651290000000000000000 by=claude-author -->
+  Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.CadlagPredTuple.mk--claude-reviewer--2026-10-17T16_02_32Z.md`).
+  <!-- def-review: Dissertation.WellPosedness.System.CadlagPredTuple.mk b59a6e73ab9651290000000000000000 by=claude-reviewer -->
 * `Law.P2.toP2WH μ`: a law of finite second moment on the tuple space as a point of `P2WH`, the
   same laws with the Hilbert-norm 2-Wasserstein distance.
   <!-- def-review: Dissertation.Law.P2.toP2WH d1c4f8da3396bc50d397270158b14316 by=claude-author -->
+  Review by claude-reviewer: faithful (report `reports/Dissertation.Law.P2.toP2WH--claude-reviewer--2026-10-17T16_01_48Z.md`).
+  <!-- def-review: Dissertation.Law.P2.toP2WH d1c4f8da3396bc50d397270158b14316 by=claude-reviewer -->
 
 ## the system of Example 3.2 of Li and Min (`Dissertation/PaperSpec/A/Sec5Preamble.lean`)
 
@@ -715,15 +807,21 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 * `WellPosedness.System.Coeffs.addDrift C c`: the coefficients `C` with the deterministic drift
   `c(t)` added to `b`, the other coefficients unchanged.
   <!-- def-review: Dissertation.WellPosedness.System.Coeffs.addDrift ebd318299326fb1ff7058f79aad54724 by=claude-author -->
+  Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.System.Coeffs.addDrift--claude-reviewer--2026-10-17T16_00_01Z.md`).
+  <!-- def-review: Dissertation.WellPosedness.System.Coeffs.addDrift ebd318299326fb1ff7058f79aad54724 by=claude-reviewer -->
 * `WellPosedness.System.singularDrift t`: the vector `(√t)⁻¹ ∈ ℝ¹`, which is `t^{-1/2}` for
   `t > 0` and `0` for `t ≤ 0` (Lean's `√t = 0` and `0⁻¹ = 0`); the drift `t^{-1/2}`, whose value
   at `t = 0` is not defined and does not affect any integral against `dt`.
   <!-- def-review: Dissertation.WellPosedness.System.singularDrift 52bed42bcf81ba997be36c4ad7c8d90e by=claude-author -->
+  Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.System.singularDrift--claude-reviewer--2026-10-17T15_50_57Z.md`).
+  <!-- def-review: Dissertation.WellPosedness.System.singularDrift 52bed42bcf81ba997be36c4ad7c8d90e by=claude-reviewer -->
 * `WellPosedness.System.singularCoeffs`: Example 5.1(i) (`affineCoeffs`) at `n = m = 1`,
   `β₁ = 1`, `β₂ = 0`, `σ_c = 0`, `h_c = 0` with `singularDrift` added: `b = t^{-1/2} − y`,
   `σ = −z`, `h = −u`, `f = 0`, `g(x, ρ) = x`: a system satisfying Assumptions 2.2–2.5 with the
   drift added, which then violates Assumption 2.2.
   <!-- def-review: Dissertation.WellPosedness.System.singularCoeffs 9cbaca3d28850a562cb0f143b2b54981 by=claude-author -->
+  Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.System.singularCoeffs--claude-reviewer--2026-10-17T15_59_39Z.md`).
+  <!-- def-review: Dissertation.WellPosedness.System.singularCoeffs 9cbaca3d28850a562cb0f143b2b54981 by=claude-reviewer -->
 
 ## the linear backward equation and the frozen step of Lemma 4.2 (`Dissertation/WellPosedness/BrownianPoisson/Hypotheses.lean`, `Dissertation/PaperSpec/A/Sec4Horizon.lean`)
 
@@ -736,6 +834,8 @@ Review by claude-reviewer: faithful with representation choices (report `reports
   right-continuous as Lemma 4.1 assumes (its left limits exist almost surely, from the equation);
   `Y ∈ S²` is a conclusion of Lemma 4.1, not part of the notion.
   <!-- def-review: Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ 61bb9f1d9c8aba870000000000000000 by=claude-author -->
+  Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ--claude-reviewer--2026-10-17T16_00_39Z.md`).
+  <!-- def-review: Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ 61bb9f1d9c8aba870000000000000000 by=claude-reviewer -->
   <!-- def-review: Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.mk a259997f09ec23780000000000000000 by=claude-author -->
   Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.mk--claude-reviewer--2026-10-17T12_27_45Z.md`).
   <!-- def-review: Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.mk a259997f09ec23780000000000000000 by=claude-reviewer -->
@@ -760,6 +860,8 @@ Review by claude-reviewer: faithful with representation choices (report `reports
   motion `W` and the initial σ-algebra `𝒢₀`. It is the expression of clause (a) of
   `ex_brownian`, written as an abbreviation.
   <!-- def-review: Dissertation.WellPosedness.Existence.enlBrownian 5721f67c4734358587f5377d953b5ca1 by=claude-author -->
+  Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Existence.enlBrownian--claude-reviewer--2026-10-17T16_00_09Z.md`).
+  <!-- def-review: Dissertation.WellPosedness.Existence.enlBrownian 5721f67c4734358587f5377d953b5ca1 by=claude-reviewer -->
 * `WellPosedness.Spec.BrownianLipInteriorAt ℱ P t L C`, for `C : Coeffs 0 n m d`:
   `LipInteriorAt ℱ P t L C` with the terms `‖C.h t Θ μ − C.h t Θ' μ'‖` and `‖δU‖` deleted and
   `w2H μ μ'` replaced by `w2P (projP2 μ) (projP2 μ')`: for all `(Θ, μ), (Θ', μ') ∈ 𝒟_t`
@@ -767,30 +869,42 @@ Review by claude-reviewer: faithful with representation choices (report `reports
   `|δb| + |δσ|_F + |δf| ≤ L (|δX| + |δY| + |δZ|_F + W₂(μ^{XYZ}, μ'^{XYZ}))`, the coefficients at
   `t`, with `W₂` that of the laws of `(X, Y, Z)` on `ReducedTuple n m d`.
   <!-- def-review: Dissertation.WellPosedness.Spec.BrownianLipInteriorAt 9e0655ad2249204f58e4f3cc2b928cf1 by=claude-author -->
+  Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.BrownianLipInteriorAt--claude-reviewer--2026-10-17T16_00_30Z.md`).
+  <!-- def-review: Dissertation.WellPosedness.Spec.BrownianLipInteriorAt 9e0655ad2249204f58e4f3cc2b928cf1 by=claude-reviewer -->
 * `WellPosedness.Spec.BrownianLipInterior ℱ P T L C`: `BrownianLipInteriorAt ℱ P t L C` for
   almost every `t ∈ [0, T]` (Lebesgue measure restricted to `Icc 0 T`), as `LipInterior` is for
   `LipInteriorAt`.
   <!-- def-review: Dissertation.WellPosedness.Spec.BrownianLipInterior 9e0655ad2249204f740fd58a17e0cae3 by=claude-author -->
+  Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.BrownianLipInterior--claude-reviewer--2026-10-17T16_00_24Z.md`).
+  <!-- def-review: Dissertation.WellPosedness.Spec.BrownianLipInterior 9e0655ad2249204f740fd58a17e0cae3 by=claude-reviewer -->
 * `WellPosedness.Spec.BrownianAssumption23 ℱ P T L C`: `0 ≤ L ∧ BrownianLipInterior ℱ P T L C ∧
   LipTerminal ℱ P T L C.g`, the three fields of `Assumption23` with the interior bound replaced
   by its Brownian form; the terminal bound (2.6) has no jump term and is unchanged.
   <!-- def-review: Dissertation.WellPosedness.Spec.BrownianAssumption23 9e0655ad2249204f01324c504097ee3a by=claude-author -->
+  Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.BrownianAssumption23--claude-reviewer--2026-10-17T16_00_19Z.md`).
+  <!-- def-review: Dissertation.WellPosedness.Spec.BrownianAssumption23 9e0655ad2249204f01324c504097ee3a by=claude-reviewer -->
 * `WellPosedness.Spec.brownianPairing G C t θ θ' μ μ'`:
   `⟨δb, Gᵀ δY⟩ + ⟨δσ, Gᵀ δZ⟩_F + ⟨−δf, G δX⟩` with `δψ = ψ(t, θ, μ) − ψ(t, θ', μ')`, through
   `GX Gᵀ`, `GZ Gᵀ`, `GX G`: `pairing27` without its last term
   `∫_E ⟨δh(e), Gᵀ δU(e)⟩ ν(de)`.
   <!-- def-review: Dissertation.WellPosedness.Spec.brownianPairing de8a42fe1472d600a546e2f6903660ba by=claude-author -->
+  Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.brownianPairing--claude-reviewer--2026-10-17T16_01_16Z.md`).
+  <!-- def-review: Dissertation.WellPosedness.Spec.brownianPairing de8a42fe1472d600a546e2f6903660ba by=claude-reviewer -->
 * `WellPosedness.Spec.BrownianMonoAt ℱ P t G β₁ β₂ C`: `Mono27At` with `brownianPairing` in place
   of `pairing27` and the term `‖GU Gᵀ ν δU‖²` deleted from the first expectation of the right
   side: for all `(Θ, μ), (Θ', μ') ∈ 𝒟_t`, the pairing is integrable and
   `𝔼[⟨δb, Gᵀ δY⟩ + ⟨δσ, Gᵀ δZ⟩_F + ⟨−δf, G δX⟩] ≤ −β₁ 𝔼[|Gᵀ δY|² + |Gᵀ δZ|²_F] − β₂ 𝔼|G δX|²`.
   <!-- def-review: Dissertation.WellPosedness.Spec.BrownianMonoAt e073370a300411e99f39979ae6c8f92b by=claude-author -->
+  Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.BrownianMonoAt--claude-reviewer--2026-10-17T16_00_44Z.md`).
+  <!-- def-review: Dissertation.WellPosedness.Spec.BrownianMonoAt e073370a300411e99f39979ae6c8f92b by=claude-reviewer -->
 * `WellPosedness.Spec.BrownianAssumption25 ℱ P T G α β₁ β₂ C`: the conjunction of the terminal
   inequality of `Assumption25` (the field `terminal`, copied verbatim: integrability and
   `𝔼⟨δg_T, G δX_T⟩ ≥ α 𝔼|G δX_T|²` for all `X_T, X'_T ∈ L²(Ω, ℱ_T; ℝⁿ)`), `BrownianMonoAt` for
   almost every `t ∈ [0, T]`, and `Constants n m α β₁ β₂`: `Assumption25` with the interior
   inequality replaced by its Brownian form.
   <!-- def-review: Dissertation.WellPosedness.Spec.BrownianAssumption25 0d4cac9166e43d4d18e17cffed3382aa by=claude-author -->
+  Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.BrownianAssumption25--claude-reviewer--2026-10-17T16_00_55Z.md`).
+  <!-- def-review: Dissertation.WellPosedness.Spec.BrownianAssumption25 0d4cac9166e43d4d18e17cffed3382aa by=claude-reviewer -->
 * `WellPosedness.Spec.BrownianPaperSolution W ℱ hℱW T C ξ₀ X Y Z`, for a `d`-dimensional Brownian
   motion `W` whose coordinates are Brownian motions for `ℱ`: the fields of `PaperSolution` with
   `D.W` replaced by `W`, the fields `U_pred`, `U_vanish`, `U_sq`, `γ_meas`, `γ_prog`, `γ_sq`,
@@ -802,7 +916,11 @@ Review by claude-reviewer: faithful with representation choices (report `reports
   integral for `ℱ`. The remaining fields are those of `PaperSolution` verbatim.
   `BrownianPaperSolution.mk` is its constructor.
   <!-- def-review: Dissertation.WellPosedness.Spec.BrownianPaperSolution 022ed18f831241360000000000000000 by=claude-author -->
+  Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.BrownianPaperSolution--claude-reviewer--2026-10-17T16_01_01Z.md`).
+  <!-- def-review: Dissertation.WellPosedness.Spec.BrownianPaperSolution 022ed18f831241360000000000000000 by=claude-reviewer -->
   <!-- def-review: Dissertation.WellPosedness.Spec.BrownianPaperSolution.mk d9e9d3d34768f9080000000000000000 by=claude-author -->
+  Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.BrownianPaperSolution.mk--claude-reviewer--2026-10-17T16_02_47Z.md`).
+  <!-- def-review: Dissertation.WellPosedness.Spec.BrownianPaperSolution.mk d9e9d3d34768f9080000000000000000 by=claude-reviewer -->
 * `WellPosedness.Spec.BrownianPaperWeakSolution W ℱ hℱW T C ξ₀ X Y Z`: the fields of
   `PaperWeakSolutionInt` (with those of `PaperWeakTuple` and `PaperAdmissibleInt`) with the same
   deletions and replacements: `X, Y` adapted, right-continuous on `[0, T)`, left limits a.s., of
@@ -812,18 +930,49 @@ Review by claude-reviewer: faithful with representation choices (report `reports
   two identities without the Poisson integrals. `BrownianPaperWeakSolution.mk` is its
   constructor.
   <!-- def-review: Dissertation.WellPosedness.Spec.BrownianPaperWeakSolution 022ed18f831241360000000000000000 by=claude-author -->
+  Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.BrownianPaperWeakSolution--claude-reviewer--2026-10-17T16_01_05Z.md`).
+  <!-- def-review: Dissertation.WellPosedness.Spec.BrownianPaperWeakSolution 022ed18f831241360000000000000000 by=claude-reviewer -->
   <!-- def-review: Dissertation.WellPosedness.Spec.BrownianPaperWeakSolution.mk 71b4d5da999e7ef30000000000000000 by=claude-author -->
+  Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.BrownianPaperWeakSolution.mk--claude-reviewer--2026-10-17T16_02_51Z.md`).
+  <!-- def-review: Dissertation.WellPosedness.Spec.BrownianPaperWeakSolution.mk 71b4d5da999e7ef30000000000000000 by=claude-reviewer -->
 * `PaperSpec.A.BrownianSolution W h𝒢₀ hW T C ξ₀ X Y Z`:
   `BrownianPaperSolution W (enlBrownian 𝒢₀ W h𝒢₀) hW T C (fun i ω => ξ₀ ω i) X Y Z` together with
   left limits of every path of `X` and of `Y` on `(0, T]`: `PaperSpec.A.Solution` with
   `PaperSolutionEnl` replaced by the Brownian system over the Brownian filtration and the
   existential over `γ` gone.
   <!-- def-review: Dissertation.PaperSpec.A.BrownianSolution ad5f899adde540f54a42ffaf2a183700 by=claude-author -->
+  Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.BrownianSolution--claude-reviewer--2026-10-17T16_01_53Z.md`).
+  <!-- def-review: Dissertation.PaperSpec.A.BrownianSolution ad5f899adde540f54a42ffaf2a183700 by=claude-reviewer -->
 * `PaperSpec.A.BrownianWeakSolution W h𝒢₀ hW T C ξ₀ X Y Z`: the same with
   `BrownianPaperWeakSolution`: `PaperSpec.A.WeakSolution` with the jump channel deleted.
   <!-- def-review: Dissertation.PaperSpec.A.BrownianWeakSolution ad5f899adde540f582430c5fbb5efc55 by=claude-author -->
+  Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.BrownianWeakSolution--claude-reviewer--2026-10-17T16_02_01Z.md`).
+  <!-- def-review: Dissertation.PaperSpec.A.BrownianWeakSolution ad5f899adde540f582430c5fbb5efc55 by=claude-reviewer -->
 * `PaperSpec.A.RepresentsMartBrownian W h𝒢₀ hW T M Z`: `PaperSpec.A.RepresentsMart` with `U`, its
   three conditions and the compensated Poisson integral deleted, over `enlBrownian 𝒢₀ W h𝒢₀`:
   `Z` predictable, vanishing off `[0, T]`, of finite energy, and `M_t = M_0 + ∫_0^t Z dW`
   almost surely for every `t ∈ [0, T]`.
   <!-- def-review: Dissertation.PaperSpec.A.RepresentsMartBrownian 12cb148176c5045b1b2bd36a25a42656 by=claude-author -->
+  Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.RepresentsMartBrownian--claude-reviewer--2026-10-17T16_01_20Z.md`).
+  <!-- def-review: Dissertation.PaperSpec.A.RepresentsMartBrownian 12cb148176c5045b1b2bd36a25a42656 by=claude-reviewer -->
+
+## The singular diffusion of Remark 3.4 (`Dissertation/WellPosedness/System/SingularDiffusion.lean`)
+
+* `WellPosedness.System.singularDiffusionCoeffs`: Example 5.1(i) (`affineCoeffs`) at
+  `n = m = 1`, `β₁ = 1`, `β₂ = 0`, `σ_c = 0`, `h_c = 0`, with the deterministic matrix
+  `(√t)⁻¹ e₁₁ ∈ ℝ^{1×d}` added to `σ`: the structure update `{ affineCoeffs 1 0 0 0 with σ := … }`,
+  so `b, h, f, g` are those of `affineCoeffs 1 0 0 0` (`b = −(1 • y)`, `h = 0 − 1 • u`,
+  `f = 0 • x`, `g(x, ρ) = x`), and
+  `σ(t, θ, μ) = toLp 2 (fun p => if p.2 = 0 then (√t)⁻¹ else 0) + (0 − 1 • z)`, whose entry
+  `(1, j)` is `(√t)⁻¹ − z_{1j}` for the first column (`j = 0` in Lean's indexing) and `−z_{1j}`
+  for the others. `(√t)⁻¹` is `t^{-1/2}` for `t > 0` and `0` for `t ≤ 0` (Lean's `√t = 0` and
+  `0⁻¹ = 0`); the value at `t = 0` does not affect any integral against `dt`. So
+  `b = −y`, `σ(t, θ, μ) = t^{-1/2} e₁₁ − z`, `h = −u`, `f = 0`, `g(x, ρ) = x`; for `d = 1` this is
+  Example 5.1(i) with the constant noise baseline `σ_c` replaced by the time-dependent baseline
+  `t^{-1/2}`. The added term depends on the time only, so it cancels in every difference of
+  coefficients, and it is Borel in the time; its square `t^{-1}` is not integrable near `0`, so
+  for `d ≥ 1` the origin value `σ(·, 0, δ₀)` is not in `L²(0, T)`. For `d = 0` the matrix space
+  `ℝ^{1×0}` is trivial and the system is the affine one.
+  <!-- def-review: Dissertation.WellPosedness.System.singularDiffusionCoeffs 9cbaca3d28850a5612dfa3a02c42b537 by=claude-author -->
+  Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.singularDiffusionCoeffs--claude-reviewer--2026-10-17T16_49_03Z.md`).
+  <!-- def-review: Dissertation.WellPosedness.System.singularDiffusionCoeffs 9cbaca3d28850a5612dfa3a02c42b537 by=claude-reviewer -->

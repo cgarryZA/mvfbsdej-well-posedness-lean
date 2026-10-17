@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q",
+  "lean": [
+   "Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q"
+  ],
+  "claims": [
+   "A:ex:fulllaw"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-a498a7c0d4ce",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba12be9f13eb8df21c1",
+  "fingerprint": "pl-fp-v1:77391c424ac867b33c84ccb47f92f2979db03059f85ddcadebf00bcf5fe4dbae",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of spec ex_fulllaw_beyond_Q (Example 5.4 (iii): \"the Q-term, a nonlinear cylindrical\nfunctional of the U-marginal: finitely many integrals of arbitrary bounded-Lipschitz features\non the infinite-dimensional fibre L^2(nu), composed through the nonlinear Q. All three lie\nbeyond the expectation and two-point-kernel jump-integrand interactions\"), with the precise\ncondition \"Q not affine on the attained range of the features\".\n\nSetting: standing H, any n,m,d, sigma-finite nu (countably generated E); J >= 1; features\nphi_1..phi_J : L^2(nu) -> R bounded Lipschitz; Q : R^J -> R bounded Lipschitz; w_1 in R^m.\nFeature map F(lambda) := (int phi_1 dlambda, ..., int phi_J dlambda) for lambda in\nP_2(L^2(nu)); attained range R := {F(mu^U) : mu in P_2(H)} = {F(lambda): lambda in\nP_2(L^2)} (a convex subset of R^J).\nHypothesis: Q is not affine on R (no affine map a + <c, .> agrees with Q on R; equivalently,\nsince R is convex, Q|_R fails the affine identity on some segment of R).\nConclusion: the cylindrical term mu |-> Q(F(mu^U)) (times epsilon w_1, w_1 != 0) is not an\nexpectation functional: not int phibar dmu for any kernel phibar (Lipschitz, of the preceding\nexamples' class), equivalently (here) not affine under mixtures. Quantified over all nu,\nfeatures, Q satisfying the hypothesis.\nThis is exactly the true form: if Q is affine on R, Q(F(mu^U)) = a + sum c_j int phi_j du^U is\nan expectation functional; so the condition is necessary and sufficient, and is the faithful\nprecise reading of \"nonlinear Q\" (the literal \"nonlinear Q, arbitrary features\" is false:\nconstant features). This unit is not flagged as a correction; as a reading of the printed\nclaim it is the printed claim with \"nonlinear\" read as \"not affine where it is evaluated\".\nHypothesis satisfiable when nu != 0 (e.g. J = 1, phi_1 = clipped coordinate functional, Q\nnon-affine bounded Lipschitz); the witness should show such an instance.\nNarrower would be: extra hypotheses (specific J, specific features, nu finite), or a weaker\nconclusion (e.g. only non-linearity rather than non-expectation).",
+  "locked_at": "2026-10-17T15:47:46Z"
+ },
+ "comparison": {
+  "text": "Comparison, ex_fulllaw_beyond_Q (Sec5.lean:623-640), corrected statement (\"when Q is not affine\non the attained range of the features\").\nSetting: sigma-finite nu on countably generated E, n m d J in N; features phi_j : L^2(nu;R^m)\n-> R Lipschitz (constants K j) and bounded (B) - printed bounded Lipschitz features; Q : R^J ->\nR Lipschitz (LQ). Q is NOT required bounded (the printed Q is bounded Lipschitz): broader.\nHypothesis (the correction): not exists a, c with Q(F(mu^U)) = a + sum c_j F_j(mu^U) for every\nmu in P2(H), F_j(mu^U) = int phi_j dmu^U: Q agrees with no affine map on the attained range - my\nreading.\nConclusion: every phi' : H -> R integrable against every P2 law has some mu in P2 with\nQ(F(mu^U)) != int phi' dmu: the cylindrical term (scalar factor of epsilon w_1) is no\nexpectation functional - present.\nNothing narrower than printed plus correction; one printed hypothesis (Q bounded) dropped.\nInstantiation: add |Q| <= BQ (bounded Q) to obtain the printed claim with the correction.\nWitness ex_fulllaw_beyond_Q_hypotheses: nu = delta_0, J = 1, phi_1 = min(|u|,1), Q = min(|s|,1/2),\nwith Q non-affine on the attained values {0, 1/2, 1} - intended instance.\nVerdict: broader.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T16:01:29Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "broader",
+  "detail": "Broader than printed-plus-correction. The Lean requires Q only Lipschitz, not bounded (the\nprinted Q is bounded and Lipschitz); everything else is the printed claim with exactly the\nnamed correction (Q agrees with no affine map on the attained range of the feature vector).\nInstantiation: add |Q| <= B_Q to obtain the printed claim with the correction."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T16:01:36Z",
+  "disagreements": "The author's review recorded for this unit is empty (its text is attached to an adjacent review marker of a unit outside this chunk and was not shown), so there is nothing to compare point by point. My verdict: broader - the proposition requires Q only Lipschitz (the printed Q is bounded Lipschitz); otherwise it is the printed claim with exactly the named correction (Q not affine on the attained range of the features)."
+ },
+ "submitted_at": "2026-10-17T16:03:52Z",
+ "issue_draft": null
+}

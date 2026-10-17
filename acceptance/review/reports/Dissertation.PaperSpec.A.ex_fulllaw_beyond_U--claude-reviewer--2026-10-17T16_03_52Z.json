@@ -1,0 +1,57 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.ex_fulllaw_beyond_U",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U",
+  "lean": [
+   "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U"
+  ],
+  "claims": [
+   "A:ex:fulllaw",
+   "A:sec5:overview"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-a498a7c0d4ce",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba1e06f855614a9b4c6",
+  "fingerprint": "pl-fp-v1:bdd2c1463c8eaee2882e02050fc9a8fb04a05f4b4af1875b5bdda20d325fb797",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of spec ex_fulllaw_beyond_U, as printed (every sigma-finite nu): Example 5.4 (ii)\n\"qtilde(W_2(mu^U, Lambda_0)) and qhat(W_2(mu^U, Lambda_0)), the same for the U-marginal, the\nlatter entering the jump coefficient itself ... All three lie beyond the expectation and\ntwo-point-kernel jump-integrand interactions\".\n\nPrinted proposition: for every sigma-finite nu on a countably generated E, all n,m,d, every\nLambda_0 in P_2(L^2(nu)) and bounded Lipschitz qtilde, qhat (non-degenerate: not constant, as\nin the radial clause - the same nondegeneracy that the companion radial clause uses), the\nU-marginal statistics mu |-> qtilde(W_2(mu^U, Lambda_0)) (and qhat(...), times v_0 / hhat)\nare not expectation functionals of mu (not of the form int phibar dmu; or not affine).\nQuantification \"as printed\": every sigma-finite nu, no nontriviality of L^2(nu).\nExpected refutation: nu = 0 => L^2(nu) = {0}, P_2(L^2) = {delta_0}, mu^U = delta_0 = Lambda_0\nfor every mu, so the statistic is the constant q(0): an expectation functional (of a constant\nkernel). nu = 0 is in the standing setting (sigma-finite, not excluded). Valid if the\nproposition's nondegeneracy hypothesis on q is something a q can meet while the statistic\nis constant at nu = 0 (e.g. \"q not constant on [0,infinity)\"); if the proposition's\nnondegeneracy were \"not constant on the attained range\", then at nu = 0 the hypothesis would\nfail and the refutation could not go through nu = 0.\nThe proposition must be no stronger than printed (e.g. not claim non-affinity of a specific\ncombination the paper does not state), and its form should mirror the radial clause.",
+  "locked_at": "2026-10-17T15:47:46Z"
+ },
+ "comparison": {
+  "text": "Comparison, ex_fulllaw_beyond_U (Sec5.lean:596-608), printed reading, refuted.\nSame shape as the radial clause, with the U-marginal: 0 < m (standing m >= 1), q bounded\nLipschitz not constant on [0, infinity), Lambda0 in P2(L^2(nu;R^m)), every phi : H -> R\nintegrable against every P2 law; exists mu in P2 with q(w2P mu^U Lambda0) != int phi dmu. W_2 on\nP2(L^2(nu;R^m)) with the L^2 norm. Quantified over every sigma-finite nu on countably generated\nE, as printed. One scalar statistic covers both qtilde (drift) and qhat (jump coefficient):\nthey are the same law functional, multiplied by v0 resp. hhat. Not stronger than printed (same\nnondegeneracy as the radial clause).\nRefutation ex_fulllaw_beyond_U_false: E = PUnit, nu = 0, q = min(|r|,1) (bounded, 1-Lipschitz,\nq 0 != q 1), Lambda0 = delta_0, phi = const q(0): every U-marginal is delta_0, so the statistic is\nq(0) = int phi dmu. nu = 0 is a sigma-finite measure on a countably generated space, admitted by\nthe standing setting; the hypothesis on q is met. Valid.\nVerdict: faithful (refutation valid).",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T16:01:28Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T16:01:36Z",
+  "disagreements": "The author's review recorded for this unit is empty (its text is attached to an adjacent review marker of a unit outside this chunk and was not shown), so there is nothing to compare point by point. My verdict: faithful (see comparison); no disagreement can be recorded against an empty review."
+ },
+ "submitted_at": "2026-10-17T16:03:52Z",
+ "issue_draft": null
+}

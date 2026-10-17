@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.Existence.ProgTuple.mk",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.Existence.ProgTuple.mk",
+  "lean": [
+   "Dissertation.WellPosedness.Existence.ProgTuple.mk"
+  ],
+  "claims": [
+   "A:eq:coefmeas"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-a498a7c0d4ce",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "e1108dc351d6859c0000000000000000",
+  "fingerprint": "pl-fp-v1:cf0954a1720e0ae7553e33bb8b0010fcfc7d6bcca8dffccf5132b2be724a0528",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for def:Dissertation.WellPosedness.Existence.ProgTuple.mk (locked before seeing Lean).\n\nConstructor of a \"progressively measurable tuple\" structure, used for (2.5) eq:coefmeas (the\ncoefficient processes along a tuple are progressively measurable / predictable). Paper notion:\nTheta = (X,Y,Z,U) with X (R^n), Y (R^m) cadlag adapted (hence progressive), Z (R^{m x d}) and\nU (L^2(nu;R^m)) predictable (hence progressive); the claim (2.5) needs psi(s,Theta_s,mu_s)\nprogressive, which follows from Theta progressive and psi jointly Borel.\nFaithful constructor: four component processes on [0,T] x Omega (or R>=0 x Omega) of the right\ntypes with progressive measurability w.r.t. the standing filtration (each component or the\nH-valued tuple; equivalent as H is a product of separable metrizable spaces). A weaker\nrequirement than cadlag adapted/predictable is broader (fine for (2.5) since the paper's tuples\nare instances). Any integrability fields must not be stronger than the paper's tuples satisfy.",
+  "locked_at": "2026-10-17T15:42:32Z"
+ },
+ "comparison": {
+  "text": "Comparison for def:Dissertation.WellPosedness.Existence.ProgTuple.mk (constructor of ProgTuple).\n\nLean fields (Existence/WPZero.lean): each coordinate of X and Y adapted (on all of R) with every path\nright-continuous at every t in R; each coordinate of Z jointly measurable, progressively measurable,\nfinite energy on [0,T]; each coordinate of U jointly measurable, marked progressively measurable,\nfinite marked energy on [0,T]. Used in CoeffRegular (for every ProgTuple there is gamma with\nCrossEval), the first line of (2.5).\n\nAgainst my reading:\n- four component processes of the right types (R^n, R^m, R^{m x d} coordinates; U as a mark\n  function, its L^2(nu) class taken by tupleAt): yes.\n- progressive measurability: X, Y adapted and right-continuous, hence progressive; Z, U progressive\n  (marked progressive). Weaker than the paper's cadlag adapted / predictable, i.e. a broader class,\n  which strengthens a statement quantifying over all such tuples: fine.\n- integrability: Z, U of finite energy, which the paper's tuples (H^2_W, H^2_N) have; X, Y carry no\n  integrability requirement (broader). Fine.\n- every path right-continuous on all of R (not a.s., and also off [0,T]): a version/extension\n  convention; the paper's cadlag tuples on [0,T] extended constantly outside [0,T] satisfy it over\n  the standing filtrations (frozen before 0), and a.s.-cadlag adapted processes on an augmented\n  filtration have everywhere-cadlag versions.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:57:01Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices: (1) X, Y adapted with every path right-continuous at every real time (a\nversion and an extension off [0,T]; cadlag tuples on [0,T] extended constantly satisfy it on the\nstanding filtrations), left limits not required (broader); (2) Z, U progressively (marked\nprogressively) measurable instead of predictable (broader class, enough for (2.5)'s\nprogressive-measurability line); (3) Z, U of finite energy on [0,T], as every tuple of HH/Hweak is;\n(4) coordinatewise components, U as a jointly measurable mark function."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T16:02:02Z",
+  "disagreements": "The author's review entry is empty (no recorded reading). It should record that the class is\nX, Y adapted with every path right-continuous on all of R (no left limits, no integrability) and\nZ, U progressive (not predictable) with finite energy: broader than the paper's cadlag/predictable\ntuples in measurability, with the every-path, all-of-R right-continuity a version/extension\nconvention."
+ },
+ "submitted_at": "2026-10-17T16:02:09Z",
+ "issue_draft": null
+}

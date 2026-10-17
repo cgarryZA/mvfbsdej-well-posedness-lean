@@ -20,8 +20,6 @@ correction.
 ## Main definitions
 
 * `Dissertation.PaperSpec.A.rem_beta1_dich_printed` — Remark 2.10 over every σ-finite `ν`.
-* `Dissertation.PaperSpec.A.rem_uniq_exist_printed` — Remark 3.4, existence requires
-  Assumption 2.2.
 * `Dissertation.PaperSpec.A.cor_margin_additive_printed`, `cor_margin_finite_printed` — the
   paragraph after Corollary 3.6 over every σ-finite `ν`.
 * `Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q_printed` — Example 5.4, the cylindrical term of a
@@ -68,28 +66,6 @@ def rem_beta1_dich_printed : Prop :=
         C.h t θ μ = C.h t θ' μ') → β₁ = 0 ∧ n ≤ m ∧ 0 < α ∧ 0 < β₂)
     ∧ (m < n → 0 < β₁ ∧ ¬ ∀ (t : ℝ) (θ θ' : TupleH ν n m d) (μ μ' : P2 (TupleH ν n m d)),
         θ.1 = θ'.1 → C.h t θ μ = C.h t θ' μ')
-
-/-- Remark 3.4, existence requires Assumption 2.2, as printed. In the standing setting, for
-`T > 0` and coefficients satisfying (2.3) and Assumptions 2.3–2.5 with constants `L, α, β₁, β₂`
-and a full-rank `G`: if (1.1) has, from an initial datum `ξ₀`, a tuple of `ℍ_weak` satisfying it
-with `𝔼 sup_{t ≤ T} |X_t|² < ∞` and `𝔼 sup_{t ≤ T} |Y_t|² < ∞` (a solution in `ℍ`), then
-Assumption 2.2 holds with `ξ₀`. -/
-def rem_uniq_exist_printed : Prop :=
-  ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
-    [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
-    (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
-    (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
-    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P), ∀ T : ℝ, 0 < T →
-    ∀ (L α β₁ β₂ : ℝ) (G : Matrix (Fin m) (Fin n) ℝ) (C : Coeffs ν n m d),
-    JointBorel T C → Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C → G.rank = min m n →
-    Assumption25 (enlJoint 𝒢₀ D h𝒢₀) P T G α β₁ β₂ C →
-    ∀ ξ₀ : Ω → EuclideanSpace ℝ (Fin n),
-    (∃ (X : Fin n → ℝ → Ω → ℝ) (Y : Fin m → ℝ → Ω → ℝ) (Z : Fin m → ℝ → Ω → Fin d → ℝ)
-        (U : Fin m → ℝ → Ω → E → ℝ),
-      WeakSolution D h𝒢₀ hind₀ T C ξ₀ X Y Z U
-        ∧ ∫⁻ ω, (⨆ t ∈ Set.Icc (0 : ℝ) T, esq (fun i => X i t ω)) ∂P < ⊤
-        ∧ ∫⁻ ω, (⨆ t ∈ Set.Icc (0 : ℝ) T, esq (fun k => Y k t ω)) ∂P < ⊤) →
-    Assumption22 (enlJoint 𝒢₀ D h𝒢₀) P T C ξ₀
 
 /-- The paragraph after Corollary 3.6, the additive jump coefficient, as printed (every σ-finite
 `ν`). In the standing setting with `m ≥ 1`, for `T > 0`: if `h(t, θ, μ)` depends on `t` and the

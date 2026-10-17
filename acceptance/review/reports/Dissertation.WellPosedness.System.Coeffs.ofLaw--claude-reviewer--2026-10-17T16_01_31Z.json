@@ -1,0 +1,57 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.System.Coeffs.ofLaw",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.System.Coeffs.ofLaw",
+  "lean": [
+   "Dissertation.WellPosedness.System.Coeffs.ofLaw"
+  ],
+  "claims": [
+   "A:ex:fulllaw",
+   "A:rem:regimes"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-a498a7c0d4ce",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "078c486754be7860fbd98d3584940f30",
+  "fingerprint": "pl-fp-v1:44f5a645452e175c3590759203a38f24a5591d6f7878275ccf74a9eacefa118f",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for def:Dissertation.WellPosedness.System.Coeffs.ofLaw (locked before seeing Lean).\n\nContext Ex 5.4 / Cor 3.6: perturbations p_b, p_sigma, p_h, p_f \"independent of theta\"\n(law-only) added to a baseline; g is not perturbed. A def \"Coeffs.ofLaw\" must build a\ncoefficient system whose interior coefficients depend only on (t, mu) (or only on mu):\n b(t,theta,mu) = pb(t,mu), sigma = psigma(t,mu), h = ph(t,mu), f = pf(t,mu),\nand terminal g = 0 (so that baseline + perturbation leaves g unchanged), or with g given.\nFaithful: theta-independence, the components in the correct slots and spaces (R^n, R^{n x d},\nL^2(nu;R^n), R^m), g zero (or the baseline's g if it is a \"replace\" rather than a \"perturbation\"\nsystem). Adding such a system to a baseline must give (b0+pb, sigma0+psigma, h0+ph, f0+pf, g).",
+  "locked_at": "2026-10-17T15:42:32Z"
+ },
+ "comparison": {
+  "text": "Comparison for def:Dissertation.WellPosedness.System.Coeffs.ofLaw.\n\nLean (Robustness/Perturb.lean): Coeffs.ofLaw pb psigma ph pf := (b t _ mu = pb t mu, sigma t _ mu = psigma t mu,\nh t _ mu = ph t mu, f t _ mu = pf t mu, g _ _ = 0). Coeffs.perturb C p adds b, sigma, h, f\ncomponentwise and keeps g := C.g (the perturbation's g is ignored).\n\nAgainst my reading: theta-independent (law-and-time-only) interior coefficients in the right slots\nand spaces (R^n, R^{n x d}, L^2(nu;R^n), R^m): yes; terminal g = 0: yes; combined with a baseline\nvia perturb it gives (b0 + pb, sigma0 + psigma, h0 + ph, f0 + pf, g): yes, as in Cor 3.6 / Ex 5.4.\nNo junk.\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:55:33Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T16:01:26Z",
+  "disagreements": "The author's review entry is empty (no recorded reading). Nothing to dispute on substance: the def\nis (pb(t,mu), psigma(t,mu), ph(t,mu), pf(t,mu), g = 0), theta-independent, and perturb keeps the\nbaseline's g; the review should say so."
+ },
+ "submitted_at": "2026-10-17T16:01:31Z",
+ "issue_draft": null
+}

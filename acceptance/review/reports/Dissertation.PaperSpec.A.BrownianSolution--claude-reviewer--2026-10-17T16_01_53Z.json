@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.PaperSpec.A.BrownianSolution",
+  "kind": "def",
+  "name": "Dissertation.PaperSpec.A.BrownianSolution",
+  "lean": [
+   "Dissertation.PaperSpec.A.BrownianSolution"
+  ],
+  "claims": [
+   "A:ex:brownian"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-a498a7c0d4ce",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ad5f899adde540f54a42ffaf2a183700",
+  "fingerprint": "pl-fp-v1:b6f008aeca3701b5df167846c3307f862efecf18ea2d9f339d1c59c3cb9cf663",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for def:Dissertation.PaperSpec.A.BrownianSolution (locked before seeing Lean).\n\nSame paper notion as BrownianPaperSolution: a solution in S^2 x S^2 x H^2_W of the Brownian\nreduction (Ex 5.2) of (1.1) on the Brownian filtration (W, F_0):\n X_t = xi_0 + int_0^t b(s,Theta_s,mu_s) ds + int_0^t sigma(s,Theta_s,mu_s) dW_s,\n Y_t = g(X_T, Law X_T) + int_t^T f(s,Theta_s,mu_s) ds - int_t^T Z_s dW_s,\na.s. for every t in [0,T], Theta = (X,Y,Z), mu_s = Law Theta_s (a.e. t), with X, Y cadlag adapted,\nE sup|X|^2, E sup|Y|^2 < inf, Z predictable/progressive with E int |Z|_F^2 < inf. The PaperSpec\ndef may be a Prop wrapper (e.g. Nonempty of the structure, or existence of the components); it\nmust express exactly this, over the Brownian basis with no Poisson channel and no U-coordinate.",
+  "locked_at": "2026-10-17T15:42:32Z"
+ },
+ "comparison": {
+  "text": "Comparison for def:Dissertation.PaperSpec.A.BrownianSolution.\n\nLean (PaperSpec/A/Sec5BrownianReduction.lean): BrownianSolution W hG0 hW T C xi0 X Y Z :=\nBrownianPaperSolution W (enlBrownian G0 W hG0) hW T C xi0 X Y Z ∧ every path of X and Y has left limits\non (0,T]; C : Coeffs (0) n m d.\n\nAgainst my reading: the Brownian solution notion over the usual augmentation of the (W, G0)\nfiltration: yes (enlBrownian, unit 5); in S^2 x S^2 x H^2_W with the Brownian forward and backward\nidentities a.s. for every t, own laws, terminal law: yes, via BrownianPaperSolution (unit 14),\nwhose representation choices carry over (nu = 0, coordinates, versions, explicit measurability and\nenergy of the coefficient processes). The added left-limit clause makes every path cadlag on\n[0,T], matching the full Solution notion so that ex_brownian_reduction compares like with like.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:56:30Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices (inherited from BrownianPaperSolution): Brownian reduction at nu = 0;\ncoordinatewise processes; every path cadlag on [0,T] (right-continuous on [0,T), and, by the extra\nclause, left limits on (0,T]); cadlag versions of the Ito integrals with the identities on one null\nset; coefficient processes required measurable with finite energy (automatic under Assumptions\n2.2-2.3 for HH tuples); integrands extended by 0 off [0,T]; the filtration is enlBrownian, the usual\naugmentation (by the null sets of the ambient sigma-algebra) of the (W, G0) filtration."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T16:01:48Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-17T16:01:53Z",
+ "issue_draft": null
+}

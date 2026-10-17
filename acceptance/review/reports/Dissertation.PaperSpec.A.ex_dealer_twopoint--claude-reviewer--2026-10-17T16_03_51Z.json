@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.ex_dealer_twopoint",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.ex_dealer_twopoint",
+  "lean": [
+   "Dissertation.PaperSpec.A.ex_dealer_twopoint"
+  ],
+  "claims": [
+   "A:ex:dealer"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-a498a7c0d4ce",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba10e7a45835d5244c0",
+  "fingerprint": "pl-fp-v1:1823ad4947d81894bf45af44cdcf060bce9675d7528682b1df17aa29158a6d51",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of spec ex_dealer_twopoint: \"for a unit w in L^2(nu), the two-point laws\nlambda_1 = (delta_{-w}+delta_w)/2 and lambda_2 = (delta_{-2w}+delta_{2w})/2 share their mean,\nyet A_{lambda_1}(w) = w/sqrt5, A_{lambda_2}(w) = (1/2)(3/sqrt10 - 1/sqrt2) w.\"\n\nFaithful statement: for every sigma-finite nu (countably generated E; an arbitrary real inner\nproduct space would be broader and fine) and every w in L^2(nu;R) with |w| = 1:\n 1. lambda_1, lambda_2 are probability measures in P_2 (automatic for two-point laws);\n 2. mean(lambda_1) = mean(lambda_2) (both equal 0) - \"share their mean\";\n 3. A_{lambda_1}(w) = (1/sqrt 5) w;\n 4. A_{lambda_2}(w) = (1/2)(3/sqrt 10 - 1/sqrt 2) w,\n with A_lambda(u) = int gradV(u-v) lambda(dv), gradV(w) = w/sqrt(1+|w|^2), the Bochner integral\n against the two-point measure. Check: A_{lambda_1}(w) = (gradV(2w)+gradV(0))/2 = w/sqrt5;\n A_{lambda_2}(w) = (gradV(3w)+gradV(-w))/2 = (3w/sqrt10 - w/sqrt2)/2. True.\nHypothesis |w| = 1 is the printed one; it can only be met when L^2(nu) != 0 (the witness, if\nany, should exhibit nu != 0 and a unit w). A statement for an arbitrary unit vector of an\narbitrary inner-product space is broader and fine.\nThe \"yet\" (the two values differ) may or may not be included; the values themselves imply it.",
+  "locked_at": "2026-10-17T15:47:46Z"
+ },
+ "comparison": {
+  "text": "Comparison, ex_dealer_twopoint (Sec5.lean:667-678).\nforall sigma-finite nu on countably generated E, forall w in L^2(nu;R^1) with |w| = 1 - printed\n\"unit w\".\nLambda_1 = (1/2)(delta_{-w} + delta_w), Lambda_2 = (1/2)(delta_{-2w} + delta_{2w}) as measures\n(probability measures; finite second moment automatic - not stated but not needed).\nConclusions: means equal (int v dLambda_1 = int v dLambda_2); ex55Crowd Lambda_1 w =\n(1/sqrt5) w; ex55Crowd Lambda_2 w = ((1/2)(3/sqrt10 - 1/sqrt2)) w - the printed values.\nThe \"yet\" (difference) follows from the values; the separate non-function-of-mean clause is\nex_dealer_mean_corr.\nWitness ex_dealer_unit_hypotheses: a unit vector on the dealer marks - intended instance.\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T16:01:28Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T16:01:35Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-17T16:03:51Z",
+ "issue_draft": null
+}

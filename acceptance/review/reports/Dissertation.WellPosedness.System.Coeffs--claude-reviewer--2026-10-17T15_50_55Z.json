@@ -1,0 +1,97 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.System.Coeffs",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.System.Coeffs",
+  "lean": [
+   "Dissertation.WellPosedness.System.Coeffs"
+  ],
+  "claims": [
+   "A:abstract",
+   "A:ass:integ",
+   "A:ass:lip",
+   "A:ass:mono",
+   "A:conclusion",
+   "A:cor:robust",
+   "A:eq:coeffint",
+   "A:eq:coefmeas",
+   "A:eq:forced",
+   "A:eq:hborel",
+   "A:eq:monomargin",
+   "A:eq:monomarginu",
+   "A:eq:mvfbsdej",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:ex:dealer",
+   "A:ex:fulllaw",
+   "A:intro:limin-comparison",
+   "A:intro:mvfbsdej",
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:rem:beta1-dich",
+   "A:rem:cwp-class",
+   "A:rem:diag-mono",
+   "A:rem:freelaw",
+   "A:rem:generalrank",
+   "A:rem:intrinsic",
+   "A:rem:margin",
+   "A:rem:regimes",
+   "A:rem:uniq-no-integ",
+   "A:sec2:hborel-derivation",
+   "A:sec3:margin-paragraph",
+   "A:sec3:one-null-set",
+   "A:sec4:WP-def",
+   "A:sec4:horizon-not-contractive",
+   "A:sec5:overview",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-a498a7c0d4ce",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "fd49e3c7112f41550000000000000000",
+  "fingerprint": "pl-fp-v1:f3fdc81bc5c1853ac71563aa1d0b8a132fa576dd15014de49d59d610935378cd",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for def:Dissertation.WellPosedness.System.Coeffs (paper §2, \"Their signatures are ...\", lines ~299-331).\n\nPaper notion: the coefficient system (b, sigma, h, f, g) of the MV-FBSDEJ (1.1), deterministic\nfunctions with signatures\n  b     : [0,T] x H x P2(H) -> R^n\n  sigma : [0,T] x H x P2(H) -> R^{n x d}       (Frobenius norm)\n  h     : [0,T] x H x P2(H) -> L^2(nu; R^n)    (h(t,theta,.,mu), the jump coefficient as an L^2(nu)-valued map)\n  f     : [0,T] x H x P2(H) -> R^m\n  g     : R^n x P2(R^n) -> R^m                  (no time argument; depends on x and its law)\nwhere H = R^n x R^m x R^{m x d} x L^2(nu;R^m) with the Hilbert norm\n|theta|^2 = |x|^2+|y|^2+|z|_F^2+||u||^2_{L^2(nu)}, and P2(.) carries the W2 distance.\nStanding: all coefficients jointly Borel measurable (for h: Borel as a map into L^2(nu;R^n), (2.3)).\nRandomness enters only through the inputs: no omega argument.\n\nWhat a faithful Lean definition must be: a structure (indexed by n,m,d, nu) with exactly these five\nfields of these types. Acceptable representation choices: time domain R instead of [0,T] (values off\n[0,T] are never used); the measure argument typed as a P2/P2W wrapper of the paper's P2(H) with the\nW2 metric; h valued in Lp R^n 2 nu (i.e. classes, fibre L^2(nu;R^n)). Measurability may be a field\nof the structure or imposed separately by each proposition (then check that the propositions impose\nit where the paper's standing assumption is needed). To check: no omega-dependence; the codomain\nof h is L^2(nu;R^n) (forward dimension n, not m); g takes a law on R^n (not on H); the norms of\nR^n, R^m (Euclidean) and R^{m x d}, R^{n x d} (Frobenius) are the paper's; H carries the l^2-type\nproduct norm, not Lean's default sup norm on products.",
+  "locked_at": "2026-10-17T15:41:47Z"
+ },
+ "comparison": {
+  "text": "Comparison for def:Dissertation.WellPosedness.System.Coeffs (System/Coefficients.lean:73-87).\n\nLean: structure with fields\n  b : R -> TupleH nu n m d -> P2 (TupleH nu n m d) -> EuclideanSpace R (Fin n)\n  sigma : ... -> EuclideanSpace R (Fin n x Fin d)\n  h : ... -> Lp (EuclideanSpace R (Fin n)) 2 nu\n  f : ... -> EuclideanSpace R (Fin m)\n  g : EuclideanSpace R (Fin n) -> P2 (EuclideanSpace R (Fin n)) -> EuclideanSpace R (Fin m)\nwith TupleH = R^n x R^m x EuclideanSpace R (Fin m x Fin d) x Lp (R^m) 2 nu.\n\nItem by item against my reading:\n- five fields, deterministic (no omega): yes.\n- b codomain R^n Euclidean, f codomain R^m: yes.\n- sigma codomain R^{n x d} with Frobenius norm: EuclideanSpace on index pairs (i,j), whose norm is\n  exactly the Frobenius norm: yes.\n- h codomain L^2(nu; R^n) (forward dimension n): yes (classes).\n- g : R^n x P2(R^n) -> R^m, no time argument, law on R^n: yes.\n- time domain R instead of [0,T]: representation choice; only [0,T] is used (coefficient processes\n  are cut off by indicators of [0,T], Solves.lean).\n- measure argument: P2 (TupleH ...), the probability measures of finite second moment on the\n  product (sigma-algebra: product of Borel algebras, the L^2(nu) factor with the scoped Borel\n  instance lpMeasurableSpace). TupleH carries the MAX of the channel norms, not the paper's Hilbert\n  norm; but Coeffs uses only the carrier set, which is the same as P2(H): finiteness of the second\n  moment is invariant under the equivalent norm (max <= Hilbert <= 2 max), and the Borel sets agree\n  (equivalent norms; product sigma-algebra = Borel for the second-countable components under the\n  standing sigma-finite nu / countably generated E). The W2 metric is not part of Coeffs (it enters\n  through the assumption predicates, which are separate units).\n- joint Borel measurability: NOT part of the structure (docstring of Coefficients.lean says so; it\n  is imposed through JointBorel / the solution predicate's measurability fields). This is a\n  representation choice for the definition; whether each proposition imposes it where the paper's\n  standing assumption is needed is a matter for the proposition reviews.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:50:03Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices: (1) time ranges over R, only [0,T] is used (coefficient processes are cut off\nto [0,T]); (2) R^{n x d} is EuclideanSpace R (Fin n x Fin d), whose norm is the Frobenius norm;\n(3) the measure argument is P2 of TupleH, which carries the max of the channel norms rather than\nthe Hilbert norm -- the carrier set (Borel probability measures with finite second moment) is the\nsame as the paper's P2(H), and no metric is part of Coeffs; (4) the standing joint Borel\nmeasurability is not a field of the structure but a separate hypothesis (JointBorel) / a condition\nof the solution predicate, so it must be checked at the propositions, not here."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:50:11Z",
+  "disagreements": "No disagreement with a stated position: the author's entry shown for this unit is only the section\nheading. For the record, my verdict is \"faithful with representation choices\": time over R, matrices\nas EuclideanSpace on index pairs (Frobenius), the measure argument P2 of the max-norm product TupleH\n(same carrier as the paper's P2(H); no metric in the structure), and joint Borel measurability not\npart of the structure (imposed separately), which the proposition reviews must check."
+ },
+ "submitted_at": "2026-10-17T15:50:55Z",
+ "issue_draft": null
+}

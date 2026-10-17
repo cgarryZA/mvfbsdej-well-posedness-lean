@@ -18,8 +18,6 @@ import LevyStochCalc.Driver.Existence
 
 * `Dissertation.Acceptance.A.rem_beta1_dich_printed_false` — at `ν = 0` the system of
   Example 5.1(i) has an additive jump coefficient and satisfies Assumption 2.5 with `β₁ = 1`.
-* `Dissertation.Acceptance.A.rem_uniq_exist_printed_false` — the singular-drift system has a
-  solution in `ℍ` and violates Assumption 2.2.
 * `Dissertation.Acceptance.A.cor_margin_additive_printed_false` — at `ν = 0` every jump
   coefficient is additive and Example 5.1(i) satisfies (2.13) with a margin.
 * `Dissertation.Acceptance.A.cor_margin_finite_printed_false` — at `ν = δ₀` one functional
@@ -63,19 +61,6 @@ theorem rem_beta1_dich_printed_false : ¬ PaperSpec.A.rem_beta1_dich_printed.{0,
   have h1 := (h ⊥ (0 : Measure PUnit.{1}) 1 1 1 P D bot_le hind one_pos one_pos 1 one_pos 1
     (by simp) 1 1 1 _ h25).2.1 hadd
   exact one_ne_zero h1.1
-
-/-- **Remark 3.4, existence requires Assumption 2.2, is false as printed.** Over a Lévy driver with
-`d = 1` and `ν = δ₀` on `ℝ`, with `𝒢₀ = ⊥` and `T = 1`, the singular-drift system satisfies (2.3)
-and Assumptions 2.3–2.5, violates Assumption 2.2 for every initial datum, and has a solution in
-`ℍ` from the initial datum `0`. -/
-theorem rem_uniq_exist_printed_false : ¬ PaperSpec.A.rem_uniq_exist_printed.{0, 0, 0} := by
-  intro h
-  obtain ⟨Ω, _, P, _, ⟨D⟩⟩ := LevyStochCalc.Driver.LevyDriver.exists 1 ℝ (Measure.dirac (0 : ℝ))
-  have hind₀ : Indep (⊥ : MeasurableSpace Ω) (⨆ t, D.filtration t) P := indep_bot_left _
-  obtain ⟨hJ, h23, hG, h25, hn22, X, Y, Z, U, hsol⟩ :=
-    rem_uniq_singular (Measure.dirac (0 : ℝ)) 1 P D hind₀ 1 one_pos
-  exact hn22 _ (h ⊥ (Measure.dirac (0 : ℝ)) 1 1 1 P D bot_le hind₀ 1 one_pos 1 1 1 0 1 _ hJ h23
-    hG h25 _ ⟨X, Y, Z, U, hsol⟩)
 
 /-- **The paragraph after Corollary 3.6, the additive jump coefficient, is false as printed at
 `ν = 0`.** Over a Lévy driver with `ν = 0` on a point, `L²(ν) = {0}`, so every jump coefficient

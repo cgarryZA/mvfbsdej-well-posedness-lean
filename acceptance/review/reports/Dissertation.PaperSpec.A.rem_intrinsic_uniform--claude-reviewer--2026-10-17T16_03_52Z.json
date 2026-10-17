@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.rem_intrinsic_uniform",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.rem_intrinsic_uniform",
+  "lean": [
+   "Dissertation.PaperSpec.A.rem_intrinsic_uniform"
+  ],
+  "claims": [
+   "A:rem:intrinsic"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-a498a7c0d4ce",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba13b7a9a5f65a5b218",
+  "fingerprint": "pl-fp-v1:b7f42b607a9fbc91f432a966c4e17124f0693b93f306388d93572a3565cd17a7",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of spec rem_intrinsic_uniform (Remark 2.9: \"For t > 0 the sigma-field F_t supports a\nuniformly distributed variable (a function of W^1_t)\").\n\nSetting: the standing filtered probability space with a d-dimensional (F_t)-Brownian motion W\n(d >= 1), W^1 its first coordinate; t > 0 (t <= T, or any t > 0).\nFaithful statement: for every t > 0 there is a random variable V : Omega -> R such that\n 1. V is F_t-measurable;\n 2. V is uniformly distributed on [0,1] (Law V = Lebesgue on [0,1] / uniform);\n 3. V = phi(W^1_t) for a Borel phi : R -> R (e.g. phi = standard normal cdf of x/sqrt t).\nHypotheses: only the standing ones (W a Brownian motion adapted to (F_t), W^1_t ~ N(0,t)).\nThe \"function of W^1_t\" part is printed and should be present (a statement that only gives an\nF_t-measurable uniform variable is narrower in content than printed but still the operative\nclaim; I'd flag its absence). t > 0 is essential (at t = 0, W_0 = 0 is constant).",
+  "locked_at": "2026-10-17T15:47:46Z"
+ },
+ "comparison": {
+  "text": "Comparison, rem_intrinsic_uniform (Sec2Remarks.lean:102-112).\nSetting: Levy driver D (d-dim Brownian motion W and an independent Poisson random measure N\nwith sigma-finite intensity nu), d > 0, initial sigma-field G0 <= m_Omega (independence not\nassumed: broader), filtration enlJoint G0 D = usual augmentation of sigma(W, N) v G0 - the\npaper's F_t.\nFor every t > 0: exists phi : R -> unitInterval measurable, with phi(W^1_t) measurable for\nenlJoint ... t and P.map (phi o W^1_t) = volume (the uniform law on [0,1]). W^1 = D.W.W <0,hd>,\nthe first coordinate. Items 1-3 of my reading all present (F_t-measurable, uniform, a Borel\nfunction of W^1_t). E need not be countably generated (broader).\nWitness ex_concrete_hypotheses: a driver exists - hypotheses (only the standing ones) met.\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T16:01:28Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T16:01:36Z",
+  "disagreements": "The author's review recorded for this unit is empty (its text is attached to an adjacent review marker of a unit outside this chunk and was not shown), so there is nothing to compare point by point. My verdict: faithful (see comparison); no disagreement can be recorded against an empty review."
+ },
+ "submitted_at": "2026-10-17T16:03:52Z",
+ "issue_draft": null
+}

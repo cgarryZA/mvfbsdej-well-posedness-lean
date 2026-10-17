@@ -108,6 +108,8 @@ it was not a trivial instance was wrong.
 Verdict: faithful.
 
 <!-- spec-review: Dissertation.PaperSpec.A.thm_stab ed839d34f480cba16bc55062de98e587 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.thm_stab--claude-reviewer--2026-10-17T16_05_53Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.thm_stab ed839d34f480cba16bc55062de98e587 by=claude-reviewer -->
 
 ## Theorem 3.3: `Dissertation.PaperSpec.A.thm_uniq`
 
@@ -148,6 +150,8 @@ Verdict: faithful, with the reading of "satisfies (1.1)" by `L²` stochastic int
 `definitions.md`.
 
 <!-- spec-review: Dissertation.PaperSpec.A.thm_uniq ed839d34f480cba1b8815741b34ba4e5 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.thm_uniq--claude-reviewer--2026-10-17T16_05_53Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.thm_uniq ed839d34f480cba1b8815741b34ba4e5 by=claude-reviewer -->
 
 ## Theorem 3.5: `Dissertation.PaperSpec.A.thm_cwp`, and its continuous dependence
 
@@ -188,6 +192,8 @@ the order of the proposition.
 Verdict: faithful.
 
 <!-- spec-review: Dissertation.PaperSpec.A.thm_cwp ed839d34f480cba10deeabcd10e6e74d by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.thm_cwp--claude-reviewer--2026-10-17T16_05_53Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.thm_cwp ed839d34f480cba10deeabcd10e6e74d by=claude-reviewer -->
 
 ## Proposition 3.8: `Dissertation.PaperSpec.A.prop_strict`
 
@@ -292,7 +298,11 @@ clause broader, the printed claim an instance.
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.cor_robust--claude-reviewer--2026-10-17T12_24_23Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.cor_robust ed839d34f480cba154326c82c977c8bd by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.cor_robust_wp ed839d34f480cba16dd662e97e677716 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.cor_robust_wp--claude-reviewer--2026-10-17T16_05_53Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.cor_robust_wp ed839d34f480cba16dd662e97e677716 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.cor_robust_lip ed839d34f480cba14b18016daa0b4aac by=claude-author -->
+Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.cor_robust_lip--claude-reviewer--2026-10-17T16_03_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.cor_robust_lip ed839d34f480cba14b18016daa0b4aac by=claude-reviewer -->
 
 ## Assumption 2.4 (the bounds after "Then"): `Dissertation.PaperSpec.A.ass_G`
 
@@ -345,6 +355,8 @@ Witness: `Dissertation.Acceptance.A.eq_lipfun_hypotheses` (the projection `θ �
 Verdict: faithful.
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_lipfun ed839d34f480cba187b5540277706218 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.eq_lipfun--claude-reviewer--2026-10-17T16_03_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_lipfun ed839d34f480cba187b5540277706218 by=claude-reviewer -->
 
 ## Remark 2.6, (2.11): `Dissertation.PaperSpec.A.eq_margproj`
 
@@ -361,6 +373,8 @@ hypotheses beyond the standing setting.
 Verdict: faithful.
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_margproj ed839d34f480cba1c19abbad6d02050c by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.eq_margproj--claude-reviewer--2026-10-17T16_03_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_margproj ed839d34f480cba1c19abbad6d02050c by=claude-reviewer -->
 
 ## Lemma 4.1: `Dissertation.PaperSpec.A.lem_bpbsde`
 
@@ -560,7 +574,11 @@ Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.ex_
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_i--claude-reviewer--2026-10-17T12_13_03Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i ed839d34f480cba1d2f6e8919288ad6b by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_pairing ed839d34f480cba1272d037d1e16e040 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_i_pairing--claude-reviewer--2026-10-17T16_05_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_pairing ed839d34f480cba1272d037d1e16e040 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_wp ed839d34f480cba13343e4213bb7f62d by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_i_wp--claude-reviewer--2026-10-17T16_05_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_wp ed839d34f480cba13343e4213bb7f62d by=claude-reviewer -->
 
 ## Example 5.1(i) with the drift (3.6): `Dissertation.PaperSpec.A.ex_concrete_i_clamp`, `ex_concrete_i_clamp_wp`
 
@@ -640,6 +658,8 @@ Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_ii--claude-reviewer--2026-10-17T12_18_31Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_ii ed839d34f480cba1cba84bcbe1866633 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_ii_pairing ed839d34f480cba16aa5f84a4f3328b5 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_ii_pairing--claude-reviewer--2026-10-17T16_05_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_ii_pairing ed839d34f480cba16aa5f84a4f3328b5 by=claude-reviewer -->
 
 ## Example 5.2: `Dissertation.PaperSpec.A.ex_brownian`
 
@@ -759,7 +779,11 @@ listed).
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_expfunc--claude-reviewer--2026-10-17T12_20_36Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc ed839d34f480cba1c0ebc41bbfe679cc by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc_limin ed839d34f480cba1dc8d682dbdc81fa7 by=claude-author -->
+Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.ex_expfunc_limin--claude-reviewer--2026-10-17T16_03_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc_limin ed839d34f480cba1dc8d682dbdc81fa7 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc_jump ed839d34f480cba1e622a1683bfc9f0d by=claude-author -->
+Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.ex_expfunc_jump--claude-reviewer--2026-10-17T16_03_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc_jump ed839d34f480cba1e622a1683bfc9f0d by=claude-reviewer -->
 
 ## Remarks 2.7–2.9: `Dissertation.PaperSpec.A.rem_diag_mono`, `rem_diag_mono_converse`, `rem_intrinsic_uniform`, `rem_intrinsic_coupling`, `rem_intrinsic_basis`
 
@@ -819,10 +843,20 @@ pointwise condition, Assumption 2.5 with `G = 1`, and `0 < 1/2 < 1`); `rem_coupl
 Verdict: faithful, with the readings listed (both readings of (2.7) in Remark 2.8).
 
 <!-- spec-review: Dissertation.PaperSpec.A.rem_diag_mono ed839d34f480cba146c1633f8e03b86c by=claude-author -->
+Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.rem_diag_mono--claude-reviewer--2026-10-17T16_05_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.rem_diag_mono ed839d34f480cba146c1633f8e03b86c by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.rem_diag_mono_converse ed839d34f480cba14b5e4594e14d9dc7 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.rem_diag_mono_converse--claude-reviewer--2026-10-17T16_05_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.rem_diag_mono_converse ed839d34f480cba14b5e4594e14d9dc7 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.rem_intrinsic_uniform ed839d34f480cba13b7a9a5f65a5b218 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.rem_intrinsic_uniform--claude-reviewer--2026-10-17T16_03_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.rem_intrinsic_uniform ed839d34f480cba13b7a9a5f65a5b218 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.rem_intrinsic_coupling ed839d34f480cba1ff8eb9ca359fa48b by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.rem_intrinsic_coupling--claude-reviewer--2026-10-17T16_03_53Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.rem_intrinsic_coupling ed839d34f480cba1ff8eb9ca359fa48b by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.rem_intrinsic_basis ed839d34f480cba132c02ed3a09a0eba by=claude-author -->
+Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.rem_intrinsic_basis--claude-reviewer--2026-10-17T16_05_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.rem_intrinsic_basis ed839d34f480cba132c02ed3a09a0eba by=claude-reviewer -->
 
 ## The displays (1.1), (2.3), (4.1)
 
@@ -1036,6 +1070,8 @@ and a constant law flow are predictable and Borel).
 Verdict: faithful.
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_coefmeas_jump ed839d34f480cba1e13c6b7ca8ccca73 by=claude-author -->
+Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.eq_coefmeas_jump--claude-reviewer--2026-10-17T16_03_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_coefmeas_jump ed839d34f480cba1e13c6b7ca8ccca73 by=claude-reviewer -->
 
 ## Remark 3.2, the solution class: `Dissertation.PaperSpec.A.rem_cwp_class`
 
@@ -1134,7 +1170,11 @@ Verdict: faithful.
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.thm_stab_companion--claude-reviewer--2026-10-17T12_19_01Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.thm_stab_companion ed839d34f480cba10ff3a550a92ccddf by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.thm_stab_data ed839d34f480cba1f26d5949b31ba63f by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.thm_stab_data--claude-reviewer--2026-10-17T16_05_53Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.thm_stab_data ed839d34f480cba1f26d5949b31ba63f by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.thm_stab_minimal ed839d34f480cba127494e1cb3f498aa by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.thm_stab_minimal--claude-reviewer--2026-10-17T16_05_53Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.thm_stab_minimal ed839d34f480cba127494e1cb3f498aa by=claude-reviewer -->
 
 ## The preamble of Section 5: `Dissertation.PaperSpec.A.sec5_limin`
 
@@ -1215,6 +1255,8 @@ Verdict: faithful.
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.rem_generalrank--claude-reviewer--2026-10-17T12_13_00Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.rem_generalrank ed839d34f480cba1bcd1d82734738c5b by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.rem_generalrank_wp ed839d34f480cba118d1835a02488a97 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.rem_generalrank_wp--claude-reviewer--2026-10-17T16_05_53Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.rem_generalrank_wp ed839d34f480cba118d1835a02488a97 by=claude-reviewer -->
 
 ## Lemma A.1, the law flows: `Dissertation.PaperSpec.A.lem_lawflow`, `lem_lawflow_invariant`
 
@@ -1255,6 +1297,8 @@ Verdict: faithful.
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lem_lawflow--claude-reviewer--2026-10-17T12_27_30Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.lem_lawflow ed839d34f480cba1090c1a53f2a6cf7f by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.lem_lawflow_invariant ed839d34f480cba184c9d1f8d6f2b814 by=claude-author -->
+Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.lem_lawflow_invariant--claude-reviewer--2026-10-17T16_03_53Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.lem_lawflow_invariant ed839d34f480cba184c9d1f8d6f2b814 by=claude-reviewer -->
 
 ## (4.2) and (4.3), the coefficient bounds: `Dissertation.PaperSpec.A.eq_coeffint`, `eq_termg`
 
@@ -1304,6 +1348,8 @@ Verdict: faithful.
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_coeffint--claude-reviewer--2026-10-17T12_22_13Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_coeffint ed839d34f480cba13c4b68e5e50bad34 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.eq_termg ed839d34f480cba171988e2e6de37794 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.eq_termg--claude-reviewer--2026-10-17T16_03_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_termg ed839d34f480cba171988e2e6de37794 by=claude-reviewer -->
 
 ## Example 5.1(i), sharpness: `Dissertation.PaperSpec.A.ex_concrete_i_sharp`
 
@@ -1380,6 +1426,8 @@ notions to their Brownian forms is an open clause.
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_brownian_not_h0--claude-reviewer--2026-10-17T12_11_37Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_brownian_not_h0 ed839d34f480cba13fa0ef4acc9fb310 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_brownian_rank_gt ed839d34f480cba154d947c79143fab0 by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_brownian_rank_gt--claude-reviewer--2026-10-17T16_05_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_brownian_rank_gt ed839d34f480cba154d947c79143fab0 by=claude-reviewer -->
 
 ## Example 5.2, the reduction to the Brownian forms: `Dissertation.PaperSpec.A.ex_brownian_reduction`, `ex_brownian_prp`
 
@@ -1496,7 +1544,11 @@ Verdict: faithful, with "remove the Poisson channel" read as `ν = 0`, as in the
 `ex_brownian`.
 
 <!-- spec-review: Dissertation.PaperSpec.A.ex_brownian_reduction ed839d34f480cba16ec077c21383f1ee by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_brownian_reduction--claude-reviewer--2026-10-17T16_05_53Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_brownian_reduction ed839d34f480cba16ec077c21383f1ee by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_brownian_prp ed839d34f480cba1d54de82e0956a03e by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_brownian_prp--claude-reviewer--2026-10-17T16_03_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_brownian_prp ed839d34f480cba1d54de82e0956a03e by=claude-reviewer -->
 
 ## §3, the solution definition and the solution space: `Dissertation.PaperSpec.A.sec3_one_null_set`, `sec3_HH_inclusion`, `sec3_HH_definite`
 
@@ -1728,6 +1780,8 @@ càdlàg paths, localisation with the indicator `1_{τ_k > 0}`); the printed cla
 §2 and as used in Lemmas 4.1 and 4.3, is an instance.
 
 <!-- spec-review: Dissertation.PaperSpec.A.sec4_supremum_criterion ed839d34f480cba1f588c2071f5242ff by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.sec4_supremum_criterion--claude-reviewer--2026-10-17T16_03_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.sec4_supremum_criterion ed839d34f480cba1f588c2071f5242ff by=claude-reviewer -->
 
 ## Abstract: the claims it summarises (`A:abstract`)
 
@@ -1834,7 +1888,11 @@ Verdict: `rem_beta1_dich_printed` is a faithful reading of the printed remark, r
 `rem_beta1_dich` is its faithful correction (`ν ≠ 0` added).
 
 <!-- spec-review: Dissertation.PaperSpec.A.rem_beta1_dich_printed ed839d34f480cba1ea466e04b39bde57 by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.rem_beta1_dich_printed--claude-reviewer--2026-10-17T16_05_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.rem_beta1_dich_printed ed839d34f480cba1ea466e04b39bde57 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.rem_beta1_dich ed839d34f480cba1312ac03d25ff8ea1 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.rem_beta1_dich--claude-reviewer--2026-10-17T16_05_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.rem_beta1_dich ed839d34f480cba1312ac03d25ff8ea1 by=claude-reviewer -->
 
 ## Remark 2.11, the dissipativity margin: `Dissertation.PaperSpec.A.rem_margin_reduce`, `rem_margin_unweighted`
 
@@ -1884,9 +1942,13 @@ Verdict: faithful (`rem_margin_unweighted` with the constant `c / c_G` as the re
 instead be recorded").
 
 <!-- spec-review: Dissertation.PaperSpec.A.rem_margin_reduce ed839d34f480cba15843e0ffe4756126 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.rem_margin_reduce--claude-reviewer--2026-10-17T16_03_53Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.rem_margin_reduce ed839d34f480cba15843e0ffe4756126 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.rem_margin_unweighted ed839d34f480cba1ba4163c9b3d796bd by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.rem_margin_unweighted--claude-reviewer--2026-10-17T16_03_53Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.rem_margin_unweighted ed839d34f480cba1ba4163c9b3d796bd by=claude-reviewer -->
 
-## Remark 3.4, uniqueness without origin integrability: `Dissertation.PaperSpec.A.rem_uniq_exist_printed`, `rem_uniq_singular`
+## Remark 3.4, uniqueness without origin integrability: `Dissertation.PaperSpec.A.rem_uniq_exist`, `rem_uniq_singular`
 
 Manuscript (§3, Remark `rem:uniq-no-integ`): "Remark 3.2 would place each tuple `Θ ∈ ℍ_weak`
 satisfying (1.1) individually in `ℍ` if Assumption 2.2 were imposed. But the uniqueness only
@@ -1895,65 +1957,128 @@ requires Assumptions 2.3–2.5, as we only need to show that the difference `Θ�
 Assumption 2.2."
 
 The first sentence is `rem_cwp_class` (Remark 3.2) and the second `thm_uniq` (Theorem 3.3), both
-reviewed above. The third is read here.
+reviewed above. The third is `rem_uniq_exist`; `rem_uniq_singular` records what the remark's
+uniqueness without Assumption 2.2 is about, a system outside Assumption 2.2 that has a solution.
 
-Propositions:
+### `rem_uniq_exist`, Assumption 2.2 cannot be dropped from Theorem 3.5
 
-* `rem_uniq_exist_printed`: in the standing setting, for `T > 0` and coefficients with (2.3) and
-  Assumptions 2.3–2.5 (constants `L, α, β₁, β₂`, `G` of full rank): if, from an initial datum
-  `ξ₀`, some tuple of `ℍ_weak` satisfies (1.1) (`WeakSolution`) with `𝔼 sup_{t ≤ T} |X_t|² < ∞`
-  and `𝔼 sup_{t ≤ T} |Y_t|² < ∞`, then Assumption 2.2 holds with `ξ₀`.
-* `rem_uniq_singular`: in the standing setting with `𝒢₀ = ⊥`, `n = m = 1` and any `d`, on every
-  horizon `T > 0`, the system of Example 5.1(i) with `β₁ = 1`, `β₂ = 0`, `σ_c = 0`, `h_c = 0` and
-  the deterministic drift `t^{-1/2}` added to `b` (`singularCoeffs`, reviewed in
-  `definitions.md`) satisfies (2.3), Assumption 2.3 with `L = 1`, Assumption 2.4 with `G = 1` and
-  Assumption 2.5 with `G = 1`, `α = 1`, `β₁ = 1`, `β₂ = 0`; violates Assumption 2.2 for every
-  initial datum; and from `ξ₀ = 0` has a tuple of `ℍ_weak` satisfying (1.1) whose `X` and `Y`
-  have square-integrable suprema.
+Proposition: in the standing setting (any `𝒢₀` independent of the driver, `ν` σ-finite on a
+countably generated `(E, ℰ)`, the filtration `enlJoint 𝒢₀ D h𝒢₀`), with `n = m = 1` and `d ≥ 1`,
+on every horizon `T > 0`, the named system `singularDiffusionCoeffs` (reviewed in
+`definitions.md`: Example 5.1(i) at `β₁ = 1`, `β₂ = 0`, `σ_c = 0`, `h_c = 0` with the deterministic
+diffusion `t^{-1/2} e₁₁` added to `σ`) satisfies (2.3) `JointBorel`, Assumption 2.3 with `L = 1`,
+Assumption 2.4 with `G = 1` (`(1 : Matrix (Fin 1) (Fin 1) ℝ).rank = min 1 1`) and Assumption 2.5
+with `G = 1`, `α = 1`, `β₁ = 1`, `β₂ = 0`; and for every initial datum `ξ₀ : Ω → ℝ¹`:
+Assumption 2.2 fails, no `X, Y, Z, U` satisfy `WeakSolution` (a tuple of `ℍ_weak` satisfying
+(1.1)), and no `X, Y, Z, U` satisfy `Solution` (a solution in `ℍ`).
 
-Correspondence (the printed reading):
+Correspondence:
 
-* "The existence requires Assumption 2.2" is read as a mathematical claim: under what the remark
-  keeps for the uniqueness ((2.3) and Assumptions 2.3–2.5), a solution in `ℍ` exists only if
-  Assumption 2.2 holds. The other reading, that the existence proof of Theorem 3.5 uses
-  Assumption 2.2, is a statement about a proof and is not formalised.
-* "A solution in `ℍ`" is the definition of §3: a tuple of `ℍ` satisfying both identities of (1.1)
-  almost surely for every `t`, the drift and the driver entering through the Lebesgue integrals
-  `∫_0^t b ds` and `∫_t^T f ds`. The proposition takes a tuple of `ℍ_weak` satisfying (1.1) with
-  pathwise drift and driver integrals (`WeakSolution`, reviewed in `definitions.md`) whose `X`
-  and `Y` have square-integrable suprema, that is, a tuple of `ℍ`. No hypothesis is added: (2.3)
-  is standing, Assumptions 2.3–2.5 are those of the preceding sentence and `G` of full rank is
-  Assumption 2.4, with which Assumption 2.5 is stated.
-* Refutation: `Dissertation.Acceptance.A.rem_uniq_exist_printed_false`, over a Lévy driver with
-  `d = 1` and `ν = δ₀` on `ℝ`, `𝒢₀ = ⊥` and `T = 1`, at the system of `rem_uniq_singular` from
-  `ξ₀ = 0`: the hypotheses hold, and Assumption 2.2 fails because the origin drift `t^{-1/2}` is
-  not square integrable on `(0, 1)`. The solution is deterministic and continuous
-  (`X_t = 2√t − y t`, `Y ≡ y`, `Z = U = 0`, `y = 2√T / (1 + T)`), so it is a solution in `ℍ`
-  under any reading of the path conditions.
-* The refutation rests on the printed solution notion, whose drift and driver need only be
-  integrable along paths. The repository's `Solution` also asks the drift and driver processes to
-  have finite energy, which Remark 3.2 derives from Assumptions 2.2–2.3. The singular system has no
-  such solution (its drift process `t^{-1/2} − Y_t` is not square integrable for `Y ∈ S²`), and
-  with that notion the Lipschitz bound of Assumption 2.3 at the inputs `(Θ_t, μ_t)` and `(0, δ₀)`
-  makes the origin values of Assumption 2.2 square integrable; the instance refutes the claim only
-  for the printed notion.
+* Reading. "The existence requires Assumption 2.2" is read here as: Assumption 2.2 cannot be
+  dropped from Theorem 3.5, because under what the remark keeps for the uniqueness, (2.3) and
+  Assumptions 2.3–2.5, a solution need not exist. This is the reading the remark's contrast
+  supports ("the uniqueness only requires … However, the existence requires …"): uniqueness
+  holds under the weaker hypotheses, existence does not. A stronger reading, that every system
+  with (2.3), Assumptions 2.3–2.5 and a solution satisfies Assumption 2.2, is false
+  (`rem_uniq_singular` below) and is not what the sentence says: it states a hypothesis of the
+  existence theorem, not a necessary condition for a solution. A third reading, that the proof of
+  Theorem 3.5 uses Assumption 2.2, is a statement about a proof and is not formalised.
+* Form. The printed claim, read so, is an existential negative statement: some system in the
+  standing setting meets (2.3) and Assumptions 2.3–2.5 and has no solution. The proposition
+  exhibits one, on every stochastic basis of §2 with `d ≥ 1`, every `ν`, every `𝒢₀` and every
+  `T > 0`; the printed claim is its instance at any such basis, for example the one of the
+  witness. It is broader than needed in the basis and the horizon, and specific in the system,
+  which is named so that the exhibit can be read.
+* Hypotheses of the remark. (2.3) is `JointBorel` (standing); Assumption 2.3 is `Assumption23`
+  with `L = 1`; Assumption 2.4 is the full rank of `G = 1`, with which Assumption 2.5 is stated;
+  Assumption 2.5 is `Assumption25` with `G = 1`, `α = 1`, `β₁ = 1`, `β₂ = 0`, constants admissible
+  for `m = n` (`α + β₁ > 0`, `β₁ + β₂ > 0`). These are the printed forms reviewed with Theorem 3.5.
+  They are conclusions of the proposition, so a proof of it establishes that the system meets
+  them; they are not assumed.
+* "Without Assumption 2.2": the conjunct `¬ Assumption22 … ξ₀` for every `ξ₀` records that the
+  system lies outside Assumption 2.2. It fails through the origin value of the diffusion only:
+  `σ(t, 0, δ₀) = t^{-1/2} e₁₁`, whose square `t^{-1}` is not integrable on `(0, T)`; the origin
+  values of `b, h, f` are `0`, and `ξ₀ = 0` meets the initial-datum part.
+* "Does not give a solution": the proposition denies the existence of a tuple of `ℍ_weak`
+  satisfying (1.1) (`WeakSolution`, reviewed in `definitions.md`) from any initial datum, which
+  is stronger than denying a solution in `ℍ`, the class of Theorem 3.5; the `Solution` conjunct
+  is stated as well, since that is the class of the theorem whose hypothesis is at issue.
+* The mechanism, and the reading of the stochastic integral. A tuple of `ℍ_weak` has
+  `𝔼 ∫_0^T |Z_t|²_F dt < ∞`, and (1.1) contains `∫_0^t σ(s, Θ_s, μ_s) dW_s`, whose entry `(1, 1)`
+  integrand is `s^{-1/2} − Z_{11,s}` on `[0, T]`. `WeakSolution` reads the Itô integral in `L²`,
+  so it asks `𝔼 ∫_0^T |s^{-1/2} − Z_{11,s}|² ds < ∞`; with `|s^{-1/2}|² ≤ 2 |s^{-1/2} − Z_{11,s}|²
+  + 2 |Z_{11,s}|²` and `∫_0^T s^{-1} ds = ∞` the two finiteness conditions are incompatible. The
+  same holds for the local reading of the Itô integral, `∫_0^T |σ_s|²_F ds < ∞` almost surely:
+  `∫_0^T |Z_{11,s}|² ds < ∞` almost surely forces `∫_0^T |s^{-1/2} − Z_{11,s}|² ds = ∞` on almost
+  every path. The proposition is proved for the repository's notion only; the counterexample does
+  not depend on the choice between the two readings.
+* The absence of solutions comes from the system, not from the solution notion: on the same
+  bases the same notion is met by Example 5.1(i) (`thm_uniq_hypotheses`, at `β₁ = β₂ = 1`) and by
+  the singular-drift system `singularCoeffs` (`rem_uniq_singular`). The latter has the same base
+  `affineCoeffs 1 0 0 0` as `singularDiffusionCoeffs`, with the same singular term `t^{-1/2}`
+  added to the drift instead of the diffusion: the drift enters (1.1) through a pathwise Lebesgue
+  integral, for which `t^{-1/2}` is integrable, the diffusion through an Itô integral, for which
+  it is not square integrable. Together the two systems show that Assumption 2.2 is neither
+  necessary for existence nor removable from Theorem 3.5.
+* `n = m = 1`, `G = 1`: the dimensions and the coupling matrix of Example 5.1(i); `d ≥ 1` is part
+  of the standing setting (for `d = 0` the added term is absent). Example 5.1(i) prints
+  `β₂ > 0` and a constant `σ_c`; here `β₂ = 0`, which keeps the constants of Assumption 2.5
+  admissible, and the constant baseline `σ_c` is replaced by the baseline `t^{-1/2}` (for
+  `d = 1`, `σ = t^{-1/2} − z`). The example supplies the formula; the remark's hypotheses are
+  checked for the system itself.
 
-Correction: `rem_uniq_singular` adds no hypothesis to the printed sentence; no hypothesis restores
-it within the printed solution notion. It states the fact behind the refutation: a system meeting
-(2.3) and Assumptions 2.3–2.5 but not Assumption 2.2 can have a solution in `ℍ`. The minimal
-change of the manuscript is to say that the existence theorem assumes Assumption 2.2. One family
-of instances (any `ν`, any `d`, `𝒢₀ = ⊥`, every `T > 0`) suffices for this negative statement.
+Witness: `Dissertation.Acceptance.A.rem_uniq_exist_hypotheses`: a probability space carrying a
+Lévy driver with `d = 1` and `ν = δ₀` on `ℝ` (σ-finite, `ℝ` countably generated), `𝒢₀ = ⊥`
+independent of the driver, `0 < d` and `T = 1 > 0`, which are the proposition's hypotheses; at
+that instance the system satisfies (2.3), Assumption 2.3 with `L = 1`, Assumption 2.4 with
+`G = 1` and Assumption 2.5 with `G = 1`, `α = β₁ = 1`, `β₂ = 0`: the hypotheses of Theorem 3.5
+other than Assumption 2.2.
 
-Witness: `Dissertation.Acceptance.A.rem_uniq_hypotheses` for `rem_uniq_singular`: a Lévy driver
-with `d = 1` and `ν = δ₀` on `ℝ`, independent of `𝒢₀ = ⊥`, and `T = 1`, which are the
-proposition's hypotheses; the witness also exhibits the solution.
+Verdict: faithful as the reading "Assumption 2.2 cannot be dropped from Theorem 3.5" (an
+exhibit, broader than the printed claim in the basis and the horizon, the printed claim an
+instance), with the reading of "satisfies (1.1)" by `L²` stochastic integrals recorded in
+`definitions.md`.
 
-Verdict: `rem_uniq_exist_printed` is a faithful reading of the printed sentence (read as a
-necessity, with the printed solution notion), refuted; `rem_uniq_singular` is faithful as the
-statement that replaces it.
+<!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_exist ed839d34f480cba142c9722d1381aa5b by=claude-author -->
+Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.rem_uniq_exist--claude-reviewer--2026-10-17T16_48_54Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_exist ed839d34f480cba142c9722d1381aa5b by=claude-reviewer -->
 
-<!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_exist_printed ed839d34f480cba1abd886ba63493a6f by=claude-author -->
+### `rem_uniq_singular`, a system outside Assumption 2.2 with a solution
+
+Proposition: in the standing setting with `𝒢₀ = ⊥`, `n = m = 1` and any `d`, on every horizon
+`T > 0`, the system of Example 5.1(i) with `β₁ = 1`, `β₂ = 0`, `σ_c = 0`, `h_c = 0` and the
+deterministic drift `t^{-1/2}` added to `b` (`singularCoeffs`, reviewed in `definitions.md`)
+satisfies (2.3), Assumption 2.3 with `L = 1`, Assumption 2.4 with `G = 1` and Assumption 2.5 with
+`G = 1`, `α = 1`, `β₁ = 1`, `β₂ = 0`; violates Assumption 2.2 for every initial datum; and from
+`ξ₀ = 0` has a tuple of `ℍ_weak` satisfying (1.1) whose `X` and `Y` have square-integrable suprema.
+
+Correspondence:
+
+* The remark separates the hypotheses of uniqueness from those of existence; its uniqueness
+  statement is not empty outside Assumption 2.2 because systems there can have solutions. This
+  system is one: the drift `t^{-1/2}` enters (1.1) through a pathwise Lebesgue integral, for
+  which it is integrable, and the solution is deterministic and continuous
+  (`X_t = 2√t − y t`, `Y ≡ y`, `Z = U = 0`, `y = 2√T / (1 + T)`), a solution in `ℍ` under any
+  reading of the path conditions. It also shows that Assumption 2.2 is not necessary for a
+  solution, which is why the third sentence is read as a hypothesis of Theorem 3.5.
+* "A solution in `ℍ`" is the definition of §3, with the drift and the driver entering through
+  the Lebesgue integrals `∫_0^t b ds` and `∫_t^T f ds`: a tuple of `ℍ_weak` satisfying (1.1) with
+  pathwise drift and driver integrals (`WeakSolution`) whose `X` and `Y` have square-integrable
+  suprema. The repository's `Solution` also asks the drift and driver processes to have finite
+  energy, which Remark 3.2 derives from Assumptions 2.2–2.3; this system has no such solution, so
+  the proposition is stated with the printed notion.
+* One family of instances (any `ν`, any `d`, `𝒢₀ = ⊥`, every `T > 0`) suffices: the claim is that
+  such a system exists.
+
+Witness: `Dissertation.Acceptance.A.rem_uniq_hypotheses`: a Lévy driver with `d = 1` and `ν = δ₀`
+on `ℝ`, independent of `𝒢₀ = ⊥`, and `T = 1`, which are the proposition's hypotheses; the witness
+also exhibits the solution.
+
+Verdict: faithful, as the example the remark's uniqueness statement is about.
+
 <!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_singular ed839d34f480cba1c331e57f1b4633b6 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.rem_uniq_singular--claude-reviewer--2026-10-17T16_05_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_singular ed839d34f480cba1c331e57f1b4633b6 by=claude-reviewer -->
 
 ## The paragraph after Corollary 3.6: `Dissertation.PaperSpec.A.cor_margin_channels`, `cor_margin_additive_printed`, `cor_margin_additive`, `cor_margin_finite_printed`, `cor_margin_finite`
 
@@ -2053,10 +2178,20 @@ Verdict: `cor_margin_channels` faithful (broader); `cor_margin_additive_printed`
 "functionals" (linear) and of "entering through" (at deterministic inputs) recorded.
 
 <!-- spec-review: Dissertation.PaperSpec.A.cor_margin_channels ed839d34f480cba14127298d8cc156d9 by=claude-author -->
+Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.cor_margin_channels--claude-reviewer--2026-10-17T16_05_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_channels ed839d34f480cba14127298d8cc156d9 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.cor_margin_additive_printed ed839d34f480cba173b44fe7fdcea16b by=claude-author -->
+Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.cor_margin_additive_printed--claude-reviewer--2026-10-17T16_03_53Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_additive_printed ed839d34f480cba173b44fe7fdcea16b by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.cor_margin_additive ed839d34f480cba19075028a95edf84d by=claude-author -->
+Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.cor_margin_additive--claude-reviewer--2026-10-17T16_03_53Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_additive ed839d34f480cba19075028a95edf84d by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.cor_margin_finite_printed ed839d34f480cba1d9ce6ca7008a00fa by=claude-author -->
+Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.cor_margin_finite_printed--claude-reviewer--2026-10-17T16_05_51Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_finite_printed ed839d34f480cba1d9ce6ca7008a00fa by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.cor_margin_finite ed839d34f480cba15e05ed8a37017606 by=claude-author -->
+Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.cor_margin_finite--claude-reviewer--2026-10-17T16_05_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_finite ed839d34f480cba15e05ed8a37017606 by=claude-reviewer -->
 
 ## Section 5, the overview paragraph (`A:sec5:overview`)
 
@@ -2231,13 +2366,29 @@ with "nonlinear" read as a nonconstant profile; `ex_fulllaw_beyond_U` and
 `ex_fulllaw_beyond_U_corr` and `ex_fulllaw_beyond_Q` faithful corrections.
 
 <!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_lip ed839d34f480cba11fea7903ed24f9f8 by=claude-author -->
+Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.ex_fulllaw_lip--claude-reviewer--2026-10-17T16_05_51Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_lip ed839d34f480cba11fea7903ed24f9f8 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_pert ed839d34f480cba1e9dade95deb0a071 by=claude-author -->
+Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.ex_fulllaw_pert--claude-reviewer--2026-10-17T16_05_53Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_pert ed839d34f480cba1e9dade95deb0a071 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_wp ed839d34f480cba173d663ff51153197 by=claude-author -->
+Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.ex_fulllaw_wp--claude-reviewer--2026-10-17T16_05_53Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_wp ed839d34f480cba173d663ff51153197 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial ed839d34f480cba1fc87ff54d30df5ad by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial--claude-reviewer--2026-10-17T16_03_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial ed839d34f480cba1fc87ff54d30df5ad by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_U ed839d34f480cba1e06f855614a9b4c6 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_fulllaw_beyond_U--claude-reviewer--2026-10-17T16_03_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_U ed839d34f480cba1e06f855614a9b4c6 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr ed839d34f480cba193f328d7c8c243ea by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr--claude-reviewer--2026-10-17T16_03_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr ed839d34f480cba193f328d7c8c243ea by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q_printed ed839d34f480cba1ef10ddd1a845cbd2 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q_printed--claude-reviewer--2026-10-17T16_03_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q_printed ed839d34f480cba1ef10ddd1a845cbd2 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q ed839d34f480cba12be9f13eb8df21c1 by=claude-author -->
+Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q--claude-reviewer--2026-10-17T16_03_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q ed839d34f480cba12be9f13eb8df21c1 by=claude-reviewer -->
 
 ## Example 5.5, the mean-field dealer market: `Dissertation.PaperSpec.A.ex_dealer_potential`, `ex_dealer_crowd`, `ex_dealer_coeffs`, `ex_dealer`, `ex_dealer_mono`, `ex_dealer_wp`, `ex_dealer_twopoint`, `ex_dealer_mean`, `ex_dealer_mean_corr`, `ex_dealer_marks`
 
@@ -2342,15 +2493,35 @@ every `t`: broader); `ex_dealer_mean` a faithful reading of the printed claim ov
 `ν`, refuted; `ex_dealer_mean_corr` its faithful correction.
 
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_potential ed839d34f480cba1c2e5952133294af3 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_dealer_potential--claude-reviewer--2026-10-17T16_03_51Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_potential ed839d34f480cba1c2e5952133294af3 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_crowd ed839d34f480cba1542ac74da98a0887 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_dealer_crowd--claude-reviewer--2026-10-17T16_03_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_crowd ed839d34f480cba1542ac74da98a0887 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_coeffs ed839d34f480cba1ddb1f9221aa35a6d by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_dealer_coeffs--claude-reviewer--2026-10-17T16_03_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_coeffs ed839d34f480cba1ddb1f9221aa35a6d by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer ed839d34f480cba107ca712a02eccb0d by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_dealer--claude-reviewer--2026-10-17T16_05_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer ed839d34f480cba107ca712a02eccb0d by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_mono ed839d34f480cba135a4c463f2fdb488 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_dealer_mono--claude-reviewer--2026-10-17T16_05_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_mono ed839d34f480cba135a4c463f2fdb488 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_wp ed839d34f480cba178dd2668b1705283 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_dealer_wp--claude-reviewer--2026-10-17T16_05_53Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_wp ed839d34f480cba178dd2668b1705283 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_twopoint ed839d34f480cba10e7a45835d5244c0 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_dealer_twopoint--claude-reviewer--2026-10-17T16_03_51Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_twopoint ed839d34f480cba10e7a45835d5244c0 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_mean ed839d34f480cba11a8c2923753a6d10 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_dealer_mean--claude-reviewer--2026-10-17T16_03_51Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_mean ed839d34f480cba11a8c2923753a6d10 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_mean_corr ed839d34f480cba18bab6ae8a6c6a027 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_dealer_mean_corr--claude-reviewer--2026-10-17T16_03_51Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_mean_corr ed839d34f480cba18bab6ae8a6c6a027 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_marks ed839d34f480cba140a65f520ffefa33 by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_dealer_marks--claude-reviewer--2026-10-17T16_03_51Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_marks ed839d34f480cba140a65f520ffefa33 by=claude-reviewer -->
 
 ## Remark 5.6, the scope of the measure argument: `Dissertation.PaperSpec.A.rem_freelaw_printed`, `rem_freelaw`
 
@@ -2406,7 +2577,11 @@ Verdict: `rem_freelaw_printed` a faithful reading of the printed sentence, refut
 `rem_freelaw` its faithful correction.
 
 <!-- spec-review: Dissertation.PaperSpec.A.rem_freelaw_printed ed839d34f480cba1bbce7828c4ba38e5 by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.rem_freelaw_printed--claude-reviewer--2026-10-17T16_05_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.rem_freelaw_printed ed839d34f480cba1bbce7828c4ba38e5 by=claude-reviewer -->
 <!-- spec-review: Dissertation.PaperSpec.A.rem_freelaw ed839d34f480cba105f02a9629cb6b98 by=claude-author -->
+Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.rem_freelaw--claude-reviewer--2026-10-17T16_05_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.rem_freelaw ed839d34f480cba105f02a9629cb6b98 by=claude-reviewer -->
 
 ## Remark 5.7, perturbative and non-perturbative law dependence: `Dissertation.PaperSpec.A.rem_regimes_law_nonlinear`, `rem_regimes_corr`
 
@@ -2432,7 +2607,7 @@ Propositions:
   `A_{s λ₁ + (1 − s) λ₂}(u) ≠ s A_{λ₁}(u) + (1 − s) A_{λ₂}(u)`.
 * `rem_regimes_corr`: for such `ν` with `L²(ν) ≠ {0}`: the crowding correction is affine in the
   law; no `Φ` has `A_λ(u) = Φ(∫ v λ(dv), u)` for all `λ` and `u`; and for some `λ` the map
-  `u ↦ A_λ(u)` is not linear.
+  `u ↦ A_λ(u)` is not affine (no linear `A` and constant `c` give `A_λ(u) = A u + c` for all `u`).
 
 Correspondence:
 
@@ -2455,20 +2630,34 @@ failure does not depend on the instance.
 
 Correction: `rem_regimes_corr` replaces the conclusion by what Example 5.5 establishes: the
 interaction is affine in the law (in the two-point-kernel class of Example 5.3), no function of
-its mean (the example's "Beyond the mean") and nonlinear in the valuation curve (`∇V` is not
-linear). The hypothesis `L²(ν) ≠ {0}` is needed for the last two (at `L²(ν) = {0}` the correction
-is the zero map, linear and a function of the mean) and not for the first; it is the minimal one.
+its mean (the example's "Beyond the mean") and nonlinear in the valuation curve: at `λ = δ_0` the
+correction is `u ↦ ∇V(u)`, which vanishes at `0` and is not homogeneous, so it is not affine (an
+offset alone does not make a map nonlinear, so the proposition denies affinity, not only
+linearity). The hypothesis `L²(ν) ≠ {0}` is needed for the last two (at `L²(ν) = {0}` the
+correction is the zero map, affine and a function of the mean) and not for the first; it is the
+minimal one.
 The change of the manuscript it records is to call the interaction nonlinear in the valuation
 curve and dependent on the `U`-law beyond its mean, rather than genuinely nonlinear.
 
 Witness: `Dissertation.Acceptance.A.ex_dealer_unit_hypotheses` for `rem_regimes_corr` (a unit
 vector of `L²(ν)` on the mark space of Example 5.5).
 
+Another reading: an independent reviewer read "a genuinely nonlinear `U`-law interaction" as a
+dependence on the `U`-law beyond its mean through the nonlinear kernel `∇V`. Under that reading
+the printed claim needs only `L²(ν) ≠ {0}`, and `rem_regimes_corr` states it (its second and third
+conjuncts). The refutation is kept because §5 reserves "genuinely nonlinear" for law functionals
+beyond the expectation and two-point-kernel interactions of Example 5.3, which are affine in the
+law, and the crowding correction is one of those; both readings are recorded here.
+
 Verdict: `rem_regimes_law_nonlinear` a faithful reading of "genuinely nonlinear `U`-law
 interaction" in the vocabulary of §5, refuted; `rem_regimes_corr` the corrected statement.
 
 <!-- spec-review: Dissertation.PaperSpec.A.rem_regimes_law_nonlinear ed839d34f480cba1ce2bdab6776d4961 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_regimes_corr ed839d34f480cba1669271adf7dd9d95 by=claude-author -->
+Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.rem_regimes_law_nonlinear--claude-reviewer--2026-10-17T16_03_51Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.rem_regimes_law_nonlinear ed839d34f480cba1ce2bdab6776d4961 by=claude-reviewer -->
+<!-- spec-review: Dissertation.PaperSpec.A.rem_regimes_corr ed839d34f480cba16f1e06b2c31d2e18 by=claude-author -->
+Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.rem_regimes_corr--claude-reviewer--2026-10-17T16_49_19Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.rem_regimes_corr ed839d34f480cba16f1e06b2c31d2e18 by=claude-reviewer -->
 
 ## Section 6, the conclusion (`A:conclusion`)
 

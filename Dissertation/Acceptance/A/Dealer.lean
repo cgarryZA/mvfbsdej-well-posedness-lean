@@ -118,11 +118,15 @@ theorem ex_dealer_not_mean_corr : PaperSpec.A.ex_dealer_not_mean_corr.{v} := by
   have hw : ‖‖u‖⁻¹ • u‖ = 1 := by
     rw [norm_smul, norm_inv, norm_norm, inv_mul_cancel₀ hn]
   refine ⟨fun ⟨Φ, hΦ⟩ => crowdOp_not_mean_function hw
-    ⟨fun m => Φ m (‖u‖⁻¹ • u), fun Λ => hΦ Λ _⟩, P2.dirac 0, fun hL => ?_⟩
-  have h := hL.map_smul (2 : ℝ) (‖u‖⁻¹ • u)
-  change crowdOp (Measure.dirac 0) _ = (2 : ℝ) • crowdOp (Measure.dirac 0) _ at h
-  rw [crowdOp_dirac, crowdOp_dirac, sub_zero, sub_zero] at h
-  exact crowdGrad_two_smul_ne hw h
+    ⟨fun m => Φ m (‖u‖⁻¹ • u), fun Λ => hΦ Λ _⟩, P2.dirac 0, fun ⟨A, c, hA⟩ => ?_⟩
+  have h0 := hA 0
+  have h1 := hA (‖u‖⁻¹ • u)
+  have h2 := hA ((2 : ℝ) • ‖u‖⁻¹ • u)
+  change crowdOp (Measure.dirac 0) _ = _ at h0 h1 h2
+  rw [crowdOp_dirac, sub_zero, crowdGrad_zero, map_zero, zero_add] at h0
+  rw [crowdOp_dirac, sub_zero, ← h0, add_zero] at h1 h2
+  rw [map_smul, ← h1] at h2
+  exact crowdGrad_two_smul_ne hw h2
 
 /-- Example 5.5, the crowding correction is affine in the law and an expectation kernel. -/
 theorem ex_dealer_affine : PaperSpec.A.ex_dealer_affine.{v} := by

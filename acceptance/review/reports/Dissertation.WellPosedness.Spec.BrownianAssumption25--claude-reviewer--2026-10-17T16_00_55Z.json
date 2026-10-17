@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.Spec.BrownianAssumption25",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.Spec.BrownianAssumption25",
+  "lean": [
+   "Dissertation.WellPosedness.Spec.BrownianAssumption25"
+  ],
+  "claims": [
+   "A:ex:brownian"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-a498a7c0d4ce",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "0d4cac9166e43d4d18e17cffed3382aa",
+  "fingerprint": "pl-fp-v1:6e46a3a15bbcdb53ccca74a912cb65ace98ecc5598a1b2edcaae4f7b4a9e995a",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for def:Dissertation.WellPosedness.Spec.BrownianAssumption25 (locked before seeing Lean).\n\nBrownian version of Assumption 2.5 (terminal and interior G-monotonicity) for given G in\nR^{m x n}, alpha, beta1, beta2:\n (terminal) for all X_T, X'_T in L^2(Omega,F_T;R^n):\n   E<g(X_T,Law X_T) - g(X'_T,Law X'_T), G(X_T - X'_T)> >= alpha E|G(X_T - X'_T)|^2;\n (interior) for a.e. t in [0,T], BrownianMonoAt(t) (see that unit) for all diagonal inputs;\n (constants) alpha, beta1, beta2 >= 0, alpha + beta1 > 0, beta1 + beta2 > 0, beta1 > 0 if\n   m < n, and alpha > 0 and beta2 > 0 if m > n.\nF_t, F_T: the Brownian filtration (W, F_0). The constants may be existential inside the def or\nparameters. \"a.e. t\" w.r.t. Lebesgue on [0,T]. The full-rank G (Ass 2.4) is a separate\nassumption. Junk: integrals of non-integrable functions are 0 in Lean; with L^2 inputs and\nLipschitz g the terminal terms are integrable.",
+  "locked_at": "2026-10-17T15:42:31Z"
+ },
+ "comparison": {
+  "text": "Comparison for def:Dissertation.WellPosedness.Spec.BrownianAssumption25.\n\nLean: (terminal) for all X_T, X'_T strongly F_T-measurable with MemLp 2: the pairing\n<g(X_T, law X_T) - g(X'_T, law X'_T), G(X_T - X'_T)> is integrable and its expectation is\n>= alpha E|G(X_T - X'_T)|^2; (interior) for a.e. t in [0,T], BrownianMonoAt F P t G beta1 beta2 C;\n(constants) Constants n m alpha beta1 beta2 = alpha, beta1, beta2 >= 0, alpha + beta1 > 0,\nbeta1 + beta2 > 0, m < n -> beta1 > 0, n < m -> alpha > 0 ∧ beta2 > 0.\n\nAgainst my reading:\n- terminal inequality over all X_T, X'_T in L^2(Omega, F_T; R^n), with the induced terminal laws:\n  yes; the extra integrability conjunct makes the Lean integral the genuine expectation (the paper\n  presupposes the expectation exists; automatic under the terminal Lipschitz bound).\n- interior: Lebesgue-a.e. t in [0,T], exceptional set independent of inputs: yes (BrownianMonoAt\n  compared in its own unit; it also carries an integrability conjunct).\n- constants: exactly the paper's list, with the rank conditions (beta1 > 0 if m < n; alpha, beta2 > 0\n  if m > n): yes.\n- Brownian setting: nu = 0, so no U-terms: yes. G full rank (Ass 2.4) separate: yes.\n- G, alpha, beta1, beta2 are parameters (existential at the proposition level): fine.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:51:54Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices: (1) Brownian reduction at nu = 0 (no U-coordinate, no jump pairing);\n(2) both the terminal and (through BrownianMonoAt) the interior conditions include integrability\nof the pairing, so that the Lean integral is the genuine expectation; the paper presupposes these\nexpectations exist, and they are automatic under Assumption 2.3 with L^2 inputs; (3) G and the\nconstants are parameters of the predicate."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T16:00:51Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-17T16:00:55Z",
+ "issue_draft": null
+}

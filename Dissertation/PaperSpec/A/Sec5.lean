@@ -681,7 +681,7 @@ def ex_dealer_twopoint : Prop :=
 valuation curve when the fibre is nontrivial. For `ν` σ-finite on a countably generated space with
 `L²(ν)` not reduced to `0`, there is no `Φ` with `A_λ(u) = Φ(∫ v λ(dv), u)` for every
 `λ ∈ P₂(L²(ν))` and `u ∈ L²(ν)`; and for some `λ ∈ P₂(L²(ν))` the map `u ↦ A_λ(u)` is not
-linear. -/
+affine. -/
 def ex_dealer_not_mean_corr : Prop :=
   ∀ {E : Type v} [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν]
     [MeasurableSpace.CountablyGenerated E],
@@ -690,7 +690,9 @@ def ex_dealer_not_mean_corr : Prop :=
         → Lp (EuclideanSpace ℝ (Fin 1)) 2 ν,
       ∀ (Λ : P2 (Lp (EuclideanSpace ℝ (Fin 1)) 2 ν)) (u : Lp (EuclideanSpace ℝ (Fin 1)) 2 ν),
         ex55Crowd Λ.law u = Φ (∫ v, v ∂Λ.law) u)
-    ∧ ∃ Λ : P2 (Lp (EuclideanSpace ℝ (Fin 1)) 2 ν), ¬ IsLinearMap ℝ (ex55Crowd Λ.law)
+    ∧ ∃ Λ : P2 (Lp (EuclideanSpace ℝ (Fin 1)) 2 ν),
+      ¬ ∃ (A : Lp (EuclideanSpace ℝ (Fin 1)) 2 ν →ₗ[ℝ] Lp (EuclideanSpace ℝ (Fin 1)) 2 ν)
+        (c : Lp (EuclideanSpace ℝ (Fin 1)) 2 ν), ∀ u, ex55Crowd Λ.law u = A u + c
 
 /-- Example 5.5, the crowding correction is affine in the law and an expectation kernel. For `ν`
 σ-finite on a countably generated space: for `λ₁, λ₂ ∈ P₂(L²(ν))`, `s ∈ [0, 1]` and `u ∈ L²(ν)`,

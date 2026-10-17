@@ -1,0 +1,60 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.System.Coeffs.perturb",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.System.Coeffs.perturb",
+  "lean": [
+   "Dissertation.WellPosedness.System.Coeffs.perturb"
+  ],
+  "claims": [
+   "A:conclusion",
+   "A:cor:robust",
+   "A:ex:fulllaw",
+   "A:rem:generalrank",
+   "A:rem:regimes"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-a498a7c0d4ce",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "4810e11e4c9f2ac6af25365b8feb2717",
+  "fingerprint": "pl-fp-v1:8c3ca7c34eaeb52b743765b5de1860c5cfb7200385a99437dc504a019a70d6b0",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for def:Dissertation.WellPosedness.System.Coeffs.perturb (Cor 3.6).\n\nPaper notion: the perturbed system\n(b, sigma, h, f, g) := (b0 + p_b, sigma0 + p_sigma, h0 + p_h, f0 + p_f, g):\npointwise sums of the four interior coefficients, terminal function g of the baseline unchanged.\n\nFaithful Lean: perturb c p = coefficient system with b = c.b + p.b, sigma = c.sigma + p.sigma,\nh = c.h + p.h (addition in L^2(nu;R^n)), f = c.f + p.f, and g = c.g (the baseline's). Edge case:\nif g is also summed (c.g + p.g), the Lean is faithful only where p.g = 0 is imposed/chosen; if g is\ntaken from p, it is wrong.",
+  "locked_at": "2026-10-17T15:41:48Z"
+ },
+ "comparison": {
+  "text": "Comparison for def:Dissertation.WellPosedness.System.Coeffs.perturb (Robustness/Perturb.lean:53-61):\nb = C.b + p.b, sigma = C.sigma + p.sigma, h = C.h + p.h (addition in Lp), f = C.f + p.f, g = C.g.\nExactly (b0 + p_b, sigma0 + p_sigma, h0 + p_h, f0 + p_f, g) with the baseline's terminal function,\npointwise in (t, theta, mu). p.g is ignored, as my reading required. Verdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:50:04Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:50:12Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-17T15:50:57Z",
+ "issue_draft": null
+}

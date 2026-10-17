@@ -375,16 +375,16 @@
      "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses"
     },
     {
-     "name": "the existence requires Assumption 2.2, as printed",
-     "spec": "Dissertation.PaperSpec.A.rem_uniq_exist_printed",
-     "refute": "Dissertation.Acceptance.A.rem_uniq_exist_printed_false"
+     "name": "the existence requires Assumption 2.2: (2.3) and Assumptions 2.3–2.5 alone do not give a solution",
+     "spec": "Dissertation.PaperSpec.A.rem_uniq_exist",
+     "accept": "Dissertation.Acceptance.A.rem_uniq_exist",
+     "witness": "Dissertation.Acceptance.A.rem_uniq_exist_hypotheses"
     },
     {
-     "name": "a system violating Assumption 2.2 and satisfying (2.3) and Assumptions 2.3–2.5 has a solution in ℍ",
+     "name": "uniqueness without Assumption 2.2 concerns systems that have solutions: one violating Assumption 2.2 and satisfying (2.3) and Assumptions 2.3–2.5 has a solution in ℍ",
      "spec": "Dissertation.PaperSpec.A.rem_uniq_singular",
      "accept": "Dissertation.Acceptance.A.rem_uniq_singular",
-     "witness": "Dissertation.Acceptance.A.rem_uniq_hypotheses",
-     "corrects": "the existence requires Assumption 2.2, as printed"
+     "witness": "Dissertation.Acceptance.A.rem_uniq_hypotheses"
     }
    ]
   },

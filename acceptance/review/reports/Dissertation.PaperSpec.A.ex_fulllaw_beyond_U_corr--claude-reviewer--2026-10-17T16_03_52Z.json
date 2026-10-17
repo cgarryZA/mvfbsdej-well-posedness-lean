@@ -1,0 +1,57 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr",
+  "lean": [
+   "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr"
+  ],
+  "claims": [
+   "A:ex:fulllaw",
+   "A:sec5:overview"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-a498a7c0d4ce",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba193f328d7c8c243ea",
+  "fingerprint": "pl-fp-v1:22af2162ff7a9dc3738d459ea4684b8119c137c19dfd0e9d5933ec4b647475a6",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of spec ex_fulllaw_beyond_U_corr: the U-marginal radial statistics are no expectation\nfunctionals, with the correction L^2(nu) != 0.\n\nFaithful corrected statement: for every sigma-finite nu (countably generated E) with\nL^2(nu;R^m) != 0 (equivalently nu != 0), all n,m,d, every Lambda_0 in P_2(L^2(nu)), every\nbounded Lipschitz qtilde (resp. qhat) non-constant on [0, infinity) (the same nondegeneracy as\nthe radial clause and the printed version), the statistic mu |-> qtilde(W_2(mu^U, Lambda_0))\n(the drift term with v_0, and the jump term qhat(...) hhat) is not an expectation functional\nof mu in P_2(H). Both the drift and jump statistics are covered by the clause (\"statistics\",\nplural; the jump one \"entering the jump coefficient itself\").\nOnly the correction L^2(nu) != 0 may be added; e.g. requiring Lambda_0 = delta_0, finite nu,\nor a stronger nondegeneracy than the printed version's would be narrower.\nTruth check: with L^2 != 0, W_2(., Lambda_0) attains all of [0, infinity) on P_2(L^2), and\nfor Lambda_0 = delta_0 the mixture argument (mu_s = (1-s)delta_0 + s delta_u gives\nq(sqrt(s)|u|) = (1-s)q(0) + s q(|u|), forcing q(r) = q(0) + a r^2, bounded => constant) shows\nnon-affinity; the general Lambda_0 case is plausible, to be checked against the proof.",
+  "locked_at": "2026-10-17T15:47:46Z"
+ },
+ "comparison": {
+  "text": "Comparison, ex_fulllaw_beyond_U_corr (Sec5.lean:610-621).\nAs ex_fulllaw_beyond_U with \"0 < m\" replaced by (exists u != 0 in L^2(nu;R^m)) - the correction\nL^2(nu) != 0 (which implies m >= 1 and nu != 0). Nothing else added: same q nondegeneracy, any\nLambda0 in P2(L^2), any n, d. Conclusion as before.\nWitness ex_fulllaw_beyond_hypotheses: nu = delta_0 with a nonzero vector, q = min(|r|,1) -\nintended instance.\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T16:01:28Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T16:01:36Z",
+  "disagreements": "The author's review recorded for this unit is empty (its text is attached to an adjacent review marker of a unit outside this chunk and was not shown), so there is nothing to compare point by point. My verdict: faithful (see comparison); no disagreement can be recorded against an empty review."
+ },
+ "submitted_at": "2026-10-17T16:03:52Z",
+ "issue_draft": null
+}

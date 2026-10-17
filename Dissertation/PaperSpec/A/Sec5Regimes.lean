@@ -18,7 +18,7 @@ the valuation curve `u` and no function of the mean of `λ`.
 * `Dissertation.PaperSpec.A.rem_regimes_law_nonlinear` — the crowding correction is not affine in
   the law.
 * `Dissertation.PaperSpec.A.rem_regimes_corr` — the crowding correction is affine in the law, no
-  function of its mean, and nonlinear in the valuation curve.
+  function of its mean, and not affine in the valuation curve.
 -/
 
 open MeasureTheory Filter ProbabilityTheory
@@ -46,7 +46,7 @@ def rem_regimes_law_nonlinear : Prop :=
 with `L²(ν)` not reduced to `0`, the crowding correction of Example 5.5 is affine in the law,
 `A_{s λ₁ + (1 − s) λ₂}(u) = s A_{λ₁}(u) + (1 − s) A_{λ₂}(u)` for `λ₁, λ₂ ∈ P₂(L²(ν))` and
 `s ∈ [0, 1]`; there is no `Φ` with `A_λ(u) = Φ(∫ v λ(dv), u)` for every `λ` and `u`; and for some
-`λ ∈ P₂(L²(ν))` the map `u ↦ A_λ(u)` is not linear. -/
+`λ ∈ P₂(L²(ν))` the map `u ↦ A_λ(u)` is not affine. -/
 def rem_regimes_corr : Prop :=
   ∀ {E : Type v} [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν]
     [MeasurableSpace.CountablyGenerated E],
@@ -59,6 +59,8 @@ def rem_regimes_corr : Prop :=
         → Lp (EuclideanSpace ℝ (Fin 1)) 2 ν,
       ∀ (Λ : P2 (Lp (EuclideanSpace ℝ (Fin 1)) 2 ν)) (u : Lp (EuclideanSpace ℝ (Fin 1)) 2 ν),
         ex55Crowd Λ.law u = Φ (∫ v, v ∂Λ.law) u)
-    ∧ ∃ Λ : P2 (Lp (EuclideanSpace ℝ (Fin 1)) 2 ν), ¬ IsLinearMap ℝ (ex55Crowd Λ.law)
+    ∧ ∃ Λ : P2 (Lp (EuclideanSpace ℝ (Fin 1)) 2 ν),
+      ¬ ∃ (A : Lp (EuclideanSpace ℝ (Fin 1)) 2 ν →ₗ[ℝ] Lp (EuclideanSpace ℝ (Fin 1)) 2 ν)
+        (c : Lp (EuclideanSpace ℝ (Fin 1)) 2 ν), ∀ u, ex55Crowd Λ.law u = A u + c
 
 end Dissertation.PaperSpec.A

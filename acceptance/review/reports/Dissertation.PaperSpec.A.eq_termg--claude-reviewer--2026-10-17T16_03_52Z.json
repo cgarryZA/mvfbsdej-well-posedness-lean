@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.eq_termg",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.eq_termg",
+  "lean": [
+   "Dissertation.PaperSpec.A.eq_termg"
+  ],
+  "claims": [
+   "A:eq:termg"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-a498a7c0d4ce",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba171988e2e6de37794",
+  "fingerprint": "pl-fp-v1:15480d57a7b017e059f8cf37ad2705ef42cdc014d87fed09bf3f995b216d4d52",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of spec eq_termg ((4.3): E|g(X_T, Law(X_T))|^2 <= C (E|X_T|^2 + |g(0, delta_0)|^2),\n\"follows in the same way from (2.? lipT) and (2.couplingT)\").\n\nSetting: standing filtered probability space, horizon T > 0, dimensions n, m >= 1 (any nu);\ng : R^n x P_2(R^n) -> R^m deterministic, jointly Borel (standing).\nHypothesis: the terminal Lipschitz condition of Assumption 2.4 (eq:lipT) with constant\nL >= 0, in its printed diagonal form: for all X_T, X'_T in L^2(Omega, F_T; R^n),\n|g(X_T, Law X_T) - g(X'_T, Law X'_T)| <= L (|X_T - X'_T| + W_2(Law X_T, Law X'_T)) a.s.\n(A pointwise hypothesis for all x, x', rho, rho' would be stronger than printed => narrower;\nthe proof uses only the pair (X_T, 0).)\nConclusion: for every X_T in L^2(Omega, F_T; R^n):\n   E|g(X_T, Law X_T)|^2 <= C (E|X_T|^2 + |g(0, delta_0)|^2).\nConstant: C depends only on L here (C = max(3, 6L^2) works: |g(X_T,rho)| <= |g(0,delta_0)| +\nL(|X_T| + (E|X_T|^2)^{1/2})). By the section's convention C may depend on T, L, |G|, c_G,\nalpha, beta_1, beta_2, c_BDG; it must be chosen BEFORE g, X_T, the probability space, n, m,\nnu (exists C = C(L) for all ...). If C is quantified after g or X_T the statement is\nweaker (mismatched with the constant convention).\nEdge cases: E as a lintegral (ENNReal) or Bochner integral - if Bochner, need integrability of\n|g(X_T, rho)|^2 or else junk 0 would make LHS trivially small (harmless direction: LHS junk 0\nmakes the bound trivially true, so the proposition would be weaker only in a junk case that\ncannot occur here because the bound itself gives integrability... but formally a Bochner\nLHS on a non-integrable function is 0, so the statement would hold vacuously there; one\nneeds the RHS finite: E|X_T|^2 < infinity is given). Law(X_T) must be in P_2(R^n): needs\nX_T in L^2.",
+  "locked_at": "2026-10-17T15:47:46Z"
+ },
+ "comparison": {
+  "text": "Comparison, eq_termg (Sec4Coeff.lean:63-74).\nConstant: exists K : R -> R, chosen before the probability space, filtration, dimensions, T, L,\ng and X_T; the bound uses K(L): C depends only on L - as in my reading (stricter than the\nsection's allowed dependence on T, |G|, ...; fine).\nHypothesis: LipTerminal F P T L g, which is (2.6) in the printed diagonal form: for all F_T-\nstrongly-measurable square-integrable X_T, X'_T, a.s. |g(X_T, Law X_T) - g(X'_T, Law X'_T)|\n<= L (|X_T - X'_T| + W_2(Law X_T, Law X'_T)), with W_2 = w2P on P2(R^n) (Euclidean norm).\nNot the pointwise form - matches.\nConclusion: for all F_T-strongly-measurable X_T in L^2: lintegral |g(X_T, lawP2 X_T)|^2 <=\nofReal(K L) (lintegral |X_T|^2 + |g(0, delta_0)|^2). lawP2 P X_T is the genuine image law\n(MemLp holds). Expectations read in [0, infinity] (lintegrals): no Bochner junk.\nNo measurability hypothesis on g (broader; the standing Borel measurability is not needed).\nn, m in N, T in R, any filtration indexed by R: broader ambient generality.\nWitness thm_cwp_hypotheses: a system satisfying the assumptions (Example 5.1(i)); its g\nsatisfies LipTerminal - fine.\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T16:01:28Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T16:01:35Z",
+  "disagreements": "The author's review recorded for this unit is empty (its text is attached to an adjacent review marker of a unit outside this chunk and was not shown), so there is nothing to compare point by point. My verdict: faithful (see comparison); no disagreement can be recorded against an empty review."
+ },
+ "submitted_at": "2026-10-17T16:03:52Z",
+ "issue_draft": null
+}

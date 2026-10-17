@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.Existence.ProgTuple",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.Existence.ProgTuple",
+  "lean": [
+   "Dissertation.WellPosedness.Existence.ProgTuple"
+  ],
+  "claims": [
+   "A:eq:coefmeas"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-a498a7c0d4ce",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "f8659178ce7276550000000000000000",
+  "fingerprint": "pl-fp-v1:14a7d6b126973b9cb38cbc32eee59eee92ff2a98f1c260fddbb4875ba112dc50",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for def:Dissertation.WellPosedness.Existence.ProgTuple ((2.5) / Lemma A.1).\n\nPaper notion: a tuple process Theta = (X, Y, Z, U) on [0,T] x Omega, H-valued (X in R^n, Y in R^m,\nZ in R^{m x d}, U in L^2(nu;R^m)), progressively measurable w.r.t. the standing filtration (F_t)\n(usual augmentation of W, N, F_0); in the paper X, Y are cadlag adapted (hence progressive) and\nZ, U predictable (hence progressive); (2.5) asserts that along such a tuple (and its law flow) the\ncoefficient processes psi(s, Theta_s, mu_s) are progressively measurable and h(s, Theta_{s-}, e,\nmu^-_s) predictable.\n\nFaithful Lean: a structure/predicate packaging the four component processes with progressive\nmeasurability of each (for each t, the restriction to [0,t] x Omega is B([0,t]) (x) F_t-measurable,\nwith the L^2(nu)-valued U strongly measurable in this sense), w.r.t. the paper's filtration. If it\nalso packages square integrability (diagonal inputs Theta_t in L^2(F_t;H)), that is in line with\n(2.5)'s \"along any diagonal input\". To check: progressive (not merely adapted, not merely jointly\nmeasurable), right filtration, right codomains and norms of H.",
+  "locked_at": "2026-10-17T15:41:49Z"
+ },
+ "comparison": {
+  "text": "Comparison for def:Dissertation.WellPosedness.Existence.ProgTuple (Existence/WPZero.lean:62-90): a\nProp-valued structure on coordinate families X, Y (R-indexed time), Z (m x d entries), U (pointwise in\nthe mark): X, Y adapted to F with EVERY path right-continuous at every t in R; Z jointly measurable,\nprogressively measurable and of finite energy on [0,T]; U jointly measurable in (omega, s, e), marked\nprogressively measurable, finite marked energy on [0,T].\n\nAgainst my reading: progressive measurability of every component is ensured (adapted + right-\ncontinuous paths => progressive for X, Y; explicitly for Z, U), w.r.t. the generic filtration F\n(which filtration is the propositions' matter), with the right codomains (R^n, R^m, R^{m x d},\npointwise representatives of L^2(nu;R^m)), U read through a jointly measurable representative as in\n(2.4). Compared with the paper's tuple processes (X, Y cadlag adapted; Z, U predictable, square\nintegrable -- the solution class of §3 and the hypothesis of Lemma A.1), ProgTuple is BROADER:\nright-continuity instead of cadlag (no left limits), progressive instead of predictable for Z and U,\nand no square integrability of X, Y (Lemma A.1 assumes E int (|X|^2 + |Y|^2) dt < infinity). Nothing the\npaper's tuples have is missing: every paper tuple (extended outside [0,T], e.g. constantly for X, Y and\nby 0 for Z, U) is a ProgTuple. In its use (eq_coefmeas: CoeffRegular quantifies over all ProgTuples)\nthe broader class strengthens the hypothesis side of a \"for all tuples\" statement; the\npredictability conclusion of (2.5) for h is handled by the separate eq_coefmeas_jump with a\nPredictable tuple. Verdict: broader.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:50:05Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "broader",
+  "detail": "ProgTuple is broader than the paper's class of tuple processes (X, Y cadlag adapted, Z in H^2_W and U\nin H^2_N predictable, as in the solution class of §3 and Lemma A.1): it asks only right-continuous\nadapted X, Y (no left limits, no square integrability) and progressively (marked progressively, for\nU) measurable, jointly measurable, finite-energy Z, U. The paper's tuples are an instance: given\n(X, Y, Z, U) of the paper on [0,T], extend X, Y constantly outside [0,T] (keeping right-continuity\neverywhere; choose all paths cadlag, possible under the usual conditions) and Z, U by 0; cadlag\nimplies right-continuous, predictable implies progressive (and joint measurability), and the\nenergy conditions are the H^2_W / H^2_N norms. Hence ProgTuple ⊇ paper tuples."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:50:13Z",
+  "disagreements": "No disagreement with the author's description, which is accurate. I add a classification the entry\ndoes not state: ProgTuple is broader than the paper's tuple processes (cadlag adapted X, Y; predictable\nsquare-integrable Z, U): right-continuity instead of cadlag, progressive instead of predictable, and no\nsquare integrability of X, Y; every paper tuple (suitably extended outside [0,T]) is a ProgTuple, so it\nwidens the hypothesis side of eq_coefmeas, and the predictable conclusion for h is left to\neq_coefmeas_jump."
+ },
+ "submitted_at": "2026-10-17T15:50:57Z",
+ "issue_draft": null
+}

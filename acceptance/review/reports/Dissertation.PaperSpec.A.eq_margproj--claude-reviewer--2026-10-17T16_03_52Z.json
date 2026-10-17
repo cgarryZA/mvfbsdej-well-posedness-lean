@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.eq_margproj",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.eq_margproj",
+  "lean": [
+   "Dissertation.PaperSpec.A.eq_margproj"
+  ],
+  "claims": [
+   "A:remark-2.6"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-a498a7c0d4ce",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba1c19abbad6d02050c",
+  "fingerprint": "pl-fp-v1:add2ab479c715c283f0abfd1c91ccd82e4d32f1549b9881808c8e64365d6745b",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of spec eq_margproj ((2.11): \"Marginal projection P_2(H) -> P_2(L^2(nu)) is 1-Lipschitz\nfor W_2: W_2(mu^U, mu'^U)^2 <= int |u-u'|^2 dpi <= int |theta-theta'|_H^2 dpi <= W_2(mu,mu')^2\").\n\nSetting: H = R^n x R^m x R^{m x d} x L^2(nu;R^m) with |theta|_H^2 = |x|^2+|y|^2+|z|_F^2+|u|^2,\nfor all dimensions n, m, d >= 1 and every sigma-finite nu on a countably generated E (nu = 0\nincluded). mu^U := push-forward of mu by theta |-> u. P_2(.) = Borel probability measures\nwith finite second moment. W_2 = quadratic Wasserstein distance (inf over couplings).\nFaithful statement: for all mu, mu' in P_2(H): W_2(mu^U, mu'^U) <= W_2(mu, mu') (or the\nsquared form). Also implicitly mu^U in P_2(L^2(nu)) (the marginal of a P_2 law is P_2). The\npaper's proof uses an optimal coupling; the statement does not depend on its existence.\nConstant: exactly 1. No other hypotheses.\nEncoding checks: the H norm must be the Euclidean (l^2) product norm, not the sup norm\n(Lean's default on products is the sup norm!) - for the U-marginal bound\n|u - u'| <= |theta - theta'|_H holds in both norms, so the inequality would remain true with\nthe sup norm, but W_2 on P_2(H) must be the one of the paper's |.|_H to be the printed\nstatement (a sup-norm W_2 on H is smaller, so a sup-norm statement W_2^U <= W_2^{sup}(mu,mu')\nwould be STRONGER than printed, still fine logically as broader... actually it implies the\nprinted one since W_2^{sup} <= W_2^{l2}). W_2 as ENNReal vs real: with P_2 measures, finite.\nA statement over a general product with a 1-Lipschitz projection is broader and fine.",
+  "locked_at": "2026-10-17T15:47:46Z"
+ },
+ "comparison": {
+  "text": "Comparison, eq_margproj (Sec2.lean:45-51).\nforall sigma-finite nu on countably generated E, forall n m d, forall mu, mu' in P2(TupleH):\nw2P mu.margU mu'.margU <= w2H mu mu'.\nTupleH carries the max norm, but the right side is w2H: the 2-Wasserstein distance of the\nimages under toL2 into WithLp 2 (x, WithLp 2 (y, WithLp 2 (z, u))), i.e. for the Hilbert norm\n(|x|^2+|y|^2+|z|_F^2+|u|^2)^{1/2} - the paper's W_2 on P_2(H). The left side is the W_2 on\nP2(L^2(nu;R^m)) for the L^2 norm. margU = push-forward by the projection onto the u channel -\nmu^U. Constant 1. Both distances finite for P2 laws (no toReal junk).\nDimensions n, m, d in N (including 0) - broader, harmless.\nWitness eq_margproj_hypotheses: two laws with distinct U-marginals at nu = delta_0 - fine.\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T16:01:28Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T16:01:35Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-17T16:03:52Z",
+ "issue_draft": null
+}

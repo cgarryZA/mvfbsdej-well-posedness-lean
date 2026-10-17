@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.Law.P2.toP2WH",
+  "kind": "def",
+  "name": "Dissertation.Law.P2.toP2WH",
+  "lean": [
+   "Dissertation.Law.P2.toP2WH"
+  ],
+  "claims": [
+   "A:lem:lawflow"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-a498a7c0d4ce",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "d1c4f8da3396bc50d397270158b14316",
+  "fingerprint": "pl-fp-v1:1e16e82ece402cd0d9820096df152afbba5279bdb5e1c766e03577de6e2e84e3",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for def:Dissertation.Law.P2.toP2WH (locked before seeing Lean).\n\nInverse direction of P2WH.toP2: the conversion from P2 over one carrier of H (by name, the\n\"Law\" module's P2 on a plain product type or another model) to P2 over the Hilbert carrier WH\n(WithLp-2 product with norm |x|^2+|y|^2+|z|_F^2+||u||^2) on which the coefficients take their\nmeasure argument and on which W2 is the paper's W2. Faithful: pushforward along the canonical\nmeasurable equivalence between the carriers (no alteration of the measure), preserving finite\nsecond moments (norm equivalence), and inverse to toP2. Context Lemma A.1 (law flow): the law\nof the tuple computed on the product carrier is converted to the coefficient carrier; a\nfaithful conversion makes mu_t the law of Theta_t on H.",
+  "locked_at": "2026-10-17T15:42:32Z"
+ },
+ "comparison": {
+  "text": "Comparison for def:Dissertation.Law.P2.toP2WH.\n\nLean (System/HilbertW2Space.lean): P2.toP2WH mu := mu : P2WH HX HY HZY HUY, where P2WH is the type synonym of\nP2 (Tuple HX HY HZY HUY) carrying the Hilbert-norm W2 pseudometric (dist = w2H, via toL2 into the\nWithLp-2 carrier) and its Borel sigma-algebra.\n\nAgainst my reading: the conversion is the identity on the underlying law (no alteration, no junk),\ninverse to P2WH.toP2 (rfl lemmas both ways); second moments unchanged; on the target, distances are\nthe paper's Hilbert-norm W2 (P2WH.dist_toP2WH). The canonical identification of the max-norm product\nwith the Hilbert carrier is toL2 inside w2H, as my reading required. Used e.g. in JointBorel to give\nP2(H) the Borel structure of the paper's W2 (measurable_toP2WH relates it to the evaluation\nsigma-algebra).\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:56:20Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T16:01:44Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-17T16:01:48Z",
+ "issue_draft": null
+}

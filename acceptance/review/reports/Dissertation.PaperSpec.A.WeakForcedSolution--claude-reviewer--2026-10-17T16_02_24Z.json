@@ -1,0 +1,57 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.PaperSpec.A.WeakForcedSolution",
+  "kind": "def",
+  "name": "Dissertation.PaperSpec.A.WeakForcedSolution",
+  "lean": [
+   "Dissertation.PaperSpec.A.WeakForcedSolution"
+  ],
+  "claims": [
+   "A:lem:pert",
+   "A:sec4:WP-def"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-a498a7c0d4ce",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "6d8e8f373c5e26dad42e89a4945d5642",
+  "fingerprint": "pl-fp-v1:5f4610c4ad96a71ecde2af741ff414ff5989e20447bb72029b0b044875bf0ab4",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for def:Dissertation.PaperSpec.A.WeakForcedSolution (locked before seeing Lean).\n\nPaper notion (Lemma 4.3 hypotheses): Theta solves (4.1) at parameter lambda with an\nF_0-measurable initial datum xi_0 and forcing q, where X, Y are cadlag adapted with\nE int_0^T (|X_t|^2 + |Y_t|^2) dt < inf and X_T in L^2(Omega,F_T;R^n), Z in H^2_W, U in H^2_N;\nidentities of (4.1) a.s. for every t in [0,T] (with h at (Theta^-, mu^-)). Note: Lemma 4.3 asks\nonly F_0-measurability of xi_0 (not L^2), and the separate hypothesis Theta^1 - Theta^2 in HH is\nnot part of the single-solution notion. Faithful Lean: these integrability conditions (Hweak plus\nX_T in L^2), not E sup; the forced identities as in ForcedSolution. Requiring xi_0 in L^2\ninside the def would be narrower than Lemma 4.3 (harmless only if the proposition supplies it).",
+  "locked_at": "2026-10-17T15:42:32Z"
+ },
+ "comparison": {
+  "text": "Comparison for def:Dissertation.PaperSpec.A.WeakForcedSolution.\n\nLean (PaperSpec/A/Setting.lean): WeakForcedSolution ... := (∃ gamma, PaperWeakSolutionForcedInt over enlJoint ...)\n∧ every path of X and Y has left limits on (0,T]. PaperWeakSolutionForcedInt extends PaperWeakTuple\n(X, Y adapted on [0,T], right-continuous paths on [0,T), a.s. left limits, E int_0^T |.|^2 < inf; Z\npredictable, U marked predictable, finite energies, 0 off [0,T]) with: q a Forcing; forced drift and\ndriver integrands measurable, progressive, a.s. pathwise integrable; forced diffusion and jump\nintegrands measurable, progressive, finite energy; gamma represents h(Theta^-, mu^-); X_T in L^2; the\nidentities of (4.1) a.s. for all t in [0,T].\n\nAgainst my reading (Lemma 4.3 hypotheses on each solution):\n- X, Y cadlag adapted with E int (|X|^2 + |Y|^2) dt < inf, X_T in L^2(Omega, F_T): yes (adapted on\n  [0,T] gives F_T-measurability of X_T).\n- Z in H^2_W, U in H^2_N: yes.\n- (4.1) identities with lambda on b, sigma, h, f, g and additive forcings, a.s. for every t: yes.\n- xi0 only F_0-measurable in Lemma 4.3: the def imposes nothing on xi0 (not even L^2): not narrower.\n- Theta^1 - Theta^2 in HH is not part of the single-solution notion: correct, left to the lemma.\n- extra conditions: existence of the integrals made explicit (pathwise drift/driver, L^2\n  diffusion/jump integrands), as for WeakSolution.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:57:38Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices: as for ForcedSolution, with the Hweak integrability: (1) combined\nintegrands lambda*psi + q^psi (linearity); (2) Poisson integral through a marked progressive\nrepresentative gamma of h(Theta^-, mu^-); (3) the existence of the integrals made explicit: forced\ndrift and driver integrands measurable with a.s. integrable paths, forced diffusion and jump\nintegrands measurable and square integrable; (4) X_T in L^2 explicit; (5) coordinates, cadlag\nversions, identities on one null set, integrands extended by 0 off [0,T]; nothing imposed on xi0."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T16:02:16Z",
+  "disagreements": "The author's review entry is empty (no recorded reading). It should record that the def matches\nLemma 4.3's per-solution hypotheses (Hweak with X_T in L^2, nothing imposed on xi0, the\nTheta^1 - Theta^2 in HH hypothesis left to the lemma), with the existence of the forced integrals\nmade explicit (pathwise drift/driver, L^2 diffusion/jump integrands) and q only a Forcing."
+ },
+ "submitted_at": "2026-10-17T16:02:24Z",
+ "issue_draft": null
+}

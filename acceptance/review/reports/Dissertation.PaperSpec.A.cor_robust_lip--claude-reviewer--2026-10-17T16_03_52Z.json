@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.cor_robust_lip",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.cor_robust_lip",
+  "lean": [
+   "Dissertation.PaperSpec.A.cor_robust_lip"
+  ],
+  "claims": [
+   "A:cor:robust"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-a498a7c0d4ce",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba14b18016daa0b4aac",
+  "fingerprint": "pl-fp-v1:1c0b2472fa7cc5475eff926b5def78c0b27cea2a6819205588ff76fccf6024ec",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of spec cor_robust_lip (Corollary 3.6, last sentence: \"If, in addition, the\nperturbations are independent of theta and W_2-Lipschitz, (3.5) |dp_b|+|dp_sigma|_F+\n|dp_h|_{L^2(nu)}+|dp_f| <= L_p W_2(mu,mu') for a.e. t and all diagonal pairs, then (3.4) holds\nwith c_pert = |G| L_p\").\n\nSetting: standing basis, horizon T > 0, m = n (the corollary's standing hypothesis; the\nimplication itself does not need it, so a statement for general m, n is broader and fine),\nd >= 1, sigma-finite nu; G in R^{m x n} (full rank in the corollary - not needed for this\nimplication; broader fine); |G| operator norm.\nPerturbations p_b : [0,T] x H x P_2(H) -> R^n, p_sigma -> R^{n x d}, p_h -> L^2(nu;R^n),\np_f -> R^m; \"independent of theta\": p_psi(t, theta, mu) = p_psi(t, mu) (deterministic\nalong diagonal inputs). (Dropping independence is broader and still true.)\nHypothesis (3.5): for a.e. t in [0,T] and all diagonal inputs (Theta, mu), (Theta', mu') in\nD_t (Theta, Theta' in L^2(Omega, F_t; H), mu = Law Theta, mu' = Law Theta'):\n |dp_b| + |dp_sigma|_F + |dp_h|_{L^2(nu)} + |dp_f| <= L_p W_2(mu, mu') (a.s. / deterministic),\n L_p >= 0.\nConclusion (3.4) with c_pert = |G| L_p: for a.e. t and all such pairs,\n E[<dp_b, G^T dY> + <dp_sigma, G^T dZ>_F + <-dp_f, G dX> + int_E <dp_h(e), G^T dU(e)> nu(de)]\n   <= |G| L_p E[|dX|^2 + |dY|^2 + |dZ|_F^2 + |dU|^2_{L^2(nu)}].\nQuantifier order: exists null set of times (a.e. t), then all diagonal pairs - in both\nhypothesis and conclusion. Also a statement \"for each t at which (3.5) holds for all pairs,\n(3.4) holds at t for all pairs\" is fine (stronger).\nConstant: exactly |G| L_p. Inner products: Frobenius for sigma, L^2(nu) for h. W_2 on P_2(H).",
+  "locked_at": "2026-10-17T15:47:47Z"
+ },
+ "comparison": {
+  "text": "Comparison, cor_robust_lip (Sec3.lean:240-250).\nSetting: any probability space and filtration indexed by R (broader than the standing basis),\nsigma-finite nu on countably generated E, n d with 0 < n, T > 0, m = n built in (p : Coeffs nu n\nn d, G : n x n); G arbitrary (full rank not assumed: broader).\nHypotheses: p.TupleIndep (p_b, p_sigma, p_h, p_f independent of theta - \"independent of\ntheta\"); LawLip35 F P T Lp p: for a.e. t in [0,T] and all q, q' in D_t (strongly F_t-measurable,\nL^2, law = lawP2), a.s. |dp_b| + |dp_sigma| + |dp_h|_{L^2} + |dp_f| <= Lp w2H(mu, mu') - (3.5) with\nthe Hilbert W_2. The perturbations' origin-integrability and diagonal-Lipschitz conditions of\nAssumptions 2.2-2.3 and the baseline assumptions are not assumed (not needed): broader.\nConclusion: PairingBound34 F P T G (|GX G| Lp) p: for a.e. t, all q, q' in D_t, the pairing is\nintegrable and E[<dp_b, G^T dY> + <dp_sigma, G^T dZ>_F + <-dp_f, G dX> + int <dp_h(e), G^T\ndU(e)> nu(de)] <= |G| Lp E[|dX|^2+|dY|^2+|dZ|^2+|dU|^2] - (3.4) with c_pert = |G| Lp, |G| =\noperator norm of x |-> Gx (Euclidean). Quantifier order a.e. t then all pairs - matches.\nInstantiation: the Corollary's perturbations (with their Assumption 2.2-2.3 conditions) and\nits full-rank G are special cases.\nWitness cor_robust_lip_hypotheses: a constant perturbation p_sigma = e_11 with Lp = 1 - fine.\nVerdict: broader.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T16:01:29Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "broader",
+  "detail": "Broader than printed. The Lean keeps m = n, tuple-independence of the perturbation and (3.5)\n(with the Hilbert-norm W_2, a.e. t, all diagonal pairs, a.s.), and concludes (3.4) with\nc_pert = |G| L_p, but drops the context hypotheses: G of full rank, the perturbations' origin-\nintegrability and diagonal Lipschitz conditions, the baseline's assumptions; and it works over\nany filtration. None is used by the implication. Instantiation: the Corollary's perturbations on\nthe standing basis with its full-rank G."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T16:01:36Z",
+  "disagreements": "The author's review recorded for this unit is empty (its text is attached to an adjacent review marker of a unit outside this chunk and was not shown), so there is nothing to compare point by point. My verdict: broader - the proposition keeps m = n, tuple independence and (3.5), but drops G of full rank and the perturbations' origin-integrability and diagonal-Lipschitz conditions, which the implication does not use."
+ },
+ "submitted_at": "2026-10-17T16:03:52Z",
+ "issue_draft": null
+}

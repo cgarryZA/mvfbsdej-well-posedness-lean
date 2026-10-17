@@ -34,6 +34,7 @@ modules = [
   "Dissertation.PaperSpec.A.Sec5Sharp",
   "Dissertation.PaperSpec.A.Sec5BrownianReduction",
   "Dissertation.PaperSpec.A.Sec4Supremum",
+  "Dissertation.PaperSpec.A.Sec3Rem34Exist",
   "Dissertation.PaperSpec.A.Setting",
   "Dissertation.Acceptance.A.AppA",
   "Dissertation.Acceptance.A.Dealer",
@@ -64,6 +65,7 @@ modules = [
   "Dissertation.Acceptance.A.Sec5BrownianReduction",
   "Dissertation.Acceptance.A.Sec4Supremum",
   "Dissertation.Acceptance.A.WitnessSec4",
+  "Dissertation.Acceptance.A.Sec3Rem34Exist",
 ]
 scope_roots = ["Dissertation", "LevyStochCalc"]
 spec_prefix = "Dissertation.PaperSpec"

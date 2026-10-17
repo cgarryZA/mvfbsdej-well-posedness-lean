@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.Spec.BrownianPaperSolution",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.Spec.BrownianPaperSolution",
+  "lean": [
+   "Dissertation.WellPosedness.Spec.BrownianPaperSolution"
+  ],
+  "claims": [
+   "A:ex:brownian"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-a498a7c0d4ce",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "022ed18f831241360000000000000000",
+  "fingerprint": "pl-fp-v1:07199fadc2fdd6630ecc12c86d995ed5b2a512f18d5a4adc953aa711ad5fbb8f",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for def:Dissertation.WellPosedness.Spec.BrownianPaperSolution (locked before seeing Lean).\n\nPaper notion: a solution of the Brownian reduction (Ex 5.2) of (1.1) in the space\nS^2(R^n) x S^2(R^m) x H^2_W(R^{m x d}): a triple (X,Y,Z), X,Y cadlag (here continuous suffices)\nadapted to the Brownian filtration (W, F_0), E sup |X|^2 < inf, E sup |Y|^2 < inf, Z predictable\n(or progressively measurable) with E int_0^T |Z|_F^2 dt < inf, such that a.s. for every\nt in [0,T]:\n X_t = xi_0 + int_0^t b(s,Theta_s,mu_s) ds + int_0^t sigma(s,Theta_s,mu_s) dW_s,\n Y_t = g(X_T, Law X_T) + int_t^T f(s,Theta_s,mu_s) ds - int_t^T Z_s dW_s,\nwith Theta = (X,Y,Z) and mu_s = Law(Theta_s) (Borel representative, a.e. equal).\nFaithful: Brownian filtration (no Poisson), H_B-valued tuple (no U), the Ito integral, the\ncorrect law arguments (full-tuple law of (X,Y,Z), terminal law of X_T), the S^2/H^2 integrability.\nA structure with fields for the components and the conditions is fine. Using \"for each t a.s.\"\nis equivalent by cadlag paths.",
+  "locked_at": "2026-10-17T15:42:31Z"
+ },
+ "comparison": {
+  "text": "Comparison for def:Dissertation.WellPosedness.Spec.BrownianPaperSolution.\n\nLean (Spec/BrownianForms.lean): structure BrownianPaperSolution W F hFW T C xi0 X Y Z, C : Coeffs (0) n m d,\ncoordinates X i, Y k, Z k (Fin d -> R):\n X, Y: adapted on [0,T], every path right-continuous on [0,T), a.s. left limits on (0,T],\n   E sup_{[0,T]} |X|^2 < inf, E sup |Y|^2 < inf;\n Z: each coordinate predictable, 0 off [0,T], finite energy;\n drift/diffusion/driver processes along Theta_s = (X_s, Y_s, Z_s, 0) with law lawP2 P (tupleAt .. s):\n   jointly measurable, progressive, finite energy E int_0^T |.|^2 < inf;\n fwd: exists a version M of the Ito integral of the diffusion process, a.s. cadlag on [0,T], and a.s.\n   for all t in [0,T]: X_t = xi0 + int_{[0,t]} b(s,Theta_s,mu_s) ds + M_t;\n bwd: exists a cadlag version M of int Z dW and a.s. for all t in [0,T]:\n   Y_t = g(X_T, law X_T) + int_{[t,T]} f(s,Theta_s,mu_s) ds - (M_T - M_t).\n\nAgainst my reading:\n- Brownian basis: filtration F a parameter with each W^j a Brownian motion for it; the PaperSpec\n  wrapper BrownianSolution instantiates F = enlBrownian (W, F_0). nu = 0: no U, no Poisson\n  integral. Yes.\n- X, Y in S^2 (cadlag adapted, E sup < inf): yes (right-continuity for every path, left limits a.s.;\n  the PaperSpec wrapper adds left limits for every path).\n- Z in H^2_W predictable: yes.\n- identities a.s. for every t on one null set, with the Ito integral (cadlag version), the\n  full-tuple law of (X,Y,Z) and the terminal law of X_T: yes (terminalVal uses lawP2 of X_T, the true\n  law since X_T in L^2).\n- extra conditions: the coefficient processes along Theta are required jointly/progressively\n  measurable with finite energy. Measurability is (2.5) (the paper's standing joint Borel\n  measurability gives it); finite energy of b, sigma, f along Theta in HH follows from Assumptions\n  2.2-2.3 by (4.2) (eq:coeffint), the setting of Ex 5.2's claims; the diffusion's finite energy is\n  what the L^2 Ito integral needs. For a system without Assumption 2.2 the drift requirement would\n  narrow the notion (the weak \"Int\" variants exist for that), but Ex 5.2 is under 2.2-2.5. Mild.\n- xi0 measurability/integrability not part of the notion: hypotheses of the propositions. Fine.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:52:52Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices: (1) Brownian reduction at nu = 0 (tuple (X,Y,Z,0), no Poisson integral);\n(2) coordinatewise processes; (3) cadlag as: every path right-continuous on [0,T) and a.s. left\nlimits (versions); (4) the identities via a cadlag version of the library L^2 Ito integral, on one\nfull-measure set for all t in [0,T]; (5) the coefficient processes along the solution are required\njointly and progressively measurable with finite energy: measurability is (2.5) under the standing\njoint Borel measurability, and the energies are finite for Theta in HH under Assumptions 2.2-2.3\n((4.2)), so this restricts nothing where the paper uses the notion (systems satisfying 2.2-2.5);\n(6) Z and the coefficient processes extended by 0 off [0,T]; (7) the filtration is a parameter,\ninstantiated by the PaperSpec wrapper with the usual augmentation of the (W, F_0) filtration."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T16:00:55Z",
+  "disagreements": "No disagreement on the description. The review describes the Lean by its diff from PaperSolution\nbut does not compare it with the paper: it should record that the required measurability and\nfinite energy of the drift, diffusion and driver processes along the solution are not part of the\nprinted solution notion and are harmless only because they follow from (2.5) and (4.2) under\nAssumptions 2.2-2.3 for HH tuples (the setting of Ex 5.2), and that every path is required\nright-continuous on [0,T) (a version choice)."
+ },
+ "submitted_at": "2026-10-17T16:01:01Z",
+ "issue_draft": null
+}

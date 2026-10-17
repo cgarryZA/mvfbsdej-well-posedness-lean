@@ -29,6 +29,7 @@ import Dissertation.PaperSpec.A.Sec5Regimes
 import Dissertation.PaperSpec.A.AsPrinted
 import Dissertation.PaperSpec.A.Sec5BrownianReduction
 import Dissertation.PaperSpec.A.Sec4Supremum
+import Dissertation.PaperSpec.A.Sec3Rem34Exist
 
 /-!
 # The statements of the paper

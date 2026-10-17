@@ -32,6 +32,7 @@ import Dissertation.Acceptance.A.WitnessHyp
 import Dissertation.Acceptance.A.Sec5BrownianReduction
 import Dissertation.Acceptance.A.Sec4Supremum
 import Dissertation.Acceptance.A.WitnessSec4
+import Dissertation.Acceptance.A.Sec3Rem34Exist
 
 /-!
 # Proofs of the statements of the paper

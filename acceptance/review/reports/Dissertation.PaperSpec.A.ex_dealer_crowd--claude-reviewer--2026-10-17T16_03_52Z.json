@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.ex_dealer_crowd",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.ex_dealer_crowd",
+  "lean": [
+   "Dissertation.PaperSpec.A.ex_dealer_crowd"
+  ],
+  "claims": [
+   "A:ex:dealer"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-a498a7c0d4ce",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba1542ac74da98a0887",
+  "fingerprint": "pl-fp-v1:7aa2e4e66fd31b604c16e6f539377603e572bd88cc40e86edf9067d6109062c8",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of spec ex_dealer_crowd (Example 5.5: \"For u,u' in L^2(nu) and lambda, lambda' in\nP_2(L^2(nu)), coupling (v,v') optimally and using that gradV is 1-Lipschitz,\n|A_lambda(u) - A_lambda'(u')| <= |u - u'| + W_2(lambda, lambda')\").\n\nSetting: every sigma-finite nu on a countably generated (E,cE) (fibre L^2(nu;R), n=m=1 in the\nexample; a general fibre/real separable Hilbert space would be broader and fine).\nObjects: A_lambda(u) = int gradV(u - v) lambda(dv) (Bochner), gradV(w) = w/sqrt(1+|w|^2);\nW_2 the quadratic Wasserstein distance on P_2(L^2(nu)) (inf over couplings of\n(int |v - v'|^2 dpi)^{1/2}).\nFaithful statement: for all u, u' in L^2(nu) and all lambda, lambda' in P_2(L^2(nu)):\n   |A_lambda(u) - A_lambda'(u')|_{L^2(nu)} <= |u - u'|_{L^2(nu)} + W_2(lambda, lambda').\nConstants exactly 1 and 1 (joint Lipschitz with these constants). No further hypothesis.\nEdge cases to check: Bochner integral junk (0) when the integrand is not integrable /\nnot strongly measurable - must not happen for lambda in P_2 on a separable fibre (gradV\ncontinuous and bounded); W_2 encoded in R>=0inf or as real via toReal - must be finite for\nP_2 measures, else the bound could be vacuous/false. If the Lean takes lambda, lambda' as\narbitrary probability measures (not P_2), W_2 may be infinite: then if W_2 is ENNReal the\nbound is trivial there, harmless; if toReal is used, an infinite W_2 would become 0 and the\nstatement would be false (so it would have to restrict to P_2).\nNot part of this clause (other clauses): measurability (2.4), Assumption 2.4's constant.",
+  "locked_at": "2026-10-17T15:47:46Z"
+ },
+ "comparison": {
+  "text": "Comparison, ex_dealer_crowd (Sec5.lean:658-665).\nforall sigma-finite nu on countably generated E, forall Lambda, Lambda' in P2(L^2(nu;R^1)),\nforall u, u': |A_Lambda(u) - A_Lambda'(u')| <= |u - u'| + w2P Lambda Lambda'.\nA = ex55Crowd = int gradV(u - v) dLambda (printed). w2P is the real 2-Wasserstein distance on\nP2(L^2(nu)) for the L^2(nu) norm: sqrt of the (finite, since both laws are P2) infimum of the\nquadratic transport cost over couplings - the printed W_2(lambda, lambda'); no toReal junk since\nw2sq != top for P2 laws. Constants 1 and 1, as printed. Bochner integrals genuine (bounded\ncontinuous integrand; L^2(nu) separable under sigma-finiteness and countable generation).\nNo further hypotheses. Verdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T16:01:28Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T16:01:35Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-17T16:03:52Z",
+ "issue_draft": null
+}

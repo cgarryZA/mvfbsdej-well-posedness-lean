@@ -1,0 +1,57 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.ex_dealer_marks",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.ex_dealer_marks",
+  "lean": [
+   "Dissertation.PaperSpec.A.ex_dealer_marks"
+  ],
+  "claims": [
+   "A:ex:dealer",
+   "A:abstract"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-a498a7c0d4ce",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba140a65f520ffefa33",
+  "fingerprint": "pl-fp-v1:aba9ed43099ad9877b196be0fe2cff12547cfec4bc3fc30a8e2cff180e351093",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of spec ex_dealer_marks (Example 5.5, \"Marks and activity\"; and the abstract's \"its\nmark measure has infinite activity\").\n\nSetting (printed): E = {-1,+1} x (0,1], e = (s,q), nu(ds,dq) = c_s q^{-1-r} dq with constants\nc_{-1}, c_{+1} > 0 and 0 < r < 2, i.e. nu = sum_{s=+-1} c_s delta_s (x) (q^{-1-r} Lebesgue on\n(0,1]). E carries its Borel (product) sigma-algebra; countably generated.\n\nA faithful statement must contain, for all c_{-1}, c_{+1} > 0 and all 0 < r < 2:\n 1. nu(E) = infinity (infinite activity);\n 2. int_E q^2 nu(de) < infinity;\n 3. h_c(s,q) := s q is in L^2(nu) (measurable and square integrable: MemLp h_c 2 nu),\n    so that h_c is an admissible baseline in the fibre L^2(nu;R) (n=1).\n Desirable (standing-setting membership, \"admitted\"): nu is sigma-finite (it is; q^{-1-r} is\n locally finite on (0,1]), so the measure is an instance of the standing setting. If the\n Lean omits sigma-finiteness this is a minor omission (the claim printed in the passage is\n items 1-3), but it is relevant for the abstract's clause that the example lies in the\n setting.\nQuantifiers: universal over the constants; no further hypotheses. A statement with weaker\n ranges (e.g. r >= 0 for item 1, r < 2 for item 2) is broader and fine. A statement fixing\n particular c_s or r (e.g. c_s = 1, r = 1) is narrower.\nEncoding choices acceptable: {-1,+1} as Bool/Fin 2/units of Z, (0,1] as Ioc 0 1 inside R\n (restricted Lebesgue measure with density), provided nu is the printed density measure.",
+  "locked_at": "2026-10-17T15:47:45Z"
+ },
+ "comparison": {
+  "text": "Comparison, ex_dealer_marks (Sec5.lean:716-725).\nQuantifiers: forall c : Bool -> R with c b > 0 for both b, forall r with 0 < r < 2 - the printed\nc_{+-1} > 0, 0 < r < 2, universally. Matches.\nMeasure: nu := (count on Bool) (x) (Lebesgue on Ioc 0 1 via comap Subtype.val volume), with\ndensity ofReal(c(e.1) * q^{-1-r}); this is sum_s c_s delta_s (x) q^{-1-r} dq on\n{-1,+1} x (0,1], with Bool encoding the side (true = +1, false = -1). q > 0 on the subtype, so\nq^{-1-r} (rpow) is the genuine power; ofReal of a positive number, no junk.\nConclusions: nu univ = infinity (item 1); lintegral of ofReal(q^2) < infinity (item 2);\nMemLp ((if side then 1 else -1) * q) 2 nu (item 3: h_c(s,q) = s q in L^2(nu)). All present.\nAbstract clause \"the dealer mark measure has infinite activity\": nu univ = infinity. Present.\nNot stated: sigma-finiteness of nu (so that it is an instance of the standing setting). The\nprinted passage does not assert it explicitly; it is proved elsewhere (ex_dealer_hypotheses has\nSigmaFinite (dealerMarks ...)). Harmless omission for this clause.\nRepresentation choices: Bool for {-1,+1}; the subtype Ioc 0 1 with the comap of Lebesgue for\n(0,1]; density via ENNReal.ofReal; the integral item 2 as a lintegral. All faithful encodings.\nWitness ex_dealer_marks_hypotheses: c = 1/2, r = 1 - an intended instance.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T16:01:29Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices, each harmless:\n1. The sides {-1,+1} are encoded as Bool (true = +1, false = -1), with counting measure; h_c is\n   written (if side then 1 else -1) * q, i.e. s q.\n2. (0,1] is the subtype Set.Ioc 0 1 of R with the comap of Lebesgue measure, i.e. Lebesgue\n   measure on (0,1]; the density c_s q^{-1-r} enters through withDensity and ENNReal.ofReal of a\n   positive real (no truncation occurs).\n3. int_E q^2 dnu < infinity is stated as a lintegral of ofReal(q^2), the same quantity.\n4. Sigma-finiteness of nu is not part of the statement; the passage's three conclusions do not\n   assert it (it is proved separately in ex_dealer_hypotheses), so nothing printed is lost."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T16:01:35Z",
+  "disagreements": "Minor, on the verdict label and one correspondence remark of the shared Example 5.5 review (shown\nunder ex_dealer_potential): (1) I record \"faithful with representation choices\" rather than plain\n\"faithful\": the sides are Bool (true = +1), (0,1] is the subtype Ioc 0 1 with the comap of\nLebesgue measure, the density enters through withDensity/ofReal, and item 2 is a lintegral - all\nharmless encodings. (2) The review says \"the same measure is dealerMarks\"; the proposition does\nnot use dealerMarks but an inline measure (the same formula), and it does not state that nu is\nsigma-finite (that is proved separately, in ex_dealer_hypotheses). Neither point changes the\nmeaning of the three printed conclusions."
+ },
+ "submitted_at": "2026-10-17T16:03:51Z",
+ "issue_draft": null
+}

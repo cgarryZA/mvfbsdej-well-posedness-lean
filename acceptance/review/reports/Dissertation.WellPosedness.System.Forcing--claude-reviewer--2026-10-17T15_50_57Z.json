@@ -1,0 +1,60 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.System.Forcing",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.System.Forcing",
+  "lean": [
+   "Dissertation.WellPosedness.System.Forcing"
+  ],
+  "claims": [
+   "A:eq:forced",
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:sec4:WP-def"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-a498a7c0d4ce",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "a3ba59f5823fbe6a0000000000000000",
+  "fingerprint": "pl-fp-v1:a0b53f2bd3cc2761240a40da2e50fb1607c62933350668a2055e73a26be013ca",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for def:Dissertation.WellPosedness.System.Forcing (paper §4, before (4.1)).\n\nPaper notion: a square-integrable forcing q = (q^b, q^sigma, q^h, q^f, q^g_T) with\n  q^b in L^2(Omega x [0,T]; R^n), progressively measurable\n  q^sigma in L^2(Omega x [0,T]; R^{n x d}), progressively measurable\n  q^h in L^2(Omega x [0,T] x E; R^n), predictable (P (x) E-measurable), square integrable for\n      dP x dt x nu (equivalently, via (2.4), an L^2(nu;R^n)-valued predictable square-integrable process)\n  q^f in L^2(Omega x [0,T]; R^m), progressively measurable\n  q^g_T in L^2(Omega, F_T; R^m).\nWP(lambda) quantifies over EVERY such forcing.\n\nFaithful Lean: a structure with these five components with exactly these codomains (dimensions\nn, n x d, n (jump, forward), m, m), with the measurability (progressive w.r.t. the paper's\nfiltration for q^b, q^sigma, q^f; predictable for q^h; F_T-measurable for q^g_T) and square\nintegrability either as fields of the structure or as a predicate imposed in WP(lambda). Edge\ncases: if the Lean Forcing imposes stronger conditions (e.g. continuity, boundedness, or\ndeterministic forcings), WP(lambda) quantifies over fewer forcings and becomes weaker than the\npaper's (narrower); if it imposes weaker ones (no measurability), WP(lambda) becomes stronger\n(possibly ill-posed: stochastic integrals of non-predictable integrands are junk).",
+  "locked_at": "2026-10-17T15:41:48Z"
+ },
+ "comparison": {
+  "text": "Comparison for def:Dissertation.WellPosedness.System.Forcing (System/Coefficients.lean:191-236), a\nProp-valued structure on coordinate families qb : Fin n -> Omega -> R -> R, qsigma : Fin n -> R ->\nOmega -> Fin d -> R, qh : Fin n -> R -> Omega -> E -> R, qf : Fin m -> Omega -> R -> R, qg : Fin m ->\nOmega -> R, over a filtration F and P, nu, T.\n\nItem by item:\n- q^b: jointly measurable, ProgressivelyMeasurable F (LevyStochCalc: for every t the process cut\n  at Iic t is F_t (x) Borel strongly measurable -- the standard notion), vanishes off [0,T], finite\n  energy int^- omega int^-_{[0,T]} |q|^2 (= L^2(Omega x [0,T]) per coordinate, equivalent to the\n  vector norm). Matches.\n- q^sigma: same, entrywise for the n x d entries (Frobenius-square-integrable iff each entry is).\n  Matches.\n- q^f: same, m coordinates. Matches.\n- q^h: jointly measurable in (omega, s, e), MarkedProgressivelyMeasurable (F_t (x) Borel (x) E cut at t),\n  vanishes off [0,T], finite marked energy int int int |q|^2 dnu ds dP. Paper: predictable\n  (P (x) E-measurable). Lean asks only marked progressive measurability, which is weaker; the class of\n  forcings is therefore (as functions) larger. Harmless: a progressively measurable (marked)\n  square-integrable integrand coincides dt x dP x nu-a.e. with a predictable one (time is integrated\n  against Lebesgue measure), and the L^2 compensated-Poisson integral only depends on the\n  dt x dP x nu class; so the L^2 classes of admissible q^h are the paper's. Documented in the\n  module docstring.\n- q^g_T: strongly F_T-measurable and MemLp 2 P. Matches L^2(Omega, F_T; R^m).\n- Extension by 0 off [0,T]: the paper's forcings live on [0,T]; extension by 0 is a bijective\n  convention (and preserves progressive measurability).\n- Codomains/dimensions: n, n x d, n (jump, forward), m, m. Match.\n- Filtration: generic F; which filtration is used (the paper's augmented one) is decided by the\n  propositions.\nNeither stronger restrictions (boundedness, continuity) nor missing measurability. Verdict: faithful\nwith representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:50:04Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Choices: (1) coordinates (each R^j- or R^{n x d}-valued process as a family of scalar processes; vector\nsquare integrability iff each coordinate is); (2) every component extended by 0 off [0,T] (bijective\nwith the paper's forcings on [0,T], keeps progressive measurability); (3) q^h is required to be\nmarked progressively measurable rather than predictable -- the class is larger as a set of\nfunctions, but every square-integrable progressive marked integrand agrees dt x dP x nu-a.e. with a\npredictable one, and the L^2 compensated Poisson integral depends only on that class, so the\nadmissible forcings are the paper's up to the identification it makes itself; (4) joint\nmeasurability on Omega x R (x E) stated explicitly (implied by the paper's progressive/predictable\nmeasurability)."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:50:12Z",
+  "disagreements": "No disagreement with a stated position (the author's entry shown is only the section heading). For\nthe record: faithful with representation choices; the one substantive choice is that q^h is required\nto be marked progressively measurable instead of predictable, harmless because square-integrable\nprogressive marked integrands agree dt x dP x nu-a.e. with predictable ones and the L^2 compensated\nPoisson integral sees only that class."
+ },
+ "submitted_at": "2026-10-17T15:50:57Z",
+ "issue_draft": null
+}

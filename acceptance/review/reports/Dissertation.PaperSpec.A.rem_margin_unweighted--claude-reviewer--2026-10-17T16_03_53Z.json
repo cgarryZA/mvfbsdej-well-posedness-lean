@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.rem_margin_unweighted",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.rem_margin_unweighted",
+  "lean": [
+   "Dissertation.PaperSpec.A.rem_margin_unweighted"
+  ],
+  "claims": [
+   "A:rem:margin"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-a498a7c0d4ce",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba1ba4163c9b3d796bd",
+  "fingerprint": "pl-fp-v1:604c2f8d9a4cd6515bd432ddbef03bd8d40f767692a90ae2016bccf0a124b152",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of spec rem_margin_unweighted (Remark 2.11: \"When m = n the margin may instead be\nrecorded in the unweighted form (2.13)\").\n\nSetting: m = n, G in R^{n x n} full rank (invertible), c_G = s_min(G)^{-2}, coefficient system,\ndiagonal pairs.\nMeaning: at m = n the slack can be expressed with the unweighted quantities |dY|^2 + |dZ|_F^2 +\n|dU|^2 + |dX|^2 instead of the G-weighted ones. Since |v|^2 <= c_G |G^T v|^2 and |x|^2 <=\nc_G |G x|^2 (Assumption 2.5 at m = n), a weighted margin c gives an unweighted margin c/c_G\n(= c s_min(G)^2) with the same beta's; or from a bound with betabar_i: (2.13) with beta_i =\nbetabar_i - c c_G and margin c for 0 < c < min betabar_i / c_G. The paper does not state the\nconstant; it does NOT claim the same c (that would be false unless s_min(G) >= 1; cf.\nExample 5.1(i) \"unweighted here because G = 1\").\nFaithful statement: for m = n and full-rank G: if the interior pairing satisfies (2.12) with\nmargin c > 0 (or a bound with betabar_i > 0), then it satisfies (2.13) with some margin c' > 0\n(explicitly e.g. c' = c / c_G) and constants beta_1, beta_2 >= 0, for a.e. t and all diagonal\npairs. If the Lean claims the same margin c with no rescaling it would be false or need G\northogonal-type hypotheses (narrower). If it fixes c' as a function of c and G - fine.",
+  "locked_at": "2026-10-17T15:47:47Z"
+ },
+ "comparison": {
+  "text": "Comparison, rem_margin_unweighted (Sec2Remarks.lean:227-239).\nSetting: standing, m = n >= 1 (C : Coeffs nu n n d, G : n x n), G.rank = n (full rank), c > 0,\nany b1, b2, T.\nHypothesis: Margin212 with b1, b2 and margin c (weighted margin (2.12)).\nConclusion: Margin213 with the same b1, b2 and margin c / (sMin G ^ 2)^{-1} = c s_min(G)^2 =\nc / c_G, the unweighted form (2.13). sMin G = sqrt of the least eigenvalue of G^T G (n <= n\nbranch), the smallest singular value; c_G = s_min^{-2} as in Assumption 2.4. My reading: the\nmargin is re-recorded in unweighted form with the rescaled constant c / c_G (not the same c,\nwhich would be false unless s_min >= 1). Matches; the explicit constant is the natural one.\nWitness rem_margin_hypotheses: Example 5.1(i) with G = 1, margin 1/2 - intended instance.\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T16:01:29Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T16:01:36Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-17T16:03:53Z",
+ "issue_draft": null
+}
