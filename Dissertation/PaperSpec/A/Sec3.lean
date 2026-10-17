@@ -179,10 +179,10 @@ def cor_robust : Prop :=
 /-- Corollary 3.6, well-posedness of the perturbed system. There is a function `C_stab` of
 `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that: under the hypotheses of `cor_robust`, the perturbed
 system with initial datum `ξ₀` has a solution in `ℍ`; any two tuples of `ℍ_weak` satisfying it
-with the same initial datum are equal in `ℍ_weak`; and for some Lipschitz constant `L` of the
-perturbed system, (3.1) holds with the constant `C_stab(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂)` for
-its solutions against the solutions of every system `2` satisfying (2.3) and Assumptions
-2.2–2.3. -/
+with the same initial datum are equal in `ℍ_weak`; and for every constant `L` with which the
+perturbed system satisfies Assumption 2.3, (3.1) holds with the constant
+`C_stab(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂)` for its solutions against the solutions of every
+system `2` satisfying (2.3) and Assumptions 2.2–2.3. -/
 def cor_robust_wp : Prop :=
   ∃ Cstab : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ,
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
@@ -212,8 +212,8 @@ def cor_robust_wp : Prop :=
               (fun ω s => Z₁ k s ω j - Z₂ k s ω j) = 0)
           ∧ ∀ k, LevyStochCalc.Poisson.Compensated.markedEnergy P ν T
               (fun ω s e => U₁ k s ω e - U₂ k s ω e) = 0)
-    ∧ ∃ L : ℝ, Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L (C.perturb p)
-      ∧ ∀ (L₂ : ℝ) (C₂ : Coeffs ν n n d) (ξ₂ : Ω → EuclideanSpace ℝ (Fin n)),
+    ∧ ∀ L : ℝ, Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L (C.perturb p) →
+      ∀ (L₂ : ℝ) (C₂ : Coeffs ν n n d) (ξ₂ : Ω → EuclideanSpace ℝ (Fin n)),
         JointBorel T C₂ → Assumption22 (enlJoint 𝒢₀ D h𝒢₀) P T C₂ ξ₂ →
         Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L₂ C₂ →
         ∀ (X₁ X₂ : Fin n → ℝ → Ω → ℝ) (Y₁ Y₂ : Fin n → ℝ → Ω → ℝ)

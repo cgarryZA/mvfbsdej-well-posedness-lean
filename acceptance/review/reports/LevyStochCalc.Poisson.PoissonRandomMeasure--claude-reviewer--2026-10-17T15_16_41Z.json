@@ -1,0 +1,82 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:LevyStochCalc.Poisson.PoissonRandomMeasure",
+  "kind": "def",
+  "name": "LevyStochCalc.Poisson.PoissonRandomMeasure",
+  "lean": [
+   "LevyStochCalc.Poisson.PoissonRandomMeasure"
+  ],
+  "claims": [
+   "A:cor:robust",
+   "A:eq:compid",
+   "A:eq:forced",
+   "A:eq:mvfbsdej",
+   "A:eq:zeromean",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:intro:mvfbsdej",
+   "A:lem:bpbsde",
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:rem:cwp-class",
+   "A:rem:diag-mono",
+   "A:rem:generalrank",
+   "A:rem:intrinsic",
+   "A:sec2:infinite-activity-atoms",
+   "A:sec2:prp",
+   "A:sec3:HH-banach",
+   "A:sec3:one-null-set",
+   "A:sec4:WP-def",
+   "A:sec4:horizon-not-contractive",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "351b24f2cb8b3f890000000000000000",
+  "fingerprint": "pl-fp-v1:0fb613dcd4f42e6dccefe749bfbc81f2574c58d46c6abef9b66cb7ea4da3a8d4",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading (locked before any Lean is shown) — def LevyStochCalc.Poisson.PoissonRandomMeasure\n\nPaper notion (§2): \"a Poisson random measure N on ℝ_+ × E with intensity dt ν(de), where ν\nis a σ-finite measure on a countably generated (E, E)\". Standard definition: a map\nω ↦ N(ω) into the measures on ℝ_+ × E (with values in ℕ ∪ {∞}, a counting measure a.s.),\nmeasurable in the sense that ω ↦ N(ω)(B) is a random variable for each measurable B, such\nthat (a) for each measurable B with (dt⊗ν)(B) < ∞, N(B) ~ Poisson((dt⊗ν)(B)) (and N(B) = ∞\na.s. if (dt⊗ν)(B) = ∞, by convention / consequence of σ-finiteness and independence);\n(b) for pairwise disjoint B_1,…,B_k, the variables N(B_1),…,N(B_k) are independent.\nIndependence from W (and F_0) is a separate hypothesis in the paper.\n\nFaithful Lean definition: a structure with such a random measure field N, its measurability,\nthe Poisson law with mean the reference intensity dt⊗ν on each measurable set (with the ∞\nconvention, or only for finite-intensity sets), and mutual independence on disjoint finite\nfamilies. Time domain: ℝ_+ (ℝ restricted to [0,∞), ℝ≥0, or all of ℝ with Lebesgue — the\nlast is a broader object that restricts to the paper's). Problems: a law requirement that\nis impossible at infinite-intensity sets (vacuity, since ν may be infinite), missing\nindependence, intensity not dt⊗ν, measure values not integer (if law forces Poisson on\nevery finite-intensity set, integer-valuedness a.s. follows on those sets; that suffices).\nSatisfiability: a witness PRM must exist for σ-finite ν (with infinite ν(E)).",
+  "locked_at": "2026-10-17T15:06:21Z"
+ },
+ "comparison": {
+  "text": "Comparison — PoissonRandomMeasure (LevyStochCalc/Poisson/RandomMeasure.lean:71-149)\n\nLean: a structure over (Ω, P) probability and σ-finite ν, with\nN : Ω → Measure (ℝ × E) (a measure for every ω);\nmeasurable_eval: ω ↦ N ω B measurable for measurable B;\ninteger_valued: for finite-intensity B, a.s. N ω B ∈ ℕ;\ninfinite_at_infinite_intensity: for infinite-intensity B, a.s. N ω B = ∞;\npoisson_law: for finite-intensity B, Law(N(·,B)) = poissonMeasureENN((dt⊗ν)(B));\nindependent_disjoint: for every countable pairwise-disjoint measurable family, the counts are\niIndepFun;\njoint_past_future_independent: σ(N(B) : B ⊆ (−∞,s]×E) ⊥ σ(N((s,t]×A)) for 0 ≤ s < t,\nν(A) < ∞.\nIntensity = referenceIntensity ν = Lebesgue on [0,∞) ⊗ ν.\n\nAgainst my reading:\n- Random measure, measurable evaluations: matches.\n- Poisson law with mean dt⊗ν(B) on finite-intensity sets: matches; the infinite-intensity\n  case is the separate field N(B) = ∞ a.s. — the correct convention (not a junk law), so no\n  vacuity from infinite ν (poissonMeasureENN is only applied to finite means).\n- Independence on disjoint sets: countable families (stronger in form than finite families but\n  equivalent, iIndepFun being defined through finite subfamilies).\n- joint_past_future_independent: a consequence of the standard axioms (refine finitely many past\n  sets into disjoint atoms; additivity of N(ω) expresses past counts through the atoms;\n  independence on disjoint families) — adds no restriction.\n- infinite_at_infinite_intensity: also a consequence for σ-finite intensity (countable disjoint\n  finite-intensity pieces, independent Poisson counts with divergent mean sum ⇒ sum = ∞ a.s.).\n- Integer-valuedness: only per set a.s., no atomicity field. The standard definition asks\n  N(ω) to be a counting measure. Every standard PRM is a Lean PRM; a Lean PRM has, on each\n  set, the same law and joint laws as a standard one, and (docstring) the library proves a.s.\n  integer-valuedness / atomicity on finite-intensity windows for countably generated E (the\n  paper's E is countably generated). All paper uses are a.e. statements, so this is harmless.\n- Time domain ℝ × E with intensity Lebesgue restricted to [0,∞): counts on negative-time sets\n  are Poisson(0) = 0 a.s.; the restriction to [0,∞) × E is the paper's PRM.\n- Satisfiable: PoissonRandomMeasure.exists_of_sigmaFinite (every σ-finite ν, infinite ν(E)\n  included) and LevyDriver.exists.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:15:53Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices of PoissonRandomMeasure, and why each is harmless:\n1. Time axis ℝ with intensity Lebesgue on [0,∞) ⊗ ν: the counts at negative times vanish a.s.,\n   and the restriction to [0,∞) × E is the paper's PRM.\n2. \"Integer-valued atomic measure\" recorded only as a.s. integrality on each finite-intensity\n   set (no atomicity field): laws and joint laws of counts are those of a standard PRM, every\n   standard PRM satisfies the structure, and all uses are almost sure.\n3. Extra fields (N(B) = ∞ a.s. on infinite-intensity sets; past/future independence;\n   countable instead of finite disjoint families): each follows from the standard definition for\n   σ-finite ν, so they do not narrow the notion. Existence for every σ-finite ν is a theorem\n   (exists_of_sigmaFinite)."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:16:02Z",
+  "disagreements": "The author's review, as shown by rv.py author, consists of the review marker only (no reading text, no item-by-item comparison), so there is no stated position of the author to disagree with on substance.\nNot recorded there: integer-valuedness is only per set almost surely, with no atomicity field;\ntwo fields (N(B) = ∞ a.s. on infinite-intensity sets, past/future independence) are derived\nproperties of the standard definition added as axioms of the structure; time is ℝ with intensity\nrestricted to [0,∞). All harmless (existence theorem exists_of_sigmaFinite; standard PRMs satisfy\nthe structure), but these are the points an independent reader must check."
+ },
+ "submitted_at": "2026-10-17T15:16:41Z",
+ "issue_draft": null
+}

@@ -1,0 +1,68 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.Spec.OriginValues",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.Spec.OriginValues",
+  "lean": [
+   "Dissertation.WellPosedness.Spec.OriginValues"
+  ],
+  "claims": [
+   "A:ass:integ",
+   "A:cor:robust",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:lem:cont",
+   "A:lem:small",
+   "A:rem:cwp-class",
+   "A:rem:generalrank",
+   "A:sec4:horizon-not-contractive",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "4b26c5076ea2f4260000000000000000",
+  "fingerprint": "pl-fp-v1:10b195ad9f8f537086c161243e7f185b831136d6309edb44549c7d6746cc3fc3",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Unit: def Spec.OriginValues (the coefficient half of Assumption 2.2).\nPaper: with 0 the origin of H and delta_0 the Dirac mass at it:\n  t |-> b(t,0,delta_0) in L^2(0,T;R^n), t |-> sigma(t,0,delta_0) in L^2(0,T;R^{n x d}),\n  t |-> h(t,0,.,delta_0) in L^2(0,T; L^2(nu;R^n)), t |-> f(t,0,delta_0) in L^2(0,T;R^m).\nFaithful Lean: a predicate over (T, C) (no filtration, no P needed) with the four memberships,\neach as MemLp 2 on [0,T] with Lebesgue measure (including (a.e.-strong) measurability), the h one\nin the Bochner space of L^2(nu)-valued maps (or equivalently the joint L^2(dt x nu) function),\nevaluated exactly at theta = 0 and mu = Dirac(0) in P_2(H). Nothing about g or xi_0.",
+  "locked_at": "2026-10-17T12:37:23Z"
+ },
+ "comparison": {
+  "text": "OriginValues T C (Spec/Assumptions.lean): MemLp (t |-> C.b t 0 (P2.dirac 0)) 2 (volume.restrict\n(Ioo 0 T)), and likewise for sigma (R^{n x d}, Frobenius), h (values in Lp R^n 2 nu: membership in the\nBochner space L^2(0,T; L^2(nu;R^n)), with a.e.-strong measurability of the Lp-valued map) and f (R^m).\n0 is the origin of H (zero of the product), P2.dirac 0 the Dirac mass there.\nMatches the reading: the four memberships, nothing about g or xi0; L^2 includes measurability.\nRepresentation choice: the open interval (0,T) instead of [0,T] (Lebesgue-null difference).\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:03:56Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "L^2(0,T) is taken over Ioo 0 T rather than [0,T]: the two differ by a Lebesgue-null set, so the\nmemberships are the same. h's origin value is in the Bochner space of L^2(nu;R^n)-valued maps, the\npaper's L^2(0,T; L^2(nu;R^n))."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:04:22Z",
+  "disagreements": "No disagreement on substance. The author's review is an empty marker with no recorded\ncomparison; the representation choices listed in my detail are not recorded there."
+ },
+ "submitted_at": "2026-10-17T15:04:37Z",
+ "issue_draft": null
+}

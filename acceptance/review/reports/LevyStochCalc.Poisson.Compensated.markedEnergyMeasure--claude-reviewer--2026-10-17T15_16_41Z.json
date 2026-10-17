@@ -1,0 +1,57 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:LevyStochCalc.Poisson.Compensated.markedEnergyMeasure",
+  "kind": "def",
+  "name": "LevyStochCalc.Poisson.Compensated.markedEnergyMeasure",
+  "lean": [
+   "LevyStochCalc.Poisson.Compensated.markedEnergyMeasure"
+  ],
+  "claims": [
+   "A:lem:lawflow",
+   "A:sec3:HH-banach"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "6a70d753259c930a27f458a6e2a44d87",
+  "fingerprint": "pl-fp-v1:690e02d5578bab6254df09c5c161210ce770644fd680d3f7a0dea95a3b5f09f1",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading (locked before any Lean is shown) — def LevyStochCalc.Poisson.Compensated.markedEnergyMeasure\n\nPaper notion. The paper never names this object, but it uses it throughout: the measure\ndt ⊗ dP ⊗ ν on (time) × Ω × E under which jump integrands are square integrable\n(HN: E ∫_0^T ||U_t||^2_{L^2(ν)} dt < ∞; the Fubini isometry (eq:fubiniiso)\nL^2(P; L^2(ν)) ≅ L^2(P ⊗ E) \"under dt ⊗ dP ⊗ ν\"; Lemma A.1; forcing q^h ∈ L^2(Ω×[0,T]×E)).\nIt is also the Doléans (\"energy\") measure of the compensated measure Ñ: for a predictable\nintegrand U the compensated-Poisson isometry reads E|∫_0^T∫_E U dÑ|^2 = ∫ |U|^2 d(dt⊗dP⊗ν).\n\nA faithful Lean definition must therefore be: the product of Lebesgue measure in time (on\n[0,T], or on ℝ_+ / ℝ restricted to the integration horizon), the probability P, and the\nmark measure ν, on the product (time × Ω × E). Acceptable variants: the restriction of this\nproduct to the marked predictable σ-algebra P ⊗ E (that is what the isometry needs); the\nordering of the factors; time horizon ℝ_+ instead of [0,T] when integrals over [0,T] are\nread through indicators. Problems would be: a measure that is not dt⊗dP⊗ν (wrong factor,\ne.g. N instead of ν, or a missing factor), a time factor that does not restrict to\nLebesgue on [0,T] (e.g. counting or a weighted measure), or σ-finiteness lost so that the\nproduct is not the paper's (Mathlib's Measure.prod needs SFinite on the right factor; for\nσ-finite ν that is satisfied). If it is the \"energy\" of a fixed integrand (the measure with\ndensity |U|^2 w.r.t. dt⊗dP⊗ν), it must still be built on dt⊗dP⊗ν.",
+  "locked_at": "2026-10-17T15:06:19Z"
+ },
+ "comparison": {
+  "text": "Comparison — markedEnergyMeasure (LevyStochCalc/Poisson/CompensatedIntegrandComplete.lean:29-32)\n\nLean: markedEnergyMeasure P ν T = P.prod ((volume.restrict (Icc 0 T)).prod ν) on Ω × ℝ × E.\nReading: dt ⊗ dP ⊗ ν on [0,T] × Ω × E, the measure of the integrand spaces HN / (2.4) /\nLemma A.1 and the Doléans measure of Ñ on [0,T].\n- Factors: P (sample), Lebesgue restricted to [0,T] (time), ν (marks): exactly the three\n  factors. Order Ω × (ℝ × E) instead of [0,T] × Ω × E: a relabelling of coordinates.\n- Time: Lebesgue on ℝ restricted to Icc 0 T: the paper's dt on [0,T]; closed vs half-open\n  interval differ by a Lebesgue-null set.\n- σ-algebra: the full product σ-algebra (not the predictable one); the paper's L^2 classes of\n  predictable integrands are subclasses of L^2 of this measure, so nothing is lost; the\n  Fubini/predictable statements restrict it where needed.\n- Measure.prod with σ-finite ν: the right factor (volume.restrict Icc).prod ν is s-finite,\n  P a probability measure: the product is the genuine product measure.\n- T < 0: Icc 0 T empty, zero measure — never used by the paper (T > 0).\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:15:52Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:15:58Z",
+  "disagreements": "The author's review, as shown by rv.py author, consists of the review marker only (no reading text, no item-by-item comparison), so there is no stated position of the author to disagree with on substance.\nI agree with the implicit verdict (reviewed as faithful); my comparison finds no representation choice that needs recording."
+ },
+ "submitted_at": "2026-10-17T15:16:41Z",
+ "issue_draft": null
+}

@@ -1,0 +1,82 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:LevyStochCalc.Driver.LevyDriver.N",
+  "kind": "def",
+  "name": "LevyStochCalc.Driver.LevyDriver.N",
+  "lean": [
+   "LevyStochCalc.Driver.LevyDriver.N"
+  ],
+  "claims": [
+   "A:cor:robust",
+   "A:eq:compid",
+   "A:eq:forced",
+   "A:eq:mvfbsdej",
+   "A:eq:zeromean",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:intro:mvfbsdej",
+   "A:lem:bpbsde",
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:rem:cwp-class",
+   "A:rem:diag-mono",
+   "A:rem:generalrank",
+   "A:rem:intrinsic",
+   "A:sec2:infinite-activity-atoms",
+   "A:sec2:prp",
+   "A:sec3:HH-banach",
+   "A:sec3:one-null-set",
+   "A:sec4:WP-def",
+   "A:sec4:horizon-not-contractive",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "5a083be1dafe7d36f9ed1dcbab2d13fc",
+  "fingerprint": "pl-fp-v1:bdadae197b4ffc643207f72cf74bb703ffd825f85d2a310964952a1d9ada3077",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Unit: def:LevyStochCalc.Driver.LevyDriver.N (reading locked before any Lean is seen)\n\nPaper notion. The Poisson random measure N on R_+ x E with intensity dt (x) nu(de) of Section 2\n(line 225), with compensated measure Ntilde = N - dt nu(de) (line 234).\n\nWhat a faithful Lean definition must be.\n- The field of the LevyDriver structure giving N: a random measure omega |-> N(omega) on\n  (time) x E (a Measure on the product, or a family of set functions A |-> N(A)(omega) in\n  N u {oo} / R>=0 oo), each N(A) a random variable. Its meaning is that of the structure's PRM axiom:\n  Poisson((Leb (x) nu)(A)) marginals on finite-intensity sets and independence over disjoint sets.\n- Values in R>=0oo are natural (N(A) can be infinite when the intensity is infinite); no junk issue as\n  long as compensated quantities are only formed on finite-intensity sets.\n- Faithful iff the structure (unit 11) constrains it correctly.",
+  "locked_at": "2026-10-17T12:35:33Z"
+ },
+ "comparison": {
+  "text": "Comparison: def:LevyStochCalc.Driver.LevyDriver.N\n(Driver/Joint.lean:56-57.)\n\n- Reading: the field giving N, a random measure on time x E with measurable counts, constrained by the\n  PRM axioms; R>=0oo values natural; faithful iff the structure is.\n- Lean: field N : PoissonRandomMeasure P nu (N.N : Omega -> Measure (R x E), counts in R>=0oo, PRM axioms\n  with intensity Lebesgue|[0,oo) (x) nu). The projection adds nothing; the structure (unit 11) and the PRM\n  record were reviewed above (faithful, with the representation choices recorded there).\n\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:01:14Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:01:26Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-17T15:01:47Z",
+ "issue_draft": null
+}

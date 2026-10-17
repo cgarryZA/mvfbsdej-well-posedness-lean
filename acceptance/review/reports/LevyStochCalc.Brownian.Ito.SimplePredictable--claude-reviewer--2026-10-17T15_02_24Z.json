@@ -1,0 +1,75 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:LevyStochCalc.Brownian.Ito.SimplePredictable",
+  "kind": "def",
+  "name": "LevyStochCalc.Brownian.Ito.SimplePredictable",
+  "lean": [
+   "LevyStochCalc.Brownian.Ito.SimplePredictable"
+  ],
+  "claims": [
+   "A:cor:robust",
+   "A:eq:forced",
+   "A:eq:mvfbsdej",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:intro:mvfbsdej",
+   "A:lem:bpbsde",
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:rem:cwp-class",
+   "A:rem:generalrank",
+   "A:sec2:prp",
+   "A:sec4:WP-def",
+   "A:sec4:horizon-not-contractive",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "095844f503e4a7e50000000000000000",
+  "fingerprint": "pl-fp-v1:76bbed7d96cdad1d3508aa8cc2c41e4feac1e59fcc607decd1e5e28726f92cd7",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for def:LevyStochCalc.Brownian.Ito.SimplePredictable (written before seeing any Lean).\n\nPaper notion. The paper uses the Ito integral int_0^t Z_s dW_s for predictable square-integrable\nZ (H^2_W), and the Brownian--Poisson isometries; the standard construction goes through simple\npredictable integrands: Z_t(omega) = sum_{i<N} xi_i(omega) 1_{(t_i, t_{i+1}]}(t) with a finite\npartition 0 <= t_0 < t_1 < ... < t_N (<= T), each xi_i F_{t_i}-measurable (with respect to the\nfiltration of the setting) and square-integrable (often bounded). Simple predictable processes\nare dense in the square-integrable predictable (or progressive) integrands for the norm\n(E int_0^T |Z|^2 dt)^{1/2}.\n\nA faithful Lean structure \"SimplePredictable\" must:\n- consist of a finite number N of intervals, a partition t_0 <= ... <= t_N (monotone; strict or\n  non-strict both harmless since degenerate intervals contribute nothing), and coefficients\n  xi_i : Omega -> R (or the relevant vector space);\n- require each xi_i to be F_{t_i}-measurable for the LEFT endpoint t_i (this is what makes the\n  integrand predictable and the integral a martingale; measurability w.r.t. F_{t_{i+1}} or\n  F_T would be wrong), and square-integrable or bounded;\n- evaluation: the process is xi_i on (t_i, t_{i+1}] (or [t_i, t_{i+1}); the a.e.-in-time\n  difference is harmless for the integral and the energy, but left-open/right-closed is the\n  predictable convention).\nIf the coefficients are only required measurable (not L^2), then the integral and isometry need\nthe L^2 condition elsewhere; it must not be missing where the isometry is used.",
+  "locked_at": "2026-10-17T12:34:24Z"
+ },
+ "comparison": {
+  "text": "Comparison for Ito.SimplePredictable (structure, parameters Ω and horizon T).\nFields: N : ℕ; partition : Fin (N+1) → ℝ with partition 0 = 0, partition (last) ≤ T, StrictMono;\nξ : Fin N → Ω → ℝ, each bounded (∃ M, ∀ ω, |ξ i ω| ≤ M) and measurable for the AMBIENT σ-algebra.\nAgainst my reading:\n- Finite partition 0 = t_0 < … < t_N ≤ T, with coefficients on each piece. Matches. Bounded\n  coefficients are the usual dense class.\n- MISSING from the structure: F_{t_i}-measurability of ξ_i (left-endpoint adaptedness), which my\n  reading required. The structure is not parametrised by a filtration at all. The docstring says\n  \"ξ_i is ℱ_{t_i}-measurable\", but the field comment says adaptedness \"is a separate hypothesis of\n  the consumers\". So the type contains non-adapted step processes, which are not simple\n  predictable, and the Itô isometry fails for them.\n- I checked the consumers relevant here. simpleIntegral_memLp_intermediate_brownian and the\n  difference isometry take h_adapt : ∀ i, StronglyMeasurable[ℱ (partition i)] (ξ i).\n  exists_adaptedSimple_within returns approximants together with that adaptedness, and\n  masterApprox_adapt records it for the master sequence that defines stochasticIntegral. So\n  wherever predictability matters, the hypothesis is supplied.\n- One-dimensional, real coefficients (the multi-dimensional integral is assembled elsewhere).\nThus the structure on its own is broader than the paper's notion of a simple predictable\nintegrand. The paper's notion is the structure together with the left-endpoint adaptedness\nhypothesis that every consumer adds.\nVerdict: broader.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:01:14Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "broader",
+  "detail": "Broader than the notion it names. SimplePredictable Ω T has no filtration parameter, and the\ncoefficients ξ_i are required only to be bounded and measurable for the ambient σ-algebra, not\nF_{t_i}-measurable. The docstring's \"ξ_i is ℱ_{t_i}-measurable\" is not enforced by the type. The\npaper's (standard) simple predictable integrand Σ ξ_i 1_{(t_i,t_{i+1}]} with ξ_i F_{t_i}-measurable\nis obtained as a SimplePredictable G together with the hypothesis\nh_adapt : ∀ i : Fin G.N, StronglyMeasurable[ℱ (G.partition i.castSucc)] (G.ξ i). That is exactly\nthe hypothesis carried by every consumer that needs predictability:\nsimpleIntegral_memLp_intermediate_brownian, the isometry lemmas, exists_adaptedSimple_within, and\nmasterApprox_adapt for the sequence defining stochasticIntegral. Any statement that quantifies\nover SimplePredictable without h_adapt does not quantify over simple predictable processes."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:01:52Z",
+  "disagreements": "Disagreement. The author's entry records only the marker, which reads as an acceptance of the\ndefinition as the paper's \"simple predictable\" integrand. It is not that. The structure requires\nthe coefficients ξ_i only to be bounded and measurable for the ambient σ-algebra. It has no\nfiltration parameter and no F_{t_i}-measurability (left-endpoint adaptedness) field, although its\ndocstring says \"ξ_i is ℱ_{t_i}-measurable\". The type therefore contains non-adapted step\nprocesses, for which the Itô isometry fails. It is broader than the paper's notion. The paper's\nnotion is the structure together with h_adapt : ∀ i, StronglyMeasurable[ℱ (partition i)] (ξ i).\nThat hypothesis is carried by every consumer that needs it (the simple-integral L² and isometry\nlemmas, exists_adaptedSimple_within, masterApprox_adapt), so the stochastic integral built on it\nis correct. The review entry should say so, and so should the docstring, which overstates the\nfield list."
+ },
+ "submitted_at": "2026-10-17T15:02:24Z",
+ "issue_draft": null
+}

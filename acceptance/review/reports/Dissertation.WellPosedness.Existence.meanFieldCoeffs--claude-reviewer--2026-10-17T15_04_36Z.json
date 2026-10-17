@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.Existence.meanFieldCoeffs",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.Existence.meanFieldCoeffs",
+  "lean": [
+   "Dissertation.WellPosedness.Existence.meanFieldCoeffs"
+  ],
+  "claims": [
+   "A:ex:concrete"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "e170fd42ef8bf937a752d819f1e43056",
+  "fingerprint": "pl-fp-v1:455908fcb0dabe5bda9aa05cf4aad73633ad81518ce2f29a4670d0545a3cdc1d",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Unit: def Existence.meanFieldCoeffs (Example 5.1(ii)).\nPaper: n = m = d = 1, G = 1, nu arbitrary sigma-finite. With theta = (x,y,z,u) and the marginal\nmeans m_Psi(mu) = int_H pi_Psi(theta) mu(dtheta) (Bochner means; m_U(mu) in L^2(nu)) and the\nbarycentre b(rho) = int_{R^n} x rho(dx):\n   b = -2y - m_Y(mu),  sigma = -2z - m_Z(mu),  h = -2u - m_U(mu)  (in L^2(nu)),\n   f = 2x + m_X(mu),   g(x, rho) = 2x + barycentre(rho).\nNo time dependence. A faithful Lean definition: exactly these, with the means the genuine\nBochner integrals under mu in P_2(H) (well defined since second moments are finite, so no\njunk from non-integrability), the U-mean as an element of L^2(nu) (Bochner mean of the\nL^2(nu)-valued coordinate), signs and factors 2, 1 as printed (note the asymmetric signs: minus\nfor b, sigma, h, plus for f and g). A general-n version with n = m and d arbitrary is acceptable\nif the n=m=d=1 instance is the paper's.",
+  "locked_at": "2026-10-17T12:34:53Z"
+ },
+ "comparison": {
+  "text": "meanFieldCoeffs nu n d : Coeffs nu n n d (Examples/MeanField.lean:209):\n  b = -(2 y) - (tupleMean mu).y, sigma = -(2 z) - (tupleMean mu).z, h = -(2 u) - (tupleMean mu).u,\n  f = 2 x + (tupleMean mu).x, g x rho = 2 x + barycentre rho,\nwith tupleMean mu = Bochner integral of theta under mu.law in H (its components are the marginal\nmeans m_Psi(mu), projections being continuous linear; the U-mean is the L^2(nu)-valued Bochner mean)\nand barycentre rho = Bochner integral of x under rho.law.\nItem by item with Example 5.1(ii): all signs and factors as printed (minus for b, sigma, h; plus for\nf and g), no t dependence, means genuine for mu in P_2 (finite second moment implies integrability\nof the identity on the separable H of the paper's setting; a Bochner junk 0 could only arise for a\nnon-separable L^2(nu), outside the paper's countably generated E). General n = m and d; the paper's\nsystem is n = d = 1.\nVerdict: broader (general dimension), instance n = d = 1 is the printed one.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T12:40:38Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "broader",
+  "detail": "Instantiation: n := 1, d := 1 (m = n = 1): b = -2y - m_Y(mu), sigma = -2z - m_Z(mu),\nh = -2u - m_U(mu) in L^2(nu; R^1), f = 2x + m_X(mu), g(x,rho) = 2x + b(rho), exactly Example 5.1(ii).\nNote: the definition carries no countable-generation hypothesis on E; the means are genuine when\nL^2(nu) is separable (the paper's standing setting), which the statements assume."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:04:21Z",
+  "disagreements": "No disagreement on substance, but the author's review is an empty marker (only a section heading at\nmost): it does not record that the definition is broader than the printed system (general\ndimensions) nor the instantiation that gives the printed one (n = d = 1, resp. d = 1), which the\nreview policy asks for a broader definition."
+ },
+ "submitted_at": "2026-10-17T15:04:36Z",
+ "issue_draft": null
+}

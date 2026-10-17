@@ -120,10 +120,10 @@ theorem cor_robust_wp : PaperSpec.A.cor_robust_wp.{u, v, w} := by
     perturb_assumptions_of_assumptions h22 h23 h25 h213 hcdiss hJp horigp hLp hLp0 h34 hc
   refine ⟨(thm_cwp 𝒢₀ ν n n d P D h𝒢₀ hind₀ hn hn hd T hT _ α β₁ β₂ G _ ξ₀ hJp h22' h23' hG
       h25').1, fun X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ h₁ h₂ => (thm_uniq 𝒢₀ ν n n d P D h𝒢₀ hind₀ hn hn hd T
-      hT _ α β₁ β₂ G _ hJp h23' hG h25' ξ₀ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ h₁ h₂).1, _, h23',
-    fun L₂ C₂ ξ₂ hJ₂ h22₂ h23₂ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ h₁ h₂ => hstab 𝒢₀ ν n n d P D h𝒢₀ hind₀
-      hn hn hd T hT _ L₂ α β₁ β₂ G _ C₂ ξ₀ ξ₂ hJp h22' h23' hG h25' hJ₂ h22₂ h23₂ X₁ X₂ Y₁ Y₂ Z₁
-      Z₂ U₁ U₂ h₁ h₂⟩
+      hT _ α β₁ β₂ G _ hJp h23' hG h25' ξ₀ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ h₁ h₂).1,
+    fun L hL L₂ C₂ ξ₂ hJ₂ h22₂ h23₂ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ h₁ h₂ => hstab 𝒢₀ ν n n d P D h𝒢₀
+      hind₀ hn hn hd T hT L L₂ α β₁ β₂ G _ C₂ ξ₀ ξ₂ hJp h22' hL hG h25' hJ₂ h22₂ h23₂ X₁ X₂ Y₁ Y₂
+      Z₁ Z₂ U₁ U₂ h₁ h₂⟩
 
 /-- Corollary 3.6, (3.5) gives (3.4) with `c_pert = ‖G‖ L_p`. -/
 theorem cor_robust_lip : PaperSpec.A.cor_robust_lip.{u, v} := by

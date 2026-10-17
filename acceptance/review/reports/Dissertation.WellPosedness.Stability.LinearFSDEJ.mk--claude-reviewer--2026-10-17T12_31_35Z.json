@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.Stability.LinearFSDEJ.mk",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.Stability.LinearFSDEJ.mk",
+  "lean": [
+   "Dissertation.WellPosedness.Stability.LinearFSDEJ.mk"
+  ],
+  "claims": [
+   "A:sec4:horizon-not-contractive"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "302302b2a85c5d690000000000000000",
+  "fingerprint": "pl-fp-v1:ef266bd0afea39aa14085ba657e01d37c5d25a84a702f754bb8e542946db7fea",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading: LinearFSDEJ.mk is the constructor of the predicate \"X solves the linear forward\nequation with frozen integrands\" (the paper's (4.5)/(4.12) in one coordinate). Its meaning is\nfixed by the structure: it must take exactly the conditions of the notion (measurability /\nprogressivity / square integrability of the integrands, initial value, adapted right-continuous\nX, the identity a.s. at every t in [0,T]) and nothing more, and produce the predicate. Faithful\niff the structure is, and the constructor adds no field beyond the structure's.",
+  "locked_at": "2026-10-17T12:31:21Z"
+ },
+ "comparison": {
+  "text": "LinearFSDEJ.mk takes exactly the 18 fields of the structure LinearFSDEJ (sigma_meas/prog/vanish/sq,\ngamma_meas/prog/vanish/sq, b_meas/prog/vanish/sq, xi0_sq, X_adapted, X_rightCont, eqn) and no\nother hypothesis, and returns LinearFSDEJ D F hW hN T xi0 b X sigma gamma. It is the\nauto-generated constructor; its meaning is the structure's, reviewed as faithful with\nrepresentation choices (scalar coordinate form; integrands extended by 0 off [0,T]; gamma marked\nprogressive instead of predictable; X right-continuous everywhere without a left-limit field;\nidentity a.s. at each t; xi0 in L^2).",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T12:31:30Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "(1) Scalar coordinate form (one coordinate of X, a row sigma in R^d, a scalar jump integrand):\nthe paper's vector equation is the conjunction over coordinates. (2) Integrands extended by 0\noff [0,T] (fields *_vanish): only [0,T] enters. (3) gamma marked progressively measurable rather\nthan predictable: the L^2 compensated integral does not distinguish integrands equal\ndP x dt x nu-a.e. (4) X right-continuous on every path at every real time and adapted at every\nreal time, with no left-limit field: left limits follow a.s. from the identity, and any paper\nsolution on [0,T] extends (0 before time 0, X_T after T). (5) identity a.s. at each t in [0,T],\nthe paper's \"a.s. for every t\". (6) xi0 in L^2, as in Assumption 2.2 and Lemma 4.3."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T12:31:30Z",
+  "disagreements": "none (the author review shows only a marker, definitions.md:300; nothing to disagree with)."
+ },
+ "submitted_at": "2026-10-17T12:31:35Z",
+ "issue_draft": null
+}

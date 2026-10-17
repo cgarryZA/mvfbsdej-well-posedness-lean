@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.lem_cont",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.lem_cont",
+  "lean": [
+   "Dissertation.PaperSpec.A.lem_cont"
+  ],
+  "claims": [
+   "A:lem:cont"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba15f6eb38f12c8d372",
+  "fingerprint": "pl-fp-v1:d11b2d38f5f18a28c2f9963e544bf04c0892ed192488ded686e8fe3f4b22060b",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of Lemma 4.4 (lem:cont).\nConstant first: zeta_0 = zeta_0(T, L, ||G||, c_G, alpha, beta1, beta2, lambda_*) (c_BDG universal), a function\nof these parameters only, chosen before everything else, and STRICTLY POSITIVE (at least whenever\nthe hypotheses can hold: T > 0, L >= 0, admissible alpha, beta1, beta2, lambda_* in (0,1]). A zeta_0 that\nmay be 0 would make the lemma trivial, so positivity must be in the statement.\nlambda_*: \"the small-coupling threshold of Lemma 4.2\" (a number in (0,1] depending on T, L, c_BDG).\nThe proof uses lambda_* only as the lower bound underline-lambda of Lemma 4.3 for lambda_0 >= lambda_*,\nso a statement for every lambda_* in (0,1] (with zeta_0 depending on lambda_*) is a broader, faithful\nreading; the printed lemma is its instance at the threshold of Lemma 4.2.\nSetting: standing setting, n, m, d >= 1, T > 0.\nHypotheses: coefficients with (2.3)-Borel measurability and initial datum xi0 satisfying\nAssumptions 2.2-2.5 (L, G full rank, alpha, beta1, beta2); lambda_0 in [lambda_*, 1]; WP(lambda_0): the\nlambda_0-forced system (4.1) has a unique solution in S for every square-integrable forcing q (q^b,\nq^sigma, q^f progressively measurable, q^h predictable, all square integrable, q^g_T in L2(F_T)).\nConclusion: for every zeta in [0, zeta_0] with lambda_0 + zeta <= 1, WP(lambda_0 + zeta) holds.\nQuantifier order: exists zeta_0 (function), forall setting, coefficients, lambda_0, (WP lambda_0) ->\nforall zeta ... -> WP(lambda_0 + zeta).",
+  "locked_at": "2026-10-17T12:24:11Z"
+ },
+ "comparison": {
+  "text": "Comparison: lem_cont vs Lemma 4.4.\nConstant: exists zeta0 : R^8 -> R first, applied to (T, L, ||G||, c_G, alpha, beta1, beta2, lambda_*);\nthe conclusion includes 0 < zeta0(...) under the hypotheses. Matches (\"there is zeta_0 > 0, depending\nonly on ...\"; c_BDG universal).\nlambda_*: universally quantified in (0, 1]; the printed lemma fixes lambda_* as the threshold of\nLemma 4.2 (a number in (0, 1]); the proposition is the broader statement for every lambda_* in (0,1],\nthe printed claim its instance. Matches my reading.\nSetting/hypotheses: standing setting, n, m, d > 0, T > 0; JointBorel, Assumption22 C xi0,\nAssumption23 L, full-rank G, Assumption25. Matches \"Let Assumptions 2.2-2.5 hold\".\nConclusion: for all lambda_0 in [lambda_*, 1] with WP(lambda_0), for all zeta in [0, zeta0] with\nlambda_0 + zeta <= 1, WP(lambda_0 + zeta). Matches.\nWP (Setting.lean): for every forcing in PredForcing (q^b, q^sigma, q^f jointly and progressively\nmeasurable, finite energy; q^h marked predictable with finite marked energy; q^g F_T-measurable L2;\nall normalised to vanish off [0,T]) there is a ForcedSolution of (4.1) in S, and any two\nForcedSolutions are equal in S. PaperSolutionForced writes (4.1) with integrands lambda psi + q^psi\n(lambda h + q^h for the jump integral, equal to lambda int h dN~ + int q^h dN~ by linearity) and\nterminal value lambda g(X_T, Law X_T) + q^g_T. Matches the definition of WP(lambda).\nWitness thm_cwp_hypotheses: the coefficient hypotheses at Example 5.1(i). The inductive hypothesis\nWP(lambda_0) is not exhibited by the witness; it holds at that instance by the paper's argument\n(Lemma 4.2 and the lemma itself), so the hypotheses are satisfiable, but the witness covers only\nthe coefficient part.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T12:25:07Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "1. lambda_* is quantified over (0, 1] instead of being the specific threshold of Lemma 4.2: broader\n   (the printed lemma is the instance lambda_* = threshold), and zeta_0 depends on lambda_* as printed.\n2. WP(lambda) is encoded with forcings normalised to vanish off [0,T] and the jump forcing marked\n   predictable; (4.1) is written with combined integrands lambda psi + q^psi (linearity).\n3. Shared solution-notion encodings (as in thm_cwp) for the forced solutions.\n4. The witness exhibits the coefficient hypotheses only; WP(lambda_0) is the lemma's inductive\n   hypothesis, satisfiable by the paper's results but not exhibited in Lean."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T12:25:07Z",
+  "disagreements": "none (minor: the premise WP(lambda_0) is met at lambda_0 = lambda_* only via lem_small, a separate proposition, not by the linked witness itself)."
+ },
+ "submitted_at": "2026-10-17T12:25:19Z",
+ "issue_draft": null
+}

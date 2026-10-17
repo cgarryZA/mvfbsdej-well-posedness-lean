@@ -32,8 +32,6 @@ intensity `ν = δ₀` on `ℝ` (`LevyStochCalc.Driver.LevyDriver.exists`), the 
 * `Dissertation.Acceptance.A.eq_lipfun_hypotheses` — the hypotheses of (2.10).
 * `Dissertation.Acceptance.A.lem_bpbsde_hypotheses` — the hypotheses of Lemma 4.1, at the
   backward equation of the solution of Theorem 3.5 for Example 5.1(i).
-* `Dissertation.Acceptance.A.lem_pert_hypotheses` — the hypotheses of Lemma 4.3, at the solution
-  of Theorem 3.5 for Example 5.1(i), as a solution of (4.1) at `λ = 1` with zero forcing.
 * `Dissertation.Acceptance.A.ass_G_hypotheses` — the hypotheses of the bounds of Assumption 2.4.
 * `Dissertation.Acceptance.A.prop_strict_hypotheses` — the hypotheses of Proposition 3.8.
 * `Dissertation.Acceptance.A.thm_stab_hypotheses` — the hypotheses of Theorem 3.1, at the systems
@@ -327,44 +325,6 @@ theorem lem_bpbsde_hypotheses :
   filter_upwards [hid, hM 1 hT1, hM t ht] with ω hω h1 ht'
   rw [hω t ht, ← h1, ← ht']
   rfl
-
-/-- **The hypotheses of Lemma 4.3 hold at Example 5.1(i).** At the instance of
-`thm_cwp_hypotheses`, the system satisfies (2.3) and Assumptions 2.3–2.5; `λ̲ = λ = 1`; the zero
-forcing is a forcing of (4.1) and the initial datum `0` is `ℱ₀`-measurable; and the solution of
-Theorem 3.5 solves (4.1) at `λ = 1` with zero forcing in `ℍ_weak` (taken as both `Θ¹` and `Θ²`,
-whose difference `0` lies in `ℍ`). -/
-theorem lem_pert_hypotheses :
-    ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)
-      (D : LevyStochCalc.Driver.LevyDriver P 1 (Measure.dirac (0 : ℝ)))
-      (hind₀ : Indep (⊥ : MeasurableSpace Ω) (⨆ t, D.filtration t) P),
-      JointBorel 1 (sys 1)
-      ∧ Assumption23 (enlJoint ⊥ D bot_le) P 1 1 (sys 1)
-      ∧ (1 : Matrix (Fin 1) (Fin 1) ℝ).rank = min 1 1
-      ∧ Assumption25 (enlJoint ⊥ D bot_le) P 1 (1 : Matrix (Fin 1) (Fin 1) ℝ) 1 1 1 (sys 1)
-      ∧ Measurable[enlJoint ⊥ D bot_le 0] (fun _ : Ω => (0 : EuclideanSpace ℝ (Fin 1)))
-      ∧ PredForcing (enlJoint ⊥ D bot_le) P (Measure.dirac (0 : ℝ)) 1
-          (0 : Fin 1 → Ω → ℝ → ℝ) (0 : Fin 1 → ℝ → Ω → Fin 1 → ℝ) (0 : Fin 1 → ℝ → Ω → ℝ → ℝ)
-          (0 : Fin 1 → Ω → ℝ → ℝ) (0 : Fin 1 → Ω → ℝ)
-      ∧ ∃ (X : Fin 1 → ℝ → Ω → ℝ) (Y : Fin 1 → ℝ → Ω → ℝ) (Z : Fin 1 → ℝ → Ω → Fin 1 → ℝ)
-          (U : Fin 1 → ℝ → Ω → ℝ → ℝ),
-          WeakForcedSolution D bot_le hind₀ 1 1 (sys 1) (fun _ => 0) 0 0 0 0 0 X Y Z U
-          ∧ supSize P (Measure.dirac (0 : ℝ)) 1 (fun i t ω => X i t ω - X i t ω)
-              (fun k t ω => Y k t ω - Y k t ω) (fun k t ω j => Z k t ω j - Z k t ω j)
-              (fun k t ω e => U k t ω e - U k t ω e) < ⊤ := by
-  obtain ⟨Ω, _, P, _, ⟨D⟩⟩ := LevyStochCalc.Driver.LevyDriver.exists 1 ℝ (Measure.dirac (0 : ℝ))
-  have hind₀ : Indep (⊥ : MeasurableSpace Ω) (⨆ t, D.filtration t) P := indep_bot_left _
-  obtain ⟨hJ, h22, h23, hG, h25⟩ :=
-    affine_assumptions (ν := Measure.dirac (0 : ℝ)) (ℱ := enlJoint ⊥ D bot_le) (P := P) (T := 1)
-      (σc := 0) (hc := 0) one_pos one_pos (0 : EuclideanSpace ℝ (Fin 1))
-  have e₁ : max (max (1 : ℝ) 1) 1 = 1 := by norm_num
-  rw [e₁] at h23
-  obtain ⟨X, Y, Z, U, ⟨γ, h⟩, hX, hY⟩ := (thm_cwp ⊥ _ 1 1 1 P D bot_le hind₀ one_pos one_pos
-    one_pos 1 one_pos 1 1 1 1 1 _ _ hJ h22 h23 hG h25).1
-  have hw : WeakForcedSolution D bot_le hind₀ 1 1 (sys 1) (fun _ => 0) 0 0 0 0 0 X Y Z U :=
-    ⟨⟨γ, paperWeakSolutionForcedInt_one_zero_iff.mpr (h.toWeakInt zero_le_one)⟩, hX, hY⟩
-  refine ⟨Ω, inferInstance, P, inferInstance, D, hind₀, hJ, h23, hG, h25, measurable_const,
-    { toForcing := Forcing.zero, qh_pred := fun _ => measurable_const }, X, Y, Z, U, hw, ?_⟩
-  simp [supSize, esq, Brownian.Ito.energy, Poisson.Compensated.markedEnergy]
 
 /-- **The hypotheses of the bounds of Assumption 2.4 hold** at `m = n = 1`, `G = 1`, which has
 full rank. -/

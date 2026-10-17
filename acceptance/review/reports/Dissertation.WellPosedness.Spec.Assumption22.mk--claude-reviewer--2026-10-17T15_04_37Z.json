@@ -1,0 +1,68 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.Spec.Assumption22.mk",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.Spec.Assumption22.mk",
+  "lean": [
+   "Dissertation.WellPosedness.Spec.Assumption22.mk"
+  ],
+  "claims": [
+   "A:ass:integ",
+   "A:cor:robust",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:lem:cont",
+   "A:lem:small",
+   "A:rem:cwp-class",
+   "A:rem:generalrank",
+   "A:sec4:horizon-not-contractive",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "f08ed69f41bd56a20000000000000000",
+  "fingerprint": "pl-fp-v1:8b66c86d7f0f8d73bdd1908e671f7e176710e55e12400d02a04a5652dd2bcab0",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Unit: Assumption22.mk, the constructor of Assumption22 (Assumption 2.2). Its type must take\nexactly the clauses of Assumption 2.2 as arguments and return Assumption22 F P T C xi_0:\n  * xi_0 in L^2(Omega, F_0; R^n): F_0-measurability (F_0 the time-0 field of the filtration)\n    and square integrability;\n  * b(., 0, delta_0) in L^2(0,T;R^n); sigma(., 0, delta_0) in L^2(0,T;R^{n x d});\n    h(., 0, ., delta_0) in L^2(0,T;L^2(nu;R^n)); f(., 0, delta_0) in L^2(0,T;R^m),\nwith 0 the origin of H and delta_0 the Dirac mass there; L^2(0,T;.) on [0,T] with Lebesgue\nmeasure, including measurability. Nothing else (no condition on g, no Lipschitz condition).",
+  "locked_at": "2026-10-17T12:35:27Z"
+ },
+ "comparison": {
+  "text": "Assumption22.mk : StronglyMeasurable[F 0] xi0 -> MemLp xi0 2 P -> OriginValues T C ->\nAssumption22 F P T C xi0. (The rv.py signature prints `StronglyMeasurable xi0` without the\nsigma-algebra; `#check` with pp.explicit in a scratch file confirms the argument is\n@StronglyMeasurable Omega _ _ (F.seq 0) xi0, i.e. F_0-measurability.)\nExactly the clauses of Assumption 2.2 (xi0 in L^2(F_0), the four origin values in L^2(0,T) via\nOriginValues), nothing added. Representation choices as for Assumption22: strong\nF_0-measurability (equivalent when F_0 contains the null sets, as enlJoint does), Ioo 0 T.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T12:42:37Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Same as Assumption22: xi0 strongly F_0-measurable (equivalent to a.e. when F_0 holds the null sets,\nas the standing filtration does); L^2 on Ioo 0 T rather than [0,T] (null difference); h's origin\nvalue in the Bochner space L^2(0,T; L^2(nu;R^n))."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:04:21Z",
+  "disagreements": "No disagreement on substance. The author's review is an empty marker with no recorded\ncomparison; the representation choices listed in my detail are not recorded there."
+ },
+ "submitted_at": "2026-10-17T15:04:37Z",
+ "issue_draft": null
+}

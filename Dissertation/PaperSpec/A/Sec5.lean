@@ -54,10 +54,9 @@ setting is that of §2 (see `Dissertation.PaperSpec.A.thm_cwp`), here with `n = 
 * `Dissertation.PaperSpec.A.ex55Crowd` — the crowding correction of Example 5.5.
 * `Dissertation.PaperSpec.A.ex_dealer_potential`, `ex_dealer_crowd` — Example 5.5: the potential,
   and the Lipschitz bound of the crowding correction.
-* `Dissertation.PaperSpec.A.ex_dealer_twopoint`, `ex_dealer_not_mean`, `ex_dealer_not_mean_corr`,
-  `ex_dealer_affine` — Example 5.5 beyond the mean: the two-point values; the crowding correction
-  as a function of the mean and of the valuation curve, over every `ν` and with `L²(ν) ≠ 0`; and
-  the crowding correction in the law.
+* `Dissertation.PaperSpec.A.ex_dealer_twopoint`, `ex_dealer_not_mean_corr`, `ex_dealer_affine` —
+  Example 5.5 beyond the mean: the two-point values; the crowding correction as a function of the
+  mean and of the valuation curve, with `L²(ν) ≠ 0`; and the crowding correction in the law.
 * `Dissertation.PaperSpec.A.ex_dealer_marks` — Example 5.5, the mark measure.
 -/
 
@@ -679,21 +678,10 @@ def ex_dealer_twopoint : Prop :=
       ∧ ex55Crowd Λ₂ w = ((1 / 2 : ℝ) * (3 / Real.sqrt 10 - 1 / Real.sqrt 2)) • w
 
 /-- Example 5.5, the crowding correction is no function of the mean and is nonlinear in the
-valuation curve, over every σ-finite `ν`. For `ν` σ-finite on a countably generated space,
-there is no `Φ` with `A_λ(u) = Φ(∫ v λ(dv), u)` for every `λ ∈ P₂(L²(ν))` and `u ∈ L²(ν)`; and for
-some `λ ∈ P₂(L²(ν))` the map `u ↦ A_λ(u)` is not linear. -/
-def ex_dealer_not_mean : Prop :=
-  ∀ {E : Type v} [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν]
-    [MeasurableSpace.CountablyGenerated E],
-    (¬ ∃ Φ : Lp (EuclideanSpace ℝ (Fin 1)) 2 ν → Lp (EuclideanSpace ℝ (Fin 1)) 2 ν
-        → Lp (EuclideanSpace ℝ (Fin 1)) 2 ν,
-      ∀ (Λ : P2 (Lp (EuclideanSpace ℝ (Fin 1)) 2 ν)) (u : Lp (EuclideanSpace ℝ (Fin 1)) 2 ν),
-        ex55Crowd Λ.law u = Φ (∫ v, v ∂Λ.law) u)
-    ∧ ∃ Λ : P2 (Lp (EuclideanSpace ℝ (Fin 1)) 2 ν), ¬ IsLinearMap ℝ (ex55Crowd Λ.law)
-
-/-- Example 5.5, the crowding correction is no function of the mean and is nonlinear in the
-valuation curve when the fibre is nontrivial: `ex_dealer_not_mean` with `L²(ν)` not reduced to
-`0` (for `ν ≠ 0`). -/
+valuation curve when the fibre is nontrivial. For `ν` σ-finite on a countably generated space with
+`L²(ν)` not reduced to `0`, there is no `Φ` with `A_λ(u) = Φ(∫ v λ(dv), u)` for every
+`λ ∈ P₂(L²(ν))` and `u ∈ L²(ν)`; and for some `λ ∈ P₂(L²(ν))` the map `u ↦ A_λ(u)` is not
+linear. -/
 def ex_dealer_not_mean_corr : Prop :=
   ∀ {E : Type v} [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν]
     [MeasurableSpace.CountablyGenerated E],

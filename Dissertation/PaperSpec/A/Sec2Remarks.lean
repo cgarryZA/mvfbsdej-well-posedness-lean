@@ -42,25 +42,39 @@ open Dissertation.WellPosedness.System Dissertation.WellPosedness.Existence
 universe u v w
 
 /-- Remark 2.8, the pointwise condition gives Assumption 2.5. In the standing setting, for a
-horizon `T`, a coupling matrix `G`, constants `β₁, β₂` and coefficients with (2.3) and
-Assumption 2.3 with some `L`: if for almost every `t ∈ [0, T]` the inequality of (2.7) holds
-without expectations at all points `θ, θ' ∈ H` and laws `μ, μ' ∈ P₂(H)`, then (2.7) holds for
-almost every `t ∈ [0, T]`, the expectation of the pairing existing. -/
+horizon `T`, a coupling matrix `G`, constants `β₁, β₂` and coefficients with (2.3): if for almost
+every `t ∈ [0, T]` the inequality of (2.7) holds without expectations at all points `θ, θ' ∈ H`
+and laws `μ, μ' ∈ P₂(H)`, then for almost every `t ∈ [0, T]` and all `(Θ, μ), (Θ', μ') ∈ 𝒟_t`
+the positive part of the pairing of (2.7) has finite expectation, so that its expectation exists in
+`[−∞, ∞)`, and when the pairing is integrable its expectation satisfies (2.7); and if the
+coefficients also satisfy Assumption 2.3 with some `L`, then (2.7) holds for almost every
+`t ∈ [0, T]`, the expectation of the pairing existing. -/
 def rem_diag_mono : Prop :=
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
     (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
     (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ),
     Indep 𝒢₀ (⨆ t, D.filtration t) P →
-    ∀ (T L β₁ β₂ : ℝ) (G : Matrix (Fin m) (Fin n) ℝ) (C : Coeffs ν n m d),
-    JointBorel T C → Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C →
+    ∀ (T β₁ β₂ : ℝ) (G : Matrix (Fin m) (Fin n) ℝ) (C : Coeffs ν n m d),
+    JointBorel T C →
     (∀ᵐ t ∂(volume.restrict (Set.Icc (0 : ℝ) T)), ∀ (θ θ' : TupleH ν n m d)
       (μ μ' : P2 (TupleH ν n m d)),
       pairing27 G C t θ θ' μ μ'
         ≤ -β₁ * (‖GX Gᵀ (θ.2.1 - θ'.2.1)‖ ^ 2 + ‖GZ Gᵀ (θ.2.2.1 - θ'.2.2.1)‖ ^ 2
             + ‖GU Gᵀ ν (θ.2.2.2 - θ'.2.2.2)‖ ^ 2)
           - β₂ * ‖GX G (θ.1 - θ'.1)‖ ^ 2) →
-    ∀ᵐ t ∂(volume.restrict (Set.Icc (0 : ℝ) T)), Mono27At (enlJoint 𝒢₀ D h𝒢₀) P t G β₁ β₂ C
+    (∀ᵐ t ∂(volume.restrict (Set.Icc (0 : ℝ) T)),
+      ∀ p ∈ diagonalInputs ν n m d (enlJoint 𝒢₀ D h𝒢₀) P t,
+      ∀ p' ∈ diagonalInputs ν n m d (enlJoint 𝒢₀ D h𝒢₀) P t,
+        ∫⁻ ω, ENNReal.ofReal (pairing27 G C t (p.1 ω) (p'.1 ω) p.2 p'.2) ∂P < ⊤
+        ∧ (Integrable (fun ω => pairing27 G C t (p.1 ω) (p'.1 ω) p.2 p'.2) P →
+          ∫ ω, pairing27 G C t (p.1 ω) (p'.1 ω) p.2 p'.2 ∂P
+            ≤ -β₁ * ∫ ω, (‖GX Gᵀ ((p.1 ω).2.1 - (p'.1 ω).2.1)‖ ^ 2
+                + ‖GZ Gᵀ ((p.1 ω).2.2.1 - (p'.1 ω).2.2.1)‖ ^ 2
+                + ‖GU Gᵀ ν ((p.1 ω).2.2.2 - (p'.1 ω).2.2.2)‖ ^ 2) ∂P
+              - β₂ * ∫ ω, ‖GX G ((p.1 ω).1 - (p'.1 ω).1)‖ ^ 2 ∂P))
+    ∧ ∀ L : ℝ, Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C →
+      ∀ᵐ t ∂(volume.restrict (Set.Icc (0 : ℝ) T)), Mono27At (enlJoint 𝒢₀ D h𝒢₀) P t G β₁ β₂ C
 
 /-- Remark 2.8, the converse fails. In the standing setting with `n = m = d = 1`, for every
 horizon `T > 0` some coefficients satisfy (2.3), Assumption 2.3 with some `L` and Assumption 2.5
@@ -113,9 +127,9 @@ def rem_intrinsic_coupling : Prop :=
 
 /-- Remark 2.9, the diagonal assumptions are intrinsic. For two standing bases (Lévy drivers
 with the same `d ≥ 1` Brownian coordinates and mark measure `ν`, and σ-algebras `𝒢₀, 𝒢₀'`), a
-horizon `T > 0` and coefficients with (2.3): Assumption 2.3 with a constant `L` holds over one
-basis exactly when it holds over the other; and when it holds, so does Assumption 2.5 with given
-`G, α, β₁, β₂`. -/
+horizon `T > 0` and coefficients with (2.3), Assumption 2.3 with a constant `L` and
+Assumption 2.5 with given `G, α, β₁, β₂` each hold over one basis exactly when they hold over the
+other. -/
 def rem_intrinsic_basis : Prop :=
   ∀ {Ω Ω' : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω]
     (𝒢₀' : MeasurableSpace Ω') [mΩ' : MeasurableSpace Ω'] {E : Type v}
@@ -126,9 +140,8 @@ def rem_intrinsic_basis : Prop :=
     ∀ T : ℝ, 0 < T → ∀ (L α β₁ β₂ : ℝ) (G : Matrix (Fin m) (Fin n) ℝ) (C : Coeffs ν n m d),
     JointBorel T C →
     (Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C ↔ Assumption23 (enlJoint 𝒢₀' D' h𝒢₀') P' T L C)
-    ∧ (Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C →
-      (Assumption25 (enlJoint 𝒢₀ D h𝒢₀) P T G α β₁ β₂ C
-        ↔ Assumption25 (enlJoint 𝒢₀' D' h𝒢₀') P' T G α β₁ β₂ C))
+    ∧ (Assumption25 (enlJoint 𝒢₀ D h𝒢₀) P T G α β₁ β₂ C
+      ↔ Assumption25 (enlJoint 𝒢₀' D' h𝒢₀') P' T G α β₁ β₂ C)
 
 /-- Remark 2.10, the `β₁` dichotomy. In the standing setting with `n, m ≥ 1`, for `T > 0`,
 `ν ≠ 0` and `G ∈ ℝ^{m×n}` of full rank, let the coefficients satisfy Assumption 2.5 with `G` and

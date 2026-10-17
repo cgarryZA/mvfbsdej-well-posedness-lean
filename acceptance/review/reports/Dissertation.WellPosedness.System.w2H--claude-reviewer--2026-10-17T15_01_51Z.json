@@ -1,0 +1,76 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.System.w2H",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.System.w2H",
+  "lean": [
+   "Dissertation.WellPosedness.System.w2H"
+  ],
+  "claims": [
+   "A:ass:lip",
+   "A:cor:robust",
+   "A:eq:coeffint",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:ex:expfunc",
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:prop:strict",
+   "A:rem:cwp-class",
+   "A:rem:diag-mono",
+   "A:rem:generalrank",
+   "A:rem:intrinsic",
+   "A:remark-2.6",
+   "A:sec4:horizon-not-contractive",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "9b325b0ab6c710a41121705bb1470821",
+  "fingerprint": "pl-fp-v1:97fb784ac386bf2c3080aa25c51579c81a3172ac7ded7542af854ae1bc7c52e7",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for def:Dissertation.WellPosedness.System.w2H (written before seeing any Lean).\n\nPaper notion. W_2 on P_2(H), H = R^n x R^m x R^{m x d} x L^2(nu;R^m) with\n|theta|_H^2 = |x|^2 + |y|^2 + |z|_F^2 + ||u||_{L^2(nu)}^2: the quadratic Wasserstein distance of\nVillani Def 6.1, W_2(mu,mu')^2 = inf over couplings pi of (mu,mu') (probability measures on\nH x H with marginals mu, mu') of \\int |theta - theta'|_H^2 dpi. Remark 2.6 uses that every\nsynchronous pair (Theta,Theta') gives a coupling, so W_2^2 <= E|Theta-Theta'|_H^2, and that an\noptimal coupling exists (so the infimum is attained) in the reverse bounds.\n\nA faithful Lean definition must:\n- take the infimum over ALL couplings (measures on H x H with the given marginals), not only over\n  couplings realised by random variables on the standing basis (which would coincide only on a\n  rich enough Omega; Remark 2.9 discusses this for F_t, t > 0, but the paper's W_2 is the\n  intrinsic one);\n- use the cost |theta - theta'|_H^2 with the Hilbert (sum-of-squares) norm of H — NOT Lean's\n  default product sup-norm and not the sup-norm on Fin n -> R or matrices; a different equivalent\n  norm gives a different W_2 and changes Lipschitz constants in Ass 2.3 / Prop 3.8 / Ex 5.1;\n- be the square root of the squared cost (W_2, not W_2^2), compared in the paper with\n  L(|delta X| + ... + W_2(mu,mu'));\n- edge cases: for laws outside P_2 the paper does not define W_2; any junk value (e.g. toReal of\n  infinity = 0) is harmless only if every use is at P_2 laws (diagonal laws of L^2 tuples,\n  delta_0); if the value lives in R>=0-infinity, comparisons must be read accordingly.",
+  "locked_at": "2026-10-17T12:34:24Z"
+ },
+ "comparison": {
+  "text": "Comparison for System.w2H.\nLean: w2H μ μ' := w2 (μ.law.map toL2) (μ'.law.map toL2), where (Dissertation.Law)\nw2 μ ν = √((w2sq μ ν).toReal), w2sq μ ν = ⨅ γ (IsCoupling μ ν γ), ∫⁻ ofReal ‖p.1 - p.2‖² ∂γ,\nIsCoupling μ ν γ := γ.fst = μ ∧ γ.snd = ν.\n- Infimum over ALL couplings: every measure on the product with the two marginals, not only\n  couplings realised on the standing Ω. Matches Villani Def 6.1.\n- Cost: ‖p.1 − p.2‖² in TupleL2, the nested L² product with ‖toL2 θ‖² = channelSq θ. With the\n  TupleH channels this is |θ−θ'|_H² for the paper's Hilbert norm, NOT the max norm of the Lean\n  product (that version is w2P). Couplings of the image laws correspond to couplings of μ, μ'\n  under toL2 × toL2, a measurable bijection with measurable inverse ofL2. So w2H is the paper's W₂\n  on P₂(H). Matches.\n- W₂ (square root), not W₂². Matches.\n- Real-valued via toReal. An infinite infimum would give junk 0. For P2 laws the image laws have\n  finite second moment in the Hilbert norm (factor 4), so w2sq is finite (w2sq_map_toL2_ne_top,\n  in the second-countable setting of the paper). The junk is not reached on P2 in the paper's\n  setting.\n- The σ-algebras on HX..HUY are instance parameters. For TupleH they are Borel (EuclideanSpace;\n  Lp via the scoped borel instance), and the product σ-algebra equals the Borel σ-algebra when\n  L²(ν) is second countable (ν σ-finite, E countably generated).\n- Separation of w2 is not established in the repository. That concerns properties, not meaning.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T12:39:11Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices. (1) W₂ for the Hilbert norm is computed by pushing both laws forward along\ntoL2 into the nested-L² copy of H and taking the generic w2 there. The bijection toL2 × toL2\nidentifies the couplings, so the value is the paper's W₂(μ,μ') for |·|_H. (2) The value is\nreal-valued: √(toReal of an ℝ≥0∞ infimum over all couplings, as measures on the product with the\nprescribed marginals). For laws in P2 the infimum is finite in the paper's setting, where L²(ν)\nis second countable, so the toReal junk (∞ ↦ 0) is not reached. (3) Couplings live on the\nproduct σ-algebra of the channel σ-algebras. For TupleH these are Borel, and the product\nσ-algebra is the Borel σ-algebra of H under the paper's separability assumptions."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:01:22Z",
+  "disagreements": "None on the substance: it is the paper's W₂ for the Hilbert norm. The author's entry does not\nrecord the edge cases I checked: the real value is √(toReal ·), which is finite on P2 in the\npaper's second-countable setting, and couplings live on the product σ-algebra, which is Borel\nthere."
+ },
+ "submitted_at": "2026-10-17T15:01:51Z",
+ "issue_draft": null
+}

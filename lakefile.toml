@@ -32,3 +32,7 @@ rev = "984dbf0b790031eac05d56fe5a84b65e15e1e932"
 [[lean_lib]]
 name = "Dissertation"
 globs = ["Dissertation.*"]
+
+# the challenge module that tools/acceptance.py comparator-inputs writes for comparator
+[[lean_lib]]
+name = "AcceptanceChallenge"

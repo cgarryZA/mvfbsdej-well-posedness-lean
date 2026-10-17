@@ -1,0 +1,82 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:LevyStochCalc.Brownian.Multidim.MultidimBrownianMotion.mk",
+  "kind": "def",
+  "name": "LevyStochCalc.Brownian.Multidim.MultidimBrownianMotion.mk",
+  "lean": [
+   "LevyStochCalc.Brownian.Multidim.MultidimBrownianMotion.mk"
+  ],
+  "claims": [
+   "A:cor:robust",
+   "A:eq:compid",
+   "A:eq:forced",
+   "A:eq:mvfbsdej",
+   "A:eq:zeromean",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:intro:mvfbsdej",
+   "A:lem:bpbsde",
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:rem:cwp-class",
+   "A:rem:diag-mono",
+   "A:rem:generalrank",
+   "A:rem:intrinsic",
+   "A:sec2:infinite-activity-atoms",
+   "A:sec2:prp",
+   "A:sec3:HH-banach",
+   "A:sec3:one-null-set",
+   "A:sec4:WP-def",
+   "A:sec4:horizon-not-contractive",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "2f29b9a2ad355ba10000000000000000",
+  "fingerprint": "pl-fp-v1:1016b5b000f8db94eacf4c56ff1624251693ead6e73c23f50c83ab8ed9681d4f",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Unit: def:LevyStochCalc.Brownian.Multidim.MultidimBrownianMotion.mk (reading locked before any Lean is seen)\n\nPaper notion. The constructor of the d-dimensional Brownian motion structure (Section 2, line 225):\nto give a d-dimensional BM is to give a process W = (W^1..W^d) together with the proofs that it is a\nstandard d-dimensional Brownian motion (each component a standard real BM; components mutually\nindependent; continuous paths; W_0 = 0).\n\nWhat a faithful Lean definition must be.\n- The structure constructor: its argument list is the data field(s) and the property fields of the\n  structure. Faithful iff the hypotheses it demands are exactly the defining properties of a\n  d-dimensional standard BM (no missing property such as mutual independence of components, no\n  unwarranted extra property). Same content as unit 04.",
+  "locked_at": "2026-10-17T12:35:32Z"
+ },
+ "comparison": {
+  "text": "Comparison: def:LevyStochCalc.Brownian.Multidim.MultidimBrownianMotion.mk\n(Brownian/Multidim.lean:47-49.)\n\n- Reading: the constructor; its hypotheses must be exactly the defining properties of a d-dim standard BM.\n- Lean: mk (W : Fin d -> BrownianMotion P) (iIndepFun of the component path maps) (a.s. joint continuity).\n  The hypotheses are: each component a standard BM (via the BrownianMotion type), mutual independence of\n  the components, and a.s. continuity of the vector path (implied by the components). These are the\n  defining properties; nothing is missing and the only extra content (joint measurability, zero extension\n  to negative times, inside BrownianMotion) is the representation choice recorded for the structure.\n\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:01:13Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:01:25Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-17T15:01:45Z",
+ "issue_draft": null
+}

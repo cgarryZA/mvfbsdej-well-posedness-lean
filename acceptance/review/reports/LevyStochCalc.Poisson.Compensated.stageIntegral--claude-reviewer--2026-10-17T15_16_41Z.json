@@ -1,0 +1,76 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:LevyStochCalc.Poisson.Compensated.stageIntegral",
+  "kind": "def",
+  "name": "LevyStochCalc.Poisson.Compensated.stageIntegral",
+  "lean": [
+   "LevyStochCalc.Poisson.Compensated.stageIntegral"
+  ],
+  "claims": [
+   "A:cor:robust",
+   "A:eq:forced",
+   "A:eq:mvfbsdej",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:intro:mvfbsdej",
+   "A:lem:bpbsde",
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:rem:cwp-class",
+   "A:rem:generalrank",
+   "A:sec2:prp",
+   "A:sec3:one-null-set",
+   "A:sec4:WP-def",
+   "A:sec4:horizon-not-contractive",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "684f75cf6cc2aa0c47441d48e213f8c3",
+  "fingerprint": "pl-fp-v1:68c6000d1b98a952a240eadf5c7632013f12f2297bb54c078f7c752c4e86655c",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading (locked before any Lean is shown) — def LevyStochCalc.Poisson.Compensated.stageIntegral\n\nPaper notion. None of its own: an internal quantity of the construction of the\ncompensated-Poisson stochastic integral. From the name, the integral at stage k: the\nelementary compensated integral of a simple predictable approximant U_k of U,\nt ↦ Σ_i ξ_i (N((s_i ∧ t, t_i ∧ t] × A_i) − (t_i∧t − s_i∧t) ν(A_i)), ξ_i bounded\nF_{s_i}-measurable, ν(A_i) < ∞ — a càdlàg (piecewise) process computed pathwise from N; or\nthe L^2 integral of the stage approximant. Faithful iff it is the integral of the stage\napproximant (pathwise elementary formula, or its L^2 class), so that the stage limits give\nthe integral; for a càdlàg version it must be a pathwise càdlàg process (e.g. built from\nN(ω) evaluated on rectangles, with finite ν(A_i)).",
+  "locked_at": "2026-10-17T15:06:20Z"
+ },
+ "comparison": {
+  "text": "Comparison — stageIntegral (CompensatedApprox.lean:373-375)\n\nLean: stageIntegral n t ω = (master n).2.integral N t ω, where MarkStep.integral N G t ω =\nΣ_{i<N₀} Σ_k ξ_{ik}(ω) · N.compensated((p_i ∧ t, p_{i+1} ∧ t] × B_k) ω, and\nN.compensated B ω = (N ω B).toReal − (dt⊗ν)(B).toReal.\nAgainst my reading: the pathwise elementary compensated integral of the stage-n simple\npredictable approximant up to time t, computed from N(ω) on finite-intensity rectangles\n(ν(B_k) < ∞, bounded time intervals) — matches. It is a martingale for ℱ under hℱ\n(martingale_stageIntegral), in L^2, and 0 for t ≤ 0. The toReal junk on the null event\n{N(rectangle) = ∞} is a.e. irrelevant.\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:15:52Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:15:58Z",
+  "disagreements": "The author's review, as shown by rv.py author, consists of the review marker only (no reading text, no item-by-item comparison), so there is no stated position of the author to disagree with on substance.\nI agree with the implicit verdict (reviewed as faithful); my comparison finds no representation choice that needs recording."
+ },
+ "submitted_at": "2026-10-17T15:16:41Z",
+ "issue_draft": null
+}

@@ -1,0 +1,76 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.Law.P2.mapOfLe",
+  "kind": "def",
+  "name": "Dissertation.Law.P2.mapOfLe",
+  "lean": [
+   "Dissertation.Law.P2.mapOfLe"
+  ],
+  "claims": [
+   "A:cor:robust",
+   "A:eq:coefmeas",
+   "A:eq:hborel",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:lem:cont",
+   "A:lem:lawflow",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:rem:cwp-class",
+   "A:rem:diag-mono",
+   "A:rem:generalrank",
+   "A:rem:intrinsic",
+   "A:sec2:coefmeas",
+   "A:sec2:hborel-derivation",
+   "A:sec4:horizon-not-contractive",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "eacf22aaa85ca476d2e3ad477d111a93",
+  "fingerprint": "pl-fp-v1:a2a3b0660a16c0401c0ec2e4063b63e570652896490c1632946e3722cd2fc646",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "# Reading: (presumably) pushforward of a P_2 law under a norm-dominated map\n# (def:Dissertation.Law.P2.mapOfLe)\n\nPaper's notion. The claims that use this unit (Ass. 2.3, 2.5, Cor. 3.6, ...) involve laws\nobtained from a tuple law by image under a map: the X-marginal rho = Law(X_T) of the tuple, the\nU-marginal mu^U, laws of components of Theta, and the induced terminal law. In each case the\nnotion is the image measure mu ∘ P^{-1} of a law mu in P_2(E) under a measurable map P : E -> F\nwhose growth makes the image again a law of finite second moment (e.g. |P x| <= C |x| or\n|P x| <= |x|, or a bound of the image's second moment by that of mu).\n\nA faithful Lean definition: the element of `P2 F` whose underlying measure is `μ.law.map P`\nfor measurable P (genuine pushforward, no junk), with whatever hypothesis guarantees finite\nsecond moment (a \"≤\" hypothesis, e.g. on norms or on second moments). The measure must not be\naltered. If instead the hypothesis is a bound on the second moment of the image (`secondMoment\n(μ.law.map P) ≤ ...`), that is a sufficient condition too, harmless.",
+  "locked_at": "2026-10-17T12:07:24Z"
+ },
+ "comparison": {
+  "text": "# Comparison: P2.mapOfLe\n\nLean: for `μ : P2 E`, measurable `φ : E → F` and `c : ℝ` with `‖φ x‖ ≤ c ‖x‖`,\n`P2.mapOfLe` is the element of `P2 F` with `law := μ.law.map φ`.\n\n- Underlying measure: the genuine pushforward (φ measurable). Matches mu ∘ φ^{-1}.\n- Probability: preserved. Second moment: ≤ c^2 · secondMoment μ < ⊤. Correct proof\n  obligation, nothing hidden.\n- Hypothesis `‖φ x‖ ≤ c‖x‖` is a sufficient condition for the image to lie in P_2; it\n  restricts where the operation is defined, not its value. It covers the uses in the\n  repository (an isometric/linear embedding `toL2` into an L^2 space in\n  WellPosedness/System/HilbertW2Space.lean, coordinate projections in Examples/Brownian.lean),\n  all of linear growth. A negative c only makes the hypothesis unsatisfiable unless E is\n  trivial; no junk value arises.\n- Same as `P2.map` with c = 1 up to the form of the bound.\n\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T12:07:39Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T12:07:39Z",
+  "disagreements": "No disagreement on meaning. The author's entry shown for this unit (definitions.md:159) is empty: it records no reading of P2.mapOfLe (pushforward along a measurable map of linear growth; the bound is only a sufficient condition for finite second moment)."
+ },
+ "submitted_at": "2026-10-17T12:07:47Z",
+ "issue_draft": null
+}

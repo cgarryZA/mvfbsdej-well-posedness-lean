@@ -1,0 +1,75 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:LevyStochCalc.Brownian.IsBrownianFiltration.mk",
+  "kind": "def",
+  "name": "LevyStochCalc.Brownian.IsBrownianFiltration.mk",
+  "lean": [
+   "LevyStochCalc.Brownian.IsBrownianFiltration.mk"
+  ],
+  "claims": [
+   "A:cor:robust",
+   "A:eq:forced",
+   "A:eq:mvfbsdej",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:intro:mvfbsdej",
+   "A:lem:bpbsde",
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:rem:cwp-class",
+   "A:rem:generalrank",
+   "A:sec2:prp",
+   "A:sec4:WP-def",
+   "A:sec4:horizon-not-contractive",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "72b9d0c6dbc50a990000000000000000",
+  "fingerprint": "pl-fp-v1:b7549995fef2679463353664c849b330f678d3e6b44e172e05d4ac96c1d43235",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for def:LevyStochCalc.Brownian.IsBrownianFiltration.mk (written before seeing any Lean).\n\nPaper notion. The constructor of the IsBrownianFiltration structure (a Prop-structure or\nstructure): from proofs of its fields — adaptedness of W to F and independence of increments\nW_t - W_s from F_s (s <= t) — it produces the predicate. Its type is the list of the fields; it\nis faithful iff those fields are exactly the (F_t)-Brownian motion property described in my\nreading of IsBrownianFiltration (nothing missing, nothing that excludes the paper's\nBrownian--Poisson filtration). Reviewed together with IsBrownianFiltration.",
+  "locked_at": "2026-10-17T12:34:24Z"
+ },
+ "comparison": {
+  "text": "Comparison for IsBrownianFiltration.mk.\nThe constructor's type takes (∀ t, Measurable[ℱ t] (W.W t)) and (∀ s ≥ 0, Indep (ℱ s)\n(⨆_{t>s} σ(W.W t − W.W s)) P) to IsBrownianFiltration W ℱ. These are exactly the fields of the\npredicate: adaptedness plus independence of ℱ_s from the future increments, which is the\n(ℱ_t)-BM property of my reading. Nothing is missing, and nothing excludes the paper's\nBrownian–Poisson filtration (see IsBrownianFiltration).\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T12:40:34Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices (as for the predicate). The filtration is indexed by ℝ. Adaptedness is\nrequired for all real t, which holds for the paper's augmented filtration extended to negative\ntimes. The independence of ℱ_s is from the joint σ-algebra of all future increments. The\npredicate is per one-dimensional component."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:01:52Z",
+  "disagreements": "No disagreement on the substance. The author's entry (acceptance/review/definitions.md) records only the review marker, or a section heading, and no comparison with the paper. It does not state the points I relied on: the constructor's fields are exactly adaptedness and independence of ℱ_s from the future increments."
+ },
+ "submitted_at": "2026-10-17T15:02:24Z",
+ "issue_draft": null
+}

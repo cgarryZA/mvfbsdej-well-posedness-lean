@@ -1,0 +1,57 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.Spec.Margin213",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.Spec.Margin213",
+  "lean": [
+   "Dissertation.WellPosedness.Spec.Margin213"
+  ],
+  "claims": [
+   "A:cor:robust",
+   "A:ex:concrete"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "2ad64300a1211b964de2010be9bc24c1",
+  "fingerprint": "pl-fp-v1:398b904cb81b838e74fbcdb400013f73c7b17f25097bf736508fca6810d81142",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Unit: def Spec.Margin213 (the unweighted margin (2.13), Remark 2.10; used by Cor 3.6 and\nExample 5.1).\nPaper: when m = n, (2.7) holds with margin c > 0 in the unweighted form if, for a.e. t in [0,T]\nand all diagonal inputs (Theta,mu), (Theta',mu') in D_t,\n  E[ <db, G^T dY> + <dsigma, G^T dZ>_F + <-df, G dX> + int_E <dh(e), G^T dU(e)> nu(de) ]\n    <= -beta1 E[|G^T dY|^2 + |G^T dZ|_F^2 + ||G^T dU||^2] - beta2 E|G dX|^2\n       - c E[|dY|^2 + |dZ|_F^2 + ||dU||^2 + |dX|^2].\n(In Cor 3.6 the margin c_diss > 0 is a hypothesis; the definition may or may not include c > 0.)\nFaithful Lean: a predicate over (F, P, T, G, beta1, beta2, c, coefficients) asserting exactly\nthis expected inequality for a.e. t (time set chosen before inputs) and all pairs of\nF_t-measurable square-integrable H-valued inputs with their own laws; expectations genuine\n(with the integrability caveat: Bochner expectations of non-integrable integrands are junk 0);\nthe unweighted margin term with the plain norms of dX, dY, dZ, dU (not G-weighted). The m = n\nrestriction belongs to the statement (it concerns the setting where G is square).",
+  "locked_at": "2026-10-17T12:37:09Z"
+ },
+ "comparison": {
+  "text": "Margin213 F P T G beta1 beta2 c C (Spec/CorollaryHyps.lean:58): for a.e. t in [0,T], for all pairs\nof diagonal inputs at t, the pairing pairing27 (the left side of (2.7), compared under Assumption25)\nis integrable and\n E pairing27 <= -beta1 E(|G^T dY|^2 + |G^T dZ|_F^2 + ||G^T dU||^2) - beta2 E|G dX|^2\n               - c E(|dY|^2 + |dZ|_F^2 + ||dU||^2 + |dX|^2).\nMatches (2.13) term by term: the G-weighted beta-blocks, the unweighted margin block with the plain\nnorms in the printed order, a.e. t before the inputs, diagonal inputs with their laws. m = n and\nc > 0 are not in the predicate; they belong to the statements (Cor 3.6 has m = n and c_diss > 0).\nRepresentation choice: existence of the expectation of the pairing required, as in Assumption25\n(automatic under Assumption 2.3 and (2.3); the file even shows that for c > 0 the margin inequality\nforces integrability); Bochner expectations of integrable right-hand sides, no junk.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:03:40Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "The expectation of the pairing is required to exist (Integrable), as in Assumption25; automatic\nunder Assumption 2.3 with (2.3), and for c > 0 implied by the inequality itself (margin213_iff).\nInputs are strongly measurable representatives (harmless). The m = n restriction and c > 0 are left\nto the statements."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:04:22Z",
+  "disagreements": "No disagreement on substance. The author's review is an empty marker with no recorded\ncomparison; the representation choices listed in my detail are not recorded there."
+ },
+ "submitted_at": "2026-10-17T15:04:37Z",
+ "issue_draft": null
+}

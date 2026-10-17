@@ -1,0 +1,76 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:LevyStochCalc.Poisson.Compensated.MarkStep.ξ",
+  "kind": "def",
+  "name": "LevyStochCalc.Poisson.Compensated.MarkStep.ξ",
+  "lean": [
+   "LevyStochCalc.Poisson.Compensated.MarkStep.ξ"
+  ],
+  "claims": [
+   "A:cor:robust",
+   "A:eq:forced",
+   "A:eq:mvfbsdej",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:intro:mvfbsdej",
+   "A:lem:bpbsde",
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:rem:cwp-class",
+   "A:rem:generalrank",
+   "A:sec2:prp",
+   "A:sec3:one-null-set",
+   "A:sec4:WP-def",
+   "A:sec4:horizon-not-contractive",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "0be3e10909ab07b6258c2d3d03a8b983",
+  "fingerprint": "pl-fp-v1:4ae1f5b9565d4b28f09b0b0d63f6a4e9657bdbfd1592ed016472dff87a7f3cea",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Unit: def:LevyStochCalc.Poisson.Compensated.MarkStep.ξ (reading locked before any Lean is seen)\n\nPaper notion. The random coefficients xi_{k,j} : Omega -> R (or R^m) of the elementary marked integrand\n(unit 17); xi_{k,j} is the value on the slab (t_k, t_{k+1}] x B_j, to be F_{t_k}-measurable and square\nintegrable.\n\nWhat a faithful Lean definition must be.\n- A field of MarkStep: a doubly indexed family (time slab k, mark set j) of real (or vector) random\n  variables. Its meaning is fixed by the structure's properties and the Adapted predicate (unit 18);\n  faithful iff those are.",
+  "locked_at": "2026-10-17T12:35:34Z"
+ },
+ "comparison": {
+  "text": "Comparison: def:LevyStochCalc.Poisson.Compensated.MarkStep.ξ\n(Poisson/MarkStepIsometry.lean:81-82.)\n\n- Reading: doubly indexed (slab, mark) family of real random variables; meaning fixed by the structure and\n  Adapted.\n- Lean: xi : N -> Fin K -> Omega -> R (slab index i, mark index k), bounded and measurable by the structure,\n  F_{p_i}-measurable under Adapted; entries with i >= N_0 unused.\n\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:01:16Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:01:27Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-17T15:01:48Z",
+ "issue_draft": null
+}

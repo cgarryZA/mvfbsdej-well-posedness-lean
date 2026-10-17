@@ -1,0 +1,68 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.Spec.OriginValues.mk",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.Spec.OriginValues.mk",
+  "lean": [
+   "Dissertation.WellPosedness.Spec.OriginValues.mk"
+  ],
+  "claims": [
+   "A:ass:integ",
+   "A:cor:robust",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:lem:cont",
+   "A:lem:small",
+   "A:rem:cwp-class",
+   "A:rem:generalrank",
+   "A:sec4:horizon-not-contractive",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "4f791247b92d220e0000000000000000",
+  "fingerprint": "pl-fp-v1:9a8212fff7a9c2af048de8a71085a15d6970406e705c0b81535e530ac9f9585b",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Unit: OriginValues.mk, the constructor of OriginValues. Its type must take exactly the four\nmemberships b(.,0,delta_0) in L^2(0,T;R^n), sigma(.,0,delta_0) in L^2(0,T;R^{n x d}),\nh(.,0,.,delta_0) in L^2(0,T;L^2(nu;R^n)), f(.,0,delta_0) in L^2(0,T;R^m) (with 0 the origin of H and\ndelta_0 the Dirac mass there, L^2 on [0,T] with Lebesgue measure) and return OriginValues T C.",
+  "locked_at": "2026-10-17T12:37:23Z"
+ },
+ "comparison": {
+  "text": "OriginValues.mk takes the four MemLp facts (b, sigma, h, f at theta = 0 and P2.dirac 0 = the Dirac\nmass at the origin of H, square integrable on Ioo 0 T for Lebesgue measure) and returns\nOriginValues T C. Exactly my reading, with the Ioo-for-[0,T] choice (null difference).\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:04:13Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "L^2(0,T) is taken over Ioo 0 T rather than [0,T]: the two differ by a Lebesgue-null set, so the\nmemberships are the same. h's origin value is in the Bochner space of L^2(nu;R^n)-valued maps, the\npaper's L^2(0,T; L^2(nu;R^n))."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:04:22Z",
+  "disagreements": "No disagreement on substance. The author's review is an empty marker with no recorded\ncomparison; the representation choices listed in my detail are not recorded there."
+ },
+ "submitted_at": "2026-10-17T15:04:37Z",
+ "issue_draft": null
+}

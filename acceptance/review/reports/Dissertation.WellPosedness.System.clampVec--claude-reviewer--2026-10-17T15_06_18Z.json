@@ -1,0 +1,57 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.System.clampVec",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.System.clampVec",
+  "lean": [
+   "Dissertation.WellPosedness.System.clampVec"
+  ],
+  "claims": [
+   "A:ex:concrete",
+   "A:prop:strict"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "72826a95517d7c68486a411354533973",
+  "fingerprint": "pl-fp-v1:5ac999135609e70b5df3511de47978fbdcdb3dc508a223be34e04240b2be6347",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for clampVec (paper (3.6): g_0(r) := max{-1, min{1, r}}).\nPaper: the scalar clamp to [-1,1]. A \"vector\" version must apply g_0 to each component (for the\npaper's n = m = 1 use it is the scalar clamp). Faithful Lean: componentwise max(-1, min(1, r_i)) on\nthe vector type used for R^m (EuclideanSpace or Fin m -> R). It is 1-Lipschitz (per component; in the\nEuclidean norm componentwise clamp is 1-Lipschitz). Any other vector version (e.g. radial\nprojection onto the unit ball) would agree at dimension 1 but differ in dimension > 1; for the\npaper's claims (n = m = 1) only dimension 1 matters, but the definition should be the componentwise one\nor be used only in dimension 1.",
+  "locked_at": "2026-10-17T12:33:35Z"
+ },
+ "comparison": {
+  "text": "Comparison for clampVec (ExpectedVsPointwiseModel.lean:76): clampVec v := WithLp.toLp 2 (fun i => clamp01\n(v i)) on EuclideanSpace R (Fin 1), clamp01 r := max (-1) (min 1 r) (ExpectedVsPointwise.lean:35).\nAgainst my reading (g_0(r) = max{-1, min{1, r}}, applied componentwise; only dimension 1 is used): the\ndefinition is the coordinatewise clamp on R^1, i.e. exactly g_0 on the single coordinate\n(clampVec_apply). No other dimension is defined, so the vector-version ambiguity I noted does not\narise. Verdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:03:46Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:05:47Z",
+  "disagreements": "none (the author's excerpt shown for this unit is a marker and at most a section heading, with no\nitem-level reading to compare against; my comparison file records the representation choices in\ndetail)."
+ },
+ "submitted_at": "2026-10-17T15:06:18Z",
+ "issue_draft": null
+}

@@ -1,0 +1,64 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.System.sMin",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.System.sMin",
+  "lean": [
+   "Dissertation.WellPosedness.System.sMin"
+  ],
+  "claims": [
+   "A:ass:G",
+   "A:cor:robust",
+   "A:ex:concrete",
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:rem:generalrank",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "42b2e53d2f710588e25de988c32456ea",
+  "fingerprint": "pl-fp-v1:fcf19e010490b279eed58d7e622bfc124e060dec69d83048df6ca7c72ab17c40",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for def:Dissertation.WellPosedness.System.sMin (written before seeing any Lean).\n\nPaper notion. Assumption 2.4: G in R^{m x n} full rank; s_min(G) > 0 its smallest singular\nvalue; c_G := s_min(G)^{-2}; then |x|^2 <= c_G |Gx|^2 when m >= n and |y|^2 <= c_G |G^T y|^2\nwhen n >= m. The smallest singular value of an m x n matrix is sigma_{min(m,n)}(G), the\nmin(m,n)-th largest singular value: sqrt(lambda_min(G^T G)) when m >= n (= min_{|x|=1}|Gx|),\nsqrt(lambda_min(G G^T)) when n >= m (= min_{|y|=1}|G^T y|). Equivalently\ns_min(G) = max( inf_{|x|=1}|Gx| , inf_{|y|=1}|G^T y| ) in all cases. It is positive iff G has\nfull rank (rank = min(m,n)). Dimensions n,m >= 1.\n\nA faithful Lean definition must:\n- give the min(m,n)-th singular value for BOTH rank branches. A definition as\n  inf_{|x|=1}|Gx| (or sqrt lambda_min(G^T G)) alone is correct only for m >= n and is 0 for\n  m < n, which would make c_G = 0^{-1} = 0 in Lean and the n >= m bound false/vacuous; similarly\n  the G^T-only version is wrong for m > n;\n- use Euclidean norms on R^n, R^m (not the sup norm), since singular values are Euclidean\n  notions; with sup norms the infimum is a different number;\n- be nonnegative; positivity should be equivalent to full rank;\n- junk: for a rank-deficient G the value 0 is the true smallest singular value, and then\n  c_G = 0^{-1} is Lean junk 0 — harmless only where full rank is assumed (Ass 2.4).",
+  "locked_at": "2026-10-17T12:34:23Z"
+ },
+ "comparison": {
+  "text": "Comparison for System.sMin.\nLean: sMin (G : Matrix (Fin m) (Fin n) ℝ) : ℝ := √(if n ≤ m then ⨅ i, eigenvalues (Gᴴ G) i else\n⨅ i, eigenvalues (G Gᴴ) i).\n- Both rank branches are covered. If n ≤ m (m ≥ n), it is √λ_min(GᵀG) (an n×n matrix, n eigenvalues),\n  which is σ_n(G) = σ_{min(m,n)}(G). If m < n, it is √λ_min(GGᵀ) (m×m), which is\n  σ_m(G) = σ_{min(m,n)}(G). For m = n either branch gives the same value. This is exactly the\n  smallest singular value as I described it. It is not the one-branch version I warned about.\n- Over ℝ, ᴴ is the transpose. The eigenvalues are those of the Hermitian (symmetric) matrices,\n  which are real and ≥ 0 because the matrices are positive semidefinite. ⨅ over Fin k with k ≥ 1\n  (finite, nonempty, bounded) is the minimum. The square root is the real sqrt (≥ 0).\n- It is positive iff G has full rank min(m,n). Euclidean notions (eigenvalues of GᵀG) are used, so\n  the norm issue does not arise.\n- Junk: if n = 0 (or m = 0) the infimum over an empty index is sInf ∅ = 0 in ℝ. The paper has\n  n, m ≥ 1. For a rank-deficient G the value 0 is the true smallest singular value, and\n  c_G = sMin⁻² would be Lean junk 0. Assumption 2.4 assumes full rank, so this is harmless where\n  full rank is assumed.\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T12:39:11Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:01:22Z",
+  "disagreements": "No disagreement on the substance. The author's entry (acceptance/review/definitions.md) records only the review marker and no comparison with the paper, so it does not state what I relied on: both rank branches are handled (√λ_min(GᵀG) for n ≤ m, √λ_min(GGᵀ) for m < n), giving σ_{min(m,n)}(G). The only junk is 0 at n = 0 or m = 0, outside the paper."
+ },
+ "submitted_at": "2026-10-17T15:01:50Z",
+ "issue_draft": null
+}

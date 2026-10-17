@@ -1,0 +1,61 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.System.PaperAdmissibleInt.mk",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.System.PaperAdmissibleInt.mk",
+  "lean": [
+   "Dissertation.WellPosedness.System.PaperAdmissibleInt.mk"
+  ],
+  "claims": [
+   "A:cor:robust",
+   "A:rem:cwp-class",
+   "A:rem:generalrank",
+   "A:sec3:one-null-set",
+   "A:sec:examples",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "9e454a38d7aa3b8f0000000000000000",
+  "fingerprint": "pl-fp-v1:16ca1169031a44afd34efb05b878ea52bb12541d5428a97e0701ad53429c4231",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for PaperAdmissibleInt.mk (the anonymous constructor of the structure PaperAdmissibleInt).\nPaper notion: same as PaperAdmissibleInt -- \"the integrals of (1.1) along Theta exist\" (coefficient\nprocesses along the candidate tuple are measurable in the right sense, progressively measurable\nfor b, sigma, f, predictable for the jump integrand h(s, Theta_{s-}, e, mu^-_s), and integrable\nenough for the Lebesgue, Ito and compensated-Poisson integrals of (1.1) to be defined).\nA faithful constructor must take exactly the fields of the structure as arguments and produce the\nstructure; it may add nothing and drop nothing. Its type must be: (all field hypotheses) ->\nPaperAdmissibleInt F P T C X Y Z U gamma. Its faithfulness reduces to that of the structure: every\nfield must be one the paper's notion requires (measurability, integrability for the integrals, the\npredictable representative of the jump coefficient), and none may impose more than the paper's\nadmissible class (e.g. no square-integrability of b or f beyond what the paper's integrals need in\nthe classes where the paper does not have it).",
+  "locked_at": "2026-10-17T12:33:34Z"
+ },
+ "comparison": {
+  "text": "Comparison for PaperAdmissibleInt.mk. The constructor's type takes exactly the 13 fields of the\nstructure PaperAdmissibleInt (b_meas, b_prog, b_int, sigma_meas, sigma_prog, sigma_sq, gamma_meas,\ngamma_prog, gamma_sq, f_meas, f_prog, f_int, jump_rep), in that order, with the implicit parameters\nof the structure, and returns PaperAdmissibleInt F P T C X Y Z U gamma. It adds and drops nothing,\nso its meaning is the structure's, reviewed under PaperAdmissibleInt: faithful to the paper's\n\"the integrals of (1.1) along Theta exist\" with the representation choices listed there (indicator\ncut to [0,T], exact laws at every time with Dirac-0 junk off L^2, uLift junk on a null set, marked\nprogressive representative gamma of the predictable jump integrand, finite energy of sigma and gamma,\njunk left limits at s = 0 / on null paths).",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T12:38:01Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices (all harmless):\n1. Coefficient processes are extended by 0 off [0,T] (indicator); only [0,T] enters (1.1).\n2. mu_s, mu^-_s are the exact laws lawP2 P Theta_s at every time (Dirac 0 when Theta_s is not in L^2)\n   instead of Lemma A.1's Borel representatives; they agree for a.e. s, so coefficient processes\n   agree dt dP-a.e. and every integral is unchanged.\n3. The L^2(nu) channel uLift is 0 where U_s(omega,.) is not square integrable: a dt dP-null set.\n4. The Poisson integrand is a representative gamma required marked progressively measurable and\n   equal nu-a.e. to h(s,Theta^-_s,.,mu^-_s) for a.e. s, a.s. (the paper's is predictable); the L^2\n   compensated integral depends only on the dP dt nu class, so it is the paper's integral.\n5. Finite energy of sigma and gamma (L^2 stochastic integrals) rather than mere existence; under\n   Ass 2.3 (assumed wherever the unit is used) any Hweak tuple along which these integrals exist\n   satisfies it. Drift/driver only need a.s. integrable paths, matching the Lebesgue integrals.\n6. Joint measurability is asked besides progressive measurability (implied).\n7. leftLimProc at s = 0 / where no left limit exists takes junk values: a single time and a null set\n   of paths, irrelevant to the a.e.-s representation."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:05:44Z",
+  "disagreements": "none (the author's excerpt shown for this unit is a marker and at most a section heading, with no\nitem-level reading to compare against; my comparison file records the representation choices in\ndetail)."
+ },
+ "submitted_at": "2026-10-17T15:06:15Z",
+ "issue_draft": null
+}

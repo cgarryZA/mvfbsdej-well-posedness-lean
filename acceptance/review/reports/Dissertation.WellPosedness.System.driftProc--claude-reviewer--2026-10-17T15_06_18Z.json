@@ -1,0 +1,75 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.System.driftProc",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.System.driftProc",
+  "lean": [
+   "Dissertation.WellPosedness.System.driftProc"
+  ],
+  "claims": [
+   "A:cor:robust",
+   "A:eq:coefmeas",
+   "A:eq:forced",
+   "A:eq:mvfbsdej",
+   "A:ex:concrete",
+   "A:intro:mvfbsdej",
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:rem:cwp-class",
+   "A:rem:generalrank",
+   "A:sec2:coefmeas",
+   "A:sec3:one-null-set",
+   "A:sec4:WP-def",
+   "A:sec4:horizon-not-contractive",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "12c9183ed27748868bc8011ce72cfb14",
+  "fingerprint": "pl-fp-v1:d7b12fffe02bd15622372a7858a69720e6d5cfce322f82449c98c765fa36cf2e",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for driftProc (paper: (s,omega) -> b(s, Theta_s(omega), mu_s), (2.3)).\nSame as diffusionProc with b in place of sigma: R^n-valued, component i, evaluated at the tuple\nTheta_s(omega) = (X_s, Y_s, Z_s, U_s) (no left limits) and the law mu_s = Law_P(Theta_s) of the full tuple at\ntime s. Junk values only on null sets (U_s(omega,.) not in L^2(nu); Theta_s not in L^2), harmless.",
+  "locked_at": "2026-10-17T12:33:35Z"
+ },
+ "comparison": {
+  "text": "Comparison for driftProc (System/Solves.lean): (Set.Icc 0 T).indicator (fun s => C.b s (tupleAt nu X Y Z U s omega)\n(lawP2 P (tupleAt nu X Y Z U s)) ...) s -- coordinate i of b evaluated at the tuple Theta_s(omega) = (X_s, Y_s, Z_s,\nuLift U_s(omega,.)) (no left limits) and the law lawP2 P Theta_s of the full tuple at time s under P, cut to\n[0,T].\nAgainst my reading ((2.3)-style coefficient process (s,omega) -> b(s, Theta_s(omega), mu_s)): matches, with\n(i) mu_s the exact law at every s (Dirac 0 when Theta_s is not in L^2) instead of Lemma A.1's Borel\nrepresentative -- equal for a.e. s for the paper's tuples, so the processes agree dt dP-a.e.; (ii) the\nL^2(nu) channel uLift is 0 where U_s(omega,.) is not square integrable -- a dt dP-null set for U in H^2_N;\n(iii) extension by 0 off [0,T] -- only [0,T] enters. Coordinates: tupleAt maps the coordinate\nprocesses into TupleH (Euclidean X, Y; Z rows as the m x d channel; U as its L^2(nu;R^m) class).\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:04:15Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices (harmless):\n1. The law argument is lawP2 P Theta_s at every time (the true law when Theta_s is in L^2, Dirac 0\n   otherwise) instead of the Borel representative of Lemma A.1; they agree for a.e. s, so the\n   process agrees dt dP-a.e. with the paper's and no integral or a.e. claim changes.\n2. The jump-integrand channel of the tuple is uLift (the L^2(nu) class of e -> U_s(omega,e), 0 when not\n   square integrable): a dt dP-null set for U in H^2_N.\n3. The process is extended by 0 off [0,T] (indicator); only [0,T] is used."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:05:48Z",
+  "disagreements": "none (the author's excerpt shown for this unit is a marker and at most a section heading, with no\nitem-level reading to compare against; my comparison file records the representation choices in\ndetail)."
+ },
+ "submitted_at": "2026-10-17T15:06:18Z",
+ "issue_draft": null
+}

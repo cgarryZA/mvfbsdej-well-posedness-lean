@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.lem_pert",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.lem_pert",
+  "lean": [
+   "Dissertation.PaperSpec.A.lem_pert"
+  ],
+  "claims": [
+   "A:lem:pert"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba1eefcd4522364d865",
+  "fingerprint": "pl-fp-v1:d021001f46f0e743847fce65845ce37df792ad7727231b430b91851e6b99ecb3",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of Lemma 4.3 (lem:pert).\nConstant first: C_B = C_B(T, L, ||G||, c_G, alpha, beta1, beta2, underline-lambda) (c_BDG universal),\nchosen before everything; independent of lambda (in [underline-lambda, 1]), of the data, forcings,\ndimensions and nu.\nSetting: standing setting, n, m, d >= 1, T > 0.\nHypotheses: coefficients with (2.3)-Borel measurability satisfying Assumptions 2.3 (L), 2.4 (G full\nrank), 2.5 (alpha, beta1, beta2) — no Assumption 2.2; underline-lambda in (0,1]; lambda in\n[underline-lambda, 1]; for k = 1, 2: F_0-measurable initial data xi0^k (not required L2 individually),\nsquare-integrable forcings q^k of the Section 4 class (q^b, q^sigma, q^f progressive, q^h predictable,\nall L2, q^g_T in L2(F_T)), and Theta^k solving (4.1) at lambda with (xi0^k, q^k), in the weak class:\nX^k, Y^k cadlag adapted with E int_0^T (|X^k|^2 + |Y^k|^2) dt < inf, X^k_T in L2(F_T), Z^k in H^2_W,\nU^k in H^2_N; and Theta^1 - Theta^2 in S (finite S-norm of the difference).\nConclusion (4.13): E sup|dX|^2 + E sup|dY|^2 + E int (|dZ|^2 + ||dU||^2) <= C_B (E|dxi0|^2 + E|dq^g_T|^2 +\nE int (|dq^b|^2 + |dq^sigma|_F^2 + ||dq^h||^2 + |dq^f|^2) dt), d = (.)^1 - (.)^2, in [0, inf].\nQuantifiers: exists C_B (function) forall setting, coefficients, underline-lambda, lambda, data,\nforcings, tuples.",
+  "locked_at": "2026-10-17T12:25:41Z"
+ },
+ "comparison": {
+  "text": "Comparison: lem_pert vs Lemma 4.3.\nConstant: exists CB : R^8 -> R first, at (T, L, ||G||, c_G, alpha, beta1, beta2, underline-lambda):\nmatches \"C_B depends only on T, L, ||G||, c_G, alpha, beta1, beta2, underline-lambda and c_BDG\"; it does\nnot depend on lambda, the data or the forcings.\nSetting: standing setting, n, m, d > 0, T > 0.\nHypotheses: JointBorel, Assumption23 L, full-rank G, Assumption25 (no Assumption 2.2, as printed);\n0 < lamLow <= 1, lamLow <= lam <= 1; xi^k F_0-measurable (enlJoint 0), not required L2 (as printed);\nboth forcings in PredForcing (q^b, q^sigma, q^f progressive with finite energy, q^h marked predictable\nwith finite marked energy, q^g F_T-measurable L2); Theta^k WeakForcedSolutions of (4.1) at lam with\n(xi^k, q^k): X^k, Y^k adapted with cadlag paths and finite energy (H_weak), Z^k, U^k in H^2_W, H^2_N,\nX^k_T in L2, forced drift/driver pathwise integrable, forced diffusion/jump integrands of finite\nenergy (for the L2 stochastic integrals), identities on one null set for all t; supSize(Theta^1 -\nTheta^2) < inf (Theta^1 - Theta^2 in S). Matches the printed hypotheses.\nConclusion: supSize(dTheta) <= ofReal(CB(...)) * dataSize(dxi0, dq^b, dq^sigma, dq^h, dq^f, dq^g), i.e.\n(4.13). Matches.\nWitness lem_pert_hypotheses: Example 5.1(i) at lamLow = lam = 1, zero forcing, the Theorem 3.5\nsolution taken twice: hypotheses met (a degenerate instance with both sides 0, but the hypotheses\nare shown satisfiable at an intended instance — the uniqueness use of the lemma).\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T12:26:17Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "1. The weak forced solutions are encoded by WeakForcedSolution (H_weak tuple, X_T in L2, pathwise forced\n   drift/driver integrals, L2 stochastic integrals of the forced diffusion and jump integrands with\n   the jump coefficient through a representative gamma, identities on one null set for all t).\n2. Forcings in the normal form of PredForcing (vanishing off [0,T], q^h marked predictable).\n3. Theta^1 - Theta^2 in S as finite supSize; inequality in [0, inf].\n4. The linked witness is degenerate (Theta^1 = Theta^2), which still shows the hypotheses can be met."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T12:26:17Z",
+  "disagreements": "none (minor: the linked witness is degenerate — Theta^1 = Theta^2, both sides of (4.13) zero — though it does show the hypotheses can be met)."
+ },
+ "submitted_at": "2026-10-17T12:26:32Z",
+ "issue_draft": null
+}

@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.PaperSpec.A.BrownianFrozenStep",
+  "kind": "def",
+  "name": "Dissertation.PaperSpec.A.BrownianFrozenStep",
+  "lean": [
+   "Dissertation.PaperSpec.A.BrownianFrozenStep"
+  ],
+  "claims": [
+   "A:sec4:horizon-not-contractive"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "98bd6b9787534217c971d1dc13a30cc3",
+  "fingerprint": "pl-fp-v1:fe89adcadd9aa07bdfafda0dd6fc08aca936251cbc5fa8afc1fb7ceb7a96ec36",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "# Reading: the frozen-coefficient step (Brownian case) (def:Dissertation.PaperSpec.A.BrownianFrozenStep)\n\nPaper's notion. §4 intro (line 886): \"shortening the horizon does not make the frozen-coefficient\nmap contractive, since the (z,u)-dependence of sigma, h and the full-tuple law coupling enter the\ncontraction constant with no T-factor.\" The frozen-coefficient map is Phi_lambda of the proof of\nLemma 4.2 (eq:frozenfwd, eq:frozenbwd): for a trial tuple Theta = (X,Y,Z,U) in S (the solution\nspace), with mu^Theta_t = Law(Theta_t), Phi(Theta) = Theta-bar where\n  Xbar_t = xi_0 + lambda int_0^t b(s,Theta_s,mu_s) ds + lambda int_0^t sigma(s,Theta_s,mu_s) dW_s\n           + lambda int int h(s,Theta_s^-,e,mu_s^-) N~(ds,de) + forcings,\n  Ybar_t = lambda g(Xbar_T, Law Xbar_T) + q^g_T + int_t^T (lambda f(s,Theta_s,mu_s) + q^f_s) ds\n           - int_t^T Zbar dW - int_t^T int Ubar dN~,\nwith (Zbar, Ubar) from the predictable representation of the martingale E[Xi | F_t].\n\"Brownian\" step: the same with no jump channel (h = 0, U absent or zero), driven by W only, so\nTheta = (X, Y, Z) and the backward component comes from Brownian martingale representation.\nWith lambda = 1 and zero forcing in the simplest reading (the §4 claim is about the frozen map\nas such; scale lambda can be absorbed into the coefficients).\n\nA faithful Lean definition (as a relation \"Thetabar is the frozen step of Theta\", or as the map):\n- inputs: a trial (X, Y, Z) of the right integrability/adaptedness on [0,T], the coefficients\n  (b, sigma, f, g) and initial datum xi_0, the horizon T, a Brownian motion W on a filtered\n  probability space;\n- Xbar given by the forward frozen dynamics with b, sigma evaluated at (Theta_s, Law Theta_s)\n  of the TRIAL tuple (not of Thetabar), a.s. for every t ∈ [0,T];\n- (Ybar, Zbar) solving the linear BSDE with terminal value g(Xbar_T, Law Xbar_T) (note: at the\n  OUTPUT Xbar_T) and driver f evaluated along the trial, Zbar predictable/progressive square\n  integrable, Ybar adapted (càdlàg/continuous);\n- if laws enter, Law(Theta_s) must be the law of the trial tuple at time s.\nFor the claim, the definition should be general enough to contain an instance where sigma\ndepends on z (so that the frozen map's Lipschitz constant has no T-factor); if it is a\nspecialised linear Brownian example, it must still be a genuine instance of Phi as above.",
+  "locked_at": "2026-10-17T12:16:08Z"
+ },
+ "comparison": {
+  "text": "# Comparison: BrownianFrozenStep\n\nLean (PaperSpec/A/Sec4Horizon.lean:47-59): over a Lévy driver D with d = 1 and mark space\n`Unit` with ν = 0 (no jumps), the filtration `enlJoint 𝒢₀ D h𝒢₀` (usual augmentation of the\ndriver's filtration enlarged by an independent 𝒢₀ = §2's filtration), coefficients\n`C : Coeffs 0 1 1 1` (n = m = d = 1), a trial (X, Y, Z, U) and an output (X', Y', Z', U'):\n  (a) ∀ i, LinearFSDEJ … T 0 (driftProc P T C X Y Z U i) (X' i) (diffusionProc P T C X Y Z U i) 0\n      i.e. X'_t = 0 + ∫_0^t b(s, Θ_s, Law Θ_s) ds + ∫_0^t σ(s, Θ_s, Law Θ_s) dW_s + 0, a.s. at each\n      t ∈ [0,T], Θ the TRIAL tuple; integrands progressive, finite energy, vanishing off [0,T];\n      X' adapted, right-continuous;\n  (b) ∀ k, LinearBSDEJ … T (terminalVal P T C X' k) (driverProc P T C X Y Z U k) (Y' k) (Z' k) (U' k)\n      i.e. Y'_t = g(X'_T, Law X'_T) + ∫_t^T f(s, Θ_s, Law Θ_s) ds − ∫_t^T Z' dW − ∫_t^T∫ U' dÑ,\n      terminal value at the OUTPUT X'_T, driver along the trial; Z', U' progressive, finite\n      energy; Y' adapted right-continuous; terminal value square integrable.\n\nItem by item against the reading (Phi_lambda of the proof of Lemma 4.2, (4.10)-(4.11)):\n- Coefficients b, σ, f evaluated at the trial tuple and its law Law(Θ_s) = lawP2 P (tupleAt …):\n  yes (driftProc / diffusionProc / driverProc, Solves.lean:100-115). Law at every s; junk δ_0\n  only at times where Θ_s ∉ L^2, a dt-null set for a trial in ℍ, invisible to the dt- and\n  dW-integrals.\n- g at the output X'_T with its law: yes (terminalVal P T C X' k).\n- Backward via a linear BSDE with predictable-representation integrand: the paper constructs\n  (Z̄, Ū) from E[Ξ|F_t]; here (Y', Z', U') is any solution of the linear BSDE in the\n  progressive finite-energy class, which is the same (unique) object.\n- Jumps: ν = 0 on a one-point mark space, so `C.h` takes values in the zero space\n  L^2(0) = {0}, the jump integrand 0 is the only possibility, and the Poisson integrals vanish.\n  This is the paper's setting with ν = 0 (σ-finite, countably generated E), i.e. no jumps:\n  the \"Brownian\" case.\n- Specialisation: λ = 1, zero forcing, ξ_0 = 0, n = m = d = 1. The paper's Φ_λ is general; the\n  definition captures only this special case. Its sole use is an instance claim (§4 intro:\n  shortening the horizon does not make the frozen map contractive), where a special case is\n  exactly what is needed; λ = 1 is the target case, and ξ_0, q cancel in differences, so they do\n  not affect contractivity.\n- Equations a.s. at each t (not \"a.s. for all t\") and right-continuous paths (no left limits\n  required): with right-continuous X', Y' and the L^2 stochastic integrals these are the\n  paper's identities up to indistinguishability; harmless.\n- Filtration: §2's (enlJoint), not a smaller one. Good.\n\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T12:17:55Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices (each harmless for the definition's only use, the instance claim of the\n§4 introduction):\n1. Special case of the frozen map Φ_λ of Lemma 4.2: λ = 1, zero forcing, initial datum 0,\n   n = m = d = 1, and no jumps (mark space a point, ν = 0, so h ∈ L^2(0) = {0} and the jump\n   integrand 0 is forced). The claim is a counterexample to contractivity at the target λ = 1;\n   ξ_0 and q cancel in differences of Φ, and ν = 0 is within the paper's σ-finite setting.\n2. Stated as a relation between a trial and an output: the output solves the frozen linear\n   forward equation (coefficients along the trial and its law) and the frozen linear BSDE\n   (terminal value g at the output X'_T and its law, driver along the trial), each in the\n   repository's class (progressive finite-energy integrands vanishing off [0,T], adapted\n   right-continuous paths, equations a.s. at each t). The paper's output, built by\n   predictable representation, is the unique such solution.\n3. The trial's law is lawP2 of the trial tuple at every time (junk δ_0 only off L^2, a dt-null\n   set of times for trials in ℍ, invisible to the dt and dW integrals)."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T12:17:55Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-17T12:18:02Z",
+ "issue_draft": null
+}

@@ -1,0 +1,59 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.System.PaperSolutionForced",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.System.PaperSolutionForced",
+  "lean": [
+   "Dissertation.WellPosedness.System.PaperSolutionForced"
+  ],
+  "claims": [
+   "A:eq:forced",
+   "A:lem:cont",
+   "A:lem:small",
+   "A:sec4:WP-def"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "879f49cf215ebc960000000000000000",
+  "fingerprint": "pl-fp-v1:fa4a1becfe4d7886db95c94d9b3d6e42d020800e2a5cb485ebff132e098d2088",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for PaperSolutionForced (paper §4: solution in HH of the lambda-scaled forced system (4.1)).\nSetting as in §2. Given lambda in [0,1], an F_0-measurable initial datum xi_0 (in L^2), and a\nsquare-integrable forcing q = (q^b, q^sigma, q^h, q^f, q^g_T) (q^b, q^sigma, q^f progressively measurable\nin L^2(Omega x [0,T]), q^h predictable P(x)calE-measurable square integrable for dP dt nu, q^g_T in\nL^2(Omega, F_T; R^m)). A solution is Theta = (X,Y,Z,U) in HH (X, Y cadlag adapted with E sup|.|^2 < inf;\nZ in H^2_W, U in H^2_N) such that for every t in [0,T], a.s.:\n X_t = xi_0 + lambda int_0^t b(s,Theta_s,mu_s) ds + lambda int_0^t sigma(s,Theta_s,mu_s) dW_s\n       + lambda int_0^t int_E h(s,Theta^-_s,e,mu^-_s) Ntilde(ds,de)\n       + int_0^t q^b ds + int_0^t q^sigma dW + int_0^t int_E q^h(e) Ntilde(ds,de),\n Y_t = lambda g(X_T, Law X_T) + lambda int_t^T f(s,Theta_s,mu_s) ds + q^g_T + int_t^T q^f ds\n       - int_t^T Z dW - int_t^T int_E U Ntilde.\nmu_t = Law(Theta_t), mu^-_t = Law(Theta^-_t). The coefficient integrals must exist (in HH they do under\nAss 2.2-2.3 by (4.2)); WP(lambda) quantifies over every such q and asks for a unique solution in HH.\nA faithful Lean definition: same as PaperSolution with the lambda scalings and additive forcings\n(lambda multiplying b, sigma, h, g, f but not the forcings, not xi_0, and not Z, U), forcing terms\nentering with the signs shown, the HH class (S^2 for X and Y). Lambda = 1, q = 0 must reduce to\nPaperSolution.",
+  "locked_at": "2026-10-17T12:33:34Z"
+ },
+ "comparison": {
+  "text": "Comparison for PaperSolutionForced (System/PaperSolutionForced.lean:111), read with Forcing\n(System/Coefficients.lean:196), the PaperSolution encoding (reviewed), and its use in\nPaperSpec/A/Setting.lean (ForcedSolution = exists gamma, PaperSolutionForced over enlJoint, plus\nevery-path left limits; WP quantifies over PredForcing q).\nAgainst my reading:\n- HH class for (X, Y, Z, U): identical fields to PaperSolution (adapted, every path right-continuous\n  on [0,T), a.s. left limits, E sup |.|^2 < inf; predictable Z, marked predictable U, finite\n  energies, vanishing off [0,T]).\n- forcing: q is a Forcing: q^b, q^sigma, q^f jointly and progressively measurable, vanishing off\n  [0,T], finite energy on [0,T]; q^h jointly measurable, marked progressively measurable, vanishing\n  off [0,T], finite marked energy; q^g_T strongly F_T-measurable and in L^2. This is implied by\n  PredForcing (the class WP quantifies over), and is a slightly larger class (q^h progressive) for\n  the solution predicate itself; harmless.\n- Forward identity, a.s. for all t in [0,T]: X_t = xi0 + int_{[0,t]} (lam b + q^b) ds + M_t +\n  int_0^t int_E (lam gamma + q^h) Ntilde, M a cadlag version of int (lam sigma + q^sigma) dW. The paper\n  writes lam int b + int q^b etc. separately; with both integrands square integrable (b, sigma, h\n  along an HH tuple under Ass 2.2-2.3, q by hypothesis) the integrals are linear, so the forms\n  agree. lam multiplies b, sigma, h(gamma), not the forcings, not xi0. Matches.\n- Backward identity, a.s. for all t: Y_t = lam g(X_T, Law X_T) + q^g + int_{[t,T]} (lam f + q^f) ds\n  - (M_T - M_t) - (int_0^T int U Ntilde - int_0^t int U Ntilde), M a cadlag version of int Z dW. lam\n  multiplies g and f, not q^g, q^f, Z, U. Matches (4.1).\n- Integrability/measurability conditions are asked of the forced integrands lam psi + q^psi; for\n  lam /= 0 and q a forcing this is equivalent to the conditions on psi alone, and they hold for any\n  paper solution under JointBorel + Ass 2.2-2.3 (assumed in lem:small, lem:cont, sec4 WP). At lam = 0\n  they involve only q.\n- jump_rep, laws, left limits, the representative gamma: as in PaperSolution.\n- lam = 1, q = 0 reduces to PaperSolution (the author proves this in PaperSolutionForcedOne).\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T12:40:29Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices (harmless), in addition to those of PaperSolution (coordinate encoding,\nevery-path right continuity with a.s. left limits, Z/U and forcings vanishing off [0,T], exact laws\nat every time, uLift junk on a null set, marked-progressive representative gamma, identities on one\nnull set with cadlag versions of the Brownian integrals):\n1. Measurability and finite energy are asked of the forced integrands lam*psi + q^psi rather than of\n   psi and q^psi separately; given q square integrable and progressive these are equivalent for\n   lam /= 0, and the single integral of the sum equals the paper's sum of integrals by linearity.\n2. The forcing field is Forcing (q^h marked progressively measurable, all components vanishing off\n   [0,T], q^g_T strongly F_T-measurable): implied by the paper's class (PredForcing, which WP\n   quantifies over); the larger class only enlarges what may be plugged in.\n3. Finite energy of the forced drift and driver is more than existence of the Lebesgue integrals;\n   implied under Ass 2.2-2.3, which every claim using the unit assumes."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:05:45Z",
+  "disagreements": "none (the author's excerpt shown for this unit is a marker and at most a section heading, with no\nitem-level reading to compare against; my comparison file records the representation choices in\ndetail)."
+ },
+ "submitted_at": "2026-10-17T15:06:15Z",
+ "issue_draft": null
+}

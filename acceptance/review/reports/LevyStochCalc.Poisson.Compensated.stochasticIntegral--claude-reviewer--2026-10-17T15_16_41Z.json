@@ -1,0 +1,76 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:LevyStochCalc.Poisson.Compensated.stochasticIntegral",
+  "kind": "def",
+  "name": "LevyStochCalc.Poisson.Compensated.stochasticIntegral",
+  "lean": [
+   "LevyStochCalc.Poisson.Compensated.stochasticIntegral"
+  ],
+  "claims": [
+   "A:cor:robust",
+   "A:eq:forced",
+   "A:eq:mvfbsdej",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:intro:mvfbsdej",
+   "A:lem:bpbsde",
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:rem:cwp-class",
+   "A:rem:generalrank",
+   "A:sec2:prp",
+   "A:sec3:one-null-set",
+   "A:sec4:WP-def",
+   "A:sec4:horizon-not-contractive",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "0f01c66ebd3c9ea16c0e39e9314f702b",
+  "fingerprint": "pl-fp-v1:6fd30271fc393d5c4a15e6e95925dccacdec5c2a332756d913ac5f1abd17431b",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading (locked before any Lean is shown) — def LevyStochCalc.Poisson.Compensated.stochasticIntegral\n\nPaper notion. The compensated-Poisson stochastic integral ∫∫ U_s(e) Ñ(ds,de) of a predictable\n(P ⊗ E-measurable) integrand U ∈ L^2(dt⊗dP⊗ν), with respect to the compensated PRM\nÑ = N − dt ν of (§2), relative to the filtration (F_t). Standard construction: on elementary\nintegrands U = ξ 1_{(a,b]}(s) 1_A(e), ξ bounded F_a-measurable, ν(A) < ∞, it is\nξ·(N((a,b]×A) − (b−a)ν(A)); linear; isometric E|∫∫U dÑ|^2 = E∫∫|U|^2 ν(de) ds; extended\nby continuity (density of elementary integrands in L^2(P⊗E, dt⊗dP⊗ν)). Equivalent pathwise\ndescription for U ∈ L^1 ∩ L^2: ∫∫U dN − ∫∫ U ν(de) ds.\n\nFaithful Lean definition: the continuous linear isometry L^2(markedPredictable, dt⊗dP⊗ν) →\nL^2(Ω) agreeing with the elementary formula (or an equivalent characterisation), over the\npaper's filtration and PRM; for vector-valued U (values in ℝ^n, ℝ^m) componentwise or\ndirectly in a Hilbert space. Whether it is the whole-line integral or the integral over [0,T]\n/ [0,t] must be read from usage. Junk values outside the class harmless only if not used.\nThe PRM's intensity must be dt ⊗ ν (matching the compensator subtracted).",
+  "locked_at": "2026-10-17T15:06:20Z"
+ },
+ "comparison": {
+  "text": "Comparison — stochasticIntegral (LevyStochCalc/Poisson/Compensated.lean:81-85)\n\nLean: stochasticIntegral N ℱ hℱ φ h_meas h_progMeas h_sq_int_global : ℝ → Ω → ℝ is\nClassical.choose of exists_cadlag_modification: a process Y adapted to ℱ.rightCont, with\nY t = process t P-a.e. for every t, and P-a.e. path right-continuous with left limits at every\nt ∈ ℝ. Integrand φ : Ω → ℝ → E → ℝ real valued, jointly measurable, marked progressively\nmeasurable for ℱ, square integrable on every [0,T]; needs IsPoissonFiltration N ℱ.\n\nAgainst my reading (the compensated-Poisson integral ∫_0^t∫_E U dÑ of a square-integrable\npredictable integrand, càdlàg square-integrable martingale, isometry, compensator dt⊗ν):\n- Value at each t: a.s. the L^2-isometric extension of the elementary integral\n  ξ(N((a,b]×A) − (b−a)ν(A)) (via process = processLp a.e.) — matches; it is a time-indexed\n  process (the argument named T is the time).\n- Elementary integrals use Ñ = N − dt⊗ν with the PRM's referenceIntensity — matches.\n- Path regularity: a.s. càdlàg modification — matches the paper's use (càdlàg sides of the\n  identities, t-independent null set); any two such choices are indistinguishable, so the\n  propositions' \"a.s. for all t\" identities do not depend on the choice.\n- Adaptedness: to ℱ.rightCont rather than ℱ. The paper's filtration (enlJoint, the usual\n  augmentation) is right-continuous (isRightContinuous_enlJoint), so this is ℱ there.\n- Integrand class: marked progressive instead of predictable — broader; on predictable\n  integrands it is the classical integral; for progressive ones it is the integral of the\n  a.e.-equal predictable version (the standard L^2 extension). The paper's integrands U, q^h and\n  h(s,Θ^-_s,e,μ^-_s) are predictable, hence in the class (MarkedPredictable implies marked\n  progressive, used as hU.markedProgressivelyMeasurable in the specs).\n- Real valued, time ℝ; the paper's vector-valued integrands are integrated componentwise; the\n  hypotheses demand square integrability on every horizon, met by integrands vanishing off\n  [0,T] (as the specs arrange).\n- Time interval (0,t]: equals ∫_0^t (the paper's) — the time 0 point is dt- and N-null.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:15:52Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices of stochasticIntegral, and why each is harmless:\n1. A chosen (Classical.choose) a.s.-càdlàg modification of the L^2 integral process: two such\n   modifications are indistinguishable, so no statement \"a.s., for all t\" depends on the choice.\n2. Adapted to ℱ.rightCont: equal to ℱ for the paper's right-continuous augmented filtration.\n3. Integrand class marked progressively measurable (with joint measurability and square\n   integrability on every horizon), broader than the paper's predictable class; it agrees with\n   the classical integral on predictable integrands and equals the integral of the a.e.-equal\n   predictable version otherwise, so every paper integral keeps its value.\n4. Scalar integrands on time ℝ, integral over (0,t]; vector integrands are handled\n   componentwise and integrands on [0,T] are extended by 0."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:15:58Z",
+  "disagreements": "The author's review, as shown by rv.py author, consists of the review marker only (no reading text, no item-by-item comparison), so there is no stated position of the author to disagree with on substance.\nNot recorded there, and in my view needed: the integral is adapted to ℱ.rightCont (equal to ℱ\nonly for a right-continuous filtration such as the paper's enlJoint); it is a chosen a.s.-càdlàg\nmodification (choice-independent up to indistinguishability); the integrand class is marked\nprogressively measurable rather than predictable (broader, consistent on predictable\nintegrands); and integrands are scalar and must be square integrable on every horizon."
+ },
+ "submitted_at": "2026-10-17T15:16:41Z",
+ "issue_draft": null
+}

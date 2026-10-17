@@ -1,0 +1,75 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:LevyStochCalc.Brownian.Ito.simpleIntegral",
+  "kind": "def",
+  "name": "LevyStochCalc.Brownian.Ito.simpleIntegral",
+  "lean": [
+   "LevyStochCalc.Brownian.Ito.simpleIntegral"
+  ],
+  "claims": [
+   "A:cor:robust",
+   "A:eq:forced",
+   "A:eq:mvfbsdej",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:intro:mvfbsdej",
+   "A:lem:bpbsde",
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:rem:cwp-class",
+   "A:rem:generalrank",
+   "A:sec2:prp",
+   "A:sec4:WP-def",
+   "A:sec4:horizon-not-contractive",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "1a897ae182e91c2d9e8ab5364d5848bb",
+  "fingerprint": "pl-fp-v1:bcbbe0c34c29bb96eac6ec690aa95946ba1f5656ea727589b116017db20b278a",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for def:LevyStochCalc.Brownian.Ito.simpleIntegral (written before seeing any Lean).\n\nPaper notion. The Ito integral of a simple predictable integrand\nZ = sum_{i<N} xi_i 1_{(t_i,t_{i+1}]}: (int_0^t Z dW)(omega) = sum_{i<N} xi_i(omega)\n(W_{t_{i+1} wedge t}(omega) - W_{t_i wedge t}(omega)), forward (Ito) increments with xi_i at the\nleft endpoint. At t = T (or t >= t_N) it is sum xi_i (W_{t_{i+1}} - W_{t_i}).\n\nA faithful Lean definition must:\n- use forward increments W_{t_{i+1}} - W_{t_i} multiplied by the coefficient xi_i of the\n  interval (t_i, t_{i+1}] (not the right-endpoint coefficient, not the midpoint — Stratonovich);\n- cut off at the evaluation time t via min (t_{i+1} wedge t, t_i wedge t), if it is a process in\n  t; a terminal-only version (no t) must be used with integrands supported in [0,T] or with the\n  partition truncated at t;\n- be linear in xi and satisfy the isometry E|int Z dW|^2 = E int |Z|^2 dt for adapted\n  square-integrable xi_i.",
+  "locked_at": "2026-10-17T12:34:25Z"
+ },
+ "comparison": {
+  "text": "Comparison for Ito.simpleIntegral.\nLean: simpleIntegral W H t ω = Σ_i ξ_i(ω) (W_{t_{i+1} ∧ t}(ω) − W_{t_i ∧ t}(ω)).\n- Forward (Itô) increments, with the left-endpoint coefficient ξ_i of the piece (t_i, t_{i+1}],\n  cut off at t by min. This is exactly the formula of my reading (not Stratonovich, not the\n  right-endpoint coefficient).\n- Linear in ξ. The isometry is proved under the adaptedness hypothesis (consumers supply it).\n  For t < 0 every increment is W_t − W_t = 0.\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:01:16Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:01:53Z",
+  "disagreements": "No disagreement on the substance. The author's entry (acceptance/review/definitions.md) records only the review marker, or a section heading, and no comparison with the paper. It does not state the points I relied on: the formula uses forward increments with the left-endpoint coefficient, cut off at t. The isometry holds only under the adaptedness hypothesis that consumers supply."
+ },
+ "submitted_at": "2026-10-17T15:02:25Z",
+ "issue_draft": null
+}

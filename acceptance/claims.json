@@ -21,7 +21,7 @@
    "source_sha256": "952765bd095132205c2a2ed30a292f5a88840f96e56d5a877f906f6a21524a94",
    "scope": "definition",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "definition",
@@ -43,7 +43,7 @@
    "source_sha256": "ef9a3acbfb5b5d7c874f4f8a54ca3a7d5a23e6dce6483f2e6391407799f2925e",
    "scope": "definition",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "definition",
@@ -65,7 +65,7 @@
    "source_sha256": "9c7bbbc5ca7a20286ef27d4eb7edb07d33d9787563041cadef820d833345f085",
    "scope": "definition",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "definition",
@@ -108,7 +108,7 @@
    "source_sha256": "a60a526e8cdd9d0ae4441e25895e5af1cc39a45df41a9028fe0f60371ce998ff",
    "scope": "definition",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "definition",
@@ -130,17 +130,19 @@
    "source_sha256": "a8c8906e45bdcd6591c7751bd3186ea3b83dd382cd95543acb4edcabc2093661",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "(2.8)",
      "spec": "Dissertation.PaperSpec.A.eq_coupling",
-     "accept": "Dissertation.Acceptance.A.eq_coupling"
+     "accept": "Dissertation.Acceptance.A.eq_coupling",
+     "witness": "Dissertation.Acceptance.A.eq_coupling_hypotheses"
     },
     {
      "name": "(2.9)",
      "spec": "Dissertation.PaperSpec.A.eq_couplingT",
-     "accept": "Dissertation.Acceptance.A.eq_couplingT"
+     "accept": "Dissertation.Acceptance.A.eq_couplingT",
+     "witness": "Dissertation.Acceptance.A.eq_couplingT_hypotheses"
     },
     {
      "name": "(2.10)",
@@ -151,7 +153,8 @@
     {
      "name": "(2.11)",
      "spec": "Dissertation.PaperSpec.A.eq_margproj",
-     "accept": "Dissertation.Acceptance.A.eq_margproj"
+     "accept": "Dissertation.Acceptance.A.eq_margproj",
+     "witness": "Dissertation.Acceptance.A.eq_margproj_hypotheses"
     }
    ]
   },
@@ -166,7 +169,7 @@
    "source_sha256": "be0e5f3df25ec2abc69bf27152a283d58fcd77f478e5fc28b8e3fd3c3f3e5b25",
    "scope": "duplicate",
    "scope_note": "A:ass:G",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -180,7 +183,7 @@
    "source_sha256": "7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "the pointwise condition gives Assumption 2.5, under (2.3) and Assumption 2.3",
@@ -207,7 +210,7 @@
    "source_sha256": "f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "a uniform variable, a function of W1_t, at every t > 0",
@@ -239,9 +242,22 @@
    "location": "paper/wellposedness.tex",
    "source_sha256": "ce35242e5c61dc248a5bf9b36f678223d523cf9e6c42793d8e5d2fd12e1df0ea",
    "scope": "formal",
-   "scope_note": "The propositions of the text of arXiv 2608.23203v1 for this claim are not yet stated.",
-   "scope_reviewed": false,
-   "clauses": []
+   "scope_note": "",
+   "scope_reviewed": true,
+   "clauses": [
+    {
+     "name": "the reduction to the jump channel and the β₁ dichotomy, as printed (every σ-finite ν)",
+     "spec": "Dissertation.PaperSpec.A.rem_beta1_dich_printed",
+     "refute": "Dissertation.Acceptance.A.rem_beta1_dich_printed_false"
+    },
+    {
+     "name": "the reduction to the jump channel and the β₁ dichotomy, with ν ≠ 0",
+     "spec": "Dissertation.PaperSpec.A.rem_beta1_dich",
+     "accept": "Dissertation.Acceptance.A.rem_beta1_dich",
+     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses",
+     "corrects": "the reduction to the jump channel and the β₁ dichotomy, as printed (every σ-finite ν)"
+    }
+   ]
   },
   {
    "id": "A:rem:margin",
@@ -253,9 +269,22 @@
    "location": "paper/wellposedness.tex",
    "source_sha256": "818715d0c102417894d7fdc0dd695f91b0ee288c7ecc02af05c10a95821a090a",
    "scope": "formal",
-   "scope_note": "The propositions of the text of arXiv 2608.23203v1 for this claim are not yet stated.",
-   "scope_reviewed": false,
-   "clauses": []
+   "scope_note": "",
+   "scope_reviewed": true,
+   "clauses": [
+    {
+     "name": "a bound with the constants β̄₁, β̄₂ is (2.12) with the constants β̄ᵢ − c and margin c, for 0 < c < min{β̄₁, β̄₂}",
+     "spec": "Dissertation.PaperSpec.A.rem_margin_reduce",
+     "accept": "Dissertation.Acceptance.A.rem_margin_reduce",
+     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
+    },
+    {
+     "name": "when m = n the margin may be recorded in the unweighted form (2.13)",
+     "spec": "Dissertation.PaperSpec.A.rem_margin_unweighted",
+     "accept": "Dissertation.Acceptance.A.rem_margin_unweighted",
+     "witness": "Dissertation.Acceptance.A.rem_margin_hypotheses"
+    }
+   ]
   },
   {
    "id": "A:thm:stab",
@@ -268,7 +297,7 @@
    "source_sha256": "381ba74c22961e597927279a40c3d1204009169a635d33ce49e1a5962c04d6b8",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "main",
@@ -289,7 +318,7 @@
    "source_sha256": "391a3db056fefb35dea3e08d03c460ac0787411fb1d02916f36e10dbfe0f733a",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "Remark 3.2: a tuple of ℍ_weak satisfying (1.1) lies in ℍ",
@@ -310,7 +339,7 @@
    "source_sha256": "03292da4be100aa38ea90d55eff64159cf4e923c05926fa169ebba6ed2985189",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "main",
@@ -330,9 +359,34 @@
    "location": "paper/wellposedness.tex",
    "source_sha256": "16ace776485cb414a0ad39fba869a577ec053811b32b39e09709fb01a4e0f75e",
    "scope": "formal",
-   "scope_note": "The propositions of the text of arXiv 2608.23203v1 for this claim are not yet stated.",
-   "scope_reviewed": false,
-   "clauses": []
+   "scope_note": "",
+   "scope_reviewed": true,
+   "clauses": [
+    {
+     "name": "Assumption 2.2 imposed, each tuple of ℍ_weak satisfying (1.1) lies in ℍ (Remark 3.2)",
+     "spec": "Dissertation.PaperSpec.A.rem_cwp_class",
+     "accept": "Dissertation.Acceptance.A.rem_cwp_class",
+     "witness": "Dissertation.Acceptance.A.rem_cwp_class_hypotheses"
+    },
+    {
+     "name": "the uniqueness only requires Assumptions 2.3–2.5 (Theorem 3.3)",
+     "spec": "Dissertation.PaperSpec.A.thm_uniq",
+     "accept": "Dissertation.Acceptance.A.thm_uniq",
+     "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses"
+    },
+    {
+     "name": "the existence requires Assumption 2.2, as printed",
+     "spec": "Dissertation.PaperSpec.A.rem_uniq_exist_printed",
+     "refute": "Dissertation.Acceptance.A.rem_uniq_exist_printed_false"
+    },
+    {
+     "name": "a system violating Assumption 2.2 and satisfying (2.3) and Assumptions 2.3–2.5 has a solution in ℍ",
+     "spec": "Dissertation.PaperSpec.A.rem_uniq_singular",
+     "accept": "Dissertation.Acceptance.A.rem_uniq_singular",
+     "witness": "Dissertation.Acceptance.A.rem_uniq_hypotheses",
+     "corrects": "the existence requires Assumption 2.2, as printed"
+    }
+   ]
   },
   {
    "id": "A:thm:cwp",
@@ -345,7 +399,7 @@
    "source_sha256": "0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "existence and uniqueness",
@@ -372,7 +426,7 @@
    "source_sha256": "3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "assumptions of the perturbed system",
@@ -405,7 +459,7 @@
    "source_sha256": "d7d2976d856eb17cca4f2ce81183317ed11c078bb8c7bf4a7d4da20f32b3da6d",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "Remark 3.7: the perturbed system satisfies Assumptions 2.2-2.5 with margin c_diss - c_pert in (2.12), arbitrary m, n",
@@ -432,7 +486,7 @@
    "source_sha256": "b18b8a1407fec705caed58f7f0bb7604c994a084d50703fdd8cc68b071003604",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "main",
@@ -453,7 +507,7 @@
    "source_sha256": "d62094248f27ce8bc15117e3e39b9ea5169bf86a1af04e994e8c82a5ec2ff534",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "main",
@@ -474,7 +528,7 @@
    "source_sha256": "bffd23b982e584c71b1ab55af148dce8ccd1f30bcb7d7cda8b1ed69982efc706",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "main",
@@ -495,13 +549,13 @@
    "source_sha256": "ea2eb3fcdf75fe4c7dccc111e320388b6d82e0967dd051aa673e75f7a5f1c1e9",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "main",
      "spec": "Dissertation.PaperSpec.A.lem_pert",
      "accept": "Dissertation.Acceptance.A.lem_pert",
-     "witness": "Dissertation.Acceptance.A.lem_pert_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
     }
    ]
   },
@@ -516,13 +570,13 @@
    "source_sha256": "c383f5951a193b52153def310e145b684712418abdb0ed5c8405a458be4b45de",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "main",
      "spec": "Dissertation.PaperSpec.A.lem_cont",
      "accept": "Dissertation.Acceptance.A.lem_cont",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_cont_hypotheses"
     }
    ]
   },
@@ -537,12 +591,13 @@
    "source_sha256": "c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "(i) the Hamiltonian and its minimiser",
      "spec": "Dissertation.PaperSpec.A.ex_concrete_i_ham",
-     "accept": "Dissertation.Acceptance.A.ex_concrete_i_ham"
+     "accept": "Dissertation.Acceptance.A.ex_concrete_i_ham",
+     "witness": "Dissertation.Acceptance.A.ex_concrete_i_ham_hypotheses"
     },
     {
      "name": "(i) the assumptions",
@@ -577,7 +632,8 @@
     {
      "name": "(ii) the mean and the barycentre",
      "spec": "Dissertation.PaperSpec.A.ex_concrete_ii_mean",
-     "accept": "Dissertation.Acceptance.A.ex_concrete_ii_mean"
+     "accept": "Dissertation.Acceptance.A.ex_concrete_ii_mean",
+     "witness": "Dissertation.Acceptance.A.ex_concrete_ii_mean_hypotheses"
     },
     {
      "name": "(ii) the assumptions",
@@ -610,7 +666,7 @@
    "source_sha256": "73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "main",
@@ -632,7 +688,15 @@
     },
     {
      "name": "the assumptions and the solution notions at nu = 0 reduce to their Brownian forms",
-     "spec": null
+     "spec": "Dissertation.PaperSpec.A.ex_brownian_reduction",
+     "accept": "Dissertation.Acceptance.A.ex_brownian_reduction",
+     "witness": "Dissertation.Acceptance.A.ex_brownian_reduction_hypotheses"
+    },
+    {
+     "name": "the representation property at nu = 0 is the Brownian one",
+     "spec": "Dissertation.PaperSpec.A.ex_brownian_prp",
+     "accept": "Dissertation.Acceptance.A.ex_brownian_prp",
+     "witness": "Dissertation.Acceptance.A.ex_brownian_prp_hypotheses"
     }
    ]
   },
@@ -647,7 +711,7 @@
    "source_sha256": "bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "the expectation-functional class",
@@ -679,9 +743,58 @@
    "location": "paper/wellposedness.tex",
    "source_sha256": "c6dac94442298fb91021e9410980558e1c560d7da7bb03b9fe21e4542a37e683",
    "scope": "formal",
-   "scope_note": "The propositions of the text of arXiv 2608.23203v1 for this claim are not yet stated.",
-   "scope_reviewed": false,
-   "clauses": []
+   "scope_note": "",
+   "scope_reviewed": true,
+   "clauses": [
+    {
+     "name": "the law statistics are W₂-Lipschitz, with the constants Lip(𝔮), Lip(𝔮̃), Lip(𝔮̂), L_Q",
+     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_lip",
+     "accept": "Dissertation.Acceptance.A.ex_fulllaw_lip",
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses"
+    },
+    {
+     "name": "the perturbation: origin integrability, (3.5) with L_p, Assumption 2.3, and (3.4) with c_pert = ‖G‖ L_p",
+     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_pert",
+     "accept": "Dissertation.Acceptance.A.ex_fulllaw_pert",
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses"
+    },
+    {
+     "name": "well-posedness with margin c_diss − ‖G‖ L_p under (5.1)",
+     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_wp",
+     "accept": "Dissertation.Acceptance.A.ex_fulllaw_wp",
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses"
+    },
+    {
+     "name": "the radial statistic of the full tuple law is no expectation functional",
+     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial",
+     "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_radial",
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses"
+    },
+    {
+     "name": "the U-marginal radial statistics are no expectation functionals, as printed (every σ-finite ν)",
+     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U",
+     "refute": "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_false"
+    },
+    {
+     "name": "the U-marginal radial statistics are no expectation functionals, with L²(ν) ≠ 0",
+     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr",
+     "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_corr",
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses",
+     "corrects": "the U-marginal radial statistics are no expectation functionals, as printed (every σ-finite ν)"
+    },
+    {
+     "name": "the cylindrical term of a non-affine Q is no expectation functional, as printed (arbitrary bounded Lipschitz features)",
+     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q_printed",
+     "refute": "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q_printed_false"
+    },
+    {
+     "name": "the cylindrical term is no expectation functional when Q is not affine on the attained range of the features",
+     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q",
+     "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q",
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q_hypotheses",
+     "corrects": "the cylindrical term of a non-affine Q is no expectation functional, as printed (arbitrary bounded Lipschitz features)"
+    }
+   ]
   },
   {
    "id": "A:ex:dealer",
@@ -693,9 +806,70 @@
    "location": "paper/wellposedness.tex",
    "source_sha256": "3dfd46a5ffe721a5c7560c057227552960a29e63ca7af022a17dd6989f44556c",
    "scope": "formal",
-   "scope_note": "The propositions of the text of arXiv 2608.23203v1 for this claim are not yet stated.",
-   "scope_reviewed": false,
-   "clauses": []
+   "scope_note": "",
+   "scope_reviewed": true,
+   "clauses": [
+    {
+     "name": "the potential: even, convex, its gradient, bounded and 1-Lipschitz",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_potential",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_potential",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+    },
+    {
+     "name": "the crowding correction is jointly Lipschitz in u and the law",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_crowd",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_crowd",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+    },
+    {
+     "name": "at ε = 0 the coefficients are those of Example 5.1(i)",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_coeffs",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_coeffs",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+    },
+    {
+     "name": "Assumptions 2.2–2.4 and (2.3), with L = max{β₁ + ε, β₂, 1}",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer",
+     "accept": "Dissertation.Acceptance.A.ex_dealer",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+    },
+    {
+     "name": "the crowding interaction is monotone at every interaction strength ε ≥ 0",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_mono",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_mono",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+    },
+    {
+     "name": "well-posedness at every interaction strength ε ≥ 0 (Theorem 3.5)",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_wp",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_wp",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+    },
+    {
+     "name": "the two-point laws share their mean, with the printed values",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_twopoint",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_twopoint",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses"
+    },
+    {
+     "name": "the crowding correction is no function of E[U], as printed (every σ-finite ν)",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_mean",
+     "refute": "Dissertation.Acceptance.A.ex_dealer_mean_false"
+    },
+    {
+     "name": "the crowding correction is no function of E[U], with L²(ν) ≠ 0",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_mean_corr",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_mean_corr",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses",
+     "corrects": "the crowding correction is no function of E[U], as printed (every σ-finite ν)"
+    },
+    {
+     "name": "the mark measure: infinite mass, square-integrable size, h_c ∈ L²(ν)",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_marks",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_marks",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_marks_hypotheses"
+    }
+   ]
   },
   {
    "id": "A:rem:freelaw",
@@ -707,9 +881,28 @@
    "location": "paper/wellposedness.tex",
    "source_sha256": "e2204cd5268c52bf28ead0e1dd0321d0914e8ca0c49f13ab56fa690ca4815fea",
    "scope": "formal",
-   "scope_note": "The propositions of the text of arXiv 2608.23203v1 for this claim are not yet stated.",
-   "scope_reviewed": false,
-   "clauses": []
+   "scope_note": "",
+   "scope_reviewed": true,
+   "clauses": [
+    {
+     "name": "the W₂ term is dominated by the synchronous coupling bound (2.8)",
+     "spec": "Dissertation.PaperSpec.A.eq_coupling",
+     "accept": "Dissertation.Acceptance.A.eq_coupling",
+     "witness": "Dissertation.Acceptance.A.eq_coupling_hypotheses"
+    },
+    {
+     "name": "the coefficients depend on u pointwise whenever β₁ > 0, as printed (every σ-finite ν)",
+     "spec": "Dissertation.PaperSpec.A.rem_freelaw_printed",
+     "refute": "Dissertation.Acceptance.A.rem_freelaw_printed_false"
+    },
+    {
+     "name": "the coefficients depend on u pointwise whenever β₁ > 0, with ν ≠ 0",
+     "spec": "Dissertation.PaperSpec.A.rem_freelaw",
+     "accept": "Dissertation.Acceptance.A.rem_freelaw",
+     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses",
+     "corrects": "the coefficients depend on u pointwise whenever β₁ > 0, as printed (every σ-finite ν)"
+    }
+   ]
   },
   {
    "id": "A:rem:regimes",
@@ -721,9 +914,52 @@
    "location": "paper/wellposedness.tex",
    "source_sha256": "8628790b3f61760d63f6a1cb8711d6fb055f4a005b160d92c994e6a8185b1c0c",
    "scope": "formal",
-   "scope_note": "The propositions of the text of arXiv 2608.23203v1 for this claim are not yet stated.",
-   "scope_reviewed": false,
-   "clauses": []
+   "scope_note": "",
+   "scope_reviewed": true,
+   "clauses": [
+    {
+     "name": "Example 5.4: the full-tuple law perturbation satisfies (3.4) with c_pert = ‖G‖ L_p",
+     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_pert",
+     "accept": "Dissertation.Acceptance.A.ex_fulllaw_pert",
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses"
+    },
+    {
+     "name": "Example 5.4: added below the dissipativity margin, the system stays well-posed",
+     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_wp",
+     "accept": "Dissertation.Acceptance.A.ex_fulllaw_wp",
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses"
+    },
+    {
+     "name": "Example 5.4: the radial statistic is a nonlinear law dependence, no expectation functional",
+     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial",
+     "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_radial",
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses"
+    },
+    {
+     "name": "the dealer interaction is a genuinely nonlinear U-law interaction, as printed",
+     "spec": "Dissertation.PaperSpec.A.rem_regimes_law_nonlinear",
+     "refute": "Dissertation.Acceptance.A.rem_regimes_law_nonlinear_false"
+    },
+    {
+     "name": "the dealer interaction is affine in the U-law, no function of its mean, and nonlinear in the valuation curve, with L²(ν) ≠ 0",
+     "spec": "Dissertation.PaperSpec.A.rem_regimes_corr",
+     "accept": "Dissertation.Acceptance.A.rem_regimes_corr",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses",
+     "corrects": "the dealer interaction is a genuinely nonlinear U-law interaction, as printed"
+    },
+    {
+     "name": "the crowding interaction is monotone at every interaction strength ε ≥ 0",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_mono",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_mono",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+    },
+    {
+     "name": "well-posedness at every interaction strength ε ≥ 0 (Theorem 3.5)",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_wp",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_wp",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+    }
+   ]
   },
   {
    "id": "A:lem:lawflow",
@@ -736,7 +972,7 @@
    "source_sha256": "b61210309cec8802a77053643f14f17525726292aaf8f26f098a3e85223633b5",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "Lemma A.1: Borel law flows mu, mu^- representing Law(Theta_t), Law(Theta^-_t), equal a.e.",
@@ -762,9 +998,58 @@
    "location": "paper/wellposedness.tex:73",
    "source_sha256": "3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9",
    "scope": "formal",
-   "scope_note": "The propositions of the text of arXiv 2608.23203v1 for this claim are not yet stated.",
+   "scope_note": "",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [
+    {
+     "name": "the a priori continuous-dependence estimate (Theorem 3.1)",
+     "spec": "Dissertation.PaperSpec.A.thm_stab",
+     "accept": "Dissertation.Acceptance.A.thm_stab",
+     "witness": "Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses"
+    },
+    {
+     "name": "uniqueness (Theorem 3.3)",
+     "spec": "Dissertation.PaperSpec.A.thm_uniq",
+     "accept": "Dissertation.Acceptance.A.thm_uniq",
+     "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses"
+    },
+    {
+     "name": "existence and uniqueness on every finite horizon (Theorem 3.5)",
+     "spec": "Dissertation.PaperSpec.A.thm_cwp",
+     "accept": "Dissertation.Acceptance.A.thm_cwp",
+     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
+    },
+    {
+     "name": "pointwise monotonicity gives expected diagonal monotonicity (Remark 2.8)",
+     "spec": "Dissertation.PaperSpec.A.rem_diag_mono",
+     "accept": "Dissertation.Acceptance.A.rem_diag_mono",
+     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
+    },
+    {
+     "name": "expected diagonal monotonicity is strictly weaker (Proposition 3.8)",
+     "spec": "Dissertation.PaperSpec.A.prop_strict",
+     "accept": "Dissertation.Acceptance.A.prop_strict",
+     "witness": "Dissertation.Acceptance.A.prop_strict_hypotheses"
+    },
+    {
+     "name": "the dealer interaction is monotone at every interaction strength (Example 5.5)",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_mono",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_mono",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+    },
+    {
+     "name": "the dealer market is well posed at every interaction strength (Example 5.5)",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_wp",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_wp",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+    },
+    {
+     "name": "the dealer mark measure has infinite activity (Example 5.5)",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_marks",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_marks",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_marks_hypotheses"
+    }
+   ]
   },
   {
    "id": "A:intro:mvfbsdej",
@@ -797,10 +1082,23 @@
    "title": "Li-Min: expectation-functional interactions, jump integrand only pointwise, monotonicity imposes finite total jump mass; the present theorem removes all three restrictions",
    "location": "paper/wellposedness.tex:155",
    "source_sha256": "90030b2d20a48b0ae1854a8fb2d4053ad1be2da6ece678b13095bd33e99bda43",
-   "scope": "literature",
-   "scope_note": "a statement about cited work",
-   "scope_reviewed": false,
-   "clauses": []
+   "scope": "formal",
+   "scope_note": "the claims about this paper; the description of the interactions of [LiMin] is a statement about cited work",
+   "scope_reviewed": true,
+   "clauses": [
+    {
+     "name": "the theorem allows W₂-dependence on the full tuple law, the law of U included, at arbitrary σ-finite activity, under the expected G-monotonicity (Theorem 3.5)",
+     "spec": "Dissertation.PaperSpec.A.thm_cwp",
+     "accept": "Dissertation.Acceptance.A.thm_cwp",
+     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
+    },
+    {
+     "name": "Example 5.3 details the embedding of their interaction class",
+     "spec": "Dissertation.PaperSpec.A.ex_expfunc_limin",
+     "accept": "Dissertation.Acceptance.A.ex_expfunc_limin",
+     "witness": "Dissertation.Acceptance.A.ex_expfunc_limin_hypotheses"
+    }
+   ]
   },
   {
    "id": "A:intro:rsz-extension",
@@ -811,9 +1109,9 @@
    "title": "Assumption 2.5 adjoins a jump term to RSZ (H.1)(1) / BYZ (A1) posed on the joint law of (X,Y,Z) with rectangular full-rank G",
    "location": "paper/wellposedness.tex:192",
    "source_sha256": "35a0b66664c5c6c37fcab69b46738fb5b9f70798d932ef62a39cf512b2da78af",
-   "scope": "literature",
-   "scope_note": "a statement about cited work",
-   "scope_reviewed": false,
+   "scope": "part-of",
+   "scope_note": "A:ex:brownian",
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -832,7 +1130,8 @@
     {
      "name": "L2(nu; R^j) is separable",
      "spec": "Dissertation.PaperSpec.A.sec2_separable",
-     "accept": "Dissertation.Acceptance.A.sec2_separable"
+     "accept": "Dissertation.Acceptance.A.sec2_separable",
+     "witness": "Dissertation.Acceptance.A.sec2_separable_hypotheses"
     }
    ]
   },
@@ -922,23 +1221,10 @@
    "title": "Along any diagonal input / tuple, b,sigma,f evaluations are progressively measurable and the h evaluation is predictable",
    "location": "paper/wellposedness.tex:344",
    "source_sha256": "e92807a86fd4018cc3957107d1f31ad54876122aa006e56b1843c215dad28c22",
-   "scope": "formal",
-   "scope_note": "",
-   "scope_reviewed": false,
-   "clauses": [
-    {
-     "name": "(2.5), the first line: along any diagonal input the evaluations of b, σ and f are progressively measurable",
-     "spec": "Dissertation.PaperSpec.A.eq_coefmeas",
-     "accept": "Dissertation.Acceptance.A.eq_coefmeas",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
-    },
-    {
-     "name": "(2.5), the second line: the jump coefficient at the predictable tuple and its law is predictable",
-     "spec": "Dissertation.PaperSpec.A.eq_coefmeas_jump",
-     "accept": "Dissertation.Acceptance.A.eq_coefmeas_jump",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
-    }
-   ]
+   "scope": "duplicate",
+   "scope_note": "A:eq:coefmeas",
+   "scope_reviewed": true,
+   "clauses": []
   },
   {
    "id": "A:rem2.6",
@@ -965,12 +1251,13 @@
    "source_sha256": "a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "E int_0^T |V|^2 <= T E sup |V|^2, so HH is contained in Hweak",
      "spec": "Dissertation.PaperSpec.A.sec3_HH_inclusion",
-     "accept": "Dissertation.Acceptance.A.sec3_HH_inclusion"
+     "accept": "Dissertation.Acceptance.A.sec3_HH_inclusion",
+     "witness": "Dissertation.Acceptance.A.sec3_HH_inclusion_hypotheses"
     },
     {
      "name": "under the identification ||.||_HH is a norm: it vanishes exactly on the zero class",
@@ -980,7 +1267,9 @@
     },
     {
      "name": "(HH, ||.||_HH) is complete",
-     "spec": "Dissertation.PaperSpec.A.sec3_HH_complete"
+     "spec": "Dissertation.PaperSpec.A.sec3_HH_complete",
+     "accept": "Dissertation.Acceptance.A.sec3_HH_complete",
+     "witness": "Dissertation.Acceptance.A.sec3_HH_complete_hypotheses"
     }
    ]
   },
@@ -995,7 +1284,7 @@
    "source_sha256": "14d75cb86a9216c652eee2f0e1f6bebae9651e4f1f55bc1c34aacc8f595b9954",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "the identities of (1.1) holding almost surely for every t hold off one null set for all t",
@@ -1016,7 +1305,7 @@
    "source_sha256": "11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "(a) the companion bound: with system 2 under Assumptions 2.2–2.5, (3.1) with the differences along solution 1 and the constant of system 2",
@@ -1048,9 +1337,40 @@
    "location": "paper/wellposedness.tex:797",
    "source_sha256": "10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17",
    "scope": "formal",
-   "scope_note": "The propositions of the text of arXiv 2608.23203v1 for this claim are not yet stated.",
-   "scope_reviewed": false,
-   "clauses": []
+   "scope_note": "",
+   "scope_reviewed": true,
+   "clauses": [
+    {
+     "name": "a margin in (2.13) makes every channel strictly dissipative",
+     "spec": "Dissertation.PaperSpec.A.cor_margin_channels",
+     "accept": "Dissertation.Acceptance.A.cor_margin_channels",
+     "witness": "Dissertation.Acceptance.A.cor_robust_hypotheses"
+    },
+    {
+     "name": "an additive h₀ cannot serve as a baseline, as printed (every σ-finite ν)",
+     "spec": "Dissertation.PaperSpec.A.cor_margin_additive_printed",
+     "refute": "Dissertation.Acceptance.A.cor_margin_additive_printed_false"
+    },
+    {
+     "name": "an additive h₀ cannot serve as a baseline, with ν ≠ 0",
+     "spec": "Dissertation.PaperSpec.A.cor_margin_additive",
+     "accept": "Dissertation.Acceptance.A.cor_margin_additive",
+     "witness": "Dissertation.Acceptance.A.cor_margin_additive_hypotheses",
+     "corrects": "an additive h₀ cannot serve as a baseline, as printed (every σ-finite ν)"
+    },
+    {
+     "name": "jump feedback through finitely many functionals of u supplies no margin, as printed (every σ-finite ν)",
+     "spec": "Dissertation.PaperSpec.A.cor_margin_finite_printed",
+     "refute": "Dissertation.Acceptance.A.cor_margin_finite_printed_false"
+    },
+    {
+     "name": "jump feedback through finitely many functionals of u supplies no margin, with L²(ν) infinite dimensional",
+     "spec": "Dissertation.PaperSpec.A.cor_margin_finite",
+     "accept": "Dissertation.Acceptance.A.cor_margin_finite",
+     "witness": "Dissertation.Acceptance.A.cor_margin_finite_hypotheses",
+     "corrects": "jump feedback through finitely many functionals of u supplies no margin, as printed (every σ-finite ν)"
+    }
+   ]
   },
   {
    "id": "A:sec4:horizon-not-contractive",
@@ -1063,7 +1383,7 @@
    "source_sha256": "3848cfec9527e65f37a2aa7ee50e7c186ffb9d3e89e5d7181ef8045b33f7557a",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "shortening the horizon does not make the frozen-coefficient map contractive: on every horizon a system satisfying the assumptions has a frozen map that does not decrease distances",
@@ -1082,10 +1402,17 @@
    "title": "A cadlag local martingale whose running supremum is integrable has zero-mean increments (localisation + DCT); BDG at p=1 covers compensated-Poisson martingales",
    "location": "paper/wellposedness.tex:908",
    "source_sha256": "66f9ea22a06a00e8b6aad28172a7820750d9f1d2f2ddeb8475dddc064283e43b",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
-   "clauses": []
+   "scope": "formal",
+   "scope_note": "the supremum criterion is stated and proved; the BDG inequality at p = 1 of the preceding sentence is cited work (He, Wang and Yan) and is not stated",
+   "scope_reviewed": true,
+   "clauses": [
+    {
+     "name": "a càdlàg local martingale whose running supremum is integrable has zero-mean increments",
+     "spec": "Dissertation.PaperSpec.A.sec4_supremum_criterion",
+     "accept": "Dissertation.Acceptance.A.sec4_supremum_criterion",
+     "witness": "Dissertation.Acceptance.A.sec4_supremum_criterion_hypotheses"
+    }
+   ]
   },
   {
    "id": "A:sec4:WP-def",
@@ -1119,9 +1446,9 @@
    "title": "Along any Theta in HH, coefficient processes are square-integrable with the bound (4.2); terminal bound (4.3)",
    "location": "paper/wellposedness.tex:944",
    "source_sha256": "fb2d9936eeb420107ab775d3d6f5f596ace121471c667bed056241cf5805dad6",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope": "duplicate",
+   "scope_note": "A:eq:coeffint",
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1135,7 +1462,7 @@
    "source_sha256": "89a434caa7c84ed5e2143713d1483dde1e7fa2001de1f51afe467a70f3c9fe8f",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1149,7 +1476,7 @@
    "source_sha256": "518b95da43921c8290496ba8c58a2f74ebe2bce2191c71305e264312b4786bd7",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1163,7 +1490,7 @@
    "source_sha256": "ed713718821e088c6ca09a59f75d22202a9e9960885df259a33fd8f6dd54fcbe",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1177,7 +1504,7 @@
    "source_sha256": "3f24646e833f5a7b1bfdeb3449b26795f12ebfae2cde62dff93327979908d073",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "the system of Li–Min Example 3.2 satisfies (2.3) and Assumptions 2.2–2.3 and has no solution on T = 3π/4 from an initial datum of nonzero mean",
@@ -1197,9 +1524,64 @@
    "location": "paper/wellposedness.tex:1834",
    "source_sha256": "85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9",
    "scope": "formal",
-   "scope_note": "The propositions of the text of arXiv 2608.23203v1 for this claim are not yet stated.",
+   "scope_note": "",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [
+    {
+     "name": "Example 5.1(i) meets every assumption at arbitrary activity",
+     "spec": "Dissertation.PaperSpec.A.ex_concrete_i",
+     "accept": "Dissertation.Acceptance.A.ex_concrete_i",
+     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses"
+    },
+    {
+     "name": "Example 5.1(ii) meets every assumption at arbitrary activity",
+     "spec": "Dissertation.PaperSpec.A.ex_concrete_ii",
+     "accept": "Dissertation.Acceptance.A.ex_concrete_ii",
+     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses"
+    },
+    {
+     "name": "Example 5.2 recovers the Brownian subclass",
+     "spec": "Dissertation.PaperSpec.A.ex_brownian",
+     "accept": "Dissertation.Acceptance.A.ex_brownian",
+     "witness": "Dissertation.Acceptance.A.ex_brownian_hypotheses"
+    },
+    {
+     "name": "Example 5.3 recovers the expectation-functional subclass",
+     "spec": "Dissertation.PaperSpec.A.ex_expfunc",
+     "accept": "Dissertation.Acceptance.A.ex_expfunc",
+     "witness": "Dissertation.Acceptance.A.ex_expfunc_hypotheses"
+    },
+    {
+     "name": "Example 5.4: a nonlinear functional of the full tuple",
+     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial",
+     "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_radial",
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses"
+    },
+    {
+     "name": "the U-marginal radial statistics are no expectation functionals, as printed (every σ-finite ν)",
+     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U",
+     "refute": "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_false"
+    },
+    {
+     "name": "the U-marginal radial statistics are no expectation functionals, with L²(ν) ≠ 0",
+     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr",
+     "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_corr",
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses",
+     "corrects": "the U-marginal radial statistics are no expectation functionals, as printed (every σ-finite ν)"
+    },
+    {
+     "name": "the crowding interaction is monotone at every interaction strength ε ≥ 0",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_mono",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_mono",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+    },
+    {
+     "name": "well-posedness at every interaction strength ε ≥ 0 (Theorem 3.5)",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_wp",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_wp",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+    }
+   ]
   },
   {
    "id": "A:ex:concrete(i)",
@@ -1239,9 +1621,58 @@
    "location": "paper/wellposedness.tex:2297",
    "source_sha256": "c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829",
    "scope": "formal",
-   "scope_note": "The propositions of the text of arXiv 2608.23203v1 for this claim are not yet stated.",
+   "scope_note": "",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [
+    {
+     "name": "the stability estimate (Theorem 3.1)",
+     "spec": "Dissertation.PaperSpec.A.thm_stab",
+     "accept": "Dissertation.Acceptance.A.thm_stab",
+     "witness": "Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses"
+    },
+    {
+     "name": "uniqueness (Theorem 3.3)",
+     "spec": "Dissertation.PaperSpec.A.thm_uniq",
+     "accept": "Dissertation.Acceptance.A.thm_uniq",
+     "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses"
+    },
+    {
+     "name": "existence and uniqueness on every finite horizon (Theorem 3.5)",
+     "spec": "Dissertation.PaperSpec.A.thm_cwp",
+     "accept": "Dissertation.Acceptance.A.thm_cwp",
+     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
+    },
+    {
+     "name": "robustness at m = n below the dissipativity margin (Corollary 3.6)",
+     "spec": "Dissertation.PaperSpec.A.cor_robust_wp",
+     "accept": "Dissertation.Acceptance.A.cor_robust_wp",
+     "witness": "Dissertation.Acceptance.A.cor_robust_hypotheses"
+    },
+    {
+     "name": "pointwise monotonicity gives expected diagonal monotonicity (Remark 2.8)",
+     "spec": "Dissertation.PaperSpec.A.rem_diag_mono",
+     "accept": "Dissertation.Acceptance.A.rem_diag_mono",
+     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
+    },
+    {
+     "name": "expected diagonal monotonicity is strictly weaker (Proposition 3.8)",
+     "spec": "Dissertation.PaperSpec.A.prop_strict",
+     "accept": "Dissertation.Acceptance.A.prop_strict",
+     "witness": "Dissertation.Acceptance.A.prop_strict_hypotheses"
+    },
+    {
+     "name": "the reduction to the jump channel and the β₁ dichotomy, as printed (every σ-finite ν)",
+     "spec": "Dissertation.PaperSpec.A.rem_beta1_dich_printed",
+     "refute": "Dissertation.Acceptance.A.rem_beta1_dich_printed_false"
+    },
+    {
+     "name": "the reduction to the jump channel and the β₁ dichotomy, with ν ≠ 0",
+     "spec": "Dissertation.PaperSpec.A.rem_beta1_dich",
+     "accept": "Dissertation.Acceptance.A.rem_beta1_dich",
+     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses",
+     "corrects": "the reduction to the jump channel and the β₁ dichotomy, as printed (every σ-finite ν)"
+    }
+   ]
   },
   {
    "id": "A:lemA1:polish",
@@ -1254,7 +1685,7 @@
    "source_sha256": "cdf7e5fd3a5753faf4d5aaea2d4e017db124558fd0461ec3b81dd52a3f8527cc",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1268,7 +1699,7 @@
    "source_sha256": "4683d66c9de5e151a16b21a1e6cbac952384cffefeb3e0e4b2eb720fb4a0b746",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1373,7 +1804,8 @@
     {
      "name": "the Fubini isometry, the jointly measurable representative and its uniqueness",
      "spec": "Dissertation.PaperSpec.A.eq_fubiniiso",
-     "accept": "Dissertation.Acceptance.A.eq_fubiniiso"
+     "accept": "Dissertation.Acceptance.A.eq_fubiniiso",
+     "witness": "Dissertation.Acceptance.A.eq_fubiniiso_hypotheses"
     }
    ]
   },
@@ -1388,7 +1820,7 @@
    "source_sha256": "7924cb39f7a28bb67419f823f289ffe9c6c3d00cf2e8c7a19b20c87c5f3ff7d7",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "(2.5), the first line: along any diagonal input the evaluations of b, σ and f are progressively measurable",
@@ -1415,7 +1847,7 @@
    "source_sha256": "26000867c0563c5cbf92033eb156bb744fdb9cd4ef31d2116ab1e40cbf2ded35",
    "scope": "part-of",
    "scope_note": "A:ass:lip",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1429,7 +1861,7 @@
    "source_sha256": "02adff614a721879d5dbecfa1276846e950167cc29a91b51cd366cd0b0407892",
    "scope": "part-of",
    "scope_note": "A:ass:mono",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1443,7 +1875,7 @@
    "source_sha256": "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
    "scope": "part-of",
    "scope_note": "A:remark-2.6",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1457,7 +1889,7 @@
    "source_sha256": "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
    "scope": "part-of",
    "scope_note": "A:remark-2.6",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1471,7 +1903,7 @@
    "source_sha256": "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
    "scope": "part-of",
    "scope_note": "A:remark-2.6",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1485,7 +1917,7 @@
    "source_sha256": "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
    "scope": "part-of",
    "scope_note": "A:remark-2.6",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1497,10 +1929,18 @@
    "title": "equation eq:monomargin [stmt:Remark 2.11]",
    "location": "paper/wellposedness.tex:506",
    "source_sha256": "6867b6d6ec817311e74332eaab2da6b80faa99cc43729915f5643802059f3d9e",
-   "scope": "part-of",
-   "scope_note": "A:rem:margin",
-   "scope_reviewed": false,
-   "clauses": []
+   "scope": "definition",
+   "scope_note": "",
+   "scope_reviewed": true,
+   "clauses": [
+    {
+     "name": "definition",
+     "spec": null,
+     "defs": [
+      "Dissertation.PaperSpec.A.Margin212"
+     ]
+    }
+   ]
   },
   {
    "id": "A:eq:monomarginu",
@@ -1511,10 +1951,18 @@
    "title": "equation eq:monomarginu [stmt:Remark 2.11]",
    "location": "paper/wellposedness.tex:519",
    "source_sha256": "7c818f2a54f2995c3b33a671b0efcda0c8f8a80e07551362d6085a06522b0ed6",
-   "scope": "part-of",
-   "scope_note": "A:rem:margin",
-   "scope_reviewed": false,
-   "clauses": []
+   "scope": "definition",
+   "scope_note": "",
+   "scope_reviewed": true,
+   "clauses": [
+    {
+     "name": "definition",
+     "spec": null,
+     "defs": [
+      "Dissertation.WellPosedness.Spec.Margin213"
+     ]
+    }
+   ]
   },
   {
    "id": "A:eq:stab",
@@ -1527,7 +1975,7 @@
    "source_sha256": "c4dddf739159e4e400a4c5e45ce3dbae16243514e4a494320285d30867760b23",
    "scope": "part-of",
    "scope_note": "A:thm:stab",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1541,7 +1989,7 @@
    "source_sha256": "b8ff2e9838043219793ee5e3e2d0c12015348a06f6da0bc20037b93031104413",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1555,7 +2003,7 @@
    "source_sha256": "937e56ed71142a48eaf493db8e817431b0c8769c3e48253e307a850a6d5dc870",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1569,7 +2017,7 @@
    "source_sha256": "b94f0a4750861f7bc9aa9bfbd4348cb77fc596c40e0d0d62aa588f5f490b4965",
    "scope": "part-of",
    "scope_note": "A:cor:robust",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1583,7 +2031,7 @@
    "source_sha256": "bc1a64adcc53f32ca3513646e766d459d78bdc812608e63ce103bae80cd160d6",
    "scope": "part-of",
    "scope_note": "A:cor:robust",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1597,7 +2045,7 @@
    "source_sha256": "84689f8ae1da8e496feca41656fa1bbc6a0891e660a47e6896333f7697a0442e",
    "scope": "part-of",
    "scope_note": "A:prop:strict",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1611,7 +2059,7 @@
    "source_sha256": "0452cb72286d7896e16340d2c6888629794fff652f758c7dcbee71da8f17513a",
    "scope": "part-of",
    "scope_note": "A:prop:strict",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1647,7 +2095,7 @@
    "source_sha256": "99964f49a13228cf4ff98983af9cd5548e95ce839497c0cbc9b456e605c4e606",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "(4.2): E int |psi(s, Theta_s, mu_s)|^2 <= C E int (|X|^2 + |Y|^2 + |Z|^2 + ||U||^2 + |psi(s, 0, delta_0)|^2), psi in {b, sigma, h, f}",
@@ -1668,7 +2116,7 @@
    "source_sha256": "d9e41a50e8147b0d78ae4662fa4a0ea0b13792c0adffdd92178e02bc91f3a077",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "(4.3): E |g(X_T, Law X_T)|^2 <= C (E |X_T|^2 + |g(0, delta_0)|^2)",
@@ -1689,7 +2137,7 @@
    "source_sha256": "4352743d42febbabaf32ef20a893a0457ba44eb5f1c97db13dd5cd420a5d8a32",
    "scope": "part-of",
    "scope_note": "A:lem:bpbsde",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1703,7 +2151,7 @@
    "source_sha256": "efecab9f849df00da61de05cf74326fccbf0779932b8d2aeff894575e2879244",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1717,7 +2165,7 @@
    "source_sha256": "92a2bc4ba1b90193adee8d79f2769267c5413a5370b0bd03b7e6e4c7469c7880",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1731,7 +2179,7 @@
    "source_sha256": "0865cca4da02a9a6573bfcc686bbde2000bd44117ed5ba6c061fc230c560e761",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1745,7 +2193,7 @@
    "source_sha256": "6fe095bee848af81f9082966d2be4cd8accc4659d4a12f521c9bf832321f7e6a",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1759,7 +2207,7 @@
    "source_sha256": "c26bfe399b8b1c2a051fd7d421e096cfd49479aac965c43535242164b1159c9c",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1773,7 +2221,7 @@
    "source_sha256": "469b21f5927adabb7fee93e9c2aa10426ee4e11ae8385388c2c9cdadf1b60836",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1787,7 +2235,7 @@
    "source_sha256": "7a713a9888a387c7d5461cda8b0e9a690209c1e1f68fc45bc8990a3ad3bf91b1",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1801,7 +2249,7 @@
    "source_sha256": "8aee0383c039e706daf9b94b5a0408b82c53bea7ebb9e712a8c63d08847a968e",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1815,7 +2263,7 @@
    "source_sha256": "9911c31b0afc66bb02b8de946d63f88f53b1d71583d816b0c3717a51d7fa1445",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1829,7 +2277,7 @@
    "source_sha256": "f1781896f3410c6e3889036f37c13ff87e0a8e3209085a713880cf494b15721f",
    "scope": "part-of",
    "scope_note": "A:lem:pert",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1843,7 +2291,7 @@
    "source_sha256": "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1857,7 +2305,7 @@
    "source_sha256": "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1871,7 +2319,7 @@
    "source_sha256": "1b8f9d553f28916e2f54c39b33a2d9c8270af102cdd73d9e420081d45ef2d208",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1885,7 +2333,7 @@
    "source_sha256": "cc119107c0993e2db3aa44ba40139d2e14673d3ecbade95adf57b556559bf4c0",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1899,7 +2347,7 @@
    "source_sha256": "62f3b40810c1c1ad56e0bb47800f386409d756a01bb3bdd6bc510b6f786b760a",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1913,7 +2361,7 @@
    "source_sha256": "fe0258cfec56f0d71d86bfbec12251fbec48d09d25639edb4d296042102ec93d",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1927,7 +2375,7 @@
    "source_sha256": "909d07a537026d305069f258459dc3c52f5bd1bad9e9b98683ae7754a0907ce3",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1941,7 +2389,7 @@
    "source_sha256": "fe489ef4eed4fd89e08a469d28825a305af2936b44592398acd705f7e53ac8bc",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1955,7 +2403,7 @@
    "source_sha256": "b221d93cc08c91cf0d54475fa4a4bbb7b68fe6f5c967f455e5e5107f21268364",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1969,7 +2417,7 @@
    "source_sha256": "37a5694c4457487af0725c17ac96b9ef804cb992e2e789b8661706a8ec6a1618",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1983,7 +2431,7 @@
    "source_sha256": "7c2febe0d21bc9699aeba46d61934fd741aba925ca0b495cca48ac284698cf78",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -1997,7 +2445,7 @@
    "source_sha256": "c68216407f632038650cfacf86e7655f06ce41acd873e027186e216206c02738",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -2011,7 +2459,7 @@
    "source_sha256": "cca2116d4d0a472a686da1aa3c819b122304999c153475c9552e6a8d8b2a260e",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   },
   {
@@ -2025,7 +2473,7 @@
    "source_sha256": "420e5aa02e9a408ea8fdae5277b43ff45ee5b84a32654c19dcefeedb0c4a8598",
    "scope": "part-of",
    "scope_note": "A:ex:fulllaw",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": []
   }
  ]

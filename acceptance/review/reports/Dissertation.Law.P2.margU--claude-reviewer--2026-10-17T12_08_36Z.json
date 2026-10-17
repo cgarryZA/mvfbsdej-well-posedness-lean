@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.Law.P2.margU",
+  "kind": "def",
+  "name": "Dissertation.Law.P2.margU",
+  "lean": [
+   "Dissertation.Law.P2.margU"
+  ],
+  "claims": [
+   "A:remark-2.6"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "537c6d484c8f0e8b128e7c03175bc3a7",
+  "fingerprint": "pl-fp-v1:74fb9d3710f3a218b3c79f33994db8cf4608a2dd998a813e5bd1dead39c7aab4",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "# Reading: the U-marginal mu^U (def:Dissertation.Law.P2.margU)\n\nPaper's notion (Remark 2.6, eq:margproj). For mu in P_2(H), H = R^n x R^m x R^{m x d} x\nL^2(nu; R^m) with |theta|_H^2 = |x|^2+|y|^2+|z|_F^2+|u|_{L^2(nu)}^2, mu^U in P_2(L^2(nu)) is the\nU-marginal: the image of mu under the coordinate projection pi_U(x,y,z,u) = u. It lies in P_2\nsince |u| <= |theta|_H.\n\nA faithful Lean definition: the element of `P2 (L^2(nu;R^m)-type)` whose law is\n`μ.law.map π_U`, with π_U the (measurable) projection to the fourth (jump) coordinate of the\nLean model of H. Need: the projection is the jump coordinate (not another coordinate); the\ntarget type is the Lean model of L^2(nu; R^m) used for U (with its norm = the L^2(nu) norm);\nthe model of H's norm dominates the u-norm (so the projection is norm non-increasing). If H is\nmodelled as a nested product with the sup norm, the measure is still the right marginal (the\nnorm only matters for P_2 membership and W_2); check that the ambient type is the one the\npropositions use for H.",
+  "locked_at": "2026-10-17T12:07:59Z"
+ },
+ "comparison": {
+  "text": "# Comparison: P2.margU\n\nLean: `μ.margU := μ.map measurable_projUH norm_projUH_le : P2 (Lp (EuclideanSpace ℝ (Fin m)) 2 ν)`\nfor `μ : P2 (TupleH ν n m d)`, where `TupleH ν n m d` =\n`EuclideanSpace ℝ (Fin n) × EuclideanSpace ℝ (Fin m) × EuclideanSpace ℝ (Fin m × Fin d) ×\nLp (EuclideanSpace ℝ (Fin m)) 2 ν` (Tuple.lean:134) and `projUH θ = θ.2.2.2` (the fourth\ncoordinate), a continuous linear map.\n\n- Projection: onto the jump channel L^2(nu; R^m) — the paper's u-coordinate. Good.\n- Target type: Mathlib's `Lp (EuclideanSpace ℝ (Fin m)) 2 ν`, i.e. L^2(nu; R^m) with the\n  L^2(nu) norm (∫|u(e)|^2 ν(de))^{1/2}, Euclidean norm on R^m. Good; its σ-algebra is the\n  scoped Borel instance `lpMeasurableSpace`.\n- Law: the genuine pushforward `μ.law.map projUH` (`margU_law`, rfl). Good.\n- P_2 membership: via `‖projUH θ‖ ≤ ‖θ‖`; TupleH carries the max of channel norms rather than\n  the paper's Hilbert norm, but these are equivalent (within factor 2), so finiteness of the\n  second moment, and hence the set P_2(H), are the same. The law μ^U itself does not depend on\n  the norm. The norm choice matters for W_2 (other units: `w2P` on TupleH vs `w2H`), not here.\n- Z channel uses EuclideanSpace on Fin m × Fin d (Frobenius); irrelevant to margU.\n\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T12:08:29Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T12:08:29Z",
+  "disagreements": "No disagreement on meaning. The author's entry shown for this unit (definitions.md:254) is empty; it records no reading of margU (projection onto the fourth, L^2(nu) channel; pushforward law; P_2 membership via the max-norm bound, equivalent to the Hilbert-norm one)."
+ },
+ "submitted_at": "2026-10-17T12:08:36Z",
+ "issue_draft": null
+}

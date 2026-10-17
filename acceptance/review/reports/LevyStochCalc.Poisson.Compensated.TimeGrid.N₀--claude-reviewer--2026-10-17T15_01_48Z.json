@@ -1,0 +1,76 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:LevyStochCalc.Poisson.Compensated.TimeGrid.N₀",
+  "kind": "def",
+  "name": "LevyStochCalc.Poisson.Compensated.TimeGrid.N₀",
+  "lean": [
+   "LevyStochCalc.Poisson.Compensated.TimeGrid.N₀"
+  ],
+  "claims": [
+   "A:cor:robust",
+   "A:eq:forced",
+   "A:eq:mvfbsdej",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:intro:mvfbsdej",
+   "A:lem:bpbsde",
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:rem:cwp-class",
+   "A:rem:generalrank",
+   "A:sec2:prp",
+   "A:sec3:one-null-set",
+   "A:sec4:WP-def",
+   "A:sec4:horizon-not-contractive",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "96a3829b277b5ce438918b7312dbff61",
+  "fingerprint": "pl-fp-v1:e6ef2b887f951f78019572d712bd980d1ef3c9fa9b0b0a2498f8c5b8147255a8",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Unit: def:LevyStochCalc.Poisson.Compensated.TimeGrid.N₀ (reading locked before any Lean is seen)\n\nPaper notion. The number of steps (slabs) of the time grid (unit 25).\n\nWhat a faithful Lean definition must be.\n- A natural-number field of TimeGrid indexing the grid points / slabs; no further content.",
+  "locked_at": "2026-10-17T12:35:34Z"
+ },
+ "comparison": {
+  "text": "Comparison: def:LevyStochCalc.Poisson.Compensated.TimeGrid.N₀\n(Poisson/MarkStepIsometry.lean:32-33.)\n\n- Reading: natural-number number of slabs; no content.\n- Lean: N_0 : N, \"Number of pieces\"; the slabs are (p_i, p_{i+1}], i < N_0.\n\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:01:17Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:01:28Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-17T15:01:48Z",
+ "issue_draft": null
+}

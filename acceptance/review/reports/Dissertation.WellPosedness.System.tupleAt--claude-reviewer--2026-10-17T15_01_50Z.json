@@ -1,0 +1,76 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.System.tupleAt",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.System.tupleAt",
+  "lean": [
+   "Dissertation.WellPosedness.System.tupleAt"
+  ],
+  "claims": [
+   "A:cor:robust",
+   "A:eq:coefmeas",
+   "A:eq:forced",
+   "A:eq:mvfbsdej",
+   "A:ex:concrete",
+   "A:intro:mvfbsdej",
+   "A:lem:cont",
+   "A:lem:lawflow",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:rem:cwp-class",
+   "A:rem:generalrank",
+   "A:sec2:coefmeas",
+   "A:sec3:one-null-set",
+   "A:sec4:WP-def",
+   "A:sec4:horizon-not-contractive",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "0b900ec4a75a6b31755afe5c94aee280",
+  "fingerprint": "pl-fp-v1:2a7c18adf0bf6d8bba70ddaba8b58e0c6486f760f53be280b2a284ac6dd21d4b",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for def:Dissertation.WellPosedness.System.tupleAt (written before seeing any Lean).\n\nPaper notion. Theta_t = (X_t, Y_t, Z_t, U_t), the solution tuple at time t, as an H-valued\nrandom variable omega |-> (X_t(omega), Y_t(omega), Z_t(omega), U_t(omega)) in\nH = R^n x R^m x R^{m x d} x L^2(nu;R^m); the coefficients b, sigma, f are evaluated at\n(t, Theta_t, mu_t) with mu_t = Law(Theta_t). (The jump coefficient uses the predictable version\nTheta_t^- = (X_{t-}, Y_{t-}, Z_t, U_t); \"tupleAt\" is the non-left-limit version, unless it\ntakes a parameter.) Inside dt-integrals the two agree dt x dP-a.e. (Section 4 preamble).\n\nA faithful Lean definition must:\n- put X_t, Y_t, Z_t, U_t in the X, Y, Z, U slots respectively, all at the same time t;\n- take U_t(omega) as the element of L^2(nu;R^m) given by e |-> U_t(omega,e) (via the fibre lift,\n  with a junk value where \\int|U_t(omega,e)|^2 nu(de) = infinity; this set is dt x dP-null when\n  E\\int\\int|U|^2 < infinity, so harmless for time-integrated or a.e.-t statements, and for the law\n  mu_t at a.e. t);\n- if it also covers Theta_t^-, use left limits of X and Y only (Z, U untouched).",
+  "locked_at": "2026-10-17T12:34:23Z"
+ },
+ "comparison": {
+  "text": "Comparison for System.tupleAt.\nLean: tupleAt ν X Y Z U s ω := (toLp (i ↦ X i s ω), toLp (k ↦ Y k s ω), toLp ((k,j) ↦ Z k s ω j),\nuLift ν (e ↦ k ↦ U k s ω e)) : TupleH ν n m d, for coordinate processes X : Fin n → ℝ → Ω → ℝ,\nY : Fin m → …, Z : Fin m → ℝ → Ω → Fin d → ℝ, U : Fin m → ℝ → Ω → E → ℝ.\n- X_s, Y_s, Z_s, U_s go into the X, Y, Z, U slots, all at the same time s. Matches.\n- Z_s ∈ ℝ^{m×d}, with row k and entry j, as EuclideanSpace on Fin m × Fin d (Frobenius). Matches.\n- U_s(ω) is the L²(ν;ℝ^m) class of e ↦ (U_{k,s}(ω,e))_k via uLift, and 0 when it is not square\n  integrable. As in my reading, the exceptional (s,ω)-set is dt⊗dP-null under\n  E∫∫|U|² < ∞, so this is harmless for time-integrated statements and for laws at a.e. s.\n  Statements \"for every s\" about the U-channel would see the junk.\n- tupleAt is the non-left-limit Θ_s. Θ_s^- is a separate definition (TupleLeft.lean, not reviewed\n  here).\n- Time is all of ℝ (no restriction to [0,T]). The coefficient processes restrict to [0,T] by\n  indicators (Solves.lean). Harmless.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T12:39:11Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices. (1) The processes are given as real coordinate processes (X i, Y k, rows\nZ k with entries j, U k with marks e) and assembled into H by WithLp.toLp 2 (Euclidean,\nFrobenius) and uLift. (2) The jump channel is the L²(ν) class of e ↦ U_s(ω,e), with the junk\nvalue 0 where that function is not square integrable. Under the paper's integrability\nE∫_0^T∫_E|U|² dν dt < ∞ this exceptional set is dt⊗dP-null. So it changes neither the\ntime-integrated identities nor the law μ_s for a.e. s. That is the paper's own reading, through\npredictable representatives (eq:fubiniiso, Lemma A.1). (3) Time ranges over ℝ, and the\nstatements restrict to [0,T]."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:01:22Z",
+  "disagreements": "No disagreement on the substance. The author's entry (acceptance/review/definitions.md) records only the review marker and no comparison with the paper, so it does not state what I relied on: the U-channel goes through uLift, with junk 0 on a dt⊗dP-null set under the paper's integrability, and Θ_s^- is a separate definition."
+ },
+ "submitted_at": "2026-10-17T15:01:50Z",
+ "issue_draft": null
+}

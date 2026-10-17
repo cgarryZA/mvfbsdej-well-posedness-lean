@@ -119,10 +119,10 @@ theorem rem_generalrank_wp : PaperSpec.A.rem_generalrank_wp.{u, v, w} := by
   refine ⟨(thm_cwp 𝒢₀ ν n m d P D h𝒢₀ hind₀ hn hm hd T hT L α β₁ β₂ G _ ξ₀ hJp
       h22' h23' hG h25').1, fun X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ h₁ h₂ => (thm_uniq 𝒢₀ ν n m
       d P D h𝒢₀ hind₀ hn hm hd T hT L α β₁ β₂ G _ hJp h23' hG h25' ξ₀ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂
-      h₁ h₂).1, L, h23',
-    fun L₂ C₂ ξ₂ hJ₂ h22₂ h23₂ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ h₁ h₂ => hstab 𝒢₀ ν n m d P D h𝒢₀ hind₀
-      hn hm hd T hT L L₂ α β₁ β₂ G _ C₂ ξ₀ ξ₂ hJp h22' h23' hG h25' hJ₂ h22₂ h23₂ X₁ X₂ Y₁ Y₂
-      Z₁ Z₂ U₁ U₂ h₁ h₂⟩
+      h₁ h₂).1,
+    fun L' hL' L₂ C₂ ξ₂ hJ₂ h22₂ h23₂ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ h₁ h₂ => hstab 𝒢₀ ν n m d P D h𝒢₀
+      hind₀ hn hm hd T hT L' L₂ α β₁ β₂ G _ C₂ ξ₀ ξ₂ hJp h22' hL' hG h25' hJ₂ h22₂ h23₂ X₁ X₂ Y₁
+      Y₂ Z₁ Z₂ U₁ U₂ h₁ h₂⟩
 
 /-- **The hypotheses of Remark 3.7 hold at the instance of Corollary 3.6.** At the instance of
 `Dissertation.cor_robust_hypotheses` (`n = m = 1`, `G = 1`), the baseline satisfies

@@ -1,0 +1,84 @@
+### A:sec:examples: Dissertation.PaperSpec.A.sec5_limin
+Pins: manuscript A None; project 8b7dc67f842cfe4e558dbac79ab38a26a6d07eac; hash ed839d34f480cba132884b458e231942 (pl-fp-v1:fd036e103f5368cf4f20517beaf40eb130251cb1b72529ed48017c688017ea08)
+Reviewer: claude-reviewer (model, claude, self-declared); 2026-10-17T12:25:43Z; same model family as the author: yes
+Phase 1 specification (locked 2026-10-17T12:24:11Z):
+# Reading: sec5_limin
+
+Paper (§5 preamble, line 1826): "Theorem 3.5 permits broad law dependence; the restrictive
+hypothesis is the dissipativity of Assumption 2.5, which ... cannot be traded for Lipschitz
+continuity alone. The jump system of [LiMin, Example 3.2] is linear, hence Lipschitz, and is shown
+there to admit no adapted solution on the horizon T = 3 pi / 4."
+
+I consulted the cited source (arXiv 1812.10254, Li-Min, Example 3.2; downloaded PDF, text
+extracted): m = n = d = 1,
+  dx(t) = E[y(t)] dt + dB_t + int_E k(t,e) mu~(dt,de),
+  -dy(t) = E[x(t)] dt - z(t) dB_t - int_E k(t,e) mu~(dt,de),   t in [0, 3pi/4],
+  x(0) = 1,  y(3pi/4) = -E[x(3pi/4)];
+nonexistence: (E x, E y) would solve X' = Y, Y' = -X, X(0) = 1, Y(3pi/4) = -X(3pi/4), which has
+no solution. In the present paper's notation: b = m_Y(mu), sigma = 1, h(e) = u(e) (the jump
+coefficient equals the backward jump integrand), f = m_X(mu), g(x, rho) = -barycentre(rho),
+xi0 = 1, T = 3pi/4. (Means: X(0) = x0, general solution X = x0 cos t + c sin t, the terminal
+condition gives x0 (cos T - sin T) = -c (cos T + sin T), at T = 3pi/4: -sqrt2 x0 = 0, so any
+initial datum of nonzero mean is obstructed.)
+
+Faithful formal statement:
+- Setting: standing basis with n = m = d = 1, any (sigma-finite) nu (LiMin's Levy measure is the
+  nu of the setting; the obstruction is through means and does not depend on nu), T = 3pi/4.
+- The system above (with its own coefficient definitions matching b = m_Y, sigma = 1, h = u,
+  f = m_X, g = -b(rho)); a different system would be unfaithful.
+- Claims: (a) "linear, hence Lipschitz": (2.3) and Ass. 2.2 (origin values: sigma(.,0,delta_0) = 1
+  in L^2(0,T), others 0; xi0 = 1 in L^2(F_0)) and Ass. 2.3 for some L; Ass. 2.4 with G = 1 may be
+  included. (b) No solution: there is no solution of (1.1) on [0, 3pi/4] with initial datum 1
+  -- in the paper's solution class S at least (LiMin: "no adapted solution"; a weaker solution
+  class makes the claim stronger). Generalising xi0 = 1 to any xi0 in L^2(F_0) with E xi0 != 0 is
+  a harmless broadening.
+- Implicit (the point of the sentence): Ass. 2.5 fails for this system (otherwise Thm 3.5 would
+  give a solution) -- optional; follows from (b) and Thm 3.5.
+- Non-vacuity: the existential/negative form needs a basis witness.
+Comparison (verdict recorded 2026-10-17T12:25:34Z):
+# Comparison: sec5_limin
+
+Lean (Sec5Preamble.lean:32): for every basis (any sigma-finite nu on countably generated E, d = 1,
+G0 independent): with liMinCoeffs nu (b = (mean mu).Y, sigma = 1, h = u, f = (mean mu).X,
+g(x, rho) = -barycentre rho) on T = 3pi/4: JointBorel; Assumption22 for every deterministic
+initial datum x0; exists L with Assumption23; and for every xi0 : Omega -> R^1 with E xi0 != 0 there
+is no tuple (X, Y, Z, U) with WeakSolution (an H_weak tuple satisfying (1.1) over the §2
+filtration, h at the predictable tuple, Law X_T in P_2).
+
+Against my reading:
+- The system: liMinCoeffs is exactly Li-Min's Example 3.2 as I extracted it from the cited source
+  (dx = E[y] dt + dB + int k dmu~, -dy = E[x] dt - z dB - int k dmu~, y(T) = -E[x(T)]),
+  translated: b = m_Y, sigma = 1, h = u, f = m_X, g = -b(rho). Correct.
+- Horizon T = 3pi/4, d = n = m = 1: yes; nu arbitrary sigma-finite (LiMin's Levy measure is the
+  nu of the setting; the obstruction is through means): yes.
+- "Linear, hence Lipschitz": (2.3), Ass. 2.2 (for every deterministic datum, x0 = 1 included),
+  Ass. 2.3 with some L: yes.
+- "No adapted solution": no WeakSolution, i.e. no tuple of H_weak satisfying (1.1); since a
+  solution in S is a WeakSolution (PaperSolution.toWeakInt), this implies no solution in S, as
+  the docstring says. The class H_weak is the natural "adapted (square-integrable) solution"
+  class, so this is at least as strong as the cited claim.
+- Generalisation: from x(0) = 1 to every xi0 with E xi0 != 0 (non-integrable xi0 have junk mean 0
+  and are excluded by the hypothesis; xi0 = 1 is included). Broader.
+- Non-vacuity: WeakSolution is satisfiable for other systems (rem_uniq_singular, proved, exhibits
+  one), so "no WeakSolution" is not an artefact of an unsatisfiable predicate; witness
+  sec5_limin_hypotheses gives a basis (nu = dirac 0, G0 = bot) and xi0 = 1 with nonzero mean.
+- Not stated: that Ass. 2.5 fails for this system (implicit in "cannot be traded"); it follows
+  from the nonexistence and Thm 3.5.
+
+Verdict: broader.
+Witness: —
+Verdict: broader — The proposition is broader than the printed claim in two harmless directions: it excludes
+solutions for every initial datum xi0 with nonzero mean (the cited example has x(0) = 1), and it
+excludes every tuple of H_weak satisfying (1.1) (not only solutions in S); it also holds over every
+basis with d = 1 and any sigma-finite nu. The printed claim is the instance xi0 = 1 (constant, mean
+1 != 0), on the standing basis with LiMin's Levy measure as nu: the system of [LiMin, Ex. 3.2]
+(liMinCoeffs: b = m_Y(mu), sigma = 1, h = u, f = m_X(mu), g = -b(rho), checked against the cited
+source) satisfies (2.3), Assumption 2.2 (with x0 = 1) and Assumption 2.3, and has no solution on
+T = 3pi/4 (a solution in S is a WeakSolution, PaperSolution.toWeakInt).
+Disagreements with the author's review (shown 2026-10-17T12:25:34Z): Agreement on the correspondence. Classification differs: the author records "faithful"; the
+author's own readings say the proposition excludes solutions for every initial datum of nonzero
+mean (Li-Min: x(0) = 1) and every H_weak tuple (not only solutions in S), which is a
+generalisation of the printed claim, so I record "broader" (instantiation: xi0 = 1). I also
+checked liMinCoeffs independently against the cited source (arXiv 1812.10254, Example 3.2:
+dx = E[y] dt + dB + int k dmu~, -dy = E[x] dt - z dB - int k dmu~, x(0) = 1, y(3pi/4) = -E[x(3pi/4)])
+and it matches.

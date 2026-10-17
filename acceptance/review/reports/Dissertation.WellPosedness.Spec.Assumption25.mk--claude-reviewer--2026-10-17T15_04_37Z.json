@@ -1,0 +1,69 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.Spec.Assumption25.mk",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.Spec.Assumption25.mk",
+  "lean": [
+   "Dissertation.WellPosedness.Spec.Assumption25.mk"
+  ],
+  "claims": [
+   "A:ass:mono",
+   "A:cor:robust",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:rem:diag-mono",
+   "A:rem:generalrank",
+   "A:rem:intrinsic",
+   "A:sec4:horizon-not-contractive",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "0f5949362ae546510000000000000000",
+  "fingerprint": "pl-fp-v1:861a2bc3bed1c760eb259ca5cfa0f71033467350fd6dd6e03286f89a85c27864",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Unit: Assumption25.mk, the constructor of Assumption25 (Assumption 2.5). Its type must take\nexactly: the terminal inequality E<dg_T, G dX_T> >= alpha E|G dX_T|^2 for all square-integrable\nF_T-measurable X_T, X'_T (laws induced); the interior inequality (2.7) in expectation for a.e. t\nand all pairs of diagonal inputs at t; the constant pattern alpha, beta1, beta2 >= 0,\nalpha+beta1 > 0, beta1+beta2 > 0, m<n -> beta1>0, m>n -> alpha, beta2 > 0; and return\nAssumption25 F P T G alpha beta1 beta2 C. Nothing else (no full-rank or Lipschitz premise).",
+  "locked_at": "2026-10-17T12:36:07Z"
+ },
+ "comparison": {
+  "text": "Assumption25.mk takes: the terminal clause (for strongly F_T-measurable square-integrable X_T, X'_T,\nintegrability of the pairing and E<dg_T, G dX_T> >= alpha E|G dX_T|^2; the printer drops the\nsigma-algebra of StronglyMeasurable, the source field is StronglyMeasurable[F T]); the interior\nclause (for a.e. t in [0,T], Mono27At F P t G beta1 beta2 C); Constants n m alpha beta1 beta2; and\nreturns Assumption25. Exactly my reading, with the same representation choices as Assumption25\n(existence of the expectations of the pairings required; strongly measurable representatives).\nNo full-rank or Lipschitz premise.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:02:18Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "As for Assumption25: the expectations of the two pairings are required to exist (automatic under\nAssumption 2.3 and (2.3), always assumed with 2.5); inputs are strongly measurable\nrepresentatives of the L^2 classes; Bochner expectations of integrable functions."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:04:21Z",
+  "disagreements": "No disagreement on substance. The author's review is an empty marker with no recorded\ncomparison; the representation choices listed in my detail are not recorded there."
+ },
+ "submitted_at": "2026-10-17T15:04:37Z",
+ "issue_draft": null
+}

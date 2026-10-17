@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.rem_generalrank",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.rem_generalrank",
+  "lean": [
+   "Dissertation.PaperSpec.A.rem_generalrank"
+  ],
+  "claims": [
+   "A:rem:generalrank"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba1bcd1d82734738c5b",
+  "fingerprint": "pl-fp-v1:e269f49dfdfbfcc0ec101c99beac867010eebc6017e476e2af7afd4d455f333e",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of Remark 3.7 (rem:generalrank), clause: assumption transfer for arbitrary m, n.\n\nThe remark says Corollary 3.6's argument works for arbitrary m, n when the margin and (3.4) are both\nrecorded in the weighted quantities of (2.12). The clause under review is the first conclusion of\nCorollary 3.6 transposed:\nSetting: standing setting, T > 0, arbitrary n, m, d >= 1 (no m = n), G in R^{m x n} of full rank.\nHypotheses:\n - baseline (b0, sigma0, h0, f0, g) with xi0 satisfies (2.3)-Borel, Assumptions 2.2, 2.3 (some L0),\n   2.4, 2.5 with alpha, beta1, beta2 (admissible constants incl. rank side conditions);\n - the weighted margin (2.12) with c_diss > 0: interior pairing <= -beta1 E[|G^T dY|^2 + |G^T dZ|^2_F +\n   ||G^T dU||^2] - beta2 E|G dX|^2 - c_diss E[|G^T dY|^2 + |G^T dZ|^2_F + ||G^T dU||^2 + |G dX|^2],\n   a.e. t, all diagonal pairs;\n - perturbations p_b, p_sigma, p_h, p_f with origin integrability (2.2) and diagonal interior\n   Lipschitz (2.3) with some constant;\n - (3.4) recorded in the weighted quantity: E[perturbation pairing] <= c_pert E[|G^T dY|^2 +\n   |G^T dZ|^2_F + ||G^T dU||^2 + |G dX|^2], c_pert >= 0, a.e. t, all diagonal pairs;\n - c_pert < c_diss.\nConclusion: the perturbed system (b0+p_b, sigma0+p_sigma, h0+p_h, f0+p_f, g) with the same xi0\nsatisfies Assumptions 2.2-2.5 with the same G, alpha, beta1, beta2 (and some Lipschitz constant,\nL0 + L_p), and (2.12) with margin c_diss - c_pert.\n(The well-posedness conclusion is a separate clause; the c_pert = ||G|| L_p part is not part of\nthis clause.)",
+  "locked_at": "2026-10-17T12:12:24Z"
+ },
+ "comparison": {
+  "text": "Comparison: rem_generalrank vs Remark 3.7 (assumption-transfer clause).\nSetting: standing setting, n, m, d > 0 arbitrary (no m = n), T > 0, G : Matrix (Fin m) (Fin n).\nHypotheses: JointBorel C; Assumption22 C xi0; Assumption23 L0 C; G.rank = min m n (full rank);\nAssumption25 G alpha beta1 beta2 C (with Constants incl. rank side conditions); Margin212 cdiss C\n(weighted margin (2.12): extra -c E[|G^T dY|^2 + |G^T dZ|^2 + ||G^T dU||^2 + |G dX|^2]), cdiss > 0;\nOriginValues p; LipInterior Lp p, Lp >= 0; PairingBound34W cpert p ((3.4) with right-hand side\nc E[|G^T dY|^2 + |G^T dZ|^2_F + ||G^T dU||^2 + |G dX|^2]), cpert >= 0; JointBorel (C.perturb p);\ncpert < cdiss. All match the reading (Margin212 and PairingBound34W checked against (2.12) and the\nweighted quantity term by term; integrability of the pairing expectations is required, automatic\nunder 2.3 + Borel measurability).\nConclusion: Assumption22 (C.perturb p) xi0, exists L with Assumption23 L (C.perturb p), G full rank,\nAssumption25 G alpha beta1 beta2 (C.perturb p), Margin212 (cdiss - cpert) (C.perturb p). This is\n\"Assumptions 2.2-2.5 with the same G, alpha, beta1, beta2 and margin c_diss - c_pert\" in the weighted\nform. Assumption 2.3 is itself \"there is L >= 0\", so the existential L is faithful here.\nJointBorel (C.perturb p) as hypothesis: equivalent, given JointBorel C, to the standing Borel\nmeasurability of the perturbations; harmless.\nWitness rem_generalrank_hypotheses: the cor_robust instance (n = m = 1, G = 1, affine baseline with\nbeta = 2, margin 1, feedback perturbation cpert = 1/2): hypotheses met. It does not exercise m != n,\nbut the hypotheses are shown satisfiable at an intended instance.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T12:12:52Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "1. The expectations in Assumption 2.5, (2.12) and the weighted (3.4) are Bochner integrals with\n   integrability of the pairing required; under Assumption 2.3 and Borel measurability the pairings\n   are integrable for L2 inputs, so nothing is lost.\n2. Borel measurability of the perturbations is hypothesised as JointBorel of the perturbed system;\n   given JointBorel of the baseline the two are equivalent.\n3. The common TupleH / w2H / lawP2 encodings (channel-sum norms and Hilbert W2 in the Lipschitz\n   bounds; lawP2 a law of finite second moment) as in Assumptions 2.2-2.5."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T12:12:52Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-17T12:13:00Z",
+ "issue_draft": null
+}

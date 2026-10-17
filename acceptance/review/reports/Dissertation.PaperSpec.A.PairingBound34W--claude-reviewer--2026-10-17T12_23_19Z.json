@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.PaperSpec.A.PairingBound34W",
+  "kind": "def",
+  "name": "Dissertation.PaperSpec.A.PairingBound34W",
+  "lean": [
+   "Dissertation.PaperSpec.A.PairingBound34W"
+  ],
+  "claims": [
+   "A:rem:generalrank"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "2b1db421079e9e76f26e2afdddf6a5b4",
+  "fingerprint": "pl-fp-v1:683e0ac0a281424ee4e2bab8a001690f4a140d723462f6fc4a511f402726e476",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "# Reading: (3.4) recorded in the weighted quantities (def:Dissertation.PaperSpec.A.PairingBound34W)\n\nPaper: Corollary 3.6, (3.4) = eq:pertpair: for some c_pert ≥ 0, for a.e. t ∈ [0,T] and all\n(Θ,μ), (Θ',μ') ∈ D_t,\n  E[⟨δp_b, GᵀδY⟩ + ⟨δp_σ, GᵀδZ⟩_F + ⟨−δp_f, GδX⟩ + ∫_E ⟨δp_h(e), GᵀδU(e)⟩ ν(de)]\n    ≤ c_pert E[|δX|² + |δY|² + |δZ|_F² + ‖δU‖²]   (unweighted, m = n).\nRemark 3.7 (general rank): \"(3.4) recorded in those [weighted] quantities\", i.e. with the\nright-hand side c_pert E[|GᵀδY|² + |GᵀδZ|_F² + ‖GᵀδU‖²_{L^2(ν)} + |GδX|²], the weighted\nquantities of (2.12). δp_ψ = p_ψ(t,Θ,μ) − p_ψ(t,Θ',μ') for the perturbation coefficients\np = (p_b, p_σ, p_h, p_f) (same signatures as b, σ, h, f).\n\nA faithful Lean definition: parameters (filtration, P, T, G, c_pert, the perturbation\ncoefficients); for a.e. t ∈ [0,T] and all pairs of D_t (F_t-measurable L^2 tuples with their\nlaws), the pairing of the perturbation differences (same pairing as (2.7), with p in place of\n(b,σ,h,f)) has expectation at most c_pert times the expectation of the weighted sum (Gᵀ on Y, Z,\nU; G on X). Integrability of the pairing may be required (as in the repository's convention),\nharmless under the Lipschitz condition on p. c_pert ≥ 0 may be a separate hypothesis.",
+  "locked_at": "2026-10-17T12:22:51Z"
+ },
+ "comparison": {
+  "text": "# Comparison: PairingBound34W\n\nLean (PaperSpec/A/Sec3GeneralRank.lean:36-51): for ℱ, P, T, G, c and a perturbation\n`p : Coeffs ν n m d` (its b, σ, h, f fields are p_b, p_σ, p_h, p_f; its g field is unused):\n∀ᵐ t ∂(Lebesgue on [0,T]), ∀ q, q' ∈ diagonalInputs … t,\n  Integrable (pairing27 G p t …) ∧ E[pairing27 G p t …]\n    ≤ c · E[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²_{L^2(ν)} + |G δX|²].\n\n- Left side: pairing27 with p in place of C: ⟨δp_b, GᵀδY⟩ + ⟨δp_σ, GᵀδZ⟩_F + ⟨−δp_f, GδX⟩ +\n  ∫⟨δp_h(e), GᵀδU(e)⟩ν(de), δp_ψ = p_ψ(t,θ,μ) − p_ψ(t,θ',μ'). The pairing of (3.4). Good.\n- Right side: c times the expectation of the four weighted quantities of (2.12) (Gᵀ on Y, Z,\n  U; G on X). This is (3.4) \"recorded in the weighted quantities\" (Remark 3.7). Good.\n- Quantifiers: a.e. t, then all pairs of D_t (as in Margin212). Good.\n- Integrability conjunct: added, as in the repository's Ass. 2.5 convention; for perturbations\n  satisfying the diagonal Lipschitz condition (hypothesis of Cor. 3.6/Rem. 3.7) the pairing is\n  integrable for L^2 inputs. Harmless.\n- c_pert ≥ 0: not part of the definition (belongs to the user). Fine.\n\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T12:23:08Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices:\n1. The perturbation (p_b, p_σ, p_h, p_f) is packaged as a `Coeffs` record whose terminal field is\n   unused by the pairing; only the four interior fields enter.\n2. The bound is accompanied by integrability of the pairing (the expectation exists), the\n   repository's convention for Assumption 2.5; for perturbations satisfying the diagonal\n   Lipschitz condition required by Cor. 3.6 / Remark 3.7 this holds for all L^2 diagonal inputs.\n3. D_t represented by strongly F_t-measurable L^2 maps with their lawP2 laws (as in Margin212);\n   the jump pairing through representatives of L^2(ν) elements (equal to the L^2 inner product)."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T12:23:08Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-17T12:23:19Z",
+ "issue_draft": null
+}

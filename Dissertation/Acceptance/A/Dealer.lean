@@ -40,8 +40,6 @@ import Dissertation.WellPosedness.Stability.LinearCongr
   Lipschitz bound of the crowding correction.
 * `Dissertation.Acceptance.A.ex_dealer_twopoint`, `ex_dealer_not_mean_corr`, `ex_dealer_affine` —
   beyond the mean.
-* `Dissertation.Acceptance.A.ex_dealer_not_mean_false` — at `ν = 0` the crowding correction
-  vanishes, so it is a function of the mean.
 * `Dissertation.Acceptance.A.ex_dealer_marks` — the mark measure.
 * `Dissertation.Acceptance.A.ex_dealer_unit_hypotheses`, `ex_dealer_marks_hypotheses` — the
   hypotheses hold on the mark space of the example.
@@ -96,14 +94,6 @@ theorem ex_dealer_twopoint : PaperSpec.A.ex_dealer_twopoint.{v} := by
   refine ⟨rfl, rfl, ?_⟩
   congr 1
   ring
-
-/-- **Example 5.5, the crowding correction as no function of the mean, is false as printed at
-`ν = 0`.** With the intensity `ν = 0` on a one-point mark space the fibre `L²(ν)` is `{0}`, so
-`A_λ(u) = Φ(∫ v λ(dv), u)` holds for every `λ` and `u` with `Φ = 0`. -/
-theorem ex_dealer_not_mean_false : ¬ PaperSpec.A.ex_dealer_not_mean.{v} := by
-  intro h
-  exact (h (E := PUnit.{v + 1}) (0 : Measure PUnit.{v + 1})).1
-    ⟨fun _ _ => 0, fun _ _ => Subsingleton.elim _ _⟩
 
 /-- The crowding gradient is not homogeneous: `∇V(2 w) ≠ 2 ∇V(w)` for a unit vector `w`. -/
 theorem crowdGrad_two_smul_ne {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℝ F]

@@ -1,0 +1,75 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.System.diagonalInputs",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.System.diagonalInputs",
+  "lean": [
+   "Dissertation.WellPosedness.System.diagonalInputs"
+  ],
+  "claims": [
+   "A:ass:lip",
+   "A:ass:mono",
+   "A:cor:robust",
+   "A:def:diag",
+   "A:eq:coeffint",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:rem:cwp-class",
+   "A:rem:diag-mono",
+   "A:rem:generalrank",
+   "A:rem:intrinsic",
+   "A:sec4:horizon-not-contractive",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "43fba323e088abc4f9c7fc5ffd25f8a4",
+  "fingerprint": "pl-fp-v1:e929a09b7f57a197d5e3301d9ba11748abe814e45fccc79d37262e1a2721d79d",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for diagonalInputs (paper Definition 2.1, the diagonal D_t).\nD_t := {(Theta, Law(Theta)) : Theta in L^2(Omega, F_t; H)} subset L^2(Omega,F_t;H) x P_2(H).\nFaithful Lean: the set of pairs (Theta, mu) with Theta F_t-measurable, square-integrable H-valued, and\nmu = Law_P(Theta) (pushforward of P by Theta), as an element of P_2(H). \"for all (Theta,mu),(Theta',mu') in\nD_t\" then means for all Theta, Theta' in L^2(Omega, F_t; H) with mu, mu' their laws; both on the same\nprobability space (the standing one). Edge cases: F_t-measurability (not just F); t in [0,T];\nthe law must be the true law (not a junk value) for L^2 tuples.",
+  "locked_at": "2026-10-17T12:33:35Z"
+ },
+ "comparison": {
+  "text": "Comparison for diagonalInputs (System/DiagonalInputs.lean:44):\ndiagonalInputs nu n m d F P t := {p | StronglyMeasurable[F t] p.1 /\\ MemLp p.1 2 P /\\ p.2 = lawP2 P p.1}, a set of\npairs (Theta : Omega -> TupleH nu n m d, mu : P2 (TupleH nu n m d)).\nAgainst my reading (Def 2.1: D_t = {(Theta, Law Theta) : Theta in L^2(Omega, F_t; H)}):\n- F_t-measurability: strongly F_t-measurable maps (representatives of L^2(Omega,F_t;H) classes) -- matches;\n  the paper's elements are a.s. classes, and every class has such a representative; every condition\n  imposed along D_t (a.s. inequalities, expectations, laws) is invariant under a.s. modification, so\n  quantifying over representatives is equivalent.\n- Square integrability: MemLp 2 for the type's (max) norm, equivalent to E|Theta|_H^2 < inf. Matches.\n- mu = Law(Theta): lawP2 P Theta, which on MemLp tuples is the pushforward P.map Theta (no junk). Matches.\n- Same probability space and filtration as the standing ones (parameters F, P). t is any real; the\n  restriction to t in [0,T] is in the assumptions that use it.\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:04:00Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:05:47Z",
+  "disagreements": "none (the author's excerpt shown for this unit is a marker and at most a section heading, with no\nitem-level reading to compare against; my comparison file records the representation choices in\ndetail)."
+ },
+ "submitted_at": "2026-10-17T15:06:18Z",
+ "issue_draft": null
+}

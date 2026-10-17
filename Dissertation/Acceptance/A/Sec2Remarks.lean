@@ -11,6 +11,7 @@ import Dissertation.WellPosedness.Remarks.JumpDichotomy
 import Dissertation.WellPosedness.Remarks.Pointwise
 import Dissertation.WellPosedness.Remarks.Margin
 import Dissertation.WellPosedness.Remarks.CouplingForm
+import Dissertation.WellPosedness.Remarks.CouplingFormIntegrable
 import Dissertation.WellPosedness.Remarks.CouplingRealisation
 import Dissertation.WellPosedness.Remarks.UniformVariable
 
@@ -108,7 +109,22 @@ theorem integral_gWeightSq_eq {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω}
 
 /-- Remark 2.8, the pointwise condition gives Assumption 2.5. -/
 theorem rem_diag_mono : PaperSpec.A.rem_diag_mono.{u, v, w} := by
-  intro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ _ T L β₁ β₂ G C hJ h23 hpw
+  intro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ _ T β₁ β₂ G C hJ hpw
+  refine ⟨?_, fun L h23 => ?_⟩
+  · filter_upwards [hpw] with t ht p hp p' hp'
+    obtain ⟨-, h2, -⟩ := hp
+    obtain ⟨-, h2', -⟩ := hp'
+    have hA := ((integrable_norm_sq_comp_sub_Y (GX Gᵀ) h2 h2').fun_add
+      (integrable_norm_sq_comp_sub_Z (GZ Gᵀ) h2 h2')).fun_add
+      (integrable_norm_sq_comp_sub_U (GU Gᵀ ν) h2 h2')
+    have hB := integrable_norm_sq_comp_sub_X (GX G) h2 h2'
+    have hR := (hA.const_mul (-β₁)).sub (hB.const_mul β₂)
+    have hle := fun ω => ht (p.1 ω) (p'.1 ω) p.2 p'.2
+    refine ⟨lt_of_le_of_lt (lintegral_mono fun ω => ENNReal.ofReal_le_ofReal (hle ω))
+      hR.lintegral_lt_top, fun hi => ?_⟩
+    refine (integral_mono hi hR hle).trans_eq ?_
+    refine (integral_sub (hA.const_mul _) (hB.const_mul _)).trans ?_
+    rw [integral_const_mul, integral_const_mul]
   have hL := lipInterior_iff_diagonalLipschitzH.mp h23.interior
   have hB := (jointBorel_iff.mp hJ).1
   have hM := (pointwise_spec_iff.mp hpw).diagonalMonotone_of_coeffBorelW2 hL hB
@@ -171,10 +187,7 @@ theorem rem_intrinsic_basis : PaperSpec.A.rem_intrinsic_basis.{u, v, w} := by
         hU').mpr (lipInterior_iff_diagonalLipschitzH.mp hi)),
         lipTerminal_iff_terminalLipschitz.mpr ((terminalLipschitz_congr_basis hg hU hU' hT).mpr
           (lipTerminal_iff_terminalLipschitz.mp ht))⟩
-  refine ⟨h23, fun h => ?_⟩
-  rw [assumption25_iff hJ h, assumption25_iff hJ (h23.mp h)]
-  exact and_congr (diagonalMonotone_congr_basis hB hU hU')
-    (and_congr (terminalMonotone_congr_basis hg hU hU' hT) Iff.rfl)
+  exact ⟨h23, assumption25_congr_basis hJ hU hU' hT⟩
 
 /-- Remark 2.11, the reduced constants. -/
 theorem rem_margin_reduce : PaperSpec.A.rem_margin_reduce.{u, v, w} := by

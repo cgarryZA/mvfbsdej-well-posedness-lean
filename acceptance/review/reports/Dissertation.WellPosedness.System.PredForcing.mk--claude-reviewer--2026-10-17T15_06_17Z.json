@@ -1,0 +1,59 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.System.PredForcing.mk",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.System.PredForcing.mk",
+  "lean": [
+   "Dissertation.WellPosedness.System.PredForcing.mk"
+  ],
+  "claims": [
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:sec4:WP-def"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "72571516b42bad8d0000000000000000",
+  "fingerprint": "pl-fp-v1:28aa56fd208183b2889cce407bf67882b0603543e6ad6c0016ba12dadfcd6c0f",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for PredForcing.mk (constructor of the structure PredForcing).\nSame notion as PredForcing (square-integrable forcing: progressive q^b, q^sigma, q^f in L^2(Omega x [0,T]),\npredictable q^h in L^2(dP dt nu), q^g_T in L^2(F_T)). The constructor takes exactly the structure's\nfields; faithful iff the structure is.",
+  "locked_at": "2026-10-17T12:33:34Z"
+ },
+ "comparison": {
+  "text": "Comparison for PredForcing.mk: the constructor takes the parent Forcing F P nu T q and qh_pred (each\ncoordinate of q^h marked predictable) and returns PredForcing F P nu T q -- exactly the structure's\nfields. Meaning as reviewed under PredForcing (faithful with the representation choices there).",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T12:42:30Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices (harmless):\n1. Forcing components are processes on R vanishing off [0,T] (encoding of processes on [0,T]).\n2. Joint measurability is required besides progressive / marked predictable measurability (implied).\n3. The marked predictable sigma-algebra lacks the paper's time-0 cells, forcing q^h(0) = 0; time 0 is\n   Lebesgue-null and every paper q^h has an a.e.-equal version in the class.\n4. q^g_T is required strongly F_T-measurable (an exact representative of its L^2(F_T) class).\n5. q^h is required both marked progressive (inherited from Forcing) and marked predictable; the\n   former follows from the latter.\nUnder WP's \"for every forcing\", each paper forcing is represented by one in this class with the\nsame integrals in (4.1), so the quantifier is equivalent to the paper's."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:05:46Z",
+  "disagreements": "none (the author's excerpt shown for this unit is a marker and at most a section heading, with no\nitem-level reading to compare against; my comparison file records the representation choices in\ndetail)."
+ },
+ "submitted_at": "2026-10-17T15:06:17Z",
+ "issue_draft": null
+}

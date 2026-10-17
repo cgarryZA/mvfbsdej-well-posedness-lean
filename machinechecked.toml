@@ -28,7 +28,12 @@ modules = [
   "Dissertation.PaperSpec.A.Sec5Brownian",
   "Dissertation.PaperSpec.A.Sec5FreeLaw",
   "Dissertation.PaperSpec.A.Sec5Preamble",
+  "Dissertation.PaperSpec.A.AsPrinted",
+  "Dissertation.PaperSpec.A.Sec5Regimes",
+  "Dissertation.PaperSpec.A.Sec5Dealer",
   "Dissertation.PaperSpec.A.Sec5Sharp",
+  "Dissertation.PaperSpec.A.Sec5BrownianReduction",
+  "Dissertation.PaperSpec.A.Sec4Supremum",
   "Dissertation.PaperSpec.A.Setting",
   "Dissertation.Acceptance.A.AppA",
   "Dissertation.Acceptance.A.Dealer",
@@ -52,6 +57,13 @@ modules = [
   "Dissertation.Acceptance.A.Sec5Sharp",
   "Dissertation.Acceptance.A.Witness",
   "Dissertation.Acceptance.A.WitnessNonzero",
+  "Dissertation.Acceptance.A.AsPrinted",
+  "Dissertation.Acceptance.A.Sec3Complete",
+  "Dissertation.Acceptance.A.Sec5Dealer",
+  "Dissertation.Acceptance.A.WitnessHyp",
+  "Dissertation.Acceptance.A.Sec5BrownianReduction",
+  "Dissertation.Acceptance.A.Sec4Supremum",
+  "Dissertation.Acceptance.A.WitnessSec4",
 ]
 scope_roots = ["Dissertation", "LevyStochCalc"]
 spec_prefix = "Dissertation.PaperSpec"

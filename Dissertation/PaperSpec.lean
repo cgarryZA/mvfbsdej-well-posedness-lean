@@ -24,6 +24,11 @@ import Dissertation.PaperSpec.A.Sec5Sharp
 import Dissertation.PaperSpec.A.Sec5Brownian
 import Dissertation.PaperSpec.A.Sec5FreeLaw
 import Dissertation.PaperSpec.A.Sec5Preamble
+import Dissertation.PaperSpec.A.Sec5Dealer
+import Dissertation.PaperSpec.A.Sec5Regimes
+import Dissertation.PaperSpec.A.AsPrinted
+import Dissertation.PaperSpec.A.Sec5BrownianReduction
+import Dissertation.PaperSpec.A.Sec4Supremum
 
 /-!
 # The statements of the paper

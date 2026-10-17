@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.mk",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.mk",
+  "lean": [
+   "Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.mk"
+  ],
+  "claims": [
+   "A:sec4:horizon-not-contractive"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "a259997f09ec23780000000000000000",
+  "fingerprint": "pl-fp-v1:f0b3e5adde3267ca80b80dd9ffabeb9ce8f05a0ec291d4dd10f24786f96de8a2",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Unit: def LinearBSDEJ.mk (constructor of the structure LinearBSDEJ, namespace BrownianPoisson).\nUsed by claim A:sec4:horizon-not-contractive (§4 intro, line 886), which concerns the frozen-\ncoefficient map Phi_lambda of Lemma 4.2 (lem:small), whose backward half is the \"frozen linear\nBSDE\" (eq:frozenbwd), and whose difference is the linear BSDEJ (eq:dYlin) of Lemma 4.1.\n\nPaper notion (eq:dYlin / eq:frozenbwd): a linear BSDE with jumps on the standing\nBrownian-Poisson basis (W d-dim BM, N Poisson random measure with sigma-finite intensity\ndt nu(de), filtration = usual augmentation of sigma(W, N, F_0)): data\n  * terminal value xi in L^2(Omega, F_T; R^m),\n  * driver phi in L^2(Omega x [0,T]; R^m), progressively measurable (an exogenous process,\n    the driver does NOT depend on (Y,Z,U) -- that is what \"linear\"/\"frozen\" means here),\nand a solution triple\n  * Y cadlag adapted R^m-valued,\n  * Z in H^2_W(0,T; R^{m x d}) predictable, E int |Z|_F^2 < inf,\n  * U in H^2_N(0,T; L^2(nu;R^m)) predictable (P x E-measurable representative), \n    E int ||U||^2 dt < inf,\nwith, a.s. for every t in [0,T],\n  Y_t = xi + int_t^T phi_s ds - int_t^T Z_s dW_s - int_t^T int_E U_s(e) Ntilde(ds,de).\n\nA faithful constructor: a structure whose fields are exactly these processes with these\nmeasurability/integrability conditions (relative to the standing filtration), and the\nbackward identity holding at every t (a.s., null set possibly depending on t is equivalent\nbecause both sides are cadlag), where the stochastic integrals are the Ito integral against\nthe given W and the compensated Poisson integral against the given N. Lemma 4.1 moreover\nconcludes Y in S^2, so S^2 need not be a field (it may be one if a hypothesis xi, phi in L^2\nis also carried). Junk-value issues to check: the stochastic integrals must be the genuine\nL^2 integrals (not 0 by a totality convention) on the integrands supplied; the drift\nintegral int_t^T phi must be the Lebesgue integral along paths (a.s. integrable); the\nfiltration must be the standing one.",
+  "locked_at": "2026-10-17T12:25:42Z"
+ },
+ "comparison": {
+  "text": "Comparison, LinearBSDEJ.mk (the constructor of the Prop-structure LinearBSDEJ, Hypotheses.lean:54).\n\nReading item -> Lean:\n* basis W, N, filtration: D : LevyDriver (d-dim BM W and PRM N with sigma-finite nu, independent);\n  the filtration is a parameter F with hFW (each W^j Brownian for F) and hFN (N Poisson for F).\n  The paper's filtration is one instance (the spec instantiates enlJoint, reviewed separately).\n  Parametric generality in F is fine for a definition.\n* xi in L^2(F_T): MemLp xi 2 P; F_T-measurability not required. Harmless: eqn at t = T gives\n  Y_T = xi a.s. (integral over Icc T T is 0, integral differences vanish), and Y_T is\n  F_T-measurable by Y_adapted, so xi is a.s. equal to an F_T-measurable variable.\n* phi in L^2(Omega x [0,T]): jointly measurable, progressive, energy finite, vanishing off [0,T].\n  Progressivity is stronger than the paper's bare L^2 in Lemma 4.1, but every driver the paper\n  feeds to the linear equation (lambda f(s,Theta_s,mu_s) + q^f, lambda delta f) is progressive.\n* Y cadlag adapted: Adapted F Y and every path right-continuous (left limits not asked).\n  Harmless: the right side of the equation has a cadlag modification, Y agrees with it a.s.\n  at each rational time, and both are right-continuous, so Y is a.s. cadlag.\n* Z in H^2_W predictable: coordinates jointly measurable, progressive, finite energy, vanishing off\n  [0,T]; Z : Fin d -> R is one row of the R^{m x d} integrand (the equation is scalar; the R^m\n  equation is m decoupled scalar ones, as Z dW and U Ntilde act row/coordinatewise).\n  Progressive versus predictable is harmless for the continuous Brownian integrator.\n* U in H^2_N predictable: a pointwise function Omega x R x E -> R, jointly measurable, marked\n  progressive, finite marked energy, vanishing off [0,T]. The compensated integral of the library\n  is the L^2 (isometric) integral, determined by the dt x dP x nu class of the integrand, and a\n  progressive integrand has a predictable version in that class; the paper itself reads every\n  Poisson integral through a P x E-measurable representative (eq:fubiniiso). Harmless.\n* Equation: for each t in [0,T], a.s., Y_t = xi + int_{[t,T]} phi - (I^W_T - I^W_t)\n  - (I^N_T - I^N_t), with I^W the library's multidimensional Ito integral (sum of coordinate L^2\n  integrals) and I^N the library's cadlag compensated Poisson integral, both for F. The null set\n  depends on t; equivalent to the paper's form (both sides cadlag up to modification). The\n  Bochner drift integral is genuine a.s. because finite energy makes phi(omega,.) in L^1[0,T]\n  for a.e. omega. Integral over Icc vs (t,T]: Lebesgue-null difference.\n* Vanishing off [0,T] of Z, U, phi: a normalisation; only values on [0,T] enter the equation.\n* No S^2 requirement on Y: matches Lemma 4.1, which concludes it.\n\nNo junk-value problem found: the stochastic integrals are fed the proofs of their own\nhypotheses (derived from vanishing + finite energy), so they are the genuine integrals.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T12:27:38Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices, each harmless:\n1. Scalar equation (Y real, Z a row Fin d -> R, U real-valued in the mark): the R^m-valued\n   linear BSDEJ is m decoupled scalar ones (users quantify over the component k).\n2. Filtration is a parameter F with W Brownian and N Poisson for F; the paper's filtration is\n   the instance used by the statements.\n3. Y adapted with right-continuous paths, left limits not asked: Y equals a.s. at each time a\n   cadlag modification of the right side, so it is a.s. cadlag.\n4. xi only MemLp 2, not F_T-measurable: the equation at t = T forces xi = Y_T a.s.\n5. phi, Z progressive and U marked progressive (pointwise function of the mark), not predictable:\n   the library integrals are L^2-isometric integrals of dt x dP (x nu) classes, which contain\n   predictable versions; the paper reads Poisson integrals through such representatives.\n   phi progressive is stronger than Lemma 4.1's bare L^2 drift, but all drivers the paper uses\n   are progressive.\n6. Z, U, phi vanish off [0,T]: normalisation, only values on [0,T] enter.\n7. Equation a.s. at each t (null set depending on t), equivalent to the a.s.-for-all-t form for\n   cadlag sides."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T12:27:38Z",
+  "disagreements": "The author's review is an empty marker (no text at acceptance/review/definitions.md:400): it\nrecords no comparison. No disagreement on substance; the representation choices listed in my\ndetail (scalar form, right-continuity only, xi not F_T-measurable, progressive rather than\npredictable integrands, vanishing off [0,T]) are not recorded by the author and should be."
+ },
+ "submitted_at": "2026-10-17T12:27:45Z",
+ "issue_draft": null
+}

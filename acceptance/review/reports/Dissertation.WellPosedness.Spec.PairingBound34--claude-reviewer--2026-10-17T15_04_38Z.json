@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.Spec.PairingBound34",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.Spec.PairingBound34",
+  "lean": [
+   "Dissertation.WellPosedness.Spec.PairingBound34"
+  ],
+  "claims": [
+   "A:cor:robust"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "2b1db421079e9e767580b40b6b9fa24b",
+  "fingerprint": "pl-fp-v1:66623bf41cb2c0125f636d80e162be349b2dc3e2fe4fbc5d09a996eb170c242f",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Unit: def Spec.PairingBound34 (the perturbation pairing bound (3.4), Corollary 3.6).\nPaper: for some c_pert >= 0, for a.e. t in [0,T] and all (Theta,mu), (Theta',mu') in D_t,\n  E[ <dp_b, G^T dY> + <dp_sigma, G^T dZ>_F + <-dp_f, G dX> + int_E <dp_h(e), G^T dU(e)> nu(de) ]\n    <= c_pert E[ |dX|^2 + |dY|^2 + |dZ|_F^2 + ||dU||^2_{L^2(nu)} ],\nwith dp_psi = p_psi(t,Theta,mu) - p_psi(t,Theta',mu') (p = (p_b, p_sigma, p_h, p_f) a perturbation\nsystem, same signatures as b, sigma, h, f), m = n so G is square.\nFaithful Lean: a predicate over (F, P, T, G, c_pert, p) with exactly this inequality, for a.e. t\n(chosen before the inputs) and all pairs of F_t-measurable square-integrable inputs with their own\nlaws; genuine expectations (Bochner junk-0 caveat if integrability fails); the bound unweighted\n(plain norms), the pairing G-weighted as printed, minus sign on f. c_pert >= 0 may be a separate\nhypothesis.",
+  "locked_at": "2026-10-17T12:37:23Z"
+ },
+ "comparison": {
+  "text": "PairingBound34 F P T G c p (Spec/CorollaryHyps.lean:75): for a.e. t in [0,T], for all pairs of\ndiagonal inputs at t, the pairing pairing27 G p t ... of the perturbation differences is integrable\nand E pairing27 <= c E(|dX|^2 + |dY|^2 + |dZ|_F^2 + ||dU||^2).\nMatches (3.4): the G-weighted pairing <dp_b, G^T dY> + <dp_sigma, G^T dZ>_F + <-dp_f, G dX>\n+ int <dp_h, G^T dU> dnu (pairing27 with the perturbation as coefficient system), the unweighted\nright side, a.e. t before inputs, diagonal inputs with their laws. c_pert >= 0 is not in the\npredicate (a hypothesis of the corollary), and m = n is the statement's.\nRepresentation choice: existence of the expectation of the pairing required (automatic when p\nsatisfies the diagonal Lipschitz condition and (2.3), which Cor 3.6 assumes); strongly measurable\nrepresentatives.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:04:13Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "The expectation of the pairing is required to exist (Integrable); under the corollary's hypotheses\non p (diagonal Lipschitz, measurability) it is automatic, and it is the natural reading of E[...].\nInputs are strongly measurable representatives (harmless). c_pert >= 0 and m = n are left to the\nstatement."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:04:22Z",
+  "disagreements": "No disagreement on substance. The author's review is an empty marker with no recorded\ncomparison; the representation choices listed in my detail are not recorded there."
+ },
+ "submitted_at": "2026-10-17T15:04:38Z",
+ "issue_draft": null
+}

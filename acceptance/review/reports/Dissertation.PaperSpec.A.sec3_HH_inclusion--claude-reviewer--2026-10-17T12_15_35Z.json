@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.sec3_HH_inclusion",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.sec3_HH_inclusion",
+  "lean": [
+   "Dissertation.PaperSpec.A.sec3_HH_inclusion"
+  ],
+  "claims": [
+   "A:sec3:HH-banach"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba130514b735af5f227",
+  "fingerprint": "pl-fp-v1:4e8f72443b121a3726cd0f49b21bb90f6c2115b3679c2ef8ddbb770d66d76acc",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of the Section 3 \"Solution space\" claim, clause: E int_0^T |V_t|^2 dt <= T E sup_{t<=T} |V_t|^2,\nso S is contained in H_weak.\nClaim (two parts):\n (i) for every (cadlag adapted, or just jointly measurable) R^j-valued process V on [0,T]:\n     E int_0^T |V_t|^2 dt <= T E sup_{t<=T} |V_t|^2 (in [0, inf]);\n (ii) consequently every element of S (X, Y in S^2; Z in H^2_W; U in H^2_N) lies in H_weak (X, Y in\n     L2(0,T): cadlag adapted with E int_0^T |.|^2 < inf; Z, U unchanged).\nA faithful statement must contain the inclusion S subset H_weak (with the same filtration and the\nsame regularity of the components); the inequality may be stated alone or as the reason. T >= 0\n(T > 0 standing). Setting: standing filtered space, n, m, d >= 1.",
+  "locked_at": "2026-10-17T12:15:09Z"
+ },
+ "comparison": {
+  "text": "Comparison: sec3_HH_inclusion vs the inclusion clause.\nStatement: for any measurable space Omega, measure P, n, T >= 0 and ANY process V : Fin n -> R -> Omega\n-> R: (i) int^- int^-_{[0,T]} |V_s|^2 ds dP <= T * int^- sup_{t in [0,T]} |V_t|^2 dP (esq = squared\nEuclidean norm, in [0, inf]); (ii) if E sup_{t<=T}|V_t|^2 < inf then each coordinate has finite energy\nE int_0^T |V_{i,t}|^2 dt < inf.\n(i) is the printed inequality, for arbitrary (even non-measurable, via lower integrals) processes:\nbroader. (ii) is the inclusion S^2 subset L^2(0,T) componentwise, which is exactly what separates the\nS fields (X_sup, Y_sup) from the H_weak fields (X_sq, Y_sq); the remaining components and\nregularity conditions are the same in S and H_weak, so (ii) gives S subset H_weak.\nThe claim is stated generally (any probability space, no filtration), so the standing setting is an\ninstance. No witness needed (no hypotheses beyond T >= 0).\nVerdict: faithful with representation choices (the inclusion of spaces is stated through its only\nnon-trivial component, the energy bound of S^2 processes).",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T12:15:30Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "1. S subset H_weak is stated through its one non-trivial content: E sup|V|^2 < inf implies finite\n   energy of every coordinate (the other conditions of S and H_weak coincide in the encoding).\n2. The inequality is stated for arbitrary processes on an arbitrary measure space, with lower\n   Lebesgue integrals in [0, inf] and T >= 0: broader than the standing setting."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T12:15:30Z",
+  "disagreements": "The author's review as displayed has no body (marker only); no substantive disagreement."
+ },
+ "submitted_at": "2026-10-17T12:15:35Z",
+ "issue_draft": null
+}

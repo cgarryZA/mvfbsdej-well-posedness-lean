@@ -1,0 +1,82 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:LevyStochCalc.Brownian.Multidim.MultidimBrownianMotion.W",
+  "kind": "def",
+  "name": "LevyStochCalc.Brownian.Multidim.MultidimBrownianMotion.W",
+  "lean": [
+   "LevyStochCalc.Brownian.Multidim.MultidimBrownianMotion.W"
+  ],
+  "claims": [
+   "A:cor:robust",
+   "A:eq:compid",
+   "A:eq:forced",
+   "A:eq:mvfbsdej",
+   "A:eq:zeromean",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:intro:mvfbsdej",
+   "A:lem:bpbsde",
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:rem:cwp-class",
+   "A:rem:diag-mono",
+   "A:rem:generalrank",
+   "A:rem:intrinsic",
+   "A:sec2:infinite-activity-atoms",
+   "A:sec2:prp",
+   "A:sec3:HH-banach",
+   "A:sec3:one-null-set",
+   "A:sec4:WP-def",
+   "A:sec4:horizon-not-contractive",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "1cfeb648b43624357bd81521c555728a",
+  "fingerprint": "pl-fp-v1:87f242600239f08f3f2a2e6c2548c617a19db5abf8d61dd0706fc8cdd4873b1f",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Unit: def:LevyStochCalc.Brownian.Multidim.MultidimBrownianMotion.W (reading locked before any Lean is seen)\n\nPaper notion. The process W = (W^1,...,W^d) itself of the d-dimensional Brownian motion of Section 2\n(line 225), with components W^j (the paper uses W^1_t in Remark 2.6, line 478).\n\nWhat a faithful Lean definition must be.\n- The projection/field of the structure MultidimBrownianMotion that returns the process: either the\n  vector process t |-> W_t in R^d, or the family of real component processes j |-> (t |-> W^j_t).\n  Its meaning is entirely that of the structure's axioms (unit 04): the field must be the process those\n  axioms constrain (each component a standard BM, components mutually independent).\n- Nothing more: a projection is faithful iff the structure is.",
+  "locked_at": "2026-10-17T12:35:32Z"
+ },
+ "comparison": {
+  "text": "Comparison: def:LevyStochCalc.Brownian.Multidim.MultidimBrownianMotion.W\n(Brownian/Multidim.lean:51-52.)\n\n- Reading: the projection returning the process (vector process or family of components); faithful iff the\n  structure is.\n- Lean: the field W : Fin d -> BrownianMotion P, the family of component Brownian motions W^i, which the\n  structure constrains to be mutually independent standard BMs (reviewed under the structure unit:\n  faithful with representation choices). The projection itself adds nothing.\n\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:01:13Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:01:25Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-17T15:01:45Z",
+ "issue_draft": null
+}

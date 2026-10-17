@@ -1,0 +1,82 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:LevyStochCalc.Poisson.referenceIntensity",
+  "kind": "def",
+  "name": "LevyStochCalc.Poisson.referenceIntensity",
+  "lean": [
+   "LevyStochCalc.Poisson.referenceIntensity"
+  ],
+  "claims": [
+   "A:cor:robust",
+   "A:eq:compid",
+   "A:eq:forced",
+   "A:eq:mvfbsdej",
+   "A:eq:zeromean",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:intro:mvfbsdej",
+   "A:lem:bpbsde",
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:rem:cwp-class",
+   "A:rem:diag-mono",
+   "A:rem:generalrank",
+   "A:rem:intrinsic",
+   "A:sec2:infinite-activity-atoms",
+   "A:sec2:prp",
+   "A:sec3:HH-banach",
+   "A:sec3:one-null-set",
+   "A:sec4:WP-def",
+   "A:sec4:horizon-not-contractive",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "22b0e836f3d3268f75c31fc958e5d10d",
+  "fingerprint": "pl-fp-v1:8b1dcd765f972321deb8f7678eb11e3fd45b39b11c750b9194342f0ff6cb79b2",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading (locked before any Lean is shown) — def LevyStochCalc.Poisson.referenceIntensity\n\nPaper notion (§2): the intensity of N, dt ν(de) on ℝ_+ × E: Lebesgue measure in time times\nthe σ-finite mark measure ν. Faithful Lean definition: the product measure\n(volume on the time type, restricted to [0,∞) if the time type is ℝ; plain volume if the\ntime type is ℝ≥0 or [0,∞)) ⊗ ν on time × E. Using Lebesgue on all of ℝ (with a PRM on ℝ × E)\nis a broader object that restricts to the paper's on [0,∞) × E — harmless as long as all\nintegrals are over [0,T]. Problems: a finite/normalised time measure, a measure not equal to\nLebesgue on [0,T], or ν replaced by something else.",
+  "locked_at": "2026-10-17T15:06:21Z"
+ },
+ "comparison": {
+  "text": "Comparison — referenceIntensity (RandomMeasure.lean:65-69)\n\nLean: referenceIntensity ν = (volume.restrict (Ici 0)).prod ν on ℝ × E.\nAgainst my reading: Lebesgue on [0,∞) (the time type is ℝ, restricted to [0,∞)) times the\nσ-finite ν — exactly dt ν(de) on ℝ_+ × E; it vanishes on negative times. Product of two\nσ-finite measures, so the genuine product.\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T15:15:53Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:16:03Z",
+  "disagreements": "The author's review, as shown by rv.py author, consists of the review marker only (no reading text, no item-by-item comparison), so there is no stated position of the author to disagree with on substance.\nI agree with the implicit verdict (reviewed as faithful); my comparison finds no representation choice that needs recording."
+ },
+ "submitted_at": "2026-10-17T15:16:42Z",
+ "issue_draft": null
+}

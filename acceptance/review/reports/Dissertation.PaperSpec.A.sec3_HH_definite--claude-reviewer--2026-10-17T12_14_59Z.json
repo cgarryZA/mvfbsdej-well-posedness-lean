@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.sec3_HH_definite",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.sec3_HH_definite",
+  "lean": [
+   "Dissertation.PaperSpec.A.sec3_HH_definite"
+  ],
+  "claims": [
+   "A:sec3:HH-banach"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba12b4c9985cfe528af",
+  "fingerprint": "pl-fp-v1:9238ee69573b14140e3037360bc0cb4c0c116d92a2df27e1bbd116f0995043aa",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of the Section 3 \"Solution space\" claim, clause: under the identification, ||.||_S vanishes\nexactly on the zero class (definiteness; the seminorm properties are elementary).\nClaim: for Theta = (X, Y, Z, U) in S (cadlag adapted X, Y with finite sup norms; predictable Z, U of\nfinite energy) on [0, T]: ||Theta||_S = 0 iff Theta is the zero class, i.e. X and Y are\nindistinguishable from 0 on [0, T] (a.s. X_t = 0 for all t in [0,T]), Z = 0 dt x dP-a.e. and\nU = 0 dt x dP x nu-a.e. on [0,T]. Equivalently, for two elements, ||Theta - Theta'||_S = 0 iff they are\nidentified (X, Y indistinguishable, Z, U a.e. equal). A faithful statement should give at least the\nnontrivial direction (norm zero implies zero class); the converse direction (identified elements\nhave norm zero) is what makes the norm well defined on classes; both belong to \"is a norm rather\nthan a seminorm\" on the quotient. Setting: standing filtered space, T > 0, n, m, d >= 1.",
+  "locked_at": "2026-10-17T12:14:29Z"
+ },
+ "comparison": {
+  "text": "Comparison: sec3_HH_definite vs the definiteness clause.\nHypothesis: (X, Y, Z, U) satisfies PaperWeakTuple over the standing filtration (H_weak; S is the\nsubset with finite supSize, so this is broader: for tuples with infinite norm both sides are false\ntogether).\nStatement: supSize = 0 iff (a.s. X_i(t) = 0 for all t in [0,T] and all i) and (same for Y) and for every\ncoordinate Z_{k,j} = 0 a.e. for energyMeasure P T = P x Leb|[0,T] and U_k = 0 a.e. for\nmarkedEnergyMeasure = P x (Leb|[0,T] x nu). Exactly \"the norm vanishes iff Theta is the zero class\":\nindistinguishable from 0 on [0,T] for X, Y; dt x dP-a.e. and dt x dP x nu-a.e. zero for Z, U. Both\ndirections are given.\nSetting: standing filtration; dimensions and T unrestricted (broader, harmless).\nWitness sec3_space_hypotheses: a nonzero tuple of H_weak (X_0 = 1) exists, so the hypothesis is not\nvacuous.\nVerdict: faithful with representation choices (classes encoded on representatives, broader input\nclass H_weak).",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T12:14:53Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "1. The zero class is stated on representatives (indistinguishability on [0,T] for X, Y; a.e. for Z, U\n   with respect to the energy measures P x Leb|[0,T] and P x Leb|[0,T] x nu), equivalent to the\n   quotient statement.\n2. Stated for every tuple of H_weak (PaperWeakTuple), not only S: broader, with S the instance.\n3. Dimensions and T unrestricted."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T12:14:53Z",
+  "disagreements": "The author's review as displayed has no body (marker only), so there is nothing to disagree with on substance; my comparison finds the proposition faithful."
+ },
+ "submitted_at": "2026-10-17T12:14:59Z",
+ "issue_draft": null
+}

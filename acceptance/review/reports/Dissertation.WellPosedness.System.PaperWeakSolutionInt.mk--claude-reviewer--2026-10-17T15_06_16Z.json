@@ -1,0 +1,60 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.System.PaperWeakSolutionInt.mk",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.System.PaperWeakSolutionInt.mk",
+  "lean": [
+   "Dissertation.WellPosedness.System.PaperWeakSolutionInt.mk"
+  ],
+  "claims": [
+   "A:cor:robust",
+   "A:rem:cwp-class",
+   "A:rem:generalrank",
+   "A:sec:examples",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "88d41182691dfcb90000000000000000",
+  "fingerprint": "pl-fp-v1:b2c5d23e54a3eeaac27cf895a0d2f462cc8c7bf03356ee7852820ea404be81c4",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for PaperWeakSolutionInt.mk (constructor of the structure PaperWeakSolutionInt).\nSame notion as PaperWeakSolutionInt (Theta in Hweak, X_T in L^2, integrals of (1.1) existing, both\nidentities of (1.1) for every t a.s.). The constructor takes exactly the structure's fields;\nfaithful iff the structure is.",
+  "locked_at": "2026-10-17T12:33:34Z"
+ },
+ "comparison": {
+  "text": "Comparison for PaperWeakSolutionInt.mk: the auto-generated constructor; it takes the two parents\n(toPaperWeakTuple, toPaperAdmissibleInt), XT_sq, fwd and bwd -- exactly the structure's fields -- and\nreturns PaperWeakSolutionInt D F hFW hFN T C xi0 X Y Z U gamma. Nothing added or dropped; meaning as\nreviewed under PaperWeakSolutionInt (faithful with the representation choices listed there).",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T12:41:29Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices (harmless): those of PaperWeakTuple and PaperAdmissibleInt (coordinate\nencoding; every-path right continuity, a.s. left limits; Z, U vanishing off [0,T]; exact laws at every\ntime with Dirac-0 junk off L^2; uLift junk on a null set; marked-progressive representative gamma of\nthe predictable jump integrand; L^2 existence conditions for the stochastic integrals, pathwise for\nthe Lebesgue ones; junk left limits at time 0) and of PaperSolution's identities (one null set for all\nt in [0,T], cadlag versions M of the per-time Brownian L^2 integrals). xi0 is an arbitrary function\n(no L^2, as Thm 3.3 has no Ass 2.2)."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T15:05:45Z",
+  "disagreements": "none (the author's excerpt shown for this unit is a marker and at most a section heading, with no\nitem-level reading to compare against; my comparison file records the representation choices in\ndetail)."
+ },
+ "submitted_at": "2026-10-17T15:06:16Z",
+ "issue_draft": null
+}

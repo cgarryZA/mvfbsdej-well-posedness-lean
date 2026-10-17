@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.lem_bpbsde",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.lem_bpbsde",
+  "lean": [
+   "Dissertation.PaperSpec.A.lem_bpbsde"
+  ],
+  "claims": [
+   "A:lem:bpbsde"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-6cb40f993a68",
+  "project_commit": "8b7dc67f842cfe4e558dbac79ab38a26a6d07eac",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba1202e3ec284da1f15",
+  "fingerprint": "pl-fp-v1:b9ef9bf6d8a83c03894450213b3ad879c95d5e54575291d921edba3be8b1d9d3",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-reviewer",
+  "kind": "model",
+  "name": "claude-reviewer",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of Lemma 4.1 (lem:bpbsde).\nConstant first: C_BP = C_BP(T) (c_BDG universal), a function of T only, chosen before everything\n(independent of m, d, nu, the space and the data).\nSetting: standing setting (filtration of W, N, F_0 with the usual conditions; nu sigma-finite), T > 0,\ndimensions m, d >= 1 (dY is R^m-valued, dZ R^{m x d}).\nHypotheses: dY cadlag adapted (R^m); dZ in H^2_W (predictable, E int_0^T |dZ|_F^2 < inf); dU in H^2_N\n(predictable L2(nu;R^m)-valued / P x E-measurable, E int_0^T ||dU||^2 < inf); dxi in L2(Omega, F_T; R^m);\nphi in L2(Omega x [0,T]; R^m) (jointly measurable, square integrable; the printed lemma asks no\nadaptedness of phi — progressive measurability would be a harmless added hypothesis in every use);\nthe identity (4.4) dY_t = dxi + int_t^T phi ds - int_t^T dZ dW - int_t^T int_E dU dN~ holding (a.s., for\nevery t in [0,T]; with cadlag sides one null set).\nConclusion: dY in S^2 (E sup_{t<=T} |dY_t|^2 < inf) and\nE sup_{t<=T} |dY_t|^2 + E int_0^T (|dZ_s|_F^2 + ||dU_s||^2) ds <= C_BP(T) (E|dxi|^2 + E int_0^T |phi_s|^2 ds).",
+  "locked_at": "2026-10-17T12:23:10Z"
+ },
+ "comparison": {
+  "text": "Comparison: lem_bpbsde vs Lemma 4.1.\nConstant: exists CBP : R -> R first, applied to T only (c_BDG universal): matches \"depending only on T\nand c_BDG\"; independent of m, d, nu, the space and the data.\nSetting: standing setting (Levy driver, G0 independent, enlJoint), m, d > 0, T > 0. Matches.\nHypotheses:\n- dZ: each coordinate predictable for enlJoint, vanishing off [0,T] (normalisation), finite energy:\n  dZ in H^2_W. dU: marked predictable, vanishing off [0,T], finite marked energy: dU in H^2_N. Matches.\n- dxi: F_T-measurable (enlJoint T) and in L2. Matches.\n- phi: jointly measurable with finite energy (no adaptedness), i.e. phi in L2(Omega x [0,T]). Matches.\n- dY: adapted on [0,T], every path right-continuous on [0,T) with left limits on (0,T] (cadlag paths;\n  the paper's cadlag adapted process). Matches (every-path regularity is the standard\n  representative).\n- The identity (4.4) at every t in [0,T], almost surely (null set depending on t), with\n  int_[t,T] phi ds pathwise, the Brownian integral as the canonical L2 integral at the two times T, t\n  (fixed-time evaluation, so no path version is needed), the compensated Poisson integral in its\n  cadlag version. Matches \"satisfy (4.4)\".\nConclusion: E sup_{t in [0,T]} |dY_t|^2 < inf (dY in S^2) and E sup|dY|^2 + sum of energies of dZ, dU <=\nofReal(CBP T) (E|dxi|^2 + sum of energies of phi), in [0, inf]. Matches.\nWitness lem_bpbsde_hypotheses: the backward component of the Example 5.1(i) solution with its\nterminal value and driver: all hypotheses met at an intended instance.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-17T12:23:43Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "1. Processes in coordinates; dZ, dU normalised to vanish off [0,T] (their values off [0,T] do not\n   enter (4.4)); dY assumed cadlag on every path (standard representative of a cadlag process).\n2. (4.4) asked a.s. at each t, with the canonical L2 Brownian integral at fixed times and the cadlag\n   version of the compensated Poisson integral.\n3. Inequality read in [0, inf] with ENNReal.ofReal of the constant."
+ },
+ "author_review": {
+  "shown_at": "2026-10-17T12:23:43Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-17T12:23:54Z",
+ "issue_draft": null
+}
