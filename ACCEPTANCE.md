@@ -100,7 +100,7 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | `A:rem2.6` | Remark 2.6 (no label) | duplicate | A:remark-2.6 | yes |
 | `A:sec4:coeffint` | (4.2)-(4.3) | duplicate | A:eq:coeffint | yes |
 | `A:lem4.1:M2-infinite-activity` | proof of Lemma 4.1 | proof-step | a step of a printed proof | yes |
-| `A:sec4:uniqueness-along-homotopy` | ¶ before Lemma 4.4 | proof-step | a step of a printed proof | yes |
+| `A:sec4:uniqueness-along-homotopy` | ¶ before Lemma 4.4 | proof-step | a step of the argument of Section 4 outside a proof environment: uniqueness along the homotopy is Lemma 4.3 at zero d... | yes |
 | `A:sec4:proof-thm35` | §4.5 | proof-step | a step of a printed proof | yes |
 | `A:ex:concrete(i)` | Example 5.1(i) | part-of | A:ex:concrete | yes |
 | `A:ex:concrete(ii)` | Example 5.1(ii) | part-of | A:ex:concrete | yes |

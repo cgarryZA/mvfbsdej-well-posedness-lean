@@ -1951,7 +1951,7 @@
    "number": "Example 5.1",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the derivation of (1.1) from the control problem by the stochastic maximum principle for jump diffusions is cited work (Tang and Li) and is not stated; the clauses state the system and its properties",
    "scope_reviewed": true,
    "status": "formal: proved, author-reviewed"
   },
@@ -4362,7 +4362,7 @@
    "number": "¶ before Lemma 4.4",
    "paper": "A",
    "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope_note": "a step of the argument of Section 4 outside a proof environment: uniqueness along the homotopy is Lemma 4.3 at zero data, with Lemma 4.2 for the base case",
    "scope_reviewed": true,
    "status": "out of scope: proof-step"
   },

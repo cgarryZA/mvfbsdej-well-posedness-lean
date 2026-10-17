@@ -732,9 +732,9 @@ Review by claude-reviewer: faithful with representation choices (report `reports
   and have finite energy there; `ξ ∈ L²`; and almost surely at each `t ∈ [0, T]`,
   `Y_t = ξ + ∫_t^T φ_s ds − (∫_0^T Z dW − ∫_0^t Z dW) − (∫_0^T ∫_E U Ñ − ∫_0^t ∫_E U Ñ)`, with the
   library's Brownian and compensated Poisson integrals for `ℱ` (reviewed with the driver): a
-  solution of the linear backward equation with jumps with the given drift, in the sense of the
-  paper's `S²` processes except that `𝔼 sup |Y|²` is not part of it (the propositions that need it
-  state it).
+  solution of the linear backward equation with jumps with the given drift, with `Y` adapted and
+  right-continuous as Lemma 4.1 assumes (its left limits exist almost surely, from the equation);
+  `Y ∈ S²` is a conclusion of Lemma 4.1, not part of the notion.
   <!-- def-review: Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ 61bb9f1d9c8aba870000000000000000 by=claude-author -->
   <!-- def-review: Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.mk a259997f09ec23780000000000000000 by=claude-author -->
   Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.mk--claude-reviewer--2026-10-17T12_27_45Z.md`).

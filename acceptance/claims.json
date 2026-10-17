@@ -590,7 +590,7 @@
    "location": "paper/wellposedness.tex",
    "source_sha256": "c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the derivation of (1.1) from the control problem by the stochastic maximum principle for jump diffusions is cited work (Tang and Li) and is not stated; the clauses state the system and its properties",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -1475,7 +1475,7 @@
    "location": "paper/wellposedness.tex:1746",
    "source_sha256": "518b95da43921c8290496ba8c58a2f74ebe2bce2191c71305e264312b4786bd7",
    "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope_note": "a step of the argument of Section 4 outside a proof environment: uniqueness along the homotopy is Lemma 4.3 at zero data, with Lemma 4.2 for the base case",
    "scope_reviewed": true,
    "clauses": []
   },
