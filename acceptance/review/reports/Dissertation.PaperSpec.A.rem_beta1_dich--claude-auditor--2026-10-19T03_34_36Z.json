@@ -1,0 +1,57 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.rem_beta1_dich",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.rem_beta1_dich",
+  "lean": [
+   "Dissertation.PaperSpec.A.rem_beta1_dich"
+  ],
+  "claims": [
+   "A:rem:beta1-dich",
+   "A:conclusion"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba1312ac03d25ff8ea1",
+  "fingerprint": "pl-fp-v1:194396b1368cfda6448c8c3fd807f354f8a6daec03b9c6ac4edd605948aa96bc",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading (spec rem_beta1_dich; Remark 2.10, 02-model-assumptions.tex:265-283).\nClaims (with ν ≠ 0, so L²(ν) ≠ {0}; T > 0; G ∈ R^{m×n} full rank; coefficients b,σ,h,f,g):\n(i) reduction to the jump channel: if (2.6) holds with β1, β2, then for a.e. t and all diagonal\n    pairs with δX = δY = δZ = 0:\n    E∫_E⟨δh(e), GᵀδU(e)⟩ν(de) ≤ −β1 E‖GᵀδU‖²; with β1 > 0 this is strict U-dissipativity of h;\n(ii) dichotomy: if h is of the additive form h = h(t,x,e) (no u-feedback; no law dependence), then\n    β1 ≤ 0, hence β1 = 0 under β1 ≥ 0; then Assumption 2.5 (α+β1 > 0, β1+β2 > 0, β1 > 0 if m < n,\n    α,β2 > 0 if m > n) requires m ≥ n and α, β2 > 0 — so for m < n Assumption 2.5 is incompatible\n    with an additive h (m < n is available only for U-dissipative h).\nA faithful statement must contain (i) (the displayed reduced inequality, a.e. t, all such\ndiagonal pairs) and (ii) (additive h ⇒ β1 = 0 ⇒ m ≥ n ∧ α > 0 ∧ β2 > 0), with hypotheses: the\ninterior inequality of Assumption 2.5 (and the constant conditions for the rank conclusion), on\nthe standing basis. \"δU arbitrary\" must range over genuine diagonal pairs (deterministic tuples\n(x,y,z,u),(x,y,z,u') suffice), with Gᵀ(u − u') ≠ 0 achievable because Gᵀ ≠ 0 and ν ≠ 0.\nThe ν = 0 sentence and the XuTangMeng sentence are commentary, not required.\n\n----\nCommon setting (paper §1–§2), used by every reading below:\n- filtered probability space (Ω,F,(F_t),P), usual conditions; horizon T>0; dims n,m,d ≥ 1;\n  d-dim Brownian motion W; independent Poisson random measure N on R_+×E with intensity dt⊗ν,\n  ν σ-finite on a countably generated (E,𝓔); filtration = usual augmentation of σ(W,N,F_0).\n- H = R^n × R^m × R^{m×d} × L²(ν;R^m) with |θ|² = |x|² + |y|² + |z|_F² + ‖u‖²_{L²(ν)}\n  (Euclidean norms on R^j, Frobenius on matrices; NOT sup norms).\n- Coefficients b,σ,h,f : [0,T]×H×P_2(H) → R^n, R^{n×d}, L²(ν;R^n), R^m; g : R^n×P_2(R^n) → R^m,\n  deterministic. W_2 the quadratic Wasserstein distance.\n- Diagonal input at time t: (Θ, Law Θ) with Θ ∈ L²(Ω,F_t;H) (F_t-measurable, square-integrable).\n- Interior pairing P(Θ,Θ') := E[⟨δb,GᵀδY⟩ + ⟨δσ,GᵀδZ⟩_F + ⟨−δf,GδX⟩ + ∫_E⟨δh(e),GᵀδU(e)⟩ν(de)].\n- (2.6): for a.e. t, all diagonal pairs: P ≤ −β1 E[|GᵀδY|²+|GᵀδZ|²_F+‖GᵀδU‖²] − β2 E|GδX|².\n- (2.12) weighted margin c: (2.6) RHS minus c E[|GᵀδY|²+|GᵀδZ|²_F+‖GᵀδU‖²+|GδX|²].\n- (2.13) unweighted margin c: (2.6) RHS minus c E[|δY|²+|δZ|²_F+‖δU‖²+|δX|²].\n- Solution: Θ=(X,Y,Z,U) ∈ 𝕊 (X,Y càdlàg adapted with E sup|·|²<∞, Z predictable in H²_W,\n  U predictable in H²_N) satisfying both identities of (1.1) a.s. for every t, h evaluated at the\n  predictable tuple Θ^-_t=(X_{t-},Y_{t-},Z_t,U_t) and μ^-_t = Law(Θ^-_t).",
+  "locked_at": "2026-10-19T03:17:17Z"
+ },
+ "comparison": {
+  "text": "Comparison: spec rem_beta1_dich (Sec2Remarks.lean:153-180).\n- Setting: standing basis, n, m ≥ 1, T > 0, ν ≠ 0, G full rank, coefficients satisfying\n  Assumption25 (terminal + interior + admissible constants) — the remark's context.\n- (i) reduction: for a.e. t, all diagonal pairs with δX = δY = δZ = 0 (pointwise in ω):\n  E∫⟨δh(e),Gᵀ δU(e)⟩ν(de) ≤ −β₁ E‖GᵀδU‖². Matches.\n- (ii) if h depends on (t, x) only (no y, z, u, law): β₁ = 0, n ≤ m, α > 0, β₂ > 0. Matches\n  (β1 ≤ 0 hence 0; then the constant conditions give m ≥ n, α, β2 > 0).\n- (iii) if m < n: β₁ > 0 and h is not additive — \"the m < n case is available only for\n  U-dissipative jump coefficients\" (β1 > 0 makes (i) strict U-dissipativity). Matches.\n- \"Pointwise in ω\" equality of the other coordinates instead of a.s.: harmless (modify a\n  representative on a null set; laws and expectations unchanged).\n- Witness rem_affine_hypotheses: Ex 5.1(i) at ν = δ0 ≠ 0 with Assumption 2.5.\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:32:32Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:32:40Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:34:36Z",
+ "issue_draft": null
+}

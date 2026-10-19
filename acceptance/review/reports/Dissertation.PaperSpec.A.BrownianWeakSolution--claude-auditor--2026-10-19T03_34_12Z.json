@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.PaperSpec.A.BrownianWeakSolution",
+  "kind": "def",
+  "name": "Dissertation.PaperSpec.A.BrownianWeakSolution",
+  "lean": [
+   "Dissertation.PaperSpec.A.BrownianWeakSolution"
+  ],
+  "claims": [
+   "A:ex:brownian"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ad5f899adde540f582430c5fbb5efc55",
+  "fingerprint": "pl-fp-v1:90bb9a29f8dd89b4f17dfaef61ab09da22a7a6b5535cce0528d7f4cbffd0d0e9",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of def PaperSpec.A.BrownianWeakSolution (Brownian specialisation of the weak class\nHweak used in Theorem 3.3 and Remark 3.2: Theta in Hweak satisfying (1.1)).\n\nPaper notion. As BrownianSolution (r_05) but with the weak integrability class\nHweak = L^2(0,T;R^n) x L^2(0,T;R^m) x H^2_W: X, Y cadlag adapted with E int_0^T |X_t|^2 dt < inf,\nE int_0^T |Y_t|^2 dt < inf; Z predictable with E int_0^T |Z|_F^2 < inf; both identities hold\na.s. for every t in [0,T]. The terminal condition presupposes Law(X_T) in P_2(R^n), i.e.\nX_T in L^2 (proof of Thm 3.3: \"As the terminal conditions presuppose Law(X^k_T) in P_2(R^n), we\nhave X^k_T in L^2\"); a faithful definition must include X_T in L^2 explicitly or make it\nautomatic. Coefficient processes need not be a priori square-integrable (Remark 3.4: no\nAssumption 2.2), but the integrals in the identities must be meaningful (stochastic integral of\nsigma(s,Theta_s,mu_s) requires local square integrability at least).\nA faithful Lean definition must: require cadlag adapted X,Y with finite dt dP L^2 norms,\npredictable Z in H^2_W, X_T in L^2 (or the P_2 presupposition), the two identities a.s. for every\nt, same integrals and law flows as r_05; no extra conditions such as E sup < inf (which would make\nit the strong class and lose Theorem 3.3's \"Furthermore\" content).",
+  "locked_at": "2026-10-19T03:16:13Z"
+ },
+ "comparison": {
+  "text": "Comparison, PaperSpec.A.BrownianWeakSolution (Sec5BrownianReduction.lean:66-73).\n\nBrownianWeakSolution := BrownianPaperWeakSolution over enlBrownian, plus left limits on every path.\n- Weak class Hweak: X, Y cadlag adapted with E int_0^T |.|^2 < inf; Z in H^2_W; X_T in L^2 (the\n  paper's presupposition Law(X_T) in P_2); identities a.s. for every t (null set uniform).\n- Drift/driver pathwise integrable (no origin integrability needed - Remark 3.4), diffusion finite\n  energy (L^2 Ito integral), as analysed in c_17.\n- Filtration enlBrownian; hW as for BrownianSolution.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:32:33Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices: nu = 0 modelling of the Brownian basis (filtration enlBrownian, trivial\nU-channel); and those of BrownianPaperWeakSolution: coordinates, processes on R constrained on\n[0,T], Z vanishing off [0,T], identities on one full-measure set with cadlag versions of the Ito\nintegrals, pointwise law flow, X_T in L^2 as a field (the paper's presupposition Law X_T in P_2),\nand \"the integrals exist\" made explicit (b, f measurable with integrable paths; sigma measurable\nwith finite energy - under Assumption 2.3 along an Hweak tuple equivalent to sigma(.,0,delta_0) in\nL^2(0,T), which any Ito integral of the diffusion requires)."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:32:44Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:34:12Z",
+ "issue_draft": null
+}

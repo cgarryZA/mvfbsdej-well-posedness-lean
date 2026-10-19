@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.ex_concrete_i_wp",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.ex_concrete_i_wp",
+  "lean": [
+   "Dissertation.PaperSpec.A.ex_concrete_i_wp"
+  ],
+  "claims": [
+   "A:ex:concrete"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba13343e4213bb7f62d",
+  "fingerprint": "pl-fp-v1:111be0cd1f9f68d87ea5051f1a8354f7776ad41e7f34be14301da15b5061c184",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "# Reading: spec ex_concrete_i_wp (Example 5.1(i): \"Theorem 3.5 yields well-posedness\")\n\nSetting as Example 5.1(i): n=m=d=1, G=1, nu arbitrary sigma-finite, xi0 in L^2(F_0), sigma_c in R,\nh_c in L^2(nu), beta1, beta2 > 0, any T > 0, the standing basis; coefficients b=-beta1 y,\nsigma=sigma_c-beta1 z, h=h_c-beta1 u, f=beta2 x, g=x.\n\"Well-posedness\" in the sense of Theorem 3.5: the system (1.1) (here the displayed linear system)\nadmits a solution Theta in HH, unique (Theorem 3.3: among tuples of H_weak, a fortiori HH, with the\nsame initial datum), and depending continuously on the data in the sense of (3.1). The paper also\nidentifies the target as WP(1) with q = 0 (\"it suffices to prove WP(1)\").\nA faithful formal statement: for all such data, there EXISTS a solution in HH of the Example\n5.1(i) system and it is UNIQUE (uniqueness modulo the HH identification: indistinguishable X, Y;\nZ dt x dP-a.e.; U dt x dP x nu-a.e.). Including the continuous dependence (3.1) or the forced\nWP(1) is acceptable (stronger); omitting continuous dependence is the paper's own reading of\nwell-posedness as WP(1) at q = 0 and is acceptable. The solution notion must be the paper's\n(identities a.s. for every t, h at the predictable tuple, laws of the tuple), and the claim must\nhold for every nu (arbitrary activity), every T > 0, every basis.",
+  "locked_at": "2026-10-19T03:16:43Z"
+ },
+ "comparison": {
+  "text": "# Comparison: ex_concrete_i_wp (Example 5.1(i), well-posedness)\n\nLean (Sec5.lean): for every standing basis (any sigma-finite nu, d = 1, G0 independent), T > 0,\nbeta1, beta2 > 0, sigma_c, h_c in L^2(nu), xi0 strongly F_0-measurable and square integrable:\n (existence) there are X, Y, Z, U with Solution D ... T (affineCoeffs ...) xi0 X Y Z U\n   — the paper's solution notion in HH (PaperSolution over enlJoint: adapted X, Y with\n   right-continuous paths, left limits, E sup^2 < oo; predictable Z, U of finite energy; the\n   integrals of (1.1) along Theta exist; h read through a representative gamma of\n   h(s, Theta^-_s, ., mu^-_s); both identities on one full-measure set for all t; plus left limits\n   for every path);\n (uniqueness) any two such solutions have X, Y indistinguishable on [0,T] and zero energy of the\n   differences of Z and of U, i.e. they are equal in HH.\n\nAgainst my reading: the setting is Example 5.1(i)'s, universally over nu (arbitrary activity),\nT, basis, sigma_c, h_c, beta's, xi0: yes. Existence of a solution in HH: yes. Uniqueness modulo\nthe HH identification (indistinguishable X, Y; Z equal dt x dP-a.e.; U equal dt x dP x nu-a.e.):\nyes — the right notion, not literal equality. Continuous dependence (3.1) is not restated; as my\nreading recorded, the paper's §4 identifies the well-posedness target with WP(1) at q = 0\n(unique existence in HH), and the stability estimate is the general Theorem 3.1 applied to this\nsystem; omitting it is acceptable. Uniqueness is in HH rather than H_weak; the printed sentence\nsays only \"Theorem 3.5 yields well-posedness\", whose uniqueness is in HH.\nThe solution notion is the shared PaperSpec.A.Solution (reviewed separately); the existence\nconjunct is a genuine claim (proved in Acceptance/A/Sec5.lean), so the predicate is satisfiable.\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:28:49Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:36:56Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:37:01Z",
+ "issue_draft": null
+}

@@ -1,0 +1,59 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.System.meanY",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.System.meanY",
+  "lean": [
+   "Dissertation.WellPosedness.System.meanY"
+  ],
+  "claims": [
+   "A:abstract",
+   "A:conclusion",
+   "A:ex:concrete",
+   "A:prop:strict"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "b1bbcb6b80a91cb129a220d0bfbb8cc1",
+  "fingerprint": "pl-fp-v1:62fd134d51dad3508d56faa1c7bebfec36accd900659791235d8a96e8a30d715",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of def meanY.\nPaper: m_Y(mu) := int_H y mu(dtheta), the Y-marginal mean of mu in P_2(H), an element of R^m (m=1 in Prop 3.8;\ngeneral m in Example 5.1(ii) with m=1). Bochner integral of the Y-projection. Along a diagonal input,\nm_Y(Law Theta) = E Y. Faithful Lean: Bochner integral of the y-component (second coordinate) against mu\n(the underlying measure of an element of P_2(H)); junk 0 for non-integrable irrelevant on P_2. Must be the\nY component, not X.",
+  "locked_at": "2026-10-19T03:16:07Z"
+ },
+ "comparison": {
+  "text": "Comparison, def meanY: ∫ θ, θ.2.1 ∂μ.law for μ : P2 (TupleH ν 1 1 d): the Bochner integral of the\nY-component (θ.2.1 is the second coordinate y), in EuclideanSpace ℝ (Fin 1). Integrable on P2.\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:29:17Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:29:28Z",
+  "disagreements": "No disagreement on substance. Label only: the review records \"faithful with representation choices\"\n(value in EuclideanSpace ℝ (Fin 1)); I record \"faithful\", regarding R^1 as EuclideanSpace ℝ (Fin 1) as the\npaper's y ∈ R^m at m = 1 rather than a choice. Both note that no junk value is reachable on P2."
+ },
+ "submitted_at": "2026-10-19T03:31:21Z",
+ "issue_draft": null
+}

@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q",
+  "lean": [
+   "Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q"
+  ],
+  "claims": [
+   "A:ex:fulllaw"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba12be9f13eb8df21c1",
+  "fingerprint": "pl-fp-v1:77391c424ac867b33c84ccb47f92f2979db03059f85ddcadebf00bcf5fe4dbae",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of spec:Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q (Example 5.4, 05-examples.tex:314-318).\n\nPrinted claim: \"The cylindrical term does so [lies beyond the expectation and two-point-kernel\njump-integrand interactions of the preceding examples] when Q is non-affine on the attained range\nof the feature vector (int phi_1 dmu^U, ..., int phi_J dmu^U)\".\n\nA faithful formal statement must contain:\n- Setting: H = R^n x R^m x R^{m x d} x L^2(nu;R^m), P_2(H), mu^U the U-marginal; standing nu\n  (Ex 5.4 takes nu != 0; a one-point attained range makes every Q affine there, so for nu = 0\n  the hypothesis below is unsatisfiable and no extra nu-hypothesis is needed).\n- Data: J, features phi_1..phi_J : L^2(nu;R^m) -> R bounded Lipschitz, Q : R^J -> R bounded\n  Lipschitz (standing hypotheses of Ex 5.4; if the Lean drops them, it is broader).\n- Hypothesis: Q is NOT affine on the attained range A = {(int phi_j(u) mu(dtheta))_j : mu in P_2(H)},\n  i.e. there are no a, c with Q(s) = a + sum c_j s_j for all s in A (the negation of the\n  hypothesis of ex_fulllaw_affineQ). Using \"Q not affine on R^J\" instead would be a weaker\n  hypothesis, making a false (too strong) statement; using a stronger non-affinity hypothesis\n  (e.g. strict convexity on some segment of A) would narrow it.\n- Conclusion: mu -> Q(int phi dmu^U) is not an expectation functional of Example 5.3: no kernel\n  phibar (measurable, Lipschitz) with Q(...) = int phibar(theta') mu(dtheta') for all mu in P_2(H)\n  (excluding all measurable kernels, or showing failure of mixture-affinity, is stronger and fine).\n  (True: the feature map is mixture-affine, A is convex, and mixture-affinity of Q o s would make\n  Q affine on A.)",
+  "locked_at": "2026-10-19T03:18:01Z"
+ },
+ "comparison": {
+  "text": "Comparison: spec ex_fulllaw_beyond_Q (PaperSpec/A/Sec5.lean:610-627).\nLean: for every nu, n m d J, Q : R^J -> R Lipschitz (LQ), phi_j : L^2(nu;R^m) -> R Lipschitz (K_j)\nand bounded (B): if NOT (exists a, c, for all mu in P_2(H), Q((int phi_j dmu^U)_j) =\na + sum c_j int phi_j dmu^U), then for every phi' : H -> R integrable against every law of\nP_2(H) there is mu with Q((int phi_j dmu^U)_j) != int phi' dmu.\nReading: features bounded Lipschitz, Q bounded Lipschitz. Hypothesis exactly \"Q not affine on the\nattained range A\" (neither the weaker \"not affine on R^J\" nor anything stronger). Conclusion: no\nExample 5.3 kernel represents mu -> Q(s(mu)). Excluding all integrable kernels is acceptable.\n- Hypothesis: the negation of affinity on {s(mu) : mu in P_2(H)} = A. Exactly the printed\n  condition. Matches.\n- Data: features bounded Lipschitz (as printed); Q Lipschitz, with boundedness of Q dropped\n  (broader; the claim stays true, since mixture-affinity of Q o s plus convexity of A forces Q to\n  be affine on A, with no boundedness needed).\n- Conclusion: no integrable phi' (stronger than \"no Example 5.3 kernel\"), hence broader.\n- No nu != 0 hypothesis: for nu = 0 the range A is a single point, so the hypothesis is\n  unsatisfiable. Nothing is lost and nothing false is claimed.\n- The clause is in the paper at f598204 (\"The cylindrical term does so when Q is non-affine on the\n  attained range of the feature vector\").\n- Non-vacuous: witness ex_fulllaw_beyond_Q_hypotheses (J = 1, phi_1 = min(||u||,1),\n  Q = min(|s|,1/2), not affine on the range [0,1] reached at three Dirac laws).\nVerdict: broader.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:34:55Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "broader",
+  "detail": "Broader than the printed claim. (i) Q is only assumed Lipschitz; the paper's standing data also\nmake it bounded. (ii) The conclusion excludes every phi' : H -> R integrable against all P_2(H)\nlaws, not just Example 5.3 kernels. Instantiation giving the printed claim: take the paper's\nbounded Lipschitz features phi_j and bounded Lipschitz Q. The hypothesis \"no a, c with\nQ(s) = a + sum c_j s_j at every s = (int phi_j dmu^U)_j, mu in P_2(H)\" is the printed \"Q non-affine\non the attained range\". If the Q-term were an Example 5.3 expectation functional\nint phibar(t,theta,theta') mu(dtheta'), the frozen kernel phibar(t,theta,.) is Lipschitz, hence\nintegrable against every P_2 law, which contradicts the proposition. The vector term\neps Q(...) w1 (eps > 0, w1 != 0) reduces to the scalar one through a coordinate with w1_j != 0."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:38:14Z",
+  "disagreements": "1. Verdict label. The author's summary says \"faithful\", with the parenthesis \"without the bounds:\n   broader\". The proposition is broader in two ways. Q is not assumed bounded. And the conclusion\n   excludes every phi' integrable against all P_2(H) laws, not only Example 5.3 kernels; the\n   author notes this for the radial statistics, and it applies here as well. So the verdict should\n   be \"broader\". The instantiation is the paper's bounded Lipschitz Q and features, with an\n   Example 5.3 kernel frozen at (t, theta) being integrable against every P_2 law.\n2. Agreement that the hypothesis is exactly \"Q not affine on the attained range\" (the negation of\n   affinity at every s = (int phi_j dmu^U)_j), neither the weaker \"not affine on R^J\" nor a\n   stronger condition. For nu = 0 the range is a single point, so the hypothesis cannot hold and\n   nothing false is claimed."
+ },
+ "submitted_at": "2026-10-19T03:38:27Z",
+ "issue_draft": null
+}

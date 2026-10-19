@@ -1,0 +1,84 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.System.tupleAt",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.System.tupleAt",
+  "lean": [
+   "Dissertation.WellPosedness.System.tupleAt"
+  ],
+  "claims": [
+   "A:abstract",
+   "A:conclusion",
+   "A:cor:robust",
+   "A:eq:coefmeas",
+   "A:eq:forced",
+   "A:eq:mvfbsdej",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:ex:dealer",
+   "A:ex:fulllaw",
+   "A:intro:limin-comparison",
+   "A:intro:mvfbsdej",
+   "A:lem:cont",
+   "A:lem:lawflow",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:rem:cwp-class",
+   "A:rem:generalrank",
+   "A:rem:regimes",
+   "A:rem:uniq-no-integ",
+   "A:sec3:one-null-set",
+   "A:sec4:WP-def",
+   "A:sec4:horizon-not-contractive",
+   "A:sec5:overview",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "0b900ec4a75a6b31755afe5c94aee280",
+  "fingerprint": "pl-fp-v1:2a7c18adf0bf6d8bba70ddaba8b58e0c6486f760f53be280b2a284ac6dd21d4b",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for def:Dissertation.WellPosedness.System.tupleAt (locked before any Lean is shown).\n\nPaper notion (sec 1-2): the H-valued random tuple at time t,\n  Theta_t = (X_t, Y_t, Z_t, U_t) : Omega -> H,\nX_t in R^n, Y_t in R^m, Z_t in R^{m x d}, U_t in L^2(nu;R^m) (at the current time, not left\nlimits). If U is stored pointwise (t,omega,e) |-> U_t(omega)(e) in R^m, then U_t(omega) must be the\nL^2(nu) class of e |-> U_t(omega,e) (requires int |U_t(omega,e)|^2 nu(de) < inf; junk elsewhere,\nharmless on a dt x dP-null set, which holds for U in H^2_N via the Fubini isometry (2.fubiniiso)).\nA faithful Lean definition: fun omega => (X t omega, Y t omega, Z t omega, U t omega) in the\npaper's H (components in the order x, y, z, u, with the Hilbert-sum structure).",
+  "locked_at": "2026-10-19T03:13:12Z"
+ },
+ "comparison": {
+  "text": "Comparison for def:Dissertation.WellPosedness.System.tupleAt.\n\nLean: tupleAt nu X Y Z U s omega = (toLp (i |-> X i s omega), toLp (k |-> Y k s omega),\ntoLp ((k,j) |-> Z k s omega j), uLift nu (e |-> (k |-> U k s omega e))) : TupleH nu n m d.\n- order x, y, z, u and dimensions n, m, m x d (entry (k,j) = row k, column j of Z_s), m-valued\n  u: OK.\n- current time s, no left limits (left limits are obtained by passing leftLimProc X, leftLimProc Y):\n  OK.\n- U_s(omega) = the L^2(nu) class of e |-> U_s(omega,e) when square integrable in e, 0 otherwise (uLift).\n  For U with finite marked energy this holds for dt x dP-a.e. (s,omega); the junk 0 is taken on a\n  null set. OK.\n- the target type TupleH (max norm; Hilbert norm via toL2) - see TupleH.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:25:28Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices, harmless:\n1. The processes are coordinate families (X : Fin n -> R -> Omega -> R, ..., U pointwise in e), packed\n   into H at each (s,omega).\n2. The jump channel is uLift, the L^2(nu) class of e |-> U_s(omega,e), and 0 when that function is not\n   square integrable. This happens only on a dt x dP-null set for U in H^2_N.\n3. The target type TupleH carries the max norm. The Hilbert norm is available through toL2 where\n   the paper uses it."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:25:40Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:27:25Z",
+ "issue_draft": null
+}

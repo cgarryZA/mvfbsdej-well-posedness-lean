@@ -1,0 +1,58 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.rem_diag_mono",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.rem_diag_mono",
+  "lean": [
+   "Dissertation.PaperSpec.A.rem_diag_mono"
+  ],
+  "claims": [
+   "A:rem:diag-mono",
+   "A:abstract",
+   "A:conclusion"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba146c1633f8e03b86c",
+  "fingerprint": "pl-fp-v1:64f834769da042adf20dfb54f477d15ff842e5f91be6f37be61a2f15a8533751",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading (locked before any Lean): spec rem_diag_mono, Remark 2.8, clause \"the pointwise condition\ngives Assumption 2.5, under (2.3) and Assumption 2.3; pointwise monotonicity gives expected\ndiagonal monotonicity\".\n\nPaper content. The pointwise G-monotonicity condition: the inequality of (2.7) without\nexpectations, at every fixed theta, theta' in H and mu, mu' in P_2(H) (free measures):\n  <b(t,theta,mu)-b(t,theta',mu'), G^T dy> + <dsigma, G^T dz>_F + <-df, G dx>\n   + int_E <dh(e), G^T du(e)> nu(de)\n  <= -beta1 (|G^T dy|^2 + |G^T dz|_F^2 + ||G^T du||^2) - beta2 |G dx|^2\n(for a.e. t, or every t). Applying it at theta = Theta(omega), theta' = Theta'(omega),\nmu = Law Theta, mu' = Law Theta' and taking expectations yields the interior inequality of\nAssumption 2.5 along all diagonal pairs (for the same set of t). \"So the pointwise condition is the\nstronger one.\" The terminal half of Assumption 2.5 is not mentioned by the pointwise condition\n(the remark speaks of \"the inequality of (2.7)\"); a formal \"gives Assumption 2.5\" either concerns\nthe interior inequality only, or assumes also a pointwise/expected terminal condition and the\nconstant constraints (alpha,beta1,beta2 >= 0, alpha+beta1>0, beta1+beta2>0, rank conditions).\n\"The converse fails\" is Prop 3.8, not this clause.\n\nA faithful formal statement must contain:\n- standing setting (any basis, any sigma-finite nu, any dims, G any m x n matrix (full rank not\n  needed for this implication)), deterministic jointly Borel coefficients;\n- hypothesis: the pointwise inequality at every theta, theta', mu, mu' (free) for the t's in\n  question (a.e. t or all t), with constants beta1, beta2;\n- conclusion: for those t (a.e. t) and all diagonal pairs (Theta,Law Theta),(Theta',Law Theta')\n  with Theta, Theta' in L2(Omega,F_t;H), the expected interior inequality with the same constants.\n- Integrability: the paper's \"taking expectations\" is implicitly in the extended sense (the\n  pointwise right side is integrable and <=0, so the left side has an expectation in [-inf,0]).\n  A Lean Bochner-integral formulation needs the left side integrable to avoid the junk value 0;\n  the clause adds (2.3) (Borel measurability of h into L2(nu)) and Assumption 2.3 (diagonal\n  Lipschitz) as hypotheses, which give measurability and square-integrability of the coefficient\n  differences along L2 inputs. This is an added hypothesis relative to the printed remark, but\n  harmless in the paper's context, where joint Borel measurability is standing and Assumption 2.3\n  accompanies Assumption 2.5 in every use. I would accept it as a representation choice provided\n  it only serves integrability (and say so); a hypothesis that does more work would be narrowing.\n- If the conclusion is the full Assumption 2.5 (terminal part too), the statement must assume the\n  terminal condition and constant constraints as well, otherwise it would claim more than the\n  remark.",
+  "locked_at": "2026-10-19T03:15:37Z"
+ },
+ "comparison": {
+  "text": "Comparison: spec rem_diag_mono (Sec2Remarks.lean:44-77) against my locked reading.\n\nSetting: arbitrary Ω, 𝒢₀ independent of the driver, E countably generated, ν σ-finite, dims\nn, m, d, LevyDriver, filtration enlJoint (the standing augmented filtration). T, β₁, β₂, G (any\nm×n matrix, no rank condition — fine, the implication does not need it), coefficients C with\nJointBorel T C ((2.3), standing in the paper).\n\nHypothesis: for a.e. t ∈ [0,T], for all θ, θ' ∈ H and all μ, μ' ∈ P₂(H) (free laws), the\npointwise (2.7): pairing27 G C t θ θ' μ μ' ≤ −β₁(|Gᵀδy|² + |Gᵀδz|²_F + ‖Gᵀδu‖²) − β₂|Gδx|².\npairing27 is exactly ⟨δb, Gᵀδy⟩ + ⟨δσ, Gᵀδz⟩_F + ⟨−δf, Gδx⟩ + ∫⟨δh(e), Gᵀδu(e)⟩ν(de). \"a.e. t\"\nin the hypothesis is at least as weak as the paper's (unspecified, presumably every/a.e.) t —\nharmless.\n\nConclusion, part 1 (only (2.3) assumed): for a.e. t and all diagonal pairs in 𝒟_t,\n∫⁻ (pairing)⁺ dP < ∞ (the expectation exists in [−∞, ∞)), and if the pairing is integrable its\nexpectation satisfies (2.7). This is the extended-real reading of the paper's \"taking\nexpectations gives (2.7)\": when the pairing is not integrable its expectation is −∞ and (2.7) is\ntrivial, so the Lean statement says exactly what the paper says while avoiding the Bochner junk\nvalue 0. Part 2: if moreover Assumption 2.3 holds with some L, then for a.e. t Mono27At, i.e.\nthe Lean form of the interior Assumption 2.5 (integrability of the pairing plus (2.7)) along 𝒟_t.\nThe clause name (\"under (2.3) and Assumption 2.3\") refers to this second part; the Lipschitz\nhypothesis only supplies the integrability that the Lean form of Assumption 2.5 demands, and\npart 1 already gives the content without it.\n\nScope: interior inequality only; the remark's pointwise condition is \"the inequality of (2.7)\",\nso the terminal half of Assumption 2.5 is not part of the claim (as my reading anticipated).\nWitness rem_affine_hypotheses (Acceptance/A/Sec2Remarks.lean:263) exhibits Example 5.1(i)\n(ν = δ₀, n = m = d = 1, β₁ = β₂ = 1) satisfying JointBorel, Assumption 2.3 and the pointwise\nhypothesis: hypotheses are met at an intended instance; not vacuous.\n\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:18:50Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices, each harmless:\n1. The paper's \"taking expectations\" is in the extended sense; the Lean conclusion encodes it as\n   \"the positive part has finite expectation, and the inequality holds whenever the pairing is\n   integrable\" (the non-integrable case has expectation −∞, where (2.7) is trivial). This avoids\n   the Bochner junk value 0 and says the same thing.\n2. A second conjunct adds Assumption 2.3 as a hypothesis to conclude the Lean form Mono27At of\n   the interior Assumption 2.5, whose definition demands integrability of the pairing; Lipschitz\n   only supplies that integrability. The first conjunct gives the claim without it, so nothing is\n   lost.\n3. Only the interior inequality (2.7) is concluded, matching the remark's pointwise condition,\n   which is \"the inequality of (2.7)\"; the pointwise hypothesis is imposed for a.e. t (no stronger\n   than the paper's)."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:33:35Z",
+  "disagreements": "Labelling only, no disagreement of substance. The other review calls the proposition \"broader\",\ntreating the first conjunct (positive part of the pairing integrable; (2.7) whenever the pairing\nis integrable, without Assumption 2.3) as an extra strengthening and the second conjunct as the\nprinted claim. I read the first conjunct as the extended-real form of the remark itself, since\nthe remark's \"taking expectations\" assumes no Lipschitz bound, and the second as the Lean form of\nAssumption 2.5 with the integrability that Assumption 2.3 supplies. Hence my label \"faithful with\nrepresentation choices\". The review's other point, that beta1 and beta2 range over all reals, is\na harmless broadening that I did not list; it supports their label. Both labels are in the\nmatching group, and we agree that the interior-only conclusion and the a.e.-t pointwise hypothesis\nare right."
+ },
+ "submitted_at": "2026-10-19T03:34:01Z",
+ "issue_draft": null
+}

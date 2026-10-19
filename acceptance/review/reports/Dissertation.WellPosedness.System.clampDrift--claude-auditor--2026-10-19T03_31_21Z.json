@@ -1,0 +1,59 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.System.clampDrift",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.System.clampDrift",
+  "lean": [
+   "Dissertation.WellPosedness.System.clampDrift"
+  ],
+  "claims": [
+   "A:abstract",
+   "A:conclusion",
+   "A:ex:concrete",
+   "A:prop:strict"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "b25f794b96410650c732095ab6aa7055",
+  "fingerprint": "pl-fp-v1:e32b25ac97174aad3716d8b466a92ca34ce3f5bb1bb2869a0764faa44ad6817f",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of def clampDrift (eq:bmean, Proposition 3.8; also Example 5.1(i) last paragraph).\nPaper: n=m=1, d>=1 arbitrary, beta1>0, 0<eps<beta1:\n  b(t,theta,mu) := -beta1*y + eps*g0(y - m_Y(mu)),  g0(r)=max{-1,min{1,r}},  m_Y(mu) = int_H y mu(dtheta).\nValue in R^n = R^1; independent of t, x, z, u. The measure argument mu in P_2(H), H = R x R x R^{1xd} x L2(nu;R).\nFaithful Lean: exactly this map (as a function of t, theta, mu), with m_Y the Bochner Y-marginal mean and g0\nthe clamp to [-1,1] (for a vector in R^1, the clamp of its single coordinate).",
+  "locked_at": "2026-10-19T03:16:07Z"
+ },
+ "comparison": {
+  "text": "Comparison, def clampDrift: -(β1 • θ.2.1) + ε • clampVec (θ.2.1 - meanY μ) on TupleH ν 1 1 d, valued in\nEuclideanSpace ℝ (Fin 1), time ignored. = -β1 y + ε g0(y - m_Y(μ)) with clampVec the coordinatewise\ng0 and meanY the Y-marginal Bochner mean. d free (Prop 3.8 has d≥1). Verdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:29:17Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:29:28Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:31:21Z",
+ "issue_draft": null
+}

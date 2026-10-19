@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.rem_beta1_fibre",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.rem_beta1_fibre",
+  "lean": [
+   "Dissertation.PaperSpec.A.rem_beta1_fibre"
+  ],
+  "claims": [
+   "A:rem:beta1-dich"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba1c9fa0ba4a3588e95",
+  "fingerprint": "pl-fp-v1:f0c2ba11054fac7ba52e3b5c361a3016389c723dcfed9e2a132569950c881c4f",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of spec:Dissertation.PaperSpec.A.rem_beta1_fibre (Remark 2.10, clause \"nu != 0 gives\nL2(nu) != {0}; nu = 0 gives L2(nu) = {0}\").\n\nPaper passage (02-model-assumptions.tex:265-283). \"Suppose nu != 0, so that L2(nu) != {0}.\" and\nlater \"When nu = 0 the fibre L2(nu) is trivial, delta U = 0 identically\".  Lnu is the macro for\nL^2(nu; R^m) (01-introduction.tex:32, macros.tex), the U-fibre of the tuple space H.\n\nSetting (standing, section 2): (E, E) a countably generated measurable space, nu a sigma-finite\nmeasure on it, m >= 1.  The fibre is L^2(nu; R^m) with the Euclidean norm on R^m, as equivalence\nclasses nu-a.e.\n\nWhat a faithful formal statement must contain (two implications, both about the fibre type):\n1. If nu != 0 (as a measure), then L^2(nu; R^m) has a nonzero element (Nontrivial / exists u\n   with u != 0 in the Lp space).  Hypotheses needed for truth: nu sigma-finite (a measure with\n   only values 0 and infinity, nu != 0, has L^2 = {0}, so sigma-finiteness is load-bearing and is\n   part of the standing setting), and m >= 1 (for m = 0, R^0 = {0} and the fibre is trivial\n   whatever nu is).  Either hypothesis may be stated through the standing-setting structure.  A\n   countable-generation hypothesis is harmless (standing setting) but not needed.\n2. If nu = 0, then L^2(nu; R^m) is trivial: every element equals 0 (Subsingleton), for every m.\n   No hypothesis needed.\nQuantifiers: for every such E, nu (and m >= 1); no constants.\nThe fibre must be the same L^2(nu; R^m) type the tuple space H uses for its U-component (the\nU-component of the Lean tuple type), not some other space; with m the backward dimension (or a\nuniversally quantified m >= 1, which is broader and gives the printed claim at the backward\ndimension).\nA version with m fixed to 1 or values in R only would be narrower (it would lose general m).\nA version that drops sigma-finiteness in clause 1 would be false.",
+  "locked_at": "2026-10-19T03:15:06Z"
+ },
+ "comparison": {
+  "text": "Comparison for spec:Dissertation.PaperSpec.A.rem_beta1_fibre (Sec2Remarks.lean:146-151).\n\nLean: for all E : Type v with a measurable structure, nu : Measure E with [SigmaFinite nu], m : N\nwith 0 < m:  (nu != 0 -> exists u : Lp (EuclideanSpace R (Fin m)) 2 nu, u != 0)\n          /\\ (nu = 0 -> forall u : Lp (EuclideanSpace R (Fin m)) 2 nu, u = 0).\n\nItem by item against my reading:\n- Fibre type: Lp (EuclideanSpace R (Fin m)) 2 nu, which is exactly the fourth channel of the Lean\n  tuple space TupleH (System/Tuple.lean:134-136). Euclidean norm on R^m. Matches.\n- Clause 1 (nu != 0 => nontrivial fibre): present, with SigmaFinite nu (load-bearing, present) and\n  m >= 1 (present). Matches.\n- Clause 2 (nu = 0 => fibre {0}): present as \"every element is 0\". It also carries 0 < m (the\n  quantifier m>0 precedes both clauses), so it is stated only for m >= 1; in the standing setting\n  m >= 1, so the printed claim (at the backward dimension) is covered. Harmless.\n- The standing hypothesis \"countably generated (E, E)\" is NOT assumed (the docstring says \"on a\n  countably generated space\" but the Lean does not require it). This makes the proposition broader\n  than the printed claim, in a harmless way: the printed claim is the instance with E countably\n  generated and m the backward dimension (>= 1).\n- Universe: E : Type v (universe-polymorphic parameter); the acceptance theorem proves the `.{v}`\n  instance, i.e. all universes. Fine.\n- No constants; the claim is stated at this revision (\"Suppose nu != 0, so that L2(nu) != {0}\" and\n  \"When nu = 0 the fibre L2(nu) is trivial\").\n- Hypotheses satisfiable trivially (any sigma-finite nu, e.g. dirac 0 in the witness\n  rem_affine_hypotheses, which shows dirac 0 != 0).\nVerdict: broader (only by dropping the unused countable-generation hypothesis); the printed claim\nis the instance at a countably generated E and m = the backward dimension. Docstring slightly\noverstates the hypotheses (mentions countable generation, which the Lean does not assume).",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:16:53Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "broader",
+  "detail": "Broader only in that the standing hypothesis \"(E, E) countably generated\" is not assumed (the\ndocstring mentions it, the Lean does not). The printed claim is the instance of the proposition at\na countably generated mark space E, a sigma-finite nu and m = the backward dimension (m >= 1 in\nthe standing setting): nu != 0 gives a nonzero element of Lp (EuclideanSpace R (Fin m)) 2 nu (the\nU-channel of TupleH), nu = 0 makes every element 0."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:25:54Z",
+  "disagreements": "One minor disagreement, on the verdict label only. The author's review (and the docstring) describe\nrem_beta1_fibre as being \"for nu sigma-finite on a countably generated space\", but the Lean\nproposition does not assume [MeasurableSpace.CountablyGenerated E]: it quantifies over every\nmeasurable space E with a sigma-finite nu (and m > 0). It is therefore formally broader than the\nprinted claim, harmlessly; the printed claim is its instance at a countably generated E and m = the\nbackward dimension. I recorded \"broader\" rather than \"faithful\" for that reason; the docstring\nshould drop \"on a countably generated space\" or the hypothesis should be added. No disagreement about\nthe content: both clauses, the fibre type (the U-channel of TupleH) and the need for sigma-finiteness\nand m >= 1 are as the author says."
+ },
+ "submitted_at": "2026-10-19T03:26:06Z",
+ "issue_draft": null
+}

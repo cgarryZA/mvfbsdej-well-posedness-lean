@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.rem_generalrank_wp",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.rem_generalrank_wp",
+  "lean": [
+   "Dissertation.PaperSpec.A.rem_generalrank_wp"
+  ],
+  "claims": [
+   "A:rem:generalrank"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba118d1835a02488a97",
+  "fingerprint": "pl-fp-v1:3759c778dd48fa1457637241bbf2a4a8a4ebdde4ee85b7554d5b477cbeebd236",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading (locked before any Lean): spec rem_generalrank_wp, Remark 3.7, clause \"the perturbed\nsystem is well-posed, arbitrary m, n\".\n\nPaper content. As cor_robust_wp but for arbitrary m, n with the margin and the perturbation\npairing bound both recorded in the weighted quantities of (2.12): baseline under 2.2-2.5 with\nweighted margin c_diss > 0; perturbations with origin integrability, interior diagonal Lipschitz,\nweighted (3.4) with c_pert in [0, c_diss). Conclusion (\"the identical conclusion\"): the perturbed\nsystem satisfies 2.2-2.5 with margin c_diss - c_pert in (2.12) and hence, by Thms 3.1, 3.3, 3.5,\nis well-posed: existence and uniqueness of an HH-solution of (1.1) (and stability).\n\nA faithful formal statement must contain:\n- arbitrary m, n (no m = n), d, nu, basis, T; G full rank m x n;\n- baseline 2.2-2.5 + weighted margin c_diss > 0; perturbations: origin integrability, interior\n  diagonal Lipschitz, weighted (3.4) (the notion of def PairingBound34W) with 0 <= c_pert <\n  c_diss;\n- conclusion: exists unique (HH identification) solution of (1.1) with the perturbed\n  coefficients and xi_0 (optionally with stability).\n- Same watch on solution notion.",
+  "locked_at": "2026-10-19T03:15:38Z"
+ },
+ "comparison": {
+  "text": "Comparison: spec rem_generalrank_wp (Sec3GeneralRank.lean:83-142) against my locked reading.\n\nHypotheses: exactly those of rem_generalrank: arbitrary n, m, d > 0, G in R^{m x n} with\nG.rank = min m n; baseline under JointBorel and Assumptions 2.2-2.5 with the weighted margin\nMargin212 (cdiss > 0); perturbation with OriginValues, LipInterior (Lp >= 0) and the weighted\npairing bound PairingBound34W (cpert >= 0); JointBorel of the perturbed system; cpert < cdiss.\n\nConclusion: (i) a Solution in HH of (1.1) for C.perturb p with xi0; (ii) any two WeakSolutions\nwith the same xi0 equal (indistinguishable X, Y on [0,T], zero energy of Z-, U-differences);\n(iii) exists Cstab (chosen first, a function of (T, L, ||G||, c_G, alpha, beta1, beta2)) with (3.1)\nfor every Lipschitz constant L of the perturbed system, against every system 2 under (2.3) and\nAssumptions 2.2-2.3. This is \"the identical conclusion\" of Corollary 3.6 (well-posedness by\nTheorems 3.1, 3.3, 3.5) at arbitrary m, n with both margin and (3.4) in the weighted quantities.\n\nWitness rem_generalrank_hypotheses: the square instance of Cor 3.6 satisfies the weighted\nhypotheses; not vacuous.\n\nVerdict: faithful with representation choices (same as cor_robust_wp).",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:31:05Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices, each harmless (as for cor_robust_wp):\n1. Well-posedness is existence of an HH solution, uniqueness in Hweak with the same initial datum,\n   and (3.1) with C_stab(T, L, ||G||, c_G, alpha, beta1, beta2) fixed before the data.\n2. Standing measurability of the perturbations as JointBorel of the perturbed system; Margin212 and\n   PairingBound34W demand integrable pairings (automatic under the Lipschitz bounds); full rank as\n   G.rank = min m n.\n3. Solution notions and [0, inf] reading as in thm_cwp, thm_uniq, thm_stab."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:37:29Z",
+  "disagreements": "none (labelling only: faithful vs my faithful with representation choices; I add that the witness instance is square, n = m = 1, which shows satisfiability but does not exercise m != n)"
+ },
+ "submitted_at": "2026-10-19T03:37:46Z",
+ "issue_draft": null
+}

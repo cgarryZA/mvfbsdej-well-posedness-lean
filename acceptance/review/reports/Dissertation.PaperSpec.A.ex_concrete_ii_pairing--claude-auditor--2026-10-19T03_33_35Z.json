@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.ex_concrete_ii_pairing",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.ex_concrete_ii_pairing",
+  "lean": [
+   "Dissertation.PaperSpec.A.ex_concrete_ii_pairing"
+  ],
+  "claims": [
+   "A:ex:concrete"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba16aa5f84a4f3328b5",
+  "fingerprint": "pl-fp-v1:24b0e4eed87fe4e05b10f7fe893d24b079c425d5b243a1cbf798ed42fb825cea",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading (locked before any Lean): spec ex_concrete_ii_pairing, clause \"(ii) the pairings along the diagonal\"\nof Example 5.1(ii).\n\nPaper content. Standing setting of §2 (filtered space with usual conditions, horizon T>0, d-dim\nBrownian motion W, independent Poisson random measure N on R_+ x E, intensity dt nu(de), nu\nsigma-finite on a countably generated (E, calE), arbitrary activity, nu(E)=infinity allowed).\nExample (ii) keeps n=m=d=1 and G=1. Coefficients (deterministic, time-independent):\n  b(t,theta,mu) = -2y - m_Y(mu), sigma = -2z - m_Z(mu), h(e) = -2u(e) - m_U(mu)(e),\n  f = 2x + m_X(mu), g(x,rho) = 2x + bary(rho),\nwith m_Psi(mu) = int pi_Psi(theta) mu(dtheta) (Bochner mean of the Psi-marginal; m_U(mu) is an\nelement of L2(nu)) and bary(rho) = int x rho(dx).\nClaim of the clause: along diagonal pairs (Theta, Law Theta), (Theta', Law Theta') in D_t\n(Theta, Theta' in L2(Omega, F_t; H)), the interior pairing of (2.7)\n  E[<db,dY> + <dsigma,dZ> + <-df,dX> + int_E <dh(e),dU(e)> nu(de)]\n  = -2 E[|dX|^2+|dY|^2+|dZ|_F^2+||dU||^2] - (|E dX|^2+|E dY|^2+|E dZ|^2+||E dU||^2)\n  <= -2 E[|dX|^2+|dY|^2+|dZ|^2+||dU||^2],\nand the terminal pairing, for X_T, X'_T in L2(Omega,F_T;R) with rho = Law X_T, rho' = Law X'_T,\n  E<dg_T, dX_T> = 2E|dX_T|^2 + |E dX_T|^2 >= 2 E|dX_T|^2,\nhence Assumption 2.5 with alpha = beta1 = beta2 = 2 (G=1, so G^T dY = dY etc.).\n\nA faithful formal statement must contain:\n- the setting at arbitrary sigma-finite nu (not only finite nu); n=m=d=1, G=1 (or a broader form\n  that specialises to these);\n- the exact coefficients above, with the means as integrals against the measure argument\n  (on the diagonal they become E Psi); h valued in L2(nu), its mean m_U a Bochner mean in L2(nu);\n- quantification: for every (or a.e.) t, for all F_t-measurable square-integrable H-valued Theta,\n  Theta' with the measure arguments equal to their own laws (diagonal, not free measures);\n  terminal: all F_T-measurable square-integrable X_T, X'_T with their own laws;\n- conclusion: the interior inequality with beta1 = beta2 = 2 and the terminal inequality with\n  alpha = 2 (either as the two exact identities with the mean-square terms or as the resulting\n  inequalities); the interior pairing with the L2(nu) inner product for the jump channel.\n- Acceptable: stating the conclusion as \"Assumption 2.5's two inequalities hold with\n  alpha=beta1=beta2=2\". The clause name says \"the pairings\", so the identities are the most literal\n  form; the inequalities are what the example uses.\n- Lean junk-value watch: expectations of non-integrable functions (Bochner = 0) - on L2 inputs all\n  pairings here are integrable, so no issue if the inputs are genuinely L2; means of measures in\n  P_2 are well defined. Witness: none needed beyond existence of L2 inputs (hypotheses are only\n  membership of inputs), but a vacuity check: the quantified class must be nonempty/meaningful.",
+  "locked_at": "2026-10-19T03:15:37Z"
+ },
+ "comparison": {
+  "text": "Comparison: spec ex_concrete_ii_pairing (Sec5.lean:269-318) against my locked reading.\n\nSetting. Arbitrary Ω, initial σ-field 𝒢₀ ≤ mΩ independent of the driver σ-fields, arbitrary\nmeasurable E with CountablyGenerated, arbitrary SigmaFinite ν (infinite activity allowed),\nprobability P, a LevyDriver with d = 1 (1-dim Brownian motion W and Poisson random measure N,\nσ(W) ⊥ σ(N)), filtration enlJoint 𝒢₀ D h𝒢₀ = usual augmentation (right-continuous version,\naugmented by null sets) of t ↦ ℱ^{W,N}_t ⊔ 𝒢₀ — the paper's standing filtration. T > 0 arbitrary.\nn = m = d = 1 (Coeffs ν 1 1 1 via meanFieldCoeffs ν 1 1), G = 1 (pairing27 with the identity\nmatrix; GX 1 = toEuclideanLin 1 = id, GZ 1 = 1 ⊗ I = id). Matches.\n\nCoefficients. meanFieldCoeffs: b = −2y − (tupleMean μ).Y, σ = −2z − (tupleMean μ).Z,\nh = −2u − (tupleMean μ).U (an element of L²(ν)), f = 2x + (tupleMean μ).X, g(x, ρ) = 2x +\nbarycentre ρ, with tupleMean μ = Bochner ∫ θ dμ (channels = marginal means, tupleMean_eq) and\nbarycentre ρ = ∫ x dρ. Exactly the paper's coefficients of (ii).\n\nQuantifiers. ∀ t (every real t, broader than any a.e.-t reading and harmless: the identities are\nalgebraic and hold at every t, coefficients being time independent), ∀ p, p' ∈ diagonalInputs at\nt for the standing filtration: Θ strongly ℱ_t-measurable, MemLp 2, μ = lawP2 P Θ — the diagonal\n𝒟_t of Definition 2.1. Terminal: ∀ X_T, X'_T strongly ℱ_T-measurable and square integrable, with\ntheir own laws. Matches.\n\nConclusion. (0) tupleMean p.2 = E Θ (the paper's m_Ψ(Law Θ) = E Ψ); (1)-(4) the four channel\nidentities E⟨−δf, δX⟩ = −2E|δX|² − |EδX|², E⟨δb, δY⟩ = ..., E⟨δσ, δZ⟩ = ..., and\nE ∫_E ⟨δh(e), δU(e)⟩ ν(de) = −2E‖δU‖²_{L²} − ‖EδU‖²_{L²} (pointwise evaluation of L² classes\nunder ∫ dν, independent of representatives); (5) the full interior pairing (pairing27 with G = 1,\nwhich is ⟨δb, δY⟩ + ⟨δσ, δZ⟩_F + ⟨−δf, δX⟩ + ∫⟨δh(e), δU(e)⟩ν(de)) equals −2E[sum of squares] −\n(sum of squared means); (6) terminal E⟨δg_T, δX_T⟩ = 2E|δX_T|² + |EδX_T|². These are exactly the\npaper's displayed identities; the inequalities and \"Assumption 2.5 with α = β₁ = β₂ = 2\" follow\nimmediately (the mean squares being nonnegative). The clause is \"the pairings along the\ndiagonal\", which the identities state literally.\n\nJunk values: all integrands are integrable for L² inputs (products of L² functions, Bochner means\nof P₂ laws), so the Bochner integrals are genuine; lawP2 of a MemLp map is its law in P₂. No\nhypotheses beyond the setting, which is inhabited (LevyDriver.exists; witness\nex_concrete_hypotheses exists in Acceptance/A/Witness.lean), and diagonal inputs exist (e.g.\nconstants), so no vacuity.\n\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:18:02Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:33:25Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:33:35Z",
+ "issue_draft": null
+}

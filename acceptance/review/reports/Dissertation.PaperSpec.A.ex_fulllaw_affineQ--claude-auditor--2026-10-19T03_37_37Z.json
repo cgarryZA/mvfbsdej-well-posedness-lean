@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.ex_fulllaw_affineQ",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.ex_fulllaw_affineQ",
+  "lean": [
+   "Dissertation.PaperSpec.A.ex_fulllaw_affineQ"
+  ],
+  "claims": [
+   "A:ex:fulllaw"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba1b7c4d4b7307e74ea",
+  "fingerprint": "pl-fp-v1:c1c56b7f113beceffc7bfe8c4338c5fe843f308fd8210ce9945992e3b56f615b",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of spec:Dissertation.PaperSpec.A.ex_fulllaw_affineQ (Example 5.4, 05-examples.tex:314-318).\n\nPrinted claim: \"if Q(s) = a + sum_j c_j s_j there [on the attained range of the feature vector\n(int phi_1 dmu^U, ..., int phi_J dmu^U)], the Q-term equals int_H (a + sum_j c_j phi_j(u')) mu(dtheta'),\nan expectation functional already covered by Example 5.3.\"\n\nA faithful formal statement must contain:\n- Setting: H = R^n x R^m x R^{m x d} x L^2(nu;R^m), P_2(H); J >= 1 (or any J), features\n  phi_1..phi_J : L^2(nu;R^m) -> R bounded Lipschitz; Q : R^J -> R (bounded Lipschitz, standing);\n  a in R, c in R^J.\n- Hypothesis: Q(s) = a + sum c_j s_j for every s in the ATTAINED RANGE\n  A = { (int phi_j(u) mu(dtheta))_j : mu in P_2(H) } (not merely somewhere; requiring it on all\n  of R^J would be a stronger hypothesis, i.e. a narrower statement).\n- Conclusion: for every mu in P_2(H),\n  Q(int phi_1 dmu^U, ..., int phi_J dmu^U) = int_H (a + sum_j c_j phi_j(u')) mu(dtheta'),\n  and (the \"covered by Example 5.3\" part) the kernel theta' -> a + sum c_j phi_j(u') is of the\n  Example 5.3 class (measurable, Lipschitz in theta' with constant <= sum |c_j| Lip(phi_j), hence\n  in the class); the multiplied form eps Q(...) w_1 = int eps(a + sum c_j phi_j(u')) w_1 dmu is\n  equivalent.\n- The identity holds for all mu in P_2(H) (the integral of bounded phi_j against mu exists).",
+  "locked_at": "2026-10-19T03:18:01Z"
+ },
+ "comparison": {
+  "text": "Comparison: spec ex_fulllaw_affineQ (PaperSpec/A/Sec5.lean:567-580).\nLean: for every nu, n m d J, Q : R^J -> R, phi : Fin J -> L^2(nu;R^m) -> R, K, a, c:\n(phi_j Lipschitz with constant K_j) -> (for all mu in P_2(H),\nQ((int phi_j dmu^U)_j) = a + sum_j c_j int phi_j dmu^U) -> for all mu in P_2(H),\nQ((int phi_j dmu^U)_j) = int (a + sum_j c_j phi_j(theta'.U)) dmu(theta').\nReading: hypothesis \"Q(s) = a + sum c_j s_j on the ATTAINED RANGE\" (not on all of R^J); conclusion\nthe identity for all mu, plus \"covered by Example 5.3\" (the kernel is of the Example 5.3 class).\n- Hypothesis: quantified over mu in P_2(H), i.e. exactly on the attained range\n  A = {(int phi_j dmu^U)_j : mu in P_2(H)}. Matches (not the narrower \"affine on R^J\").\n- Conclusion: the identity for every mu in P_2(H). Matches. The kernel theta' -> a +\n  sum_j c_j phi_j(u') is Lipschitz with constant sum_j |c_j| K_j (u' is a 1-Lipschitz function of\n  theta'), hence measurable and in Example 5.3's class. This is immediate from the stated\n  hypothesis and is not restated as a conjunct. I regard it as implicit rather than missing: it\n  is a one-line consequence of a hypothesis that appears in the statement.\n- The paper's standing data for Ex 5.4 have Q and phi_j bounded and Lipschitz. The Lean drops\n  boundedness of phi_j and every condition on Q (only affinity on A is used). The identity\n  remains true, since a Lipschitz phi_j has linear growth and is integrable against P_2 laws. So\n  the proposition is broader.\n- The multiplied term eps Q(...) w1 = int eps (a + sum c_j phi_j(u')) w1 dmu follows by scaling.\n- Non-vacuous: witness ex_fulllaw_affineQ_hypotheses.\n- The paper claims it at f598204 (\"if Q(s) = a + sum_j c_j s_j there, the Q-term equals\n  int_H(a + sum_j c_j phi_j(u')) mu(dtheta'), an expectation functional already covered by\n  Example 5.3\").\nVerdict: broader.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:34:54Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "broader",
+  "detail": "Broader than the printed claim. The proposition assumes only that the features phi_j are\nLipschitz (constants K_j). It does not assume they are bounded, and it assumes nothing of Q beyond\naffinity on the attained range. The paper's Ex 5.4 data have Q and phi_j bounded and Lipschitz.\nInstantiation giving the printed claim: take the paper's bounded Lipschitz phi_j with\nK_j := Lip(phi_j) and the paper's Q. The hypothesis \"Q(s) = a + sum c_j s_j at every\ns = (int phi_j dmu^U)_j, mu in P_2(H)\" is the printed \"on the attained range\". The conclusion is\nthe printed identity Q((int phi_j dmu^U)_j) = int_H (a + sum_j c_j phi_j(u')) mu(dtheta'). The\nprinted appositive \"an expectation functional already covered by Example 5.3\" is not restated as\na conjunct, but it follows at once from the Lipschitz hypothesis. The kernel\ntheta' -> a + sum_j c_j phi_j(u') is Lipschitz on H with constant sum_j |c_j| K_j, because\n||u' - u''|| <= |theta' - theta''|_H, and so it is a measurable Lipschitz kernel of Example 5.3."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:37:27Z",
+  "disagreements": "1. Verdict label. The author's summary verdict is \"faithful\", with the parenthesis \"without the\n   bounds: broader\". The proposition drops the printed boundedness of phi_j and every condition\n   on Q, and the identity stays true for Lipschitz phi_j, so the verdict should be \"broader\". The\n   instantiation is the paper's bounded Lipschitz phi_j (K_j = Lip(phi_j)) and the paper's Q.\n2. Small precision. The author says \"already covered by Example 5.3\" is \"the identification of\n   the expectation functional with the kernel theta' -> a + sum_j c_j phi_j(u'), Lipschitz in\n   theta'\". The formal conclusion states only the identity. The Lipschitz membership of the kernel\n   (constant sum_j |c_j| K_j) is not a conjunct, though it is an immediate consequence of the\n   Lipschitz hypothesis visible in the statement. I accept that, but the review should say it is\n   implicit rather than stated."
+ },
+ "submitted_at": "2026-10-19T03:37:37Z",
+ "issue_draft": null
+}

@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.rem_freelaw",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.rem_freelaw",
+  "lean": [
+   "Dissertation.PaperSpec.A.rem_freelaw"
+  ],
+  "claims": [
+   "A:rem:freelaw"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba105f02a9629cb6b98",
+  "fingerprint": "pl-fp-v1:37bf359e5fd4d04daf3d5ffb0ba9993b910a3dbe7b7fefc14cef695d3bba427e",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading (spec rem_freelaw; Remark 5.6, 05-examples.tex:535-538).\nClaim: the coefficients depend on u pointwise — a dependence Remark 2.10 makes unavoidable whenever\nβ1 > 0 and ν ≠ 0.\nA faithful statement: on a standing basis with ν ≠ 0 and T > 0, for any G full rank, coefficients\nb,σ,h,f and constants with β1 > 0 (β2 ≥ 0, α arbitrary) such that the interior monotonicity (2.6)\nholds, the jump coefficient h depends on u pointwise: there are t (indeed a.e. t), x, y, z, u, u',\nμ with h(t,(x,y,z,u),μ) ≠ h(t,(x,y,z,u'),μ). Contrapositive form: if h(t,θ,μ) does not depend on\nthe u-coordinate of θ (h = H(t,x,y,z,μ)), then (2.6) fails for every β1 > 0.\n- \"Pointwise\" is contrasted with dependence through the measure argument; so the most faithful\n  form allows h to depend on the law (including its U-marginal) arbitrarily: the alternative ruled\n  out is \"h depends on θ only through (x,y,z)\". With law dependence allowed the refutation needs\n  equal-law diagonal pairs (a fair-coin swap of two values of U, available in F_t for t > 0);\n  without law dependence deterministic pairs suffice (Remark 2.10's additive case).\n- A version that rules out only law-free u-independent h (h = H(t,x,y,z) or h = H(t,x)) is\n  narrower than the sentence (it covers Remark 2.10's additive case only).\n- Saying \"some coefficient depends on u\" instead of \"h depends on u\" is weaker but still a reading\n  of \"the coefficients depend on u pointwise\".\n\n----\nCommon setting (paper §1–§2), used by every reading below:\n- filtered probability space (Ω,F,(F_t),P), usual conditions; horizon T>0; dims n,m,d ≥ 1;\n  d-dim Brownian motion W; independent Poisson random measure N on R_+×E with intensity dt⊗ν,\n  ν σ-finite on a countably generated (E,𝓔); filtration = usual augmentation of σ(W,N,F_0).\n- H = R^n × R^m × R^{m×d} × L²(ν;R^m) with |θ|² = |x|² + |y|² + |z|_F² + ‖u‖²_{L²(ν)}\n  (Euclidean norms on R^j, Frobenius on matrices; NOT sup norms).\n- Coefficients b,σ,h,f : [0,T]×H×P_2(H) → R^n, R^{n×d}, L²(ν;R^n), R^m; g : R^n×P_2(R^n) → R^m,\n  deterministic. W_2 the quadratic Wasserstein distance.\n- Diagonal input at time t: (Θ, Law Θ) with Θ ∈ L²(Ω,F_t;H) (F_t-measurable, square-integrable).\n- Interior pairing P(Θ,Θ') := E[⟨δb,GᵀδY⟩ + ⟨δσ,GᵀδZ⟩_F + ⟨−δf,GδX⟩ + ∫_E⟨δh(e),GᵀδU(e)⟩ν(de)].\n- (2.6): for a.e. t, all diagonal pairs: P ≤ −β1 E[|GᵀδY|²+|GᵀδZ|²_F+‖GᵀδU‖²] − β2 E|GδX|².\n- (2.12) weighted margin c: (2.6) RHS minus c E[|GᵀδY|²+|GᵀδZ|²_F+‖GᵀδU‖²+|GδX|²].\n- (2.13) unweighted margin c: (2.6) RHS minus c E[|δY|²+|δZ|²_F+‖δU‖²+|δX|²].\n- Solution: Θ=(X,Y,Z,U) ∈ 𝕊 (X,Y càdlàg adapted with E sup|·|²<∞, Z predictable in H²_W,\n  U predictable in H²_N) satisfying both identities of (1.1) a.s. for every t, h evaluated at the\n  predictable tuple Θ^-_t=(X_{t-},Y_{t-},Z_t,U_t) and μ^-_t = Law(Θ^-_t).",
+  "locked_at": "2026-10-19T03:17:17Z"
+ },
+ "comparison": {
+  "text": "Comparison: spec rem_freelaw (Sec5FreeLaw.lean:33-55).\n- Setting: standing basis, n, m, d ≥ 1, T > 0, ν ≠ 0, G full rank; coefficients with\n  Assumption25 (G, α, β1, β2) and β1 > 0. Matches the hypotheses \"β1 > 0 and ν ≠ 0\".\n- Conclusion: for a.e. t there are diagonal inputs p, p' with the same law (p.2 = p'.2), the same\n  (X, Y, Z) at every ω, and ¬(h(t,Θ,μ) = h(t,Θ',μ') a.s.). This is my contrapositive form with any\n  law dependence: no h of the form H(t,x,y,z,μ) can satisfy (2.6) with β1 > 0; indeed it exhibits\n  the equal-law swap pair. \"Depend on u pointwise\" is stated for h, the precise reading.\n- d ≥ 1 is standing (needed for the fair-coin event in ℱ_t).\n- Witness rem_affine_hypotheses: Ex 5.1(i) at ν = δ0 ≠ 0 with Assumption 2.5 and β1 = 1.\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:32:32Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:32:40Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:34:36Z",
+ "issue_draft": null
+}

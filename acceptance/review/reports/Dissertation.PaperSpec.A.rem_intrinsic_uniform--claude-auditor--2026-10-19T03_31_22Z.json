@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.rem_intrinsic_uniform",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.rem_intrinsic_uniform",
+  "lean": [
+   "Dissertation.PaperSpec.A.rem_intrinsic_uniform"
+  ],
+  "claims": [
+   "A:rem:intrinsic"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba13b7a9a5f65a5b218",
+  "fingerprint": "pl-fp-v1:b7f42b607a9fbc91f432a966c4e17124f0693b93f306388d93572a3565cd17a7",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of spec rem_intrinsic_uniform, clause \"a uniform variable, a function of W^1_t, at every t>0\"\n(Remark 2.9).\nSetting: standing basis with d-dimensional (F_t)-Brownian motion W (W^1 its first coordinate), T>0.\nClaim: for every t in (0,T] (t>0), F_t supports a uniformly distributed random variable which is a function of\nW^1_t: there is a Borel phi: R -> [0,1] (explicitly phi(x) = Phi(x/sqrt t), Phi the standard normal cdf)\nsuch that V := phi(W^1_t) is F_t-measurable and V ~ Uniform[0,1] (Law V = Lebesgue on [0,1]).\nFaithful formal: for all t with 0<t<=T (or all t>0), there exists V: Omega -> R, F_t-measurable, with\nLaw(V) = uniform on [0,1] (or (0,1)) and V = phi o W^1_t for some measurable phi. Dropping \"function of\nW^1_t\" would be narrower than the clause wording but the mathematical content used is the existence of an\nF_t-measurable uniform; I would flag dropping it. Hypotheses: none beyond the standing basis (W Brownian,\nadapted). No restriction on F_0.",
+  "locked_at": "2026-10-19T03:16:08Z"
+ },
+ "comparison": {
+  "text": "Comparison, rem_intrinsic_uniform (Sec2Remarks.lean:102-112) vs reading.\n- Setting: a Lévy driver D (d-dimensional Brownian motion W and independent PRM N with intensity\n  dt ⊗ ν, ν σ-finite), d > 0, a σ-algebra 𝒢₀ ≤ the ambient one; the filtration enlJoint 𝒢₀ D (the usual\n  augmentation of σ(W, N) ⊔ 𝒢₀, the paper's (F_t) when 𝒢₀ = F_0 is independent). The independence of\n  𝒢₀ is NOT assumed (not needed): broader. Countable generation of E not assumed (not needed).\n- ∀ t > 0 (not only t ≤ T): ∃ φ : ℝ → [0,1] measurable with φ(W¹_t) enlJoint-t-measurable and\n  P.map(φ ∘ W¹_t) = volume on unitInterval (the uniform law). Matches \"F_t supports a uniformly\n  distributed variable, a function of W¹_t\".\n- Witness ex_concrete_hypotheses: a Lévy driver exists (d = 1, ν = δ_0) with an independent 𝒢₀ = ⊥.\nVerdict: broader.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:29:18Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "broader",
+  "detail": "Broader: no independence of 𝒢₀ from the driver and no countable generation of E are assumed, and the\nconclusion is for every t > 0. The printed clause is the instance 𝒢₀ = F_0 independent of the driver\n(so enlJoint 𝒢₀ D is the standing filtration (F_t)), E countably generated, t ∈ (0, T]."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:29:29Z",
+  "disagreements": "Label only. The review records \"faithful\" while noting that independence of 𝒢₀ is not assumed and E need\nnot be countably generated (\"broader\"). Under the review rules I record \"broader\", instantiation 𝒢₀ = F_0\nindependent of the driver, E countably generated, t ∈ (0,T]. No disagreement on content."
+ },
+ "submitted_at": "2026-10-19T03:31:22Z",
+ "issue_draft": null
+}

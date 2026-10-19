@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.ex_dealer_ham",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.ex_dealer_ham",
+  "lean": [
+   "Dissertation.PaperSpec.A.ex_dealer_ham"
+  ],
+  "claims": [
+   "A:ex:dealer"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba18d97e926abe7317b",
+  "fingerprint": "pl-fp-v1:cdd1db827286f7d6afb025b59f8a2c2b0b555e68f85cfe23d68ce6918e81afc6",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of spec:Dissertation.PaperSpec.A.ex_dealer_ham (Example 5.5, clause \"the exposure term\n<h_x x, u> of the Hamiltonian has x-derivative the added driver term <h_x, u>\").\n\nPaper (05-examples.tex:382-386): \"In the control problem the latter enters the Hamiltonian as\n<h_x x, u>_{L2(nu)}, whose x-derivative is the added driver term <h_x, u>_{L2(nu)}.\"  Here n = 1,\nx in R, h_x, u in L2(nu) (= L2(nu; R)), h_x x the scalar multiple x h_x.\n\nFaithful statement: for all h_x, u in L2(nu) and every x in R, the function\nx' |-> <x' h_x, u>_{L2(nu)} (R -> R) has derivative <h_x, u>_{L2(nu)} at x (HasDerivAt, or\nderiv = ...).  Universally quantified over nu / the mark space (any measure).  Optionally (harmless,\nbroader) also: the full Hamiltonian H of Ex. 5.1(i) plus this term has x-derivative\nbeta_2 x + <h_x, u>, the driver f of Ex. 5.5.  A statement fixing h_x or u would be narrower; a\nstatement only of the identity <x h_x, u> = x <h_x, u> would not be the derivative claim (though it\ntrivially implies it) - I will judge whether the derivative is stated.",
+  "locked_at": "2026-10-19T03:15:07Z"
+ },
+ "comparison": {
+  "text": "Comparison for spec:Dissertation.PaperSpec.A.ex_dealer_ham (Sec5Dealer.lean:62-78).\n\nLean: forall E nu beta1 beta2 sigma_c h_c h_x y z u a x,\n  HasDerivAt (fun x => <a^b, y> + <sigma_c + a^sigma, z> + int_E <h_c(e) + a^h(e), u(e)> nu(de)\n                       + <x . h_x, u> + beta2/2 x^2 + 1/(2 beta1) (|a^b|^2 + |a^sigma|^2 + ||a^h||^2))\n             (beta2 * x + <h_x, u>) x.\n\nAgainst my reading:\n- My reading asked for: for all h_x, u in L2(nu) and x in R, x' |-> <x' h_x, u> has derivative\n  <h_x, u> at x. The Lean states more: the whole Hamiltonian of Example 5.1(i) (05-examples.tex:44-50:\n  a^b y + (sigma_c + a^sigma) z + int (h_c + a^h) u dnu + beta2/2 |x|^2 + 1/(2 beta1)(...)), with the\n  exposure term <h_x x, u> added, has x-derivative beta2 x + <h_x, u>, the driver f of Ex. 5.5. That is\n  the paper's sentence in context (\"enters the Hamiltonian as <h_x x, u>, whose x-derivative is the\n  added driver term\"), and it contains the clause.\n- Instantiation giving the printed clause exactly: take beta2 = 0, sigma_c = 0, h_c = 0 and controls\n  a = 0 (any y, z, beta1): the function becomes x |-> <x . h_x, u> plus terms that vanish, and the\n  derivative is <h_x, u>. (Alternatively, subtract the derivative beta2 x of the Ex. 5.1(i) part.)\n- Quantifiers: all h_x, u, x (and all other data), any measure nu. Matches/broader.\n- The Ex. 5.1(i) Hamiltonian is transcribed correctly (inner products on R^1, the nu-integral on\n  representatives of L2 classes, which is the L2 inner product; 1/(2 beta1) is constant in x, so the\n  convention 1/0 = 0 at beta1 = 0 is irrelevant to the derivative).\n- Claimed at this revision (05-examples.tex:382-386).\nVerdict: broader (it states the derivative of the full Hamiltonian; the printed clause is the\ninstance beta2 = 0, sigma_c = 0, h_c = 0, a = 0).",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:24:08Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "broader",
+  "detail": "The proposition gives the x-derivative of the whole Example 5.1(i) Hamiltonian plus the exposure\nterm (it equals the Ex. 5.5 driver beta2 x + <h_x, u>), which is more than the clause \"the exposure\nterm <h_x x, u> has x-derivative <h_x, u>\". The printed clause is the instance beta2 = 0, sigma_c = 0,\nh_c = 0, a = (0, 0, 0) (any beta1, y, z): the differentiated function is then x |-> <x h_x, u> up to\nvanishing terms, with derivative <h_x, u> at every x."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:26:58Z",
+  "disagreements": "Verdict label only. The author's correspondence notes that ex_dealer_ham is stated on the whole\nExample 5.1(i) Hamiltonian with the exposure term added, whose full x-derivative is the driver\nbeta2 x + <h_x, u>, but the final verdict (\"faithful, broader where noted\") does not list it as\nbroader. The clause is \"the exposure term <h_x x, u> has x-derivative <h_x, u>\"; the proposition\nstates more, and the clause is its instance beta2 = 0, sigma_c = 0, h_c = 0, a = 0. I recorded\n\"broader\" with that instantiation. No disagreement on content."
+ },
+ "submitted_at": "2026-10-19T03:27:20Z",
+ "issue_draft": null
+}

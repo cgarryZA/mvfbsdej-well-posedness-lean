@@ -1,0 +1,57 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.ex_dealer_marks",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.ex_dealer_marks",
+  "lean": [
+   "Dissertation.PaperSpec.A.ex_dealer_marks"
+  ],
+  "claims": [
+   "A:ex:dealer",
+   "A:abstract"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba140a65f520ffefa33",
+  "fingerprint": "pl-fp-v1:aba9ed43099ad9877b196be0fe2cff12547cfec4bc3fc30a8e2cff180e351093",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "UNIT spec:Dissertation.PaperSpec.A.ex_dealer_marks\n\nPaper passage: Example 5.5 (ex:dealer), paragraph \"Marks and activity\":\n\"Take E = {-1,+1} x (0,1], writing e = (vs, q) for side vs and size q, with\nnu(d vs, dq) = c_vs q^{-1-rho} dq for constants c_vs > 0 and 0 < rho < 2: then nu(E) = infinity\nwhile int_E q^2 nu(d vs, dq) < infinity, so h_c(vs, q) := vs q lies in L2(nu) - infinitely many\nsmall tickets with square-integrable aggregate exposure.\"\n(Later, in \"The interaction is active\", the specialisation c_{+-1} = (2 - rho)/2 is taken, so that\n||h_c|| = ||h_x|| = 1 and <h_c, h_x> = 0; that is a different clause.)\nClause: \"the mark measure: infinite mass, square-integrable size, h_c in L2(nu); the dealer mark\nmeasure has infinite activity\".\n\nWhat a faithful formal statement must contain.\nSetting: the mark space E = {-1,+1} x (0,1] with its Borel (product) sigma-algebra; nu is the\nmeasure on E with nu({vs} x dq) = c_vs q^{-1-rho} dq on (0,1] for each side vs, i.e.\nnu = sum_{vs in {-1,+1}} delta_vs (x) c_vs q^{-1-rho} 1_{(0,1]}(q) dq. (No probability space or\nfiltration is involved: this is a statement about a deterministic measure.)\nQuantifiers: for all constants c_{-1} > 0, c_{+1} > 0 (a function c : {-1,+1} -> R with positive\nvalues) and all rho with 0 < rho < 2. No other hypotheses. Order: c, rho universally quantified,\nthen the conclusion.\nConclusion (a conjunction):\n (1) nu(E) = infinity (infinite mass / infinite activity);\n (2) int_E q^2 nu(d vs, dq) < infinity (square-integrable size), as an ENNReal lintegral < top\n     or as integrability of (vs,q) -> q^2;\n (3) h_c(vs,q) := vs q lies in L2(nu): Memℒp h_c 2 nu (MemLp), equivalently (2) since |h_c|^2 =\n     q^2; real-valued (n = 1).\nPossibly also (implicit in the paper's standing setting) nu sigma-finite; including it as an\nextra conjunct is broader-conclusion and harmless; including it as a hypothesis would be\nwrong (it is a property of this nu, not an assumption).\nConstants: none.\nRepresentation choices that are harmless: E encoded as a subset of R x R or as Bool x\nIoc 0 1 or as a subtype, provided nu is the same measure (in particular supported on sizes in\n(0,1], density c_vs q^{-1-rho} with respect to Lebesgue in q, no mass at q <= 0 or q > 1, the two\nsides weighted c_{-1}, c_{+1}); vs encoded as +-1 in R so that h_c = vs q. A statement with\nc_{-1} = c_{+1} (a single constant) or a specific rho or the normalization c = (2 - rho)/2 only\nwould be narrower. A statement in which the density uses Real.rpow at q <= 0 without a\nrestriction to q > 0 would have junk values (rpow of 0 or negatives) and must be checked.\nWitness: none needed (no hypotheses beyond c > 0, 0 < rho < 2, which are satisfiable).\nThe paper does claim this at this revision (Example 5.5, \"Marks and activity\").",
+  "locked_at": "2026-10-19T03:14:28Z"
+ },
+ "comparison": {
+  "text": "Lean (Dissertation/PaperSpec/A/Sec5.lean:705-714):\n  forall (c : Bool -> R), (forall b, 0 < c b) -> forall rho : R, 0 < rho -> rho < 2 ->\n    let nu : Measure (Bool x Set.Ioc 0 1) :=\n      (Measure.count.prod (Measure.comap Subtype.val volume)).withDensity\n        (fun e => ENNReal.ofReal (c e.1 * (e.2 : R) ^ (-1 - rho)))\n    nu univ = top /\\ lintegral (ofReal ((e.2)^2)) dnu < top\n      /\\ MemLp (fun e => (if e.1 then 1 else -1) * (e.2 : R)) 2 nu.\nItem by item against the locked reading:\n - Setting: E = {-1,+1} x (0,1] represented as Bool x Ioc 0 1 (true = +1, false = -1) with the\n   product of the discrete sigma-algebra on Bool and the subtype Borel sigma-algebra on (0,1]:\n   the Borel product sigma-algebra of the paper. nu = (counting on the sides) x (Lebesgue on\n   (0,1], comap of volume along the subtype inclusion = restriction) with density\n   c_vs q^{-1-rho}: nu({vs} x dq) = c_vs q^{-1-rho} dq, as printed. q ranges over (0,1] only,\n   so the rpow q^{-1-rho} is evaluated at q > 0 only (no junk at q <= 0); the density is\n   positive, ofReal exact.\n - Quantifiers: c : Bool -> R with c b > 0 for both sides (c_{-1}, c_{+1} > 0 independent), and\n   rho with 0 < rho < 2, universally quantified, in the order of the paper; no extra hypotheses;\n   no specialisation (not c = (2-rho)/2, not a single constant).\n - Conclusion: (1) nu(E) = infinity; (2) int_E q^2 dnu < infinity (ENNReal lintegral of q^2,\n   finite); (3) h_c(vs,q) = vs q in L2(nu) (MemLp 2, real-valued since n = 1). All three, as\n   printed. Clause from the abstract (\"the dealer mark measure has infinite activity\") = (1).\n - Constants: none.\n - Hypotheses can be met: witness ex_dealer_marks_hypotheses exhibits c = 1/2 (both sides),\n   rho = 1, an instance the paper intends (it is the paper's normalisation c = (2 - rho)/2 at\n   rho = 1). The proof ex_dealer_marks exists.\n - The paper claims this at revision f598204 (Example 5.5, \"Marks and activity\").\nRepresentation choices (all harmless): Bool for the side {-1,+1} with h_c = (if side then 1 else\n-1) * q; (0,1] as a subtype with comap-Lebesgue; the integral int q^2 dnu < infinity as an\nENNReal lintegral of ofReal q^2; L2(nu) with real values rather than EuclideanSpace R (Fin 1);\nsigma-finiteness of nu not stated (not part of this clause).",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:26:33Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices: (1) the side set {-1,+1} is Bool (true = +1, false = -1) and h_c(vs,q) is\nwritten (if side then 1 else -1) * q - the same function; (2) (0,1] is the subtype Set.Ioc 0 1\nwith Lebesgue measure comap'd along the inclusion (= the restriction of Lebesgue measure), so the\ndensity c_vs q^{-1-rho} is only evaluated at q > 0 (no rpow junk); nu is the counting measure on\nthe sides times this, with that density - the printed nu; (3) int_E q^2 dnu < infinity is stated\nas an ENNReal lintegral of ofReal(q^2) < top, the same statement; (4) L2(nu) membership is MemLp 2\nof a real-valued function rather than an element of L2(nu; R^1) - same condition for n = 1. No\nhypothesis is added, no case lost (c_{-1}, c_{+1} > 0 independent, all 0 < rho < 2); the witness\nc = 1/2, rho = 1 is an instance the paper intends."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:26:41Z",
+  "disagreements": "No substantive disagreement: the author's review covers the clause (\"Marks and activity\":\nE = {-1,+1} x (0,1], nu(d vs, dq) = c_vs q^{-1-rho} dq, c_vs > 0, 0 < rho < 2: nu(E) = infinity,\nint q^2 dnu < infinity, h_c in L2(nu)) with the witness ex_dealer_marks_hypotheses, and its overall\nverdict is faithful. Classification: I record \"faithful with representation choices\" because the\nproposition encodes the sides as Bool (h_c = (if side then 1 else -1) * q), (0,1] as a subtype with\ncomap-Lebesgue, the finiteness as an ENNReal lintegral and L2 membership as real-valued MemLp;\nthe author's review does not list these encodings for ex_dealer_marks. Note also that the author's\nnote \"the other propositions hold for every sigma-finite nu: broader\" does not apply to this\nproposition, which fixes its own nu; it is neither broader nor narrower than the printed clause."
+ },
+ "submitted_at": "2026-10-19T03:27:26Z",
+ "issue_draft": null
+}

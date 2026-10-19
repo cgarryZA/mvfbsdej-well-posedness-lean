@@ -1,0 +1,58 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.System.ReducedTuple",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.System.ReducedTuple",
+  "lean": [
+   "Dissertation.WellPosedness.System.ReducedTuple"
+  ],
+  "claims": [
+   "A:ex:brownian",
+   "A:rem:beta1-dich",
+   "A:sec5:overview"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "d68fe71f65d1320f648e397a6f92aa48",
+  "fingerprint": "pl-fp-v1:1ae70923ace02c605de3bad8556855740b42e3f0b4dd26c8883de05479913f07",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of def:Dissertation.WellPosedness.System.ReducedTuple.\n\nPaper notion. Example 5.2 (Brownian reduction, 05-examples.tex:197-208): \"Delete the\nU-coordinate from the tuple, reducing H to R^n x R^m x R^{m x d}.\"  Remark 2.10 refers to this\ncase (\"When nu = 0 the fibre L2(nu) is trivial ... this is the Brownian case of Example 5.2\").\nThe full space H = R^n x R^m x R^{m x d} x L^2(nu;R^m) carries the Hilbert norm\n|theta|^2 = |x|^2 + |y|^2 + |z|_F^2 + ||u||^2 (01-introduction.tex:19-31), with Euclidean norms on\nR^j and the Frobenius norm on matrices; the reduced space inherits the same norm with the u-term\nremoved: |(x,y,z)|^2 = |x|^2 + |y|^2 + |z|_F^2.  The reduced assumptions are \"W2-Lipschitz\njoint-law dependence of (X,Y,Z)\", so W2 on P2(reduced space) is computed in that norm.\n\nWhat a faithful Lean definition must be. The type of triples (x, y, z) with x in R^n, y in R^m,\nz in R^{m x d} (n, m, d the dimensions of the setting), equipped with the l2 (Hilbert-sum)\nnorm sqrt(|x|^2 + |y|^2 + |z|_F^2): e.g. WithLp 2 of a product of EuclideanSpace ℝ (Fin n),\nEuclideanSpace ℝ (Fin m) and the Frobenius-normed matrix space (or a matrix space identified\nwith EuclideanSpace on Fin m x Fin d), or a structure with an explicitly defined matching inner\nproduct.  The components should be the same types as the first three components of the Lean full\ntuple space, so that the projection forgetting u is the coordinate map.\nRepresentation issues to check: Lean's default product norm is the sup norm, and the default\nMatrix norm is not Frobenius (no global instance, or an operator/sup norm by local instance);\nwith a sup-type norm the W2 distance and all Lipschitz/moment constants of the reduced setting\nwould differ from the paper's (equivalent but not equal), which matters for the W2-Lipschitz\nreading of Example 5.2; that would be a non-harmless choice unless the uses only need the\ntopology/measurable structure.  The Borel sigma-algebra must be the one of this norm (it is the\nproduct Borel structure for second-countable factors).",
+  "locked_at": "2026-10-19T03:15:06Z"
+ },
+ "comparison": {
+  "text": "Comparison for def:Dissertation.WellPosedness.System.ReducedTuple (Examples/Brownian.lean:59-65).\n\nLean: ReducedTuple n m d := WithLp 2 (EuclideanSpace R (Fin n) x\n  WithLp 2 (EuclideanSpace R (Fin m) x EuclideanSpace R (Fin m x Fin d))).\n\nAgainst my reading:\n- Components: x in R^n (EuclideanSpace, Euclidean norm), y in R^m (Euclidean), z in R^{m x d}\n  represented as EuclideanSpace R (Fin m x Fin d), whose norm is sqrt(sum_{ij} z_ij^2), the\n  Frobenius norm. These are the same channel types as the first three channels of TupleH\n  (System/Tuple.lean:134-136), so dropping u is a coordinate map.\n- Norm: nested l2 products (WithLp 2), so ||w||^2 = |x|^2 + |y|^2 + |z|_F^2 - proved in the file\n  as norm_reducedTuple_sq. This is the paper's Hilbert norm of the reduced space, NOT the sup norm\n  (unlike TupleH, which carries the max of channel norms). Hence W2 on P2(ReducedTuple) (w2P) is the\n  paper's W2 for the reduced space.\n- Measurable structure: Mathlib's WithLp.measurableSpace (comap of ofLp) with WithLp.borelSpace for\n  binary products of second-countable Borel spaces: the Borel sigma-algebra of the norm topology.\n  Matches.\n- No junk values involved (a type).\nRepresentation choices: (1) matrices as Euclidean vectors on Fin m x Fin d (Frobenius norm exactly;\nharmless, matrix actions are implemented separately); (2) the triple as a nested l2 product\n(x, (y, z)) instead of a flat triple (norm identical, ordering of components as in the paper).\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:17:28Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "(1) The m x d matrix channel is EuclideanSpace R (Fin m x Fin d): its norm is exactly the Frobenius\nnorm and it is the same channel type as in TupleH, so nothing changes. (2) The triple is the nested\nl2 product WithLp 2 (R^n x WithLp 2 (R^m x R^{m x d})), whose norm squared is\n|x|^2 + |y|^2 + |z|_F^2 (lemma norm_reducedTuple_sq), the paper's Hilbert norm, with the Borel\nsigma-algebra; the nesting only regroups the coordinates."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:26:06Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:26:15Z",
+ "issue_draft": null
+}

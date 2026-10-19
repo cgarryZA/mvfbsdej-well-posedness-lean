@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.ex_dealer_symm",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.ex_dealer_symm",
+  "lean": [
+   "Dissertation.PaperSpec.A.ex_dealer_symm"
+  ],
+  "claims": [
+   "A:ex:dealer"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba11753a45d7d37cdc6",
+  "fingerprint": "pl-fp-v1:cf84db2ed7aecde0b37248c2626d7ab2adb54845263330ad760fec236bcbb27f",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of spec:Dissertation.PaperSpec.A.ex_dealer_symm (Example 5.5, clause \"the symmetrised\ncrowding pairing, positive unless lambda is a Dirac mass\").\n\nPaper (05-examples.tex:505-512): \"For lambda in P2(L2(nu)) the symmetrisation above, under\nlambda (x) lambda, gives\n  int <A_lambda(u), u> lambda(du) = (1/2) iint ||u - v||^2 / sqrt(1 + ||u - v||^2) lambda(du) lambda(dv),\nwhich is positive unless lambda is a Dirac mass\".\nA_lambda(u) = int grad V(u - v) lambda(dv), grad V(w) = w / sqrt(1 + ||w||^2), on L2(nu) = L2(nu; R)\n(dealer example, m = 1).\n\nFaithful statement:\n- For every lambda in P2(L2(nu)) (Borel probability measure on the fibre with finite second\n  moment; finite first moment suffices for integrability, so a broader class is harmless if the\n  integrals are genuinely integrable there - with Bochner junk = 0 for non-integrable integrands a\n  broader class could make the identity hold trivially or fail, so I will check);\n- (identity) int <A_lambda(u), u> lambda(du) = (1/2) iint ||u-v||^2/sqrt(1+||u-v||^2) d(lambda x lambda);\n- (positivity) if lambda is not a Dirac mass (there is no a with lambda = delta_a), then this\n  value is > 0.  (The converse, = 0 at a Dirac mass, is immediate and harmless if included; \"unless\"\n  is read as \"if not Dirac then positive\".)\n- Setting: the standing mark space and sigma-finite nu (countably generated, so L2(nu) separable\n  and the diagonal is measurable); any nu (for nu = 0 every lambda is Dirac and the claim is\n  vacuous-true; fine).\nBoth the identity and the positivity are part of the clause (\"the symmetrised ... pairing,\npositive\"); a statement with only one of them would be narrower.  The pairing must be the L2(nu)\ninner product, A the paper's crowding correction.",
+  "locked_at": "2026-10-19T03:15:07Z"
+ },
+ "comparison": {
+  "text": "Comparison for spec:Dissertation.PaperSpec.A.ex_dealer_symm (Sec5DealerActive.lean:174-183).\n\nLean: forall E nu [SigmaFinite] [CountablyGenerated] (Lam : P2 (Lp (EuclideanSpace R (Fin 1)) 2 nu)),\n  int <ex55Crowd Lam.law u, u> dLam(u)\n     = 1/2 * int_u int_v ||u - v||^2 / sqrt(1 + ||u - v||^2) dLam dLam\n  /\\ ((not exists u, Lam.law = dirac u) -> 0 < int <ex55Crowd Lam.law u, u> dLam(u)).\n\nAgainst my reading:\n- Laws: every lambda in P2(L2(nu)) (probability, finite second moment). Matches the printed class.\n- Identity: present, with the paper's integrand ||u-v||^2/sqrt(1+||u-v||^2) and factor 1/2; the\n  double integral under lambda (x) lambda is written as an iterated Bochner integral, which equals\n  the product integral by Fubini because the integrand is integrable (bounded by ||u|| + ||v||,\n  finite first moments). Left side integrable since |<A(u),u>| <= ||u||. So both sides are genuine\n  values, not Bochner junk 0; the identity cannot hold vacuously.\n- Positivity unless Dirac: (not exists a, lambda = delta_a) -> value > 0. Matches (\"unless\" read as\n  \"if not Dirac then positive\").\n- A is ex55Crowd, the paper's crowding correction; pairing the L2(nu) inner product. Fibre L2(nu; R^1).\n- Setting: sigma-finite, countably generated nu (so L2(nu) separable, Borel structure fine).\n  No other hypotheses; the class P2(L2(nu)) is nonempty (Dirac masses), and non-Dirac laws exist\n  whenever the fibre is nontrivial (witness ex_dealer_unit_hypotheses gives a unit vector).\n- Claimed by the paper at this revision (05-examples.tex:505-512).\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:21:36Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:26:58Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:27:19Z",
+ "issue_draft": null
+}

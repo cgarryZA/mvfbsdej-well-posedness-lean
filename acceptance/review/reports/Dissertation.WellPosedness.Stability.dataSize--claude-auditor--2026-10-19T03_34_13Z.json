@@ -1,0 +1,63 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.Stability.dataSize",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.Stability.dataSize",
+  "lean": [
+   "Dissertation.WellPosedness.Stability.dataSize"
+  ],
+  "claims": [
+   "A:abstract",
+   "A:conclusion",
+   "A:cor:robust",
+   "A:lem:pert",
+   "A:rem:generalrank",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "f5b22d1ca3f4de88514ab122da58813f",
+  "fingerprint": "pl-fp-v1:a47c4b9c3651606c6c2b87324036ba082278fb7fff00f9cfd83fc660a79d3544",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of def Stability.dataSize (the data-size quantity on the right of the stability estimates:\n(3.1)'s bracket and the P of Lemma 4.3, (4.6)).\n\nPaper notion. For two systems/solutions (or a forcing difference):\n  E|delta xi_0|^2 + E|delta g_T|^2\n  + E int_0^T ( |delta b_t|^2 + |delta sigma_t|_F^2 + ||delta h_t||^2_{L^2(nu)} + |delta f_t|^2 ) dt,\nwith delta xi_0 in R^n, delta g_T in R^m (hat-delta g_T of Thm 3.1: g^1(X^2_T, Law X^2_T) -\ng^2(X^2_T, Law X^2_T); or q^g difference in Lemma 4.3), delta b in R^n, delta sigma in R^{n x d}\n(Frobenius), delta h in L^2(nu;R^n), delta f in R^m; in Thm 3.1 all coefficient differences are\nevaluated along solution 2 (h at the predictable tuple). Here dt on [0,T].\nA faithful Lean definition: exactly this sum of five terms with these norms, squared; expectation\nover P and dt-integral over [0,T]. Edge cases: in R via Bochner integrals, a non-integrable term\ngets junk 0, which would make the RHS of a stability bound too small and the bound a stronger\n(possibly false) claim; so either the def is in ENNReal (lintegral, value infinity for\nnon-integrable data - then a bound LHS <= C * dataSize is trivially true when dataSize = infinity,\nwhich matches the paper's \"the estimate holds whenever the differences are square integrable\"), or\nevery use must carry integrability hypotheses. The constant factor must be none (pure sum).",
+  "locked_at": "2026-10-19T03:16:14Z"
+ },
+ "comparison": {
+  "text": "Comparison, Stability.dataSize (Stability/PairDiff.lean:124-131).\n\ndataSize P nu T xi qb qsigma qh qf qg = int^- sum_i xi_i^2 dP + int^- sum_k qg_k^2 dP\n + sum_i E int_0^T |qb_i|^2 + sum_{i,j} E int_0^T |qsigma_ij|^2 + sum_i E int_0^T int_E |qh_i|^2 nu(de)\n + sum_k E int_0^T |qf_k|^2, all in [0, inf] (lintegrals/energies on Icc 0 T).\n= E|dxi_0|^2 + E|dg_T|^2 + E int_0^T (|db|^2 + |dsigma|_F^2 + ||dh||^2_{L^2(nu)} + |df|^2) dt in\ncoordinates; no constant factor. ENNReal-valued: non-integrable data give infinity (the bound is then\ntrivial), no junk-0. At use (thm_stab) the arguments are the differences along solution 2 with h at\nthe predictable tuple (via coeffJump with left limits). Matches my reading.\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:32:34Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:32:45Z",
+  "disagreements": "Label only. I recorded \"faithful\"; the review's choices (coordinates, ENNReal values, data passed as\narguments) I regard as a one-for-one transcription of the printed quantity rather than departures.\nIts remark that lintegral is additive only for measurable data is right and does not bite (all data\nof the paper are measurable). No disagreement in substance."
+ },
+ "submitted_at": "2026-10-19T03:34:13Z",
+ "issue_draft": null
+}

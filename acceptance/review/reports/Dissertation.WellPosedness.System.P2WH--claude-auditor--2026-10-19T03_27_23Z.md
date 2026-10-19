@@ -1,0 +1,57 @@
+### A:abstract, A:conclusion, A:cor:robust, A:eq:coefmeas, A:eq:hborel, A:ex:brownian, A:ex:concrete, A:ex:dealer, A:ex:fulllaw, A:intro:limin-comparison, A:lem:cont, A:lem:lawflow, A:lem:pert, A:lem:small, A:rem:beta1-dich, A:rem:cwp-class, A:rem:diag-mono, A:rem:generalrank, A:rem:intrinsic, A:rem:regimes, A:rem:uniq-no-integ, A:sec2:hborel-derivation, A:sec4:horizon-not-contractive, A:sec5:overview, A:sec:examples, A:thm3.1:companion, A:thm:cwp, A:thm:stab, A:thm:uniq: Dissertation.WellPosedness.System.P2WH
+Pins: manuscript A None; project 128888621847f17ef1e2e2351bf070ed392bad40; hash 8b570604f2bfe77f0b8346109edf1c66 (pl-fp-v1:d727776f413b6c277cd41f6054252ca4f08714749a04cfa45e42d8e70a9f8f8e)
+Reviewer: claude-auditor (model, claude, self-declared); 2026-10-19T03:27:23Z; same model family as the author: yes
+Phase 1 specification (locked 2026-10-19T03:13:11Z):
+Reading for def:Dissertation.WellPosedness.System.P2WH (locked before any Lean is shown).
+
+Paper notion. P_2(H) (sec 1-2): the Borel probability measures mu on the Hilbert space
+H = R^n x R^m x R^{m x d} x L^2(nu;R^m) (norm |theta|^2 = |x|^2+|y|^2+|z|_F^2+||u||^2_{L^2(nu)})
+with finite second moment, int |theta|_H^2 mu(d theta) < infinity, equipped with the quadratic
+Wasserstein distance W_2 (Villani Def 6.1); (P_2(H), W_2) is Polish (H separable since nu is
+sigma-finite on a countably generated space). Coefficients b, sigma, h, f take a law argument in
+P_2(H); laws mu_t = Law(Theta_t) of square-integrable tuples are elements.
+
+A faithful Lean definition must be:
+- carrier: probability measures on H w.r.t. the Borel sigma-algebra of the norm topology of H
+  (the H being the paper's, with the l^2-sum (Hilbert) norm, not the sup norm of a product),
+  subject to finite second moment int ||theta||_H^2 d mu < infinity;
+- (the metric is reviewed separately in instPseudoMetricSpace / w2H) dist = W_2;
+- no extra restriction (e.g. only finitely supported, or only laws of variables on the standing
+  basis) and no relaxation (all probability measures, infinite moment allowed) - unless the
+  metric still equals W_2 on the relevant set; an extra restriction to laws realised on the
+  standing basis would change the meaning of the free-measure statements (Prop 3.8) and must be
+  flagged.
+Edge: probability measure means total mass 1 (not a sub-probability, not a finite measure).
+Comparison (verdict recorded 2026-10-19T03:25:27Z):
+Comparison for def:Dissertation.WellPosedness.System.P2WH.
+
+Lean: P2WH HX HY HZY HUY := P2 (Tuple HX HY HZY HUY), a type synonym of P2 on the product of four
+abstract inner product spaces, where P2 E is the structure {law : Measure E, IsProbabilityMeasure,
+secondMoment law != top} with secondMoment = int ofReal(|x|^2) dlaw (Dissertation/Law/P2.lean).
+Its metric (separate instance unit) is the Hilbert-norm W_2 (P2WH.dist_toP2WH: dist = w2H, rfl);
+its sigma-algebra the Borel one of that metric (P2WH.instMeasurableSpace := borel).
+
+Item by item with my reading:
+- probability measures on H: yes (IsProbabilityMeasure, total mass 1).
+- sigma-algebra on H: the product of the four channel sigma-algebras (Prod instance). At the
+  paper's instance (TupleP2WH: Euclidean spaces with Borel, L^2(nu) with lpMeasurableSpace = borel,
+  all second countable under SigmaFinite nu and countably generated E) the product sigma-algebra is
+  the Borel sigma-algebra of H. OK.
+- finite second moment: computed with the norm of Tuple, which is Mathlib's product (max) norm,
+  not the Hilbert norm. Since max <= Hilbert <= 2 max (norm_le_norm_toL2, norm_toL2_le), the two
+  finiteness conditions coincide; the carrier is exactly P_2(H). OK.
+- no extra restriction (all such laws, not only laws realised on the standing basis), no
+  relaxation. OK.
+- the metric carried is W_2 for the Hilbert norm (via lawToL2 into P2W TupleL2), as the paper.
+Generic in the four channel spaces; the paper's H is the instance TupleP2WH.
+
+Verdict: faithful with representation choices.
+Witness: —
+Verdict: faithful with representation choices — Representation choices, each harmless:
+1. Type synonym of P2 (Tuple ...) (probability measure + finite second moment), generic in the four
+   channel spaces; the paper's P_2(H) is the instance TupleP2WH.
+2. The second moment is taken in the max norm of the product type; it is within a factor 2 of the
+   Hilbert norm, so finiteness of the second moment, hence the carrier, is the paper's.
+3. The Hilbert-norm W_2 is put on the synonym by the induced pseudometric (dist = w2H by rfl), and
+   the sigma-algebra is the Borel one of that topology, as the paper's (P_2(H), W_2).
+Disagreements with the author's review (shown 2026-10-19T03:25:39Z): none

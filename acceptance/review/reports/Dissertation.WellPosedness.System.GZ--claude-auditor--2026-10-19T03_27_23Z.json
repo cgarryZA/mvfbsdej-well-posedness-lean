@@ -1,0 +1,84 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.System.GZ",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.System.GZ",
+  "lean": [
+   "Dissertation.WellPosedness.System.GZ"
+  ],
+  "claims": [
+   "A:abstract",
+   "A:ass:G",
+   "A:ass:mono",
+   "A:conclusion",
+   "A:cor:robust",
+   "A:eq:monomargin",
+   "A:eq:monomarginu",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:ex:dealer",
+   "A:ex:fulllaw",
+   "A:intro:limin-comparison",
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:rem:beta1-dich",
+   "A:rem:diag-mono",
+   "A:rem:freelaw",
+   "A:rem:generalrank",
+   "A:rem:intrinsic",
+   "A:rem:margin",
+   "A:rem:regimes",
+   "A:rem:uniq-no-integ",
+   "A:sec3:margin-paragraph",
+   "A:sec4:horizon-not-contractive",
+   "A:sec5:overview",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "c2eb31a2cb944229321c531fa6d8a32a",
+  "fingerprint": "pl-fp-v1:34e49ac326737a1b507b676e5969437a873dc7cdd96ff8ae9e20d89291445eb6",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for def:Dissertation.WellPosedness.System.GZ (locked before any Lean is shown).\n\nPaper notion. The paper has no symbol \"GZ\"; the name points at the G-weighted Z-channel of\nAssumption 2.4/2.5 (ass:G, ass:mono): for z in R^{m x d} the quantity G^T z in R^{n x d}\n(matrix product of the transpose of the coupling matrix G in R^{m x n} with z), which enters\n  <delta sigma, G^T delta Z>_F   (Frobenius pairing in R^{n x d}),\n  |G^T delta Z|_F^2              (in the beta_1 coercive term),\n  |Z|_F^2 <= c_G |G^T Z|_F^2     (ass:G, when G^T is injective).\n(Less likely: \"GZ\" = the product with G itself, but G z is not defined for z in R^{m x d}\nunless n=m; only G^T z makes dimensional sense for the Z-channel pairing with sigma in R^{n x d}.)\n\nA faithful Lean definition must therefore be:\n- the linear map z |-> G^T z, R^{m x d} -> R^{n x d}, (G^T z)_{ij} = sum_k G_{ki} z_{kj}, applied\n  columnwise (equivalently to each of the d columns of z);\n- in whatever encoding of R^{m x d} the development uses (Matrix, EuclideanSpace on Fin m x Fin d,\n  Fin d -> EuclideanSpace (Fin m), ...), the encoding of the target must carry the Frobenius\n  (Euclidean on all entries) norm/inner product, so that |.|_F and <.,.>_F are the paper's;\n- no hidden scaling, no use of G instead of G^T, no restriction to injective G (the map is\n  defined for every G; injectivity is a hypothesis elsewhere).\nIf instead the Lean \"GZ\" is G applied in a different channel (e.g. to U pointwise), it must be the\npointwise G^T u(e), descending to L^2(nu) classes.",
+  "locked_at": "2026-10-19T03:13:11Z"
+ },
+ "comparison": {
+  "text": "Comparison for def:Dissertation.WellPosedness.System.GZ.\n\nLean: GZ G : EuclideanSpace R (Fin n x Fin d) ->L[R] EuclideanSpace R (Fin m x Fin d),\nthe Euclidean linear map of the Kronecker matrix G (x) I_d. Entry check: ((G (x) I_d) z)(k,j) =\nsum_{i,j'} G_{ki} delta_{jj'} z(i,j') = (G z_{.j})_k (GZ_toLp_apply), i.e. sigma |-> G sigma acting\ncolumn by column, R^{n x d} -> R^{m x d}.\n\nAgainst my reading: I expected the Z-channel operator z |-> G^T z. The Lean defines the operator\non the sigma-channel, sigma |-> G sigma, and obtains G^T z in two equivalent ways:\nGZ (G^T) (the same construction at the transposed matrix, R^{m x d} -> R^{n x d}), and\nadjoint (GZ G) = GZ G^T (adjoint_GZ, proved). Consumers use exactly these: Assumption 2.5\n(pairing27, Mono27At) uses inner (delta sigma) (GZ G^T delta Z) and |GZ G^T delta Z|^2, i.e. the\npaper's <delta sigma, G^T delta Z>_F and |G^T delta Z|_F^2; ass_G uses\n|adjoint (GZ G) Z|^2 = |G^T Z|_F^2. So the paper's G^T Z is recovered exactly.\nEncoding: R^{n x d} as EuclideanSpace on Fin n x Fin d: the l2 norm over all entries is the\nFrobenius norm, the inner product the Frobenius pairing - the paper's |.|_F, <.,.>_F.\nNo scaling, defined for every G (no rank assumption inside). No junk values.\n\nVerdict: faithful with representation choices (matrix encoding; operator defined on the sigma\nchannel with G^T z obtained as GZ G^T or the adjoint).",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:25:27Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices, each harmless:\n1. R^{n x d} and R^{m x d} are encoded as EuclideanSpace R (Fin n x Fin d) (resp. Fin m x Fin d):\n   the Euclidean norm on all entries is exactly the Frobenius norm and its inner product the\n   Frobenius pairing.\n2. The paper writes the Z-channel operator as z |-> G^T z; Lean defines sigma |-> G sigma (the\n   Kronecker matrix G (x) I_d, checked entrywise in GZ_toLp_apply to act column by column) and gets\n   G^T z as GZ G^T, which is also the adjoint of GZ G (adjoint_GZ). The consumers (pairing27,\n   Mono27At, ass_G) use GZ G^T or the adjoint, so they read the paper's <delta sigma, G^T delta Z>_F\n   and |G^T delta Z|_F."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:25:39Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:27:23Z",
+ "issue_draft": null
+}

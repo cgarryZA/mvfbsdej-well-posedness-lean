@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.lem_lawflow_invariant",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.lem_lawflow_invariant",
+  "lean": [
+   "Dissertation.PaperSpec.A.lem_lawflow_invariant"
+  ],
+  "claims": [
+   "A:lem:lawflow"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba184c9d1f8d6f2b814",
+  "fingerprint": "pl-fp-v1:5b592b7821c070fecd50bbe1798b7b7ff34350b9115d2311b8dc73c336b059ac",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "# Reading: spec lem_lawflow_invariant (Lemma A.1: uniqueness of the flows and invariance under representatives)\n\nLemma A.1, second part: the Borel representatives mu, mu^- of t -> Law(Theta_t), Law(Theta^-_t)\nare unique up to Lebesgue-null sets of times; and coefficient evaluations along these\nrepresentatives are invariant, up to dt x dP-null sets, under the choice of predictable\nrepresentatives of (Z,U) and of the Borel representatives.\nA faithful formal statement (hypotheses as Lemma A.1: X, Y cadlag adapted, Z, U predictable,\nE int (|X|^2+|Y|^2+|Z|^2+||U||^2) dt < oo):\n* Uniqueness: any two Borel maps mu, mu~ : [0,T] -> P2(H) with mu_t = Law(Theta_t) a.e. and\n  mu~_t = Law(Theta_t) a.e. agree for a.e. t (same for mu^-).\n* Invariance: for (Z',U') another pair of predictable versions (Z = Z' dt x dP-a.e., U = U'\n  dt x dP x nu-a.e., or a.e. as L^2(nu)-valued processes), with flows mu', mu'^- representing the\n  laws of Theta' = (X,Y,Z',U') and Theta'^-, and for ANY coefficient psi (b, sigma, f evaluated at\n  (s, Theta_s, mu_s); h at (s, Theta^-_s, mu^-_s)):\n  psi(s, Theta_s(omega), mu_s) = psi(s, Theta'_s(omega), mu'_s) for dt x dP-a.e. (s,omega)\n  (in L^2(nu) for h), and likewise when only the Borel representative is changed.\n  No regularity of psi is needed (the arguments coincide a.e.); a statement requiring Lipschitz\n  or continuity of psi would be narrower but harmless if the paper's coefficients satisfy it.\n* The time domain [0,T], Lebesgue measure; P the standing measure.",
+  "locked_at": "2026-10-19T03:16:45Z"
+ },
+ "comparison": {
+  "text": "# Comparison: lem_lawflow_invariant (Lemma A.1: uniqueness of the flows, invariance)\n\nLean (AppA.lean): for every probability space, sigma-finite nu on countably generated E, n, m, d,\nT, ANY processes X, Y, two versions Z, Z' (equal dP x dt-a.e. on Omega x [0,T]) and U, U' (equal\ndP x dt x nu-a.e.), ANY flows rho, rho' : R -> P2(H) with (rho s).law = P.map Theta_s and\n(rho' s).law = P.map Theta'_s for a.e. s in [0,T] (Theta = tupleAt X Y Z U, Theta' = tupleAt X Y Z'\nU'), and ANY function psi : R -> H -> P2(H) -> W (any target type):\n  rho s = rho' s for a.e. s in [0,T], and\n  psi(s, Theta_s(omega), rho_s) = psi(s, Theta'_s(omega), rho'_s) for dP x dt-a.e. (omega, s).\n\nAgainst my reading:\n* Uniqueness of the flows: the case Z' = Z, U' = U gives that any two representatives of\n  t -> Law(Theta_t) agree a.e.; the Borel property is not even needed. Yes.\n* Invariance under the choice of versions of (Z, U) and of representatives: yes, both changes at\n  once, for every coefficient psi, with no regularity of psi (as my reading said none is needed);\n  the jump coefficient (L^2(nu)-valued, at Theta^-) is covered by taking W = L^2(nu; R^n) and X, Y\n  replaced by their left-limit processes, since X, Y are arbitrary.\n* a.e. w.r.t. dt x dP on [0,T] x Omega: yes (energyMeasure = P x Lebesgue on [0,T]).\nDifferences (generalisations): X, Y, Z, U need not be cadlag/predictable/square integrable (the\nstatement is for arbitrary processes); the versions Z', U' need not be predictable; the flows need\nnot be Borel; psi is arbitrary.\nInstantiation giving the printed clause: X, Y, Z, U as in Lemma A.1, (Z', U') another pair of\npredictable versions, rho, rho' the Borel flows of the first clause for the two pairs (and the\nsame pair for the uniqueness statement), psi in {b, sigma, f}, and for h the same with X, Y\nreplaced by leftLimProc X, leftLimProc Y and the flows mu^-.\nVerdict: broader.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:35:21Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "broader",
+  "detail": "Broader than printed: the statement holds for arbitrary processes X, Y, arbitrary versions Z', U'\nequal to Z, U dP x dt (x nu)-a.e. (not necessarily predictable), arbitrary flows rho, rho' that\nrepresent the laws of Theta_s, Theta'_s for a.e. s (not necessarily Borel) and an arbitrary\ncoefficient psi with any target. Instantiation giving the printed clause: take X, Y cadlag adapted\nand Z, U predictable as in Lemma A.1; for uniqueness of the flows take Z' = Z, U' = U and two Borel\nrepresentatives rho, rho' (conclusion rho = rho' a.e.); for invariance take (Z', U') another\npair of predictable versions and rho, rho' the corresponding Borel flows, with psi = b, sigma, f,\nand for h the same applied to X, Y replaced by their left limits (the predictable tuple Theta^- and\nthe flows mu^-), W = L^2(nu; R^n)."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:38:30Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:38:36Z",
+ "issue_draft": null
+}

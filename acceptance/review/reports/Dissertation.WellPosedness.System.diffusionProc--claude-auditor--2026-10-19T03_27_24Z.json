@@ -1,0 +1,83 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.System.diffusionProc",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.System.diffusionProc",
+  "lean": [
+   "Dissertation.WellPosedness.System.diffusionProc"
+  ],
+  "claims": [
+   "A:abstract",
+   "A:conclusion",
+   "A:cor:robust",
+   "A:eq:coefmeas",
+   "A:eq:forced",
+   "A:eq:mvfbsdej",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:ex:dealer",
+   "A:ex:fulllaw",
+   "A:intro:limin-comparison",
+   "A:intro:mvfbsdej",
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:rem:cwp-class",
+   "A:rem:generalrank",
+   "A:rem:regimes",
+   "A:rem:uniq-no-integ",
+   "A:sec3:one-null-set",
+   "A:sec4:WP-def",
+   "A:sec4:horizon-not-contractive",
+   "A:sec5:overview",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "38de1bfa70e0d9f65621b71beed53a93",
+  "fingerprint": "pl-fp-v1:fd9aff9beb5c0bd26e0e59d9f3ee7c2164e3f1a2485d8caab9e82efe2b0b9bc1",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for def:Dissertation.WellPosedness.System.diffusionProc (locked before any Lean is\nshown).\n\nPaper notion ((1.1), (2.coefmeas)): the diffusion coefficient process along a tuple Theta,\n  (s, omega) |-> sigma(s, Theta_s(omega), mu_s),   mu_s = Law(Theta_s) in P_2(H),\nvalues in R^{n x d}; it is the integrand of int_0^t ... dW_s in the forward equation.\nEvaluated at the current tuple Theta_s = (X_s, Y_s, Z_s, U_s) (not left limits; though for the dW\nintegral left limits would give the same integral since they differ on a dt x dP-null set), and\nat the joint law mu_s of the full tuple at time s (Borel representative of s |-> Law(Theta_s),\nagreeing with Law(Theta_s) for a.e. s). Progressively measurable along diagonal inputs.\nA faithful Lean definition must be: fun s omega => sigma s (Theta_s omega) (law of Theta_s), with\nthe law being the push-forward of P under Theta_s as an element of P_2(H); at times s where\nTheta_s is not square integrable the paper's mu_s is the Borel representative - any junk value\nthere is harmless provided this happens only on a Lebesgue-null set of times (which is the case\nfor tuples in the solution class). sigma must be the system's diffusion coefficient (not b, h).",
+  "locked_at": "2026-10-19T03:13:11Z"
+ },
+ "comparison": {
+  "text": "Comparison for def:Dissertation.WellPosedness.System.diffusionProc.\n\nLean: diffusionProc P T C X Y Z U (coordinate) = indicator_[0,T](s) * C.sigma s (tupleAt nu X Y Z U s omega)\n(lawP2 P (tupleAt nu X Y Z U s)) (coordinate), values R^{n x d}, entry (i,j).\n- coefficient: C.sigma, the system's diffusion coefficient. OK.\n- point argument: tupleAt at the current time s (X_s, Y_s, Z_s, U_s), not left limits - as the\n  paper's sigma(s,Theta_s,mu_s). OK.\n- law argument: lawP2 P Theta_s, the exact law of the full tuple at every time (push-forward when\n  Theta_s in L^2, Dirac 0 junk otherwise). The paper's mu_s is a Borel representative agreeing with\n  Law(Theta_s) for a.e. s; the process is used only as the integrand of the dW integral, which depends only on its\n  dt x dP class, and for tuples of the solution class Theta_s is in L^2 for a.e. s (X,Y in S^2,\n  Z,U in H^2 with the Fubini argument), so the junk value is taken only on a Lebesgue-null set of\n  times. Harmless.\n- vanishing off [0,T]: normalisation; only [0,T] enters (1.1).\n- coordinates: one real coordinate per call (the vector-valued process is the family). OK.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:25:27Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices, harmless:\n1. The law argument is the exact law lawP2 P Theta_s at every time, not a Borel representative.\n   It agrees with the paper's mu_s for a.e. s, and its junk value (Dirac 0 when Theta_s is not\n   square integrable) is taken only on a Lebesgue-null set of times for tuples of the solution\n   class. The process enters only through the integrand of the dW integral, which sees only its dt x dP class.\n2. The process is cut off to 0 outside [0,T] and returned coordinatewise. Neither changes\n   anything on [0,T]."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:25:39Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:27:24Z",
+ "issue_draft": null
+}

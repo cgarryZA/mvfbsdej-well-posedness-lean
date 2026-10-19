@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.cor_robust_lip",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.cor_robust_lip",
+  "lean": [
+   "Dissertation.PaperSpec.A.cor_robust_lip"
+  ],
+  "claims": [
+   "A:cor:robust"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba14b18016daa0b4aac",
+  "fingerprint": "pl-fp-v1:1c0b2472fa7cc5475eff926b5def78c0b27cea2a6819205588ff76fccf6024ec",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of spec cor_robust_lip: Corollary 3.6, last paragraph and its proof (03-main-results.tex:\n227-233, 259-276): \"(3.5) gives (3.4) with c_pert = ||G|| L_p\".\n\nPaper claim. Setting of Corollary 3.6: m = n, G in R^{m x n} full rank with operator norm ||G||,\nperturbations p_b, p_sigma, p_h, p_f : [0,T] x H x P_2(H) -> R^n, R^{n x d}, L^2(nu;R^n), R^m,\nindependent of theta (p_psi(t,theta,mu) = p_psi(t,mu)). Hypothesis (3.5): for a.e. t in [0,T] and\nall diagonal inputs (Theta,mu),(Theta',mu') in D_t,\n |delta p_b| + |delta p_sigma|_F + ||delta p_h||_{L^2(nu)} + |delta p_f| <= L_p W_2(mu,mu')\n(deterministic, since independent of theta). Conclusion (3.4) with c_pert = ||G|| L_p: for a.e. t\nand all diagonal inputs,\n E[<delta p_b, G^T dY> + <delta p_sigma, G^T dZ>_F + <-delta p_f, G dX>\n   + int_E <delta p_h(e), G^T dU(e)> nu(de)] <= ||G|| L_p E[|dX|^2 + |dY|^2 + |dZ|_F^2 + ||dU||^2].\nA faithful formal statement must contain: theta-independence; (3.5) along diagonal inputs a.e. t;\nconclusion (3.4) a.e. t for all diagonal inputs with the exact constant ||G|| L_p, ||G|| the\noperator (spectral) norm (a Frobenius norm would weaken the constant - a different claim);\nL_p >= 0. m = n may be dropped (broader; the instantiation m = n gives the printed claim). The\nother hypotheses of Corollary 3.6 (baseline assumptions, origin-integrability, diagonal Lipschitz of\nthe perturbations) are not needed; including them makes it narrower only formally (they are the\ncorollary's standing hypotheses, so including them is still faithful to the printed clause).\nThe stochastic setting: the sec. 2 basis, D_t over F_t-measurable L^2 tuples, U-component in\nL^2(nu;R^m), the h-pairing int_E <., G^T .> nu(de) = L^2(nu) inner product.",
+  "locked_at": "2026-10-19T03:16:14Z"
+ },
+ "comparison": {
+  "text": "Comparison, cor_robust_lip (Sec3.lean:240-250).\n\n- Setting: any probability space with any filtration F (the sec. 2 one is an instance), nu\n  sigma-finite on countably generated E, n >= 1, T > 0, m = n (p : Coeffs nu n n d, G : n x n),\n  any G (full rank not required), any L_p.\n- p.TupleIndep: p_b, p_sigma, p_h, p_f independent of theta. OK.\n- LawLip35 F P T L_p p: for a.e. t in [0,T], for all diagonal inputs, a.s.\n  |dp_b| + |dp_sigma|_F + ||dp_h||_{L^2(nu)} + |dp_f| <= L_p w2H(mu,mu') - (3.5) with the Hilbert-norm\n  W_2. (a.s. is harmless: the differences are deterministic.)\n- Conclusion PairingBound34 F P T G (||GX G|| * L_p) p: for a.e. t, all diagonal inputs, the\n  pairing27 of p (<dp_b, G^T dY> + <dp_sigma, G^T dZ>_F + <-dp_f, G dX> + int_E <dp_h(e), G^T dU(e)>\n  nu(de)) is integrable and its expectation is <= c E[|dX|^2 + |dY|^2 + |dZ|_F^2 + ||dU||^2] with\n  c = ||GX G|| L_p; ||GX G|| is the operator norm of the continuous linear map x |-> Gx on Euclidean\n  space = the spectral norm ||G|| of the paper. (3.4) exactly, with the printed constant.\n- The other hypotheses of Corollary 3.6 (baseline assumptions, perturbation origin integrability and\n  Lipschitz) are not needed and absent: broader.\n- Witness cor_robust_lip_hypotheses: constant p_sigma (so dp = 0) with L_p = 1 - satisfiable,\n  though a degenerate (law-free) instance; nonvacuity is clear anyway (e.g. p_b(t,mu) = a\n  Lipschitz function of the mean).\nVerdict: broader.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:32:34Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "broader",
+  "detail": "Broader: any filtered probability space (not only the sec. 2 basis), any square G (full rank not\nrequired), and none of Corollary 3.6's other hypotheses (baseline Assumptions 2.2-2.5 with margin,\norigin integrability and diagonal Lipschitz of the perturbations), which the implication does not\nuse. Instantiation giving the printed clause: the sec. 2 filtration enlJoint of a Levy driver,\nm = n, G of full rank, p the perturbations of Corollary 3.6 satisfying its hypotheses; then\n(3.5) with L_p and theta-independence give (3.4) with c_pert = ||G|| L_p, ||G|| the operator norm\n(||GX G||). Note: the witness is a constant perturbation (dp = 0), a degenerate but valid instance."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:32:45Z",
+  "disagreements": "Verdict agrees (broader), same instantiation. One addition: the witness cor_robust_lip_hypotheses\nis a constant perturbation (p_sigma constant, so every difference dp is 0 and (3.5) holds with\nL_p = 1 trivially). It establishes that the hypotheses can be met, but only by a degenerate,\nlaw-free instance; an instance with genuinely law-dependent p (e.g. a Lipschitz function of the\nmean) would match the corollary's intent better. Not a defect of the proposition, whose hypotheses\nare evidently satisfiable."
+ },
+ "submitted_at": "2026-10-19T03:34:13Z",
+ "issue_draft": null
+}

@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.PaperSpec.A.translateTuple",
+  "kind": "def",
+  "name": "Dissertation.PaperSpec.A.translateTuple",
+  "lean": [
+   "Dissertation.PaperSpec.A.translateTuple"
+  ],
+  "claims": [
+   "A:rem:uniq-no-integ"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "25b128e1a8bd16214207e456ab04981b",
+  "fingerprint": "pl-fp-v1:fd6b804d04b1282cecb9ddb5b44575c53ed72c5ac818138cbe730cc1f6b23328",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of def:Dissertation.PaperSpec.A.translateTuple (Remark 3.4).\n\nPaper notion: \"the shift X -> X - 2 sqrt t, applied to the state\". 2 sqrt t is the antiderivative\nof the singular drift t^{-1/2} vanishing at t=0, so the shift leaves X_0 = xi0 unchanged and\nremoves the singular drift: if X solves the singular forward equation, X - 2 sqrt t solves a\nforward equation with drift b evaluated at the shifted-back point. Only the forward state X is\nshifted; Y, Z, U are left unchanged.\n\nA faithful Lean definition must: map a tuple (process or point at time t) Theta=(X,Y,Z,U) to\n(X_t - 2 sqrt t, Y_t, Z_t, U_t) (or the inverse shift X_t + 2 sqrt t, depending on the direction\nit is used in; either is harmless if used consistently), with a deterministic shift function\nequal to 2 sqrt t (or a general deterministic A(t) with A(0)=0 instantiated at 2 sqrt t);\nno change to Y, Z, U; the shift acts at every time t (also on left limits: since 2 sqrt t is\ncontinuous, X_{t-} shifts by the same amount). For n>1 the shift must be in R^n (a vector-valued\nA(t)); for the n=1 instance a scalar is fine.",
+  "locked_at": "2026-10-19T03:17:59Z"
+ },
+ "comparison": {
+  "text": "Comparison: def translateTuple (PaperSpec/A/Sec3Rem34.lean:81-85): (x,y,z,u) -> (x + r, y, z, u),\nr in R^n.\nReading: shift of the forward coordinate only, by a deterministic amount (2 sqrt t at time t),\neither direction if used consistently.\nLean: adds r to the X channel, leaves (Y, Z, U) = theta.2 unchanged. It is used in\ntranslatedCoeffs with r = r_t and in rem_uniq_translation with r_t = 2 sqrt t e, the solution of\nthe singular system being (X + 2 sqrt t e, Y, Z, U) for Theta = (X,Y,Z,U) a solution of the\ntranslated system -- the inverse of the paper's X -> X - 2 sqrt t, consistent. Point-level\n(acting on theta in H) rather than process-level; the process-level shift appears explicitly in\nrem_uniq_translation. Nothing else to check (no junk values: total, linear).\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:34:53Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:35:36Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:35:49Z",
+ "issue_draft": null
+}

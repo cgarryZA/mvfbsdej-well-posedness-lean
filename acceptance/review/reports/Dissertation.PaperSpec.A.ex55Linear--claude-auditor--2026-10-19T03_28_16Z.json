@@ -1,0 +1,59 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.PaperSpec.A.ex55Linear",
+  "kind": "def",
+  "name": "Dissertation.PaperSpec.A.ex55Linear",
+  "lean": [
+   "Dissertation.PaperSpec.A.ex55Linear"
+  ],
+  "claims": [
+   "A:abstract",
+   "A:ex:dealer",
+   "A:rem:regimes",
+   "A:sec5:overview"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "3561bf3607d9b592dcbcbbff1b4dd84b",
+  "fingerprint": "pl-fp-v1:1713a3d44ede974e7868983a13f6b8827c151dc3aad2e059683f49be85f5b93f",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of def:Dissertation.PaperSpec.A.ex55Linear.\n\nPaper notion. In Example 5.5 the word \"linear\" occurs in \"The linear equation\n  X^0_t = int_0^t ( -X^0_s ds + (1/2) dW_s ) + (1/2) int_0^t int_E (h_c(e) + h_x(e) X^0_{s-})\n          N~(ds,de)\nhas Lipschitz coefficients, hence a unique solution X^0 in S^2(0,T;R)\", in the specialisation\nbeta_1 = 1, beta_2 = 1/2, sigma_c = 1, xi_0 = 0, c_{+-1} = (2-rho)/2, h_c(s,q) = s q,\nh_x(s,q) = q; from it Theta^0 = (X^0, Y^0 = X^0, Z^0 = 1/2, U^0_t = (1/2)(h_c + h_x X^0_{t-})),\nwhich solves the system at epsilon = 0. Another possible reading of the name is the epsilon = 0\n(\"linear\", affine) part of the coefficient system of Ex. 5.5 (b = -beta_1 y, sigma = sigma_c -\nbeta_1 z, h = h_c + h_x x - beta_1 u, f = beta_2 x + <h_x,u>, g = x), i.e. ex55Coeffs at\nepsilon = 0, which at h_x = 0 is Ex. 5.1(i).\n\nWhat a faithful Lean definition must be:\n (a) if it encodes the linear SDE for X^0 (as a predicate on a process, or as the coefficient data\n     of that SDE): drift -x (i.e. -beta_1 * y with y = x), Brownian coefficient 1/2 (=\n     sigma_c - beta_1 z with z = 1/2), jump coefficient (1/2)(h_c + h_x x_-) evaluated at the left\n     limit, initial value 0, with the specialised h_c, h_x on the dealer marks; the identity a.s.\n     for every t (or the cadlag solution notion).\n (b) if it encodes the epsilon = 0 coefficient system: exactly the five maps above with general\n     parameters (or the specialised ones), identical to ex55Coeffs with epsilon = 0.\nEither way the coefficients must be the printed ones with the printed signs; the jump term must\nuse X_{s-}; h_c, h_x elements of L2(nu) with h_x x the scalar multiple.",
+  "locked_at": "2026-10-19T03:15:19Z"
+ },
+ "comparison": {
+  "text": "def:Dissertation.PaperSpec.A.ex55Linear (Dissertation/PaperSpec/A/Sec5DealerActive.lean:48-65):\nLinearFSDEJ D (enlJoint 𝒢₀ D h𝒢₀) … T (ξ₀ = 0) (b = 1_{[0,T]}(s)·(−X_s)) X (σ = 1_{[0,T]}(s)·½)\n(γ = 1_{(0,T]}(s)·½(ς q + q X_{s−})), ς = (if e.1 then 1 else −1), q = e.2, over the driver\nD : LevyDriver P 1 (ex55Marks ϱ); LinearFSDEJ from Stability/ForwardEq.lean:64-104.\nAgainst my reading, case (a) (the linear SDE for X⁰):\n- Equation: X_t = 0 + ∫_{[0,t]} (−X_s) ds + ∫_0^t ½ dW_s + ∫_0^t∫_E ½(h_c(e) + h_x(e)X_{s−}) Ñ(ds,de)\n  with h_c(ς,q) = ς q, h_x(ς,q) = q, the left limit leftLimProc X (Function.leftLim) in the jump\n  integrand; d = 1; marks ex55Marks ϱ (c_{±1} = (2−ϱ)/2). Exactly the paper's\n  X⁰_t = ∫_0^t(−X⁰_s ds + ½ dW_s) + ½∫_0^t∫_E (h_c + h_x X⁰_{s−}) Ñ(ds,de), ξ₀ = 0, β₁ = 1,\n  σ_c = 1 (σ = σ_c − β₁ Z⁰ = ½). ✓\n- Filtration: enlJoint (paper's (F_t)); integrals: L² Itô and compensated Poisson integrals. ✓\n- Solution notion: X adapted (at every real t), every path right-continuous (at every real t),\n  equation a.s. at each t ∈ [0,T]; integrands progressive/marked progressive, finite energy\n  (E∫_0^T X² < ∞ via b_sq; marked energy of γ, finite iff E∫(1+X²) < ∞ since ‖h_c‖ = ‖h_x‖ = 1 and\n  ⟨h_c,h_x⟩ = 0), vanishing off [0,T]; ξ₀ = 0 ∈ L².\n- Representation choices: processes indexed by ℝ with adaptedness and right-continuity asked at\n  all real times (a paper solution on [0,T] extends, e.g. frozen after T and 0 before 0; a.s.\n  regularity is upgraded to every path by modification on a null set, which is in enlJoint 0);\n  \"a.s. at each t\" instead of \"a.s. for all t\" (equivalent: both sides right-continuous, the\n  integrals being càdlàg versions); the jump integrand cut to (0,T] instead of [0,T] (s = 0 is a\n  null time); S²-membership and left limits not asked explicitly but implied by the equation with\n  L² integrands (E sup|X|² < ∞ from b_sq, σ, γ energies and BDG/Doob). The parameter ϱ is not\n  constrained in the definition (the claims must impose 0 < ϱ < 2).\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:26:34Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "The predicate is the paper's linear equation X⁰_t = ∫_0^t(−X⁰_s ds + ½ dW_s) +\n½∫_0^t∫_E(h_c + h_x X⁰_{s−}) dÑ with h_c = ςq, h_x = q, ξ₀ = 0, on the paper's filtration, read as\nLinearFSDEJ. Choices: (1) time is ℝ, with adaptedness and every-path right-continuity at all real\ntimes (a paper solution on [0,T] extends constantly and, after modification on a null set, which\nthe augmented filtration contains, meets them); (2) the equation a.s. at each t ∈ [0,T]\n(equivalent to a.s. for all t by right-continuity of both sides); (3) the jump integrand cut to\n(0,T] (s = 0 is Lebesgue-null); (4) membership in S² is implied by the equation with its L²\nintegrands rather than stated; (5) ϱ is a free real, its range 0 < ϱ < 2 left to the claims."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:27:50Z",
+  "disagreements": "No disagreement on the reading. Additions to the author's description, all harmless: LinearFSDEJ\nasks adaptedness and every-path right-continuity at all real times, not only on [0,T]. The equation\nis required a.s. at each t, which is equivalent to a.s. for all t because both sides are right-\ncontinuous. Membership in S² and the left limits are not stated but follow from the equation with\nits L² integrands (the author's review covers them in ex_dealer_zero). The definition leaves ϱ\nfree, so 0 < ϱ < 2 must come from the propositions."
+ },
+ "submitted_at": "2026-10-19T03:28:16Z",
+ "issue_draft": null
+}

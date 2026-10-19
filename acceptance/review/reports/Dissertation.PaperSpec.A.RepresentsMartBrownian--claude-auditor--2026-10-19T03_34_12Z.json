@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.PaperSpec.A.RepresentsMartBrownian",
+  "kind": "def",
+  "name": "Dissertation.PaperSpec.A.RepresentsMartBrownian",
+  "lean": [
+   "Dissertation.PaperSpec.A.RepresentsMartBrownian"
+  ],
+  "claims": [
+   "A:ex:brownian"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "12cb148176c5045b1b2bd36a25a42656",
+  "fingerprint": "pl-fp-v1:baed5214808dfa7d858b465bfdb2ef5fc5ed95f46d02bfae7512bd1bddf33e77",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of def PaperSpec.A.RepresentsMartBrownian (Example 5.2: \"the representation property is\nthe Brownian one\").\n\nPaper notion. A square-integrable martingale M for the Brownian filtration (augmentation of\nsigma(F_0,W)) is represented by Z when M_t = M_0 + int_0^t Z_s dW_s for every t in [0,T] a.s.,\nwith Z predictable and E int_0^T |Z_s|^2 ds < inf (Z in H^2_W).\nA faithful Lean definition: Z predictable (w.r.t. the Brownian filtration) and square-integrable\non [0,T] x Omega, and the identity at every t in [0,T] a.s. with the Ito integral w.r.t. W. Same\njunk-value remark as r_07: the integrability of Z must be part of the definition or of every use.",
+  "locked_at": "2026-10-19T03:16:13Z"
+ },
+ "comparison": {
+  "text": "Comparison, PaperSpec.A.RepresentsMartBrownian (Sec5BrownianReduction.lean:79-90).\n\n- Z : R -> Omega -> Fin d -> R, each coordinate predictable for enlBrownian, vanishing off [0,T],\n  finite energy; for every t in [0,T], a.s. M_t = M_0 + sum_j int_0^t Z^j dW^j (multidimensional\n  L^2 Ito integral over enlBrownian, using hW). Integrability inside the existential. Matches my\n  reading; scalar M.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:32:33Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices: scalar M (componentwise for vector martingales), Z a d-row normalised to\nvanish off [0,T]; filtration enlBrownian (usual augmentation of sigma(F_0, W)); predictability,\nfinite energy and the identity for every t in [0,T] a.s. as in the paper."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:32:44Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:34:12Z",
+ "issue_draft": null
+}

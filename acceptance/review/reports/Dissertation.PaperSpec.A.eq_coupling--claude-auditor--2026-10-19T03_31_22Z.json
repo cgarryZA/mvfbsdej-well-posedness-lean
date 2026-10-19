@@ -1,0 +1,57 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.eq_coupling",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.eq_coupling",
+  "lean": [
+   "Dissertation.PaperSpec.A.eq_coupling"
+  ],
+  "claims": [
+   "A:rem:wasserstein-bounds",
+   "A:rem:freelaw"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba17af7c36ae6c33114",
+  "fingerprint": "pl-fp-v1:c06c57a8182b802f4febab5ebac000d011c3ca6dba4ea3d8ef4bffca45217da2",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of spec eq_coupling, clauses \"(2.8)\" (Remark 2.6) and \"the W_2 term is dominated by the synchronous\ncoupling bound (2.8)\" (Remark 5.6).\nSetting: at a time t, on the standing probability space, two diagonal inputs (Theta,mu), (Theta',mu'):\nTheta, Theta' in L^2(Omega,F_t;H) with mu = Law Theta, mu' = Law Theta' in P_2(H); H with the l2-product\nnorm |theta|_H^2 = |x|^2+|y|^2+|z|_F^2+||u||^2; W_2 the Villani (Def 6.1) quadratic Wasserstein distance\nW_2(mu,mu')^2 = inf over couplings pi of int |theta - theta'|_H^2 dpi.\nClaim: W_2(mu,mu')^2 <= E[|dX|^2+|dY|^2+|dZ|_F^2+||dU||^2] = E|Theta - Theta'|_H^2.\nFaithful formal: for all t (or any sigma-algebra / any probability space -- broader is fine), all square-\nintegrable H-valued Theta, Theta' (F_t-measurable), W_2(Law Theta, Law Theta')^2 <= E|Theta-Theta'|_H^2,\nwith W_2 as defined for H's Hilbert norm, and the right side written as the sum of the four component\nsquared norms (or as |.|_H^2, if H's norm is the l2 product). If the Lean H carries the sup product norm, the\nW_2 in the statement is not the paper's W_2 (I'd flag it at the W_2 definition). Remark 5.6's clause is the\nsame inequality (it says (2.8) dominates the W_2 term in every use). No hypotheses on coefficients.",
+  "locked_at": "2026-10-19T03:16:08Z"
+ },
+ "comparison": {
+  "text": "Comparison, eq_coupling (Sec2.lean:74-84) vs reading.\n- ∀ probability space (Ω, P), ν σ-finite on countably generated E, n,m,d, Θ, Θ' : Ω → H with\n  MemLp Θ 2 P, MemLp Θ' 2 P. The paper's diagonal inputs at t (F_t-measurable, square integrable, on the\n  standing basis) are instances; dropping F_t-measurability and the basis is harmless (the bound is\n  about laws on one probability space).\n- w2H(Law Θ, Law Θ')² ≤ E[|δX|² + |δY|² + |δZ|_F² + ‖δU‖²_{L²(ν)}], w2H the W2 of the Hilbert norm of H\n  (via toL2), lawP2 the law in P2(H) (non-junk since Θ ∈ L²), right side a Bochner integral of an\n  integrable function. Exactly (2.8) with the paper's W2.\n- Remark 5.6's clause is the same inequality. Witness eq_coupling_hypotheses: two distinct L² tuples.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:29:18Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices: (1) the paper's W2 on P2(H) is w2H, the Wasserstein distance of the Hilbert\nnorm realised through toL2 (the product type itself carries the max norm), so the left side is the\npaper's W2; (2) the bound is stated for any two square-integrable random tuples on any probability space,\nwhich contains the diagonal inputs at any time t of the standing basis; (3) the expectation of the\nfour-channel sum is a Bochner integral of an integrable function. Harmless."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:29:29Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:31:22Z",
+ "issue_draft": null
+}

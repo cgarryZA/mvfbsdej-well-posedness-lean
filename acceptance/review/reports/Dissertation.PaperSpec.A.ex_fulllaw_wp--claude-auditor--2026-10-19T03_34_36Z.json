@@ -1,0 +1,57 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.ex_fulllaw_wp",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.ex_fulllaw_wp",
+  "lean": [
+   "Dissertation.PaperSpec.A.ex_fulllaw_wp"
+  ],
+  "claims": [
+   "A:ex:fulllaw",
+   "A:rem:regimes"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba173d663ff51153197",
+  "fingerprint": "pl-fp-v1:d9054038e97f0c927c85410e5cfcebab48bcd0caab37dd7600402bbe9a1d36eb",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading (spec ex_fulllaw_wp; Example 5.4, 05-examples.tex:288-299 and 338-344; Remark 5.7).\nSetting: as ex_fulllaw_pert, plus a baseline (b0,σ0,h0,f0,g) and ξ0 with m = n, satisfying\nAssumptions 2.2–2.5 (with G, α, β1, β2, L) and a margin c_diss > 0 in the unweighted form (2.13)\n(baseline law-free in the example — \"a law-dependent dissipative baseline works identically\", so\nlaw-dependent baselines are a harmless broadening).\nHypothesis: (5.1) ε‖G‖(|w0|Lip(𝔮) + |v0|Lip(𝔮̃) + |w1|L_Q + ‖ĥ‖Lip(𝔮̂)) < c_diss.\nConclusion: the perturbed system (b0 + p_b, σ0, h0 + p_h, f0 + p_f, g) with ξ0\n- satisfies Assumptions 2.2–2.5 with the same G, α, β1, β2 and margin c_diss − ‖G‖L_p in (2.13);\n- is well posed: there is a unique solution Θ ∈ 𝕊 (Theorems 3.3, 3.5; Cor 3.6 also cites\n  stability, Theorem 3.1 — the core is ∃! in 𝕊).\nThe hypotheses on the baseline must be the paper's assumptions (not stronger ad hoc ones), and\nthe witness should be a baseline the paper intends (Example 5.1(i)).\n\n----\nCommon setting (paper §1–§2), used by every reading below:\n- filtered probability space (Ω,F,(F_t),P), usual conditions; horizon T>0; dims n,m,d ≥ 1;\n  d-dim Brownian motion W; independent Poisson random measure N on R_+×E with intensity dt⊗ν,\n  ν σ-finite on a countably generated (E,𝓔); filtration = usual augmentation of σ(W,N,F_0).\n- H = R^n × R^m × R^{m×d} × L²(ν;R^m) with |θ|² = |x|² + |y|² + |z|_F² + ‖u‖²_{L²(ν)}\n  (Euclidean norms on R^j, Frobenius on matrices; NOT sup norms).\n- Coefficients b,σ,h,f : [0,T]×H×P_2(H) → R^n, R^{n×d}, L²(ν;R^n), R^m; g : R^n×P_2(R^n) → R^m,\n  deterministic. W_2 the quadratic Wasserstein distance.\n- Diagonal input at time t: (Θ, Law Θ) with Θ ∈ L²(Ω,F_t;H) (F_t-measurable, square-integrable).\n- Interior pairing P(Θ,Θ') := E[⟨δb,GᵀδY⟩ + ⟨δσ,GᵀδZ⟩_F + ⟨−δf,GδX⟩ + ∫_E⟨δh(e),GᵀδU(e)⟩ν(de)].\n- (2.6): for a.e. t, all diagonal pairs: P ≤ −β1 E[|GᵀδY|²+|GᵀδZ|²_F+‖GᵀδU‖²] − β2 E|GδX|².\n- (2.12) weighted margin c: (2.6) RHS minus c E[|GᵀδY|²+|GᵀδZ|²_F+‖GᵀδU‖²+|GδX|²].\n- (2.13) unweighted margin c: (2.6) RHS minus c E[|δY|²+|δZ|²_F+‖δU‖²+|δX|²].\n- Solution: Θ=(X,Y,Z,U) ∈ 𝕊 (X,Y càdlàg adapted with E sup|·|²<∞, Z predictable in H²_W,\n  U predictable in H²_N) satisfying both identities of (1.1) a.s. for every t, h evaluated at the\n  predictable tuple Θ^-_t=(X_{t-},Y_{t-},Z_t,U_t) and μ^-_t = Law(Θ^-_t).",
+  "locked_at": "2026-10-19T03:17:17Z"
+ },
+ "comparison": {
+  "text": "Comparison: spec ex_fulllaw_wp (Sec5.lean:509-565).\n- Setting: standing basis, m = n ≥ 1, d ≥ 1, T > 0; baseline C (may depend on the law — the\n  paper's \"a law-dependent dissipative baseline works identically\") with ξ₀, satisfying (2.3),\n  Assumption22, Assumption23 (L0), G full rank, Assumption25 (G, α, β1, β2) and Margin213 with\n  c_diss > 0 — the Corollary 3.6 baseline hypotheses as printed; perturbation data as in\n  ex_fulllaw_pert (boundedness not assumed, ν ≠ 0 not required).\n- Hypothesis (5.1): ε‖G‖(|w0|Lq + |v0|Lqb + |w1|L_Q + ‖ĥ‖Lqh) < c_diss. Matches.\n- Conclusions for C.perturb(ex54Pert): (2.3); Assumption22 (ξ₀); ∃ L Assumption23; Assumption25\n  with the baseline's G, α, β1, β2; Margin213 with margin c_diss − ‖G‖L_p; a Solution in ℍ\n  exists; any two solutions agree in ℍ. Matches (\"well-posed\" = ∃! in ℍ; the stability estimate\n  (3.1) is not restated, as accepted in my reading).\n- Broader: boundedness of the data and ν ≠ 0 dropped; law-dependent baselines allowed.\n- Witness ex_fulllaw_hypotheses: Ex 5.1(i) baseline (β = 2 recorded with margin 1) and bounded\n  data with ε = 1/4, L_p = 3/4 < 1 — an intended instance.\nVerdict: broader (instantiation: bounded data, ν ≠ 0, law-free baseline).",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:32:33Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "broader",
+  "detail": "Broader: boundedness of the data and ν ≠ 0 are not required, and the baseline may depend on the\nlaw (the paper says such a baseline \"works identically\"). Instantiation: bounded data, ν ≠ 0, a\nlaw-free baseline (e.g. Example 5.1(i)); then under (5.1) the perturbed system satisfies\nAssumptions 2.2–2.5 with margin c_diss − ‖G‖L_p and has a unique solution in ℍ."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:32:40Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:34:36Z",
+ "issue_draft": null
+}

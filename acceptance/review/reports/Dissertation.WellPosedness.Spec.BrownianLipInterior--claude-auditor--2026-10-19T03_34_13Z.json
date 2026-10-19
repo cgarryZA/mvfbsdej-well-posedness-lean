@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.Spec.BrownianLipInterior",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.Spec.BrownianLipInterior",
+  "lean": [
+   "Dissertation.WellPosedness.Spec.BrownianLipInterior"
+  ],
+  "claims": [
+   "A:ex:brownian"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "9e0655ad2249204f740fd58a17e0cae3",
+  "fingerprint": "pl-fp-v1:f7e9bc347d0db5d4c0e2468a38d89f624200886580e0f7be895be4582ef556e8",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of def Spec.BrownianLipInterior (the interior half of Assumption 2.3, Brownian form).\n\nPaper notion. Given L >= 0 (parameter or existential): for a.e. t in [0,T] and all diagonal inputs\n(Theta,mu),(Theta',mu') in D_t (Theta, Theta' in L^2(Omega,F_t;H_B), mu, mu' their own laws),\nalmost surely\n  |b(t,Theta,mu) - b(t,Theta',mu')| + |sigma(...) - sigma(...)|_F + |f(...) - f(...)|\n     <= L (|X - X'| + |Y - Y'| + |Z - Z'|_F + W_2(mu,mu')).\nA faithful Lean definition: \"for a.e. t (Lebesgue on [0,T]) , BrownianLipInteriorAt t\" with the\nAt-predicate as in r_13; a.e. on [0,T] (not on all of R, though a.e. on R restricted to [0,T] is\nthe same if the predicate is only required for t in [0,T]). The quantifier order: a.e. t first,\nthen all inputs, then a.s.",
+  "locked_at": "2026-10-19T03:16:13Z"
+ },
+ "comparison": {
+  "text": "Comparison, Spec.BrownianLipInterior (BrownianForms.lean:91-93).\n\nBrownianLipInterior F P T L C := for a.e. t (volume.restrict (Icc 0 T)), BrownianLipInteriorAt F P t\nL C. Exactly the a.e.-t interior half of Brownian Assumption 2.3, quantifier order a.e. t first.\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:32:33Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:32:44Z",
+  "disagreements": "Label only. I recorded \"faithful\" for the a.e.-t wrapper itself (it is exactly \"for a.e. t in\n[0,T], BrownianLipInteriorAt\"); the nu = 0 realisation of the Brownian reduction that the review\nlists sits in the types (Coeffs (0 : Measure E)) and in BrownianLipInteriorAt, where I recorded it.\nNo disagreement in substance."
+ },
+ "submitted_at": "2026-10-19T03:34:13Z",
+ "issue_draft": null
+}

@@ -1,0 +1,57 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.cor_robust_wp",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.cor_robust_wp",
+  "lean": [
+   "Dissertation.PaperSpec.A.cor_robust_wp"
+  ],
+  "claims": [
+   "A:cor:robust",
+   "A:conclusion"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba16dd662e97e677716",
+  "fingerprint": "pl-fp-v1:8b30d4c288e009d6fd38c12ae156df445d4f7256e9c5bab9189a26bc90ba6e61",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading (locked before any Lean): spec cor_robust_wp, Corollary 3.6, clauses \"well-posedness;\nrobustness at m = n below the dissipativity margin\".\n\nPaper content. Hypotheses of Cor 3.6 (first part): m = n; baseline (b_0, sigma_0, h_0, f_0, g)\nwith xi_0 under Assumptions 2.2-2.5 with unweighted margin c_diss > 0 (2.13); perturbations\np_b, p_sigma, p_h, p_f with origin integrability, interior diagonal Lipschitz and (3.4) with some\nc_pert >= 0; c_pert < c_diss. Conclusion: the perturbed system is well-posed \"by Theorems 3.1,\n3.3 and 3.5\": existence of a solution Theta in HH of (1.1) for the perturbed coefficients with\ninitial datum xi_0, its uniqueness (in HH, indeed in Hweak), and continuous dependence in the\nsense of (3.1).\n\nA faithful formal statement must contain:\n- arbitrary n (= m), d, nu (sigma-finite), basis, T > 0;\n- the hypotheses above (margin c_diss > 0 in the unweighted form, (3.4) with c_pert < c_diss);\n- conclusion: there exists a unique (in the HH identification) solution in HH of (1.1) with the\n  perturbed coefficients (b_0 + p_b, ..., g) and xi_0. Including the stability estimate is\n  optional (it is the sense \"well-posed\" carries via Thm 3.1, but as a property of every system\n  under 2.2-2.5 it follows from the \"assumptions\" clause and Thm 3.1); omitting it is at most a\n  minor narrowing of \"well-posed\" that I would note rather than count against if existence and\n  uniqueness are complete.\n- Same watch as thm_cwp on the solution notion (genuine integrals, law flows, no junk).",
+  "locked_at": "2026-10-19T03:15:38Z"
+ },
+ "comparison": {
+  "text": "Comparison: spec cor_robust_wp (Sec3.lean:179-238) against my locked reading.\n\nHypotheses: exactly those of cor_robust (m = n by types; baseline under JointBorel and Assumptions\n2.2-2.5 with unweighted margin Margin213, cdiss > 0; perturbation with OriginValues, LipInterior\n(Lp >= 0), PairingBound34 (cpert >= 0); JointBorel of the perturbed system (standing\nmeasurability); cpert < cdiss) — see my comparison for cor_robust, matching Corollary 3.6.\n\nConclusion (\"well-posed by Theorems 3.1, 3.3 and 3.5\"):\n(i) existence of a Solution in HH of (1.1) for C.perturb p with initial datum xi0 (Thm 3.5);\n(ii) uniqueness: any two WeakSolutions (in Hweak, with the same xi0) are equal (X, Y\nindistinguishable on [0,T], zero energy of the Z-, U-differences) — Thm 3.3's class, which\ncontains HH (broader than uniqueness in HH alone, as the paper's citation of Thm 3.3 gives);\n(iii) stability: with exists Cstab chosen first as a function of (T, L, ||G||, c_G, alpha, beta1,\nbeta2), for every L with which the perturbed system satisfies Assumption 2.3, (3.1) for its\nsolutions against the solutions of every system 2 under (2.3) and Assumptions 2.2-2.3, differences\nalong solution 2 (Thm 3.1, with the perturbed system as system 1, whose 2.5 constants are the\nbaseline's). All three senses of \"well-posed\" are present, with the constant dependence of Thm 3.1.\n\nSolution notions as in thm_cwp / thm_uniq. Witness cor_robust_hypotheses: the hypotheses are met\nat Example 5.1(i) with a feedback perturbation.\n\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:30:52Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices, each harmless:\n1. \"Well-posed by Theorems 3.1, 3.3 and 3.5\" is rendered as the conjunction of existence of an\n   HH solution, uniqueness among Hweak solutions with the same initial datum (Theorem 3.3's class),\n   and the stability estimate (3.1) with a constant C_stab(T, L, ||G||, c_G, alpha, beta1, beta2)\n   fixed before the data, for every Lipschitz constant L of the perturbed system.\n2. The hypotheses carry the encodings of cor_robust: m = n in the types, standing measurability of\n   the perturbations as JointBorel of the perturbed system, integrable pairings in Margin213 and\n   PairingBound34 (automatic under the Lipschitz bounds).\n3. Solution notions and [0, inf] reading of (3.1) as in thm_cwp, thm_uniq, thm_stab."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:37:17Z",
+  "disagreements": "none (labelling only: faithful vs my faithful with representation choices, for the same analysis)"
+ },
+ "submitted_at": "2026-10-19T03:37:29Z",
+ "issue_draft": null
+}

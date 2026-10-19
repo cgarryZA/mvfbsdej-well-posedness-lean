@@ -1,0 +1,58 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.PaperSpec.A.Margin212",
+  "kind": "def",
+  "name": "Dissertation.PaperSpec.A.Margin212",
+  "lean": [
+   "Dissertation.PaperSpec.A.Margin212"
+  ],
+  "claims": [
+   "A:eq:monomargin",
+   "A:rem:generalrank",
+   "A:rem:margin"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "2ad64300a1211b9647d3727884567824",
+  "fingerprint": "pl-fp-v1:61069a19a65f6fe5337c169b83b8bc3acca0b75970985f78cd2a0f99c552ab0a",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of def:Dissertation.PaperSpec.A.Margin212 (eq. (2.12) eq:monomargin of Remark 2.11).\n\nPaper notion: \"(2.7) holds with margin c > 0\" if, for a.e. t in [0,T] and all diagonal pairs\n(Theta,mu),(Theta',mu') in D_t (the quantifiers of (2.7) in Assumption 2.5),\n  E[ <db, G^T dY> + <dsigma, G^T dZ>_F + <-df, G dX> + int_E <dh(e), G^T dU(e)> nu(de) ]\n  <= -beta1 E[|G^T dY|^2 + |G^T dZ|_F^2 + ||G^T dU||^2_{L^2(nu)}] - beta2 E|G dX|^2\n     - c E[|G^T dY|^2 + |G^T dZ|_F^2 + ||G^T dU||^2 + |G dX|^2],\nwith dpsi = psi(t,Theta,mu) - psi(t,Theta',mu') (h as an element of L^2(nu;R^n) at the diagonal\ninput), dX = X - X', etc.; G in R^{m x n}; G^T acting on Y in R^m, column-wise on Z in R^{m x d},\npointwise in e on U(e).\n\nA faithful Lean definition must contain: the same left side as (2.7) (signs, G vs G^T placement,\nthe L^2(nu) pairing for the jump channel), the beta1 and beta2 terms in the G-WEIGHTED quantities,\nthe extra margin term c times the sum of the four G-weighted squares (weighted, not unweighted\n-- the unweighted one is (2.13)), the quantifiers \"a.e. t\" and \"all diagonal pairs at t\"\n(diagonal: Theta in L^2(Omega,F_t;H), mu = Law(Theta)), expectations on both sides. Whether c > 0\nis part of the definition or a separate hypothesis is a representation choice. Junk values:\nexpectation of a non-integrable pairing (Bochner 0) -- harmless for L^2 inputs and Lipschitz\ncoefficients, but the definition alone does not ensure integrability.",
+  "locked_at": "2026-10-19T03:18:01Z"
+ },
+ "comparison": {
+  "text": "Comparison: def Margin212 F P T G beta1 beta2 c C (PaperSpec/A/Sec2Remarks.lean:199-218).\nLean: for a.e. t in [0,T], all p, p' in D_t: the pairing pairing27 G C t (p.1 w) (p'.1 w) p.2 p'.2\nis integrable and\nE[pairing] <= -beta1 E[|G^T dY|^2 + |G^T dZ|^2 + ||G^T dU||^2] - beta2 E|G dX|^2\n              - c E[|G^T dY|^2 + |G^T dZ|^2 + ||G^T dU||^2 + |G dX|^2].\nReading: (2.12) = (2.7) plus the margin term in the G-WEIGHTED quantities, a.e. t, all diagonal\npairs, expectations on both sides; c > 0 either built in or separate.\n- Left side: pairing27 is the left side of (2.7), with the f minus sign, G^T on Y, Z (GZ G^T =\n  G^T (x) I_d, i.e. column-wise) and U (GX G^T applied pointwise to U(e) inside int_E ... nu(de)),\n  and G on X. Matches.\n- Right side: the beta1 term on G^T dY, G^T dZ, GU G^T dU (= e -> G^T dU(e) as an L^2(nu)\n  element); the beta2 term on G dX; the margin term c times the SUM OF THE FOUR WEIGHTED squares.\n  Weighted, not unweighted. Matches (2.12), and is distinct from Margin213 = (2.13).\n- Quantifiers: a.e. t (volume restricted to Icc 0 T), all diagonal inputs (strongly F_t-measurable,\n  L^2, with their laws). Matches Assumption 2.5's quantifiers, as (2.12) inherits them.\n- Integrability of the pairing required; c not constrained to be > 0 (positivity is separate where\n  used).\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:34:55Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices, each harmless:\n1. The expectation of the pairing is required to exist, as in the formal Assumption 2.5\n   (Mono27At). This excludes the Bochner junk value. For L^2 diagonal inputs and Lipschitz\n   coefficients the pairing is integrable by Cauchy-Schwarz, so in every intended use the conjunct\n   holds.\n2. The margin c is a real parameter. The paper's \"with margin c > 0\" positivity is imposed\n   separately wherever the definition is used (e.g. 0 < c in rem_margin_sharp and\n   rem_margin_unweighted).\n3. The jump-channel pairing is int_E <dh(e), G^T dU(e)> nu(de) over representatives of L^2(nu)\n   classes. It does not depend on the representatives, and equals <dh, G^T dU>_{L^2(nu)}."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:37:56Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:38:08Z",
+ "issue_draft": null
+}

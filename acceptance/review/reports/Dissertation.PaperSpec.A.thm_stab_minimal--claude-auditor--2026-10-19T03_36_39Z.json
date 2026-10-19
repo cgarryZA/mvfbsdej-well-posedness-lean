@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.thm_stab_minimal",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.thm_stab_minimal",
+  "lean": [
+   "Dissertation.PaperSpec.A.thm_stab_minimal"
+  ],
+  "claims": [
+   "A:thm3.1:companion"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba127494e1cb3f498aa",
+  "fingerprint": "pl-fp-v1:91f29e1752bf9686affa3d43268bcf482a6a79aa39e56dd3f0e382ea9fbc53ff",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading (locked before any Lean): spec thm_stab_minimal, paragraph after Theorem 3.1, clause\n\"(c) (3.1) in [0, inf] with only (2.3) on system 2, so whenever the displayed differences are\nsquare-integrable\".\n\nPaper content. \"More minimally, the hypotheses on system 2 serve only to make the right-hand side\nof (3.1) finite: the estimate holds whenever the displayed differences are square-integrable.\"\nSo: system 1 (b^1,...,g^1, xi_0^1) satisfies Assumptions 2.2-2.5 with constants L, alpha, beta1,\nbeta2, G; system 2 (b^2,...,g^2, xi_0^2) satisfies no Assumption 2.2-2.3, only the standing\nrequirements (deterministic, jointly Borel coefficients - (2.3) is the Borel measurability of h\ninto L2(nu)); Theta^k in HH solves (1.1) for system k. Then (3.1) holds with the same C_stab\n(depending only on T, L, ||G||, c_G, alpha, beta1, beta2, c_BDG), where (3.1) is read in\n[0, inf] (trivial when the right side is infinite), equivalently: whenever the differences\n(delta psi)(t) along solution 2 and the hat-delta g_T are square-integrable, the estimate holds.\n\nA faithful formal statement must contain:\n- the same quantifier order as Theorem 3.1: C_stab chosen from (T, L, ||G||, c_G, alpha, beta1,\n  beta2) before dims, nu, basis, systems, solutions;\n- system 1 under 2.2-2.5; system 2 under only measurability ((2.3) and standing Borel\n  measurability), no Lipschitz, no origin integrability; Theta^k in HH solving (1.1)_k (for system\n  2 the solution notion must presuppose whatever integrability makes (1.1)_2 meaningful along\n  Theta^2 - that is part of \"solves\", not an extra assumption);\n- conclusion: LHS of (3.1) <= C_stab * RHS in [0, inf] (ENNReal lintegrals), or the real-valued\n  version under the hypothesis that the displayed differences are square-integrable;\n- differences evaluated along solution 2 exactly as in §3: psi^1(t, Theta^2_t, mu^2_t) -\n  psi^2(t, Theta^2_t, mu^2_t), h at the predictable tuple, hat-delta g_T = g^1(X^2_T, Law X^2_T) -\n  g^2(X^2_T, Law X^2_T); LHS E sup|dX|^2 + E sup|dY|^2 + E int(|dZ|^2+||dU||^2).\n- Narrowing watch: retaining Assumption 2.3 (Lipschitz) or 2.2 on system 2 would lose the\n  clause; \"(2.3)\" in the clause name is the equation (Borel measurability of h), not Assumption\n  2.3.",
+  "locked_at": "2026-10-19T03:15:38Z"
+ },
+ "comparison": {
+  "text": "Comparison: spec thm_stab_minimal (Sec3Stability.lean:104-138) against my locked reading.\n\nQuantifier order: exists Cstab : R^7 -> R first, evaluated at (T, L, ||GX G||, (sMin G^2)^{-1},\nalpha, beta1, beta2): a function of T, L, ||G||, c_G, alpha, beta1, beta2 only (c_BDG universal),\nfixed before dims, nu, basis, systems and solutions. Matches.\n\nSystem 1: JointBorel, Assumptions 2.2-2.5 (L, G full rank, alpha, beta1, beta2) with xi1.\nSystem 2: only JointBorel T C2 — the clause's \"(2.3)\" (standing Borel measurability), no\nLipschitz, no origin integrability; xi2 arbitrary. Matches \"with only (2.3) on system 2\".\n\nSolutions: Theta^1 Solution of (C1, xi1), Theta^2 Solution of (C2, xi2) in HH. The Lean solution\nnotion asks the coefficient processes of system 2 along Theta^2 to have finite energy (b_sq,\nsigma_sq, f_sq, gamma_sq). A paper solution of system 2 need only have a pathwise drift integral\n(and the L2 stochastic integrals). The difference is immaterial for this clause: system 1 satisfies\n2.2-2.3 and Theta^2 is in HH, so the system-1 coefficient processes along Theta^2 are square\nintegrable. If a system-2 process along Theta^2 is not, the corresponding displayed difference is\nnot square integrable and the [0, inf] estimate is trivial (right side inf). When the displayed\ndifferences are square integrable, the system-2 processes are, and the Lean and paper notions\ncoincide. The measurability fields follow from JointBorel C2.\n\nConclusion: supSize(Theta^1 - Theta^2) <= ofReal(Cstab(...)) * dataSize(...) in [0, inf], with\ndataSize = E|xi1 - xi2|^2 + E|g1(X^2_T, Law X^2_T) - g2(X^2_T, Law X^2_T)|^2 + sum of energies of\nthe differences b1 - b2, sigma1 - sigma2, f1 - f2 along Theta^2 (tuple and law lawP2 of Theta^2_s)\nand of the jump difference h1 - h2 at the predictable tuple (leftLim X^2, leftLim Y^2, Z^2, U^2)\nand its law (coeffJump, a jointly measurable representative; the energy is\nrepresentative-independent). This is (3.1) with the differences along solution 2 as in §3, read in\n[0, inf], i.e. \"the estimate holds whenever the displayed differences are square integrable\".\n\nWitness thm_stab_nonzero_hypotheses: a nonzero instance (Example 5.1(i), two initial data) meeting\nthe hypotheses, with right side 1. Not vacuous.\n\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:29:22Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices, each harmless:\n1. The estimate is read in [0, inf] (lintegral energies, ofReal of the constant): this is the\n   paper's \"holds whenever the displayed differences are square integrable\", trivial otherwise.\n2. The Lean solution notion for system 2 demands finite energy of its coefficient processes along\n   Theta^2. Whenever the displayed differences are square integrable this follows from the\n   system-1 bounds, and otherwise the right side is infinite. The clause therefore loses nothing.\n3. Constants: C_stab is a function of (T, L, ||G||, c_G, alpha, beta1, beta2) with\n   ||G|| = ||GX G|| and c_G = s_min(G)^{-2}; c_BDG is universal.\n4. The jump difference uses the jointly measurable representative coeffJump of h at the\n   predictable tuple; energies are independent of the representative. The other solution-notion\n   encodings are as in thm_cwp (law flow lawP2 at every s, cadlag versions, vanishing off [0,T])."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:36:24Z",
+  "disagreements": "none (labelling only: the review says faithful, I say faithful with representation choices, for the same analysis, including the observation that the finite-energy fields of the system-2 solution lose no case of the printed claim)"
+ },
+ "submitted_at": "2026-10-19T03:36:39Z",
+ "issue_draft": null
+}

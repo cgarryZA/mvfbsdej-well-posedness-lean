@@ -1,0 +1,59 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.thm_uniq",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.thm_uniq",
+  "lean": [
+   "Dissertation.PaperSpec.A.thm_uniq"
+  ],
+  "claims": [
+   "A:thm:uniq",
+   "A:rem:uniq-no-integ",
+   "A:abstract",
+   "A:conclusion"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba1b8815741b34ba4e5",
+  "fingerprint": "pl-fp-v1:29befa06a8ddb87b3a7b3e4b037eae6a466f96caa9406f4d8cda5becf9cfcd0d",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading (locked before any Lean): spec thm_uniq, Theorem 3.3 (with Remark 3.4), clauses \"main;\nthe uniqueness only requires Assumptions 2.3-2.5; uniqueness\".\n\nPaper content. Under Assumptions 2.3-2.5 (NOT 2.2), (1.1) has at most one solution. More\nprecisely, if Theta^1, Theta^2 in Hweak satisfy (1.1) with the same initial condition, then\nTheta^1 = Theta^2; furthermore Theta^1 - Theta^2 in HH.\nHweak = L2(0,T;R^n) x L2(0,T;R^m) x H^2_W x H^2_N, with the L2 factor = cadlag adapted V with\nE int_0^T |V_t|^2 dt < inf. \"Satisfy (1.1)\": both identities a.s. for every t, h at the\npredictable tuple; the terminal condition presupposes Law(X_T) in P_2(R^n), i.e. X_T in L2\n(proof, line 162); the integrals of (1.1) are presupposed to exist.\n\nA faithful formal statement must contain:\n- arbitrary setting (T>0, dims, sigma-finite nu, basis), deterministic Borel coefficients;\n- hypotheses: Assumptions 2.3, 2.4, 2.5 only (no origin integrability of coefficients, no\n  xi_0 in L2 - xi_0 just F_0-measurable, or at least not more than what the Hweak solution notion\n  forces);\n- Theta^1, Theta^2 in the Hweak class (cadlag adapted X, Y with E int |X|^2, E int |Y|^2 finite;\n  Z, U predictable square-integrable), each satisfying (1.1) with the same xi_0 (and X^k_T in L2 as\n  presupposed by the terminal law);\n- conclusion: Theta^1 = Theta^2 in the identification sense (X^1, X^2 indistinguishable, Y\n  likewise, Z^1 = Z^2 dt x dP-a.e., U^1 = U^2 dt x dP x nu-a.e. / in L2(nu) for a.e. (t, omega));\n  plus the (then trivial) Theta^1 - Theta^2 in HH.\n- Narrowing watch: requiring Theta^k in HH (not Hweak), requiring Assumption 2.2, xi_0 in L2,\n  finite nu, or extra integrability beyond what \"satisfy (1.1)\" needs would lose the clause \"the\n  uniqueness only requires Assumptions 2.3-2.5\" / the Hweak class. Solution notion for the Hweak\n  class must make sense without Assumption 2.2 (coefficient processes along Theta may not be in\n  L2 individually; the integrals must still be required to exist, e.g. local integrability, which\n  is part of \"satisfies (1.1)\").",
+  "locked_at": "2026-10-19T03:15:37Z"
+ },
+ "comparison": {
+  "text": "Comparison: spec thm_uniq (Sec3.lean:90-117) against my locked reading.\n\nHypotheses: standing setting (G0 independent, enlJoint, nu sigma-finite, n, m, d > 0, T > 0);\nJointBorel ((2.3), standing); Assumption23 (L), G.rank = min m n (2.4), Assumption25 (G, alpha,\nbeta1, beta2). No Assumption 2.2: no origin integrability of the coefficients, no condition on\nxi0 (not even L2). Matches \"the uniqueness only requires Assumptions 2.3-2.5\".\n\nSolution class: WeakSolution = exists gamma, PaperWeakSolutionInt over enlJoint, with every path\ncadlag: X, Y adapted on [0,T], right-continuous, left limits, E int_0^T |.|^2 finite (Hweak);\nZ predictable, U marked predictable, finite energies (H^2_W, H^2_N); X_T in L2 (the paper's\npresupposition Law X_T in P2(R^n), proof of Thm 3.3); the integrals of (1.1) exist\n(PaperAdmissibleInt): drift and driver pathwise, a.s. integrable on [0,T] (as Remark 3.4's\nt^{-1/2} example needs), diffusion and jump integrand with finite energy (L2 stochastic\nintegrals); gamma represents h at the predictable tuple; both identities on one null set for all t\nwith the same xi0. Matches \"Theta^1, Theta^2 in Hweak satisfy (1.1) with the same initial\ncondition\". On the L2 stochastic integrals: for the Brownian channel this loses nothing, since a.s.\nlocal square integrability of sigma(s, Theta_s, mu_s) forces sigma(., 0, delta_0) in L2(0,T) by\nAssumption 2.3 (at a.e. s, (Theta_s, mu_s) is a diagonal input) and hence finite energy along\nTheta. For the jump channel it is the paper's framework (§2: Poisson integrals of square-integrable\nL2(nu)-valued predictable integrands); the same Lipschitz argument applies in the L2 theory.\n\nConclusion: X^1, X^2 and Y^1, Y^2 indistinguishable on [0,T]; zero energy of the Z- and\nU-differences (Theta^1 = Theta^2 in the identification); and supSize(Theta^1 - Theta^2) < inf,\ni.e. Theta^1 - Theta^2 in HH. Matches all three sentences.\n\nWitness thm_uniq_hypotheses: at Example 5.1(i) the hypotheses hold and two weak solutions exist\n(the same one twice). Not vacuous.\n\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:25:46Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices, each harmless:\n1. \"Satisfy (1.1)\" in Hweak is encoded as PaperWeakSolutionInt: drift and driver integrals\n   pathwise (a.s. integrable paths), Brownian and Poisson integrals in the L2 sense (finite energy\n   of sigma along Theta and of the jump representative gamma), X_T in L2. The L2 requirement is no\n   loss for the Brownian channel (with Assumption 2.3, a.s. local square integrability along an\n   Hweak tuple already forces finite energy) and is the paper's L2 framework for Poisson integrals\n   (§2, (2.4)).\n2. The law flow is lawP2 P Theta_s at every s (a.e. equal to the paper's Borel representative);\n   gamma is a marked progressive representative of the predictable h(s, Theta^-_s, ., mu^-_s).\n3. The identities hold on one null set for all t, equivalent to \"a.s. for every t\" (cadlag\n   sides); paths cadlag for every omega; Z, U vanish off [0,T].\n4. Equality Theta^1 = Theta^2 is indistinguishability of X, Y on [0,T] and zero energy of the\n   Z-, U-differences; Theta^1 - Theta^2 in HH is finiteness of supSize of the differences.\n5. Assumption 2.5 in Lean demands integrable pairings, automatic under Assumption 2.3."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:35:26Z",
+  "disagreements": "Labelling only. The review records \"faithful\" and I record \"faithful with representation\nchoices\", listing the solution-notion encodings explicitly. One of them is worth recording: the\nweak solution class takes the stochastic integrals in the L2 sense (finite energy of sigma along\nTheta and of the jump representative). I argue this loses no paper solution in the Brownian\nchannel under Assumption 2.3 and is the paper's L2 framework for Poisson integrals. The review\nlists \"stochastic integrals in L^2\" as part of the class without that justification. No\ndisagreement on the verdict group."
+ },
+ "submitted_at": "2026-10-19T03:35:38Z",
+ "issue_draft": null
+}

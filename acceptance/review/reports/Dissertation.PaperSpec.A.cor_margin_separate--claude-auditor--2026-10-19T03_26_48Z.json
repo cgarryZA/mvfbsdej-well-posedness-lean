@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.cor_margin_separate",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.cor_margin_separate",
+  "lean": [
+   "Dissertation.PaperSpec.A.cor_margin_separate"
+  ],
+  "claims": [
+   "A:sec3:margin-paragraph"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba1b90f9a7b02bff832",
+  "fingerprint": "pl-fp-v1:3ec0f6e08a6405f634c7f271408d79bc6f9d8ec16bbf53873800f4d7a53766af",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of spec:Dissertation.PaperSpec.A.cor_margin_separate (paragraph after Corollary 3.6,\nclause \"finitely many continuous functionals cannot separate the points of an\ninfinite-dimensional space\").\n\nPaper (03-main-results.tex:278-288): \"When, moreover, L2(nu) is infinite-dimensional, jump\nfeedback entering through finitely many functionals of u supplies no margin either, since finitely\nmany continuous functionals cannot separate the points of an infinite-dimensional space; a margin\nthen needs feedback dissipative on the whole of L2(nu) ... If L2(nu) is finite-dimensional ...\nfinitely many functionals can determine u and the second obstruction disappears.\"\n\nThe clause is a general fact used as a justification. Faithful statement:\n- Setting: an infinite-dimensional real space V; at minimum the fibre L2(nu; R^m) under the\n  hypothesis that it is infinite-dimensional (not FiniteDimensional), or more broadly any\n  infinite-dimensional real normed / Hilbert space (broader, and the printed use is the instance\n  V = L2(nu)).\n- Quantifiers: for every finite family (J in N, phi_1, ..., phi_J : V -> R) of continuous\n  functionals,\n- Conclusion: there exist u != u' in V with phi_j(u) = phi_j(u') for all j (the family is not\n  injective / does not separate points).\nOn the meaning of \"functional\": the paper says \"continuous functionals\", and the use (feedback\nof h entering through finitely many functionals of u, e.g. bounded-Lipschitz features as in\nExample 5.4) concerns arbitrary, possibly nonlinear, continuous real-valued maps; for linear\nfunctionals continuity is irrelevant (finitely many linear functionals, continuous or not, have a\ncommon kernel of finite codimension), so the word \"continuous\" is load-bearing only in the\nnonlinear reading.  The nonlinear statement is true (restrict to a (J+1)-dimensional subspace and\napply Borsuk-Ulam to the sphere).  A Lean statement restricted to continuous LINEAR functionals\nproves a strictly weaker fact (a case lost: nonlinear continuous functionals) and would be\nnarrower than this reading; I would accept it as faithful only if the paper's usage clearly means\nlinear functionals, which I do not think it does.\nA version that drops \"infinite-dimensional\" (or uses discontinuous maps) would be false.\nJ = 0 must be allowed or harmless (then any two distinct points work; V is nontrivial).",
+  "locked_at": "2026-10-19T03:15:07Z"
+ },
+ "comparison": {
+  "text": "Comparison for spec:Dissertation.PaperSpec.A.cor_margin_separate (Sec3Margin.lean:149-154).\n\nLean: forall (H : Type v) [NormedAddCommGroup H] [NormedSpace R H], not FiniteDimensional R H ->\n  forall (k : N) (F : H -> (Fin k -> R)), Continuous F -> not Function.Injective F.\n\nAgainst my reading:\n- Space: every infinite-dimensional real normed space (covers L2(nu; R^m) whenever it is\n  infinite-dimensional, the case the paragraph uses). The paper's \"an infinite-dimensional space\"\n  is generic; real normed spaces are the natural reading (the fibre is a Hilbert space).\n- Functionals: a family of k continuous functionals phi_1..phi_k : H -> R is the same as a\n  continuous F : H -> (Fin k -> R) (product topology), F = (phi_j)_j. Continuous, NOT necessarily\n  linear: this is the general (nonlinear) reading I identified as the paper's, not the weaker\n  linear one.\n- Conclusion: \"cannot separate the points\" = F is not injective, i.e. there are u != u' with\n  phi_j(u) = phi_j(u') for all j. Matches.\n- k = 0 is included (F constant; non-injective because H is nontrivial). Fine.\n- Hypothesis \"not FiniteDimensional\" is load-bearing (the statement is false in finite dimension\n  for k >= dim) and is the paper's. It can be met: the witness cor_margin_continuous_hypotheses\n  proves not FiniteDimensional R (Lp (EuclideanSpace R (Fin 1)) 2 volume), i.e. L2(nu) with nu\n  Lebesgue on R, an intended (infinite-activity) instance.\n- The statement is true (Borsuk-Ulam on a (k+1)-dimensional sphere), proved in\n  Acceptance/A/Sec3MarginContinuous.lean via Dissertation.Topology.not_injective_of_continuous_of_\n  infinite_dimensional (not reviewed here, only that the type is the proposition).\n- It is something the paper claims at this revision (03-main-results.tex:283-285).\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:18:56Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:26:36Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:26:48Z",
+ "issue_draft": null
+}

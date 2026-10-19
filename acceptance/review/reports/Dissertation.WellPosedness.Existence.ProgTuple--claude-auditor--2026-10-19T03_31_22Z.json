@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.Existence.ProgTuple",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.Existence.ProgTuple",
+  "lean": [
+   "Dissertation.WellPosedness.Existence.ProgTuple"
+  ],
+  "claims": [
+   "A:eq:coefmeas"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "f8659178ce7276550000000000000000",
+  "fingerprint": "pl-fp-v1:14a7d6b126973b9cb38cbc32eee59eee92ff2a98f1c260fddbb4875ba112dc50",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of def ProgTuple (used by eq:coefmeas).\nPaper notion: the unknown tuple Theta=(X,Y,Z,U), X,Y cadlag adapted, Z,U predictable (U as an L2(nu)-valued\nstrongly measurable process via (2.4)); in (2.5) what is used is that Theta: [0,T] x Omega -> H is\nprogressively measurable wrt (F_t) (H with Borel sigma-algebra). So a \"progressive tuple\" must be an\nH-valued (or four component) process together with progressive measurability wrt the standing filtration\n(for each t, Theta restricted to [0,t] x Omega is Borel([0,t]) ⊗ F_t-measurable). It need not include\nsquare integrability for (2.5). Faithful Lean def: a structure carrying the process and a proof of\nprogressive measurability (Mathlib's ProgMeasurable or equivalent), for the standing filtration, with the\ncorrect H (L2(nu) component as the Lp space).",
+  "locked_at": "2026-10-19T03:16:08Z"
+ },
+ "comparison": {
+  "text": "Comparison, def ProgTuple (WPZero.lean:62-90) vs reading.\nFields: X, Y coordinatewise adapted with right-continuous paths (every ω, every t); Z coordinatewise\njointly measurable, progressively measurable, finite energy on [0,T]; U coordinatewise (pointwise in\nthe mark) jointly measurable on Ω × ℝ × E, marked progressively measurable, finite marked energy.\nAgainst the reading (an H-valued progressively measurable tuple process on the standing filtration):\nright-continuous adapted X,Y are progressively measurable; Z,U progressive; the U channel is a\npointwise mark function read into L²(ν) by uLift (the paper reads U through a P⊗E representative, (2.4)),\nso the H-valued tuple tupleAt is progressive. Extra: finite energy of Z and U (the paper's tuples have\nZ ∈ H²_W, U ∈ H²_N, so no paper case is lost). Coordinates as real processes. The filtration is a\nparameter (instantiated with the standing one).\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:29:18Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices: (1) the tuple is given coordinatewise (real processes; Z on pairs; U as a\nmark-indexed function, lifted to L²(ν) by uLift) rather than as an H-valued process; (2) progressive\nmeasurability is ensured by adaptedness plus right-continuity for X,Y and by (marked) progressive\nmeasurability for Z,U -- a class containing the paper's càdlàg-adapted/predictable tuples; (3) finite\nenergy of Z and U is included, as for every tuple the paper considers (H²_W, H²_N). Harmless for its use\nin (2.5)."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:29:28Z",
+  "disagreements": "No disagreement on substance. Label only: the review records \"broader\" (right-continuous rather than\ncàdlàg, progressive rather than predictable, no L² for X,Y); I record \"faithful with representation\nchoices\" for this definition, since its role is the class of tuples for (2.5) and the paper's tuples are\nall ProgTuples. (The review itself labels the constructor ProgTuple.mk \"faithful with representation\nchoices\" with the same analysis.)"
+ },
+ "submitted_at": "2026-10-19T03:31:22Z",
+ "issue_draft": null
+}

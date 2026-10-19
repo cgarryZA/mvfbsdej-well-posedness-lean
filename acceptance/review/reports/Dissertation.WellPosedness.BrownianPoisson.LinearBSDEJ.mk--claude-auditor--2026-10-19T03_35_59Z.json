@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.mk",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.mk",
+  "lean": [
+   "Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.mk"
+  ],
+  "claims": [
+   "A:sec4:horizon-not-contractive"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "a259997f09ec23780000000000000000",
+  "fingerprint": "pl-fp-v1:f0b3e5adde3267ca80b80dd9ffabeb9ce8f05a0ec291d4dd10f24786f96de8a2",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "# Reading: def WellPosedness.BrownianPoisson.LinearBSDEJ.mk (constructor)\n\nThe constructor of the structure LinearBSDEJ. Its meaning is the list of fields: to build a value\none must supply exactly the data and properties of a solution of the linear BSDEJ\n  Y_t = xi + int_t^T phi ds - int_t^T Z dW - int_t^T int_E U Ntilde(ds,de):\nthe processes (Y,Z,U), Y cadlag adapted, Z and U predictable and square-integrable (H^2_W, H^2_N),\nthe terminal value xi in L^2(F_T) and driver phi in L^2(Omega x [0,T]), and the identity a.s. for\nevery t in [0,T]. A faithful constructor has argument types matching those fields (see the reading\nof LinearBSDEJ); nothing extra that would make the structure uninhabitable by the paper's linear\nBSDEJ solutions, and nothing missing that the paper requires.",
+  "locked_at": "2026-10-19T03:16:43Z"
+ },
+ "comparison": {
+  "text": "# Comparison: def LinearBSDEJ.mk\n\nThe constructor takes exactly the fields of LinearBSDEJ, in order: Z_meas, Z_prog, Z_vanish, Z_sq,\nU_meas, U_prog, U_vanish, U_sq, phi_meas, phi_prog, phi_vanish, phi_sq, xi_sq, Y_adapted,\nY_rightCont, eqn (the identity a.s. at each t in [0,T], with the canonical Ito and compensated\nPoisson integrals of F built from the earlier fields). Nothing else is required, nothing is\nmissing relative to the structure. Its meaning is that of LinearBSDEJ, with the same\nrepresentation choices (progressive instead of predictable integrands, progressive drift,\nright-continuous adapted Y, identity a.s. at each t, xi only square integrable, extension by 0 off\n[0,T]); see the comparison for LinearBSDEJ.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:22:14Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "The constructor's arguments are exactly the fields of LinearBSDEJ, so it carries the same harmless\nrepresentation choices: (1) progressive / marked-progressive Z, U in place of predictable ones\n(the L^2 integrals depend only on a.e. classes, which contain predictable representatives);\n(2) a progressive drift phi (every use is progressive; an adapted solution forces a progressive\nversion); (3) Y adapted with right-continuous paths and the identity a.s. at each t (equivalent up\nto indistinguishability to the cadlag, all-t form); (4) xi only square integrable (F_T-measurable up\nto a null set via Y_T = xi); (5) scalar equation, integrands extended by 0 off [0,T]."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:35:53Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:35:59Z",
+ "issue_draft": null
+}

@@ -1,0 +1,94 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:LevyStochCalc.Brownian.BrownianMotion",
+  "kind": "def",
+  "name": "LevyStochCalc.Brownian.BrownianMotion",
+  "lean": [
+   "LevyStochCalc.Brownian.BrownianMotion"
+  ],
+  "claims": [
+   "A:abstract",
+   "A:conclusion",
+   "A:cor:robust",
+   "A:eq:compid",
+   "A:eq:forced",
+   "A:eq:mvfbsdej",
+   "A:eq:zeromean",
+   "A:ex:brownian",
+   "A:ex:concrete",
+   "A:ex:dealer",
+   "A:ex:fulllaw",
+   "A:intro:limin-comparison",
+   "A:intro:mvfbsdej",
+   "A:lem:bpbsde",
+   "A:lem:cont",
+   "A:lem:pert",
+   "A:lem:small",
+   "A:rem:beta1-dich",
+   "A:rem:cwp-class",
+   "A:rem:diag-mono",
+   "A:rem:freelaw",
+   "A:rem:generalrank",
+   "A:rem:intrinsic",
+   "A:rem:margin",
+   "A:rem:regimes",
+   "A:rem:uniq-no-integ",
+   "A:sec2:infinite-activity-atoms",
+   "A:sec2:prp",
+   "A:sec3:HH-banach",
+   "A:sec3:margin-paragraph",
+   "A:sec3:one-null-set",
+   "A:sec4:WP-def",
+   "A:sec4:horizon-not-contractive",
+   "A:sec5:overview",
+   "A:sec:examples",
+   "A:thm3.1:companion",
+   "A:thm:cwp",
+   "A:thm:stab",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "caf7babc7d9b82d50000000000000000",
+  "fingerprint": "pl-fp-v1:39f240ff68c50b1623f9b979ad438cfeb14cfd1dc4035c74299d5292ce8d02a4",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading for def:LevyStochCalc.Brownian.BrownianMotion (locked before any Lean is shown).\n\nPaper notion (sec 2): \"a d-dimensional Brownian motion W\" on (Omega,F,P) - a standard\nd-dimensional Brownian motion: an R^d-valued process (W_t)_{t >= 0} (at least on [0,T]) with\n (i) W_0 = 0 (a.s.);\n (ii) continuous sample paths (a.s.);\n (iii) independent increments: for 0 <= t_0 < t_1 < ... < t_k the increments W_{t_i}-W_{t_{i-1}}\n      are independent (with respect to its own past; the F_t-version is in IsBrownianFiltration);\n (iv) Gaussian increments W_t - W_s ~ N(0, (t-s) I_d) for s <= t (independent standard\n      components, identity covariance).\nA faithful Lean structure must contain (or imply) all of (i)-(iv), with identity covariance (not a\ngeneral covariance, not a 1-dimensional motion unless d = 1), in R^d = EuclideanSpace R (Fin d) (or\nFin d -> R), measurability of each W_t. A strictly weaker structure (e.g. missing Gaussianity or\nindependence) would make W a more general process (broader hypotheses, so a theorem about it\nwould be stronger, but propositions stating existence over a BM would be off); a stronger one\n(e.g. paths continuous everywhere rather than a.s.) is a harmless representation choice since a\nmodification exists.",
+  "locked_at": "2026-10-19T03:13:12Z"
+ },
+ "comparison": {
+  "text": "Comparison for def:LevyStochCalc.Brownian.BrownianMotion.\n\nLean (LevyStochCalc/Brownian/Construction.lean): structure over (Omega, P) with\n  W : R -> Omega -> R; measurable_eval (each W_t measurable); joint_measurable ((t,omega) |-> W_t(omega)\n  measurable); initial_zero (W_0 = 0 a.s.); increment_gaussian (for 0 <= s < t, P.map (W_t - W_s) =\n  gaussianReal 0 (t - s), i.e. N(0, t-s)); continuous_paths (a.s. t |-> W_t continuous on R);\n  negative_zero (W_s = 0 a.s. for each s < 0); joint_increment_independent (for 0 <= s < t,\n  sigma(W_u : u <= s) is independent of sigma(W_t - W_s)).\nMy reading asked for a d-dimensional standard BM. The Lean unit is the SCALAR standard BM; the\npaper's d-dimensional W is assembled in MultidimBrownianMotion (d scalar BMs, mutually independent\nas path-valued variables, jointly continuous), which the driver D.W is. So the unit is the\npaper's notion \"Brownian motion\" for one component W^j, and I judge it as such:\n (i) W_0 = 0 a.s.: initial_zero. OK.\n (ii) continuous paths a.s.: continuous_paths (on all of R, with the negative-time convention). OK.\n (iii) independent increments: joint_increment_independent gives that each increment W_t - W_s is\n      independent of the natural past sigma(W_u, u <= s); by induction over t_0 < ... < t_k the increments\n      are mutually independent. OK.\n (iv) Gaussian increments with variance t - s (identity covariance in dimension 1): increment_gaussian\n      (Mathlib's gaussianReal mu v has variance v). OK.\nExtra: index set R with W_s = 0 a.s. for s < 0 (convention; with a.s. continuity the paths vanish on\n(-inf,0] a.s.), and joint measurability in (t,omega) (a regularity met by a continuous modification;\nthe library proves existence, Brownian/Existence.lean). Neither changes the law of (W_t)_{t >= 0}.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:25:28Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices, harmless:\n1. The structure is the scalar standard Brownian motion. The paper's d-dimensional W is the\n   MultidimBrownianMotion built from d of them (mutually independent components), and the driver\n   uses that.\n2. The process is indexed by R, with W_s = 0 a.s. for s < 0. Together with a.s. continuity this\n   only extends the paths by 0 on the negative axis.\n3. Joint measurability of (t,omega) |-> W_t(omega) is required. A continuous modification has it,\n   and existence is proved in the library. Independent increments are stated as independence of\n   each increment from the natural past, which by induction gives mutual independence of the\n   increments."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:25:40Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:27:25Z",
+ "issue_draft": null
+}

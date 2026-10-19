@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.rem_uniq_initial",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.rem_uniq_initial",
+  "lean": [
+   "Dissertation.PaperSpec.A.rem_uniq_initial"
+  ],
+  "claims": [
+   "A:rem:uniq-no-integ"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba1fa628ed6b5f5989d",
+  "fingerprint": "pl-fp-v1:d16d93ab938552f1255a8a7c20185ed36e03a7b3fc6c7bfce7ce993aa86f1a8a",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading (spec rem_uniq_initial; Remark 3.4, 03-main-results.tex:186-187). See COMMON.md.\nClaim: the initial-data condition ξ0 ∈ L² (part of Assumption 2.2) is necessary for a solution in\n𝕊, since X_0 = ξ0 and E sup_t |X_t|² < ∞.\nA faithful statement: on the standing basis, for arbitrary coefficients (b,σ,h,f,g) (no\nassumption needed; Assumptions 2.3–2.5 as context would be a harmless narrowing) and an\nF_0-measurable ξ0 : Ω → R^n, if there is a solution Θ ∈ 𝕊 of (1.1) with initial datum ξ0, then\nE|ξ0|² < ∞ (ξ0 ∈ L²(Ω,F_0;R^n)). The solution notion must be the paper's (both identities a.s. for\nevery t, in particular at t = 0 giving X_0 = ξ0 a.s.; X ∈ S²). It must not assume ξ0 ∈ L² nor\nassume Assumption 2.2 (that would make it trivial).\n\n----\nCommon setting (paper §1–§2), used by every reading below:\n- filtered probability space (Ω,F,(F_t),P), usual conditions; horizon T>0; dims n,m,d ≥ 1;\n  d-dim Brownian motion W; independent Poisson random measure N on R_+×E with intensity dt⊗ν,\n  ν σ-finite on a countably generated (E,𝓔); filtration = usual augmentation of σ(W,N,F_0).\n- H = R^n × R^m × R^{m×d} × L²(ν;R^m) with |θ|² = |x|² + |y|² + |z|_F² + ‖u‖²_{L²(ν)}\n  (Euclidean norms on R^j, Frobenius on matrices; NOT sup norms).\n- Coefficients b,σ,h,f : [0,T]×H×P_2(H) → R^n, R^{n×d}, L²(ν;R^n), R^m; g : R^n×P_2(R^n) → R^m,\n  deterministic. W_2 the quadratic Wasserstein distance.\n- Diagonal input at time t: (Θ, Law Θ) with Θ ∈ L²(Ω,F_t;H) (F_t-measurable, square-integrable).\n- Interior pairing P(Θ,Θ') := E[⟨δb,GᵀδY⟩ + ⟨δσ,GᵀδZ⟩_F + ⟨−δf,GδX⟩ + ∫_E⟨δh(e),GᵀδU(e)⟩ν(de)].\n- (2.6): for a.e. t, all diagonal pairs: P ≤ −β1 E[|GᵀδY|²+|GᵀδZ|²_F+‖GᵀδU‖²] − β2 E|GδX|².\n- (2.12) weighted margin c: (2.6) RHS minus c E[|GᵀδY|²+|GᵀδZ|²_F+‖GᵀδU‖²+|GδX|²].\n- (2.13) unweighted margin c: (2.6) RHS minus c E[|δY|²+|δZ|²_F+‖δU‖²+|δX|²].\n- Solution: Θ=(X,Y,Z,U) ∈ 𝕊 (X,Y càdlàg adapted with E sup|·|²<∞, Z predictable in H²_W,\n  U predictable in H²_N) satisfying both identities of (1.1) a.s. for every t, h evaluated at the\n  predictable tuple Θ^-_t=(X_{t-},Y_{t-},Z_t,U_t) and μ^-_t = Law(Θ^-_t).",
+  "locked_at": "2026-10-19T03:17:16Z"
+ },
+ "comparison": {
+  "text": "Comparison: spec rem_uniq_initial (Sec3Rem34.lean:41-54).\n- Setting: standing basis, any n, m, d, T ≥ 0, arbitrary coefficients C (no assumption) and an\n  arbitrary ξ₀ : Ω → ℝⁿ — as in my reading (no assumption needed).\n- Hypotheses: WeakSolution (a tuple of ℍ_weak satisfying (1.1) with initial datum ξ₀, integrals\n  existing, h at the predictable tuple) AND E sup_{t≤T}|X_t|² < ∞. The paper's hypothesis is \"a\n  solution in ℍ\". PaperSolution.toWeakInt (PaperWeakSolutionInt.lean:211, T ≥ 0) turns a\n  Solution into the WeakSolution data with the same γ (left limits are part of both), and\n  Solution contains X_sup. So every solution in ℍ meets the Lean hypotheses; the Lean also covers\n  ℍ_weak tuples whose X merely has a finite sup moment. Broader.\n- Conclusion: ∀ i, MemLp (ξ₀ · i) 2 P, i.e. ξ₀ ∈ L² (coordinatewise = vector-valued in finite\n  dimension). F_0-measurability is not concluded; it is part of what an initial datum is, and the\n  remark's content is the L² condition. Matches.\n- Not trivial: ξ₀ ∈ L² is not assumed; the solution notion fixes X_0 = ξ₀ a.s. through the\n  forward identity at t = 0.\n- Witness rem_uniq_hypotheses: the singular-drift system has a WeakSolution from 0 with finite\n  sup moments — the hypotheses can be met.\nVerdict: broader (instantiation: a Solution in ℍ gives the WeakSolution hypothesis by\nPaperSolution.toWeakInt and the sup bound by its X_sup field).",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:32:32Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "broader",
+  "detail": "Broader: the hypothesis is \"a WeakSolution (ℍ_weak tuple satisfying (1.1)) whose X has finite\nE sup|X|²\" instead of \"a Solution in ℍ\". Instantiation giving the printed claim: for a Solution\n(T ≥ 0), PaperSolution.toWeakInt yields the WeakSolution data with the same γ (left limits are in\nboth predicates) and the Solution's X_sup field gives the sup bound; the conclusion ξ₀ ∈ L² then\nis the printed necessity of the initial-data condition."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:32:39Z",
+  "disagreements": "Classification only. The author records faithful; I record broader: the hypothesis is a\nWeakSolution with a finite sup moment of X, which every Solution in ℍ provides\n(PaperSolution.toWeakInt and the X_sup field), but which also covers ℍ_weak tuples that are not\nSolutions. The author's own correspondence states this (\"a solution in ℍ is such a tuple\"); we\nagree on the meaning."
+ },
+ "submitted_at": "2026-10-19T03:34:35Z",
+ "issue_draft": null
+}

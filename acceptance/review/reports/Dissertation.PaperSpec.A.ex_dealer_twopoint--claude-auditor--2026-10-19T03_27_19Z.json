@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.ex_dealer_twopoint",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.ex_dealer_twopoint",
+  "lean": [
+   "Dissertation.PaperSpec.A.ex_dealer_twopoint"
+  ],
+  "claims": [
+   "A:ex:dealer"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba10e7a45835d5244c0",
+  "fingerprint": "pl-fp-v1:1823ad4947d81894bf45af44cdcf060bce9675d7528682b1df17aa29158a6d51",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of spec:Dissertation.PaperSpec.A.ex_dealer_twopoint (Example 5.5, clause \"the two-point\nlaws share their mean, with the printed values\").\n\nPaper (05-examples.tex:402-407): for a unit w in L2(nu), lambda_1 = (1/2)(delta_{-w} + delta_w),\nlambda_2 = (1/2)(delta_{-2w} + delta_{2w}) \"share their mean, yet\nA_{lambda_1}(w) = (1/sqrt5) w, A_{lambda_2}(w) = (1/2)(3/sqrt10 - 1/sqrt2) w\".\nCheck: A_{l1}(w) = (1/2)(gradV(2w) + gradV(0)) = (1/2)(2w/sqrt5) = w/sqrt5; A_{l2}(w) =\n(1/2)(gradV(3w) + gradV(-w)) = (1/2)(3w/sqrt10 - w/sqrt2).  Correct.\n\nFaithful statement:\n- For every w in L2(nu) (fibre of the dealer example, L2(nu; R); general m harmless) with\n  ||w|| = 1 (ν arbitrary sigma-finite; if no unit vector exists the statement is vacuous for that\n  nu, but the example takes nu != 0);\n- with lambda_1, lambda_2 exactly the printed two-point laws (as probability measures, elements of\n  P2(L2(nu)) - two-point laws have finite second moment);\n- conclusions: mean(lambda_1) = mean(lambda_2) (barycentres; both = 0 - stating \"= 0\" for both is\n  equivalent), A_{lambda_1}(w) = (1/sqrt 5) w, A_{lambda_2}(w) = (1/2)(3/sqrt 10 - 1/sqrt 2) w.\n- The crowding correction A must be the paper's, evaluated at u = w.\nA statement fixing a particular nu or a particular w is narrower; a statement without the mean\nequality is narrower.",
+  "locked_at": "2026-10-19T03:15:07Z"
+ },
+ "comparison": {
+  "text": "Comparison for spec:Dissertation.PaperSpec.A.ex_dealer_twopoint (Sec5.lean:654-665).\n\nLean: forall E nu [SigmaFinite] [CountablyGenerated] (w : L2(nu; R^1)), ||w|| = 1 ->\n  let L1 := (1/2) . (dirac (-w) + dirac w); L2' := (1/2) . (dirac (-(2 w)) + dirac (2 w));\n  (int v dL1 = int v dL2') /\\ ex55Crowd L1 w = (1/sqrt 5) . w\n    /\\ ex55Crowd L2' w = ((1/2) * (3/sqrt 10 - 1/sqrt 2)) . w.\n\nAgainst my reading:\n- For every unit w in the fibre L2(nu; R^1) (any sigma-finite, countably generated nu): matches;\n  not a fixed nu or w. Satisfiable when the fibre is nontrivial (witness ex_dealer_unit_hypotheses\n  gives a unit w for the dealer mark measure).\n- lambda_1, lambda_2 exactly the printed two-point laws (as measures with weights 1/2 in R>=0inf;\n  probability measures with finite second moment; the proposition uses them as plain measures,\n  which is all that is needed).\n- Equal means: Bochner barycentres of finite measures with two atoms (genuine values, both 0).\n  Matches \"share their mean\".\n- Printed values: A_{lambda_1}(w) = w/sqrt5 and A_{lambda_2}(w) = (1/2)(3/sqrt10 - 1/sqrt2) w, with\n  A = ex55Crowd (the paper's crowding correction). Matches; I rechecked the arithmetic\n  (gradV(2w) = 2w/sqrt5, gradV(3w) = 3w/sqrt10, gradV(-w) = -w/sqrt2, gradV(0) = 0).\n- Claimed at this revision (05-examples.tex:402-407).\nVerdict: faithful.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:21:49Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:26:58Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:27:19Z",
+ "issue_draft": null
+}

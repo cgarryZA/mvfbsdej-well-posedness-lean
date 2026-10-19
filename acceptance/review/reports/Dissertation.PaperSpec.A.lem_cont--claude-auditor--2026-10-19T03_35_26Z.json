@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.lem_cont",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.lem_cont",
+  "lean": [
+   "Dissertation.PaperSpec.A.lem_cont"
+  ],
+  "claims": [
+   "A:lem:cont"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba15f6eb38f12c8d372",
+  "fingerprint": "pl-fp-v1:d11b2d38f5f18a28c2f9963e544bf04c0892ed192488ded686e8fe3f4b22060b",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading (locked before any Lean): spec lem_cont, Lemma 4.4 (Continuation), clause \"main\".\n\nPaper content. Let Assumptions 2.2-2.5 hold and lambda_* be the small-coupling threshold of Lemma\n4.2 (lambda_* = (2 sqrt C_Phi)^{-1} in (0,1/2], depending only on T, L, c_BDG). There is\nzeta_0 > 0 depending only on T, L, ||G||, c_G, alpha, beta1, beta2, lambda_*, c_BDG, such that:\nif lambda_0 in [lambda_*, 1] and WP(lambda_0) holds, then WP(lambda_0 + zeta) holds for every\nzeta in [0, zeta_0] with lambda_0 + zeta <= 1.\nWP(lambda): the lambda-scaled forced system (4.1) (with the system's fixed xi_0) has a unique\nsolution in HH for EVERY square-integrable forcing q = (q^b, q^sigma, q^h, q^f, q^g_T)\n(q^b, q^sigma, q^f progressively measurable and in L2(Omega x [0,T]); q^h predictable\nP x calE-measurable in L2(dP dt nu); q^g_T in L2(Omega, F_T; R^m)).\n\nA faithful formal statement must contain:\n- Quantifier order: for all parameter values (T, L, ||G||, c_G, alpha, beta1, beta2, lambda_*)\n  there exists zeta_0 > 0 (a function of these only; c_BDG universal so may be absorbed), and\n  THEN for all dims n,m,d, nu, bases, coefficient systems and xi_0 satisfying Assumptions 2.2-2.5\n  with those constants (||G|| and c_G the norm and s_min^{-2} of the system's G), for all\n  lambda_0 in [lambda_*,1], WP(lambda_0) implies WP(lambda_0+zeta) for all zeta in [0,zeta_0]\n  with lambda_0+zeta <= 1. zeta_0 must not depend on n, m, d, nu, the basis, the coefficients,\n  lambda_0, or q.\n- lambda_*: either the specific threshold of Lemma 4.2 (then its definition must be that of the\n  paper, depending on T, L, c_BDG) or an arbitrary lambda_* in (0,1] (broader: the lemma's proof\n  only uses lambda_0 >= lambda_* > 0 via Lemma 4.3 with underline-lambda = lambda_*; the printed\n  claim is the instance at the threshold). Both acceptable; a fixed lambda_* not equal to the\n  paper's threshold and not quantified would be mismatched.\n- WP must be defined as in the paper: unique HH-solution for every square-integrable forcing with\n  the stated measurability; solutions of (4.1) with genuine integrals and law flows.\n- Watch for vacuity: WP(lambda_0) must be satisfiable (e.g. WP(lambda) for lambda <= lambda_* by\n  Lemma 4.2), so the implication is not vacuous; the forcing class must not be empty or trivial.",
+  "locked_at": "2026-10-19T03:15:37Z"
+ },
+ "comparison": {
+  "text": "Comparison: spec lem_cont (Sec4.lean:154-177) against my locked reading.\n\nQuantifier order. \"exists zeta0 : R^8 -> R\" first, then all bases, dims, coefficients, data: zeta0\nis a function of (T, L, ||G||, c_G, alpha, beta1, beta2, lambda_*) only, evaluated at\n(T, L, ||GX G|| (operator norm of G), (sMin G ^ 2)^{-1} = c_G, alpha, beta1, beta2, lamStar). It\ncannot depend on n, m, d, nu, the basis, the coefficients, lambda_0 or q. c_BDG is universal and\nabsorbed. Matches.\n\nHypotheses. Standing setting (G0 independent, enlJoint, nu sigma-finite, n, m, d > 0, T > 0),\nJointBorel, Assumptions 2.2, 2.3 (L), 2.4 (G.rank = min m n), 2.5 (G, alpha, beta1, beta2): the\npaper's Assumptions 2.2-2.5. lamStar: any real in (0, 1], not specifically the threshold of Lemma\n4.2. This is broader: the paper's lambda_* is one such value (lambda_* in (0, 1/2]), and the proof\nonly uses lambda_0 >= lambda_* > 0 through Lemma 4.3 with lower bound lambda_*.\n\nConclusion. zeta0(...) > 0 (at the parameters of every system satisfying the hypotheses, which is\nwhat \"there is zeta_0 > 0\" means), and for all lambda_0 in [lamStar, 1], WP(lambda_0) implies\nWP(lambda_0 + zeta) for all zeta in [0, zeta0] with lambda_0 + zeta <= 1. Matches.\n\nWP (Setting.lean): for every forcing q in PredForcing (q^b, q^sigma, q^f jointly and progressively\nmeasurable, square integrable on [0,T], normalised to vanish off [0,T]; q^h marked predictable,\nthe paper's P x calE, square integrable; q^g_T F_T-measurable in L2), there is a ForcedSolution of\n(4.1) in HH (PaperSolutionForced: S^2 X, Y, H^2 Z, U, the forced identities with lambda on b,\nsigma, h, f, g and the forcing unscaled, initial datum xi0), and any two ForcedSolutions agree\n(X, Y indistinguishable on [0,T], zero energy of the Z-, U-differences). This is the paper's\nWP(lambda). The forced integrands lambda psi + q^psi are required square integrable as a whole;\nwith q square integrable this is equivalent to the paper's separate integrals for lambda != 0 and\nis the paper's notion at lambda = 0.\n\nWitness lem_cont_hypotheses: Example 5.1(i) with lamStar = lambda_0 = the Lemma 4.2 constant and\nWP(lambda_0) holding (from lem_small), so the hypotheses, including WP(lambda_0), are met.\n\nVerdict: broader.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:24:45Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "broader",
+  "detail": "Broader in lambda_*: the proposition holds for every lamStar in (0, 1], with zeta0 a function of\n(T, L, ||G||, c_G, alpha, beta1, beta2, lamStar). The printed claim is the instance\nlamStar := lambda_*(T, L) = (2 sqrt(C_Phi))^{-1} in (0, 1/2], the small-coupling threshold of\nLemma 4.2 (lem_small supplies it as a function of T and L): then zeta0 depends only on\nT, L, ||G||, c_G, alpha, beta1, beta2, lambda_* (and the universal c_BDG), and for lambda_0 in\n[lambda_*, 1], WP(lambda_0) gives WP(lambda_0 + zeta) for zeta in [0, zeta0] with\nlambda_0 + zeta <= 1. Everything else (quantifier order, hypotheses, WP) matches the paper."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:35:07Z",
+  "disagreements": "Labelling and witness, no disagreement of substance.\n(1) The review records \"faithful with representation choices\" with lambda_* over (0, 1] listed as\na broadening; I record \"broader\" for that same reason, with the instantiation lambda_* := the\nLemma 4.2 threshold.\n(2) The review's caveat that the linked witness exhibits only the coefficient hypotheses no\nlonger applies at the current state. The linked witness lem_cont_hypotheses\n(Acceptance/A/WitnessSec4.lean:121) also exhibits WP(lambda_0) at lambda_0 = lamStar = the\nLemma 4.2 constant, obtained from lem_small. So the inductive premise is shown satisfiable in\nLean."
+ },
+ "submitted_at": "2026-10-19T03:35:26Z",
+ "issue_draft": null
+}

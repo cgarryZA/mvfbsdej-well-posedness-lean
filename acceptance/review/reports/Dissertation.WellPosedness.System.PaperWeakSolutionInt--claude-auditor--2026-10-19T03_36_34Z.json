@@ -1,0 +1,64 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.System.PaperWeakSolutionInt",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.System.PaperWeakSolutionInt",
+  "lean": [
+   "Dissertation.WellPosedness.System.PaperWeakSolutionInt"
+  ],
+  "claims": [
+   "A:abstract",
+   "A:conclusion",
+   "A:cor:robust",
+   "A:ex:brownian",
+   "A:rem:cwp-class",
+   "A:rem:generalrank",
+   "A:rem:uniq-no-integ",
+   "A:sec:examples",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "0dd47e8a79576bf20000000000000000",
+  "fingerprint": "pl-fp-v1:548810fe1944bd5aaa604f0ac1624282d93688676d2b2723c2d83a963efbd173",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of def:Dissertation.WellPosedness.System.PaperWeakSolutionInt (structure).\n\nPaper notion: a solution of (1.1) in the weak class H^2 (Thm 3.3: \"Theta^1,Theta^2 in H^2 satisfy\n(1.1)\"; Rem 3.2; Rem 3.4), in integral form: Theta=(X,Y,Z,U) with\n- X, Y cadlag adapted to the standing filtration (augmentation of F0 v sigma(W) v sigma(N)),\n  E int_0^T|X_t|^2 dt < oo, E int_0^T|Y_t|^2 dt < oo; Z predictable, E int|Z|_F^2 < oo;\n  U predictable (P x E-measurable), E int ||U_t||^2_{L^2(nu)} dt < oo;\n- for every t in [0,T], a.s.:\n  X_t = xi0 + int_0^t b(s,Theta_s,mu_s)ds + int_0^t sigma(s,Theta_s,mu_s)dW_s\n        + int_0^t int_E h(s,Theta_s^-,e,mu_s^-) Ntilde(ds,de),\n  Y_t = g(X_T,Law(X_T)) + int_t^T f(s,Theta_s,mu_s)ds - int_t^T Z_s dW_s\n        - int_t^T int_E U_s(e) Ntilde(ds,de);\n- mu_t = Law(Theta_t), mu_t^- = Law(Theta_t^-) (or a.e.-equal Borel representatives), the law of\n  X_T exactly in g; the jump coefficient at the left-limit tuple Theta_t^- = (X_{t-},Y_{t-},Z_t,U_t).\n\nA faithful Lean definition must contain: the weak-class membership (not S), the two identities\nfor all t a.s., the diagonal law arguments, xi0 the given initial datum, the backward terminal\nvalue g(X_T, Law(X_T)) (not a free terminal variable), the correct signs. It may carry\nadmissibility conditions (measurability and integrability of the coefficient processes so that the\nintegrals exist); L^2-integrability of those processes is automatic under Assumptions 2.2-2.3 but\nrestricts the class when 2.2 is dropped (Thm 3.3, Rem 3.4).",
+  "locked_at": "2026-10-19T03:18:00Z"
+ },
+ "comparison": {
+  "text": "Comparison: structure PaperWeakSolutionInt D F hFW hFN T C xi0 X Y Z U gamma\n(System/PaperWeakSolutionInt.lean:107-163) = PaperWeakTuple + PaperAdmissibleInt + XT_sq + fwd + bwd.\nReading: weak class (not S); both identities for all t a.s.; diagonal laws; xi0 the given datum;\nterminal value g(X_T, Law X_T); correct signs; admissibility with only the needed integrability.\n- Weak class: PaperWeakTuple (adapted on [0,T]; every path right-continuous on [0,T); a.e. path\n  has left limits on (0,T]; finite E int_0^T |X_i|^2, |Y_k|^2; Z predictable, U marked predictable,\n  finite energies; Z, U vanish off [0,T]). Matches H^2_weak.\n- fwd: exists M with M_t = sum_j int_0^t sigma_ij dW^j a.s. for each t, M cadlag a.s., and a.s.\n  for all t in [0,T]: X_i t = xi0_i + int_[0,t] driftProc + M_t + (compensated integral of gamma_i)_t.\n  Matches the forward line of (1.1).\n- bwd: a.s. for all t: Y_k t = terminalVal k + int_[t,T] driverProc - (M_T - M_t)\n  - (int U_k dNtilde)_T + (int U_k dNtilde)_t, where M is the Brownian integral of the row Z_k,\n  terminalVal = g(X_T, lawP2 P X_T). Matches the backward line of (1.1), signs included.\n- XT_sq: X_T in L^2 (presupposed by the paper), making Law(X_T) the genuine law.\n- The filtration F is a parameter carrying the driver (Brownian and Poisson filtration\n  properties). The paper's filtration is supplied by PaperWeakSolutionIntEnl (enlJoint). As a\n  def over a general F this is the right abstraction.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:34:53Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices of the solution notion (shared by WeakSolution, PaperWeakSolutionIntEnl,\nPaperWeakSolutionInt(.mk), PaperAdmissibleInt(.mk), PaperWeakTuple(.mk)), each harmless:\n1. Coordinate families (X : Fin n -> R -> Omega -> R etc.) in place of vector-valued processes;\n   U as a mark-indexed function, marked predictable, i.e. the P x E-measurable representative the\n   paper itself uses ((2.4)).\n2. Z and U are required to vanish off [0,T]; adaptedness and the path conditions are imposed on\n   [0,T] only. Values off the horizon play no role in the paper.\n3. The law flow is the exact law lawP2 P Theta_s at every s, with the junk value delta_0 where\n   Theta_s is not in L^2. On a weak tuple that happens only on a Lebesgue-null set of times, so\n   this agrees with the paper's Borel representatives (Lemma A.1) up to null sets, which the paper\n   shows do not affect any integral.\n4. The jump integrand is an exists-quantified representative gamma of h(s,Theta_{s-},.,mu^-_s)\n   for a.e. s, a.s., required to be marked progressive (not predictable) with finite energy. The L^2\n   compensated integral does not distinguish an integrand from its predictable version.\n5. \"The integrals of (1.1) exist\" is spelled out: the drift and driver need only a.e. path\n   integrable (pathwise Lebesgue integrals, as in the paper, so no L^2 requirement on b, f without\n   Assumption 2.2). The diffusion and jump integrand need finite energy (L^2 stochastic\n   integrals). Under Assumption 2.3, the setting of every use, finite energy is equivalent to\n   the a.s. local square integrability that the stochastic integrals need, since both reduce to\n   square integrability in time of the deterministic origin values. The measurability fields are\n   (2.5).\n6. Both identities hold on one null set for all t in [0,T]. The paper allows this because both\n   sides are cadlag, and the library integrals are cadlag versions (the Brownian one through an\n   explicit cadlag version M).\n7. X_T in L^2 is a field. The paper presupposes it (\"the terminal conditions presuppose\n   Law(X_T) in P_2\").\n8. Cadlag: PaperWeakTuple asks every path to be right-continuous and almost every path to have\n   left limits. WeakSolution/Solution also ask every path to have left limits. The filtration is\n   augmented, so this is a choice of version."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:36:34Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:36:34Z",
+ "issue_draft": null
+}

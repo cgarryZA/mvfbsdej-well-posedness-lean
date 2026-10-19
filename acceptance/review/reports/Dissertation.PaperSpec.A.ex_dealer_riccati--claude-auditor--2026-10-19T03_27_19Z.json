@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.ex_dealer_riccati",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.ex_dealer_riccati",
+  "lean": [
+   "Dissertation.PaperSpec.A.ex_dealer_riccati"
+  ],
+  "claims": [
+   "A:ex:dealer"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba122071b255b506300",
+  "fingerprint": "pl-fp-v1:cc4f7c9f65263795d51a835db58b108e1bfd02e0fe6c833251a94e1bbe613580",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of spec:Dissertation.PaperSpec.A.ex_dealer_riccati (Example 5.5, clause \"the Riccati\nfunction: p' = beta_1 p^2 - beta_2, p(T) = 1, p > 0 on [0, T], unique\").\n\nPaper (05-examples.tex:474-482): \"for h_x = 0, with p the positive solution of\np' = beta_1 p^2 - beta_2, p(T) = 1, the tuple Y_t = p(t) X_t, ... solves the system\".  The\ndefinite article presupposes existence and uniqueness of such p on [0, T], and positivity.\nParameters: beta_1, beta_2 > 0 (Example 5.1(i), 05-examples.tex:30, which Ex. 5.5 builds on);\nhorizon T > 0 (standing setting).\n\nMathematical check: the equilibrium is p* = sqrt(beta_2/beta_1) > 0; backward from p(T) = 1 the\nsolution moves monotonically toward p* and stays between min(1,p*) and max(1,p*), so it exists on\n(-infinity, T], is positive, and is unique (locally Lipschitz right side).\n\nFaithful statement must contain:\n- Quantifiers: for all beta_1 > 0, beta_2 > 0 (general, not only the later specialisation\n  beta_1 = 1, beta_2 = 1/2; fixing those would be narrower), for all T > 0;\n- existence of p with: p differentiable on [0, T] (derivative at interior points, one-sided at\n  the endpoints, or two-sided on an open neighbourhood - harmless), p'(t) = beta_1 p(t)^2 - beta_2\n  for t in [0, T], p(T) = 1, p(t) > 0 for every t in [0, T];\n- uniqueness: any two functions with these properties agree on [0, T] (uniqueness must be modulo\n  values outside [0, T] if p : R -> R; a literal \"exists unique p : R -> R\" with constraints only on\n  [0, T] would be false, hence not the paper's claim).  Uniqueness may be among all solutions\n  (positivity then automatic) or among positive ones; both readings give the printed \"the positive\n  solution\".\n- No constants.",
+  "locked_at": "2026-10-19T03:15:07Z"
+ },
+ "comparison": {
+  "text": "Comparison for spec:Dissertation.PaperSpec.A.ex_dealer_riccati (Sec5DealerActive.lean:67-76).\n\nLean: forall beta1 beta2 T, 0 < beta1 -> 0 < beta2 -> 0 < T ->\n  (exists p : R -> R, (forall t in [0,T], HasDerivAt p (beta1 * p t^2 - beta2) t) /\\ p T = 1\n     /\\ forall t in [0,T], 0 < p t)\n  /\\ forall p q : R -> R, (ODE on [0,T]) -> p T = 1 -> (ODE on [0,T]) -> q T = 1 ->\n     forall t in [0,T], p t = q t.\n\nAgainst my reading:\n- Quantifiers: general beta1 > 0, beta2 > 0 (not only the specialisation 1, 1/2), every T > 0.\n  Matches.\n- Existence with p' = beta1 p^2 - beta2 on [0,T], p(T) = 1, p > 0 on [0,T]. Matches.\n- Uniqueness: on [0,T] (pointwise equality for t in [0,T]), so values outside [0,T] are not\n  constrained - not the false \"exists unique p : R -> R\". Uniqueness is among ALL solutions with\n  p(T) = 1 (positivity not assumed), which is stronger than uniqueness among positive solutions and\n  implies the paper's \"the positive solution\". True (locally Lipschitz right side, solutions bounded\n  on the compact interval).\n- Derivatives: HasDerivAt (two-sided) at every t in [0, T], including the endpoints. For existence\n  this is fine (the solution extends a little beyond both endpoints). For uniqueness the class is\n  functions with two-sided derivatives at 0 and T; a solution with only one-sided derivatives at the\n  endpoints can be extended beyond them by the local ODE solution to a function with two-sided\n  derivatives, without changing it on [0,T], so the uniqueness statement covers that class too.\n  Harmless.\n- No constants. Hypotheses trivially satisfiable (any beta1, beta2, T > 0).\n- The paper does claim this at the revision (\"with p the positive solution of p' = beta1 p^2 -\n  beta2, p(T) = 1\").\nRepresentation choices: p : R -> R with two-sided derivatives on the closed interval [0, T];\nuniqueness stated as agreement on [0, T].\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:20:16Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "(1) p is a function R -> R and the ODE is required as HasDerivAt (two-sided) at every t in [0, T],\nendpoints included; for existence the solution extends past both endpoints, and for uniqueness any\nsolution with one-sided endpoint derivatives extends to such a function without changing its\nvalues on [0, T], so the class is effectively the paper's. (2) Uniqueness is stated as agreement on\n[0, T] among all solutions with p(T) = 1, which implies uniqueness of \"the positive solution\"."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:26:58Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:27:19Z",
+ "issue_draft": null
+}

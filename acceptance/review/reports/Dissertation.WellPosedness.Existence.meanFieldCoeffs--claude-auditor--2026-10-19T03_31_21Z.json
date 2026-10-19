@@ -1,0 +1,57 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.Existence.meanFieldCoeffs",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.Existence.meanFieldCoeffs",
+  "lean": [
+   "Dissertation.WellPosedness.Existence.meanFieldCoeffs"
+  ],
+  "claims": [
+   "A:ex:concrete",
+   "A:sec5:overview"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "e170fd42ef8bf937a752d819f1e43056",
+  "fingerprint": "pl-fp-v1:455908fcb0dabe5bda9aa05cf4aad73633ad81518ce2f29a4670d0545a3cdc1d",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of def meanFieldCoeffs (Example 5.1(ii)).\nPaper: n=m=d=1, G=1, theta=(x,y,z,u):\n  b = -2y - m_Y(mu),  sigma = -2z - m_Z(mu) (1x1 matrix),  h = -2u - m_U(mu) in L2(nu;R) (h(e) = -2u(e)-m_U(mu)(e)),\n  f = 2x + m_X(mu),   g(x,rho) = 2x + b(rho)  (b(rho)=int x rho(dx) the barycentre).\nm_Psi(mu) = Bochner mean of the Psi-component under mu in P_2(H) (m_U(mu) the Bochner mean in L2(nu)).\nDeterministic, time-independent, for arbitrary sigma-finite nu. A faithful Lean def is exactly this five-tuple\nwith correct signs and coefficients 2 and 1; junk of Bochner integrals for non-integrable measures is irrelevant\non P_2. (Same coefficients as Li-Min Example 3.1.)",
+  "locked_at": "2026-10-19T03:16:07Z"
+ },
+ "comparison": {
+  "text": "Comparison, def meanFieldCoeffs (MeanField.lean:209-218) vs reading.\nb = -(2•y) - (tupleMean μ).2.1 = -2y - m_Y(μ); σ = -(2•z) - (tupleMean μ).2.2.1 = -2z - m_Z(μ);\nh = -(2•u) - (tupleMean μ).2.2.2 = -2u - m_U(μ) in L2(ν); f = 2•x + (tupleMean μ).1 = 2x + m_X(μ);\ng x ρ = 2•x + barycentre ρ. Signs and coefficients match. m_Ψ are the channels of the Bochner mean\n(= marginal Bochner means, tupleMean_eq). Generalised to Coeffs ν n n d (paper n=d=1).\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:29:17Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices: (1) defined for every n (=m) and d, the paper's case n=d=1 being an instance;\n(2) the marginal means are the channels of tupleMean μ (Bochner mean in H), equal to the marginal\nBochner means; (3) h is an L2(ν) class; (4) time over ℝ, ignored. Harmless."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:29:27Z",
+  "disagreements": "No disagreement on substance. Label only: the review records \"broader\" (general n = m and d); I record\n\"faithful with representation choices\", the printed system being the instance n = d = 1. I agree with the\nreview's note that the means are genuine (no Bochner junk) only when L²(ν) is separable, which the paper's\nstanding setting guarantees and the definition does not assume."
+ },
+ "submitted_at": "2026-10-19T03:31:21Z",
+ "issue_draft": null
+}

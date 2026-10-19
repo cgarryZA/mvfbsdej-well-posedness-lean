@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.Spec.BrownianAssumption25",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.Spec.BrownianAssumption25",
+  "lean": [
+   "Dissertation.WellPosedness.Spec.BrownianAssumption25"
+  ],
+  "claims": [
+   "A:ex:brownian"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "0d4cac9166e43d4d18e17cffed3382aa",
+  "fingerprint": "pl-fp-v1:6e46a3a15bbcdb53ccca74a912cb65ace98ecc5598a1b2edcaae4f7b4a9e995a",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of def Spec.BrownianAssumption25 (Assumption 2.5 in the Brownian reduction; possibly with\nAssumption 2.4 bundled).\n\nPaper notion. With G in R^{m x n} (full rank by Assumption 2.4) and constants alpha, beta_1, beta_2:\n(a) terminal: for all X_T, X'_T in L^2(Omega,F_T;R^n),\n   E <delta g_T, G delta X_T> >= alpha E |G delta X_T|^2;\n(b) interior: for a.e. t in [0,T] and all diagonal inputs (Theta,mu),(Theta',mu') in D_t (Brownian,\n   H_B = R^n x R^m x R^{m x d}),\n   E[<delta b, G^T delta Y> + <delta sigma, G^T delta Z>_F + <-delta f, G delta X>]\n     <= -beta_1 E[|G^T delta Y|^2 + |G^T delta Z|_F^2] - beta_2 E|G delta X|^2;\n(c) constants: alpha, beta_1, beta_2 >= 0, alpha + beta_1 > 0, beta_1 + beta_2 > 0, beta_1 > 0 if\n   m < n, alpha, beta_2 > 0 if m > n.\nA faithful Lean definition: all three parts, the jump term deleted (not just set to zero with a\nU-coordinate present), Frobenius pairing for sigma/Z, G^T acting on Y in R^m giving R^n and on Z\ngiving R^{n x d}. Expectations: Bochner integrals are fine when the integrands are integrable\n(they are under Assumption 2.3 and L^2 inputs); a junk 0 for non-integrable integrands only makes\nthe condition stronger at such inputs (should be noted). If G full rank is bundled, it must be\nrank = min(m,n).",
+  "locked_at": "2026-10-19T03:16:13Z"
+ },
+ "comparison": {
+  "text": "Comparison, Spec.BrownianAssumption25 (BrownianForms.lean:133-144).\n\n- Terminal: for all X_T, X'_T strongly F_T-measurable in L^2: the pairing <dg_T, G dX_T> is\n  integrable and E<dg_T, G dX_T> >= alpha E|G dX_T|^2. OK (integrability made explicit - the paper's\n  expectation presupposes it; under (2.6) and L^2 inputs it holds).\n- Interior: a.e. t in [0,T], BrownianMonoAt: E[<db, G^T dY> + <dsigma, G^T dZ>_F + <-df, G dX>]\n  <= -beta_1 E[|G^T dY|^2 + |G^T dZ|_F^2] - beta_2 E|G dX|^2 with integrability of the pairing;\n  jump pairing and ||G^T dU||^2 deleted. GX G^T : R^m -> R^n, GZ G^T = (G^T (x) I_d) : R^{m x d} ->\n  R^{n x d} (matrix product G^T Z), GX G : R^n -> R^m. OK.\n- Constants n m alpha beta_1 beta_2: alpha, beta_1, beta_2 >= 0, alpha+beta_1 > 0,\n  beta_1+beta_2 > 0, m < n -> beta_1 > 0, n < m -> alpha, beta_2 > 0. OK.\n- G full rank not bundled (as in the main Assumption25; rank stated separately at use sites).\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:32:33Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices: integrability of the terminal and interior pairings is required explicitly\n(the paper's expectations presuppose it; it holds under Assumption 2.3 for L^2 inputs); the tuple\nspace is TupleH at nu = 0 with the jump terms deleted; G full rank (Assumption 2.4) is stated\nseparately at use sites; the filtration is a parameter."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:32:44Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:34:13Z",
+ "issue_draft": null
+}

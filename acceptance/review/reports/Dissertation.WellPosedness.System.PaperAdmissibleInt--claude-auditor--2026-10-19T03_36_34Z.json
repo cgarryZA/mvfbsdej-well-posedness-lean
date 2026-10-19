@@ -1,0 +1,65 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.WellPosedness.System.PaperAdmissibleInt",
+  "kind": "def",
+  "name": "Dissertation.WellPosedness.System.PaperAdmissibleInt",
+  "lean": [
+   "Dissertation.WellPosedness.System.PaperAdmissibleInt"
+  ],
+  "claims": [
+   "A:abstract",
+   "A:conclusion",
+   "A:cor:robust",
+   "A:ex:brownian",
+   "A:rem:cwp-class",
+   "A:rem:generalrank",
+   "A:rem:uniq-no-integ",
+   "A:sec3:one-null-set",
+   "A:sec:examples",
+   "A:thm:uniq"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-d90e6dd085a7",
+  "project_commit": "128888621847f17ef1e2e2351bf070ed392bad40",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "6be52fa0d3961fab0000000000000000",
+  "fingerprint": "pl-fp-v1:8b5b404dde66cea59aa1793b4f082f1804bf693a17a204f24fadd42e0e048f8d",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of def:Dissertation.WellPosedness.System.PaperAdmissibleInt (structure).\n\nFrom the name (\"admissible\", \"Int\" = integral form) and its users (Thm 3.3, Rem 3.2, Rem 3.4,\nCor 3.6, Sec. 3 \"one null set\", examples): the conditions on a tuple Theta and a coefficient system\nunder which the two identities of (1.1) are meaningful, i.e. the standing requirements of a\nsolution before the identities are imposed. In the paper these are:\n- Theta in the weak class H^2 (or S): X, Y cadlag adapted, E int|X|^2, E int|Y|^2 < oo;\n  Z predictable in H^2_W; U predictable (P x E-measurable) in H^2_N;\n- X_T in L^2(F_T) so that Law(X_T) in P_2(R^n) and g(X_T,Law(X_T)) is defined (Thm 3.3 proof:\n  \"the terminal conditions presuppose Law(X_T) in P_2\");\n- the law flows mu_t, mu_t^- (Borel representatives; Lemma A.1);\n- the coefficient processes (2.5): b,sigma,f along (Theta_s,mu_s) progressively measurable,\n  h along (Theta_{s-},mu_s^-) predictable, with the integrability that makes\n  int b ds (pathwise L^1 suffices), int sigma dW (L^2 for the L^2 Ito integral),\n  int int h dNtilde (L^2(dt x dP x nu) for the L^2 Poisson integral) and int f ds defined;\n  in the paper's L^2 theory these are in L^2(dt x dP) by (4.2) under Assumptions 2.2-2.3.\n- (Sec. 3) both sides of each identity cadlag in t, so one null set for all t.\n\nA faithful Lean definition must contain these and nothing that changes the class in the\npaper's intended uses: requiring L^2 integrability of the coefficient processes is harmless\nunder Assumptions 2.2-2.3 (it follows from them by (4.2)) but is an added hypothesis when 2.2 is\nnot assumed (Thm 3.3 as printed needs only 2.3-2.5; Rem 3.4's singular drift is not L^2 in time).\nThe measure argument must be the law of the tuple (diagonal), not a free measure.",
+  "locked_at": "2026-10-19T03:18:00Z"
+ },
+ "comparison": {
+  "text": "Comparison: structure PaperAdmissibleInt F P T C X Y Z U gamma\n(System/PaperWeakSolutionInt.lean:58-103).\nFields: b_meas, b_prog, b_int (a.e. path of the drift process integrable on [0,T]); sigma_meas,\nsigma_prog, sigma_sq (finite energy); gamma_meas, gamma_prog (marked progressive), gamma_sq\n(finite marked energy); f_meas, f_prog, f_int (a.e. path integrable); jump_rep: for a.e.\ns in [0,T], a.s., e -> gamma(.,s,omega,e) equals h(s, tupleAt(leftLim X, leftLim Y, Z, U) s omega,\nlawP2 P of that tuple) nu-a.e.\nReading: the conditions under which the identities of (1.1) are meaningful: measurability (2.5)\n(progressive for b, sigma, f; predictable for h along (Theta_{s-}, mu^-_s)), the integrability\nneeded for int b ds, int sigma dW, int int h dNtilde, int f ds, diagonal law arguments; L^2 for\nb, f would be an added hypothesis without Assumption 2.2.\n- Drift and driver: pathwise integrability only. That is exactly what the dt-integrals of (1.1)\n  need, so there is no narrowing without Assumption 2.2 (Thm 3.3, Rem 3.4).\n- Diffusion and jump: finite energy (the L^2 Ito / compensated Poisson integrals). Under\n  Assumption 2.3 this is equivalent to the a.s. local square integrability these integrals need,\n  since both reduce to sigma(.,0,delta_0), h(.,0,.,delta_0) in L^2(0,T). So nothing a paper\n  solution has is lost in the settings where the class is used.\n- The jump coefficient at the left-limit tuple and the law of the left-limit tuple: matches\n  (Theta^-_t, mu^-_t). The representative gamma is marked progressive rather than predictable;\n  the L^2 compensated integral is the same for both.\n- The drift, diffusion and driver processes are at (Theta_s, Law Theta_s) (driftProc etc.,\n  Solves.lean), with the exact law (delta_0 junk only at times where Theta_s is not L^2).\n- X_T in L^2 is not here but in PaperWeakSolutionInt (XT_sq). Fine.\n- The measure argument is always the law of the tuple (diagonal), never a free measure. Matches.\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T03:34:53Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices of the solution notion (shared by WeakSolution, PaperWeakSolutionIntEnl,\nPaperWeakSolutionInt(.mk), PaperAdmissibleInt(.mk), PaperWeakTuple(.mk)), each harmless:\n1. Coordinate families (X : Fin n -> R -> Omega -> R etc.) in place of vector-valued processes;\n   U as a mark-indexed function, marked predictable, i.e. the P x E-measurable representative the\n   paper itself uses ((2.4)).\n2. Z and U are required to vanish off [0,T]; adaptedness and the path conditions are imposed on\n   [0,T] only. Values off the horizon play no role in the paper.\n3. The law flow is the exact law lawP2 P Theta_s at every s, with the junk value delta_0 where\n   Theta_s is not in L^2. On a weak tuple that happens only on a Lebesgue-null set of times, so\n   this agrees with the paper's Borel representatives (Lemma A.1) up to null sets, which the paper\n   shows do not affect any integral.\n4. The jump integrand is an exists-quantified representative gamma of h(s,Theta_{s-},.,mu^-_s)\n   for a.e. s, a.s., required to be marked progressive (not predictable) with finite energy. The L^2\n   compensated integral does not distinguish an integrand from its predictable version.\n5. \"The integrals of (1.1) exist\" is spelled out: the drift and driver need only a.e. path\n   integrable (pathwise Lebesgue integrals, as in the paper, so no L^2 requirement on b, f without\n   Assumption 2.2). The diffusion and jump integrand need finite energy (L^2 stochastic\n   integrals). Under Assumption 2.3, the setting of every use, finite energy is equivalent to\n   the a.s. local square integrability that the stochastic integrals need, since both reduce to\n   square integrability in time of the deterministic origin values. The measurability fields are\n   (2.5).\n6. Both identities hold on one null set for all t in [0,T]. The paper allows this because both\n   sides are cadlag, and the library integrals are cadlag versions (the Brownian one through an\n   explicit cadlag version M).\n7. X_T in L^2 is a field. The paper presupposes it (\"the terminal conditions presuppose\n   Law(X_T) in P_2\").\n8. Cadlag: PaperWeakTuple asks every path to be right-continuous and almost every path to have\n   left limits. WeakSolution/Solution also ask every path to have left limits. The filtration is\n   augmented, so this is a choice of version."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T03:36:17Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T03:36:34Z",
+ "issue_draft": null
+}
