@@ -28,7 +28,10 @@ proof depends on (only `propext`, `Classical.choice`, `Quot.sound` pass), and wh
 the specification layer imports the acceptance layer; and it hashes every proposition and every
 declaration of `Dissertation` or `LevyStochCalc` its meaning depends on (proofs erased). A
 proposition or definition counts as reviewed only when `acceptance/review/*.md` records a review
-of it at its current hash, so a change of meaning reopens its review.
+of it at its current hash, so a change of meaning reopens its review. A review of a claim's
+proposition (or of a definition a definition claim names) also records the digest of the claim's
+source passage it read (`source=<claim>@<source_sha256>`), and counts for that claim only while
+the digest is the claim's current one, so a change of the printed text reopens it too.
 
 A claim is *accepted* when every clause is proved and reviewed. The report says, per claim, which
 of these holds; it does not grade coverage.
@@ -195,20 +198,83 @@ def run_probe(queries, tmp):
 # ---------------------------------------------------------------------------------------------
 # Review records
 
-MARK = re.compile(r"<!--\s*(spec|def)-review:\s*(\S+)\s+([0-9a-f]{32})\s+by=(\S+)\s*-->")
+# A review marker: the declaration, the hash it was reviewed at, the reviewer, and for each claim
+# whose passage the reading compared it with, the digest of that passage (the claim's
+# `source_sha256`, in the scheme of its pin) as read.
+MARK = re.compile(r"<!--\s*(spec|def)-review:\s*(\S+)\s+([0-9a-f]{32})\s+by=(\S+)"
+                  r"((?:\s+source=[^\s@]+@[0-9a-f]{64})*)\s*-->")
+ANY_MARK = re.compile(r"<!--\s*(?:spec|def)-review:.*?-->", re.S)
+SOURCE = re.compile(r"source=([^\s@]+)@([0-9a-f]{64})")
+
+
+def parse_reviews(files):
+    """The markers of the review files `files` (name -> text): per kind (`spec`, `def`) and
+    declaration, the list of markers in file order, and the markers that do not parse."""
+    marks = {"spec": collections.defaultdict(list), "def": collections.defaultdict(list)}
+    malformed = []
+    for name, text in files:
+        for raw in ANY_MARK.findall(text):
+            m = MARK.fullmatch(raw)
+            if not m:
+                malformed.append(f"{name}: malformed review marker {norm(raw)[:100]}")
+                continue
+            kind, decl, h, who, src = m.groups()
+            marks[kind][decl].append({"hash": h, "file": name, "by": who,
+                                      "sources": dict(SOURCE.findall(src))})
+    return marks["spec"], marks["def"], malformed
 
 
 def read_reviews():
-    spec, defs = {}, {}
-    if not os.path.isdir(REVIEW_DIR):
-        return spec, defs
-    for name in sorted(os.listdir(REVIEW_DIR)):
-        if not name.endswith(".md"):
-            continue
-        text = pathlib.Path(REVIEW_DIR, name).read_text()
-        for kind, decl, h, who in MARK.findall(text):
-            (spec if kind == "spec" else defs)[decl] = (h, name, who)
-    return spec, defs
+    files = []
+    if os.path.isdir(REVIEW_DIR):
+        files = [(n, pathlib.Path(REVIEW_DIR, n).read_text())
+                 for n in sorted(os.listdir(REVIEW_DIR)) if n.endswith(".md")]
+    return parse_reviews(files)
+
+
+def review_state(marks, h, claim=None, digest=None):
+    """The review of a declaration at its current hash `h` from its markers: (`reviewed`,
+    reviewer), preferring a reviewer other than the author; with a claim, only a reading of that
+    claim's passage at its current `digest` counts, and (`passage changed`, reviewers) says that
+    the readings at hash `h` were of an earlier text of the passage. Otherwise (`changed`, None)
+    for markers at other hashes only, (`none`, None) for none."""
+    at = [m for m in marks if m["hash"] == h]
+    cur = at if claim is None else [m for m in at if m["sources"].get(claim) == digest]
+    if cur:
+        indep = [m for m in cur if m["by"] != AUTHOR]
+        return "reviewed", (indep or cur)[-1]["by"]
+    stale = [m["by"] for m in at if claim in m["sources"]]
+    if stale:
+        return "passage changed", sorted(set(stale))
+    if marks and not at:
+        return "changed", None
+    return "none", None
+
+
+def marker_failures(data, spec_rev, def_rev):
+    """Markers that record a reading of a passage of a claim that is not in the inventory, or of
+    a claim that does not use the declaration (as a clause's proposition, for a spec-review; as a
+    definition of a clause, for a def-review)."""
+    uses = {"spec": collections.defaultdict(set), "def": collections.defaultdict(set)}
+    for e in data["claims"]:
+        for c in e["clauses"]:
+            if c.get("spec"):
+                uses["spec"][c["spec"]].add(e["id"])
+            for d in c.get("defs", []):
+                uses["def"][d].add(e["id"])
+    ids = {e["id"] for e in data["claims"]}
+    out = []
+    for kind, rev in (("spec", spec_rev), ("def", def_rev)):
+        for decl, marks in sorted(rev.items()):
+            for m in marks:
+                for cid in sorted(m["sources"]):
+                    if cid not in ids:
+                        out.append(f"{m['file']}: the {kind}-review of {decl} by {m['by']} "
+                                   f"records a reading of {cid}, which is not a claim")
+                    elif cid not in uses[kind][decl]:
+                        out.append(f"{m['file']}: the {kind}-review of {decl} by {m['by']} "
+                                   f"records a reading of {cid}, which does not use it")
+    return out
 
 
 # ---------------------------------------------------------------------------------------------
@@ -330,6 +396,8 @@ def check(args):
                             "(run with --write)")
     for f in failures:
         print("FAIL", f)
+    for line in passage_notes(status):
+        print("note:", line)
     s = status["summary"]
     for p in PAPERS:
         print(f"paper {p}: " + ", ".join(f"{k} {v}" for k, v in s[p].items()))
@@ -418,7 +486,8 @@ def evaluate(papers):
     for n, r in probe["proof"].items():
         if r["verdict"] != "ok":
             failures.append(f"{n}: {r['verdict']}")
-    spec_rev, def_rev = read_reviews()
+    spec_rev, def_rev, malformed = read_reviews()
+    failures += malformed + marker_failures(data, spec_rev, def_rev)
     status = build_status(data, probe, spec_rev, def_rev)
     return data, failures, status, source_checked
 
@@ -610,19 +679,33 @@ def closure_review(names, probe, def_rev):
     """(pending, changed, author) project declarations in the closures of `names` without a
     current review, and those whose current review is by the author of the statements. A
     statement of a clause is reviewed by its own spec-review; every other declaration, auxiliary
-    definitions of the statement layer included, needs a def-review."""
+    definitions of the statement layer included, needs a def-review. A declaration of a closure
+    is not the reading of one claim's passage, so its review is current at its hash."""
     pending, changed, author = set(), set(), set()
     for n in names:
         for d, info in probe["closure"].get(n, {}).items():
             if d in probe["spec"]:
                 continue
-            if d not in def_rev:
+            state, who = review_state(def_rev.get(d, []), info["hash"])
+            if state == "none":
                 pending.add(d)
-            elif def_rev[d][0] != info["hash"]:
+            elif state != "reviewed":
                 changed.add(d)
-            elif def_rev[d][2] == AUTHOR:
+            elif who == AUTHOR:
                 author.add(d)
     return pending, changed, author
+
+
+def passage_notes(status):
+    """For each clause whose readings were of an earlier text of its claim's passage: the claim,
+    the declaration and the readers."""
+    out = []
+    for r in status["claims"]:
+        for c in r["clauses"]:
+            for decl, who in sorted(c.get("passage_changed", {}).items()):
+                out.append(f"{r['id']}: its source passage changed since the reading of "
+                           f"{short(decl)} by {', '.join(who)}; that review is reopened")
+    return out
 
 
 def build_status(data, probe, spec_rev, def_rev):
@@ -637,28 +720,36 @@ def build_status(data, probe, spec_rev, def_rev):
                   "refute": c.get("refute"), "corrects": c.get("corrects"),
                   "witness": c.get("witness"),
                   "defs": c.get("defs", [])}
+            passage = {}
+            digest = e.get("source_sha256")
             if spec:
                 sp = probe["spec"].get(spec, {})
                 cs["spec_ok"] = sp.get("verdict") == "ok"
                 cs["spec_hash"] = sp.get("hash")
-                rev = spec_rev.get(spec)
-                cs["spec_review"] = (f"reviewed by {rev[2]}" if rev and rev[0] == sp.get("hash")
-                                     else "changed since review" if rev else "not reviewed")
+                state, who = review_state(spec_rev.get(spec, []), sp.get("hash"), e["id"], digest)
+                cs["spec_review"] = {"reviewed": f"reviewed by {who}",
+                                     "passage changed": "passage changed since review",
+                                     "changed": "changed since review"}.get(state, "not reviewed")
+                if state == "passage changed":
+                    passage[spec] = who
                 pending, changed, author = closure_review([spec], probe, def_rev)
-                if rev and rev[0] == sp.get("hash") and rev[2] == AUTHOR:
+                if state == "reviewed" and who == AUTHOR:
                     author.add(spec)
             else:
                 pending, changed, author = closure_review(cs["defs"], probe, def_rev)
                 for d in cs["defs"]:
                     dh = probe["def"].get(d, {}).get("hash")
-                    rev = def_rev.get(d)
-                    if not rev:
+                    state, who = review_state(def_rev.get(d, []), dh, e["id"], digest)
+                    if state == "none":
                         pending.add(d)
-                    elif rev[0] != dh:
+                    elif state != "reviewed":
                         changed.add(d)
-                    elif rev[2] == AUTHOR:
+                        if state == "passage changed":
+                            passage[d] = who
+                    elif who == AUTHOR:
                         author.add(d)
                 cs["spec_review"] = "n/a"
+            cs["passage_changed"] = passage
             cs["defs_pending"] = sorted(pending)
             cs["defs_changed"] = sorted(changed)
             cs["author_reviewed"] = sorted(author)
@@ -801,11 +892,19 @@ def render(data, status, source_checked):
 
 
 def hashes(args):
+    """The current hash of each name, as a review marker: a spec-review for the proposition of a
+    clause and a def-review otherwise, with the current passage digest of every claim that uses
+    it (for a def-review, every definition claim that names it)."""
+    data = json.loads(pathlib.Path(CLAIMS).read_text())
     with tempfile.TemporaryDirectory() as tmp:
         probe = run_probe([f"DEF {n}" for n in args.names], tmp)
     for n in args.names:
         r = probe["def"].get(n, {})
-        print(f"<!-- def-review: {n} {r.get('hash')} by=REVIEWER -->  ({r.get('verdict')})")
+        specs = [e for e in data["claims"] if any(c.get("spec") == n for c in e["clauses"])]
+        defs = [e for e in data["claims"] if any(n in c.get("defs", []) for c in e["clauses"])]
+        kind, users = ("spec", specs) if specs else ("def", defs)
+        src = "".join(f" source={e['id']}@{e['source_sha256']}" for e in users)
+        print(f"<!-- {kind}-review: {n} {r.get('hash')} by=REVIEWER{src} -->  ({r.get('verdict')})")
         for d, info in sorted(probe["closure"].get(n, {}).items()):
             print(f"    closure {info['kind']:9} {d} {info['hash']} "
                   f"{info['module'].replace('.', '/')}.lean:{info['line']}")
