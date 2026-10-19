@@ -43,7 +43,7 @@ alignment:
         - "Dissertation.Acceptance.A.eq_couplingT"
         - "Dissertation.Acceptance.A.eq_lipfun"
         - "Dissertation.Acceptance.A.eq_margproj"
-      status: "formal: accepted"
+      status: "formal: proved, review pending"
     - source: "Remark 2.8"
       lean:
         - "Dissertation.Acceptance.A.rem_diag_mono"
@@ -68,7 +68,7 @@ alignment:
         - "Dissertation.Acceptance.A.rem_margin_reduce"
         - "Dissertation.Acceptance.A.rem_margin_unweighted"
         - "Dissertation.Acceptance.A.rem_margin_smaller"
-      status: "formal: accepted"
+      status: "formal: proved, review pending"
     - source: "Theorem 3.1"
       lean:
         - "Dissertation.Acceptance.A.thm_stab"
@@ -161,7 +161,7 @@ alignment:
         - "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_corr"
         - "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q"
         - "Dissertation.Acceptance.A.ex_fulllaw_affineQ"
-      status: "formal: accepted"
+      status: "formal: proved, review pending"
     - source: "Example 5.5"
       lean:
         - "Dissertation.Acceptance.A.ex_dealer_potential"
@@ -188,7 +188,7 @@ alignment:
       lean:
         - "Dissertation.Acceptance.A.eq_coupling"
         - "Dissertation.Acceptance.A.rem_freelaw"
-      status: "formal: accepted"
+      status: "formal: proved, review pending"
     - source: "Remark 5.7"
       lean:
         - "Dissertation.Acceptance.A.ex_fulllaw_pert"

@@ -2,8 +2,10 @@
 
 Every declaration of `Dissertation` or `LevyStochCalc` in the definition closure of a statement of
 `Dissertation.PaperSpec` is read here against the mathematics it stands for. The marker records
-the hash reviewed (type and value, proofs erased); a change reopens the entry. Mathlib and the
-pinned upstream libraries are taken as foundations.
+the hash reviewed (type and value, proofs erased); a change reopens the entry. A definition named
+by a definition claim of the inventory is read against that claim's passage, and its marker also
+records the passage digest as read (`source=<claim>@<digest>`); a change of the passage reopens
+it for that claim. Mathlib and the pinned upstream libraries are taken as foundations.
 
 ## Laws and the 2-Wasserstein distance (`Dissertation/Law/`)
 
@@ -924,11 +926,11 @@ Review by claude-auditor: faithful with representation choices (report `reports/
 * `System.diagonalInputs ν n m d ℱ P t`: the pairs `(Θ, μ)` with `Θ : Ω → H` strongly
   `ℱ_t`-measurable and square integrable and `μ = lawP2 P Θ`: `𝒟_t` of Definition 2.1, an element of
   `L²(Ω, ℱ_t; H)` being represented by a function in its class, which loses no class.
-<!-- def-review: Dissertation.WellPosedness.System.diagonalInputs 43fba323e088abc4f9c7fc5ffd25f8a4 by=claude-author -->
+<!-- def-review: Dissertation.WellPosedness.System.diagonalInputs 43fba323e088abc4f9c7fc5ffd25f8a4 by=claude-author source=A:def:diag@952765bd095132205c2a2ed30a292f5a88840f96e56d5a877f906f6a21524a94 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.System.diagonalInputs--claude-reviewer--2026-10-17T15_06_18Z.md`).
-<!-- def-review: Dissertation.WellPosedness.System.diagonalInputs 43fba323e088abc4f9c7fc5ffd25f8a4 by=claude-reviewer -->
+<!-- def-review: Dissertation.WellPosedness.System.diagonalInputs 43fba323e088abc4f9c7fc5ffd25f8a4 by=claude-reviewer source=A:def:diag@952765bd095132205c2a2ed30a292f5a88840f96e56d5a877f906f6a21524a94 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.diagonalInputs--claude-auditor--2026-10-19T03_27_24Z.md`).
-<!-- def-review: Dissertation.WellPosedness.System.diagonalInputs 43fba323e088abc4f9c7fc5ffd25f8a4 by=claude-auditor -->
+<!-- def-review: Dissertation.WellPosedness.System.diagonalInputs 43fba323e088abc4f9c7fc5ffd25f8a4 by=claude-auditor source=A:def:diag@952765bd095132205c2a2ed30a292f5a88840f96e56d5a877f906f6a21524a94 -->
 * `System.GX G`: `x ↦ G x`, `ℝⁿ → ℝᵐ`, as a continuous linear map; `GX Gᵀ` is the adjoint, the
   paper's `Gᵀ` (`adjoint_GX`).
 <!-- def-review: Dissertation.WellPosedness.System.GX 63e2a9453a1500d8567ae4e516472ab8 by=claude-author -->
@@ -1058,11 +1060,11 @@ Manuscript (§2): the coefficients are jointly Borel, `h` through (2.3); Assumpt
   for `h`), and `(x, ρ) ↦ g(x, ρ)` is Borel on `ℝⁿ × P₂(ℝⁿ)` with `W₂` (`P2W`): the joint Borel
   measurability of §2, with (2.3) for `h`. The maximum norm and the Hilbert norm give `H` the same
   topology.
-<!-- def-review: Dissertation.WellPosedness.Spec.JointBorel 4b26c5076ea2f4260000000000000000 by=claude-author -->
+<!-- def-review: Dissertation.WellPosedness.Spec.JointBorel 4b26c5076ea2f4260000000000000000 by=claude-author source=A:eq:hborel@e96f0d4c4f81b393c2119f66e1766cb7561f3cf1fa43458d01f4d5c4892a910a -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.Spec.JointBorel--claude-reviewer--2026-10-17T15_04_38Z.md`).
-<!-- def-review: Dissertation.WellPosedness.Spec.JointBorel 4b26c5076ea2f4260000000000000000 by=claude-reviewer -->
+<!-- def-review: Dissertation.WellPosedness.Spec.JointBorel 4b26c5076ea2f4260000000000000000 by=claude-reviewer source=A:eq:hborel@e96f0d4c4f81b393c2119f66e1766cb7561f3cf1fa43458d01f4d5c4892a910a -->
 Review by claude-auditor: faithful (report `reports/Dissertation.WellPosedness.Spec.JointBorel--claude-auditor--2026-10-19T03_26_57Z.md`).
-<!-- def-review: Dissertation.WellPosedness.Spec.JointBorel 4b26c5076ea2f4260000000000000000 by=claude-auditor -->
+<!-- def-review: Dissertation.WellPosedness.Spec.JointBorel 4b26c5076ea2f4260000000000000000 by=claude-auditor source=A:eq:hborel@e96f0d4c4f81b393c2119f66e1766cb7561f3cf1fa43458d01f4d5c4892a910a -->
 <!-- def-review: Dissertation.WellPosedness.Spec.JointBorel.mk 472156baffd503850000000000000000 by=claude-author -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.Spec.JointBorel.mk--claude-reviewer--2026-10-17T15_04_38Z.md`).
 <!-- def-review: Dissertation.WellPosedness.Spec.JointBorel.mk 472156baffd503850000000000000000 by=claude-reviewer -->
@@ -1085,11 +1087,11 @@ Review by claude-auditor: faithful with representation choices (report `reports/
 * `Spec.Assumption22 ℱ P T C ξ₀`, with constructor `.mk`: `ξ₀` strongly `ℱ_0`-measurable and square
   integrable, and `OriginValues T C`: Assumption 2.2, the element `ξ₀` of `L²(Ω, ℱ₀; ℝⁿ)`
   represented by a function in its class.
-<!-- def-review: Dissertation.WellPosedness.Spec.Assumption22 5efdb45a84324ede0000000000000000 by=claude-author -->
+<!-- def-review: Dissertation.WellPosedness.Spec.Assumption22 5efdb45a84324ede0000000000000000 by=claude-author source=A:ass:integ@ef9a3acbfb5b5d7c874f4f8a54ca3a7d5a23e6dce6483f2e6391407799f2925e -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.Assumption22--claude-reviewer--2026-10-17T15_04_37Z.md`).
-<!-- def-review: Dissertation.WellPosedness.Spec.Assumption22 5efdb45a84324ede0000000000000000 by=claude-reviewer -->
+<!-- def-review: Dissertation.WellPosedness.Spec.Assumption22 5efdb45a84324ede0000000000000000 by=claude-reviewer source=A:ass:integ@ef9a3acbfb5b5d7c874f4f8a54ca3a7d5a23e6dce6483f2e6391407799f2925e -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.Assumption22--claude-auditor--2026-10-19T03_26_57Z.md`).
-<!-- def-review: Dissertation.WellPosedness.Spec.Assumption22 5efdb45a84324ede0000000000000000 by=claude-auditor -->
+<!-- def-review: Dissertation.WellPosedness.Spec.Assumption22 5efdb45a84324ede0000000000000000 by=claude-auditor source=A:ass:integ@ef9a3acbfb5b5d7c874f4f8a54ca3a7d5a23e6dce6483f2e6391407799f2925e -->
 <!-- def-review: Dissertation.WellPosedness.Spec.Assumption22.mk f08ed69f41bd56a20000000000000000 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.Assumption22.mk--claude-reviewer--2026-10-17T15_04_37Z.md`).
 <!-- def-review: Dissertation.WellPosedness.Spec.Assumption22.mk f08ed69f41bd56a20000000000000000 by=claude-reviewer -->
@@ -1119,11 +1121,11 @@ Review by claude-auditor: faithful (report `reports/Dissertation.WellPosedness.S
 <!-- def-review: Dissertation.WellPosedness.Spec.LipTerminal 50fea10a492649962d326ec49234e618 by=claude-auditor -->
 * `Spec.Assumption23 ℱ P T L C`, with constructor `.mk`: `L ≥ 0`, `LipInterior` and `LipTerminal`
   with `L`: Assumption 2.3.
-<!-- def-review: Dissertation.WellPosedness.Spec.Assumption23 0d5048c72ef913b60000000000000000 by=claude-author -->
+<!-- def-review: Dissertation.WellPosedness.Spec.Assumption23 0d5048c72ef913b60000000000000000 by=claude-author source=A:ass:lip@9c7bbbc5ca7a20286ef27d4eb7edb07d33d9787563041cadef820d833345f085 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.Spec.Assumption23--claude-reviewer--2026-10-17T15_04_38Z.md`).
-<!-- def-review: Dissertation.WellPosedness.Spec.Assumption23 0d5048c72ef913b60000000000000000 by=claude-reviewer -->
+<!-- def-review: Dissertation.WellPosedness.Spec.Assumption23 0d5048c72ef913b60000000000000000 by=claude-reviewer source=A:ass:lip@9c7bbbc5ca7a20286ef27d4eb7edb07d33d9787563041cadef820d833345f085 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.Assumption23--claude-auditor--2026-10-19T03_26_57Z.md`).
-<!-- def-review: Dissertation.WellPosedness.Spec.Assumption23 0d5048c72ef913b60000000000000000 by=claude-auditor -->
+<!-- def-review: Dissertation.WellPosedness.Spec.Assumption23 0d5048c72ef913b60000000000000000 by=claude-auditor source=A:ass:lip@9c7bbbc5ca7a20286ef27d4eb7edb07d33d9787563041cadef820d833345f085 -->
 <!-- def-review: Dissertation.WellPosedness.Spec.Assumption23.mk 6c3bcf190c1a21530000000000000000 by=claude-author -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.Spec.Assumption23.mk--claude-reviewer--2026-10-17T15_04_38Z.md`).
 <!-- def-review: Dissertation.WellPosedness.Spec.Assumption23.mk 6c3bcf190c1a21530000000000000000 by=claude-reviewer -->
@@ -1166,11 +1168,11 @@ Review by claude-auditor: faithful with representation choices (report `reports/
   `𝔼⟨δg_T, G δX_T⟩ ≥ α 𝔼|G δX_T|²` for strongly `ℱ_T`-measurable square-integrable `X_T, X'_T`, its
   pairing integrable; `Mono27At` for almost every `t ∈ [0, T]`; and `Constants`: Assumption 2.5,
   with the same choice for the terminal pairing.
-<!-- def-review: Dissertation.WellPosedness.Spec.Assumption25 2ad64300a1211b960000000000000000 by=claude-author -->
+<!-- def-review: Dissertation.WellPosedness.Spec.Assumption25 2ad64300a1211b960000000000000000 by=claude-author source=A:ass:mono@a60a526e8cdd9d0ae4441e25895e5af1cc39a45df41a9028fe0f60371ce998ff -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.Assumption25--claude-reviewer--2026-10-17T15_04_37Z.md`).
-<!-- def-review: Dissertation.WellPosedness.Spec.Assumption25 2ad64300a1211b960000000000000000 by=claude-reviewer -->
+<!-- def-review: Dissertation.WellPosedness.Spec.Assumption25 2ad64300a1211b960000000000000000 by=claude-reviewer source=A:ass:mono@a60a526e8cdd9d0ae4441e25895e5af1cc39a45df41a9028fe0f60371ce998ff -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.Assumption25--claude-auditor--2026-10-19T03_26_57Z.md`).
-<!-- def-review: Dissertation.WellPosedness.Spec.Assumption25 2ad64300a1211b960000000000000000 by=claude-auditor -->
+<!-- def-review: Dissertation.WellPosedness.Spec.Assumption25 2ad64300a1211b960000000000000000 by=claude-auditor source=A:ass:mono@a60a526e8cdd9d0ae4441e25895e5af1cc39a45df41a9028fe0f60371ce998ff -->
 <!-- def-review: Dissertation.WellPosedness.Spec.Assumption25.mk 0f5949362ae546510000000000000000 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.Assumption25.mk--claude-reviewer--2026-10-17T15_04_37Z.md`).
 <!-- def-review: Dissertation.WellPosedness.Spec.Assumption25.mk 0f5949362ae546510000000000000000 by=claude-reviewer -->
@@ -1199,9 +1201,9 @@ tuple `(Θ⁻_t, μ⁻_t)`"; `ℍ ⊂ ℍ_weak`.
   and `s = 0` is a `dt`-null time of the integrals of (1.1).
 
 Verdict: faithful with representation choices.
-<!-- def-review: Dissertation.PaperSpec.A.Solution bf42c97d226817aeb326b2633e3dca6b by=claude-author -->
+<!-- def-review: Dissertation.PaperSpec.A.Solution bf42c97d226817aeb326b2633e3dca6b by=claude-author source=A:intro:mvfbsdej@0d85452f18880ddaaf63d57d1760fe13bf46552331679aa18ef206bbdea64300 source=A:eq:mvfbsdej@0d85452f18880ddaaf63d57d1760fe13bf46552331679aa18ef206bbdea64300 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.Solution--claude-auditor--2026-10-19T05_48_40Z.md`).
-<!-- def-review: Dissertation.PaperSpec.A.Solution bf42c97d226817aeb326b2633e3dca6b by=claude-auditor -->
+<!-- def-review: Dissertation.PaperSpec.A.Solution bf42c97d226817aeb326b2633e3dca6b by=claude-auditor source=A:intro:mvfbsdej@0d85452f18880ddaaf63d57d1760fe13bf46552331679aa18ef206bbdea64300 source=A:eq:mvfbsdej@0d85452f18880ddaaf63d57d1760fe13bf46552331679aa18ef206bbdea64300 -->
 
 ## The weak solution notion of §3 (`ℍ_weak`)
 
@@ -1336,11 +1338,11 @@ Review by claude-auditor: faithful (report `reports/Dissertation.WellPosedness.S
   `pairing27` is integrable and its expectation is at most `−β₁ 𝔼[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²]
   − β₂ 𝔼|G δX|² − c 𝔼[|δY|² + |δZ|²_F + ‖δU‖² + |δX|²]`: (2.13), with the integrability choice of
   `Mono27At`.
-<!-- def-review: Dissertation.WellPosedness.Spec.Margin213 2ad64300a1211b964de2010be9bc24c1 by=claude-author -->
+<!-- def-review: Dissertation.WellPosedness.Spec.Margin213 2ad64300a1211b964de2010be9bc24c1 by=claude-author source=A:eq:monomarginu@f626420b93b36f0e86aa29e8fb81b7b1a6e5de7e8721ca40a618d662ddd39b54 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.Margin213--claude-reviewer--2026-10-17T15_04_37Z.md`).
-<!-- def-review: Dissertation.WellPosedness.Spec.Margin213 2ad64300a1211b964de2010be9bc24c1 by=claude-reviewer -->
+<!-- def-review: Dissertation.WellPosedness.Spec.Margin213 2ad64300a1211b964de2010be9bc24c1 by=claude-reviewer source=A:eq:monomarginu@f626420b93b36f0e86aa29e8fb81b7b1a6e5de7e8721ca40a618d662ddd39b54 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.Margin213--claude-auditor--2026-10-19T03_26_58Z.md`).
-<!-- def-review: Dissertation.WellPosedness.Spec.Margin213 2ad64300a1211b964de2010be9bc24c1 by=claude-auditor -->
+<!-- def-review: Dissertation.WellPosedness.Spec.Margin213 2ad64300a1211b964de2010be9bc24c1 by=claude-auditor source=A:eq:monomarginu@f626420b93b36f0e86aa29e8fb81b7b1a6e5de7e8721ca40a618d662ddd39b54 -->
 * `Spec.PairingBound34 ℱ P T G c p`: for almost every `t ∈ [0, T]` and all pairs of `𝒟_t`, the
   pairing `pairing27` of the perturbation differences is integrable and its expectation is at most
   `c 𝔼[|δX|² + |δY|² + |δZ|²_F + ‖δU‖²]`: (3.4), with the same choice.
@@ -1454,11 +1456,11 @@ Review by claude-auditor: faithful with representation choices (report `reports/
 * `PaperSpec.A.WeakForcedSolution`: some `γ` with `PaperWeakSolutionForcedInt` over
   `enlJoint 𝒢₀ D h𝒢₀`, and every path of `X` and of `Y` with left limits on `(0, T]`: (4.1) in
   `ℍ_weak` with `X_T ∈ L²`, the class of Lemma 4.3.
-<!-- def-review: Dissertation.PaperSpec.A.WeakForcedSolution 6d8e8f373c5e26dad42e89a4945d5642 by=claude-author -->
+<!-- def-review: Dissertation.PaperSpec.A.WeakForcedSolution 6d8e8f373c5e26dad42e89a4945d5642 by=claude-author source=A:sec4:WP-def@17962fe037ff7de888f26d2b0c9f51427d790ab6422e549a1d661ef69141a32e -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.WeakForcedSolution--claude-reviewer--2026-10-17T16_02_24Z.md`).
-<!-- def-review: Dissertation.PaperSpec.A.WeakForcedSolution 6d8e8f373c5e26dad42e89a4945d5642 by=claude-reviewer -->
+<!-- def-review: Dissertation.PaperSpec.A.WeakForcedSolution 6d8e8f373c5e26dad42e89a4945d5642 by=claude-reviewer source=A:sec4:WP-def@17962fe037ff7de888f26d2b0c9f51427d790ab6422e549a1d661ef69141a32e -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.WeakForcedSolution--claude-auditor--2026-10-19T03_38_16Z.md`).
-<!-- def-review: Dissertation.PaperSpec.A.WeakForcedSolution 6d8e8f373c5e26dad42e89a4945d5642 by=claude-auditor -->
+<!-- def-review: Dissertation.PaperSpec.A.WeakForcedSolution 6d8e8f373c5e26dad42e89a4945d5642 by=claude-auditor source=A:sec4:WP-def@17962fe037ff7de888f26d2b0c9f51427d790ab6422e549a1d661ef69141a32e -->
 * `PaperSpec.A.ForcedSolution`: `WeakForcedSolution` together with `𝔼 sup_{t ≤ T} |X_t|² < ∞`
   and `𝔼 sup_{t ≤ T} |Y_t|² < ∞`: a tuple of `ℍ` satisfying (4.1), as `Solution` is for (1.1). The
   forced drift and driver integrals are pathwise; under (2.3) and Assumptions 2.2–2.3 the notion
@@ -1466,20 +1468,20 @@ Review by claude-auditor: faithful with representation choices (report `reports/
   (`ForcedSolution.paperSolutionForced`, `forcedSolution_of_paperSolutionForced`). The forcing's
   admissibility is part of the predicate (`Forcing`, where `q^h` need only be marked
   progressive); `WP` quantifies over `PredForcing`, the printed predictable class.
-<!-- def-review: Dissertation.PaperSpec.A.ForcedSolution 6d8e8f373c5e26da320d4d9860023747 by=claude-author -->
+<!-- def-review: Dissertation.PaperSpec.A.ForcedSolution 6d8e8f373c5e26da320d4d9860023747 by=claude-author source=A:eq:forced@134e01a0256ffc7a16425886631cfe88968f942fb53d500c263ce1cf361b3cf8 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ForcedSolution--claude-auditor--2026-10-19T05_48_40Z.md`).
-<!-- def-review: Dissertation.PaperSpec.A.ForcedSolution 6d8e8f373c5e26da320d4d9860023747 by=claude-auditor -->
+<!-- def-review: Dissertation.PaperSpec.A.ForcedSolution 6d8e8f373c5e26da320d4d9860023747 by=claude-auditor source=A:eq:forced@134e01a0256ffc7a16425886631cfe88968f942fb53d500c263ce1cf361b3cf8 -->
 * `PaperSpec.A.WP D h𝒢₀ hind₀ T λ C ξ₀`: for every `PredForcing` `q` over `enlJoint 𝒢₀ D h𝒢₀`,
   a `ForcedSolution` exists, and any two have `X` and `Y` indistinguishable on `[0, T]` and the
   energies of the differences of `Z` and of `U` equal to zero: uniqueness in `ℍ` up to its
   identifications.
 
 Verdict: faithful with representation choices.
-<!-- def-review: Dissertation.PaperSpec.A.WP 4c83187e460bc5017fcd19712e7de906 by=claude-author -->
+<!-- def-review: Dissertation.PaperSpec.A.WP 4c83187e460bc5017fcd19712e7de906 by=claude-author source=A:sec4:WP-def@17962fe037ff7de888f26d2b0c9f51427d790ab6422e549a1d661ef69141a32e -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.WP--claude-reviewer--2026-10-17T16_01_36Z.md`).
-<!-- def-review: Dissertation.PaperSpec.A.WP 4c83187e460bc5017fcd19712e7de906 by=claude-reviewer -->
+<!-- def-review: Dissertation.PaperSpec.A.WP 4c83187e460bc5017fcd19712e7de906 by=claude-reviewer source=A:sec4:WP-def@17962fe037ff7de888f26d2b0c9f51427d790ab6422e549a1d661ef69141a32e -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.WP--claude-auditor--2026-10-19T03_37_30Z.md`).
-<!-- def-review: Dissertation.PaperSpec.A.WP 4c83187e460bc5017fcd19712e7de906 by=claude-auditor -->
+<!-- def-review: Dissertation.PaperSpec.A.WP 4c83187e460bc5017fcd19712e7de906 by=claude-auditor source=A:sec4:WP-def@17962fe037ff7de888f26d2b0c9f51427d790ab6422e549a1d661ef69141a32e -->
 
 ## The coefficient systems of Example 5.1 (`Existence/AffineExample.lean`, `Existence/ClampAffine.lean`, `Examples/MeanField.lean`)
 
@@ -1701,11 +1703,11 @@ Manuscript (Remark 2.11): (2.7) holds with margin `c > 0` if (2.12) holds.
   `pairing27` is integrable and its expectation is at most `−β₁ 𝔼[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²]
   − β₂ 𝔼|G δX|² − c 𝔼[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖² + |G δX|²]`: (2.12), with the integrability
   choice of `Mono27At`.
-<!-- def-review: Dissertation.PaperSpec.A.Margin212 2ad64300a1211b9647d3727884567824 by=claude-author -->
+<!-- def-review: Dissertation.PaperSpec.A.Margin212 2ad64300a1211b9647d3727884567824 by=claude-author source=A:eq:monomargin@3bf398680ece348005cee018ad83bc5cf40f4671bc0e6c341b0bf437325b642e -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.Margin212--claude-reviewer--2026-10-17T12_22_34Z.md`).
-<!-- def-review: Dissertation.PaperSpec.A.Margin212 2ad64300a1211b9647d3727884567824 by=claude-reviewer -->
+<!-- def-review: Dissertation.PaperSpec.A.Margin212 2ad64300a1211b9647d3727884567824 by=claude-reviewer source=A:eq:monomargin@3bf398680ece348005cee018ad83bc5cf40f4671bc0e6c341b0bf437325b642e -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.Margin212--claude-auditor--2026-10-19T03_38_08Z.md`).
-<!-- def-review: Dissertation.PaperSpec.A.Margin212 2ad64300a1211b9647d3727884567824 by=claude-auditor -->
+<!-- def-review: Dissertation.PaperSpec.A.Margin212 2ad64300a1211b9647d3727884567824 by=claude-auditor source=A:eq:monomargin@3bf398680ece348005cee018ad83bc5cf40f4671bc0e6c341b0bf437325b642e -->
 
 Verdict: faithful with representation choices.
 
