@@ -2007,10 +2007,9 @@ Clauses:
   example's `β₂ > 0`, and still satisfying Assumptions 2.2–2.5)
   with `t^{-1/2}` added to `b` satisfies (2.3) and Assumptions 2.3–2.5 (`L = 1`, `G = 1`,
   `α = β₁ = 1`, `β₂ = 0`), violates Assumption 2.2 for every initial datum, and from `ξ₀ = 0` has
-  a solution in `ℍ`: `WeakSolution` with finite `𝔼 sup |X|²` and `𝔼 sup |Y|²`, the drift integral
-  read pathwise. A solution in the stronger sense `Solution` would need finite drift energy,
-  which the drift `t^{-1/2}` excludes, so `ℍ` is read as the paper defines it, through
-  `WeakSolution` and the `S²` bounds.
+  a solution in `ℍ` (`Solution`: `WeakSolution` with finite `𝔼 sup |X|²` and `𝔼 sup |Y|²`, the
+  drift integral read pathwise, as for every solution; the drift `t^{-1/2}` has infinite energy,
+  which the solution notion does not exclude).
 * The "For instance" sentence, for an arbitrary system, is `rem_uniq_translation`: in the
   standing setting with `n, m, d ≥ 1` (those of Theorem 3.5), for `T > 0`, a system `C` with
   initial datum `ξ₀` satisfying (2.3) and Assumptions 2.2–2.5 (`L, α, β₁, β₂`, `G` of full rank)
@@ -2018,8 +2017,7 @@ Clauses:
   with `L` and Assumption 2.5 with `G, α, β₁, β₂`, and violates Assumption 2.2 for every initial
   datum; `C̃ = translatedCoeffs C (t ↦ 2√t e) T` satisfies (2.3) and Assumptions 2.2, 2.3, 2.5
   with the same constants and `ξ₀`; and there is `(X, Y, Z, U)` with `Solution` for `C̃` from
-  `ξ₀` such that `(X + 2√t e, Y, Z, U)` has `WeakSolution` for `C⁺` from `ξ₀` and finite
-  `𝔼 sup |X + 2√t e|²` and `𝔼 sup |Y|²`.
+  `ξ₀` such that `(X + 2√t e, Y, Z, U)` has `Solution` for `C⁺` from `ξ₀`.
 
 Correspondence for `rem_uniq_translation`:
 
@@ -2030,23 +2028,24 @@ Correspondence for `rem_uniq_translation`:
   forward coordinate and `g` at `x + r_T` and the translated terminal law, which is "applied to
   the state and translating the law argument accordingly".
 * Assumption 2.4 concerns `G` alone and is unchanged by both operations; it is a hypothesis.
-* "So a solution still exists" is read as for `rem_uniq_singular`: a solution in `ℍ` of the
-  system with the singular drift, `WeakSolution` with both `S²` bounds, the drift integral read
-  pathwise. The proposition also names the translated solution and the translation back, which is
-  the printed route.
+* "So a solution still exists" is `Solution` for the system with the singular drift. The
+  proposition also names the translated solution and the translation back, which is the printed
+  route.
 
 Witnesses: `Dissertation.Acceptance.A.rem_uniq_hypotheses` for `rem_uniq_initial` and
 `rem_uniq_singular`: over a probability space carrying a Lévy driver with `d = 1`, `ν = δ₀`,
-`𝒢₀ = ⊥`, `T = 1`, the singular system has a `WeakSolution` from `0` with both `S²` bounds
-finite; `Dissertation.Acceptance.A.thm_cwp_hypotheses` for `rem_uniq_translation`: a system
+`𝒢₀ = ⊥`, `T = 1`, the singular system has a `Solution` from `0`;
+`Dissertation.Acceptance.A.thm_cwp_hypotheses` for `rem_uniq_translation`: a system
 satisfying (2.3) and Assumptions 2.2–2.5 over a standing basis with `n = m = d = 1`, with which
 any `e ≠ 0` meets the hypotheses.
 
-Verdict: faithful.
+Verdict: broader for `rem_uniq_initial` (its hypothesis asks of the tuple of `ℍ_weak` only the
+`S²` bound of `X`; a solution in `ℍ` is an instance); faithful for `rem_uniq_singular` and
+`rem_uniq_translation`.
 
 <!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_initial ed839d34f480cba1fa628ed6b5f5989d by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_singular ed839d34f480cba1c331e57f1b4633b6 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_translation ed839d34f480cba1800e3b89c10396d1 by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_singular ed839d34f480cba1ba6232c9763ebb54 by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_translation ed839d34f480cba13b68ad605862c311 by=claude-author -->
 
 ## The paragraph after Corollary 3.6: `Dissertation.PaperSpec.A.cor_margin_channels`, `cor_margin_additive`, `cor_margin_finite`, `cor_margin_continuous`, `cor_margin_separate`, `cor_margin_findim`
 
@@ -2406,8 +2405,9 @@ Propositions (each in the standing setting with `n = m = d = 1` where a basis ap
 * `ex_dealer_symm`: the symmetrised identity for `λ ∈ P₂(L²(ν))` and positivity off Dirac masses.
 * `ex_dealer_active`: in the specialisation, `P{A_{Law(U⁰_t)}(U⁰_t) ≠ 0} > 0` at every
   `t ∈ (0, T]`; and for every `ε > 0` and every solution at `ε`, the energy of `ε A` is positive.
-* `ex_dealer_depends`: a tuple solving at `ε ≠ ε'` has the correction zero for `dt ⊗ dP`; in the
-  specialisation, no tuple solves at two strengths `ε ≠ ε'` in `[0, ∞)`.
+* `ex_dealer_depends`: for `β₁, β₂ > 0` and `ε, ε' ≥ 0`, a tuple solving at `ε ≠ ε'` has the
+  correction zero for `dt ⊗ dP`; in the specialisation, no tuple solves at two strengths
+  `ε ≠ ε'` in `[0, ∞)`.
 
 Correspondence:
 
@@ -2453,8 +2453,9 @@ Correspondence:
   Theorem 3.5 (they agree by Theorem 3.3), and `Law(U^ε_t)` is read as in `ex_dealer_inert`. The
   contradiction argument is a step of the proof.
 * `ex_dealer_depends`: "the solution therefore depends on `ε`" is the second clause; the
-  conditional sentence is the first, stated with no restriction on the constants; "subtracting the
-  forward equations and the compensated-Poisson isometry" describes its proof.
+  conditional sentence is the first, stated for the constants of Example 5.5 (`β₁, β₂ > 0`,
+  `ε, ε' ≥ 0`), every σ-finite `ν` and every initial datum; "subtracting the forward equations and
+  the compensated-Poisson isometry" describes its proof.
 * Not formalised: the dealer-market reading (requests for quotes, valuation curves, routing,
   quotes affine in the curve, the uncontrolled exposure change at an event, the small-ticket
   limit), which is modelling, and the finite-player inspiration (Cont and Xiong), which is cited
@@ -2493,7 +2494,7 @@ at every `t`; `ex_dealer_active` for every solution).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_zero ed839d34f480cba1fbee3842d146d0f8 by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_symm ed839d34f480cba11753a45d7d37cdc6 by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_active ed839d34f480cba11684a792fea39139 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_depends ed839d34f480cba16e17ac4ef107c296 by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_depends ed839d34f480cba1d5b82af653b55a54 by=claude-author -->
 
 ## Remark 5.6, the scope of the measure argument: `Dissertation.PaperSpec.A.rem_freelaw`
 

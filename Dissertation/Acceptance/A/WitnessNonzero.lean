@@ -283,7 +283,7 @@ theorem Solution.X_zero_ae {Ω : Type*} {𝒢₀ : MeasurableSpace Ω} [mΩ : Me
     {Z : Fin m → ℝ → Ω → Fin d → ℝ} {U : Fin m → ℝ → Ω → E → ℝ}
     (hS : Solution D h𝒢₀ hind₀ T C ξ₀ X Y Z U) (i : Fin n) :
     X i 0 =ᵐ[P] fun ω => ξ₀ ω i := by
-  obtain ⟨⟨γ, h⟩, -, -⟩ := hS
+  obtain ⟨⟨⟨γ, h⟩, -, -⟩, -, -⟩ := hS
   obtain ⟨M, hMae, -, hid⟩ := h.fwd i
   have h0 : (0 : ℝ) ∈ Set.Icc (0 : ℝ) T := ⟨le_rfl, hT⟩
   filter_upwards [hid, hMae 0 h0,

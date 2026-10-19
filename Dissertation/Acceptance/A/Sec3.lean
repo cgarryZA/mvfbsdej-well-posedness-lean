@@ -9,6 +9,7 @@ import Dissertation.WellPosedness.System.JumpLeftEnergy
 import Dissertation.WellPosedness.Spec.Thm35
 import Dissertation.WellPosedness.Existence.CadlagVersion
 import Dissertation.WellPosedness.Spec.Cor36WellPosed
+import Dissertation.Acceptance.A.Solution
 
 /-!
 # Section 3 of the well-posedness paper: proofs of the main results
@@ -39,8 +40,8 @@ theorem thm_stab : PaperSpec.A.thm_stab.{u, v, w} := by
     aprioriConst T (10 * (2 * L) ^ 2) (4 * (2 * L) ^ 2) g c α β₁ β₂ 1, ?_⟩
   intro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ hn hm hd T hT L L₂ α β₁ β₂ G C₁ C₂ ξ₁ ξ₂
     hJ₁ h22₁ h23₁ hG h25₁ hJ₂ h22₂ h23₂ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ hS₁ hS₂
-  obtain ⟨⟨γ₁, h₁⟩, -, -⟩ := hS₁
-  obtain ⟨⟨γ₂, h₂⟩, hX₂l, hY₂l⟩ := hS₂
+  obtain ⟨⟨γ₁, h₁⟩, -, -⟩ := Solution.paperSolutionEnl hT.le hJ₁ h22₁.origin h23₁ hS₁
+  obtain ⟨⟨γ₂, h₂⟩, hX₂l, hY₂l⟩ := Solution.paperSolutionEnl hT.le hJ₂ h22₂.origin h23₂ hS₂
   have key := PaperSolutionEnl.supSize_sub_le_of_assumptions D h𝒢₀ hind₀ hn hm hd hT hJ₁ h22₁
     h23₁ hG h25₁ hJ₂ h22₂ h23₂ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ γ₁ γ₂ h₁ h₂
   have hj : ∀ i, LevyStochCalc.Poisson.Compensated.markedEnergy P ν T
@@ -97,10 +98,10 @@ theorem thm_cwp : PaperSpec.A.thm_cwp.{u, v, w} := by
       exists_paperSolutionEnl_unique_of_assumptions D h𝒢₀ hind₀ hn hm hd hT hJ h22 h23 hG h25
     obtain ⟨X', Y', h', hX', hY', -⟩ :=
       h.exists_cadlag_version hT.le (jointBorel_iff.mp hJ).1.toCoeffBorel hnull
-    exact ⟨X', Y', Z, U, ⟨γ, h'⟩, hX', hY'⟩
-  · rintro X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ ⟨⟨γ₁, h₁⟩, -, -⟩ ⟨⟨γ₂, h₂⟩, -, -⟩
+    exact ⟨X', Y', Z, U, solution_of_paperSolutionEnl hT.le h' hX' hY'⟩
+  · rintro X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ ⟨⟨⟨γ₁, h₁⟩, -, -⟩, -, -⟩ ⟨⟨⟨γ₂, h₂⟩, -, -⟩, -, -⟩
     exact PaperWeakSolutionIntEnl.uniqueness_of_assumptions D h𝒢₀ hind₀ hn hm hd hT hJ h23 hG
-      h25 _ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ γ₁ γ₂ (h₁.toWeakInt hT.le) (h₂.toWeakInt hT.le)
+      h25 _ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ γ₁ γ₂ h₁ h₂
 
 /-- Corollary 3.6, the assumptions of the perturbed system. -/
 theorem cor_robust : PaperSpec.A.cor_robust.{u, v, w} := by

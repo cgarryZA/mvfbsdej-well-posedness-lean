@@ -103,13 +103,13 @@ theorem lem_pert_two_data_hypotheses :
       (fun k ω s => (0 : Fin 1 → Ω → ℝ → ℝ) k ω s - (0 : Fin 1 → Ω → ℝ → ℝ) k ω s)
       (fun k ω => (0 : Fin 1 → Ω → ℝ) k ω - (0 : Fin 1 → Ω → ℝ) k ω) = 1 := by
     simp [dataSize, esq, Brownian.Ito.energy, Poisson.Compensated.markedEnergy]
-  obtain ⟨⟨γ₁, h₁⟩, hX₁, hY₁⟩ := hs₁
-  obtain ⟨⟨γ₂, h₂⟩, hX₂, hY₂⟩ := hs₂
+  obtain ⟨⟨⟨γ₁, h₁⟩, hX₁, hY₁⟩, -, -⟩ := hs₁
+  obtain ⟨⟨⟨γ₂, h₂⟩, hX₂, hY₂⟩, -, -⟩ := hs₂
   refine ⟨Ω, inferInstance, P, inferInstance, D, hind₀, hJ, h23, hG, h25, measurable_const,
     measurable_const, { toForcing := Forcing.zero, qh_pred := fun _ => measurable_const },
     X₁, X₂, Y₁, Y₂, Z₁, Z₂, U₁, U₂,
-    ⟨⟨γ₁, paperWeakSolutionForcedInt_one_zero_iff.mpr (h₁.toWeakInt zero_le_one)⟩, hX₁, hY₁⟩,
-    ⟨⟨γ₂, paperWeakSolutionForcedInt_one_zero_iff.mpr (h₂.toWeakInt zero_le_one)⟩, hX₂, hY₂⟩,
+    ⟨⟨γ₁, paperWeakSolutionForcedInt_one_zero_iff.mpr h₁⟩, hX₁, hY₁⟩,
+    ⟨⟨γ₂, paperWeakSolutionForcedInt_one_zero_iff.mpr h₂⟩, hX₂, hY₂⟩,
     lt_of_le_of_lt hle (ENNReal.mul_lt_top ENNReal.ofReal_lt_top ?_), hdata⟩
   simp only [sub_self]
   simp [dataSize, esq, Brownian.Ito.energy, Poisson.Compensated.markedEnergy]

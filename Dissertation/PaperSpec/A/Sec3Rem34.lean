@@ -57,9 +57,8 @@ def rem_uniq_initial : Prop :=
 `d`, on every horizon `T > 0`: the affine coefficients of Example 5.1(i) taken at `β₁ = 1`,
 `β₂ = 0`, `σ_c = 0`, `h_c = 0`, with the deterministic drift `t^{-1/2}` added to `b`, satisfy
 (2.3), Assumption 2.3 with `L = 1`, Assumption 2.4 with `G = 1` and Assumption 2.5 with `G = 1`,
-`α = 1`, `β₁ = 1`, `β₂ = 0`, violate Assumption 2.2 for every initial datum, and from the initial
-datum `0` have a tuple of `ℍ_weak` satisfying (1.1) with `𝔼 sup_{t ≤ T} |X_t|² < ∞` and
-`𝔼 sup_{t ≤ T} |Y_t|² < ∞`: a solution in `ℍ` with the drift integral read pathwise. -/
+`α = 1`, `β₁ = 1`, `β₂ = 0`, violate Assumption 2.2 for every initial datum, and have a solution
+of (1.1) in `ℍ` from the initial datum `0`. -/
 def rem_uniq_singular : Prop :=
   ∀ {Ω : Type u} [MeasurableSpace Ω] {E : Type v} [MeasurableSpace E] (ν : Measure E)
     [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] (d : ℕ) (P : Measure Ω)
@@ -74,9 +73,7 @@ def rem_uniq_singular : Prop :=
         ¬ Assumption22 (enlJoint ⊥ D bot_le) P T (singularCoeffs (ν := ν) (d := d)) ξ₀)
     ∧ ∃ (X : Fin 1 → ℝ → Ω → ℝ) (Y : Fin 1 → ℝ → Ω → ℝ) (Z : Fin 1 → ℝ → Ω → Fin d → ℝ)
         (U : Fin 1 → ℝ → Ω → E → ℝ),
-        WeakSolution D bot_le hind₀ T (singularCoeffs (ν := ν) (d := d)) (fun _ => 0) X Y Z U
-        ∧ ∫⁻ ω, (⨆ t ∈ Set.Icc (0 : ℝ) T, esq (fun i => X i t ω)) ∂P < ⊤
-        ∧ ∫⁻ ω, (⨆ t ∈ Set.Icc (0 : ℝ) T, esq (fun k => Y k t ω)) ∂P < ⊤
+        Solution D bot_le hind₀ T (singularCoeffs (ν := ν) (d := d)) (fun _ => 0) X Y Z U
 
 /-- The translation `(x, y, z, u) ↦ (x + r, y, z, u)` of the forward coordinate of a tuple. -/
 def translateTuple {E : Type v} [MeasurableSpace E] {ν : Measure E} [SigmaFinite ν]
@@ -103,9 +100,8 @@ deterministic drift `t^{-1/2} e` to `b` gives a system `C⁺` that satisfies (2.
 Assumptions 2.3 and 2.5 with the same constants and violates Assumption 2.2 for every initial
 datum. The system `C̃` obtained from `C` by the shift `X ↦ X − 2√t e`, translating the law
 argument accordingly, satisfies (2.3) and Assumptions 2.2–2.5 with the same constants, and has a
-solution `Θ = (X, Y, Z, U)` in `ℍ` from `ξ₀` such that `(X + 2√t e, Y, Z, U)` is a tuple of
-`ℍ_weak` satisfying (1.1) for `C⁺` from `ξ₀`, with `𝔼 sup_{t ≤ T} |X_t + 2√t e|² < ∞` and
-`𝔼 sup_{t ≤ T} |Y_t|² < ∞`: a solution in `ℍ` with the drift integral read pathwise. -/
+solution `Θ = (X, Y, Z, U)` in `ℍ` from `ξ₀` such that `(X + 2√t e, Y, Z, U)` is a solution of
+(1.1) for `C⁺` in `ℍ` from `ξ₀`. -/
 def rem_uniq_translation : Prop :=
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
@@ -135,10 +131,7 @@ def rem_uniq_translation : Prop :=
         (U : Fin m → ℝ → Ω → E → ℝ),
         Solution D h𝒢₀ hind₀ T (translatedCoeffs C (fun t => (2 * Real.sqrt t) • e) T) ξ₀
           X Y Z U
-        ∧ WeakSolution D h𝒢₀ hind₀ T (C.addDrift fun t => (Real.sqrt t)⁻¹ • e) ξ₀
+        ∧ Solution D h𝒢₀ hind₀ T (C.addDrift fun t => (Real.sqrt t)⁻¹ • e) ξ₀
           (fun i t ω => X i t ω + 2 * Real.sqrt t * e i) Y Z U
-        ∧ ∫⁻ ω, (⨆ t ∈ Set.Icc (0 : ℝ) T,
-            esq (fun i => X i t ω + 2 * Real.sqrt t * e i)) ∂P < ⊤
-        ∧ ∫⁻ ω, (⨆ t ∈ Set.Icc (0 : ℝ) T, esq (fun k => Y k t ω)) ∂P < ⊤
 
 end Dissertation.PaperSpec.A

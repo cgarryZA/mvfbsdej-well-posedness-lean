@@ -216,18 +216,19 @@ def ex_dealer_active : Prop :=
             (tupleAt (ex55Marks ϱ) (leftLimProc X) (leftLimProc Y) Z U s ω).2.2.2‖ₑ ^ 2 ∂volume ∂P
 
 /-- Example 5.5, the solution depends on `ε`. In the standing setting with `n = m = d = 1`, for
-`T > 0`, `β₁, β₂, σ_c`, `h_c, h_x ∈ L²(ν)`, `ε ≠ ε'` and an initial datum `ξ₀`: if a tuple solves
-(1.1) with the coefficients of Example 5.5 at both strengths `ε` and `ε'`, the crowding correction
-along it vanishes for `dt ⊗ dP` on `[0, T]`; and in the specialisation of `ex_dealer_zero`, no
-tuple solves (1.1) at two strengths `ε ≠ ε'` in `[0, ∞)`. -/
+`T > 0`, `β₁, β₂ > 0`, `σ_c`, `h_c, h_x ∈ L²(ν)`, `ε, ε' ≥ 0` with `ε ≠ ε'` and an initial datum
+`ξ₀`: if a tuple solves (1.1) with the coefficients of Example 5.5 at both strengths `ε` and
+`ε'`, the crowding correction along it vanishes for `dt ⊗ dP` on `[0, T]`; and in the
+specialisation of `ex_dealer_zero`, no tuple solves (1.1) at two strengths `ε ≠ ε'` in
+`[0, ∞)`. -/
 def ex_dealer_depends : Prop :=
   (∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
     (P : Measure Ω) [IsProbabilityMeasure P]
     (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P 1 ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
     (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P), ∀ T : ℝ, 0 < T →
-    ∀ (β₁ β₂ : ℝ) (σc : EuclideanSpace ℝ (Fin 1 × Fin 1))
-      (hc hx : Lp (EuclideanSpace ℝ (Fin 1)) 2 ν) (ε ε' : ℝ), ε ≠ ε' →
+    ∀ (β₁ β₂ : ℝ), 0 < β₁ → 0 < β₂ → ∀ (σc : EuclideanSpace ℝ (Fin 1 × Fin 1))
+      (hc hx : Lp (EuclideanSpace ℝ (Fin 1)) 2 ν) (ε ε' : ℝ), 0 ≤ ε → 0 ≤ ε' → ε ≠ ε' →
     ∀ (ξ₀ : Ω → EuclideanSpace ℝ (Fin 1)) (X : Fin 1 → ℝ → Ω → ℝ) (Y : Fin 1 → ℝ → Ω → ℝ)
       (Z : Fin 1 → ℝ → Ω → Fin 1 → ℝ) (U : Fin 1 → ℝ → Ω → E → ℝ),
       Solution D h𝒢₀ hind₀ T (ex55Coeffs ν β₁ β₂ σc hc hx ε) ξ₀ X Y Z U →

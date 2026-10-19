@@ -107,10 +107,8 @@ theorem thm_uniq_hypotheses :
       (σc := 0) (hc := 0) one_pos one_pos (0 : EuclideanSpace ℝ (Fin 1))
   have e₁ : max (max (1 : ℝ) 1) 1 = 1 := by norm_num
   rw [e₁] at h23
-  obtain ⟨X, Y, Z, U, ⟨γ, h⟩, hX, hY⟩ := (thm_cwp ⊥ _ 1 1 1 P D bot_le hind₀ one_pos one_pos
+  obtain ⟨X, Y, Z, U, hw, -, -⟩ := (thm_cwp ⊥ _ 1 1 1 P D bot_le hind₀ one_pos one_pos
     one_pos 1 one_pos 1 1 1 1 1 _ _ hJ h22 h23 hG h25).1
-  have hw : WeakSolution D bot_le hind₀ 1 (sys 1) (fun _ => 0) X Y Z U :=
-    ⟨⟨γ, h.toWeakInt zero_le_one⟩, hX, hY⟩
   exact ⟨Ω, inferInstance, P, inferInstance, D, hind₀, hJ, h23, hG, h25, X, X, Y, Y, Z, Z, U, U,
     hw, hw⟩
 
@@ -304,8 +302,9 @@ theorem lem_bpbsde_hypotheses :
       (σc := 0) (hc := 0) one_pos one_pos (0 : EuclideanSpace ℝ (Fin 1))
   have e₁ : max (max (1 : ℝ) 1) 1 = 1 := by norm_num
   rw [e₁] at h23
-  obtain ⟨X, Y, Z, U, ⟨γ, h⟩, -, hY⟩ := (thm_cwp ⊥ _ 1 1 1 P D bot_le hind₀ one_pos one_pos
+  obtain ⟨X, Y, Z, U, hS⟩ := (thm_cwp ⊥ _ 1 1 1 P D bot_le hind₀ one_pos one_pos
     one_pos 1 one_pos 1 1 1 1 1 _ _ hJ h22 h23 hG h25).1
+  obtain ⟨⟨γ, h⟩, -, hY⟩ := Solution.paperSolutionEnl zero_le_one hJ h22.origin h23 hS
   have hT1 : (1 : ℝ) ∈ Set.Icc (0 : ℝ) 1 := ⟨zero_le_one, le_rfl⟩
   set ρ := Dissertation.Law.lawP2 P
     fun ω' => (WithLp.toLp 2 fun i => X i 1 ω' : EuclideanSpace ℝ (Fin 1))

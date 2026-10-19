@@ -20,7 +20,10 @@ càdlàg adapted processes `V` with `𝔼 sup_{t ≤ T} |V_t|² < ∞`, identifi
 `U` with `𝔼 ∫_0^T ‖U_t‖²_{L²(ν)} dt < ∞`, identified almost everywhere.
 
 `PaperSolution` states this definition for coordinate processes over a filtration `ℱ` carrying
-the driver `D`, with `γ` a representative of the jump coefficient along the solution.
+the driver `D`, with `γ` a representative of the jump coefficient along the solution, and asks in
+addition that the drift and driver processes along `Θ` have finite energy on `[0, T]`. Under (2.3)
+and Assumptions 2.2–2.3 the coefficient processes along a tuple of `ℍ²` have finite energy ((4.2)),
+so it is then the paper's notion.
 
 * **`X ∈ S²(ℝⁿ)`, `Y ∈ S²(ℝᵐ)`.** Each coordinate is adapted at every time of `[0, T]`, every
   path is right-continuous at every time of `[0, T)`, almost every path has left limits at every
@@ -88,7 +91,8 @@ The square integrability of `ξ₀` and of `g(X_T, Law X_T)` is not a field: it 
 
 ## Main definitions
 
-* `PaperSolution` — `(X, Y, Z, U)` is a solution of (1.1) in the sense of the paper.
+* `PaperSolution` — `(X, Y, Z, U)` is a solution of (1.1) in `ℍ²` whose drift and driver
+  processes have finite energy.
 
 ## Main statements
 
@@ -189,7 +193,7 @@ theorem jumpProc_of_notMem {s : ℝ} (hs : s ∉ Set.Icc (0 : ℝ) T) (i : Fin n
 
 /-! ### The solution predicate -/
 
-/-- **`(X, Y, Z, U)` is a solution of (1.1) in the sense of the well-posedness paper**, with
+/-- **`(X, Y, Z, U)` is a solution of (1.1) in `ℍ²` with drift and driver of finite energy**, with
 coefficients `C` and initial datum `ξ₀`, over the filtration `ℱ` carrying the driver `D`, and
 with `γ` a representative of the jump coefficient: `X` and `Y` are adapted on `[0, T]` with
 right-continuous paths on `[0, T)`, left limits on `(0, T]` almost surely and finite

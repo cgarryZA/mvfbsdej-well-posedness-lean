@@ -45,8 +45,8 @@ representative `γ` (`jump_rep`), as in `PaperSolution`. The relation to `Solves
 
 ## Main definitions
 
-* `PaperSolutionForced` — `(X, Y, Z, U)` solves the `λ`-forced system (4.1) in the sense of the
-  paper.
+* `PaperSolutionForced` — `(X, Y, Z, U)` solves the `λ`-forced system (4.1) in `ℍ²` with forced
+  integrands of finite energy.
 
 ## Main statements
 
@@ -98,7 +98,8 @@ end Vanish
 
 /-! ### The solution predicate -/
 
-/-- **`(X, Y, Z, U)` solves the `λ`-forced system (4.1) in the sense of the paper**, with
+/-- **`(X, Y, Z, U)` solves the `λ`-forced system (4.1) in `ℍ²` with forced integrands of finite
+energy**, with
 coefficients `C`, initial datum `ξ₀` and forcing `q = (q^b, q^σ, q^h, q^f, q^g)`, over the
 filtration `ℱ` carrying the driver `D`, and with `γ` a representative of the jump coefficient:
 `q` is a forcing; `X` and `Y` are adapted on `[0, T]` with right-continuous paths on `[0, T)`,

@@ -167,8 +167,7 @@ theorem sec3_HH_inclusion_hypotheses :
   rw [e₁] at h23
   obtain ⟨X, Y, Z, U, hS⟩ := (thm_cwp ⊥ _ 1 1 1 P D bot_le hind₀ one_pos one_pos one_pos 1
     one_pos 1 1 1 1 1 _ _ hJ h22 h23 hG h25).1
-  obtain ⟨⟨γ, h⟩, -, -⟩ := id hS
-  refine ⟨Ω, inferInstance, P, inferInstance, D, hind₀, X, Y, Z, U, hS, zero_le_one, h.X_sup, ?_⟩
+  refine ⟨Ω, inferInstance, P, inferInstance, D, hind₀, X, Y, Z, U, hS, zero_le_one, hS.2.1, ?_⟩
   filter_upwards [Solution.X_zero_ae zero_le_one hS 0] with ω hω
   rw [hω]
   simp

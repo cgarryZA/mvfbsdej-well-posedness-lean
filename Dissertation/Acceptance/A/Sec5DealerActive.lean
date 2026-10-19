@@ -41,18 +41,40 @@ theorem ex_dealer_riccati : PaperSpec.A.ex_dealer_riccati := by
   exact ⟨exists_pos_riccati hβ₁ hβ₂, fun p q hp hpT hq hqT =>
     riccati_unique hβ₁.le hp hq (hpT.trans hqT.symm)⟩
 
+/-- For `T > 0`, `β₁, β₂ > 0` and `ε ≥ 0`, a solution of (1.1) in `ℍ` with the coefficients of
+Example 5.5 is one in the sense of `PaperSolutionEnl`, every path of `X` and of `Y` having left
+limits on `(0, T]`. -/
+theorem ex55_paperSolutionEnl {Ω : Type u} {𝒢₀ : MeasurableSpace Ω} [mΩ : MeasurableSpace Ω]
+    {E : Type v} [MeasurableSpace E] {ν : Measure E} [SigmaFinite ν]
+    [MeasurableSpace.CountablyGenerated E] {P : Measure Ω} [IsProbabilityMeasure P]
+    {D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P 1 ν} {h𝒢₀ : 𝒢₀ ≤ mΩ}
+    {hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P} {T β₁ β₂ ε : ℝ}
+    {σc : EuclideanSpace ℝ (Fin 1 × Fin 1)} {hc hx : Lp (EuclideanSpace ℝ (Fin 1)) 2 ν}
+    {ξ₀ : Ω → EuclideanSpace ℝ (Fin 1)} {X : Fin 1 → ℝ → Ω → ℝ} {Y : Fin 1 → ℝ → Ω → ℝ}
+    {Z : Fin 1 → ℝ → Ω → Fin 1 → ℝ} {U : Fin 1 → ℝ → Ω → E → ℝ} (hT : 0 < T) (hβ₁ : 0 < β₁)
+    (hβ₂ : 0 < β₂) (hε : 0 ≤ ε)
+    (h : PaperSpec.A.Solution D h𝒢₀ hind₀ T (PaperSpec.A.ex55Coeffs ν β₁ β₂ σc hc hx ε) ξ₀
+      X Y Z U) :
+    (∃ γ : Fin 1 → ℝ → Ω → E → ℝ, PaperSolutionEnl D h𝒢₀ hind₀ T
+        (PaperSpec.A.ex55Coeffs ν β₁ β₂ σc hc hx ε) (fun i ω => ξ₀ ω i) X Y Z U γ)
+      ∧ (∀ i ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ l : ℝ, Tendsto (fun s => X i s ω) (𝓝[<] t) (𝓝 l))
+      ∧ ∀ k ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ l : ℝ, Tendsto (fun s => Y k s ω) (𝓝[<] t) (𝓝 l) := by
+  obtain ⟨-, hJ, h22, h23, -⟩ := ex_dealer 𝒢₀ ν P D h𝒢₀ hind₀ T hT β₁ β₂ hβ₁ hβ₂ σc hc hx ε hε
+    (fun _ => 0) stronglyMeasurable_const (memLp_const _)
+  exact Solution.paperSolutionEnl hT.le hJ h22.origin h23 h
+
 /-- Example 5.5, without the exposure term the interaction is inert. -/
 theorem ex_dealer_inert : PaperSpec.A.ex_dealer_inert.{u, v, w} := by
   intro Ω 𝒢₀ mΩ E _ ν _ _ P _ D h𝒢₀ hind₀ T hT β₁ β₂ hβ₁ hβ₂ σc hc ε hε ξ₀ hξm hξ p hp hpT
     hp0
   refine ⟨(ex_dealer_wp 𝒢₀ ν P D h𝒢₀ hind₀ T hT β₁ β₂ hβ₁ hβ₂ σc hc 0 ε hε ξ₀ hξm hξ).1,
     fun X Y Z U hsol => ?_⟩
-  obtain ⟨⟨γ, hPS⟩, hXl, hYl⟩ := hsol
+  obtain ⟨⟨γ, hPS⟩, hXl, hYl⟩ := ex55_paperSolutionEnl hT hβ₁ hβ₂ hε hsol
   rw [ex55Coeffs_eq] at hPS
   obtain ⟨h1, h2, h3, h4, h5⟩ := PaperSolution.dealer_inert hPS (crossWitnessEnl D h𝒢₀ hind₀)
     (hF0_enlJoint D h𝒢₀) (fun _ hs h0 => measurableSet_enlJoint_of_null D h𝒢₀ hs h0) hT hβ₁ hε
     hp hpT hp0 (hXl 0) (hYl 0)
-  refine ⟨h1, h2, h3, h4, fun ε' _ => ⟨⟨γ, ?_⟩, hXl, hYl⟩⟩
+  refine ⟨h1, h2, h3, h4, fun ε' _ => solution_of_paperSolutionEnl (γ := γ) hT.le ?_ hXl hYl⟩
   rw [ex55Coeffs_eq]
   exact h5 ε'
 
@@ -130,9 +152,10 @@ theorem ex_dealer_zero : PaperSpec.A.ex_dealer_zero.{u, w} := by
     (if e.1 then 1 else -1) * (e.2 : ℝ)) (ηx := fun e : DealerMark => (e.2 : ℝ)) h₁ h₂ 𝒲 hT hηx,
     fun X0 hlin0 hXl => ?_⟩
   · -- existence, from the well-posedness of the system at `ε = 0`
-    obtain ⟨X, Y, Z, U, ⟨γ, hPS⟩, hXl, -⟩ := (ex_dealer_wp 𝒢₀ (PaperSpec.A.ex55Marks ϱ) P D h𝒢₀
+    obtain ⟨X, Y, Z, U, hsol⟩ := (ex_dealer_wp 𝒢₀ (PaperSpec.A.ex55Marks ϱ) P D h𝒢₀
       hind₀ T hT 1 (1 / 2) one_pos one_half_pos (EuclideanSpace.single (0, 0) 1) hc hx 0
       le_rfl 0 stronglyMeasurable_const (memLp_const _)).1
+    obtain ⟨⟨γ, hPS⟩, hXl, -⟩ := ex55_paperSolutionEnl hT one_pos one_half_pos le_rfl hsol
     rw [ex55Coeffs_eq] at hPS
     obtain ⟨X', Y', hXX, -, hS⟩ := hPS.exists_solves hT.le
     have hX'l : ∀ ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ l : ℝ,
@@ -156,8 +179,9 @@ theorem ex_dealer_zero : PaperSpec.A.ex_dealer_zero.{u, w} := by
       hlin0
     have hPS := DealerLinear.paperSolution hlin 𝒲 hℱ0 hnull hT single_one_apply hhx hxc hηcm hηxm
       hcm hxm hcr hxr hXl
-    refine ⟨⟨⟨dealerZeroU T (fun e : DealerMark => (if e.1 then 1 else -1) * (e.2 : ℝ))
-      (fun e => (e.2 : ℝ)) X0, ?_⟩, fun _ => hXl, fun _ => hXl⟩, hlin.expectation_eq_zero 𝒲 hT,
+    refine ⟨solution_of_paperSolutionEnl (γ := dealerZeroU T
+      (fun e : DealerMark => (if e.1 then 1 else -1) * (e.2 : ℝ)) (fun e => (e.2 : ℝ)) X0) hT.le
+      ?_ (fun _ => hXl) (fun _ => hXl), hlin.expectation_eq_zero 𝒲 hT,
       hlin.integral_sq_eq 𝒲 hT hcm hxm hηc hηx hηcx',
       fun t ht => hlin.hasDerivAt_integral_sq 𝒲 hT hcm hxm hηc hηx hηcx' ht, fun t ht => ?_⟩
     · rw [ex55Coeffs_eq]
@@ -192,7 +216,7 @@ theorem ex_dealer_active : PaperSpec.A.ex_dealer_active.{u, w} := by
       (ηx := fun e : DealerMark => (e.2 : ℝ)) (hc := hc) hlin 𝒲 hℱ0 hnull hT hcm hxm hηc hηx
       hηcx' hhx hXl ht,
     fun ε hε X Y Z U hsol => ?_⟩
-  obtain ⟨⟨γ, hPS⟩, hXl, hYl⟩ := hsol
+  obtain ⟨⟨γ, hPS⟩, hXl, hYl⟩ := ex55_paperSolutionEnl hT one_pos one_half_pos hε.le hsol
   rw [ex55Coeffs_eq] at hPS
   exact PaperSolution.dealer_active hPS 𝒲 hℱ0 hnull hT single_one_apply hhx hxc hηcm hηxm hcm
     hxm hcr hxr hηc hηx hηcx' hε.ne' hXl hYl
@@ -203,9 +227,10 @@ theorem ex_dealer_depends_crowd {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [m�
     {E : Type v} [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν]
     [MeasurableSpace.CountablyGenerated E] (P : Measure Ω) [IsProbabilityMeasure P]
     (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P 1 ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
-    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P) (T : ℝ) (hT : 0 < T) (β₁ β₂ : ℝ)
-    (σc : EuclideanSpace ℝ (Fin 1 × Fin 1)) (hc hx : Lp (EuclideanSpace ℝ (Fin 1)) 2 ν)
-    (ε ε' : ℝ) (hεε : ε ≠ ε') (ξ₀ : Ω → EuclideanSpace ℝ (Fin 1)) (X : Fin 1 → ℝ → Ω → ℝ)
+    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P) (T : ℝ) (hT : 0 < T) (β₁ β₂ : ℝ) (hβ₁ : 0 < β₁)
+    (hβ₂ : 0 < β₂) (σc : EuclideanSpace ℝ (Fin 1 × Fin 1))
+    (hc hx : Lp (EuclideanSpace ℝ (Fin 1)) 2 ν) (ε ε' : ℝ) (hε : 0 ≤ ε) (hε' : 0 ≤ ε')
+    (hεε : ε ≠ ε') (ξ₀ : Ω → EuclideanSpace ℝ (Fin 1)) (X : Fin 1 → ℝ → Ω → ℝ)
     (Y : Fin 1 → ℝ → Ω → ℝ) (Z : Fin 1 → ℝ → Ω → Fin 1 → ℝ) (U : Fin 1 → ℝ → Ω → E → ℝ)
     (h₁ : PaperSpec.A.Solution D h𝒢₀ hind₀ T (PaperSpec.A.ex55Coeffs ν β₁ β₂ σc hc hx ε) ξ₀
       X Y Z U)
@@ -215,20 +240,22 @@ theorem ex_dealer_depends_crowd {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [m�
       PaperSpec.A.ex55Crowd
           (lawP2 P (tupleAt ν (leftLimProc X) (leftLimProc Y) Z U s)).margU.law
         (tupleAt ν (leftLimProc X) (leftLimProc Y) Z U s ω).2.2.2 = 0 := by
-  obtain ⟨⟨γ₁, hPS₁⟩, -, -⟩ := h₁
-  obtain ⟨⟨γ₂, hPS₂⟩, -, -⟩ := h₂
+  obtain ⟨⟨γ₁, hPS₁⟩, -, -⟩ := ex55_paperSolutionEnl hT hβ₁ hβ₂ hε h₁
+  obtain ⟨⟨γ₂, hPS₂⟩, -, -⟩ := ex55_paperSolutionEnl hT hβ₁ hβ₂ hε' h₂
   rw [ex55Coeffs_eq] at hPS₁ hPS₂
   exact PaperSolution.dealer_crowd_eq_zero_of_two hPS₁ hPS₂ (crossWitnessEnl D h𝒢₀ hind₀) hT hεε
 
 /-- Example 5.5, the solution depends on `ε`. -/
 theorem ex_dealer_depends : PaperSpec.A.ex_dealer_depends.{u, v, w} := by
   refine ⟨?_, ?_⟩
-  · intro Ω 𝒢₀ mΩ E _ ν _ _ P _ D h𝒢₀ hind₀ T hT β₁ β₂ σc hc hx ε ε' hεε ξ₀ X Y Z U h₁ h₂
-    exact ex_dealer_depends_crowd 𝒢₀ ν P D h𝒢₀ hind₀ T hT β₁ β₂ σc hc hx ε ε' hεε ξ₀ X Y Z U h₁ h₂
+  · intro Ω 𝒢₀ mΩ E _ ν _ _ P _ D h𝒢₀ hind₀ T hT β₁ β₂ hβ₁ hβ₂ σc hc hx ε ε' hε hε' hεε ξ₀ X Y
+      Z U h₁ h₂
+    exact ex_dealer_depends_crowd 𝒢₀ ν P D h𝒢₀ hind₀ T hT β₁ β₂ hβ₁ hβ₂ σc hc hx ε ε' hε hε'
+      hεε ξ₀ X Y Z U h₁ h₂
   intro Ω 𝒢₀ mΩ ϱ hϱ0 hϱ2 P _ D h𝒢₀ hind₀ T hT hc hx hcr hxr ε ε' hε hε' hεε
   rintro ⟨X, Y, Z, U, h₁, h₂⟩
   have hA := ex_dealer_depends_crowd 𝒢₀ (PaperSpec.A.ex55Marks ϱ) P D h𝒢₀ hind₀ T hT 1 (1 / 2)
-    _ hc hx ε ε' hεε 0 X Y Z U h₁ h₂
+    one_pos one_half_pos _ hc hx ε ε' hε hε' hεε 0 X Y Z U h₁ h₂
   -- one of the two strengths is positive
   obtain ⟨ε₀, hε₀, hsol⟩ : ∃ ε₀ : ℝ, 0 < ε₀ ∧ PaperSpec.A.Solution D h𝒢₀ hind₀ T
       (PaperSpec.A.ex55Coeffs (PaperSpec.A.ex55Marks ϱ) 1 (1 / 2)
@@ -238,7 +265,7 @@ theorem ex_dealer_depends : PaperSpec.A.ex_dealer_depends.{u, v, w} := by
     · exact ⟨ε', lt_of_le_of_ne hε' (fun h' => hεε (h.symm.trans h')), h₂⟩
   have hpos := (ex_dealer_active 𝒢₀ ϱ hϱ0 hϱ2 P D h𝒢₀ hind₀ T hT hc hx hcr hxr).2 ε₀ hε₀ X Y Z U
     hsol
-  obtain ⟨⟨γ, hPS⟩, hXl, hYl⟩ := hsol
+  obtain ⟨⟨γ, hPS⟩, hXl, hYl⟩ := ex55_paperSolutionEnl hT one_pos one_half_pos hε₀.le hsol
   rw [ex55Coeffs_eq] at hPS
   have hΛ := PaperSolution.ae_margU_law_eq_map hPS (crossWitnessEnl D h𝒢₀ hind₀)
     (hF0_enlJoint D h𝒢₀) (fun _ hs h0 => measurableSet_enlJoint_of_null D h𝒢₀ hs h0) hT hXl hYl

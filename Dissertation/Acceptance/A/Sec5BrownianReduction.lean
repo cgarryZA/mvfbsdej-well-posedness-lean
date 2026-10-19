@@ -180,133 +180,6 @@ variable {D : Driver.LevyDriver.{u, v, w} P d (0 : Measure E)}
   {ξ₀ : Fin n → Ω → ℝ} {X : Fin n → ℝ → Ω → ℝ} {Y : Fin m → ℝ → Ω → ℝ}
   {Z : Fin m → ℝ → Ω → Fin d → ℝ} {U : Fin m → ℝ → Ω → E → ℝ}
 
-/-- **At `ν = 0` a solution of (1.1) in `ℍ` is a solution of the Brownian system with a jump
-integrand that is `0` in `L²(dt ⊗ dP ⊗ ν)`**, over any filtration carrying the driver. -/
-theorem paperSolution_iff_brownian :
-    (∃ γ, PaperSolution D ℱ hℱW hℱN T C ξ₀ X Y Z U γ) ↔
-      (∀ k, Probability.MarkedPredictable ℱ (0 : Measure E) (fun ω s e => U k s ω e)
-        ∧ (∀ ω s e, s ∉ Set.Icc (0 : ℝ) T → U k s ω e = 0)
-        ∧ Poisson.Compensated.markedEnergy P (0 : Measure E) T (fun ω s e => U k s ω e) = 0)
-      ∧ BrownianPaperSolution D.W ℱ hℱW T C ξ₀ X Y Z := by
-  have hb := driftProc_nu_zero (P := P) T C X Y Z U
-  have hσ := diffusionProc_nu_zero (P := P) T C X Y Z U
-  have hf := driverProc_nu_zero (P := P) T C X Y Z U
-  constructor
-  · rintro ⟨γ, h⟩
-    refine ⟨fun k => ⟨h.U_pred k, h.U_vanish k, markedEnergy_nu_zero T _⟩, ?_⟩
-    exact
-    { X_adapted := h.X_adapted
-      X_rightCont := h.X_rightCont
-      X_leftLim := h.X_leftLim
-      X_sup := h.X_sup
-      Y_adapted := h.Y_adapted
-      Y_rightCont := h.Y_rightCont
-      Y_leftLim := h.Y_leftLim
-      Y_sup := h.Y_sup
-      Z_pred := h.Z_pred
-      Z_vanish := h.Z_vanish
-      Z_sq := h.Z_sq
-      b_meas := by rw [← hb]; exact h.b_meas
-      b_prog := by rw [← hb]; exact h.b_prog
-      b_sq := by rw [← hb]; exact h.b_sq
-      σ_meas := by rw [← hσ]; exact h.σ_meas
-      σ_prog := by rw [← hσ]; exact h.σ_prog
-      σ_sq := by rw [← hσ]; exact h.σ_sq
-      f_meas := by rw [← hf]; exact h.f_meas
-      f_prog := by rw [← hf]; exact h.f_prog
-      f_sq := by rw [← hf]; exact h.f_sq
-      fwd := fun i => by
-        obtain ⟨M, hM, hreg, heq⟩ := h.fwd i
-        refine ⟨M, fun t ht => ?_, hreg, ?_⟩
-        · filter_upwards [hM t ht] with ω hω
-          rw [hω]
-          exact congrFun (congrFun (brownianIntegral_congr D.W ℱ hℱW (congrFun hσ i) _ _ _ _ _ _)
-            t) ω
-        · have hN := ae_forall_Icc_poissonIntegral_nu_zero D.N ℱ hℱN
-            (fun ω' s e => jumpProc T γ i s ω' e) (h.γ_meas i) (h.γ_prog i)
-            (marked_sq_int_global_of_vanishing (fun ω s e hs => jumpProc_of_notMem hs i ω e)
-              (h.γ_sq i)) T
-          filter_upwards [heq, hN] with ω h1 h2 t ht
-          rw [h1 t ht, h2 t ht, add_zero, hb]
-      bwd := fun k => by
-        obtain ⟨M, hM, hreg, heq⟩ := h.bwd k
-        refine ⟨M, hM, hreg, ?_⟩
-        have hN := ae_forall_Icc_poissonIntegral_nu_zero D.N ℱ hℱN (fun ω' s e => U k s ω' e)
-          ((h.U_pred k).mono (Probability.markedPredictableSigma_le ℱ (0 : Measure E)) le_rfl)
-          (h.U_pred k).markedProgressivelyMeasurable
-          (marked_sq_int_global_of_vanishing (h.U_vanish k) (h.U_sq k)) T
-        filter_upwards [heq, hN] with ω h1 h2 t ht
-        rw [h1 t ht, h2 t ht, h2 T ⟨ht.1.trans ht.2, le_rfl⟩, sub_self, sub_zero, hf] }
-  · rintro ⟨hU, h⟩
-    have hγm : ∀ i, Measurable fun p : Ω × ℝ × E =>
-        jumpProc T (0 : Fin n → ℝ → Ω → E → ℝ) i p.2.1 p.1 p.2.2 := fun i => by
-      rw [jumpProc_zero]
-      exact measurable_const
-    have hγp : ∀ i, Probability.MarkedProgressivelyMeasurable ℱ fun ω s e =>
-        jumpProc T (0 : Fin n → ℝ → Ω → E → ℝ) i s ω e := fun i => by
-      rw [jumpProc_zero]
-      exact Poisson.Compensated.markedProgressivelyMeasurable_zero ℱ
-    have hγq : ∀ i, Poisson.Compensated.markedEnergy P (0 : Measure E) T
-        (fun ω s e => jumpProc T (0 : Fin n → ℝ → Ω → E → ℝ) i s ω e) ≠ ⊤ := fun i => by
-      rw [markedEnergy_nu_zero]
-      exact ENNReal.zero_ne_top
-    refine ⟨0, ?_⟩
-    exact
-    { X_adapted := h.X_adapted
-      X_rightCont := h.X_rightCont
-      X_leftLim := h.X_leftLim
-      X_sup := h.X_sup
-      Y_adapted := h.Y_adapted
-      Y_rightCont := h.Y_rightCont
-      Y_leftLim := h.Y_leftLim
-      Y_sup := h.Y_sup
-      Z_pred := h.Z_pred
-      Z_vanish := h.Z_vanish
-      Z_sq := h.Z_sq
-      U_pred := fun k => (hU k).1
-      U_vanish := fun k => (hU k).2.1
-      U_sq := fun k => by rw [(hU k).2.2]; exact ENNReal.zero_ne_top
-      b_meas := by rw [hb]; exact h.b_meas
-      b_prog := by rw [hb]; exact h.b_prog
-      b_sq := by rw [hb]; exact h.b_sq
-      σ_meas := by rw [hσ]; exact h.σ_meas
-      σ_prog := by rw [hσ]; exact h.σ_prog
-      σ_sq := by rw [hσ]; exact h.σ_sq
-      γ_meas := hγm
-      γ_prog := hγp
-      γ_sq := hγq
-      f_meas := by rw [hf]; exact h.f_meas
-      f_prog := by rw [hf]; exact h.f_prog
-      f_sq := by rw [hf]; exact h.f_sq
-      jump_rep := ae_of_all _ fun _ => ae_of_all _ fun _ => by
-        rw [Filter.EventuallyEq, ae_zero]
-        exact Filter.eventually_bot
-      fwd := fun i => by
-        obtain ⟨M, hM, hreg, heq⟩ := h.fwd i
-        refine ⟨M, fun t ht => ?_, hreg, ?_⟩
-        · filter_upwards [hM t ht] with ω hω
-          rw [hω]
-          exact congrFun (congrFun
-            (brownianIntegral_congr D.W ℱ hℱW (congrFun hσ i).symm _ _ _ _ _ _) t) ω
-        · have hN := ae_forall_Icc_poissonIntegral_nu_zero D.N ℱ hℱN
-            (fun ω' s e => jumpProc T (0 : Fin n → ℝ → Ω → E → ℝ) i s ω' e) (hγm i) (hγp i)
-            (marked_sq_int_global_of_vanishing (fun ω s e hs => jumpProc_of_notMem hs i ω e)
-              (hγq i)) T
-          filter_upwards [heq, hN] with ω h1 h2 t ht
-          rw [h2 t ht, add_zero, hb]
-          exact h1 t ht
-      bwd := fun k => by
-        obtain ⟨M, hM, hreg, heq⟩ := h.bwd k
-        refine ⟨M, hM, hreg, ?_⟩
-        have hN := ae_forall_Icc_poissonIntegral_nu_zero D.N ℱ hℱN (fun ω' s e => U k s ω' e)
-          (((hU k).1).mono (Probability.markedPredictableSigma_le ℱ (0 : Measure E)) le_rfl)
-          ((hU k).1).markedProgressivelyMeasurable
-          (marked_sq_int_global_of_vanishing (hU k).2.1
-            (by rw [(hU k).2.2]; exact ENNReal.zero_ne_top)) T
-        filter_upwards [heq, hN] with ω h1 h2 t ht
-        rw [h2 t ht, h2 T ⟨ht.1.trans ht.2, le_rfl⟩, sub_self, sub_zero, hf]
-        exact h1 t ht }
-
 /-- **At `ν = 0` a solution of (1.1) in `ℍ_weak` is a solution of the Brownian system in
 `ℍ_weak` with a jump integrand that is `0` in `L²(dt ⊗ dP ⊗ ν)`**, over any filtration carrying
 the driver. -/
@@ -437,15 +310,6 @@ theorem paperWeakSolutionInt_iff_brownian :
         rw [h2 t ht, h2 T ⟨ht.1.trans ht.2, le_rfl⟩, sub_self, sub_zero, hf]
         exact h1 t ht }
 
-/-- The Brownian system in `ℍ` over equal filtrations. -/
-theorem brownianPaperSolution_congr {W : Brownian.Multidim.MultidimBrownianMotion P d}
-    {ℱ₁ ℱ₂ : Filtration ℝ ‹MeasurableSpace Ω›} (h : ℱ₁ = ℱ₂)
-    (h₁ : ∀ j : Fin d, Brownian.IsBrownianFiltration (W.W j) ℱ₁)
-    (h₂ : ∀ j : Fin d, Brownian.IsBrownianFiltration (W.W j) ℱ₂) :
-    BrownianPaperSolution W ℱ₁ h₁ T C ξ₀ X Y Z ↔ BrownianPaperSolution W ℱ₂ h₂ T C ξ₀ X Y Z := by
-  subst h
-  rfl
-
 /-- The Brownian system in `ℍ_weak` over equal filtrations. -/
 theorem brownianPaperWeakSolution_congr {W : Brownian.Multidim.MultidimBrownianMotion P d}
     {ℱ₁ ℱ₂ : Filtration ℝ ‹MeasurableSpace Ω›} (h : ℱ₁ = ℱ₂)
@@ -468,30 +332,17 @@ theorem ex_brownian_reduction : PaperSpec.A.ex_brownian_reduction.{u, v, w} := b
         ↔ Probability.MarkedPredictable (enlBrownian 𝒢₀ D.W h𝒢₀) (0 : Measure E)
           (fun ω s e => U k s ω e) := fun U k => by
     rw [hF]
-  refine ⟨fun L => ?_, fun t L => ?_, fun t G β₁ β₂ => ?_, fun G α β₁ β₂ => ?_,
-    fun ξ₀ X Y Z U => ?_, fun ξ₀ X Y Z U => ?_⟩
-  · rw [hF]
-    exact assumption23_iff_brownian
-  · rw [hF]
-    exact lipInteriorAt_iff_brownian
-  · rw [hF]
-    exact mono27At_iff_brownian
-  · rw [hF]
-    exact assumption25_iff_brownian
-  · have hcore := paperSolution_iff_brownian (D := D)
-      (hℱW := isBrownianFiltration_enlJoint D h𝒢₀ hind₀)
-      (hℱN := isPoissonFiltration_enlJoint D h𝒢₀ hind₀) (T := T) (C := C)
-      (ξ₀ := fun i ω => ξ₀ ω i) (X := X) (Y := Y) (Z := Z) (U := U)
-    have hB := brownianPaperSolution_congr (W := D.W) (T := T) (C := C)
-      (ξ₀ := fun i ω => ξ₀ ω i) (X := X) (Y := Y) (Z := Z) hF
-      (isBrownianFiltration_enlJoint D h𝒢₀ hind₀) (isBrownianFiltration_enlBrownian D h𝒢₀ hind₀)
-    constructor
-    · rintro ⟨h1, h2, h3⟩
-      obtain ⟨hU, hBr⟩ := hcore.mp h1
-      exact ⟨fun k => ⟨(hMP U k).mp (hU k).1, (hU k).2⟩, hB.mp hBr, h2, h3⟩
-    · rintro ⟨hU, hBr, h2, h3⟩
-      exact ⟨hcore.mpr ⟨fun k => ⟨(hMP U k).mpr (hU k).1, (hU k).2⟩, hB.mpr hBr⟩, h2, h3⟩
-  · have hcore := paperWeakSolutionInt_iff_brownian (D := D)
+  have hweak : ∀ (ξ₀ : Ω → EuclideanSpace ℝ (Fin n)) (X : Fin n → ℝ → Ω → ℝ)
+      (Y : Fin m → ℝ → Ω → ℝ) (Z : Fin m → ℝ → Ω → Fin d → ℝ) (U : Fin m → ℝ → Ω → E → ℝ),
+      PaperSpec.A.WeakSolution D h𝒢₀ hind₀ T C ξ₀ X Y Z U
+        ↔ (∀ k, Probability.MarkedPredictable (enlBrownian 𝒢₀ D.W h𝒢₀) (0 : Measure E)
+              (fun ω s e => U k s ω e)
+            ∧ (∀ ω s e, s ∉ Set.Icc (0 : ℝ) T → U k s ω e = 0)
+            ∧ Poisson.Compensated.markedEnergy P (0 : Measure E) T (fun ω s e => U k s ω e) = 0)
+          ∧ PaperSpec.A.BrownianWeakSolution D.W h𝒢₀
+            (isBrownianFiltration_enlBrownian D h𝒢₀ hind₀) T C ξ₀ X Y Z := by
+    intro ξ₀ X Y Z U
+    have hcore := paperWeakSolutionInt_iff_brownian (D := D)
       (hℱW := isBrownianFiltration_enlJoint D h𝒢₀ hind₀)
       (hℱN := isPoissonFiltration_enlJoint D h𝒢₀ hind₀) (T := T) (C := C)
       (ξ₀ := fun i ω => ξ₀ ω i) (X := X) (Y := Y) (Z := Z) (U := U)
@@ -504,6 +355,22 @@ theorem ex_brownian_reduction : PaperSpec.A.ex_brownian_reduction.{u, v, w} := b
       exact ⟨fun k => ⟨(hMP U k).mp (hU k).1, (hU k).2⟩, hB.mp hBr, h2, h3⟩
     · rintro ⟨hU, hBr, h2, h3⟩
       exact ⟨hcore.mpr ⟨fun k => ⟨(hMP U k).mpr (hU k).1, (hU k).2⟩, hB.mpr hBr⟩, h2, h3⟩
+  refine ⟨fun L => ?_, fun t L => ?_, fun t G β₁ β₂ => ?_, fun G α β₁ β₂ => ?_,
+    fun ξ₀ X Y Z U => ?_, hweak⟩
+  · rw [hF]
+    exact assumption23_iff_brownian
+  · rw [hF]
+    exact lipInteriorAt_iff_brownian
+  · rw [hF]
+    exact mono27At_iff_brownian
+  · rw [hF]
+    exact assumption25_iff_brownian
+  · constructor
+    · rintro ⟨h1, h2, h3⟩
+      obtain ⟨hU, hBr⟩ := (hweak ξ₀ X Y Z U).mp h1
+      exact ⟨hU, hBr, h2, h3⟩
+    · rintro ⟨hU, hBr, h2, h3⟩
+      exact ⟨(hweak ξ₀ X Y Z U).mpr ⟨hU, hBr⟩, h2, h3⟩
 
 /-- **The hypotheses of the reduction of Example 5.2 can be met, at a system with a solution.**
 There is a probability space carrying a Lévy driver with `d = 1` and the intensity `ν = 0` on

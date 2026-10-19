@@ -504,33 +504,69 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 
 ## The solution notion of §3
 
-<!-- def-review: Dissertation.WellPosedness.System.PaperSolution 0dd47e8a79576bf20000000000000000 by=claude-author -->
-Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.PaperSolution--claude-reviewer--2026-10-17T15_06_15Z.md`).
-<!-- def-review: Dissertation.WellPosedness.System.PaperSolution 0dd47e8a79576bf20000000000000000 by=claude-reviewer -->
-<!-- def-review: Dissertation.WellPosedness.System.PaperSolution.mk 07f48ea7fa37d0240000000000000000 by=claude-author -->
-Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.PaperSolution.mk--claude-reviewer--2026-10-17T15_06_15Z.md`).
-<!-- def-review: Dissertation.WellPosedness.System.PaperSolution.mk 07f48ea7fa37d0240000000000000000 by=claude-reviewer -->
-<!-- def-review: Dissertation.WellPosedness.Existence.PaperSolutionEnl a03b8b3d0b5b5f35c55bf194cd675c69 by=claude-author -->
-Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Existence.PaperSolutionEnl--claude-reviewer--2026-10-17T15_04_37Z.md`).
-<!-- def-review: Dissertation.WellPosedness.Existence.PaperSolutionEnl a03b8b3d0b5b5f35c55bf194cd675c69 by=claude-reviewer -->
-<!-- def-review: Dissertation.PaperSpec.A.Solution bf42c97d226817ae1c792ec3d931211c by=claude-author -->
-Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.Solution--claude-reviewer--2026-10-17T16_01_12Z.md`).
-<!-- def-review: Dissertation.PaperSpec.A.Solution bf42c97d226817ae1c792ec3d931211c by=claude-reviewer -->
+Manuscript (§3): `S²(ℝʲ)` is the space of càdlàg adapted `V` with `𝔼 sup_{t ≤ T} |V_t|² < ∞`,
+`ℍ = S²(ℝⁿ) × S²(ℝᵐ) × H²_W × H²_N`, and "a solution of (1.1) is a tuple `Θ ∈ ℍ` satisfying both
+identities of (1.1) almost surely for every `t ∈ [0, T]`, with `h` evaluated at the predictable
+tuple `(Θ⁻_t, μ⁻_t)`"; `ℍ ⊂ ℍ_weak`.
+
+* `PaperSpec.A.Solution D h𝒢₀ hind₀ T C ξ₀ X Y Z U`: `WeakSolution` together with
+  `𝔼 sup_{t ≤ T} |X_t|² < ∞` and `𝔼 sup_{t ≤ T} |Y_t|² < ∞` (`esq` the squared Euclidean norm in
+  `[0, ∞]`, the supremum over `[0, T]` inside the lower integral). As `S² ⊂ L²_ad`
+  (`sec3_HH_inclusion`), this is the paper's notion: a tuple of `ℍ` satisfying (1.1), with the
+  representation choices of `WeakSolution`. The drift and driver integrals are pathwise, so no
+  square integrability of `b(·, Θ, μ)` or `f(·, Θ, μ)` is asked; that matters only outside
+  Assumptions 2.2–2.3 (Remark 3.4, the drift `t^{-1/2}`). Under (2.3) and Assumptions 2.2–2.3 the
+  notion coincides with the implementation's `PaperSolutionEnl`, which asks those processes to have
+  finite energy (`Solution.paperSolutionEnl`, `solution_of_paperSolutionEnl`).
+
+Verdict: faithful with representation choices.
+<!-- def-review: Dissertation.PaperSpec.A.Solution bf42c97d226817aeb326b2633e3dca6b by=claude-author -->
 
 ## The weak solution notion of §3 (`ℍ_weak`)
 
+Manuscript (§3, "Solution space"): `L²_ad(ℝʲ)` is the space of càdlàg adapted `V` with
+`𝔼 ∫_0^T |V_t|² dt < ∞`, `H²_W` that of the predictable `Z` with `𝔼 ∫_0^T |Z_t|²_F dt < ∞`,
+`H²_N` that of the predictable `L²(ν)`-valued `U` with `𝔼 ∫_0^T ‖U_t‖² dt < ∞`, and
+`ℍ_weak = L²_ad(ℝⁿ) × L²_ad(ℝᵐ) × H²_W × H²_N`. A tuple satisfies (1.1) when both identities hold
+almost surely for every `t ∈ [0, T]`, with `h` at the predictable tuple `(Θ⁻_t, μ⁻_t)`.
+
+* `System.PaperWeakTuple ℱ P ν T X Y Z U`: coordinates `X_i`, `Y_k` adapted at every `t ∈ [0, T]`,
+  every path right-continuous on `[0, T)`, almost every path with left limits on `(0, T]`, finite
+  `𝔼 ∫_0^T |·|² dt` (`energy`); `Z_{k,j}` predictable, `U_k` marked predictable (a jointly
+  measurable function of `(ω, s, e)`), each of finite energy and vanishing off `[0, T]`. This is
+  `ℍ_weak` coordinate by coordinate; the vanishing off `[0, T]` is a normalisation (the values off
+  the horizon do not enter (1.1)); the marked-predictable σ-algebra has no time-`0` sets, so
+  `U_0 = 0`, a `dt`-null time. `.mk` is its constructor.
 <!-- def-review: Dissertation.WellPosedness.System.PaperWeakTuple f8659178ce7276550000000000000000 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.PaperWeakTuple--claude-reviewer--2026-10-17T15_06_16Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.PaperWeakTuple f8659178ce7276550000000000000000 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.PaperWeakTuple.mk bd25e780ca59bc0f0000000000000000 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.PaperWeakTuple.mk--claude-reviewer--2026-10-17T15_06_16Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.PaperWeakTuple.mk bd25e780ca59bc0f0000000000000000 by=claude-reviewer -->
+* `System.PaperAdmissibleInt ℱ P T C X Y Z U γ`: the integrals of (1.1) along `Θ` exist. The
+  drift `b(s, Θ_s, μ_s)` and driver `f(s, Θ_s, μ_s)` (`driftProc`, `driverProc`, cut to `[0, T]`,
+  `μ_s = lawP2 P Θ_s`) are jointly and progressively measurable with almost every path integrable
+  on `[0, T]`, so the Lebesgue integrals of (1.1) exist; the diffusion `σ(s, Θ_s, μ_s)` is jointly
+  and progressively measurable with finite energy, and `γ` cut to `[0, T]` is jointly and marked
+  progressively measurable with finite marked energy, so the `L²` stochastic integrals of the
+  library exist; and `γ` represents `e ↦ h(s, Θ⁻_s, e, μ⁻_s)` in `L²(ν)` for almost every `s`,
+  almost surely (`jump_rep`). Choices: the stochastic integrals are `L²` ones (under Assumption 2.3
+  the coefficient processes along a tuple of `ℍ_weak` have finite energy, (4.2), so no tuple the
+  paper integrates is lost); `γ` is marked progressive rather than `𝒫 ⊗ ℰ`-measurable, which the
+  `L²` integral does not see; `μ_s` is the law at each time, the junk `δ₀` of `lawP2` only on the
+  `dt`-null set of times where `Θ_s ∉ L²`. `.mk` is its constructor.
 <!-- def-review: Dissertation.WellPosedness.System.PaperAdmissibleInt 6be52fa0d3961fab0000000000000000 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.PaperAdmissibleInt--claude-reviewer--2026-10-17T15_06_15Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.PaperAdmissibleInt 6be52fa0d3961fab0000000000000000 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.PaperAdmissibleInt.mk 9e454a38d7aa3b8f0000000000000000 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.PaperAdmissibleInt.mk--claude-reviewer--2026-10-17T15_06_15Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.PaperAdmissibleInt.mk 9e454a38d7aa3b8f0000000000000000 by=claude-reviewer -->
+* `System.PaperWeakSolutionInt D ℱ hℱW hℱN T C ξ₀ X Y Z U γ`: `PaperWeakTuple` and
+  `PaperAdmissibleInt`, `X_T ∈ L²` (so that `Law(X_T) ∈ P₂` and `g(X_T, Law X_T)` is the paper's),
+  and the two identities of (1.1) off one null set for every `t ∈ [0, T]`, the Brownian integrals
+  read through a version `M` with almost surely càdlàg paths (`fwd`, `bwd`). The paper's
+  "almost surely for every `t`" is equivalent, both sides being càdlàg (`sec3_one_null_set`).
+  `.mk` is its constructor; `Spec.PaperWeakSolutionIntEnl` is it over `enlJoint 𝒢₀ D h𝒢₀`.
 <!-- def-review: Dissertation.WellPosedness.System.PaperWeakSolutionInt 0dd47e8a79576bf20000000000000000 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.PaperWeakSolutionInt--claude-reviewer--2026-10-17T15_06_16Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.PaperWeakSolutionInt 0dd47e8a79576bf20000000000000000 by=claude-reviewer -->
@@ -540,6 +576,13 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 <!-- def-review: Dissertation.WellPosedness.Spec.PaperWeakSolutionIntEnl a03b8b3d0b5b5f35dc54c302d2c70a24 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.PaperWeakSolutionIntEnl--claude-reviewer--2026-10-17T12_28_46Z.md`).
 <!-- def-review: Dissertation.WellPosedness.Spec.PaperWeakSolutionIntEnl a03b8b3d0b5b5f35dc54c302d2c70a24 by=claude-reviewer -->
+* `PaperSpec.A.WeakSolution D h𝒢₀ hind₀ T C ξ₀ X Y Z U`: some `γ` with
+  `PaperWeakSolutionIntEnl`, and every path of `X` and of `Y` with left limits on `(0, T]` (with
+  the every-path right-continuity, every path càdlàg on `[0, T]`), over `enlJoint 𝒢₀ D h𝒢₀`, the
+  usual augmentation of `ℱ^{W,N}_t ∨ 𝒢₀` with `𝒢₀` independent of the driver (`hind₀`). This is
+  the paper's "`Θ ∈ ℍ_weak` satisfying (1.1)", with the choices above.
+
+Verdict: faithful with representation choices.
 <!-- def-review: Dissertation.PaperSpec.A.WeakSolution bf42c97d226817ae58445a0e39aa5d15 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.WeakSolution--claude-reviewer--2026-10-17T16_01_26Z.md`).
 <!-- def-review: Dissertation.PaperSpec.A.WeakSolution bf42c97d226817ae58445a0e39aa5d15 by=claude-reviewer -->
@@ -594,36 +637,63 @@ Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.
 
 ## The forced system (4.1) and `WP(λ)` of §4
 
+Manuscript (§4): for `λ ∈ [0, 1]` and a square-integrable forcing `q = (q^b, q^σ, q^h, q^f, q^g_T)`
+(`q^b, q^σ, q^f` progressively measurable and in `L²(Ω × [0, T])`, `q^h` predictable,
+`𝒫 ⊗ ℰ`-measurable and in `L²(dP ⊗ dt ⊗ ν)`, `q^g_T ∈ L²(Ω, ℱ_T)`), the system (4.1) is (1.1)
+with every coefficient multiplied by `λ` and the forcing added; `WP(λ)`: (4.1) has a unique
+solution in `ℍ` for every such forcing.
+
+* `System.Forcing ℱ P ν T qb qσ qh qf qg`: `q^b, q^σ, q^f` jointly and progressively measurable,
+  `q^h` jointly and marked progressively measurable, each vanishing off `[0, T]` and of finite
+  (marked) energy; `q^g` strongly `ℱ_T`-measurable and in `L²`. The vanishing off `[0, T]` is a
+  normalisation (extension by `0`); `.mk` is its constructor.
 <!-- def-review: Dissertation.WellPosedness.System.Forcing a3ba59f5823fbe6a0000000000000000 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.Forcing--claude-reviewer--2026-10-17T15_50_57Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.Forcing a3ba59f5823fbe6a0000000000000000 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.Forcing.mk de3e0249fbf732c50000000000000000 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.Forcing.mk--claude-reviewer--2026-10-17T16_02_38Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.Forcing.mk de3e0249fbf732c50000000000000000 by=claude-reviewer -->
+* `System.PredForcing`: a `Forcing` whose `q^h` is marked predictable, the paper's `𝒫 ⊗ ℰ`
+  class; the marked-predictable σ-algebra has no time-`0` sets, so `q^h_0 = 0`, a `dt`-null time
+  that does not enter (4.1). `.mk` is its constructor.
 <!-- def-review: Dissertation.WellPosedness.System.PredForcing 467cf5000b974ed10000000000000000 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.PredForcing--claude-reviewer--2026-10-17T15_06_16Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.PredForcing 467cf5000b974ed10000000000000000 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.PredForcing.mk 72571516b42bad8d0000000000000000 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.PredForcing.mk--claude-reviewer--2026-10-17T15_06_17Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.PredForcing.mk 72571516b42bad8d0000000000000000 by=claude-reviewer -->
-<!-- def-review: Dissertation.WellPosedness.System.PaperSolutionForced 879f49cf215ebc960000000000000000 by=claude-author -->
-Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.PaperSolutionForced--claude-reviewer--2026-10-17T15_06_15Z.md`).
-<!-- def-review: Dissertation.WellPosedness.System.PaperSolutionForced 879f49cf215ebc960000000000000000 by=claude-reviewer -->
-<!-- def-review: Dissertation.WellPosedness.System.PaperSolutionForced.mk f826ed5f5757258c0000000000000000 by=claude-author -->
-Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.PaperSolutionForced.mk--claude-reviewer--2026-10-17T15_06_15Z.md`).
-<!-- def-review: Dissertation.WellPosedness.System.PaperSolutionForced.mk f826ed5f5757258c0000000000000000 by=claude-reviewer -->
+* `System.PaperWeakSolutionForcedInt D ℱ hℱW hℱN T λ C ξ₀ q X Y Z U γ`: `PaperWeakTuple`; `q` a
+  `Forcing`; the forced drift and driver `λ b + q^b`, `λ f + q^f` jointly and progressively
+  measurable with almost every path integrable on `[0, T]`; the forced diffusion `λ σ + q^σ` and
+  jump integrand `λ γ + q^h` jointly and (marked) progressively measurable with finite energy;
+  `γ` representing `h(s, Θ⁻_s, ·, μ⁻_s)` as in `PaperAdmissibleInt`; `X_T ∈ L²`; and the two
+  identities of (4.1) off one null set for every `t ∈ [0, T]`, with càdlàg versions of the
+  Brownian integrals. Each forced integrand `λ ψ + q^ψ` is integrated as one process, which is the
+  sum of the two printed integrals since `q` is square integrable. `.mk` is its constructor.
 <!-- def-review: Dissertation.WellPosedness.System.PaperWeakSolutionForcedInt 879f49cf215ebc960000000000000000 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.PaperWeakSolutionForcedInt--claude-reviewer--2026-10-17T15_06_16Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.PaperWeakSolutionForcedInt 879f49cf215ebc960000000000000000 by=claude-reviewer -->
 <!-- def-review: Dissertation.WellPosedness.System.PaperWeakSolutionForcedInt.mk abbc9a6411f109000000000000000000 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.PaperWeakSolutionForcedInt.mk--claude-reviewer--2026-10-17T15_06_16Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.PaperWeakSolutionForcedInt.mk abbc9a6411f109000000000000000000 by=claude-reviewer -->
-<!-- def-review: Dissertation.PaperSpec.A.ForcedSolution 6d8e8f373c5e26da1ce1add2f80b1ed8 by=claude-author -->
-Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ForcedSolution--claude-reviewer--2026-10-17T16_02_16Z.md`).
-<!-- def-review: Dissertation.PaperSpec.A.ForcedSolution 6d8e8f373c5e26da1ce1add2f80b1ed8 by=claude-reviewer -->
+* `PaperSpec.A.WeakForcedSolution`: some `γ` with `PaperWeakSolutionForcedInt` over
+  `enlJoint 𝒢₀ D h𝒢₀`, and every path of `X` and of `Y` with left limits on `(0, T]`: (4.1) in
+  `ℍ_weak` with `X_T ∈ L²`, the class of Lemma 4.3.
 <!-- def-review: Dissertation.PaperSpec.A.WeakForcedSolution 6d8e8f373c5e26dad42e89a4945d5642 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.WeakForcedSolution--claude-reviewer--2026-10-17T16_02_24Z.md`).
 <!-- def-review: Dissertation.PaperSpec.A.WeakForcedSolution 6d8e8f373c5e26dad42e89a4945d5642 by=claude-reviewer -->
+* `PaperSpec.A.ForcedSolution`: `WeakForcedSolution` together with `𝔼 sup_{t ≤ T} |X_t|² < ∞`
+  and `𝔼 sup_{t ≤ T} |Y_t|² < ∞`: a tuple of `ℍ` satisfying (4.1), as `Solution` is for (1.1). The
+  forced drift and driver integrals are pathwise; under (2.3) and Assumptions 2.2–2.3 the notion
+  coincides with the implementation's `PaperSolutionForced`, which asks them finite energy
+  (`ForcedSolution.paperSolutionForced`, `forcedSolution_of_paperSolutionForced`).
+<!-- def-review: Dissertation.PaperSpec.A.ForcedSolution 6d8e8f373c5e26da320d4d9860023747 by=claude-author -->
+* `PaperSpec.A.WP D h𝒢₀ hind₀ T λ C ξ₀`: for every `PredForcing` `q` over `enlJoint 𝒢₀ D h𝒢₀`,
+  a `ForcedSolution` exists, and any two have `X` and `Y` indistinguishable on `[0, T]` and the
+  energies of the differences of `Z` and of `U` equal to zero: uniqueness in `ℍ` up to its
+  identifications.
+
+Verdict: faithful with representation choices.
 <!-- def-review: Dissertation.PaperSpec.A.WP 4c83187e460bc5017fcd19712e7de906 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.WP--claude-reviewer--2026-10-17T16_01_36Z.md`).
 <!-- def-review: Dissertation.PaperSpec.A.WP 4c83187e460bc5017fcd19712e7de906 by=claude-reviewer -->
@@ -926,44 +996,27 @@ Review by claude-reviewer: faithful with representation choices (report `reports
   <!-- def-review: Dissertation.WellPosedness.Spec.BrownianAssumption25 0d4cac9166e43d4d18e17cffed3382aa by=claude-author -->
   Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.BrownianAssumption25--claude-reviewer--2026-10-17T16_00_55Z.md`).
   <!-- def-review: Dissertation.WellPosedness.Spec.BrownianAssumption25 0d4cac9166e43d4d18e17cffed3382aa by=claude-reviewer -->
-* `WellPosedness.Spec.BrownianPaperSolution W ℱ hℱW T C ξ₀ X Y Z`, for a `d`-dimensional Brownian
-  motion `W` whose coordinates are Brownian motions for `ℱ`: the fields of `PaperSolution` with
-  `D.W` replaced by `W`, the fields `U_pred`, `U_vanish`, `U_sq`, `γ_meas`, `γ_prog`, `γ_sq`,
-  `jump_rep` deleted, every coefficient process taken along the zero jump integrand
-  (`driftProc P T C X Y Z 0`, `diffusionProc …`, `driverProc …`), and the compensated Poisson
-  integrals deleted from `fwd` (`X_t = ξ₀ + ∫_{[0, t]} b + M_t`) and from `bwd`
-  (`Y_t = terminalVal + ∫_{[t, T]} f − (M_T − M_t)`), on one set of full measure for all
-  `t ∈ [0, T]`, with `M` an almost surely càdlàg version of the multidimensional Brownian
-  integral for `ℱ`. The remaining fields are those of `PaperSolution` verbatim.
-  `BrownianPaperSolution.mk` is its constructor.
-  <!-- def-review: Dissertation.WellPosedness.Spec.BrownianPaperSolution 022ed18f831241360000000000000000 by=claude-author -->
-  Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.BrownianPaperSolution--claude-reviewer--2026-10-17T16_01_01Z.md`).
-  <!-- def-review: Dissertation.WellPosedness.Spec.BrownianPaperSolution 022ed18f831241360000000000000000 by=claude-reviewer -->
-  <!-- def-review: Dissertation.WellPosedness.Spec.BrownianPaperSolution.mk d9e9d3d34768f9080000000000000000 by=claude-author -->
-  Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.BrownianPaperSolution.mk--claude-reviewer--2026-10-17T16_02_47Z.md`).
-  <!-- def-review: Dissertation.WellPosedness.Spec.BrownianPaperSolution.mk d9e9d3d34768f9080000000000000000 by=claude-reviewer -->
-* `WellPosedness.Spec.BrownianPaperWeakSolution W ℱ hℱW T C ξ₀ X Y Z`: the fields of
-  `PaperWeakSolutionInt` (with those of `PaperWeakTuple` and `PaperAdmissibleInt`) with the same
-  deletions and replacements: `X, Y` adapted, right-continuous on `[0, T)`, left limits a.s., of
-  finite energy; `Z` predictable, vanishing off `[0, T]`, of finite energy; the drift and driver
-  processes along `(X, Y, Z, 0)` jointly and progressively measurable with a.s. integrable paths,
-  the diffusion process jointly and progressively measurable with finite energy; `X_T ∈ L²`; the
-  two identities without the Poisson integrals. `BrownianPaperWeakSolution.mk` is its
-  constructor.
+* `WellPosedness.Spec.BrownianPaperWeakSolution W ℱ hℱW T C ξ₀ X Y Z`, for a `d`-dimensional
+  Brownian motion `W` whose coordinates are Brownian motions for `ℱ`: the fields of
+  `PaperWeakSolutionInt` (with those of `PaperWeakTuple` and `PaperAdmissibleInt`) with `D.W`
+  replaced by `W`, the fields of `U` and of `γ` and `jump_rep` deleted, every coefficient process
+  taken along the zero jump integrand (`driftProc P T C X Y Z 0`, …) and the compensated Poisson
+  integrals deleted from the identities: `X, Y` adapted, right-continuous on `[0, T)`, left
+  limits a.s., of finite energy; `Z` predictable, vanishing off `[0, T]`, of finite energy; the
+  drift and driver processes along `(X, Y, Z, 0)` jointly and progressively measurable with a.s.
+  integrable paths, the diffusion process jointly and progressively measurable with finite energy;
+  `X_T ∈ L²`; the two identities without the Poisson integrals. `BrownianPaperWeakSolution.mk` is
+  its constructor.
   <!-- def-review: Dissertation.WellPosedness.Spec.BrownianPaperWeakSolution 022ed18f831241360000000000000000 by=claude-author -->
   Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.BrownianPaperWeakSolution--claude-reviewer--2026-10-17T16_01_05Z.md`).
   <!-- def-review: Dissertation.WellPosedness.Spec.BrownianPaperWeakSolution 022ed18f831241360000000000000000 by=claude-reviewer -->
   <!-- def-review: Dissertation.WellPosedness.Spec.BrownianPaperWeakSolution.mk 71b4d5da999e7ef30000000000000000 by=claude-author -->
   Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.BrownianPaperWeakSolution.mk--claude-reviewer--2026-10-17T16_02_51Z.md`).
   <!-- def-review: Dissertation.WellPosedness.Spec.BrownianPaperWeakSolution.mk 71b4d5da999e7ef30000000000000000 by=claude-reviewer -->
-* `PaperSpec.A.BrownianSolution W h𝒢₀ hW T C ξ₀ X Y Z`:
-  `BrownianPaperSolution W (enlBrownian 𝒢₀ W h𝒢₀) hW T C (fun i ω => ξ₀ ω i) X Y Z` together with
-  left limits of every path of `X` and of `Y` on `(0, T]`: `PaperSpec.A.Solution` with
-  `PaperSolutionEnl` replaced by the Brownian system over the Brownian filtration and the
-  existential over `γ` gone.
-  <!-- def-review: Dissertation.PaperSpec.A.BrownianSolution ad5f899adde540f54a42ffaf2a183700 by=claude-author -->
-  Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.BrownianSolution--claude-reviewer--2026-10-17T16_01_53Z.md`).
-  <!-- def-review: Dissertation.PaperSpec.A.BrownianSolution ad5f899adde540f54a42ffaf2a183700 by=claude-reviewer -->
+* `PaperSpec.A.BrownianSolution W h𝒢₀ hW T C ξ₀ X Y Z`: `BrownianWeakSolution` together with
+  `𝔼 sup_{t ≤ T} |X_t|² < ∞` and `𝔼 sup_{t ≤ T} |Y_t|² < ∞`: `PaperSpec.A.Solution` with the jump
+  channel deleted, over the Brownian filtration.
+  <!-- def-review: Dissertation.PaperSpec.A.BrownianSolution ad5f899adde540f57d4d98c5e1e36528 by=claude-author -->
 * `PaperSpec.A.BrownianWeakSolution W h𝒢₀ hW T C ξ₀ X Y Z`: the same with
   `BrownianPaperWeakSolution`: `PaperSpec.A.WeakSolution` with the jump channel deleted.
   <!-- def-review: Dissertation.PaperSpec.A.BrownianWeakSolution ad5f899adde540f582430c5fbb5efc55 by=claude-author -->

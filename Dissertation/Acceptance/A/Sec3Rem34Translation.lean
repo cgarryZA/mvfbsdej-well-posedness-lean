@@ -772,7 +772,7 @@ theorem rem_uniq_translation : PaperSpec.A.rem_uniq_translation.{u, v, w} := by
   obtain ⟨X, Y, Z, U, hS⟩ :=
     (thm_cwp 𝒢₀ ν n m d P D h𝒢₀ hind₀ hn hm hd T hT L α β₁ β₂ G (translatedCoeffs C r T) ξ₀ hJt
       h22t h23t hG h25t).1
-  obtain ⟨⟨γ, hγ⟩, hXl, hYl⟩ := hS
+  obtain ⟨⟨γ, hγ⟩, hXl, hYl⟩ := Solution.paperSolutionEnl hT.le hJt h22t.origin h23t hS
   have hci : ∀ i, IntegrableOn (fun s => c s i) (Set.Icc (0 : ℝ) T) := fun i =>
     IntegrableOn.congr_fun ((integrableOn_inv_sqrt T).mul_const (e i))
       (fun s _ => by simp [hc_def]) measurableSet_Icc
@@ -787,7 +787,7 @@ theorem rem_uniq_translation : PaperSpec.A.rem_uniq_translation.{u, v, w} := by
     simp [hr_def]
   refine ⟨hJ', assumption23_addDrift h23 c, assumption25_addDrift h25 c,
     fun ξ => not_assumption22_addDrift_inv_sqrt hT he h22.origin ξ, hJt, h22t, h23t, h25t,
-    X, Y, Z, U, ⟨⟨γ, hγ⟩, hXl, hYl⟩, ?_, ?_, hγ.Y_sup⟩
+    X, Y, Z, U, hS, ⟨?_, ?_, hγ.Y_sup⟩⟩
   · rw [hX']
     refine ⟨⟨γ, hW⟩, fun i ω t ht => ?_, hYl⟩
     obtain ⟨l, hl⟩ := hXl i ω t ht

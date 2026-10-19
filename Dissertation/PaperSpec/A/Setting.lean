@@ -34,27 +34,13 @@ open scoped Topology
 namespace Dissertation.PaperSpec.A
 
 open Dissertation.WellPosedness.System Dissertation.WellPosedness.Existence
+  Dissertation.WellPosedness.Stability
 
 universe u v w
 
 variable {Ω : Type u} {𝒢₀ : MeasurableSpace Ω} [mΩ : MeasurableSpace Ω] {E : Type v}
   [MeasurableSpace E] {ν : Measure E} [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
   {n m d : ℕ} {P : Measure Ω} [IsProbabilityMeasure P]
-
-/-- `Θ = (X, Y, Z, U)` solves (1.1) with coefficients `C` and initial datum `ξ₀` in the space `ℍ`,
-over the usual augmentation of the filtration of the driver `D` enlarged at time `0` by `𝒢₀`:
-every path of `X` and of `Y` is càdlàg on `[0, T]`, both are adapted with
-`𝔼 sup_{t ≤ T} |·|² < ∞`, `Z` and `U` are predictable with finite energy and vanish off `[0, T]`,
-and both identities of (1.1) hold almost surely for every `t ∈ [0, T]`, the Poisson integral read
-through a representative `γ` of `h(t, Θ⁻_t, ·, μ⁻_t)`. -/
-def Solution (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
-    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P) (T : ℝ) (C : Coeffs ν n m d)
-    (ξ₀ : Ω → EuclideanSpace ℝ (Fin n)) (X : Fin n → ℝ → Ω → ℝ) (Y : Fin m → ℝ → Ω → ℝ)
-    (Z : Fin m → ℝ → Ω → Fin d → ℝ) (U : Fin m → ℝ → Ω → E → ℝ) : Prop :=
-  (∃ γ : Fin n → ℝ → Ω → E → ℝ,
-      PaperSolutionEnl D h𝒢₀ hind₀ T C (fun i ω => ξ₀ ω i) X Y Z U γ)
-    ∧ (∀ i ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ l : ℝ, Tendsto (fun s => X i s ω) (𝓝[<] t) (𝓝 l))
-    ∧ ∀ k ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ l : ℝ, Tendsto (fun s => Y k s ω) (𝓝[<] t) (𝓝 l)
 
 /-- `Θ = (X, Y, Z, U)` satisfies (1.1) with coefficients `C` and initial datum `ξ₀` in the space
 `ℍ_weak`, over the usual augmentation of the filtration of the driver `D` enlarged at time `0` by
@@ -74,31 +60,27 @@ def WeakSolution (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢�
     ∧ (∀ i ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ l : ℝ, Tendsto (fun s => X i s ω) (𝓝[<] t) (𝓝 l))
     ∧ ∀ k ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ l : ℝ, Tendsto (fun s => Y k s ω) (𝓝[<] t) (𝓝 l)
 
-/-- `Θ = (X, Y, Z, U)` solves the `λ`-forced system (4.1) with coefficients `C`, initial datum
-`ξ₀` and forcing `q = (q^b, q^σ, q^h, q^f, q^g_T)` in the space `ℍ`, over the usual augmentation
-of the filtration of the driver `D` enlarged at time `0` by `𝒢₀`: every path of `X` and of `Y` is
-càdlàg on `[0, T]`, both are adapted with `𝔼 sup_{t ≤ T} |·|² < ∞`, `Z` and `U` are predictable
-with finite energy and vanish off `[0, T]`, and both identities of (4.1) hold almost surely for
-every `t ∈ [0, T]`, the Poisson integral of `λ h(t, Θ⁻_t, ·, μ⁻_t) + q^h_t` read through a
-representative `γ` of `h(t, Θ⁻_t, ·, μ⁻_t)`. -/
-def ForcedSolution (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
-    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P) (T lam : ℝ) (C : Coeffs ν n m d)
-    (ξ₀ : Ω → EuclideanSpace ℝ (Fin n)) (qb : Fin n → Ω → ℝ → ℝ)
-    (qσ : Fin n → ℝ → Ω → Fin d → ℝ) (qh : Fin n → ℝ → Ω → E → ℝ) (qf : Fin m → Ω → ℝ → ℝ)
-    (qg : Fin m → Ω → ℝ) (X : Fin n → ℝ → Ω → ℝ) (Y : Fin m → ℝ → Ω → ℝ)
+/-- `Θ = (X, Y, Z, U)` solves (1.1) with coefficients `C` and initial datum `ξ₀` in the space `ℍ`,
+over the usual augmentation of the filtration of the driver `D` enlarged at time `0` by `𝒢₀`:
+`Θ` satisfies (1.1) in `ℍ_weak` (`WeakSolution`), and `𝔼 sup_{t ≤ T} |X_t|² < ∞`,
+`𝔼 sup_{t ≤ T} |Y_t|² < ∞`. -/
+def Solution (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
+    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P) (T : ℝ) (C : Coeffs ν n m d)
+    (ξ₀ : Ω → EuclideanSpace ℝ (Fin n)) (X : Fin n → ℝ → Ω → ℝ) (Y : Fin m → ℝ → Ω → ℝ)
     (Z : Fin m → ℝ → Ω → Fin d → ℝ) (U : Fin m → ℝ → Ω → E → ℝ) : Prop :=
-  (∃ γ : Fin n → ℝ → Ω → E → ℝ,
-      PaperSolutionForced D (Dissertation.WellPosedness.Enlarged.enlJoint 𝒢₀ D h𝒢₀)
-        (Dissertation.WellPosedness.Enlarged.isBrownianFiltration_enlJoint D h𝒢₀ hind₀)
-        (Dissertation.WellPosedness.Enlarged.isPoissonFiltration_enlJoint D h𝒢₀ hind₀) T lam C
-        (fun i ω => ξ₀ ω i) qb qσ qh qf qg X Y Z U γ)
-    ∧ (∀ i ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ l : ℝ, Tendsto (fun s => X i s ω) (𝓝[<] t) (𝓝 l))
-    ∧ ∀ k ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ l : ℝ, Tendsto (fun s => Y k s ω) (𝓝[<] t) (𝓝 l)
+  WeakSolution D h𝒢₀ hind₀ T C ξ₀ X Y Z U
+    ∧ ∫⁻ ω, (⨆ t ∈ Set.Icc (0 : ℝ) T, esq (fun i => X i t ω)) ∂P < ⊤
+    ∧ ∫⁻ ω, (⨆ t ∈ Set.Icc (0 : ℝ) T, esq (fun k => Y k t ω)) ∂P < ⊤
 
 /-- `Θ = (X, Y, Z, U)` solves the `λ`-forced system (4.1) with coefficients `C`, initial datum
-`ξ₀` and forcing `q` in the space `ℍ_weak`, with `X_T ∈ L²`: as `ForcedSolution`, with
-`𝔼 ∫_0^T |·|² dt < ∞` for `X, Y` in place of the `S²` bounds and the drift and driver integrals
-taken pathwise. -/
+`ξ₀` and forcing `q = (q^b, q^σ, q^h, q^f, q^g_T)` in the space `ℍ_weak`, with `X_T ∈ L²`, over
+the usual augmentation of the filtration of the driver `D` enlarged at time `0` by `𝒢₀`: every
+path of `X` and of `Y` is càdlàg on `[0, T]`, both are adapted with `𝔼 ∫_0^T |·|² dt < ∞`, `Z` and
+`U` are predictable with finite energy and vanish off `[0, T]`, `q` is a square-integrable
+forcing, the integrals of (4.1) along `Θ` exist (the drift and driver integrals pathwise, the
+stochastic integrals in `L²`), and both identities of (4.1) hold almost surely for every
+`t ∈ [0, T]`, the Poisson integral of `λ h(t, Θ⁻_t, ·, μ⁻_t) + q^h_t` read through a
+representative `γ` of `h(t, Θ⁻_t, ·, μ⁻_t)`. -/
 def WeakForcedSolution (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
     (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P) (T lam : ℝ) (C : Coeffs ν n m d)
     (ξ₀ : Ω → EuclideanSpace ℝ (Fin n)) (qb : Fin n → Ω → ℝ → ℝ)
@@ -112,6 +94,20 @@ def WeakForcedSolution (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h
         (fun i ω => ξ₀ ω i) qb qσ qh qf qg X Y Z U γ)
     ∧ (∀ i ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ l : ℝ, Tendsto (fun s => X i s ω) (𝓝[<] t) (𝓝 l))
     ∧ ∀ k ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ l : ℝ, Tendsto (fun s => Y k s ω) (𝓝[<] t) (𝓝 l)
+
+/-- `Θ = (X, Y, Z, U)` solves the `λ`-forced system (4.1) with coefficients `C`, initial datum
+`ξ₀` and forcing `q` in the space `ℍ`, over the usual augmentation of the filtration of the driver
+`D` enlarged at time `0` by `𝒢₀`: `Θ` satisfies (4.1) in `ℍ_weak` (`WeakForcedSolution`), and
+`𝔼 sup_{t ≤ T} |X_t|² < ∞`, `𝔼 sup_{t ≤ T} |Y_t|² < ∞`. -/
+def ForcedSolution (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
+    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P) (T lam : ℝ) (C : Coeffs ν n m d)
+    (ξ₀ : Ω → EuclideanSpace ℝ (Fin n)) (qb : Fin n → Ω → ℝ → ℝ)
+    (qσ : Fin n → ℝ → Ω → Fin d → ℝ) (qh : Fin n → ℝ → Ω → E → ℝ) (qf : Fin m → Ω → ℝ → ℝ)
+    (qg : Fin m → Ω → ℝ) (X : Fin n → ℝ → Ω → ℝ) (Y : Fin m → ℝ → Ω → ℝ)
+    (Z : Fin m → ℝ → Ω → Fin d → ℝ) (U : Fin m → ℝ → Ω → E → ℝ) : Prop :=
+  WeakForcedSolution D h𝒢₀ hind₀ T lam C ξ₀ qb qσ qh qf qg X Y Z U
+    ∧ ∫⁻ ω, (⨆ t ∈ Set.Icc (0 : ℝ) T, esq (fun i => X i t ω)) ∂P < ⊤
+    ∧ ∫⁻ ω, (⨆ t ∈ Set.Icc (0 : ℝ) T, esq (fun k => Y k t ω)) ∂P < ⊤
 
 /-- `WP(λ)` of §4: for the coefficients `C` and the initial datum `ξ₀`, the `λ`-forced system
 (4.1) has a unique solution in `ℍ` for every forcing `q` — `q^b, q^σ, q^f` progressively
