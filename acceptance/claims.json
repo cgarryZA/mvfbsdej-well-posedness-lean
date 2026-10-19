@@ -243,7 +243,7 @@
    "source_sha256": "20e41bdfd1e0996ebf1050ab15273a783631b8c503a6635284298cc387eea4f4",
    "scope": "formal",
    "scope_note": "the last sentence, on domination-monotonicity results for Lévy-driven systems without mean-field dependence, is a statement about cited work",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "ν ≠ 0 gives L²(ν) ≠ {0}; ν = 0 gives L²(ν) = {0}",
@@ -288,7 +288,7 @@
    "source_sha256": "f098128a01b0fc8e2f2ddbb98e80be357bf141638ca4f28a2161fd38cb98a896",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "a bound with the constants β̄₁, β̄₂ is (2.12) with the constants β̄ᵢ − c and margin c, for 0 < c < min{β̄₁, β̄₂}",
@@ -384,7 +384,7 @@
    "source_sha256": "867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798",
    "scope": "formal",
    "scope_note": "\"the proof of Theorem 3.5 uses Assumption 2.2\" describes a proof and is not a separate claim",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "Assumption 2.2 imposed, each tuple of ℍ_weak satisfying (1.1) lies in ℍ (Remark 3.2)",
@@ -621,7 +621,7 @@
    "source_sha256": "1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633",
    "scope": "formal",
    "scope_note": "the derivation of (1.1) from the control problem by the stochastic maximum principle for jump diffusions is cited work (Tang and Li) and is not stated; the clauses state the system and its properties; the attribution of (ii) to Example 3.1 of Li and Min is a statement about cited work",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "(i) the Hamiltonian and its minimiser",
@@ -741,7 +741,7 @@
    "source_sha256": "6ba8e9a8bd4a3a1d756a510bfc8571612af5e4c854e3bd45a28c1b5172afaaad",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "the expectation-functional class",
@@ -774,7 +774,7 @@
    "source_sha256": "4176ca3d18b96f9c52b91a364a4ddab7da82df540496d303cc1ccabf2366be8b",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "the law statistics are W₂-Lipschitz, with the constants Lip(𝔮), Lip(𝔮̃), Lip(𝔮̂), L_Q",
@@ -831,7 +831,7 @@
    "source_sha256": "08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b",
    "scope": "formal",
    "scope_note": "the dealer-market reading (requests for quotes, valuation curves, routing, quotes affine in the curve, the uncontrolled exposure change at an event) is modelling and is not stated; the finite-player inspiration (Cont and Xiong) is a statement about cited work",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "the potential: even, convex, its gradient, bounded and 1-Lipschitz",
@@ -960,7 +960,7 @@
    "source_sha256": "c2b143b44403046035d85f7e9d730c306f0b5cb52b01f72f3a72ded8e56980b7",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "the W₂ term is dominated by the synchronous coupling bound (2.8)",
@@ -987,7 +987,7 @@
    "source_sha256": "2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "Example 5.4: the full-tuple law perturbation satisfies (3.4) with c_pert = ‖G‖ L_p",
@@ -1434,7 +1434,7 @@
    "source_sha256": "10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "a margin in (2.13) makes every channel strictly dissipative",
@@ -1640,7 +1640,7 @@
    "source_sha256": "85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "Example 5.1(i) meets every assumption at arbitrary activity",
@@ -1749,7 +1749,7 @@
    "source_sha256": "c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "the stability estimate (Theorem 3.1)",
