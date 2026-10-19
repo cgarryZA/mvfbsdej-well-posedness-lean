@@ -4098,26 +4098,66 @@
    "status": "out of scope: part-of"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_dX",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_dX"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.15): each coordinate of δX satisfies δX_t = δξ₀ + ∫_0^t (λ δb + q^b) ds + ∫_0^t (λ δσ + q^σ) dW + ∫_0^t ∫_E (λ δh + q^h) Ñ(ds, de) almost surely at every t ∈ [0, T], q = δq, δh at the predictable tuples; the jump integral is that of every representative of the integrand, and one exists",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_dX",
+     "spec_hash": "ed839d34f480cba17f8ea34acd5ecf0b",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:dX",
    "kind": "embedded-in-proof",
    "number": "(4.15)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_dY",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_dY"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.16): each coordinate of (δY, δZ, δU) satisfies δY_T = λ δg_T + q^g_T and δY_t = λ δg_T + q^g_T + ∫_t^T (λ δf + q^f) ds − ∫_t^T δZ dW − ∫_t^T ∫_E δU Ñ(ds, de) almost surely at every t ∈ [0, T], q = δq",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_dY",
+     "spec_hash": "ed839d34f480cba1cc37dd9a0d2b35ad",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:dY",
    "kind": "embedded-in-proof",
    "number": "(4.16)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [],
@@ -4142,48 +4182,128 @@
    "status": "out of scope: proof-step"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_Gid",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_Gid"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.19): 𝔼⟨G δX_T, δY_T⟩ − 𝔼⟨G δξ₀, δY_0⟩ = 𝔼 ∫_0^T [⟨λ δb + q^b, Gᵀ δY⟩ + ⟨λ δσ + q^σ, Gᵀ δZ⟩_F + ∫_E ⟨λ δh + q^h, Gᵀ δU⟩ dν + ⟨−λ δf − q^f, G δX⟩] dt, the three expectations existing, δh at the predictable tuples",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_Gid",
+     "spec_hash": "ed839d34f480cba187a9b1634afe69c9",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:Gid",
    "kind": "embedded-in-proof",
    "number": "(4.19)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_intmono",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_intmono"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.20) at almost every t: λ 𝔼[⟨δb, Gᵀ δY⟩ + ⟨δσ, Gᵀ δZ⟩_F + ∫_E ⟨δh, Gᵀ δU⟩ dν + ⟨−δf, G δX⟩] ≤ −λ β₁ 𝔼[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²] − λ β₂ 𝔼|G δX|², the expectation on the left existing, δh at the predictable tuples",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_intmono",
+     "spec_hash": "ed839d34f480cba14dbfddebc754cdd1",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:intmono",
    "kind": "embedded-in-proof",
    "number": "(4.20)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_termmono",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_termmono"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.21): 𝔼⟨G δX_T, δY_T⟩ = λ 𝔼⟨G δX_T, δg_T⟩ + 𝔼⟨G δX_T, q^g_T⟩ ≥ λ α 𝔼|G δX_T|² − |𝔼⟨G δX_T, q^g_T⟩|, the expectations existing",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_termmono",
+     "spec_hash": "ed839d34f480cba1ea261f16df305b5f",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:termmono",
    "kind": "embedded-in-proof",
    "number": "(4.21)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_coerc",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_coerc"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.22): N' and P are finite, and λ α 𝔼|G δX_T|² + λ β₂ 𝔼∫|G δX|² + λ β₁ 𝔼∫[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²] ≤ the six pairings in absolute value ≤ 𝒦 = η N' + ‖G‖²/(4η) P for every η > 0",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_coerc",
+     "spec_hash": "ed839d34f480cba1763b5cdd464a968d",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:coerc",
    "kind": "embedded-in-proof",
    "number": "(4.22)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [],
@@ -4274,10 +4394,10 @@
   "A": {
    "definition: reviewed": 11,
    "formal: accepted": 48,
-   "formal: proved, author-reviewed": 5,
+   "formal: proved, author-reviewed": 11,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
-   "out of scope: proof-step": 23,
+   "out of scope: proof-step": 17,
    "refuted as printed; corrected statement proved": 1
   }
  }

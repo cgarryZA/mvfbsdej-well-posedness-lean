@@ -699,6 +699,243 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lem_pert--claude-auditor--2026-10-19T03_38_06Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.lem_pert ed839d34f480cba1eefcd4522364d865 by=claude-auditor -->
 
+## (4.15) and (4.16), the difference equations in the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_dX`, `eq_dY`
+
+Manuscript (proof of Lemma `lem:pert`, lines 511–533): "The difference equations below involve
+the forcings only through `δq`, which we therefore write simply as `q`." With
+`δψ_t := ψ(t, Θ¹_t, μ¹_t) − ψ(t, Θ²_t, μ²_t)`, `ψ ∈ {b, σ, h, f}`, `μ^k_t := Law(Θ^k_t)`,
+"likewise `δg_T`, with `δh` evaluated at the predictable tuples `(Θ^{k,−}_t, μ^{k,−}_t)`. … The
+difference equations are
+`d δX_t = (λ δb_t + q^b_t) dt + (λ δσ_t + q^σ_t) dW_t + ∫_E (λ δh_t(e) + q^h_t(e)) Ñ(dt, de)`,
+(4.15) `d δY_t = −(λ δf_t + q^f_t) dt + δZ_t dW_t + ∫_E δU_t(e) Ñ(dt, de)`,
+`δY_T = λ δg_T + q^g_T`. (4.16)" Section 2 (`02-model-assumptions.tex`, lines 35–45) defines
+`Θ^−_t = (X_{t−}, Y_{t−}, Z_t, U_t)` and fixes Borel representatives `μ_t`, `μ^−_t` of the law
+flows: "Expressions such as `b(t, Θ_t, μ_t)` are thereby defined at every `t`, while every claim
+made about them is `dt`-a.e. or time-integrated."
+
+Propositions:
+
+* `eq_dX`: under the hypotheses of Lemma 4.3 (those of `lem_pert`, verbatim), for every
+  coordinate `i`: the drift `λ (δb)_i + q^b_i` (the difference of the `driftProc`s and of the
+  forcings) has almost surely integrable paths on `[0, T]`; the diffusion `λ (δσ)_i + q^σ_i`
+  meets the conditions of the Brownian integral (existential proofs `hσm`, `hσp`, `hσq`); some
+  `H : Ω → ℝ → E → ℝ` meeting the conditions of the compensated integral (jointly measurable,
+  marked progressively measurable for `enlJoint`, finite energy on every horizon) agrees,
+  `markedEnergyMeasure`-almost everywhere on `Ω × [0, T] × E`, with
+  `λ (coeffJump(h, Θ¹⁻) − coeffJump(h, Θ²⁻))_i + q^h_i` (each cut to `[0, T]` by `jumpProc`); and
+  for every such `H` and every `t ∈ [0, T]`, almost surely
+  `δX_{i,t} = δξ₀_i + ∫_{[0, t]} (λ δb_i + q^b_i) ds + ∫_0^t (λ δσ_i + q^σ_i) dW
+  + ∫_0^t ∫_E H Ñ(ds, de)`.
+* `eq_dY`: under the same hypotheses, for every coordinate `k`: the driver `λ (δf)_k + q^f_k` has
+  almost surely integrable paths on `[0, T]`; almost surely
+  `δY_{k,T} = λ (g(X¹_T, Law X¹_T) − g(X²_T, Law X²_T))_k + q^g_k`; `δZ_k` and `δU_k` meet the
+  conditions of the stochastic integrals (existential proofs); and for every `t ∈ [0, T]`, almost
+  surely `δY_{k,t} = λ δg_k + q^g_k + ∫_{[t, T]} (λ δf_k + q^f_k) ds − (∫_0^T − ∫_0^t) δZ_k dW
+  − (∫_0^T − ∫_0^t) ∫_E δU_k Ñ(ds, de)`.
+
+Readings:
+
+* The hypotheses are those of Lemma 4.3, written as in `lem_pert` (reviewed with Lemma 4.3).
+* `q = δq`: the differences `q^{·,1} − q^{·,2}` of the forcings; `δξ₀ = ξ₀¹ − ξ₀²`
+  coordinatewise; `δψ` along `Θ^k` through `driftProc`, `diffusionProc`, `driverProc` and
+  `terminalVal` (reviewed in `definitions.md`), `ψ(s, Θ^k_s(ω), Law Θ^k_s)` for `s ∈ [0, T]`.
+* The differential notation is read in integral form, forward from `0` for `δX` (`δX_0 = δξ₀` is
+  the identity at `t = 0`) and backward from `T` for `δY`, almost surely at each `t ∈ [0, T]`,
+  with the canonical stochastic integrals of the library over `enlJoint`, as in `LinearFSDEJ`,
+  `LinearBSDEJ` and the class `WeakForcedSolution`. `∫_0^t` is over `[0, t]` and `∫_t^T` over
+  `[t, T]` (the same for Lebesgue measure); the drift and driver integrals are pathwise, with
+  their integrability stated. `δY_T = λ δg_T + q^g_T` is stated on its own as well as inside the
+  identity at `t = T`.
+* `δh` at the predictable tuples: `Θ^{k,−}_s = (X^k_{s−}, Y^k_{s−}, Z^k_s, U^k_s)` through
+  `leftLimProc`, and `h(s, Θ^{k,−}_s, ·, μ^{k,−}_s)` through its canonical representative
+  `coeffJump` (reviewed in `definitions.md`), `μ^{k,−}_s` the law of `Θ^{k,−}_s`. The paper makes
+  every claim about these expressions `dt`-a.e. or time-integrated, so the jump integrand is a
+  `dP ⊗ dt ⊗ ν`-class on `Ω × [0, T] × E`, and its compensated integral is that of a
+  representative meeting the conditions of the integral. The proposition states that such a
+  representative exists and that the identity holds with every one. It does not ask the
+  expression at the predictable tuple itself to meet those conditions: at `s = 0` the left limits
+  `X_{0−}`, `Y_{0−}` read the paths before `0`, on which `WeakForcedSolution` places no condition,
+  so on that null set of times the expression need not be measurable.
+
+Proofs: extended off `[0, T]`, the solutions solve `SolvesForcedInt`, and the difference of the
+extensions is a `PairDiff` with Lipschitz constants `10 (2L)²` and `4 (2L)²`, from Assumptions
+2.3 and 2.5 along the diagonal (`PaperWeakSolutionForcedInt.exists_pairDiff`); its coordinates
+solve `LinearFSDEJ` and `LinearBSDEJ`, whose equations are (4.15) and (4.16) for the extensions,
+which agree with the solutions on `[0, T]`, with the jump integrand `λ (γ¹ − γ²) + q^h` of the
+solutions' representatives. That integrand agrees almost everywhere with the one at the
+predictable tuples (`PaperWeakSolutionForcedInt.ae_forcedJump_sub_leftLim_eq`: the paths frozen
+outside `[0, T]` are càdlàg with the same left limits on `(0, T]`, their predictable tuple is
+their tuple at almost every time, and `jump_rep`), so it is a representative; every
+representative has almost surely the same compensated integral
+(`compensatedIntegral_congr_of_markedEnergy`). The path integrability comes from the solutions
+(`b_int`, `f_int`), and `δY_T` from the backward equation at `T`.
+
+Witness: `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`, the hypotheses of Lemma 4.3
+(reviewed with Lemma 4.3), which are those of both propositions.
+
+Verdict: faithful.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_dX ed839d34f480cba17f8ea34acd5ecf0b by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_dY ed839d34f480cba1cc37dd9a0d2b35ad by=claude-author -->
+
+## (4.19), the `G`-energy identity in Step 1 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_Gid`
+
+Manuscript (proof of Lemma `lem:pert`, Step 1, lines 546–632): Itô's product formula gives the
+pathwise identity (4.17), whose five stochastic integrals have zero expectation (lines 579–622).
+"Taking expectations and dropping the left limits in the drift multipliers (the `dt`-integral
+convention above) reduces (4.17) to
+`𝔼⟨G δX_T, δY_T⟩ − 𝔼⟨G δξ₀, δY_0⟩ = 𝔼 ∫_0^T [⟨λ δb_t + q^b_t, Gᵀ δY_t⟩
++ ⟨λ δσ_t + q^σ_t, Gᵀ δZ_t⟩_F + ∫_E ⟨λ δh_t(e) + q^h_t(e), Gᵀ δU_t(e)⟩ ν(de)
++ ⟨−λ δf_t − q^f_t, G δX_t⟩] dt`." (4.19)
+
+Proposition: under the hypotheses of Lemma 4.3 (those of `lem_pert`, verbatim):
+`⟨G δX_T, δY_T⟩` and `⟨G δξ₀, δY_0⟩` are `P`-integrable; the integrand
+`R = (λ δb + q^b) ⬝ Gᵀ δY + ∑_j (λ δσ_{·j} + q^σ_{·j}) ⬝ Gᵀ δZ_{·j}
++ ∫_E (λ δh(e) + q^h(e)) ⬝ Gᵀ δU(e) ν(de) + (−λ δf − q^f) ⬝ G δX` is integrable for `P ⊗ ds`
+on `Ω × [0, T]`; and `∫ ⟨G δX_T, δY_T⟩ dP − ∫ ⟨G δξ₀, δY_0⟩ dP = ∫ ∫_{[0, T]} R ds dP`.
+
+Readings:
+
+* The hypotheses, `q = δq`, the coefficient differences and `δh` at the predictable tuples are
+  read as in `eq_dX` and `eq_dY`.
+* The pairings in coordinates: `⟨u, v⟩ = u ⬝ v`, `Gᵀ` the transposed matrix,
+  `⟨A, B⟩_F = ∑_j A_{·j} ⬝ B_{·j}` over the `d` columns (`Gᵀ δZ` column by column), and
+  `⟨−λ δf − q^f, G δX⟩` with the vector `−λ δf − q^f`, as printed.
+* The expectations are Bochner integrals; the integrability of the two pairings and of `R` on
+  `Ω × [0, T]` is stated, so the identity is between the expectations the paper means, and
+  `𝔼 ∫_0^T` is `∫ dP` of `∫_{[0, T]} ds`. `δh` enters only through its `ν`-integral at almost
+  every `(ω, s)`, so the values of the expression at `s = 0` (see `eq_dX`) do not matter.
+* (4.19) is the expectation form; the pathwise identity (4.17) and the bounds (4.18) are separate
+  claims (`A:eq:Gid-path`, `A:eq:bdg4`) and are not stated here.
+
+Proof: (4.19) for the difference system (`PairDiff.integral_mulVec_dotProduct_eq`: the bilinear
+second-moment identity of two Itô–Lévy processes over the same driver, summed with the weights
+`G_{ki}`) at the extensions of `exists_pairDiff`, read on the window `Ω × [0, T]` by Fubini with
+the integrability of its integrand (`integrable_gPairing`); the extensions agree with the solutions
+on `[0, T]`, and the jump integrand of the representatives agrees with the one at the predictable
+tuples (`ae_forcedJump_sub_leftLim_eq`, `ae_ae_of_ae_markedEnergyMeasure`). The implementation
+takes the identity directly in expectation form, without (4.17) and (4.18).
+
+Witness: `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`, the hypotheses of Lemma 4.3.
+
+Verdict: faithful.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_Gid ed839d34f480cba187a9b1634afe69c9 by=claude-author -->
+
+## (4.20), the insertion of monotonicity in Step 2 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_intmono`
+
+Manuscript (proof of Lemma `lem:pert`, Step 2, lines 634–646): "In the `h`-channel `δh_t` is
+evaluated at the predictable tuples `(Θ^{k,−}_t, μ^{k,−}_t)`, which agree with `(Θ^k_t, μ^k_t)`
+for `dt`-a.e. `t` by Lemma A.1. Assumption 2.5, applied at the common input pair
+`(Θ¹_t, μ¹_t), (Θ²_t, μ²_t)`, therefore bounds the unperturbed part of the integrand of (4.19):
+`λ 𝔼[⟨δb_t, Gᵀ δY_t⟩ + ⟨δσ_t, Gᵀ δZ_t⟩_F + ∫_E ⟨δh_t(e), Gᵀ δU_t(e)⟩ ν(de) + ⟨−δf_t, G δX_t⟩]
+≤ −λ β₁ 𝔼[|Gᵀ δY_t|² + |Gᵀ δZ_t|²_F + ‖Gᵀ δU_t‖²_{L²(ν)}] − λ β₂ 𝔼|G δX_t|²`." (4.20)
+
+Proposition: under the hypotheses of Lemma 4.3 (those of `lem_pert`, verbatim), at almost every
+`t ∈ [0, T]`: the pairing `⟨δb_t, GX Gᵀ δY_t⟩ + ⟨δσ_t, GZ Gᵀ δZ_t⟩
++ ∫_E ⟨δh_t(e), GX Gᵀ δU_t(e)⟩ ν(de) + ⟨−δf_t, GX G δX_t⟩` is `P`-integrable, and `λ` times its
+expectation is at most `−λ β₁ ∫ (‖GX Gᵀ δY_t‖² + ‖GZ Gᵀ δZ_t‖² + ‖GU Gᵀ ν δU_t‖²) dP
+− λ β₂ ∫ ‖GX G δX_t‖² dP`, with `δψ_t = ψ(t, Θ¹_t, Law Θ¹_t) − ψ(t, Θ²_t, Law Θ²_t)` for
+`ψ = b, σ, f`, `Θ^k_t = tupleAt`, `δh_t` the same at the predictable tuples (`tupleAt` of the left
+limits) and their laws, and `δX_t, δY_t, δZ_t, δU_t` the channels of `Θ¹_t − Θ²_t`.
+
+Readings:
+
+* The integrand is that of (2.7) (`pairing27`, reviewed with Assumption 2.5) at the pair, in the
+  printed order of its terms and with `h` at the predictable tuples; the operators `GX`, `GZ`,
+  `GU` and the right side are those of `Mono27At`, times `λ`.
+* "At `dt`-a.e. `t`": almost every `t ∈ [0, T]`. The integrability of the pairing is stated, so
+  its expectation is the one meant; the expectations on the right are Bochner integrals of
+  nonnegative functions, as in `Mono27At`.
+* `μ^{k,−}_t` is the law `lawP2` of the predictable tuple, not a fixed Borel version; the two
+  agree for almost every `t` (Lemma A.1), and the claim is made at almost every `t`.
+
+Proof: at almost every `t` the tuples are diagonal inputs at `t` (strongly `ℱ_t`-measurable,
+through the extensions of `exists_solvesForcedInt`, and square integrable), Assumption 2.5 at `t`
+bounds the expectation of `pairing27`, and the predictable tuples agree with the tuples almost
+surely (`PaperWeakTuple.ae_ae_tupleAt_leftLimProc_eq`), hence also their laws; then multiply by
+`λ ≥ 0`.
+
+Witness: `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`, the hypotheses of Lemma 4.3.
+
+Verdict: faithful.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_intmono ed839d34f480cba14dbfddebc754cdd1 by=claude-author -->
+
+## (4.21), the terminal side in Step 2 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_termmono`
+
+Manuscript (proof of Lemma `lem:pert`, Step 2, lines 648–656): "The terminal side of (4.19) is
+bounded by the terminal monotonicity of Assumption 2.5:
+`𝔼⟨G δX_T, δY_T⟩ = λ 𝔼⟨G δX_T, δg_T⟩ + 𝔼⟨G δX_T, q^g_T⟩
+≥ λ α 𝔼|G δX_T|² − |𝔼⟨G δX_T, q^g_T⟩|`." (4.21)
+
+Proposition: under the hypotheses of Lemma 4.3 (those of `lem_pert`, verbatim): the pairings
+`⟨G δX_T, δY_T⟩`, `⟨G δX_T, δg_T⟩` and `⟨G δX_T, q^g_T⟩` are `P`-integrable;
+`∫ ⟨G δX_T, δY_T⟩ = λ ∫ ⟨G δX_T, δg_T⟩ + ∫ ⟨G δX_T, q^g_T⟩`; and
+`λ α ∫ |G δX_T|² − |∫ ⟨G δX_T, q^g_T⟩| ≤ λ ∫ ⟨G δX_T, δg_T⟩ + ∫ ⟨G δX_T, q^g_T⟩`.
+
+Readings:
+
+* The chain `= … ≥ …` is the conjunction of the equation and the inequality between its middle
+  and right members.
+* `δg_T = g(X¹_T, Law X¹_T) − g(X²_T, Law X²_T)` through `terminalVal`, `q^g = δq^g`,
+  `|G δX_T|² = (G δX_T) ⬝ (G δX_T)`; the expectations are Bochner integrals, with the
+  integrability of the three pairings stated.
+
+Proof: `δY_T = λ δg_T + q^g_T` almost surely (the backward equation at `T`) and linearity; the
+terminal monotonicity of Assumption 2.5 at the pair (`PairDiff.monoT`); `λ ≥ 0` and
+`−|x| ≤ x`.
+
+Witness: `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`, the hypotheses of Lemma 4.3.
+
+Verdict: faithful.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_termmono ed839d34f480cba1ea261f16df305b5f by=claude-author -->
+
+## (4.22), the coercivity bound in Step 2 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_coerc`
+
+Manuscript (proof of Lemma `lem:pert`, Step 2, lines 657–695): with `P` as in (4.14),
+"`N' := 𝔼|δX_T|² + 𝔼|δY_0|² + 𝔼 ∫_0^T (|δX_t|² + |δY_t|² + |δZ_t|²_F + ‖δU_t‖²) dt`,
+`𝒦 := η N' + (‖G‖²/(4η)) P`, `η > 0`. Inserting (4.20) and (4.21) into (4.19) gives […].
+Rearranging, and applying Young's inequality with `|Gᵀ v| ≤ ‖G‖ |v|` and `|G v| ≤ ‖G‖ |v|`, gives
+`λ α 𝔼|G δX_T|² + λ β₂ 𝔼 ∫_0^T |G δX_t|² dt
++ λ β₁ 𝔼 ∫_0^T [|Gᵀ δY_t|² + |Gᵀ δZ_t|²_F + ‖Gᵀ δU_t‖²] dt
+≤ |𝔼⟨G δξ₀, δY_0⟩| + |𝔼⟨G δX_T, q^g_T⟩| + 𝔼 ∫_0^T (|⟨q^b, Gᵀ δY⟩| + |⟨q^σ, Gᵀ δZ⟩_F|) dt
++ 𝔼 ∫_0^T (|∫_E ⟨q^h(e), Gᵀ δU(e)⟩ ν(de)| + |⟨q^f, G δX⟩|) dt ≤ 𝒦`." (4.22)
+
+Proposition: under the hypotheses of Lemma 4.3 (those of `lem_pert`, verbatim): `N' ≠ ∞`, with
+`N' = ∫⁻ |δX_T|² + ∫⁻ |δY_0|² + (∑ energy(δX_i) + ∑ energy(δY_k) + ∑ energy(δZ_{kj})
++ ∑ markedEnergy(δU_k))`; `P ≠ ∞`, with `P = dataSize` of the differences; the left side of
+(4.22) is at most the sum `M` of the six pairings in absolute value; and for every `η > 0`,
+`M ≤ η N'.toReal + (‖GX G‖²/(4η)) P.toReal`.
+
+Readings:
+
+* `N'` is in `[0, ∞]` (lower integrals, the energies on `[0, T]`) and `P = dataSize`, reviewed
+  with Theorem 3.1; their finiteness is stated, so the real values in `𝒦` are the paper's.
+* `‖G‖` is the operator norm of `x ↦ G x` between Euclidean spaces (`‖GX G‖`, as in the
+  constants of Lemma 4.3); it is also that of `Gᵀ`.
+* The blocks and pairings are in coordinates as in `eq_Gid`; `𝔼 ∫_0^T` is `∫ dP` of
+  `∫_{[0, T]} ds` (Bochner integrals of functions integrable on the window, shown in the proof),
+  and `|⟨q^σ, Gᵀ δZ⟩_F|` is the absolute value of the Frobenius pairing. `η` is quantified for the
+  second inequality only, the first not involving it; `𝒦` is defined for each `η > 0`.
+* The sentence after (4.22), that each coercive block present is at most `𝒦`, is a consequence
+  and is not stated.
+
+Proof: the first inequality from (4.19) for the difference system, with the interior and
+terminal monotonicity at the pair inserted and `x ≤ |x|` (`PairDiff.blocks_le_abs_pairings`, at
+`λ > 0`); the second by Young's inequality with `|G x|² ≤ ‖G‖² |x|²` and its transpose, pairing
+by pairing (`abs_initial_pairing_le`, `abs_terminal_forcing_le`, `integral_abs_forcing_le`);
+finiteness from the difference system (square-integrable terminal and initial values, finite
+energies) and the forcings (`Forcing.dataSize_ne_top_of_memLp`); all at the extensions of
+`exists_pairDiff`, which agree with the solutions on `[0, T]`.
+
+Witness: `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`, the hypotheses of Lemma 4.3.
+
+Verdict: faithful.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_coerc ed839d34f480cba1763b5cdd464a968d by=claude-author -->
+
 ## (4.25), the Young bound in Step 4 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_bwdyoung`
 
 Manuscript (proof of Lemma `lem:pert`, Step 4, lines 726–733): "By Assumption 2.3, the coupling

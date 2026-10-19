@@ -9,7 +9,7 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | Status | A |
 |---|---|
 | formal: accepted | 48 |
-| formal: proved, author-reviewed | 5 |
+| formal: proved, author-reviewed | 11 |
 | formal: proved, review pending | 0 |
 | refuted as printed | 0 |
 | refuted as printed; corrected statement proved | 1 |
@@ -24,7 +24,7 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | definition: not yet stated | 0 |
 | out of scope: duplicate | 4 |
 | out of scope: part-of | 17 |
-| out of scope: proof-step | 23 |
+| out of scope: proof-step | 17 |
 
 ## Paper A (well-posedness, `1f67672`)
 
@@ -94,6 +94,12 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | `A:eq:termg` | (4.3) | formal: accepted | `A.eq_termg` | `A.eq_termg` | reviewed by claude-auditor, hypotheses met: `A.thm_cwp_hypotheses` |
 | `A:eq:supE` | (4.6) | formal: proved, author-reviewed | `A.eq_supE` | `A.eq_supE` | reviewed by claude-author, hypotheses met: `A.lem_bpbsde_hypotheses` |
 | `A:eq:terdiff` | (4.11) | formal: proved, author-reviewed | `A.eq_terdiff` | `A.eq_terdiff` | reviewed by claude-author, hypotheses met: `A.eq_terdiff_hypotheses` |
+| `A:eq:dX` | (4.15) | formal: proved, author-reviewed | `A.eq_dX` | `A.eq_dX` | reviewed by claude-author, hypotheses met: `A.lem_pert_two_data_hypotheses` |
+| `A:eq:dY` | (4.16) | formal: proved, author-reviewed | `A.eq_dY` | `A.eq_dY` | reviewed by claude-author, hypotheses met: `A.lem_pert_two_data_hypotheses` |
+| `A:eq:Gid` | (4.19) | formal: proved, author-reviewed | `A.eq_Gid` | `A.eq_Gid` | reviewed by claude-author, hypotheses met: `A.lem_pert_two_data_hypotheses` |
+| `A:eq:intmono` | (4.20) | formal: proved, author-reviewed | `A.eq_intmono` | `A.eq_intmono` | reviewed by claude-author, hypotheses met: `A.lem_pert_two_data_hypotheses` |
+| `A:eq:termmono` | (4.21) | formal: proved, author-reviewed | `A.eq_termmono` | `A.eq_termmono` | reviewed by claude-author, hypotheses met: `A.lem_pert_two_data_hypotheses` |
+| `A:eq:coerc` | (4.22) | formal: proved, author-reviewed | `A.eq_coerc` | `A.eq_coerc` | reviewed by claude-author, hypotheses met: `A.lem_pert_two_data_hypotheses` |
 | `A:eq:bwdyoung` | (4.25) | formal: accepted | `A.eq_bwdyoung` | `A.eq_bwdyoung` | reviewed by claude-auditor, hypotheses met: `A.lem_pert_two_data_hypotheses` |
 
 ## Out of scope
@@ -131,14 +137,8 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | `A:eq:bwddiff` | (4.12) | proof-step | a step of a printed proof | yes |
 | `A:eq:contract` | (4.13) | proof-step | a step of a printed proof | yes |
 | `A:eq:contpert` | (4.14) | part-of | A:lem:pert | yes |
-| `A:eq:dX` | (4.15) | proof-step | a step of a printed proof | yes |
-| `A:eq:dY` | (4.16) | proof-step | a step of a printed proof | yes |
 | `A:eq:Gid-path` | (4.17) | proof-step | a step of a printed proof | yes |
 | `A:eq:bdg4` | (4.18) | proof-step | a step of a printed proof | yes |
-| `A:eq:Gid` | (4.19) | proof-step | a step of a printed proof | yes |
-| `A:eq:intmono` | (4.20) | proof-step | a step of a printed proof | yes |
-| `A:eq:termmono` | (4.21) | proof-step | a step of a printed proof | yes |
-| `A:eq:coerc` | (4.22) | proof-step | a step of a printed proof | yes |
 | `A:eq:fwd` | (4.23) | proof-step | a step of a printed proof | yes |
 | `A:eq:bwdito` | (4.24) | proof-step | a step of a printed proof | yes |
 | `A:eq:wgt` | (4.26) | proof-step | a step of a printed proof | yes |
