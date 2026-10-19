@@ -18,7 +18,7 @@ evaluated at the predictable tuples `(Θ^{k,−}_t, μ^{k,−}_t)`. The differen
 (4.15)
 
 `d δY_t = −(λ δf_t + q^f_t) dt + δZ_t dW_t + ∫_E δU_t(e) Ñ(dt, de)`,
-`δY_T = λ δg_T + q^g_T`; (4.16)
+`δY_T = λ δg_T + q^g_T`. (4.16)
 
 Step 1 gives the `G`-energy identity in expectation
 
