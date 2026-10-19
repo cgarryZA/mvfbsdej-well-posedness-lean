@@ -31,6 +31,16 @@ jobs:
             sh -s -- -y --default-toolchain none
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
 
+      # The toolchain of `lean-toolchain`, retried: a dropped download would otherwise fail the
+      # first `lake` command.
+      - name: Install the Lean toolchain
+        run: |
+          for attempt in 1 2 3; do
+            elan toolchain install "$(cat lean-toolchain)" && exit 0
+            sleep 30
+          done
+          exit 1
+
       - name: Free disk space
         run: |
           sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc \
@@ -96,6 +106,14 @@ jobs:
           curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | \
             sh -s -- -y --default-toolchain none
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Install the Lean toolchain
+        run: |
+          for attempt in 1 2 3; do
+            elan toolchain install "$(cat lean-toolchain)" && exit 0
+            sleep 30
+          done
+          exit 1
 
       - name: Free disk space
         run: |
