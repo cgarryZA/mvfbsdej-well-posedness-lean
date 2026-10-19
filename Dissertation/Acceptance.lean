@@ -25,7 +25,8 @@ import Dissertation.Acceptance.A.Sec5Preamble
 import Dissertation.Acceptance.A.Dealer
 import Dissertation.Acceptance.A.Witness
 import Dissertation.Acceptance.A.WitnessNonzero
-import Dissertation.Acceptance.A.AsPrinted
+import Dissertation.Acceptance.A.Sec5Regimes
+import Dissertation.Acceptance.A.Sec5DealerActive
 import Dissertation.Acceptance.A.Sec3Complete
 import Dissertation.Acceptance.A.Sec5Dealer
 import Dissertation.Acceptance.A.WitnessHyp

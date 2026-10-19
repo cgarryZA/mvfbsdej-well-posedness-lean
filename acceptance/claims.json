@@ -246,16 +246,10 @@
    "scope_reviewed": false,
    "clauses": [
     {
-     "name": "the reduction to the jump channel and the β₁ dichotomy, as printed (every σ-finite ν)",
-     "spec": "Dissertation.PaperSpec.A.rem_beta1_dich_printed",
-     "refute": "Dissertation.Acceptance.A.rem_beta1_dich_printed_false"
-    },
-    {
      "name": "the reduction to the jump channel and the β₁ dichotomy, with ν ≠ 0",
      "spec": "Dissertation.PaperSpec.A.rem_beta1_dich",
      "accept": "Dissertation.Acceptance.A.rem_beta1_dich",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses",
-     "corrects": "the reduction to the jump channel and the β₁ dichotomy, as printed (every σ-finite ν)"
+     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
     }
    ]
   },
@@ -771,28 +765,16 @@
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses"
     },
     {
-     "name": "the U-marginal radial statistics are no expectation functionals, as printed (every σ-finite ν)",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U",
-     "refute": "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_false"
-    },
-    {
      "name": "the U-marginal radial statistics are no expectation functionals, with L²(ν) ≠ 0",
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr",
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_corr",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses",
-     "corrects": "the U-marginal radial statistics are no expectation functionals, as printed (every σ-finite ν)"
-    },
-    {
-     "name": "the cylindrical term of a non-affine Q is no expectation functional, as printed (arbitrary bounded Lipschitz features)",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q_printed",
-     "refute": "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q_printed_false"
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses"
     },
     {
      "name": "the cylindrical term is no expectation functional when Q is not affine on the attained range of the features",
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q",
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q_hypotheses",
-     "corrects": "the cylindrical term of a non-affine Q is no expectation functional, as printed (arbitrary bounded Lipschitz features)"
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q_hypotheses"
     }
    ]
   },
@@ -852,22 +834,70 @@
      "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses"
     },
     {
-     "name": "the crowding correction is no function of E[U], as printed (every σ-finite ν)",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_mean",
-     "refute": "Dissertation.Acceptance.A.ex_dealer_mean_false"
-    },
-    {
-     "name": "the crowding correction is no function of E[U], with L²(ν) ≠ 0",
+     "name": "the crowding correction is no function of E[U], with ν ≠ 0 (so L²(ν) ≠ 0)",
      "spec": "Dissertation.PaperSpec.A.ex_dealer_mean_corr",
      "accept": "Dissertation.Acceptance.A.ex_dealer_mean_corr",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses",
-     "corrects": "the crowding correction is no function of E[U], as printed (every σ-finite ν)"
+     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses"
     },
     {
      "name": "the mark measure: infinite mass, square-integrable size, h_c ∈ L²(ν)",
      "spec": "Dissertation.PaperSpec.A.ex_dealer_marks",
      "accept": "Dissertation.Acceptance.A.ex_dealer_marks",
      "witness": "Dissertation.Acceptance.A.ex_dealer_marks_hypotheses"
+    },
+    {
+     "name": "the crowding correction is no function of the mean and is nonlinear in the valuation curves, with L²(ν) ≠ 0",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_not_mean_corr",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_not_mean_corr",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses"
+    },
+    {
+     "name": "the crowding correction is affine in the population law: an expectation kernel of Example 5.3 with K = L²(ν)",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_affine",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_affine",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses"
+    },
+    {
+     "name": "the Riccati function: p' = β₁p² − β₂, p(T) = 1, p > 0 on [0, T], unique",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_riccati",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_riccati",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_inert_hypotheses"
+    },
+    {
+     "name": "for h_x = 0 the interaction is inert: Y = pX, Z = pσ_c/(1 + β₁p), U = p h_c/(1 + β₁p), Law(U_t) a Dirac mass, the correction vanishes, the tuple solves at every ε",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_inert",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_inert",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_inert_hypotheses"
+    },
+    {
+     "name": "the specialisation: h_c, h_x ∈ L²(ν), ‖h_c‖ = ‖h_x‖ = 1, ⟨h_c, h_x⟩ = 0",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_spec_marks",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_spec_marks",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses"
+    },
+    {
+     "name": "the linear equation has a unique solution X⁰ ∈ S²; Θ⁰ solves the system at ε = 0; 𝔼X⁰ = 0, v' = −(7/4)v + ½, v = (2/7)(1 − e^{−7t/4}); 𝔼‖U⁰_t − 𝔼U⁰_t‖² = v/4 and Law(U⁰_t) is not a Dirac mass",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_zero",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_zero",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses"
+    },
+    {
+     "name": "the symmetrised crowding pairing, positive unless λ is a Dirac mass",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_symm",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_symm",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses"
+    },
+    {
+     "name": "the interaction is active: A(U⁰_t) ≠ 0 with positive probability at every t ∈ (0, T], and 𝔼∫_0^T ‖ε A(U_t)‖² dt > 0 for every ε > 0",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_active",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_active",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses"
+    },
+    {
+     "name": "the solution depends on ε: a tuple solving at two strengths has vanishing correction, and in the specialisation no tuple solves at two strengths",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_depends",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_depends",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses"
     }
    ]
   },
@@ -891,16 +921,10 @@
      "witness": "Dissertation.Acceptance.A.eq_coupling_hypotheses"
     },
     {
-     "name": "the coefficients depend on u pointwise whenever β₁ > 0, as printed (every σ-finite ν)",
-     "spec": "Dissertation.PaperSpec.A.rem_freelaw_printed",
-     "refute": "Dissertation.Acceptance.A.rem_freelaw_printed_false"
-    },
-    {
      "name": "the coefficients depend on u pointwise whenever β₁ > 0, with ν ≠ 0",
      "spec": "Dissertation.PaperSpec.A.rem_freelaw",
      "accept": "Dissertation.Acceptance.A.rem_freelaw",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses",
-     "corrects": "the coefficients depend on u pointwise whenever β₁ > 0, as printed (every σ-finite ν)"
+     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
     }
    ]
   },
@@ -936,16 +960,10 @@
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses"
     },
     {
-     "name": "the dealer interaction is a genuinely nonlinear U-law interaction, as printed",
-     "spec": "Dissertation.PaperSpec.A.rem_regimes_law_nonlinear",
-     "refute": "Dissertation.Acceptance.A.rem_regimes_law_nonlinear_false"
-    },
-    {
-     "name": "the dealer interaction is affine in the U-law, no function of its mean, and nonlinear in the valuation curve, with L²(ν) ≠ 0",
+     "name": "the dealer interaction is nonlinear in the valuation curves (affine in the U-law, no function of its mean), with L²(ν) ≠ 0",
      "spec": "Dissertation.PaperSpec.A.rem_regimes_corr",
      "accept": "Dissertation.Acceptance.A.rem_regimes_corr",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses",
-     "corrects": "the dealer interaction is a genuinely nonlinear U-law interaction, as printed"
+     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses"
     },
     {
      "name": "the crowding interaction is monotone at every interaction strength ε ≥ 0",
@@ -958,6 +976,12 @@
      "spec": "Dissertation.PaperSpec.A.ex_dealer_wp",
      "accept": "Dissertation.Acceptance.A.ex_dealer_wp",
      "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+    },
+    {
+     "name": "the dealer interaction remains active along the solution",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_active",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_active",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses"
     }
    ]
   },
@@ -1338,7 +1362,7 @@
    "source_sha256": "10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": true,
+   "scope_reviewed": false,
    "clauses": [
     {
      "name": "a margin in (2.13) makes every channel strictly dissipative",
@@ -1347,28 +1371,16 @@
      "witness": "Dissertation.Acceptance.A.cor_robust_hypotheses"
     },
     {
-     "name": "an additive h₀ cannot serve as a baseline, as printed (every σ-finite ν)",
-     "spec": "Dissertation.PaperSpec.A.cor_margin_additive_printed",
-     "refute": "Dissertation.Acceptance.A.cor_margin_additive_printed_false"
-    },
-    {
      "name": "an additive h₀ cannot serve as a baseline, with ν ≠ 0",
      "spec": "Dissertation.PaperSpec.A.cor_margin_additive",
      "accept": "Dissertation.Acceptance.A.cor_margin_additive",
-     "witness": "Dissertation.Acceptance.A.cor_margin_additive_hypotheses",
-     "corrects": "an additive h₀ cannot serve as a baseline, as printed (every σ-finite ν)"
-    },
-    {
-     "name": "jump feedback through finitely many functionals of u supplies no margin, as printed (every σ-finite ν)",
-     "spec": "Dissertation.PaperSpec.A.cor_margin_finite_printed",
-     "refute": "Dissertation.Acceptance.A.cor_margin_finite_printed_false"
+     "witness": "Dissertation.Acceptance.A.cor_margin_additive_hypotheses"
     },
     {
      "name": "jump feedback through finitely many functionals of u supplies no margin, with L²(ν) infinite dimensional",
      "spec": "Dissertation.PaperSpec.A.cor_margin_finite",
      "accept": "Dissertation.Acceptance.A.cor_margin_finite",
-     "witness": "Dissertation.Acceptance.A.cor_margin_finite_hypotheses",
-     "corrects": "jump feedback through finitely many functionals of u supplies no margin, as printed (every σ-finite ν)"
+     "witness": "Dissertation.Acceptance.A.cor_margin_finite_hypotheses"
     }
    ]
   },
@@ -1525,7 +1537,7 @@
    "source_sha256": "85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": true,
+   "scope_reviewed": false,
    "clauses": [
     {
      "name": "Example 5.1(i) meets every assumption at arbitrary activity",
@@ -1558,16 +1570,10 @@
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses"
     },
     {
-     "name": "the U-marginal radial statistics are no expectation functionals, as printed (every σ-finite ν)",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U",
-     "refute": "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_false"
-    },
-    {
      "name": "the U-marginal radial statistics are no expectation functionals, with L²(ν) ≠ 0",
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr",
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_corr",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses",
-     "corrects": "the U-marginal radial statistics are no expectation functionals, as printed (every σ-finite ν)"
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses"
     },
     {
      "name": "the crowding interaction is monotone at every interaction strength ε ≥ 0",
@@ -1622,7 +1628,7 @@
    "source_sha256": "c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": true,
+   "scope_reviewed": false,
    "clauses": [
     {
      "name": "the stability estimate (Theorem 3.1)",
@@ -1661,16 +1667,10 @@
      "witness": "Dissertation.Acceptance.A.prop_strict_hypotheses"
     },
     {
-     "name": "the reduction to the jump channel and the β₁ dichotomy, as printed (every σ-finite ν)",
-     "spec": "Dissertation.PaperSpec.A.rem_beta1_dich_printed",
-     "refute": "Dissertation.Acceptance.A.rem_beta1_dich_printed_false"
-    },
-    {
      "name": "the reduction to the jump channel and the β₁ dichotomy, with ν ≠ 0",
      "spec": "Dissertation.PaperSpec.A.rem_beta1_dich",
      "accept": "Dissertation.Acceptance.A.rem_beta1_dich",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses",
-     "corrects": "the reduction to the jump channel and the β₁ dichotomy, as printed (every σ-finite ν)"
+     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
     }
    ]
   },

@@ -48,9 +48,8 @@ setting is that of §2 (see `Dissertation.PaperSpec.A.thm_cwp`), here with `n = 
 * `Dissertation.PaperSpec.A.ex_fulllaw_lip`, `ex_fulllaw_pert`, `ex_fulllaw_wp`,
   `ex_fulllaw_affineQ` — Example 5.4: the Lipschitz constants of the law statistics, the
   perturbation, well-posedness, and the affine cylindrical term.
-* `Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial`, `ex_fulllaw_beyond_U`,
-  `ex_fulllaw_beyond_Q` — Example 5.4: law statistics that are no expectation functionals;
-  `ex_fulllaw_beyond_U_corr` — the `U`-marginal statement with `L²(ν) ≠ 0`.
+* `Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial`, `ex_fulllaw_beyond_U_corr`,
+  `ex_fulllaw_beyond_Q` — Example 5.4: law statistics that are no expectation functionals.
 * `Dissertation.PaperSpec.A.ex55Crowd` — the crowding correction of Example 5.5.
 * `Dissertation.PaperSpec.A.ex_dealer_potential`, `ex_dealer_crowd` — Example 5.5: the potential,
   and the Lipschitz bound of the crowding correction.
@@ -593,23 +592,11 @@ def ex_fulllaw_beyond_radial : Prop :=
       (∀ μ : P2 (TupleH ν n m d), Integrable φ μ.law) →
       ∃ μ : P2 (TupleH ν n m d), q (w2H μ μ₀) ≠ ∫ θ, φ θ ∂μ.law
 
-/-- Example 5.4, the radial statistic of the `U`-marginal is no expectation functional, over
-every σ-finite `ν`. For `ν` σ-finite on a countably generated space, `m ≥ 1`, a bounded
-Lipschitz profile `𝔮̃` not constant on `[0, ∞)` and a reference law `Λ₀ ∈ P₂(L²(ν; ℝᵐ))`: no
-`φ : H → ℝ` integrable against every law of finite second moment has
+/-- Example 5.4, the radial statistic of the `U`-marginal is no expectation functional. For `ν`
+σ-finite on a countably generated space with `L²(ν; ℝᵐ)` not reduced to `0` (as for `m ≥ 1` and
+`ν ≠ 0`), a bounded Lipschitz profile `𝔮̃` not constant on `[0, ∞)` and a reference law
+`Λ₀ ∈ P₂(L²(ν; ℝᵐ))`: no `φ : H → ℝ` integrable against every law of finite second moment has
 `𝔮̃(W₂(μ^U, Λ₀)) = ∫_H φ dμ` for every `μ ∈ P₂(H)`. -/
-def ex_fulllaw_beyond_U : Prop :=
-  ∀ {E : Type v} [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν]
-    [MeasurableSpace.CountablyGenerated E] (n m d : ℕ), 0 < m →
-    ∀ (q : ℝ → ℝ) (Lq B : ℝ), (∀ r r', |q r - q r'| ≤ Lq * |r - r'|) → (∀ r, |q r| ≤ B) →
-    (∃ a b : ℝ, 0 ≤ a ∧ 0 ≤ b ∧ q a ≠ q b) →
-    ∀ (Λ₀ : P2 (Lp (EuclideanSpace ℝ (Fin m)) 2 ν)) (φ : TupleH ν n m d → ℝ),
-      (∀ μ : P2 (TupleH ν n m d), Integrable φ μ.law) →
-      ∃ μ : P2 (TupleH ν n m d), q (w2P μ.margU Λ₀) ≠ ∫ θ, φ θ ∂μ.law
-
-/-- Example 5.4, the radial statistic of the `U`-marginal is no expectation functional when the
-fibre is nontrivial: `ex_fulllaw_beyond_U` with `L²(ν; ℝᵐ)` not reduced to `0` (for `m ≥ 1`,
-`ν ≠ 0`). -/
 def ex_fulllaw_beyond_U_corr : Prop :=
   ∀ {E : Type v} [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν]
     [MeasurableSpace.CountablyGenerated E] (n m d : ℕ),

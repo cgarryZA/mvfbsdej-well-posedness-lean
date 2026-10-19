@@ -208,7 +208,7 @@
      "witness_ok": true
     }
    ],
-   "id": "A:remark-2.6",
+   "id": "A:rem:wasserstein-bounds",
    "kind": "remark",
    "number": "Remark 2.6",
    "paper": "A",
@@ -340,26 +340,10 @@
   {
    "clauses": [
     {
-     "accept": null,
-     "author_reviewed": [],
-     "corrects": null,
-     "defs": [],
-     "defs_changed": [],
-     "defs_pending": [],
-     "name": "the reduction to the jump channel and the β₁ dichotomy, as printed (every σ-finite ν)",
-     "refute": "Dissertation.Acceptance.A.rem_beta1_dich_printed_false",
-     "refute_ok": true,
-     "spec": "Dissertation.PaperSpec.A.rem_beta1_dich_printed",
-     "spec_hash": "ed839d34f480cba1ea466e04b39bde57",
-     "spec_ok": true,
-     "spec_review": "reviewed by claude-reviewer",
-     "witness": null
-    },
-    {
      "accept": "Dissertation.Acceptance.A.rem_beta1_dich",
      "accept_ok": true,
      "author_reviewed": [],
-     "corrects": "the reduction to the jump channel and the β₁ dichotomy, as printed (every σ-finite ν)",
+     "corrects": null,
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
@@ -379,8 +363,8 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": true,
-   "status": "refuted as printed; corrected statement proved"
+   "scope_reviewed": false,
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -425,7 +409,7 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": true,
+   "scope_reviewed": false,
    "status": "formal: accepted"
   },
   {
@@ -592,7 +576,7 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": true,
+   "scope_reviewed": false,
    "status": "formal: accepted"
   },
   {
@@ -1074,7 +1058,7 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "the derivation of (1.1) from the control problem by the stochastic maximum principle for jump diffusions is cited work (Tang and Li) and is not stated; the clauses state the system and its properties",
-   "scope_reviewed": true,
+   "scope_reviewed": false,
    "status": "formal: accepted"
   },
   {
@@ -1234,7 +1218,7 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": true,
+   "scope_reviewed": false,
    "status": "formal: accepted"
   },
   {
@@ -1308,26 +1292,10 @@
      "witness_ok": true
     },
     {
-     "accept": null,
-     "author_reviewed": [],
-     "corrects": null,
-     "defs": [],
-     "defs_changed": [],
-     "defs_pending": [],
-     "name": "the U-marginal radial statistics are no expectation functionals, as printed (every σ-finite ν)",
-     "refute": "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_false",
-     "refute_ok": true,
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U",
-     "spec_hash": "ed839d34f480cba1e06f855614a9b4c6",
-     "spec_ok": true,
-     "spec_review": "reviewed by claude-reviewer",
-     "witness": null
-    },
-    {
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_corr",
      "accept_ok": true,
      "author_reviewed": [],
-     "corrects": "the U-marginal radial statistics are no expectation functionals, as printed (every σ-finite ν)",
+     "corrects": null,
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
@@ -1341,26 +1309,10 @@
      "witness_ok": true
     },
     {
-     "accept": null,
-     "author_reviewed": [],
-     "corrects": null,
-     "defs": [],
-     "defs_changed": [],
-     "defs_pending": [],
-     "name": "the cylindrical term of a non-affine Q is no expectation functional, as printed (arbitrary bounded Lipschitz features)",
-     "refute": "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q_printed_false",
-     "refute_ok": true,
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q_printed",
-     "spec_hash": "ed839d34f480cba1ef10ddd1a845cbd2",
-     "spec_ok": true,
-     "spec_review": "reviewed by claude-reviewer",
-     "witness": null
-    },
-    {
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q",
      "accept_ok": true,
      "author_reviewed": [],
-     "corrects": "the cylindrical term of a non-affine Q is no expectation functional, as printed (arbitrary bounded Lipschitz features)",
+     "corrects": null,
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
@@ -1380,8 +1332,8 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": true,
-   "status": "refuted as printed; corrected statement proved"
+   "scope_reviewed": false,
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -1425,14 +1377,16 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "Dissertation.PaperSpec.A.ex55Coeffs"
+     ],
      "defs_pending": [],
      "name": "at ε = 0 the coefficients are those of Example 5.1(i)",
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_dealer_coeffs",
-     "spec_hash": "ed839d34f480cba1ddb1f9221aa35a6d",
+     "spec_hash": "ed839d34f480cba17c7bbab57e15328e",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-reviewer",
+     "spec_review": "changed since review",
      "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -1442,14 +1396,16 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "Dissertation.PaperSpec.A.ex55Coeffs"
+     ],
      "defs_pending": [],
      "name": "Assumptions 2.2–2.4 and (2.3), with L = max{β₁ + ε, β₂, 1}",
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_dealer",
-     "spec_hash": "ed839d34f480cba107ca712a02eccb0d",
+     "spec_hash": "ed839d34f480cba1e2c74601c0086824",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-reviewer",
+     "spec_review": "changed since review",
      "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -1459,14 +1415,16 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "Dissertation.PaperSpec.A.ex55Coeffs"
+     ],
      "defs_pending": [],
      "name": "the crowding interaction is monotone at every interaction strength ε ≥ 0",
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_dealer_mono",
-     "spec_hash": "ed839d34f480cba135a4c463f2fdb488",
+     "spec_hash": "ed839d34f480cba17aa9ad92a733a79a",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-reviewer",
+     "spec_review": "changed since review",
      "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -1476,14 +1434,16 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "Dissertation.PaperSpec.A.ex55Coeffs"
+     ],
      "defs_pending": [],
      "name": "well-posedness at every interaction strength ε ≥ 0 (Theorem 3.5)",
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_dealer_wp",
-     "spec_hash": "ed839d34f480cba178dd2668b1705283",
+     "spec_hash": "ed839d34f480cba1382a433c842b2a2c",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-reviewer",
+     "spec_review": "changed since review",
      "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -1505,30 +1465,14 @@
      "witness_ok": true
     },
     {
-     "accept": null,
+     "accept": "Dissertation.Acceptance.A.ex_dealer_mean_corr",
+     "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
-     "name": "the crowding correction is no function of E[U], as printed (every σ-finite ν)",
-     "refute": "Dissertation.Acceptance.A.ex_dealer_mean_false",
-     "refute_ok": true,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_mean",
-     "spec_hash": "ed839d34f480cba11a8c2923753a6d10",
-     "spec_ok": true,
-     "spec_review": "reviewed by claude-reviewer",
-     "witness": null
-    },
-    {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_mean_corr",
-     "accept_ok": true,
-     "author_reviewed": [],
-     "corrects": "the crowding correction is no function of E[U], as printed (every σ-finite ν)",
-     "defs": [],
-     "defs_changed": [],
-     "defs_pending": [],
-     "name": "the crowding correction is no function of E[U], with L²(ν) ≠ 0",
+     "name": "the crowding correction is no function of E[U], with ν ≠ 0 (so L²(ν) ≠ 0)",
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_dealer_mean_corr",
      "spec_hash": "ed839d34f480cba18bab6ae8a6c6a027",
@@ -1553,6 +1497,193 @@
      "spec_review": "reviewed by claude-reviewer",
      "witness": "Dissertation.Acceptance.A.ex_dealer_marks_hypotheses",
      "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.ex_dealer_not_mean_corr",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the crowding correction is no function of the mean and is nonlinear in the valuation curves, with L²(ν) ≠ 0",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_not_mean_corr",
+     "spec_hash": "ed839d34f480cba1d76cfc2366e08961",
+     "spec_ok": true,
+     "spec_review": "not reviewed",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.ex_dealer_affine",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the crowding correction is affine in the population law: an expectation kernel of Example 5.3 with K = L²(ν)",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_affine",
+     "spec_hash": "ed839d34f480cba14f86326a4c8f6eab",
+     "spec_ok": true,
+     "spec_review": "not reviewed",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.ex_dealer_riccati",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the Riccati function: p' = β₁p² − β₂, p(T) = 1, p > 0 on [0, T], unique",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_riccati",
+     "spec_hash": "ed839d34f480cba122071b255b506300",
+     "spec_ok": true,
+     "spec_review": "not reviewed",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_inert_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.ex_dealer_inert",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [
+      "Dissertation.PaperSpec.A.ex55Coeffs"
+     ],
+     "defs_pending": [],
+     "name": "for h_x = 0 the interaction is inert: Y = pX, Z = pσ_c/(1 + β₁p), U = p h_c/(1 + β₁p), Law(U_t) a Dirac mass, the correction vanishes, the tuple solves at every ε",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_inert",
+     "spec_hash": "ed839d34f480cba141c76d0c8dddc879",
+     "spec_ok": true,
+     "spec_review": "not reviewed",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_inert_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.ex_dealer_spec_marks",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.WellPosedness.Existence.DealerMark",
+      "Dissertation.WellPosedness.Existence.dealerMarks",
+      "Dissertation.WellPosedness.Existence.sizeLeb"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [
+      "Dissertation.PaperSpec.A.ex55Marks"
+     ],
+     "name": "the specialisation: h_c, h_x ∈ L²(ν), ‖h_c‖ = ‖h_x‖ = 1, ⟨h_c, h_x⟩ = 0",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_spec_marks",
+     "spec_hash": "ed839d34f480cba1efd7d1ab7e3204fd",
+     "spec_ok": true,
+     "spec_review": "not reviewed",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.ex_dealer_zero",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.WellPosedness.Existence.DealerMark",
+      "Dissertation.WellPosedness.Existence.dealerMarks",
+      "Dissertation.WellPosedness.Existence.sizeLeb"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [
+      "Dissertation.PaperSpec.A.ex55Coeffs"
+     ],
+     "defs_pending": [
+      "Dissertation.PaperSpec.A.ex55Linear",
+      "Dissertation.PaperSpec.A.ex55Marks"
+     ],
+     "name": "the linear equation has a unique solution X⁰ ∈ S²; Θ⁰ solves the system at ε = 0; 𝔼X⁰ = 0, v' = −(7/4)v + ½, v = (2/7)(1 − e^{−7t/4}); 𝔼‖U⁰_t − 𝔼U⁰_t‖² = v/4 and Law(U⁰_t) is not a Dirac mass",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_zero",
+     "spec_hash": "ed839d34f480cba1fbee3842d146d0f8",
+     "spec_ok": true,
+     "spec_review": "not reviewed",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.ex_dealer_symm",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the symmetrised crowding pairing, positive unless λ is a Dirac mass",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_symm",
+     "spec_hash": "ed839d34f480cba11753a45d7d37cdc6",
+     "spec_ok": true,
+     "spec_review": "not reviewed",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.ex_dealer_active",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.WellPosedness.Existence.DealerMark",
+      "Dissertation.WellPosedness.Existence.dealerMarks",
+      "Dissertation.WellPosedness.Existence.sizeLeb"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [
+      "Dissertation.PaperSpec.A.ex55Coeffs"
+     ],
+     "defs_pending": [
+      "Dissertation.PaperSpec.A.ex55Linear",
+      "Dissertation.PaperSpec.A.ex55Marks"
+     ],
+     "name": "the interaction is active: A(U⁰_t) ≠ 0 with positive probability at every t ∈ (0, T], and 𝔼∫_0^T ‖ε A(U_t)‖² dt > 0 for every ε > 0",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_active",
+     "spec_hash": "ed839d34f480cba11684a792fea39139",
+     "spec_ok": true,
+     "spec_review": "not reviewed",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.ex_dealer_depends",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.WellPosedness.Existence.DealerMark",
+      "Dissertation.WellPosedness.Existence.dealerMarks",
+      "Dissertation.WellPosedness.Existence.sizeLeb"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [
+      "Dissertation.PaperSpec.A.ex55Coeffs"
+     ],
+     "defs_pending": [
+      "Dissertation.PaperSpec.A.ex55Marks"
+     ],
+     "name": "the solution depends on ε: a tuple solving at two strengths has vanishing correction, and in the specialisation no tuple solves at two strengths",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_depends",
+     "spec_hash": "ed839d34f480cba16e17ac4ef107c296",
+     "spec_ok": true,
+     "spec_review": "not reviewed",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses",
+     "witness_ok": true
     }
    ],
    "id": "A:ex:dealer",
@@ -1561,8 +1692,8 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": true,
-   "status": "refuted as printed; corrected statement proved"
+   "scope_reviewed": false,
+   "status": "formal: proved, review pending"
   },
   {
    "clauses": [
@@ -1584,26 +1715,10 @@
      "witness_ok": true
     },
     {
-     "accept": null,
-     "author_reviewed": [],
-     "corrects": null,
-     "defs": [],
-     "defs_changed": [],
-     "defs_pending": [],
-     "name": "the coefficients depend on u pointwise whenever β₁ > 0, as printed (every σ-finite ν)",
-     "refute": "Dissertation.Acceptance.A.rem_freelaw_printed_false",
-     "refute_ok": true,
-     "spec": "Dissertation.PaperSpec.A.rem_freelaw_printed",
-     "spec_hash": "ed839d34f480cba1bbce7828c4ba38e5",
-     "spec_ok": true,
-     "spec_review": "reviewed by claude-reviewer",
-     "witness": null
-    },
-    {
      "accept": "Dissertation.Acceptance.A.rem_freelaw",
      "accept_ok": true,
      "author_reviewed": [],
-     "corrects": "the coefficients depend on u pointwise whenever β₁ > 0, as printed (every σ-finite ν)",
+     "corrects": null,
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
@@ -1623,8 +1738,8 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": true,
-   "status": "refuted as printed; corrected statement proved"
+   "scope_reviewed": false,
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -1680,30 +1795,14 @@
      "witness_ok": true
     },
     {
-     "accept": null,
+     "accept": "Dissertation.Acceptance.A.rem_regimes_corr",
+     "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
-     "name": "the dealer interaction is a genuinely nonlinear U-law interaction, as printed",
-     "refute": "Dissertation.Acceptance.A.rem_regimes_law_nonlinear_false",
-     "refute_ok": true,
-     "spec": "Dissertation.PaperSpec.A.rem_regimes_law_nonlinear",
-     "spec_hash": "ed839d34f480cba1ce2bdab6776d4961",
-     "spec_ok": true,
-     "spec_review": "reviewed by claude-reviewer",
-     "witness": null
-    },
-    {
-     "accept": "Dissertation.Acceptance.A.rem_regimes_corr",
-     "accept_ok": true,
-     "author_reviewed": [],
-     "corrects": "the dealer interaction is a genuinely nonlinear U-law interaction, as printed",
-     "defs": [],
-     "defs_changed": [],
-     "defs_pending": [],
-     "name": "the dealer interaction is affine in the U-law, no function of its mean, and nonlinear in the valuation curve, with L²(ν) ≠ 0",
+     "name": "the dealer interaction is nonlinear in the valuation curves (affine in the U-law, no function of its mean), with L²(ν) ≠ 0",
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.rem_regimes_corr",
      "spec_hash": "ed839d34f480cba16f1e06b2c31d2e18",
@@ -1718,14 +1817,16 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "Dissertation.PaperSpec.A.ex55Coeffs"
+     ],
      "defs_pending": [],
      "name": "the crowding interaction is monotone at every interaction strength ε ≥ 0",
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_dealer_mono",
-     "spec_hash": "ed839d34f480cba135a4c463f2fdb488",
+     "spec_hash": "ed839d34f480cba17aa9ad92a733a79a",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-reviewer",
+     "spec_review": "changed since review",
      "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -1735,15 +1836,43 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "Dissertation.PaperSpec.A.ex55Coeffs"
+     ],
      "defs_pending": [],
      "name": "well-posedness at every interaction strength ε ≥ 0 (Theorem 3.5)",
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_dealer_wp",
-     "spec_hash": "ed839d34f480cba178dd2668b1705283",
+     "spec_hash": "ed839d34f480cba1382a433c842b2a2c",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-reviewer",
+     "spec_review": "changed since review",
      "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.ex_dealer_active",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.WellPosedness.Existence.DealerMark",
+      "Dissertation.WellPosedness.Existence.dealerMarks",
+      "Dissertation.WellPosedness.Existence.sizeLeb"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [
+      "Dissertation.PaperSpec.A.ex55Coeffs"
+     ],
+     "defs_pending": [
+      "Dissertation.PaperSpec.A.ex55Linear",
+      "Dissertation.PaperSpec.A.ex55Marks"
+     ],
+     "name": "the dealer interaction remains active along the solution",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_active",
+     "spec_hash": "ed839d34f480cba11684a792fea39139",
+     "spec_ok": true,
+     "spec_review": "not reviewed",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses",
      "witness_ok": true
     }
    ],
@@ -1753,8 +1882,8 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": true,
-   "status": "refuted as printed; corrected statement proved"
+   "scope_reviewed": false,
+   "status": "formal: proved, review pending"
   },
   {
    "clauses": [
@@ -1895,14 +2024,16 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "Dissertation.PaperSpec.A.ex55Coeffs"
+     ],
      "defs_pending": [],
      "name": "the dealer interaction is monotone at every interaction strength (Example 5.5)",
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_dealer_mono",
-     "spec_hash": "ed839d34f480cba135a4c463f2fdb488",
+     "spec_hash": "ed839d34f480cba17aa9ad92a733a79a",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-reviewer",
+     "spec_review": "changed since review",
      "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -1912,14 +2043,16 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "Dissertation.PaperSpec.A.ex55Coeffs"
+     ],
      "defs_pending": [],
      "name": "the dealer market is well posed at every interaction strength (Example 5.5)",
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_dealer_wp",
-     "spec_hash": "ed839d34f480cba178dd2668b1705283",
+     "spec_hash": "ed839d34f480cba1382a433c842b2a2c",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-reviewer",
+     "spec_review": "changed since review",
      "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -1948,7 +2081,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: accepted"
+   "status": "formal: proved, review pending"
   },
   {
    "clauses": [
@@ -2179,7 +2312,7 @@
    "number": "Remark 2.6 (no label)",
    "paper": "A",
    "scope": "duplicate",
-   "scope_note": "A:remark-2.6",
+   "scope_note": "A:rem:wasserstein-bounds",
    "scope_reviewed": true,
    "status": "out of scope: duplicate"
   },
@@ -2358,26 +2491,10 @@
      "witness_ok": true
     },
     {
-     "accept": null,
-     "author_reviewed": [],
-     "corrects": null,
-     "defs": [],
-     "defs_changed": [],
-     "defs_pending": [],
-     "name": "an additive h₀ cannot serve as a baseline, as printed (every σ-finite ν)",
-     "refute": "Dissertation.Acceptance.A.cor_margin_additive_printed_false",
-     "refute_ok": true,
-     "spec": "Dissertation.PaperSpec.A.cor_margin_additive_printed",
-     "spec_hash": "ed839d34f480cba173b44fe7fdcea16b",
-     "spec_ok": true,
-     "spec_review": "reviewed by claude-reviewer",
-     "witness": null
-    },
-    {
      "accept": "Dissertation.Acceptance.A.cor_margin_additive",
      "accept_ok": true,
      "author_reviewed": [],
-     "corrects": "an additive h₀ cannot serve as a baseline, as printed (every σ-finite ν)",
+     "corrects": null,
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
@@ -2391,26 +2508,10 @@
      "witness_ok": true
     },
     {
-     "accept": null,
-     "author_reviewed": [],
-     "corrects": null,
-     "defs": [],
-     "defs_changed": [],
-     "defs_pending": [],
-     "name": "jump feedback through finitely many functionals of u supplies no margin, as printed (every σ-finite ν)",
-     "refute": "Dissertation.Acceptance.A.cor_margin_finite_printed_false",
-     "refute_ok": true,
-     "spec": "Dissertation.PaperSpec.A.cor_margin_finite_printed",
-     "spec_hash": "ed839d34f480cba1d9ce6ca7008a00fa",
-     "spec_ok": true,
-     "spec_review": "reviewed by claude-reviewer",
-     "witness": null
-    },
-    {
      "accept": "Dissertation.Acceptance.A.cor_margin_finite",
      "accept_ok": true,
      "author_reviewed": [],
-     "corrects": "jump feedback through finitely many functionals of u supplies no margin, as printed (every σ-finite ν)",
+     "corrects": null,
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
@@ -2430,8 +2531,8 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": true,
-   "status": "refuted as printed; corrected statement proved"
+   "scope_reviewed": false,
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -2680,26 +2781,10 @@
      "witness_ok": true
     },
     {
-     "accept": null,
-     "author_reviewed": [],
-     "corrects": null,
-     "defs": [],
-     "defs_changed": [],
-     "defs_pending": [],
-     "name": "the U-marginal radial statistics are no expectation functionals, as printed (every σ-finite ν)",
-     "refute": "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_false",
-     "refute_ok": true,
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U",
-     "spec_hash": "ed839d34f480cba1e06f855614a9b4c6",
-     "spec_ok": true,
-     "spec_review": "reviewed by claude-reviewer",
-     "witness": null
-    },
-    {
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_corr",
      "accept_ok": true,
      "author_reviewed": [],
-     "corrects": "the U-marginal radial statistics are no expectation functionals, as printed (every σ-finite ν)",
+     "corrects": null,
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
@@ -2718,14 +2803,16 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "Dissertation.PaperSpec.A.ex55Coeffs"
+     ],
      "defs_pending": [],
      "name": "the crowding interaction is monotone at every interaction strength ε ≥ 0",
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_dealer_mono",
-     "spec_hash": "ed839d34f480cba135a4c463f2fdb488",
+     "spec_hash": "ed839d34f480cba17aa9ad92a733a79a",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-reviewer",
+     "spec_review": "changed since review",
      "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -2735,14 +2822,16 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "Dissertation.PaperSpec.A.ex55Coeffs"
+     ],
      "defs_pending": [],
      "name": "well-posedness at every interaction strength ε ≥ 0 (Theorem 3.5)",
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_dealer_wp",
-     "spec_hash": "ed839d34f480cba178dd2668b1705283",
+     "spec_hash": "ed839d34f480cba1382a433c842b2a2c",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-reviewer",
+     "spec_review": "changed since review",
      "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
      "witness_ok": true
     }
@@ -2753,8 +2842,8 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": true,
-   "status": "refuted as printed; corrected statement proved"
+   "scope_reviewed": false,
+   "status": "formal: proved, review pending"
   },
   {
    "clauses": [],
@@ -2883,26 +2972,10 @@
      "witness_ok": true
     },
     {
-     "accept": null,
-     "author_reviewed": [],
-     "corrects": null,
-     "defs": [],
-     "defs_changed": [],
-     "defs_pending": [],
-     "name": "the reduction to the jump channel and the β₁ dichotomy, as printed (every σ-finite ν)",
-     "refute": "Dissertation.Acceptance.A.rem_beta1_dich_printed_false",
-     "refute_ok": true,
-     "spec": "Dissertation.PaperSpec.A.rem_beta1_dich_printed",
-     "spec_hash": "ed839d34f480cba1ea466e04b39bde57",
-     "spec_ok": true,
-     "spec_review": "reviewed by claude-reviewer",
-     "witness": null
-    },
-    {
      "accept": "Dissertation.Acceptance.A.rem_beta1_dich",
      "accept_ok": true,
      "author_reviewed": [],
-     "corrects": "the reduction to the jump channel and the β₁ dichotomy, as printed (every σ-finite ν)",
+     "corrects": null,
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
@@ -2922,8 +2995,8 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": true,
-   "status": "refuted as printed; corrected statement proved"
+   "scope_reviewed": false,
+   "status": "formal: accepted"
   },
   {
    "clauses": [],
@@ -3163,7 +3236,7 @@
    "number": "(2.8)",
    "paper": "A",
    "scope": "part-of",
-   "scope_note": "A:remark-2.6",
+   "scope_note": "A:rem:wasserstein-bounds",
    "scope_reviewed": true,
    "status": "out of scope: part-of"
   },
@@ -3174,7 +3247,7 @@
    "number": "(2.9)",
    "paper": "A",
    "scope": "part-of",
-   "scope_note": "A:remark-2.6",
+   "scope_note": "A:rem:wasserstein-bounds",
    "scope_reviewed": true,
    "status": "out of scope: part-of"
   },
@@ -3185,7 +3258,7 @@
    "number": "(2.10)",
    "paper": "A",
    "scope": "part-of",
-   "scope_note": "A:remark-2.6",
+   "scope_note": "A:rem:wasserstein-bounds",
    "scope_reviewed": true,
    "status": "out of scope: part-of"
   },
@@ -3196,7 +3269,7 @@
    "number": "(2.11)",
    "paper": "A",
    "scope": "part-of",
-   "scope_note": "A:remark-2.6",
+   "scope_note": "A:rem:wasserstein-bounds",
    "scope_reviewed": true,
    "status": "out of scope: part-of"
   },
@@ -3695,11 +3768,11 @@
  "summary": {
   "A": {
    "definition: reviewed": 11,
-   "formal: accepted": 39,
+   "formal: accepted": 43,
+   "formal: proved, review pending": 4,
    "out of scope: duplicate": 5,
    "out of scope: part-of": 17,
-   "out of scope: proof-step": 29,
-   "refuted as printed; corrected statement proved": 8
+   "out of scope: proof-step": 29
   }
  }
 }

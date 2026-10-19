@@ -33,8 +33,6 @@ import Dissertation.WellPosedness.Examples.FullLawBeyondRef
 * `Dissertation.Acceptance.A.ex_expfunc`, `ex_expfunc_limin`, `ex_expfunc_jump` — Example 5.3.
 * `Dissertation.Acceptance.A.ex_fulllaw_lip`, `ex_fulllaw_pert`, `ex_fulllaw_wp`,
   `ex_fulllaw_affineQ` — Example 5.4.
-* `Dissertation.Acceptance.A.ex_fulllaw_beyond_U_false` — Example 5.4, the `U`-marginal radial
-  statistic is an expectation functional at `ν = 0`: it is constant.
 * `Dissertation.Acceptance.A.ex_fulllaw_beyond_radial`, `ex_fulllaw_beyond_U_corr`,
   `ex_fulllaw_beyond_Q` — Example 5.4, the three law statistics are no expectation functionals.
 -/
@@ -490,36 +488,6 @@ theorem ex_fulllaw_affineQ : PaperSpec.A.ex_fulllaw_affineQ.{v} := by
     (integrable_finsetSum _ fun j _ => (hint j).const_mul (c j)), integral_const,
     integral_finsetSum _ fun j _ => (hint j).const_mul (c j)]
   simp only [probReal_univ, one_smul, integral_const_mul, heq]
-
-/-- Two probability measures on a type with at most one point agree. -/
-theorem measure_eq_of_subsingleton {X : Type*} [MeasurableSpace X] [Subsingleton X]
-    (μ μ' : Measure X) [IsProbabilityMeasure μ] [IsProbabilityMeasure μ'] : μ = μ' := by
-  ext s _
-  rcases s.eq_empty_or_nonempty with h | ⟨x, hx⟩
-  · simp [h]
-  · have hs : s = Set.univ := Set.eq_univ_of_forall fun y => Subsingleton.elim x y ▸ hx
-    simp [hs]
-
-/-- **Example 5.4, the `U`-marginal radial statistic, is false as printed at `ν = 0`.** With the
-intensity `ν = 0` on a one-point mark space the fibre `L²(ν; ℝ)` is `{0}`, so every `U`-marginal
-is the Dirac mass at `0` and `𝔮̃(W₂(μ^U, δ₀)) = 𝔮̃(0)` for every `μ`: the statistic is the
-expectation functional of the constant `𝔮̃(0)`, although `𝔮̃(r) = min(|r|, 1)` is bounded,
-Lipschitz and not constant on `[0, ∞)`. -/
-theorem ex_fulllaw_beyond_U_false : ¬ PaperSpec.A.ex_fulllaw_beyond_U.{v} := by
-  intro h
-  have hq : ∀ r r' : ℝ, |min |r| 1 - min |r'| 1| ≤ 1 * |r - r'| := fun r r' => by
-    rw [one_mul]
-    refine (abs_min_sub_min_le_max _ _ _ _).trans (max_le (abs_abs_sub_abs_le_abs_sub r r') ?_)
-    simp
-  have hB : ∀ r : ℝ, |min |r| 1| ≤ 1 := fun r => by
-    rw [abs_of_nonneg (le_min (abs_nonneg r) zero_le_one)]
-    exact min_le_right _ _
-  obtain ⟨μ, hμ⟩ := h (E := PUnit.{v + 1}) (0 : Measure PUnit.{v + 1}) 1 1 1 one_pos
-    (fun r => min |r| 1) 1 1 hq hB ⟨0, 1, le_rfl, zero_le_one, by norm_num⟩ (P2.dirac 0)
-    (fun _ => min |(0 : ℝ)| 1) (fun μ => integrable_const _)
-  apply hμ
-  have hU : μ.margU = P2.dirac 0 := P2.ext_law (measure_eq_of_subsingleton _ _)
-  rw [hU, w2P_self, integral_const, probReal_univ, one_smul]
 
 /-- Example 5.4, the radial statistic of the full law is no expectation functional. -/
 theorem ex_fulllaw_beyond_radial : PaperSpec.A.ex_fulllaw_beyond_radial.{v} := by

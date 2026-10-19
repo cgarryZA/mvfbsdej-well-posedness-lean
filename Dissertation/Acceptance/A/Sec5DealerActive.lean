@@ -251,4 +251,52 @@ theorem ex_dealer_depends : PaperSpec.A.ex_dealer_depends.{u, v, w} := by
       rw [← ex55Crowd_eq, hω, smul_zero])
   exact hpos.ne' h0
 
+/-! ### The hypotheses hold -/
+
+/-- **The hypotheses of the inert case of Example 5.5 hold.** With `c_{±1} = 1/2` and `ϱ = 1`,
+the mark measure is σ-finite on a countably generated space with `ν(E) = ∞`; a probability space
+carries a Lévy driver with `d = 1` and mark measure `ν`, with `𝒢₀ = ⊥` independent of it, the
+initial datum `0` strongly measurable for the time-`0` field of `enlJoint ⊥ D` and square
+integrable; `T = β₁ = β₂ = 1` and `ε = 0`; and for these constants a Riccati function `p` with
+`p' = p² − 1` on `[0, 1]`, `p(1) = 1` and `p > 0` on `[0, 1]` exists. -/
+theorem ex_dealer_inert_hypotheses :
+    (SigmaFinite (dealerMarks (fun _ => 1 / 2) 1) ∧ MeasurableSpace.CountablyGenerated DealerMark
+      ∧ dealerMarks (fun _ => 1 / 2) 1 Set.univ = ⊤
+      ∧ ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)
+        (D : LevyStochCalc.Driver.LevyDriver P 1 (dealerMarks (fun _ => 1 / 2) 1)),
+        Indep (⊥ : MeasurableSpace Ω) (⨆ t, D.filtration t) P
+        ∧ StronglyMeasurable[enlJoint ⊥ D bot_le 0] (fun _ : Ω => (0 : EuclideanSpace ℝ (Fin 1)))
+        ∧ MemLp (fun _ : Ω => (0 : EuclideanSpace ℝ (Fin 1))) 2 P
+        ∧ (0 : ℝ) < 1 ∧ (0 : ℝ) ≤ 1)
+    ∧ ∃ p : ℝ → ℝ, (∀ t ∈ Set.Icc (0 : ℝ) 1, HasDerivAt p (1 * p t ^ 2 - 1) t) ∧ p 1 = 1
+      ∧ ∀ t ∈ Set.Icc (0 : ℝ) 1, 0 < p t :=
+  ⟨ex_dealer_hypotheses, exists_riccati one_pos one_pos⟩
+
+/-- **The hypotheses of the specialisation of Example 5.5 hold.** For `ϱ = 1`, `0 < ϱ < 2`; the
+mark measure `ex55Marks 1` is σ-finite on a countably generated space; the classes `h_c, h_x` of
+`ς q` and `q` exist with these representatives; and a probability space carries a Lévy driver
+with `d = 1` and mark measure `ex55Marks 1`, with `𝒢₀ = ⊥` independent of it. -/
+theorem ex_dealer_spec_hypotheses :
+    (0 : ℝ) < 1 ∧ (1 : ℝ) < 2 ∧ SigmaFinite (PaperSpec.A.ex55Marks 1)
+      ∧ MeasurableSpace.CountablyGenerated DealerMark
+      ∧ (∃ hc hx : Lp (EuclideanSpace ℝ (Fin 1)) 2 (PaperSpec.A.ex55Marks 1),
+        (∀ᵐ e ∂PaperSpec.A.ex55Marks 1,
+          hc e = EuclideanSpace.single 0 ((if e.1 then 1 else -1) * (e.2 : ℝ)))
+        ∧ ∀ᵐ e ∂PaperSpec.A.ex55Marks 1, hx e = EuclideanSpace.single 0 (e.2 : ℝ))
+      ∧ ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)
+        (D : LevyStochCalc.Driver.LevyDriver P 1 (PaperSpec.A.ex55Marks 1)),
+        Indep (⊥ : MeasurableSpace Ω) (⨆ t, D.filtration t) P := by
+  have hϱ : (1 : ℝ) < 2 := by norm_num
+  have hxm : MemLp (fun e : DealerMark =>
+      (PiLp.single 2 (0 : Fin 1) (e.2 : ℝ) : EuclideanSpace ℝ (Fin 1))) 2
+      (PaperSpec.A.ex55Marks 1) :=
+    (memLp_markSize _ hϱ).congr_norm
+      (continuous_euclideanSingle_zero.comp_aestronglyMeasurable (memLp_markSize _ hϱ).1)
+      (Eventually.of_forall fun _ => (PiLp.norm_single 2 (fun _ : Fin 1 => ℝ) 0 _).symm)
+  obtain ⟨Ω, _, P, _, ⟨D⟩⟩ :=
+    LevyStochCalc.Driver.LevyDriver.exists 1 DealerMark (PaperSpec.A.ex55Marks 1)
+  exact ⟨one_pos, hϱ, inferInstance, inferInstance,
+    ⟨dealerJump (fun _ => (2 - 1) / 2) hϱ, hxm.toLp _, coeFn_dealerJump hϱ, hxm.coeFn_toLp⟩,
+    Ω, inferInstance, P, inferInstance, D, indep_bot_left _⟩
+
 end Dissertation.Acceptance.A
