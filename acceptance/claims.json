@@ -1133,6 +1133,10 @@
      "accept": "Dissertation.Acceptance.A.ex_dealer_active",
      "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses"
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9"
    ]
   },
   {
@@ -1143,7 +1147,7 @@
    "number": "(1.1)",
    "title": "The MV-FBSDEJ (1.1): h evaluated at predictable tuple and predictable law flow; coefficients W2-Lipschitz on P2(H) along diagonal pairs",
    "location": "paper/sections/01-introduction.tex:6",
-   "source_sha256": "80f3967ca000449faf2b3c19ea1fb0196f9c775bafcb265a8e45fc53ae802699",
+   "source_sha256": "0d85452f18880ddaaf63d57d1760fe13bf46552331679aa18ef206bbdea64300",
    "scope": "definition",
    "scope_note": "the system (1.1), stated through the solution notion of §3",
    "scope_reviewed": true,
@@ -1155,6 +1159,17 @@
       "Dissertation.PaperSpec.A.Solution"
      ]
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "80f3967ca000449faf2b3c19ea1fb0196f9c775bafcb265a8e45fc53ae802699",
+    "a65d74c6d2405e97a5cefc99b1c5abf96613cb059d90d03a087c84115ef9fe8b",
+    "b7cb011d9ffc44205cb888cc7159e49432b09e22368fd6024f87d563e2a34b54",
+    "d90a193059e1ad51724cc479755ffba2eee983fd73b997e9e6894c91899cfe37",
+    "c9292c907b7df276ec3e708a58612933c320e1af0fe13c9b04190f207e6c842a",
+    "914c8a16209d3dc086f2d56e14ce4a0dab71f9a8a27425535c8257182c52111c",
+    "67df26d0b4ba184d86fe62cbda32bc74a78fff8421dd38aa1c78316f9873b193",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
    ]
   },
   {
@@ -1182,6 +1197,10 @@
      "accept": "Dissertation.Acceptance.A.ex_expfunc_limin",
      "witness": "Dissertation.Acceptance.A.ex_expfunc_limin_hypotheses"
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "90030b2d20a48b0ae1854a8fb2d4053ad1be2da6ece678b13095bd33e99bda43"
    ]
   },
   {
@@ -1196,7 +1215,11 @@
    "scope": "part-of",
    "scope_note": "A:ex:brownian",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "35a0b66664c5c6c37fcab69b46738fb5b9f70798d932ef62a39cf512b2da78af"
+   ]
   },
   {
    "id": "A:sec2:separable-L2nu",
@@ -1217,6 +1240,10 @@
      "accept": "Dissertation.Acceptance.A.sec2_separable",
      "witness": "Dissertation.Acceptance.A.sec2_separable_hypotheses"
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "ae53c7fb64bdc4c1d458158131bce4ad8a6101350c43ccc2c48c3c458f6e166e"
    ]
   },
   {
@@ -1238,6 +1265,10 @@
      "accept": "Dissertation.Acceptance.A.sec2_infinite_activity",
      "witness": "Dissertation.Acceptance.A.sec2_infinite_activity_hypotheses"
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "9f39b94445462cf5bd885113323065e33b702bc828630f1707c4ea24b315889e"
    ]
   },
   {
@@ -1259,6 +1290,10 @@
      "accept": "Dissertation.Acceptance.A.sec2_prp",
      "witness": "Dissertation.Acceptance.A.sec2_prp_nonzero_hypotheses"
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "4abed1a193ffeafc8c98d073e7c33bcde2f293ba9bb58b16d1a0464060b8dcea"
    ]
   },
   {
@@ -1280,6 +1315,10 @@
      "accept": "Dissertation.Acceptance.A.sec2_hborel",
      "witness": "Dissertation.Acceptance.A.sec2_hborel_nonzero_hypotheses"
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "212a07e14afa5d0609973352865fe2ce8ae09c6d715739e9e87b738950e721a8"
    ]
   },
   {
@@ -1294,7 +1333,11 @@
    "scope": "duplicate",
    "scope_note": "A:eq:fubiniiso",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "df5f705af90cbf7413924cd5e12daf30a99a199a25fd04a27b157349712d582b"
+   ]
   },
   {
    "id": "A:sec2:coefmeas",
@@ -1308,7 +1351,11 @@
    "scope": "duplicate",
    "scope_note": "A:eq:coefmeas",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "e92807a86fd4018cc3957107d1f31ad54876122aa006e56b1843c215dad28c22"
+   ]
   },
   {
    "id": "A:rem2.6",
@@ -1318,11 +1365,50 @@
    "number": "Remark 2.6 (no label)",
    "title": "(2.8)-(2.9) synchronous coupling bounds; (2.10) Lipschitz law functionals are W2-Lipschitz with same constant (via an optimal coupling); (2.11) U-marginal projection 1-Lipschitz",
    "location": "paper/sections/02-model-assumptions.tex:200",
-   "source_sha256": "46a71dda66ba08c5d529b385e7d8ae8fd794699eb25531585e9f544aa410089c",
+   "source_sha256": "c8a2fba9313bc8ac01219a14798a2a020c23985fc0d7b0be3674163a953ee8a8",
    "scope": "duplicate",
    "scope_note": "A:rem:wasserstein-bounds",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_region": {
+    "end_line": 232
+   },
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "46a71dda66ba08c5d529b385e7d8ae8fd794699eb25531585e9f544aa410089c",
+    "e798067601d191e174b3f836b11e67afcfa12614a0ed5d048d68046c35440649",
+    "982a54a616b607d53264e3a4dd8472bdebdff50d9a9d8b22afff794ca0380ff2",
+    "a3cd05e844e1f87c6f85211d3ca48d5ae752ecbf1005b2c3f5065b8e42a649aa",
+    "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
+    "fbbbe87249287fc7e24623b802dd7b95587a1d8df018289cff60a58fd509617c",
+    "4be593a81f5a5c35b88f229a71c2d66c82da7b692641d0824048d7c39b5c38ea",
+    "bc4495be0d8c955953edc05b130789a30fcead79b5faa0b65c6024e7efec4faf",
+    "55d298002abbd19b5847ecb345eaf12697c1290a52ebf1e8645b725d8c33b452",
+    "d809369cf96a07c748dad6d4608429fde9a34e4947ebf0908137156549a364af",
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "19cbe3273e0cfdec8631de76a5ea8e7ab86b3a752646106df112561a1c2a5c5c",
+    "6162b65775fd3cc422603b8248c391ea1dc2d73a72daba4103dc4dd25cf53343",
+    "24fe9856a6cd1e2198c47f6a101dfd49196e568a1f12f84aa11a204d80908476",
+    "720820f124a2175510cc5e8978191c12b17341bb1dc8eb2a589dab404f983f82",
+    "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
+    "e6cfb03991b0441e0d5eda7f7aeb1fab96557d8139aa5deaf921e3ea05ec2602",
+    "acacee4165a711eed0798e14b9fdb9e482c61d350dd45f2452f58e1fa73f6a66",
+    "6381ea42a8ae2db807db16ed46fd3a6d9bdce3d287edb245c9feb3234306e59d",
+    "6a0bfa33f001d208130e9a03ea6d5576d0b13e75fcdb843aa4b01e29f97f5196",
+    "9c47ce431752fb5046b53c755698362e7775e282e4b7276791703279ef708a4c",
+    "55d298002abbd19b5847ecb345eaf12697c1290a52ebf1e8645b725d8c33b452",
+    "81fb0cc98f9d79b98306c89e2a72dfa82716f8a239d7d251b9372e3fe8e2fb44",
+    "5f0dd79f9002db592cc5b7b0fbced859e9ae180ffc26a5c1ec1411cdb80bb132",
+    "32058cc7c469998487ed4a5d6975d70ee5d1f64c720c3d8b62c06f5ac5d8ec0a",
+    "a7b5ec50196fc42b921c4e858383c24acd1ffdbd09acab12aba8bbdbc91949e8",
+    "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
+    "38645c72d296bc6d5e43fd3ccdf8a20ce012047e4308035c2d86f62ad5a3bf6b",
+    "02a3c647da0df85c16145cfbf40b2ba3e7d6af037ae47d6496e42d8262b1c833",
+    "39eaa854f53dfb8f5cfba60e15bccd8b7e393271ed7adf2b7010f77195fc5264",
+    "96fbd84fb5fec720cd7bdba8800e08c9993aafbe997baeb422d21874fad7a3dd",
+    "55d298002abbd19b5847ecb345eaf12697c1290a52ebf1e8645b725d8c33b452",
+    "3f283608774fb3e201f07eb6ca7ca2a96e4b7d5dd0174358fddb06db01593030"
+   ]
   },
   {
    "id": "A:sec3:HH-banach",
@@ -1361,6 +1447,10 @@
      "accept": "Dissertation.Acceptance.A.sec3_HH_complete",
      "witness": "Dissertation.Acceptance.A.sec3_HH_complete_hypotheses"
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f"
    ]
   },
   {
@@ -1388,6 +1478,10 @@
      "accept": "Dissertation.Acceptance.A.sec3_one_null_set",
      "witness": "Dissertation.Acceptance.A.sec3_space_hypotheses"
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "14d75cb86a9216c652eee2f0e1f6bebae9651e4f1f55bc1c34aacc8f595b9954"
    ]
   },
   {
@@ -1421,6 +1515,10 @@
      "accept": "Dissertation.Acceptance.A.thm_stab_minimal",
      "witness": "Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses"
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1"
    ]
   },
   {
@@ -1472,6 +1570,10 @@
      "accept": "Dissertation.Acceptance.A.cor_margin_findim",
      "witness": "Dissertation.Acceptance.A.cor_margin_findim_hypotheses"
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17"
    ]
   },
   {
@@ -1493,6 +1595,10 @@
      "accept": "Dissertation.Acceptance.A.sec4_horizon_not_contractive",
      "witness": "Dissertation.Acceptance.A.sec4_horizon_hypotheses"
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "3848cfec9527e65f37a2aa7ee50e7c186ffb9d3e89e5d7181ef8045b33f7557a"
    ]
   },
   {
@@ -1514,6 +1620,10 @@
      "accept": "Dissertation.Acceptance.A.sec4_supremum_criterion",
      "witness": "Dissertation.Acceptance.A.sec4_supremum_criterion_hypotheses"
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "66f9ea22a06a00e8b6aad28172a7820750d9f1d2f2ddeb8475dddc064283e43b"
    ]
   },
   {
@@ -1537,6 +1647,10 @@
       "Dissertation.PaperSpec.A.WeakForcedSolution"
      ]
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "17962fe037ff7de888f26d2b0c9f51427d790ab6422e549a1d661ef69141a32e"
    ]
   },
   {
@@ -1564,6 +1678,10 @@
      "accept": "Dissertation.Acceptance.A.eq_termg",
      "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "fb2d9936eeb420107ab775d3d6f5f596ace121471c667bed056241cf5805dad6"
    ]
   },
   {
@@ -1578,7 +1696,11 @@
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "89a434caa7c84ed5e2143713d1483dde1e7fa2001de1f51afe467a70f3c9fe8f"
+   ]
   },
   {
    "id": "A:sec4:uniqueness-along-homotopy",
@@ -1592,7 +1714,11 @@
    "scope": "proof-step",
    "scope_note": "a step of the argument of Section 4 outside a proof environment: uniqueness along the homotopy is Lemma 4.3 at zero data, with Lemma 4.2 for the base case",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "518b95da43921c8290496ba8c58a2f74ebe2bce2191c71305e264312b4786bd7"
+   ]
   },
   {
    "id": "A:sec4:proof-thm35",
@@ -1606,7 +1732,11 @@
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "ed713718821e088c6ca09a59f75d22202a9e9960885df259a33fd8f6dd54fcbe"
+   ]
   },
   {
    "id": "A:sec:examples",
@@ -1627,6 +1757,10 @@
      "accept": "Dissertation.Acceptance.A.sec5_limin",
      "witness": "Dissertation.Acceptance.A.sec5_limin_hypotheses"
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "3f24646e833f5a7b1bfdeb3449b26795f12ebfae2cde62dff93327979908d073"
    ]
   },
   {
@@ -1708,6 +1842,10 @@
      "accept": "Dissertation.Acceptance.A.ex_dealer_active",
      "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses"
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9"
    ]
   },
   {
@@ -1718,11 +1856,103 @@
    "number": "Example 5.1(i)",
    "title": "Affine base (n=m=d=1): Hamiltonian convex with minimiser, SMP [TangLi] gives optimality system = (1.1); L=max{b1,b2,1}; c_G=1; pairings exact; alpha=1; margin; U-dissipative; clamp variant keeps (2.7) with (b1-eps,b2)",
    "location": "paper/sections/05-examples.tex:24",
-   "source_sha256": "7d4c8ba4878bf88e29152c7147dbe24182a03c7bf03b4b8eb2ddddb6078ed978",
+   "source_sha256": "47a6c1888bbdc4c119d3ad41878f15e1138b07cb6bcc74e56b1a412e9525b3e4",
    "scope": "part-of",
    "scope_note": "A:ex:concrete",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_region": {
+    "end_line": 109
+   },
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "7d4c8ba4878bf88e29152c7147dbe24182a03c7bf03b4b8eb2ddddb6078ed978",
+    "2ac473dcd60dd09fbb694fc0e342e62875830081f771e53e82f96671501df8fd",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "477e1e905de6538a34a7168d57d8fcbae513423db14b9b1d06b8a83f890e2a90",
+    "f8ebcb70d1546f38a1b169134ab513058c87d044a6808facd511c963c109fcc7",
+    "4421afd1bbca8ee93c43f43cb3b2b68a21a17f2528d57472b20cf9fbad8dd016",
+    "515727c6b5c57380b1905499ce34c27c22be3e0061245b567ed8c6ceff914db1",
+    "ffffb6342d8092a38a94274fce72f8fc5c0eae1035e248658c6f4a2671057e7d",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "de5e677acf94534ea4be90acf092808e82d778e32dacb8d2c47e5e75d9726fc2",
+    "11d8634027c6cbd901d1d7b3d7e42a0d5a247e4eb3191494b2e734050e80d5c0",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "d0f2f4763bd06ad0c3aa12f75132ed6efc4e086c796d506accd2053b9c6e9b21",
+    "410c0edcaf7c481f1e08d217b734f9726ab63ecb2c4c39366128efb9f927707c",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "f8ab50a1b698027a8c4c8262cb7c1a12c1818f89b79a530696a9fa3b701919c7",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "146cb59ccbf32d9af9f2e2c659eb52709e2fd42e68707f00adf624e27d2a7a5a",
+    "488be98a804eb8620f425ccec01bac564e4e76128914105fd81fcd47a7735eaa",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "49d6cca753c272c05c6063ff9ffa7b3470634bdbf9827cb320dba807ba970501",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "3754a5990cbcd26ac231bd058e08bcbf26b5c7bf58baff6c21c232f67c5f6b16",
+    "39b55508cafedf42a3c51a3d39a5b6adc6fcc8e018e3ec5fe4b1f365a052f27f",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "c838d3e5c18045cc35046dc5f5acc43a2a2ce24a1b35999501d93f42163082a9",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "8bdeb7decf36b33777bac73c02300add2f239eeec7de368c462990efe70150d6",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "8c5533799589ab34c04f4ec2ecc4d4db26b67e0fdd17a3549a6747a40f347a20",
+    "77f2111c4d662deced28b2c381c5b98cda4e5f09b3da27ac3ae49f3c6baf3270",
+    "8b8ceeb246aa6b4d3c0734b2ffc8e1f3e6105b851ae95c5a46c0dc54fdf38170",
+    "64eb38e44f611a8909586fa56ad29d43019fcf4b2ee2cb834fb9b4013fe795d6",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "c4367c47742f8e5a8dca702a434313d8a1e11d3db2010e44ef21caa0266f3759",
+    "a613422e33ed3cead81262e2a0f1a10a579e5c8740f1e36b450179034fbef77a",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "8f4932621799e5df233a87ef931ccba49890c2a045e6ecde8f79104bd99769f4",
+    "a09d064f532f2104ec6a984cead71994ada41335eff5098b88227251d6bce9af",
+    "a83e80738bb0750f4a4c934af2b8f7d7a20e185a22cf2c94b9c0cdb65a119ddb",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "717adc16b40343db801432e977a59f107a2e7e42bb89136fae5abfc525a7dc03",
+    "9eed103958f4d5c7b2b8ac9b392a38192ce14fe6457fca8eab233a7fc4a9159f",
+    "ad55a30b127cdb9836eb3674ac36a0d1133aa43b26c4e28dd08fef779ba972ff",
+    "beb96f41bbc2deeff8694888411aa7ffe169b5644ff52ea6ea8a52c48ecd5ab3",
+    "8cadf2bdf9d363b831a4ef54ab2993412515fb01b8d276d336f847f215f30d98",
+    "8b2542204e452027822128f6a25c662485dc8108f5fdf94d9451de0b39ada81c",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "f6d7a83c7b22c6a00a9fc8a02b64eb99a920bc990f42bffabd84c7c9bebc17b1",
+    "404d3f29ce7a5b8ea5cb9b42f2832978cc002c064a898f54fae2488261babe00",
+    "3542d666d5b58c6388a62139ca20991f16b4f65f00f98344200f0ca73cae48e8",
+    "5384a06135b89f608bbe13ec05a4b6eb576841f7556413423e83cfbe1c61869e",
+    "b2203965f4c6555e8fb3fa3bf530e6f761dacf605ce160ce45a18e183d7ce296",
+    "7c6a23929d5f9618222b164be9fee73d7656418e92455b3b5cfa7f25543a5997",
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "4a73b578083b1a4a58fc8f016c15521cf825dbbe5e5c47b530d965460bfc3125",
+    "725f03321f3d1f8c5bd476e8c9a3044e0a035fba23e227797942ea8655c50746",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "305fd5c90c140ff12048779262c6495c84c8cc828c65d8874285e97be552a1c7",
+    "68d4bb71a1179dfa18ee0fef0181b2e109f386939117e866d01fa0f418579259",
+    "6f73b1d942c10a74c1e4119b5a20de8a1a005f967f54d52f2a4276c3145c2e0c",
+    "b66c6bbab33e0c13a34282ecf627f2c184726248871407c176e150d6ccc775fb",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "e9989a475b65502db30d050884c20cdfd8bb79eb34b6c3f7ff9cf9973f93f122",
+    "337bdac8e5056e0d455a86a7615fa226aebf9033ca52d9ce9aa0a6f324c17d3d",
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "8a86e7f90ece1925fcdf884bcb9d158fa3bd84fdcb65ba65284061d46b418040",
+    "55f4f798924e59a03bb9aa50a12789af49a741790d2388769fefe8bed084fe58",
+    "f8c8933fefa373222975eef1223bca7c5d786eb88061d972965259a06055a185",
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "e0fb58311cb3a9ceb5e10368a82630db9014e0b9288776912b02f536cd251d43",
+    "198597ea29750a93af618715c9ada4012262288590ce1cddb284c217a19a0557",
+    "c38420fdd976304cf44ca350e0c24f31af7b3de3ef23417eb45e48a4bb1aac2e",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "1a3e3714f048d64c69f4d3b3edd3d35667691ae925083599ee1cff4ae4a19ee9",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "5192c6c388290236330fc7c199740e98e3a175eb2b1e213849ccb6a56f578b5d",
+    "92ea7777a1774250092501beb843891b56507ae3313b218e6596da2b00ff9199",
+    "a6621910b1ef7c0a5f67794208e51b6b6358fb3c4e126abf01bce137eb04e720"
+   ]
   },
   {
    "id": "A:ex:concrete(ii)",
@@ -1736,7 +1966,11 @@
    "scope": "part-of",
    "scope_note": "A:ex:concrete",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "5673eb3549b7003ddbd72eaf6be416f492252d49f56d204c2bd32be0cb85d921"
+   ]
   },
   {
    "id": "A:conclusion",
@@ -1799,6 +2033,10 @@
      "accept": "Dissertation.Acceptance.A.rem_beta1_dich",
      "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829"
    ]
   },
   {
@@ -1813,7 +2051,11 @@
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "cdf7e5fd3a5753faf4d5aaea2d4e017db124558fd0461ec3b81dd52a3f8527cc"
+   ]
   },
   {
    "id": "A:lemA1:pettis",
@@ -1827,7 +2069,11 @@
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "4683d66c9de5e151a16b21a1e6cbac952384cffefeb3e0e4b2eb720fb4a0b746"
+   ]
   },
   {
    "id": "A:eq:mvfbsdej",
@@ -1837,7 +2083,7 @@
    "number": "(1.1)",
    "title": "equation eq:mvfbsdej [def]",
    "location": "paper/sections/01-introduction.tex:6",
-   "source_sha256": "80f3967ca000449faf2b3c19ea1fb0196f9c775bafcb265a8e45fc53ae802699",
+   "source_sha256": "0d85452f18880ddaaf63d57d1760fe13bf46552331679aa18ef206bbdea64300",
    "scope": "definition",
    "scope_note": "the system (1.1) and its solutions in the space of Section 3",
    "scope_reviewed": true,
@@ -1849,6 +2095,17 @@
       "Dissertation.PaperSpec.A.Solution"
      ]
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "80f3967ca000449faf2b3c19ea1fb0196f9c775bafcb265a8e45fc53ae802699",
+    "a65d74c6d2405e97a5cefc99b1c5abf96613cb059d90d03a087c84115ef9fe8b",
+    "b7cb011d9ffc44205cb888cc7159e49432b09e22368fd6024f87d563e2a34b54",
+    "d90a193059e1ad51724cc479755ffba2eee983fd73b997e9e6894c91899cfe37",
+    "c9292c907b7df276ec3e708a58612933c320e1af0fe13c9b04190f207e6c842a",
+    "914c8a16209d3dc086f2d56e14ce4a0dab71f9a8a27425535c8257182c52111c",
+    "67df26d0b4ba184d86fe62cbda32bc74a78fff8421dd38aa1c78316f9873b193",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
    ]
   },
   {
@@ -1859,7 +2116,7 @@
    "number": "(2.1)",
    "title": "equation eq:compid [claim]",
    "location": "paper/sections/02-model-assumptions.tex:16",
-   "source_sha256": "800f1b72b4840261a386a8c83c9145123c3e5f3915f21629c419af06386fdb4d",
+   "source_sha256": "a62f2f651f15297ca0005558e8980950d28aaaa1062298dd4c00ea019fe06299",
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
@@ -1870,6 +2127,13 @@
      "accept": "Dissertation.Acceptance.A.eq_compid",
      "witness": "Dissertation.Acceptance.A.sec2_compensation_nonzero_hypotheses"
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "800f1b72b4840261a386a8c83c9145123c3e5f3915f21629c419af06386fdb4d",
+    "2a039ab14c8267f363b079d6b19e353dc1f034848d7240b0dc203ccb1f9a4858",
+    "6e8ff351064c195ab01f0006c463caeec1b4e468c3bf5178e65c164769ef9a8d",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
    ]
   },
   {
@@ -1880,7 +2144,7 @@
    "number": "(2.2)",
    "title": "equation eq:zeromean [claim]",
    "location": "paper/sections/02-model-assumptions.tex:21",
-   "source_sha256": "c5812d77e4d5bc3ee384503abd6618caf3308ce50f881037696d6be4f444a9ee",
+   "source_sha256": "74dcd6eaa5929b1a9d4f4a1b6af308d62e1c2dd6a28ef7f0329a7ba65184f4ee",
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
@@ -1891,6 +2155,14 @@
      "accept": "Dissertation.Acceptance.A.eq_zeromean",
      "witness": "Dissertation.Acceptance.A.sec2_compensation_nonzero_hypotheses"
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "c5812d77e4d5bc3ee384503abd6618caf3308ce50f881037696d6be4f444a9ee",
+    "6d58f1afba3cdd21057109040d70211dd095047e71f33f641688c64d610004c7",
+    "7bd51b5d15522c602b31ad947f7ad2df72d03ffaefbee11383a87e053cb63790",
+    "8f98525a8f03a42d3b4b74a95126aee1d60534ee0537de9b8e83e0d7381f0bad",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
    ]
   },
   {
@@ -1901,7 +2173,7 @@
    "number": "(2.3)",
    "title": "equation eq:hborel [def]",
    "location": "paper/sections/02-model-assumptions.tex:102",
-   "source_sha256": "47d90036113382214fdafc448332ede2c231323868cef98a5bf25445e9740017",
+   "source_sha256": "e96f0d4c4f81b393c2119f66e1766cb7561f3cf1fa43458d01f4d5c4892a910a",
    "scope": "definition",
    "scope_note": "the joint Borel measurability (2.3)",
    "scope_reviewed": true,
@@ -1913,6 +2185,14 @@
       "Dissertation.WellPosedness.Spec.JointBorel"
      ]
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "47d90036113382214fdafc448332ede2c231323868cef98a5bf25445e9740017",
+    "ea01f9e73d4bcc5ee2c674671ca7efba832c0ad638347d0f4ec5d9b256f74993",
+    "c30b6b64034fd30dd1caddc2bc9d5dcb602fc7faa5d72742cc0dbc5a899fbe9e",
+    "be8d4d2e2ee9a742b8f369ed5452e315f3065e2c86313bea74a7b87ce0959d25",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
    ]
   },
   {
@@ -1923,7 +2203,7 @@
    "number": "(2.4)",
    "title": "equation eq:fubiniiso [claim]",
    "location": "paper/sections/02-model-assumptions.tex:113",
-   "source_sha256": "61f84ae00902003b1bc63e71689554d2ccc3e3fe92a885bcfc325675f3b13863",
+   "source_sha256": "597a92f6004ad8db02800eef365f8f95188c907f3f53c17cccf909c2a49ed061",
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
@@ -1934,6 +2214,13 @@
      "accept": "Dissertation.Acceptance.A.eq_fubiniiso",
      "witness": "Dissertation.Acceptance.A.eq_fubiniiso_hypotheses"
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "61f84ae00902003b1bc63e71689554d2ccc3e3fe92a885bcfc325675f3b13863",
+    "633adcf0c357f6e4ba2f5d1a526592d88d997291e5859562d08dd3f17141e19f",
+    "df5f705af90cbf7413924cd5e12daf30a99a199a25fd04a27b157349712d582b",
+    "ffc850c2244a089c0a6ffe08337134b12c6101408f4d581c1f90369105773fac"
    ]
   },
   {
@@ -1944,7 +2231,7 @@
    "number": "(2.5)",
    "title": "equation eq:coefmeas [claim]",
    "location": "paper/sections/02-model-assumptions.tex:124",
-   "source_sha256": "7924cb39f7a28bb67419f823f289ffe9c6c3d00cf2e8c7a19b20c87c5f3ff7d7",
+   "source_sha256": "951bc71349ab7748916546e7dcfd8ef117078c5b8dcd1e5f4e035106ef459170",
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
@@ -1961,6 +2248,17 @@
      "accept": "Dissertation.Acceptance.A.eq_coefmeas_jump",
      "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "7924cb39f7a28bb67419f823f289ffe9c6c3d00cf2e8c7a19b20c87c5f3ff7d7",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "a3a37113679891936975a072f8be4198fc3b44af23fd8ab870a308b9b7a88a24",
+    "a8bb1800c8499a17ec4bff494f793354a69d4a27b21aa0163e267a0143d36f47",
+    "b913c8e1ba5f9fbfd34e20be7d8825e1f3922352594d44da97e7737609658dca",
+    "b5914b03a132b25224ab0db2a8b85bfcccea4b3b0f9a608b2705c6c23e9ba745",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
    ]
   },
   {
@@ -1971,11 +2269,17 @@
    "number": "(2.6)",
    "title": "equation eq:lipT [stmt:Ass 2.3]",
    "location": "paper/sections/02-model-assumptions.tex:156",
-   "source_sha256": "26000867c0563c5cbf92033eb156bb744fdb9cd4ef31d2116ab1e40cbf2ded35",
+   "source_sha256": "d4d4e50f459aaa0ca5ff86b8a8dfd5d9d6cce45671431d6e69118671ba2d91fb",
    "scope": "part-of",
    "scope_note": "A:ass:lip",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "26000867c0563c5cbf92033eb156bb744fdb9cd4ef31d2116ab1e40cbf2ded35",
+    "bbc52154e7857847cc2104078a8d8ecd6c14803fc23aa1b9a53602ed41169c7c",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:mono",
@@ -1985,11 +2289,19 @@
    "number": "(2.7)",
    "title": "equation eq:mono [stmt:Ass 2.5]",
    "location": "paper/sections/02-model-assumptions.tex:189",
-   "source_sha256": "02adff614a721879d5dbecfa1276846e950167cc29a91b51cd366cd0b0407892",
+   "source_sha256": "ae1dda685dd5715bd86cd1c32c09befdf12e389c3c4c43e3416a947c802a8359",
    "scope": "part-of",
    "scope_note": "A:ass:mono",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "02adff614a721879d5dbecfa1276846e950167cc29a91b51cd366cd0b0407892",
+    "577fbbc13ae67863ea0b20fdda005506acb2807bc7e367aa97febbcb151216c2",
+    "f3b3ddc19a10a40ec5abd29c19132081eaa69e96b95909a2f9070e063b41c005",
+    "527e58fb5db3074d3f20e1db628d831806ac126a33cc9c30c62cb5e566c1d032",
+    "cb8fc986ce299882179b1b6be6dead3ede8b44f08a39ecac133fe8b715321baa"
+   ]
   },
   {
    "id": "A:eq:coupling",
@@ -1999,11 +2311,19 @@
    "number": "(2.8)",
    "title": "equation eq:coupling [stmt:Remark 2.6]",
    "location": "paper/sections/02-model-assumptions.tex:204",
-   "source_sha256": "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
+   "source_sha256": "4bba5ca5359428232bf8a210ca0762f9e4b72abff2f5c0268ac53eedd85c3175",
    "scope": "part-of",
    "scope_note": "A:rem:wasserstein-bounds",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
+    "fbbbe87249287fc7e24623b802dd7b95587a1d8df018289cff60a58fd509617c",
+    "4be593a81f5a5c35b88f229a71c2d66c82da7b692641d0824048d7c39b5c38ea",
+    "bc4495be0d8c955953edc05b130789a30fcead79b5faa0b65c6024e7efec4faf",
+    "55d298002abbd19b5847ecb345eaf12697c1290a52ebf1e8645b725d8c33b452"
+   ]
   },
   {
    "id": "A:eq:couplingT",
@@ -2013,11 +2333,19 @@
    "number": "(2.9)",
    "title": "equation eq:couplingT [stmt:Remark 2.6]",
    "location": "paper/sections/02-model-assumptions.tex:204",
-   "source_sha256": "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
+   "source_sha256": "4bba5ca5359428232bf8a210ca0762f9e4b72abff2f5c0268ac53eedd85c3175",
    "scope": "part-of",
    "scope_note": "A:rem:wasserstein-bounds",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
+    "fbbbe87249287fc7e24623b802dd7b95587a1d8df018289cff60a58fd509617c",
+    "4be593a81f5a5c35b88f229a71c2d66c82da7b692641d0824048d7c39b5c38ea",
+    "bc4495be0d8c955953edc05b130789a30fcead79b5faa0b65c6024e7efec4faf",
+    "55d298002abbd19b5847ecb345eaf12697c1290a52ebf1e8645b725d8c33b452"
+   ]
   },
   {
    "id": "A:eq:lipfun",
@@ -2027,11 +2355,21 @@
    "number": "(2.10)",
    "title": "equation eq:lipfun [stmt:Remark 2.6]",
    "location": "paper/sections/02-model-assumptions.tex:215",
-   "source_sha256": "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
+   "source_sha256": "0328cf62274f047586c4753cf2a6754d928eb1b07c31576740402e673e2feeec",
    "scope": "part-of",
    "scope_note": "A:rem:wasserstein-bounds",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
+    "e6cfb03991b0441e0d5eda7f7aeb1fab96557d8139aa5deaf921e3ea05ec2602",
+    "acacee4165a711eed0798e14b9fdb9e482c61d350dd45f2452f58e1fa73f6a66",
+    "6381ea42a8ae2db807db16ed46fd3a6d9bdce3d287edb245c9feb3234306e59d",
+    "6a0bfa33f001d208130e9a03ea6d5576d0b13e75fcdb843aa4b01e29f97f5196",
+    "9c47ce431752fb5046b53c755698362e7775e282e4b7276791703279ef708a4c",
+    "55d298002abbd19b5847ecb345eaf12697c1290a52ebf1e8645b725d8c33b452"
+   ]
   },
   {
    "id": "A:eq:margproj",
@@ -2041,11 +2379,20 @@
    "number": "(2.11)",
    "title": "equation eq:margproj [stmt:Remark 2.6]",
    "location": "paper/sections/02-model-assumptions.tex:226",
-   "source_sha256": "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
+   "source_sha256": "9fc3ad865d9d215b234179c183001e19228f9fccbb00fde640ec6aefea390ae1",
    "scope": "part-of",
    "scope_note": "A:rem:wasserstein-bounds",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
+    "38645c72d296bc6d5e43fd3ccdf8a20ce012047e4308035c2d86f62ad5a3bf6b",
+    "02a3c647da0df85c16145cfbf40b2ba3e7d6af037ae47d6496e42d8262b1c833",
+    "39eaa854f53dfb8f5cfba60e15bccd8b7e393271ed7adf2b7010f77195fc5264",
+    "96fbd84fb5fec720cd7bdba8800e08c9993aafbe997baeb422d21874fad7a3dd",
+    "55d298002abbd19b5847ecb345eaf12697c1290a52ebf1e8645b725d8c33b452"
+   ]
   },
   {
    "id": "A:eq:monomargin",
@@ -2055,7 +2402,7 @@
    "number": "(2.12)",
    "title": "equation eq:monomargin [stmt:Remark 2.11]",
    "location": "paper/sections/02-model-assumptions.tex:290",
-   "source_sha256": "6867b6d6ec817311e74332eaab2da6b80faa99cc43729915f5643802059f3d9e",
+   "source_sha256": "3bf398680ece348005cee018ad83bc5cf40f4671bc0e6c341b0bf437325b642e",
    "scope": "definition",
    "scope_note": "",
    "scope_reviewed": true,
@@ -2067,6 +2414,17 @@
       "Dissertation.PaperSpec.A.Margin212"
      ]
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "6867b6d6ec817311e74332eaab2da6b80faa99cc43729915f5643802059f3d9e",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "f6509d2c6587162da2101cd1e437af62f151416847f897330470d78f4e52a4dd",
+    "f3b3ddc19a10a40ec5abd29c19132081eaa69e96b95909a2f9070e063b41c005",
+    "1b8e3607d2cfc6fbdc3a396586ecbecec36670abaa8257f158a3a6c3e50f869c",
+    "c7dbe842b9eea232d50c220690afa125bfb00bef1360919ee3156177f42ddf9e",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
    ]
   },
   {
@@ -2077,7 +2435,7 @@
    "number": "(2.13)",
    "title": "equation eq:monomarginu [stmt:Remark 2.11]",
    "location": "paper/sections/02-model-assumptions.tex:308",
-   "source_sha256": "7c818f2a54f2995c3b33a671b0efcda0c8f8a80e07551362d6085a06522b0ed6",
+   "source_sha256": "f626420b93b36f0e86aa29e8fb81b7b1a6e5de7e8721ca40a618d662ddd39b54",
    "scope": "definition",
    "scope_note": "",
    "scope_reviewed": true,
@@ -2089,6 +2447,17 @@
       "Dissertation.WellPosedness.Spec.Margin213"
      ]
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "7c818f2a54f2995c3b33a671b0efcda0c8f8a80e07551362d6085a06522b0ed6",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "f6509d2c6587162da2101cd1e437af62f151416847f897330470d78f4e52a4dd",
+    "f3b3ddc19a10a40ec5abd29c19132081eaa69e96b95909a2f9070e063b41c005",
+    "1b8e3607d2cfc6fbdc3a396586ecbecec36670abaa8257f158a3a6c3e50f869c",
+    "7f59509d1b6cc7ea2c4aed968c4993854f48a05bb39a07d4f8edd188a247c4b5",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
    ]
   },
   {
@@ -2099,11 +2468,23 @@
    "number": "(3.1)",
    "title": "equation eq:stab [stmt:Thm 3.1]",
    "location": "paper/sections/03-main-results.tex:57",
-   "source_sha256": "c4dddf739159e4e400a4c5e45ce3dbae16243514e4a494320285d30867760b23",
+   "source_sha256": "288fffd396f5b9104c800c374e0d676f79e8129fb68f1159f37e091a36721407",
    "scope": "part-of",
    "scope_note": "A:thm:stab",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "c4dddf739159e4e400a4c5e45ce3dbae16243514e4a494320285d30867760b23",
+    "7808d02fddb3fca8f689a6bcb4bd538d058577685459526d4536ab435767686f",
+    "2a15a967f667284c29be0c26c94256e4242e00f4c925e1cdf4a2d0ff034a3791",
+    "487114b29e72e1d65eb01764edb138e9c47c85d84fab7875bce3871699fa5327",
+    "e3eb1a896c9574aae34bd3f1e6c26222c3de6bde2b075bd12cc48a84d40110ab",
+    "29c565ae34965de589dc25aae71c8a076d15872305587b981dce2353e39d3b46",
+    "e4f8ef416e2961c48d99ab160ca8133078767440bfede55c0e95fca04961354b",
+    "fabdc64bcf6c8dc0f1017a8114de4f68d0f1f5d2b5b798ead37fdb9e58b72690",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:uniq-coeff",
@@ -2113,11 +2494,18 @@
    "number": "(3.2)",
    "title": "equation eq:uniq-coeff [proof:Thm 3.3]",
    "location": "paper/sections/03-main-results.tex:137",
-   "source_sha256": "b8ff2e9838043219793ee5e3e2d0c12015348a06f6da0bc20037b93031104413",
+   "source_sha256": "f57c6c731e906121b2435b42950329c7dbdef6ba8c6f3dd936631467f41ab5dc",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "b8ff2e9838043219793ee5e3e2d0c12015348a06f6da0bc20037b93031104413",
+    "86ab7f063e70ce15799e61bbfa5576f8675b919d62b868384ae8ee40e5d3eb13",
+    "d6aaefc4df71055795d83fb0e834a49c831fd40f64b04a2cf74beaf77b3aa802",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:uniq-bwd",
@@ -2127,11 +2515,19 @@
    "number": "(3.3)",
    "title": "equation eq:uniq-bwd [proof:Thm 3.3]",
    "location": "paper/sections/03-main-results.tex:166",
-   "source_sha256": "937e56ed71142a48eaf493db8e817431b0c8769c3e48253e307a850a6d5dc870",
+   "source_sha256": "9e27142522202b563f42928c519e570d6b67fdfb9d25b3a33bdd984b39c35ef8",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "937e56ed71142a48eaf493db8e817431b0c8769c3e48253e307a850a6d5dc870",
+    "4da3996ef42319fb39c3baaaed52177f1c379d561fb880f1e73bc109cee04ef2",
+    "b45bfee1861ece03445afc6add7ae823ad173e6fb46cf6ee44c77f27e2764b82",
+    "bbc1aa0a2cd551756d184ff30a8fe57232b3ea3bac73defb2caaee6ebc125bdf",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:pertpair",
@@ -2141,11 +2537,19 @@
    "number": "(3.4)",
    "title": "equation eq:pertpair [stmt:Cor 3.6]",
    "location": "paper/sections/03-main-results.tex:213",
-   "source_sha256": "b94f0a4750861f7bc9aa9bfbd4348cb77fc596c40e0d0d62aa588f5f490b4965",
+   "source_sha256": "73cd82502cb4e2730813956170223a0c87123a7b190f18ee2d34a5bdb66a2bd9",
    "scope": "part-of",
    "scope_note": "A:cor:robust",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "b94f0a4750861f7bc9aa9bfbd4348cb77fc596c40e0d0d62aa588f5f490b4965",
+    "6d640e40bba49bf499c20bbebdbd616c0406beee98fa604818bac8601f0bbc07",
+    "2c6b38c2dfd396521139166d284d65b7d4a4e0db8dade0d7e434c2cc2a3bebef",
+    "01c269c9a4539d46162d7b7f9d0621d2c2ad531067df5fef0b26158207e3a996",
+    "cb8fc986ce299882179b1b6be6dead3ede8b44f08a39ecac133fe8b715321baa"
+   ]
   },
   {
    "id": "A:eq:pertlip",
@@ -2155,11 +2559,17 @@
    "number": "(3.5)",
    "title": "equation eq:pertlip [stmt:Cor 3.6]",
    "location": "paper/sections/03-main-results.tex:228",
-   "source_sha256": "bc1a64adcc53f32ca3513646e766d459d78bdc812608e63ce103bae80cd160d6",
+   "source_sha256": "09482046020eaa84fb131c497043a3cbc0b9138afe6ed1703d7e6939a533f6c2",
    "scope": "part-of",
    "scope_note": "A:cor:robust",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "bc1a64adcc53f32ca3513646e766d459d78bdc812608e63ce103bae80cd160d6",
+    "e1b354be5cc80f8ab83bd196a8debf20f27fc4cdb4bec27c2dd94eaea0d69f6e",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:bmean",
@@ -2169,11 +2579,18 @@
    "number": "(3.6)",
    "title": "equation eq:bmean [stmt:Prop 3.8]",
    "location": "paper/sections/03-main-results.tex:300",
-   "source_sha256": "84689f8ae1da8e496feca41656fa1bbc6a0891e660a47e6896333f7697a0442e",
+   "source_sha256": "55ed9e34b4b1a25f8bde4463f70d12d13c21f921dd22772845241f26a54b4e00",
    "scope": "part-of",
    "scope_note": "A:prop:strict",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "84689f8ae1da8e496feca41656fa1bbc6a0891e660a47e6896333f7697a0442e",
+    "874460539ee166cf30ed4b291c9fea5ef819318aadcfddc5e340f8721293d54f",
+    "b864da0c13e4b3cc311a638d8d5c5ee08cf42f04458a8d18ca1d3e2967d8aedb",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:diagdrift",
@@ -2183,11 +2600,17 @@
    "number": "(3.7)",
    "title": "equation eq:diagdrift [stmt:Prop 3.8]",
    "location": "paper/sections/03-main-results.tex:307",
-   "source_sha256": "0452cb72286d7896e16340d2c6888629794fff652f758c7dcbee71da8f17513a",
+   "source_sha256": "2d931a481db0f47f03458850e014506fa9951f2a5770443d7403002aee031fb6",
    "scope": "part-of",
    "scope_note": "A:prop:strict",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "0452cb72286d7896e16340d2c6888629794fff652f758c7dcbee71da8f17513a",
+    "011ef514621163b733bb6043a8677cdbdc0a15ca054e517786687437826e3e97",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:forced",
@@ -2197,7 +2620,7 @@
    "number": "(4.1)",
    "title": "equation eq:forced [def]",
    "location": "paper/sections/04-proof-wellposedness.tex:52",
-   "source_sha256": "6459d481fc91eb02a66f853e83b4c23bce1e5ca1dff0ef93521587c95845c0c0",
+   "source_sha256": "134e01a0256ffc7a16425886631cfe88968f942fb53d500c263ce1cf361b3cf8",
    "scope": "definition",
    "scope_note": "the forced system (4.1) and its solutions in the space of Section 3",
    "scope_reviewed": true,
@@ -2209,6 +2632,21 @@
       "Dissertation.PaperSpec.A.ForcedSolution"
      ]
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "6459d481fc91eb02a66f853e83b4c23bce1e5ca1dff0ef93521587c95845c0c0",
+    "717adc16b40343db801432e977a59f107a2e7e42bb89136fae5abfc525a7dc03",
+    "9cddf2d3feda55e6859f9e76b4e7327514fa61da5299e0ec8c58d8b23c7928ee",
+    "d898ed6c058f3c82b07a0753e391551090e14c9915bb33373263e3ba9ddbce1d",
+    "11ace154d4670a8a0db87e011928421c6bddf4623a8a58d40e0bfe65d936486e",
+    "14b46e16f13b20776841c17ea3880f09921e038e1e4f6f93ae86bb59b8991962",
+    "bfe43dd3edfef1d54d10faef7da59cb9cab4091b6639b450a5ecb72f4f48e214",
+    "19a315ec2a289479d166d404c05bc444af9d7c9aee32fbac256644e3bd09d503",
+    "4d98e8b3ea2dcb2828a32768fc8089565c3e480dd5eb82469c3cde7e9aeff050",
+    "25f4ddbc25aa453fd64d0a7976cfafc5bc0d81f701caf130eb3bf2595c53f8f7",
+    "8b2542204e452027822128f6a25c662485dc8108f5fdf94d9451de0b39ada81c",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
    ]
   },
   {
@@ -2219,7 +2657,7 @@
    "number": "(4.2)",
    "title": "equation eq:coeffint [claim]",
    "location": "paper/sections/04-proof-wellposedness.tex:73",
-   "source_sha256": "99964f49a13228cf4ff98983af9cd5548e95ce839497c0cbc9b456e605c4e606",
+   "source_sha256": "b023b2927b3894d8f6323197bfa4a597800d6a73770ec5eecad87a4fb7ae5331",
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
@@ -2230,6 +2668,14 @@
      "accept": "Dissertation.Acceptance.A.eq_coeffint",
      "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "99964f49a13228cf4ff98983af9cd5548e95ce839497c0cbc9b456e605c4e606",
+    "92459634b87c3af858559bf1f26c0c3e4e4035a9ce128a7ebe3ea9dc04e2ac94",
+    "e152e8856611710daa7fa21ee5c56db638e4564e4a2ab1f754fbbba292a38a7c",
+    "62efbe9948c0606ac0bbd4e1a0119fbe967093652971919b4badba5803180806",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
    ]
   },
   {
@@ -2240,7 +2686,7 @@
    "number": "(4.3)",
    "title": "equation eq:termg [claim]",
    "location": "paper/sections/04-proof-wellposedness.tex:80",
-   "source_sha256": "d9e41a50e8147b0d78ae4662fa4a0ea0b13792c0adffdd92178e02bc91f3a077",
+   "source_sha256": "b366da385f2d0d1704001661042e88366628f72edb9990bc82fba564a2eb90b8",
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
@@ -2251,6 +2697,12 @@
      "accept": "Dissertation.Acceptance.A.eq_termg",
      "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
     }
+   ],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "d9e41a50e8147b0d78ae4662fa4a0ea0b13792c0adffdd92178e02bc91f3a077",
+    "670c7068c6b563f1b0960efebdc6e2961e7dae48463d4a5cb5c73f4e9c8ba863",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
    ]
   },
   {
@@ -2261,11 +2713,17 @@
    "number": "(4.4)",
    "title": "equation eq:dYlin [stmt:Lemma 4.1]",
    "location": "paper/sections/04-proof-wellposedness.tex:90",
-   "source_sha256": "4352743d42febbabaf32ef20a893a0457ba44eb5f1c97db13dd5cd420a5d8a32",
+   "source_sha256": "67184f2eb2546f87352cc82bbef3685e5be2635eb40ffebc5ab000e215c2f782",
    "scope": "part-of",
    "scope_note": "A:lem:bpbsde",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "4352743d42febbabaf32ef20a893a0457ba44eb5f1c97db13dd5cd420a5d8a32",
+    "4e7fdf9cd3cfba7fcea4a46dffb2b9d8547f325faaab2f2b23a6c6e02a9a7315",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:itoY2",
@@ -2275,11 +2733,24 @@
    "number": "(4.5)",
    "title": "equation eq:itoY2 [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:126",
-   "source_sha256": "efecab9f849df00da61de05cf74326fccbf0779932b8d2aeff894575e2879244",
+   "source_sha256": "51438816a6ce227eb551bc114da5f0991fd8ba1675a90f07358e1730e7294a8d",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "efecab9f849df00da61de05cf74326fccbf0779932b8d2aeff894575e2879244",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "a7ad27b10ae0b2b7e19c7a597b711ff5b3c522b6fbe931564a4807fc781efbd3",
+    "5e44dc4997492f9a1fa1249636b0faffab320487a92d2d605288cb82016f1619",
+    "c82a7491a9a4fd88b4fc74f320ec988439a5b87d4f7f257f8fcc31195b75618f",
+    "29ac1ec16a27a4e59431a88945a79cb8e64171f3c8296113a0a9d76af2acee95",
+    "9c993b4605d9ef4bed9686ad9ff93024ff50fc2a09a2c2084e8a95a384f8685a",
+    "f64051667c51379e80910ae25cc9ca122a6b65e5efe159b648a8314406cf9b68",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:supE",
@@ -2289,11 +2760,24 @@
    "number": "(4.6)",
    "title": "equation eq:supE [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:206",
-   "source_sha256": "92a2bc4ba1b90193adee8d79f2769267c5413a5370b0bd03b7e6e4c7469c7880",
+   "source_sha256": "f8d195505541585ca475bfa8dacd155e918c8cab4d02984f325636e45bc61066",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "92a2bc4ba1b90193adee8d79f2769267c5413a5370b0bd03b7e6e4c7469c7880",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "c37d7cf54ed467e289b346ca585625b41bb4c43dbd4b0a6087cb8543fce75850",
+    "dcc9ccf4ba1aa9bd951802579f8e3ebf0c97ae808fcd05783e0bf9f71b130b4c",
+    "df5452ea34338c757042444dc47538a1bca49144c70a5fc4a5ccb28213e21475",
+    "f52623c5dc84a342ffbed13a059d5865a3fb335cf6e25eede068e0aff3c58a5b",
+    "c30b6b64034fd30dd1caddc2bc9d5dcb602fc7faa5d72742cc0dbc5a899fbe9e",
+    "3899e60c3e34b80bee64d8346eac6758ebdc19c871add3f8e6a5df05431ea268",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:frozenfwd",
@@ -2303,11 +2787,20 @@
    "number": "(4.7)",
    "title": "equation eq:frozenfwd [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:264",
-   "source_sha256": "0865cca4da02a9a6573bfcc686bbde2000bd44117ed5ba6c061fc230c560e761",
+   "source_sha256": "4e585ce7f397c971a8de4acdb6d81d0be45f342db82a0166e9d3d3578fcb0504",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "0865cca4da02a9a6573bfcc686bbde2000bd44117ed5ba6c061fc230c560e761",
+    "bc9e0fa251f243169f2c514e1e79196a90121df7f18fb4bb460bb92365fe4546",
+    "5d52bb0fba98f565b4e7b04ccfd185ecee0dfe13eac6923ed76f93a83387af6f",
+    "7101ddb932e883259219a7640bc18e924b105873e172f92f4e5cae65acecd688",
+    "01bc4e78769c481328fc039dfd03f7a3232aa8efe2b8707e66df0796099cec9d",
+    "cb8fc986ce299882179b1b6be6dead3ede8b44f08a39ecac133fe8b715321baa"
+   ]
   },
   {
    "id": "A:eq:frozenbwd",
@@ -2317,11 +2810,19 @@
    "number": "(4.8)",
    "title": "equation eq:frozenbwd [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:303",
-   "source_sha256": "6fe095bee848af81f9082966d2be4cd8accc4659d4a12f521c9bf832321f7e6a",
+   "source_sha256": "17276cb1f64eca4139ee188be1e81dc912dab34d5bd02a5596d5d4321fdb9764",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "6fe095bee848af81f9082966d2be4cd8accc4659d4a12f521c9bf832321f7e6a",
+    "de9eaec90c481e9732c2a91f7cc5a8b9acfa5a2b1c4e48e36688b3c69e4ba581",
+    "075b4cb8a053e34689e305aaa97254745b8fc94211bb00b517b7800d624f1cfb",
+    "6333d0fce452089454adba0fcdf5cc48fd252b5e59ca53607824a4dfedc5c758",
+    "cb8fc986ce299882179b1b6be6dead3ede8b44f08a39ecac133fe8b715321baa"
+   ]
   },
   {
    "id": "A:eq:coeffdiff",
@@ -2331,11 +2832,24 @@
    "number": "(4.9)",
    "title": "equation eq:coeffdiff [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:337",
-   "source_sha256": "c26bfe399b8b1c2a051fd7d421e096cfd49479aac965c43535242164b1159c9c",
+   "source_sha256": "a02482f342dcea543d3e2b9f5367fcfcc00191aef184c33ffa0477616f3b3bb3",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "c26bfe399b8b1c2a051fd7d421e096cfd49479aac965c43535242164b1159c9c",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "6f7b7968a04bc6ce3feef5fba41cbb4acad9e8d20cca548db06b4cfcb3e4c91e",
+    "750a6a3eaa2aa14fa480d8a5fc12d36e72fcaf8bf2c46338963950503b1e03de",
+    "531b77aa18c64f763206014e86e80f5ebe2b4c817da089019c8a5107f87c1a33",
+    "a69666a8b8753123959a1591b58b256fcac14433cb782642c298cd419dc78c3d",
+    "bfffc423bee399dbba2ac37d851a594a7264f61c480a833713d5508191dbbc6a",
+    "5e620bc0c9b9e463dee54cd4c9674dbb76dce96cc4acf52a20680edf560dd8cd",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:fwddiff",
@@ -2345,11 +2859,30 @@
    "number": "(4.10)",
    "title": "equation eq:fwddiff [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:355",
-   "source_sha256": "469b21f5927adabb7fee93e9c2aa10426ee4e11ae8385388c2c9cdadf1b60836",
+   "source_sha256": "77e48f26f92871ddcb580b9647738e2ba0b66be8eedc87a40ecaffa53cf9e98c",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "469b21f5927adabb7fee93e9c2aa10426ee4e11ae8385388c2c9cdadf1b60836",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "4d3d92546cf5895ababc25646402ca78419d46f3a5480ada411b6060aacf55fd",
+    "29591077780890ce40a5d026f6f10ca3662c37b7a8344a2eb7cc058aaad29c6b",
+    "170e2ac40e2e527de2cadb0173bc404fcae6cd5a1735f2dd79ffa20afe2423f6",
+    "5b0ed63941cf29e2a437996797950aad254173929e9364272b7f25f24c9a5a2b",
+    "4048de3bd02844fa3294a3942dba69c7463d4ae35b32f02bacb6eeb22192edc7",
+    "0cbdc5e10ea3abaf461dbfe36762be8e3045067f13ac8a5f69c8e2c0e634f948",
+    "1959ef7d2e728a2c4b442f7e93b76b81c9caf7b7c9ef6e259af8441b67c21595",
+    "aa9da6c4dfa3954a7e86ad617c7571992ed0209c00c5170b0f3cdc2769471e69",
+    "443c51d6dda582becac0b267484a00f9089db71d77ba2c8752b060fe0ec00b1e",
+    "1ec55ab8dc09c9f29abb82606d86fed0de4909bb68deb9342171dbd12eeab819",
+    "cc2b2c973b0c9ff76ae66eb92f1328b2d333b195cbcc7d6ee24f412441746636",
+    "aae73d0c9965ae0534d7954064041aa5858a34dc86f5b092bc7476994669d721",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:terdiff",
@@ -2359,11 +2892,22 @@
    "number": "(4.11)",
    "title": "equation eq:terdiff [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:379",
-   "source_sha256": "7a713a9888a387c7d5461cda8b0e9a690209c1e1f68fc45bc8990a3ad3bf91b1",
+   "source_sha256": "0caddd587e020626144250f6aae2937e7b9eb2d9473e34140e10631526acde4c",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "7a713a9888a387c7d5461cda8b0e9a690209c1e1f68fc45bc8990a3ad3bf91b1",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "459bdc898383f194a3948cbecfe83c7ec211ef7af50818effdd6d57b3ffe25fb",
+    "1b2bcc2e76a1b9edbfeeafcca43e0af89c489bd58b6835aeb4cf9aa284e20c3a",
+    "9a0b8a026dbbf57998ab0ac6e2ef9c4bec633aa1fd27710cdfed63c08c67557b",
+    "ada0d82144fba20755a076d6a885714372ffbcdfb4e4c9eb48c131f6fca6c933",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:bwddiff",
@@ -2373,11 +2917,28 @@
    "number": "(4.12)",
    "title": "equation eq:bwddiff [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:407",
-   "source_sha256": "8aee0383c039e706daf9b94b5a0408b82c53bea7ebb9e712a8c63d08847a968e",
+   "source_sha256": "de9905541b6f5056f355fb8ba0c38a5ec78c92b2259b3b8960caf0be162e2643",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "8aee0383c039e706daf9b94b5a0408b82c53bea7ebb9e712a8c63d08847a968e",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "ca93217ce5e840d4b60537a0ff4681fca5b7403c745a8f945fdebbf813bd3aee",
+    "def3f896aa28b63b9d42013ad4ce034ef28c667ddf68aab25acae4b4dbdc6454",
+    "6d6153859fa304acc5b98cc63d1af7dd342baff23513cc193c17e2f49b41b791",
+    "5b6c5bb8d7e9ae8f6b0130c3dc7c22c1c4664f87a818fc259e2b3976d5e7648d",
+    "255572342e20580dc1e7d679a20c108bb67261ce2388ed6ef81e803c000a5564",
+    "dabf1fbb3b07cd559c6225297c94300e5a3394ccf827c74db1dfa94f4e5beda7",
+    "255572342e20580dc1e7d679a20c108bb67261ce2388ed6ef81e803c000a5564",
+    "b155693e628ec21d14a40a4891f3ba07b4c213257297088f248d59d83abd8c47",
+    "656235688a747d004e3b2ad8c72a9aa4c11b82211c890e0e6202517ddb0bd00d",
+    "c36d94c46bb2243689ab7817b6a97fbcadbfc1c982017855f3f9951a258d7628",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:contract",
@@ -2387,11 +2948,25 @@
    "number": "(4.13)",
    "title": "equation eq:contract [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:427",
-   "source_sha256": "9911c31b0afc66bb02b8de946d63f88f53b1d71583d816b0c3717a51d7fa1445",
+   "source_sha256": "747835f57a1b4c1429243cdebab1cc3873022b5774d61884f0b447b1a5d04f41",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "9911c31b0afc66bb02b8de946d63f88f53b1d71583d816b0c3717a51d7fa1445",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "053be38e87098836c7e688ad23b7937b5ba55c011b38814848d1b79f6e427b4e",
+    "889414ac8a519eb54172ae192906a652d8948d36d30f41f32ea0d1e19f57387f",
+    "585eee8fbff27a29931c2256721e72cab8e1c00384ccf6c1dba9beb487e899be",
+    "1206b54f0ba125fb7ee1262b3a0bc1e6a12755fbcdbcf684849b943519071d89",
+    "aeee5022f3cc4b02990b229d9c2b57eaf600dccfbbc3959d25be013d9105e7fc",
+    "d995c5826f297513880488305922214765f6c48c5e097519ef2eefe292947356",
+    "333644cccb0e99c9afb9c4d9de46395066f102f3ff72a06d8e65afc9a48504bd",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:contpert",
@@ -2401,11 +2976,21 @@
    "number": "(4.14)",
    "title": "equation eq:contpert [stmt:Lemma 4.3]",
    "location": "paper/sections/04-proof-wellposedness.tex:498",
-   "source_sha256": "f1781896f3410c6e3889036f37c13ff87e0a8e3209085a713880cf494b15721f",
+   "source_sha256": "b5e42be5381958523efabf0cfdcfad5673ae26c84b26ad1bbc9656a3b11b0bde",
    "scope": "part-of",
    "scope_note": "A:lem:pert",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "f1781896f3410c6e3889036f37c13ff87e0a8e3209085a713880cf494b15721f",
+    "4ad145dfc0addbd95b61614aa9f18f2b674145c099311796e6007b871618fa46",
+    "487114b29e72e1d65eb01764edb138e9c47c85d84fab7875bce3871699fa5327",
+    "efcd163b4fef690991352d2ed9a8d500d9deacbfcfae64952ade9fbf2c6f957c",
+    "ace813b71105ab42971a8b9738e157c8bc6e9b65e82964588b0625621be97bdc",
+    "4b59bfa78daeb4a6523cc5524302ac215ccd263c073e678b0e836d1b009af49d",
+    "cb8fc986ce299882179b1b6be6dead3ede8b44f08a39ecac133fe8b715321baa"
+   ]
   },
   {
    "id": "A:eq:dX",
@@ -2415,11 +3000,20 @@
    "number": "(4.15)",
    "title": "equation eq:dX [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:526",
-   "source_sha256": "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
+   "source_sha256": "a877929483513c2add78424568742c35536e0d941243980e25f83f1d3832b241",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
+    "ea517867499a4aef18879da98f7e35499a74bf68f6c0c76992c0f33c9c1b4a0a",
+    "67e145a473aa4bcfb17948e38759c7972b2e8f2ce309867579d5f7a151783851",
+    "525b038cb2b1e214f4af9138d5c8a29290f7f48955212a23bd1ee5ddf9e411a7",
+    "d9c64ae97d3a49edd937092a3d202d7a153a196ae456902522a1c9aef362f02d",
+    "55d298002abbd19b5847ecb345eaf12697c1290a52ebf1e8645b725d8c33b452"
+   ]
   },
   {
    "id": "A:eq:dY",
@@ -2429,11 +3023,20 @@
    "number": "(4.16)",
    "title": "equation eq:dY [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:526",
-   "source_sha256": "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
+   "source_sha256": "a877929483513c2add78424568742c35536e0d941243980e25f83f1d3832b241",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
+    "ea517867499a4aef18879da98f7e35499a74bf68f6c0c76992c0f33c9c1b4a0a",
+    "67e145a473aa4bcfb17948e38759c7972b2e8f2ce309867579d5f7a151783851",
+    "525b038cb2b1e214f4af9138d5c8a29290f7f48955212a23bd1ee5ddf9e411a7",
+    "d9c64ae97d3a49edd937092a3d202d7a153a196ae456902522a1c9aef362f02d",
+    "55d298002abbd19b5847ecb345eaf12697c1290a52ebf1e8645b725d8c33b452"
+   ]
   },
   {
    "id": "A:eq:Gid-path",
@@ -2443,11 +3046,28 @@
    "number": "(4.17)",
    "title": "equation eq:Gid-path [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:563",
-   "source_sha256": "1b8f9d553f28916e2f54c39b33a2d9c8270af102cdd73d9e420081d45ef2d208",
+   "source_sha256": "250b294e482fd13dbd7563a46fdc8db3ff2448fcb533208c341f94e49f14ae55",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "1b8f9d553f28916e2f54c39b33a2d9c8270af102cdd73d9e420081d45ef2d208",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "cbdcf776f51ef5de3ecb0d8c7b177b520d515ab28482f54a55b4baf7ae60a4dc",
+    "e6ff76bd084809a439a81bfa283843037225c42a962b125512f50f663fdb1801",
+    "8e3125a38c8f04a7d2b462a2c4faa9fcdc9c03835e8807746528ba6eae867b96",
+    "dc7de3310668df60183f8fdb1115e45b7b144779936c393aecb3146330a2546f",
+    "7745b492ad953ce90ea337f6c35faa4354071d1ca8ee9a230028bffec43d6a78",
+    "884c0ea5385b63272b61a78b80d78114f3dbd2e0b9491a337e71b9987588b2e6",
+    "a7b7cf46982629c91acff627c73cdd68988ce5db4766acac2bfdf54570b0fda0",
+    "9ca2ad3f40d088aae1962b8b8e33f35d4980212f3a9161429abc16697469fd49",
+    "52b6987988eb85a9e9d6fe0d195663b1ee63d555a85f76dbf005386cd1284932",
+    "26258c5f8f4c6d460496dd2c1cdd4e3003974a9cae52f3b175c9c75c65511b95",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:bdg4",
@@ -2457,11 +3077,32 @@
    "number": "(4.18)",
    "title": "equation eq:bdg4 [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:579",
-   "source_sha256": "cc119107c0993e2db3aa44ba40139d2e14673d3ecbade95adf57b556559bf4c0",
+   "source_sha256": "5d58d75e0ff64d35f9d623ce18ac9506f4664d0ce027e18e70d50e5e24c79b67",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "cc119107c0993e2db3aa44ba40139d2e14673d3ecbade95adf57b556559bf4c0",
+    "ce0533a87944fa1c8379799a652ead26b542317597d56da8f1ae8b085a36d8b6",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "7a6a8fc1c01b93229098dd9a91c37d5e9100f53146f2d111dc47f079d1072190",
+    "82ab7b762db3a4ea3ed0109058dec41e07ac452bc525f22f76791d9c497eac79",
+    "570e50a1660d9c541ed4a6d66fc1a53a8875cd24d401443e87e4436a793e3ddd",
+    "6994568370b8dec9d9746aab7ac31db973d1085032bc397dd522b043091919c7",
+    "13bb48e592a89d683f79804be3709941d9616068f0117be1e956744ab889a0d1",
+    "6d3da16a392507c18f4ff383ebdcaebd96327ea1f3269ab7b0e5bab933ba5953",
+    "d5d1d983d824f095130ea909d85ebff65905ab048b1798e3d518b59f26102443",
+    "82ab7b762db3a4ea3ed0109058dec41e07ac452bc525f22f76791d9c497eac79",
+    "0682a04ded6bb778484de2a5a913511ae24bc7f10a6ef1945930f9f0f686de94",
+    "cf47b19df0283033950c5ace44a26c23e35d6eec616d2c0a05789ceba06e0e5a",
+    "13bb48e592a89d683f79804be3709941d9616068f0117be1e956744ab889a0d1",
+    "dcce873dc43b77bb90104451c683e690bf4cc84f51747ce672e8cd10cf5272fb",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "bfbbca718674aab3ed03e6439d17e1274dd262925fb890469cfe06d7b2988cc1",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:Gid",
@@ -2471,11 +3112,21 @@
    "number": "(4.19)",
    "title": "equation eq:Gid [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:624",
-   "source_sha256": "62f3b40810c1c1ad56e0bb47800f386409d756a01bb3bdd6bc510b6f786b760a",
+   "source_sha256": "46e224212d4e8316516a327f1bb7618acbfc1904c3aa6992f40bd866ace4d2b4",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "62f3b40810c1c1ad56e0bb47800f386409d756a01bb3bdd6bc510b6f786b760a",
+    "99ecca8f86e84011e0824b0e0d6dc6fdc684bf65086f2c1f18e5e7be5bdc6332",
+    "94d13481d598ef3dea2a2ebe941b6de4353dd95d4ba5f8a74211db8c64de96d5",
+    "0d2e408ed22dbb61fafdf39d572d6743cc8be07232d3577befc07e031dd0589d",
+    "d12116f196050c6efa1ea6ae8ee3aa423e3da7230874ad5a54f1a6974d2ba505",
+    "615604bdcb12bdf537bc6e01a5eeb4d09dbeb67ee5b635e2c8d95ad74431ae05",
+    "cb8fc986ce299882179b1b6be6dead3ede8b44f08a39ecac133fe8b715321baa"
+   ]
   },
   {
    "id": "A:eq:intmono",
@@ -2485,11 +3136,22 @@
    "number": "(4.20)",
    "title": "equation eq:intmono [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:637",
-   "source_sha256": "fe0258cfec56f0d71d86bfbec12251fbec48d09d25639edb4d296042102ec93d",
+   "source_sha256": "150f4be88223dcfe3fe2768079cc4c41f3b4f9d82be386a911848afcc85a0509",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "fe0258cfec56f0d71d86bfbec12251fbec48d09d25639edb4d296042102ec93d",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "c8b8406576ba86d74f7fc3ada8a8911536a7fc698ec0fbdf20d9c9362fecb71d",
+    "9f294466e4d3f417a4bb3de636c03cd8efeae713499fb637509da99fd35790ee",
+    "4b001a88ffc2d892abe407e6cdb9d889b89da46443af59ef504552e98dd26e76",
+    "5eae49565dc2b012fbf1572782f8f52fcd4f4fe8dc70eafb46adf45ffb8e980e",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:termmono",
@@ -2499,11 +3161,21 @@
    "number": "(4.21)",
    "title": "equation eq:termmono [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:648",
-   "source_sha256": "909d07a537026d305069f258459dc3c52f5bd1bad9e9b98683ae7754a0907ce3",
+   "source_sha256": "6bab7182201b7abad4829837a498ea8162e4f6bfdba1422c65464bb9053a79d0",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "909d07a537026d305069f258459dc3c52f5bd1bad9e9b98683ae7754a0907ce3",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "5123f5401301e75e818856a09fdf0450aa9fc4595a1a3222a33e59969b778ea7",
+    "5e84dd01436faee192c3ae63c7bfd51f57d8023c2c6e0181dcf8b910fff3b1d1",
+    "c9216ecafc693f673fa6df1c21d1365353e43a93a0c42b70d4b40ac420a38f02",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:coerc",
@@ -2513,11 +3185,25 @@
    "number": "(4.22)",
    "title": "equation eq:coerc [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:681",
-   "source_sha256": "fe489ef4eed4fd89e08a469d28825a305af2936b44592398acd705f7e53ac8bc",
+   "source_sha256": "28fd9c283ce2f0feb20f2c6130e074c16ed3aaced00c1a84f6c2847774c3221c",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "fe489ef4eed4fd89e08a469d28825a305af2936b44592398acd705f7e53ac8bc",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "789774bb346083d4988ceef2c7ff6e2b55973e99370b6a97ce13c0c5731ed9c6",
+    "add6aec1dfc7cbe32c942b49c4adf2a0af166d4d8c2604d4542d3c746f59dfa0",
+    "b9d4ba6b83cffd70c7a214d30de8de971c55455038f545ea3de18bdf26fa591f",
+    "9e16963e9e8cac488396f2f4618054f246ea12197a91faedee789a2011021179",
+    "7329e37af1d8bb81a25fac12ebdd9e315db94a6071f8f66caa6f5c472d10d64a",
+    "c1c00f49505d739cfca2e6921e4bf770ccf2e2e3dd27fdbd229a302102135164",
+    "95ee7267eb3054f10986b849aabd7a6b930bf0b9a3a45027321386db03dbd26e",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:fwd",
@@ -2527,11 +3213,17 @@
    "number": "(4.23)",
    "title": "equation eq:fwd [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:710",
-   "source_sha256": "b221d93cc08c91cf0d54475fa4a4bbb7b68fe6f5c967f455e5e5107f21268364",
+   "source_sha256": "ee1691dc39d0f4cefa77ed2bd65bf23b9082b6eaf7bce69caf875dc14c06ae8f",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "b221d93cc08c91cf0d54475fa4a4bbb7b68fe6f5c967f455e5e5107f21268364",
+    "c114415c16d506866bed4f00d2a450bdee960d2bf7268e9f19711de974069e23",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:bwdito",
@@ -2541,11 +3233,22 @@
    "number": "(4.24)",
    "title": "equation eq:bwdito [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:716",
-   "source_sha256": "37a5694c4457487af0725c17ac96b9ef804cb992e2e789b8661706a8ec6a1618",
+   "source_sha256": "393867a8ee02929733b52a376171325b807e01b0d81452f311285bdc89d2c889",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "37a5694c4457487af0725c17ac96b9ef804cb992e2e789b8661706a8ec6a1618",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "ce75845c50ebd774a1a8182a5712edd78847f6f4caca1fd4ecb4964015ce6463",
+    "cc4f39e98b928192b95f6eb150d764f123476e34d8a09aaf55c62371efcc5581",
+    "64f9395789db1e14e64621321a6ba20f95ba115fa9da872a1b96cbe761aeb1dc",
+    "b8769b1c21c2a95ecff589ae3ed73f9eaef3b91d802e66c15b81bf08ca896a95",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:bwdyoung",
@@ -2555,11 +3258,19 @@
    "number": "(4.25)",
    "title": "equation eq:bwdyoung [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:726",
-   "source_sha256": "7c2febe0d21bc9699aeba46d61934fd741aba925ca0b495cca48ac284698cf78",
+   "source_sha256": "46ccde70d7e38f3d406eca01cdcdb60060e3357abe03f0c096ccd0da044379b0",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "7c2febe0d21bc9699aeba46d61934fd741aba925ca0b495cca48ac284698cf78",
+    "a6648cc04ed151f14220cc247ab20eca19f8f6e591ad3fe2936016a82382cefa",
+    "0c1fff1293b0e659324049daf8549419e4c31683e0b9fe94f93a1787ab0f8623",
+    "03e5fee500c0bb46279ea7fe7ae875376adf9e7119843f248f2df6ed91ff9f32",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:wgt",
@@ -2569,11 +3280,19 @@
    "number": "(4.26)",
    "title": "equation eq:wgt [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:754",
-   "source_sha256": "c68216407f632038650cfacf86e7655f06ce41acd873e027186e216206c02738",
+   "source_sha256": "1f83bb20576ba7e561a74ddc8aa535854a49efdb61f9fb1ffc80d72ea5b14701",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "c68216407f632038650cfacf86e7655f06ce41acd873e027186e216206c02738",
+    "e8a35ec8425226af40c247f2374adf13a9cfffbf2af1370239b19e6794b18066",
+    "1c776fea7a58261546fdf60dde493e6ae7aefb412a7862b14a60a875092c5070",
+    "68d2dd7ae061ccd3fc1f2c43747a3fcbdbce572d0c5b0ddbe4e7889f89791efa",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:bwd",
@@ -2583,11 +3302,18 @@
    "number": "(4.27)",
    "title": "equation eq:bwd [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:773",
-   "source_sha256": "cca2116d4d0a472a686da1aa3c819b122304999c153475c9552e6a8d8b2a260e",
+   "source_sha256": "3114f6e187919402a154d20d84baf24f22a2a1052d28f7faf3558a9335716cf5",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "cca2116d4d0a472a686da1aa3c819b122304999c153475c9552e6a8d8b2a260e",
+    "2648b175abba0bb271ebcdb774f67b1c4d8c17a54559551167225e7383e5355d",
+    "68d2dd7ae061ccd3fc1f2c43747a3fcbdbce572d0c5b0ddbe4e7889f89791efa",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   },
   {
    "id": "A:eq:fulllaw-eps",
@@ -2597,11 +3323,18 @@
    "number": "(5.1)",
    "title": "equation eq:fulllaw-eps [stmt:Example 5.4]",
    "location": "paper/sections/05-examples.tex:341",
-   "source_sha256": "420e5aa02e9a408ea8fdae5277b43ff45ee5b84a32654c19dcefeedb0c4a8598",
+   "source_sha256": "e38d567c193c08b4aae024adb70e8e3518cefe7907f862efce76bb524d794c55",
    "scope": "part-of",
    "scope_note": "A:ex:fulllaw",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [],
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "420e5aa02e9a408ea8fdae5277b43ff45ee5b84a32654c19dcefeedb0c4a8598",
+    "7df4c4e2b56624744ed1c7712f422839dc1626a6c8681b7314bb8e0fbe86762d",
+    "245ee3a6d05e66bd03314e0d7fa7a5f4738f1070b610f6753e85b9584035f54a",
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+   ]
   }
  ]
 }

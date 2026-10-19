@@ -281,6 +281,23 @@ class Sources(unittest.TestCase):
         self.assertEqual(A.source_failures([e], [], lambda _: "old line"), [])
 
 
+    def test_region_line_pins(self):
+        """An entry pinned by source region checks every line its passage spans and names the
+        first one that changed."""
+        lines = ["\\begin{align}", "a&=1\\\\", "b&=2", "\\end{align}"]
+        e = {"id": "A:eq", "paper": "A", "location": "paper/x.tex:10",
+             "source_hash_scheme": A.REGION_SCHEME, "source_sha256": "f" * 64,
+             "source_line_sha256": [A.sha(l) for l in lines]}
+        self.assertEqual(A.source_failures([e], [], lambda _, k=0: lines[k]), [])
+        edited = lines[:2] + ["b&=3"] + lines[3:]
+        out = A.source_failures([e], [], lambda _, k=0: edited[k])
+        self.assertEqual(out, ["A:eq: line 3 of its source passage (line 12 of paper/x.tex) "
+                               "changed at the pin"])
+        self.assertTrue(A.source_failures([e], [], lambda _, k=0: lines[:2][k]))
+        self.assertTrue(A.source_failures([dict(e, source_line_sha256=[])], [],
+                                          lambda _, k=0: lines[k]))
+
+
 class ComparatorEvidence(unittest.TestCase):
     """The binding of a comparator run to its inputs."""
 
