@@ -142,9 +142,9 @@ log alone is not evidence: names identify declarations, not their content.
 
 Trust boundary: a result written on a developer's machine binds the evidence to its inputs, so
 stale evidence and evidence for another environment are rejected, but whoever can write the file
-can forge it. A release has to take the evidence directory from a run it controls, such as a CI
-job that runs `tools/comparator_check.sh` and publishes the directory as an artifact; that job is
-not yet part of the workflows.
+can forge it. A release has to take the evidence directory from a run it controls: the `certify` job
+of `.github/workflows/ci.yml` runs `tools/comparator_check.sh` and the release gate on every push
+to `main`, and publishes the directory as the run's `comparator-evidence` artifact.
 
 `python3 tools/test_acceptance.py` holds regression tests of the status logic, the clause
 validation and the gate.

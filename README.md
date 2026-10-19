@@ -78,7 +78,9 @@ python3 tools/test_acceptance.py                   # regression tests of the che
 ```
 
 The check builds a probe against the built library, so run it after `lake build`. It also checks
-the source hash of every claim against the manuscript in `manuscript/paper/`.
+the source hash of every claim against the manuscript in `manuscript/paper/`. On every push to
+`main`, the `certify` job of the CI workflow runs comparator and the release gate on its own
+evidence and publishes the evidence directory as the run's `comparator-evidence` artifact.
 
 ## The paper
 
