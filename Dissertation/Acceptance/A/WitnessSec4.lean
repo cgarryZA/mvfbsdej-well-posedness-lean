@@ -8,7 +8,7 @@ import Dissertation.Acceptance.A.Witness
 /-!
 # Instances of the hypotheses of Lemmas 4.3 and 4.4 of paper A
 
-Statement numbers refer to arXiv 2608.23203v1. Both instances are those of
+Statement numbers refer to the well-posedness paper at `f598204`. Both instances are those of
 `Dissertation.Acceptance.A.thm_cwp_hypotheses`: a Lévy driver with `d = 1` and `ν = δ₀` on `ℝ`,
 `𝒢₀ = ⊥`, `n = m = 1`, `T = 1`, and the system of Example 5.1(i) with `β₁ = β₂ = 1`,
 `σ_c = h_c = 0`.

@@ -11,7 +11,7 @@ import Dissertation.WellPosedness.System.PredictableForcing
 /-!
 # The solution notion of the well-posedness paper
 
-Statement and equation numbers refer to arXiv 2608.23203v1.
+Statement and equation numbers refer to the well-posedness paper at `f598204`.
 
 A solution of (1.1) is a tuple `Θ = (X, Y, Z, U)` of the space `ℍ` of §3 satisfying both identities
 of (1.1) almost surely for every `t ∈ [0, T]`, with `h` evaluated at the predictable tuple

@@ -87,7 +87,8 @@ alignment:
         - "Dissertation.Acceptance.A.thm_uniq"
         - "Dissertation.Acceptance.A.rem_uniq_initial"
         - "Dissertation.Acceptance.A.rem_uniq_singular"
-      status: "formal: open"
+        - "Dissertation.Acceptance.A.rem_uniq_translation"
+      status: "formal: proved, author-reviewed"
     - source: "Theorem 3.5"
       lean:
         - "Dissertation.Acceptance.A.thm_cwp"

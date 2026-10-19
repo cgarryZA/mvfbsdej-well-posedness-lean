@@ -1,6 +1,6 @@
-# MachineChecked: the audit of this repository against arXiv 2608.23203v1. `machinechecked build`
-# reads the inventory and reviews of acceptance/ (the same inputs as tools/acceptance.py) and
-# writes the reader; `machinechecked export` writes the public audit that CI publishes.
+# MachineChecked: the audit of this repository against the manuscript at f598204.
+# `machinechecked build` reads the inventory and reviews of acceptance/ (the same inputs as
+# tools/acceptance.py) and writes the reader; `machinechecked export` writes the public audit that CI publishes.
 [project]
 name = "mvfbsdej-well-posedness-lean"
 author = "Christian Garry"
@@ -28,14 +28,12 @@ modules = [
   "Dissertation.PaperSpec.A.Sec5Brownian",
   "Dissertation.PaperSpec.A.Sec5FreeLaw",
   "Dissertation.PaperSpec.A.Sec5Preamble",
-  "Dissertation.PaperSpec.A.AsPrinted",
-  "Dissertation.PaperSpec.A.Sec5Regimes",
   "Dissertation.PaperSpec.A.Sec5Dealer",
   "Dissertation.PaperSpec.A.Sec5Sharp",
   "Dissertation.PaperSpec.A.Sec5BrownianReduction",
   "Dissertation.PaperSpec.A.Sec4Supremum",
-  "Dissertation.PaperSpec.A.Sec3Rem34Exist",
   "Dissertation.PaperSpec.A.Setting",
+  "Dissertation.PaperSpec.A.Sec5DealerActive",
   "Dissertation.Acceptance.A.AppA",
   "Dissertation.Acceptance.A.Dealer",
   "Dissertation.Acceptance.A.Sec2",
@@ -58,14 +56,15 @@ modules = [
   "Dissertation.Acceptance.A.Sec5Sharp",
   "Dissertation.Acceptance.A.Witness",
   "Dissertation.Acceptance.A.WitnessNonzero",
-  "Dissertation.Acceptance.A.AsPrinted",
   "Dissertation.Acceptance.A.Sec3Complete",
   "Dissertation.Acceptance.A.Sec5Dealer",
   "Dissertation.Acceptance.A.WitnessHyp",
   "Dissertation.Acceptance.A.Sec5BrownianReduction",
   "Dissertation.Acceptance.A.Sec4Supremum",
   "Dissertation.Acceptance.A.WitnessSec4",
-  "Dissertation.Acceptance.A.Sec3Rem34Exist",
+  "Dissertation.Acceptance.A.Sec3MarginContinuous",
+  "Dissertation.Acceptance.A.Sec3Rem34Translation",
+  "Dissertation.Acceptance.A.Sec5DealerActive",
 ]
 scope_roots = ["Dissertation", "LevyStochCalc"]
 spec_prefix = "Dissertation.PaperSpec"

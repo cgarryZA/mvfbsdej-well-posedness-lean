@@ -8,7 +8,7 @@ import Dissertation.WellPosedness.System.LawFlow
 /-!
 # Lemma A.1 of the well-posedness paper
 
-Statement numbers refer to arXiv 2608.23203v1. Lemma A.1: for `X, Y` càdlàg
+Statement numbers refer to the well-posedness paper at `f598204`. Lemma A.1: for `X, Y` càdlàg
 adapted and `Z, U` predictable, of finite energy on `[0, T]`, the maps `t ↦ Law(Θ_t)` and
 `t ↦ Law(Θ⁻_t)` have Borel representatives into `(P₂(H), W₂)`, unique up to Lebesgue-null sets of
 times and equal for almost every `t`; and coefficient evaluations along them do not depend, up to

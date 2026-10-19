@@ -11,7 +11,7 @@ import Dissertation.Law.TupleMarginal
 /-!
 # Section 2 of the well-posedness paper: the coupling matrix and the Wasserstein bounds
 
-Statement and equation numbers refer to arXiv 2608.23203v1.
+Statement and equation numbers refer to the well-posedness paper at `f598204`.
 
 ## Main definitions
 

@@ -413,7 +413,8 @@
     {
      "name": "the drift t^{-1/2} e added to a system satisfying (2.3) and Assumptions 2.2–2.5 violates Assumption 2.2 and keeps Assumptions 2.3–2.5; the shift X ↦ X − 2√t e returns a system satisfying Assumptions 2.2–2.5, so a solution exists",
      "spec": "Dissertation.PaperSpec.A.rem_uniq_translation",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
+     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
+     "accept": "Dissertation.Acceptance.A.rem_uniq_translation"
     }
    ]
   },
@@ -1437,11 +1438,13 @@
     {
      "name": "L²(ν) infinite-dimensional: jump feedback through finitely many continuous, possibly nonlinear, functionals of u, with any law dependence, supplies no margin",
      "spec": "Dissertation.PaperSpec.A.cor_margin_continuous",
-     "witness": "Dissertation.Acceptance.A.cor_margin_continuous_hypotheses"
+     "witness": "Dissertation.Acceptance.A.cor_margin_continuous_hypotheses",
+     "accept": "Dissertation.Acceptance.A.cor_margin_continuous"
     },
     {
      "name": "finitely many continuous functionals cannot separate the points of an infinite-dimensional space",
-     "spec": "Dissertation.PaperSpec.A.cor_margin_separate"
+     "spec": "Dissertation.PaperSpec.A.cor_margin_separate",
+     "accept": "Dissertation.Acceptance.A.cor_margin_separate"
     },
     {
      "name": "L²(ν) finite-dimensional: finitely many functionals determine u and such feedback carries a margin",

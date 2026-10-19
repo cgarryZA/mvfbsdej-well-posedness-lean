@@ -22,7 +22,7 @@ import Dissertation.WellPosedness.Examples.Dealer.MarkSizes
 /-!
 # Section 5 of the well-posedness paper: the examples
 
-Statement and equation numbers refer to arXiv 2608.23203v1. The standing
+Statement and equation numbers refer to the well-posedness paper at `f598204`. The standing
 setting is that of §2 (see `Dissertation.PaperSpec.A.thm_cwp`), here with `n = m = d = 1` and
 `G = 1`.
 

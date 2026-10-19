@@ -10,8 +10,10 @@ import Dissertation.Acceptance.A.Sec3
 import Dissertation.Acceptance.A.Sec3Remarks
 import Dissertation.Acceptance.A.Sec3Stability
 import Dissertation.Acceptance.A.Sec3Margin
+import Dissertation.Acceptance.A.Sec3MarginContinuous
 import Dissertation.Acceptance.A.Sec3GeneralRank
 import Dissertation.Acceptance.A.Sec3Rem34
+import Dissertation.Acceptance.A.Sec3Rem34Translation
 import Dissertation.Acceptance.A.Sec3Space
 import Dissertation.Acceptance.A.Sec4Coeff
 import Dissertation.Acceptance.A.AppA

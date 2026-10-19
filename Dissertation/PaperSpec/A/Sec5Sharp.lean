@@ -8,7 +8,7 @@ import Dissertation.PaperSpec.A.Sec5
 /-!
 # Example 5.1(i) of the well-posedness paper: sharpness of the constants
 
-Statement numbers refer to arXiv 2608.23203v1. Example 5.1(i) states that the
+Statement numbers refer to the well-posedness paper at `f598204`. Example 5.1(i) states that the
 displayed identity is sharp for the constants `β₁, β₂`: no larger constants satisfy the interior
 inequality (2.7) for its coefficients with `G = 1`.
 

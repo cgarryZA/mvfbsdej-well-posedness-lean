@@ -671,7 +671,8 @@
      "witness_ok": true
     },
     {
-     "accept": null,
+     "accept": "Dissertation.Acceptance.A.rem_uniq_translation",
+     "accept_ok": true,
      "author_reviewed": [
       "Dissertation.PaperSpec.A.rem_uniq_translation",
       "Dissertation.PaperSpec.A.translateTuple",
@@ -698,7 +699,7 @@
    "scope": "formal",
    "scope_note": "\"the proof of Theorem 3.5 uses Assumption 2.2\" describes a proof and is not a separate claim",
    "scope_reviewed": false,
-   "status": "formal: open"
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
@@ -2761,7 +2762,8 @@
      "witness_ok": true
     },
     {
-     "accept": null,
+     "accept": "Dissertation.Acceptance.A.cor_margin_continuous",
+     "accept_ok": true,
      "author_reviewed": [
       "Dissertation.PaperSpec.A.cor_margin_continuous"
      ],
@@ -2779,7 +2781,8 @@
      "witness_ok": true
     },
     {
-     "accept": null,
+     "accept": "Dissertation.Acceptance.A.cor_margin_separate",
+     "accept_ok": true,
      "author_reviewed": [
       "Dissertation.PaperSpec.A.cor_margin_separate"
      ],
@@ -2822,7 +2825,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: open"
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
@@ -4092,8 +4095,7 @@
   "A": {
    "definition: reviewed": 11,
    "formal: accepted": 36,
-   "formal: open": 2,
-   "formal: proved, author-reviewed": 9,
+   "formal: proved, author-reviewed": 11,
    "out of scope: duplicate": 5,
    "out of scope: part-of": 17,
    "out of scope: proof-step": 29

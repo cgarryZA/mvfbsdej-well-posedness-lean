@@ -32,7 +32,7 @@ import Dissertation.PaperSpec.A.Sec4Supremum
 /-!
 # The statements of the paper
 
-Each result of arXiv 2608.23203v1 as a proposition written from its text.
+Each result of the well-posedness paper at `f598204` as a proposition written from its text.
 `Dissertation.Acceptance` holds their proofs, and `acceptance/claims.json` maps each claim of the
 manuscript to its proposition.
 -/

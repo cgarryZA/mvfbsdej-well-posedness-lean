@@ -8,7 +8,7 @@ import Dissertation.PaperSpec.A.Sec3
 /-!
 # The coefficient bounds (4.2) and (4.3) of the well-posedness paper
 
-Statement and equation numbers refer to arXiv 2608.23203v1. By the Lipschitz
+Statement and equation numbers refer to the well-posedness paper at `f598204`. By the Lipschitz
 bounds of Assumption 2.3 and the coupling bounds (2.8), (2.9) at the Dirac mass of the origin,
 the coefficient processes along a square-integrable tuple are square integrable: (4.2) for the
 interior coefficients, (4.3) for the terminal function.

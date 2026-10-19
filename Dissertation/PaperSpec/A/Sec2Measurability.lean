@@ -10,7 +10,7 @@ import Dissertation.WellPosedness.Existence.CoeffBorelW2
 /-!
 # The measurability of the coefficient evaluations, (2.5)
 
-Statement numbers refer to arXiv 2608.23203v1. The coefficients are jointly
+Statement numbers refer to the well-posedness paper at `f598204`. The coefficients are jointly
 Borel in their arguments (§2). Along a diagonal input, the drift, diffusion and driver evaluations
 are progressively measurable processes, and the jump coefficient, evaluated at the predictable
 tuple and its law, is predictable as an `L²(ν)`-valued process, read through a

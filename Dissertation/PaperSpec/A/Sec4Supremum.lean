@@ -9,9 +9,9 @@ import Mathlib.Probability.Process.LocalProperty
 /-!
 # The supremum criterion of Section 4 of the well-posedness paper
 
-Statement numbers refer to arXiv 2608.23203v1. The preamble of §4 states that, by localisation
-and dominated convergence, a càdlàg local martingale whose running supremum is integrable has
-zero-mean increments; the proofs of Lemmas 4.1 and 4.3 apply it on `[0, T]`.
+Statement numbers refer to the well-posedness paper at `f598204`. The preamble of §4 states that, by
+localisation and dominated convergence, a càdlàg local martingale whose running supremum is
+integrable has zero-mean increments; the proofs of Lemmas 4.1 and 4.3 apply it on `[0, T]`.
 
 A local martingale is read through Mathlib's `ProbabilityTheory.Locally`: there are stopping
 times `τ_k`, almost surely nondecreasing and tending to `∞`, such that every stopped process

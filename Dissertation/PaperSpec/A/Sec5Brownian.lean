@@ -9,7 +9,7 @@ import Dissertation.PaperSpec.A.Sec5
 /-!
 # Example 5.2 of the well-posedness paper: the representation warning and the branch `m > n`
 
-Statement numbers refer to arXiv 2608.23203v1, in the standing setting of §2.
+Statement numbers refer to the well-posedness paper at `f598204`, in the standing setting of §2.
 Example 5.2 removes the Poisson channel from the stochastic basis; it warns that setting `h ≡ 0`
 on a Brownian–Poisson basis is not a reduction, since the Poisson integral and its integrand
 persist in the representation, and it states that both rank branches of Assumption 2.5 are
