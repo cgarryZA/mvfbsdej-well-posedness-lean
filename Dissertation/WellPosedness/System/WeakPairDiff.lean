@@ -28,8 +28,6 @@ works with their difference:
 
 * `ae_ae_of_ae_markedEnergyMeasure` — a property holding almost everywhere for the marked energy
   measure holds, at almost every point of the window, for almost every mark.
-* `markedEnergy_sub_eq_zero_of_ae_eq` — almost everywhere equal marked integrands have a
-  difference of zero marked energy.
 * `PaperWeakSolutionForcedInt.exists_pairDiff` — the difference of the extended solutions is a
   `PairDiff`.
 * `PaperWeakSolutionForcedInt.ae_forcedJump_leftLim_eq` — the forced jump integrand at the
@@ -60,22 +58,6 @@ theorem ae_ae_of_ae_markedEnergyMeasure {p : Ω × ℝ × E → Prop}
   rw [Poisson.Compensated.markedEnergyMeasure, ← Measure.prodAssoc_prod,
     MeasurableEquiv.prodAssoc.measurableEmbedding.ae_map_iff] at h
   exact Measure.ae_ae_of_ae_prod h
-
-/-- Two jointly measurable marked integrands that agree almost everywhere for the marked energy
-measure on `[0, T]` have a difference of zero marked energy on `[0, T]`. -/
-theorem markedEnergy_sub_eq_zero_of_ae_eq {φ₁ φ₂ : Ω → ℝ → E → ℝ}
-    (hm₁ : Measurable fun p : Ω × ℝ × E => φ₁ p.1 p.2.1 p.2.2)
-    (hm₂ : Measurable fun p : Ω × ℝ × E => φ₂ p.1 p.2.1 p.2.2)
-    (h : ∀ᵐ p ∂(Poisson.Compensated.markedEnergyMeasure P ν T),
-      φ₁ p.1 p.2.1 p.2.2 = φ₂ p.1 p.2.1 p.2.2) :
-    Poisson.Compensated.markedEnergy P ν T (fun ω s e => φ₁ ω s e - φ₂ ω s e) = 0 := by
-  rw [Poisson.Compensated.markedEnergy_eq_eLpNorm_sq (φ := fun ω s e => φ₁ ω s e - φ₂ ω s e)
-    (hm₁.sub hm₂)]
-  have h0 : (fun p : Ω × ℝ × E => φ₁ p.1 p.2.1 p.2.2 - φ₂ p.1 p.2.1 p.2.2)
-      =ᵐ[Poisson.Compensated.markedEnergyMeasure P ν T] 0 :=
-    h.mono fun p hp => by simp only [hp, sub_self, Pi.zero_apply]
-  rw [eLpNorm_congr_ae h0, eLpNorm_zero]
-  simp
 
 end Marked
 
