@@ -486,6 +486,25 @@
      "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.rem_margin_smaller_hypotheses",
      "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.rem_margin_slack",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.rem_margin_slack"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "recording weaker constants turns the difference into slack: (2.12) with β₁, β₂ and margin c, and a perturbation whose pairing bound (3.4) in the weighted quantity holds with 0 ≤ c_pert ≤ c, give (2.7) with β₁, β₂ for the perturbed coefficients",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.rem_margin_slack",
+     "spec_hash": "ed839d34f480cba1fc10bfb5bc98adb1",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.rem_margin_slack_hypotheses",
+     "witness_ok": true
     }
    ],
    "id": "A:rem:margin",
@@ -495,7 +514,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: accepted"
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
@@ -2863,37 +2882,170 @@
    "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": null,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lem41_M2_no_square_moment"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "membership δU ∈ H²_N gives the quadratic integrand e^s|δU_s(e)|² of M² no square moment, in every standing setting",
+     "refute": "Dissertation.Acceptance.A.lem41_M2_no_square_moment_false",
+     "refute_ok": true,
+     "spec": "Dissertation.PaperSpec.A.lem41_M2_no_square_moment",
+     "spec_hash": "ed839d34f480cba129ab935a30cef6f6",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": null
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lem41_M2_no_square_moment_corr",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lem41_M2_no_square_moment_corr"
+     ],
+     "corrects": "membership δU ∈ H²_N gives the quadratic integrand e^s|δU_s(e)|² of M² no square moment, in every standing setting",
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "membership δU ∈ H²_N gives the quadratic integrand e^s|δU_s(e)|² of M² no square moment, for ν ≠ 0",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lem41_M2_no_square_moment_corr",
+     "spec_hash": "ed839d34f480cba18ac876cdb600252c",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem41_M2_no_square_moment_corr_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lem41_jump_times",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lem41_jump_times"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "with ν(E) = ∞ the jump times τ_k = inf{t ≥ 0 : N((0, t] × E) ≥ k} are all 0 almost surely, so they do not exhaust [0, T]",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lem41_jump_times",
+     "spec_hash": "ed839d34f480cba17a3bbb1b17b33874",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.sec2_infinite_activity_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lem41_M2_zero_mean",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lem41_M2_zero_mean"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "𝔼∫_0^T∫_E e^s|δU_s(e)|² ν(de) ds ≤ e^T 𝔼∫_0^T ‖δU_s‖² ds < ∞; the Poisson integral and the compensator of e^s|δU|² over (t, T] × E have finite expectation, and 𝔼[M²_T − M²_t] = 0",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lem41_M2_zero_mean",
+     "spec_hash": "ed839d34f480cba15a569c2d7c1d42fd",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:lem4.1:M2-infinite-activity",
    "kind": "embedded-in-proof",
    "number": "proof of Lemma 4.1",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "the first clause, that membership in H²_N gives the quadratic integrand of M² no square moments, read in the setting of Lemma 4.1, which admits ν = 0, is refuted: at ν = 0 every marked integrand has zero energy; it holds for ν ≠ 0. The clauses read the sentence of the pinned line (lines 148–152) and the paragraph on M² (lines 173–187)",
+   "scope_reviewed": false,
+   "status": "refuted as printed; corrected statement proved"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.sec4_uniq_homotopy",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.sec4_uniq_homotopy"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "with λ* the threshold of Lemma 4.2, uniqueness in ℍ at each λ ∈ [λ*, 1] (Lemma 4.3 with identical forcing and initial datum, λ̲ = λ*) and at each λ ∈ [0, λ*] (Lemma 4.2)",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.sec4_uniq_homotopy",
+     "spec_hash": "ed839d34f480cba178b10f6f962eecce",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:sec4:uniqueness-along-homotopy",
    "kind": "embedded-in-proof",
    "number": "¶ before Lemma 4.4",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of the argument of Section 4 outside a proof environment: uniqueness along the homotopy is Lemma 4.3 at zero data, with Lemma 4.2 for the base case",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.sec45_proof_thm35",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.sec45_proof_thm35"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "λ_k = min{λ* + kζ₀, 1}: λ_0 = λ*, λ_{k+1} − λ_k ≤ ζ₀, λ_k = 1 for k ≥ ⌈(1 − λ*)/ζ₀⌉; WP(λ) on [0, λ*], WP(λ_k) for every k, and WP(1)",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.sec45_proof_thm35",
+     "spec_hash": "ed839d34f480cba18bff3d8eda5cbf52",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.thm_cwp",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "with q ≡ 0, (1.1) has a unique solution in ℍ (Theorem 3.5)",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.thm_cwp",
+     "spec_hash": "ed839d34f480cba10deeabcd10e6e74d",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:sec4:proof-thm35",
    "kind": "embedded-in-proof",
    "number": "§4.5",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
@@ -3807,15 +3959,35 @@
    "status": "out of scope: proof-step"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_supE",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_supE"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "for every t ≤ T, 𝔼|δY_t|² + 𝔼∫_t^T (|δZ_s|²_F + ‖δU_s‖²) ds ≤ R = e^T (𝔼|δξ|² + 𝔼∫_0^T |φ_s|² ds); (4.6): sup_{t≤T} 𝔼|δY_t|² + 𝔼∫_0^T (|δZ_s|²_F + ‖δU_s‖²) ds ≤ 2R = C₀ (𝔼|δξ|² + 𝔼∫_0^T |φ_s|² ds), C₀ = 2e^T",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_supE",
+     "spec_hash": "ed839d34f480cba17f3cae8e2942fb86",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:supE",
    "kind": "embedded-in-proof",
    "number": "(4.6)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [],
@@ -3862,15 +4034,35 @@
    "status": "out of scope: proof-step"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_terdiff",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_terdiff"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.11): 𝔼|δξ̄|² ≤ λ²L² 𝔼(|δX̄_T| + W₂)² ≤ 2λ²L² (𝔼|δX̄_T|² + W₂²) ≤ C_g λ² 𝔼|δX̄_T|², C_g = 4L², for any two ℱ_T-measurable square-integrable terminal values",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_terdiff",
+     "spec_hash": "ed839d34f480cba104ed4a8f00254090",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.eq_terdiff_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:terdiff",
    "kind": "embedded-in-proof",
    "number": "(4.11)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [],
@@ -4081,10 +4273,12 @@
  "summary": {
   "A": {
    "definition: reviewed": 11,
-   "formal: accepted": 49,
+   "formal: accepted": 48,
+   "formal: proved, author-reviewed": 5,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
-   "out of scope: proof-step": 28
+   "out of scope: proof-step": 23,
+   "refuted as printed; corrected statement proved": 1
   }
  }
 }

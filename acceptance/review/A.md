@@ -455,6 +455,147 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lem_bpbsde--claude-auditor--2026-10-19T03_35_50Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.lem_bpbsde ed839d34f480cba1202e3ec284da1f15 by=claude-auditor -->
 
+## The `M²` paragraph of the proof of Lemma 4.1: `Dissertation.PaperSpec.A.lem41_M2_no_square_moment`, `lem41_M2_no_square_moment_corr`, `lem41_jump_times`, `lem41_M2_zero_mean`
+
+Manuscript (proof of Lemma `lem:bpbsde`, lines 139–152 and 173–187; the inventory pins line 151,
+inside the sentence of lines 148–152): the stochastic-integral terms of (4.5) decompose into the
+local martingales `M^W`, `M^1` and `M²_t := ∫_0^t ∫_E e^s |δU_s(e)|² Ñ(ds, de)`, "each of which we
+now show satisfies `𝔼[M_T − M_t] = 0`. The three do not share one argument: `δU ∈ H_N` gives the
+quadratic integrand of `M²` no square moments, so the `L²` theory behind the bounds below does not
+reach it — nor, with `ν(E) = ∞` admitted, does localisation along jump times, which then fail to
+exhaust `[0, T]`. `M²` is instead handled through the compensation formula, which asks only for
+integrability." And (lines 173–187): "For `M²` the integrand `e^s |δU_s(e)|²` is predictable and
+nonnegative and, because `δU ∈ H_N`, lies in `L¹(dP ⊗ ds ⊗ ν)`:
+`𝔼 ∫_0^T ∫_E e^s |δU_s(e)|² ν(de) ds ≤ e^T 𝔼 ∫_0^T ‖δU_s‖²_{L²(ν)} ds < ∞`. Both the Poisson
+integral and its compensator are therefore integrable, so the increment splits under the
+expectation: `𝔼[M²_T − M²_t] = 𝔼 ∫_t^T ∫_E e^s |δU_s(e)|² Ñ(ds, de)
+= 𝔼 ∫_t^T ∫_E e^s |δU_s(e)|² N(ds, de) − 𝔼 ∫_t^T ∫_E e^s |δU_s(e)|² ν(de) ds = 0`."
+
+Propositions:
+
+* `lem41_M2_no_square_moment`, the first clause read in the setting of the lemma: in every
+  standing setting (`enlJoint`, `ν` σ-finite on a countably generated space), for `m, d ≥ 1` and
+  `T > 0`, there is `δU : Fin m → ℝ → Ω → E → ℝ` of the class `H²_N` of Lemma 4.1 (marked
+  predictable, zero off `[0, T]`, finite energy, coordinatewise) with
+  `markedEnergy (e^s ∑_k δU_k²) = ⊤`, that is `𝔼 ∫_0^T ∫_E (e^s |δU_s(e)|²)² ν(de) ds = ∞`.
+* `lem41_M2_no_square_moment_corr`: the same with the further hypothesis `ν ≠ 0`.
+* `lem41_jump_times`: for every Lévy driver with `ν(E) = ∞`, almost surely every jump time
+  `τ_k = inf {t ≥ 0 : N((0, t] × E) ≥ k}`, `k ∈ ℕ`, is `0`.
+* `lem41_M2_zero_mean`: under the hypotheses of Lemma 4.1 (those of `lem_bpbsde`, verbatim),
+  `𝔼 ∫_0^T ∫_E e^s |δU_s(e)|² ν(de) ds ≤ e^T ∑_k 𝔼 ∫_0^T ‖δU^k_s‖² ds`, the right side is finite,
+  and for every `t ∈ [0, T]` the Poisson integral and the compensator of `e^s |δU_s(e)|²` over
+  `(t, T] × E` have finite expectation and
+  `∫ (∫_{(t, T] × E} e^s |δU|² dN − ∫_t^T ∫_E e^s |δU|² ν(de) ds) dP = 0`.
+
+Readings:
+
+* The first clause is a statement about the hypothesis `δU ∈ H_N`: membership gives no square
+  moments of the quadratic integrand, that is, some `δU ∈ H_N` has none. It is read where the
+  proof is made, in the setting of Lemma 4.1, for every setting the lemma covers. That setting
+  admits `ν = 0`: §2 asks only that `ν` be σ-finite, Remark 2.10 treats `ν = 0` as the Brownian
+  case of Example 5.2, and Lemma 4.1 is used at `ν = 0` through Theorem 3.5. The sentence makes
+  the localisation clause conditional ("with `ν(E) = ∞` admitted") and states no restriction on
+  the first, and where the paper needs `ν ≠ 0` it says so ("Suppose `ν ≠ 0`, so that
+  `L²(ν) ≠ {0}`", Remark 2.10). At `ν = 0` every marked integrand has zero energy, so membership
+  in `H_N` does give the quadratic integrand square moments: the clause read in every setting is
+  false (`lem41_M2_no_square_moment_false`). It holds for `ν ≠ 0`
+  (`lem41_M2_no_square_moment_corr`), the case in which `M²` is not identically `0`. The weaker
+  reading "in some setting, some `δU ∈ H_N` has no square moment" is implied by the corrected
+  clause at its witness; it was not adopted, as the inventory reads a step universally over the
+  setting of its lemma. A reviewer who reads the paragraph as concerning a nonzero jump measure
+  only would take the corrected clause as the printed one.
+* "Square moments of the quadratic integrand": the square integral of `e^s |δU_s(e)|²` with
+  respect to `dP ⊗ ds ⊗ ν` on `[0, T] × E`, which is `markedEnergy P ν T` of
+  `e^s ∑_k δU_k(s, e)²`; `|δU|² = ∑_k δU_k²` in `ℝᵐ`. `δU` is existential, with the conditions of
+  the class `H_N` of Lemma 4.1 as conjuncts (as `hU`, `hUv`, `hUs` of `lem_bpbsde`); `m, d ≥ 1`
+  and `T > 0` are in force. The clause is about the class, so the other data of the lemma (the
+  equation, `δY`, `δZ`, `δξ`, `φ`) are not constrained.
+* The second clause: the jump times are those of `N`, `τ_k = inf {t ≥ 0 : N((0, t] × E) ≥ k}`
+  (`sInf` of a set bounded below by `0`); "localisation along jump times … fail to exhaust
+  `[0, T]`" is read as: almost surely all of them are `0`, so `sup_k τ_k = 0 < T` for every
+  `T > 0` and stopping at them reaches no positive time. The proposition is broader than printed:
+  it holds for every Lévy driver with `ν(E) = ∞`, without the initial enlargement or a horizon (the
+  jump times are functions of `N`); the printed claim is its instance in the setting of Lemma 4.1.
+* The third clause: `M²_T − M²_t` read pathwise as
+  `∫_{(t, T] × E} e^s |δU_s(e)|² N(ds, de) − ∫_t^T ∫_E e^s |δU_s(e)|² ν(de) ds`, as `eq_zeromean`
+  reads the compensated integral, with `∫_t^T` over `(t, T]`. The `L¹` bound is the display of
+  lines 176–177, the energies on `[0, T]` as in `lem_bpbsde`; "both … are integrable" is the
+  finiteness of the expectations of the two nonnegative integrals (lower integrals in `[0, ∞]`);
+  `𝔼[M²_T − M²_t] = 0` is the Bochner expectation of the pathwise difference. The hypotheses are
+  those of Lemma 4.1, verbatim; the proof uses only those on `δU`.
+
+Proofs: the refutation at a Lévy driver with `d = 1` and `ν = 0` on `ℝ` (`LevyDriver.exists`),
+`𝒢₀ = ⊥`, `m = 1`, `T = 1`, where `markedEnergy` is an integral against the zero measure. The
+correction with `δU^k_s(e) = 1_{(T/2, T]}(s) 1_A(e) c` for every `k`, `A` measurable with
+`0 < ν(A) < ∞` (from σ-finiteness and `ν ≠ 0`) and `c = 1_{(0, 1]}(W¹_{T/2}) (W¹_{T/2})^{−1/4}`:
+`W¹_{T/2}` has the law `N(0, T/2)`, whose density is bounded above, and bounded below on `(0, 1]`,
+by positive constants, so `𝔼 c² ≍ ∫_0^1 x^{−1/2} dx < ∞` and `𝔼 c⁴ ≍ ∫_0^1 x^{−1} dx = ∞`; then
+`markedEnergy δU^k = 𝔼 c² · ν(A) · T/2` and the square moment is at least
+`𝔼 c⁴ · ν(A) · T/2 = ∞` (`exists_markedPredictable_sq_markedEnergy_eq_top`). The second clause
+from `sec2_infinite_activity`: almost surely `N((0, ε] × E) = ∞` for every `ε > 0`. The third from
+(2.1) and (2.2) (`aemeasurable_and_lintegral_compensation`, `integral_compensated_eq_zero`) at the
+marked predictable `ψ = 1_{(t, T]}(s) e^s |δU_s(e)|²`, with `e^s ≤ e^T` on `[0, T]`
+(`quadratic_compensation`, `lintegral_exp_mul_sum_sq_le`).
+
+Witnesses: `Dissertation.Acceptance.A.lem41_M2_no_square_moment_corr_hypotheses` for the
+corrected clause (a Lévy driver with `d = 1`, `ν = δ₀ ≠ 0` on `ℝ`, `𝒢₀ = ⊥`, `m = 1`, `T = 1`);
+`Dissertation.Acceptance.A.sec2_infinite_activity_hypotheses` for the second (Lebesgue measure
+on `ℝ`, of infinite mass, carried by a Lévy driver with `d = 1`);
+`Dissertation.Acceptance.A.lem_bpbsde_hypotheses` for the third (the hypotheses of Lemma 4.1 at
+the backward component of the solution of Example 5.1(i), reviewed with Lemma 4.1).
+
+Verdict: the first clause, read in the setting of Lemma 4.1, is refuted at `ν = 0`
+(`lem41_M2_no_square_moment_false`) and holds for `ν ≠ 0` (`lem41_M2_no_square_moment_corr`);
+the second and third clauses are faithful, the second broader than printed.
+
+<!-- spec-review: Dissertation.PaperSpec.A.lem41_M2_no_square_moment ed839d34f480cba129ab935a30cef6f6 by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.lem41_M2_no_square_moment_corr ed839d34f480cba18ac876cdb600252c by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.lem41_jump_times ed839d34f480cba17a3bbb1b17b33874 by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.lem41_M2_zero_mean ed839d34f480cba15a569c2d7c1d42fd by=claude-author -->
+
+## (4.6), the bound at every time in the proof of Lemma 4.1: `Dissertation.PaperSpec.A.eq_supE`
+
+Manuscript (proof of Lemma `lem:bpbsde`, lines 188–217): taking expectations in (4.5) and Young's
+inequality give `𝔼 e^t |δY_t|² + 𝔼 ∫_t^T e^s (|δZ_s|²_F + ‖δU_s‖²) ds
+≤ 𝔼 e^T |δξ|² + 𝔼 ∫_t^T e^s |φ_s|² ds`. "Bounding `1 ≤ e^s ≤ e^T` on both sides leaves, for every
+`t ≤ T`, `𝔼|δY_t|² + 𝔼 ∫_t^T (|δZ_s|²_F + ‖δU_s‖²_{L²(ν)}) ds ≤ R`,
+`R := e^T (𝔼|δξ|² + 𝔼 ∫_0^T |φ_s|² ds)`. Both terms on the left are nonnegative and `R` does not
+depend on `t`, so each is bounded by `R` on its own, the first uniformly in `t` and the second at
+`t = 0`; adding them, (4.6) `sup_{t ≤ T} 𝔼|δY_t|² + 𝔼 ∫_0^T (|δZ_s|²_F + ‖δU_s‖²_{L²(ν)}) ds
+≤ 2R = C₀ (𝔼|δξ|² + 𝔼 ∫_0^T |φ_s|² ds)`, `C₀ := 2e^T`."
+
+Proposition: under the hypotheses of Lemma 4.1 (those of `lem_bpbsde`, verbatim): for every
+`t ∈ [0, T]`, `∫⁻ |δY_t|² + ∫⁻ ∫_{[t, T]} (∑_k |δZ_k|² + ∑_k ∫ |δU_k(e)|² ν(de)) ds
+≤ ofReal(e^T) (∫⁻ |δξ|² + ∑_k 𝔼 ∫_0^T |φ_k|² ds)`; and
+`sup_{t ∈ [0, T]} ∫⁻ |δY_t|² + (∑_{k, j} energy(δZ_{kj}) + ∑_k markedEnergy(δU_k))
+≤ ofReal(2 e^T) (∫⁻ |δξ|² + ∑_k 𝔼 ∫_0^T |φ_k|² ds)`.
+
+Readings:
+
+* The hypotheses are those in force in the proof, the hypotheses of Lemma 4.1, written as in
+  `lem_bpbsde` (reviewed with Lemma 4.1); the bound at every time and (4.6) use them all.
+* "For every `t ≤ T`": every `t ∈ [0, T]`; `∫_t^T` over `[t, T]` (the same as `(t, T]` for
+  Lebesgue measure). The expectations are lower integrals in `[0, ∞]`; `|δY_t|² = ∑_k δY_k(t)²`
+  (`esq`), `|δZ_s|²_F = ∑_{k, j}`, `‖δU_s‖² = ∑_k ∫ δU_k(s, e)² ν(de)`, as in `lem_bpbsde`. `R` is
+  written out, `ofReal(e^T)` times the data.
+* (4.6): the supremum over `t ∈ [0, T]` of the expectations, plus the energies on `[0, T]` (the
+  second term of the bound at `t = 0`), at most `C₀ (…)` with `C₀ = 2e^T` explicit, which is
+  `2R`. The intermediate display with the weights `e^s` is a step of the proof, not stated.
+
+Proof: for each coordinate, the equation is a linear backward equation with a progressive version
+of `φ` (`exists_linearBSDEJ_of_measurable`); the weighted second-moment identities at the
+horizons `t` and `T` differ by the integral of their rate over `(t, T]`, which Young's inequality
+and `1 ≤ e^s ≤ e^T` bound below (`LinearBSDEJ.lintegral_sq_at_add_energy_le`); summed over the
+coordinates (`brownianPoisson_energy_at_vec_of_measurable`), and (4.6) by the bound at every time
+and at `t = 0` (`brownianPoisson_supE_vec_of_measurable`).
+
+Witness: `Dissertation.Acceptance.A.lem_bpbsde_hypotheses`, the hypotheses of Lemma 4.1 at the
+backward component of the solution of Theorem 3.5 for Example 5.1(i) (reviewed with Lemma 4.1).
+
+Verdict: faithful.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_supE ed839d34f480cba17f3cae8e2942fb86 by=claude-author -->
+
 ## Lemma 4.2: `Dissertation.PaperSpec.A.lem_small`
 
 Manuscript (§4, Lemma `lem:small`): under Assumptions
@@ -478,6 +619,47 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 <!-- spec-review: Dissertation.PaperSpec.A.lem_small ed839d34f480cba12f6a12214671fd14 by=claude-reviewer -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.lem_small--claude-auditor--2026-10-19T03_37_18Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.lem_small ed839d34f480cba12f6a12214671fd14 by=claude-auditor -->
+
+## (4.11), Step 3 of the proof of Lemma 4.2: `Dissertation.PaperSpec.A.eq_terdiff`
+
+Manuscript (proof of Lemma `lem:small`, Step 3, lines 376–389): "Put
+`δξ̄ := λ[g(X̄¹_T, Law(X̄¹_T)) − g(X̄²_T, Law(X̄²_T))]`. Then
+`𝔼|δξ̄|² ≤ λ² L² 𝔼(|δX̄_T| + W₂(Law(X̄¹_T), Law(X̄²_T)))²
+≤ 2λ² L² (𝔼|δX̄_T|² + W₂(Law(X̄¹_T), Law(X̄²_T))²) ≤ C_g λ² 𝔼|δX̄_T|²`, `C_g := 4L²`, the first
+step by (2.6) and the last by (2.9)." Here `X̄^k = Φ_λ(Θ^k)` is the forward component of the
+frozen step of a trial `Θ^k ∈ ℍ`, `λ ∈ [0, 1]`, and `δX̄ = X̄¹ − X̄²`.
+
+Proposition: on every filtered probability space, for every `g : ℝⁿ × P₂(ℝⁿ) → ℝᵐ` with the
+terminal bound (2.6) of Assumption 2.3 with the constant `L` (`LipTerminal`), every `λ ∈ ℝ` and
+all `ℱ_T`-measurable square-integrable `X₁, X₂`, the three links hold, in `[0, ∞]`:
+`∫⁻ ‖λ (g(X₁, Law X₁) − g(X₂, Law X₂))‖² ≤ ofReal(λ² L²) ∫⁻ (‖X₁ − X₂‖ + W₂)²
+≤ ofReal(2λ² L²) (∫⁻ ‖X₁ − X₂‖² + W₂²) ≤ ofReal(4L² λ²) ∫⁻ ‖X₁ − X₂‖²`, with
+`W₂ = w2P(Law X₁, Law X₂)`.
+
+Readings:
+
+* The proposition is broader than printed: it holds for any two square-integrable
+  `ℱ_T`-measurable terminal values and every `λ`, which is all the step uses of `X̄^k_T` and `λ`.
+  The printed claim is its instance at `X̄^k_T` (adapted, and square integrable since
+  `X̄^k ∈ S²`), `λ ∈ [0, 1]` and the terminal function of the coefficients, which satisfies (2.6)
+  under Assumption 2.3 (`Assumption23.terminal`). The same bound is used at 03:166 and 04:753.
+* `C_g λ²` with `C_g = 4L²` explicit; `W₂` is the 2-Wasserstein distance of the Euclidean norm on
+  `P₂(ℝⁿ)` of the laws of the terminal values (`w2P`, `lawP2`, as in (2.6) and (2.9)). The
+  expectations are lower integrals in `[0, ∞]` of `‖·‖ₑ²`; `W₂` enters through `ofReal`.
+* (2.6) holds with no sign condition on `L` in `LipTerminal`; the links do not need one either
+  (a negative `L` forces `δξ̄ = 0`).
+
+Proof: pointwise from (2.6), `‖λ v‖² = λ² ‖v‖² ≤ λ² L² (‖δX_T‖ + W₂)²`; then
+`(a + b)² ≤ 2a² + 2b²` and `W₂² ≤ 𝔼‖δX_T‖²` (the coupling bound (2.9), `ofReal_w2P_lawP2_sq_le`).
+
+Witness: `Dissertation.Acceptance.A.eq_terdiff_hypotheses`: at the instance of
+`thm_cwp_hypotheses` (a Lévy driver with `d = 1`, `ν = δ₀`, `𝒢₀ = ⊥`, `n = m = 1`, `T = 1`), the
+terminal function `g(x, ρ) = x` of Example 5.1(i) satisfies (2.6) with `L = 1`, and the terminal
+values `0` and `e₁` are `ℱ_1`-measurable and square integrable.
+
+Verdict: faithful (broader, printed claim an instance).
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_terdiff ed839d34f480cba104ed4a8f00254090 by=claude-author -->
 
 ## Lemma 4.3: `Dissertation.PaperSpec.A.lem_pert`
 
@@ -614,6 +796,80 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 <!-- spec-review: Dissertation.PaperSpec.A.lem_cont ed839d34f480cba15f6eb38f12c8d372 by=claude-reviewer -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.lem_cont--claude-auditor--2026-10-19T03_35_26Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.lem_cont ed839d34f480cba15f6eb38f12c8d372 by=claude-auditor -->
+
+## §4.4, uniqueness along the homotopy: `Dissertation.PaperSpec.A.sec4_uniq_homotopy`
+
+Manuscript (§4.4, before Lemma `lem:cont`, lines 875–878): "Taking identical sources and the common
+initial datum in Lemma 4.3 (at lower bound `λ̲ = λ*`) yields uniqueness at each `λ ∈ [λ*, 1]`;
+Lemma 4.2 gives it on `[0, λ*]`. It remains to prove existence up to `λ = 1`." Here `λ*` is the
+small-coupling threshold of Lemma 4.2 (as Lemma 4.4 says), and uniqueness is the uniqueness half
+of `WP(λ)`: two solutions of (4.1) in `ℍ` with the same initial datum and forcing coincide.
+
+Proposition: `∃ λ*` of `(T, L)` such that, in the standing setting, for `T > 0`, under (2.3) and
+Assumptions 2.2–2.5 with `L, α, β₁, β₂` and a full-rank `G`: `0 < λ*(T, L) ≤ 1`, and for every
+`λ` with `λ* ≤ λ ≤ 1` or `0 ≤ λ ≤ λ*`, every forcing `q` (`PredForcing`) and any two
+`ForcedSolution`s at `λ` with the datum `ξ₀` and the forcing `q`, `X¹, X²` and `Y¹, Y²` are
+indistinguishable on `[0, T]` and the differences of `Z` and of `U` have zero energy.
+
+Readings:
+
+* The hypotheses are those of the continuation step, the hypotheses of Theorem 3.5 (as
+  `thm_cwp`/`lem_cont`); Lemma 4.3 uses Assumptions 2.3–2.5 and Lemma 4.2 Assumptions 2.2–2.3.
+* `λ*` is chosen before everything, a function of `(T, L)`, as in `lem_small`; its range
+  `(0, 1]` is asserted in the situation of the statement. The two ranges of the sentence are the
+  two disjuncts on `λ`.
+* Uniqueness in the sense of `WP(λ)` (reviewed in `definitions.md`): solutions in `ℍ`
+  (`ForcedSolution`), the conclusion of `WP`. "Identical sources and the common initial datum":
+  one forcing `q` and one datum `ξ₀` for both solutions.
+
+Proof: with `λ*` the constant of `lem_small`; on `[λ*, 1]` by `lem_pert` at `λ̲ = λ*`,
+`ξ¹ = ξ² = ξ₀` (`ℱ₀`-measurable by Assumption 2.2) and `q¹ = q² = q`, whose difference of two
+solutions in `ℍ` lies in `ℍ` (`ForcedSolution.supSize_sub_lt_top`) and whose data size is `0`, so
+the size of the difference is `0` (`ForcedSolution.eq_of_supSize_sub_eq_zero`); on `[0, λ*]` by
+`WP(λ)` of `lem_small`.
+
+Witness: `Dissertation.Acceptance.A.thm_cwp_hypotheses` (Example 5.1(i): (2.3) and
+Assumptions 2.2–2.5 at `L = 1`, `G = 1`, `α = β₁ = β₂ = 1`).
+
+Verdict: faithful.
+
+<!-- spec-review: Dissertation.PaperSpec.A.sec4_uniq_homotopy ed839d34f480cba178b10f6f962eecce by=claude-author -->
+
+## §4.5, the proof of Theorem 3.5: `Dissertation.PaperSpec.A.sec45_proof_thm35`, and `thm_cwp`
+
+Manuscript (§4.5, lines 941–952): "By Lemma 4.2, `WP(λ)` holds for `λ ∈ [0, λ*]`. With `ζ₀` from
+Lemma 4.4, set `λ_k := min{λ* + k ζ₀, 1}`, `k ≥ 0`, so that `λ_0 = λ*`, `λ_{k+1} − λ_k ≤ ζ₀` and
+`λ_k = 1` once `k ≥ ⌈(1 − λ*)/ζ₀⌉`. Lemma 4.4 carries `WP(λ_k)` to `WP(λ_{k+1})` at every step, so
+`WP(1)` holds; taking `q ≡ 0` there gives a unique solution of (1.1) in `ℍ`."
+
+Proposition (`sec45_proof_thm35`): `∃ λ*` of `(T, L)` and `ζ₀` of
+`(T, L, ‖G‖, c_G, α, β₁, β₂, λ*)` such that, in the standing setting, for `T > 0`, under (2.3) and
+Assumptions 2.2–2.5: `0 < λ* ≤ 1`, `ζ₀(…, λ*) > 0`, `WP(λ)` for every `λ ∈ [0, λ*]`,
+`min{λ* + 0 · ζ₀, 1} = λ*`, `λ_{k+1} − λ_k ≤ ζ₀` for every `k`, `λ_k = 1` for
+`k ≥ ⌈(1 − λ*)/ζ₀⌉₊`, `WP(λ_k)` for every `k`, and `WP(1)`, with `λ_k = min{λ* + k ζ₀, 1}` written
+out and `ζ₀` evaluated at `(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂, λ*(T, L))`. The last sentence,
+"taking `q ≡ 0` there gives a unique solution of (1.1) in `ℍ`", is Theorem 3.5, the claim's
+second clause `thm_cwp` (reviewed in its own section).
+
+Readings:
+
+* `λ*` and `ζ₀` are those of Lemmas 4.2 and 4.4: functions chosen before everything with the
+  dependence these lemmas state (`lem_small`, `lem_cont`), `ζ₀` at `λ*`. The positivity and the
+  range of `λ*` are asserted in the situation of the statement, as in `lem_small`.
+* `⌈(1 − λ*)/ζ₀⌉` is the natural-number ceiling `⌈·⌉₊` (its argument is `≥ 0`); `k ≥ 0` ranges
+  over `ℕ`. "Lemma 4.4 carries `WP(λ_k)` to `WP(λ_{k+1})` at every step, so `WP(1)` holds": the
+  conclusions `WP(λ_k)` for every `k` and `WP(1)`; the induction is the proof.
+* The hypotheses are those of Theorem 3.5 (`thm_cwp`), which this proof proves.
+
+Proof: with the functions of `lem_small` and `lem_cont`; the arithmetic of `min` and `⌈·⌉₊`
+(`lambdaSeq_facts`), and induction on `k` with Lemma 4.4 at `λ₀ = λ_k ∈ [λ*, 1]` and
+`ζ = λ_{k+1} − λ_k ∈ [0, ζ₀]`; `WP(1)` is `WP(λ_K)` at `K = ⌈(1 − λ*)/ζ₀⌉₊`.
+
+Witness: `Dissertation.Acceptance.A.thm_cwp_hypotheses`, for both clauses.
+
+Verdict: faithful; the last sentence shares the proposition of Theorem 3.5.
+
+<!-- spec-review: Dissertation.PaperSpec.A.sec45_proof_thm35 ed839d34f480cba18bff3d8eda5cbf52 by=claude-author -->
 
 ## Example 5.1(i): `Dissertation.PaperSpec.A.ex_concrete_i_ham`, `ex_concrete_i`, `ex_concrete_i_pairing`, `ex_concrete_i_wp`
 
@@ -2173,7 +2429,7 @@ Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.rem
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.rem_beta1_zero--claude-auditor--2026-10-19T03_38_14Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.rem_beta1_zero ed839d34f480cba10a600b0e388b329d by=claude-auditor -->
 
-## Remark 2.11, the dissipativity margin: `Dissertation.PaperSpec.A.rem_margin_reduce`, `rem_margin_unweighted`, `rem_margin_smaller`
+## Remark 2.11, the dissipativity margin: `Dissertation.PaperSpec.A.rem_margin_reduce`, `rem_margin_unweighted`, `rem_margin_smaller`, `rem_margin_slack`
 
 Manuscript (§2, Remark `rem:margin`): (2.7) holds with margin `c > 0` if (2.12) holds, the bound
 of (2.7) with the further term `−c 𝔼[|G* δY|² + |G* δZ|²_F + ‖G* δU‖² + |G δX|²]`. "Suppose the
@@ -2197,6 +2453,12 @@ Propositions:
   and margin `c / c_G`, `c_G = s_min(G)⁻²`.
 * `rem_margin_smaller`: for `n ≥ 1`, `G ∈ ℝ^{n×n}` of full rank with `c_G = s_min(G)⁻² > 1` and
   `c > 0`, `c / c_G < c`.
+* `rem_margin_slack`: in the standing setting (any `n, m, d`, `G`, coefficients `C` and
+  perturbation `p`), if `C` satisfies (2.12) with the constants `β₁, β₂` and margin `c > 0`
+  (`Margin212`) and `p` satisfies (3.4) in the weighted quantity of (2.12) with a constant
+  `c_pert`, `0 ≤ c_pert ≤ c` (`PairingBound34W`, reviewed with Remark 3.7), then for almost every
+  `t ∈ [0, T]` the perturbed coefficients `C + p` (`Coeffs.perturb`) satisfy (2.7) with the
+  constants `β₁, β₂` (`Mono27At`).
 
 Correspondence:
 
@@ -2213,6 +2475,18 @@ Correspondence:
   the setting of the sentence (`m = n`, `G` of full rank, `c_G = s_min(G)⁻²`, `c > 0`). The
   sentence makes no claim that the margin `c` fails in (2.13), and the proposition does not
   state one.
+* "Recording weaker constants turns the difference into slack, which a perturbation raising the
+  interior pairing by at most the margin leaves intact" (lines 300–302): `rem_margin_slack`. The recorded
+  constants are those of (2.12), `β₁, β₂` with margin `c`; "a perturbation raising the interior
+  pairing by at most the margin" is a perturbation `p` of the interior coefficients whose own
+  pairing is at most `c_pert` times the weighted quantity of (2.12), with `c_pert ≤ c` (the
+  pairing of `C + p` is that of `C` plus that of `p`); "leaves intact" is the bound (2.7) with the
+  recorded constants `β₁, β₂` for `C + p`. The perturbation is the one of Corollary 3.6 and
+  Remark 3.7 (`C.perturb p`, the interior coefficients added, `g` unchanged), and (3.4) in the
+  weighted quantity is the form Remark 3.7 records; `c_pert ≥ 0` and `c > 0` are kept as the
+  notions state them (a margin is positive, (3.4) has `c_pert ≥ 0`). The proposition holds with
+  no sign condition on `β₁, β₂` and does not assert Assumption 2.5 for `C + p` (its constants'
+  admissibility and the terminal inequality are not part of the sentence).
 
 Witnesses: `Dissertation.Acceptance.A.rem_affine_hypotheses` for `rem_margin_reduce` (over a Lévy
 driver with `d = 1`, `ν = δ₀`, `𝒢₀ = ⊥`, `T = 1`, Example 5.1(i) with `β₁ = β₂ = 1` satisfies
@@ -2222,17 +2496,26 @@ Assumption 2.5 at `G = 1`, whose interior part is (2.7) with `β̄₁ = β̄₂ 
 and margin `1/2 > 0`; at `G = 1`, `c_G = 1`, so this witness meets the hypotheses without showing
 the factor `c_G`); `Dissertation.Acceptance.A.rem_margin_smaller_hypotheses` for
 `rem_margin_smaller` (`G = 1/2 ∈ ℝ^{1×1}`, of full rank, with `s_min(G) = 1/2`, so `c_G = 4 > 1`,
-and `c = 1`).
+and `c = 1`); `Dissertation.Acceptance.A.rem_margin_slack_hypotheses` for `rem_margin_slack`
+(the instance of `rem_generalrank_hypotheses`, `n = m = 1`, `G = 1`, `ν = δ₀`: the baseline
+Example 5.1(i) with `β₁ = β₂ = 2` satisfies (2.12) with the constants `1, 1` and margin `c = 1`,
+and the feedback perturbation with `ε = 1/2` satisfies the weighted (3.4) with `c_pert = 1/2`,
+hence with `c_pert = 1 = c`, the case of a perturbation raising the pairing by the whole margin).
+
+Proof of `rem_margin_slack`: the expected pairing of `C + p` is that of `C`, at most
+`−β₁ A − β₂ B − c S`, plus that of `p`, at most `c_pert S ≤ c S`, with `S ≥ 0` the weighted
+quantity.
 
 Verdict: faithful.
 
 <!-- spec-review: Dissertation.PaperSpec.A.rem_margin_reduce ed839d34f480cba15843e0ffe4756126 by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.rem_margin_unweighted ed839d34f480cba1ba4163c9b3d796bd by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.rem_margin_smaller ed839d34f480cba133faa12dcf2189f6 by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.rem_margin_slack ed839d34f480cba1fc10bfb5bc98adb1 by=claude-author -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.rem_margin_reduce--claude-auditor--2026-10-19T03_34_35Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.rem_margin_reduce ed839d34f480cba15843e0ffe4756126 by=claude-auditor -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_margin_unweighted ed839d34f480cba1ba4163c9b3d796bd by=claude-author -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.rem_margin_unweighted--claude-auditor--2026-10-19T03_34_35Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.rem_margin_unweighted ed839d34f480cba1ba4163c9b3d796bd by=claude-auditor -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_margin_smaller ed839d34f480cba133faa12dcf2189f6 by=claude-author -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.rem_margin_smaller--claude-auditor--2026-10-19T18_47_31Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.rem_margin_smaller ed839d34f480cba133faa12dcf2189f6 by=claude-auditor -->
 

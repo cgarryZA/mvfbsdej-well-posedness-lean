@@ -8,11 +8,11 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 
 | Status | A |
 |---|---|
-| formal: accepted | 49 |
-| formal: proved, author-reviewed | 0 |
+| formal: accepted | 48 |
+| formal: proved, author-reviewed | 5 |
 | formal: proved, review pending | 0 |
 | refuted as printed | 0 |
-| refuted as printed; corrected statement proved | 0 |
+| refuted as printed; corrected statement proved | 1 |
 | refuted as printed; other clauses open | 0 |
 | refuted as printed; corrected statement proved; other clauses open | 0 |
 | formal: open | 0 |
@@ -24,7 +24,7 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | definition: not yet stated | 0 |
 | out of scope: duplicate | 4 |
 | out of scope: part-of | 17 |
-| out of scope: proof-step | 28 |
+| out of scope: proof-step | 23 |
 
 ## Paper A (well-posedness, `1f67672`)
 
@@ -39,7 +39,7 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | `A:rem:diag-mono` | Remark 2.8 | formal: accepted | `A.rem_diag_mono`, `A.rem_diag_mono_converse` | `A.rem_diag_mono`, `A.rem_diag_mono_converse` | the pointwise condition gives Assumption 2.5, under (2.3) and Assumption 2.3: reviewed by claude-auditor, hypotheses met: `A.rem_affine_hypotheses`; the converse fails: reviewed by claude-auditor, hypotheses met: `A.ex_concrete_hypotheses` |
 | `A:rem:intrinsic` | Remark 2.9 | formal: accepted | `A.rem_intrinsic_uniform`, `A.rem_intrinsic_coupling`, `A.rem_intrinsic_basis` | `A.rem_intrinsic_uniform`, `A.rem_intrinsic_coupling`, `A.rem_intrinsic_basis` | a uniform variable, a function of W1_t, at every t > 0: reviewed by claude-auditor, hypotheses met: `A.ex_concrete_hypotheses`; every coupling is the joint law of F_t-measurable inputs, t > 0: reviewed by claude-auditor, hypotheses met: `A.rem_coupling_hypotheses`; Assumptions 2.3 and 2.5 do not depend on the basis: reviewed by claude-auditor, hypotheses met: `A.rem_affine_hypotheses` |
 | `A:rem:beta1-dich` | Remark 2.10 | formal: accepted | `A.rem_beta1_fibre`, `A.rem_beta1_dich`, `A.rem_beta1_zero`, `A.ex_brownian`, `A.ex_brownian_rank_gt` | `A.rem_beta1_fibre`, `A.rem_beta1_dich`, `A.rem_beta1_zero`, `A.ex_brownian`, `A.ex_brownian_rank_gt` | ν ≠ 0 gives L²(ν) ≠ {0}; ν = 0 gives L²(ν) = {0}: reviewed by claude-auditor, hypotheses met: `A.rem_affine_hypotheses`; the reduction to the jump channel and the β₁ dichotomy, with ν ≠ 0: reviewed by claude-auditor, hypotheses met: `A.rem_affine_hypotheses`; at ν = 0 the restriction disappears: an additive jump coefficient allows β₁ > 0: reviewed by claude-auditor, hypotheses met: `A.ex_brownian_hypotheses`; at ν = 0 both rank branches are available: the branch m < n with an additive jump coefficient (Example 5.2): reviewed by claude-auditor, hypotheses met: `A.ex_brownian_hypotheses`; at ν = 0 both rank branches are available: the branch m > n (Example 5.2): reviewed by claude-auditor, hypotheses met: `A.ex_brownian_rank_gt_hypotheses` |
-| `A:rem:margin` | Remark 2.11 | formal: accepted | `A.rem_margin_reduce`, `A.rem_margin_unweighted`, `A.rem_margin_smaller` | `A.rem_margin_reduce`, `A.rem_margin_unweighted`, `A.rem_margin_smaller` | a bound with the constants β̄₁, β̄₂ is (2.12) with the constants β̄ᵢ − c and margin c, for 0 < c < min{β̄₁, β̄₂}: reviewed by claude-auditor, hypotheses met: `A.rem_affine_hypotheses`; when m = n the weighted margin c gives the margin c / c_G in the unweighted form (2.13): reviewed by claude-auditor, hypotheses met: `A.rem_margin_hypotheses`; the unweighted margin c / c_G is smaller than c when c_G > 1: reviewed by claude-auditor, hypotheses met: `A.rem_margin_smaller_hypotheses` |
+| `A:rem:margin` | Remark 2.11 | formal: proved, author-reviewed | `A.rem_margin_reduce`, `A.rem_margin_unweighted`, `A.rem_margin_smaller`, `A.rem_margin_slack` | `A.rem_margin_reduce`, `A.rem_margin_unweighted`, `A.rem_margin_smaller`, `A.rem_margin_slack` | a bound with the constants β̄₁, β̄₂ is (2.12) with the constants β̄ᵢ − c and margin c, for 0 < c < min{β̄₁, β̄₂}: reviewed by claude-auditor, hypotheses met: `A.rem_affine_hypotheses`; when m = n the weighted margin c gives the margin c / c_G in the unweighted form (2.13): reviewed by claude-auditor, hypotheses met: `A.rem_margin_hypotheses`; the unweighted margin c / c_G is smaller than c when c_G > 1: reviewed by claude-auditor, hypotheses met: `A.rem_margin_smaller_hypotheses`; recording weaker constants turns the difference into slack: (2.12) with β₁, β₂ and margin c, and a perturbation whose pairing bound (3.4) in the weighted quantity holds with 0 ≤ c_pert ≤ c, give (2.7) with β₁, β₂ for the perturbed coefficients: reviewed by claude-author, hypotheses met: `A.rem_margin_slack_hypotheses` |
 | `A:thm:stab` | Theorem 3.1 | formal: accepted | `A.thm_stab` | `A.thm_stab` | reviewed by claude-auditor, hypotheses met: `A.thm_stab_nonzero_hypotheses` |
 | `A:rem:cwp-class` | Remark 3.2 | formal: accepted | `A.rem_cwp_class` | `A.rem_cwp_class` | reviewed by claude-auditor, hypotheses met: `A.rem_cwp_class_hypotheses` |
 | `A:thm:uniq` | Theorem 3.3 | formal: accepted | `A.thm_uniq` | `A.thm_uniq` | reviewed by claude-auditor, hypotheses met: `A.thm_uniq_hypotheses` |
@@ -75,6 +75,9 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | `A:sec4:supremum-criterion` | §4 preamble | formal: accepted | `A.sec4_supremum_criterion` | `A.sec4_supremum_criterion` | reviewed by claude-auditor, hypotheses met: `A.sec4_supremum_criterion_hypotheses` |
 | `A:sec4:WP-def` | (4.1) + WP(lambda) | definition: reviewed | `Dissertation.PaperSpec.A.WP`, `Dissertation.PaperSpec.A.WeakForcedSolution` | — | definitions |
 | `A:sec4:coeffint` | (4.2)-(4.3) | formal: accepted | `A.eq_coeffint`, `A.eq_termg` | `A.eq_coeffint`, `A.eq_termg` | (4.2): E int |psi(s, Theta_s, mu_s)|^2 <= C E int (|X|^2 + |Y|^2 + |Z|^2 + ||U||^2 + |psi(s, 0, delta_0)|^2), psi in {b, sigma, h, f}: reviewed by claude-auditor, hypotheses met: `A.thm_cwp_hypotheses`; (4.3): E |g(X_T, Law X_T)|^2 <= C (E |X_T|^2 + |g(0, delta_0)|^2): reviewed by claude-auditor, hypotheses met: `A.thm_cwp_hypotheses` |
+| `A:lem4.1:M2-infinite-activity` | proof of Lemma 4.1 | refuted as printed; corrected statement proved | `A.lem41_M2_no_square_moment`, `A.lem41_M2_no_square_moment_corr`, `A.lem41_jump_times`, `A.lem41_M2_zero_mean` | ¬ `A.lem41_M2_no_square_moment_false`, `A.lem41_M2_no_square_moment_corr`, `A.lem41_jump_times`, `A.lem41_M2_zero_mean` | membership δU ∈ H²_N gives the quadratic integrand e^s|δU_s(e)|² of M² no square moment, in every standing setting: reviewed by claude-author; membership δU ∈ H²_N gives the quadratic integrand e^s|δU_s(e)|² of M² no square moment, for ν ≠ 0: reviewed by claude-author, hypotheses met: `A.lem41_M2_no_square_moment_corr_hypotheses`; with ν(E) = ∞ the jump times τ_k = inf{t ≥ 0 : N((0, t] × E) ≥ k} are all 0 almost surely, so they do not exhaust [0, T]: reviewed by claude-author, hypotheses met: `A.sec2_infinite_activity_hypotheses`; 𝔼∫_0^T∫_E e^s|δU_s(e)|² ν(de) ds ≤ e^T 𝔼∫_0^T ‖δU_s‖² ds < ∞; the Poisson integral and the compensator of e^s|δU|² over (t, T] × E have finite expectation, and 𝔼[M²_T − M²_t] = 0: reviewed by claude-author, hypotheses met: `A.lem_bpbsde_hypotheses` |
+| `A:sec4:uniqueness-along-homotopy` | ¶ before Lemma 4.4 | formal: proved, author-reviewed | `A.sec4_uniq_homotopy` | `A.sec4_uniq_homotopy` | reviewed by claude-author, hypotheses met: `A.thm_cwp_hypotheses` |
+| `A:sec4:proof-thm35` | §4.5 | formal: proved, author-reviewed | `A.sec45_proof_thm35`, `A.thm_cwp` | `A.sec45_proof_thm35`, `A.thm_cwp` | λ_k = min{λ* + kζ₀, 1}: λ_0 = λ*, λ_{k+1} − λ_k ≤ ζ₀, λ_k = 1 for k ≥ ⌈(1 − λ*)/ζ₀⌉; WP(λ) on [0, λ*], WP(λ_k) for every k, and WP(1): reviewed by claude-author, hypotheses met: `A.thm_cwp_hypotheses`; with q ≡ 0, (1.1) has a unique solution in ℍ (Theorem 3.5): reviewed by claude-auditor, hypotheses met: `A.thm_cwp_hypotheses` |
 | `A:sec:examples` | §5 preamble | formal: accepted | `A.sec5_limin` | `A.sec5_limin` | reviewed by claude-auditor, hypotheses met: `A.sec5_limin_hypotheses` |
 | `A:sec5:overview` | §5 ¶2 | formal: accepted | `A.ex_concrete_i`, `A.ex_concrete_ii`, `A.ex_brownian`, `A.ex_brownian_reduction`, `A.ex_expfunc`, `A.ex_expfunc_limin`, `A.ex_fulllaw_beyond_radial`, `A.ex_fulllaw_beyond_U_corr`, `A.ex_dealer_mono`, `A.ex_dealer_wp`, `A.ex_dealer_active` | `A.ex_concrete_i`, `A.ex_concrete_ii`, `A.ex_brownian`, `A.ex_brownian_reduction`, `A.ex_expfunc`, `A.ex_expfunc_limin`, `A.ex_fulllaw_beyond_radial`, `A.ex_fulllaw_beyond_U_corr`, `A.ex_dealer_mono`, `A.ex_dealer_wp`, `A.ex_dealer_active` | Example 5.1(i) meets every assumption at arbitrary activity: reviewed by claude-auditor, hypotheses met: `A.ex_concrete_hypotheses`; Example 5.1(ii) meets every assumption at arbitrary activity: reviewed by claude-auditor, hypotheses met: `A.ex_concrete_hypotheses`; Example 5.2 recovers the Brownian subclass: reviewed by claude-auditor, hypotheses met: `A.ex_brownian_hypotheses`; Example 5.2: at ν = 0 the assumptions and solution notions are the Brownian ones: reviewed by claude-auditor, hypotheses met: `A.ex_brownian_reduction_hypotheses`; Example 5.3 recovers the expectation-functional subclass: reviewed by claude-auditor, hypotheses met: `A.ex_expfunc_hypotheses`; Example 5.3: the kernels of the independent-copy interactions of [LiMin] embed in the class: reviewed by claude-auditor, hypotheses met: `A.ex_expfunc_limin_hypotheses`; Example 5.4: a nonlinear functional of the full tuple: reviewed by claude-auditor, hypotheses met: `A.ex_fulllaw_beyond_hypotheses`; the U-marginal radial statistics are no expectation functionals, with L²(ν) ≠ 0: reviewed by claude-auditor, hypotheses met: `A.ex_fulllaw_beyond_hypotheses`; the crowding interaction is monotone at every interaction strength ε ≥ 0: reviewed by claude-auditor, hypotheses met: `A.ex_dealer_hypotheses`; well-posedness at every interaction strength ε ≥ 0 (Theorem 3.5): reviewed by claude-auditor, hypotheses met: `A.ex_dealer_hypotheses`; Example 5.5: in an explicit specialisation the interaction is active along the solution: reviewed by claude-auditor, hypotheses met: `A.ex_dealer_spec_hypotheses` |
 | `A:conclusion` | §6 | formal: accepted | `A.thm_stab`, `A.thm_uniq`, `A.thm_cwp`, `A.cor_robust_wp`, `A.rem_diag_mono`, `A.prop_strict`, `A.rem_diag_mono_converse`, `A.rem_beta1_dich` | `A.thm_stab`, `A.thm_uniq`, `A.thm_cwp`, `A.cor_robust_wp`, `A.rem_diag_mono`, `A.prop_strict`, `A.rem_diag_mono_converse`, `A.rem_beta1_dich` | the stability estimate (Theorem 3.1): reviewed by claude-auditor, hypotheses met: `A.thm_stab_nonzero_hypotheses`; uniqueness (Theorem 3.3): reviewed by claude-auditor, hypotheses met: `A.thm_uniq_hypotheses`; existence and uniqueness on every finite horizon (Theorem 3.5): reviewed by claude-auditor, hypotheses met: `A.thm_cwp_hypotheses`; robustness at m = n below the dissipativity margin (Corollary 3.6): reviewed by claude-auditor, hypotheses met: `A.cor_robust_hypotheses`; pointwise monotonicity gives expected diagonal monotonicity (Remark 2.8): reviewed by claude-auditor, hypotheses met: `A.rem_affine_hypotheses`; expected diagonal monotonicity is strictly weaker (Proposition 3.8): reviewed by claude-auditor, hypotheses met: `A.prop_strict_hypotheses`; expected diagonal monotonicity is strictly weaker: a full coefficient system satisfying Assumption 2.5 without the pointwise condition (Remark 2.8): reviewed by claude-auditor, hypotheses met: `A.ex_concrete_hypotheses`; the reduction to the jump channel and the β₁ dichotomy, with ν ≠ 0: reviewed by claude-auditor, hypotheses met: `A.rem_affine_hypotheses` |
@@ -89,6 +92,8 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | `A:eq:forced` | (4.1) | definition: reviewed | `Dissertation.PaperSpec.A.ForcedSolution` | — | definitions |
 | `A:eq:coeffint` | (4.2) | formal: accepted | `A.eq_coeffint` | `A.eq_coeffint` | reviewed by claude-auditor, hypotheses met: `A.thm_cwp_hypotheses` |
 | `A:eq:termg` | (4.3) | formal: accepted | `A.eq_termg` | `A.eq_termg` | reviewed by claude-auditor, hypotheses met: `A.thm_cwp_hypotheses` |
+| `A:eq:supE` | (4.6) | formal: proved, author-reviewed | `A.eq_supE` | `A.eq_supE` | reviewed by claude-author, hypotheses met: `A.lem_bpbsde_hypotheses` |
+| `A:eq:terdiff` | (4.11) | formal: proved, author-reviewed | `A.eq_terdiff` | `A.eq_terdiff` | reviewed by claude-author, hypotheses met: `A.eq_terdiff_hypotheses` |
 | `A:eq:bwdyoung` | (4.25) | formal: accepted | `A.eq_bwdyoung` | `A.eq_bwdyoung` | reviewed by claude-auditor, hypotheses met: `A.lem_pert_two_data_hypotheses` |
 
 ## Out of scope
@@ -100,9 +105,6 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | `A:sec2:fubini-iso` | (2.4) | duplicate | A:eq:fubiniiso | yes |
 | `A:sec2:coefmeas` | (2.5) | duplicate | A:eq:coefmeas | yes |
 | `A:rem2.6` | Remark 2.6 (no label) | duplicate | A:rem:wasserstein-bounds | yes |
-| `A:lem4.1:M2-infinite-activity` | proof of Lemma 4.1 | proof-step | a step of a printed proof | yes |
-| `A:sec4:uniqueness-along-homotopy` | ¶ before Lemma 4.4 | proof-step | a step of the argument of Section 4 outside a proof environment: uniqueness along the homotopy is Lemma 4.3 at zero d... | yes |
-| `A:sec4:proof-thm35` | §4.5 | proof-step | a step of a printed proof | yes |
 | `A:ex:concrete(i)` | Example 5.1(i) | part-of | A:ex:concrete | yes |
 | `A:ex:concrete(ii)` | Example 5.1(ii) | part-of | A:ex:concrete | yes |
 | `A:lemA1:polish` | proof of Lemma A.1, step 2 | proof-step | a step of a printed proof | yes |
@@ -122,12 +124,10 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | `A:eq:diagdrift` | (3.7) | part-of | A:prop:strict | yes |
 | `A:eq:dYlin` | (4.4) | part-of | A:lem:bpbsde | yes |
 | `A:eq:itoY2` | (4.5) | proof-step | a step of a printed proof | yes |
-| `A:eq:supE` | (4.6) | proof-step | a step of a printed proof | yes |
 | `A:eq:frozenfwd` | (4.7) | proof-step | a step of a printed proof | yes |
 | `A:eq:frozenbwd` | (4.8) | proof-step | a step of a printed proof | yes |
 | `A:eq:coeffdiff` | (4.9) | proof-step | a step of a printed proof | yes |
 | `A:eq:fwddiff` | (4.10) | proof-step | a step of a printed proof | yes |
-| `A:eq:terdiff` | (4.11) | proof-step | a step of a printed proof | yes |
 | `A:eq:bwddiff` | (4.12) | proof-step | a step of a printed proof | yes |
 | `A:eq:contract` | (4.13) | proof-step | a step of a printed proof | yes |
 | `A:eq:contpert` | (4.14) | part-of | A:lem:pert | yes |

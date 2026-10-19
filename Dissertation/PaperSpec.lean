@@ -30,6 +30,9 @@ import Dissertation.PaperSpec.A.Sec5BrownianReduction
 import Dissertation.PaperSpec.A.Sec4Supremum
 import Dissertation.PaperSpec.A.Sec3SpaceNorm
 import Dissertation.PaperSpec.A.Sec4BackwardYoung
+import Dissertation.PaperSpec.A.Sec4BrownianPoisson
+import Dissertation.PaperSpec.A.Sec4Small
+import Dissertation.PaperSpec.A.Sec4Continuation
 
 /-!
 # The statements of the paper
