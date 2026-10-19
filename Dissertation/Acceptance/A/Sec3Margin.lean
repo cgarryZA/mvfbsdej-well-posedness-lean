@@ -23,7 +23,8 @@ import LevyStochCalc.Driver.Existence
 * `Dissertation.Acceptance.A.not_finiteDimensional_Lp_volume` — `L²(Lebesgue; ℝ¹)` is infinite
   dimensional.
 * `Dissertation.Acceptance.A.cor_margin_additive_hypotheses`, `cor_margin_finite_hypotheses`,
-  `cor_margin_findim_hypotheses` — instances meeting the hypotheses.
+  `cor_margin_continuous_hypotheses`, `cor_margin_findim_hypotheses` — instances meeting the
+  hypotheses.
 -/
 
 open MeasureTheory Filter ProbabilityTheory
@@ -222,6 +223,29 @@ theorem cor_margin_finite_hypotheses :
     LinearMap.pi fun _ => (innerSL ℝ unitIndicator).toLinearMap, fun t x y z u u' h => ?_⟩
   have h0 := congrFun h 0
   simp only [LinearMap.pi_apply, ContinuousLinearMap.coe_coe, innerSL_apply_apply] at h0
+  simp only [rankOneCoeffs, h0]
+
+/-- **The hypotheses of `cor_margin_continuous` can be met.** Over a probability space carrying
+a Lévy driver with `d = 1` and `ν` Lebesgue measure on `ℝ`, with `𝒢₀ = ⊥` independent of it,
+`L²(ν; ℝ¹)` is infinite dimensional, and at every time and every law the jump coefficient of
+`rankOneCoeffs` depends on `u` only through the continuous functional `u ↦ ⟨φ, u⟩`. -/
+theorem cor_margin_continuous_hypotheses :
+    ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)
+      (D : LevyStochCalc.Driver.LevyDriver P 1 (volume : Measure ℝ)),
+      Indep (⊥ : MeasurableSpace Ω) (⨆ t, D.filtration t) P
+      ∧ ¬ FiniteDimensional ℝ (Lp (EuclideanSpace ℝ (Fin 1)) 2 (volume : Measure ℝ))
+      ∧ ∃ F : ℝ → Lp (EuclideanSpace ℝ (Fin 1)) 2 (volume : Measure ℝ) → (Fin 1 → ℝ),
+        (∀ t, Continuous (F t))
+        ∧ ∀ (t : ℝ) (θ θ' : TupleH (volume : Measure ℝ) 1 1 1)
+          (μ : P2 (TupleH (volume : Measure ℝ) 1 1 1)), θ.1 = θ'.1 →
+          θ.2.1 = θ'.2.1 → θ.2.2.1 = θ'.2.2.1 → F t θ.2.2.2 = F t θ'.2.2.2 →
+          rankOneCoeffs.h t θ μ = rankOneCoeffs.h t θ' μ := by
+  obtain ⟨Ω, _, P, _, ⟨D⟩⟩ := LevyStochCalc.Driver.LevyDriver.exists 1 ℝ (volume : Measure ℝ)
+  refine ⟨Ω, inferInstance, P, inferInstance, D, indep_bot_left _,
+    not_finiteDimensional_Lp_volume, fun _ u _ => inner ℝ unitIndicator u,
+    fun _ => continuous_pi fun _ => continuous_const.inner continuous_id,
+    fun t θ θ' μ _ _ _ h => ?_⟩
+  have h0 := congrFun h 0
   simp only [rankOneCoeffs, h0]
 
 /-- **The hypotheses of `cor_margin_additive` can be met.** Over a probability space carrying a

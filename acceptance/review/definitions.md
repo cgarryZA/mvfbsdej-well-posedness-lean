@@ -675,18 +675,29 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 
 ## The coefficients of Example 5.5 (`PaperSpec/A/Sec5Dealer.lean`)
 
-* `PaperSpec.A.ex55Coeffs ν β₁ β₂ σ_c h_c ε`: the coefficient system of Example 5.5 at
+* `PaperSpec.A.ex55Coeffs ν β₁ β₂ σ_c h_c h_x ε`: the coefficient system of Example 5.5 at
   `n = m = d = 1`, at `θ = (x, y, z, u)` and a law `μ` of `P₂(H)`: `b = −β₁ y`,
-  `σ = σ_c − β₁ z` (`σ_c ∈ ℝ^{1×1}`), `h = h_c − β₁ u − ε A_{μ^U}(u)` in `L²(ν)`, `f = β₂ x` and
-  `g(x, ρ) = x`, where `A = ex55Crowd` is evaluated at the law `μ.margU.law` of the `U`-marginal
-  of `μ`, the printed "`μ^U` the `U`-marginal of the measure argument". No coefficient depends on
-  `t`. This is the printed display obtained by tilting the jump response of Example 5.1(i) by the
-  crowding correction. The constants are arbitrary reals; the propositions assume `β₁, β₂ > 0` and
-  `ε ≥ 0`, as printed. Along a solution the jump coefficient is evaluated at `(Θ⁻_t, μ⁻_t)` by the
-  solution notion, as for every system. At `ε = 0` it is `affineCoeffs` (`ex_dealer_coeffs`).
-  <!-- def-review: Dissertation.PaperSpec.A.ex55Coeffs 1ebbc311cf6da8affd41f08dbb7afff9 by=claude-author -->
-  Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex55Coeffs--claude-reviewer--2026-10-17T15_59_48Z.md`).
-  <!-- def-review: Dissertation.PaperSpec.A.ex55Coeffs 1ebbc311cf6da8affd41f08dbb7afff9 by=claude-reviewer -->
+  `σ = σ_c − β₁ z` (`σ_c ∈ ℝ^{1×1}`), `h = h_c + x h_x − β₁ u − ε A_{μ^U}(u)` in `L²(ν)` (`x` the
+  single coordinate of the forward state), `f = β₂ x + ⟨h_x, u⟩_{L²(ν)}` (as a vector of `ℝ¹`)
+  and `g(x, ρ) = x`, where `A = ex55Crowd` is evaluated at the law `μ.margU.law` of the
+  `U`-marginal of `μ`, the printed "`μ^U` the `U`-marginal of the measure argument". No
+  coefficient depends on `t`. This is the printed display. The constants are arbitrary reals; the
+  propositions assume `β₁, β₂ > 0` and `ε ≥ 0` where printed. Along a solution the jump
+  coefficient is evaluated at `(Θ⁻_t, μ⁻_t)` by the solution notion, as for every system. At
+  `ε = 0`, `h_x = 0` it is `affineCoeffs` (`ex_dealer_coeffs`).
+  <!-- def-review: Dissertation.PaperSpec.A.ex55Coeffs 7d5b37041cd45e9e4ecfce744149d3e2 by=claude-author -->
+* `PaperSpec.A.ex55Marks ϱ`: `dealerMarks` with `c_{±1} = (2 − ϱ)/2` and exponent `ϱ`, the mark
+  measure `c_ς q^{−1−ϱ} dq` on `{−1, +1} × (0, 1]` of the specialisation ("`c_{±1} = (2 − ϱ)/2`").
+  <!-- def-review: Dissertation.PaperSpec.A.ex55Marks 9be0f1e1fafbacc538907ec2c3b03cad by=claude-author -->
+* `PaperSpec.A.ex55Linear 𝒢₀ ϱ P D h𝒢₀ hind₀ T X`: `LinearFSDEJ` (reviewed below) over
+  `enlJoint 𝒢₀ D h𝒢₀` on `[0, T]` with initial value `0`, drift `−X_s` on `[0, T]`, diffusion `½`
+  on `[0, T]` and Poisson integrand `½ (ς q + q X_{s−})` on `(0, T]`, the left limit taken by
+  `leftLimProc`: the printed linear equation
+  `X⁰_t = ∫_0^t (−X⁰_s ds + ½ dW_s) + ½ ∫_0^t ∫_E (h_c(e) + h_x(e) X⁰_{s−}) Ñ(ds, de)` with
+  `h_c(ς, q) = ς q`, `h_x(ς, q) = q` (`ς = +1` for `true`), for an adapted `X` with
+  right-continuous paths, almost surely at each `t ∈ [0, T]`. The cut-offs to `[0, T]` and
+  `(0, T]` do not change the equation on `[0, T]`.
+  <!-- def-review: Dissertation.PaperSpec.A.ex55Linear 3561bf3607d9b592dcbcbbff1b4dd84b by=claude-author -->
 
 ## The mark space of Example 5.5 and the linear forward equation (`Examples/Dealer/Marks.lean`, `Stability/ForwardEq.lean`)
 
@@ -822,6 +833,16 @@ Review by claude-reviewer: faithful with representation choices (report `reports
   <!-- def-review: Dissertation.WellPosedness.System.singularCoeffs 9cbaca3d28850a562cb0f143b2b54981 by=claude-author -->
   Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.System.singularCoeffs--claude-reviewer--2026-10-17T15_59_39Z.md`).
   <!-- def-review: Dissertation.WellPosedness.System.singularCoeffs 9cbaca3d28850a562cb0f143b2b54981 by=claude-reviewer -->
+* `PaperSpec.A.translateTuple r θ = (θ.1 + r, θ.2)`: the translation `(x, y, z, u) ↦ (x + r, y, z, u)`
+  of the forward coordinate of `H`.
+  <!-- def-review: Dissertation.PaperSpec.A.translateTuple 25b128e1a8bd16214207e456ab04981b by=claude-author -->
+* `PaperSpec.A.translatedCoeffs C r T`: `ψ̃(t, θ, μ) = ψ(t, θ + r_t, lawP2 μ (translateTuple r_t))`
+  for `ψ ∈ {b, σ, h, f}` and `g̃(x, ρ) = g(x + r_T, lawP2 ρ (· + r_T))`. For `μ ∈ P₂` the
+  translation is square integrable under `μ`, so `lawP2` returns the push-forward
+  `μ ∘ (· + r)⁻¹` and not its fallback value: the coefficients of the state `X − r` when `X` solves
+  the system with coefficients `C` and the drift `ṙ` added, the law argument translated
+  accordingly, as Remark 3.4 describes for `r_t = 2√t e`.
+  <!-- def-review: Dissertation.PaperSpec.A.translatedCoeffs a6d589d1c49f1879976bb03fd33b7999 by=claude-author -->
 
 ## the linear backward equation and the frozen step of Lemma 4.2 (`Dissertation/WellPosedness/BrownianPoisson/Hypotheses.lean`, `Dissertation/PaperSpec/A/Sec4Horizon.lean`)
 
@@ -955,24 +976,3 @@ Review by claude-reviewer: faithful with representation choices (report `reports
   <!-- def-review: Dissertation.PaperSpec.A.RepresentsMartBrownian 12cb148176c5045b1b2bd36a25a42656 by=claude-author -->
   Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.RepresentsMartBrownian--claude-reviewer--2026-10-17T16_01_20Z.md`).
   <!-- def-review: Dissertation.PaperSpec.A.RepresentsMartBrownian 12cb148176c5045b1b2bd36a25a42656 by=claude-reviewer -->
-
-## The singular diffusion of Remark 3.4 (`Dissertation/WellPosedness/System/SingularDiffusion.lean`)
-
-* `WellPosedness.System.singularDiffusionCoeffs`: Example 5.1(i) (`affineCoeffs`) at
-  `n = m = 1`, `β₁ = 1`, `β₂ = 0`, `σ_c = 0`, `h_c = 0`, with the deterministic matrix
-  `(√t)⁻¹ e₁₁ ∈ ℝ^{1×d}` added to `σ`: the structure update `{ affineCoeffs 1 0 0 0 with σ := … }`,
-  so `b, h, f, g` are those of `affineCoeffs 1 0 0 0` (`b = −(1 • y)`, `h = 0 − 1 • u`,
-  `f = 0 • x`, `g(x, ρ) = x`), and
-  `σ(t, θ, μ) = toLp 2 (fun p => if p.2 = 0 then (√t)⁻¹ else 0) + (0 − 1 • z)`, whose entry
-  `(1, j)` is `(√t)⁻¹ − z_{1j}` for the first column (`j = 0` in Lean's indexing) and `−z_{1j}`
-  for the others. `(√t)⁻¹` is `t^{-1/2}` for `t > 0` and `0` for `t ≤ 0` (Lean's `√t = 0` and
-  `0⁻¹ = 0`); the value at `t = 0` does not affect any integral against `dt`. So
-  `b = −y`, `σ(t, θ, μ) = t^{-1/2} e₁₁ − z`, `h = −u`, `f = 0`, `g(x, ρ) = x`; for `d = 1` this is
-  Example 5.1(i) with the constant noise baseline `σ_c` replaced by the time-dependent baseline
-  `t^{-1/2}`. The added term depends on the time only, so it cancels in every difference of
-  coefficients, and it is Borel in the time; its square `t^{-1}` is not integrable near `0`, so
-  for `d ≥ 1` the origin value `σ(·, 0, δ₀)` is not in `L²(0, T)`. For `d = 0` the matrix space
-  `ℝ^{1×0}` is trivial and the system is the affine one.
-  <!-- def-review: Dissertation.WellPosedness.System.singularDiffusionCoeffs 9cbaca3d28850a5612dfa3a02c42b537 by=claude-author -->
-  Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.singularDiffusionCoeffs--claude-reviewer--2026-10-17T16_49_03Z.md`).
-  <!-- def-review: Dissertation.WellPosedness.System.singularDiffusionCoeffs 9cbaca3d28850a5612dfa3a02c42b537 by=claude-reviewer -->

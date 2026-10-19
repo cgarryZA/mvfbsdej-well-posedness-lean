@@ -242,14 +242,38 @@
    "location": "paper/sections/02-model-assumptions.tex",
    "source_sha256": "20e41bdfd1e0996ebf1050ab15273a783631b8c503a6635284298cc387eea4f4",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the last sentence, on domination-monotonicity results for Lévy-driven systems without mean-field dependence, is a statement about cited work",
    "scope_reviewed": false,
    "clauses": [
+    {
+     "name": "ν ≠ 0 gives L²(ν) ≠ {0}; ν = 0 gives L²(ν) = {0}",
+     "spec": "Dissertation.PaperSpec.A.rem_beta1_fibre",
+     "accept": "Dissertation.Acceptance.A.rem_beta1_fibre",
+     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
+    },
     {
      "name": "the reduction to the jump channel and the β₁ dichotomy, with ν ≠ 0",
      "spec": "Dissertation.PaperSpec.A.rem_beta1_dich",
      "accept": "Dissertation.Acceptance.A.rem_beta1_dich",
      "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
+    },
+    {
+     "name": "at ν = 0 the restriction disappears: an additive jump coefficient allows β₁ > 0",
+     "spec": "Dissertation.PaperSpec.A.rem_beta1_zero",
+     "accept": "Dissertation.Acceptance.A.rem_beta1_zero",
+     "witness": "Dissertation.Acceptance.A.ex_brownian_hypotheses"
+    },
+    {
+     "name": "at ν = 0 both rank branches are available: the branch m < n with an additive jump coefficient (Example 5.2)",
+     "spec": "Dissertation.PaperSpec.A.ex_brownian",
+     "accept": "Dissertation.Acceptance.A.ex_brownian",
+     "witness": "Dissertation.Acceptance.A.ex_brownian_hypotheses"
+    },
+    {
+     "name": "at ν = 0 both rank branches are available: the branch m > n (Example 5.2)",
+     "spec": "Dissertation.PaperSpec.A.ex_brownian_rank_gt",
+     "accept": "Dissertation.Acceptance.A.ex_brownian_rank_gt",
+     "witness": "Dissertation.Acceptance.A.ex_brownian_rank_gt_hypotheses"
     }
    ]
   },
@@ -273,10 +297,16 @@
      "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
     },
     {
-     "name": "when m = n the margin may be recorded in the unweighted form (2.13)",
+     "name": "when m = n the weighted margin c gives the margin c / c_G in the unweighted form (2.13)",
      "spec": "Dissertation.PaperSpec.A.rem_margin_unweighted",
      "accept": "Dissertation.Acceptance.A.rem_margin_unweighted",
      "witness": "Dissertation.Acceptance.A.rem_margin_hypotheses"
+    },
+    {
+     "name": "the margin c itself does not carry over to (2.13)",
+     "spec": "Dissertation.PaperSpec.A.rem_margin_sharp",
+     "accept": "Dissertation.Acceptance.A.rem_margin_sharp",
+     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses"
     }
    ]
   },
@@ -353,7 +383,7 @@
    "location": "paper/sections/03-main-results.tex",
    "source_sha256": "867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "\"the proof of Theorem 3.5 uses Assumption 2.2\" describes a proof and is not a separate claim",
    "scope_reviewed": false,
    "clauses": [
     {
@@ -369,16 +399,21 @@
      "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses"
     },
     {
-     "name": "the existence requires Assumption 2.2: (2.3) and Assumptions 2.3–2.5 alone do not give a solution",
-     "spec": "Dissertation.PaperSpec.A.rem_uniq_exist",
-     "accept": "Dissertation.Acceptance.A.rem_uniq_exist",
-     "witness": "Dissertation.Acceptance.A.rem_uniq_exist_hypotheses"
+     "name": "the initial-data condition ξ₀ ∈ L² is necessary for a solution in ℍ",
+     "spec": "Dissertation.PaperSpec.A.rem_uniq_initial",
+     "accept": "Dissertation.Acceptance.A.rem_uniq_initial",
+     "witness": "Dissertation.Acceptance.A.rem_uniq_hypotheses"
     },
     {
-     "name": "uniqueness without Assumption 2.2 concerns systems that have solutions: one violating Assumption 2.2 and satisfying (2.3) and Assumptions 2.3–2.5 has a solution in ℍ",
+     "name": "the origin-value conditions are not necessary: the drift t^{-1/2} added to one system of Example 5.1(i), with a solution in ℍ",
      "spec": "Dissertation.PaperSpec.A.rem_uniq_singular",
      "accept": "Dissertation.Acceptance.A.rem_uniq_singular",
      "witness": "Dissertation.Acceptance.A.rem_uniq_hypotheses"
+    },
+    {
+     "name": "the drift t^{-1/2} e added to a system satisfying (2.3) and Assumptions 2.2–2.5 violates Assumption 2.2 and keeps Assumptions 2.3–2.5; the shift X ↦ X − 2√t e returns a system satisfying Assumptions 2.2–2.5, so a solution exists",
+     "spec": "Dissertation.PaperSpec.A.rem_uniq_translation",
+     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
     }
    ]
   },
@@ -775,6 +810,12 @@
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q",
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q",
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q_hypotheses"
+    },
+    {
+     "name": "Q affine on the attained range of the features: the cylindrical term is an expectation functional of Example 5.3",
+     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_affineQ",
+     "accept": "Dissertation.Acceptance.A.ex_fulllaw_affineQ",
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_affineQ_hypotheses"
     }
    ]
   },
@@ -788,7 +829,7 @@
    "location": "paper/sections/05-examples.tex",
    "source_sha256": "08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the dealer-market reading (requests for quotes, valuation curves, routing, quotes affine in the curve, the uncontrolled exposure change at an event) is modelling and is not stated; the finite-player inspiration (Cont and Xiong) is a statement about cited work",
    "scope_reviewed": false,
    "clauses": [
     {
@@ -804,13 +845,18 @@
      "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
     },
     {
-     "name": "at ε = 0 the coefficients are those of Example 5.1(i)",
+     "name": "at ε = 0 and h_x = 0 the coefficients are those of Example 5.1(i)",
      "spec": "Dissertation.PaperSpec.A.ex_dealer_coeffs",
      "accept": "Dissertation.Acceptance.A.ex_dealer_coeffs",
      "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
     },
     {
-     "name": "Assumptions 2.2–2.4 and (2.3), with L = max{β₁ + ε, β₂, 1}",
+     "name": "the exposure term ⟨h_x x, u⟩ of the Hamiltonian has x-derivative the added driver term ⟨h_x, u⟩",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_ham",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_ham"
+    },
+    {
+     "name": "Assumptions 2.2–2.4 and (2.3), with L = max{β₁ + ε + ‖h_x‖, β₂ + ‖h_x‖, 1}",
      "spec": "Dissertation.PaperSpec.A.ex_dealer",
      "accept": "Dissertation.Acceptance.A.ex_dealer",
      "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
@@ -960,9 +1006,9 @@
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses"
     },
     {
-     "name": "the dealer interaction is nonlinear in the valuation curves (affine in the U-law, no function of its mean), with L²(ν) ≠ 0",
-     "spec": "Dissertation.PaperSpec.A.rem_regimes_corr",
-     "accept": "Dissertation.Acceptance.A.rem_regimes_corr",
+     "name": "Example 5.5: the U-law interaction is nonlinear in the valuation curves (and no function of the mean of the U-law), with L²(ν) ≠ 0",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_not_mean_corr",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_not_mean_corr",
      "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses"
     },
     {
@@ -978,7 +1024,7 @@
      "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
     },
     {
-     "name": "the dealer interaction remains active along the solution",
+     "name": "Example 5.5: the interaction remains active along the solution",
      "spec": "Dissertation.PaperSpec.A.ex_dealer_active",
      "accept": "Dissertation.Acceptance.A.ex_dealer_active",
      "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses"
@@ -1072,6 +1118,12 @@
      "spec": "Dissertation.PaperSpec.A.ex_dealer_marks",
      "accept": "Dissertation.Acceptance.A.ex_dealer_marks",
      "witness": "Dissertation.Acceptance.A.ex_dealer_marks_hypotheses"
+    },
+    {
+     "name": "the dealer interaction is active along the solution in an explicit specialisation (Example 5.5)",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_active",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_active",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses"
     }
    ]
   },
@@ -1381,6 +1433,21 @@
      "spec": "Dissertation.PaperSpec.A.cor_margin_finite",
      "accept": "Dissertation.Acceptance.A.cor_margin_finite",
      "witness": "Dissertation.Acceptance.A.cor_margin_finite_hypotheses"
+    },
+    {
+     "name": "L²(ν) infinite-dimensional: jump feedback through finitely many continuous, possibly nonlinear, functionals of u, with any law dependence, supplies no margin",
+     "spec": "Dissertation.PaperSpec.A.cor_margin_continuous",
+     "witness": "Dissertation.Acceptance.A.cor_margin_continuous_hypotheses"
+    },
+    {
+     "name": "finitely many continuous functionals cannot separate the points of an infinite-dimensional space",
+     "spec": "Dissertation.PaperSpec.A.cor_margin_separate"
+    },
+    {
+     "name": "L²(ν) finite-dimensional: finitely many functionals determine u and such feedback carries a margin",
+     "spec": "Dissertation.PaperSpec.A.cor_margin_findim",
+     "accept": "Dissertation.Acceptance.A.cor_margin_findim",
+     "witness": "Dissertation.Acceptance.A.cor_margin_findim_hypotheses"
     }
    ]
   },
@@ -1586,6 +1653,12 @@
      "spec": "Dissertation.PaperSpec.A.ex_dealer_wp",
      "accept": "Dissertation.Acceptance.A.ex_dealer_wp",
      "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+    },
+    {
+     "name": "Example 5.5: in an explicit specialisation the interaction is active along the solution",
+     "spec": "Dissertation.PaperSpec.A.ex_dealer_active",
+     "accept": "Dissertation.Acceptance.A.ex_dealer_active",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses"
     }
    ]
   },

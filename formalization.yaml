@@ -4,8 +4,8 @@ description: >-
   Lean 4 formalisation of the well-posedness of fully coupled McKean-Vlasov forward-backward SDEs
   with jumps under full-tuple law dependence.
 sources:
-  - id: "arXiv:2608.23203v1"
-    url: "https://arxiv.org/abs/2608.23203v1"
+  - id: "cgarryZA/mvfbsdej-well-posedness@f598204"
+    url: "https://github.com/cgarryZA/mvfbsdej-well-posedness/tree/f598204"
     title: "Well-posedness of fully coupled McKean-Vlasov FBSDEs with jumps under full-tuple law dependence"
     authors: ["Chunrong Feng", "Christian Garry"]
     relationship: formalizes
@@ -57,13 +57,18 @@ alignment:
       status: "formal: accepted"
     - source: "Remark 2.10"
       lean:
+        - "Dissertation.Acceptance.A.rem_beta1_fibre"
         - "Dissertation.Acceptance.A.rem_beta1_dich"
-      status: "formal: accepted"
+        - "Dissertation.Acceptance.A.rem_beta1_zero"
+        - "Dissertation.Acceptance.A.ex_brownian"
+        - "Dissertation.Acceptance.A.ex_brownian_rank_gt"
+      status: "formal: proved, author-reviewed"
     - source: "Remark 2.11"
       lean:
         - "Dissertation.Acceptance.A.rem_margin_reduce"
         - "Dissertation.Acceptance.A.rem_margin_unweighted"
-      status: "formal: accepted"
+        - "Dissertation.Acceptance.A.rem_margin_sharp"
+      status: "formal: proved, author-reviewed"
     - source: "Theorem 3.1"
       lean:
         - "Dissertation.Acceptance.A.thm_stab"
@@ -80,9 +85,9 @@ alignment:
       lean:
         - "Dissertation.Acceptance.A.rem_cwp_class"
         - "Dissertation.Acceptance.A.thm_uniq"
-        - "Dissertation.Acceptance.A.rem_uniq_exist"
+        - "Dissertation.Acceptance.A.rem_uniq_initial"
         - "Dissertation.Acceptance.A.rem_uniq_singular"
-      status: "formal: accepted"
+      status: "formal: open"
     - source: "Theorem 3.5"
       lean:
         - "Dissertation.Acceptance.A.thm_cwp"
@@ -154,12 +159,14 @@ alignment:
         - "Dissertation.Acceptance.A.ex_fulllaw_beyond_radial"
         - "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_corr"
         - "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q"
-      status: "formal: accepted"
+        - "Dissertation.Acceptance.A.ex_fulllaw_affineQ"
+      status: "formal: proved, author-reviewed"
     - source: "Example 5.5"
       lean:
         - "Dissertation.Acceptance.A.ex_dealer_potential"
         - "Dissertation.Acceptance.A.ex_dealer_crowd"
         - "Dissertation.Acceptance.A.ex_dealer_coeffs"
+        - "Dissertation.Acceptance.A.ex_dealer_ham"
         - "Dissertation.Acceptance.A.ex_dealer"
         - "Dissertation.Acceptance.A.ex_dealer_mono"
         - "Dissertation.Acceptance.A.ex_dealer_wp"
@@ -175,22 +182,22 @@ alignment:
         - "Dissertation.Acceptance.A.ex_dealer_symm"
         - "Dissertation.Acceptance.A.ex_dealer_active"
         - "Dissertation.Acceptance.A.ex_dealer_depends"
-      status: "formal: proved, review pending"
+      status: "formal: proved, author-reviewed"
     - source: "Remark 5.6"
       lean:
         - "Dissertation.Acceptance.A.eq_coupling"
         - "Dissertation.Acceptance.A.rem_freelaw"
-      status: "formal: accepted"
+      status: "formal: proved, author-reviewed"
     - source: "Remark 5.7"
       lean:
         - "Dissertation.Acceptance.A.ex_fulllaw_pert"
         - "Dissertation.Acceptance.A.ex_fulllaw_wp"
         - "Dissertation.Acceptance.A.ex_fulllaw_beyond_radial"
-        - "Dissertation.Acceptance.A.rem_regimes_corr"
+        - "Dissertation.Acceptance.A.ex_dealer_not_mean_corr"
         - "Dissertation.Acceptance.A.ex_dealer_mono"
         - "Dissertation.Acceptance.A.ex_dealer_wp"
         - "Dissertation.Acceptance.A.ex_dealer_active"
-      status: "formal: proved, review pending"
+      status: "formal: proved, author-reviewed"
     - source: "Lemma A.1"
       lean:
         - "Dissertation.Acceptance.A.lem_lawflow"

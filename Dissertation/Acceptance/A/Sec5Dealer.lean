@@ -15,8 +15,10 @@ import Dissertation.WellPosedness.Examples.Dealer.Exposure
 
 * `Dissertation.Acceptance.A.ex55Coeffs_eq` — the coefficients of Example 5.5 are
   `dealerExpCoeffs`.
-* `Dissertation.Acceptance.A.ex_dealer_coeffs`, `ex_dealer`, `ex_dealer_mono`, `ex_dealer_wp` —
-  the coefficients at `ε = 0`, the assumptions, the monotonicity and well-posedness.
+* `Dissertation.Acceptance.A.ex_dealer_coeffs`, `ex_dealer_ham`, `ex_dealer`, `ex_dealer_mono`,
+  `ex_dealer_wp` —
+  the coefficients at `ε = 0`, the Hamiltonian, the assumptions, the monotonicity and
+  well-posedness.
 * `Dissertation.Acceptance.A.ex_dealer_mean_corr` — the crowding correction is no function of the
   mean when `L²(ν) ≠ 0`.
 * `Dissertation.Acceptance.A.ex_dealer_hypotheses` — the hypotheses of `ex_dealer`,
@@ -48,6 +50,17 @@ theorem ex55Coeffs_eq {E : Type v} [MeasurableSpace E] (ν : Measure E) [SigmaFi
 theorem ex_dealer_coeffs : PaperSpec.A.ex_dealer_coeffs.{v} := by
   intro E _ ν _ _ β₁ β₂ σc hc
   rw [ex55Coeffs_eq, dealerExpCoeffs_zero, dealerCoeffs_zero]
+
+/-- Example 5.5, the exposure term of the Hamiltonian. -/
+theorem ex_dealer_ham : PaperSpec.A.ex_dealer_ham.{v} := by
+  intro E _ ν β₁ β₂ σc hc hx y z u a x
+  have h1 : HasDerivAt (fun x : ℝ => inner ℝ (x • hx) u) (inner ℝ hx u) x := by
+    simpa only [real_inner_smul_left] using hasDerivAt_mul_const (x := x) (inner ℝ hx u)
+  have h2 : HasDerivAt (fun x : ℝ => β₂ / 2 * x ^ 2) (β₂ * x) x := by
+    refine ((hasDerivAt_pow 2 x).const_mul (β₂ / 2)).congr_deriv ?_
+    norm_num
+    ring
+  exact ((((hasDerivAt_const x _).add h1).add h2).add_const _).congr_deriv (by ring)
 
 /-- Example 5.5, the assumptions. -/
 theorem ex_dealer : PaperSpec.A.ex_dealer.{u, v, w} := by

@@ -18,6 +18,7 @@ by the crowding correction `A_{μ^U}(u) = ∫ ∇V(u − v) μ^U(dv)` of the `U`
 * `Dissertation.PaperSpec.A.ex55Coeffs` — the coefficients of Example 5.5.
 * `Dissertation.PaperSpec.A.ex_dealer_coeffs` — at `ε = 0` and `h_x = 0` they are those of
   Example 5.1(i).
+* `Dissertation.PaperSpec.A.ex_dealer_ham` — the exposure term of the Hamiltonian and the driver.
 * `Dissertation.PaperSpec.A.ex_dealer` — the origin value, (2.3) and Assumptions 2.2–2.4.
 * `Dissertation.PaperSpec.A.ex_dealer_mono` — monotonicity at every `ε ≥ 0`.
 * `Dissertation.PaperSpec.A.ex_dealer_wp` — well-posedness at every `ε ≥ 0`.
@@ -57,6 +58,24 @@ def ex_dealer_coeffs : Prop :=
     [MeasurableSpace.CountablyGenerated E] (β₁ β₂ : ℝ) (σc : EuclideanSpace ℝ (Fin 1 × Fin 1))
     (hc : Lp (EuclideanSpace ℝ (Fin 1)) 2 ν),
     ex55Coeffs ν β₁ β₂ σc hc 0 0 = affineCoeffs β₁ β₂ σc hc
+
+/-- Example 5.5, the exposure term of the Hamiltonian. For `β₁, β₂ ∈ ℝ`, `σ_c ∈ ℝ`,
+`h_c, h_x ∈ L²(ν)`, a point `(y, z, u)` and controls `a = (a^b, a^σ, a^h)`, the Hamiltonian of
+Example 5.1(i) with the exposure term `⟨h_x x, u⟩_{L²(ν)}` added,
+`H(x) = a^b y + (σ_c + a^σ) z + ∫_E (h_c(e) + a^h(e)) u(e) ν(de) + ⟨h_x x, u⟩_{L²(ν)}
+  + (β₂/2) x² + (1/(2β₁)) (|a^b|² + |a^σ|² + ‖a^h‖²_{L²(ν)})`,
+has `x`-derivative `β₂ x + ⟨h_x, u⟩_{L²(ν)}`, the driver `f` of Example 5.5, at every `x ∈ ℝ`. -/
+def ex_dealer_ham : Prop :=
+  ∀ {E : Type v} [MeasurableSpace E] (ν : Measure E) (β₁ β₂ : ℝ)
+    (σc : EuclideanSpace ℝ (Fin 1 × Fin 1)) (hc hx : Lp (EuclideanSpace ℝ (Fin 1)) 2 ν)
+    (y : EuclideanSpace ℝ (Fin 1)) (z : EuclideanSpace ℝ (Fin 1 × Fin 1))
+    (u : Lp (EuclideanSpace ℝ (Fin 1)) 2 ν)
+    (a : EuclideanSpace ℝ (Fin 1) × EuclideanSpace ℝ (Fin 1 × Fin 1)
+      × Lp (EuclideanSpace ℝ (Fin 1)) 2 ν) (x : ℝ),
+    HasDerivAt (fun x : ℝ => inner ℝ a.1 y + inner ℝ (σc + a.2.1) z
+        + ∫ e, inner ℝ (hc e + a.2.2 e) (u e) ∂ν + inner ℝ (x • hx) u + β₂ / 2 * x ^ 2
+        + 1 / (2 * β₁) * (‖a.1‖ ^ 2 + ‖a.2.1‖ ^ 2 + ‖a.2.2‖ ^ 2))
+      (β₂ * x + inner ℝ hx u) x
 
 /-- Example 5.5, the assumptions. In the standing setting with `n = m = d = 1`, for `T > 0`,
 `β₁, β₂ > 0`, `σ_c ∈ ℝ`, `h_c, h_x ∈ L²(ν)`, `ε ≥ 0` and `ξ₀ ∈ L²(Ω, ℱ₀)`, the coefficients of

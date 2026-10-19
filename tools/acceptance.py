@@ -80,8 +80,8 @@ ALIGNMENT_HEAD = ("# The alignment below is generated from acceptance/ by "
 NUMBERED = re.compile(r"(Theorem|Lemma|Proposition|Corollary|Definition|Remark|Example|"
                       r"Assumption|Convention) (?:[A-Z](?:\.\d+)+|[A-Z]?\d+(?:\.\d+)*)")
 PROBE = os.path.join(ROOT, "tools", "acceptance_probe.lean")
-PAPERS = {"A": ("WP", "2608.23203v1", "well-posedness")}
-PAPER_SOURCE = "https://arxiv.org/abs/2608.23203v1"
+PAPERS = {"A": ("WP", "f598204", "well-posedness")}
+PAPER_SOURCE = "https://github.com/cgarryZA/mvfbsdej-well-posedness/tree/f598204"
 PAPER_DIR = os.path.join(ROOT, "manuscript", "paper")
 SCOPES = {"formal", "definition", "expository", "literature", "empirical", "proof-step",
           "part-of", "duplicate"}

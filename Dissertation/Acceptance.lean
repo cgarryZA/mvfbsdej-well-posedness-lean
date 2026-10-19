@@ -25,7 +25,6 @@ import Dissertation.Acceptance.A.Sec5Preamble
 import Dissertation.Acceptance.A.Dealer
 import Dissertation.Acceptance.A.Witness
 import Dissertation.Acceptance.A.WitnessNonzero
-import Dissertation.Acceptance.A.Sec5Regimes
 import Dissertation.Acceptance.A.Sec5DealerActive
 import Dissertation.Acceptance.A.Sec3Complete
 import Dissertation.Acceptance.A.Sec5Dealer
@@ -33,7 +32,6 @@ import Dissertation.Acceptance.A.WitnessHyp
 import Dissertation.Acceptance.A.Sec5BrownianReduction
 import Dissertation.Acceptance.A.Sec4Supremum
 import Dissertation.Acceptance.A.WitnessSec4
-import Dissertation.Acceptance.A.Sec3Rem34Exist
 
 /-!
 # Proofs of the statements of the paper

@@ -8,12 +8,14 @@ import Dissertation.PaperSpec.A.Sec3
 /-!
 # The paragraph after Corollary 3.6 of the well-posedness paper
 
-Statement and equation numbers refer to arXiv 2608.23203v1, in the standing setting of §2. The
-paragraph after Corollary 3.6 reads the unweighted margin (2.13) along two diagonal inputs that
-differ in one channel: a margin forces every channel to be strictly dissipative, so an additive
-jump coefficient `h₀ = h₀(t, x, e)` supplies no margin, nor does jump feedback through finitely
-many functionals of `u`. The propositions below state these for `ν ≠ 0` and for `L²(ν)` infinite
-dimensional, and the case of a finite-dimensional `L²(ν)`.
+Statement and equation numbers refer to arXiv 2608.23203v1, in the standing
+setting of §2. The paragraph after Corollary 3.6 reads the unweighted margin (2.13) along two
+diagonal inputs that differ in one channel: a margin forces every channel to be strictly
+dissipative; an additive jump coefficient `h₀ = h₀(t, x, e)` then supplies no margin when
+`ν ≠ 0`, nor does jump feedback through finitely many functionals of `u` when `L²(ν)` is
+infinite dimensional, finitely many continuous functionals not separating its points; when `L²(ν)`
+is finite dimensional, finitely many functionals determine `u` and such feedback can carry a
+margin.
 
 ## Main definitions
 
@@ -23,6 +25,11 @@ dimensional, and the case of a finite-dimensional `L²(ν)`.
   margin.
 * `Dissertation.PaperSpec.A.cor_margin_finite` — finitely many functionals of `u` supply no
   margin on an infinite-dimensional `L²(ν)`.
+* `Dissertation.PaperSpec.A.cor_margin_separate` — finitely many continuous functionals do not
+  separate the points of an infinite-dimensional space.
+* `Dissertation.PaperSpec.A.cor_margin_continuous` — finitely many continuous, possibly nonlinear,
+  functionals of `u` supply no margin on an infinite-dimensional `L²(ν)`, whatever the law
+  dependence.
 * `Dissertation.PaperSpec.A.cor_margin_findim` — on a finite-dimensional `L²(ν)`, jump feedback
   through finitely many functionals of `u` carries a margin.
 -/
@@ -138,5 +145,33 @@ def cor_margin_findim : Prop :=
             = (affineCoeffs (β₁ + c) (β₂ + c) σc hc).h t θ' μ')
       ∧ Margin213 (enlJoint 𝒢₀ D h𝒢₀) P T (1 : Matrix (Fin n) (Fin n) ℝ) β₁ β₂ c
           (affineCoeffs (β₁ + c) (β₂ + c) σc hc)
+
+/-- The paragraph after Corollary 3.6, the separation fact: finitely many continuous functionals
+do not separate the points of an infinite-dimensional real normed space; every continuous map
+`F : H → ℝᵏ` on such a space identifies two distinct points. -/
+def cor_margin_separate : Prop :=
+  ∀ (H : Type v) [NormedAddCommGroup H] [NormedSpace ℝ H], ¬ FiniteDimensional ℝ H →
+    ∀ (k : ℕ) (F : H → (Fin k → ℝ)), Continuous F → ¬ Function.Injective F
+
+/-- The paragraph after Corollary 3.6, finitely many continuous functionals. In the standing
+setting with `d ≥ 1`, for `T > 0` with `L²(ν; ℝᵐ)` infinite dimensional: if at each time the
+jump coefficient depends on `u` only through `k` continuous, possibly nonlinear, functionals
+`F_t : L²(ν; ℝᵐ) → ℝᵏ`, with any dependence on the law,
+`h(t, (x, y, z, u), μ) = h(t, (x, y, z, u'), μ)` whenever `F_t u = F_t u'`, then (2.13) fails
+for all constants `β₁ ≥ 0`, `β₂` and every margin `c > 0`. -/
+def cor_margin_continuous : Prop :=
+  ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
+    [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
+    (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
+    (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ),
+    Indep 𝒢₀ (⨆ t, D.filtration t) P → 0 < d → ∀ T : ℝ, 0 < T →
+    ¬ FiniteDimensional ℝ (Lp (EuclideanSpace ℝ (Fin m)) 2 ν) →
+    ∀ (β₁ β₂ c : ℝ) (G : Matrix (Fin m) (Fin n) ℝ) (C : Coeffs ν n m d) (k : ℕ)
+      (F : ℝ → Lp (EuclideanSpace ℝ (Fin m)) 2 ν → (Fin k → ℝ)), 0 ≤ β₁ → 0 < c →
+    (∀ t, Continuous (F t)) →
+    (∀ (t : ℝ) (θ θ' : TupleH ν n m d) (μ : P2 (TupleH ν n m d)), θ.1 = θ'.1 →
+      θ.2.1 = θ'.2.1 → θ.2.2.1 = θ'.2.2.1 → F t θ.2.2.2 = F t θ'.2.2.2 →
+      C.h t θ μ = C.h t θ' μ) →
+    ¬ Margin213 (enlJoint 𝒢₀ D h𝒢₀) P T G β₁ β₂ c C
 
 end Dissertation.PaperSpec.A

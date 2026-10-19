@@ -151,6 +151,7 @@ validation and the gate.
 
 ## The manuscript
 
-The manuscript is arXiv 2608.23203v1, the version pinned in `claims.json`; its LaTeX source as
-posted to arXiv is vendored in `manuscript/paper/wellposedness.tex`, and the check reads it there
+The manuscript is the revision of arXiv 2608.23203v1 at commit `f598204` of the manuscript
+repository, the version pinned in `claims.json`; its LaTeX source is vendored in
+`manuscript/paper/`, and the check reads it there
 (`--paper` names another such `paper/` directory).

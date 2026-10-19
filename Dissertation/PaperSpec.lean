@@ -25,11 +25,9 @@ import Dissertation.PaperSpec.A.Sec5Brownian
 import Dissertation.PaperSpec.A.Sec5FreeLaw
 import Dissertation.PaperSpec.A.Sec5Preamble
 import Dissertation.PaperSpec.A.Sec5Dealer
-import Dissertation.PaperSpec.A.Sec5Regimes
 import Dissertation.PaperSpec.A.Sec5DealerActive
 import Dissertation.PaperSpec.A.Sec5BrownianReduction
 import Dissertation.PaperSpec.A.Sec4Supremum
-import Dissertation.PaperSpec.A.Sec3Rem34Exist
 
 /-!
 # The statements of the paper
