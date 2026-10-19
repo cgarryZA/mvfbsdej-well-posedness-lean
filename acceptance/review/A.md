@@ -289,10 +289,15 @@ feedback perturbation `p_b = ε y`, `p_σ = ε z`, `p_h = ε u`, `p_f = 0`, `ε 
 `L_p = c_pert = 1/2`; every hypothesis in the order of the propositions, the perturbed system's
 (2.3) through its identification with Example 5.1(i) at `(3/2, 2)`
 (`sys_two_perturb_feedback`). `Dissertation.Acceptance.A.cor_robust_lip_hypotheses`: the constant
-perturbation `p_σ = e₁₁` is independent of `θ` and satisfies (3.5) with `L_p = 1`.
+perturbation `p_σ = e₁₁` is independent of `θ` and satisfies (3.5) with `L_p = 1`. This witness is
+degenerate: a constant perturbation has `δp = 0` at every pair of inputs, so (3.5) holds with every
+`L_p ≥ 0` and the conclusion (3.4) reads `0 ≤ c_pert 𝔼[…]`; it shows the hypotheses of
+`cor_robust_lip` consistent, without exercising the bound at a nonzero difference.
 
-Verdict: faithful, with the reading of the perturbed system's measurability recorded; the (3.5)
-clause broader, the printed claim an instance.
+Verdict: `cor_robust` and `cor_robust_wp` faithful, with the reading of the perturbed system's
+measurability recorded; `cor_robust_lip` broader: it holds on every filtered probability space,
+without the other hypotheses of the corollary, and the printed claim is its instance in the setting
+of the corollary.
 
 <!-- spec-review: Dissertation.PaperSpec.A.cor_robust ed839d34f480cba154326c82c977c8bd by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.cor_robust--claude-reviewer--2026-10-17T12_24_23Z.md`).
@@ -451,7 +456,7 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 Manuscript (Lemma `lem:pert`): under Assumptions 2.3–2.5, for `λ̲ ∈ (0, 1]` and
 `λ ∈ [λ̲, 1]`, let `Θ¹, Θ²` solve (4.1) at `λ` with `ℱ₀`-measurable initial data `ξ₀^k` and
 forcings `q^k`, where `X^k, Y^k` are càdlàg adapted with `𝔼 ∫_0^T (|X^k|² + |Y^k|²) dt < ∞`,
-`X^k_T ∈ L²(Ω, ℱ_T)`, `Z^k ∈ H²_W`, `U^k ∈ H²_N`, and `Θ¹ − Θ² ∈ ℍ`. Then (4.13) holds with
+`X^k_T ∈ L²(Ω, ℱ_T)`, `Z^k ∈ H²_W`, `U^k ∈ H²_N`, and `Θ¹ − Θ² ∈ ℍ`. Then (4.14) holds with
 `C_B` depending only on `T, L, ‖G‖, c_G, α, β₁, β₂, λ̲` and `c_BDG`.
 
 Proposition: `∃ C_B` of these eight arguments; in the standing setting, for `T > 0`, under (2.3)
@@ -468,12 +473,12 @@ Correspondence:
   integrability of `ξ₀^k` is asked, as printed.
 * `Θ¹ − Θ² ∈ ℍ`: the finiteness of `supSize` of the difference (the càdlàg adaptedness and
   predictability of the difference are inherited). The proof does not use it.
-* (4.13): `supSize` and `dataSize` (reviewed with Theorem 3.1) with the differences of the data.
+* (4.14): `supSize` and `dataSize` (reviewed with Theorem 3.1) with the differences of the data.
 
 Witness: `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`: at Example 5.1(i),
 `λ̲ = λ = 1` and zero forcings, the solutions of Theorem 3.5 from the initial data `0` and `e₁`
 as solutions of (4.1) in `ℍ_weak`; their difference lies in `ℍ` (by Theorem 3.1), and the data
-size on the right of (4.13) is `𝔼|δξ₀|² = 1`, so the estimate is exercised with distinct
+size on the right of (4.14) is `𝔼|δξ₀|² = 1`, so the estimate is exercised with distinct
 solutions.
 
 Verdict: faithful.
@@ -496,12 +501,13 @@ Correspondence: the proposition is broader than printed: it holds for every `λ*
 only the threshold of Lemma 4.2; the printed claim is its instance at that threshold (which lies
 in `(0, 1]` by `lem_small`). The positivity of `ζ₀` is asserted in the situation of the lemma.
 
-Witness: `Dissertation.Acceptance.A.lem_cont_hypotheses`: the hypotheses of the lemma at
-Example 5.1(i) (the instance of `thm_cwp_hypotheses`), together with `λ* = λ₀ = λ*(1, 1) ∈ (0, 1]`,
-the constant of Lemma 4.2, and `WP(λ₀)` there (by `lem_small`), so the premise of the
-continuation step is met.
+Witness: `Dissertation.Acceptance.A.lem_cont_hypotheses`: the hypotheses of the lemma at Example
+5.1(i) (the instance of `thm_cwp_hypotheses`, with the datum `0`), together with `λ*` and `λ₀` both
+equal to the constant `λ*(1, 1) ∈ (0, 1]` of Lemma 4.2, and `WP(λ₀)` there (from `lem_small`), so
+the premise of the continuation step is met and the step is exercised.
 
-Verdict: faithful (broader, printed claim an instance).
+Verdict: broader: `λ*` ranges over all of `(0, 1]`; the printed claim is its instance at the
+threshold of Lemma 4.2.
 
 <!-- spec-review: Dissertation.PaperSpec.A.lem_cont ed839d34f480cba15f6eb38f12c8d372 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lem_cont--claude-reviewer--2026-10-17T12_25_19Z.md`).
@@ -549,7 +555,7 @@ Correspondence:
   not depend on `t`). The expectation of the interior pairing is a Bochner integral; its integrand
   is pointwise equal to the integrable right-hand side, and its integrability is also part of
   `Assumption25` in `ex_concrete_i`.
-* The margin: Remark 2.7 turns a bound with constants `β̄₁, β̄₂` into (2.12) with
+* The margin: Remark 2.11 turns a bound with constants `β̄₁, β̄₂` into (2.12) with
   `β_i = β̄_i − c` and margin `c`; at `G = 1` the unweighted (2.13) (`Margin213`, reviewed with
   Corollary 3.6) has the same constant, which is what the example asserts.
 * The jump identity is printed without expectation; it is stated pointwise, at all points
@@ -565,7 +571,10 @@ Witness: `Dissertation.Acceptance.A.ex_concrete_hypotheses` (the standing settin
 * "Unweighted with the same constant here because `G = 1` gives `c_G = 1`": at `G = 1`,
   `c_G = 1`, so by Remark 2.11 the unweighted margin has the same constant.
 
-Verdict: faithful (the pairings at every `t`, `β₂` arbitrary in `ex_concrete_i_ham`: broader).
+Verdict: `ex_concrete_i` and `ex_concrete_i_wp` faithful; `ex_concrete_i_ham` broader: it holds for
+every measure `ν`, σ-finite or not, and every real `β₂`, and the printed claim is its instance at a
+σ-finite `ν` and `β₂ > 0`; `ex_concrete_i_pairing` broader: the pairings hold at every `t`, the
+printed claim being its instance at almost every `t ∈ [0, T]`.
 
 <!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_ham ed839d34f480cba1cf9f26355b828c6a by=claude-author -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.ex_concrete_i_ham--claude-reviewer--2026-10-17T12_16_01Z.md`).
@@ -772,8 +781,12 @@ Witnesses: `Dissertation.Acceptance.A.ex_expfunc_hypotheses`, `ex_expfunc_limin_
   take the Euclidean norm on each block. Another norm on these finite-dimensional blocks changes
   the Lipschitz constant by a fixed factor: a representation choice.
 
-Verdict: faithful with representation choices (the three propositions broader than printed, as
-listed).
+Verdict: `ex_expfunc` faithful with representation choices (the sum form of the Lipschitz condition,
+with the Hilbert norm of `H`). `ex_expfunc_limin` and `ex_expfunc_jump` broader, with the block norm
+as representation choice: they do not assume the square-integrable origin values of `ψ̄`, nor the
+joint Borel measurability and the origin integrability `∫_0^T ‖𝐇_t(0, 0)‖² dt < ∞` of `𝐇` (no
+measurability of `ψ̄` or `h̄` either), which the example imposes for the full coefficient system;
+the printed claims are their instances at kernels with those properties.
 
 <!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc ed839d34f480cba1c0ebc41bbfe679cc by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_expfunc--claude-reviewer--2026-10-17T12_20_36Z.md`).
@@ -840,7 +853,12 @@ over a Lévy driver with `d = 1`, `ν = δ₀ ≠ 0`, `𝒢₀ = ⊥`, `T = 1`: 
 pointwise condition, Assumption 2.5 with `G = 1`, and `0 < 1/2 < 1`); `rem_coupling_hypotheses`
 (`δ_{(0,0)}` couples `δ₀` with itself); `ex_concrete_hypotheses`, `ex_brownian_hypotheses`.
 
-Verdict: faithful, with the readings listed (both readings of (2.7) in Remark 2.8).
+Verdict: `rem_diag_mono` and `rem_diag_mono_converse` faithful, with the readings listed (both
+readings of (2.7) in Remark 2.8). `rem_intrinsic_uniform`, `rem_intrinsic_coupling` and
+`rem_intrinsic_basis` broader: none assumes `𝒢₀` independent of the driver (the standing `hind₀`),
+so they hold over `enlJoint 𝒢₀ D h𝒢₀` for every `𝒢₀`, the first two at every `t > 0` (and
+`rem_intrinsic_uniform` for every σ-finite `ν`, countably generated or not); the printed claims are
+their instances over the standing basis, with `𝒢₀` independent of the driver.
 
 <!-- spec-review: Dissertation.PaperSpec.A.rem_diag_mono ed839d34f480cba146c1633f8e03b86c by=claude-author -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.rem_diag_mono--claude-reviewer--2026-10-17T16_05_52Z.md`).
@@ -1012,7 +1030,9 @@ Readings:
 Witnesses: none needed; the hypotheses (σ-finite measures, `E` countably generated) hold at every
 instance of §2.
 
-Verdict: faithful, at a generality containing the paper's.
+Verdict: broader: the proposition holds for every σ-finite `(X, μ)` and every `j`; the printed claim
+is its instance at `X = Ω × [0, T]` with the predictable σ-field `𝒫` and `dt ⊗ dP`, `j = m` (or
+`n`).
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_fubiniiso ed839d34f480cba1f8905adfcaf41890 by=claude-author -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.eq_fubiniiso--claude-reviewer--2026-10-17T12_13_20Z.md`).
@@ -1040,7 +1060,10 @@ Readings:
 
 Witness: `Dissertation.Acceptance.A.thm_cwp_hypotheses` ((2.3) at Example 5.1(i)).
 
-Verdict: faithful.
+Verdict: broader: the proposition holds for every filtration and probability, along every
+progressive tuple, and its jump part is the marked-progressive representative at `(Θ_s, μ_s)` of
+`CoeffRegular`, not the predictable line of (2.5); the printed first line is its instance over the
+standing basis along the tuples of the paper (diagonal inputs `Θ_s` with their laws).
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_coefmeas ed839d34f480cba11ac3211646c24c86 by=claude-author -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.eq_coefmeas--claude-reviewer--2026-10-17T12_08_44Z.md`).
@@ -1067,7 +1090,9 @@ Readings:
 Witness: `Dissertation.Acceptance.A.thm_cwp_hypotheses` ((2.3) at Example 5.1(i); a constant tuple
 and a constant law flow are predictable and Borel).
 
-Verdict: faithful.
+Verdict: broader: the proposition holds for every filtration, every predictable tuple `Θ` and every
+Borel law flow `ρ`; the printed claim is its instance over the standing basis at `Θ = Θ⁻` of a tuple
+of the paper and `ρ = μ⁻`, the Borel flow of Lemma A.1, read through (2.4).
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_coefmeas_jump ed839d34f480cba1e13c6b7ca8ccca73 by=claude-author -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.eq_coefmeas_jump--claude-reviewer--2026-10-17T16_03_52Z.md`).
@@ -1164,7 +1189,10 @@ satisfies (2.3). In each the left side, symmetric in the two solutions, is at le
 earlier witness `thm_stab_hypotheses` had two zero solutions and is no longer
 linked.
 
-Verdict: faithful.
+Verdict: `thm_stab_companion` broader: system 1 needs only (2.3) and Assumptions 2.2–2.3, and the
+printed claim is its instance at a system 1 that also satisfies Assumptions 2.4–2.5, as in Theorem
+3.1; `thm_stab_data` faithful; `thm_stab_minimal` faithful in the reading recorded (the inequality
+in `[0, ∞]`).
 
 <!-- spec-review: Dissertation.PaperSpec.A.thm_stab_companion ed839d34f480cba10ff3a550a92ccddf by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.thm_stab_companion--claude-reviewer--2026-10-17T12_19_01Z.md`).
@@ -1209,7 +1237,11 @@ Witness: `Dissertation.Acceptance.A.sec5_limin_hypotheses`: a probability space 
 driver with `d = 1` and `ν = δ₀` on `ℝ`, `𝒢₀ = ⊥` independent of it, and the initial datum
 `ξ₀ ≡ 1` of mean `1`.
 
-Verdict: faithful.
+Verdict: broader: the proposition holds on every standing basis with `d = 1` and every σ-finite `ν`,
+excludes every tuple of `ℍ_weak` satisfying (1.1), and does so from every initial datum of nonzero
+mean; the printed claim (no adapted solution of the Li–Min system on `T = 3π/4`) is its instance at
+the basis of the cited example and its initial value `x(0) = 1`, through the transcription
+`liMinCoeffs` reviewed in `definitions.md`.
 
 <!-- spec-review: Dissertation.PaperSpec.A.sec5_limin ed839d34f480cba132884b458e231942 by=claude-author -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.sec5_limin--claude-reviewer--2026-10-17T12_25_43Z.md`).
@@ -1291,7 +1323,12 @@ Witnesses: `Dissertation.Acceptance.A.lem_lawflow_hypotheses` (the zero tuple on
 space satisfies `CadlagPredTuple`) and `Dissertation.Acceptance.A.lem_lawflow_invariant_hypotheses`
 (on a one-point space every tuple's law flow represents its laws).
 
-Verdict: faithful.
+Verdict: broader. `lem_lawflow` holds for every filtration and probability; `lem_lawflow_invariant`
+takes arbitrary `X, Y` (no adaptedness or path regularity), arbitrary flows `ρ, ρ'` representing the
+laws (not only Borel ones) and an arbitrary coefficient `ψ`, with no measurability. The printed
+claims are their instances over the standing basis, at a tuple with `X, Y` càdlàg adapted and `Z, U`
+predictable (`CadlagPredTuple`), the Borel flows of `lem_lawflow` and the coefficients of the
+system.
 
 <!-- spec-review: Dissertation.PaperSpec.A.lem_lawflow ed839d34f480cba1090c1a53f2a6cf7f by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lem_lawflow--claude-reviewer--2026-10-17T12_27_30Z.md`).
@@ -1342,7 +1379,11 @@ Witness: `Dissertation.Acceptance.A.thm_cwp_hypotheses` for both: at Example 5.1
 holds with `L = 1` (its interior and terminal parts are `LipInterior` and `LipTerminal`), and the
 zero tuple, constant in time, is adapted and square integrable at every `t`, as is `X_T = 0`.
 
-Verdict: faithful.
+Verdict: broader: `eq_coeffint` and `eq_termg` hold on every filtered probability space, for every
+tuple with `Θ_t` `ℱ_t`-measurable and square integrable for almost every `t` (every `ℱ_T`-measurable
+square-integrable `X_T`), with no assumption beyond the Lipschitz bound used (no Assumption 2.2, and
+for `eq_termg` no mark space); the printed claims are their instances over the standing basis along
+`Θ ∈ ℍ` (and its `X_T`) under Assumptions 2.2–2.3.
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_coeffint ed839d34f480cba13c4b68e5e50bad34 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_coeffint--claude-reviewer--2026-10-17T12_22_13Z.md`).
@@ -1866,8 +1907,8 @@ coercivity is not the only available solvability mechanism."
 
 Propositions:
 
-* `rem_beta1_fibre`: for `ν` σ-finite on a countably generated space and `m ≥ 1`,
-  `L²(ν; ℝᵐ) ≠ {0}` when `ν ≠ 0`, and `L²(ν; ℝᵐ) = {0}` when `ν = 0`.
+* `rem_beta1_fibre`: for `ν` σ-finite on any measurable space (countable generation is not assumed)
+  and `m ≥ 1`, `L²(ν; ℝᵐ) ≠ {0}` when `ν ≠ 0`, and `L²(ν; ℝᵐ) = {0}` when `ν = 0`.
 * `rem_beta1_dich`: in the standing setting, for `n, m ≥ 1`, `T > 0`, `ν ≠ 0`, `G ∈ ℝ^{m×n}` of
   full rank and coefficients satisfying Assumption 2.5 with `G, α, β₁, β₂`: (a) for almost every
   `t ∈ [0, T]` and all `(Θ, μ), (Θ', μ') ∈ 𝒟_t` whose `X, Y, Z` agree at every `ω`, the displayed
@@ -1913,7 +1954,8 @@ satisfies Assumption 2.5 with `α = 1`. The antecedents inside (b) and (c) (an a
 (a) is not vacuous there. `Dissertation.Acceptance.A.ex_brownian_hypotheses` for
 `rem_beta1_zero`: a Lévy driver with `ν = 0` independent of `𝒢₀ = ⊥`, and `T = 1`.
 
-Verdict: faithful.
+Verdict: `rem_beta1_dich` and `rem_beta1_zero` faithful; `rem_beta1_fibre` broader, at every
+measurable mark space, the printed claim its instance at the countably generated `E` of §2.
 
 <!-- spec-review: Dissertation.PaperSpec.A.rem_beta1_fibre ed839d34f480cba1c9fa0ba4a3588e95 by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.rem_beta1_dich ed839d34f480cba1312ac03d25ff8ea1 by=claude-author -->
@@ -2145,8 +2187,14 @@ Witnesses:
   with `ν = δ₀` and `d = 1`, `𝒢₀ = ⊥`, and `L²(δ₀; ℝ¹)` finite dimensional; `n = 1`, `T = 1`,
   `β₁ = β₂ = 0`, `c = 1`, `σ_c = 0`, `h_c = 0` meet the remaining hypotheses.
 
-Verdict: faithful; `cor_margin_finite` is the linear, Dirac-input case and `cor_margin_continuous`
-the general reading of the same sentence, so together they cover it.
+Verdict: `cor_margin_channels`, `cor_margin_additive` and `cor_margin_continuous` broader: they hold
+for every `m`, `n`, coupling matrix `G` and coefficient system, with no assumption on the system
+beyond the hypotheses stated (and `cor_margin_channels` for all constants `β₁, β₂, c`); the printed
+claims are their instances at a baseline of Corollary 3.6 (`m = n`, Assumptions 2.2–2.5, admissible
+constants, `c > 0`). `cor_margin_finite` is broader in the same way relative to its linear reading,
+whose instance at such a baseline is the linear, Dirac-input case of the printed sentence; it is
+narrower than the sentence, which `cor_margin_continuous` reads in general, so together they cover
+it. `cor_margin_separate` and `cor_margin_findim` faithful, in the readings recorded.
 
 <!-- spec-review: Dissertation.PaperSpec.A.cor_margin_channels ed839d34f480cba14127298d8cc156d9 by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.cor_margin_additive ed839d34f480cba19075028a95edf84d by=claude-author -->
@@ -2282,8 +2330,10 @@ Correspondence:
   `ex_fulllaw_beyond_Q`; the printed bound on `Q` is not used and not assumed (broader). The
   converse sentence "if `Q(s) = a + ∑_j c_j s_j` there, the `Q`-term equals … an expectation
   functional" is `ex_fulllaw_affineQ`, with the features Lipschitz (bounded is not needed), so the
-  integrals exist; "already covered by Example 5.3" is the identification of the expectation
-  functional with the kernel `θ' ↦ a + ∑_j c_j φ_j(u')`, Lipschitz in `θ'`, as in `ex_expfunc`.
+  integrals exist. "Already covered by Example 5.3" is not a conjunct of the proposition: it follows
+  from its Lipschitz hypothesis, under which the kernel `θ' ↦ a + ∑_j c_j φ_j(u')` is measurable and
+  Lipschitz in `θ'` for `|·|_H` (with constant `∑_j |c_j| Lip(φ_j)`), so that `ex_expfunc` applies
+  to it.
 * "On the infinite-dimensional fibre `L²(ν)`" is read as a description of the fibre, not as a
   hypothesis: the claims hold for every `ν` of the standing setting (with `L²(ν) ≠ {0}` where
   stated).
@@ -2311,10 +2361,17 @@ Witnesses:
   `ν = δ₀` on `ℝ`, `J = 1`, the `1`-Lipschitz feature `φ₁(u) = min{‖u‖, 1}` and `Q(s) = s₁`,
   affine, with `a = 0`, `c₁ = 1`.
 
-Verdict: `ex_fulllaw_lip`, `ex_fulllaw_pert` and `ex_fulllaw_wp` faithful (broader: no bounds on
-the profiles, any `G` in `ex_fulllaw_pert`, any baseline); `ex_fulllaw_beyond_radial`,
-`ex_fulllaw_beyond_U_corr`, `ex_fulllaw_beyond_Q` and `ex_fulllaw_affineQ` faithful
-(`ex_fulllaw_beyond_Q` and `ex_fulllaw_affineQ` without the bounds: broader).
+Verdict: broader, each with its instantiation; the profiles on `ℝ` and the Euclidean `Lip(Q)` are
+representation choices. `ex_fulllaw_lip`, `ex_fulllaw_pert` and `ex_fulllaw_wp` drop the boundedness
+of the profiles, of `Q` and of the features (`ex_fulllaw_pert` also takes any `G`, and
+`ex_fulllaw_wp` any baseline of Corollary 3.6); the printed claims are their instances at bounded
+data and, for `ex_fulllaw_wp`, at the baseline the example names or any other.
+`ex_fulllaw_beyond_radial`, `ex_fulllaw_beyond_U_corr` and `ex_fulllaw_beyond_Q` exclude every
+function integrable against every law of `P₂(H)`, not only the expectation and kernel interactions
+of the preceding examples, at general dimensions (and `ex_fulllaw_beyond_Q` without the bound on
+`Q`); the printed claims are their instances at `m = n` and the interactions of Examples 5.1–5.3.
+`ex_fulllaw_affineQ` drops the boundedness of the features; the printed claim is its instance at
+bounded Lipschitz features.
 
 <!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_lip ed839d34f480cba11fea7903ed24f9f8 by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_pert ed839d34f480cba1e9dade95deb0a071 by=claude-author -->
@@ -2412,10 +2469,21 @@ Propositions (each in the standing setting with `n = m = d = 1` where a basis ap
 Correspondence:
 
 * The setting is that of Example 5.1(i), which the example modifies: `n = m = d = 1`, `G = 1`,
-  `ξ₀ ∈ L²(Ω, ℱ₀)`, `σ_c ∈ ℝ`, `h_c, h_x ∈ L²(ν)`, `β₁, β₂ > 0`, `ε ≥ 0`. The overview of §5
-  takes `ν ≠ 0` in this example; `ex_dealer_mean_corr` and `ex_dealer_not_mean_corr` assume only
-  `L²(ν) ≠ {0}`, which `ν ≠ 0` gives (`rem_beta1_fibre`), and the other propositions hold for
-  every σ-finite `ν`: broader. The coefficients are `ex55Coeffs` (reviewed in `definitions.md`).
+  `ξ₀ ∈ L²(Ω, ℱ₀)`, `σ_c ∈ ℝ`, `h_c, h_x ∈ L²(ν)`, `β₁, β₂ > 0`, `ε ≥ 0`. The overview of §5 takes
+  `ν ≠ 0` in this example. `ex_dealer_mean_corr` and `ex_dealer_not_mean_corr` assume `L²(ν) ≠ {0}`,
+  which for σ-finite `ν` is equivalent to `ν ≠ 0` (`rem_beta1_fibre`: `ν ≠ 0` gives a nonzero
+  element, and `ν = 0` makes `L²(ν) = {0}`), so they are at the printed generality.
+  `ex_dealer_marks` and the specialisation (`ex_dealer_spec_marks`, `ex_dealer_zero`,
+  `ex_dealer_active` and the second clause of `ex_dealer_depends`) are at the printed mark measure,
+  and `ex_dealer_twopoint` asks a unit vector of `L²(ν)`, so `ν ≠ 0`. `ex_dealer`, `ex_dealer_mono`,
+  `ex_dealer_wp` and `ex_dealer_inert`, and with them the other propositions not tied to the mark
+  measure (`ex_dealer_crowd`, `ex_dealer_coeffs`, `ex_dealer_affine`, `ex_dealer_symm`, the first
+  clause of `ex_dealer_depends`), hold for every σ-finite `ν` on a countably generated space,
+  `ν = 0` included: broader, the printed claims their instances at `ν ≠ 0`. `ex_dealer_potential`
+  holds for every measure `ν` on every measurable space, with none of the standing hypotheses on
+  `E`, and `ex_dealer_ham` likewise for all real `β₁, β₂`: broader, the printed claims their
+  instances in the setting of the example. The coefficients are `ex55Coeffs` (reviewed in
+  `definitions.md`).
 * `ex_dealer_ham`: "the latter enters the Hamiltonian as `⟨h_x x, u⟩`, whose `x`-derivative is the
   added driver term" is stated on the Hamiltonian of Example 5.1(i) (`ex_concrete_i_ham`) with that
   term added, whose full `x`-derivative is the driver `f = β₂ x + ⟨h_x, u⟩`. The control problem
@@ -2440,6 +2508,13 @@ Correspondence:
   system along them. `Z` and `U` are elements of `ℍ`, defined up to `dt ⊗ dP`-null sets, so their
   identities, the Dirac law and the vanishing of the correction are stated for almost every `s`;
   `Law(U_s)` is the `U`-marginal of `Law(Θ⁻_s)`, the argument of the jump coefficient in (1.1).
+* `ex_dealer_marks`: the printed mark measure with its encodings: the sides as `Bool`, `true` for
+  `+1`, so that `h_c(ς, q) = ς q` is `(if ς then 1 else −1) q`; the sizes as the subtype `(0, 1]` of
+  `ℝ` with Lebesgue measure carried to it (`comap`); `ν` the measure with density
+  `ofReal (c_ς q^{−1−ϱ})` against counting measure times that Lebesgue measure, the printed
+  `c_ς q^{−1−ϱ} dq` with counting measure in `ς`; `ν(E) = ∞` as `ν univ = ∞`; `∫ q² dν < ∞` as a
+  lower integral of `ofReal (q²)`; and `h_c ∈ L²(ν)` as `MemLp` of exponent `2`. The hypotheses
+  `c_ς > 0`, `0 < ϱ < 2` are the printed ones, so the proposition is not broader.
 * `ex_dealer_spec_marks`: the printed choices; `ex55Marks ϱ` is `dealerMarks` with
   `c_{±1} = (2 − ϱ)/2` (reviewed in `definitions.md`).
 * `ex_dealer_zero`: "a unique solution `X⁰ ∈ S²(ℝ)`" is existence in `S²` with càdlàg-type paths
@@ -2472,9 +2547,18 @@ of the example with `c_{±1} = 1/2`, `ϱ = 1`; a Lévy driver with `d = 1` on it
 `ex_dealer_spec_hypotheses` for `ex_dealer_spec_marks`, `ex_dealer_zero`, `ex_dealer_active` and
 `ex_dealer_depends` (`ϱ = 1`, a Lévy driver on `ex55Marks 1`, `𝒢₀ = ⊥`, `T = 1`, the classes of
 `ς q` and `q`).
+`ex_dealer_potential` has no hypotheses, so it needs no witness; the one linked
+(`ex_dealer_hypotheses`) is not needed for it.
 
-Verdict: faithful, broader where noted (every σ-finite `ν`; the inequalities of `ex_dealer_mono`
-at every `t`; `ex_dealer_active` for every solution).
+Verdict: broader, each with the instantiation above, for `ex_dealer`, `ex_dealer_mono`,
+`ex_dealer_wp` and `ex_dealer_inert` (every σ-finite `ν`, `ν = 0` included, and the inequalities of
+`ex_dealer_mono` at every `t`) and the other propositions not tied to the mark measure
+(`ex_dealer_crowd`, `ex_dealer_coeffs`, `ex_dealer_affine`, `ex_dealer_symm`, `ex_dealer_depends`,
+the last also for every initial datum); for `ex_dealer_ham` and `ex_dealer_potential` (every measure
+`ν` on every measurable space, `ex_dealer_ham` for all real `β₁, β₂`); and for `ex_dealer_active`
+(every solution). Faithful: `ex_dealer_twopoint`, `ex_dealer_mean_corr` and
+`ex_dealer_not_mean_corr` (`L²(ν) ≠ {0}` being `ν ≠ 0`), `ex_dealer_marks` with the encodings
+listed, `ex_dealer_riccati`, `ex_dealer_spec_marks` and `ex_dealer_zero`.
 
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_potential ed839d34f480cba1c2e5952133294af3 by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_crowd ed839d34f480cba1542ac74da98a0887 by=claude-author -->
@@ -2560,7 +2644,7 @@ The remark summarises the two examples; its clauses are propositions reviewed th
   `ex_dealer_wp` (monotone and well-posed at every `ε ≥ 0`), and "remain active along the
   solution" is `ex_dealer_active`, reviewed under Example 5.5.
 
-Verdict: covered by the clauses listed, each faithful as reviewed under its example.
+Verdict: covered by the clauses listed, each as reviewed under its example.
 
 ## Section 6, the conclusion (`A:conclusion`)
 

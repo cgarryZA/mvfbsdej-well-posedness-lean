@@ -437,7 +437,7 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "the last sentence, on domination-monotonicity results for Lévy-driven systems without mean-field dependence, is a statement about cited work",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "status": "formal: proved, author-reviewed"
   },
   {
@@ -506,7 +506,7 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "status": "formal: proved, author-reviewed"
   },
   {
@@ -706,7 +706,7 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "\"the proof of Theorem 3.5 uses Assumption 2.2\" describes a proof and is not a separate claim",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "status": "formal: proved, author-reviewed"
   },
   {
@@ -1204,7 +1204,7 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "the derivation of (1.1) from the control problem by the stochastic maximum principle for jump diffusions is cited work (Tang and Li) and is not stated; the clauses state the system and its properties; the attribution of (ii) to Example 3.1 of Li and Min is a statement about cited work",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "status": "formal: proved, author-reviewed"
   },
   {
@@ -1367,7 +1367,7 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "status": "formal: accepted"
   },
   {
@@ -1513,7 +1513,7 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "status": "formal: proved, author-reviewed"
   },
   {
@@ -1917,7 +1917,7 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "the dealer-market reading (requests for quotes, valuation curves, routing, quotes affine in the curve, the uncontrolled exposure change at an event) is modelling and is not stated; the finite-player inspiration (Cont and Xiong) is a statement about cited work",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "status": "formal: proved, author-reviewed"
   },
   {
@@ -1965,7 +1965,7 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "status": "formal: proved, author-reviewed"
   },
   {
@@ -2121,7 +2121,7 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "status": "formal: proved, author-reviewed"
   },
   {
@@ -2933,7 +2933,7 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "status": "formal: proved, author-reviewed"
   },
   {
@@ -3351,7 +3351,7 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "status": "formal: proved, author-reviewed"
   },
   {
@@ -3529,7 +3529,7 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "status": "formal: proved, author-reviewed"
   },
   {

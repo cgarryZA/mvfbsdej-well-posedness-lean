@@ -143,7 +143,7 @@ def rem_intrinsic_basis : Prop :=
     ∧ (Assumption25 (enlJoint 𝒢₀ D h𝒢₀) P T G α β₁ β₂ C
       ↔ Assumption25 (enlJoint 𝒢₀' D' h𝒢₀') P' T G α β₁ β₂ C)
 
-/-- Remark 2.10, the fibre. For `ν` σ-finite on a countably generated space and `m ≥ 1`:
+/-- Remark 2.10, the fibre. For a σ-finite measure `ν` on a measurable space and `m ≥ 1`:
 `L²(ν; ℝᵐ) ≠ {0}` when `ν ≠ 0`, and `L²(ν; ℝᵐ) = {0}` when `ν = 0`. -/
 def rem_beta1_fibre : Prop :=
   ∀ {E : Type v} [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] (m : ℕ), 0 < m →

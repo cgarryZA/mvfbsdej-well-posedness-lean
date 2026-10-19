@@ -21,7 +21,7 @@ contractive, since the `(z, u)`-dependence of `σ, h` enters the contraction con
 
 ## Main definitions
 
-* `Dissertation.PaperSpec.A.BrownianFrozenStep` — the frozen step (4.10)–(4.11) at `λ = 1`, for a
+* `Dissertation.PaperSpec.A.BrownianFrozenStep` — the frozen step (4.7)–(4.8) at `λ = 1`, for a
   scalar Brownian driver without jumps.
 * `Dissertation.PaperSpec.A.sec4_horizon_not_contractive` — on every horizon, a system of
   Example 5.1(i) whose frozen map does not decrease the distance of a trial from `0`.
@@ -38,7 +38,7 @@ open Dissertation.WellPosedness.System Dissertation.WellPosedness.Existence
 
 universe u w
 
-/-- The frozen step (4.10)–(4.11) of Lemma 4.2 at `λ = 1`, without forcing and from the initial
+/-- The frozen step (4.7)–(4.8) of Lemma 4.2 at `λ = 1`, without forcing and from the initial
 datum `0`, for `n = m = d = 1` and no jumps (`E` a point, `ν = 0`), over the filtration of §2:
 the trial `Θ = (X, Y, Z, U)` is sent to `Θ̄ = (X̄, Ȳ, Z̄, Ū)` when
 `X̄_t = ∫_0^t b(s, Θ_s, μ_s) ds + ∫_0^t σ(s, Θ_s, μ_s) dW_s` and
