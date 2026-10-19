@@ -45,7 +45,9 @@ lake build
 ```
 
 Lake fetches the dependencies at the revisions pinned in `lake-manifest.json`: Mathlib and
-`LevyStochCalc`.
+`LevyStochCalc`. Mathlib's cache does not cover `LevyStochCalc` and the other dependencies, so
+this builds them from source, which takes hours; restoring the prebuilt build below takes about
+a minute.
 
 ### Restoring a prebuilt build
 

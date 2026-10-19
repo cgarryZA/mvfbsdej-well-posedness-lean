@@ -90,6 +90,11 @@ FORMAL_ENVS = {"theorem", "proposition", "lemma", "corollary", "example", "remar
 DEFINITION_ENVS = {"definition", "assumption", "convention", "hypothesis"}
 
 
+# The source-region scheme of MachineChecked (its docs/SOURCE_REGIONS.md), whose per-line pins
+# this checker verifies from the pinned tree's lines.
+REGION_SCHEME = "tex-region-v1"
+
+
 def sha(text):
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
@@ -139,12 +144,13 @@ def env_id(env):
     return f"{paper}:{env['env']}-{env['number']}"
 
 
-def line_text(src, paper, location):
-    """The source line at `location` (`paper/<file>:<line>`) of a paper's pinned tree."""
+def line_text(src, paper, location, offset=0):
+    """The source line `offset` lines after `location` (`paper/<file>:<line>`) of a paper's
+    pinned tree."""
     path, _, line = location.rpartition(":")
     full = os.path.join(src, PAPERS[paper][0], path)
     lines = pathlib.Path(full).read_text(encoding="utf-8").split("\n")
-    return lines[int(line) - 1]
+    return lines[int(line) - 1 + offset]
 
 
 # ---------------------------------------------------------------------------------------------
@@ -174,9 +180,11 @@ def run_probe(queries, tmp):
                                                   "module": parts[5],
                                                   "line": int(parts[6]) if len(parts) > 6 else 0}
         elif tag in ("ACC", "REF", "WIT"):
+            # A missing declaration's line carries no universe levels.
+            levels = parts[5] if len(parts) > 5 else "-"
             res["proof"][parts[1]] = {"kind": tag, "spec": parts[2], "verdict": parts[3],
-                                      "axioms": parts[4],
-                                      "levels": [] if parts[5] == "-" else parts[5].split(",")}
+                                      "axioms": parts[4] if len(parts) > 4 else "-",
+                                      "levels": [] if levels == "-" else levels.split(",")}
         elif tag == "LAYER":
             res["layer"].append(line)
         elif tag == "SPECMODULE":
@@ -334,14 +342,33 @@ def check(args):
 
 def source_failures(claims, envs, line_of):
     """The inventory against the numbered environments `envs` extracted at the pins, in both
-    directions (`line_of(entry)` reads the anchor line of an entry): an environment whose text
-    changed, an anchor line that changed or is missing, an environment extracted twice, and an
-    extracted environment that the inventory does not list."""
+    directions (`line_of(entry, k)` reads the k-th line from the anchor line of an entry): an
+    environment whose text changed, a pinned source line that changed or is missing, an
+    environment extracted twice, and an extracted environment that the inventory does not
+    list. An entry pinned by source region (`source_hash_scheme` `tex-region-v1`) has one
+    digest per source line its passage spans (`source_line_sha256`); each is checked, and the
+    first line that differs is named."""
     out = []
     ids = collections.Counter(env_id(env) for env in envs)
     by_id = {env_id(env): sha(norm(env["statement"])) for env in envs}
     out += [f"{i}: extracted twice from the manuscripts" for i in sorted(ids) if ids[i] > 1]
     for e in claims:
+        if e.get("source_hash_scheme") == REGION_SCHEME:
+            pins = e.get("source_line_sha256") or []
+            if not pins:
+                out.append(f"{e['id']}: its source region has no line pins")
+            path, _, first = e["location"].rpartition(":")
+            for k, pin in enumerate(pins):
+                try:
+                    text = line_of(e, k)
+                except (OSError, IndexError, ValueError):
+                    out.append(f"{e['id']}: source location {e['location']} missing")
+                    break
+                if sha(text) != pin:
+                    out.append(f"{e['id']}: line {k + 1} of its source passage (line "
+                               f"{int(first) + k} of {path}) changed at the pin")
+                    break
+            continue
         if e["id"] in by_id:
             if by_id[e["id"]] != e["source_sha256"]:
                 out.append(f"{e['id']}: source text changed at the pin")
@@ -366,8 +393,9 @@ def evaluate(papers):
         source_checked = False
         if papers and os.path.isdir(papers):
             envs, src = extract(papers, tmp)
-            failures += source_failures(data["claims"], envs,
-                                        lambda e: line_text(src, e["paper"], e["location"]))
+            failures += source_failures(
+                data["claims"], envs,
+                lambda e, k=0: line_text(src, e["paper"], e["location"], k))
             source_checked = True
         queries = []
         for e in data["claims"]:
