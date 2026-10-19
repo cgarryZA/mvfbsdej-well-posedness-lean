@@ -3257,19 +3257,25 @@
    "kind": "embedded-in-proof",
    "number": "(4.25)",
    "title": "equation eq:bwdyoung [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:726",
-   "source_sha256": "46ccde70d7e38f3d406eca01cdcdb60060e3357abe03f0c096ccd0da044379b0",
+   "location": "paper/sections/04-proof-wellposedness.tex:724",
+   "source_sha256": "4ad6ce70621e90a1bf3a3b4b7f0fdd3fdb2e2a0cb00544c763f1bbe218fdbbd7",
    "scope": "proof-step",
    "scope_note": "a step of a printed proof",
    "scope_reviewed": true,
    "clauses": [],
+   "source_region": {
+    "end_line": 731
+   },
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
+    "7195b742a64e5e5c508eac0787a60a238334fb3901d1cbd3d3dce35743d9e484",
+    "5f1b971955bd797c7641ec1ed8c16b5c3675fbbe24cd64ae7d670cb08addf9c2",
     "7c2febe0d21bc9699aeba46d61934fd741aba925ca0b495cca48ac284698cf78",
     "a6648cc04ed151f14220cc247ab20eca19f8f6e591ad3fe2936016a82382cefa",
     "0c1fff1293b0e659324049daf8549419e4c31683e0b9fe94f93a1787ab0f8623",
     "03e5fee500c0bb46279ea7fe7ae875376adf9e7119843f248f2df6ed91ff9f32",
-    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60",
+    "d54291cf5bfad821a3ba11d05136a985f5a7df4770eabd2a843d2cabb3fcc826"
    ]
   },
   {
