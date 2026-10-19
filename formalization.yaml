@@ -68,7 +68,7 @@ alignment:
         - "Dissertation.Acceptance.A.rem_margin_reduce"
         - "Dissertation.Acceptance.A.rem_margin_unweighted"
         - "Dissertation.Acceptance.A.rem_margin_smaller"
-      status: "formal: proved, author-reviewed"
+      status: "formal: accepted"
     - source: "Theorem 3.1"
       lean:
         - "Dissertation.Acceptance.A.thm_stab"

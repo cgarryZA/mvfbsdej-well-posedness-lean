@@ -473,9 +473,7 @@
     {
      "accept": "Dissertation.Acceptance.A.rem_margin_smaller",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.rem_margin_smaller"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -485,7 +483,7 @@
      "spec": "Dissertation.PaperSpec.A.rem_margin_smaller",
      "spec_hash": "ed839d34f480cba133faa12dcf2189f6",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.rem_margin_smaller_hypotheses",
      "witness_ok": true
     }
@@ -497,7 +495,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -4022,9 +4020,7 @@
     {
      "accept": "Dissertation.Acceptance.A.eq_bwdyoung",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.eq_bwdyoung"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4034,7 +4030,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_bwdyoung",
      "spec_hash": "ed839d34f480cba13db23656421cf5a0",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
      "witness_ok": true
     }
@@ -4046,7 +4042,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [],
@@ -4085,8 +4081,7 @@
  "summary": {
   "A": {
    "definition: reviewed": 11,
-   "formal: accepted": 47,
-   "formal: proved, author-reviewed": 2,
+   "formal: accepted": 49,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
    "out of scope: proof-step": 28

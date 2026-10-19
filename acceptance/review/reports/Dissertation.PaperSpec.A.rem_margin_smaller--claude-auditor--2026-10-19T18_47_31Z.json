@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.rem_margin_smaller",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.rem_margin_smaller",
+  "lean": [
+   "Dissertation.PaperSpec.A.rem_margin_smaller"
+  ],
+  "claims": [
+   "A:rem:margin"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-da94ddc2228a",
+  "project_commit": "41c425269e86e5256d3fe5eb969b63186bcd80a2",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba133faa12dcf2189f6",
+  "fingerprint": "pl-fp-v1:5cb9106616368814fa98002328b875b673d3e6bdc96744ba4b4a8738326070d4",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "# Reading of Remark 2.11 (rem:margin), clause \"the unweighted margin c/c_G is smaller than c when\n# c_G > 1\" (sections/02-model-assumptions.tex:288ff.), locked before any Lean\n\n## The passage\n\"When m=n both G and G^T are injective, so the bounds of Assumption 2.4 (ass:G), applied channel by\nchannel, give c(|G^T dY|^2+|G^T dZ|_F^2+||G^T dU||^2+|G dX|^2) >= (c/c_G)(|dY|^2+...+|dX|^2).\nA margin c in (monomargin) therefore yields the margin c/c_G, which is smaller than c when\nc_G > 1, in the unweighted form ...\"\n\nThe clause under review is only the comparison \"c/c_G is smaller than c when c_G > 1\". (The\n\"yields the margin c/c_G in the unweighted form\" part is a separate clause, rem_margin_unweighted.)\n\n## Notions\n- c > 0: the margin of (monomargin) (a positive real).\n- c_G := s_min(G)^{-2} for a full-rank G in R^{m x n} (Assumption 2.4); here m = n so G is\n  invertible and s_min(G) > 0, c_G > 0 finite. c_G > 1 iff s_min(G) < 1.\n\n## What a faithful formal statement must contain\n- Hypotheses: c > 0; c_G > 1. Either c_G an arbitrary real (then the statement is the bare\n  arithmetic fact and covers every paper instance c_G = s_min(G)^{-2}; conversely every real\n  c_G > 1 arises from some square full-rank G, e.g. G = c_G^{-1/2} I, so this is equivalent, a\n  representation choice), or c_G := s_min(G)^{-2} for a full-rank square (m = n) real matrix G,\n  with s_min the smallest singular value.\n- Conclusion: the STRICT inequality c / c_G < c. A non-strict c/c_G <= c would be weaker than\n  printed (\"smaller\"); an \"iff\" would be stronger than printed (the paper only says \"when\").\n- If c_G is built from G in Lean: check the definition of s_min / c_G (e.g. via eigenvalues of\n  G^T G, operator-norm of inverse, sInf of |Gx| over unit sphere), check junk: s_min = 0 gives\n  0^{-2} = 0 in Lean (0^{-1} = 0), so c_G = 0 would not satisfy c_G > 1 - harmless; check that\n  the case m = n is included (a statement restricted to, say, m > n would lose the paper's case).\n- The sign of c matters: for c <= 0 the conclusion fails (c/c_G >= c), so c > 0 must be a\n  hypothesis (the paper has margin c > 0). c_G > 1 also needed (c_G = 1 gives equality).\n- No constants, no probabilistic setting is needed; a statement that embeds this in the full\n  setting (coefficients, G, (monomargin) hypotheses) would be fine as long as it still concludes\n  c/c_G < c and its hypotheses can be met (witness: e.g. c = 1, G = (1/2) I_n, c_G = 4).\n- Is it a claim of the paper at this revision: yes, the sentence \"which is smaller than c when\n  c_G>1\" is in Remark 2.11 as vendored.\n- Coverage of the claim A:rem:margin (to be checked after show): the passage's mathematical claims\n  as I read them are (i) definition of \"holds with margin c\" (monomargin) and of the unweighted\n  form (monomarginu) (definitions, not claims); (ii) reduction: if the interior pairing is bounded\n  with constants bar-beta_1, bar-beta_2, then for every 0 < c < min{bar-beta_1, bar-beta_2} the same\n  bound is (monomargin) with beta_i := bar-beta_i - c and margin c; (iii) the prose \"recording weaker\n  constants turns the difference into slack, which a perturbation raising the interior pairing by\n  at most the margin leaves intact\" (a perturbation claim: if the pairing of a perturbed system\n  exceeds the original by at most c E[sum of G-weighted squares], it still satisfies the\n  monotonicity with beta_i); (iv) when m = n, c(weighted sum) >= (c/c_G)(unweighted sum)\n  pointwise, hence a margin c in (monomargin) yields margin c/c_G in (monomarginu);\n  (v) c/c_G < c when c_G > 1.",
+  "locked_at": "2026-10-19T18:41:21Z"
+ },
+ "comparison": {
+  "text": "# Comparison: Dissertation.PaperSpec.A.rem_margin_smaller vs Remark 2.11, clause \"the unweighted\n# margin c/c_G is smaller than c when c_G > 1\" (02-model-assumptions.tex:288ff.)\n\nReviewer: claude-auditor (same model family as the statements' author).\n\nLean:\n  forall (n : N) (G : Matrix (Fin n) (Fin n) R) (c : R), 0 < n -> G.rank = min n n -> 0 < c ->\n    1 < (sMin G ^ 2)^{-1} -> c / (sMin G ^ 2)^{-1} < c\n\nItem by item against my locked reading:\n- Context m = n: G is square n x n, n >= 1 (standing n >= 1), full rank (Assumption 2.4 with m = n).\n  The passage's sentence is in its \"When m = n\" case, which is the only case in which the margin\n  c/c_G is produced; nothing of the passage is lost.\n- c_G: `(sMin G ^ 2)^{-1}` = s_min(G)^{-2}, the paper's definition (Assumption 2.4). `sMin G` is the\n  square root of the least eigenvalue of G^T G (branch n <= m, taken here since m = n), i.e. the\n  smallest singular value; for n >= 1 the infimum is over a nonempty finite index set, so no junk.\n  Junk check: a singular G would give sMin = 0 and (0^2)^{-1} = 0 in Lean, which fails 1 < c_G, so\n  the full-rank hypothesis is even redundant; no spurious instances.\n- Hypotheses c > 0 (margin is positive) and c_G > 1: present, exactly the \"when\".\n- Conclusion: strict `c / c_G < c`, the paper's \"smaller than c\". Not weakened to <=, not\n  strengthened to an iff.\n- No constants or quantifier-order issues; no probabilistic setting is needed for this clause (the\n  \"yields the margin c/c_G in the unweighted form\" part is the separate clause\n  rem_margin_unweighted, which uses the same c/(sMin G^2)^{-1}).\n- Breadth: over all square full-rank G with c_G > 1 and all c > 0 - exactly the paper's range\n  (every real c_G > 1 occurs, e.g. G = c_G^{-1/2} I). Neither broader nor narrower.\n- Witness `Dissertation.Acceptance.A.rem_margin_smaller_hypotheses`: n = 1, G = (1/2) I_1 (full rank,\n  c_G = 4 > 1), c = 1 > 0; these are exactly the statement's hypotheses, at a coupling matrix the\n  paper's Assumption 2.4 admits. Non-vacuous.\n- Claimed at this revision: yes, \"which is smaller than c when c_G>1\" is in Remark 2.11 as vendored\n  (rv.py says revision f598204, the Lean header cites 1f67672; I read the vendored sources).\n\nVerdict: faithful.\n\n## Coverage of A:rem:margin (clauses rem_margin_reduce, rem_margin_unweighted, rem_margin_smaller)\nRead from acceptance/claims.json after show. The passage's mathematical content at this revision:\n(a) the definitions of \"(2.7) holds with margin c\" (2.12) and of the unweighted form (2.13) -\ndefinitions, carried by Margin212 / Margin213; (b) the reduction \"a bound with constants\nbar-beta_1, bar-beta_2 is (2.12) with beta_i = bar-beta_i - c and margin c for every\n0 < c < min{bar-beta_1, bar-beta_2}\" - clause rem_margin_reduce; (c) for m = n, G and G^T injective and\nchannel by channel c(weighted sum) >= (c/c_G)(unweighted sum), hence margin c in (2.12) yields margin\nc/c_G in (2.13) - clause rem_margin_unweighted (its pointwise inequality and the injectivity are the\njustification of that clause, not separate claims); (d) c/c_G < c when c_G > 1 - clause\nrem_margin_smaller. One assertion is not a clause: \"recording weaker constants turns the difference\ninto slack, which a perturbation raising the interior pairing by at most the margin leaves intact\",\ni.e. if a perturbed system's interior pairing exceeds the original's by at most\nc E[|G^T dY|^2 + |G^T dZ|_F^2 + ||G^T dU||^2 + |G dX|^2], it still satisfies (2.7) with beta_i. It is a\none-line consequence of (2.12) (add the two inequalities), worded as motivation, and its quantitative\nuse is in the perturbation result of section 3 (which, per PairingBound34, uses the unweighted\nform); I would accept it as expository, but the inventory should record that decision (a scope note\non the claim) rather than leave it implicit. No clause states something the passage no longer\nclaims: all three clause names match sentences present in the vendored Remark 2.11.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T18:46:57Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful",
+  "detail": ""
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T18:47:22Z",
+  "disagreements": "No disagreement with the verdict (faithful), but the review shown for this unit is not a review of\nit. The entry at acceptance/review/A.md:2233 reads only \"Review by claude-auditor: faithful (report\nreports/Dissertation.PaperSpec.A.rem_margin_unweighted--claude-auditor--...md)\": it names the report\nof a different proposition, rem_margin_unweighted, and records nothing about rem_margin_smaller\nitself - no passage, no item-by-item reading (square G for the m = n case, c_G = (sMin G^2)^{-1},\nhypotheses c > 0 and c_G > 1, strict conclusion), and no witness\n(Dissertation.Acceptance.A.rem_margin_smaller_hypotheses, G = (1/2) I_1, c_G = 4, c = 1). If the marker\nfor rem_margin_smaller rests on that entry, it points at evidence for another statement and should\nbe replaced by a review of this proposition (e.g. this report). (I did not open the cited report,\nas the protocol forbids reading acceptance/review/reports/.)"
+ },
+ "submitted_at": "2026-10-19T18:47:31Z",
+ "issue_draft": null
+}
