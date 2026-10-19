@@ -82,6 +82,9 @@ ai_reviewers = ["claude*"]
 [[paper]]
 id = "A"
 title = "Well-posedness of fully coupled McKean-Vlasov FBSDEs with jumps under full-tuple law dependence"
-source = { path = "manuscript" }
+# The vendored manuscript is the manuscript repository at this commit; the audit pins that
+# unpublished revision, and `build` checks that the inventory is pinned to the same one.
+version = "manuscript"
+source = { path = "manuscript", rev = "1f676720d35765628a63892fecd1744fbbd69f00" }
 root = "paper/wellposedness.tex"
 publish = { pdf = true, source_text = true, lean = true, reviews = true }
