@@ -5,6 +5,7 @@ Authors: Christian Garry
 -/
 import Dissertation.Acceptance.A.Sec3
 import Dissertation.Acceptance.A.Sec4
+import Dissertation.Acceptance.A.Sec5
 import Dissertation.WellPosedness.Spec.Examples
 import Dissertation.WellPosedness.Robustness.Example
 import Dissertation.WellPosedness.Examples.Nemytskii
@@ -28,7 +29,7 @@ intensity `ν = δ₀` on `ℝ` (`LevyStochCalc.Driver.LevyDriver.exists`), the 
 * `Dissertation.Acceptance.A.cor_robust_hypotheses` — the hypotheses of Corollary 3.6, at the
   baseline of Example 5.1(i) with `β₁ = β₂ = 2` and the feedback perturbation `ε = 1/2`.
 * `Dissertation.Acceptance.A.cor_robust_lip_hypotheses` — the hypotheses of the (3.5) clause of
-  Corollary 3.6, at a constant perturbation of the diffusion coefficient.
+  Corollary 3.6, at the perturbation of Example 5.4.
 * `Dissertation.Acceptance.A.eq_lipfun_hypotheses` — the hypotheses of (2.10).
 * `Dissertation.Acceptance.A.lem_bpbsde_hypotheses` — the hypotheses of Lemma 4.1, at the
   backward equation of the solution of Theorem 3.5 for Example 5.1(i).
@@ -221,22 +222,6 @@ theorem cor_robust_hypotheses :
     LipInterior.of_diagonalLipschitz (diagonalLipschitz_of_lipschitzCoefficientsP2
       (lipschitzCoefficientsP2_affine_feedback hε)), hε,
     pairingBound34_iff.mpr (diagonalPairingBound_affine_feedback hε), hε, hJp, by norm_num⟩
-
-/-- **The hypotheses of the (3.5) clause of Corollary 3.6 hold at a constant perturbation.** On
-a probability space carrying a Lévy driver with `d = 1` and `ν = δ₀` on `ℝ`, over its filtration
-`enlJoint ⊥ D`, with `n = 1` and `T = 1`, the perturbation `p_σ = e₁₁` (the unit matrix), all other
-perturbation coefficients `0`, is independent of the tuple and satisfies (3.5) with `L_p = 1`. -/
-theorem cor_robust_lip_hypotheses :
-    ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)
-      (D : LevyStochCalc.Driver.LevyDriver P 1 (Measure.dirac (0 : ℝ))),
-      (affineCoeffs (ν := Measure.dirac (0 : ℝ)) (n := 1) (d := 1) 0 0
-          (EuclideanSpace.single (0, 0) 1) 0).TupleIndep
-      ∧ LawLip35 (enlJoint ⊥ D bot_le) P 1 1
-          (affineCoeffs (ν := Measure.dirac (0 : ℝ)) (n := 1) (d := 1) 0 0
-            (EuclideanSpace.single (0, 0) 1) 0) := by
-  obtain ⟨Ω, _, P, _, ⟨D⟩⟩ := LevyStochCalc.Driver.LevyDriver.exists 1 ℝ (Measure.dirac (0 : ℝ))
-  exact ⟨Ω, inferInstance, P, inferInstance, D, tupleIndep_affine_const,
-    lawLip35_iff.mpr (diagonalLawLipschitzH_affine_const zero_le_one)⟩
 
 /-- **The hypotheses of (2.10) hold** at the projection `θ ↦ y` of `H` (`n = m = d = 1`,
 `ν = δ₀` on `ℝ`) onto the separable Hilbert space `K = ℝ¹`, with `L = 1`. -/
@@ -594,6 +579,39 @@ instance measurableSingletonClass_tupleH_dirac :
     MeasurableSingletonClass (TupleH (Measure.dirac (0 : ℝ)) 1 1 1) :=
   @Prod.instMeasurableSingletonClass _ _ _ _ _ (@Prod.instMeasurableSingletonClass _ _ _ _ _
     inferInstance)
+
+/-- **The hypotheses of the (3.5) clause of Corollary 3.6 hold at the perturbation of
+Example 5.4.** On a probability space carrying a Lévy driver with `d = 1` and `ν = δ₀` on `ℝ`, over
+its filtration `enlJoint ⊥ D`, with `n = 1` and `T = 1`, the perturbation of Example 5.4 with
+`ε = 1/4`, the profiles `min(|r|, 1)`, `Q(s) = min(|s₁|, 1)`, the feature `min(‖u‖, 1)`,
+`w₀ = w₁ = v₀ = e₁`, `ĥ = 0` and the reference laws `δ₀` depends on the tuple through its law only
+and satisfies (3.5) with `L_p = 3/4`. -/
+theorem cor_robust_lip_hypotheses :
+    ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)
+      (D : LevyStochCalc.Driver.LevyDriver P 1 (Measure.dirac (0 : ℝ))),
+      (ex54Pert (Measure.dirac (0 : ℝ)) 1 1 1 (1 / 4) (fun r => min |r| 1) (fun r => min |r| 1)
+          (fun r => min |r| 1) (fun v => min |v 0| 1) (fun _ u => min ‖u‖ 1)
+          (Dissertation.Law.P2.dirac 0) (Dissertation.Law.P2.dirac 0)
+          (EuclideanSpace.single 0 1) (EuclideanSpace.single 0 1) (EuclideanSpace.single 0 1)
+          0).TupleIndep
+      ∧ LawLip35 (enlJoint ⊥ D bot_le) P 1 (3 / 4)
+          (ex54Pert (Measure.dirac (0 : ℝ)) 1 1 1 (1 / 4) (fun r => min |r| 1)
+            (fun r => min |r| 1) (fun r => min |r| 1) (fun v => min |v 0| 1)
+            (fun _ u => min ‖u‖ 1) (Dissertation.Law.P2.dirac 0) (Dissertation.Law.P2.dirac 0)
+            (EuclideanSpace.single 0 1) (EuclideanSpace.single 0 1) (EuclideanSpace.single 0 1)
+            0) := by
+  obtain ⟨Ω, _, P, _, D, hind, -⟩ := ex_fulllaw_hypotheses
+  obtain ⟨hTI, -, hLL, -, -⟩ := ex_fulllaw_pert ⊥ (Measure.dirac (0 : ℝ)) 1 1 1 P D bot_le hind
+    one_pos one_pos 1 one_pos 1 (1 / 4) (fun r => min |r| 1) (fun r => min |r| 1)
+    (fun r => min |r| 1) (fun v => min |v 0| 1) (fun _ u => min ‖u‖ 1)
+    (Dissertation.Law.P2.dirac 0) (Dissertation.Law.P2.dirac 0) (EuclideanSpace.single 0 1)
+    (EuclideanSpace.single 0 1) (EuclideanSpace.single 0 1) 0 1 1 1 1 (fun _ => 1) (by norm_num)
+    zero_le_one zero_le_one zero_le_one zero_le_one abs_minAbsOne_sub_le abs_minAbsOne_sub_le
+    abs_minAbsOne_sub_le abs_minCoordOne_sub_le (fun _ => abs_minNormOne_sub_le)
+  have he : ‖(EuclideanSpace.single 0 1 : EuclideanSpace ℝ (Fin 1))‖ = 1 := by simp
+  rw [he, norm_zero] at hLL
+  norm_num at hLL
+  exact ⟨Ω, inferInstance, P, inferInstance, D, hTI, hLL⟩
 
 /-- The feature `min(‖u‖, 1)` of the `U`-marginal of the Dirac mass at a tuple with `U`-channel
 `t e₁`, `e₁` the constant unit vector of `L²(δ₀; ℝ¹)`, is `min(|t|, 1)`. -/

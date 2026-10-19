@@ -300,11 +300,11 @@ baseline Example 5.1(i) with `β₁ = β₂ = 2`, `σ_c = 0`, `h_c = 0`, datum `
 feedback perturbation `p_b = ε y`, `p_σ = ε z`, `p_h = ε u`, `p_f = 0`, `ε = 1/2`, with
 `L_p = c_pert = 1/2`; every hypothesis in the order of the propositions, the perturbed system's
 (2.3) through its identification with Example 5.1(i) at `(3/2, 2)`
-(`sys_two_perturb_feedback`). `Dissertation.Acceptance.A.cor_robust_lip_hypotheses`: the constant
-perturbation `p_σ = e₁₁` is independent of `θ` and satisfies (3.5) with `L_p = 1`. This witness is
-degenerate: a constant perturbation has `δp = 0` at every pair of inputs, so (3.5) holds with every
-`L_p ≥ 0` and the conclusion (3.4) reads `0 ≤ c_pert 𝔼[…]`; it shows the hypotheses of
-`cor_robust_lip` consistent, without exercising the bound at a nonzero difference.
+(`sys_two_perturb_feedback`). `Dissertation.Acceptance.A.cor_robust_lip_hypotheses`: the
+perturbation of Example 5.4 (`ε = 1/4`, the profiles `min(|r|, 1)`, `Q(s) = min(|s₁|, 1)`, the
+feature `min(‖u‖, 1)`, `w₀ = w₁ = v₀ = e₁`, `ĥ = 0`, reference laws `δ₀`), over a Lévy driver with
+`d = 1`, `ν = δ₀`, `n = 1`, `T = 1`, depends on the tuple through its law only and satisfies (3.5)
+with `L_p = 3/4`: a law-dependent perturbation of the kind the corollary is about.
 
 Verdict: `cor_robust` and `cor_robust_wp` faithful, with the reading of the perturbed system's
 measurability recorded; `cor_robust_lip` broader: it holds on every filtered probability space,
