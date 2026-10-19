@@ -1978,8 +1978,9 @@ Clauses:
   argument (`X₀ = ξ₀` and the `S²` bound) uses none.
 * "The origin-value conditions are sufficient but not necessary": sufficiency is Theorem 3.5.
   Non-necessity is an existence claim, and `rem_uniq_singular` gives one instance: with
-  `𝒢₀ = ⊥`, `n = m = 1`, any `d`, every Lévy driver and every `T > 0`, the system of
-  Example 5.1(i) (`β₁ = 1`, `β₂ = 0`, `σ_c = 0`, `h_c = 0`, which satisfies Assumptions 2.2–2.5)
+  `𝒢₀ = ⊥`, `n = m = 1`, any `d`, every Lévy driver and every `T > 0`, the affine
+  coefficients of Example 5.1(i) taken at `β₁ = 1`, `β₂ = 0`, `σ_c = 0`, `h_c = 0` (outside the
+  example's `β₂ > 0`, and still satisfying Assumptions 2.2–2.5)
   with `t^{-1/2}` added to `b` satisfies (2.3) and Assumptions 2.3–2.5 (`L = 1`, `G = 1`,
   `α = β₁ = 1`, `β₂ = 0`), violates Assumption 2.2 for every initial datum, and from `ξ₀ = 0` has
   a solution in `ℍ`: `WeakSolution` with finite `𝔼 sup |X|²` and `𝔼 sup |Y|²`, the drift integral

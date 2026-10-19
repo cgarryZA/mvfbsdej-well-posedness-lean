@@ -54,11 +54,11 @@ def rem_uniq_initial : Prop :=
     ∀ i, MemLp (fun ω => ξ₀ ω i) 2 P
 
 /-- Remark 3.4, the singular drift. In the standing setting with `𝒢₀ = ⊥`, `n = m = 1` and any
-`d`, on every horizon `T > 0`: the system of Example 5.1(i) with `β₁ = 1`, `β₂ = 0`, `σ_c = 0`,
-`h_c = 0` and the deterministic drift `t^{-1/2}` added to `b` satisfies (2.3), Assumption 2.3
-with `L = 1`, Assumption 2.4 with `G = 1` and Assumption 2.5 with `G = 1`, `α = 1`, `β₁ = 1`,
-`β₂ = 0`, violates Assumption 2.2 for every initial datum, and from the initial datum `0` has a
-tuple of `ℍ_weak` satisfying (1.1) with `𝔼 sup_{t ≤ T} |X_t|² < ∞` and
+`d`, on every horizon `T > 0`: the affine coefficients of Example 5.1(i) taken at `β₁ = 1`,
+`β₂ = 0`, `σ_c = 0`, `h_c = 0`, with the deterministic drift `t^{-1/2}` added to `b`, satisfy
+(2.3), Assumption 2.3 with `L = 1`, Assumption 2.4 with `G = 1` and Assumption 2.5 with `G = 1`,
+`α = 1`, `β₁ = 1`, `β₂ = 0`, violate Assumption 2.2 for every initial datum, and from the initial
+datum `0` have a tuple of `ℍ_weak` satisfying (1.1) with `𝔼 sup_{t ≤ T} |X_t|² < ∞` and
 `𝔼 sup_{t ≤ T} |Y_t|² < ∞`: a solution in `ℍ` with the drift integral read pathwise. -/
 def rem_uniq_singular : Prop :=
   ∀ {Ω : Type u} [MeasurableSpace Ω] {E : Type v} [MeasurableSpace E] (ν : Measure E)

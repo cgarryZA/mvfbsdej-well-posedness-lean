@@ -620,7 +620,7 @@
    "location": "paper/sections/05-examples.tex",
    "source_sha256": "1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633",
    "scope": "formal",
-   "scope_note": "the derivation of (1.1) from the control problem by the stochastic maximum principle for jump diffusions is cited work (Tang and Li) and is not stated; the clauses state the system and its properties",
+   "scope_note": "the derivation of (1.1) from the control problem by the stochastic maximum principle for jump diffusions is cited work (Tang and Li) and is not stated; the clauses state the system and its properties; the attribution of (ii) to Example 3.1 of Li and Min is a statement about cited work",
    "scope_reviewed": false,
    "clauses": [
     {
@@ -695,7 +695,7 @@
    "location": "paper/sections/05-examples.tex",
    "source_sha256": "73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the comparison with condition (A1) of [BYZ] is a statement about cited work",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -1102,6 +1102,12 @@
      "spec": "Dissertation.PaperSpec.A.prop_strict",
      "accept": "Dissertation.Acceptance.A.prop_strict",
      "witness": "Dissertation.Acceptance.A.prop_strict_hypotheses"
+    },
+    {
+     "name": "expected diagonal monotonicity is strictly weaker: a full coefficient system satisfying Assumption 2.5 without the pointwise condition (Remark 2.8)",
+     "spec": "Dissertation.PaperSpec.A.rem_diag_mono_converse",
+     "accept": "Dissertation.Acceptance.A.rem_diag_mono_converse",
+     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses"
     },
     {
      "name": "the dealer interaction is monotone at every interaction strength (Example 5.5)",
@@ -1530,10 +1536,23 @@
    "title": "Along any Theta in HH, coefficient processes are square-integrable with the bound (4.2); terminal bound (4.3)",
    "location": "paper/sections/04-proof-wellposedness.tex:71",
    "source_sha256": "fb2d9936eeb420107ab775d3d6f5f596ace121471c667bed056241cf5805dad6",
-   "scope": "duplicate",
-   "scope_note": "A:eq:coeffint",
+   "scope": "formal",
+   "scope_note": "the passage states (4.2) and (4.3), which are also the claims A:eq:coeffint and A:eq:termg",
    "scope_reviewed": true,
-   "clauses": []
+   "clauses": [
+    {
+     "name": "(4.2): E int |psi(s, Theta_s, mu_s)|^2 <= C E int (|X|^2 + |Y|^2 + |Z|^2 + ||U||^2 + |psi(s, 0, delta_0)|^2), psi in {b, sigma, h, f}",
+     "spec": "Dissertation.PaperSpec.A.eq_coeffint",
+     "accept": "Dissertation.Acceptance.A.eq_coeffint",
+     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
+    },
+    {
+     "name": "(4.3): E |g(X_T, Law X_T)|^2 <= C (E |X_T|^2 + |g(0, delta_0)|^2)",
+     "spec": "Dissertation.PaperSpec.A.eq_termg",
+     "accept": "Dissertation.Acceptance.A.eq_termg",
+     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
+    }
+   ]
   },
   {
    "id": "A:lem4.1:M2-infinite-activity",
@@ -1630,10 +1649,22 @@
      "witness": "Dissertation.Acceptance.A.ex_brownian_hypotheses"
     },
     {
+     "name": "Example 5.2: at ν = 0 the assumptions and solution notions are the Brownian ones",
+     "spec": "Dissertation.PaperSpec.A.ex_brownian_reduction",
+     "accept": "Dissertation.Acceptance.A.ex_brownian_reduction",
+     "witness": "Dissertation.Acceptance.A.ex_brownian_reduction_hypotheses"
+    },
+    {
      "name": "Example 5.3 recovers the expectation-functional subclass",
      "spec": "Dissertation.PaperSpec.A.ex_expfunc",
      "accept": "Dissertation.Acceptance.A.ex_expfunc",
      "witness": "Dissertation.Acceptance.A.ex_expfunc_hypotheses"
+    },
+    {
+     "name": "Example 5.3: the kernels of the independent-copy interactions of [LiMin] embed in the class",
+     "spec": "Dissertation.PaperSpec.A.ex_expfunc_limin",
+     "accept": "Dissertation.Acceptance.A.ex_expfunc_limin",
+     "witness": "Dissertation.Acceptance.A.ex_expfunc_limin_hypotheses"
     },
     {
      "name": "Example 5.4: a nonlinear functional of the full tuple",
@@ -1743,6 +1774,12 @@
      "spec": "Dissertation.PaperSpec.A.prop_strict",
      "accept": "Dissertation.Acceptance.A.prop_strict",
      "witness": "Dissertation.Acceptance.A.prop_strict_hypotheses"
+    },
+    {
+     "name": "expected diagonal monotonicity is strictly weaker: a full coefficient system satisfying Assumption 2.5 without the pointwise condition (Remark 2.8)",
+     "spec": "Dissertation.PaperSpec.A.rem_diag_mono_converse",
+     "accept": "Dissertation.Acceptance.A.rem_diag_mono_converse",
+     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses"
     },
     {
      "name": "the reduction to the jump channel and the β₁ dichotomy, with ν ≠ 0",

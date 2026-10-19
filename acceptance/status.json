@@ -1179,7 +1179,7 @@
    "number": "Example 5.1",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the derivation of (1.1) from the control problem by the stochastic maximum principle for jump diffusions is cited work (Tang and Li) and is not stated; the clauses state the system and its properties",
+   "scope_note": "the derivation of (1.1) from the control problem by the stochastic maximum principle for jump diffusions is cited work (Tang and Li) and is not stated; the clauses state the system and its properties; the attribution of (ii) to Example 3.1 of Li and Min is a statement about cited work",
    "scope_reviewed": false,
    "status": "formal: accepted"
   },
@@ -1276,7 +1276,7 @@
    "number": "Example 5.2",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the comparison with condition (A1) of [BYZ] is a statement about cited work",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -2222,6 +2222,23 @@
      "witness_ok": true
     },
     {
+     "accept": "Dissertation.Acceptance.A.rem_diag_mono_converse",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "expected diagonal monotonicity is strictly weaker: a full coefficient system satisfying Assumption 2.5 without the pointwise condition (Remark 2.8)",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.rem_diag_mono_converse",
+     "spec_hash": "ed839d34f480cba14b5e4594e14d9dc7",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-reviewer",
+     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses",
+     "witness_ok": true
+    },
+    {
      "accept": "Dissertation.Acceptance.A.ex_dealer_mono",
      "accept_ok": true,
      "author_reviewed": [
@@ -2916,15 +2933,50 @@
    "status": "definition: reviewed"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_coeffint",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.2): E int |psi(s, Theta_s, mu_s)|^2 <= C E int (|X|^2 + |Y|^2 + |Z|^2 + ||U||^2 + |psi(s, 0, delta_0)|^2), psi in {b, sigma, h, f}",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_coeffint",
+     "spec_hash": "ed839d34f480cba13c4b68e5e50bad34",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-reviewer",
+     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_termg",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.3): E |g(X_T, Law X_T)|^2 <= C (E |X_T|^2 + |g(0, delta_0)|^2)",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_termg",
+     "spec_hash": "ed839d34f480cba171988e2e6de37794",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-reviewer",
+     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:sec4:coeffint",
    "kind": "embedded-in-proof",
    "number": "(4.2)-(4.3)",
    "paper": "A",
-   "scope": "duplicate",
-   "scope_note": "A:eq:coeffint",
+   "scope": "formal",
+   "scope_note": "the passage states (4.2) and (4.3), which are also the claims A:eq:coeffint and A:eq:termg",
    "scope_reviewed": true,
-   "status": "out of scope: duplicate"
+   "status": "formal: accepted"
   },
   {
    "clauses": [],
@@ -3042,6 +3094,23 @@
      "witness_ok": true
     },
     {
+     "accept": "Dissertation.Acceptance.A.ex_brownian_reduction",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "Example 5.2: at ν = 0 the assumptions and solution notions are the Brownian ones",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.ex_brownian_reduction",
+     "spec_hash": "ed839d34f480cba16ec077c21383f1ee",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-reviewer",
+     "witness": "Dissertation.Acceptance.A.ex_brownian_reduction_hypotheses",
+     "witness_ok": true
+    },
+    {
      "accept": "Dissertation.Acceptance.A.ex_expfunc",
      "accept_ok": true,
      "author_reviewed": [],
@@ -3056,6 +3125,23 @@
      "spec_ok": true,
      "spec_review": "reviewed by claude-reviewer",
      "witness": "Dissertation.Acceptance.A.ex_expfunc_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.ex_expfunc_limin",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "Example 5.3: the kernels of the independent-copy interactions of [LiMin] embed in the class",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.ex_expfunc_limin",
+     "spec_hash": "ed839d34f480cba1dc8d682dbdc81fa7",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-reviewer",
+     "witness": "Dissertation.Acceptance.A.ex_expfunc_limin_hypotheses",
      "witness_ok": true
     },
     {
@@ -3295,6 +3381,23 @@
      "spec_ok": true,
      "spec_review": "reviewed by claude-reviewer",
      "witness": "Dissertation.Acceptance.A.prop_strict_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.rem_diag_mono_converse",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "expected diagonal monotonicity is strictly weaker: a full coefficient system satisfying Assumption 2.5 without the pointwise condition (Remark 2.8)",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.rem_diag_mono_converse",
+     "spec_hash": "ed839d34f480cba14b5e4594e14d9dc7",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-reviewer",
+     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses",
      "witness_ok": true
     },
     {
@@ -4096,9 +4199,9 @@
  "summary": {
   "A": {
    "definition: reviewed": 11,
-   "formal: accepted": 36,
+   "formal: accepted": 37,
    "formal: proved, author-reviewed": 11,
-   "out of scope: duplicate": 5,
+   "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
    "out of scope: proof-step": 29
   }
