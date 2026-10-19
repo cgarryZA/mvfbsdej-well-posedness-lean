@@ -38,7 +38,7 @@ universe u v w
 /-- Example 5.5, the Riccati function. -/
 theorem ex_dealer_riccati : PaperSpec.A.ex_dealer_riccati := by
   intro β₁ β₂ T hβ₁ hβ₂ _
-  exact ⟨exists_riccati hβ₁ hβ₂, fun p q hp hpT hq hqT =>
+  exact ⟨exists_pos_riccati hβ₁ hβ₂, fun p q hp hpT hq hqT =>
     riccati_unique hβ₁.le hp hq (hpT.trans hqT.symm)⟩
 
 /-- Example 5.5, without the exposure term the interaction is inert. -/
@@ -157,7 +157,7 @@ theorem ex_dealer_zero : PaperSpec.A.ex_dealer_zero.{u, w} := by
     have hPS := DealerLinear.paperSolution hlin 𝒲 hℱ0 hnull hT single_one_apply hhx hxc hηcm hηxm
       hcm hxm hcr hxr hXl
     refine ⟨⟨⟨dealerZeroU T (fun e : DealerMark => (if e.1 then 1 else -1) * (e.2 : ℝ))
-      (fun e => (e.2 : ℝ)) X0, ?_⟩, fun _ => hXl, fun _ => hXl⟩, hlin.integral_eq_zero 𝒲 hT,
+      (fun e => (e.2 : ℝ)) X0, ?_⟩, fun _ => hXl, fun _ => hXl⟩, hlin.expectation_eq_zero 𝒲 hT,
       hlin.integral_sq_eq 𝒲 hT hcm hxm hηc hηx hηcx',
       fun t ht => hlin.hasDerivAt_integral_sq 𝒲 hT hcm hxm hηc hηx hηcx' ht, fun t ht => ?_⟩
     · rw [ex55Coeffs_eq]
@@ -174,7 +174,7 @@ theorem ex_dealer_zero : PaperSpec.A.ex_dealer_zero.{u, w} := by
 theorem ex_dealer_symm : PaperSpec.A.ex_dealer_symm.{v} := by
   intro E _ ν _ _ Λ
   have hΛ := integrable_norm_of_secondMoment_ne_top Λ.secondMoment_ne_top
-  exact ⟨integral_inner_crowdOp_self Λ.law hΛ, integral_inner_crowdOp_self_pos Λ.law hΛ⟩
+  exact ⟨integral_inner_crowdOp_self Λ.law hΛ, crowdPairing_pos Λ.law hΛ⟩
 
 /-- Example 5.5, the interaction is active. -/
 theorem ex_dealer_active : PaperSpec.A.ex_dealer_active.{u, w} := by
@@ -270,7 +270,7 @@ theorem ex_dealer_inert_hypotheses :
         ∧ (0 : ℝ) < 1 ∧ (0 : ℝ) ≤ 1)
     ∧ ∃ p : ℝ → ℝ, (∀ t ∈ Set.Icc (0 : ℝ) 1, HasDerivAt p (1 * p t ^ 2 - 1) t) ∧ p 1 = 1
       ∧ ∀ t ∈ Set.Icc (0 : ℝ) 1, 0 < p t :=
-  ⟨ex_dealer_hypotheses, exists_riccati one_pos one_pos⟩
+  ⟨ex_dealer_hypotheses, exists_pos_riccati one_pos one_pos⟩
 
 /-- **The hypotheses of the specialisation of Example 5.5 hold.** For `ϱ = 1`, `0 < ϱ < 2`; the
 mark measure `ex55Marks 1` is σ-finite on a countably generated space; the classes `h_c, h_x` of

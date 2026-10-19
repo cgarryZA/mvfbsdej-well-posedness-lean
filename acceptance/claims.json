@@ -854,7 +854,8 @@
     {
      "name": "the exposure term ⟨h_x x, u⟩ of the Hamiltonian has x-derivative the added driver term ⟨h_x, u⟩",
      "spec": "Dissertation.PaperSpec.A.ex_dealer_ham",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_ham"
+     "accept": "Dissertation.Acceptance.A.ex_dealer_ham",
+     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
     },
     {
      "name": "Assumptions 2.2–2.4 and (2.3), with L = max{β₁ + ε + ‖h_x‖, β₂ + ‖h_x‖, 1}",
@@ -1444,7 +1445,8 @@
     {
      "name": "finitely many continuous functionals cannot separate the points of an infinite-dimensional space",
      "spec": "Dissertation.PaperSpec.A.cor_margin_separate",
-     "accept": "Dissertation.Acceptance.A.cor_margin_separate"
+     "accept": "Dissertation.Acceptance.A.cor_margin_separate",
+     "witness": "Dissertation.Acceptance.A.cor_margin_continuous_hypotheses"
     },
     {
      "name": "L²(ν) finite-dimensional: finitely many functionals determine u and such feedback carries a margin",

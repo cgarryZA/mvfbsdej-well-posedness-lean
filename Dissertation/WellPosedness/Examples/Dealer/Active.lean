@@ -143,7 +143,7 @@ theorem DealerLinear.crowd_ne_zero (h : DealerLinear D ℱ hℱW hℱN T ηc ηx
   haveI : IsProbabilityMeasure Λ := Measure.isProbabilityMeasure_map hUm
   have hΛi : Integrable (fun u => ‖u‖) Λ :=
     (integrable_map_measure continuous_norm.aestronglyMeasurable hUm).mpr hUi.norm
-  have hpos := integral_inner_crowdOp_self_pos Λ hΛi hD
+  have hpos := crowdPairing_pos Λ hΛi hD
   rw [hΛ, integral_map hUm (((continuous_crowdOp _).inner continuous_id).aestronglyMeasurable)]
     at hpos
   refine pos_iff_ne_zero.mpr fun h0 => ?_

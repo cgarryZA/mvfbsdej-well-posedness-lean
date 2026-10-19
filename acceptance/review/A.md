@@ -2115,7 +2115,8 @@ Witnesses:
 * `cor_margin_continuous`: `Dissertation.Acceptance.A.cor_margin_continuous_hypotheses`: the
   driver and `L²(ν; ℝ¹)` of `cor_margin_finite_hypotheses`, and at every time and every law the
   jump coefficient of `rankOneCoeffs` depends on `u` only through the continuous functional
-  `u ↦ ⟨φ, u⟩`. `cor_margin_separate` has no hypotheses beyond its types.
+  `u ↦ ⟨φ, u⟩`; the same witness meets the hypotheses of `cor_margin_separate`
+  (`L²(ν; ℝ¹)` infinite dimensional and the continuous map `u ↦ ⟨φ, u⟩` into `ℝ¹`).
 * `cor_margin_findim`: `Dissertation.Acceptance.A.cor_margin_findim_hypotheses`: a Lévy driver
   with `ν = δ₀` and `d = 1`, `𝒢₀ = ⊥`, and `L²(δ₀; ℝ¹)` finite dimensional; `n = 1`, `T = 1`,
   `β₁ = β₂ = 0`, `c = 1`, `σ_c = 0`, `h_c = 0` meet the remaining hypotheses.
@@ -2435,7 +2436,8 @@ Correspondence:
   work.
 
 Witnesses: `Dissertation.Acceptance.A.ex_dealer_hypotheses` for `ex_dealer`, `ex_dealer_mono`,
-`ex_dealer_wp`, `ex_dealer_coeffs`, `ex_dealer_potential` and `ex_dealer_crowd` (the mark measure
+`ex_dealer_wp`, `ex_dealer_coeffs`, `ex_dealer_ham`, `ex_dealer_potential` and `ex_dealer_crowd`
+(the mark measure
 of the example with `c_{±1} = 1/2`, `ϱ = 1`; a Lévy driver with `d = 1` on it; `𝒢₀ = ⊥`; the datum
 `0`; `T = β₁ = β₂ = ε = 1`); `ex_dealer_unit_hypotheses` for `ex_dealer_twopoint`,
 `ex_dealer_mean_corr`, `ex_dealer_not_mean_corr`, `ex_dealer_affine` and `ex_dealer_symm` (a unit

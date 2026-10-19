@@ -1564,7 +1564,8 @@
      "spec_hash": "ed839d34f480cba18d97e926abe7317b",
      "spec_ok": true,
      "spec_review": "reviewed by claude-author",
-     "witness": null
+     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
+     "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.ex_dealer",
@@ -2796,7 +2797,8 @@
      "spec_hash": "ed839d34f480cba1b90f9a7b02bff832",
      "spec_ok": true,
      "spec_review": "reviewed by claude-author",
-     "witness": null
+     "witness": "Dissertation.Acceptance.A.cor_margin_continuous_hypotheses",
+     "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.cor_margin_findim",

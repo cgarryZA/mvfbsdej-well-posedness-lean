@@ -25,7 +25,7 @@ integrand vanishes only on the diagonal.
 
 * `inner_crowdGrad_self` — `⟨∇V(w), w⟩ = ‖w‖² / √(1 + ‖w‖²)`.
 * `integral_inner_crowdOp_self` — the symmetrised pairing.
-* `integral_inner_crowdOp_self_pos` — the pairing is positive off the Dirac masses.
+* `crowdPairing_pos` — the pairing is positive off the Dirac masses.
 -/
 
 open MeasureTheory Filter
@@ -110,7 +110,7 @@ theorem integral_inner_crowdOp_self (Λ : Measure F) [IsProbabilityMeasure Λ]
 
 /-- **The symmetrised crowding pairing is positive off the Dirac masses.** For a probability
 measure `λ` with finite first moment which is not a Dirac mass, `∫ ⟨A_λ(u), u⟩ λ(du) > 0`. -/
-theorem integral_inner_crowdOp_self_pos (Λ : Measure F) [IsProbabilityMeasure Λ]
+theorem crowdPairing_pos (Λ : Measure F) [IsProbabilityMeasure Λ]
     (hΛ : Integrable (fun u : F => ‖u‖) Λ) (hD : ¬ ∃ u, Λ = Measure.dirac u) :
     0 < ∫ u, ⟪crowdOp Λ u, u⟫ ∂Λ := by
   rw [integral_inner_crowdOp_self Λ hΛ]

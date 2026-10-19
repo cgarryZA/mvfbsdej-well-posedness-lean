@@ -19,7 +19,7 @@ time `t ∈ (0, T]` the left limit `X_{t−}` has the same two moments, by domin
 ## Main statements
 
 * `linearFSDEJ_one` — the constant `1` solves the linear forward equation with zero integrands.
-* `DealerLinear.integral_eq_zero` — `𝔼 X_t = 0`.
+* `DealerLinear.expectation_eq_zero` — `𝔼 X_t = 0`.
 * `DealerLinear.integral_sq_eq` — `𝔼 X_t² = (2/7)(1 − e^{−7t/4})`.
 * `DealerLinear.hasDerivAt_integral_sq` — `v' = −(7/4) v + ½`.
 * `DealerLinear.leftLim_moments` — the moments of `X_{t−}`.
@@ -162,7 +162,7 @@ theorem integral_half_mul_self {ν : Measure E} (hc : MemLp ηc 2 ν) (hx : MemL
 
 /-- **The mean of the linear equation vanishes.** Over a filtration with a cross witness and for
 `T > 0`, a solution of the linear equation has `𝔼 X_t = 0` at every `t ∈ [0, T]`. -/
-theorem DealerLinear.integral_eq_zero (h : DealerLinear D ℱ hℱW hℱN T ηc ηx X)
+theorem DealerLinear.expectation_eq_zero (h : DealerLinear D ℱ hℱW hℱN T ηc ηx X)
     (𝒲 : D.CrossWitness ℱ) (hT : 0 < T) : ∀ t ∈ Set.Icc (0 : ℝ) T, ∫ ω, X t ω ∂P = 0 := by
   have h1 := linearFSDEJ_one D ℱ hℱW hℱN T
   set m : ℝ → ℝ := fun s => ∫ ω, X s ω ∂P with hmdef
@@ -357,7 +357,7 @@ theorem DealerLinear.leftLim_moments (h : DealerLinear D ℱ hℱW hℱN T ηc �
         nlinarith [abs_nonneg (X (sq n) ω), sq_abs (X (sq n) ω)])
       (Eventually.of_forall hconv)
     have h0 : (fun n => ∫ ω, X (sq n) ω ∂P) = fun _ => 0 :=
-      funext fun n => h.integral_eq_zero 𝒲 hT (sq n) (hsq_mem n)
+      funext fun n => h.expectation_eq_zero 𝒲 hT (sq n) (hsq_mem n)
     rw [h0] at hlim
     exact tendsto_nhds_unique hlim tendsto_const_nhds
   · -- the second moment, by dominated convergence under `B`

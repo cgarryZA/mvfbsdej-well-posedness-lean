@@ -21,7 +21,7 @@ solutions on `[0, T]` with the same terminal value agree there, the vector field
 
 ## Main statements
 
-* `exists_riccati` — the positive solution.
+* `exists_pos_riccati` — the positive solution.
 * `riccati_unique` — uniqueness on `[0, T]`.
 -/
 
@@ -31,7 +31,7 @@ namespace Dissertation.WellPosedness.Existence
 
 /-- **The positive Riccati function.** For `β₁, β₂, T > 0` there is `p` with
 `p' = β₁ p² − β₂` at every `t ∈ [0, T]`, `p(T) = 1` and `p > 0` on `[0, T]`. -/
-theorem exists_riccati {β₁ β₂ T : ℝ} (hβ₁ : 0 < β₁) (hβ₂ : 0 < β₂) :
+theorem exists_pos_riccati {β₁ β₂ T : ℝ} (hβ₁ : 0 < β₁) (hβ₂ : 0 < β₂) :
     ∃ p : ℝ → ℝ, (∀ t ∈ Icc (0 : ℝ) T, HasDerivAt p (β₁ * p t ^ 2 - β₂) t) ∧ p T = 1
       ∧ ∀ t ∈ Icc (0 : ℝ) T, 0 < p t := by
   set k := Real.sqrt (β₂ / β₁) with hk
