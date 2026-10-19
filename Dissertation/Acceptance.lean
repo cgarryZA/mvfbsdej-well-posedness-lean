@@ -35,6 +35,7 @@ import Dissertation.Acceptance.A.Sec5BrownianReduction
 import Dissertation.Acceptance.A.Sec4Supremum
 import Dissertation.Acceptance.A.WitnessSec4
 import Dissertation.Acceptance.A.Sec3SpaceNorm
+import Dissertation.Acceptance.A.Sec4BackwardYoung
 
 /-!
 # Proofs of the statements of the paper

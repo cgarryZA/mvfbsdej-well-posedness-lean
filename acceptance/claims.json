@@ -3259,10 +3259,23 @@
    "title": "equation eq:bwdyoung [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:724",
    "source_sha256": "4ad6ce70621e90a1bf3a3b4b7f0fdd3fdb2e2a0cb00544c763f1bbe218fdbbd7",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the printed estimate, for every ε > 0 with C independent of ε, is refuted: it fails for large ε at two deterministic forced solutions of a system meeting the hypotheses of Lemma 4.3; it holds for 0 < ε ≤ 1, the range the proof uses",
    "scope_reviewed": true,
-   "clauses": [],
+   "clauses": [
+    {
+     "name": "(4.25) for every ε > 0, C independent of ε",
+     "spec": "Dissertation.PaperSpec.A.eq_bwdyoung",
+     "refute": "Dissertation.Acceptance.A.eq_bwdyoung_false"
+    },
+    {
+     "name": "(4.25) for every 0 < ε ≤ 1",
+     "spec": "Dissertation.PaperSpec.A.eq_bwdyoung_corr",
+     "accept": "Dissertation.Acceptance.A.eq_bwdyoung_corr",
+     "corrects": "(4.25) for every ε > 0, C independent of ε",
+     "witness": "Dissertation.Acceptance.A.eq_bwdyoung_corr_hypotheses"
+    }
+   ],
    "source_region": {
     "end_line": 731
    },

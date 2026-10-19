@@ -12,7 +12,7 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | formal: proved, author-reviewed | 0 |
 | formal: proved, review pending | 0 |
 | refuted as printed | 0 |
-| refuted as printed; corrected statement proved | 0 |
+| refuted as printed; corrected statement proved | 1 |
 | refuted as printed; other clauses open | 0 |
 | refuted as printed; corrected statement proved; other clauses open | 0 |
 | formal: open | 0 |
@@ -24,7 +24,7 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | definition: not yet stated | 0 |
 | out of scope: duplicate | 4 |
 | out of scope: part-of | 17 |
-| out of scope: proof-step | 29 |
+| out of scope: proof-step | 28 |
 
 ## Paper A (well-posedness, `f598204`)
 
@@ -89,6 +89,7 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | `A:eq:forced` | (4.1) | definition: reviewed | `Dissertation.PaperSpec.A.ForcedSolution` | — | definitions |
 | `A:eq:coeffint` | (4.2) | formal: accepted | `A.eq_coeffint` | `A.eq_coeffint` | reviewed by claude-auditor, hypotheses met: `A.thm_cwp_hypotheses` |
 | `A:eq:termg` | (4.3) | formal: accepted | `A.eq_termg` | `A.eq_termg` | reviewed by claude-auditor, hypotheses met: `A.thm_cwp_hypotheses` |
+| `A:eq:bwdyoung` | (4.25) | refuted as printed; corrected statement proved | `A.eq_bwdyoung`, `A.eq_bwdyoung_corr` | ¬ `A.eq_bwdyoung_false`, `A.eq_bwdyoung_corr` | (4.25) for every ε > 0, C independent of ε: reviewed by claude-author; (4.25) for every 0 < ε ≤ 1: reviewed by claude-author, hypotheses met: `A.eq_bwdyoung_corr_hypotheses` |
 
 ## Out of scope
 
@@ -140,7 +141,6 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | `A:eq:coerc` | (4.22) | proof-step | a step of a printed proof | yes |
 | `A:eq:fwd` | (4.23) | proof-step | a step of a printed proof | yes |
 | `A:eq:bwdito` | (4.24) | proof-step | a step of a printed proof | yes |
-| `A:eq:bwdyoung` | (4.25) | proof-step | a step of a printed proof | yes |
 | `A:eq:wgt` | (4.26) | proof-step | a step of a printed proof | yes |
 | `A:eq:bwd` | (4.27) | proof-step | a step of a printed proof | yes |
 | `A:eq:fulllaw-eps` | (5.1) | part-of | A:ex:fulllaw | yes |

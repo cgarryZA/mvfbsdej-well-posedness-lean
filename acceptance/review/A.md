@@ -517,6 +517,113 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lem_pert--claude-auditor--2026-10-19T03_38_06Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.lem_pert ed839d34f480cba1eefcd4522364d865 by=claude-auditor -->
 
+## (4.25), the Young bound in Step 4 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_bwdyoung`, `eq_bwdyoung_corr`
+
+### The printed reading: `Dissertation.PaperSpec.A.eq_bwdyoung`
+
+Manuscript (proof of Lemma `lem:pert`, Step 4, lines 724–731): "By Assumption 2.3, the coupling
+bound (2.8), and Young's inequality, for every `ε > 0`,
+`2 𝔼⟨δY_s, λ δf_s + q^f_s⟩ ≤ (C/ε) 𝔼|δY_s|² + ε 𝔼(|δZ_s|²_F + ‖δU_s‖²_{L²(ν)})
++ (C/ε) 𝔼(|δX_s|² + |q^f_s|²)`, with `C` independent of `ε`." In this proof `q` stands for the
+difference `δq` of the forcings ("The difference equations below involve the forcings only through
+`δq`, which we therefore write simply as `q`"), `δf_s = f(s, Θ¹_s, μ¹_s) − f(s, Θ²_s, μ²_s)` with
+`μ^k_s = Law(Θ^k_s)`, and `C` follows the convention of §4: a positive constant depending only on
+`T, L, ‖G‖, c_G, α, β₁, β₂` and `c_BDG`. The next display inserts (4.25) under
+`∫_t^T e^{κs} … ds`, and the proof then takes `ε < 1`.
+
+Proposition: `∃ K` of `(T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)` such that, in the standing setting and
+under the hypotheses of Lemma 4.3 (those of `lem_pert`: `T > 0`, (2.3), Assumptions 2.3–2.5 with
+`L, α, β₁, β₂` and a full-rank `G`, `0 < λ̲ ≤ 1`, `λ̲ ≤ λ ≤ 1`, `ℱ₀`-measurable `ξ₁, ξ₂`, forcings
+`q¹, q²` of the class of (4.1), `WeakForcedSolution`s `Θ¹, Θ²` and `supSize(Θ¹ − Θ²) < ∞`), for
+every `ε > 0`, at almost every `s ∈ [0, T]`,
+`ofReal(2 ∫ ∑_k δY_{k,s} (λ δf_{k,s} + δq^f_{k,s}) dP) ≤ ofReal(C/ε) ∫⁻ |δY_s|² dP
++ ofReal(ε) ∫⁻ (|δZ_s|²_F + ‖δU_s‖²) dP + ofReal(C/ε) ∫⁻ (|δX_s|² + |δq^f_s|²) dP`
+with `C = K(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂, λ̲)` and `δf_s` the difference of the `driverProc`s.
+
+Readings:
+
+* The hypotheses are those in force at Step 4, the hypotheses of Lemma 4.3, written as in
+  `lem_pert`: the class `WeakForcedSolution` (`ℍ_weak` with `X_T ∈ L²` and the integrals of (4.1)
+  along `Θ^k` existing, reviewed in `definitions.md`); `ℱ₀`-measurability as measurability for
+  the time-`0` field of `enlJoint`; `Θ¹ − Θ² ∈ ℍ` as the finiteness of `supSize`;
+  `c_G = s_min(G)⁻²`. The sentence cites Assumption 2.3 and (2.8) only; keeping the other
+  standing hypotheses makes the printed reading weaker, and the counterexample meets all of
+  them.
+* The constant: `K` is chosen before everything else, so `C` is fixed before `ε` and independent
+  of it, as printed. Its arguments are the broadest dependence the text allows: the §4 convention
+  lists `T, L, ‖G‖, c_G, α, β₁, β₂` (`c_BDG` is a universal constant), and `λ̲` is added because
+  the constant `C_B` of Lemma 4.3 depends on it. The counterexample below defeats every value of
+  `C` (it fails once `ε > max(C, 0)/2`), so a reading in which `C` depends on further data fixed
+  before `ε` (`λ`, the dimensions, the coefficients, the solutions) is refuted by the same
+  instance.
+* The time: (4.25) is printed at a time `s` and used under `∫_t^T … ds`; the proposition asks it at
+  almost every `s ∈ [0, T]` (Lebesgue), the weaker conclusion. The counterexample violates it at
+  every `s ∈ [0, 1]`, so the reading "for every `s`" is refuted too.
+* The expectations: `𝔼⟨δY_s, λ δf_s + q^f_s⟩` is the Bochner integral of
+  `∑_k (Y¹_{k,s} − Y²_{k,s})(λ (f¹ − f²)_{k,s} + (q^{f,1} − q^{f,2})_{k,s})`, read in `[0, ∞]`
+  through `ENNReal.ofReal`, its positive part; the right side is in `[0, ∞]` (lower integrals of
+  `esq`, `∑_k esq` for `|·|²_F`, `∑_k ∫⁻ |δU_k(e)|² ν(de)` for `‖·‖²_{L²(ν)}`). Harmless: when the
+  right side is finite the extended inequality is the real one (a negative left side satisfies
+  both); when it is infinite the printed inequality says nothing; a pairing that is not integrable
+  (undefined in the paper) is read as `0`, which only weakens the printed reading.
+* `ofReal(C/ε)` reads a negative `C` as `0`; since `K` is existential and the right side grows
+  with `C`, this is the reading with `C ≥ 0`, equivalent to the paper's positive `C`.
+* `δf_s` is `driverProc P T C X¹ Y¹ Z¹ U¹ k ω s − driverProc P T C X² Y² Z² U² k ω s`: coordinate
+  `k` of `f(s, Θ^k_s(ω), Law(Θ^k_s))` for `s ∈ [0, T]` (reviewed in `definitions.md`); `δq^f_s` is
+  `qf₁ − qf₂`, as the proof's convention `q = δq` says.
+
+Counterexample (`Dissertation.Acceptance.A.eq_bwdyoung_false`, from the instance of
+`eq_bwdyoung_corr_hypotheses`): a Lévy driver with `d = 1`, `ν = δ₀` on `ℝ`, `𝒢₀ = ⊥`,
+`n = m = 1`, `T = 1`, and the law-free system `skewCoeffs`: `b = x − y`, `σ = −z`, `h = −u`,
+`f = x + y`, `g(x, ρ) = x`. It satisfies (2.3), Assumption 2.3 with `L = 2`
+(`|δb| + |δσ| + ‖δh‖ + |δf| ≤ 2|δx| + 2|δy| + |δz| + ‖δu‖`), Assumption 2.4 with `G = 1`, and
+Assumption 2.5 with `G = 1`, `α = β₁ = β₂ = 1` (the interior pairing is
+`−|δx|² − |δy|² − |δz|² − ‖δu‖²`, the terminal one `|δx|²`). At `λ̲ = λ = 1`, with initial data
+`0`: `Θ¹ = (0, e^{−t}, 0, 0)` solves (4.1) with `q^b_t = e^{−t}` on `[0, 1]`, `q^g_T = e^{−1}` and
+`q^σ = q^h = q^f = 0` (the forward drift `x − y + q^b` vanishes, and
+`e^{−t} = e^{−1} + ∫_t^1 e^{−s} ds`); `Θ² = 0` is the parameter-`0` member of the same family, its
+forcing and backward component identically `0`. Both are `WeakForcedSolution`s (the stochastic
+integrals of their zero integrands vanish almost surely), and `Θ¹ − Θ² ∈ ℍ`. At every
+`s ∈ [0, 1]`, `δf_s = δY_s = e^{−s}` and `δX, δZ, δU, δq^f` vanish, so the left side is
+`2 e^{−2s}` and the right side `(C/ε) e^{−2s}`; at `ε = |C| + 1`, `C/ε < 1` and the inequality
+fails at every `s ∈ [0, 1]`, a set of positive measure. The refutation is of
+`eq_bwdyoung.{0, 0, w}`, at `Ω : Type` and `E = ℝ`; a counterexample on one probability space
+refutes the claim, which is made for every one.
+
+Verdict: faithful; the printed claim is refuted (`eq_bwdyoung_false`), and its correction is
+`eq_bwdyoung_corr`.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bwdyoung ed839d34f480cba1d442b5bd511edbb5 by=claude-author -->
+
+### The corrected reading: `Dissertation.PaperSpec.A.eq_bwdyoung_corr`
+
+Manuscript: as above (lines 724–731), the bound for every `ε > 0` with `C` independent of `ε`.
+The proof uses it only for `ε < 1` ("Take `ε < 1` and `κ > C/ε`"); for `ε ≤ 1` it follows from
+Assumption 2.3, (2.8) and Young's inequality, the terms `ε 𝔼|δX_s|²` and `ε 𝔼|δY_s|²` that Young's
+inequality leaves being at most `(1/ε)` times the same expectations.
+
+Proposition: `eq_bwdyoung` with `∀ ε, 0 < ε →` replaced by `∀ ε, 0 < ε → ε ≤ 1 →`; nothing else
+changes (same constant function `K` of the same eight arguments chosen first, same hypotheses,
+same almost-every-`s` conclusion and the same reading of each side).
+
+Readings: those of `eq_bwdyoung`. The proof gives `K = 2 (10 (2L)²) + 3`, a function of `L` alone,
+within the allowed dependence: at almost every `s`, Young's inequality with weight
+`a = (2K' + 2)/ε` and the expected Lipschitz bound (3.2) with `K' = 10 (2L)²`
+(`PairDiff.ae_backwardYoung_le`, `PaperWeakSolutionForcedInt.ae_backwardYoung_le`). The proof of
+Lemma 4.3 in the implementation does not use (4.25) (`Stability/BackwardEnergy.lean`).
+
+Witness: `Dissertation.Acceptance.A.eq_bwdyoung_corr_hypotheses`: the instance of the
+counterexample above meets every hypothesis (the system with (2.3) and Assumptions 2.3–2.5 at
+`L = 2`, `G = 1`, `α = β₁ = β₂ = 1`; `λ̲ = λ = 1`; the initial datum `0`; the two forcings, in the
+class of (4.1); the two `WeakForcedSolution`s; `supSize(Θ¹ − Θ²) < ∞`), and the expectation
+`𝔼⟨δY_s, λ δf_s + δq^f_s⟩` equals `e^{−2s} > 0` at every `s ∈ [0, 1]`, so the bound is exercised
+with distinct solutions and a positive left side; there it reads `2 e^{−2s} ≤ (323/ε) e^{−2s}`.
+
+Verdict: faithful to (4.25) restricted to `ε ∈ (0, 1]`, the range the proof uses; a corrected
+statement beside the refuted printed one, not the printed claim.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bwdyoung_corr ed839d34f480cba13db23656421cf5a0 by=claude-author -->
+
 ## Lemma 4.4: `Dissertation.PaperSpec.A.lem_cont`
 
 Manuscript (Lemma `lem:cont`): under Assumptions 2.2–2.5, with `λ*` the threshold of Lemma 4.2,

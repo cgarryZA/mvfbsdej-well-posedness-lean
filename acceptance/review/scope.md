@@ -135,3 +135,9 @@ mis-scoped:
   (4.3), which are also the claims `A:eq:coeffint` and `A:eq:termg`.
 * The scope notes of `A:ex:concrete` and `A:ex:brownian` record the attribution of (ii) to
   [LiMin, Ex. 3.1] and the comparison with [BYZ, (A1)] as statements about cited work.
+* `A:eq:bwdyoung`, the Young bound (4.25) in Step 4 of the proof of Lemma 4.3, recorded as a
+  `proof-step`, is `formal`: an external review found the printed bound, for every `ε > 0` with
+  `C` independent of `ε`, false. Its clauses are the printed reading `eq_bwdyoung`, refuted, and
+  the reading for `0 < ε ≤ 1`, the range the proof uses, `eq_bwdyoung_corr`; its source region is
+  extended to the sentence that governs the display (lines 724–731 of
+  `04-proof-wellposedness.tex`).

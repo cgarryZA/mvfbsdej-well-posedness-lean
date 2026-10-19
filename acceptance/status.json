@@ -4016,15 +4016,53 @@
    "status": "out of scope: proof-step"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": null,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_bwdyoung"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.25) for every ε > 0, C independent of ε",
+     "refute": "Dissertation.Acceptance.A.eq_bwdyoung_false",
+     "refute_ok": true,
+     "spec": "Dissertation.PaperSpec.A.eq_bwdyoung",
+     "spec_hash": "ed839d34f480cba1d442b5bd511edbb5",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": null
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_bwdyoung_corr",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_bwdyoung_corr"
+     ],
+     "corrects": "(4.25) for every ε > 0, C independent of ε",
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.25) for every 0 < ε ≤ 1",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_bwdyoung_corr",
+     "spec_hash": "ed839d34f480cba13db23656421cf5a0",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.eq_bwdyoung_corr_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:bwdyoung",
    "kind": "embedded-in-proof",
    "number": "(4.25)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the printed estimate, for every ε > 0 with C independent of ε, is refuted: it fails for large ε at two deterministic forced solutions of a system meeting the hypotheses of Lemma 4.3; it holds for 0 < ε ≤ 1, the range the proof uses",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "refuted as printed; corrected statement proved"
   },
   {
    "clauses": [],
@@ -4066,7 +4104,8 @@
    "formal: accepted": 48,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
-   "out of scope: proof-step": 29
+   "out of scope: proof-step": 28,
+   "refuted as printed; corrected statement proved": 1
   }
  }
 }
