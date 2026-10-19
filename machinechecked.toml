@@ -79,6 +79,8 @@ ai_reviewers = ["claude*"]
 
 [[paper]]
 id = "A"
+# The public paper this audit is of: machinechecked.org matches the audit to its arXiv listing.
+published = "arXiv:2608.23203v1"
 title = "Well-posedness of fully coupled McKean-Vlasov FBSDEs with jumps under full-tuple law dependence"
 source = { path = "manuscript" }
 root = "paper/wellposedness.tex"
