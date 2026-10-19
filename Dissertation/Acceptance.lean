@@ -39,6 +39,7 @@ import Dissertation.Acceptance.A.Sec4BackwardYoung
 import Dissertation.Acceptance.A.Sec4BrownianPoisson
 import Dissertation.Acceptance.A.Sec4Small
 import Dissertation.Acceptance.A.Sec4Continuation
+import Dissertation.Acceptance.A.Sec4Difference
 
 /-!
 # Proofs of the statements of the paper

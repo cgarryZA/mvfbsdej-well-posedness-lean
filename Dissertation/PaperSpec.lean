@@ -33,6 +33,7 @@ import Dissertation.PaperSpec.A.Sec4BackwardYoung
 import Dissertation.PaperSpec.A.Sec4BrownianPoisson
 import Dissertation.PaperSpec.A.Sec4Small
 import Dissertation.PaperSpec.A.Sec4Continuation
+import Dissertation.PaperSpec.A.Sec4Difference
 
 /-!
 # The statements of the paper

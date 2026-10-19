@@ -28,10 +28,14 @@ works with their difference:
 
 * `ae_ae_of_ae_markedEnergyMeasure` — a property holding almost everywhere for the marked energy
   measure holds, at almost every point of the window, for almost every mark.
+* `ae_window_mem` — almost every point of the window has its time in `[0, T]`.
 * `PaperWeakSolutionForcedInt.exists_pairDiff` — the difference of the extended solutions is a
   `PairDiff`.
-* `PaperWeakSolutionForcedInt.ae_forcedJump_leftLim_eq` — the forced jump integrand at the
+* `PaperWeakSolutionForcedInt.ae_forcedJump_leftLim_eq`,
+  `PaperWeakSolutionForcedInt.ae_forcedJump_sub_leftLim_eq` — the forced jump integrand at the
   predictable tuple agrees with that of the representative.
+* `Forcing.dataSize_ne_top_of_memLp` — the data size of a square-integrable initial datum and a
+  forcing is finite.
 -/
 
 open MeasureTheory Filter Topology Dissertation.Law
@@ -58,6 +62,12 @@ theorem ae_ae_of_ae_markedEnergyMeasure {p : Ω × ℝ × E → Prop}
   rw [Poisson.Compensated.markedEnergyMeasure, ← Measure.prodAssoc_prod,
     MeasurableEquiv.prodAssoc.measurableEmbedding.ae_map_iff] at h
   exact Measure.ae_ae_of_ae_prod h
+
+/-- Almost every point of the window `Ω × [0, T]` has its time in `[0, T]`. -/
+theorem ae_window_mem :
+    ∀ᵐ x ∂(P.prod (volume.restrict (Set.Icc (0 : ℝ) T))), x.2 ∈ Set.Icc (0 : ℝ) T :=
+  (Measure.ae_prod_iff_ae_ae (measurableSet_Icc.preimage measurable_snd)).mpr
+    (ae_of_all _ fun _ => ae_restrict_mem measurableSet_Icc)
 
 end Marked
 
@@ -218,5 +228,42 @@ theorem PaperWeakSolutionForcedInt.ae_forcedJump_leftLim_eq
   rw [← hq]
   simp only [jumpProc, Set.indicator_of_mem hqI',
     Existence.coeffJump_eq_of_tupleAt_eq hqI' (hleft _ hqI)]
+
+/-- **The forced jump integrands of two solutions at the predictable tuples.** For two solutions
+of the `λ`-forced system in `ℍ_weak` with the same coefficients, with the joint measurability
+(2.3), `T ≥ 0`, and every path of `X^k` and `Y^k` with left limits at every time of `(0, T]`,
+almost everywhere for the marked energy measure on `[0, T]`, for every coordinate `i`,
+`λ (coeffJump(h, Θ¹⁻) − coeffJump(h, Θ²⁻))_i + δq^h_i = λ (γ¹ − γ²)_i + δq^h_i`. -/
+theorem PaperWeakSolutionForcedInt.ae_forcedJump_sub_leftLim_eq
+    (h₁ : PaperWeakSolutionForcedInt D ℱ hℱW hℱN T lam C ξ₁ qb₁ qσ₁ qh₁ qf₁ qg₁ X₁ Y₁ Z₁ U₁ γ₁)
+    (h₂ : PaperWeakSolutionForcedInt D ℱ hℱW hℱN T lam C ξ₂ qb₂ qσ₂ qh₂ qf₂ qg₂ X₂ Y₂ Z₂ U₂ γ₂)
+    (hT : 0 ≤ T) (hC : Existence.CoeffBorel T C)
+    (hXl₁ : ∀ i ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ l : ℝ, Tendsto (fun s => X₁ i s ω) (𝓝[<] t) (𝓝 l))
+    (hYl₁ : ∀ k ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ l : ℝ, Tendsto (fun s => Y₁ k s ω) (𝓝[<] t) (𝓝 l))
+    (hXl₂ : ∀ i ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ l : ℝ, Tendsto (fun s => X₂ i s ω) (𝓝[<] t) (𝓝 l))
+    (hYl₂ : ∀ k ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ l : ℝ, Tendsto (fun s => Y₂ k s ω) (𝓝[<] t) (𝓝 l)) :
+    ∀ᵐ q ∂(Poisson.Compensated.markedEnergyMeasure P ν T), ∀ i,
+      lam * (jumpProc T (Existence.coeffJump P T C (leftLimProc X₁) (leftLimProc Y₁) Z₁ U₁) i
+            q.2.1 q.1 q.2.2
+          - jumpProc T (Existence.coeffJump P T C (leftLimProc X₂) (leftLimProc Y₂) Z₂ U₂) i
+            q.2.1 q.1 q.2.2) + (qh₁ i q.2.1 q.1 q.2.2 - qh₂ i q.2.1 q.1 q.2.2)
+        = lam * (jumpProc T γ₁ i q.2.1 q.1 q.2.2 - jumpProc T γ₂ i q.2.1 q.1 q.2.2)
+          + (qh₁ i q.2.1 q.1 q.2.2 - qh₂ i q.2.1 q.1 q.2.2) := by
+  filter_upwards [ae_all_iff.mpr fun i => h₁.ae_forcedJump_leftLim_eq hT hC hXl₁ hYl₁ i,
+    ae_all_iff.mpr fun i => h₂.ae_forcedJump_leftLim_eq hT hC hXl₂ hYl₂ i] with q e₁ e₂ i
+  linear_combination e₁ i - e₂ i
+
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
+/-- **The data size of a square-integrable initial datum and a forcing is finite.** -/
+theorem Forcing.dataSize_ne_top_of_memLp
+    (hq : Forcing ℱ P ν T qb qσ qh qf qg) (hξ : ∀ i, MemLp (ξ₀ i) 2 P) :
+    dataSize P ν T ξ₀ qb qσ qh qf qg ≠ ⊤ := by
+  unfold dataSize
+  refine ENNReal.add_ne_top.mpr ⟨ENNReal.add_ne_top.mpr ⟨ENNReal.add_ne_top.mpr
+    ⟨ENNReal.add_ne_top.mpr ⟨ENNReal.add_ne_top.mpr
+      ⟨(lintegral_esq_lt_top hξ).ne, (lintegral_esq_lt_top hq.qg_sq).ne⟩,
+      ENNReal.sum_ne_top.mpr fun i _ => hq.qb_sq i⟩,
+      ENNReal.sum_ne_top.mpr fun i _ => ENNReal.sum_ne_top.mpr fun j _ => hq.qσ_sq i j⟩,
+    ENNReal.sum_ne_top.mpr fun i _ => hq.qh_sq i⟩, ENNReal.sum_ne_top.mpr fun k _ => hq.qf_sq k⟩
 
 end Dissertation.WellPosedness.System

@@ -3071,10 +3071,17 @@
    "title": "equation eq:dX [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:528",
    "source_sha256": "a877929483513c2add78424568742c35536e0d941243980e25f83f1d3832b241",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "clauses": [],
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "clauses": [
+    {
+     "name": "(4.15): each coordinate of δX satisfies δX_t = δξ₀ + ∫_0^t (λ δb + q^b) ds + ∫_0^t (λ δσ + q^σ) dW + ∫_0^t ∫_E (λ δh + q^h) Ñ(ds, de) almost surely at every t ∈ [0, T], q = δq, δh at the predictable tuples; the jump integral is that of every representative of the integrand, and one exists",
+     "spec": "Dissertation.PaperSpec.A.eq_dX",
+     "accept": "Dissertation.Acceptance.A.eq_dX",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+    }
+   ],
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
     "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
@@ -3094,10 +3101,17 @@
    "title": "equation eq:dY [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:528",
    "source_sha256": "a877929483513c2add78424568742c35536e0d941243980e25f83f1d3832b241",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "clauses": [],
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "clauses": [
+    {
+     "name": "(4.16): each coordinate of (δY, δZ, δU) satisfies δY_T = λ δg_T + q^g_T and δY_t = λ δg_T + q^g_T + ∫_t^T (λ δf + q^f) ds − ∫_t^T δZ dW − ∫_t^T ∫_E δU Ñ(ds, de) almost surely at every t ∈ [0, T], q = δq",
+     "spec": "Dissertation.PaperSpec.A.eq_dY",
+     "accept": "Dissertation.Acceptance.A.eq_dY",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+    }
+   ],
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
     "8503a0fa5f101a29c7c6181eac5b310d05b823d9e0e4e08ad9a2eceba50b9e90",
@@ -3183,10 +3197,17 @@
    "title": "equation eq:Gid [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:626",
    "source_sha256": "46e224212d4e8316516a327f1bb7618acbfc1904c3aa6992f40bd866ace4d2b4",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "clauses": [],
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "clauses": [
+    {
+     "name": "(4.19): 𝔼⟨G δX_T, δY_T⟩ − 𝔼⟨G δξ₀, δY_0⟩ = 𝔼 ∫_0^T [⟨λ δb + q^b, Gᵀ δY⟩ + ⟨λ δσ + q^σ, Gᵀ δZ⟩_F + ∫_E ⟨λ δh + q^h, Gᵀ δU⟩ dν + ⟨−λ δf − q^f, G δX⟩] dt, the three expectations existing, δh at the predictable tuples",
+     "spec": "Dissertation.PaperSpec.A.eq_Gid",
+     "accept": "Dissertation.Acceptance.A.eq_Gid",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+    }
+   ],
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
     "62f3b40810c1c1ad56e0bb47800f386409d756a01bb3bdd6bc510b6f786b760a",
@@ -3207,10 +3228,17 @@
    "title": "equation eq:intmono [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:639",
    "source_sha256": "150f4be88223dcfe3fe2768079cc4c41f3b4f9d82be386a911848afcc85a0509",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "clauses": [],
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "clauses": [
+    {
+     "name": "(4.20) at almost every t: λ 𝔼[⟨δb, Gᵀ δY⟩ + ⟨δσ, Gᵀ δZ⟩_F + ∫_E ⟨δh, Gᵀ δU⟩ dν + ⟨−δf, G δX⟩] ≤ −λ β₁ 𝔼[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²] − λ β₂ 𝔼|G δX|², the expectation on the left existing, δh at the predictable tuples",
+     "spec": "Dissertation.PaperSpec.A.eq_intmono",
+     "accept": "Dissertation.Acceptance.A.eq_intmono",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+    }
+   ],
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
     "fe0258cfec56f0d71d86bfbec12251fbec48d09d25639edb4d296042102ec93d",
@@ -3232,10 +3260,17 @@
    "title": "equation eq:termmono [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:650",
    "source_sha256": "6bab7182201b7abad4829837a498ea8162e4f6bfdba1422c65464bb9053a79d0",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "clauses": [],
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "clauses": [
+    {
+     "name": "(4.21): 𝔼⟨G δX_T, δY_T⟩ = λ 𝔼⟨G δX_T, δg_T⟩ + 𝔼⟨G δX_T, q^g_T⟩ ≥ λ α 𝔼|G δX_T|² − |𝔼⟨G δX_T, q^g_T⟩|, the expectations existing",
+     "spec": "Dissertation.PaperSpec.A.eq_termmono",
+     "accept": "Dissertation.Acceptance.A.eq_termmono",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+    }
+   ],
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
     "909d07a537026d305069f258459dc3c52f5bd1bad9e9b98683ae7754a0907ce3",
@@ -3256,10 +3291,17 @@
    "title": "equation eq:coerc [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:683",
    "source_sha256": "28fd9c283ce2f0feb20f2c6130e074c16ed3aaced00c1a84f6c2847774c3221c",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "clauses": [],
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "clauses": [
+    {
+     "name": "(4.22): N' and P are finite, and λ α 𝔼|G δX_T|² + λ β₂ 𝔼∫|G δX|² + λ β₁ 𝔼∫[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²] ≤ the six pairings in absolute value ≤ 𝒦 = η N' + ‖G‖²/(4η) P for every η > 0",
+     "spec": "Dissertation.PaperSpec.A.eq_coerc",
+     "accept": "Dissertation.Acceptance.A.eq_coerc",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+    }
+   ],
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
     "fe489ef4eed4fd89e08a469d28825a305af2936b44592398acd705f7e53ac8bc",
