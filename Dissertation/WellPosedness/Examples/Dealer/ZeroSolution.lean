@@ -147,6 +147,19 @@ theorem coeFn_uLift {ι : Type*} [Fintype ι] {u : E → ι → ℝ} (hu : ∀ k
   rw [uLift_of_memLp hm]
   exact hm.coeFn_toLp.symm
 
+omit [MeasurableSpace Ω] in
+/-- **The pairing of two classes through representatives**: if `η, κ` represent `H, K` in
+`L²(ν; ℝ¹)`, then `⟨H, K⟩ = ∫_E η κ dν`. -/
+theorem inner_eq_integral_of_rep {H K : Lp (EuclideanSpace ℝ (Fin 1)) 2 ν} {η κ : E → ℝ}
+    (hH : ∀ᵐ e ∂ν, H e = EuclideanSpace.single 0 (η e))
+    (hK : ∀ᵐ e ∂ν, K e = EuclideanSpace.single 0 (κ e)) :
+    ⟪H, K⟫ = ∫ e, η e * κ e ∂ν := by
+  rw [L2.inner_def]
+  refine integral_congr_ae ?_
+  filter_upwards [hH, hK] with e h1 h2
+  rw [h1, h2]
+  simp [PiLp.inner_apply, PiLp.single_apply, mul_comm]
+
 /-- A progressive process cut to `[0, T]` is progressive. -/
 theorem progressivelyMeasurable_indicator_Icc {ℱ : Filtration ℝ ‹MeasurableSpace Ω›}
     {H : Ω → ℝ → ℝ} (hH : Probability.ProgressivelyMeasurable ℱ H) (T : ℝ) :

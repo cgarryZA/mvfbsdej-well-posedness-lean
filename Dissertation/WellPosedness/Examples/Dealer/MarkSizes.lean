@@ -145,4 +145,36 @@ theorem norm_dealerJump_eq_one (hϱ : ϱ < 2) (hc : ∀ b, c b = (2 - ϱ) / 2) :
   rw [rate_sum_div_eq_one hϱ hc] at h
   exact (pow_eq_one_iff_of_nonneg (norm_nonneg _) two_ne_zero).mp h
 
+/-- **The second moment of the signed size**: for `c_ς ≥ 0` and `ϱ < 2`,
+`∫_E (ς q)² ν(dς, dq) = (c_{+1} + c_{−1}) / (2 − ϱ)`. -/
+theorem integral_signedSize_sq (hc : ∀ b, 0 ≤ c b) (hϱ : ϱ < 2) :
+    ∫ e, signedSize e ^ 2 ∂dealerMarks c ϱ = (c true + c false) / (2 - ϱ) := by
+  simp_rw [signedSize, mul_pow, markSide_sq, one_mul]
+  exact integral_markSize_sq hc hϱ
+
+/-- **The pairing of the signed size with the size**: for `c_ς ≥ 0` and `ϱ < 2`,
+`∫_E ς q · q ν(dς, dq) = (c_{+1} − c_{−1}) / (2 − ϱ)`. -/
+theorem integral_signedSize_mul_markSize (hc : ∀ b, 0 ≤ c b) (hϱ : ϱ < 2) :
+    ∫ e, signedSize e * (e.2 : ℝ) ∂dealerMarks c ϱ = (c true - c false) / (2 - ϱ) := by
+  have hm : Measurable fun e : DealerMark => signedSize e * (e.2 : ℝ) :=
+    (((measurable_of_countable markSide).comp measurable_fst).mul
+      (measurable_subtype_coe.comp measurable_snd)).mul
+      (measurable_subtype_coe.comp measurable_snd)
+  have hi : Integrable (fun e : DealerMark => markSide e.1 * (e.2 : ℝ) * e.2)
+      (dealerMarks c ϱ) := by
+    refine (integrable_markSize_sq c hϱ).mono' hm.aestronglyMeasurable
+      (Eventually.of_forall fun e => ?_)
+    have h1 : |markSide e.1| = 1 := by cases e.1 <;> norm_num [markSide]
+    rw [Real.norm_eq_abs, abs_mul, abs_mul, h1, one_mul, ← sq, sq_abs]
+  rw [show (fun e : DealerMark => signedSize e * (e.2 : ℝ))
+      = fun e => markSide e.1 * (e.2 : ℝ) * e.2 from rfl,
+    integral_dealerMarks_sides hc ϱ (g := fun b x => markSide b * x * x) hi]
+  have e1 : ∀ b, (fun x : ℝ => x ^ (-1 - ϱ) * (markSide b * x * x))
+      = fun x => markSide b * (x ^ (-1 - ϱ) * x ^ 2) := fun b => funext fun x => by ring
+  rw [e1, e1, integral_const_mul, integral_const_mul, integral_Ioc_rpow_mul_sq hϱ]
+  have h1 : markSide true = 1 := rfl
+  have h2 : markSide false = -1 := rfl
+  rw [h1, h2]
+  ring
+
 end Dissertation.WellPosedness.Existence
