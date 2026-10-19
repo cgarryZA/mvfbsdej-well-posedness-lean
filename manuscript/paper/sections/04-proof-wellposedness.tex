@@ -27,10 +27,12 @@ subscripted ($C_0$, $C_{\mathrm{BP}}$, $C_B$, \dots) and fixed where they are in
 It\^o's formula for L\'evy-type stochastic integrals, and the product form obtained by
 applying it to the bilinear map $(x,y)\mapsto\inner{Gx}{y}$, are those
 of~\cite[\S4.4]{Applebaum}, stated for the Brownian--Poisson setting fixed above. The
-maximal estimates use the Burkholder--Davis--Gundy inequality at $p=1$ in
-quadratic-variation form (\cite{HeWangYan}, chapter on $H^1$ and BMO); valid for
-c\`adl\`ag local martingales, it covers the compensated-Poisson martingales below without
-a separate jump statement. By localisation and dominated convergence, a c\`adl\`ag local
+maximal estimates use the Burkholder--Davis--Gundy inequality in quadratic-variation form,
+at $p=1$ for the zero-mean arguments and at $p=2$ for squared suprema
+(\cite{HeWangYan}, chapter on $H^1$ and BMO; at $p=2$ Doob's inequality gives the
+constant~$4$), with one universal constant $c_{\mathrm{BDG}}$ valid at both exponents; valid
+for c\`adl\`ag local martingales, the inequality covers the compensated-Poisson martingales
+below without a separate jump statement. By localisation and dominated convergence, a c\`adl\`ag local
 martingale whose running supremum is integrable has zero-mean increments (the
 \emph{supremum criterion} below).
 
@@ -722,7 +724,7 @@ gives, for $\kappa>0$,
 \end{aligned}
 \end{equation}
 By Assumption~\ref{ass:lip}, the coupling bound \eqref{eq:coupling}, and Young's
-inequality, for every $\varepsilon>0$,
+inequality, for every $0<\varepsilon\le1$,
 \begin{equation}\label{eq:bwdyoung}
 2\,\E\inner{\delta Y_s}{\lambda\delta f_s+q^f_s}
 \le \frac C\varepsilon\,\E|\delta Y_s|^2+\varepsilon\,\E\big(|\delta Z_s|_F^2+\Lnorm{\delta U_s}^2\big)

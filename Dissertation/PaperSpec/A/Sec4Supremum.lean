@@ -9,7 +9,7 @@ import Mathlib.Probability.Process.LocalProperty
 /-!
 # The supremum criterion of Section 4 of the well-posedness paper
 
-Statement numbers refer to the well-posedness paper at `f598204`. The preamble of §4 states that, by
+Statement numbers refer to the well-posedness paper at `1f67672`. The preamble of §4 states that, by
 localisation and dominated convergence, a càdlàg local martingale whose running supremum is
 integrable has zero-mean increments; the proofs of Lemmas 4.1 and 4.3 apply it on `[0, T]`.
 

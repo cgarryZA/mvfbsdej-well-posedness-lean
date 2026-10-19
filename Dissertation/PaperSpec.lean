@@ -34,7 +34,7 @@ import Dissertation.PaperSpec.A.Sec4BackwardYoung
 /-!
 # The statements of the paper
 
-Each result of the well-posedness paper at `f598204` as a proposition written from its text.
+Each result of the well-posedness paper at `1f67672` as a proposition written from its text.
 `Dissertation.Acceptance` holds their proofs, and `acceptance/claims.json` maps each claim of the
 manuscript to its proposition.
 -/

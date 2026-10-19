@@ -13,7 +13,7 @@ import Dissertation.Law.Wasserstein
 /-!
 # Section 2 of the well-posedness paper: the remarks on the assumptions
 
-Statement and equation numbers refer to the well-posedness paper at `f598204`. The standing
+Statement and equation numbers refer to the well-posedness paper at `1f67672`. The standing
 setting is that of §2 (see `Dissertation.PaperSpec.A.thm_cwp`).
 
 ## Main definitions
@@ -26,9 +26,9 @@ setting is that of §2 (see `Dissertation.PaperSpec.A.thm_cwp`).
 * `Dissertation.PaperSpec.A.rem_beta1_fibre`, `rem_beta1_dich`, `rem_beta1_zero` — Remark 2.10:
   the fibre `L²(ν)`, the `β₁` dichotomy, and zero intensity.
 * `Dissertation.PaperSpec.A.Margin212` — (2.12), the weighted margin.
-* `Dissertation.PaperSpec.A.rem_margin_reduce`, `rem_margin_unweighted`, `rem_margin_sharp` —
-  Remark 2.11: the reduced constants, the unweighted margin `c / c_G`, and the failure of the
-  margin `c` itself.
+* `Dissertation.PaperSpec.A.rem_margin_reduce`, `rem_margin_unweighted`, `rem_margin_smaller` —
+  Remark 2.11: the reduced constants, the unweighted margin `c / c_G`, and its comparison with
+  `c`.
 -/
 
 open MeasureTheory Filter ProbabilityTheory
@@ -245,19 +245,10 @@ def rem_margin_unweighted : Prop :=
     Margin212 (enlJoint 𝒢₀ D h𝒢₀) P T G β₁ β₂ c C →
     Margin213 (enlJoint 𝒢₀ D h𝒢₀) P T G β₁ β₂ (c / (sMin G ^ 2)⁻¹) C
 
-/-- Remark 2.11, the margin `c` itself does not carry over. In the standing setting with
-`n = m = d = 1`, for every horizon `T > 0` there are `G ∈ ℝ^{1×1}` of full rank, coefficients,
-constants `β₁, β₂ ≥ 0` and `c > 0` such that (2.12) holds with margin `c` and (2.13) with the same
-constants fails with margin `c`. -/
-def rem_margin_sharp : Prop :=
-  ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
-    [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
-    (P : Measure Ω) [IsProbabilityMeasure P]
-    (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P 1 ν) (h𝒢₀ : 𝒢₀ ≤ mΩ),
-    Indep 𝒢₀ (⨆ t, D.filtration t) P → ∀ T : ℝ, 0 < T →
-    ∃ (G : Matrix (Fin 1) (Fin 1) ℝ) (C : Coeffs ν 1 1 1) (β₁ β₂ c : ℝ),
-      G.rank = min 1 1 ∧ 0 ≤ β₁ ∧ 0 ≤ β₂ ∧ 0 < c
-      ∧ Margin212 (enlJoint 𝒢₀ D h𝒢₀) P T G β₁ β₂ c C
-      ∧ ¬ Margin213 (enlJoint 𝒢₀ D h𝒢₀) P T G β₁ β₂ c C
+/-- Remark 2.11, the comparison of the margins. For `n ≥ 1` and `G ∈ ℝ^{n×n}` of full rank with
+`c_G = s_min(G)⁻² > 1`, and `c > 0`, the unweighted margin `c / c_G` is smaller than `c`. -/
+def rem_margin_smaller : Prop :=
+  ∀ (n : ℕ) (G : Matrix (Fin n) (Fin n) ℝ) (c : ℝ), 0 < n → G.rank = min n n → 0 < c →
+    1 < (sMin G ^ 2)⁻¹ → c / (sMin G ^ 2)⁻¹ < c
 
 end Dissertation.PaperSpec.A

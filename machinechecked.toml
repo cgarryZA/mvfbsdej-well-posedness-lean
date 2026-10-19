@@ -1,4 +1,4 @@
-# MachineChecked: the audit of this repository against the manuscript at f598204.
+# MachineChecked: the audit of this repository against the manuscript at 1f67672.
 # `machinechecked build` reads the inventory and reviews of acceptance/ (the same inputs as
 # tools/acceptance.py) and writes the reader; `machinechecked export` writes the public audit that CI publishes.
 [project]
@@ -33,6 +33,7 @@ modules = [
   "Dissertation.PaperSpec.A.Sec5Sharp",
   "Dissertation.PaperSpec.A.Sec5BrownianReduction",
   "Dissertation.PaperSpec.A.Sec4Supremum",
+  "Dissertation.PaperSpec.A.Sec4BackwardYoung",
   "Dissertation.PaperSpec.A.Setting",
   "Dissertation.PaperSpec.A.Sec5DealerActive",
   "Dissertation.Acceptance.A.AppA",
@@ -63,6 +64,7 @@ modules = [
   "Dissertation.Acceptance.A.WitnessHyp",
   "Dissertation.Acceptance.A.Sec5BrownianReduction",
   "Dissertation.Acceptance.A.Sec4Supremum",
+  "Dissertation.Acceptance.A.Sec4BackwardYoung",
   "Dissertation.Acceptance.A.WitnessSec4",
   "Dissertation.Acceptance.A.Sec3MarginContinuous",
   "Dissertation.Acceptance.A.Sec3Rem34Translation",

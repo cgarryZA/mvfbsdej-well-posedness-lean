@@ -141,3 +141,13 @@ mis-scoped:
   the reading for `0 < ε ≤ 1`, the range the proof uses, `eq_bwdyoung_corr`; its source region is
   extended to the sentence that governs the display (lines 724–731 of
   `04-proof-wellposedness.tex`).
+* The manuscript is pinned at `1f67672`, the corrections of a proof-step check of `f598204`. (4.25) is printed
+  for `0 < ε ≤ 1`: `A:eq:bwdyoung` has the one clause `eq_bwdyoung`, the former corrected
+  reading, and the refuted reading is gone. Remark 2.11 no longer says that the margin `c` fails
+  in (2.13); its third clause is `rem_margin_smaller` (`c / c_G < c` when `c_G > 1`), in place
+  of `rem_margin_sharp`. (2.9) is printed at `X_T`, Remark 5.6 gives the argument for its
+  pointwise dependence, Example 5.4 drops "infinite-dimensional", and the §4 preamble cites BDG
+  at `p = 1` and `p = 2`: the clauses are unchanged, the scope note of
+  `A:sec4:supremum-criterion` names both exponents, and its source region is the whole sentence
+  (lines 35–37 of `04-proof-wellposedness.tex`). The proof of Theorem 3.3 takes `δh` at the
+  predictable tuples, a proof step with no clause.

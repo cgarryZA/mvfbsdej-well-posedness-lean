@@ -8,7 +8,7 @@ import Dissertation.PaperSpec.A.Sec5Dealer
 /-!
 # Example 5.5 of the well-posedness paper: the interaction is active
 
-Statement and equation numbers refer to the well-posedness paper at `f598204`, in the standing
+Statement and equation numbers refer to the well-posedness paper at `1f67672`, in the standing
 setting of §2 with `n = m = d = 1` and `G = 1`, for the coefficients `ex55Coeffs` of Example 5.5.
 Without the exposure term the crowding correction vanishes along the solution; in the explicit
 specialisation `β₁ = 1`, `β₂ = 1/2`, `σ_c = 1`, `ξ₀ = 0`, `c_{±1} = (2 − ϱ)/2`, `h_c(ς, q) = ς q`,

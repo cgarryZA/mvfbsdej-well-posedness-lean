@@ -11,7 +11,7 @@ import Dissertation.WellPosedness.System.PaperStability
 /-!
 # Remark 3.4 of the well-posedness paper: the translation of the singular drift
 
-Statement numbers refer to the well-posedness paper at `f598204`, in the standing setting of §2. Let
+Statement numbers refer to the well-posedness paper at `1f67672`, in the standing setting of §2. Let
 the system `C` with initial datum `ξ₀` satisfy (2.3) and Assumptions 2.2–2.5, and let `e ∈ ℝⁿ` be
 nonzero. Adding the deterministic drift `t^{-1/2} e` to `b` gives the system `C⁺ = C.addDrift c`,
 `c_t = t^{-1/2} e`, whose coefficient differences are those of `C`; its drift has the origin value

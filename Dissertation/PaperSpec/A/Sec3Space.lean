@@ -8,7 +8,7 @@ import Dissertation.PaperSpec.A.Setting
 /-!
 # The solution space and the solution definition of §3 of the well-posedness paper
 
-Statement numbers refer to the well-posedness paper at `f598204`, in the standing setting of §2.
+Statement numbers refer to the well-posedness paper at `1f67672`, in the standing setting of §2.
 §3 identifies the elements of `ℍ` up to indistinguishability (`X, Y`) and almost-everywhere
 equality (`Z, U`), states that `‖·‖_ℍ` is then a norm, that `(ℍ, ‖·‖_ℍ)` is a Banach space and that
 `ℍ ⊂ ℍ_weak`, and observes that,

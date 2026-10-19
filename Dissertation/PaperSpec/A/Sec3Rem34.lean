@@ -9,7 +9,7 @@ import Dissertation.WellPosedness.Examples.SingularDrift
 /-!
 # Remark 3.4 of the well-posedness paper: uniqueness without origin integrability
 
-Statement numbers refer to the well-posedness paper at `f598204`, in the standing setting of §2.
+Statement numbers refer to the well-posedness paper at `1f67672`, in the standing setting of §2.
 Remark 3.4: uniqueness (Theorem 3.3, `thm_uniq`) needs only Assumptions 2.3–2.5; the initial-data
 condition `ξ₀ ∈ L²` is necessary for a solution in `ℍ`; the origin-value conditions of
 Assumption 2.2 are sufficient but not necessary, as adding the drift `t^{-1/2}` shows: the shift

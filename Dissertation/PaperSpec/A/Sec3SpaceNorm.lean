@@ -8,7 +8,7 @@ import Dissertation.PaperSpec.A.Setting
 /-!
 # The norm of the solution space and the càdlàg integrals of §3 of the well-posedness paper
 
-Statement numbers refer to the well-posedness paper at `f598204`, in the standing setting of §2.
+Statement numbers refer to the well-posedness paper at `1f67672`, in the standing setting of §2.
 §3 states that, after the identification of tuples of `ℍ` that agree up to indistinguishability
 (`X, Y`) and almost-everywhere equality (`Z, U`), `‖·‖_ℍ` is a norm rather than a seminorm, and,
 in the solution definition, that both sides of each identity of (1.1) are càdlàg in `t`. The

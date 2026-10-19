@@ -1,8 +1,8 @@
-# Reviews of the statements of paper A (well-posedness, at `f598204`)
+# Reviews of the statements of paper A (well-posedness, at `1f67672`)
 
 Each entry reads the manuscript passage and the proposition side by side. The marker records the
 hash of the proposition reviewed; a change of the proposition reopens the entry. Each entry reads
-the text of the manuscript at `f598204` (`manuscript/`).
+the text of the manuscript at `1f67672` (`manuscript/`).
 
 ## Remark 2.6, (2.8): `Dissertation.PaperSpec.A.eq_coupling`
 
@@ -38,8 +38,8 @@ Review by claude-auditor: faithful with representation choices (report `reports/
 
 ## Remark 2.6, (2.9): `Dissertation.PaperSpec.A.eq_couplingT`
 
-Manuscript: `W₂(ρ, ρ')² ≤ 𝔼|δX|²` for the induced terminal laws `ρ = Law(X_T)`,
-`ρ' = Law(X'_T)`, "the `X`-marginal case of (2.8)".
+Manuscript: `W₂(ρ, ρ')² ≤ 𝔼|X_T − X'_T|²` for the induced terminal laws `ρ = Law(X_T)`,
+`ρ' = Law(X'_T)`, "the `X`-marginal case of (2.8) at time `T`".
 
 Proposition: for every probability space, all `n` and all `X, X' : Ω → ℝⁿ` in `L²`,
 `w2P (lawP2 P X) (lawP2 P X')² ≤ ∫ ‖X − X'‖² dP`, with `w2P` the 2-Wasserstein distance of the
@@ -517,12 +517,10 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lem_pert--claude-auditor--2026-10-19T03_38_06Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.lem_pert ed839d34f480cba1eefcd4522364d865 by=claude-auditor -->
 
-## (4.25), the Young bound in Step 4 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_bwdyoung`, `eq_bwdyoung_corr`
+## (4.25), the Young bound in Step 4 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_bwdyoung`
 
-### The printed reading: `Dissertation.PaperSpec.A.eq_bwdyoung`
-
-Manuscript (proof of Lemma `lem:pert`, Step 4, lines 724–731): "By Assumption 2.3, the coupling
-bound (2.8), and Young's inequality, for every `ε > 0`,
+Manuscript (proof of Lemma `lem:pert`, Step 4, lines 726–733): "By Assumption 2.3, the coupling
+bound (2.8), and Young's inequality, for every `0 < ε ≤ 1`,
 `2 𝔼⟨δY_s, λ δf_s + q^f_s⟩ ≤ (C/ε) 𝔼|δY_s|² + ε 𝔼(|δZ_s|²_F + ‖δU_s‖²_{L²(ν)})
 + (C/ε) 𝔼(|δX_s|² + |q^f_s|²)`, with `C` independent of `ε`." In this proof `q` stands for the
 difference `δq` of the forcings ("The difference equations below involve the forcings only through
@@ -535,7 +533,7 @@ Proposition: `∃ K` of `(T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)` such that
 under the hypotheses of Lemma 4.3 (those of `lem_pert`: `T > 0`, (2.3), Assumptions 2.3–2.5 with
 `L, α, β₁, β₂` and a full-rank `G`, `0 < λ̲ ≤ 1`, `λ̲ ≤ λ ≤ 1`, `ℱ₀`-measurable `ξ₁, ξ₂`, forcings
 `q¹, q²` of the class of (4.1), `WeakForcedSolution`s `Θ¹, Θ²` and `supSize(Θ¹ − Θ²) < ∞`), for
-every `ε > 0`, at almost every `s ∈ [0, T]`,
+every `ε` with `0 < ε ≤ 1`, at almost every `s ∈ [0, T]`,
 `ofReal(2 ∫ ∑_k δY_{k,s} (λ δf_{k,s} + δq^f_{k,s}) dP) ≤ ofReal(C/ε) ∫⁻ |δY_s|² dP
 + ofReal(ε) ∫⁻ (|δZ_s|²_F + ‖δU_s‖²) dP + ofReal(C/ε) ∫⁻ (|δX_s|² + |δq^f_s|²) dP`
 with `C = K(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂, λ̲)` and `δf_s` the difference of the `driverProc`s.
@@ -546,83 +544,46 @@ Readings:
   `lem_pert`: the class `WeakForcedSolution` (`ℍ_weak` with `X_T ∈ L²` and the integrals of (4.1)
   along `Θ^k` existing, reviewed in `definitions.md`); `ℱ₀`-measurability as measurability for
   the time-`0` field of `enlJoint`; `Θ¹ − Θ² ∈ ℍ` as the finiteness of `supSize`;
-  `c_G = s_min(G)⁻²`. The sentence cites Assumption 2.3 and (2.8) only; keeping the other
-  standing hypotheses makes the printed reading weaker, and the counterexample meets all of
-  them.
+  `c_G = s_min(G)⁻²`. The sentence cites Assumption 2.3 and (2.8) only; the other hypotheses
+  of Lemma 4.3 are in force at Step 4, and keeping them makes the reading weaker than a bound
+  under Assumption 2.3 alone. The proof below uses Assumptions 2.3 and 2.5.
 * The constant: `K` is chosen before everything else, so `C` is fixed before `ε` and independent
   of it, as printed. Its arguments are the broadest dependence the text allows: the §4 convention
   lists `T, L, ‖G‖, c_G, α, β₁, β₂` (`c_BDG` is a universal constant), and `λ̲` is added because
-  the constant `C_B` of Lemma 4.3 depends on it. The counterexample below defeats every value of
-  `C` (it fails once `ε > max(C, 0)/2`), so a reading in which `C` depends on further data fixed
-  before `ε` (`λ`, the dimensions, the coefficients, the solutions) is refuted by the same
-  instance.
+  the constant `C_B` of Lemma 4.3 depends on it. The constant the proof gives depends on `L`
+  alone, so the bound holds under any narrower dependence the text could mean.
 * The time: (4.25) is printed at a time `s` and used under `∫_t^T … ds`; the proposition asks it at
-  almost every `s ∈ [0, T]` (Lebesgue), the weaker conclusion. The counterexample violates it at
-  every `s ∈ [0, 1]`, so the reading "for every `s`" is refuted too.
+  almost every `s ∈ [0, T]` (Lebesgue), the weaker conclusion. Under `∫_t^T … ds`, which is how
+  the proof uses it, the two readings give the same bound.
 * The expectations: `𝔼⟨δY_s, λ δf_s + q^f_s⟩` is the Bochner integral of
   `∑_k (Y¹_{k,s} − Y²_{k,s})(λ (f¹ − f²)_{k,s} + (q^{f,1} − q^{f,2})_{k,s})`, read in `[0, ∞]`
   through `ENNReal.ofReal`, its positive part; the right side is in `[0, ∞]` (lower integrals of
   `esq`, `∑_k esq` for `|·|²_F`, `∑_k ∫⁻ |δU_k(e)|² ν(de)` for `‖·‖²_{L²(ν)}`). Harmless: when the
   right side is finite the extended inequality is the real one (a negative left side satisfies
   both); when it is infinite the printed inequality says nothing; a pairing that is not integrable
-  (undefined in the paper) is read as `0`, which only weakens the printed reading.
+  (undefined in the paper) is read as `0`.
 * `ofReal(C/ε)` reads a negative `C` as `0`; since `K` is existential and the right side grows
   with `C`, this is the reading with `C ≥ 0`, equivalent to the paper's positive `C`.
 * `δf_s` is `driverProc P T C X¹ Y¹ Z¹ U¹ k ω s − driverProc P T C X² Y² Z² U² k ω s`: coordinate
   `k` of `f(s, Θ^k_s(ω), Law(Θ^k_s))` for `s ∈ [0, T]` (reviewed in `definitions.md`); `δq^f_s` is
   `qf₁ − qf₂`, as the proof's convention `q = δq` says.
 
-Counterexample (`Dissertation.Acceptance.A.eq_bwdyoung_false`, from the instance of
-`eq_bwdyoung_corr_hypotheses`): a Lévy driver with `d = 1`, `ν = δ₀` on `ℝ`, `𝒢₀ = ⊥`,
-`n = m = 1`, `T = 1`, and the law-free system `skewCoeffs`: `b = x − y`, `σ = −z`, `h = −u`,
-`f = x + y`, `g(x, ρ) = x`. It satisfies (2.3), Assumption 2.3 with `L = 2`
-(`|δb| + |δσ| + ‖δh‖ + |δf| ≤ 2|δx| + 2|δy| + |δz| + ‖δu‖`), Assumption 2.4 with `G = 1`, and
-Assumption 2.5 with `G = 1`, `α = β₁ = β₂ = 1` (the interior pairing is
-`−|δx|² − |δy|² − |δz|² − ‖δu‖²`, the terminal one `|δx|²`). At `λ̲ = λ = 1`, with initial data
-`0`: `Θ¹ = (0, e^{−t}, 0, 0)` solves (4.1) with `q^b_t = e^{−t}` on `[0, 1]`, `q^g_T = e^{−1}` and
-`q^σ = q^h = q^f = 0` (the forward drift `x − y + q^b` vanishes, and
-`e^{−t} = e^{−1} + ∫_t^1 e^{−s} ds`); `Θ² = 0` is the parameter-`0` member of the same family, its
-forcing and backward component identically `0`. Both are `WeakForcedSolution`s (the stochastic
-integrals of their zero integrands vanish almost surely), and `Θ¹ − Θ² ∈ ℍ`. At every
-`s ∈ [0, 1]`, `δf_s = δY_s = e^{−s}` and `δX, δZ, δU, δq^f` vanish, so the left side is
-`2 e^{−2s}` and the right side `(C/ε) e^{−2s}`; at `ε = |C| + 1`, `C/ε < 1` and the inequality
-fails at every `s ∈ [0, 1]`, a set of positive measure. The refutation is of
-`eq_bwdyoung.{0, 0, w}`, at `Ω : Type` and `E = ℝ`; a counterexample on one probability space
-refutes the claim, which is made for every one.
+Proof: `K = 2 (10 (2L)²) + 3`, a function of `L` alone, within the allowed dependence: at almost
+every `s`, Young's inequality with weight `a = (2K' + 2)/ε` and the expected Lipschitz bound (3.2)
+with `K' = 10 (2L)²` (`PairDiff.ae_backwardYoung_le`,
+`PaperWeakSolutionForcedInt.ae_backwardYoung_le`); the terms `ε 𝔼|δX_s|²` and `ε 𝔼|δY_s|²` that
+Young's inequality leaves are at most `(1/ε)` times the same expectations because `ε ≤ 1`. The
+proof of Lemma 4.3 in the implementation does not use (4.25) (`Stability/BackwardEnergy.lean`).
 
-Verdict: faithful; the printed claim is refuted (`eq_bwdyoung_false`), and its correction is
-`eq_bwdyoung_corr`.
+Witness: `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`, the hypotheses of Lemma 4.3,
+which are those of (4.25): at Example 5.1(i) over a Lévy driver with `d = 1`, `ν = δ₀`,
+`𝒢₀ = ⊥`, `n = m = 1`, `T = 1`, the system with (2.3) and Assumptions 2.3–2.5 at `L = 1`,
+`G = 1`, `α = β₁ = β₂ = 1`; `λ̲ = λ = 1`; the zero forcing; the initial data `0` and `e₁`; the
+solutions of Theorem 3.5 from them, `WeakForcedSolution`s with `supSize(Θ¹ − Θ²) < ∞`.
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_bwdyoung ed839d34f480cba1d442b5bd511edbb5 by=claude-author -->
+Verdict: faithful.
 
-### The corrected reading: `Dissertation.PaperSpec.A.eq_bwdyoung_corr`
-
-Manuscript: as above (lines 724–731), the bound for every `ε > 0` with `C` independent of `ε`.
-The proof uses it only for `ε < 1` ("Take `ε < 1` and `κ > C/ε`"); for `ε ≤ 1` it follows from
-Assumption 2.3, (2.8) and Young's inequality, the terms `ε 𝔼|δX_s|²` and `ε 𝔼|δY_s|²` that Young's
-inequality leaves being at most `(1/ε)` times the same expectations.
-
-Proposition: `eq_bwdyoung` with `∀ ε, 0 < ε →` replaced by `∀ ε, 0 < ε → ε ≤ 1 →`; nothing else
-changes (same constant function `K` of the same eight arguments chosen first, same hypotheses,
-same almost-every-`s` conclusion and the same reading of each side).
-
-Readings: those of `eq_bwdyoung`. The proof gives `K = 2 (10 (2L)²) + 3`, a function of `L` alone,
-within the allowed dependence: at almost every `s`, Young's inequality with weight
-`a = (2K' + 2)/ε` and the expected Lipschitz bound (3.2) with `K' = 10 (2L)²`
-(`PairDiff.ae_backwardYoung_le`, `PaperWeakSolutionForcedInt.ae_backwardYoung_le`). The proof of
-Lemma 4.3 in the implementation does not use (4.25) (`Stability/BackwardEnergy.lean`).
-
-Witness: `Dissertation.Acceptance.A.eq_bwdyoung_corr_hypotheses`: the instance of the
-counterexample above meets every hypothesis (the system with (2.3) and Assumptions 2.3–2.5 at
-`L = 2`, `G = 1`, `α = β₁ = β₂ = 1`; `λ̲ = λ = 1`; the initial datum `0`; the two forcings, in the
-class of (4.1); the two `WeakForcedSolution`s; `supSize(Θ¹ − Θ²) < ∞`), and the expectation
-`𝔼⟨δY_s, λ δf_s + δq^f_s⟩` equals `e^{−2s} > 0` at every `s ∈ [0, 1]`, so the bound is exercised
-with distinct solutions and a positive left side; there it reads `2 e^{−2s} ≤ (323/ε) e^{−2s}`.
-
-Verdict: faithful to (4.25) restricted to `ε ∈ (0, 1]`, the range the proof uses; a corrected
-statement beside the refuted printed one, not the printed claim.
-
-<!-- spec-review: Dissertation.PaperSpec.A.eq_bwdyoung_corr ed839d34f480cba13db23656421cf5a0 by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bwdyoung ed839d34f480cba13db23656421cf5a0 by=claude-author -->
 
 ## Lemma 4.4: `Dissertation.PaperSpec.A.lem_cont`
 
@@ -1995,12 +1956,14 @@ Review by claude-auditor: faithful with representation choices (report `reports/
 
 ## §4, the supremum criterion: `Dissertation.PaperSpec.A.sec4_supremum_criterion`
 
-Manuscript (the preamble of §4, lines 903–908): "The maximal estimates use the
-Burkholder–Davis–Gundy inequality at `p = 1` in quadratic-variation form ([HeWangYan], chapter on
-`H¹` and BMO); valid for càdlàg local martingales, it covers the compensated-Poisson martingales
-below without a separate jump statement. By localisation and dominated convergence, a càdlàg local
-martingale whose running supremum is integrable has zero-mean increments (the *supremum criterion*
-below)."
+Manuscript (the preamble of §4, lines 30–37): "The maximal estimates use the
+Burkholder–Davis–Gundy inequality in quadratic-variation form, at `p = 1` for the zero-mean
+arguments and at `p = 2` for squared suprema ([HeWangYan], chapter on `H¹` and BMO; at `p = 2`
+Doob's inequality gives the constant `4`), with one universal constant `c_BDG` valid at both
+exponents; valid for càdlàg local martingales, the inequality covers the compensated-Poisson
+martingales below without a separate jump statement. By localisation and dominated convergence, a
+càdlàg local martingale whose running supremum is integrable has zero-mean increments (the
+*supremum criterion* below)."
 
 Uses. Proof of Lemma 4.1 (lines 1042–1043), for the local martingales `M^W_t = ∫_0^t e^s ⟨δY_{s−},
 δZ_s dW_s⟩` and `M^1_t = ∫_0^t ∫_E e^s ⟨δY_{s−}, δU_s(e)⟩ Ñ(ds, de)`, after `𝔼 sup_{t ≤ T} |M^W_t| <
@@ -2062,8 +2025,8 @@ Correspondence:
   0`. The proposition does not assert that `M` is a martingale on `[0, T]` (true, by the same
   argument with conditional dominated convergence), since the sentence claims zero-mean increments
   only and the uses need no more.
-* Not covered: the inventory title of `A:sec4:supremum-criterion` also mentions the preceding
-  sentence, that BDG at `p = 1` is valid for càdlàg local martingales and so covers the
+* Not covered: the preceding sentence, that BDG at `p = 1` and `p = 2` holds for càdlàg local
+  martingales with one constant for both exponents (Doob's `4` at `p = 2`), and so covers the
   compensated-Poisson martingales. That is a statement about the cited inequality of He, Wang and
   Yan, not part of the supremum criterion; it is not stated here.
 
@@ -2091,7 +2054,7 @@ Review by claude-auditor: faithful with representation choices (report `reports/
 
 ## Abstract: the claims it summarises (`A:abstract`)
 
-Manuscript (abstract, at `f598204`): "We prove existence, uniqueness, and stability for fully
+Manuscript (abstract, at `1f67672`): "We prove existence, uniqueness, and stability for fully
 coupled McKean–Vlasov forward–backward SDEs with jumps whose drift, diffusion, jump, and driver
 coefficients may depend Lipschitz-continuously, in quadratic Wasserstein distance, on the joint law
 of the full solution tuple `Θ = (X, Y, Z, U)` … The terminal function may depend
@@ -2208,7 +2171,7 @@ Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.rem
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.rem_beta1_zero--claude-auditor--2026-10-19T03_38_14Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.rem_beta1_zero ed839d34f480cba10a600b0e388b329d by=claude-auditor -->
 
-## Remark 2.11, the dissipativity margin: `Dissertation.PaperSpec.A.rem_margin_reduce`, `rem_margin_unweighted`, `rem_margin_sharp`
+## Remark 2.11, the dissipativity margin: `Dissertation.PaperSpec.A.rem_margin_reduce`, `rem_margin_unweighted`, `rem_margin_smaller`
 
 Manuscript (§2, Remark `rem:margin`): (2.7) holds with margin `c > 0` if (2.12) holds, the bound
 of (2.7) with the further term `−c 𝔼[|G* δY|² + |G* δZ|²_F + ‖G* δU‖² + |G δX|²]`. "Suppose the
@@ -2218,8 +2181,8 @@ constants turns the difference into slack, which a perturbation raising the inte
 most the margin leaves intact. When `m = n` both `G` and `G*` are injective, so the bounds of
 Assumption 2.4, applied channel by channel, give `c (|G* δY|² + |G* δZ|²_F + ‖G* δU‖² + |G δX|²)
 ≥ (c / c_G)(|δY|² + |δZ|²_F + ‖δU‖² + |δX|²)`. A margin `c` in (2.12) therefore yields the margin
-`c / c_G`, not `c`, in the unweighted form, which with margin `c > 0` reads (2.13)", whose margin
-term is `−c 𝔼[|δY|² + |δZ|²_F + ‖δU‖² + |δX|²]`.
+`c / c_G`, which is smaller than `c` when `c_G > 1`, in the unweighted form, which with margin
+`c > 0` reads (2.13)", whose margin term is `−c 𝔼[|δY|² + |δZ|²_F + ‖δU‖² + |δX|²]`.
 
 Propositions:
 
@@ -2230,9 +2193,8 @@ Propositions:
 * `rem_margin_unweighted`: in the standing setting with `m = n ≥ 1`, for `G` of full rank and
   `c > 0`, (2.12) with `β₁, β₂` and margin `c` gives (2.13) (`Margin213`) with the same constants
   and margin `c / c_G`, `c_G = s_min(G)⁻²`.
-* `rem_margin_sharp`: in the standing setting with `n = m = d = 1`, for every `T > 0` there are
-  `G` of full rank, coefficients, `β₁, β₂ ≥ 0` and `c > 0` such that (2.12) holds with margin `c`
-  and (2.13) with the same constants fails with margin `c`.
+* `rem_margin_smaller`: for `n ≥ 1`, `G ∈ ℝ^{n×n}` of full rank with `c_G = s_min(G)⁻² > 1` and
+  `c > 0`, `c / c_G < c`.
 
 Correspondence:
 
@@ -2245,9 +2207,10 @@ Correspondence:
   both branches hold; `c_G = s_min(G)⁻²` is the printed constant. "Yields the margin `c / c_G`" is
   `rem_margin_unweighted`, the implication from (2.12) with margin `c` to (2.13) with margin
   `c / c_G` and the same constants.
-* "Not `c`" is read as: the margin `c` itself does not carry over in general, and
-  `rem_margin_sharp` exhibits one instance (the witness in the proof takes `G = 1/2`, so
-  `c_G = 4`). An instance suffices, since the sentence denies a general implication.
+* "Which is smaller than `c` when `c_G > 1`" compares the two margins: `rem_margin_smaller`, in
+  the setting of the sentence (`m = n`, `G` of full rank, `c_G = s_min(G)⁻²`, `c > 0`). The
+  sentence makes no claim that the margin `c` fails in (2.13), and the proposition does not
+  state one.
 
 Witnesses: `Dissertation.Acceptance.A.rem_affine_hypotheses` for `rem_margin_reduce` (over a Lévy
 driver with `d = 1`, `ν = δ₀`, `𝒢₀ = ⊥`, `T = 1`, Example 5.1(i) with `β₁ = β₂ = 1` satisfies
@@ -2255,8 +2218,9 @@ Assumption 2.5 at `G = 1`, whose interior part is (2.7) with `β̄₁ = β̄₂ 
 `0 < 1/2 < min{1, 1}`); `Dissertation.Acceptance.A.rem_margin_hypotheses` for
 `rem_margin_unweighted` (the same system satisfies (2.12) at `G = 1` with the constants `1/2, 1/2`
 and margin `1/2 > 0`; at `G = 1`, `c_G = 1`, so this witness meets the hypotheses without showing
-the factor `c_G`, which `rem_margin_sharp` shows); `Dissertation.Acceptance.A.ex_concrete_hypotheses`
-for `rem_margin_sharp` (a Lévy driver with `d = 1`, independent of `𝒢₀ = ⊥`).
+the factor `c_G`); `Dissertation.Acceptance.A.rem_margin_smaller_hypotheses` for
+`rem_margin_smaller` (`G = 1/2 ∈ ℝ^{1×1}`, of full rank, with `s_min(G) = 1/2`, so `c_G = 4 > 1`,
+and `c = 1`).
 
 Verdict: faithful.
 
@@ -2266,9 +2230,7 @@ Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.rem
 <!-- spec-review: Dissertation.PaperSpec.A.rem_margin_unweighted ed839d34f480cba1ba4163c9b3d796bd by=claude-author -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.rem_margin_unweighted--claude-auditor--2026-10-19T03_34_35Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.rem_margin_unweighted ed839d34f480cba1ba4163c9b3d796bd by=claude-auditor -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_margin_sharp ed839d34f480cba1f5295e520594119c by=claude-author -->
-Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.rem_margin_sharp--claude-auditor--2026-10-19T03_37_56Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_margin_sharp ed839d34f480cba1f5295e520594119c by=claude-auditor -->
+<!-- spec-review: Dissertation.PaperSpec.A.rem_margin_smaller ed839d34f480cba133faa12dcf2189f6 by=claude-author -->
 
 ## Remark 3.4, uniqueness without origin integrability: `Dissertation.PaperSpec.A.rem_uniq_initial`, `rem_uniq_singular`, `rem_uniq_translation`
 
@@ -2476,7 +2438,7 @@ Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.cor
 
 ## Section 5, the overview paragraph (`A:sec5:overview`)
 
-Manuscript (§5, second paragraph, at `f598204`): "Example 5.1 exhibits two dissipative models
+Manuscript (§5, second paragraph, at `1f67672`): "Example 5.1 exhibits two dissipative models
 meeting every assumption exactly, both at arbitrary jump activity: (i) a law-free affine base, and
 (ii) mean-field coefficients. Examples 5.2 and 5.3 recover the Brownian [BYZ] and the
 expectation-functional [LiMin] subclasses as special cases. Example 5.4 then carries the law
@@ -2519,7 +2481,7 @@ Manuscript (§5, Example `ex:fulllaw`): fix `μ₀ ∈ P₂(H)`, `Λ₀ ∈ P₂
 dissipative baseline works identically". The law functionals are (i) "a nonlinear radial
 statistic of the full tuple law", (ii) the same for the `U`-marginal, and (iii) "the `Q`-term, a
 nonlinear cylindrical functional of the `U`-marginal: finitely many integrals of arbitrary
-bounded-Lipschitz features on the infinite-dimensional fibre `L²(ν)`, composed through the
+bounded-Lipschitz features on the fibre `L²(ν)`, composed through the
 nonlinear `Q`". "For nonconstant `𝔮, 𝔮̃, 𝔮̂`, the radial statistics lie beyond the expectation and
 two-point-kernel jump-integrand interactions of the preceding examples, and beyond the linear
 jump-integrand expectations of the cited models. The cylindrical term does so when `Q` is
@@ -2605,9 +2567,8 @@ Correspondence:
   from its Lipschitz hypothesis, under which the kernel `θ' ↦ a + ∑_j c_j φ_j(u')` is measurable and
   Lipschitz in `θ'` for `|·|_H` (with constant `∑_j |c_j| Lip(φ_j)`), so that `ex_expfunc` applies
   to it.
-* "On the infinite-dimensional fibre `L²(ν)`" is read as a description of the fibre, not as a
-  hypothesis: the claims hold for every `ν` of the standing setting (with `L²(ν) ≠ {0}` where
-  stated).
+* "On the fibre `L²(ν)`": the claims hold for every `ν` of the standing setting (with
+  `L²(ν) ≠ {0}` where stated).
 
 Witnesses:
 
@@ -2668,7 +2629,7 @@ Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_f
 
 ## Example 5.5, the mean-field dealer market: `Dissertation.PaperSpec.A.ex_dealer_potential`, `ex_dealer_crowd`, `ex_dealer_coeffs`, `ex_dealer_ham`, `ex_dealer`, `ex_dealer_mono`, `ex_dealer_wp`, `ex_dealer_twopoint`, `ex_dealer_mean_corr`, `ex_dealer_not_mean_corr`, `ex_dealer_affine`, `ex_dealer_marks`, `ex_dealer_riccati`, `ex_dealer_inert`, `ex_dealer_spec_marks`, `ex_dealer_zero`, `ex_dealer_symm`, `ex_dealer_active`, `ex_dealer_depends`
 
-Manuscript (§5, Example `ex:dealer`, at `f598204`). The crowding correction
+Manuscript (§5, Example `ex:dealer`, at `1f67672`). The crowding correction
 `A_λ(u) := ∫_{L²(ν)} ∇V(u − v) λ(dv)`, `V(w) := √(1 + ‖w‖²) − 1`, `λ ∈ P₂(L²(ν))`; "the potential
 `V` is even and convex, with `∇V(w) = w / √(1 + ‖w‖²)`, `‖∇V(w)‖ ≤ 1`, `Lip(∇V) ≤ 1`". "Fix
 `ε ≥ 0` and `h_x ∈ L²(ν)`, make the jump response of Example 5.1(i) exposure-sensitive, and tilt
@@ -2909,9 +2870,12 @@ Manuscript (§5, Remark `rem:freelaw`): "The proofs consume the tuple law throug
 mechanism: the `W₂` term of Assumption 2.3, dominated at every use by the synchronous coupling
 bound (2.8). The right-hand side of (2.8) carries `𝔼‖δU‖²` whether or not the measure argument
 reads the `U`-marginal, because the coefficients depend on `u` pointwise — a dependence
-Remark 2.10 makes unavoidable whenever `β₁ > 0` and `ν ≠ 0`. Nothing is therefore gained by
-restricting the coefficients to the `(X, Y, Z)`-marginal law: with the coupling bound taken in
-`H`, the estimates close at the full tuple law, and Example 5.5 exhibits that scope arising from
+Remark 2.10 makes unavoidable whenever `β₁ > 0` and `ν ≠ 0`: for `w ∈ L²(ν)` with `G* w ≠ 0` and a
+symmetric sign `ξ` independent of the other components, the tuples with `U = ξ w` and `U' = −ξ w`
+and equal other components have the same law, so coefficients reading `u` only through the law make
+the left-hand side of (2.7) vanish, while its right-hand side is `−4 β₁ ‖G* w‖² < 0`. Nothing is
+therefore gained by restricting the coefficients to the `(X, Y, Z)`-marginal law: with the
+coupling bound taken in `H`, the estimates close at the full tuple law, and Example 5.5 exhibits that scope arising from
 a routing mechanism rather than by construction."
 
 The bound (2.8) is `eq_coupling` (reviewed above). The pointwise dependence is read here.
@@ -2932,7 +2896,8 @@ Correspondence:
   with `β₁ > 0` (and `G` of full rank, Assumption 2.4, with which it is stated) and `ν ≠ 0`. The
   proof applies the reduction of Remark 2.10 (`rem_beta1_dich`) to `U = B u₀` and `U' = −B u₀`,
   with `B = W¹_t − W¹_0` and `G* u₀ ≠ 0`, which have one law; `d ≥ 1` (standing) and `t > 0`
-  supply the centred Gaussian `B`.
+  supply the centred Gaussian `B`. This is the printed argument, with the symmetric random factor `B`
+  in place of the sign `ξ`.
 * "The proofs consume the tuple law through a single mechanism" and "nothing is therefore gained
   …" describe the proofs and are not formalised; the scope exhibited by Example 5.5 is the content
   of `ex_dealer`–`ex_dealer_wp`.
@@ -2973,7 +2938,7 @@ Verdict: covered by the clauses listed, each as reviewed under its example.
 
 ## Section 6, the conclusion (`A:conclusion`)
 
-Manuscript (§6, at `f598204`): "Theorems 3.1, 3.3 and 3.5 establish global well-posedness, with a
+Manuscript (§6, at `1f67672`): "Theorems 3.1, 3.3 and 3.5 establish global well-posedness, with a
 quantitative stability estimate, for fully coupled MV-FBSDEJ with `W₂`-dependence on the law of
 the whole tuple, including the `L²(ν)`-valued jump integrand, at arbitrary σ-finite jump activity.
 By Corollary 3.6, the well-posedness is robust, at `m = n`, under full-tuple-law perturbations

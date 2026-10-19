@@ -26,13 +26,8 @@ satisfies `Q ≤ c_G Q_G`, and (2.12) with margin `c ≥ 0` gives (2.13) with ma
 `G` of full rank, `c_G = s_min(G)⁻²` and the unweighted margin is `c s_min(G)²`. At `G = I`,
 `Q = Q_G`, and (2.12) and (2.13) coincide.
 
-**The margin `c / c_G` is sharp.** Take `n = m = 1`, `G = 1/2`, so `s_min(G) = 1/2` and
-`c_G = 4`, and the affine system `b = −(β̄₁/2) y`, `σ = σ_c − (β̄₁/2) z`, `h = h_c − (β̄₁/2) u`,
-`f = (β̄₂/2) x`. Its interior pairing equals the right-hand side of (2.7) with the constants
-`β̄₁, β̄₂`, so (2.12) holds with `β̄₁ − c, β̄₂ − c` and margin `c`, with equality. Since
-`Q_G = Q / 4`, (2.13) with the constants `β̄₁ − c, β̄₂ − c` holds with margin `c / 4` and, on a
-horizon `T > 0`, with no larger margin: at the deterministic inputs `(x, 0, 0, 0)` and `0`,
-`|x| = 1`, it reads `c' ≤ c / 4`. In particular for `c > 0` the unweighted margin `c` fails.
+**A matrix with `c_G > 1`.** For `n = m = 1` and `G = 1/2`, `s_min(G) = 1/2` and `c_G = 4`, so
+the unweighted margin `c / c_G` is smaller than `c` for `c > 0`.
 
 ## Main statements
 
@@ -45,12 +40,7 @@ horizon `T > 0`, with no larger margin: at the deterministic inputs `(x, 0, 0, 0
 * `DiagonalMonotoneWeightedMargin.unweighted`, `DiagonalMonotoneWeightedMargin.unweighted_of_rank`
   — the unweighted margin `c / c_G = c s_min(G)²`.
 * `diagonalMonotoneWeightedMargin_one_iff` — at `G = I` the two margins coincide.
-* `GX_smul`, `GZ_smul`, `GU_smul`, `sMin_half` — the coupling operators of `a G`, and
-  `s_min(1/2) = 1/2`.
-* `interiorPairing_affine_smul`, `diagonalMonotone_affine_smul` — the scaled affine system
-  satisfies (2.7) with equality at `G = a I`.
-* `margin_affine_half`, `not_diagonalMonotoneMargin_affine_half` — at `G = 1/2` the unweighted
-  margin is exactly `c / 4`.
+* `sMin_half` — `s_min(1/2) = 1/2`.
 -/
 
 open MeasureTheory Filter Dissertation.Law
@@ -258,27 +248,7 @@ theorem diagonalMonotoneWeightedMargin_one_iff {C : Coeffs ν n n d} :
 
 end Unweighted
 
-/-! ### Sharpness at `G = 1/2` -/
-
-section Scaled
-
-variable {E : Type*} [MeasurableSpace E] {ν : Measure E} {n m d : ℕ}
-
-omit [MeasurableSpace E] in
-/-- The forward coupling operator of `a G` is `a` times that of `G`. -/
-theorem GX_smul (a : ℝ) (G : Matrix (Fin m) (Fin n) ℝ) : GX (a • G) = a • GX G := by
-  unfold GX
-  rw [map_smul, map_smul]
-
-omit [MeasurableSpace E] in
-/-- The coupling operator of `a G` on `n × d` matrices is `a` times that of `G`. -/
-theorem GZ_smul (a : ℝ) (G : Matrix (Fin m) (Fin n) ℝ) : GZ (d := d) (a • G) = a • GZ G := by
-  unfold GZ
-  rw [Matrix.kronecker, Matrix.smul_kronecker, map_smul, map_smul]
-
-/-- The coupling operator of `a G` on `L²(ν; ℝⁿ)` is `a` times that of `G`. -/
-theorem GU_smul (a : ℝ) (G : Matrix (Fin m) (Fin n) ℝ) : GU (a • G) ν = a • GU G ν := by
-  rw [GU, GX_smul, ContinuousLinearMap.smul_compLpL, GU]
+/-! ### A matrix with `c_G > 1` -/
 
 /-- The smallest singular value of the `1 × 1` matrix `1/2` is `1/2`, so `c_G = 4`. -/
 theorem sMin_half : sMin ((2⁻¹ : ℝ) • (1 : Matrix (Fin 1) (Fin 1) ℝ)) = 2⁻¹ := by
@@ -295,123 +265,5 @@ theorem sMin_half : sMin ((2⁻¹ : ℝ) • (1 : Matrix (Fin 1) (Fin 1) ℝ)) =
   simp only [RCLike.ofReal_real_eq_id, id_eq] at h
   rw [show (default : Fin 1) = 0 from rfl, ← h,
     show (4⁻¹ : ℝ) = 2⁻¹ ^ 2 by norm_num, Real.sqrt_sq (by norm_num)]
-
-/-- The adjoint of the forward coupling operator of `a I` is `a` times the identity. -/
-theorem adjoint_GX_smul_one (a : ℝ) :
-    ContinuousLinearMap.adjoint (GX (a • (1 : Matrix (Fin n) (Fin n) ℝ)))
-      = a • ContinuousLinearMap.id ℝ _ := by
-  rw [adjoint_GX, Matrix.transpose_smul, Matrix.transpose_one, GX_smul, GX_one]
-
-/-- The adjoint of the coupling operator of `a I` on `n × d` matrices is `a` times the
-identity. -/
-theorem adjoint_GZ_smul_one (a : ℝ) :
-    ContinuousLinearMap.adjoint (GZ (d := d) (a • (1 : Matrix (Fin n) (Fin n) ℝ)))
-      = a • ContinuousLinearMap.id ℝ _ := by
-  rw [adjoint_GZ, Matrix.transpose_smul, Matrix.transpose_one, GZ_smul, GZ_one]
-
-/-- The adjoint of the coupling operator of `a I` on `L²(ν; ℝⁿ)` is `a` times the identity. -/
-theorem adjoint_GU_smul_one (a : ℝ) :
-    ContinuousLinearMap.adjoint (GU (a • (1 : Matrix (Fin n) (Fin n) ℝ)) ν)
-      = a • ContinuousLinearMap.id ℝ _ := by
-  rw [adjoint_GU, Matrix.transpose_smul, Matrix.transpose_one, GU_smul, GU_one]
-
-variable {β₁ β₂ : ℝ} {σc : EuclideanSpace ℝ (Fin n × Fin d)}
-  {hc : Lp (EuclideanSpace ℝ (Fin n)) 2 ν}
-
-/-- **The scaled affine system satisfies (2.7) with equality at `G = a I`**: for the affine
-system of Example 5.1(i) with constants `a β₁, a β₂`, pointwise,
-`⟨δb, a δY⟩ + ⟨δσ, a δZ⟩_F − ⟨δf, a δX⟩ + ⟨δh, a δU⟩_{L²(ν)}
-  = −β₁ (|a δY|² + |a δZ|²_F + ‖a δU‖²_{L²(ν)}) − β₂ |a δX|²`. -/
-theorem interiorPairing_affine_smul (a : ℝ) (t : ℝ) (θ θ' : TupleH ν n n d)
-    (μ μ' : P2 (TupleH ν n n d)) :
-    interiorPairing (GX (a • (1 : Matrix (Fin n) (Fin n) ℝ))) (GZ (a • 1)) (GU (a • 1) ν)
-        (diagDiff (Existence.affineCoeffs (a * β₁) (a * β₂) σc hc) t θ θ' μ μ')
-      = dissipation (GX (a • (1 : Matrix (Fin n) (Fin n) ℝ))) (GZ (a • 1)) (GU (a • 1) ν) β₁ β₂
-        (diagDiff (Existence.affineCoeffs (a * β₁) (a * β₂) σc hc) t θ θ' μ μ') := by
-  have e₁ : -((a * β₁) • θ.2.1) - -((a * β₁) • θ'.2.1) = -((a * β₁) • (θ.2.1 - θ'.2.1)) := by
-    rw [smul_sub]; abel
-  have e₂ : σc - (a * β₁) • θ.2.2.1 - (σc - (a * β₁) • θ'.2.2.1)
-      = -((a * β₁) • (θ.2.2.1 - θ'.2.2.1)) := by
-    rw [smul_sub]; abel
-  have e₃ : hc - (a * β₁) • θ.2.2.2 - (hc - (a * β₁) • θ'.2.2.2)
-      = -((a * β₁) • (θ.2.2.2 - θ'.2.2.2)) := by
-    rw [smul_sub]; abel
-  simp only [interiorPairing, dissipation, diagDiff, adjoint_GX_smul_one, adjoint_GZ_smul_one,
-    adjoint_GU_smul_one]
-  simp only [Existence.affineCoeffs, e₁, e₂, e₃, ← smul_sub, GX_smul, GX_one,
-    FunLike.coe_smul, Pi.smul_apply, ContinuousLinearMap.id_apply, inner_neg_left,
-    real_inner_smul_left, real_inner_smul_right, real_inner_self_eq_norm_sq, norm_smul,
-    Real.norm_eq_abs, mul_pow, sq_abs]
-  ring
-
-variable [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
-  {Ω : Type*} [MeasurableSpace Ω] {ℱ : Filtration ℝ ‹MeasurableSpace Ω›} {P : Measure Ω}
-  [IsProbabilityMeasure P] {T : ℝ}
-
-/-- **Assumption 2.5, interior, for the scaled affine system at `G = a I`**, with the constants
-`β₁, β₂`, with equality. -/
-theorem diagonalMonotone_affine_smul (a : ℝ) :
-    DiagonalMonotone ℱ P T (a • (1 : Matrix (Fin n) (Fin n) ℝ)) β₁ β₂
-      (Existence.affineCoeffs (a * β₁) (a * β₂) σc hc) :=
-  Eventually.of_forall fun t Θ Θ' _ _ _ _ => le_of_eq (integral_congr_ae
-    (Eventually.of_forall fun ω => interiorPairing_affine_smul a t (Θ ω) (Θ' ω) _ _))
-
-variable {σ₁ : EuclideanSpace ℝ (Fin 1 × Fin d)} {h₁ : Lp (EuclideanSpace ℝ (Fin 1)) 2 ν}
-
-/-- **The unweighted margin at `G = 1/2` is exactly `c / 4`.** For `n = m = 1`, `G = 1/2`
-(`c_G = s_min(G)⁻² = 4`) and the affine system of Example 5.1(i) with constants `β₁/2, β₂/2`:
-Assumption 2.5, interior, holds with the constants `β₁, β₂`; for every `c`, (2.12) holds with
-the constants `β₁ − c, β₂ − c` and margin `c`; for `c ≥ 0`, (2.13) holds with those constants and
-margin `c / 4`; and on a horizon `T > 0`, (2.13) with those constants fails for every margin
-`c' > c / 4`. -/
-theorem margin_affine_half (hT : 0 < T) (c : ℝ) (hc : 0 ≤ c) :
-    DiagonalMonotone ℱ P T ((2⁻¹ : ℝ) • (1 : Matrix (Fin 1) (Fin 1) ℝ)) β₁ β₂
-        (Existence.affineCoeffs (2⁻¹ * β₁) (2⁻¹ * β₂) σ₁ h₁)
-      ∧ DiagonalMonotoneWeightedMargin ℱ P T ((2⁻¹ : ℝ) • (1 : Matrix (Fin 1) (Fin 1) ℝ))
-        (β₁ - c) (β₂ - c) c (Existence.affineCoeffs (2⁻¹ * β₁) (2⁻¹ * β₂) σ₁ h₁)
-      ∧ DiagonalMonotoneMargin ℱ P T ((2⁻¹ : ℝ) • (1 : Matrix (Fin 1) (Fin 1) ℝ))
-        (β₁ - c) (β₂ - c) (c / 4) (Existence.affineCoeffs (2⁻¹ * β₁) (2⁻¹ * β₂) σ₁ h₁)
-      ∧ ∀ c' : ℝ, c / 4 < c' → ¬ DiagonalMonotoneMargin ℱ P T
-        ((2⁻¹ : ℝ) • (1 : Matrix (Fin 1) (Fin 1) ℝ)) (β₁ - c) (β₂ - c) c'
-        (Existence.affineCoeffs (2⁻¹ * β₁) (2⁻¹ * β₂) σ₁ h₁) := by
-  have hM := diagonalMonotone_affine_smul (ℱ := ℱ) (P := P) (T := T) (β₁ := β₁) (β₂ := β₂)
-    (σc := σ₁) (hc := h₁) (2⁻¹ : ℝ)
-  have hW := (diagonalMonotone_iff_weightedMargin_sub c).mp hM
-  have hrank : ((2⁻¹ : ℝ) • (1 : Matrix (Fin 1) (Fin 1) ℝ)).rank = 1 := by
-    rw [Matrix.rank_of_isUnit _ ((Matrix.isUnit_iff_isUnit_det _).mpr (by simp)),
-      Fintype.card_fin]
-  refine ⟨hM, hW, ?_, fun c' hc' hM' => ?_⟩
-  · have hU := hW.unweighted_of_rank hrank hc
-    rwa [sMin_half, show c * (2⁻¹ : ℝ) ^ 2 = c / 4 by ring] at hU
-  · haveI : (ae (volume.restrict (Set.Icc (0 : ℝ) T))).NeBot := by
-      rw [ae_restrict_neBot, Real.volume_Icc, sub_zero]
-      exact ENNReal.ofReal_ne_zero_iff.mpr hT
-    obtain ⟨t, ht⟩ := hM'.dirac.exists
-    set x : EuclideanSpace ℝ (Fin 1) := EuclideanSpace.single 0 1
-    have hx : ‖x‖ = 1 := by simp [x]
-    have key := ht ((x, 0, 0, 0) : TupleH ν 1 1 d) 0
-    rw [interiorPairing_affine_smul] at key
-    simp only [dissipation, diagDiff, adjoint_GX_smul_one, adjoint_GZ_smul_one,
-      adjoint_GU_smul_one] at key
-    simp only [channelSq, GX_smul, GX_one, FunLike.coe_smul, Pi.smul_apply,
-      ContinuousLinearMap.id_apply, sub_zero, Prod.fst_zero, Prod.snd_zero, smul_zero, norm_zero,
-      norm_smul, Real.norm_eq_abs, hx] at key
-    norm_num at key
-    linarith
-
-/-- **The unweighted margin `c` fails at `G = 1/2`**: for `n = m = 1`, `G = 1/2`, a horizon
-`T > 0` and `c > 0`, the affine system of Example 5.1(i) with constants `β₁/2, β₂/2` satisfies
-(2.12) with the constants `β₁ − c, β₂ − c` and margin `c`, but not (2.13) with the same constants
-and margin. -/
-theorem not_diagonalMonotoneMargin_affine_half (hT : 0 < T) {c : ℝ} (hc : 0 < c) :
-    DiagonalMonotoneWeightedMargin ℱ P T ((2⁻¹ : ℝ) • (1 : Matrix (Fin 1) (Fin 1) ℝ))
-        (β₁ - c) (β₂ - c) c (Existence.affineCoeffs (2⁻¹ * β₁) (2⁻¹ * β₂) σ₁ h₁)
-      ∧ ¬ DiagonalMonotoneMargin ℱ P T ((2⁻¹ : ℝ) • (1 : Matrix (Fin 1) (Fin 1) ℝ))
-        (β₁ - c) (β₂ - c) c (Existence.affineCoeffs (2⁻¹ * β₁) (2⁻¹ * β₂) σ₁ h₁) := by
-  obtain ⟨-, hW, -, hno⟩ := margin_affine_half (ℱ := ℱ) (P := P) (β₁ := β₁) (β₂ := β₂)
-    (σ₁ := σ₁) (h₁ := h₁) hT c hc.le
-  exact ⟨hW, hno c (by linarith)⟩
-
-end Scaled
 
 end Dissertation.WellPosedness.System

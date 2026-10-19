@@ -8,7 +8,7 @@ import Dissertation.PaperSpec.A.Sec2Remarks
 /-!
 # Remark 5.6 of the well-posedness paper: the scope of the measure argument
 
-Statement numbers refer to the well-posedness paper at `f598204`, in the standing setting of §2.
+Statement numbers refer to the well-posedness paper at `1f67672`, in the standing setting of §2.
 Remark 5.6: the proofs consume the tuple law only through the `W₂` term of Assumption 2.3,
 dominated by the coupling bound (2.8); the right-hand side carries `𝔼‖δU‖²` whether or not the
 measure argument reads the `U`-marginal, because the coefficients depend on `u` pointwise, a

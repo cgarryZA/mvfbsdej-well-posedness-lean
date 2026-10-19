@@ -151,7 +151,7 @@ validation and the gate.
 
 ## The manuscript
 
-The manuscript is the revision of arXiv 2608.23203v1 at commit `f598204` of the manuscript
+The manuscript is the revision of arXiv 2608.23203v1 at commit `1f67672` of the manuscript
 repository, the version pinned in `claims.json`; its LaTeX source is vendored in
 `manuscript/paper/`, and the check reads it there
 (`--paper` names another such `paper/` directory).

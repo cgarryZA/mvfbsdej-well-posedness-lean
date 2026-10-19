@@ -204,9 +204,9 @@ cost:
 \begin{align}
 W_2(\mu,\mu')^2&\le\E\big[|\delta X|^2+|\delta Y|^2+|\delta Z|_F^2+\Lnorm{\delta U}^2\big],
 \label{eq:coupling}\\
-W_2(\rho,\rho')^2&\le\E|\delta X|^2 ,\label{eq:couplingT}
+W_2(\rho,\rho')^2&\le\E|X_T-X'_T|^2 ,\label{eq:couplingT}
 \end{align}
-\eqref{eq:couplingT} being the $X$-marginal case of \eqref{eq:coupling}.
+\eqref{eq:couplingT} being the $X$-marginal case of \eqref{eq:coupling} at time~$T$.
 
 In the other direction, let $K$ be a separable Hilbert space and $\bar\phi:\mathcal H\to K$
 Lipschitz. The law functional $\mu\mapsto\int_{\mathcal H}\bar\phi\,\diff\mu$ is then
@@ -303,7 +303,8 @@ leaves intact. When $m=n$ both $G$ and $\Gstar$ are injective, so the bounds of
 Assumption~\ref{ass:G}, applied channel by channel, give
 $c\,\bigl(|\Gstar\delta Y|^2+|\Gstar\delta Z|_F^2+\Lnorm{\Gstar\delta U}^2+|G\delta X|^2\bigr)
 \ge(c/c_G)\bigl(|\delta Y|^2+|\delta Z|_F^2+\Lnorm{\delta U}^2+|\delta X|^2\bigr)$.
-A margin $c$ in \eqref{eq:monomargin} therefore yields the margin $c/c_G$, not $c$, in the
+A margin $c$ in \eqref{eq:monomargin} therefore yields the margin $c/c_G$, which is smaller
+than $c$ when $c_G>1$, in the
 \emph{unweighted} form, which with margin $c>0$ reads
 \begin{equation}\label{eq:monomarginu}
 \begin{aligned}

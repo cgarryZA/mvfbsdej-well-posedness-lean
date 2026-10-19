@@ -9,7 +9,7 @@ import Dissertation.PaperSpec.A.Sec2Remarks
 /-!
 # Remark 3.7 of the well-posedness paper: general rank
 
-Statement and equation numbers refer to the well-posedness paper at `f598204`, in the standing
+Statement and equation numbers refer to the well-posedness paper at `1f67672`, in the standing
 setting of §2. Corollary 3.6 is stated for `m = n` with the margin and the pairing bound (3.4)
 recorded in the unweighted quantity `|δX|² + |δY|² + |δZ|²_F + ‖δU‖²_{L²(ν)}`. Remark 3.7: with
 both recorded in the weighted quantity `|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²_{L²(ν)} + |G δX|²` of

@@ -8,11 +8,11 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 
 | Status | A |
 |---|---|
-| formal: accepted | 48 |
-| formal: proved, author-reviewed | 0 |
+| formal: accepted | 47 |
+| formal: proved, author-reviewed | 2 |
 | formal: proved, review pending | 0 |
 | refuted as printed | 0 |
-| refuted as printed; corrected statement proved | 1 |
+| refuted as printed; corrected statement proved | 0 |
 | refuted as printed; other clauses open | 0 |
 | refuted as printed; corrected statement proved; other clauses open | 0 |
 | formal: open | 0 |
@@ -26,7 +26,7 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | out of scope: part-of | 17 |
 | out of scope: proof-step | 28 |
 
-## Paper A (well-posedness, `f598204`)
+## Paper A (well-posedness, `1f67672`)
 
 | Claim | Number | Status | Proposition | Proof | Review |
 |---|---|---|---|---|---|
@@ -39,7 +39,7 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | `A:rem:diag-mono` | Remark 2.8 | formal: accepted | `A.rem_diag_mono`, `A.rem_diag_mono_converse` | `A.rem_diag_mono`, `A.rem_diag_mono_converse` | the pointwise condition gives Assumption 2.5, under (2.3) and Assumption 2.3: reviewed by claude-auditor, hypotheses met: `A.rem_affine_hypotheses`; the converse fails: reviewed by claude-auditor, hypotheses met: `A.ex_concrete_hypotheses` |
 | `A:rem:intrinsic` | Remark 2.9 | formal: accepted | `A.rem_intrinsic_uniform`, `A.rem_intrinsic_coupling`, `A.rem_intrinsic_basis` | `A.rem_intrinsic_uniform`, `A.rem_intrinsic_coupling`, `A.rem_intrinsic_basis` | a uniform variable, a function of W1_t, at every t > 0: reviewed by claude-auditor, hypotheses met: `A.ex_concrete_hypotheses`; every coupling is the joint law of F_t-measurable inputs, t > 0: reviewed by claude-auditor, hypotheses met: `A.rem_coupling_hypotheses`; Assumptions 2.3 and 2.5 do not depend on the basis: reviewed by claude-auditor, hypotheses met: `A.rem_affine_hypotheses` |
 | `A:rem:beta1-dich` | Remark 2.10 | formal: accepted | `A.rem_beta1_fibre`, `A.rem_beta1_dich`, `A.rem_beta1_zero`, `A.ex_brownian`, `A.ex_brownian_rank_gt` | `A.rem_beta1_fibre`, `A.rem_beta1_dich`, `A.rem_beta1_zero`, `A.ex_brownian`, `A.ex_brownian_rank_gt` | ν ≠ 0 gives L²(ν) ≠ {0}; ν = 0 gives L²(ν) = {0}: reviewed by claude-auditor, hypotheses met: `A.rem_affine_hypotheses`; the reduction to the jump channel and the β₁ dichotomy, with ν ≠ 0: reviewed by claude-auditor, hypotheses met: `A.rem_affine_hypotheses`; at ν = 0 the restriction disappears: an additive jump coefficient allows β₁ > 0: reviewed by claude-auditor, hypotheses met: `A.ex_brownian_hypotheses`; at ν = 0 both rank branches are available: the branch m < n with an additive jump coefficient (Example 5.2): reviewed by claude-auditor, hypotheses met: `A.ex_brownian_hypotheses`; at ν = 0 both rank branches are available: the branch m > n (Example 5.2): reviewed by claude-auditor, hypotheses met: `A.ex_brownian_rank_gt_hypotheses` |
-| `A:rem:margin` | Remark 2.11 | formal: accepted | `A.rem_margin_reduce`, `A.rem_margin_unweighted`, `A.rem_margin_sharp` | `A.rem_margin_reduce`, `A.rem_margin_unweighted`, `A.rem_margin_sharp` | a bound with the constants β̄₁, β̄₂ is (2.12) with the constants β̄ᵢ − c and margin c, for 0 < c < min{β̄₁, β̄₂}: reviewed by claude-auditor, hypotheses met: `A.rem_affine_hypotheses`; when m = n the weighted margin c gives the margin c / c_G in the unweighted form (2.13): reviewed by claude-auditor, hypotheses met: `A.rem_margin_hypotheses`; the margin c itself does not carry over to (2.13): reviewed by claude-auditor, hypotheses met: `A.ex_concrete_hypotheses` |
+| `A:rem:margin` | Remark 2.11 | formal: proved, author-reviewed | `A.rem_margin_reduce`, `A.rem_margin_unweighted`, `A.rem_margin_smaller` | `A.rem_margin_reduce`, `A.rem_margin_unweighted`, `A.rem_margin_smaller` | a bound with the constants β̄₁, β̄₂ is (2.12) with the constants β̄ᵢ − c and margin c, for 0 < c < min{β̄₁, β̄₂}: reviewed by claude-auditor, hypotheses met: `A.rem_affine_hypotheses`; when m = n the weighted margin c gives the margin c / c_G in the unweighted form (2.13): reviewed by claude-auditor, hypotheses met: `A.rem_margin_hypotheses`; the unweighted margin c / c_G is smaller than c when c_G > 1: reviewed by claude-author, hypotheses met: `A.rem_margin_smaller_hypotheses` |
 | `A:thm:stab` | Theorem 3.1 | formal: accepted | `A.thm_stab` | `A.thm_stab` | reviewed by claude-auditor, hypotheses met: `A.thm_stab_nonzero_hypotheses` |
 | `A:rem:cwp-class` | Remark 3.2 | formal: accepted | `A.rem_cwp_class` | `A.rem_cwp_class` | reviewed by claude-auditor, hypotheses met: `A.rem_cwp_class_hypotheses` |
 | `A:thm:uniq` | Theorem 3.3 | formal: accepted | `A.thm_uniq` | `A.thm_uniq` | reviewed by claude-auditor, hypotheses met: `A.thm_uniq_hypotheses` |
@@ -89,7 +89,7 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | `A:eq:forced` | (4.1) | definition: reviewed | `Dissertation.PaperSpec.A.ForcedSolution` | — | definitions |
 | `A:eq:coeffint` | (4.2) | formal: accepted | `A.eq_coeffint` | `A.eq_coeffint` | reviewed by claude-auditor, hypotheses met: `A.thm_cwp_hypotheses` |
 | `A:eq:termg` | (4.3) | formal: accepted | `A.eq_termg` | `A.eq_termg` | reviewed by claude-auditor, hypotheses met: `A.thm_cwp_hypotheses` |
-| `A:eq:bwdyoung` | (4.25) | refuted as printed; corrected statement proved | `A.eq_bwdyoung`, `A.eq_bwdyoung_corr` | ¬ `A.eq_bwdyoung_false`, `A.eq_bwdyoung_corr` | (4.25) for every ε > 0, C independent of ε: reviewed by claude-author; (4.25) for every 0 < ε ≤ 1: reviewed by claude-author, hypotheses met: `A.eq_bwdyoung_corr_hypotheses` |
+| `A:eq:bwdyoung` | (4.25) | formal: proved, author-reviewed | `A.eq_bwdyoung` | `A.eq_bwdyoung` | reviewed by claude-author, hypotheses met: `A.lem_pert_two_data_hypotheses` |
 
 ## Out of scope
 

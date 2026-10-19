@@ -8,7 +8,7 @@ import Dissertation.PaperSpec.A.Sec5
 /-!
 # Example 5.5 of the well-posedness paper: the dealer market
 
-Statement and equation numbers refer to the well-posedness paper at `f598204`, in the standing
+Statement and equation numbers refer to the well-posedness paper at `1f67672`, in the standing
 setting of §2 with `n = m = d = 1` and `G = 1`. Example 5.5 makes the jump response of
 Example 5.1(i) exposure-sensitive, `h_x x` with the matched driver term `⟨h_x, u⟩`, and tilts it
 by the crowding correction `A_{μ^U}(u) = ∫ ∇V(u − v) μ^U(dv)` of the `U`-marginal of the law.

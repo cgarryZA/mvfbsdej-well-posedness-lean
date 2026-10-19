@@ -13,7 +13,7 @@ import Dissertation.WellPosedness.BrownianPoisson.Hypotheses
 /-!
 # The horizon remark of §4 of the well-posedness paper
 
-Statement numbers refer to the well-posedness paper at `f598204`, in the standing setting of §2.
+Statement numbers refer to the well-posedness paper at `1f67672`, in the standing setting of §2.
 The introduction to §4 observes that the continuation is in the coupling strength, not the
 horizon: shortening the horizon does not make the frozen-coefficient map of Lemma 4.2
 contractive, since the `(z, u)`-dependence of `σ, h` enters the contraction constant with no

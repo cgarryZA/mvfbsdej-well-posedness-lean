@@ -4,8 +4,8 @@ description: >-
   Lean 4 formalisation of the well-posedness of fully coupled McKean-Vlasov forward-backward SDEs
   with jumps under full-tuple law dependence.
 sources:
-  - id: "cgarryZA/mvfbsdej-well-posedness@f598204"
-    url: "https://github.com/cgarryZA/mvfbsdej-well-posedness/tree/f598204"
+  - id: "cgarryZA/mvfbsdej-well-posedness@1f67672"
+    url: "https://github.com/cgarryZA/mvfbsdej-well-posedness/tree/1f67672"
     title: "Well-posedness of fully coupled McKean-Vlasov FBSDEs with jumps under full-tuple law dependence"
     authors: ["Chunrong Feng", "Christian Garry"]
     relationship: formalizes
@@ -67,8 +67,8 @@ alignment:
       lean:
         - "Dissertation.Acceptance.A.rem_margin_reduce"
         - "Dissertation.Acceptance.A.rem_margin_unweighted"
-        - "Dissertation.Acceptance.A.rem_margin_sharp"
-      status: "formal: accepted"
+        - "Dissertation.Acceptance.A.rem_margin_smaller"
+      status: "formal: proved, author-reviewed"
     - source: "Theorem 3.1"
       lean:
         - "Dissertation.Acceptance.A.thm_stab"

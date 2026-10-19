@@ -9,7 +9,7 @@ import Dissertation.WellPosedness.Spec.BrownianForms
 /-!
 # Example 5.2 of the well-posedness paper: the reduction to the Brownian forms
 
-Statement numbers refer to the well-posedness paper at `f598204`, in the standing setting of §2 with
+Statement numbers refer to the well-posedness paper at `1f67672`, in the standing setting of §2 with
 the intensity `ν = 0`. Example 5.2 removes the Poisson channel, so that the filtration is generated
 by `W` and `ℱ₀`, deletes the `U`-coordinate, and states that the assumptions reduce to
 `W₂`-Lipschitz dependence on the joint law of `(X, Y, Z)` under `G`-monotonicity. The Brownian forms

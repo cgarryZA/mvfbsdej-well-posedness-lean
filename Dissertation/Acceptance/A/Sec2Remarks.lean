@@ -24,8 +24,10 @@ import Dissertation.WellPosedness.Remarks.UniformVariable
 * `Dissertation.Acceptance.A.rem_intrinsic_uniform`, `rem_intrinsic_coupling`,
   `rem_intrinsic_basis` — Remark 2.9.
 * `Dissertation.Acceptance.A.rem_beta1_fibre`, `rem_beta1_dich`, `rem_beta1_zero` — Remark 2.10.
-* `Dissertation.Acceptance.A.rem_margin_reduce`, `rem_margin_unweighted`, `rem_margin_sharp` —
+* `Dissertation.Acceptance.A.rem_margin_reduce`, `rem_margin_unweighted`, `rem_margin_smaller` —
   Remark 2.11.
+* `Dissertation.Acceptance.A.rem_margin_smaller_hypotheses` — the hypotheses of the comparison
+  hold at `G = 1/2`, where `c_G = 4`.
 * `Dissertation.Acceptance.A.rem_affine_hypotheses`, `rem_margin_hypotheses`,
   `rem_coupling_hypotheses` — the hypotheses of the remarks hold for Example 5.1(i) over a Lévy
   driver with `ν = δ₀`.
@@ -234,24 +236,10 @@ theorem rem_margin_unweighted : PaperSpec.A.rem_margin_unweighted.{u, v, w} := b
   rw [he, he', integral_margin_eq, ← integral_dissipation_eq h2 h2', div_inv_eq_mul]
   simpa only [pairing27_eq] using ht p.1 p'.1 hs hs' h2 h2'
 
-/-- Remark 2.11, the margin `c` itself does not carry over. -/
-theorem rem_margin_sharp : PaperSpec.A.rem_margin_sharp.{u, v, w} := by
-  intro Ω 𝒢₀ mΩ E _ ν _ _ P _ D h𝒢₀ _ T hT
-  obtain ⟨hW, hno⟩ := not_diagonalMonotoneMargin_affine_half (ℱ := enlJoint 𝒢₀ D h𝒢₀) (P := P)
-    (ν := ν) (d := 1) (β₁ := 2) (β₂ := 2) (σ₁ := 0) (h₁ := 0) hT (c := 1) one_pos
-  have h1 : (0 : ℝ) ≤ 2 - 1 := by norm_num
-  have hrank : ((2⁻¹ : ℝ) • (1 : Matrix (Fin 1) (Fin 1) ℝ)).rank = min 1 1 := by
-    rw [Matrix.rank_of_isUnit _ ((Matrix.isUnit_iff_isUnit_det _).mpr (by simp)),
-      Fintype.card_fin, min_self]
-  refine ⟨_, _, 2 - 1, 2 - 1, 1, hrank, h1, h1, one_pos, ?_,
-    fun h => hno h.diagonalMonotoneMargin⟩
-  filter_upwards [hW, hW.integrable one_pos h1 h1] with t ht hi p hp p' hp'
-  obtain ⟨hs, h2, he⟩ := hp
-  obtain ⟨hs', h2', he'⟩ := hp'
-  rw [he, he']
-  refine ⟨by simpa only [pairing27_eq] using hi p.1 p'.1 hs hs' h2 h2', ?_⟩
-  rw [← integral_dissipation_eq h2 h2', ← integral_gWeightSq_eq _ _ t p.1 p'.1]
-  simpa only [pairing27_eq] using ht p.1 p'.1 hs hs' h2 h2'
+/-- Remark 2.11, the comparison of the margins. -/
+theorem rem_margin_smaller : PaperSpec.A.rem_margin_smaller := by
+  intro n G c _ _ hc h
+  exact div_lt_self hc h
 
 /-! ### The hypotheses at Example 5.1(i) -/
 
@@ -308,6 +296,17 @@ theorem rem_margin_hypotheses :
   obtain ⟨-, ⟨Ω, _, P, _, D, hind, -, -, -, hG, h25⟩, h0, h1⟩ := rem_affine_hypotheses
   exact ⟨Ω, inferInstance, P, inferInstance, D, hind, hG, h0,
     rem_margin_reduce ⊥ _ 1 1 1 P D bot_le hind 1 1 1 1 _ h25.interior (1 / 2) h0 h1⟩
+
+/-- **The hypotheses of the comparison of the margins hold at `G = 1/2`.** The `1 × 1` matrix
+`1/2` has full rank and `c_G = s_min(1/2)⁻² = 4 > 1`, and `c = 1 > 0`. -/
+theorem rem_margin_smaller_hypotheses :
+    0 < 1 ∧ ((2⁻¹ : ℝ) • (1 : Matrix (Fin 1) (Fin 1) ℝ)).rank = min 1 1 ∧ (0 : ℝ) < 1
+      ∧ 1 < (sMin ((2⁻¹ : ℝ) • (1 : Matrix (Fin 1) (Fin 1) ℝ)) ^ 2)⁻¹ := by
+  refine ⟨one_pos, ?_, one_pos, ?_⟩
+  · rw [Matrix.rank_of_isUnit _ ((Matrix.isUnit_iff_isUnit_det _).mpr (by simp)),
+      Fintype.card_fin, min_self]
+  · rw [sMin_half]
+    norm_num
 
 /-- **A coupling of two laws of finite second moment**: the Dirac mass at `(0, 0)` couples the
 Dirac mass at the origin of `H` with itself. -/
