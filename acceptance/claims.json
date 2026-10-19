@@ -1350,6 +1350,12 @@
      "witness": "Dissertation.Acceptance.A.sec3_space_hypotheses"
     },
     {
+     "name": "||.||_HH satisfies the triangle inequality and is absolutely homogeneous",
+     "spec": "Dissertation.PaperSpec.A.sec3_HH_norm",
+     "accept": "Dissertation.Acceptance.A.sec3_HH_norm",
+     "witness": "Dissertation.Acceptance.A.sec3_HH_norm_hypotheses"
+    },
+    {
      "name": "(HH, ||.||_HH) is complete",
      "spec": "Dissertation.PaperSpec.A.sec3_HH_complete",
      "accept": "Dissertation.Acceptance.A.sec3_HH_complete",
@@ -1370,6 +1376,12 @@
    "scope_note": "",
    "scope_reviewed": true,
    "clauses": [
+    {
+     "name": "both sides of each identity are cadlag in t: the stochastic integrals of (1.1) have adapted versions with every path cadlag",
+     "spec": "Dissertation.PaperSpec.A.sec3_cadlag_versions",
+     "accept": "Dissertation.Acceptance.A.sec3_cadlag_versions",
+     "witness": "Dissertation.Acceptance.A.sec3_cadlag_versions_hypotheses"
+    },
     {
      "name": "the identities of (1.1) holding almost surely for every t hold off one null set for all t",
      "spec": "Dissertation.PaperSpec.A.sec3_one_null_set",

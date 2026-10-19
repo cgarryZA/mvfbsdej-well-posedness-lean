@@ -28,6 +28,7 @@ import Dissertation.PaperSpec.A.Sec5Dealer
 import Dissertation.PaperSpec.A.Sec5DealerActive
 import Dissertation.PaperSpec.A.Sec5BrownianReduction
 import Dissertation.PaperSpec.A.Sec4Supremum
+import Dissertation.PaperSpec.A.Sec3SpaceNorm
 
 /-!
 # The statements of the paper

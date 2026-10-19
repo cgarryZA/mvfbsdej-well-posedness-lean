@@ -1550,7 +1550,7 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_brownian_prp--claude-reviewer--2026-10-17T16_03_52Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_brownian_prp ed839d34f480cba1d54de82e0956a03e by=claude-reviewer -->
 
-## §3, the solution definition and the solution space: `Dissertation.PaperSpec.A.sec3_one_null_set`, `sec3_HH_inclusion`, `sec3_HH_definite`
+## §3, the solution definition and the solution space: `Dissertation.PaperSpec.A.sec3_one_null_set`, `sec3_cadlag_versions`, `sec3_HH_inclusion`, `sec3_HH_definite`, `sec3_HH_norm`
 
 Manuscript (§3, the paragraphs on `ℍ` and on solutions): the elements of `ℍ`
 are equivalence classes (càdlàg components identified when indistinguishable, `Z` when equal
@@ -1570,12 +1570,21 @@ Propositions:
   `X_t = ξ₀ + ∫_0^t b + M_t + ∫_0^t ∫ γ Ñ` holds almost surely for each `t ∈ [0, T]` if and only
   if it holds off one null set for all `t ∈ [0, T]`; likewise the backward identity
   `Y_t = g + ∫_t^T f − (M_T − M_t) − (∫_0^T ∫ U Ñ − ∫_0^t ∫ U Ñ)`.
+* `sec3_cadlag_versions`: for a tuple of `ℍ_weak` along which the integrals of (1.1) exist, as
+  above, each coordinate of each of the four stochastic integrals of (1.1) (`∫ σ dW` and
+  `∫∫ γ Ñ` of the forward identity, `∫ Z dW` and `∫∫ U Ñ` of the backward one, with the integrands
+  and integrability proofs of `PaperWeakSolutionInt`) has a version `M`: adapted to the filtration
+  of §2, equal almost surely to the integral at every `t ∈ [0, T]`, with every path
+  right-continuous on `[0, T)` and with left limits on `(0, T]`.
 * `sec3_HH_inclusion`: for `T ≥ 0` and `V` with values in `ℝⁿ`,
   `𝔼 ∫_0^T |V_t|² dt ≤ T 𝔼 sup_{t ≤ T} |V_t|²` in `[0, ∞]`, and a finite right side gives a
   finite energy of each coordinate (the `ℍ_weak` condition).
 * `sec3_HH_definite`: for a tuple of `ℍ_weak`, `‖Θ‖²_ℍ` (`supSize`) is `0` if and only if `X`
   and `Y` are indistinguishable from `0` on `[0, T]`, `Z = 0` `dt ⊗ dP`-a.e. on `[0, T]`
   (`energyMeasure`) and `U = 0` `dt ⊗ dP ⊗ ν`-a.e. (`markedEnergyMeasure`).
+* `sec3_HH_norm`: for tuples `Θ, Θ'` of `ℍ_weak` over the filtration of §2 and `c ∈ ℝ`, with
+  `‖Θ‖_ℍ = supSize(Θ)^{1/2}` in `[0, ∞]` and the operations taken coordinatewise,
+  `‖Θ + Θ'‖_ℍ ≤ ‖Θ‖_ℍ + ‖Θ'‖_ℍ` and `‖c Θ‖_ℍ = |c| ‖Θ‖_ℍ`.
 
 Correspondence:
 
@@ -1586,12 +1595,18 @@ Correspondence:
   integral of the paper is an `L²` object; the identity is read with a càdlàg version, as the
   repository's solution notion `PaperWeakSolutionInt` does. The proposition does not assume `M` is
   that version, so it is broader.
-* "`‖·‖_ℍ` is a norm rather than a seminorm" is read as definiteness on the identified classes.
-  The seminorm properties (homogeneity, triangle inequality) are not stated: the sentence's point is
-  that the identification removes the null vectors.
-* "`(ℍ, ‖·‖_ℍ)` is a Banach space" (completeness) is not proved and is an open clause. The
-  completeness of the integrand spaces exists in LevyStochCalc for progressive integrands
-  (`exists_progressive_energy_limit`); the supremum part needs a càdlàg adapted limit.
+* "Both sides of each identity are càdlàg in `t`" for the stochastic integrals is
+  `sec3_cadlag_versions`. The Brownian integral of the library is an `L²` limit at each time
+  without path regularity, and the compensated Poisson integral has càdlàg paths almost surely, so
+  "càdlàg" is read as the existence of a version whose every path is càdlàg; the adaptedness of the
+  version is a further conclusion, so the clause is broader. Its hypothesis is the class of
+  `sec3_one_null_set`, which contains every solution.
+* "`‖·‖_ℍ` is a norm rather than a seminorm" is `sec3_HH_definite` (definiteness on the identified
+  classes) together with `sec3_HH_norm` (the triangle inequality and absolute homogeneity). Both
+  are stated on `ℍ_weak` with the norm in `[0, ∞]`; `ℍ` is the part where it is finite, so they are
+  broader. `ℍ_weak` being closed under the operations is not stated.
+* "`(ℍ, ‖·‖_ℍ)` is a Banach space" (completeness) is `sec3_HH_complete`, reviewed in the next
+  section.
 * The inclusion `ℍ ⊂ ℍ_weak` is read as the energy condition of `ℍ_weak` for `X` and `Y`; the
   other conditions of `ℍ_weak` are those of `ℍ`.
 
@@ -1600,8 +1615,15 @@ Witness: `Dissertation.Acceptance.A.sec3_space_hypotheses` for `sec3_one_null_se
 the solution of Example 5.1(i) (`β₁ = β₂ = 1`, `σ_c = h_c = 0`) from `ξ₀ ≡ e₁` gives a tuple of
 `ℍ_weak` with the integrals of (1.1), with `X_0 = 1` almost surely (not the zero tuple).
 `sec3_HH_inclusion` has no hypotheses beyond `T ≥ 0`.
+`Dissertation.Acceptance.A.sec3_cadlag_versions_hypotheses` for `sec3_cadlag_versions`: over the
+same driver, the tuple `X = Y = 1`, `Z = U = 1_{(0, 1]}` of `ℍ_weak`, along which the integrals of
+(1.1) exist for the system of Example 5.1(i), with `Z` and `U` of energy `1` (nonzero integrands).
+`Dissertation.Acceptance.A.sec3_HH_norm_hypotheses` for `sec3_HH_norm`: that tuple, taken for
+both `Θ` and `Θ'`, with `‖Θ‖²_ℍ = 4`.
 
-Verdict: faithful for the clauses stated; completeness of `ℍ` is reviewed in the next section.
+Verdict: faithful for `sec3_HH_inclusion`; broader for `sec3_one_null_set`,
+`sec3_cadlag_versions`, `sec3_HH_definite` and `sec3_HH_norm`, each by the instantiation given
+above.
 
 <!-- spec-review: Dissertation.PaperSpec.A.sec3_one_null_set ed839d34f480cba1209a5aa6ac298690 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec3_one_null_set--claude-reviewer--2026-10-17T12_16_14Z.md`).
@@ -1612,6 +1634,8 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 <!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_definite ed839d34f480cba12b4c9985cfe528af by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec3_HH_definite--claude-reviewer--2026-10-17T12_14_59Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_definite ed839d34f480cba12b4c9985cfe528af by=claude-reviewer -->
+<!-- spec-review: Dissertation.PaperSpec.A.sec3_cadlag_versions ed839d34f480cba18328d3bafc39f8ed by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_norm ed839d34f480cba140aa5342c14a73fc by=claude-author -->
 
 ## §3, completeness of the solution space: `Dissertation.PaperSpec.A.sec3_HH_complete`
 
@@ -1635,8 +1659,8 @@ Correspondence:
   limits of `PaperWeakTuple`.
 * The filtration is the one of §2, which contains the null sets at time `0`, so modifying a limit on
   a null set keeps it adapted.
-* "`‖·‖_ℍ` is a norm" is reviewed under `sec3_HH_definite`; the vector-space operations of the
-  quotient are not separately stated.
+* "`‖·‖_ℍ` is a norm" is reviewed under `sec3_HH_definite` and `sec3_HH_norm`; the closure of the
+  quotient under the vector-space operations is not separately stated.
 
 Witness: `Dissertation.Acceptance.A.sec3_HH_complete_hypotheses`: over a Lévy driver with
 `d = 1`, `ν = δ₀`, `𝒢₀ = ⊥`, `n = m = 1`, `T = 1`, the constant sequence at the tuple

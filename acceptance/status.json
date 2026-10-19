@@ -2602,6 +2602,25 @@
      "witness_ok": true
     },
     {
+     "accept": "Dissertation.Acceptance.A.sec3_HH_norm",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.sec3_HH_norm"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "||.||_HH satisfies the triangle inequality and is absolutely homogeneous",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.sec3_HH_norm",
+     "spec_hash": "ed839d34f480cba140aa5342c14a73fc",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.sec3_HH_norm_hypotheses",
+     "witness_ok": true
+    },
+    {
      "accept": "Dissertation.Acceptance.A.sec3_HH_complete",
      "accept_ok": true,
      "author_reviewed": [],
@@ -2626,10 +2645,29 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: accepted"
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.sec3_cadlag_versions",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.sec3_cadlag_versions"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "both sides of each identity are cadlag in t: the stochastic integrals of (1.1) have adapted versions with every path cadlag",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.sec3_cadlag_versions",
+     "spec_hash": "ed839d34f480cba18328d3bafc39f8ed",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.sec3_cadlag_versions_hypotheses",
+     "witness_ok": true
+    },
     {
      "accept": "Dissertation.Acceptance.A.sec3_one_null_set",
      "accept_ok": true,
@@ -2655,7 +2693,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: accepted"
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
@@ -4199,8 +4237,8 @@
  "summary": {
   "A": {
    "definition: reviewed": 11,
-   "formal: accepted": 37,
-   "formal: proved, author-reviewed": 11,
+   "formal: accepted": 35,
+   "formal: proved, author-reviewed": 13,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
    "out of scope: proof-step": 29
