@@ -1983,8 +1983,8 @@ Clauses:
   with `t^{-1/2}` added to `b` satisfies (2.3) and Assumptions 2.3–2.5 (`L = 1`, `G = 1`,
   `α = β₁ = 1`, `β₂ = 0`), violates Assumption 2.2 for every initial datum, and from `ξ₀ = 0` has
   a solution in `ℍ`: `WeakSolution` with finite `𝔼 sup |X|²` and `𝔼 sup |Y|²`, the drift integral
-  read pathwise. The solution in the stronger sense `Solution` (finite drift energy) does not
-  exist (`not_paperSolution_singularCoeffs`), so `ℍ` is read as the paper defines it, through
+  read pathwise. A solution in the stronger sense `Solution` would need finite drift energy,
+  which the drift `t^{-1/2}` excludes, so `ℍ` is read as the paper defines it, through
   `WeakSolution` and the `S²` bounds.
 * The "For instance" sentence, for an arbitrary system, is `rem_uniq_translation`: in the
   standing setting with `n, m, d ≥ 1` (those of Theorem 3.5), for `T > 0`, a system `C` with
