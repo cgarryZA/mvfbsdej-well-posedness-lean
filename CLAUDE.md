@@ -26,8 +26,8 @@ with jumps. `README.md` is the overview, `acceptance/README.md` the acceptance p
 
 ```sh
 lake exe cache get
-python3 lean_cache.py restore . cgarryZA/mvfbsdej-well-posedness-lean   # see README: the prebuilt
-lake build                                                             # build of the dependencies
+curl -sSfLO https://raw.githubusercontent.com/cgarryZA/MachineChecked/2d577fda5c42713980c3dafe6c46560c02e3330d/scripts/lean_cache.py
+python3 lean_cache.py restore . cgarryZA/mvfbsdej-well-posedness-lean --build   # the prebuilt build
 python3 tools/acceptance.py check --write    # regenerate ACCEPTANCE.md, acceptance/status.json and
                                              # the alignment of formalization.yaml
 python3 tools/test_acceptance.py

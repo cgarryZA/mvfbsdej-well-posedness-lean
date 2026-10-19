@@ -3,25 +3,24 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import LevyStochCalc.Brownian.ItoPullOut
-import LevyStochCalc.Brownian.ItoFinsetSum
-import LevyStochCalc.Brownian.MultidimIto
-import LevyStochCalc.Brownian.ItoIntegrandComplete
-import Mathlib
-import LevyStochCalc.Driver.VectorIncrement
-import LevyStochCalc.Poisson.CompensatedIsometry
-import LevyStochCalc.Driver.CellProfileStep
-import LevyStochCalc.Poisson.CompensatedProfileLinear
-import LevyStochCalc.Brownian.AugmentedFiltration
+import Mathlib.MeasureTheory.Function.ConditionalExpectation.Basic
 import Mathlib.MeasureTheory.Function.ConditionalExpectation.PullOut
 import Mathlib.MeasureTheory.Function.L2Space
-import Mathlib.Tactic
+import Mathlib.MeasureTheory.Integral.SetToL1
 import Mathlib.Probability.ConditionalExpectation
 import Mathlib.Probability.Distributions.Gaussian.Real
-import Mathlib.Probability.Moments.Variance
-import Mathlib.MeasureTheory.Integral.SetToL1
 import Mathlib.Probability.Independence.Integration
-import Mathlib.MeasureTheory.Function.ConditionalExpectation.Basic
+import Mathlib.Probability.Moments.Variance
+import Mathlib.Tactic
+import LevyStochCalc.Brownian.AugmentedFiltration
+import LevyStochCalc.Brownian.ItoFinsetSum
+import LevyStochCalc.Brownian.ItoIntegrandComplete
+import LevyStochCalc.Brownian.ItoPullOut
+import LevyStochCalc.Brownian.MultidimIto
+import LevyStochCalc.Driver.CellProfileStep
+import LevyStochCalc.Driver.VectorIncrement
+import LevyStochCalc.Poisson.CompensatedIsometry
+import LevyStochCalc.Poisson.CompensatedProfileLinear
 
 /-!
 # The Brownian integral of a coefficient frozen over a cell

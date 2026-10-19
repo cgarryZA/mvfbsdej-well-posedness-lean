@@ -44,8 +44,8 @@ norm and that norm; so `W₂` here lies between one half of the paper's `W₂` a
 A forcing of the `λ`-system (4.1) is `q = (q^b, q^σ, q^h, q^f, q^g_T)` with `q^b, q^σ, q^f`
 progressively measurable, `q^h` measurable in the predictable-times-mark sense, each square
 integrable over `Ω × [0, T]` (and `ν`), and `q^g_T ∈ L²(Ω, ℱ_T; ℝᵐ)`. `Forcing` records this in
-coordinates, with two conventions: each process is represented by its extension by `0` off
-`[0, T]`, as the integrands of `LinearBSDEJ` are, and `q^h` is marked progressively measurable
+coordinates, with two conventions: each process is represented by its extension by `0` off `[0, T]`,
+as the integrands of `BrownianPoisson.LinearBSDEJ` are, and `q^h` is marked progressively measurable
 rather than predictable.
 
 ## Main definitions

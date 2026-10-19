@@ -51,10 +51,10 @@ Two conditions of `SolvesForced` go beyond the hypotheses of the paper.
   this follows from the forward equation at almost every time, as the square integrability of
   the terminal value follows from the backward one.
 * **Measurability of the coefficient processes**, (2.5). For `λ ≠ 0` they are jointly and
-  progressively measurable (for `h`, its representative `γ` is). The paper derives this from
-  Lemma A.1 and the Borel measurability of the coefficients; for coefficients jointly measurable
-  with the evaluation σ-algebra on `P₂(H)`, `CoeffBorel`, it holds along every progressive tuple
-  at every time and for the exact law (`CoeffBorel.crossEval`).
+  progressively measurable (for `h`, its representative `γ` is). The paper derives this from Lemma
+  A.1 and the Borel measurability of the coefficients; for coefficients jointly measurable with the
+  evaluation σ-algebra on `P₂(H)`, `Existence.CoeffBorel`, it holds along every progressive tuple at
+  every time and for the exact law (`Existence.CoeffBorel.crossEval`).
 
 The `L²(ν)` channel needs no condition of its own: `U` is marked progressively measurable, so for
 every time `s` the class `uLift` of `ω ↦ U_s(ω, ·) ∈ L²(ν; ℝᵐ)` is strongly `ℱ_s`-measurable

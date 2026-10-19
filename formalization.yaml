@@ -11,8 +11,8 @@ sources:
     relationship: formalizes
 review:
   status: >-
-    Per-claim status in ACCEPTANCE.md and the MachineChecked audit; the statements are reviewed
-    by their author.
+    Per-claim status in ACCEPTANCE.md, which names the reviewers of each claim's statements, and
+    in the MachineChecked audit; the reviews are recorded in acceptance/review/.
   audit: "https://cgarryza.github.io/mvfbsdej-well-posedness-lean/"
 # The alignment below is generated from acceptance/ by `tools/acceptance.py check --write`.
 alignment:

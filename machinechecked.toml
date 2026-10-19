@@ -1,6 +1,7 @@
 # MachineChecked: the audit of this repository against the manuscript at 1f67672.
 # `machinechecked build` reads the inventory and reviews of acceptance/ (the same inputs as
-# tools/acceptance.py) and writes the reader; `machinechecked export` writes the public audit that CI publishes.
+# tools/acceptance.py) and writes the reader; `machinechecked export` writes the public audit that
+# CI publishes.
 [project]
 name = "mvfbsdej-well-posedness-lean"
 author = "Christian Garry"
@@ -69,6 +70,7 @@ modules = [
   "MVFBSDEJ.Acceptance.Sec3MarginContinuous",
   "MVFBSDEJ.Acceptance.Sec3Rem34Translation",
   "MVFBSDEJ.Acceptance.Sec5DealerActive",
+  "MVFBSDEJ.Acceptance.Solution",
 ]
 scope_roots = ["MVFBSDEJ", "LevyStochCalc"]
 spec_prefix = "MVFBSDEJ.PaperSpec"

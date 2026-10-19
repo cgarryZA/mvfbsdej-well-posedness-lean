@@ -3,10 +3,12 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
+import Mathlib.MeasureTheory.Measure.SeparableMeasure
 import Mathlib.Probability.Kernel.Representation
+import Mathlib.Topology.Separation.CompletelyRegular
 import MVFBSDEJ.Law.LawP2
-import MVFBSDEJ.WellPosedness.System.Tuple
 import MVFBSDEJ.WellPosedness.Remarks.UniformVariable
+import MVFBSDEJ.WellPosedness.System.Tuple
 
 /-!
 # Couplings realised by measurable pairs

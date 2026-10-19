@@ -125,7 +125,7 @@ theorem rem_generalrank_wp : PaperSpec.rem_generalrank_wp.{u, v, w} := by
       Y₂ Z₁ Z₂ U₁ U₂ h₁ h₂⟩
 
 /-- **The hypotheses of Remark 3.7 hold at the instance of Corollary 3.6.** At the instance of
-`MVFBSDEJ.cor_robust_hypotheses` (`n = m = 1`, `G = 1`), the baseline satisfies
+`cor_robust_hypotheses` (`n = m = 1`, `G = 1`), the baseline satisfies
 (2.12) with `β₁ = β₂ = c_diss = 1` and the feedback perturbation with `ε = 1/2` satisfies (3.4)
 in the weighted quantity with `c_pert = 1/2`. -/
 theorem rem_generalrank_hypotheses :

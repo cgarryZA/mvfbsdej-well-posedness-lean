@@ -164,7 +164,7 @@ def ex_dealer_wp : Prop :=
             (fun ω s e => U₁ k s ω e - U₂ k s ω e) = 0
 
 /-- Example 5.5, the crowding correction is no function of the mean when the fibre is
-nontrivial: `ex_dealer_mean` with `L²(ν)` not reduced to `0` (for `ν ≠ 0`). -/
+nontrivial: `ex_dealer_not_mean_corr` with `L²(ν)` not reduced to `0` (for `ν ≠ 0`). -/
 def ex_dealer_mean_corr : Prop :=
   ∀ {E : Type v} [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν]
     [MeasurableSpace.CountablyGenerated E],

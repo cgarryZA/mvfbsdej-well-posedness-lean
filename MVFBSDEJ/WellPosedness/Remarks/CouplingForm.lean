@@ -6,6 +6,7 @@ Authors: Christian Garry
 import MVFBSDEJ.WellPosedness.Remarks.CouplingRealisation
 import MVFBSDEJ.WellPosedness.Remarks.Pointwise
 import MVFBSDEJ.WellPosedness.System.DiagonalInputs
+import Mathlib.MeasureTheory.Function.SpecialFunctions.Inner
 
 /-!
 # The diagonal assumptions in coupling form
@@ -27,11 +28,11 @@ coefficients alone:
 * `CouplingTerminalLipschitz`, `CouplingTerminalMonotone` — the terminal conditions over the
   couplings of pairs of laws in `P₂(ℝⁿ)`.
 
-The transfer between the two forms needs the integrands to be measurable on `H × H`, which the
-joint measurability (2.3) of the coefficients provides (`CoeffBorel`), and the Borel measurability
-of `x ↦ g(x, ρ)` for the terminal conditions; both are standing in the paper. Without them an
-integrand on `H × H` need not be measurable for `γ`; its integral against `γ` is then `0` by the
-Bochner convention and need not equal the expectation along the pair.
+The transfer between the two forms needs the integrands to be measurable on `H × H`, which the joint
+measurability (2.3) of the coefficients provides (`Existence.CoeffBorel`), and the Borel
+measurability of `x ↦ g(x, ρ)` for the terminal conditions; both are standing in the paper. Without
+them an integrand on `H × H` need not be measurable for `γ`; its integral against `γ` is then `0` by
+the Bochner convention and need not equal the expectation along the pair.
 
 The uniform variable is needed only in the direction from the diagonal form to the coupling form,
 and only at the times where the condition is imposed. The interior conditions are imposed for

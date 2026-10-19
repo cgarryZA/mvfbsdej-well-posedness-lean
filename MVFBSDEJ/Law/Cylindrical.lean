@@ -3,10 +3,15 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import MVFBSDEJ.Law.Projection
-import MVFBSDEJ.Law.ExpectationFunctional
+import Mathlib.Algebra.Order.Star.Real
 import Mathlib.Analysis.InnerProductSpace.PiL2
+import Mathlib.Analysis.Normed.Lp.MeasurableSpace
 import Mathlib.MeasureTheory.SpecificCodomains.WithLp
+import MVFBSDEJ.Law.ExpectationFunctional
+import MVFBSDEJ.Law.LipschitzFunctional
+import MVFBSDEJ.Law.P2
+import MVFBSDEJ.Law.Projection
+import Mathlib.Tactic.Positivity.Finset
 
 /-!
 # Cylindrical functionals of a law

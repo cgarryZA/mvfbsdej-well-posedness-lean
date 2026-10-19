@@ -9,6 +9,7 @@ import MVFBSDEJ.WellPosedness.Spec.CorollaryHyps
 import MVFBSDEJ.WellPosedness.Existence.AffineExample
 import MVFBSDEJ.WellPosedness.System.FullRank
 import MVFBSDEJ.Law.Wasserstein
+import Mathlib.MeasureTheory.Constructions.UnitInterval
 
 /-!
 # Section 2 of the well-posedness paper: the remarks on the assumptions

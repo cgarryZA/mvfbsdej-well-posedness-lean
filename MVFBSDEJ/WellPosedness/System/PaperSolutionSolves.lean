@@ -30,7 +30,7 @@ following ways, and this file passes between them.
 * `Solves` evaluates the jump coefficient at `(Θ_s, μ_s)`, `PaperSolution` at `(Θ⁻_s, μ⁻_s)`.
   Almost every path of a solution in either sense has left limits on `(0, T]`, so it meets its
   left limits off a countable set of times, and `Θ⁻_s = Θ_s` almost surely for almost every `s`
-  (`PaperSolution.ae_ae_tupleAt_leftLimProc_eq`, `SolvesForced.ae_ae_tupleAt_leftLimProc_eq`):
+  (`PaperWeakTuple.ae_ae_tupleAt_leftLimProc_eq`, `SolvesForced.ae_ae_tupleAt_leftLimProc_eq`):
   a representative of one evaluation represents the other.
 * `Solves` takes `Z` and `U` progressively measurable, `PaperSolution` predictable. A predictable
   integrand vanishing off `[0, T]` is progressively measurable
@@ -62,8 +62,7 @@ of `ℍ²_weak` (`PaperWeakTuple.ae_ae_tupleAt_leftLimProc_eq`).
   `ξ₀` and `g(X_T, Law X_T)`, extended off `[0, T]`, is a solution of `Solves`.
 * `PaperSolution.memLp_initial`, `PaperSolution.memLp_terminal` — `ξ₀` and `g(X_T, Law X_T)` are
   square integrable.
-* `PaperSolution.ae_ae_tupleAt_leftLimProc_eq`, `PaperSolution.jump_rep_tupleAt` — `Θ⁻_s = Θ_s`
-  almost surely at almost every time, so `γ` represents `h(s, Θ_s, ·, μ_s)`.
+* `PaperSolution.jump_rep_tupleAt` — `Θ⁻_s = Θ_s` almost surely at almost every time, so `γ` represents `h(s, Θ_s, ·, μ_s)`.
 * `PaperSolution.exists_solves` — a solution in the sense of the paper, extended off `[0, T]`,
   is a solution of `Solves`.
 * `Solves.paperSolution` — a solution of `Solves` with predictable integrands is a solution in

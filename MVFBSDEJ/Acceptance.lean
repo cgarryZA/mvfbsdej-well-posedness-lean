@@ -4,6 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.Acceptance.Sec2
+import MVFBSDEJ.Acceptance.Solution
 import MVFBSDEJ.Acceptance.Sec2Remarks
 import MVFBSDEJ.Acceptance.Sec2Basics
 import MVFBSDEJ.Acceptance.Sec3

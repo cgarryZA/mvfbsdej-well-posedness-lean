@@ -26,8 +26,8 @@ integrals and the same energy, so the estimate for a progressive drift applies.
 
 ## Main statements
 
-* `ProgressivelyMeasurable.indicator_time` — cutting a progressive process to a Borel set of times
-  keeps it progressive.
+* `Probability.ProgressivelyMeasurable.indicator_time` — cutting a progressive process to a Borel
+  set of times keeps it progressive.
 * `exists_progressive_ae_eq` — a jointly measurable density with integrable paths and adapted
   primitive has a progressive version, equal to it at almost every time on every path.
 * `brownianPoisson_estimate_of_measurable` — the estimate of Lemma 4.1 for a jointly measurable

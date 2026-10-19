@@ -99,7 +99,7 @@ sudo apt-get update
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
   latexmk texlive-latex-recommended texlive-latex-extra texlive-science \
   texlive-fonts-recommended texlive-bibtex-extra lmodern poppler-utils
-cd <checkout>/paper && latexmk -pdf wellposedness.tex
+cd manuscript/paper && latexmk -pdf wellposedness.tex
 ```
 
 ## Layout
@@ -110,8 +110,11 @@ cd <checkout>/paper && latexmk -pdf wellposedness.tex
 | `MVFBSDEJ/Acceptance/` | their proofs, and witnesses that their hypotheses can be met |
 | `MVFBSDEJ/Law/` | laws of finite second moment, the 2-Wasserstein distance, law functionals |
 | `MVFBSDEJ/WellPosedness/` | the system, its assumptions, existence, uniqueness, stability and the examples |
+| `MVFBSDEJ/Topology/` | continuous injections into spaces of smaller dimension |
+| `manuscript/` | the LaTeX sources of the paper at the revision formalised |
+| `formalization.yaml`, `machinechecked.toml` | the claim alignment and the configuration of the MachineChecked audit |
 | `acceptance/` | the claim inventory (`claims.json`), the reviews (`review/`) and the policy |
-| `tools/` | the acceptance checker, its Lean probe and the comparator script |
+| `tools/` | the acceptance checker, its Lean probe and tests, the claim extractor and the comparator script |
 
 ## License
 

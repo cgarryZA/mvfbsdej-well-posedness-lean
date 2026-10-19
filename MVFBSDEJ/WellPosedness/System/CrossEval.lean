@@ -18,17 +18,16 @@ Theorem 3.1 of the well-posedness paper compares solutions of two coefficient sy
 the negated coefficient differences evaluated along solution 2: the equations of `Θ²` are linear
 in their integrands, and `1 · ψ¹ + q^ψ = ψ²`.
 
-That `q` is a forcing needs the coefficients of system 1 evaluated along solution 2 to be
-measurable and square integrable. The terminal term is a function of `X²_T` alone, measurable
-once `g¹` and `g²` are Borel measurable in the state, as the paper's standing joint measurability
-of the coefficients gives. The interior terms are processes, whose joint and progressive
-measurability — (2.5) for a cross-evaluation — the paper derives from Lemma A.1; `CrossEval`
-takes it as a hypothesis, with a jointly measurable, marked progressively measurable
-representative `γ` of `e ↦ h¹(s, Θ²_s, e, μ²_s)` in `L²(ν)`. It holds along every progressive
-tuple, with a canonical `γ`, when the coefficients of system 1 are jointly measurable with the
-evaluation σ-algebra on `P₂(H)` (`CoeffBorel.crossEval`). Given measurability, `q` is square
-integrable exactly when the coefficient-difference terms of the right-hand side of (3.1) are
-finite.
+That `q` is a forcing needs the coefficients of system 1 evaluated along solution 2 to be measurable
+and square integrable. The terminal term is a function of `X²_T` alone, measurable once `g¹` and
+`g²` are Borel measurable in the state, as the paper's standing joint measurability of the
+coefficients gives. The interior terms are processes, whose joint and progressive measurability —
+(2.5) for a cross-evaluation — the paper derives from Lemma A.1; `CrossEval` takes it as a
+hypothesis, with a jointly measurable, marked progressively measurable representative `γ` of
+`e ↦ h¹(s, Θ²_s, e, μ²_s)` in `L²(ν)`. It holds along every progressive tuple, with a canonical `γ`,
+when the coefficients of system 1 are jointly measurable with the evaluation σ-algebra on `P₂(H)`
+(`Existence.CoeffBorel.crossEval`). Given measurability, `q` is square integrable exactly when the
+coefficient-difference terms of the right-hand side of (3.1) are finite.
 
 ## Main definitions
 

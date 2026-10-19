@@ -3,7 +3,9 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import Mathlib
+import Mathlib.Analysis.InnerProductSpace.Adjoint
+import Mathlib.MeasureTheory.Function.LpSeminorm.Basic
+import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
 
 /-!
 # The paper's structural assumptions as predicates
@@ -30,10 +32,10 @@ Expectations are absorbed into the inner products — `𝔼⟨·,·⟩` is `⟪�
 the forward operator `G : HX →L HY` pairs `δf` with `δX` and `δg_T` with `δX_T`, and its adjoint
 pairs `δb` with `δY`; the `Z` and `U` channels get their own `GZ` and `GU`, which in the concrete
 model are `G` acting on matrix- and `L²(ν)`-valued arguments. The square case `n = m` is the
-instance in which all six spaces and all three operators coincide (`SquareCoupling`).
+instance in which all six spaces and all three operators coincide.
 
-Assumption 2.3 is stated over an abstract law distance rather than `W₂` itself, so this file stays
-Mathlib-only; its instance at `W₂` on `P₂(H)` is `MVFBSDEJ.Law.LipschitzCoefficientsP2`.
+Assumption 2.3 is stated over an abstract law distance rather than `W₂` itself; its instance at
+`W₂` on `P₂(H)` is `MVFBSDEJ.Law.LipschitzCoefficientsP2`.
 
 ## Main definitions
 

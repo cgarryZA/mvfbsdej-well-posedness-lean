@@ -13,7 +13,7 @@ import MVFBSDEJ.Topology.NoInjection
 ## Main statements
 
 * `MVFBSDEJ.Acceptance.cor_margin_separate` — finitely many continuous functionals do not
-  separate the points of an infinite-dimensional space (`Topology.NoInjection`).
+  separate the points of an infinite-dimensional space (`MVFBSDEJ.Topology.NoInjection`).
 * `MVFBSDEJ.Acceptance.cor_margin_continuous` — jump feedback through finitely many
   continuous functionals of `u` supplies no margin on an infinite-dimensional `L²(ν)`: two points
   `a ≠ b` with `F_t a = F_t b`, placed according to the sign of a Brownian increment `B` at a time

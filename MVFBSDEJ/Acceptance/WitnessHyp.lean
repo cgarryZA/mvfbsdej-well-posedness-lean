@@ -8,6 +8,7 @@ import MVFBSDEJ.PaperSpec.Sec2Basics
 import MVFBSDEJ.PaperSpec.Sec5
 import MVFBSDEJ.Acceptance.Sec3Space
 import MVFBSDEJ.WellPosedness.Examples.FullLawBeyond
+import Mathlib.Probability.Distributions.Uniform
 
 /-!
 # Instances of the hypotheses of the setting statements of paper A
