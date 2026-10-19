@@ -62,21 +62,21 @@ alignment:
         - "Dissertation.Acceptance.A.rem_beta1_zero"
         - "Dissertation.Acceptance.A.ex_brownian"
         - "Dissertation.Acceptance.A.ex_brownian_rank_gt"
-      status: "formal: proved, author-reviewed"
+      status: "formal: accepted"
     - source: "Remark 2.11"
       lean:
         - "Dissertation.Acceptance.A.rem_margin_reduce"
         - "Dissertation.Acceptance.A.rem_margin_unweighted"
         - "Dissertation.Acceptance.A.rem_margin_sharp"
-      status: "formal: proved, author-reviewed"
+      status: "formal: accepted"
     - source: "Theorem 3.1"
       lean:
         - "Dissertation.Acceptance.A.thm_stab"
-      status: "formal: proved, author-reviewed"
+      status: "formal: accepted"
     - source: "Remark 3.2"
       lean:
         - "Dissertation.Acceptance.A.rem_cwp_class"
-      status: "formal: proved, author-reviewed"
+      status: "formal: accepted"
     - source: "Theorem 3.3"
       lean:
         - "Dissertation.Acceptance.A.thm_uniq"
@@ -88,23 +88,23 @@ alignment:
         - "Dissertation.Acceptance.A.rem_uniq_initial"
         - "Dissertation.Acceptance.A.rem_uniq_singular"
         - "Dissertation.Acceptance.A.rem_uniq_translation"
-      status: "formal: proved, author-reviewed"
+      status: "formal: accepted"
     - source: "Theorem 3.5"
       lean:
         - "Dissertation.Acceptance.A.thm_cwp"
         - "Dissertation.Acceptance.A.thm_stab"
-      status: "formal: proved, author-reviewed"
+      status: "formal: accepted"
     - source: "Corollary 3.6"
       lean:
         - "Dissertation.Acceptance.A.cor_robust"
         - "Dissertation.Acceptance.A.cor_robust_wp"
         - "Dissertation.Acceptance.A.cor_robust_lip"
-      status: "formal: proved, author-reviewed"
+      status: "formal: accepted"
     - source: "Remark 3.7"
       lean:
         - "Dissertation.Acceptance.A.rem_generalrank"
         - "Dissertation.Acceptance.A.rem_generalrank_wp"
-      status: "formal: proved, author-reviewed"
+      status: "formal: accepted"
     - source: "Proposition 3.8"
       lean:
         - "Dissertation.Acceptance.A.prop_strict"
@@ -116,7 +116,7 @@ alignment:
     - source: "Lemma 4.2"
       lean:
         - "Dissertation.Acceptance.A.lem_small"
-      status: "formal: proved, author-reviewed"
+      status: "formal: accepted"
     - source: "Lemma 4.3"
       lean:
         - "Dissertation.Acceptance.A.lem_pert"
@@ -124,7 +124,7 @@ alignment:
     - source: "Lemma 4.4"
       lean:
         - "Dissertation.Acceptance.A.lem_cont"
-      status: "formal: proved, author-reviewed"
+      status: "formal: accepted"
     - source: "Example 5.1"
       lean:
         - "Dissertation.Acceptance.A.ex_concrete_i_ham"
@@ -137,7 +137,7 @@ alignment:
         - "Dissertation.Acceptance.A.ex_concrete_ii"
         - "Dissertation.Acceptance.A.ex_concrete_ii_pairing"
         - "Dissertation.Acceptance.A.ex_concrete_i_sharp"
-      status: "formal: proved, author-reviewed"
+      status: "formal: accepted"
     - source: "Example 5.2"
       lean:
         - "Dissertation.Acceptance.A.ex_brownian"
@@ -145,7 +145,7 @@ alignment:
         - "Dissertation.Acceptance.A.ex_brownian_rank_gt"
         - "Dissertation.Acceptance.A.ex_brownian_reduction"
         - "Dissertation.Acceptance.A.ex_brownian_prp"
-      status: "formal: proved, author-reviewed"
+      status: "formal: accepted"
     - source: "Example 5.3"
       lean:
         - "Dissertation.Acceptance.A.ex_expfunc"
@@ -161,7 +161,7 @@ alignment:
         - "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_corr"
         - "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q"
         - "Dissertation.Acceptance.A.ex_fulllaw_affineQ"
-      status: "formal: proved, author-reviewed"
+      status: "formal: accepted"
     - source: "Example 5.5"
       lean:
         - "Dissertation.Acceptance.A.ex_dealer_potential"
@@ -183,12 +183,12 @@ alignment:
         - "Dissertation.Acceptance.A.ex_dealer_symm"
         - "Dissertation.Acceptance.A.ex_dealer_active"
         - "Dissertation.Acceptance.A.ex_dealer_depends"
-      status: "formal: proved, author-reviewed"
+      status: "formal: accepted"
     - source: "Remark 5.6"
       lean:
         - "Dissertation.Acceptance.A.eq_coupling"
         - "Dissertation.Acceptance.A.rem_freelaw"
-      status: "formal: proved, author-reviewed"
+      status: "formal: accepted"
     - source: "Remark 5.7"
       lean:
         - "Dissertation.Acceptance.A.ex_fulllaw_pert"
@@ -198,7 +198,7 @@ alignment:
         - "Dissertation.Acceptance.A.ex_dealer_mono"
         - "Dissertation.Acceptance.A.ex_dealer_wp"
         - "Dissertation.Acceptance.A.ex_dealer_active"
-      status: "formal: proved, author-reviewed"
+      status: "formal: accepted"
     - source: "Lemma A.1"
       lean:
         - "Dissertation.Acceptance.A.lem_lawflow"

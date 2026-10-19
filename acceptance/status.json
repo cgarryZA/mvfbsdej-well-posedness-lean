@@ -502,9 +502,7 @@
     {
      "accept": "Dissertation.Acceptance.A.thm_stab",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -526,16 +524,14 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
     {
      "accept": "Dissertation.Acceptance.A.rem_cwp_class",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -557,7 +553,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -593,9 +589,7 @@
     {
      "accept": "Dissertation.Acceptance.A.rem_cwp_class",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -646,10 +640,7 @@
     {
      "accept": "Dissertation.Acceptance.A.rem_uniq_singular",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution",
-      "Dissertation.PaperSpec.A.rem_uniq_singular"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -659,17 +650,14 @@
      "spec": "Dissertation.PaperSpec.A.rem_uniq_singular",
      "spec_hash": "ed839d34f480cba1ba6232c9763ebb54",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.rem_uniq_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.rem_uniq_translation",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution",
-      "Dissertation.PaperSpec.A.rem_uniq_translation"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -679,7 +667,7 @@
      "spec": "Dissertation.PaperSpec.A.rem_uniq_translation",
      "spec_hash": "ed839d34f480cba13b68ad605862c311",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
      "witness_ok": true
     }
@@ -691,16 +679,14 @@
    "scope": "formal",
    "scope_note": "\"the proof of Theorem 3.5 uses Assumption 2.2\" describes a proof and is not a separate claim",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
     {
      "accept": "Dissertation.Acceptance.A.thm_cwp",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -717,9 +703,7 @@
     {
      "accept": "Dissertation.Acceptance.A.thm_stab",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -741,7 +725,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -765,9 +749,7 @@
     {
      "accept": "Dissertation.Acceptance.A.cor_robust_wp",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -806,7 +788,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -830,9 +812,7 @@
     {
      "accept": "Dissertation.Acceptance.A.rem_generalrank_wp",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -854,7 +834,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -919,9 +899,7 @@
     {
      "accept": "Dissertation.Acceptance.A.lem_small",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.ForcedSolution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -943,7 +921,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -979,9 +957,7 @@
     {
      "accept": "Dissertation.Acceptance.A.lem_cont",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.ForcedSolution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1003,7 +979,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -1061,9 +1037,7 @@
     {
      "accept": "Dissertation.Acceptance.A.ex_concrete_i_wp",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1097,9 +1071,7 @@
     {
      "accept": "Dissertation.Acceptance.A.ex_concrete_i_clamp_wp",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1189,7 +1161,7 @@
    "scope": "formal",
    "scope_note": "the derivation of (1.1) from the control problem by the stochastic maximum principle for jump diffusions is cited work (Tang and Li) and is not stated; the clauses state the system and its properties; the attribution of (ii) to Example 3.1 of Li and Min is a statement about cited work",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -1247,10 +1219,7 @@
     {
      "accept": "Dissertation.Acceptance.A.ex_brownian_reduction",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.BrownianSolution",
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1289,7 +1258,7 @@
    "scope": "formal",
    "scope_note": "the comparison with condition (A1) of [BYZ] is a statement about cited work",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -1393,9 +1362,7 @@
     {
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_wp",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1485,7 +1452,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -1594,9 +1561,7 @@
     {
      "accept": "Dissertation.Acceptance.A.ex_dealer_wp",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1715,9 +1680,7 @@
     {
      "accept": "Dissertation.Acceptance.A.ex_dealer_inert",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1751,9 +1714,7 @@
     {
      "accept": "Dissertation.Acceptance.A.ex_dealer_zero",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1787,9 +1748,7 @@
     {
      "accept": "Dissertation.Acceptance.A.ex_dealer_active",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1806,10 +1765,7 @@
     {
      "accept": "Dissertation.Acceptance.A.ex_dealer_depends",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution",
-      "Dissertation.PaperSpec.A.ex_dealer_depends"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1819,7 +1775,7 @@
      "spec": "Dissertation.PaperSpec.A.ex_dealer_depends",
      "spec_hash": "ed839d34f480cba1d5b82af653b55a54",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses",
      "witness_ok": true
     }
@@ -1831,7 +1787,7 @@
    "scope": "formal",
    "scope_note": "the dealer-market reading (requests for quotes, valuation curves, routing, quotes affine in the curve, the uncontrolled exposure change at an event) is modelling and is not stated; the finite-player inspiration (Cont and Xiong) is a statement about cited work",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -1901,9 +1857,7 @@
     {
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_wp",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1971,9 +1925,7 @@
     {
      "accept": "Dissertation.Acceptance.A.ex_dealer_wp",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1990,9 +1942,7 @@
     {
      "accept": "Dissertation.Acceptance.A.ex_dealer_active",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -2014,7 +1964,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -2067,9 +2017,7 @@
     {
      "accept": "Dissertation.Acceptance.A.thm_stab",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -2103,9 +2051,7 @@
     {
      "accept": "Dissertation.Acceptance.A.thm_cwp",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -2190,9 +2136,7 @@
     {
      "accept": "Dissertation.Acceptance.A.ex_dealer_wp",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -2226,9 +2170,7 @@
     {
      "accept": "Dissertation.Acceptance.A.ex_dealer_active",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -2250,15 +2192,13 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
     {
      "accept": null,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [
       "Dissertation.PaperSpec.A.Solution"
@@ -2279,16 +2219,14 @@
    "scope": "definition",
    "scope_note": "the system (1.1), stated through the solution notion of §3",
    "scope_reviewed": true,
-   "status": "definition: author-reviewed"
+   "status": "definition: reviewed"
   },
   {
    "clauses": [
     {
      "accept": "Dissertation.Acceptance.A.thm_cwp",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -2327,7 +2265,7 @@
    "scope": "formal",
    "scope_note": "the claims about this paper; the description of the interactions of [LiMin] is a statement about cited work",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [],
@@ -2528,9 +2466,7 @@
     {
      "accept": "Dissertation.Acceptance.A.sec3_HH_norm",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.sec3_HH_norm"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -2540,7 +2476,7 @@
      "spec": "Dissertation.PaperSpec.A.sec3_HH_norm",
      "spec_hash": "ed839d34f480cba140aa5342c14a73fc",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.sec3_HH_norm_hypotheses",
      "witness_ok": true
     },
@@ -2569,16 +2505,14 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
     {
      "accept": "Dissertation.Acceptance.A.sec3_cadlag_versions",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.sec3_cadlag_versions"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -2588,7 +2522,7 @@
      "spec": "Dissertation.PaperSpec.A.sec3_cadlag_versions",
      "spec_hash": "ed839d34f480cba18328d3bafc39f8ed",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.sec3_cadlag_versions_hypotheses",
      "witness_ok": true
     },
@@ -2617,16 +2551,14 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
     {
      "accept": "Dissertation.Acceptance.A.thm_stab_companion",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -2643,9 +2575,7 @@
     {
      "accept": "Dissertation.Acceptance.A.thm_stab_data",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -2662,9 +2592,7 @@
     {
      "accept": "Dissertation.Acceptance.A.thm_stab_minimal",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -2686,7 +2614,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -2864,9 +2792,7 @@
    "clauses": [
     {
      "accept": null,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.ForcedSolution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [
       "Dissertation.PaperSpec.A.WP",
@@ -2888,7 +2814,7 @@
    "scope": "definition",
    "scope_note": "the forced system (4.1) and the property WP(λ) used in the proof of Theorem 3.5",
    "scope_reviewed": true,
-   "status": "definition: author-reviewed"
+   "status": "definition: reviewed"
   },
   {
    "clauses": [
@@ -3054,10 +2980,7 @@
     {
      "accept": "Dissertation.Acceptance.A.ex_brownian_reduction",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.BrownianSolution",
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3159,9 +3082,7 @@
     {
      "accept": "Dissertation.Acceptance.A.ex_dealer_wp",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3178,9 +3099,7 @@
     {
      "accept": "Dissertation.Acceptance.A.ex_dealer_active",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3202,7 +3121,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [],
@@ -3231,9 +3150,7 @@
     {
      "accept": "Dissertation.Acceptance.A.thm_stab",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3267,9 +3184,7 @@
     {
      "accept": "Dissertation.Acceptance.A.thm_cwp",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3286,9 +3201,7 @@
     {
      "accept": "Dissertation.Acceptance.A.cor_robust_wp",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3378,7 +3291,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [],
@@ -3406,9 +3319,7 @@
    "clauses": [
     {
      "accept": null,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.Solution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [
       "Dissertation.PaperSpec.A.Solution"
@@ -3429,7 +3340,7 @@
    "scope": "definition",
    "scope_note": "the system (1.1) and its solutions in the space of Section 3",
    "scope_reviewed": true,
-   "status": "definition: author-reviewed"
+   "status": "definition: reviewed"
   },
   {
    "clauses": [
@@ -3792,9 +3703,7 @@
    "clauses": [
     {
      "accept": null,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.ForcedSolution"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [
       "Dissertation.PaperSpec.A.ForcedSolution"
@@ -3815,7 +3724,7 @@
    "scope": "definition",
    "scope_note": "the forced system (4.1) and its solutions in the space of Section 3",
    "scope_reviewed": true,
-   "status": "definition: author-reviewed"
+   "status": "definition: reviewed"
   },
   {
    "clauses": [
@@ -4153,10 +4062,8 @@
  ],
  "summary": {
   "A": {
-   "definition: author-reviewed": 4,
-   "definition: reviewed": 7,
-   "formal: accepted": 28,
-   "formal: proved, author-reviewed": 20,
+   "definition: reviewed": 11,
+   "formal: accepted": 48,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
    "out of scope: proof-step": 29

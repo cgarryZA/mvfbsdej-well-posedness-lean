@@ -1,0 +1,59 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.PaperSpec.A.ForcedSolution",
+  "kind": "def",
+  "name": "Dissertation.PaperSpec.A.ForcedSolution",
+  "lean": [
+   "Dissertation.PaperSpec.A.ForcedSolution"
+  ],
+  "claims": [
+   "A:eq:forced",
+   "A:lem:cont",
+   "A:lem:small",
+   "A:sec4:WP-def"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-3230e3a0bb18",
+  "project_commit": "90f9502669c17b205fb9360fcfbae619d4e499e8",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "6d8e8f373c5e26da320d4d9860023747",
+  "fingerprint": "pl-fp-v1:48a603d61ec17599f3078046a48dcff27e57ff01441c2f045551f6914e11ae98",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of the paper's notion \"solution of the lambda-scaled forced system (4.1)\"\n(04-proof-wellposedness.tex:37-68; used in WP(lambda), Lemmas 4.2, 4.3, 4.4).\n\nData: lambda in [0,1]; initial datum xi_0 (F_0-measurable); forcing q = (q^b, q^sigma, q^h, q^f,\nq^g_T) with q^b in L2(Omega x [0,T]; R^n), q^sigma in L2(Omega x [0,T]; R^{n x d}), q^f in\nL2(Omega x [0,T]; R^m) progressively measurable; q^h in L2(Omega x [0,T] x E; R^n) predictable\n(P (x) calE-measurable, square-integrable for dP dt nu); q^g_T in L2(Omega, F_T; R^m).\nStanding basis and coefficients as in sec. 2 (see the Solution reading).\n\nThe system (4.1): for every t in [0,T], a.s.,\n X_t = xi_0 + lambda int_0^t b(s,Theta_s,mu_s) ds + lambda int_0^t sigma(s,Theta_s,mu_s) dW_s\n       + lambda int_0^t int_E h(s,Theta_s^-,e,mu_s^-) Ntilde(ds,de)\n       + int_0^t q^b_s ds + int_0^t q^sigma_s dW_s + int_0^t int_E q^h_s(e) Ntilde(ds,de),\n Y_t = lambda g(X_T, Law(X_T)) + lambda int_t^T f(s,Theta_s,mu_s) ds + q^g_T + int_t^T q^f_s ds\n       - int_t^T Z_s dW_s - int_t^T int_E U_s(e) Ntilde(ds,de),\nwith mu_s = Law(Theta_s), mu_s^- = Law(Theta_s^-), Theta_s^- = (X_{s-},Y_{s-},Z_s,U_s).\nNote lambda multiplies all four coefficient terms AND the terminal function g; the forcing enters\nunscaled; q^g_T is added at the terminal time; q^f is integrated over [t,T].\n\nWP(lambda): for every such (admissible) forcing q, (4.1) has a unique solution in S (unique as\nan element of S, i.e. up to indistinguishability of X, Y and a.e. equality of Z, U).\nIn Lemma 4.3 the paper also speaks of tuples that \"solve (4.1)\" in a weaker class (X, Y cadlag\nadapted, E int (|X|^2+|Y|^2) < inf, X_T in L2, Z in H2_W, U in H2_N, difference in S), so the\nphrase \"solves (4.1)\" is the two identities, with the class stated separately.\n\nWhat a faithful Lean definition must be: parameterised by lambda, xi_0, the forcing q, the\ncoefficients and the tuple; the two identities above at every t (a.s.), with lambda on b, sigma,\nh, f AND g; forcing terms unscaled, with the same signs/limits as printed; jump coefficient at\nthe predictable tuple (or a dt dP nu-a.e. equal predictable integrand); law under P. Class\nmembership either built in as S (matching WP(lambda)) or separate (matching Lemma 4.3); if S is\nbuilt in, uses of it for Lemma 4.3 would be narrower, but the definition itself is still the\npaper's \"solution in S of (4.1)\". At lambda = 1 and q = 0 it must reduce to the Solution notion\nof (1.1). Admissibility of q (progressive / predictable, square-integrable) must be required\nwhere WP quantifies \"every such forcing\", either in the definition or in WP. Edge cases as for\nSolution: junk integrals for non-admissible integrands (forcing or coefficient processes),\nEuclidean norms, the augmented filtration.",
+  "locked_at": "2026-10-19T05:36:17Z"
+ },
+ "comparison": {
+  "text": "Comparison: Dissertation.PaperSpec.A.ForcedSolution (PaperSpec/A/Setting.lean:102-110) against my\nreading.\n\nLean: ForcedSolution D h𝒢₀ hind₀ T lam C ξ₀ qb qσ qh qf qg X Y Z U := WeakForcedSolution ... ∧\nE sup |X|² < ∞ ∧ E sup |Y|² < ∞; WeakForcedSolution := (∃ γ, PaperWeakSolutionForcedInt D\n(enlJoint 𝒢₀ D h𝒢₀) ... T lam C ξ₀ q X Y Z U γ) ∧ every path of X, Y with left limits on (0,T].\nPaperWeakSolutionForcedInt: System/PaperWeakSolutionForcedInt.lean:68.\n\n- Basis, filtration, class S: as for Solution (LevyDriver, 𝒢₀ independent, enlJoint usual\n  augmentation; PaperWeakTuple + cadlag every path + S2 bounds): S.\n- Forcing: field `forcing : Forcing ℱ P ν T q` (System/Coefficients.lean:196): q^b, q^σ, q^f\n  jointly measurable, progressively measurable, vanishing off [0,T], finite energy; q^h jointly\n  measurable in (ω,s,e), marked progressively measurable, vanishing off [0,T], finite marked\n  energy; q^g_T strongly F_T-measurable and in L2. The paper's class has q^h predictable; WP\n  quantifies over PredForcing (extends Forcing with q^h marked predictable), which is the paper's\n  class. So ForcedSolution is defined for a slightly larger class of forcings, which contains the\n  paper's; on the paper's forcings it is the paper's notion.\n- Forward identity: a.s. for all t in [0,T],\n  X_t = ξ₀ + int_[0,t] (lam b(s,Θ_s,μ_s) + q^b_s) ds + M_t + int_0^t int_E (lam γ + q^h) dNtilde,\n  M a cadlag version of sum_j int (lam σ_{ij} + q^σ_{ij}) dW^j, γ a representative of\n  h(s, Θ⁻_s, ., μ⁻_s) (jump_rep at the predictable tuple). Matches (4.1): lam on b, σ, h; forcing\n  unscaled.\n- Backward identity: a.s. for all t in [0,T],\n  Y_t = lam g(X_T, Law X_T) + q^g_T + int_[t,T] (lam f + q^f) ds - (M'_T - M'_t)\n        - (int_0^T int U dNtilde - int_0^t int U dNtilde).\n  Matches (4.1): lam on g and f; q^g_T added; q^f over [t,T]; signs as printed.\n- Integrals exist: forced drift/driver integrands progressive with a.s. integrable paths;\n  forced diffusion/jump integrands progressive with finite energy; X_T in L2.\n- lam is any real; the paper uses lam in [0,1]; the notion at lam in [0,1] is the paper's.\n- At lam = 1, q = 0 it is the Solution notion (paperWeakSolutionForcedInt_one_zero_iff).\n- WP (not this unit) quantifies over PredForcing and states uniqueness up to\n  indistinguishability of X, Y and zero energy of the Z, U differences, i.e. in S as classes.\n\nRepresentation choices (harmless):\n (1) all those of Solution (coordinate families and pointwise U; vanishing off [0,T]; actual law\n     at every time; measurability of the coefficient processes as conditions; existential\n     marked-progressive representative γ; identities a.s. for all t with cadlag versions of the\n     Brownian integrals; every path cadlag; left limit at 0);\n (2) the admissibility of the forcing is a conjunct of the predicate, for the class Forcing\n     (q^h marked progressive, not necessarily predictable): the paper only forms (4.1) for its\n     admissible forcings, which lie in this class, and WP restricts to them (PredForcing);\n (3) each forced pair is integrated as one integrand (int (lam ψ + q^ψ) instead of\n     lam int ψ + int q^ψ): equal by linearity, since q^ψ is admissible on its own, so the\n     forced integrand is admissible exactly when lam ψ is;\n (4) lam ranges over all reals (only [0,1] is used).\nThe class S is built in, as in WP(lambda); Lemma 4.3's weaker class is the separate\nWeakForcedSolution, so this is the paper's \"solution in S of (4.1)\".\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T05:42:31Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices, each harmless: (1) all those of Solution: coordinate families with a pointwise U; vanishing off [0,T]; the actual law at every time; measurability of the coefficient processes as conditions; an existential marked progressive representative γ of h(s,Θ⁻_s,·,μ⁻_s); identities a.s. for all t with cadlag versions of the Brownian integrals; every path cadlag; (2) admissibility of the forcing is a conjunct of the predicate, in the class Forcing, where q^h only needs to be marked progressive rather than predictable; the paper's forcings lie in that class and WP(lambda) restricts to the paper's predictable class (PredForcing extends Forcing); (3) each forced pair is integrated as one integrand, ∫(λψ + q^ψ) rather than λ∫ψ + ∫q^ψ; by linearity these are equal, since q^ψ is admissible on its own; (4) λ ranges over all reals, and only [0,1] is used. λ multiplies b, σ, h, f and g, the forcing enters unscaled, q^g_T is added at T, and at λ = 1, q = 0 the notion is Solution."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T05:48:22Z",
+  "disagreements": "No disagreement in substance. The entry does not mention two representation choices that I would record. (a) Admissibility of the forcing is a conjunct of the predicate, in the class Forcing, where q^h only needs to be marked progressive rather than predictable. This is broader than the paper's predictable class, and WP(lambda) restricts to that class through PredForcing. (b) Each forced pair is integrated as one integrand, ∫(λψ + q^ψ), which by linearity equals the paper's λ∫ψ + ∫q^ψ. λ multiplies g as well as b, σ, h and f, as in (4.1). Verdict: faithful with representation choices."
+ },
+ "submitted_at": "2026-10-19T05:48:40Z",
+ "issue_draft": null
+}
