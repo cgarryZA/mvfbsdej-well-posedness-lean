@@ -1706,7 +1706,7 @@
    "source_sha256": "89a434caa7c84ed5e2143713d1483dde1e7fa2001de1f51afe467a70f3c9fe8f",
    "scope": "formal",
    "scope_note": "the clauses read lines 139–187 of the proof, the paragraph on the zero-mean terms: the sentence of the pinned line (lines 148–152), the local martingales M^W and M¹ (lines 139–148 and 153–172) and the paragraph on M² (lines 173–187); the first clause reads the sentence's first assertion, that membership in H²_N does not give the quadratic integrand of M² square moments, for ν ≠ 0, the degenerate case ν = 0, in which every marked integrand vanishes, being the one Remark 2.10 sets aside; M^W and M¹ are read as local stochastic integrals (IsLocalBrownianIntegral, IsLocalCompensatedIntegral) for the filtration of the setting, which carries their local-martingale property, not stated separately; that M² is a local martingale (lines 139–141) is the clause on M² read pathwise, stated as a martingale on [0, T] (stronger), adapted up to a null set; that the stochastic-integral terms of (4.5) are M^W, M¹ and M² belongs to (4.5) (A:eq:itoY2); the first link of the chain for M¹ (line 162), the Burkholder–Davis–Gundy inequality at p = 1 in quadratic-variation form, is cited work (He, Wang and Yan, as in A:sec4:supremum-criterion) and is not stated: the bound on 𝔼 sup |M¹| it leads to is stated and proved through the predictable quadratic variation (Lenglart's inequality), and the links after it are stated",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "membership δU ∈ H²_N does not give the quadratic integrand e^s|δU_s(e)|² of M² square moments (for ν ≠ 0; at ν = 0 the integrand vanishes)",
@@ -1773,7 +1773,7 @@
    "source_sha256": "518b95da43921c8290496ba8c58a2f74ebe2bce2191c71305e264312b4786bd7",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "with λ* the threshold of Lemma 4.2, uniqueness in ℍ at each λ ∈ [λ*, 1] (Lemma 4.3 with identical forcing and initial datum, λ̲ = λ*) and at each λ ∈ [0, λ*] (Lemma 4.2)",
@@ -1798,7 +1798,7 @@
    "source_sha256": "ed713718821e088c6ca09a59f75d22202a9e9960885df259a33fd8f6dd54fcbe",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "with ζ₀ > 0 the constant of Lemma 4.4 and its continuation step (WP(λ₀) ⇒ WP(λ₀ + ζ) for λ₀ ∈ [λ*, 1], ζ ∈ [0, ζ₀], λ₀ + ζ ≤ 1), λ_k = min{λ* + kζ₀, 1}: λ_0 = λ*, λ_{k+1} − λ_k ≤ ζ₀, λ_k = 1 for k ≥ ⌈(1 − λ*)/ζ₀⌉; WP(λ) on [0, λ*], WP(λ_k) for every k, and WP(1)",
@@ -2130,7 +2130,7 @@
    "source_sha256": "cdf7e5fd3a5753faf4d5aaea2d4e017db124558fd0461ec3b81dd52a3f8527cc",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "the law map Θ ↦ Law(Θ) is 1-Lipschitz from L²(Ω; H) into (P₂(H), W₂): W₂(Law Θ, Law Θ')² ≤ 𝔼‖Θ − Θ'‖²_H, the synchronous coupling bound (2.8)",
@@ -2161,7 +2161,7 @@
    "source_sha256": "4683d66c9de5e151a16b21a1e6cbac952384cffefeb3e0e4b2eb720fb4a0b746",
    "scope": "formal",
    "scope_note": "the clauses read Step 1 of the proof, lines 25–51, whose last sentence (lines 43–51) holds the pinned line 48: the left limits X₋, Y₋ (lines 25–28), the separability of H (line 28), the jump channel U (lines 29–36), Θ⁻ predictable and in L²([0, T] × Ω; H) (lines 36–42), and the Fubini isometry and the Pettis step (lines 43–51); the isometry (2.4) invoked for the jump channel (line 31) is the clause of A:eq:fubiniiso, and the clause on U states its conclusion for U; that the Z-coordinate is predictable and square integrable (lines 28–29) restates the hypotheses of Lemma A.1 (CadlagPredTuple) and is not stated separately; 'hence jointly measurable' (line 37) is the joint strong measurability of the clause Θ⁻ ∈ L²([0, T] × Ω; H)",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "X₋ and Y₋ are predictable; on every path {t : X_{t−} ≠ X_t} is countable and ∫_0^T 1{X_{t−} ≠ X_t} dt = 0, and likewise for Y; X₋ = X and Y₋ = Y dt ⊗ dP-almost everywhere on [0, T] × Ω; X₋ and Y₋ have finite energy on [0, T]",
@@ -2979,7 +2979,7 @@
    "source_sha256": "4e585ce7f397c971a8de4acdb6d81d0be45f342db82a0166e9d3d3578fcb0504",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "(4.7): along a trial Θ ∈ ℍ, 𝔼 ∫_0^T |ψ(s, Θ_s, μ_s)|² ds < ∞ for ψ ∈ {b, σ, h}; the frozen forward equation, with h at (Θ⁻_s, μ⁻_s) through a representative, has a solution X̄ ∈ S²(0, T; ℝⁿ), adapted and càdlàg with 𝔼 sup_{t ≤ T} |X̄_t|² < ∞; any two solutions are indistinguishable on [0, T]",
@@ -3009,7 +3009,7 @@
    "source_sha256": "17276cb1f64eca4139ee188be1e81dc912dab34d5bd02a5596d5d4321fdb9764",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "(4.8): for every solution X̄ of (4.7), Ξ = λ g(X̄_T, Law(X̄_T)) + q^g_T + ∫_0^T (λ f(s, Θ_s, μ_s) + q^f_s) ds lies in L²(Ω, ℱ_T; ℝᵐ); there is Θ̄ = (X̄, Ȳ, Z̄, Ū) ∈ ℍ with X̄ solving (4.7) and (Ȳ, Z̄, Ū) solving (4.8); any two such Θ̄ are equal in ℍ",
@@ -3072,7 +3072,7 @@
    "source_sha256": "77e48f26f92871ddcb580b9647738e2ba0b66be8eedc87a40ecaffa53cf9e98c",
    "scope": "formal",
    "scope_note": "the first clause reads the display before (4.10), lines 350–355, the difference of (4.7) at Θ¹ and Θ², outside the pinned region (lines 357–372); the sentence after (4.10), lines 373–374, names the justifications of its links",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "the forward difference before (4.10): δσ and δh meet the conditions of the Itô and compensated integrals, almost every path of δb is integrable on [0, T], and δX̄_t = λ ∫_0^t δb_s ds + λ ∫_0^t δσ_s dW_s + λ ∫_0^t ∫_E δh_s(e) Ñ(ds, de) almost surely for every t ∈ [0, T], and almost surely at every t ∈ [0, T] at once with any version of ∫ δσ dW right-continuous on [0, T)",
@@ -3118,7 +3118,7 @@
    "source_sha256": "0caddd587e020626144250f6aae2937e7b9eb2d9473e34140e10631526acde4c",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "(4.11): 𝔼|δξ̄|² ≤ λ²L² 𝔼(|δX̄_T| + W₂)² ≤ 2λ²L² (𝔼|δX̄_T|² + W₂²) ≤ C_g λ² 𝔼|δX̄_T|², C_g = 4L², for any two ℱ_T-measurable square-integrable terminal values",
@@ -3247,7 +3247,7 @@
    "source_sha256": "a877929483513c2add78424568742c35536e0d941243980e25f83f1d3832b241",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "(4.15): each coordinate of δX satisfies δX_t = δξ₀ + ∫_0^t (λ δb + q^b) ds + ∫_0^t (λ δσ + q^σ) dW + ∫_0^t ∫_E (λ δh + q^h) Ñ(ds, de) almost surely at every t ∈ [0, T], q = δq, δh at the predictable tuples; the jump integral is that of every representative of the integrand, and one exists",
@@ -3277,7 +3277,7 @@
    "source_sha256": "a877929483513c2add78424568742c35536e0d941243980e25f83f1d3832b241",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "(4.16): each coordinate of (δY, δZ, δU) satisfies δY_T = λ δg_T + q^g_T and δY_t = λ δg_T + q^g_T + ∫_t^T (λ δf + q^f) ds − ∫_t^T δZ dW − ∫_t^T ∫_E δU Ñ(ds, de) almost surely at every t ∈ [0, T], q = δq",
@@ -3307,7 +3307,7 @@
    "source_sha256": "250b294e482fd13dbd7563a46fdc8db3ff2448fcb533208c341f94e49f14ae55",
    "scope": "proof-step",
    "scope_note": "The pathwise identity (4.17) is used only through its expectation. The proof of Lemma 4.3 takes expectations in it to obtain (4.19), and Step 2 uses (4.19), not (4.17). (4.19) is A:eq:Gid, stated and proved (eq_Gid) from the library's bilinear second-moment identity for Itô–Lévy processes (Ito.SecondMoment.integral_mul_eq_of_isItoLevyProcess). That identity needs only the square integrability of the initial values and the finite energy of the integrands of the difference equations (4.15)–(4.16), which Lemma 4.3's hypotheses give. The bounds that make the stochastic terms of (4.17) mean-zero are the clauses of A:eq:bdg4. The pathwise identity itself is not stated, for the reason recorded for (4.5).",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [],
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
@@ -3338,7 +3338,7 @@
    "source_sha256": "5d58d75e0ff64d35f9d623ce18ac9506f4664d0ce027e18e70d50e5e24c79b67",
    "scope": "formal",
    "scope_note": "the clauses read lines 579–622: the four bounds of (4.18) (lines 579–598), each with the existence of its local martingale as a local stochastic integral (IsLocalBrownianIntegral, IsLocalCompensatedIntegral), the finiteness of the bounds and the zero means the supremum criterion gives (lines 600–612), the finiteness of 𝔼∫|λδσ + q^σ|²_F and 𝔼∫‖λδh + q^h‖² (lines 606–610), the integrability of the fifth integrand (lines 612–621), and its predictability and the zero mean of the fifth term by (2.2) (lines 612–613 and 622), the last clause, with a marked predictable representative of λδh + q^h and the fifth term read pathwise, the Poisson integral minus its compensator, as for M² in A:lem4.1:M2-infinite-activity (the bounds read λδh + q^h through any representative meeting the conditions of the compensated integral, marked progressively measurable, as in (4.15)); the display at lines 600–605 is the definition of the norm of ℍ at the hypothesis Θ¹ − Θ² ∈ ℍ, whose finiteness enters each bound; not stated: that the four local martingales and the fifth term are the stochastic terms of (4.17), which belongs to (4.17) (A:eq:Gid-path, a proof step not stated); the first link of each bound, the Burkholder–Davis–Gundy inequality at p = 1 in quadratic-variation form (Davis's inequality), is cited work (He, Wang and Yan, as in A:sec4:supremum-criterion) and is not stated: each bound is stated and proved through the predictable quadratic variation (Lenglart's inequality), with the same right-hand side",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "first bound of (4.18): ∫_0^t ⟨GδX_{s−}, δZ_s dW_s⟩ exists as a local Itô integral on [0, T], 𝔼 sup_{t≤T} |∫_0^t ⟨GδX_{s−}, δZ_s dW_s⟩| ≤ c_BDG ‖G‖ (𝔼 sup_{t≤T} |δX_t|²)^{1/2} (𝔼 ∫_0^T |δZ_t|²_F dt)^{1/2} < ∞, and its increments have mean zero (c_BDG every value at least some c₀ > 0)",
@@ -3410,7 +3410,7 @@
    "source_sha256": "46e224212d4e8316516a327f1bb7618acbfc1904c3aa6992f40bd866ace4d2b4",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "(4.19): 𝔼⟨G δX_T, δY_T⟩ − 𝔼⟨G δξ₀, δY_0⟩ = 𝔼 ∫_0^T [⟨λ δb + q^b, Gᵀ δY⟩ + ⟨λ δσ + q^σ, Gᵀ δZ⟩_F + ∫_E ⟨λ δh + q^h, Gᵀ δU⟩ dν + ⟨−λ δf − q^f, G δX⟩] dt, the three expectations existing, δh at the predictable tuples",
@@ -3441,7 +3441,7 @@
    "source_sha256": "150f4be88223dcfe3fe2768079cc4c41f3b4f9d82be386a911848afcc85a0509",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "(4.20) at almost every t: λ 𝔼[⟨δb, Gᵀ δY⟩ + ⟨δσ, Gᵀ δZ⟩_F + ∫_E ⟨δh, Gᵀ δU⟩ dν + ⟨−δf, G δX⟩] ≤ −λ β₁ 𝔼[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²] − λ β₂ 𝔼|G δX|², the expectation on the left existing, δh at the predictable tuples",
@@ -3473,7 +3473,7 @@
    "source_sha256": "6bab7182201b7abad4829837a498ea8162e4f6bfdba1422c65464bb9053a79d0",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "(4.21): 𝔼⟨G δX_T, δY_T⟩ = λ 𝔼⟨G δX_T, δg_T⟩ + 𝔼⟨G δX_T, q^g_T⟩ ≥ λ α 𝔼|G δX_T|² − |𝔼⟨G δX_T, q^g_T⟩|, the expectations existing",
@@ -3578,7 +3578,7 @@
    "source_sha256": "393867a8ee02929733b52a376171325b807e01b0d81452f311285bdc89d2c889",
    "scope": "formal",
    "scope_note": "",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "(4.24): for every κ > 0 and t ∈ [0, T], 𝔼 e^{κt} |δY_t|² + 𝔼 ∫_t^T e^{κs} (κ |δY_s|² + |δZ_s|²_F + ‖δU_s‖²) ds ≤ 𝔼 e^{κT} |λ δg_T + q^g_T|² + 2 𝔼 ∫_t^T e^{κs} ⟨δY_s, λ δf_s + q^f_s⟩ ds, the integrands integrable, q = δq",

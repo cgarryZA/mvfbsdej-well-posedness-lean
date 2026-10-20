@@ -163,3 +163,195 @@ mis-scoped:
   the clauses of `A:eq:bdg4`. The pathwise identities are not stated: they would need an
   every-time Itô–Lévy formula with local stochastic integrals. `scope_reviewed` is `false` for
   both until the notes are reviewed.
+
+
+## The scope decisions of the proof steps, reviewed at `1f67672`
+
+Reviewer: `claude-auditor`, a model of the same family as the author of the decisions under
+review. Manuscript: revision `1f67672`, sources in `manuscript/paper/`.
+
+The review covers the 28 claims of the inventory whose scope decision was not yet reviewed:
+26 recorded `formal`, which are steps of the proofs of Theorem 3.3, Lemmas 4.1–4.3, Theorem 3.5
+and Lemma A.1 together with the paragraph before Lemma 4.4, and 2 recorded `proof-step`, the
+pathwise identities (4.5) and (4.17). Each scope was decided from the manuscript alone before the
+recorded scope, its note and its clauses were compared with it.
+
+### Scope
+
+All 28 blind decisions agree with the recorded scopes (26 `formal`, 2 `proof-step`).
+Resolutions: agree 28, recorded right 0, blind right 0, both 0.
+
+Three of the agreements are close. The difference equations (4.15) and (4.16) follow from (4.1)
+by linearity, and (4.20) is Assumption 2.5 applied along the two solutions, so `proof-step` would
+have been equally defensible for these three. Recording them as `formal` costs nothing.
+
+The clauses of (3.2) and (3.3) carry the hypotheses of Theorem 3.3 (Assumptions 2.3–2.5 and full
+rank of `G`). Under these hypotheses the theorem gives `Θ¹ = Θ²`, so both clauses follow from
+Theorem 3.3 with both sides zero. The argument of the two steps uses Assumption 2.3 alone, and
+Remark 3.4 asserts that the membership `Θ¹ − Θ² ∈ ℍ` needs "only the Lipschitz control of
+coefficient differences". `A:rem:uniq-no-integ` maps that sentence to Theorem 3.3, so no claim
+states the Lipschitz-only form. The gap is in the coverage of Remark 3.4, which lies outside this
+subset. It is not a gap in these two passages, which are asserted under the theorem's hypotheses.
+
+### The two proof steps
+
+(4.17). Every statement of the note is accurate. The identity is referenced only at lines 579
+and 625 of Section 4. Step 2 inserts (4.20) and (4.21) into (4.19), not into (4.17). (4.19) is
+`A:eq:Gid`, stated and with an acceptance theorem, obtained from the library's bilinear
+second-moment identity. That identity exists, and Lemma 4.3's hypotheses supply its hypotheses
+through Assumption 2.3 and `Θ¹ − Θ² ∈ ℍ`. The zero means of the five stochastic terms are the
+clauses of `A:eq:bdg4`. The expectation of (4.17) is itself a printed display, (4.19), so
+nothing the proof takes from (4.17) is left unstated.
+
+(4.5). Every statement of the note is accurate except one. The identity is referenced only at
+lines 139 and 189. The proof takes expectations at each `t`. The bound on `𝔼 sup|δY|²`
+(lines 219–245) does not use (4.5). The zero means are clauses of
+`A:lem4.1:M2-infinite-activity`. The library's weighted second-moment identity exists, and at
+weight `e^s` its difference between the horizons `T` and `t` is the expectation of (4.5). A
+pathwise statement would need local stochastic integrals. The inaccurate statement is "What the
+proof draws from the expectation is stated and proved: eq_supE (the bound at every time and
+(4.6))". What the proof draws first is the weighted inequality of lines 193–199, and `eq_supE`
+does not state it. The `proof-step` decision is sound once that display is a clause of
+`A:eq:supE` (item 3 below).
+
+### Scope notes
+
+Six formal claims of the subset carry a scope note. Every statement in them checks against the
+text except one. The note of `A:eq:coerc` places the display that inserts (4.20) and (4.21) into
+(4.19) at lines 669–680, but it is at lines 670–680; line 669 closes the display defining `𝒩′` and
+`𝒦`. The note of `A:eq:contract` is accurate but says nothing about lines 445–454 (item 6).
+
+### Uncovered assertions
+
+No clause of its claim and no other claim of the inventory states the following eleven
+assertions, which fall in nine claims. Each is a display or sentence of the same proof step as
+its claim, next to the pinned display. For `A:eq:fwddiff`, `A:eq:coerc` and `A:eq:bdg4` the
+inventory already reads such neighbouring displays as part of the passage, and for `A:eq:supE` it
+does so for the bound by `R`. Paths are relative to `manuscript/paper/sections/`.
+
+1. `A:eq:uniq-coeff`, `03-main-results.tex`, lines 133–138. This bound holds for almost every
+   time with a constant independent of `t`, and (3.2) is its time integral. It is stronger than
+   (3.2).
+   ```latex
+   Hence Assumption~\ref{ass:lip} yields
+   \E\big[|\delta b_t|^2+|\delta\sigma_t|_F^2+\Lnorm{\delta h_t}^2+|\delta f_t|^2\big]
+   \le C\,\E|\delta\Theta_t|_{\mathcal H}^2
+   for a.e.\ $t$, where $C$ is independent of $t$.
+   ```
+2. `A:eq:uniq-bwd`, `03-main-results.tex`, lines 158–163. This is the backward difference
+   equation to which Lemma 4.1 is applied to give (3.3). Its counterpart in Lemma 4.3 is the
+   formal claim `A:eq:dY`.
+   ```latex
+   For the backward equation,
+   \delta Y_t=\delta g_T+\int_t^T\delta f_s\,\diff s-\int_t^T\delta Z_s\,\diff W_s
+   -\int_t^T\!\!\int_E\delta U_s(e)\,\Nt(\diff s,\diff e),
+   where $\delta g_T:=g(X^1_T,\Law(X^1_T))-g(X^2_T,\Law(X^2_T))$.
+   ```
+3. `A:eq:supE`, `04-proof-wellposedness.tex`, lines 188–199. This is the expectation of (4.5)
+   after Young's inequality, and the paper uses (4.5) through this display alone. It implies the
+   bound by `R` that the clause states, but the converse fails.
+   ```latex
+   Taking expectations in \eqref{eq:itoY2} therefore removes the three martingale terms, and
+   bounding the drift term by Young's inequality,
+   $2\inner{\delta Y_s}{\phi_s}\le|\delta Y_s|^2+|\phi_s|^2$, cancels the $|\delta Y_s|^2$
+   integrals on the two sides:
+   \E e^{t}|\delta Y_t|^2+\E\int_t^T e^{s}\big(|\delta Z_s|_F^2+\Lnorm{\delta U_s}^2\big)\diff s
+   \le\E e^{T}|\delta\xi|^2+\E\int_t^T e^{s}|\phi_s|^2\diff s .
+   ```
+4. `A:eq:coeffdiff`, `04-proof-wellposedness.tex`, lines 333–337. This bound holds for almost
+   every `s`, and the first link of (4.9) is its integral, so it is stronger than that link. The
+   pointwise bound of lines 329–332 is Assumption 2.3 itself and is not listed.
+   ```latex
+   Squaring, using Cauchy--Schwarz in $\R^5$, taking expectations, and bounding the deterministic
+   Wasserstein term by \eqref{eq:coupling} give
+   \E\,S_s^2\le 10L^2\,\E\big[|\delta X_s|^2+|\delta Y_s|^2+|\delta Z_s|_F^2+\Lnorm{\delta U_s}^2\big].
+   ```
+5. `A:eq:bwddiff`, `04-proof-wellposedness.tex`, lines 391–397. This is the backward difference
+   that brings Lemma 4.1 to bear. Its forward twin is the clause `eq_fwddiff_identity` of
+   `A:eq:fwddiff`, so the two halves of the contraction are treated differently.
+   ```latex
+   Taking the difference of \eqref{eq:frozenbwd} at $\Theta^1$ and $\Theta^2$, the terms $q^g_T$
+   and $q^f$ cancelling,
+   \delta\bar Y_t=\delta\bar\xi+\int_t^T\!\lambda\,\delta f_s\,\diff s
+   -\int_t^T\!\delta\bar Z_s\,\diff W_s-\int_t^T\!\!\int_E\delta\bar U_s(e)\,\Nt(\diff s,\diff e) ,
+   which is \eqref{eq:dYlin} with $\delta\xi=\delta\bar\xi$ and $\phi_s=\lambda\,\delta f_s$.
+   ```
+6. `A:eq:contract`, `04-proof-wellposedness.tex`, lines 445–454. This sentence fixes the printed
+   threshold and states the contraction by `1/2`. `lem_small` leaves `λ*` an unspecified
+   function of `(T, L)`, so neither fact is stated anywhere.
+   ```latex
+   Setting \lambda_*:=(2\sqrt{C_\Phi})^{-1}\in(0,\tfrac12] gives $C_\Phi\lambda^2\le\tfrac14$ for
+   $\lambda\in[0,\lambda_*]$, so that \eqref{eq:contract} reads
+   \|\Phi_\lambda(\Theta^1)-\Phi_\lambda(\Theta^2)\|_{\HH}
+   \le\tfrac12\,\|\Theta^1-\Theta^2\|_{\HH},\qquad\lambda\in[0,\lambda_*] .
+   ```
+7. `A:eq:fwd`, `04-proof-wellposedness.tex`, lines 697–709. This chain holds at every `t ≤ T`
+   and is the input to Grönwall. The clause states only its consequence (4.23).
+   ```latex
+   \E\sup_{s\le t}|\delta X_s|^2
+   \le C\Big(\E|\delta\xi_0|^2+\E\!\int_0^t\!\big(|\delta b_s|^2+|\delta\sigma_s|_F^2+\Lnorm{\delta h_s}^2\big)\diff s+P\Big)
+   \le C\Big(\E|\delta\xi_0|^2+\E\!\int_0^t\!\big(|\delta X_s|^2+|\delta Y_s|^2+|\delta Z_s|_F^2+\Lnorm{\delta U_s}^2\big)\diff s+P\Big)
+   \le C\Big(\int_0^t\!\E\sup_{r\le s}|\delta X_r|^2\,\diff s
+   +\E\!\int_0^T\!\big(|\delta Y_s|^2+|\delta Z_s|_F^2+\Lnorm{\delta U_s}^2\big)\diff s+P\Big) .
+   ```
+8. `A:eq:fwd`, `04-proof-wellposedness.tex`, lines 710–711, in the sentence of (4.23) itself.
+   The assertion is trivial, since `Θ¹ − Θ² ∈ ℍ`.
+   ```latex
+   The map $t\mapsto\E\sup_{s\le t}|\delta X_s|^2$ is nondecreasing and finite, since
+   $\Theta^1-\Theta^2\in\HH$
+   ```
+9. `A:eq:wgt`, `04-proof-wellposedness.tex`, lines 735–744. This is the display obtained by
+   inserting (4.25) into (4.24).
+   ```latex
+   \E\,e^{\kappa t}|\delta Y_t|^2
+   +\E\!\int_t^T\!e^{\kappa s}\Big[\big(\kappa-\tfrac{C}{\varepsilon}\big)|\delta Y_s|^2
+   +(1-\varepsilon)\big(|\delta Z_s|_F^2+\Lnorm{\delta U_s}^2\big)\Big]\diff s
+   \le\E\,e^{\kappa T}|\lambda\delta g_T+q^g_T|^2
+   +\tfrac{C}{\varepsilon}\,\E\!\int_t^T\!e^{\kappa s}\big(|\delta X_s|^2+|q^f_s|^2\big)\diff s .
+   ```
+10. `A:eq:wgt`, `04-proof-wellposedness.tex`, lines 745–752. This bound holds at every `t`, its
+    right side depends on `t`, and (4.26) follows from it. It is stronger than (4.26).
+    ```latex
+    Take $\varepsilon<1$ and $\kappa>C/\varepsilon$. The $\delta Y$-integral on the left is then
+    nonnegative and may be dropped, and the weights satisfy $1\le e^{\kappa s}\le e^{\kappa T}$
+    on $[0,T]$, so
+    \E|\delta Y_t|^2+\E\!\int_t^T\!\big(|\delta Z_s|_F^2+\Lnorm{\delta U_s}^2\big)\diff s
+    \le C\Big(\E|\lambda\delta g_T+q^g_T|^2
+    +\E\!\int_t^T\!\big(|\delta X_s|^2+|q^f_s|^2\big)\diff s\Big).
+    ```
+11. `A:eq:bwd`, `04-proof-wellposedness.tex`, lines 761–772, the first two links. These are the
+    forward-form BDG bound and the Lipschitz step. (4.27) implies the conclusion of the chain but
+    not these links.
+    ```latex
+    \E\sup_{t\le T}|\delta Y_t|^2
+    \le C\Big(\E|\delta Y_0|^2+\E\!\int_0^T\!|\lambda\,\delta f_s+q^f_s|^2\diff s
+    +\E\!\int_0^T\!\big(|\delta Z_s|_F^2+\Lnorm{\delta U_s}^2\big)\diff s\Big)
+    \le C\Big(\E|\delta Y_0|^2
+    +\E\!\int_0^T\!\big(|\delta X_s|^2+|\delta Y_s|^2+|\delta Z_s|_F^2+\Lnorm{\delta U_s}^2\big)\diff s+P\Big)
+    ```
+
+One more printed estimate lies between two passages of this subset and in neither of them. In
+the proof of Theorem 3.3 (`03-main-results.tex`, lines 144–156), the forward difference
+equation and the bound
+`𝔼 sup|δX_t|² ≤ C_T 𝔼∫(|δb|² + |δσ|²_F + ‖δh‖²) < ∞` lead to `δX ∈ S²`. No claim states
+them.
+
+### Extraneous clauses
+
+None. Four clauses state more than their passage literally prints, and each is justified:
+
+* `A:lem4.1:M2-infinite-activity` states `M²` as a martingale on `[0, T]` where the text says
+  local martingale. The note records this, and it is true because the compensator is
+  integrable.
+* `A:eq:coerc` states that `𝒩′` and `P` are finite. This follows from `Θ¹ − Θ² ∈ ℍ` and is
+  needed for the `[0, ∞]` reading.
+* `A:eq:frozenbwd` states that `Θ̄` is unique in `ℍ`. This is what "`Φ_λ` is well defined"
+  means, and the converse paragraph of the proof (lines 463–483) uses it.
+* `A:eq:terdiff` is stated for any two square-integrable terminal values. The printed inequality
+  is an instance.
+
+### Decisions that differed
+
+| Claim | Recorded | Blind | Resolution | Note |
+|---|---|---|---|---|
+| — | — | — | — | No decision differed. |

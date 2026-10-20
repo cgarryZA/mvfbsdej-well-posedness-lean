@@ -147,9 +147,7 @@
     {
      "accept": "Dissertation.Acceptance.A.eq_coupling",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.eq_coupling"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -160,16 +158,14 @@
      "spec": "Dissertation.PaperSpec.A.eq_coupling",
      "spec_hash": "ed839d34f480cba17af7c36ae6c33114",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.eq_coupling_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.eq_couplingT",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.eq_couplingT"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -180,16 +176,14 @@
      "spec": "Dissertation.PaperSpec.A.eq_couplingT",
      "spec_hash": "ed839d34f480cba1b0b3c75b14edd5d3",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.eq_couplingT_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.eq_lipfun",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.eq_lipfun"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -200,16 +194,14 @@
      "spec": "Dissertation.PaperSpec.A.eq_lipfun",
      "spec_hash": "ed839d34f480cba187b5540277706218",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.eq_lipfun_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.eq_margproj",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.eq_margproj"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -220,7 +212,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_margproj",
      "spec_hash": "ed839d34f480cba1c19abbad6d02050c",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.eq_margproj_hypotheses",
      "witness_ok": true
     }
@@ -232,7 +224,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [],
@@ -466,9 +458,7 @@
     {
      "accept": "Dissertation.Acceptance.A.rem_margin_reduce",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.rem_margin_reduce"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -479,16 +469,14 @@
      "spec": "Dissertation.PaperSpec.A.rem_margin_reduce",
      "spec_hash": "ed839d34f480cba15843e0ffe4756126",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.rem_margin_unweighted",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.rem_margin_unweighted"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -499,7 +487,7 @@
      "spec": "Dissertation.PaperSpec.A.rem_margin_unweighted",
      "spec_hash": "ed839d34f480cba1ba4163c9b3d796bd",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.rem_margin_hypotheses",
      "witness_ok": true
     },
@@ -547,7 +535,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -1418,9 +1406,7 @@
     {
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_lip",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.ex_fulllaw_lip"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1431,16 +1417,14 @@
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_lip",
      "spec_hash": "ed839d34f480cba11fea7903ed24f9f8",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_jump_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_pert",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.ex_fulllaw_pert"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1451,16 +1435,14 @@
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_pert",
      "spec_hash": "ed839d34f480cba1e9dade95deb0a071",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_jump_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_wp",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.ex_fulllaw_wp"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1471,16 +1453,14 @@
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_wp",
      "spec_hash": "ed839d34f480cba10404c6cf3a0cc0d0",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_jump_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_radial",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1491,16 +1471,14 @@
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial",
      "spec_hash": "ed839d34f480cba1fc87ff54d30df5ad",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_corr",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1511,16 +1489,14 @@
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr",
      "spec_hash": "ed839d34f480cba193f328d7c8c243ea",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1531,16 +1507,14 @@
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q",
      "spec_hash": "ed839d34f480cba12be9f13eb8df21c1",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_affineQ",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.ex_fulllaw_affineQ"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1551,7 +1525,7 @@
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_affineQ",
      "spec_hash": "ed839d34f480cba1b7c4d4b7307e74ea",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_affineQ_hypotheses",
      "witness_ok": true
     }
@@ -1563,7 +1537,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -1924,9 +1898,7 @@
     {
      "accept": "Dissertation.Acceptance.A.eq_coupling",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.eq_coupling"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1937,16 +1909,14 @@
      "spec": "Dissertation.PaperSpec.A.eq_coupling",
      "spec_hash": "ed839d34f480cba17af7c36ae6c33114",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.eq_coupling_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.rem_freelaw",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.rem_freelaw"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1957,7 +1927,7 @@
      "spec": "Dissertation.PaperSpec.A.rem_freelaw",
      "spec_hash": "ed839d34f480cba105f02a9629cb6b98",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses",
      "witness_ok": true
     }
@@ -1969,7 +1939,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -1994,9 +1964,7 @@
     {
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_wp",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.ex_fulllaw_wp"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -2007,7 +1975,7 @@
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_wp",
      "spec_hash": "ed839d34f480cba10404c6cf3a0cc0d0",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses",
      "witness_ok": true
     },
@@ -2109,7 +2077,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -2944,9 +2912,7 @@
     {
      "accept": "Dissertation.Acceptance.A.sec4_supremum_criterion",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.sec4_supremum_criterion"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -2957,7 +2923,7 @@
      "spec": "Dissertation.PaperSpec.A.sec4_supremum_criterion",
      "spec_hash": "ed839d34f480cba1f588c2071f5242ff",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.sec4_supremum_criterion_hypotheses",
      "witness_ok": true
     }
@@ -2969,7 +2935,7 @@
    "scope": "formal",
    "scope_note": "the supremum criterion is stated and proved; the Burkholder–Davis–Gundy inequality at p = 1 and p = 2 of the preceding sentence, with one constant for both exponents and Doob's constant 4 at p = 2, is cited work (He, Wang and Yan) and is not stated",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -3268,7 +3234,7 @@
      "spec": "Dissertation.PaperSpec.A.thm_cwp",
      "spec_hash": "ed839d34f480cba10deeabcd10e6e74d",
      "spec_ok": true,
-     "spec_review": "not reviewed",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
      "witness_ok": true
     }
@@ -3280,7 +3246,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -3716,7 +3682,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_coupling",
      "spec_hash": "ed839d34f480cba17af7c36ae6c33114",
      "spec_ok": true,
-     "spec_review": "not reviewed",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.eq_coupling_hypotheses",
      "witness_ok": true
     },
@@ -3746,7 +3712,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -5208,9 +5174,7 @@
  "summary": {
   "A": {
    "definition: reviewed": 11,
-   "formal: accepted": 67,
-   "formal: proved, author-reviewed": 6,
-   "formal: proved, review pending": 2,
+   "formal: accepted": 75,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
    "out of scope: proof-step": 2
