@@ -615,7 +615,7 @@
      "name": "main",
      "spec": "Dissertation.PaperSpec.A.lem_pert",
      "accept": "Dissertation.Acceptance.A.lem_pert",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses"
     }
    ]
   },
@@ -1748,13 +1748,13 @@
      "name": "the integrand e^s|δU_s(e)|² of M² is predictable (marked predictable for the filtration of the setting) and nonnegative",
      "spec": "Dissertation.PaperSpec.A.lem41_M2_integrand",
      "accept": "Dissertation.Acceptance.A.lem41_M2_integrand",
-     "witness": "Dissertation.Acceptance.A.lem_bpbsde_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_infinite_hypotheses"
     },
     {
      "name": "𝔼∫_0^T∫_E e^s|δU_s(e)|² ν(de) ds ≤ e^T 𝔼∫_0^T ‖δU_s‖² ds < ∞; the Poisson integral and the compensator of e^s|δU|² over (t, T] × E have finite expectation, and 𝔼[M²_T − M²_t] = 0",
      "spec": "Dissertation.PaperSpec.A.lem41_M2_zero_mean",
      "accept": "Dissertation.Acceptance.A.lem41_M2_zero_mean",
-     "witness": "Dissertation.Acceptance.A.lem_bpbsde_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_infinite_hypotheses"
     },
     {
      "name": "M²_t = ∫_{(0, t] × E} e^s|δU_s(e)|² N(ds, de) − ∫_0^t ∫_E e^s|δU_s(e)|² ν(de) ds is a local martingale: for t ∈ [0, T] the Poisson integral has finite expectation and M²_t is integrable and ℱ_t-measurable up to a null set, and 𝔼[M²_t | ℱ_s] = M²_s almost surely for 0 ≤ s ≤ t ≤ T (a martingale on [0, T])",
@@ -1772,6 +1772,12 @@
      "name": "M¹_t = ∫_0^t ∫_E e^s ⟨δY_{s−}, δU_s(e)⟩ Ñ(ds, de) exists as a local compensated integral on [0, T], and 𝔼 sup_{t≤T} |M¹_t| ≤ c_BDG e^T (𝔼 sup_{t≤T} |δY_t|²)^{1/2} (𝔼 ∫_0^T ‖δU_s‖² ds)^{1/2} < ∞ and 𝔼[M¹_T − M¹_t] = 0 for every t ∈ [0, T] (c_BDG every value at least some c₀ > 0)",
      "spec": "Dissertation.PaperSpec.A.lem41_M1",
      "accept": "Dissertation.Acceptance.A.lem41_M1",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_nonzero_hypotheses"
+    },
+    {
+     "name": "the first link of the chain for M¹: every local compensated integral M¹_t = ∫_0^t ∫_E e^s ⟨δY_{s−}, δU_s(e)⟩ Ñ(ds, de) on [0, T] has 𝔼 sup_{t≤T} |M¹_t| ≤ c_BDG 𝔼 (∫_0^T ∫_E e^{2s} |δY_{s−}|² |δU_s(e)|² N(ds, de))^{1/2} (c_BDG every value at least some c₀ > 0)",
+     "spec": "Dissertation.PaperSpec.A.lem41_M1_bdg",
+     "accept": "Dissertation.Acceptance.A.lem41_M1_bdg",
      "witness": "Dissertation.Acceptance.A.lem_bpbsde_nonzero_hypotheses"
     },
     {
@@ -2802,7 +2808,7 @@
    "location": "paper/sections/03-main-results.tex:158",
    "source_sha256": "a0c3e3fee8dc85540db2368978e14170d1deabb4269ae81cb99aef8cf283a2fd",
    "scope": "formal",
-   "scope_note": "the pinned region is lines 158–172; the second clause reads the backward difference of lines 158–163 and the third the terminal bound of lines 163–166 (X^k_T ∈ L², 𝔼|δg_T|² ≤ C 𝔼|δX_T|² < ∞), both stated under (2.3) and Assumption 2.3 alone, the hypotheses the steps use (Remark 3.4); the passage, under the hypotheses of Theorem 3.3, is their instance, at which the two solutions coincide; '(3.2) gives 𝔼∫_0^T |δf_s|² ds < ∞' (lines 166–167) is the finiteness of the driver energy in (3.2) (A:eq:uniq-coeff) and in the first clause; 'By Lemma 4.1' names a justification",
+   "scope_note": "the pinned region is lines 158–172; the second clause reads the backward difference of lines 158–163 and the third the terminal bound of lines 163–166 (X^k_T ∈ L², 𝔼|δg_T|² ≤ C 𝔼|δX_T|² < ∞), both stated under (2.3) and Assumption 2.3 alone, the hypotheses the steps use (Remark 3.4); the passage, under the hypotheses of Theorem 3.3, is their instance, at which the two solutions coincide; the fourth clause is (3.3) under (2.3) and Assumption 2.3 alone (also a clause of A:rem:uniq-no-integ), because the first clause, (3.3) under the hypotheses of Theorem 3.3, can be witnessed only at a pair of equal solutions (Theorem 3.3 makes any two solutions with the same initial datum coincide, so δY, δg_T and δf vanish there), while the fourth is witnessed at two distinct solutions of a system with no monotonicity; '(3.2) gives 𝔼∫_0^T |δf_s|² ds < ∞' (lines 166–167) is the finiteness of the driver energy in (3.2) (A:eq:uniq-coeff) and in the first and fourth clauses; 'By Lemma 4.1' names a justification",
    "scope_reviewed": false,
    "clauses": [
     {
@@ -2821,6 +2827,12 @@
      "name": "the terminal bound before (3.3): X¹_T, X²_T ∈ L² and 𝔼|δg_T|² ≤ C 𝔼|δX_T|² < ∞, C a function of L, along two solutions in ℍ_weak with the same initial datum, under (2.3) and Assumption 2.3 alone",
      "spec": "Dissertation.PaperSpec.A.eq_uniq_bwd_terminal",
      "accept": "Dissertation.Acceptance.A.eq_uniq_bwd_terminal",
+     "witness": "Dissertation.Acceptance.A.rem_uniq_lip_hypotheses"
+    },
+    {
+     "name": "(3.3) under (2.3) and Assumption 2.3 alone: 𝔼 sup_{t ≤ T} |δY_t|² ≤ C_BP (𝔼|δg_T|² + 𝔼 ∫_0^T |δf_s|² ds) < ∞, C_BP a function of T, along two solutions in ℍ_weak with the same initial datum",
+     "spec": "Dissertation.PaperSpec.A.eq_uniq_bwd_lip",
+     "accept": "Dissertation.Acceptance.A.eq_uniq_bwd_lip",
      "witness": "Dissertation.Acceptance.A.rem_uniq_lip_hypotheses"
     }
    ],
@@ -3086,7 +3098,7 @@
      "name": "for every t ≤ T, 𝔼|δY_t|² + 𝔼∫_t^T (|δZ_s|²_F + ‖δU_s‖²) ds ≤ R = e^T (𝔼|δξ|² + 𝔼∫_0^T |φ_s|² ds); (4.6): sup_{t≤T} 𝔼|δY_t|² + 𝔼∫_0^T (|δZ_s|²_F + ‖δU_s‖²) ds ≤ 2R = C₀ (𝔼|δξ|² + 𝔼∫_0^T |φ_s|² ds), C₀ = 2e^T",
      "spec": "Dissertation.PaperSpec.A.eq_supE",
      "accept": "Dissertation.Acceptance.A.eq_supE",
-     "witness": "Dissertation.Acceptance.A.lem_bpbsde_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_drift_hypotheses"
     },
     {
      "name": "the weighted inequality before the bound by R, for every t ∈ [0, T]: 𝔼 e^t |δY_t|² + 𝔼 ∫_t^T e^s (|δZ_s|²_F + ‖δU_s‖²) ds ≤ 𝔼 e^T |δξ|² + 𝔼 ∫_t^T e^s |φ_s|² ds",
@@ -3506,7 +3518,7 @@
      "name": "(4.15): each coordinate of δX satisfies δX_t = δξ₀ + ∫_0^t (λ δb + q^b) ds + ∫_0^t (λ δσ + q^σ) dW + ∫_0^t ∫_E (λ δh + q^h) Ñ(ds, de) almost surely at every t ∈ [0, T], q = δq, δh at the predictable tuples; the jump integral is that of every representative of the integrand, and one exists",
      "spec": "Dissertation.PaperSpec.A.eq_dX",
      "accept": "Dissertation.Acceptance.A.eq_dX",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -3536,7 +3548,7 @@
      "name": "(4.16): each coordinate of (δY, δZ, δU) satisfies δY_T = λ δg_T + q^g_T and δY_t = λ δg_T + q^g_T + ∫_t^T (λ δf + q^f) ds − ∫_t^T δZ dW − ∫_t^T ∫_E δU Ñ(ds, de) almost surely at every t ∈ [0, T], q = δq",
      "spec": "Dissertation.PaperSpec.A.eq_dY",
      "accept": "Dissertation.Acceptance.A.eq_dY",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -3698,7 +3710,7 @@
      "name": "(4.19): 𝔼⟨G δX_T, δY_T⟩ − 𝔼⟨G δξ₀, δY_0⟩ = 𝔼 ∫_0^T [⟨λ δb + q^b, Gᵀ δY⟩ + ⟨λ δσ + q^σ, Gᵀ δZ⟩_F + ∫_E ⟨λ δh + q^h, Gᵀ δU⟩ dν + ⟨−λ δf − q^f, G δX⟩] dt, the three expectations existing, δh at the predictable tuples",
      "spec": "Dissertation.PaperSpec.A.eq_Gid",
      "accept": "Dissertation.Acceptance.A.eq_Gid",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -3729,7 +3741,7 @@
      "name": "(4.20) at almost every t: λ 𝔼[⟨δb, Gᵀ δY⟩ + ⟨δσ, Gᵀ δZ⟩_F + ∫_E ⟨δh, Gᵀ δU⟩ dν + ⟨−δf, G δX⟩] ≤ −λ β₁ 𝔼[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²] − λ β₂ 𝔼|G δX|², the expectation on the left existing, δh at the predictable tuples",
      "spec": "Dissertation.PaperSpec.A.eq_intmono",
      "accept": "Dissertation.Acceptance.A.eq_intmono",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -3761,7 +3773,7 @@
      "name": "(4.21): 𝔼⟨G δX_T, δY_T⟩ = λ 𝔼⟨G δX_T, δg_T⟩ + 𝔼⟨G δX_T, q^g_T⟩ ≥ λ α 𝔼|G δX_T|² − |𝔼⟨G δX_T, q^g_T⟩|, the expectations existing",
      "spec": "Dissertation.PaperSpec.A.eq_termmono",
      "accept": "Dissertation.Acceptance.A.eq_termmono",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -3792,19 +3804,19 @@
      "name": "(4.20) and (4.21) inserted into (4.19): λ α 𝔼|G δX_T|² − |𝔼⟨G δX_T, q^g_T⟩| − 𝔼⟨G δξ₀, δY_0⟩ ≤ −λ β₁ 𝔼∫[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²] − λ β₂ 𝔼∫|G δX|² + 𝔼∫(⟨q^b, Gᵀ δY⟩ + ⟨q^σ, Gᵀ δZ⟩_F + ⟨−q^f, G δX⟩ + ∫_E ⟨q^h, Gᵀ δU⟩ dν), every expectation finite",
      "spec": "Dissertation.PaperSpec.A.eq_coerc_insert",
      "accept": "Dissertation.Acceptance.A.eq_coerc_insert",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses"
     },
     {
      "name": "(4.22): N' and P are finite, and λ α 𝔼|G δX_T|² + λ β₂ 𝔼∫|G δX|² + λ β₁ 𝔼∫[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²] ≤ the six pairings in absolute value ≤ 𝒦 = η N' + ‖G‖²/(4η) P for every η > 0",
      "spec": "Dissertation.PaperSpec.A.eq_coerc",
      "accept": "Dissertation.Acceptance.A.eq_coerc",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses"
     },
     {
      "name": "each coercive block on the left of (4.22) is at most 𝒦: λα𝔼|GδX_T|² ≤ 𝒦, λβ₂𝔼∫|GδX|² ≤ 𝒦 and λβ₁𝔼∫[|GᵀδY|² + |GᵀδZ|²_F + ‖GᵀδU‖²] ≤ 𝒦, for every η > 0",
      "spec": "Dissertation.PaperSpec.A.eq_coerc_blocks",
      "accept": "Dissertation.Acceptance.A.eq_coerc_blocks",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses"
     }
    ],
    "source_region": {
@@ -3870,7 +3882,7 @@
      "name": "(4.23): 𝔼 sup_{t ≤ T} |δX_t|² ≤ C (𝔼 ∫_0^T (|δY_t|² + |δZ_t|²_F + ‖δU_t‖²) dt + P), C a function of (T, L, ‖G‖, c_G, α, β₁, β₂)",
      "spec": "Dissertation.PaperSpec.A.eq_fwd",
      "accept": "Dissertation.Acceptance.A.eq_fwd",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses"
     },
     {
      "name": "the chain fed into Grönwall, at every t ∈ [0, T]: 𝔼 sup_{s ≤ t} |δX_s|² ≤ C (𝔼|δξ₀|² + 𝔼 ∫_0^t (|δb_s|² + |δσ_s|²_F + ‖δh_s‖²) ds + P) ≤ C (𝔼|δξ₀|² + 𝔼 ∫_0^t (|δX_s|² + |δY_s|² + |δZ_s|²_F + ‖δU_s‖²) ds + P) ≤ C (∫_0^t 𝔼 sup_{r ≤ s} |δX_r|² ds + 𝔼 ∫_0^T (|δY_s|² + |δZ_s|²_F + ‖δU_s‖²) ds + P); and t ↦ 𝔼 sup_{s ≤ t} |δX_s|² is nondecreasing and finite on [0, T]",
@@ -3921,7 +3933,7 @@
      "name": "(4.24): for every κ > 0 and t ∈ [0, T], 𝔼 e^{κt} |δY_t|² + 𝔼 ∫_t^T e^{κs} (κ |δY_s|² + |δZ_s|²_F + ‖δU_s‖²) ds ≤ 𝔼 e^{κT} |λ δg_T + q^g_T|² + 2 𝔼 ∫_t^T e^{κs} ⟨δY_s, λ δf_s + q^f_s⟩ ds, the integrands integrable, q = δq",
      "spec": "Dissertation.PaperSpec.A.eq_bwdito",
      "accept": "Dissertation.Acceptance.A.eq_bwdito",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -3953,7 +3965,7 @@
      "name": "(4.25) for every 0 < ε ≤ 1, C independent of ε",
      "spec": "Dissertation.PaperSpec.A.eq_bwdyoung",
      "accept": "Dissertation.Acceptance.A.eq_bwdyoung",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses"
     }
    ],
    "source_region": {
@@ -3981,20 +3993,26 @@
    "location": "paper/sections/04-proof-wellposedness.tex:735",
    "source_sha256": "89423b84d237fc8987ae2907a0af9b11b3606cf9e003618e99ac88dce07ccceb",
    "scope": "formal",
-   "scope_note": "the pinned region is lines 735–760; the second clause reads lines 735–752: the display inserting (4.25) in (4.24) (lines 735–744) and the bound at every t for ε < 1 and κ > C/ε (lines 745–752); the first clause reads (4.26) with the sentence before it (lines 753–755)",
+   "scope_note": "the pinned region is lines 735–760; the second clause reads lines 735–752: the display inserting (4.25) in (4.24) (lines 735–744) and the bound at every t for ε < 1 and κ > C/ε (lines 745–752); the third clause reads the terminal bound 𝔼|δg_T|² ≤ C 𝔼|δX_T|² of line 753; the first clause reads (4.26) with the sentence before it (lines 753–755), whose 'the forcings in P' and '∫_t^T ≤ ∫_0^T' are steps of its proof",
    "scope_reviewed": false,
    "clauses": [
     {
      "name": "(4.26): sup_{t ≤ T} 𝔼|δY_t|² + 𝔼 ∫_0^T (|δZ_t|²_F + ‖δU_t‖²) dt ≤ C (𝔼|δX_T|² + 𝔼 ∫_0^T |δX_t|² dt + P), C a function of (T, L, ‖G‖, c_G, α, β₁, β₂)",
      "spec": "Dissertation.PaperSpec.A.eq_wgt",
      "accept": "Dissertation.Acceptance.A.eq_wgt",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses"
     },
     {
      "name": "(4.25) inserted in (4.24), for ε ∈ (0, 1], κ > 0 and t ∈ [0, T]: 𝔼 e^{κt} |δY_t|² + 𝔼 ∫_t^T e^{κs} ((κ − C/ε) |δY_s|² + (1 − ε) (|δZ_s|²_F + ‖δU_s‖²)) ds ≤ 𝔼 e^{κT} |λ δg_T + q^g_T|² + (C/ε) 𝔼 ∫_t^T e^{κs} (|δX_s|² + |q^f_s|²) ds; and for ε < 1, κ > C/ε, at every t: 𝔼|δY_t|² + 𝔼 ∫_t^T (|δZ_s|²_F + ‖δU_s‖²) ds ≤ C' (𝔼|λ δg_T + q^g_T|² + 𝔼 ∫_t^T (|δX_s|² + |q^f_s|²) ds)",
      "spec": "Dissertation.PaperSpec.A.eq_wgt_insert",
      "accept": "Dissertation.Acceptance.A.eq_wgt_insert",
      "witness": "Dissertation.Acceptance.A.lem_pert_backward_window_hypotheses"
+    },
+    {
+     "name": "the terminal bound before (4.26): 𝔼|δg_T|² ≤ C 𝔼|δX_T|², C a function of (T, L, ‖G‖, c_G, α, β₁, β₂), under the hypotheses of Lemma 4.3",
+     "spec": "Dissertation.PaperSpec.A.eq_wgt_terminal",
+     "accept": "Dissertation.Acceptance.A.eq_wgt_terminal",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses"
     }
    ],
    "source_region": {
@@ -4047,7 +4065,7 @@
      "name": "(4.27): 𝔼 sup_{t ≤ T} |δY_t|² + 𝔼 ∫_0^T (|δZ_t|²_F + ‖δU_t‖²) dt ≤ C (𝔼|δX_T|² + 𝔼 ∫_0^T |δX_t|² dt + P), C a function of (T, L, ‖G‖, c_G, α, β₁, β₂)",
      "spec": "Dissertation.PaperSpec.A.eq_bwd",
      "accept": "Dissertation.Acceptance.A.eq_bwd",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses"
     },
     {
      "name": "the first two links of the chain before (4.27): 𝔼 sup_{t ≤ T} |δY_t|² ≤ C (𝔼|δY_0|² + 𝔼 ∫_0^T |λ δf_s + q^f_s|² ds + 𝔼 ∫_0^T (|δZ_s|²_F + ‖δU_s‖²) ds) ≤ C (𝔼|δY_0|² + 𝔼 ∫_0^T (|δX_s|² + |δY_s|² + |δZ_s|²_F + ‖δU_s‖²) ds + P)",
