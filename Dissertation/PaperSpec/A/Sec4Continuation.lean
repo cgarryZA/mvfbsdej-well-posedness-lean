@@ -16,7 +16,8 @@ Lemma 4.2 gives it on `[0, λ*]`. The proof of Theorem 3.5 steps along
 ## Main definitions
 
 * `Dissertation.PaperSpec.A.sec4_uniq_homotopy` — uniqueness along the homotopy.
-* `Dissertation.PaperSpec.A.sec45_proof_thm35` — `WP(λ_k)` for every `k`, and `WP(1)`.
+* `Dissertation.PaperSpec.A.sec45_proof_thm35` — with `ζ₀` of Lemma 4.4, `WP(λ_k)` for every `k`,
+  and `WP(1)`.
 -/
 
 open MeasureTheory Filter ProbabilityTheory
@@ -68,8 +69,10 @@ def sec4_uniq_homotopy : Prop :=
 coefficients with initial datum `ξ₀` satisfy (2.3) and Assumptions 2.2–2.5 with constants
 `L, α, β₁, β₂` and coupling matrix `G`, then, with `λ* = λ*(T, L)`,
 `ζ₀ = ζ₀(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂, λ*)` and `λ_k = min{λ* + k ζ₀, 1}`: `λ* ∈ (0, 1]`,
-`ζ₀ > 0` and `WP(λ)` for every `λ ∈ [0, λ*]`; `λ_0 = λ*`, `λ_{k+1} − λ_k ≤ ζ₀` and `λ_k = 1` for
-`k ≥ ⌈(1 − λ*)/ζ₀⌉`; `WP(λ_k)` for every `k`; and `WP(1)`. -/
+`ζ₀ > 0`, and `ζ₀` has the property of Lemma 4.4: for every `λ₀ ∈ [λ*, 1]` with `WP(λ₀)`,
+`WP(λ₀ + ζ)` holds for every `ζ ∈ [0, ζ₀]` with `λ₀ + ζ ≤ 1`; `WP(λ)` for every
+`λ ∈ [0, λ*]`; `λ_0 = λ*`, `λ_{k+1} − λ_k ≤ ζ₀` and `λ_k = 1` for `k ≥ ⌈(1 − λ*)/ζ₀⌉`;
+`WP(λ_k)` for every `k`; and `WP(1)`. -/
 def sec45_proof_thm35 : Prop :=
   ∃ (lamStar : ℝ → ℝ → ℝ) (zeta0 : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ),
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
@@ -85,6 +88,9 @@ def sec45_proof_thm35 : Prop :=
     Assumption25 (enlJoint 𝒢₀ D h𝒢₀) P T G α β₁ β₂ C →
     0 < lamStar T L ∧ lamStar T L ≤ 1
     ∧ 0 < zeta0 T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ (lamStar T L)
+    ∧ (∀ lam0 : ℝ, lamStar T L ≤ lam0 → lam0 ≤ 1 → WP D h𝒢₀ hind₀ T lam0 C ξ₀ →
+        ∀ ζ : ℝ, 0 ≤ ζ → ζ ≤ zeta0 T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ (lamStar T L) →
+          lam0 + ζ ≤ 1 → WP D h𝒢₀ hind₀ T (lam0 + ζ) C ξ₀)
     ∧ (∀ lam : ℝ, 0 ≤ lam → lam ≤ lamStar T L → WP D h𝒢₀ hind₀ T lam C ξ₀)
     ∧ min (lamStar T L + ((0 : ℕ) : ℝ) * zeta0 T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ (lamStar T L))
         1 = lamStar T L

@@ -20,6 +20,7 @@ Poisson integral and its compensator over `(t, T] × E` have finite expectation 
 
 * `lintegral_lintegral_lintegral_eq_prod` — a triple lower integral over the sample point, a set
   of times and the marks is the lower integral over the product measure.
+* `markedPredictable_exp_mul_sum_sq` — the quadratic integrand is marked predictable.
 * `lintegral_exp_mul_sum_sq_le` — the `L¹` bound of the quadratic integrand.
 * `quadratic_compensation` — the finite expectations and the mean zero of `M²_T − M²_t`.
 -/
@@ -59,6 +60,37 @@ variable {Ω : Type u'} [MeasurableSpace Ω] {E : Type v'} [MeasurableSpace E]
 theorem coe_nnnorm_sq_eq_ofReal (x : ℝ) : (‖x‖₊ : ℝ≥0∞) ^ 2 = ENNReal.ofReal (x ^ 2) := by
   rw [show ((‖x‖₊ : ℝ≥0∞)) = ‖x‖ₑ from rfl, Real.enorm_eq_ofReal_abs,
     ← ENNReal.ofReal_pow (abs_nonneg x), sq_abs]
+
+/-- **The quadratic integrand is marked predictable.** For `U` marked predictable,
+coordinatewise, and vanishing off `[0, T]`, `e^s |U_s(e)|²` is marked predictable. -/
+theorem markedPredictable_exp_mul_sum_sq
+    (hU : ∀ k, Probability.MarkedPredictable ℱ ν fun ω s e => U k s ω e)
+    (hUv : ∀ k ω s e, s ∉ Set.Icc (0 : ℝ) T → U k s ω e = 0) :
+    Probability.MarkedPredictable ℱ ν fun ω s e => Real.exp s * ∑ k, U k s ω e ^ 2 := by
+  classical
+  have hF : Measurable fun q : ℝ × ℝ × (Fin m → ℝ) => Real.exp q.1 * ∑ k, q.2.2 k ^ 2 :=
+    (Real.measurable_exp.comp measurable_fst).mul
+      (Finset.measurable_sum _ fun k _ => ((measurable_pi_apply k).comp
+        measurable_snd.snd).pow_const 2)
+  have hΓ : Probability.MarkedPredictable ℱ ν fun ω s e => (fun k => U k s ω e : Fin m → ℝ) := by
+    unfold Probability.MarkedPredictable
+    letI : MeasurableSpace (Ω × ℝ × E) := Probability.markedPredictableSigma ℱ ν
+    exact measurable_pi_lambda _ fun k => hU k
+  have hcomp := Probability.MarkedPredictable.comp_measurable (ν := ν) hF
+    (Y := fun (_ : Ω) (_ : ℝ) => (0 : ℝ)) measurable_const hΓ
+  have heq : (fun ω s e => Real.exp s * ∑ k, U k s ω e ^ 2)
+      = fun ω s e => if 0 < s then Real.exp s * ∑ k, U k s ω e ^ 2 else 0 := by
+    funext ω s e
+    split_ifs with hs
+    · rfl
+    · have h0 : ∀ k, U k s ω e = 0 := fun k => by
+        have h := (hU k).eq_of_nonpos (ω := ω) (ω' := ω) (s := s) (s' := -1) (e := e) (e' := e)
+          (not_lt.mp hs) (by norm_num)
+        rw [h]
+        exact hUv k ω (-1) e fun h1 => by linarith [h1.1]
+      simp [h0]
+  rw [heq]
+  exact hcomp
 
 /-- **The `L¹` bound of the quadratic integrand.** For `U` marked predictable, coordinatewise,
 and vanishing off `[0, T]`,

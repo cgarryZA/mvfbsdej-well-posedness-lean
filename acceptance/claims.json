@@ -1721,10 +1721,16 @@
      "witness": "Dissertation.Acceptance.A.lem41_M2_no_square_moment_corr_hypotheses"
     },
     {
-     "name": "with ν(E) = ∞ the jump times τ_k = inf{t ≥ 0 : N((0, t] × E) ≥ k} are all 0 almost surely, so they do not exhaust [0, T]",
+     "name": "with ν(E) = ∞, almost surely N((0, t] × E) = ∞ for every t > 0 and the jump times τ_k = inf{t ≥ 0 : N((0, t] × E) ≥ k}, read in [0, ∞], are all 0, so sup_k τ_k < T for every T > 0: they do not exhaust [0, T]",
      "spec": "Dissertation.PaperSpec.A.lem41_jump_times",
      "accept": "Dissertation.Acceptance.A.lem41_jump_times",
      "witness": "Dissertation.Acceptance.A.sec2_infinite_activity_hypotheses"
+    },
+    {
+     "name": "the integrand e^s|δU_s(e)|² of M² is predictable (marked predictable for the filtration of the setting) and nonnegative",
+     "spec": "Dissertation.PaperSpec.A.lem41_M2_integrand",
+     "accept": "Dissertation.Acceptance.A.lem41_M2_integrand",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_hypotheses"
     },
     {
      "name": "𝔼∫_0^T∫_E e^s|δU_s(e)|² ν(de) ds ≤ e^T 𝔼∫_0^T ‖δU_s‖² ds < ∞; the Poisson integral and the compensator of e^s|δU|² over (t, T] × E have finite expectation, and 𝔼[M²_T − M²_t] = 0",
@@ -1777,7 +1783,7 @@
    "scope_reviewed": false,
    "clauses": [
     {
-     "name": "λ_k = min{λ* + kζ₀, 1}: λ_0 = λ*, λ_{k+1} − λ_k ≤ ζ₀, λ_k = 1 for k ≥ ⌈(1 − λ*)/ζ₀⌉; WP(λ) on [0, λ*], WP(λ_k) for every k, and WP(1)",
+     "name": "with ζ₀ > 0 the constant of Lemma 4.4 and its continuation step (WP(λ₀) ⇒ WP(λ₀ + ζ) for λ₀ ∈ [λ*, 1], ζ ∈ [0, ζ₀], λ₀ + ζ ≤ 1), λ_k = min{λ* + kζ₀, 1}: λ_0 = λ*, λ_{k+1} − λ_k ≤ ζ₀, λ_k = 1 for k ≥ ⌈(1 − λ*)/ζ₀⌉; WP(λ) on [0, λ*], WP(λ_k) for every k, and WP(1)",
      "spec": "Dissertation.PaperSpec.A.sec45_proof_thm35",
      "accept": "Dissertation.Acceptance.A.sec45_proof_thm35",
      "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
@@ -3327,13 +3333,19 @@
    "location": "paper/sections/04-proof-wellposedness.tex:683",
    "source_sha256": "28fd9c283ce2f0feb20f2c6130e074c16ed3aaced00c1a84f6c2847774c3221c",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the second clause reads the sentence after the display, lines 694–695, outside the pinned region (lines 683–693)",
    "scope_reviewed": false,
    "clauses": [
     {
      "name": "(4.22): N' and P are finite, and λ α 𝔼|G δX_T|² + λ β₂ 𝔼∫|G δX|² + λ β₁ 𝔼∫[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²] ≤ the six pairings in absolute value ≤ 𝒦 = η N' + ‖G‖²/(4η) P for every η > 0",
      "spec": "Dissertation.PaperSpec.A.eq_coerc",
      "accept": "Dissertation.Acceptance.A.eq_coerc",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+    },
+    {
+     "name": "each coercive block on the left of (4.22) is at most 𝒦: λα𝔼|GδX_T|² ≤ 𝒦, λβ₂𝔼∫|GδX|² ≤ 𝒦 and λβ₁𝔼∫[|GᵀδY|² + |GᵀδZ|²_F + ‖GᵀδU‖²] ≤ 𝒦, for every η > 0",
+     "spec": "Dissertation.PaperSpec.A.eq_coerc_blocks",
+     "accept": "Dissertation.Acceptance.A.eq_coerc_blocks",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
     }
    ],

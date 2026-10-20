@@ -23,7 +23,8 @@ moment, is false in a setting with `ν = 0`, where every marked integrand has ze
 * `Dissertation.Acceptance.A.lem41_M2_no_square_moment_false` — the first clause read in every
   setting is false.
 * `Dissertation.Acceptance.A.lem41_M2_no_square_moment_corr` — the first clause for `ν ≠ 0`.
-* `Dissertation.Acceptance.A.lem41_jump_times`, `lem41_M2_zero_mean` — the other two clauses.
+* `Dissertation.Acceptance.A.lem41_jump_times`, `lem41_M2_integrand`, `lem41_M2_zero_mean` — the
+  other clauses.
 * `Dissertation.Acceptance.A.eq_supE` — the bound at every time and (4.6).
 * `Dissertation.Acceptance.A.lem41_M2_no_square_moment_corr_hypotheses` — the hypotheses of the
   first clause for `ν ≠ 0` at `ν = δ₀`.
@@ -71,14 +72,32 @@ theorem lem41_M2_no_square_moment_corr :
   exact exists_markedPredictable_sq_markedEnergy_eq_top (D.W.W ⟨0, hd⟩) (half_pos hT)
     (half_lt_self hT) hW hA hA0 hAt hm
 
-/-- The second clause of the `M²` paragraph: with `ν(E) = ∞` the jump times are all `0`. -/
+/-- The second clause of the `M²` paragraph: with `ν(E) = ∞` every `(0, t]` carries infinitely
+many jumps, so the jump times are all `0` and do not exhaust `[0, T]`. -/
 theorem lem41_jump_times : PaperSpec.A.lem41_jump_times.{u, v, w} := by
   intro Ω _ P _ E _ ν _ d D hν
-  filter_upwards [sec2_infinite_activity P ν d D hν] with ω hω k
-  refine le_antisymm (le_of_forall_pos_le_add fun ε hε => ?_)
-    (le_csInf ⟨1, zero_le_one, by rw [hω 0 1 le_rfl one_pos]; exact le_top⟩ fun t ht => ht.1)
-  rw [zero_add]
-  exact csInf_le ⟨0, fun t ht => ht.1⟩ ⟨hε.le, by rw [hω 0 ε le_rfl hε]; exact le_top⟩
+  filter_upwards [sec2_infinite_activity P ν d D hν] with ω hω
+  have hinf : ∀ t : ℝ, 0 < t → D.N.N ω (Set.Ioc 0 t ×ˢ Set.univ) = ⊤ :=
+    fun t ht => hω 0 t le_rfl ht
+  have hτ : ∀ k : ℕ,
+      (⨅ (t : ℝ) (_ : 0 ≤ t ∧ (k : ℝ≥0∞) ≤ D.N.N ω (Set.Ioc 0 t ×ˢ Set.univ)),
+        ENNReal.ofReal t) = 0 := by
+    intro k
+    refine le_antisymm (ENNReal.le_of_forall_pos_le_add fun ε hε _ => ?_) zero_le
+    have hε' : (0 : ℝ) < ε := NNReal.coe_pos.mpr hε
+    rw [zero_add, ← ENNReal.ofReal_coe_nnreal]
+    exact iInf₂_le (ε : ℝ) ⟨hε'.le, by rw [hinf ε hε']; exact le_top⟩
+  refine ⟨hinf, hτ, fun T hT => ?_⟩
+  simp only [hτ, iSup_const]
+  exact ENNReal.ofReal_pos.mpr hT
+
+/-- The integrand of the third clause of the `M²` paragraph: `e^s |δU_s(e)|²` is marked
+predictable and nonnegative. -/
+theorem lem41_M2_integrand : PaperSpec.A.lem41_M2_integrand.{u, v, w} := by
+  intro Ω 𝒢₀ mΩ E _ ν _ _ m d P _ D h𝒢₀ hind₀ _ _ T hT δξ φ δY δZ δU hZ hZv hZs hU hUv hUs
+    _ _ _ _ _ _ _ _
+  exact ⟨markedPredictable_exp_mul_sum_sq hU hUv, fun ω s e =>
+    mul_nonneg (Real.exp_pos s).le (Finset.sum_nonneg fun k _ => sq_nonneg _)⟩
 
 /-- The third clause of the `M²` paragraph: the compensation formula gives
 `𝔼[M²_T − M²_t] = 0`. -/

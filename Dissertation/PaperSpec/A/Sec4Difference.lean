@@ -49,6 +49,7 @@ size `P` of (4.14) and `𝒦 = η N' + ‖G‖²/(4η) P` for `η > 0`,
 * `Dissertation.PaperSpec.A.eq_intmono` — (4.20).
 * `Dissertation.PaperSpec.A.eq_termmono` — (4.21).
 * `Dissertation.PaperSpec.A.eq_coerc` — (4.22).
+* `Dissertation.PaperSpec.A.eq_coerc_blocks` — each coercive block of (4.22) is at most `𝒦`.
 -/
 
 open MeasureTheory Filter ProbabilityTheory Matrix
@@ -481,6 +482,81 @@ def eq_coerc : Prop :=
               ⬝ᵥ (Gᵀ *ᵥ fun k => U₁ k s ω e - U₂ k s ω e) ∂ν|
             + |(fun k => qf₁ k ω s - qf₂ k ω s) ⬝ᵥ (G *ᵥ fun i => X₁ i s ω - X₂ i s ω)|)
               ∂volume ∂P
+        ≤ η * (∫⁻ ω, esq (fun i => X₁ i T ω - X₂ i T ω) ∂P
+            + ∫⁻ ω, esq (fun k => Y₁ k 0 ω - Y₂ k 0 ω) ∂P
+            + (∑ i, Brownian.Ito.energy P T (fun ω s => X₁ i s ω - X₂ i s ω)
+              + ∑ k, Brownian.Ito.energy P T (fun ω s => Y₁ k s ω - Y₂ k s ω)
+              + ∑ k, ∑ j, Brownian.Ito.energy P T (fun ω s => Z₁ k s ω j - Z₂ k s ω j)
+              + ∑ k, Poisson.Compensated.markedEnergy P ν T
+                (fun ω s e => U₁ k s ω e - U₂ k s ω e))).toReal
+          + ‖GX G‖ ^ 2 / (4 * η) * (dataSize P ν T (fun i ω => ξ₁ ω i - ξ₂ ω i)
+            (fun i ω s => qb₁ i ω s - qb₂ i ω s) (fun i s ω j => qσ₁ i s ω j - qσ₂ i s ω j)
+            (fun i s ω e => qh₁ i s ω e - qh₂ i s ω e) (fun k ω s => qf₁ k ω s - qf₂ k ω s)
+            (fun k ω => qg₁ k ω - qg₂ k ω)).toReal
+
+/-- **The sentence after (4.22).** Under the hypotheses of Lemma 4.3, as in `eq_coerc`, for every
+`η > 0` each coercive block on the left of (4.22) is at most `𝒦 = η N' + ‖G‖²/(4η) P`:
+`λ α 𝔼|G δX_T|² ≤ 𝒦`, `λ β₂ 𝔼 ∫_0^T |G δX|² ≤ 𝒦` and
+`λ β₁ 𝔼 ∫_0^T [|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²] ≤ 𝒦`, with
+`N' = 𝔼|δX_T|² + 𝔼|δY_0|² + 𝔼 ∫_0^T (|δX|² + |δY|² + |δZ|²_F + ‖δU‖²) dt`, the data size `P` of
+(4.14), `q = δq` and `‖G‖` the operator norm. -/
+def eq_coerc_blocks : Prop :=
+  ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
+    [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
+    (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
+    (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
+    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P),
+    0 < n → 0 < m → 0 < d → ∀ T : ℝ, 0 < T →
+    ∀ (L α β₁ β₂ : ℝ) (G : Matrix (Fin m) (Fin n) ℝ) (C : Coeffs ν n m d),
+    JointBorel T C → Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C → G.rank = min m n →
+    Assumption25 (enlJoint 𝒢₀ D h𝒢₀) P T G α β₁ β₂ C →
+    ∀ lamLow lam : ℝ, 0 < lamLow → lamLow ≤ 1 → lamLow ≤ lam → lam ≤ 1 →
+    ∀ (ξ₁ ξ₂ : Ω → EuclideanSpace ℝ (Fin n)),
+    Measurable[enlJoint 𝒢₀ D h𝒢₀ 0] ξ₁ → Measurable[enlJoint 𝒢₀ D h𝒢₀ 0] ξ₂ →
+    ∀ (qb₁ qb₂ : Fin n → Ω → ℝ → ℝ) (qσ₁ qσ₂ : Fin n → ℝ → Ω → Fin d → ℝ)
+      (qh₁ qh₂ : Fin n → ℝ → Ω → E → ℝ) (qf₁ qf₂ : Fin m → Ω → ℝ → ℝ)
+      (qg₁ qg₂ : Fin m → Ω → ℝ),
+    PredForcing (enlJoint 𝒢₀ D h𝒢₀) P ν T qb₁ qσ₁ qh₁ qf₁ qg₁ →
+    PredForcing (enlJoint 𝒢₀ D h𝒢₀) P ν T qb₂ qσ₂ qh₂ qf₂ qg₂ →
+    ∀ (X₁ X₂ : Fin n → ℝ → Ω → ℝ) (Y₁ Y₂ : Fin m → ℝ → Ω → ℝ)
+      (Z₁ Z₂ : Fin m → ℝ → Ω → Fin d → ℝ) (U₁ U₂ : Fin m → ℝ → Ω → E → ℝ),
+    WeakForcedSolution D h𝒢₀ hind₀ T lam C ξ₁ qb₁ qσ₁ qh₁ qf₁ qg₁ X₁ Y₁ Z₁ U₁ →
+    WeakForcedSolution D h𝒢₀ hind₀ T lam C ξ₂ qb₂ qσ₂ qh₂ qf₂ qg₂ X₂ Y₂ Z₂ U₂ →
+    supSize P ν T (fun i t ω => X₁ i t ω - X₂ i t ω) (fun k t ω => Y₁ k t ω - Y₂ k t ω)
+        (fun k t ω j => Z₁ k t ω j - Z₂ k t ω j) (fun k t ω e => U₁ k t ω e - U₂ k t ω e) < ⊤ →
+    ∀ η : ℝ, 0 < η →
+      lam * α * ∫ ω, (G *ᵥ fun i => X₁ i T ω - X₂ i T ω)
+          ⬝ᵥ (G *ᵥ fun i => X₁ i T ω - X₂ i T ω) ∂P
+        ≤ η * (∫⁻ ω, esq (fun i => X₁ i T ω - X₂ i T ω) ∂P
+            + ∫⁻ ω, esq (fun k => Y₁ k 0 ω - Y₂ k 0 ω) ∂P
+            + (∑ i, Brownian.Ito.energy P T (fun ω s => X₁ i s ω - X₂ i s ω)
+              + ∑ k, Brownian.Ito.energy P T (fun ω s => Y₁ k s ω - Y₂ k s ω)
+              + ∑ k, ∑ j, Brownian.Ito.energy P T (fun ω s => Z₁ k s ω j - Z₂ k s ω j)
+              + ∑ k, Poisson.Compensated.markedEnergy P ν T
+                (fun ω s e => U₁ k s ω e - U₂ k s ω e))).toReal
+          + ‖GX G‖ ^ 2 / (4 * η) * (dataSize P ν T (fun i ω => ξ₁ ω i - ξ₂ ω i)
+            (fun i ω s => qb₁ i ω s - qb₂ i ω s) (fun i s ω j => qσ₁ i s ω j - qσ₂ i s ω j)
+            (fun i s ω e => qh₁ i s ω e - qh₂ i s ω e) (fun k ω s => qf₁ k ω s - qf₂ k ω s)
+            (fun k ω => qg₁ k ω - qg₂ k ω)).toReal
+      ∧ lam * β₂ * ∫ ω, ∫ s in Set.Icc (0 : ℝ) T, (G *ᵥ fun i => X₁ i s ω - X₂ i s ω)
+          ⬝ᵥ (G *ᵥ fun i => X₁ i s ω - X₂ i s ω) ∂volume ∂P
+        ≤ η * (∫⁻ ω, esq (fun i => X₁ i T ω - X₂ i T ω) ∂P
+            + ∫⁻ ω, esq (fun k => Y₁ k 0 ω - Y₂ k 0 ω) ∂P
+            + (∑ i, Brownian.Ito.energy P T (fun ω s => X₁ i s ω - X₂ i s ω)
+              + ∑ k, Brownian.Ito.energy P T (fun ω s => Y₁ k s ω - Y₂ k s ω)
+              + ∑ k, ∑ j, Brownian.Ito.energy P T (fun ω s => Z₁ k s ω j - Z₂ k s ω j)
+              + ∑ k, Poisson.Compensated.markedEnergy P ν T
+                (fun ω s e => U₁ k s ω e - U₂ k s ω e))).toReal
+          + ‖GX G‖ ^ 2 / (4 * η) * (dataSize P ν T (fun i ω => ξ₁ ω i - ξ₂ ω i)
+            (fun i ω s => qb₁ i ω s - qb₂ i ω s) (fun i s ω j => qσ₁ i s ω j - qσ₂ i s ω j)
+            (fun i s ω e => qh₁ i s ω e - qh₂ i s ω e) (fun k ω s => qf₁ k ω s - qf₂ k ω s)
+            (fun k ω => qg₁ k ω - qg₂ k ω)).toReal
+      ∧ lam * β₁ * ∫ ω, ∫ s in Set.Icc (0 : ℝ) T, ((Gᵀ *ᵥ fun k => Y₁ k s ω - Y₂ k s ω)
+            ⬝ᵥ (Gᵀ *ᵥ fun k => Y₁ k s ω - Y₂ k s ω)
+          + ∑ j, (Gᵀ *ᵥ fun k => Z₁ k s ω j - Z₂ k s ω j)
+            ⬝ᵥ (Gᵀ *ᵥ fun k => Z₁ k s ω j - Z₂ k s ω j)
+          + ∫ e, (Gᵀ *ᵥ fun k => U₁ k s ω e - U₂ k s ω e)
+            ⬝ᵥ (Gᵀ *ᵥ fun k => U₁ k s ω e - U₂ k s ω e) ∂ν) ∂volume ∂P
         ≤ η * (∫⁻ ω, esq (fun i => X₁ i T ω - X₂ i T ω) ∂P
             + ∫⁻ ω, esq (fun k => Y₁ k 0 ω - Y₂ k 0 ω) ∂P
             + (∑ i, Brownian.Ito.energy P T (fun ω s => X₁ i s ω - X₂ i s ω)

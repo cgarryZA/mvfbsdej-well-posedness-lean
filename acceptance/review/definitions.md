@@ -1926,6 +1926,47 @@ Verdict: faithful with representation choices.
   Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.BrownianFrozenStep--claude-auditor--2026-10-19T03_35_46Z.md`).
   <!-- def-review: Dissertation.PaperSpec.A.BrownianFrozenStep 98bd6b9787534217c971d1dc13a30cc3 by=claude-auditor -->
 
+## The trial space, the frozen step and the coefficient differences of Lemma 4.2 (`Dissertation/PaperSpec/A/Sec4Frozen.lean`)
+
+* `PaperSpec.A.HTuple ℱ P ν T X Y Z U`: `PaperWeakTuple ℱ P ν T X Y Z U` (reviewed with the weak
+  solution notion), every path of each coordinate of `X` and `Y` with a left limit at every
+  `t ∈ (0, T]`, and `𝔼 sup_{t ∈ [0, T]} |X_t|² < ∞`, `𝔼 sup_{t ∈ [0, T]} |Y_t|² < ∞` (lower
+  integrals of the suprema of `esq`): `Θ ∈ ℍ = S²(ℝⁿ) × S²(ℝᵐ) × H²_W × H²_N` of §3, the `S²`
+  coordinates adapted with càdlàg paths on `[0, T]` (right-continuous on `[0, T)`, left limits on
+  `(0, T]`), `Z` predictable and `U` marked predictable, both of finite energy. The processes are
+  constrained on `[0, T]` only and `Z`, `U` vanish off it, the encoding of `WeakSolution`; the
+  conditions on `Θ` in `Solution` are exactly these.
+  <!-- def-review: Dissertation.PaperSpec.A.HTuple f8659178ce7276554797eb3de5a8f4d0 by=claude-author -->
+* `PaperSpec.A.coeffDiffNorm P C Θ₁ Θ₂ s ω = ‖δb‖ₑ + ‖δσ‖ₑ + ‖δh‖ₑ + ‖δf‖ₑ` in `[0, ∞]`, with
+  `δψ = ψ(s, Θ₁ s ω, lawP2 P (Θ₁ s)) − ψ(s, Θ₂ s ω, lawP2 P (Θ₂ s))`: `S_s` of Step 1 of the proof
+  of Lemma 4.2 for two random tuples `Θᵏ_s` and their laws in `P₂(H)`. `‖δσ‖` is the Euclidean
+  norm on `ℝ^{n × d}` (the Frobenius norm) and `‖δh‖` the norm of `L²(ν; ℝⁿ)`, the norms of
+  Assumption 2.3; `lawP2` is the law of a square-integrable tuple (reviewed with the laws).
+  <!-- def-review: Dissertation.PaperSpec.A.coeffDiffNorm 1d032902209e76e50e3f27b76888b87d by=claude-author -->
+* `PaperSpec.A.FrozenForward D h𝒢₀ hind₀ T λ C ξ₀ q^b q^σ q^h X Y Z U X'`: there is
+  `γ : Fin n → ℝ → Ω → E → ℝ` with `e ↦ (γ_i s ω e)_i` equal `ν`-almost everywhere to
+  `h(s, Θ⁻_s(ω), ·, Law(Θ⁻_s))` for almost every `s ∈ [0, T]`, almost surely, where
+  `Θ⁻_s = tupleAt ν (leftLimProc X) (leftLimProc Y) Z U s` is the predictable tuple of
+  `PaperWeakSolution`; and each coordinate `X'_i` solves `LinearFSDEJ` over `enlJoint 𝒢₀ D h𝒢₀`
+  from `ξ₀ᵢ` with drift `λ driftProc_i + q^b_i`, diffusion row `λ diffusionProc_i + q^σ_i` and
+  jump integrand `λ jumpProc T γ i + q^h_i`, the processes along the trial `Θ = (X, Y, Z, U)` cut
+  to `[0, T]`. This is the frozen forward equation (4.7): its six integrals combined by linearity,
+  `h` at the left limits through a representative of its `L²(ν)` values (the compensated integral
+  integrates an a.e. class). `LinearFSDEJ` gives `X'` adapted with right-continuous paths and the
+  identity almost surely at each `t ∈ [0, T]`, and asks of the integrands what the three integrals
+  need. Which representative is taken does not matter: two solutions are indistinguishable
+  (`eq_frozenfwd`).
+  <!-- def-review: Dissertation.PaperSpec.A.FrozenForward 2d8ed447ca12534ca192702cec9f9648 by=claude-author -->
+* `PaperSpec.A.FrozenStep D h𝒢₀ hind₀ T λ C ξ₀ q X Y Z U X' Y' Z' U'`: `FrozenForward … X'`; each
+  coordinate `(Y'_k, Z'_k, U'_k)` solves `LinearBSDEJ` over `enlJoint` with terminal value
+  `λ terminalVal P T C X' k + q^g_k`, which is `λ g(X'_T, Law(X'_T)) + q^g_T`, and drift
+  `λ driverProc_k + q^f_k` along the trial; and `HTuple … X' Y' Z' U'`. This is
+  `Φ_λ(Θ) = Θ̄` of Lemma 4.2: (4.7), (4.8) and `Θ̄ ∈ ℍ`. It is a relation; its image is unique up to
+  the identification of `ℍ` (`eq_frozenbwd`). Its first two conditions at `n = m = d = 1`,
+  `ν = 0`, `λ = 1`, `q = 0` and `ξ₀ = 0` correspond to `BrownianFrozenStep`, whose Poisson
+  integrand `0` stands for the representative `γ` (with `ν = 0` the compensated integral vanishes).
+  <!-- def-review: Dissertation.PaperSpec.A.FrozenStep 4c12ec59e5b0c0624baf69ddef5e32bc by=claude-author -->
+
 ## The Brownian forms of Example 5.2 (`Dissertation/WellPosedness/Spec/BrownianForms.lean`, `Dissertation/PaperSpec/A/Sec5BrownianReduction.lean`, `Dissertation/WellPosedness/Examples/BrownianFiltration.lean`)
 
 * `WellPosedness.Existence.enlBrownian 𝒢₀ W h𝒢₀`: `augFiltration (W.naturalFiltration ⊔

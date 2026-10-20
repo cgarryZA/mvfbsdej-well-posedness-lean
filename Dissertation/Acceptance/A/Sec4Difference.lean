@@ -27,6 +27,7 @@ Lemma 4.3, an instance of which is `Dissertation.Acceptance.A.lem_pert_two_data_
 * `Dissertation.Acceptance.A.eq_intmono` — (4.20).
 * `Dissertation.Acceptance.A.eq_termmono` — (4.21).
 * `Dissertation.Acceptance.A.eq_coerc` — (4.22).
+* `Dissertation.Acceptance.A.eq_coerc_blocks` — each coercive block of (4.22) is at most `𝒦`.
 -/
 
 open MeasureTheory ProbabilityTheory Filter Matrix
@@ -408,5 +409,31 @@ theorem eq_coerc : PaperSpec.A.eq_coerc.{u, v, w} := by
       ENNReal.toReal_add (by finiteness) (by finiteness), ← add_assoc]
   rw [hN]
   linarith
+
+
+/-- **The sentence after (4.22)**: each coercive block, being nonnegative, is at most the sum of
+the blocks, hence at most `𝒦`. -/
+theorem eq_coerc_blocks : PaperSpec.A.eq_coerc_blocks.{u, v, w} := by
+  intro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ hn hm hd T hT L α β₁ β₂ G C hJ h23 hG h25
+    lamLow lam hlow hlow1 hlam hlam1 ξ₁ ξ₂ hξ₁ hξ₂ qb₁ qb₂ qσ₁ qσ₂ qh₁ qh₂ qf₁ qf₂ qg₁ qg₂ hq₁ hq₂
+    X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ hS₁ hS₂ hsup η hη
+  obtain ⟨-, -, hM, hK⟩ := Dissertation.Acceptance.A.eq_coerc 𝒢₀ ν n m d P D h𝒢₀ hind₀ hn hm hd
+    T hT L α β₁ β₂ G C hJ h23 hG h25 lamLow lam hlow hlow1 hlam hlam1 ξ₁ ξ₂ hξ₁ hξ₂ qb₁ qb₂ qσ₁
+    qσ₂ qh₁ qh₂ qf₁ qf₂ qg₁ qg₂ hq₁ hq₂ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ hS₁ hS₂ hsup
+  have hl : 0 ≤ lam := (hlow.trans_le hlam).le
+  have hdot : ∀ {k : ℕ} (v : Fin k → ℝ), 0 ≤ v ⬝ᵥ v := fun v =>
+    Finset.sum_nonneg fun i _ => mul_self_nonneg (v i)
+  have h3 : ∀ {a b c M K : ℝ}, 0 ≤ a → 0 ≤ b → 0 ≤ c → a + b + c ≤ M → M ≤ K →
+      a ≤ K ∧ b ≤ K ∧ c ≤ K := fun ha hb hc hM hK =>
+    ⟨by linarith, by linarith, by linarith⟩
+  refine h3 ?_ ?_ ?_ hM (hK η hη)
+  · exact mul_nonneg (mul_nonneg hl h25.constants.α_nonneg)
+      (integral_nonneg fun ω => hdot _)
+  · exact mul_nonneg (mul_nonneg hl h25.constants.β₂_nonneg)
+      (integral_nonneg fun ω => setIntegral_nonneg measurableSet_Icc fun s _ => hdot _)
+  · refine mul_nonneg (mul_nonneg hl h25.constants.β₁_nonneg)
+      (integral_nonneg fun ω => setIntegral_nonneg measurableSet_Icc fun s _ => ?_)
+    exact add_nonneg (add_nonneg (hdot _) (Finset.sum_nonneg fun j _ => hdot _))
+      (integral_nonneg fun e => hdot _)
 
 end Dissertation.Acceptance.A

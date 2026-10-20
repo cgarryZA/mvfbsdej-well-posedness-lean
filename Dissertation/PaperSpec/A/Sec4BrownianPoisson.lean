@@ -11,16 +11,19 @@ import Dissertation.PaperSpec.A.Sec4
 Statement and equation numbers refer to the well-posedness paper at `1f67672`. The proof of
 Lemma 4.1 takes expectations in the Itô identity (4.5) for `e^t |δY_t|²`. Its paragraph on the
 zero-mean terms says that the quadratic integrand `e^s |δU_s(e)|²` of the Poisson martingale `M²`
-has no square moments, that with `ν(E) = ∞` the jump times do not exhaust `[0, T]`, and that the
-compensation formula gives `𝔼[M²_T − M²_t] = 0`. The expected identity then gives the bound at
-every time `t` and (4.6).
+has no square moments, that with `ν(E) = ∞` the jump times do not exhaust `[0, T]`, that the
+integrand is predictable and nonnegative, and that the compensation formula gives
+`𝔼[M²_T − M²_t] = 0`. The expected identity then gives the bound at every time `t` and (4.6).
 
 ## Main definitions
 
 * `Dissertation.PaperSpec.A.lem41_M2_no_square_moment` — `δU ∈ H²_N` gives `e^s |δU_s(e)|²` no
   square moment, in every setting.
 * `Dissertation.PaperSpec.A.lem41_M2_no_square_moment_corr` — the same for `ν ≠ 0`.
-* `Dissertation.PaperSpec.A.lem41_jump_times` — with `ν(E) = ∞` the jump times are all `0`.
+* `Dissertation.PaperSpec.A.lem41_jump_times` — with `ν(E) = ∞` every `(0, t]` carries infinitely
+  many jumps and the jump times, read in `[0, ∞]`, are all `0`.
+* `Dissertation.PaperSpec.A.lem41_M2_integrand` — `e^s |δU_s(e)|²` is marked predictable and
+  nonnegative.
 * `Dissertation.PaperSpec.A.lem41_M2_zero_mean` — `𝔼[M²_T − M²_t] = 0`, `M²` read pathwise.
 * `Dissertation.PaperSpec.A.eq_supE` — the bound at every time and (4.6).
 -/
@@ -72,14 +75,70 @@ def lem41_M2_no_square_moment_corr : Prop :=
           (fun ω s e => Real.exp s * ∑ k, δU k s ω e ^ 2) = ⊤
 
 /-- The `M²` paragraph of the proof of Lemma 4.1, its second clause: if `ν(E) = ∞`, then almost
-surely every jump time `τ_k = inf {t ≥ 0 : N((0, t] × E) ≥ k}`, `k ∈ ℕ`, is `0`, so the jump
-times do not exhaust `[0, T]` for any `T > 0`. -/
+surely every interval `(0, t]`, `t > 0`, carries infinitely many jumps, `N((0, t] × E) = ∞`; every
+jump time `τ_k = inf {t ≥ 0 : N((0, t] × E) ≥ k}`, `k ∈ ℕ`, read in `[0, ∞]` (the infimum of the
+empty set being `∞`), is `0`; and so `sup_k τ_k < T` for every `T > 0`: the jump times do not
+exhaust `[0, T]`. -/
 def lem41_jump_times : Prop :=
   ∀ {Ω : Type u} [MeasurableSpace Ω] (P : Measure Ω) [IsProbabilityMeasure P] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] (d : ℕ)
     (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν), ν Set.univ = ⊤ →
-    ∀ᵐ ω ∂P, ∀ k : ℕ,
-      sInf {t : ℝ | 0 ≤ t ∧ (k : ℝ≥0∞) ≤ D.N.N ω (Set.Ioc 0 t ×ˢ Set.univ)} = 0
+    ∀ᵐ ω ∂P, (∀ t : ℝ, 0 < t → D.N.N ω (Set.Ioc 0 t ×ˢ Set.univ) = ⊤)
+      ∧ (∀ k : ℕ, (⨅ (t : ℝ) (_ : 0 ≤ t ∧ (k : ℝ≥0∞) ≤ D.N.N ω (Set.Ioc 0 t ×ˢ Set.univ)),
+          ENNReal.ofReal t) = 0)
+      ∧ ∀ T : ℝ, 0 < T →
+        (⨆ k : ℕ, ⨅ (t : ℝ) (_ : 0 ≤ t ∧ (k : ℝ≥0∞) ≤ D.N.N ω (Set.Ioc 0 t ×ˢ Set.univ)),
+          ENNReal.ofReal t) < ENNReal.ofReal T
+
+/-- The `M²` paragraph of the proof of Lemma 4.1, the integrand of its third clause. Under the
+hypotheses of Lemma 4.1 (those of `lem_bpbsde`), the integrand `e^s |δU_s(e)|²` of `M²` is marked
+predictable for the filtration of the setting and nonnegative. -/
+def lem41_M2_integrand : Prop :=
+  ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
+    [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
+    (m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
+    (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
+    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P),
+    0 < m → 0 < d → ∀ T : ℝ, 0 < T →
+    ∀ (δξ : Ω → EuclideanSpace ℝ (Fin m)) (φ : Fin m → Ω → ℝ → ℝ) (δY : Fin m → ℝ → Ω → ℝ)
+      (δZ : Fin m → ℝ → Ω → Fin d → ℝ) (δU : Fin m → ℝ → Ω → E → ℝ)
+      (hZ : ∀ k j, Probability.Predictable (enlJoint 𝒢₀ D h𝒢₀) fun ω s => δZ k s ω j)
+      (hZv : ∀ k ω s, s ∉ Set.Icc (0 : ℝ) T → δZ k s ω = 0)
+      (hZs : ∀ k j, Brownian.Ito.energy P T (fun ω s => δZ k s ω j) ≠ ⊤)
+      (hU : ∀ k, Probability.MarkedPredictable (enlJoint 𝒢₀ D h𝒢₀) ν
+        fun ω s e => δU k s ω e)
+      (hUv : ∀ k ω s e, s ∉ Set.Icc (0 : ℝ) T → δU k s ω e = 0)
+      (hUs : ∀ k, Poisson.Compensated.markedEnergy P ν T (fun ω s e => δU k s ω e) ≠ ⊤),
+    Measurable[enlJoint 𝒢₀ D h𝒢₀ T] δξ → MemLp δξ 2 P →
+    (∀ k, Measurable (Function.uncurry (φ k))) → (∀ k, Brownian.Ito.energy P T (φ k) ≠ ⊤) →
+    (∀ k, ∀ t ∈ Set.Icc (0 : ℝ) T, Measurable[enlJoint 𝒢₀ D h𝒢₀ t] (δY k t)) →
+    (∀ k ω, ∀ t ∈ Set.Ico (0 : ℝ) T, Tendsto (fun s => δY k s ω) (𝓝[>] t) (𝓝 (δY k t ω))) →
+    (∀ k ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ l : ℝ, Tendsto (fun s => δY k s ω) (𝓝[<] t) (𝓝 l)) →
+    (∀ k, ∀ t ∈ Set.Icc (0 : ℝ) T, ∀ᵐ ω ∂P,
+      δY k t ω = δξ ω k + (∫ s in Set.Icc t T, φ k ω s)
+        - (Brownian.Multidim.MultidimBrownianMotion.stochasticIntegral D.W (enlJoint 𝒢₀ D h𝒢₀)
+              (isBrownianFiltration_enlJoint D h𝒢₀ hind₀) (δZ k)
+              (fun j => Brownian.Ito.measurable_uncurry_of_predictable (hZ k j))
+              (progressivelyMeasurable_of_predictable_of_vanish (hZ k) (hZv k))
+              (BSDEJ.Solves.sq_int_global_of_vanishing (hZv k) (hZs k)) T ω
+            - Brownian.Multidim.MultidimBrownianMotion.stochasticIntegral D.W
+              (enlJoint 𝒢₀ D h𝒢₀) (isBrownianFiltration_enlJoint D h𝒢₀ hind₀) (δZ k)
+              (fun j => Brownian.Ito.measurable_uncurry_of_predictable (hZ k j))
+              (progressivelyMeasurable_of_predictable_of_vanish (hZ k) (hZv k))
+              (BSDEJ.Solves.sq_int_global_of_vanishing (hZv k) (hZs k)) t ω)
+        - (Poisson.Compensated.stochasticIntegral D.N (enlJoint 𝒢₀ D h𝒢₀)
+              (isPoissonFiltration_enlJoint D h𝒢₀ hind₀) (fun ω' s e => δU k s ω' e)
+              ((hU k).mono (Probability.markedPredictableSigma_le _ ν) le_rfl)
+              (hU k).markedProgressivelyMeasurable
+              (BSDEJ.Solves.marked_sq_int_global_of_vanishing (hUv k) (hUs k)) T ω
+            - Poisson.Compensated.stochasticIntegral D.N (enlJoint 𝒢₀ D h𝒢₀)
+              (isPoissonFiltration_enlJoint D h𝒢₀ hind₀) (fun ω' s e => δU k s ω' e)
+              ((hU k).mono (Probability.markedPredictableSigma_le _ ν) le_rfl)
+              (hU k).markedProgressivelyMeasurable
+              (BSDEJ.Solves.marked_sq_int_global_of_vanishing (hUv k) (hUs k)) t ω)) →
+    Probability.MarkedPredictable (enlJoint 𝒢₀ D h𝒢₀) ν
+        (fun ω s e => Real.exp s * ∑ k, δU k s ω e ^ 2)
+      ∧ ∀ ω s e, 0 ≤ Real.exp s * ∑ k, δU k s ω e ^ 2
 
 /-- The `M²` paragraph of the proof of Lemma 4.1, its third clause. Under the hypotheses of
 Lemma 4.1 (those of `lem_bpbsde`), `𝔼 ∫_0^T ∫_E e^s |δU_s(e)|² ν(de) ds

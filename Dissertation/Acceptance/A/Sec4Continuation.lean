@@ -194,7 +194,7 @@ theorem sec45_proof_thm35 : PaperSpec.A.sec45_proof_thm35.{u, v, w} := by
       have hstep' := hstep _ (hlow k) (min_le_right _ _) ih _ (sub_nonneg.mpr (hmono k))
         (hdiff k) (by rw [add_sub_cancel]; exact min_le_right _ _)
       rwa [add_sub_cancel] at hstep'
-  refine ⟨hpos, hle, hz, hwp, h0, hdiff, hone, hwpk, ?_⟩
+  refine ⟨hpos, hle, hz, hstep, hwp, h0, hdiff, hone, hwpk, ?_⟩
   have h1 := hone _ le_rfl
   rw [← h1]
   exact hwpk _

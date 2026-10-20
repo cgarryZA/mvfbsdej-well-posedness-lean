@@ -2930,13 +2930,32 @@
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
-     "name": "with ν(E) = ∞ the jump times τ_k = inf{t ≥ 0 : N((0, t] × E) ≥ k} are all 0 almost surely, so they do not exhaust [0, T]",
+     "name": "with ν(E) = ∞, almost surely N((0, t] × E) = ∞ for every t > 0 and the jump times τ_k = inf{t ≥ 0 : N((0, t] × E) ≥ k}, read in [0, ∞], are all 0, so sup_k τ_k < T for every T > 0: they do not exhaust [0, T]",
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.lem41_jump_times",
-     "spec_hash": "ed839d34f480cba17a3bbb1b17b33874",
+     "spec_hash": "ed839d34f480cba17f1df52f488747a1",
      "spec_ok": true,
      "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.sec2_infinite_activity_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lem41_M2_integrand",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lem41_M2_integrand"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the integrand e^s|δU_s(e)|² of M² is predictable (marked predictable for the filtration of the setting) and nonnegative",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lem41_M2_integrand",
+     "spec_hash": "ed839d34f480cba118f567d673033f15",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_hypotheses",
      "witness_ok": true
     },
     {
@@ -3011,10 +3030,10 @@
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
-     "name": "λ_k = min{λ* + kζ₀, 1}: λ_0 = λ*, λ_{k+1} − λ_k ≤ ζ₀, λ_k = 1 for k ≥ ⌈(1 − λ*)/ζ₀⌉; WP(λ) on [0, λ*], WP(λ_k) for every k, and WP(1)",
+     "name": "with ζ₀ > 0 the constant of Lemma 4.4 and its continuation step (WP(λ₀) ⇒ WP(λ₀ + ζ) for λ₀ ∈ [λ*, 1], ζ ∈ [0, ζ₀], λ₀ + ζ ≤ 1), λ_k = min{λ* + kζ₀, 1}: λ_0 = λ*, λ_{k+1} − λ_k ≤ ζ₀, λ_k = 1 for k ≥ ⌈(1 − λ*)/ζ₀⌉; WP(λ) on [0, λ*], WP(λ_k) for every k, and WP(1)",
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.sec45_proof_thm35",
-     "spec_hash": "ed839d34f480cba18bff3d8eda5cbf52",
+     "spec_hash": "ed839d34f480cba1227f3637481e69e0",
      "spec_ok": true,
      "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
@@ -4030,37 +4049,104 @@
    "status": "formal: proved, author-reviewed"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_frozenfwd",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.FrozenForward",
+      "Dissertation.PaperSpec.A.HTuple",
+      "Dissertation.PaperSpec.A.eq_frozenfwd"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.7): along a trial Θ ∈ ℍ, 𝔼 ∫_0^T |ψ(s, Θ_s, μ_s)|² ds < ∞ for ψ ∈ {b, σ, h}; the frozen forward equation, with h at (Θ⁻_s, μ⁻_s) through a representative, has a solution X̄ with 𝔼 sup_{t ≤ T} |X̄_t|² < ∞; any two solutions are indistinguishable on [0, T]",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_frozenfwd",
+     "spec_hash": "ed839d34f480cba10fb1e480e4d68889",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.frozen_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:frozenfwd",
    "kind": "embedded-in-proof",
    "number": "(4.7)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_frozenbwd",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.FrozenForward",
+      "Dissertation.PaperSpec.A.FrozenStep",
+      "Dissertation.PaperSpec.A.HTuple",
+      "Dissertation.PaperSpec.A.eq_frozenbwd"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.8): for every solution X̄ of (4.7), Ξ = λ g(X̄_T, Law(X̄_T)) + q^g_T + ∫_0^T (λ f(s, Θ_s, μ_s) + q^f_s) ds lies in L²(Ω, ℱ_T; ℝᵐ); there is Θ̄ = (X̄, Ȳ, Z̄, Ū) ∈ ℍ with X̄ solving (4.7) and (Ȳ, Z̄, Ū) solving (4.8); any two such Θ̄ are equal in ℍ",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_frozenbwd",
+     "spec_hash": "ed839d34f480cba178b77fba8e33d01f",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.frozen_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:frozenbwd",
    "kind": "embedded-in-proof",
    "number": "(4.8)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_coeffdiff",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.HTuple",
+      "Dissertation.PaperSpec.A.coeffDiffNorm",
+      "Dissertation.PaperSpec.A.eq_coeffdiff"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.9): 𝔼 ∫_0^T S_s² ds ≤ 10 L² 𝔼 ∫_0^T (|δX_s|² + |δY_s|² + |δZ_s|²_F + ‖δU_s‖²) ds ≤ 10 L² (T 𝔼 sup_{t ≤ T} |δX_t|² + T 𝔼 sup_{t ≤ T} |δY_t|² + 𝔼 ∫_0^T (|δZ_s|²_F + ‖δU_s‖²) ds) ≤ 10 L² max{T, 1} ‖Θ¹ − Θ²‖²_ℍ",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_coeffdiff",
+     "spec_hash": "ed839d34f480cba1b363f744d12fe99d",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.frozen_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:coeffdiff",
    "kind": "embedded-in-proof",
    "number": "(4.9)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [],
@@ -4334,6 +4420,25 @@
      "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
      "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_coerc_blocks",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_coerc_blocks"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "each coercive block on the left of (4.22) is at most 𝒦: λα𝔼|GδX_T|² ≤ 𝒦, λβ₂𝔼∫|GδX|² ≤ 𝒦 and λβ₁𝔼∫[|GᵀδY|² + |GᵀδZ|²_F + ‖GᵀδU‖²] ≤ 𝒦, for every η > 0",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_coerc_blocks",
+     "spec_hash": "ed839d34f480cba17bd256e67c544535",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness_ok": true
     }
    ],
    "id": "A:eq:coerc",
@@ -4341,7 +4446,7 @@
    "number": "(4.22)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the second clause reads the sentence after the display, lines 694–695, outside the pinned region (lines 683–693)",
    "scope_reviewed": false,
    "status": "formal: proved, author-reviewed"
   },
@@ -4514,10 +4619,10 @@
   "A": {
    "definition: reviewed": 11,
    "formal: accepted": 48,
-   "formal: proved, author-reviewed": 17,
+   "formal: proved, author-reviewed": 20,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
-   "out of scope: proof-step": 11,
+   "out of scope: proof-step": 8,
    "refuted as printed; corrected statement proved": 1
   }
  }
