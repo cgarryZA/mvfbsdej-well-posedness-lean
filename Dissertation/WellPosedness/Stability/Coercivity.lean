@@ -35,6 +35,8 @@ in the form of the hypothesis of the closure step, with `N' = A + Y₀ + I_X + J
 
 ## Main statements
 
+* `PairDiff.blocks_le_pairings` — (4.20) and (4.21) inserted into (4.19).
+* `PairDiff.blocks_le_abs_pairings` — the first inequality of (4.22).
 * `PairDiff.coercivity` — (4.22) for every `η > 0`.
 * `PairDiff.rankCase_blocks` — the rank case of Assumption 2.4 bounds `J`, or `A` and `I_X`, by
   the matching blocks.
@@ -88,33 +90,25 @@ variable {D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν}
 
 /-! ### The coercivity inequality -/
 
-/-- **The coercivity inequality (4.22) of Lemma 4.3.** For the difference system at `λ ≥ 0`
-with finite data size `P`, over a filtration with a cross witness, and a coupling matrix with
-`|G x|² ≤ g² |x|²`, for every `η > 0`
+/-- **(4.20) and (4.21) inserted into (4.19).** For the difference system at `λ > 0` with finite
+data size `P`, over a filtration with a cross witness,
 
-`λ (α 𝔼|GδX_T|² + β₂ 𝔼 ∫_0^T |GδX|² + β₁ 𝔼 ∫_0^T (|GᵀδY|² + |GᵀδZ|²_F + ‖GᵀδU‖²))
-  ≤ η (A + Y₀ + I_X + J) + (g²/(4η)) P`,
-
-with `A = 𝔼|δX_T|²`, `Y₀ = 𝔼|δY_0|²`, `I_X = 𝔼 ∫_0^T |δX|²` and
-`J = 𝔼 ∫_0^T (|δY|² + |δZ|²_F + ‖δU‖²)`. -/
-theorem coercivity
+`λ α 𝔼|GδX_T|² − |𝔼⟨q^g, G δX_T⟩| − 𝔼⟨G δξ₀, δY_0⟩
+  ≤ −λ β₁ 𝔼 ∫_0^T (|GᵀδY|² + |GᵀδZ|²_F + ‖GᵀδU‖²) − λ β₂ 𝔼 ∫_0^T |GδX|²
+    + 𝔼 ∫_0^T (⟨q^b, GᵀδY⟩ + ⟨q^σ, GᵀδZ⟩_F − ⟨q^f, GδX⟩ + ∫_E ⟨q^h, GᵀδU⟩ dν) dt`. -/
+theorem blocks_le_pairings
     (hD : PairDiff D ℱ hℱW hℱN T lam K KT α β₁ β₂ G ξ₀ X Y Z U b σ h f g qb qσ qh qf qg)
-    (𝒲 : D.CrossWitness ℱ) (hT : 0 < T) (hlam0 : 0 ≤ lam)
-    (hP : dataSize P ν T ξ₀ qb qσ qh qf qg ≠ ⊤) {gG : ℝ}
-    (hGn : ∀ x : Fin n → ℝ, (G *ᵥ x) ⬝ᵥ (G *ᵥ x) ≤ gG ^ 2 * (x ⬝ᵥ x)) :
-    ∀ η : ℝ, 0 < η →
-      lam * (α * blockXT P G X T + β₂ * blockX P G X T + β₁ * blockY P ν G Y Z U T)
-        ≤ η * ((∫⁻ ω, esq (fun i => X i T ω) ∂P).toReal
-            + (∫⁻ ω, esq (fun k => Y k 0 ω) ∂P).toReal
-            + (∑ i, Brownian.Ito.energy P T (fun ω s => X i s ω)).toReal
-            + (∑ k, Brownian.Ito.energy P T (fun ω s => Y k s ω)
-              + ∑ k, ∑ j, Brownian.Ito.energy P T (fun ω s => Z k s ω j)
-              + ∑ k, Poisson.Compensated.markedEnergy P ν T (fun ω s e => U k s ω e)).toReal)
-          + gG ^ 2 / (4 * η) * (dataSize P ν T ξ₀ qb qσ qh qf qg).toReal := by
-  intro η hη
-  rcases hlam0.eq_or_lt with hl0 | hlpos
-  · rw [← hl0, zero_mul]
-    positivity
+    (𝒲 : D.CrossWitness ℱ) (hT : 0 < T) (hlpos : 0 < lam)
+    (hP : dataSize P ν T ξ₀ qb qσ qh qf qg ≠ ⊤) :
+    lam * α * blockXT P G X T - |∫ ω, (fun k => qg k ω) ⬝ᵥ (G *ᵥ fun i => X i T ω) ∂P|
+        - ∫ ω, (G *ᵥ fun i => ξ₀ i ω) ⬝ᵥ (fun k => Y k 0 ω) ∂P
+      ≤ -lam * β₁ * blockY P ν G Y Z U T - lam * β₂ * blockX P G X T
+        + ∫ p, ((fun i => qb i p.1 p.2) ⬝ᵥ (Gᵀ *ᵥ fun k => Y k p.2 p.1)
+          + ∑ j, (fun i => qσ i p.2 p.1 j) ⬝ᵥ (Gᵀ *ᵥ fun k => Z k p.2 p.1 j)
+          - (fun k => qf k p.1 p.2) ⬝ᵥ (G *ᵥ fun i => X i p.2 p.1)
+          + ∫ e, (fun i => qh i p.2 p.1 e) ⬝ᵥ (Gᵀ *ᵥ fun k => U k p.2 p.1 e) ∂ν)
+          ∂(P.prod (volume.restrict (Set.Icc (0 : ℝ) T))) := by
+  have hlam0 : 0 ≤ lam := hlpos.le
   have hl : lam ≠ 0 := hlpos.ne'
   set μ₂ := P.prod (volume.restrict (Set.Icc (0 : ℝ) T)) with hμ₂
   have mX := hD.memLp_window_X 𝒲 hT
@@ -200,18 +194,6 @@ theorem coercivity
     refine hle.trans_eq ?_
     rw [hBYf, hBXf]
     rfl
-  -- the interior forcing
-  have hFle : ∫ p, Ff p ∂μ₂
-      ≤ η * ((∑ i, Brownian.Ito.energy P T (fun ω s => X i s ω)).toReal
-          + (∑ k, Brownian.Ito.energy P T (fun ω s => Y k s ω)
-            + ∑ k, ∑ j, Brownian.Ito.energy P T (fun ω s => Z k s ω j)
-            + ∑ k, Poisson.Compensated.markedEnergy P ν T (fun ω s e => U k s ω e)).toReal)
-        + gG ^ 2 / (4 * η) * ((∑ i, Brownian.Ito.energy P T (qb i)).toReal
-          + (∑ i, ∑ j, Brownian.Ito.energy P T (fun ω s => qσ i s ω j)).toReal
-          + (∑ i, Poisson.Compensated.markedEnergy P ν T (fun ω s e => qh i s ω e)).toReal
-          + (∑ k, Brownian.Ito.energy P T (qf k)).toReal) := by
-    rw [hFf]
-    exact hD.integral_forcing_le 𝒲 hT hP hGn hη
   -- the terminal monotonicity and pairings
   have mXT : ∀ i, MemLp (X i T) 2 P := fun i => (hD.fwd i).memLp_terminal hT.le
   have mqg := hD.memLp_qg hP
@@ -228,13 +210,94 @@ theorem coercivity
     filter_upwards [ae_all_iff.mpr fun k => (hD.bwd k).ae_eq_terminal hT.le] with ω hω
     have e : (fun k => Y k T ω) = fun k => lam * g k ω + qg k ω := funext hω
     rw [e, dotProduct_comm, dotProduct_mul_add]
-  have hTq := hD.neg_terminal_forcing_le hT hP hGn hη
-  have hIni := hD.initial_pairing_le hT hGn hη
-  -- assembly
   have hmonoT : α * blockXT P G X T
       ≤ ∫ ω, (fun k => g k ω) ⬝ᵥ (G *ᵥ fun i => X i T ω) ∂P := hD.monoT
   have h1 := mul_le_mul_of_nonneg_left hmonoT hlam0
   have h2 := mul_le_mul_of_nonneg_left hmono hlam0
+  have h4 := neg_abs_le (∫ ω, (fun k => qg k ω) ⬝ᵥ (G *ᵥ fun i => X i T ω) ∂P)
+  linarith
+
+/-- **The coercive blocks of (4.22) are bounded by the six pairings.** For the difference system
+at `λ > 0` with finite data size `P`, over a filtration with a cross witness,
+
+`λ (α 𝔼|GδX_T|² + β₂ 𝔼 ∫_0^T |GδX|² + β₁ 𝔼 ∫_0^T (|GᵀδY|² + |GᵀδZ|²_F + ‖GᵀδU‖²))
+  ≤ |𝔼⟨G δξ₀, δY_0⟩| + |𝔼⟨q^g, G δX_T⟩|
+    + 𝔼 ∫_0^T (|⟨q^b, GᵀδY⟩| + |⟨q^σ, GᵀδZ⟩_F| + |∫_E ⟨q^h, GᵀδU⟩ dν| + |⟨q^f, GδX⟩|) dt`. -/
+theorem blocks_le_abs_pairings
+    (hD : PairDiff D ℱ hℱW hℱN T lam K KT α β₁ β₂ G ξ₀ X Y Z U b σ h f g qb qσ qh qf qg)
+    (𝒲 : D.CrossWitness ℱ) (hT : 0 < T) (hlpos : 0 < lam)
+    (hP : dataSize P ν T ξ₀ qb qσ qh qf qg ≠ ⊤) :
+    lam * (α * blockXT P G X T + β₂ * blockX P G X T + β₁ * blockY P ν G Y Z U T)
+      ≤ |∫ ω, (G *ᵥ fun i => ξ₀ i ω) ⬝ᵥ (fun k => Y k 0 ω) ∂P|
+        + |∫ ω, (fun k => qg k ω) ⬝ᵥ (G *ᵥ fun i => X i T ω) ∂P|
+        + ∫ p, ((|(fun i => qb i p.1 p.2) ⬝ᵥ (Gᵀ *ᵥ fun k => Y k p.2 p.1)|
+            + |∑ j, (fun i => qσ i p.2 p.1 j) ⬝ᵥ (Gᵀ *ᵥ fun k => Z k p.2 p.1 j)|)
+          + (|∫ e, (fun i => qh i p.2 p.1 e) ⬝ᵥ (Gᵀ *ᵥ fun k => U k p.2 p.1 e) ∂ν|
+            + |(fun k => qf k p.1 p.2) ⬝ᵥ (G *ᵥ fun i => X i p.2 p.1)|))
+          ∂(P.prod (volume.restrict (Set.Icc (0 : ℝ) T))) := by
+  have hins := hD.blocks_le_pairings 𝒲 hT hlpos hP
+  set μ₂ := P.prod (volume.restrict (Set.Icc (0 : ℝ) T)) with hμ₂
+  have hFi : Integrable (fun p : Ω × ℝ => (fun i => qb i p.1 p.2)
+        ⬝ᵥ (Gᵀ *ᵥ fun k => Y k p.2 p.1)
+      + ∑ j, (fun i => qσ i p.2 p.1 j) ⬝ᵥ (Gᵀ *ᵥ fun k => Z k p.2 p.1 j)
+      - (fun k => qf k p.1 p.2) ⬝ᵥ (G *ᵥ fun i => X i p.2 p.1)
+      + ∫ e, (fun i => qh i p.2 p.1 e) ⬝ᵥ (Gᵀ *ᵥ fun k => U k p.2 p.1 e) ∂ν) μ₂ := by
+    have hi := integrable_gPairing (ν := ν) G (hD.memLp_window_qb hP) (hD.memLp_window_qσ hP)
+      (hD.memLp_window_qf hP) (hD.memLp_markedWindow_qh hP) (hD.memLp_window_X 𝒲 hT)
+      (hD.memLp_window_Y 𝒲 hT) (hD.memLp_window_Z (T := T)) (hD.memLp_markedWindow_U (T := T))
+    exact hi
+  -- the forcing pairings, below their absolute values
+  have hFabs := (hD.integrable_abs_forcing 𝒲 hT hP)
+  have hFF : ∫ p, ((fun i => qb i p.1 p.2) ⬝ᵥ (Gᵀ *ᵥ fun k => Y k p.2 p.1)
+        + ∑ j, (fun i => qσ i p.2 p.1 j) ⬝ᵥ (Gᵀ *ᵥ fun k => Z k p.2 p.1 j)
+        - (fun k => qf k p.1 p.2) ⬝ᵥ (G *ᵥ fun i => X i p.2 p.1)
+        + ∫ e, (fun i => qh i p.2 p.1 e) ⬝ᵥ (Gᵀ *ᵥ fun k => U k p.2 p.1 e) ∂ν) ∂μ₂
+      ≤ ∫ p, ((|(fun i => qb i p.1 p.2) ⬝ᵥ (Gᵀ *ᵥ fun k => Y k p.2 p.1)|
+            + |∑ j, (fun i => qσ i p.2 p.1 j) ⬝ᵥ (Gᵀ *ᵥ fun k => Z k p.2 p.1 j)|)
+          + (|∫ e, (fun i => qh i p.2 p.1 e) ⬝ᵥ (Gᵀ *ᵥ fun k => U k p.2 p.1 e) ∂ν|
+            + |(fun k => qf k p.1 p.2) ⬝ᵥ (G *ᵥ fun i => X i p.2 p.1)|)) ∂μ₂ := by
+    refine integral_mono hFi (hFabs.1.add hFabs.2) fun p => ?_
+    dsimp only
+    have h1 := le_abs_self ((fun i => qb i p.1 p.2) ⬝ᵥ (Gᵀ *ᵥ fun k => Y k p.2 p.1))
+    have h2 := le_abs_self (∑ j, (fun i => qσ i p.2 p.1 j) ⬝ᵥ (Gᵀ *ᵥ fun k => Z k p.2 p.1 j))
+    have h3 := neg_abs_le ((fun k => qf k p.1 p.2) ⬝ᵥ (G *ᵥ fun i => X i p.2 p.1))
+    have h4 := le_abs_self
+      (∫ e, (fun i => qh i p.2 p.1 e) ⬝ᵥ (Gᵀ *ᵥ fun k => U k p.2 p.1 e) ∂ν)
+    linarith
+  have h3 := le_abs_self (∫ ω, (G *ᵥ fun i => ξ₀ i ω) ⬝ᵥ (fun k => Y k 0 ω) ∂P)
+  linarith
+
+/-- **The coercivity inequality (4.22) of Lemma 4.3.** For the difference system at `λ ≥ 0`
+with finite data size `P`, over a filtration with a cross witness, and a coupling matrix with
+`|G x|² ≤ g² |x|²`, for every `η > 0`
+
+`λ (α 𝔼|GδX_T|² + β₂ 𝔼 ∫_0^T |GδX|² + β₁ 𝔼 ∫_0^T (|GᵀδY|² + |GᵀδZ|²_F + ‖GᵀδU‖²))
+  ≤ η (A + Y₀ + I_X + J) + (g²/(4η)) P`,
+
+with `A = 𝔼|δX_T|²`, `Y₀ = 𝔼|δY_0|²`, `I_X = 𝔼 ∫_0^T |δX|²` and
+`J = 𝔼 ∫_0^T (|δY|² + |δZ|²_F + ‖δU‖²)`. -/
+theorem coercivity
+    (hD : PairDiff D ℱ hℱW hℱN T lam K KT α β₁ β₂ G ξ₀ X Y Z U b σ h f g qb qσ qh qf qg)
+    (𝒲 : D.CrossWitness ℱ) (hT : 0 < T) (hlam0 : 0 ≤ lam)
+    (hP : dataSize P ν T ξ₀ qb qσ qh qf qg ≠ ⊤) {gG : ℝ}
+    (hGn : ∀ x : Fin n → ℝ, (G *ᵥ x) ⬝ᵥ (G *ᵥ x) ≤ gG ^ 2 * (x ⬝ᵥ x)) :
+    ∀ η : ℝ, 0 < η →
+      lam * (α * blockXT P G X T + β₂ * blockX P G X T + β₁ * blockY P ν G Y Z U T)
+        ≤ η * ((∫⁻ ω, esq (fun i => X i T ω) ∂P).toReal
+            + (∫⁻ ω, esq (fun k => Y k 0 ω) ∂P).toReal
+            + (∑ i, Brownian.Ito.energy P T (fun ω s => X i s ω)).toReal
+            + (∑ k, Brownian.Ito.energy P T (fun ω s => Y k s ω)
+              + ∑ k, ∑ j, Brownian.Ito.energy P T (fun ω s => Z k s ω j)
+              + ∑ k, Poisson.Compensated.markedEnergy P ν T (fun ω s e => U k s ω e)).toReal)
+          + gG ^ 2 / (4 * η) * (dataSize P ν T ξ₀ qb qσ qh qf qg).toReal := by
+  intro η hη
+  rcases hlam0.eq_or_lt with hl0 | hlpos
+  · rw [← hl0, zero_mul]
+    positivity
+  have hB := hD.blocks_le_abs_pairings 𝒲 hT hlpos hP
+  have hFle := hD.integral_abs_forcing_le 𝒲 hT hP hGn hη
+  have hTq := hD.abs_terminal_forcing_le hT hP hGn hη
+  have hIni := hD.abs_initial_pairing_le hT hGn hη
   rw [toReal_dataSize hP]
   linarith
 

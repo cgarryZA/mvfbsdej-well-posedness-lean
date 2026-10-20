@@ -37,11 +37,11 @@ the real part of `w2sq μ ν`.
 * `Dissertation.Law.w2sq_ne_top_of_secondMoment_ne_top`: two laws of finite second moment are at
   finite squared distance.
 
-Reflexivity and symmetry are available for `w2` here, and on a separable Banach space so is the
-triangle inequality, in `Dissertation/Law/Triangle.lean`; separation, the vanishing of the
-distance forcing the two laws to agree, is not established. The real-valued `w2` sends an
-infinite squared distance to `0`, so every real-valued statement carries a hypothesis forcing the
-squared distance to be finite.
+Reflexivity and symmetry are available for `w2` here, and on a separable Banach space so are the
+triangle inequality, in `Dissertation/Law/Triangle.lean`, and separation, the vanishing of the
+distance forcing the two laws to agree, in `Dissertation/Law/P2Separation.lean`. The real-valued
+`w2` sends an infinite squared distance to `0`, so every real-valued statement carries a
+hypothesis forcing the squared distance to be finite.
 -/
 
 namespace Dissertation.Law

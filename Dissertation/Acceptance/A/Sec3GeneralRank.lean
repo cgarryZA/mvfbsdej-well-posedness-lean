@@ -19,6 +19,9 @@ import Dissertation.WellPosedness.Remarks.Margin
 * `Dissertation.Acceptance.A.margin212_weighted`, `margin212_of_weighted`,
   `pairingBound34W_weighted`, `pairingBound34W_of_weighted` — (2.12) and the weighted (3.4) as
   printed are the weighted conditions along the diagonal.
+* `Dissertation.Acceptance.A.rem_margin_slack` — Remark 2.11, the slack left by the margin.
+* `Dissertation.Acceptance.A.rem_margin_slack_hypotheses` — its hypotheses at the instance of
+  Remark 3.7, with `c_pert = c = 1`.
 * `Dissertation.Acceptance.A.rem_generalrank` — the assumptions of the perturbed system at
   general rank.
 * `Dissertation.Acceptance.A.rem_generalrank_wp` — its well-posedness, with the constant of
@@ -88,7 +91,42 @@ theorem pairingBound34W_of_weighted {p : Coeffs ν n m d}
   rw [← integral_gWeightSq_eq G p t q.1 q'.1]
   simpa only [pairing27_eq] using hle
 
+/-- The interior pairing of a perturbed system is the sum of the pairings of the baseline and of
+the perturbation. -/
+theorem pairing27_perturb (C p : Coeffs ν n m d) (t : ℝ) (θ θ' : TupleH ν n m d)
+    (μ μ' : P2 (TupleH ν n m d)) :
+    pairing27 G (C.perturb p) t θ θ' μ μ'
+      = pairing27 G C t θ θ' μ μ' + pairing27 G p t θ θ' μ μ' := by
+  simp only [pairing27_eq, interiorPairing_diagDiff_perturb]
+
+/-- (3.4) in the weighted quantity with a constant `c` holds with every larger constant. -/
+theorem PairingBound34W.mono {p : Coeffs ν n m d} {c' : ℝ}
+    (h : PaperSpec.A.PairingBound34W ℱ P T G c p) (hc : c ≤ c') :
+    PaperSpec.A.PairingBound34W ℱ P T G c' p := by
+  filter_upwards [h] with t ht q hq q' hq'
+  obtain ⟨hi, hle⟩ := ht q hq q' hq'
+  refine ⟨hi, hle.trans (mul_le_mul_of_nonneg_right hc (integral_nonneg fun ω => ?_))⟩
+  positivity
+
 end Bridges
+
+/-- Remark 2.11, the slack: a perturbation raising the interior pairing by at most the margin
+leaves (2.7) with the recorded constants intact. -/
+theorem rem_margin_slack : PaperSpec.A.rem_margin_slack.{u, v, w} := by
+  intro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ _ T β₁ β₂ c cpert G C p h212 _ h34 _ hcc
+  filter_upwards [h212, h34] with t ht ht' q hq q' hq'
+  obtain ⟨hi, hle⟩ := ht q hq q' hq'
+  obtain ⟨hi', hle'⟩ := ht' q hq q' hq'
+  simp only [pairing27_perturb]
+  refine ⟨hi.add hi', ?_⟩
+  rw [integral_add hi hi']
+  have hS : 0 ≤ ∫ ω, (‖GX Gᵀ ((q.1 ω).2.1 - (q'.1 ω).2.1)‖ ^ 2
+      + ‖GZ Gᵀ ((q.1 ω).2.2.1 - (q'.1 ω).2.2.1)‖ ^ 2
+      + ‖GU Gᵀ ν ((q.1 ω).2.2.2 - (q'.1 ω).2.2.2)‖ ^ 2
+      + ‖GX G ((q.1 ω).1 - (q'.1 ω).1)‖ ^ 2) ∂P :=
+    integral_nonneg fun ω => by positivity
+  nlinarith [mul_le_mul_of_nonneg_right hcc hS]
+
 
 /-- Remark 3.7, the assumptions of the perturbed system. -/
 theorem rem_generalrank : PaperSpec.A.rem_generalrank.{u, v, w} := by
@@ -168,5 +206,25 @@ theorem rem_generalrank_hypotheses :
   exact ⟨Ω, inferInstance, P, inferInstance, D, hind₀, hJ, h22, h23, hG, h25,
     margin212_of_weighted hW one_pos zero_le_one zero_le_one, h1, horig, hLp, hLp0,
     pairingBound34W_of_weighted hP, hcp, hJp, hc⟩
+
+/-- **The hypotheses of the slack clause of Remark 2.11 hold at the instance of Remark 3.7.** At
+the instance of `rem_generalrank_hypotheses` (`n = m = 1`, `G = 1`, `ν = δ₀`), the baseline
+satisfies (2.12) with `β₁ = β₂ = 1` and margin `c = 1 > 0`, and the feedback perturbation with
+`ε = 1/2` satisfies (3.4) in the weighted quantity with `c_pert = 1`, so `0 ≤ c_pert ≤ c`. -/
+theorem rem_margin_slack_hypotheses :
+    ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)
+      (D : LevyStochCalc.Driver.LevyDriver P 1 (Measure.dirac (0 : ℝ)))
+      (_ : Indep (⊥ : MeasurableSpace Ω) (⨆ t, D.filtration t) P),
+      PaperSpec.A.Margin212 (enlJoint ⊥ D bot_le) P 1 (1 : Matrix (Fin 1) (Fin 1) ℝ) 1 1 1
+          (affineCoeffs (ν := Measure.dirac (0 : ℝ)) (n := 1) (d := 1) 2 2 0 0)
+      ∧ (0 : ℝ) < 1
+      ∧ PaperSpec.A.PairingBound34W (enlJoint ⊥ D bot_le) P 1 (1 : Matrix (Fin 1) (Fin 1) ℝ) 1
+          (affineCoeffs (ν := Measure.dirac (0 : ℝ)) (n := 1) (d := 1) (-(1 / 2)) 0 0 0)
+      ∧ (0 : ℝ) ≤ 1 ∧ (1 : ℝ) ≤ 1 := by
+  obtain ⟨Ω, _, P, _, D, hind₀, -, -, -, -, -, h212, h1, -, -, -, h34, -, -, -⟩ :=
+    rem_generalrank_hypotheses
+  exact ⟨Ω, inferInstance, P, inferInstance, D, hind₀, h212, h1,
+    PairingBound34W.mono h34 (by norm_num),
+    zero_le_one, le_rfl⟩
 
 end Dissertation.Acceptance.A

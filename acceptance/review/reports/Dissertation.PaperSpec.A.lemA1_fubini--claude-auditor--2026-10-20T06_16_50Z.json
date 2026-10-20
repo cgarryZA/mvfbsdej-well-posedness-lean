@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.lemA1_fubini",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.lemA1_fubini",
+  "lean": [
+   "Dissertation.PaperSpec.A.lemA1_fubini"
+  ],
+  "claims": [
+   "A:lemA1:pettis"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-fdd34b341e29",
+  "project_commit": "6d403c197bfb10fe8808933c6e525ee0ae544fb1",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba18bb7bf3a9a35bb91",
+  "fingerprint": "pl-fp-v1:21affc96cb4c8611e3f5aa34d8b24cb0fdaa743607613dd42246afce452628bc",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of the clause (manuscript/paper/sections/09-appendix.tex, proof of Lemma A.1, Step 1: \"The\nFubini isometry of [HNVW, Proposition 1.2.24], L^2([0,T] x Omega; H) = L^2(0,T; L^2(Omega; H)),\nsupplies a strongly measurable L^2(Omega;H)-valued representative of t -> Theta_t^-\").\n\nThis is a cited fact, stated in the paper for the specific H of Section 2 on the standing\nprobability space. HNVW Prop. 1.2.24: for sigma-finite measure spaces (S, A, mu), (T, B, nu),\n1 <= p < infinity and a Banach space X, the map f -> (s -> f(s, .)) is an isometric isomorphism\nL^p(S x T; X) = L^p(S; L^p(T; X)).\n\nWhat a faithful formal statement must contain.\nSetting: T > 0; a probability space (Omega, F, P) (the full sigma-field F on Omega); H the paper's\nHilbert space R^n x R^m x R^{m x d} x L^2(nu; R^m), or more broadly any (separable) Hilbert or\nBanach space (a broadening containing the paper's H as an instance is harmless; the instantiation\nmust then be the paper's H). Measure on [0,T] x Omega: Lebesgue restricted to [0,T] times P, on\nB([0,T]) (x) F.\nConclusion: there exists a map Phi : L^2([0,T] x Omega; H) -> L^2([0,T]; L^2(Omega; H)) that is\n(i) linear and isometric, and onto (an isometric isomorphism, \"=\"); and\n(ii) for every f in L^2([0,T] x Omega; H), for a.e. t in [0,T], the section omega -> f(t, omega)\n    lies in L^2(Omega; H) and Phi(f)(t) is its class.\n(ii) is the property used in the proof (it is what makes Phi(Theta^-) a representative of\nt -> Theta^-_t). A statement giving only an abstract isometric isomorphism without (ii) would be\nnarrower than what the paper uses; a statement giving (ii) and isometry without surjectivity would\nlose the \"=\" of the citation (the proof only needs the into-direction, but the paper asserts the\nisomorphism). The clause name lists \"Fubini isometry ... Phi(f)(t) = f(t, .) a.e. t\", so the\nisomorphism plus the section property is the target. Representatives: f is an a.e.-class; the\nsection property must be read for a representative of f (any two representatives give a.e.-equal\nsections for a.e. t), so it must not depend on a particular junk representative in a way that\nmakes it false or vacuous.\nNo hypotheses beyond the setting.",
+  "locked_at": "2026-10-20T06:10:05Z"
+ },
+ "comparison": {
+  "text": "Comparison of `Dissertation.PaperSpec.A.lemA1_fubini` (Dissertation/PaperSpec/A/AppASteps.lean) with my\nlocked reading of manuscript/paper/sections/09-appendix.tex, proof of Lemma A.1, Step 1 (the\nFubini isometry of HNVW Prop. 1.2.24).\n\nSetting.\n- Any probability space `(Ω, mΩ, P)` (the paper: the standing one, an instance). The σ-algebra on\n  Ω is the full one, as in my reading. Broader, harmless.\n- `ν` sigma-finite on a countably generated `E` (the standing hypothesis, needed to form H),\n  `n m d : ℕ`, `T : ℝ` (any). Broader in the dimensions and T, harmless.\n- H: `TupleL2 (EuclideanSpace ℝ (Fin n)) (EuclideanSpace ℝ (Fin m)) (EuclideanSpace ℝ (Fin m ×\n  Fin d)) (Lp (EuclideanSpace ℝ (Fin m)) 2 ν)`, the nested `WithLp 2` product: the paper's H with\n  its Hilbert norm (Dissertation/WellPosedness/System/HilbertW2.lean, `TupleL2`, `norm_toL2_sq`).\n  The statement is for the paper's H itself, not a general Banach space: exactly the printed\n  instance.\n- Spaces: `Lp H 2 ((volume.restrict (Icc 0 T)).prod P)` = L^2([0, T] × Ω; H) for\n  Leb|[0,T] ⊗ P on Borel(ℝ) ⊗ mΩ; `Lp (Lp H 2 P) 2 (volume.restrict (Icc 0 T))` =\n  L^2(0, T; L^2(Ω; H)) (closed versus open interval: a null difference).\n\nConclusion.\n(i) `∃ Φ : … ≃ₗᵢ[ℝ] …`: a linear isometric equivalence, i.e. linear, isometric and onto. This is the\n    \"≅\" of the citation, including surjectivity, as my reading required.\n(ii) `∀ f, ∀ᵐ t ∂(Leb|[0,T]), (Φ f t : Ω → H) =ᵐ[P] fun ω => f (t, ω)`: for every f, for a.e. t, the\n    section of (the canonical strongly measurable representative of) f at t is P-a.e. equal to\n    the element Φ f t of L^2(Ω; H). This gives at once that the section lies in L^2(Ω; H) and that\n    Φ(f)(t) is its class, for a.e. t. Since two representatives of f have P-a.e. equal sections\n    for a.e. t (Fubini), the property does not depend on the representative, so it is neither\n    vacuous nor an artefact of the junk choice of `↑f`. It pins Φ down uniquely as the section\n    map, which is the map of HNVW 1.2.24 and the property the proof uses (\"supplies a … representative\n    of t ↦ Θ⁻_t\").\nNo hypotheses beyond the setting; the quantifier order (Φ chosen after the data, before f) is\nright.\n\nWitness `Dissertation.Acceptance.A.lemA1_fubini_hypotheses`: the instance arguments are met at the\nuniform law on Bool and ν = δ₀ on ℝ (nonzero). The only hypotheses are typeclass instances, met by\nthe paper's own setting; the proposition is not vacuous.\n\nComparison with my reading: every item matches; the only differences are the broadening to any\nprobability space, any T and any n, m, d (the paper's standing probability space, T > 0 and\nn, m, d >= 1 are an instance).\n\nCoverage (claim A:lemA1:pettis, acceptance/claims.json, clauses lemA1_L2, lemA1_fubini,\nlemA1_pettis; scope_reviewed false). Its passage, as the scope note delimits it, is the sentence of\nlines 43–51 with its input Θ⁻ ∈ L^2([0, T] × Ω; H) from lines 36–42. Its assertions: the input\n(lemA1_L2), the Fubini isometry (this clause), the strongly measurable L^2(Ω; H)-valued\nrepresentative of t ↦ Θ⁻_t, separably valued off a null set by Pettis, with a Borel version a.e.\nequal (lemA1_pettis). The clauses together state every assertion of the delimited passage, and no\nclause states something it does not claim (the section property of this clause is the content of\nHNVW 1.2.24 that \"supplies a representative\" relies on). Left out by the scope note: the\npredictability of Θ⁻ and the earlier assertions of Step 1 (lines 25–36: left limits predictable\nand a.e. equal to X, Y; H separable; the predictable L^2(ν)-valued representative of U), which no\nother proof-step claim of the inventory states. Hypotheses: this clause has none beyond the\nsetting, as in the paper (a cited general fact); the other two carry exactly Lemma A.1's\nhypotheses (X, Y càdlàg adapted, Z, U predictable, the integrability bound), those in force in\nStep 1; no more, no fewer.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-20T06:15:18Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "broader",
+  "detail": "Broader only in the setting: any probability space (Ω, P) with its full σ-algebra, any T ∈ ℝ and any\nn, m, d ∈ ℕ, for the paper's H (`TupleL2 …` with the Hilbert norm, ν sigma-finite on a countably\ngenerated E). Instantiation giving the printed claim: the standing probability space\n(Ω, F, P), T > 0, n, m, d >= 1. The conclusion is the printed one: a linear isometric equivalence\nL^2([0, T] × Ω; H) ≃ L^2(0, T; L^2(Ω; H)) whose value at f is, for a.e. t, the class of the\nsection f(t, ·) (a representative-independent property)."
+ },
+ "author_review": {
+  "shown_at": "2026-10-20T06:16:13Z",
+  "disagreements": "No substantive disagreement. One point on the verdict label: the author records `faithful` but also\nsays the proposition holds for every probability space and every T, with the printed claim as its\ninstance at the paper's (Ω, F, P) and horizon. That is the `broader` case of the protocol, with\nthat instantiation, and it is what I record. I agree with the reading of \"≅\" as a linear isometric\nequivalence. I also agree that the a.e. section property identifies the map as the one of HNVW\n1.2.24 and is independent of the representative of f."
+ },
+ "submitted_at": "2026-10-20T06:16:50Z",
+ "issue_draft": null
+}
