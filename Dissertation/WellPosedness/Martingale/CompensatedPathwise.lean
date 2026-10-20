@@ -7,6 +7,7 @@ import LevyStochCalc.Poisson.PathwiseIdentity
 import LevyStochCalc.Poisson.CompensatedLinear
 import Dissertation.WellPosedness.BrownianPoisson.Compensation
 import Dissertation.WellPosedness.Martingale.LocalIntegral
+import LevyStochCalc.Ito.JumpCoefficientPredictableCriteria
 
 /-!
 # The compensated integral of an integrable predictable integrand is pathwise
@@ -53,7 +54,8 @@ theorem lintegral_count_eq_lintegral_ref (hℱ : Poisson.IsPoissonFiltration N �
   obtain ⟨h1, -, h3⟩ := BrownianPoisson.aemeasurable_and_lintegral_compensation (N := N) hℱ T hΨ
   have hΨm : Measurable Ψ := hΨ.mono (markedPredictableSigma_le ℱ ν) le_rfl
   refine ⟨h1, h3.trans (lintegral_congr fun ω => ?_)⟩
-  rw [Poisson.lintegral_referenceIntensity_window (hΨm.comp measurable_prodMk_left) univ T]
+  rw [Poisson.lintegral_referenceIntensity_window (f := fun q : ℝ × E => Ψ (ω, q))
+    (hΨm.comp measurable_prodMk_left) univ T]
   simp only [Measure.restrict_univ]
 
 variable (hℱ : Poisson.IsPoissonFiltration N ℱ)
@@ -186,9 +188,9 @@ theorem stochasticIntegral_ae_eq_pathwise_of_integrable {ψ : Ω → ℝ → E �
   have hset_eq : ∀ (μ : Measure (ℝ × E)) k (ω : Ω),
       ∫⁻ q in W \ Wk k, ‖ψ ω q.1 q.2‖ₑ ∂μ = ∫⁻ q in W, Ψk k (ω, q) ∂μ := by
     intro μ k ω
-    have hdiff : W \ Wk k = W ∩ {q : ℝ × E | q.2 ∉ A k} := by
+    have hdiff : W \ Wk k = {q : ℝ × E | q.2 ∉ A k} ∩ W := by
       ext q
-      simp only [hWdef, hWkdef, mem_diff, mem_prod, mem_univ, and_true, mem_inter_iff,
+      simp only [hWdef, hWkdef, Set.mem_sdiff, mem_prod, mem_univ, and_true, mem_inter_iff,
         mem_setOf_eq]
       tauto
     have hm2 : MeasurableSet {q : ℝ × E | q.2 ∉ A k} := (measurable_snd (hAm k)).compl
@@ -203,25 +205,29 @@ theorem stochasticIntegral_ae_eq_pathwise_of_integrable {ψ : Ω → ℝ → E �
     have hRpm : ∀ k, Measurable (Dk k) := fun k => by
       haveI : SFinite Ref := by rw [hRefdef, Poisson.referenceIntensity]; infer_instance
       exact ((hΨk_m k).comp (measurable_fst.prodMk measurable_snd)).lintegral_prod_right'
-    have hlim := tendsto_lintegral_of_dominated_convergence
+    have hlimω : ∀ᵐ ω ∂P, Tendsto (fun k => Dk k ω) atTop (𝓝 0) := by
+      filter_upwards [ae_lt_top hRefm hL1] with ω hω
+      have hpt : ∀ q : ℝ × E, Tendsto (fun k => Ψk k (ω, q)) atTop (𝓝 0) := by
+        intro q
+        obtain ⟨k₀, hk₀⟩ : ∃ k₀, q.2 ∈ A k₀ := by
+          have hq : q.2 ∈ ⋃ k, A k := by rw [hAdef, iUnion_spanningSets]; exact mem_univ _
+          exact mem_iUnion.mp hq
+        refine tendsto_atTop_of_eventually_const (i₀ := k₀) fun k hk => ?_
+        have hkA : q.2 ∈ A k := monotone_spanningSets ν hk hk₀
+        simp [hΨkdef, hkA]
+      have h := tendsto_lintegral_of_dominated_convergence (μ := Ref.restrict W)
+        (F := fun k q => Ψk k (ω, q)) (f := fun _ => 0)
+        (fun q => ‖ψ ω q.1 q.2‖ₑ) (fun k => (hΨk_m k).comp measurable_prodMk_left)
+        (fun k => Eventually.of_forall fun q => by
+          by_cases hq : q.2 ∈ A k <;> simp [hΨkdef, hq])
+        hω.ne (Eventually.of_forall hpt)
+      simpa using h
+    have hlim := tendsto_lintegral_of_dominated_convergence (μ := P) (f := fun _ => 0)
       (fun ω => ∫⁻ q in W, ‖ψ ω q.1 q.2‖ₑ ∂Ref) hRpm
       (fun k => Eventually.of_forall fun ω => lintegral_mono fun q => by
         by_cases hq : q.2 ∈ A k <;> simp [hΨkdef, hq])
-      hL1 ?_ (f := fun _ => 0)
-    · simpa using hlim
-    filter_upwards [ae_lt_top hRefm hL1] with ω hω
-    have h := tendsto_lintegral_of_dominated_convergence (μ := Ref.restrict W)
-      (F := fun k q => Ψk k (ω, q)) (f := fun _ => 0)
-      (fun q => ‖ψ ω q.1 q.2‖ₑ) (fun k => (hΨk_m k).comp measurable_prodMk_left)
-      (fun k => Eventually.of_forall fun q => by
-        by_cases hq : q.2 ∈ A k <;> simp [hΨkdef, hq])
-      hω.ne (Eventually.of_forall fun q => ?_)
-    · simpa using h
-    obtain ⟨k₀, hk₀⟩ : ∃ k₀, q.2 ∈ A k₀ := by
-      have hq : q.2 ∈ ⋃ k, A k := by rw [hAdef, iUnion_spanningSets]; exact mem_univ _
-      exact mem_iUnion.mp hq
-    refine tendsto_atTop_of_eventually_const (i₀ := k₀) fun k hk => ?_
-    simp [hΨkdef, monotone_spanningSets ν hk hk₀]
+      hL1 hlimω
+    simpa using hlim
   -- the stochastic integrals converge in mean
   have hYm : AEStronglyMeasurable (Poisson.Compensated.stochasticIntegral N ℱ hℱ ψ hm hp hq t) P :=
     ((Poisson.Compensated.stochasticIntegral_adapted N ℱ hℱ ψ hm hp hq t).mono
@@ -244,7 +250,8 @@ theorem stochasticIntegral_ae_eq_pathwise_of_integrable {ψ : Ω → ℝ → E �
       have hme : Measurable fun p : Ω × ℝ × E =>
           (‖ψ p.1 p.2.1 p.2.2 - ψk k p.1 p.2.1 p.2.2‖₊ : ℝ≥0∞) ^ 2 :=
         ((measurable_nnnorm.comp (hm.sub (hmk k))).coe_nnreal_ennreal).pow_const 2
-      rw [hEkdef, Poisson.Compensated.markedEnergyMeasure, lintegral_prod _ hme.aemeasurable]
+      simp only [hEkdef, Poisson.Compensated.markedEnergyMeasure]
+      rw [lintegral_prod _ hme.aemeasurable]
       refine lintegral_congr fun ω => ?_
       exact (lintegral_prod (μ := volume.restrict (Icc (0 : ℝ) t)) (ν := ν)
         (fun y : ℝ × E => (‖ψ ω y.1 y.2 - ψk k ω y.1 y.2‖₊ : ℝ≥0∞) ^ 2)
@@ -256,6 +263,15 @@ theorem stochasticIntegral_ae_eq_pathwise_of_integrable {ψ : Ω → ℝ → E �
         rw [Brownian.Ito.eLpNorm_sq_eq_lintegral] at h
         rw [← h]
         exact (hq t ht).ne
+      have hpt : ∀ p : Ω × ℝ × E, Tendsto (fun k =>
+          (‖ψ p.1 p.2.1 p.2.2 - ψk k p.1 p.2.1 p.2.2‖₊ : ℝ≥0∞) ^ 2) atTop (𝓝 0) := by
+        intro p
+        obtain ⟨k₀, hk₀⟩ : ∃ k₀, p.2.2 ∈ A k₀ := by
+          have hq' : p.2.2 ∈ ⋃ k, A k := by rw [hAdef, iUnion_spanningSets]; exact mem_univ _
+          exact mem_iUnion.mp hq'
+        refine tendsto_atTop_of_eventually_const (i₀ := k₀) fun k hk => ?_
+        have hkA : p.2.2 ∈ A k := monotone_spanningSets ν hk hk₀
+        simp [hψkdef, hkA]
       have h := tendsto_lintegral_of_dominated_convergence
         (μ := Poisson.Compensated.markedEnergyMeasure P ν t) (f := fun _ => 0)
         (F := fun k p => (‖ψ p.1 p.2.1 p.2.2 - ψk k p.1 p.2.1 p.2.2‖₊ : ℝ≥0∞) ^ 2)
@@ -264,22 +280,17 @@ theorem stochasticIntegral_ae_eq_pathwise_of_integrable {ψ : Ω → ℝ → E �
         (fun k => Eventually.of_forall fun p => by
           simp only [hψkdef]
           split_ifs <;> simp)
-        hbound (Eventually.of_forall fun p => ?_)
-      · simpa using h
-      obtain ⟨k₀, hk₀⟩ : ∃ k₀, p.2.2 ∈ A k₀ := by
-        have hq' : p.2.2 ∈ ⋃ k, A k := by rw [hAdef, iUnion_spanningSets]; exact mem_univ _
-        exact mem_iUnion.mp hq'
-      refine tendsto_atTop_of_eventually_const (i₀ := k₀) fun k hk => ?_
-      simp [hψkdef, monotone_spanningSets ν hk hk₀]
+        hbound (Eventually.of_forall hpt)
+      simpa using h
     have hle : ∀ k, ∫⁻ ω, ‖Poisson.Compensated.stochasticIntegral N ℱ hℱ ψ hm hp hq t ω
         - Poisson.Compensated.stochasticIntegral N ℱ hℱ (ψk k) (hmk k) (hpk k) (hqk k) t ω‖ₑ ∂P
         ≤ Ek k ^ (2 : ℝ)⁻¹ := by
       intro k
       refine (Poisson.lintegral_enorm_le_eLpNorm_two (hYm.sub (hXm k))).trans (le_of_eq ?_)
       rw [Poisson.eLpNorm_two_eq_rpow, ← hiso k]
-      simp only [enorm_eq_nnnorm]
+      simp only [enorm_eq_nnnorm, Pi.sub_apply]
     refine tendsto_of_tendsto_of_tendsto_of_le_of_le tendsto_const_nhds ?_
-      (fun k => zero_le _) hle
+      (fun _ => bot_le) hle
     simpa using hEk.ennrpow_const ((2 : ℝ)⁻¹)
   -- the pathwise forms converge in mean
   set Z : Ω → ℝ := fun ω => (∫ q in W, ψ ω q.1 q.2 ∂(N.N ω)) - ∫ q in W, ψ ω q.1 q.2 ∂Ref
@@ -320,17 +331,18 @@ theorem stochasticIntegral_ae_eq_pathwise_of_integrable {ψ : Ω → ℝ → E �
             refine (enorm_add_le _ _).trans (add_le_add ?_ ?_)
             · rw [enorm_neg, ← hset_eq]
               exact enorm_integral_le_lintegral_enorm _
-            · rw [hDkdef, ← hset_eq]
+            · change _ ≤ ∫⁻ q in W, Ψk k (ω, q) ∂Ref
+              rw [← hset_eq]
               exact enorm_integral_le_lintegral_enorm _
         _ = ∫⁻ ω, ∫⁻ q in W, Ψk k (ω, q) ∂(N.N ω) ∂P + ∫⁻ ω, Dk k ω ∂P := by
             refine lintegral_add_right' _ ?_
             haveI : SFinite Ref := by rw [hRefdef, Poisson.referenceIntensity]; infer_instance
             exact (((hΨk_m k).comp (measurable_fst.prodMk measurable_snd)).lintegral_prod_right'
-              (μ := Ref.restrict W)).aemeasurable
+              (ν := Ref.restrict W)).aemeasurable
         _ = 2 * ∫⁻ ω, Dk k ω ∂P := by rw [hNk.2, two_mul]
     refine tendsto_of_tendsto_of_tendsto_of_le_of_le tendsto_const_nhds ?_
-      (fun k => zero_le _) hle
-    simpa using hDk_tend.const_mul (Or.inr (by norm_num : (2 : ℝ≥0∞) ≠ ⊤))
+      (fun _ => bot_le) hle
+    simpa using ENNReal.Tendsto.const_mul hDk_tend (Or.inr (by norm_num : (2 : ℝ≥0∞) ≠ ⊤))
   exact Poisson.ae_eq_of_tendsto_lintegral_enorm hYm hZm hXm h1 h2
 
 end Dissertation.WellPosedness.Martingale

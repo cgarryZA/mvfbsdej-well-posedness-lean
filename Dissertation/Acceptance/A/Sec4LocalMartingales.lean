@@ -5,6 +5,7 @@ Authors: Christian Garry
 -/
 import Dissertation.PaperSpec.A.Sec4LocalMartingales
 import Dissertation.WellPosedness.BrownianPoisson.LocalMartingales
+import Dissertation.WellPosedness.Martingale.DavisCompensated
 import Dissertation.Acceptance.A.Sec4
 
 /-!
@@ -14,12 +15,17 @@ Statement and equation numbers refer to the well-posedness paper at `1f67672`. T
 `w_s = e^s δY_{s−} 1_{(0, T]}(s)` is predictable, bounded by `e^T R` before `δY` leaves the ball of
 radius `R`, and satisfies `|w_s|² ≤ e^{2T} sup_{t ≤ T} |δY_t|²`; with `𝔼 sup_{t ≤ T} |δY_t|² < ∞`
 from Lemma 4.1, `localBrownian_weight` and `localCompensated_weight` give the local integrals,
-their bounds with `c₀ = 9`, and the zero means.
+their bounds with `c₀ = 9`, and the zero means. The integrand of `M¹` is marked predictable and
+vanishes at the nonpositive times, so the Burkholder–Davis–Gundy inequality in quadratic-variation
+form for local compensated integrals (`IsLocalCompensatedIntegral.lintegral_biSup_le_count`,
+constant `24`) and the Cauchy–Schwarz inequality in `ℝᵐ` give the first link of its chain.
 
 ## Main statements
 
 * `Dissertation.Acceptance.A.lem41_MW` — `M^W`.
 * `Dissertation.Acceptance.A.lem41_M1` — `M¹`.
+* `Dissertation.Acceptance.A.lem41_M1_bdg` — the first link of the chain for `M¹`, with
+  `c₀ = 24`.
 * `Dissertation.Acceptance.A.lem41_M1_chain` — the links of the chain for `M¹` after its first.
 -/
 
@@ -111,6 +117,55 @@ theorem lem41_M1 : PaperSpec.A.lem41_M1.{u, v, w} := by
           * (∑ k, ∫⁻ ω, ∫⁻ s in Icc (0 : ℝ) T, ∫⁻ e, (‖δU k s ω e‖₊ : ℝ≥0∞) ^ 2
               ∂ν ∂volume ∂P) ^ (1 / 2 : ℝ) := (key.2 M1 hM1).1
     _ ≤ _ := mul_le_mul' (mul_le_mul' hc9 le_rfl) le_rfl
+
+/-- **The first link of the chain for `M¹`**, with `c₀ = 24`: the Burkholder–Davis–Gundy
+inequality in quadratic-variation form and the Cauchy–Schwarz inequality in `ℝᵐ`. -/
+theorem lem41_M1_bdg : PaperSpec.A.lem41_M1_bdg.{u, v, w} := by
+  refine ⟨24, by norm_num, fun c hc => ?_⟩
+  intro Ω 𝒢₀ mΩ E _ ν _ _ m d P _ D h𝒢₀ hind₀ hm hd T hT δξ φ δY δZ δU hZ hZv hZs hU hUv hUs
+    hξm hξ hφm hφs hYa hYr hYl heq M1 hM1
+  set ℱ := enlJoint 𝒢₀ D h𝒢₀ with hℱdef
+  set H : Ω → ℝ → E → ℝ := fun ω s e => Real.exp s
+    * ∑ k, (if 0 < s then leftLimProc δY k s ω else 0) * δU k s ω e with hHdef
+  -- the integrand is marked predictable
+  have hY : ∀ k, Probability.Predictable ℱ fun ω s =>
+      if s ∈ Ioc (0 : ℝ) T then leftLimProc δY k s ω else 0 := fun k =>
+    predictable_leftLim_Ioc (hYa k) (hYl k)
+  have hF : Measurable fun p : ℝ × ℝ × ℝ => Real.exp p.1 * p.2.1 * p.2.2 :=
+    (Real.measurable_exp.comp measurable_fst).mul measurable_snd.fst |>.mul measurable_snd.snd
+  have hterm : ∀ k, Probability.MarkedPredictable ℱ ν fun ω s e =>
+      if 0 < s then Real.exp s * (if s ∈ Ioc (0 : ℝ) T then leftLimProc δY k s ω else 0)
+        * δU k s ω e else 0 := fun k =>
+    (hU k).comp_measurable hF (hY k).measurable
+  have hHeq : (fun ω s e => ∑ k, (if 0 < s then Real.exp s
+      * (if s ∈ Ioc (0 : ℝ) T then leftLimProc δY k s ω else 0) * δU k s ω e else 0)) = H := by
+    rw [hHdef, ← expLeftLim_markedIntegrand_eq hUv]
+    funext ω s e
+    refine Finset.sum_congr rfl fun k _ => ?_
+    by_cases hs : 0 < s
+    · simp only [if_pos hs, expLeftLimWeight]
+    · simp [hs, expLeftLimWeight, show s ∉ Ioc (0 : ℝ) T from fun h => hs h.1]
+  have hpred : Probability.MarkedPredictable ℱ ν H := by
+    rw [← hHeq]
+    exact Finset.measurable_sum Finset.univ fun k _ => hterm k
+  have h0 : ∀ ω s e, s ≤ 0 → H ω s e = 0 := fun ω s e hs => by
+    simp [hHdef, not_lt.mpr hs]
+  have key := IsLocalCompensatedIntegral.lintegral_biSup_le_count D.N ℱ
+    (isPoissonFiltration_enlJoint D h𝒢₀ hind₀) (hF0_enlJoint D h𝒢₀)
+    (fun _ hs h0 => measurableSet_enlJoint_of_null D h𝒢₀ hs h0) hT hpred h0 hM1
+  refine key.trans ?_
+  have hc24 : (24 : ℝ≥0∞) ≤ ENNReal.ofReal c := by
+    rw [show (24 : ℝ≥0∞) = ENNReal.ofReal 24 by norm_num]
+    exact ENNReal.ofReal_le_ofReal hc
+  gcongr with ω x
+  -- the Cauchy–Schwarz inequality in `ℝᵐ`
+  rw [Real.enorm_eq_ofReal_abs, ← ENNReal.ofReal_pow (abs_nonneg _), sq_abs]
+  refine ENNReal.ofReal_le_ofReal ?_
+  simp only [hHdef]
+  rw [mul_pow, show Real.exp (2 * x.1) = Real.exp x.1 ^ 2 by
+    rw [sq, ← Real.exp_add, two_mul], mul_assoc]
+  gcongr
+  exact Finset.sum_mul_sq_le_sq_mul_sq _ _ _
 
 /-- **The links of the chain for `M¹` after its first**: Cauchy–Schwarz, the compensation formula
 (2.1) and the `L²(ν)` norm. -/

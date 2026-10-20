@@ -872,9 +872,15 @@ Witnesses: `Dissertation.Acceptance.A.lem41_M2_no_square_moment_hypotheses` for 
 clause (a Lévy driver with `d = 1`, `ν = δ₀ ≠ 0` on `ℝ`, `𝒢₀ = ⊥`, `m = 1`, `T = 1`);
 `Dissertation.Acceptance.A.sec2_infinite_activity_hypotheses` for the second (Lebesgue measure
 on `ℝ`, of infinite mass, carried by a Lévy driver with `d = 1`);
-`Dissertation.Acceptance.A.lem_bpbsde_hypotheses` for the integrand clause and the third (the
-hypotheses of Lemma 4.1 at the backward component of the solution of Example 5.1(i), reviewed
-with Lemma 4.1).
+`Dissertation.Acceptance.A.lem_bpbsde_infinite_hypotheses` for the integrand clause and the
+third: over a Lévy driver with `d = 1` whose intensity `ν` is Lebesgue measure on `ℝ`
+(`ν(E) = ∞`, the case the paragraph is about), `𝒢₀ = ⊥`, `m = 1`, `T = 1`, the hypotheses of
+Lemma 4.1 hold at `δZ = 1_{(0, 1]}`, `δU_s(e) = 1_{(0, 1]}(s) 1_{(0, 1]}(e)` (each of energy `1`,
+stated), `φ = 0`, `δY` the sum of càdlàg versions of `∫_0^t δZ dW` and `∫_0^t ∫_E δU dÑ` and
+`δξ = δY_1`. Its objects are nonzero: the integrand `e^s |δU_s(e)|² = e^s 1_{(0, 1]}(s) 1_{(0, 1]}(e)`
+is not zero, and the `L¹` bound of the third clause reads `∫_0^1 e^s ds = e − 1 ≤ e · 1`, both
+sides positive. (Until this revision both clauses named `lem_bpbsde_hypotheses`, whose data are
+zero, so that `δU = 0` and the integrand vanished; a changed witness changes no proposition.)
 
 Verdict: the first clause, read for `ν ≠ 0` with the disagreement above resolved, the second
 clause, the integrand clause and the third clause are faithful, the second broader than printed.
