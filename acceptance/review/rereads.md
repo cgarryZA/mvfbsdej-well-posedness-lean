@@ -588,6 +588,100 @@ digest.
   sentence, outside this clause. The earlier verdict (faithful with representation choices) stands.
   <!-- spec-review: Dissertation.PaperSpec.A.lemA1_polish ed839d34f480cba19bbef9c769d701cd by=claude-auditor source=A:lemA1:polish@4468f51e4d8fb85e1f6e3d35f1ed7799fb3dbe79faddc1003ff88fca9dc30d5d -->
 
+## `A:sec2:difference-notation` (paper/sections/02-model-assumptions.tex, lines 69–84)
+
+* `Dissertation.Law.lawP2` (added: lines 69–84 (a definition claim rescoped from expository: the
+  whole passage)). The whole region (lines 69-84) is new. lawP2 encodes "Law" in the items of the
+  passage: the measure component mu = Law(Theta) of a diagonal input (membership in diagonalInputs
+  sets it to lawP2 P Theta) and the induced terminal laws rho := Law(X_T), rho' := Law(X'_T) in
+  P_2(R^n) (lines 80-81), which LipTerminal and the terminal field of Assumption25 write as lawP2 P
+  XT, lawP2 P XT'. Every random element whose law the passage takes is square integrable there
+  (Theta in L^2(Omega, F_t; H), X_T in L^2(Omega, F_T; R^n)), and the definitions carry those L^2
+  hypotheses, so lawP2 is the image measure P o Theta^{-1} and its junk value delta_0 off L^2 is
+  never reached. The earlier verdict, faithful with representation choices (a total function with
+  junk off L^2), stands.
+  <!-- def-review: Dissertation.Law.lawP2 8e02ec4a91100180227c044dc87cf8fe by=claude-auditor source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+
+* `Dissertation.WellPosedness.Spec.Assumption23` (added: lines 69–84 (a definition claim rescoped
+  from expository: the whole passage)). The whole region (lines 69-84) is new; it fixes the notation
+  of Assumption 2.3. Assumption23 encodes the assembly of the items Assumption 2.3 uses: L >= 0, the
+  interior bound LipInteriorAt for a.e. t in [0, T] (two diagonal inputs at the same t on the
+  standing space, delta X and the other channel differences of Theta - Theta', delta psi = psi(t,
+  Theta, mu) - psi(t, Theta', mu') for psi in {b, sigma, h, f} with mu, mu' the laws of the inputs),
+  and the terminal bound LipTerminal (delta g_T = g(X_T, rho) - g(X'_T, rho') with the induced laws
+  rho = Law(X_T), rho' = Law(X'_T)), one L for both. No field varies a measure argument
+  independently of its tuple, which is what "all hypotheses below are imposed along D_t only" (lines
+  69-70) requires; the theta/Theta convention of lines 70-71 is typographical and is followed
+  (coefficients take points, inputs are maps from Omega). The added lines spell out the objects the
+  earlier report already read in Assumption 2.3; the earlier verdict, faithful with representation
+  choices (L a parameter with the field 0 <= L), stands.
+  <!-- def-review: Dissertation.WellPosedness.Spec.Assumption23 0d5048c72ef913b60000000000000000 by=claude-auditor source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+
+* `Dissertation.WellPosedness.Spec.Assumption25` (added: lines 69–84 (a definition claim rescoped
+  from expository: the whole passage)). The whole region (lines 69-84) is new; it fixes the notation
+  of Assumption 2.5. Assumption25 encodes the items as Assumption 2.5 uses them: in the field
+  terminal, delta g_T = C.g (XT w) (lawP2 P XT) - C.g (XT' w) (lawP2 P XT'), the measure argument of
+  g being the induced law rho = Law(X_T) of its own state argument (never free), and delta X_T = XT
+  - XT', over all F_T-measurable square-integrable X_T, X'_T as the assumption quantifies them; in
+  the field interior, Mono27At for a.e. t in [0, T], i.e. two diagonal inputs at the same t on the
+  same space with delta psi and the channel differences of Theta - Theta' through pairing27.
+  Constants (and the separate G) involve no measure argument, so the "imposed along D_t only"
+  sentence (lines 69-70) is respected; the theta/Theta convention of lines 70-71 is typographical.
+  The added lines define exactly the objects the earlier report already compared; its verdict,
+  faithful with representation choices (integrability conjuncts, G and the constants as parameters,
+  a.e. t for Lebesgue on [0, T]), stands.
+  <!-- def-review: Dissertation.WellPosedness.Spec.Assumption25 2ad64300a1211b960000000000000000 by=claude-auditor source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+
+* `Dissertation.WellPosedness.Spec.LipInteriorAt` (added: lines 69–84 (a definition claim rescoped
+  from expository: the whole passage)). The whole region (lines 69-84) is new. LipInteriorAt encodes
+  the items "two diagonal inputs (Theta, mu), (Theta', mu') at the same time t on the same
+  probability space" (both p, p' range over diagonalInputs at the one t on the one (Omega, F, P), so
+  mu = lawP2 P Theta and mu' = lawP2 P Theta', never free), "delta X := X - X'" with delta Y, delta
+  Z, delta U the other channels of Theta(w) - Theta'(w), and "delta psi := psi(t, Theta, mu) -
+  psi(t, Theta', mu'), psi in {b, sigma, h, f}" as the random variable w -> C.psi t (Theta w) mu -
+  C.psi t (Theta' w) mu', delta h the difference in L^2(nu; R^n) of the values of C.h. Lines 69-71
+  (hypotheses only along D_t; lower-case theta a point, upper-case Theta a random tuple) state the
+  diagonal quantification and the convention the earlier report already found in the definition.
+  Nothing added contradicts or extends the reading; the earlier verdict, faithful, stands.
+  <!-- def-review: Dissertation.WellPosedness.Spec.LipInteriorAt 0d5048c72ef913b66bcf6ee4c960f28a by=claude-auditor source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+
+* `Dissertation.WellPosedness.Spec.LipTerminal` (added: lines 69–84 (a definition claim rescoped
+  from expository: the whole passage)). The whole region (lines 69-84) is new. LipTerminal encodes
+  the items "the induced terminal laws rho := Law(X_T), rho' := Law(X'_T)" and "delta g_T := g(X_T,
+  rho) - g(X'_T, rho')" (lines 80-84): its left side is g (XT w) (lawP2 P XT) - g (XT' w) (lawP2 P
+  XT'), the law argument always the law in P_2(R^n) of the state argument itself (the L^2 hypotheses
+  keep lawP2 off its junk value), so the terminal condition is diagonal as lines 69-70 require. The
+  passage introduces X_T, X'_T without a quantifier; Assumption 2.3 quantifies them over L^2(Omega,
+  F_T; R^n), which is what the definition takes (strongly F_T-measurable square-integrable maps),
+  and the earlier report already read that quantifier. The added lines change nothing; the earlier
+  verdict, faithful, stands.
+  <!-- def-review: Dissertation.WellPosedness.Spec.LipTerminal 50fea10a492649962d326ec49234e618 by=claude-auditor source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+
+* `Dissertation.WellPosedness.Spec.Mono27At` (added: lines 69–84 (a definition claim rescoped from
+  expository: the whole passage)). The whole region (lines 69-84) is new. Mono27At encodes the items
+  "two diagonal inputs (Theta, mu), (Theta', mu') at the same time t on the same probability space"
+  (p, p' range over diagonalInputs at one t on one (Omega, F, P), so the measure arguments are the
+  laws lawP2 P Theta, lawP2 P Theta', never varied independently, as lines 69-70 require) and the
+  differences delta X, delta Y, delta Z, delta U and delta psi, psi in {b, sigma, h, f}, through
+  pairing27 evaluated at theta = Theta(w), theta' = Theta'(w) with those laws, and through the
+  channel differences in the quadratic terms. The theta/Theta convention of lines 70-71 is followed.
+  The added lines define the objects the earlier report already compared in (2.7); its verdict,
+  faithful with representation choices (the explicit integrability conjunct of the pairing), stands.
+  <!-- def-review: Dissertation.WellPosedness.Spec.Mono27At a59346236526d219b3e1099916102f71 by=claude-auditor source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+
+* `Dissertation.WellPosedness.Spec.pairing27` (added: lines 69–84 (a definition claim rescoped from
+  expository: the whole passage)). The whole region (lines 69-84) is new. pairing27 encodes the
+  items "delta X := X - X'" (with delta Y, delta Z, delta U the other channels) and "delta psi :=
+  psi(t, Theta, mu) - psi(t, Theta', mu'), psi in {b, sigma, h, f}" at two points theta, theta' of H
+  with laws mu, mu' at one time t: each term is C.psi t theta mu - C.psi t theta' mu', and the mark
+  integral takes delta h(e) and delta U(e) through representatives, which changes the integrand only
+  on nu-null sets, so the integral is the L^2(nu) pairing. That it takes points theta (lower case)
+  is the convention of lines 70-71; that its laws are free arguments does not vary a measure
+  independently in any hypothesis, because its use in (2.7), Mono27At, evaluates it at Theta(w),
+  Theta'(w) with mu, mu' the laws of diagonal inputs (lines 69-70). The earlier report read it
+  pointwise in exactly this way; its verdict, faithful, stands.
+  <!-- def-review: Dissertation.WellPosedness.Spec.pairing27 ede49a3a3551d3de0749c24d2bf7198b by=claude-auditor source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+
 ## `A:sec2:hborel-derivation` (paper/sections/02-model-assumptions.tex, lines 107–110)
 
 * `Dissertation.PaperSpec.A.sec2_hborel` (added: lines 108–110). Lines 108–110 complete the sentence

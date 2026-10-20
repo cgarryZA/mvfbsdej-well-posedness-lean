@@ -18,8 +18,8 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | formal: open | 0 |
 | formal: unspecified | 0 |
 | formal: malformed | 0 |
-| definition: reviewed | 13 |
-| definition: author-reviewed | 1 |
+| definition: reviewed | 14 |
+| definition: author-reviewed | 0 |
 | definition: review pending | 0 |
 | definition: not yet stated | 0 |
 | out of scope: duplicate | 4 |
@@ -67,7 +67,7 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | `A:sec2:infinite-activity-atoms` | §2 ¶1 | formal: accepted | `A.sec2_infinite_activity` | `A.sec2_infinite_activity` | reviewed by claude-auditor, hypotheses met: `A.sec2_infinite_activity_hypotheses` |
 | `A:sec2:tuple-notation` | §2 ¶ before Definition 2.1 | definition: reviewed | `Dissertation.WellPosedness.System.TupleH`, `Dissertation.WellPosedness.System.tupleAt`, `Dissertation.WellPosedness.System.leftLimProc`, `Dissertation.Law.lawP2`, `Dissertation.WellPosedness.System.driftProc`, `Dissertation.WellPosedness.System.diffusionProc`, `Dissertation.WellPosedness.System.driverProc`, `Dissertation.WellPosedness.Existence.coeffJump` | — | definitions |
 | `A:sec2:prp` | §2 PRP ¶ | formal: accepted | `A.sec2_prp` | `A.sec2_prp` | reviewed by claude-auditor, hypotheses met: `A.sec2_prp_nonzero_hypotheses` |
-| `A:sec2:difference-notation` | §2 ¶ after Definition 2.1 | definition: author-reviewed | `Dissertation.WellPosedness.Spec.Assumption23`, `Dissertation.WellPosedness.Spec.Assumption25`, `Dissertation.WellPosedness.Spec.LipInteriorAt`, `Dissertation.WellPosedness.Spec.LipTerminal`, `Dissertation.WellPosedness.Spec.pairing27`, `Dissertation.WellPosedness.Spec.Mono27At`, `Dissertation.Law.lawP2` | — | definitions |
+| `A:sec2:difference-notation` | §2 ¶ after Definition 2.1 | definition: reviewed | `Dissertation.WellPosedness.Spec.Assumption23`, `Dissertation.WellPosedness.Spec.Assumption25`, `Dissertation.WellPosedness.Spec.LipInteriorAt`, `Dissertation.WellPosedness.Spec.LipTerminal`, `Dissertation.WellPosedness.Spec.pairing27`, `Dissertation.WellPosedness.Spec.Mono27At`, `Dissertation.Law.lawP2` | — | definitions |
 | `A:sec2:hborel-derivation` | (2.3) + ¶ | formal: accepted | `A.sec2_hborel` | `A.sec2_hborel` | reviewed by claude-auditor, hypotheses met: `A.sec2_hborel_nonzero_hypotheses` |
 | `A:sec3:HH-banach` | §3 "Solution space" | formal: accepted | `A.sec3_HH_inclusion`, `A.sec3_HH_definite`, `A.sec3_HH_norm`, `A.sec3_HH_complete` | `A.sec3_HH_inclusion`, `A.sec3_HH_definite`, `A.sec3_HH_norm`, `A.sec3_HH_complete` | E int_0^T |V|^2 <= T E sup |V|^2, so HH is contained in Hweak: reviewed by claude-auditor, hypotheses met: `A.sec3_HH_inclusion_hypotheses`; under the identification ||.||_HH is a norm: it vanishes exactly on the zero class: reviewed by claude-auditor, hypotheses met: `A.sec3_space_hypotheses`; ||.||_HH satisfies the triangle inequality and is absolutely homogeneous: reviewed by claude-auditor, hypotheses met: `A.sec3_HH_norm_hypotheses`; (HH, ||.||_HH) is complete: reviewed by claude-auditor, hypotheses met: `A.sec3_HH_complete_hypotheses` |
 | `A:sec3:one-null-set` | §3 solution definition | formal: accepted | `A.sec3_cadlag_versions`, `A.sec3_one_null_set` | `A.sec3_cadlag_versions`, `A.sec3_one_null_set` | both sides of each identity are cadlag in t: the stochastic integrals of (1.1) have adapted versions with every path cadlag: reviewed by claude-auditor, hypotheses met: `A.sec3_cadlag_versions_hypotheses`; the identities of (1.1) holding almost surely for every t hold off one null set for all t: reviewed by claude-auditor, hypotheses met: `A.sec3_space_hypotheses` |
