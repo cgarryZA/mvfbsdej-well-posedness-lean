@@ -786,19 +786,19 @@
      "name": "the law statistics are W₂-Lipschitz, with the constants Lip(𝔮), Lip(𝔮̃), Lip(𝔮̂), L_Q",
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_lip",
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_lip",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses"
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_jump_hypotheses"
     },
     {
      "name": "the perturbation: origin integrability, (3.5) with L_p, Assumption 2.3, and (3.4) with c_pert = ‖G‖ L_p",
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_pert",
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_pert",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses"
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_jump_hypotheses"
     },
     {
      "name": "well-posedness with margin c_diss − ‖G‖ L_p under (5.1)",
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_wp",
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_wp",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses"
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_jump_hypotheses"
     },
     {
      "name": "the radial statistic of the full tuple law is no expectation functional",
@@ -1736,7 +1736,7 @@
      "name": "M²_t = ∫_{(0, t] × E} e^s|δU_s(e)|² N(ds, de) − ∫_0^t ∫_E e^s|δU_s(e)|² ν(de) ds is a local martingale: for t ∈ [0, T] the Poisson integral has finite expectation and M²_t is integrable and ℱ_t-measurable up to a null set, and 𝔼[M²_t | ℱ_s] = M²_s almost surely for 0 ≤ s ≤ t ≤ T (a martingale on [0, T])",
      "spec": "Dissertation.PaperSpec.A.lem41_M2_martingale",
      "accept": "Dissertation.Acceptance.A.lem41_M2_martingale",
-     "witness": "Dissertation.Acceptance.A.lem_bpbsde_nonzero_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_infinite_hypotheses"
     },
     {
      "name": "M^W_t = ∫_0^t e^s ⟨δY_{s−}, δZ_s dW_s⟩ exists as a local Itô integral on [0, T], and 𝔼 sup_{t≤T} |M^W_t| ≤ c_BDG e^T (𝔼 sup_{t≤T} |δY_t|²)^{1/2} (𝔼 ∫_0^T |δZ_s|²_F ds)^{1/2} < ∞ and 𝔼[M^W_T − M^W_t] = 0 for every t ∈ [0, T] (c_BDG every value at least some c₀ > 0)",
@@ -2917,8 +2917,8 @@
    "location": "paper/sections/04-proof-wellposedness.tex:128",
    "source_sha256": "51438816a6ce227eb551bc114da5f0991fd8ba1675a90f07358e1730e7294a8d",
    "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
+   "scope_note": "The pathwise identity (4.5) is used only through its expectation. The proof of Lemma 4.1 takes expectations in it at each time t, which removes its three stochastic terms. The later bound on E sup|δY|² squares the forward form of the lemma's equation and applies BDG to the L² martingales ∫δZ dW and ∫∫δU dÑ, without (4.5). What the proof draws from the expectation is stated and proved: eq_supE (the bound at every time and (4.6)), from the library's weighted second-moment identity for Itô–Lévy processes (Ito.SecondMoment.integral_exp_mul_self_eq_of_isItoLevyProcess, at the weight e^s), whose difference between the horizons T and t is, coordinatewise, the expectation of (4.5). That identity needs only the square integrability of δξ and the finite energy of δZ, δU and φ that the lemma assumes. The zero means of the three stochastic terms are the clauses of A:lem4.1:M2-infinite-activity. The pathwise identity itself is not stated. It would need an every-time Itô–Lévy formula for general predictable integrands, with local stochastic integrals because δY₋δZ and δY₋δU need not have finite energy, and no claim of the paper uses more than its expectation.",
+   "scope_reviewed": false,
    "clauses": [],
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
@@ -3078,13 +3078,13 @@
      "name": "the forward difference before (4.10): δσ and δh meet the conditions of the Itô and compensated integrals, almost every path of δb is integrable on [0, T], and δX̄_t = λ ∫_0^t δb_s ds + λ ∫_0^t δσ_s dW_s + λ ∫_0^t ∫_E δh_s(e) Ñ(ds, de) almost surely for every t ∈ [0, T], and almost surely at every t ∈ [0, T] at once with any version of ∫ δσ dW right-continuous on [0, T)",
      "spec": "Dissertation.PaperSpec.A.eq_fwddiff_identity",
      "accept": "Dissertation.Acceptance.A.eq_fwddiff_identity",
-     "witness": "Dissertation.Acceptance.A.frozen_pair_hypotheses"
+     "witness": "Dissertation.Acceptance.A.frozen_pair_window_hypotheses"
     },
     {
      "name": "(4.10): for two trials Θ¹, Θ² ∈ ℍ and their frozen steps Θ̄ᵏ = Φ_λ(Θᵏ), 𝔼 sup_{t ≤ T} |δX̄_t|² ≤ 3λ² [𝔼(∫_0^T |δb_s| ds)² + 𝔼 sup_{t ≤ T} |∫_0^t δσ_s dW_s|² + 𝔼 sup_{t ≤ T} |∫_0^t ∫_E δh_s(e) Ñ(ds, de)|²] ≤ 3λ² [T 𝔼 ∫_0^T |δb_s|² ds + c_BDG 𝔼 ∫_0^T |δσ_s|²_F ds + c_BDG 𝔼 ∫_0^T ‖δh_s‖² ds] ≤ 3λ² max{T, c_BDG} 𝔼 ∫_0^T (|δb_s|² + |δσ_s|²_F + ‖δh_s‖²) ds ≤ 3λ² max{T, c_BDG} 𝔼 ∫_0^T S_s² ds ≤ C_X λ² ‖Θ¹ − Θ²‖²_ℍ, C_X = 3 max{T, c_BDG} L⋆², for every c_BDG ≥ c₀, some c₀ > 0",
      "spec": "Dissertation.PaperSpec.A.eq_fwddiff",
      "accept": "Dissertation.Acceptance.A.eq_fwddiff",
-     "witness": "Dissertation.Acceptance.A.frozen_pair_hypotheses"
+     "witness": "Dissertation.Acceptance.A.frozen_pair_window_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -3306,8 +3306,8 @@
    "location": "paper/sections/04-proof-wellposedness.tex:565",
    "source_sha256": "250b294e482fd13dbd7563a46fdc8db3ff2448fcb533208c341f94e49f14ae55",
    "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
+   "scope_note": "The pathwise identity (4.17) is used only through its expectation. The proof of Lemma 4.3 takes expectations in it to obtain (4.19), and Step 2 uses (4.19), not (4.17). (4.19) is A:eq:Gid, stated and proved (eq_Gid) from the library's bilinear second-moment identity for Itô–Lévy processes (Ito.SecondMoment.integral_mul_eq_of_isItoLevyProcess). That identity needs only the square integrability of the initial values and the finite energy of the integrands of the difference equations (4.15)–(4.16), which Lemma 4.3's hypotheses give. The bounds that make the stochastic terms of (4.17) mean-zero are the clauses of A:eq:bdg4. The pathwise identity itself is not stated, for the reason recorded for (4.5).",
+   "scope_reviewed": false,
    "clauses": [],
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
@@ -3344,37 +3344,37 @@
      "name": "first bound of (4.18): ∫_0^t ⟨GδX_{s−}, δZ_s dW_s⟩ exists as a local Itô integral on [0, T], 𝔼 sup_{t≤T} |∫_0^t ⟨GδX_{s−}, δZ_s dW_s⟩| ≤ c_BDG ‖G‖ (𝔼 sup_{t≤T} |δX_t|²)^{1/2} (𝔼 ∫_0^T |δZ_t|²_F dt)^{1/2} < ∞, and its increments have mean zero (c_BDG every value at least some c₀ > 0)",
      "spec": "Dissertation.PaperSpec.A.eq_bdg4_XZ",
      "accept": "Dissertation.Acceptance.A.eq_bdg4_XZ",
-     "witness": "Dissertation.Acceptance.A.lem_pert_forced_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_pert_backward_window_hypotheses"
     },
     {
      "name": "second bound of (4.18): ∫_0^t ⟨G(λδσ_s + q^σ_s) dW_s, δY_{s−}⟩ exists as a local Itô integral on [0, T], 𝔼 sup_{t≤T} |∫_0^t ⟨G(λδσ_s + q^σ_s) dW_s, δY_{s−}⟩| ≤ c_BDG ‖G‖ (𝔼 sup_{t≤T} |δY_t|²)^{1/2} (𝔼 ∫_0^T |λδσ_t + q^σ_t|²_F dt)^{1/2} < ∞, and its increments have mean zero (c_BDG every value at least some c₀ > 0)",
      "spec": "Dissertation.PaperSpec.A.eq_bdg4_sigmaY",
      "accept": "Dissertation.Acceptance.A.eq_bdg4_sigmaY",
-     "witness": "Dissertation.Acceptance.A.lem_pert_forced_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_pert_forward_window_hypotheses"
     },
     {
      "name": "third bound of (4.18): ∫_0^t ∫_E ⟨GδX_{s−}, δU_s(e)⟩ Ñ(ds, de) exists as a local compensated integral on [0, T], 𝔼 sup_{t≤T} |∫_0^t ∫_E ⟨GδX_{s−}, δU_s(e)⟩ Ñ(ds, de)| ≤ c_BDG ‖G‖ (𝔼 sup_{t≤T} |δX_t|²)^{1/2} (𝔼 ∫_0^T ‖δU_t‖² dt)^{1/2} < ∞, and its increments have mean zero (c_BDG every value at least some c₀ > 0)",
      "spec": "Dissertation.PaperSpec.A.eq_bdg4_XU",
      "accept": "Dissertation.Acceptance.A.eq_bdg4_XU",
-     "witness": "Dissertation.Acceptance.A.lem_pert_forced_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_pert_backward_window_hypotheses"
     },
     {
      "name": "fourth bound of (4.18): with λδh + q^h read through any representative meeting the conditions of the compensated integral (one exists), ∫_0^t ∫_E ⟨G(λδh_s + q^h_s)(e), δY_{s−}⟩ Ñ(ds, de) exists as a local compensated integral on [0, T], 𝔼 sup_{t≤T} |∫_0^t ∫_E ⟨G(λδh_s + q^h_s)(e), δY_{s−}⟩ Ñ(ds, de)| ≤ c_BDG ‖G‖ (𝔼 sup_{t≤T} |δY_t|²)^{1/2} (𝔼 ∫_0^T ‖λδh_t + q^h_t‖² dt)^{1/2} < ∞, and its increments have mean zero (c_BDG every value at least some c₀ > 0)",
      "spec": "Dissertation.PaperSpec.A.eq_bdg4_hY",
      "accept": "Dissertation.Acceptance.A.eq_bdg4_hY",
-     "witness": "Dissertation.Acceptance.A.lem_pert_forced_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_pert_forward_window_hypotheses"
     },
     {
      "name": "𝔼 ∫_0^T |λδσ_t + q^σ_t|²_F dt < ∞ and 𝔼 ∫_0^T ‖λδh_t + q^h_t‖² dt < ∞; the fifth integrand is integrable: 𝔼 ∫_0^T ∫_E |⟨λδh_t(e) + q^h_t(e), GᵀδU_t(e)⟩| ν(de) dt ≤ ‖G‖ (𝔼 ∫_0^T ‖λδh_t + q^h_t‖² dt)^{1/2} (𝔼 ∫_0^T ‖δU_t‖² dt)^{1/2} < ∞",
      "spec": "Dissertation.PaperSpec.A.eq_bdg4_fifth",
      "accept": "Dissertation.Acceptance.A.eq_bdg4_fifth",
-     "witness": "Dissertation.Acceptance.A.lem_pert_forced_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_pert_jump_window_hypotheses"
     },
     {
      "name": "the fifth term of (4.17): λδh + q^h has a marked predictable representative H, and for every such H the fifth integrand ⟨H_t(e), GᵀδU_t(e)⟩ is marked predictable, 𝔼 ∫_{(0, T] × E} |⟨H, GᵀδU⟩| dN and 𝔼 ∫_0^T ∫_E |⟨H, GᵀδU⟩| ν(de) dt are finite, and ∫_{(0, T] × E} ⟨H, GᵀδU⟩ dN − ∫_0^T ∫_E ⟨H, GᵀδU⟩ ν(de) dt has mean zero (2.2)",
      "spec": "Dissertation.PaperSpec.A.eq_bdg4_fifth_mean",
      "accept": "Dissertation.Acceptance.A.eq_bdg4_fifth_mean",
-     "witness": "Dissertation.Acceptance.A.lem_pert_forced_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_pert_jump_window_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",

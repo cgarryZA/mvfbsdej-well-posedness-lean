@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.eq_couplingT",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.eq_couplingT",
+  "lean": [
+   "Dissertation.PaperSpec.A.eq_couplingT"
+  ],
+  "claims": [
+   "A:rem:wasserstein-bounds"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-acf2a57b4863",
+  "project_commit": "d3e594defeeeb94a6d05c33c666bcb870d584302",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba1b0b3c75b14edd5d3",
+  "fingerprint": "pl-fp-v1:1a693cb2c3538754b4113a944316473dbc55b8b812343163a2d2c5be76e92385",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "# Reading: eq_couplingT — (2.9) of Remark 2.6\n\nSetting. Standing probability space (any probability space is a harmless broadening). R^n with\nthe Euclidean norm. W_2 on P_2(R^n): coupling infimum of squared Euclidean distance.\n\nHypotheses. X_T, X'_T in L^2(Omega, F_T; R^n) (measurable, square-integrable);\nrho = Law(X_T), rho' = Law(X'_T) (the induced terminal laws, in P_2(R^n)).\n\nConclusion. W_2(rho, rho')^2 <= E |X_T - X'_T|^2.\n\nThe paper notes it is the X-marginal case of (2.8) at time T; any formal route is fine.\nFaithfulness points: Euclidean (not sup) norm on R^n; square-integrability as hypothesis (or\nlintegral form) so a Bochner junk 0 cannot appear; Law as pushforward of a measurable map; W_2 the\ngenuine infimum on P_2(R^n).",
+  "locked_at": "2026-10-20T11:09:24Z"
+ },
+ "comparison": {
+  "text": "# Decision: spec:Dissertation.PaperSpec.A.eq_couplingT (Dissertation/PaperSpec/A/Sec2.lean)\n\nVerdict: broader.\n\nComparison with the locked reading.\n- Space. `EuclideanSpace ℝ (Fin n)`: R^n with the Euclidean norm, as in the paper.\n- W_2. `w2P` (Dissertation/Law/P2.lean) is `w2` of the underlying laws: the square root of the\n  infimum over couplings of the lintegral of the squared Euclidean distance; on `P2` laws the\n  squared distance is finite (`w2sq_ne_top`), so the real value is genuine, not the junk 0.\n- Laws. `lawP2 P X`, `lawP2 P X'` are the image measures, since the hypotheses `MemLp X 2 P`,\n  `MemLp X' 2 P` hold (Dissertation/Law/LawP2.lean, `lawP2_law`); these are ρ and ρ'.\n- Right-hand side. `∫ ω, ‖X ω - X' ω‖ ^ 2 ∂P`, integrable under the hypotheses, is E|X_T - X'_T|^2.\n- Conclusion: W_2(ρ, ρ')^2 <= E|X_T - X'_T|^2, the printed (2.9).\nBroader in the same harmless ways as (2.8): any probability space, and X, X' need only be square\nintegrable, not F_T-measurable. The printed claim is the instance in the detail file. The paper's\nremark that (2.9) is the X-marginal case of (2.8) at time T is a derivation route, not a separate\nassertion; the proposition states (2.9) directly, which is what the passage displays.\n\nCurrent text. Read at 1f67672 (Remark 2.6). I have not seen the earlier text, so I cannot say what\nchanged; the proposition says what the current (2.9) says.\n\nWitness. `Dissertation.Acceptance.A.eq_couplingT_hypotheses` (Dissertation/Acceptance/A/\nWitnessHyp.lean): on Bool with the uniform law, X = 1_{true} e₁ and X' = 1_{false} e₁ in R^1,\nsquare integrable and not a.s. equal. A genuine nonzero instance (n = 1).\n\nCoverage (claim A:rem:wasserstein-bounds). As recorded in the eq_coupling decision: the four\nclauses (2.8)-(2.11) state every mathematical assertion of Remark 2.6 at this revision; the\noptimal coupling inside the printed chains is a cited proof device; no clause states something\nthe passage does not claim, and the hypotheses are those in force (square-integrable terminal\nstates on one probability space).",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-20T11:23:00Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "broader",
+  "detail": "Broader than the printed claim: the proposition holds over every probability space and every pair\nof square-integrable random vectors of R^n. The printed (2.9) is the instance Ω = the standing\nspace, X = X_T, X' = X'_T in L^2(Ω, F_T; R^n) (so MemLp holds), where lawP2 P X_T = ρ and\nlawP2 P X'_T = ρ' and w2P is W_2 on P_2(R^n) for the Euclidean norm."
+ },
+ "author_review": {
+  "shown_at": "2026-10-20T11:23:13Z",
+  "disagreements": "Disagreement in the verdict label only. The earlier review records \"faithful\"; I record\n\"broader\", because the proposition holds over every probability space and every pair of\nsquare-integrable random vectors of R^n, not only F_T-measurable terminal states on the standing\nbasis; the printed (2.9) is the instance. No substantive disagreement about the meaning (Euclidean\nnorm, genuine W_2 on P_2(R^n), image laws, genuine expectation)."
+ },
+ "submitted_at": "2026-10-20T11:24:07Z",
+ "issue_draft": null
+}

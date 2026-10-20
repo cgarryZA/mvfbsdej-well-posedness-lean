@@ -153,18 +153,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "(2.8)",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.eq_coupling": [
-       "claude-auditor",
-       "claude-author",
-       "claude-reviewer"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.eq_coupling",
      "spec_hash": "ed839d34f480cba17af7c36ae6c33114",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.eq_coupling_hypotheses",
      "witness_ok": true
     },
@@ -177,18 +171,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "(2.9)",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.eq_couplingT": [
-       "claude-auditor",
-       "claude-author",
-       "claude-reviewer"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.eq_couplingT",
      "spec_hash": "ed839d34f480cba1b0b3c75b14edd5d3",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.eq_couplingT_hypotheses",
      "witness_ok": true
     },
@@ -201,18 +189,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "(2.10)",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.eq_lipfun": [
-       "claude-auditor",
-       "claude-author",
-       "claude-reviewer"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.eq_lipfun",
      "spec_hash": "ed839d34f480cba187b5540277706218",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.eq_lipfun_hypotheses",
      "witness_ok": true
     },
@@ -225,18 +207,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "(2.11)",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.eq_margproj": [
-       "claude-auditor",
-       "claude-author",
-       "claude-reviewer"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.eq_margproj",
      "spec_hash": "ed839d34f480cba1c19abbad6d02050c",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.eq_margproj_hypotheses",
      "witness_ok": true
     }
@@ -248,7 +224,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [],
@@ -488,17 +464,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "a bound with the constants β̄₁, β̄₂ is (2.12) with the constants β̄ᵢ − c and margin c, for 0 < c < min{β̄₁, β̄₂}",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.rem_margin_reduce": [
-       "claude-auditor",
-       "claude-author"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.rem_margin_reduce",
      "spec_hash": "ed839d34f480cba15843e0ffe4756126",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses",
      "witness_ok": true
     },
@@ -511,17 +482,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "when m = n the weighted margin c gives the margin c / c_G in the unweighted form (2.13)",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.rem_margin_unweighted": [
-       "claude-auditor",
-       "claude-author"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.rem_margin_unweighted",
      "spec_hash": "ed839d34f480cba1ba4163c9b3d796bd",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.rem_margin_hypotheses",
      "witness_ok": true
     },
@@ -569,7 +535,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -1446,18 +1412,13 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "the law statistics are W₂-Lipschitz, with the constants Lip(𝔮), Lip(𝔮̃), Lip(𝔮̂), L_Q",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.ex_fulllaw_lip": [
-       "claude-auditor",
-       "claude-author"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_lip",
      "spec_hash": "ed839d34f480cba11fea7903ed24f9f8",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses",
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_jump_hypotheses",
      "witness_ok": true
     },
     {
@@ -1469,41 +1430,33 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "the perturbation: origin integrability, (3.5) with L_p, Assumption 2.3, and (3.4) with c_pert = ‖G‖ L_p",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.ex_fulllaw_pert": [
-       "claude-auditor",
-       "claude-author"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_pert",
      "spec_hash": "ed839d34f480cba1e9dade95deb0a071",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses",
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_jump_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_wp",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.ex_fulllaw_wp"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
      "name": "well-posedness with margin c_diss − ‖G‖ L_p under (5.1)",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.ex_fulllaw_wp": [
-       "claude-auditor",
-       "claude-author"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_wp",
-     "spec_hash": "ed839d34f480cba173d663ff51153197",
+     "spec_hash": "ed839d34f480cba10404c6cf3a0cc0d0",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses",
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_jump_hypotheses",
      "witness_ok": true
     },
     {
@@ -1515,17 +1468,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "the radial statistic of the full tuple law is no expectation functional",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial": [
-       "claude-auditor",
-       "claude-author"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial",
      "spec_hash": "ed839d34f480cba1fc87ff54d30df5ad",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses",
      "witness_ok": true
     },
@@ -1538,17 +1486,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "the U-marginal radial statistics are no expectation functionals, with L²(ν) ≠ 0",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr": [
-       "claude-auditor",
-       "claude-author"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr",
      "spec_hash": "ed839d34f480cba193f328d7c8c243ea",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses",
      "witness_ok": true
     },
@@ -1561,17 +1504,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "the cylindrical term is no expectation functional when Q is not affine on the attained range of the features",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q": [
-       "claude-auditor",
-       "claude-author"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q",
      "spec_hash": "ed839d34f480cba12be9f13eb8df21c1",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q_hypotheses",
      "witness_ok": true
     },
@@ -1584,17 +1522,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "Q affine on the attained range of the features: the cylindrical term is an expectation functional of Example 5.3",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.ex_fulllaw_affineQ": [
-       "claude-auditor",
-       "claude-author"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_affineQ",
      "spec_hash": "ed839d34f480cba1b7c4d4b7307e74ea",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_affineQ_hypotheses",
      "witness_ok": true
     }
@@ -1606,7 +1539,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
@@ -1973,18 +1906,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "the W₂ term is dominated by the synchronous coupling bound (2.8)",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.eq_coupling": [
-       "claude-auditor",
-       "claude-author",
-       "claude-reviewer"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.eq_coupling",
      "spec_hash": "ed839d34f480cba17af7c36ae6c33114",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.eq_coupling_hypotheses",
      "witness_ok": true
     },
@@ -1997,17 +1924,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "the coefficients depend on u pointwise whenever β₁ > 0, with ν ≠ 0",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.rem_freelaw": [
-       "claude-auditor",
-       "claude-author"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.rem_freelaw",
      "spec_hash": "ed839d34f480cba105f02a9629cb6b98",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses",
      "witness_ok": true
     }
@@ -2019,7 +1941,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -2044,7 +1966,9 @@
     {
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_wp",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.ex_fulllaw_wp"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -2053,9 +1977,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_wp",
-     "spec_hash": "ed839d34f480cba173d663ff51153197",
+     "spec_hash": "ed839d34f480cba10404c6cf3a0cc0d0",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses",
      "witness_ok": true
     },
@@ -2157,7 +2081,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: accepted"
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
@@ -2998,18 +2922,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "a càdlàg local martingale whose running supremum is integrable has zero-mean increments",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.sec4_supremum_criterion": [
-       "claude-auditor",
-       "claude-author",
-       "claude-reviewer"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.sec4_supremum_criterion",
      "spec_hash": "ed839d34f480cba1f588c2071f5242ff",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.sec4_supremum_criterion_hypotheses",
      "witness_ok": true
     }
@@ -3021,7 +2939,7 @@
    "scope": "formal",
    "scope_note": "the supremum criterion is stated and proved; the Burkholder–Davis–Gundy inequality at p = 1 and p = 2 of the preceding sentence, with one constant for both exponents and Doob's constant 4 at p = 2, is cited work (He, Wang and Yan) and is not stated",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -3189,7 +3107,7 @@
      "spec_hash": "ed839d34f480cba1983f1a786ecea56b",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_bpbsde_nonzero_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_infinite_hypotheses",
      "witness_ok": true
     },
     {
@@ -3768,7 +3686,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_coupling",
      "spec_hash": "ed839d34f480cba17af7c36ae6c33114",
      "spec_ok": true,
-     "spec_review": "not reviewed",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.eq_coupling_hypotheses",
      "witness_ok": true
     },
@@ -3798,7 +3716,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -4475,8 +4393,8 @@
    "number": "(4.5)",
    "paper": "A",
    "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
+   "scope_note": "The pathwise identity (4.5) is used only through its expectation. The proof of Lemma 4.1 takes expectations in it at each time t, which removes its three stochastic terms. The later bound on E sup|δY|² squares the forward form of the lemma's equation and applies BDG to the L² martingales ∫δZ dW and ∫∫δU dÑ, without (4.5). What the proof draws from the expectation is stated and proved: eq_supE (the bound at every time and (4.6)), from the library's weighted second-moment identity for Itô–Lévy processes (Ito.SecondMoment.integral_exp_mul_self_eq_of_isItoLevyProcess, at the weight e^s), whose difference between the horizons T and t is, coordinatewise, the expectation of (4.5). That identity needs only the square integrability of δξ and the finite energy of δZ, δU and φ that the lemma assumes. The zero means of the three stochastic terms are the clauses of A:lem4.1:M2-infinite-activity. The pathwise identity itself is not stated. It would need an every-time Itô–Lévy formula for general predictable integrands, with local stochastic integrals because δY₋δZ and δY₋δU need not have finite energy, and no claim of the paper uses more than its expectation.",
+   "scope_reviewed": false,
    "status": "out of scope: proof-step"
   },
   {
@@ -4616,7 +4534,7 @@
      "spec_hash": "ed839d34f480cba1cdc19be62d7635bf",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.frozen_pair_hypotheses",
+     "witness": "Dissertation.Acceptance.A.frozen_pair_window_hypotheses",
      "witness_ok": true
     },
     {
@@ -4634,7 +4552,7 @@
      "spec_hash": "ed839d34f480cba1898e8661a670d8b9",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.frozen_pair_hypotheses",
+     "witness": "Dissertation.Acceptance.A.frozen_pair_window_hypotheses",
      "witness_ok": true
     }
    ],
@@ -4815,8 +4733,8 @@
    "number": "(4.17)",
    "paper": "A",
    "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
+   "scope_note": "The pathwise identity (4.17) is used only through its expectation. The proof of Lemma 4.3 takes expectations in it to obtain (4.19), and Step 2 uses (4.19), not (4.17). (4.19) is A:eq:Gid, stated and proved (eq_Gid) from the library's bilinear second-moment identity for Itô–Lévy processes (Ito.SecondMoment.integral_mul_eq_of_isItoLevyProcess). That identity needs only the square integrability of the initial values and the finite energy of the integrands of the difference equations (4.15)–(4.16), which Lemma 4.3's hypotheses give. The bounds that make the stochastic terms of (4.17) mean-zero are the clauses of A:eq:bdg4. The pathwise identity itself is not stated, for the reason recorded for (4.5).",
+   "scope_reviewed": false,
    "status": "out of scope: proof-step"
   },
   {
@@ -4836,7 +4754,7 @@
      "spec_hash": "ed839d34f480cba1ea9600d62db2bc6a",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_forced_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_backward_window_hypotheses",
      "witness_ok": true
     },
     {
@@ -4854,7 +4772,7 @@
      "spec_hash": "ed839d34f480cba1cb9feae8e68982b0",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_forced_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_forward_window_hypotheses",
      "witness_ok": true
     },
     {
@@ -4872,7 +4790,7 @@
      "spec_hash": "ed839d34f480cba18a39ea87912f080a",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_forced_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_backward_window_hypotheses",
      "witness_ok": true
     },
     {
@@ -4890,7 +4808,7 @@
      "spec_hash": "ed839d34f480cba11d2a86bd66838ee7",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_forced_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_forward_window_hypotheses",
      "witness_ok": true
     },
     {
@@ -4908,7 +4826,7 @@
      "spec_hash": "ed839d34f480cba1bb7df8f3a4d24d8b",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_forced_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_jump_window_hypotheses",
      "witness_ok": true
     },
     {
@@ -4926,7 +4844,7 @@
      "spec_hash": "ed839d34f480cba153e1a9d9480bd7ff",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_forced_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_jump_window_hypotheses",
      "witness_ok": true
     }
    ],
@@ -5260,8 +5178,9 @@
  "summary": {
   "A": {
    "definition: reviewed": 11,
-   "formal: accepted": 68,
-   "formal: proved, review pending": 7,
+   "formal: accepted": 72,
+   "formal: proved, author-reviewed": 2,
+   "formal: proved, review pending": 1,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
    "out of scope: proof-step": 2
