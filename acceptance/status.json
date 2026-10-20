@@ -2481,6 +2481,178 @@
   {
    "clauses": [
     {
+     "accept": "Dissertation.Acceptance.A.thm_stab",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.thm_stab"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the a priori stability estimate (Theorem 3.1)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.thm_stab",
+     "spec_hash": "ed839d34f480cba16bc55062de98e587",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.thm_uniq",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.thm_uniq"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "uniqueness in the natural class ℍ_weak (Theorem 3.3)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.thm_uniq",
+     "spec_hash": "ed839d34f480cba1b8815741b34ba4e5",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.thm_cwp",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.thm_cwp"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "global existence, with uniqueness, on every finite horizon (Theorem 3.5)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.thm_cwp",
+     "spec_hash": "ed839d34f480cba10deeabcd10e6e74d",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.cor_robust_wp",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.cor_robust_wp"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "robustness at m = n below the dissipativity margin (Corollary 3.6)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.cor_robust_wp",
+     "spec_hash": "ed839d34f480cba16dd662e97e677716",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.cor_robust_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.rem_generalrank_wp",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.rem_generalrank_wp"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "robustness for general rank, the margin and (3.4) in the weighted quantities of (2.12) (Remark 3.7)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.rem_generalrank_wp",
+     "spec_hash": "ed839d34f480cba118d1835a02488a97",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.rem_generalrank_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.rem_diag_mono",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.rem_diag_mono"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "pointwise monotonicity gives expected diagonal monotonicity (Remark 2.8)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.rem_diag_mono",
+     "spec_hash": "ed839d34f480cba146c1633f8e03b86c",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.prop_strict",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.prop_strict"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "expected diagonal monotonicity is strictly weaker (Proposition 3.8)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.prop_strict",
+     "spec_hash": "ed839d34f480cba1f1c48950c52ae4f4",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.prop_strict_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.rem_diag_mono_converse",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.rem_diag_mono_converse"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "expected diagonal monotonicity is strictly weaker: a full coefficient system satisfying Assumption 2.5 without the pointwise condition (Remark 2.8)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.rem_diag_mono_converse",
+     "spec_hash": "ed839d34f480cba14b5e4594e14d9dc7",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses",
+     "witness_ok": true
+    }
+   ],
+   "id": "A:intro:contributions",
+   "kind": "prose-claim",
+   "number": "§1 ¶8",
+   "paper": "A",
+   "scope": "formal",
+   "scope_note": "'The works surveyed above are each restricted on at least one of the three axes (measure argument, jump activity, coupling strength)' (lines 101–102) is a statement about cited work; 'We prove well-posedness under the stated L² and monotonicity assumptions' (lines 102–103) is Theorem 3.5 (thm_cwp) under (2.3) and Assumptions 2.2–2.5, with its continuous dependence (3.1) (thm_stab), and 'by global-in-time monotone continuation' (lines 103–104) describes the proof (§4.5, A:sec4:proof-thm35); item (i) (lines 106–107) is Theorem 3.1 (thm_stab); item (ii) (line 108) is Theorem 3.3 (thm_uniq); item (iii) (lines 109–110) is Theorem 3.5 (thm_cwp), 'by monotone continuation from a small-coupling base case' describing its proof (Lemmas 4.2 and 4.4, A:lem:small and A:lem:cont); item (iv) (lines 111–113) is Corollary 3.6 at m = n (cor_robust_wp) and Remark 3.7 for general rank (rem_generalrank_wp); item (v) (lines 114–115) is Remark 2.8 (rem_diag_mono: the pointwise form gives the expected diagonal one) with Proposition 3.8 (prop_strict) and Remark 2.8's converse (rem_diag_mono_converse) for the strictness, as in A:abstract and A:conclusion; the solution spaces ℍ and ℍ_weak, the class of item (ii), and the solution notion (03-main-results.tex lines 5–36) are pinned in A:sec3:HH-banach and A:sec3:one-null-set, and the two-system notation of (3.1) (03-main-results.tex lines 39–49) in A:sec3:two-system-notation",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
+  },
+  {
+   "clauses": [
+    {
      "accept": "Dissertation.Acceptance.A.sec2_separable",
      "accept_ok": true,
      "author_reviewed": [],
@@ -2864,7 +3036,7 @@
    "number": "§3 ¶ before Theorem 3.1",
    "paper": "A",
    "scope": "definition",
-   "scope_note": "the notation of the comparison of two coefficient systems k = 1, 2 in (3.1): δ· = ·¹ − ·², the coordinatewise differences the propositions take; μᵏ_t := Law(Θᵏ_t) (lawP2 of tupleAt); (δψ)(t) for ψ ∈ {b, σ, f} along solution 2 (driftProc, diffusionProc, driverProc of systems 1 and 2 at Θ²); (δh)(t) at (Θ²⁻_t, μ²⁻_t) (jumpProc of coeffJump at leftLimProc X², leftLimProc Y², Z², U²); δ̂g_T (terminalVal of systems 1 and 2 at X²); the propositions that use it are thm_stab (A:thm:stab, A:thm:cwp, A:abstract, A:conclusion), thm_stab_companion with the roles exchanged, thm_stab_data and thm_stab_minimal (A:thm3.1:companion), cor_robust_wp (A:cor:robust, A:conclusion), rem_generalrank_wp (A:rem:generalrank) and ex_fulllaw_wp (A:ex:fulllaw, Example 5.4: the perturbed system against system 2); 'The stability and uniqueness theorems below rest on comparing solutions of (1.1) under two coefficient systems' (lines 39–40) is exposition: the uniqueness theorem compares two solutions of one system, and its proof fixes its own differences along both solutions (lines 110–117, in A:eq:uniq-coeff)",
+   "scope_note": "the notation of the comparison of two coefficient systems k = 1, 2 in (3.1): δ· = ·¹ − ·², the coordinatewise differences the propositions take; μᵏ_t := Law(Θᵏ_t) (lawP2 of tupleAt); (δψ)(t) for ψ ∈ {b, σ, f} along solution 2 (driftProc, diffusionProc, driverProc of systems 1 and 2 at Θ²); (δh)(t) at (Θ²⁻_t, μ²⁻_t) (jumpProc of coeffJump at leftLimProc X², leftLimProc Y², Z², U²); δ̂g_T (terminalVal of systems 1 and 2 at X²); the propositions that use it are thm_stab (A:thm:stab, A:thm:cwp, A:abstract, A:intro:contributions, A:conclusion), thm_stab_companion with the roles exchanged, thm_stab_data and thm_stab_minimal (A:thm3.1:companion), cor_robust_wp (A:cor:robust, A:intro:contributions, A:conclusion), rem_generalrank_wp (A:rem:generalrank, A:intro:contributions) and ex_fulllaw_wp (A:ex:fulllaw, Example 5.4: the perturbed system against system 2); 'The stability and uniqueness theorems below rest on comparing solutions of (1.1) under two coefficient systems' (lines 39–40) is exposition: the uniqueness theorem compares two solutions of one system, and its proof fixes its own differences along both solutions (lines 110–117, in A:eq:uniq-coeff)",
    "scope_reviewed": false,
    "status": "definition: reviewed"
   },
@@ -4710,7 +4882,7 @@
    "number": "(4.5)",
    "paper": "A",
    "scope": "proof-step",
-   "scope_note": "The pathwise identity (4.5) is used only through its expectation. The proof of Lemma 4.1 takes expectations in it at each time t, which removes its three stochastic terms. The later bound on E sup|δY|² squares the forward form of the lemma's equation and applies BDG to the L² martingales ∫δZ dW and ∫∫δU dÑ, without (4.5). What the proof draws from the expectation is the weighted inequality of lines 193–199, the clause eq_supE_weighted of A:eq:supE, from which it derives the bound at every time and (4.6), the clause eq_supE. Both are stated and proved from the library's weighted second-moment identity for Itô–Lévy processes (Ito.SecondMoment.integral_exp_mul_self_eq_of_isItoLevyProcess, at the weight e^s), whose difference between the horizons T and t is, coordinatewise, the expectation of (4.5). That identity needs only the square integrability of δξ and the finite energy of δZ, δU and φ that the lemma assumes. The zero means of the three stochastic terms are the clauses of A:lem4.1:M2-infinite-activity. The pathwise identity itself is not stated. It would need an every-time Itô–Lévy formula for general predictable integrands, with local stochastic integrals because δY₋δZ and δY₋δU need not have finite energy, and no claim of the paper uses more than its expectation.",
+   "scope_note": "The pathwise identity (4.5) is used only through its expectation. The proof of Lemma 4.1 takes expectations in it at each time t, which removes its three stochastic terms. The later bound on E sup|δY|² squares the forward form of the lemma's equation and applies BDG to the L² martingales ∫δZ dW and ∫∫δU dÑ, without (4.5). What the proof draws from the expectation is the weighted inequality of lines 193–199, the clause eq_supE_weighted of A:eq:supE, from which it derives the bound at every time and (4.6), the clause eq_supE. Both are stated and proved from the library's weighted second-moment identity for Itô–Lévy processes (Ito.SecondMoment.integral_exp_mul_self_eq_of_isItoLevyProcess, at the weight e^s), whose difference between the horizons T and t is, coordinatewise, the expectation of (4.5). That identity needs only the square integrability of δξ and the finite energy of δZ, δU and φ that the lemma assumes. The zero means of the three stochastic terms are the clauses of A:lem4.1:M2-infinite-activity. The pathwise identity itself is not stated. It would need an every-time Itô–Lévy formula for general predictable integrands, with local stochastic integrals because δY₋δZ and δY₋δU need not have finite energy, and no claim of the paper uses more than its expectation. The region (lines 126–137) is the sentence of (4.5): its lead-in 'Itô's formula for e^t|δY_t|² then gives the pathwise identity' (lines 126–127) and the display.",
    "scope_reviewed": false,
    "status": "out of scope: proof-step"
   },
@@ -5122,7 +5294,7 @@
    "number": "(4.17)",
    "paper": "A",
    "scope": "proof-step",
-   "scope_note": "The pathwise identity (4.17) is used only through its expectation. The proof of Lemma 4.3 takes expectations in it to obtain (4.19), and Step 2 uses (4.19), not (4.17). (4.19) is A:eq:Gid, stated and proved (eq_Gid) from the library's bilinear second-moment identity for Itô–Lévy processes (Ito.SecondMoment.integral_mul_eq_of_isItoLevyProcess). That identity needs only the square integrability of the initial values and the finite energy of the integrands of the difference equations (4.15)–(4.16), which Lemma 4.3's hypotheses give. The bounds that make the stochastic terms of (4.17) mean-zero are the clauses of A:eq:bdg4. The pathwise identity itself is not stated, for the reason recorded for (4.5).",
+   "scope_note": "The pathwise identity (4.17) is used only through its expectation. The proof of Lemma 4.3 takes expectations in it to obtain (4.19), and Step 2 uses (4.19), not (4.17). (4.19) is A:eq:Gid, stated and proved (eq_Gid) from the library's bilinear second-moment identity for Itô–Lévy processes (Ito.SecondMoment.integral_mul_eq_of_isItoLevyProcess). That identity needs only the square integrability of the initial values and the finite energy of the integrands of the difference equations (4.15)–(4.16), which Lemma 4.3's hypotheses give. The bounds that make the stochastic terms of (4.17) mean-zero are the clauses of A:eq:bdg4. The pathwise identity itself is not stated, for the reason recorded for (4.5). The region (lines 563–578) is the sentence of (4.17): its lead-in 'Itô's product formula for ⟨GδX_t, δY_t⟩, integrated over [0, T] and using δX₀ = δξ₀, then gives the pathwise identity' (lines 563–564) and the display.",
    "scope_reviewed": true,
    "status": "out of scope: proof-step"
   },
@@ -5640,6 +5812,7 @@
   "A": {
    "definition: reviewed": 14,
    "formal: accepted": 75,
+   "formal: proved, author-reviewed": 1,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
    "out of scope: proof-step": 2

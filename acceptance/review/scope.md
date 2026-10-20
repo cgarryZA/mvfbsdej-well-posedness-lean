@@ -355,3 +355,49 @@ None. Four clauses state more than their passage literally prints, and each is j
 | Claim | Recorded | Blind | Resolution | Note |
 |---|---|---|---|---|
 | — | — | — | — | No decision differed. |
+
+
+## Regions of the claims without clauses, widened to their sentences
+
+Author: `claude-author`, the session that keeps the inventory; this records changes of region, not
+a review. Manuscript: revision `1f67672`.
+
+The final check of the pinned regions found 20 claims without clauses (16 `part-of`, 2
+`duplicate`, 2 `proof-step`) whose region was one line, or a label-anchored display, inside a
+longer sentence. Each region is now the sentence or passage its title asserts, pinned as a span of
+whole lines inside its host's environment where it has one; no numbered environment is crossed
+and no environment pin was converted. No review rests on these claims, so no marker changed. A
+`part-of` or `duplicate` claim names only its host in `scope_note` (the check reads that note as
+the host's id), so what the added lines are is recorded here; the two `proof-step` claims record
+their lead-ins in their notes as well. Line numbers are those of the file named in the second
+column.
+
+| Claim | Scope, file | Region | Added lines |
+|---|---|---|---|
+| `A:intro:rsz-extension` | part-of `A:ex:brownian`, `01-introduction.tex` | 95 → 95–97 | 96–97, the rest of the sentence: that the condition of [RSZ, (H.1)(1)], like [BYZ, (A1)], is posed on the joint law of `(X, Y, Z)` with a rectangular full-rank `G`, a statement about cited work (the host's note names only [BYZ, (A1)]). Line 97 also begins the next sentence (lines 97–99: the measure argument is the law of the full tuple, `ν` σ-finite), which restates the setting of (1.1) pinned in `A:intro:mvfbsdej` (lines 14–16, 40–48). |
+| `A:sec2:fubini-iso` | duplicate `A:eq:fubiniiso`, `02-model-assumptions.tex` | 115 → 112–123, the host's region | 112–114, the lead-in and the predictable σ-field `𝒫`; 117–121, the citation of [HNVW, Propositions 1.2.24–1.2.25], the representative unique up to null sets and the reading of every Poisson integral through it, all asserted by the title; 121–123, the consequence for pointwise formulas `u(e)` and the first words of (2.5), the host's content as its note records. |
+| `A:sec2:coefmeas` | duplicate `A:eq:coefmeas`, `02-model-assumptions.tex` | 123 → 123–131 | 124–131, the display (2.5) the title asserts. Line 123 also ends the reading convention of (2.4), pinned in `A:eq:fubiniiso`. |
+| `A:ex:concrete(ii)` | part-of `A:ex:concrete`, `05-examples.tex` | 112 → 112–193 | 113–193, the passage (ii) the title summarises: the coefficients and marginal means (113–133), Assumption 2.3 with `L = 2` and Assumption 2.2 (135–148), Assumption 2.5 with `α = β₁ = β₂ = 2` (150–188), and the attribution to [LiMin, Example 3.1, (H3.2)] (190–193), cited work; the host's content, as its note records. |
+| `A:eq:lipT` | part-of `A:ass:lip`, `02-model-assumptions.tex` | 156–158 (display) → 149–159 | 149–155 and 159: `L ≥ 0`, the interior bound along `𝒟_t`, the terminal values `X_T, X'_T ∈ L²(Ω, ℱ_T; ℝⁿ)` and 'almost surely'; the host's content (Assumption 2.3, lines 148–160). |
+| `A:eq:mono` | part-of `A:ass:mono`, `02-model-assumptions.tex` | 189–193 (display) → 184–193 | 184–188: the terminal inequality and 'for a.e. `t ∈ [0, T]` and all `(Θ, μ), (Θ', μ') ∈ 𝒟_t`'; the host's content (Assumption 2.5, lines 183–199). |
+| `A:eq:coupling` | part-of `A:rem:wasserstein-bounds`, `02-model-assumptions.tex` | 204–208 (display) → 201–209 | 201–203: the pair `(Θ, Θ')` realises a coupling of `(μ, μ')`, so the `W₂`-infimum, with the citation of its definition [Villani, Definition 6.1], is bounded by the synchronous transport cost; 209: (2.9) is the `X`-marginal case of (2.8) at `T`; the host's content (Remark 2.6, lines 200–232). |
+| `A:eq:couplingT` | part-of `A:rem:wasserstein-bounds`, `02-model-assumptions.tex` | 204–208 (display) → 201–209 | As for `A:eq:coupling`, the same sentence. |
+| `A:eq:lipfun` | part-of `A:rem:wasserstein-bounds`, `02-model-assumptions.tex` | 215–221 (display) → 211–221 | 211–214: `K` a separable Hilbert space, `φ̄` Lipschitz, the law functional `W₂`-Lipschitz with the same constant, the optimal coupling `π`, the Lipschitz bound and Jensen; the host's content. |
+| `A:eq:margproj` | part-of `A:rem:wasserstein-bounds`, `02-model-assumptions.tex` | 226–231 (display) → 222–231 | 222–225: marginal projection is 1-Lipschitz for `W₂`, the `U`-marginal `μ^U`, the image of `π` a coupling of `(μ^U, μ'^U)`; the host's content. |
+| `A:eq:stab` | part-of `A:thm:stab`, `03-main-results.tex` | 57–65 (display) → 52–67 | 52–56: the hypotheses on systems 1 and 2 and the solutions `Θᵏ ∈ ℍ`; 66–67: `C_stab` depends only on `T, L, ‖G‖, c_G, α, β₁, β₂` and `c_BDG`; the host's content (Theorem 3.1, lines 51–71). Line 67 also begins the sentence on the dependence on system 1 alone (lines 67–68), the host's content. |
+| `A:eq:pertpair` | part-of `A:cor:robust`, `03-main-results.tex` | 215–219 (display) → 210–219 | 210–214: the perturbations with the origin-integrability and diagonal Lipschitz conditions, `c_pert ≥ 0`, a.e. `t` and all pairs of `𝒟_t`; the host's content (Corollary 3.6, lines 207–236). Line 210 also ends the sentence on the baseline (lines 208–210), the host's content. |
+| `A:eq:pertlip` | part-of `A:cor:robust`, `03-main-results.tex` | 230–232 (display) → 229–235 | 229: the perturbations independent of `θ` and `W₂`-Lipschitz; 233–235: a.e. `t`, all pairs of `𝒟_t`, and (3.4) with `c_pert = ‖G‖ L_p`; the host's content. |
+| `A:eq:bmean` | part-of `A:prop:strict`, `03-main-results.tex` | 302–305 (display) → 300–314 | 300–301 and 306–314: `n = m = 1`, `d ≥ 1`, `G = 1`, `β₁ > 0`, `0 < ε < β₁`, `m_Y`, the free-measure `W₂`-Lipschitz bound, (3.7) and the failure of the pointwise bound; the host's content (Proposition 3.8, lines 299–315). |
+| `A:eq:diagdrift` | part-of `A:prop:strict`, `03-main-results.tex` | 309–311 (display) → 300–314 | 300–308 and 312–314: the setting, the drift (3.6), its Lipschitz bound, 'along all pairs of `𝒟_t`', and the failure of the pointwise bound; the host's content. |
+| `A:eq:dYlin` | part-of `A:lem:bpbsde`, `04-proof-wellposedness.tex` | 92–94 (display) → 90–95 | 90–91 and 95: `δY` càdlàg adapted, `δZ ∈ H²_W`, `δU ∈ H²_N`, `δξ ∈ L²(ℱ_T)`, `φ ∈ L²(Ω × [0, T])`; the host's content (Lemma 4.1, lines 89–102). Line 95 also begins the conclusion of the lemma ('Then', lines 95–101), the host's content. |
+| `A:eq:itoY2` | proof-step, `04-proof-wellposedness.tex` | 128–137 (display) → 126–137 | 126–127: the lead-in 'Itô's formula for `e^t\|δY_t\|²` then gives the pathwise identity', named in the claim's note. |
+| `A:eq:contpert` | part-of `A:lem:pert`, `04-proof-wellposedness.tex` | 500–506 (display) → 491–508 | 491–499: Assumptions 2.3–2.5, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, the solutions of (4.1) with their data, forcings and integrability, `Θ¹ − Θ² ∈ ℍ`, and `δ· = ·¹ − ·²`; 507–508: the dependence of `C_B`; the host's content (Lemma 4.3, lines 490–509). |
+| `A:eq:Gid-path` | proof-step, `04-proof-wellposedness.tex` | 565–578 (display) → 563–578 | 563–564: the lead-in 'Itô's product formula for `⟨G δX_t, δY_t⟩`, integrated over `[0, T]` and using `δX₀ = δξ₀`, then gives the pathwise identity', named in the claim's note. |
+| `A:eq:fulllaw-eps` | part-of `A:ex:fulllaw`, `05-examples.tex` | 341–344 (display) → 338–344 | 338–340: by (3.5) and Corollary 3.6, (3.4) holds with `c_pert = ‖G‖ L_p`, so the perturbed system is well-posed, with margin `c_diss − ‖G‖ L_p`, whenever (5.1) holds; the host's content (Example 5.4, lines 274–348). |
+
+One entry is new: `A:intro:contributions` (`01-introduction.tex` lines 101–116), the contribution
+list of the introduction, which restates Theorems 3.1, 3.3 and 3.5, Corollary 3.6, Remark 3.7 and
+Proposition 3.8 and was pinned by no claim. Like `A:abstract` and `A:conclusion` it is `formal`,
+with the clauses `thm_stab`, `thm_uniq`, `thm_cwp`, `cor_robust_wp`, `rem_generalrank_wp`,
+`rem_diag_mono`, `prop_strict` and `rem_diag_mono_converse`; its note names every sentence and
+what states it. Its scope decision is not yet reviewed (`scope_reviewed: false`).
