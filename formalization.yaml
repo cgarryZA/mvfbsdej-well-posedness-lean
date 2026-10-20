@@ -162,7 +162,7 @@ alignment:
         - "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_corr"
         - "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q"
         - "Dissertation.Acceptance.A.ex_fulllaw_affineQ"
-      status: "formal: proved, author-reviewed"
+      status: "formal: accepted"
     - source: "Example 5.5"
       lean:
         - "Dissertation.Acceptance.A.ex_dealer_potential"
@@ -199,7 +199,7 @@ alignment:
         - "Dissertation.Acceptance.A.ex_dealer_mono"
         - "Dissertation.Acceptance.A.ex_dealer_wp"
         - "Dissertation.Acceptance.A.ex_dealer_active"
-      status: "formal: proved, author-reviewed"
+      status: "formal: accepted"
     - source: "Lemma A.1"
       lean:
         - "Dissertation.Acceptance.A.lem_lawflow"

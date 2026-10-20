@@ -1442,9 +1442,7 @@
     {
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_wp",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.ex_fulllaw_wp"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1455,7 +1453,7 @@
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_wp",
      "spec_hash": "ed839d34f480cba10404c6cf3a0cc0d0",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_jump_hypotheses",
      "witness_ok": true
     },
@@ -1539,7 +1537,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -1966,9 +1964,7 @@
     {
      "accept": "Dissertation.Acceptance.A.ex_fulllaw_wp",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.ex_fulllaw_wp"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1979,7 +1975,7 @@
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_wp",
      "spec_hash": "ed839d34f480cba10404c6cf3a0cc0d0",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses",
      "witness_ok": true
     },
@@ -2081,7 +2077,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -3238,7 +3234,7 @@
      "spec": "Dissertation.PaperSpec.A.thm_cwp",
      "spec_hash": "ed839d34f480cba10deeabcd10e6e74d",
      "spec_ok": true,
-     "spec_review": "not reviewed",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
      "witness_ok": true
     }
@@ -3250,7 +3246,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -5178,9 +5174,7 @@
  "summary": {
   "A": {
    "definition: reviewed": 11,
-   "formal: accepted": 72,
-   "formal: proved, author-reviewed": 2,
-   "formal: proved, review pending": 1,
+   "formal: accepted": 75,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
    "out of scope: proof-step": 2
