@@ -359,5 +359,119 @@ class ComparatorEvidence(unittest.TestCase):
                 _f.write("theorem a : 1 = 1 := rfl\n")
             self.assertNotEqual(h1, A.tree_digest(d, A.lean_tree(d, "X")))
 
+
+H = "0123456789abcdef0123456789abcdef"
+OLD, NEW = "a" * 64, "b" * 64
+SPEC = "Dissertation.PaperSpec.A.a"
+ACC = "Dissertation.Acceptance.A.a"
+DEFN = "Dissertation.D"
+
+
+def marker(kind, name, who, *sources, h=H):
+    src = "".join(f" source={c}@{d}" for c, d in sources)
+    return f"<!-- {kind}-review: {name} {h} by={who}{src} -->"
+
+
+class ReviewMarkers(unittest.TestCase):
+    """A review counts for a claim only while the passage digest it records is the claim's
+    current one."""
+
+    def inventory(self, digest=NEW):
+        return {"claims": [
+            dict(claim("A:t", [{"name": "main", "spec": SPEC, "accept": ACC}]),
+                 number="Theorem 1", kind="theorem", source_sha256=digest),
+            dict(claim("A:u", [{"name": "main", "spec": SPEC, "accept": ACC}]),
+                 number="Remark 2", kind="remark", source_sha256=NEW),
+            dict(claim("A:d", [{"name": "main", "spec": None, "defs": [DEFN]}],
+                       scope="definition"), number="Definition 1", kind="definition",
+                 source_sha256=digest)]}
+
+    def probe(self, closure=None):
+        return {"spec": {SPEC: {"verdict": "ok", "hash": H}},
+                "def": {DEFN: {"verdict": "ok", "hash": H}},
+                "proof": {ACC: {"verdict": "ok"}}, "closure": closure or {}}
+
+    def status(self, text, digest=NEW, closure=None):
+        spec, defs, bad = A.parse_reviews([("A.md", text)])
+        self.assertEqual(bad, [])
+        st = A.build_status(self.inventory(digest), self.probe(closure), spec, defs)
+        return {r["id"]: r for r in st["claims"]}, st
+
+    def test_parse(self):
+        spec, defs, bad = A.parse_reviews([("A.md", marker("spec", SPEC, "r", ("A:t", NEW))
+                                            + marker("def", DEFN, "r"))])
+        self.assertEqual(spec[SPEC], [{"hash": H, "file": "A.md", "by": "r",
+                                       "sources": {"A:t": NEW}}])
+        self.assertEqual(defs[DEFN][0]["sources"], {})
+        self.assertEqual(bad, [])
+
+    def test_malformed_marker_reported(self):
+        _, _, bad = A.parse_reviews([("A.md", f"<!-- spec-review: {SPEC} {H} by=r "
+                                               "source=A:t@abc -->")])
+        self.assertEqual(len(bad), 1)
+        self.assertIn("malformed review marker", bad[0])
+
+    def test_current_passage_reviewed(self):
+        rows, _ = self.status(marker("spec", SPEC, "r", ("A:t", NEW)))
+        self.assertEqual(rows["A:t"]["status"], "formal: accepted")
+        self.assertEqual(rows["A:t"]["clauses"][0]["spec_review"], "reviewed by r")
+
+    def test_changed_passage_reopens_and_is_named(self):
+        rows, st = self.status(marker("spec", SPEC, "r", ("A:t", OLD), ("A:u", NEW)))
+        self.assertEqual(rows["A:t"]["status"], "formal: proved, review pending")
+        self.assertEqual(rows["A:t"]["clauses"][0]["spec_review"], "passage changed since review")
+        self.assertEqual(rows["A:t"]["clauses"][0]["passage_changed"], {SPEC: ["r"]})
+        # The same reading still counts for the claim whose passage is unchanged.
+        self.assertEqual(rows["A:u"]["status"], "formal: accepted")
+        notes = A.passage_notes(st)
+        self.assertEqual(len(notes), 1)
+        self.assertTrue(notes[0].startswith("A:t: its source passage changed since the reading "
+                                            "of A.a by r"))
+
+    def test_reading_without_passage_is_not_a_review(self):
+        rows, _ = self.status(marker("spec", SPEC, "r"))
+        self.assertEqual(rows["A:t"]["clauses"][0]["spec_review"], "not reviewed")
+        self.assertEqual(rows["A:t"]["status"], "formal: proved, review pending")
+
+    def test_reading_of_another_claim_does_not_count(self):
+        rows, _ = self.status(marker("spec", SPEC, "r", ("A:u", NEW)))
+        self.assertEqual(rows["A:t"]["status"], "formal: proved, review pending")
+        self.assertEqual(rows["A:u"]["status"], "formal: accepted")
+
+    def test_changed_proposition_still_reopens(self):
+        rows, _ = self.status(marker("spec", SPEC, "r", ("A:t", NEW), h="f" * 32))
+        self.assertEqual(rows["A:t"]["clauses"][0]["spec_review"], "changed since review")
+
+    def test_fresh_reading_beside_stale_one(self):
+        text = (marker("spec", SPEC, "claude-author", ("A:t", NEW))
+                + marker("spec", SPEC, "r", ("A:t", OLD)))
+        rows, _ = self.status(text)
+        self.assertEqual(rows["A:t"]["status"], "formal: proved, author-reviewed")
+        text += marker("spec", SPEC, "s", ("A:t", NEW))
+        rows, _ = self.status(text)
+        self.assertEqual(rows["A:t"]["status"], "formal: accepted")
+
+    def test_definition_claim_passage(self):
+        rows, _ = self.status(marker("def", DEFN, "r", ("A:d", NEW)))
+        self.assertEqual(rows["A:d"]["status"], "definition: reviewed")
+        rows, _ = self.status(marker("def", DEFN, "r", ("A:d", OLD)))
+        self.assertEqual(rows["A:d"]["status"], "definition: review pending")
+        self.assertEqual(rows["A:d"]["clauses"][0]["passage_changed"], {DEFN: ["r"]})
+
+    def test_closure_definitions_are_reviewed_at_their_hash(self):
+        closure = {SPEC: {"Dissertation.X": {"kind": "def", "hash": H, "module": "M",
+                                             "line": 1}}}
+        text = marker("spec", SPEC, "r", ("A:t", NEW)) + marker("def", "Dissertation.X", "r")
+        rows, _ = self.status(text, closure=closure)
+        self.assertEqual(rows["A:t"]["status"], "formal: accepted")
+
+    def test_marker_sources_validated(self):
+        spec, defs, _ = A.parse_reviews([("A.md", marker("spec", SPEC, "r", ("A:nope", NEW))
+                                          + marker("def", DEFN, "r", ("A:t", NEW)))])
+        out = A.marker_failures(self.inventory(), spec, defs)
+        self.assertTrue(any("A:nope, which is not a claim" in m for m in out))
+        self.assertTrue(any("def-review of Dissertation.D by r records a reading of A:t, which "
+                            "does not use it" in m for m in out))
+
 if __name__ == "__main__":
     unittest.main()
