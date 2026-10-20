@@ -134,7 +134,23 @@ it was not a trivial instance was wrong.
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.thm_stab ed839d34f480cba16bc55062de98e587 by=claude-author source=A:thm:stab@381ba74c22961e597927279a40c3d1204009169a635d33ce49e1a5962c04d6b8 source=A:thm:cwp@0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+Re-readings at the widened passages:
+
+* `thm_stab` (`A:thm:stab`): Re-read at the passage of lines 39–71 of `03-main-results.tex`
+  (formerly the environment, lines 51–71): the added lines (lines 39–49, before the theorem: two
+  coefficient systems `k = 1, 2`, `δ· = ·¹ − ·²`, `μᵏ_t := Law(Θᵏ_t)`, the coefficient differences
+  along solution 2 with `δh` at `(Θ²⁻_t, μ²⁻_t)`, and `δ̂g_T`, which the review above reads) do not
+  change the reading: they define the differences of (3.1) as the proposition takes them.
+* `thm_stab` (`A:abstract`): Re-read at the passage of lines 30–48 of `wellposedness.tex` (formerly
+  line 30): the added lines (lines 31–48, the rest of the abstract, quoted in the review of
+  `A:abstract`: the setting, the diagonal hypotheses, the three results, the method and the
+  dealer-market example) do not change the reading: 'an a priori continuous-dependence estimate'
+  (line 43) is (3.1) under the hypotheses of Theorem 3.1.
+* `thm_stab` (`A:conclusion`): Re-read at the passage of lines 3–16 of `06-conclusion.tex` (formerly
+  line 3): the added lines (lines 4–16, the rest of the conclusion, quoted in the review of
+  `A:conclusion`) do not change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.thm_stab ed839d34f480cba16bc55062de98e587 by=claude-author source=A:thm:stab@d9d869ac83496378709c20aa4b063f56ffd879a48b96ade6aea54acbfe427463 source=A:thm:cwp@0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3 source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.thm_stab--claude-reviewer--2026-10-17T16_05_53Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.thm_stab ed839d34f480cba16bc55062de98e587 by=claude-reviewer source=A:thm:stab@381ba74c22961e597927279a40c3d1204009169a635d33ce49e1a5962c04d6b8 source=A:thm:cwp@0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.thm_stab--claude-auditor--2026-10-19T03_36_54Z.md`).
@@ -178,7 +194,17 @@ only be met by equal tuples).
 Verdict: faithful, with the reading of "satisfies (1.1)" by `L²` stochastic integrals recorded in
 `definitions.md`.
 
-<!-- spec-review: Dissertation.PaperSpec.A.thm_uniq ed839d34f480cba1b8815741b34ba4e5 by=claude-author source=A:thm:uniq@03292da4be100aa38ea90d55eff64159cf4e923c05926fa169ebba6ed2985189 source=A:rem:uniq-no-integ@16ace776485cb414a0ad39fba869a577ec053811b32b39e09709fb01a4e0f75e source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+Re-readings at the widened passages:
+
+* `thm_uniq` (`A:abstract`): Re-read at the passage of lines 30–48 of `wellposedness.tex` (formerly
+  line 30): the added lines (lines 31–48, the rest of the abstract, quoted in the review of
+  `A:abstract`: the setting, the diagonal hypotheses, the three results, the method and the
+  dealer-market example) do not change the reading: 'uniqueness' (line 43) is Theorem 3.3.
+* `thm_uniq` (`A:conclusion`): Re-read at the passage of lines 3–16 of `06-conclusion.tex` (formerly
+  line 3): the added lines (lines 4–16, the rest of the conclusion, quoted in the review of
+  `A:conclusion`) do not change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.thm_uniq ed839d34f480cba1b8815741b34ba4e5 by=claude-author source=A:thm:uniq@03292da4be100aa38ea90d55eff64159cf4e923c05926fa169ebba6ed2985189 source=A:rem:uniq-no-integ@16ace776485cb414a0ad39fba869a577ec053811b32b39e09709fb01a4e0f75e source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.thm_uniq--claude-reviewer--2026-10-17T16_05_53Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.thm_uniq ed839d34f480cba1b8815741b34ba4e5 by=claude-reviewer source=A:thm:uniq@03292da4be100aa38ea90d55eff64159cf4e923c05926fa169ebba6ed2985189 source=A:rem:uniq-no-integ@16ace776485cb414a0ad39fba869a577ec053811b32b39e09709fb01a4e0f75e source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.thm_uniq--claude-auditor--2026-10-19T03_35_38Z.md`).
@@ -275,8 +301,21 @@ finiteness in `eq_uniq_bwd`; "By Lemma 4.1" names the proof. The last two readin
 superseded: the bound before (3.2) and the equation before (3.3) are stated, by
 `eq_uniq_coeff_ae` and `eq_uniq_bwd_eq`.
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_bwd ed839d34f480cba12aa97c204e9816a6 by=claude-author source=A:eq:uniq-bwd@a0c3e3fee8dc85540db2368978e14170d1deabb4269ae81cb99aef8cf283a2fd -->
-<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_coeff ed839d34f480cba11fcb76fb4b640955 by=claude-author source=A:eq:uniq-coeff@2dd8f5d9caccdcd87ce71c94e62f3be5dc6ab3ef350822523ab9098d57f3d769 -->
+Re-readings at the widened passages:
+
+* `eq_uniq_coeff` (`A:eq:uniq-coeff`): Re-read at the passage of lines 110–156 of
+  `03-main-results.tex` (formerly lines 110–142): the added lines (lines 143–156: 'We next show that
+  `Θ¹ − Θ² ∈ ℍ`', the forward difference equation and `𝔼 sup|δX_t|² ≤ C_T 𝔼 ∫_0^T (|δb_s|² +
+  |δσ_s|²_F + ‖δh_s‖²) ds < ∞` with `δX ∈ S²`, the clause `eq_uniq_fwd` of `A:rem:uniq-no-integ`) do
+  not change the reading.
+* `eq_uniq_bwd` (`A:eq:uniq-bwd`): Re-read at the passage of lines 158–174 of `03-main-results.tex`
+  (formerly lines 158–172): the added lines (lines 173–174: 'therefore `δY ∈ S²`. By (3.2) and (3.3)
+  we have `δΘ ∈ ℍ`', the finiteness that (3.3) states and the membership `rem_uniq_lip_mem` of
+  `A:rem:uniq-no-integ`) do not change the reading: 'therefore `δY ∈ S²`' is the finiteness this
+  proposition states.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_bwd ed839d34f480cba12aa97c204e9816a6 by=claude-author source=A:eq:uniq-bwd@2299c84c37bf6e6d07e5bf1079800d77af7ce8de795c426b59b69acde29e973a -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_coeff ed839d34f480cba11fcb76fb4b640955 by=claude-author source=A:eq:uniq-coeff@c5e7dae7414c6edbeb2afd8a9b9973a719f095ba7998511de1e2ebcb347197cb -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_uniq_coeff--claude-auditor--2026-10-20T00_40_52Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_coeff ed839d34f480cba11fcb76fb4b640955 by=claude-auditor source=A:eq:uniq-coeff@2dd8f5d9caccdcd87ce71c94e62f3be5dc6ab3ef350822523ab9098d57f3d769 -->
 <!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_bwd ed839d34f480cba12aa97c204e9816a6 by=claude-author source=A:eq:uniq-bwd@9e27142522202b563f42928c519e570d6b67fdfb9d25b3a33bdd984b39c35ef8 -->
@@ -391,8 +430,20 @@ Re-reading of `eq_uniq_bwd_eq` at the widened passage of `A:eq:uniq-bwd` (lines 
 reading above is of lines 158–163, now the beginning of the region; the rest of the region is
 the terminal bound (`eq_uniq_bwd_terminal`) and (3.3) (`eq_uniq_bwd`).
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_bwd_eq ed839d34f480cba1dacb4b647f5f4499 by=claude-author source=A:eq:uniq-bwd@a0c3e3fee8dc85540db2368978e14170d1deabb4269ae81cb99aef8cf283a2fd -->
-<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_coeff_ae ed839d34f480cba1a9e05e97904e4b0f by=claude-author source=A:eq:uniq-coeff@2dd8f5d9caccdcd87ce71c94e62f3be5dc6ab3ef350822523ab9098d57f3d769 -->
+Re-readings at the widened passages:
+
+* `eq_uniq_coeff_ae` (`A:eq:uniq-coeff`): Re-read at the passage of lines 110–156 of
+  `03-main-results.tex` (formerly lines 110–142): the added lines (lines 143–156: 'We next show that
+  `Θ¹ − Θ² ∈ ℍ`', the forward difference equation and `𝔼 sup|δX_t|² ≤ C_T 𝔼 ∫_0^T (|δb_s|² +
+  |δσ_s|²_F + ‖δh_s‖²) ds < ∞` with `δX ∈ S²`, the clause `eq_uniq_fwd` of `A:rem:uniq-no-integ`) do
+  not change the reading.
+* `eq_uniq_bwd_eq` (`A:eq:uniq-bwd`): Re-read at the passage of lines 158–174 of
+  `03-main-results.tex` (formerly lines 158–172): the added lines (lines 173–174: 'therefore `δY ∈
+  S²`. By (3.2) and (3.3) we have `δΘ ∈ ℍ`', the finiteness that (3.3) states and the membership
+  `rem_uniq_lip_mem` of `A:rem:uniq-no-integ`) do not change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_bwd_eq ed839d34f480cba1dacb4b647f5f4499 by=claude-author source=A:eq:uniq-bwd@2299c84c37bf6e6d07e5bf1079800d77af7ce8de795c426b59b69acde29e973a -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_coeff_ae ed839d34f480cba1a9e05e97904e4b0f by=claude-author source=A:eq:uniq-coeff@c5e7dae7414c6edbeb2afd8a9b9973a719f095ba7998511de1e2ebcb347197cb -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.eq_uniq_coeff_ae--claude-auditor--2026-10-20T15_30_04Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_coeff_ae ed839d34f480cba1a9e05e97904e4b0f by=claude-auditor source=A:eq:uniq-coeff@2dd8f5d9caccdcd87ce71c94e62f3be5dc6ab3ef350822523ab9098d57f3d769 -->
 <!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_bwd_eq ed839d34f480cba1dacb4b647f5f4499 by=claude-author source=A:eq:uniq-bwd@9e27142522202b563f42928c519e570d6b67fdfb9d25b3a33bdd984b39c35ef8 -->
@@ -447,7 +498,14 @@ Witness: `Dissertation.Acceptance.A.rem_uniq_lip_hypotheses`, described with `eq
 Verdict: broader (weaker hypotheses than the printed step, (2.3) and Assumption 2.3 alone; the
 instantiation that gives the printed step adds Assumptions 2.4–2.5, which the step does not use).
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_bwd_terminal ed839d34f480cba12f5e45b3317852ea by=claude-author source=A:eq:uniq-bwd@a0c3e3fee8dc85540db2368978e14170d1deabb4269ae81cb99aef8cf283a2fd -->
+Re-readings at the widened passages:
+
+* `eq_uniq_bwd_terminal` (`A:eq:uniq-bwd`): Re-read at the passage of lines 158–174 of
+  `03-main-results.tex` (formerly lines 158–172): the added lines (lines 173–174: 'therefore `δY ∈
+  S²`. By (3.2) and (3.3) we have `δΘ ∈ ℍ`', the finiteness that (3.3) states and the membership
+  `rem_uniq_lip_mem` of `A:rem:uniq-no-integ`) do not change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_bwd_terminal ed839d34f480cba12f5e45b3317852ea by=claude-author source=A:eq:uniq-bwd@2299c84c37bf6e6d07e5bf1079800d77af7ce8de795c426b59b69acde29e973a -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.eq_uniq_bwd_terminal--claude-auditor--2026-10-20T16_49_23Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_bwd_terminal ed839d34f480cba12f5e45b3317852ea by=claude-auditor source=A:eq:uniq-bwd@a0c3e3fee8dc85540db2368978e14170d1deabb4269ae81cb99aef8cf283a2fd -->
 
@@ -489,7 +547,26 @@ the order of the proposition.
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.thm_cwp ed839d34f480cba10deeabcd10e6e74d by=claude-author source=A:thm:cwp@0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:intro:limin-comparison@90030b2d20a48b0ae1854a8fb2d4053ad1be2da6ece678b13095bd33e99bda43 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+Re-readings at the widened passages:
+
+* `thm_cwp` (`A:abstract`): Re-read at the passage of lines 30–48 of `wellposedness.tex` (formerly
+  line 30): the added lines (lines 31–48, the rest of the abstract, quoted in the review of
+  `A:abstract`: the setting, the diagonal hypotheses, the three results, the method and the
+  dealer-market example) do not change the reading: 'existence on every prescribed finite horizon'
+  (lines 43–44) is Theorem 3.5 for every `T > 0`.
+* `thm_cwp` (`A:intro:limin-comparison`): Re-read at the passage of lines 58–66 of
+  `01-introduction.tex` (formerly line 58): the added lines (lines 59–66, the rest of the paragraph:
+  the theorem of Li and Min, their expectation-functional interaction, pointwise jump integrand and
+  finite total jump mass (cited work), the three restrictions the present theorem removes, and the
+  sentence on Example 5.3) do not change the reading: 'the present theorem removes all three
+  restrictions, allowing `W₂`-dependence on the full tuple law, the law of `U` included, at
+  arbitrary σ-finite activity, under the expected `G`-monotonicity condition' (lines 63–66) is
+  Theorem 3.5 over every σ-finite `ν` with coefficients `W₂`-Lipschitz in the full tuple law.
+* `thm_cwp` (`A:conclusion`): Re-read at the passage of lines 3–16 of `06-conclusion.tex` (formerly
+  line 3): the added lines (lines 4–16, the rest of the conclusion, quoted in the review of
+  `A:conclusion`) do not change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.thm_cwp ed839d34f480cba10deeabcd10e6e74d by=claude-author source=A:thm:cwp@0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3 source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 source=A:intro:limin-comparison@28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998 source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.thm_cwp--claude-reviewer--2026-10-17T16_05_53Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.thm_cwp ed839d34f480cba10deeabcd10e6e74d by=claude-reviewer source=A:thm:cwp@0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:intro:limin-comparison@90030b2d20a48b0ae1854a8fb2d4053ad1be2da6ece678b13095bd33e99bda43 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.thm_cwp--claude-auditor--2026-10-19T03_34_53Z.md`).
@@ -535,7 +612,18 @@ Witness: `Dissertation.Acceptance.A.prop_strict_hypotheses` (`ν = δ₀` on `�
 
 Verdict: faithful (clause (ii) broader, printed claim an instance).
 
-<!-- spec-review: Dissertation.PaperSpec.A.prop_strict ed839d34f480cba1f1c48950c52ae4f4 by=claude-author source=A:prop:strict@b18b8a1407fec705caed58f7f0bb7604c994a084d50703fdd8cc68b071003604 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+Re-readings at the widened passages:
+
+* `prop_strict` (`A:abstract`): Re-read at the passage of lines 30–48 of `wellposedness.tex`
+  (formerly line 30): the added lines (lines 31–48, the rest of the abstract, quoted in the review
+  of `A:abstract`: the setting, the diagonal hypotheses, the three results, the method and the
+  dealer-market example) do not change the reading: the strictness of lines 39–40 is what this
+  proposition states for the drift pairing.
+* `prop_strict` (`A:conclusion`): Re-read at the passage of lines 3–16 of `06-conclusion.tex`
+  (formerly line 3): the added lines (lines 4–16, the rest of the conclusion, quoted in the review
+  of `A:conclusion`) do not change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.prop_strict ed839d34f480cba1f1c48950c52ae4f4 by=claude-author source=A:prop:strict@b18b8a1407fec705caed58f7f0bb7604c994a084d50703fdd8cc68b071003604 source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.prop_strict--claude-reviewer--2026-10-17T12_11_02Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.prop_strict ed839d34f480cba1f1c48950c52ae4f4 by=claude-reviewer source=A:prop:strict@b18b8a1407fec705caed58f7f0bb7604c994a084d50703fdd8cc68b071003604 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.prop_strict--claude-auditor--2026-10-19T03_31_23Z.md`).
@@ -603,12 +691,18 @@ measurability recorded; `cor_robust_lip` broader: it holds on every filtered pro
 without the other hypotheses of the corollary, and the printed claim is its instance in the setting
 of the corollary.
 
+Re-readings at the widened passages:
+
+* `cor_robust_wp` (`A:conclusion`): Re-read at the passage of lines 3–16 of `06-conclusion.tex`
+  (formerly line 3): the added lines (lines 4–16, the rest of the conclusion, quoted in the review
+  of `A:conclusion`) do not change the reading.
+
 <!-- spec-review: Dissertation.PaperSpec.A.cor_robust ed839d34f480cba154326c82c977c8bd by=claude-author source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.cor_robust--claude-reviewer--2026-10-17T12_24_23Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.cor_robust ed839d34f480cba154326c82c977c8bd by=claude-reviewer source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.cor_robust--claude-auditor--2026-10-19T03_36_02Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.cor_robust ed839d34f480cba154326c82c977c8bd by=claude-auditor source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 -->
-<!-- spec-review: Dissertation.PaperSpec.A.cor_robust_wp ed839d34f480cba16dd662e97e677716 by=claude-author source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: Dissertation.PaperSpec.A.cor_robust_wp ed839d34f480cba16dd662e97e677716 by=claude-author source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.cor_robust_wp--claude-reviewer--2026-10-17T16_05_53Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.cor_robust_wp ed839d34f480cba16dd662e97e677716 by=claude-reviewer source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.cor_robust_wp--claude-auditor--2026-10-19T03_37_29Z.md`).
@@ -1283,7 +1377,15 @@ display (lines 193–199) is stated by `eq_supE_weighted`, which supersedes the 
 ("not stated"); lines 188–192 and 206–207 name the steps (the zero means, Young's inequality, the
 nonnegativity of the two terms).
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_supE ed839d34f480cba17f3cae8e2942fb86 by=claude-author source=A:eq:supE@ec71e848a496b2ac0699c793a785a071c84ef43536cb555a589400fdadc9b311 -->
+Re-readings at the widened passages:
+
+* `eq_supE` (`A:eq:supE`): Re-read at the passage of lines 188–246 of `04-proof-wellposedness.tex`
+  (formerly lines 188–217): the added lines (lines 218–246: the upgrade of `sup_t 𝔼|δY_t|²` to `𝔼
+  sup_t |δY_t|²` by the forward form, BDG and (4.6), with `C_BP := C₀(5 + 4c_BDG) + 4T`, the
+  conclusion of Lemma 4.1) do not change the reading: they prove the conclusion of Lemma 4.1 from
+  (4.6).
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_supE ed839d34f480cba17f3cae8e2942fb86 by=claude-author source=A:eq:supE@69066031ecb004372ea47f44623161352a6f6ead47cb3d38fdb991579e47bd8f -->
 <!-- spec-review: Dissertation.PaperSpec.A.eq_supE ed839d34f480cba17f3cae8e2942fb86 by=claude-author source=A:eq:supE@f8d195505541585ca475bfa8dacd155e918c8cab4d02984f325636e45bc61066 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_supE--claude-auditor--2026-10-19T22_59_53Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_supE ed839d34f480cba17f3cae8e2942fb86 by=claude-auditor source=A:eq:supE@f8d195505541585ca475bfa8dacd155e918c8cab4d02984f325636e45bc61066 -->
@@ -1344,7 +1446,15 @@ Verdict: faithful.
 Re-reading at the widened passage of `A:eq:supE` (lines 188–217): the reading above is of lines
 188–199, now the beginning of the region; the rest is the bound by `R` and (4.6) (`eq_supE`).
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_supE_weighted ed839d34f480cba197b43e0802d21b08 by=claude-author source=A:eq:supE@ec71e848a496b2ac0699c793a785a071c84ef43536cb555a589400fdadc9b311 -->
+Re-readings at the widened passages:
+
+* `eq_supE_weighted` (`A:eq:supE`): Re-read at the passage of lines 188–246 of
+  `04-proof-wellposedness.tex` (formerly lines 188–217): the added lines (lines 218–246: the upgrade
+  of `sup_t 𝔼|δY_t|²` to `𝔼 sup_t |δY_t|²` by the forward form, BDG and (4.6), with `C_BP := C₀(5 +
+  4c_BDG) + 4T`, the conclusion of Lemma 4.1) do not change the reading: they prove the conclusion
+  of Lemma 4.1 from (4.6).
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_supE_weighted ed839d34f480cba197b43e0802d21b08 by=claude-author source=A:eq:supE@69066031ecb004372ea47f44623161352a6f6ead47cb3d38fdb991579e47bd8f -->
 <!-- spec-review: Dissertation.PaperSpec.A.eq_supE_weighted ed839d34f480cba197b43e0802d21b08 by=claude-author source=A:eq:supE@f8d195505541585ca475bfa8dacd155e918c8cab4d02984f325636e45bc61066 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_supE_weighted--claude-auditor--2026-10-20T15_31_29Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_supE_weighted ed839d34f480cba197b43e0802d21b08 by=claude-auditor source=A:eq:supE@f8d195505541585ca475bfa8dacd155e918c8cab4d02984f325636e45bc61066 -->
@@ -1496,10 +1606,22 @@ Assumptions 2.2–2.3, `λ = 1`, the zero forcing in the class of (4.1), and two
 
 Verdict: faithful (both true as printed; the uniqueness of (4.7) broader than printed).
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_frozenfwd ed839d34f480cba18303299f6df7eded by=claude-author source=A:eq:frozenfwd@4e585ce7f397c971a8de4acdb6d81d0be45f342db82a0166e9d3d3578fcb0504 -->
+Re-readings at the widened passages:
+
+* `eq_frozenfwd` (`A:eq:frozenfwd`): Re-read at the passage of lines 258–285 of
+  `04-proof-wellposedness.tex` (formerly lines 266–271): the added lines (lines 258–265 and 272–285,
+  quoted in the review above: `λ`, the forcing `q`, the trial `Θ ∈ ℍ`, `μ^Θ`, `μ^{Θ,−}` and `Φ_λ`,
+  the evaluation of `h` at the left limits, (4.2) along `Θ`, the measurability of the integrands,
+  and `X̄ ∈ S²` unique) do not change the reading.
+* `eq_frozenbwd` (`A:eq:frozenbwd`): Re-read at the passage of lines 287–310 of
+  `04-proof-wellposedness.tex` (formerly lines 305–309): the added lines (lines 287–304 and 310,
+  quoted in the review above: `Ξ ∈ L²(Ω, ℱ_T; ℝᵐ)`, the martingale `M` and its representation, `Ȳ`,
+  and 'so `Θ̄ ∈ ℍ` and `Φ_λ : ℍ → ℍ` is well defined') do not change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_frozenfwd ed839d34f480cba18303299f6df7eded by=claude-author source=A:eq:frozenfwd@a72c0729408b846798089067eac3f1966ae9f7df239c8d2e944157592fc2390a -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_frozenfwd--claude-auditor--2026-10-20T02_03_32Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_frozenfwd ed839d34f480cba18303299f6df7eded by=claude-auditor source=A:eq:frozenfwd@4e585ce7f397c971a8de4acdb6d81d0be45f342db82a0166e9d3d3578fcb0504 -->
-<!-- spec-review: Dissertation.PaperSpec.A.eq_frozenbwd ed839d34f480cba178b77fba8e33d01f by=claude-author source=A:eq:frozenbwd@17276cb1f64eca4139ee188be1e81dc912dab34d5bd02a5596d5d4321fdb9764 -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_frozenbwd ed839d34f480cba178b77fba8e33d01f by=claude-author source=A:eq:frozenbwd@ef8aee719aa929ad43ce7610eae6de7be530924d8737e8c03fff1f1112349d65 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_frozenbwd--claude-auditor--2026-10-20T00_44_30Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_frozenbwd ed839d34f480cba178b77fba8e33d01f by=claude-auditor source=A:eq:frozenbwd@17276cb1f64eca4139ee188be1e81dc912dab34d5bd02a5596d5d4321fdb9764 -->
 
@@ -1570,7 +1692,15 @@ of `S_s` to (4.9), where the pin held (4.9) alone). The passage reads as quoted 
 lines 329–332 is the instance of Assumption 2.3 that it integrates. The notation `δψ`, `δX`, … is
 that of lines 312–323, quoted above, which the proof's later steps share.
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_coeffdiff ed839d34f480cba1b363f744d12fe99d by=claude-author source=A:eq:coeffdiff@44e0fb2c55b4da8c9bfd50bf76728b89618b1a097dd4a7ba72d5108c5121ddaa -->
+Re-readings at the widened passages:
+
+* `eq_coeffdiff` (`A:eq:coeffdiff`): Re-read at the passage of lines 312–348 of
+  `04-proof-wellposedness.tex` (formerly lines 325–348): the added lines (lines 312–324, quoted in
+  the review above: the trials `Θ¹, Θ² ∈ ℍ`, `Θ̄ᵏ = Φ_λ(Θᵏ)`, `δψ_s` along `(Θᵏ_s, μ^{Θᵏ}_s)`, `δX`,
+  `δX̄` and the other component differences, the cancellation of `ξ₀` and `q`, and 'Step 1: the
+  coefficient differences') do not change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_coeffdiff ed839d34f480cba1b363f744d12fe99d by=claude-author source=A:eq:coeffdiff@dbfe072b5d719a544ec43b251110f77f32c3ceb9a4d075f5cbdefe4a901196bd -->
 <!-- spec-review: Dissertation.PaperSpec.A.eq_coeffdiff ed839d34f480cba1b363f744d12fe99d by=claude-author source=A:eq:coeffdiff@a02482f342dcea543d3e2b9f5367fcfcc00191aef184c33ffa0477616f3b3bb3 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_coeffdiff--claude-auditor--2026-10-20T00_44_30Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_coeffdiff ed839d34f480cba1b363f744d12fe99d by=claude-auditor source=A:eq:coeffdiff@a02482f342dcea543d3e2b9f5367fcfcc00191aef184c33ffa0477616f3b3bb3 -->
@@ -1624,7 +1754,15 @@ Verdict: faithful.
 Re-reading at the widened passage of `A:eq:coeffdiff` (lines 325–348): the reading above is of
 lines 325–337 with the objects of lines 312–323; the rest of the region is (4.9) (`eq_coeffdiff`).
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_coeffdiff_ae ed839d34f480cba122e3ae64778e3109 by=claude-author source=A:eq:coeffdiff@44e0fb2c55b4da8c9bfd50bf76728b89618b1a097dd4a7ba72d5108c5121ddaa -->
+Re-readings at the widened passages:
+
+* `eq_coeffdiff_ae` (`A:eq:coeffdiff`): Re-read at the passage of lines 312–348 of
+  `04-proof-wellposedness.tex` (formerly lines 325–348): the added lines (lines 312–324, quoted in
+  the review above: the trials `Θ¹, Θ² ∈ ℍ`, `Θ̄ᵏ = Φ_λ(Θᵏ)`, `δψ_s` along `(Θᵏ_s, μ^{Θᵏ}_s)`, `δX`,
+  `δX̄` and the other component differences, the cancellation of `ξ₀` and `q`, and 'Step 1: the
+  coefficient differences') do not change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_coeffdiff_ae ed839d34f480cba122e3ae64778e3109 by=claude-author source=A:eq:coeffdiff@dbfe072b5d719a544ec43b251110f77f32c3ceb9a4d075f5cbdefe4a901196bd -->
 <!-- spec-review: Dissertation.PaperSpec.A.eq_coeffdiff_ae ed839d34f480cba122e3ae64778e3109 by=claude-author source=A:eq:coeffdiff@a02482f342dcea543d3e2b9f5367fcfcc00191aef184c33ffa0477616f3b3bb3 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_coeffdiff_ae--claude-auditor--2026-10-20T15_31_29Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_coeffdiff_ae ed839d34f480cba122e3ae64778e3109 by=claude-auditor source=A:eq:coeffdiff@a02482f342dcea543d3e2b9f5367fcfcc00191aef184c33ffa0477616f3b3bb3 -->
@@ -1899,7 +2037,14 @@ values `0` and `e₁` are `ℱ_1`-measurable and square integrable.
 
 Verdict: faithful (broader, printed claim an instance).
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_terdiff ed839d34f480cba104ed4a8f00254090 by=claude-author source=A:eq:terdiff@0caddd587e020626144250f6aae2937e7b9eb2d9473e34140e10631526acde4c -->
+Re-readings at the widened passages:
+
+* `eq_terdiff` (`A:eq:terdiff`): Re-read at the passage of lines 376–389 of
+  `04-proof-wellposedness.tex` (formerly lines 381–388): the added lines (lines 376–380 and 389,
+  quoted in the review above: the definition of `δξ̄`, 'Then', and 'the first step by (2.6) and the
+  last by (2.9)') do not change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_terdiff ed839d34f480cba104ed4a8f00254090 by=claude-author source=A:eq:terdiff@116673203b4e630139746461480f29ec99df5f9a0b1c2b65182172d52b7c6663 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.eq_terdiff--claude-auditor--2026-10-19T22_59_53Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_terdiff ed839d34f480cba104ed4a8f00254090 by=claude-auditor source=A:eq:terdiff@0caddd587e020626144250f6aae2937e7b9eb2d9473e34140e10631526acde4c -->
 
@@ -1969,7 +2114,14 @@ accordingly.
 Re-reading at the widened passage of `A:eq:bwddiff` (lines 391–422): the reading above is of
 lines 391–407, now the beginning of the region; the rest is (4.12) (`eq_bwddiff`).
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_bwddiff_identity ed839d34f480cba1d4d84f3b5a301248 by=claude-author source=A:eq:bwddiff@576283a2598fec120ba494d78c5a70d78a4149b00cc97a5d301df135124c6373 -->
+Re-readings at the widened passages:
+
+* `eq_bwddiff_identity` (`A:eq:bwddiff`): Re-read at the passage of lines 391–424 of
+  `04-proof-wellposedness.tex` (formerly lines 391–422): the added lines (lines 423–424: 'the second
+  inequality by (4.11) and (4.9), the fourth by (4.10), and the last by `λ⁴ ≤ λ²` for `λ ∈ [0, 1]`')
+  do not change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bwddiff_identity ed839d34f480cba1d4d84f3b5a301248 by=claude-author source=A:eq:bwddiff@ca58096655e5e6b70fd088ebf4b2b03e622b17d584f98ab52e438e1f35e7dfaa -->
 <!-- spec-review: Dissertation.PaperSpec.A.eq_bwddiff_identity ed839d34f480cba1d4d84f3b5a301248 by=claude-author source=A:eq:bwddiff@de9905541b6f5056f355fb8ba0c38a5ec78c92b2259b3b8960caf0be162e2643 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_bwddiff_identity--claude-auditor--2026-10-20T15_31_29Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_bwddiff_identity ed839d34f480cba1d4d84f3b5a301248 by=claude-auditor source=A:eq:bwddiff@de9905541b6f5056f355fb8ba0c38a5ec78c92b2259b3b8960caf0be162e2643 -->
@@ -2057,7 +2209,14 @@ sentence to (4.12), where the pin held (4.12) alone). The passage reads as quote
 section, which supersedes the last reading above ("not stated"). The justifications of lines
 423–424 follow the region; the objects of Steps 1–3 are those quoted above.
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_bwddiff ed839d34f480cba1d8920d62bd288ec6 by=claude-author source=A:eq:bwddiff@576283a2598fec120ba494d78c5a70d78a4149b00cc97a5d301df135124c6373 -->
+Re-readings at the widened passages:
+
+* `eq_bwddiff` (`A:eq:bwddiff`): Re-read at the passage of lines 391–424 of
+  `04-proof-wellposedness.tex` (formerly lines 391–422): the added lines (lines 423–424: 'the second
+  inequality by (4.11) and (4.9), the fourth by (4.10), and the last by `λ⁴ ≤ λ²` for `λ ∈ [0, 1]`')
+  do not change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bwddiff ed839d34f480cba1d8920d62bd288ec6 by=claude-author source=A:eq:bwddiff@ca58096655e5e6b70fd088ebf4b2b03e622b17d584f98ab52e438e1f35e7dfaa -->
 <!-- spec-review: Dissertation.PaperSpec.A.eq_bwddiff ed839d34f480cba1d8920d62bd288ec6 by=claude-author source=A:eq:bwddiff@de9905541b6f5056f355fb8ba0c38a5ec78c92b2259b3b8960caf0be162e2643 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_bwddiff--claude-auditor--2026-10-20T04_27_38Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_bwddiff ed839d34f480cba1d8920d62bd288ec6 by=claude-auditor source=A:eq:bwddiff@de9905541b6f5056f355fb8ba0c38a5ec78c92b2259b3b8960caf0be162e2643 -->
@@ -2322,10 +2481,23 @@ forcings.
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_dX ed839d34f480cba17f8ea34acd5ecf0b by=claude-author source=A:eq:dX@a877929483513c2add78424568742c35536e0d941243980e25f83f1d3832b241 -->
+Re-readings at the widened passages:
+
+* `eq_dX` (`A:eq:dX`): Re-read at the passage of lines 511–533 of `04-proof-wellposedness.tex`
+  (formerly lines 528–533): the added lines (lines 511–527, quoted in the review above: `q := δq`,
+  the definition of `P`, `δψ_t` with `μᵏ_t := Law(Θᵏ_t)`, `δg_T` and `δh` at the predictable tuples,
+  the diagonal inputs for a.e. `t` by Fubini with the law flow of Lemma A.1, and 'The difference
+  equations are') do not change the reading.
+* `eq_dY` (`A:eq:dY`): Re-read at the passage of lines 511–533 of `04-proof-wellposedness.tex`
+  (formerly lines 528–533): the added lines (lines 511–527, quoted in the review above: `q := δq`,
+  the definition of `P`, `δψ_t` with `μᵏ_t := Law(Θᵏ_t)`, `δg_T` and `δh` at the predictable tuples,
+  the diagonal inputs for a.e. `t` by Fubini with the law flow of Lemma A.1, and 'The difference
+  equations are') do not change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_dX ed839d34f480cba17f8ea34acd5ecf0b by=claude-author source=A:eq:dX@9dd172cef01f1026aa495e51fb68721f4460fd5f4d55467771aae4ff86cab79b -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_dX--claude-auditor--2026-10-19T22_56_03Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_dX ed839d34f480cba17f8ea34acd5ecf0b by=claude-auditor source=A:eq:dX@a877929483513c2add78424568742c35536e0d941243980e25f83f1d3832b241 -->
-<!-- spec-review: Dissertation.PaperSpec.A.eq_dY ed839d34f480cba1cc37dd9a0d2b35ad by=claude-author source=A:eq:dY@a877929483513c2add78424568742c35536e0d941243980e25f83f1d3832b241 -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_dY ed839d34f480cba1cc37dd9a0d2b35ad by=claude-author source=A:eq:dY@9dd172cef01f1026aa495e51fb68721f4460fd5f4d55467771aae4ff86cab79b -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_dY--claude-auditor--2026-10-19T22_56_08Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_dY ed839d34f480cba1cc37dd9a0d2b35ad by=claude-auditor source=A:eq:dY@a877929483513c2add78424568742c35536e0d941243980e25f83f1d3832b241 -->
 
@@ -2678,7 +2850,15 @@ forcings, at which these terms vanish.
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_Gid ed839d34f480cba187a9b1634afe69c9 by=claude-author source=A:eq:Gid@46e224212d4e8316516a327f1bb7618acbfc1904c3aa6992f40bd866ace4d2b4 -->
+Re-readings at the widened passages:
+
+* `eq_Gid` (`A:eq:Gid`): Re-read at the passage of lines 624–632 of `04-proof-wellposedness.tex`
+  (formerly lines 626–632): the added lines (lines 624–625, quoted in the review above: 'Taking
+  expectations and dropping the left limits in the drift multipliers (the `dt`-integral convention
+  above) reduces (4.17) to') do not change the reading: (4.19) is stated with `δX_t`, `δY_t` in the
+  drift multipliers, as these lines say.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_Gid ed839d34f480cba187a9b1634afe69c9 by=claude-author source=A:eq:Gid@e3e59eed648d77453dd17511b3b546a6abb04d571b7f574138b426e7b411f9ce -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_Gid--claude-auditor--2026-10-19T22_56_14Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_Gid ed839d34f480cba187a9b1634afe69c9 by=claude-auditor source=A:eq:Gid@46e224212d4e8316516a327f1bb7618acbfc1904c3aa6992f40bd866ace4d2b4 -->
 
@@ -2725,7 +2905,14 @@ The right side of (4.20) at `t ∈ (0, 1]` is `−(2t + 1 + 1) − 1`, not zero.
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_intmono ed839d34f480cba14dbfddebc754cdd1 by=claude-author source=A:eq:intmono@150f4be88223dcfe3fe2768079cc4c41f3b4f9d82be386a911848afcc85a0509 -->
+Re-readings at the widened passages:
+
+* `eq_intmono` (`A:eq:intmono`): Re-read at the passage of lines 634–646 of
+  `04-proof-wellposedness.tex` (formerly lines 639–646): the added lines (lines 634–638, quoted in
+  the review above: `δh_t` at the predictable tuples, which agree with `(Θᵏ_t, μᵏ_t)` for a.e. `t`
+  by Lemma A.1, and Assumption 2.5 applied at the common input pair) do not change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_intmono ed839d34f480cba14dbfddebc754cdd1 by=claude-author source=A:eq:intmono@9d221f3b9e56232ce7594196244b4b7c26ce6508017ae6136ed16c7526aae86e -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_intmono--claude-auditor--2026-10-19T22_56_20Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_intmono ed839d34f480cba14dbfddebc754cdd1 by=claude-auditor source=A:eq:intmono@150f4be88223dcfe3fe2768079cc4c41f3b4f9d82be386a911848afcc85a0509 -->
 
@@ -2763,7 +2950,14 @@ nonzero terms. The former witness, `lem_pert_two_data_hypotheses`, had `q^g = 0`
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_termmono ed839d34f480cba1ea261f16df305b5f by=claude-author source=A:eq:termmono@6bab7182201b7abad4829837a498ea8162e4f6bfdba1422c65464bb9053a79d0 -->
+Re-readings at the widened passages:
+
+* `eq_termmono` (`A:eq:termmono`): Re-read at the passage of lines 648–656 of
+  `04-proof-wellposedness.tex` (formerly lines 650–656): the added lines (lines 648–649, quoted in
+  the review above: 'The terminal side of (4.19) is bounded by the terminal monotonicity of
+  Assumption 2.5') do not change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_termmono ed839d34f480cba1ea261f16df305b5f by=claude-author source=A:eq:termmono@1ff3c48770a8bbe244b9a0a64dc92f938b6ba1357952a47e23573c7ccccdf7c1 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_termmono--claude-auditor--2026-10-19T22_56_25Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_termmono ed839d34f480cba1ea261f16df305b5f by=claude-auditor source=A:eq:termmono@6bab7182201b7abad4829837a498ea8162e4f6bfdba1422c65464bb9053a79d0 -->
 
@@ -3138,7 +3332,14 @@ the driver forcing `q^f = −1_{[0, 1]}` enters the last term. The former witnes
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_bwdito ed839d34f480cba1ac3ad318e96e1e46 by=claude-author source=A:eq:bwdito@393867a8ee02929733b52a376171325b807e01b0d81452f311285bdc89d2c889 -->
+Re-readings at the widened passages:
+
+* `eq_bwdito` (`A:eq:bwdito`): Re-read at the passage of lines 716–725 of
+  `04-proof-wellposedness.tex` (formerly lines 718–725): the added lines (lines 716–717, quoted in
+  the review above: 'Step 4 (backward estimate). Itô's formula applied to `e^{κt}|δY_t|²` gives, for
+  `κ > 0`,') do not change the reading: the proposition is stated for every `κ > 0`.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bwdito ed839d34f480cba1ac3ad318e96e1e46 by=claude-author source=A:eq:bwdito@d6302cd9ce59f4a74c314e331a8684638c6d9c76831a024f322a74d59192785e -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_bwdito--claude-auditor--2026-10-20T00_40_53Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_bwdito ed839d34f480cba1ac3ad318e96e1e46 by=claude-auditor source=A:eq:bwdito@393867a8ee02929733b52a376171325b807e01b0d81452f311285bdc89d2c889 -->
 
@@ -3568,7 +3769,14 @@ Assumptions 2.2–2.5 at `L = 1`, `G = 1`, `α = β₁ = β₂ = 1`).
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.sec4_uniq_homotopy ed839d34f480cba178b10f6f962eecce by=claude-author source=A:sec4:uniqueness-along-homotopy@518b95da43921c8290496ba8c58a2f74ebe2bce2191c71305e264312b4786bd7 -->
+Re-readings at the widened passages:
+
+* `sec4_uniq_homotopy` (`A:sec4:uniqueness-along-homotopy`): Re-read at the passage of lines 875–878
+  of `04-proof-wellposedness.tex` (formerly line 875): the added lines (lines 876–878, quoted in the
+  review above: the rest of the sentence and 'It remains to prove existence up to `λ = 1`') do not
+  change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.sec4_uniq_homotopy ed839d34f480cba178b10f6f962eecce by=claude-author source=A:sec4:uniqueness-along-homotopy@c905216fdc8aa89607a10094617e291d697687be2ee987671adc2fdfc0e4c6a0 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec4_uniq_homotopy--claude-auditor--2026-10-19T22_59_53Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.sec4_uniq_homotopy ed839d34f480cba178b10f6f962eecce by=claude-auditor source=A:sec4:uniqueness-along-homotopy@518b95da43921c8290496ba8c58a2f74ebe2bce2191c71305e264312b4786bd7 -->
 
@@ -3619,7 +3827,19 @@ Witness: `Dissertation.Acceptance.A.thm_cwp_hypotheses`, for both clauses.
 
 Verdict: faithful; the last sentence shares the proposition of Theorem 3.5.
 
-<!-- spec-review: Dissertation.PaperSpec.A.sec45_proof_thm35 ed839d34f480cba1227f3637481e69e0 by=claude-author source=A:sec4:proof-thm35@ed713718821e088c6ca09a59f75d22202a9e9960885df259a33fd8f6dd54fcbe -->
+Re-readings at the widened passages:
+
+* `sec45_proof_thm35` (`A:sec4:proof-thm35`): Re-read at the passage of lines 942–951 of
+  `04-proof-wellposedness.tex` (formerly line 948): the added lines (lines 942–947 and 949–951, the
+  rest of the proof of §4.5, quoted in the review above) do not change the reading.
+* `thm_cwp` (`A:sec4:proof-thm35`): Re-read at the passage of lines 942–951 of
+  `04-proof-wellposedness.tex` (formerly line 948): the added lines (the rest of the proof, quoted
+  above) do not change the reading above, that the last sentence, 'taking `q ≡ 0` there gives a
+  unique solution of (1.1) in `ℍ`', is Theorem 3.5; that reading of `thm_cwp` is now recorded in an
+  author marker for this passage.
+
+<!-- spec-review: Dissertation.PaperSpec.A.sec45_proof_thm35 ed839d34f480cba1227f3637481e69e0 by=claude-author source=A:sec4:proof-thm35@b2ec171b301f7adcfcd1839bdf9f892a2d35c3e631135d347dc9506cdf473a56 -->
+<!-- spec-review: Dissertation.PaperSpec.A.thm_cwp ed839d34f480cba10deeabcd10e6e74d by=claude-author source=A:sec4:proof-thm35@b2ec171b301f7adcfcd1839bdf9f892a2d35c3e631135d347dc9506cdf473a56 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec45_proof_thm35--claude-auditor--2026-10-20T02_03_19Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.sec45_proof_thm35 ed839d34f480cba1227f3637481e69e0 by=claude-auditor source=A:sec4:proof-thm35@ed713718821e088c6ca09a59f75d22202a9e9960885df259a33fd8f6dd54fcbe -->
 
@@ -3686,12 +3906,20 @@ every measure `ν`, σ-finite or not, and every real `β₂`, and the printed cl
 σ-finite `ν` and `β₂ > 0`; `ex_concrete_i_pairing` broader: the pairings hold at every `t`, the
 printed claim being its instance at almost every `t ∈ [0, T]`.
 
+Re-readings at the widened passages:
+
+* `ex_concrete_i` (`A:sec5:overview`): Re-read at the passage of lines 9–22 of `05-examples.tex`
+  (formerly line 10): the added lines (line 9, 'The examples illustrate both the scope of the law
+  dependence and the role of the dissipativity assumption', and lines 11–22, the rest of the
+  overview through 'In Examples 5.4 and 5.5, we take `ν ≠ 0`', quoted in the review of
+  `A:sec5:overview`) do not change the reading.
+
 <!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_ham ed839d34f480cba1cf9f26355b828c6a by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.ex_concrete_i_ham--claude-reviewer--2026-10-17T12_16_01Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_ham ed839d34f480cba1cf9f26355b828c6a by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_concrete_i_ham--claude-auditor--2026-10-19T03_31_21Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_ham ed839d34f480cba1cf9f26355b828c6a by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i ed839d34f480cba1d2f6e8919288ad6b by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i ed839d34f480cba1d2f6e8919288ad6b by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_i--claude-reviewer--2026-10-17T12_13_03Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i ed839d34f480cba1d2f6e8919288ad6b by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_i--claude-auditor--2026-10-19T03_36_52Z.md`).
@@ -3782,12 +4010,20 @@ Witness: `Dissertation.Acceptance.A.ex_concrete_hypotheses` (setting and datum `
 
 Verdict: faithful ((2.3) and the pairings at every `t`: broader).
 
+Re-readings at the widened passages:
+
+* `ex_concrete_ii` (`A:sec5:overview`): Re-read at the passage of lines 9–22 of `05-examples.tex`
+  (formerly line 10): the added lines (line 9, 'The examples illustrate both the scope of the law
+  dependence and the role of the dissipativity assumption', and lines 11–22, the rest of the
+  overview through 'In Examples 5.4 and 5.5, we take `ν ≠ 0`', quoted in the review of
+  `A:sec5:overview`) do not change the reading.
+
 <!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_ii_mean ed839d34f480cba1adb40add6e4f8112 by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_ii_mean--claude-reviewer--2026-10-17T12_19_08Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_ii_mean ed839d34f480cba1adb40add6e4f8112 by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_concrete_ii_mean--claude-auditor--2026-10-19T03_31_21Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_ii_mean ed839d34f480cba1adb40add6e4f8112 by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_ii ed839d34f480cba1cba84bcbe1866633 by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_ii ed839d34f480cba1cba84bcbe1866633 by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_ii--claude-reviewer--2026-10-17T12_18_31Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_ii ed839d34f480cba1cba84bcbe1866633 by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_ii--claude-auditor--2026-10-19T03_34_14Z.md`).
@@ -3846,7 +4082,15 @@ Witness: `Dissertation.Acceptance.A.ex_brownian_hypotheses` (a Lévy driver with
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.ex_brownian ed839d34f480cba13b36df98cbfaee33 by=claude-author source=A:rem:beta1-dich@ce35242e5c61dc248a5bf9b36f678223d523cf9e6c42793d8e5d2fd12e1df0ea source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+Re-readings at the widened passages:
+
+* `ex_brownian` (`A:sec5:overview`): Re-read at the passage of lines 9–22 of `05-examples.tex`
+  (formerly line 10): the added lines (line 9, 'The examples illustrate both the scope of the law
+  dependence and the role of the dissipativity assumption', and lines 11–22, the rest of the
+  overview through 'In Examples 5.4 and 5.5, we take `ν ≠ 0`', quoted in the review of
+  `A:sec5:overview`) do not change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.ex_brownian ed839d34f480cba13b36df98cbfaee33 by=claude-author source=A:rem:beta1-dich@ce35242e5c61dc248a5bf9b36f678223d523cf9e6c42793d8e5d2fd12e1df0ea source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_brownian--claude-reviewer--2026-10-17T12_10_35Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_brownian ed839d34f480cba13b36df98cbfaee33 by=claude-reviewer source=A:rem:beta1-dich@ce35242e5c61dc248a5bf9b36f678223d523cf9e6c42793d8e5d2fd12e1df0ea source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_brownian--claude-auditor--2026-10-19T03_34_12Z.md`).
@@ -3918,12 +4162,31 @@ joint Borel measurability and the origin integrability `∫_0^T ‖𝐇_t(0, 0)�
 measurability of `ψ̄` or `h̄` either), which the example imposes for the full coefficient system;
 the printed claims are their instances at kernels with those properties.
 
-<!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc ed839d34f480cba1c0ebc41bbfe679cc by=claude-author source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+Re-readings at the widened passages:
+
+* `ex_expfunc_limin` (`A:intro:limin-comparison`): Re-read at the passage of lines 58–66 of
+  `01-introduction.tex` (formerly line 58): the added lines (lines 59–66, the rest of the paragraph:
+  the theorem of Li and Min, their expectation-functional interaction, pointwise jump integrand and
+  finite total jump mass (cited work), the three restrictions the present theorem removes, and the
+  sentence on Example 5.3) do not change the reading: 'Example 5.3 details the embedding of their
+  interaction class' (line 66) is this proposition.
+* `ex_expfunc` (`A:sec5:overview`): Re-read at the passage of lines 9–22 of `05-examples.tex`
+  (formerly line 10): the added lines (line 9, 'The examples illustrate both the scope of the law
+  dependence and the role of the dissipativity assumption', and lines 11–22, the rest of the
+  overview through 'In Examples 5.4 and 5.5, we take `ν ≠ 0`', quoted in the review of
+  `A:sec5:overview`) do not change the reading.
+* `ex_expfunc_limin` (`A:sec5:overview`): Re-read at the passage of lines 9–22 of `05-examples.tex`
+  (formerly line 10): the added lines (line 9, 'The examples illustrate both the scope of the law
+  dependence and the role of the dissipativity assumption', and lines 11–22, the rest of the
+  overview through 'In Examples 5.4 and 5.5, we take `ν ≠ 0`', quoted in the review of
+  `A:sec5:overview`) do not change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc ed839d34f480cba1c0ebc41bbfe679cc by=claude-author source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_expfunc--claude-reviewer--2026-10-17T12_20_36Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc ed839d34f480cba1c0ebc41bbfe679cc by=claude-reviewer source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_expfunc--claude-auditor--2026-10-19T03_34_12Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc ed839d34f480cba1c0ebc41bbfe679cc by=claude-auditor source=A:ex:expfunc@6ba8e9a8bd4a3a1d756a510bfc8571612af5e4c854e3bd45a28c1b5172afaaad source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc_limin ed839d34f480cba1dc8d682dbdc81fa7 by=claude-author source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 source=A:intro:limin-comparison@90030b2d20a48b0ae1854a8fb2d4053ad1be2da6ece678b13095bd33e99bda43 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc_limin ed839d34f480cba1dc8d682dbdc81fa7 by=claude-author source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 source=A:intro:limin-comparison@28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.ex_expfunc_limin--claude-reviewer--2026-10-17T16_03_52Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc_limin ed839d34f480cba1dc8d682dbdc81fa7 by=claude-reviewer source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 source=A:intro:limin-comparison@90030b2d20a48b0ae1854a8fb2d4053ad1be2da6ece678b13095bd33e99bda43 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_expfunc_limin--claude-auditor--2026-10-19T03_34_13Z.md`).
@@ -3996,12 +4259,32 @@ so they hold over `enlJoint 𝒢₀ D h𝒢₀` for every `𝒢₀`, the first t
 `rem_intrinsic_uniform` for every σ-finite `ν`, countably generated or not); the printed claims are
 their instances over the standing basis, with `𝒢₀` independent of the driver.
 
-<!-- spec-review: Dissertation.PaperSpec.A.rem_diag_mono ed839d34f480cba146c1633f8e03b86c by=claude-author source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+Re-readings at the widened passages:
+
+* `rem_diag_mono` (`A:abstract`): Re-read at the passage of lines 30–48 of `wellposedness.tex`
+  (formerly line 30): the added lines (lines 31–48, the rest of the abstract, quoted in the review
+  of `A:abstract`: the setting, the diagonal hypotheses, the three results, the method and the
+  dealer-market example) do not change the reading: 'expected diagonal monotonicity is strictly
+  weaker than pointwise monotonicity' (lines 39–40) contains the implication this proposition
+  states.
+* `rem_diag_mono_converse` (`A:abstract`): Re-read at the passage of lines 30–48 of
+  `wellposedness.tex` (formerly line 30): the added lines (lines 31–48, the rest of the abstract,
+  quoted in the review of `A:abstract`: the setting, the diagonal hypotheses, the three results, the
+  method and the dealer-market example) do not change the reading: the strictness of lines 39–40 is
+  the failure of the converse for a full coefficient system.
+* `rem_diag_mono` (`A:conclusion`): Re-read at the passage of lines 3–16 of `06-conclusion.tex`
+  (formerly line 3): the added lines (lines 4–16, the rest of the conclusion, quoted in the review
+  of `A:conclusion`) do not change the reading.
+* `rem_diag_mono_converse` (`A:conclusion`): Re-read at the passage of lines 3–16 of
+  `06-conclusion.tex` (formerly line 3): the added lines (lines 4–16, the rest of the conclusion,
+  quoted in the review of `A:conclusion`) do not change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.rem_diag_mono ed839d34f480cba146c1633f8e03b86c by=claude-author source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.rem_diag_mono--claude-reviewer--2026-10-17T16_05_52Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.rem_diag_mono ed839d34f480cba146c1633f8e03b86c by=claude-reviewer source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.rem_diag_mono--claude-auditor--2026-10-19T03_34_01Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.rem_diag_mono ed839d34f480cba146c1633f8e03b86c by=claude-auditor source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_diag_mono_converse ed839d34f480cba14b5e4594e14d9dc7 by=claude-author source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: Dissertation.PaperSpec.A.rem_diag_mono_converse ed839d34f480cba14b5e4594e14d9dc7 by=claude-author source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.rem_diag_mono_converse--claude-reviewer--2026-10-17T16_05_52Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.rem_diag_mono_converse ed839d34f480cba14b5e4594e14d9dc7 by=claude-reviewer source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.rem_diag_mono_converse--claude-auditor--2026-10-19T03_36_03Z.md`).
@@ -4124,32 +4407,66 @@ Lévy driver with `d = 1`, `ν = δ₀` on `ℝ`, `𝒢₀ = ⊥`:
 
 Verdict: faithful, with the readings listed (in particular "atoms" as the count of `N`).
 
-<!-- spec-review: Dissertation.PaperSpec.A.sec2_separable ed839d34f480cba1673cfd9d331f5aa6 by=claude-author source=A:sec2:separable-L2nu@ae53c7fb64bdc4c1d458158131bce4ad8a6101350c43ccc2c48c3c458f6e166e -->
+Re-readings at the widened passages:
+
+* `sec2_separable` (`A:sec2:separable-L2nu`): Re-read at the passage of lines 2–8 of
+  `02-model-assumptions.tex` (formerly line 6): the added lines (lines 2–5 and 7–8: the standing
+  setting (the filtered space with the usual conditions, `T > 0`, `n, m, d ≥ 1`, `W` and an
+  independent Poisson random measure `N` of intensity `dt ν(de)`), the end of the parenthesis, 'is
+  separable for every `j ≥ 1`', and the filtration generated by `W`, `N` and an independent `ℱ₀`) do
+  not change the reading: the conclusion is stated for every `j ≥ 1` and every σ-finite `ν` on a
+  countably generated space, and needs nothing of the filtered space.
+* `sec2_infinite_activity` (`A:sec2:infinite-activity-atoms`): Re-read at the passage of lines 9–11
+  of `02-model-assumptions.tex` (formerly line 10): the added lines (lines 9 and 11: 'We do not
+  require `ν` to be finite: the infinite-activity regime,' and 'is admitted throughout, with the
+  finite-activity case `ν(E) < ∞` recovered as a special instance') do not change the reading: the
+  proposition is the relative clause of line 10, under `ν(E) = ∞`.
+* `sec2_prp` (`A:sec2:prp`): Re-read at the passage of lines 47–56 of `02-model-assumptions.tex`
+  (formerly line 47): the added lines (lines 48–56, quoted in the review above: the citations, the
+  passage to the independent initial enlargement by `ℱ₀`, the representation for every `t ∈ [0, T]`
+  with `M_0` `ℱ₀`-measurable and `(Z, U)` predictable and square integrable, unique up to null sets)
+  do not change the reading.
+* `sec2_hborel` (`A:sec2:hborel-derivation`): Re-read at the passage of lines 107–110 of
+  `02-model-assumptions.tex` (formerly line 107): the added lines (lines 108–110, quoted in the
+  review above: Tonelli makes `h` weakly measurable and the Pettis theorem upgrades weak to strong
+  measurability) do not change the reading.
+* `eq_compid` (`A:eq:compid`): Re-read at the passage of lines 14–25 of `02-model-assumptions.tex`
+  (formerly lines 16–19): the added lines (lines 14–15, the end of the definition of `Ñ` and 'For
+  predictable `ψ ≥ 0` the compensation formula reads', and lines 20–25, (2.2), the claim
+  `A:eq:zeromean`) do not change the reading: 'predictable `ψ ≥ 0`' is the reading above,
+  measurability for the marked predictable σ-algebra with values in `[0, ∞]`.
+* `eq_zeromean` (`A:eq:zeromean`): Re-read at the passage of lines 13–25 of
+  `02-model-assumptions.tex` (formerly lines 21–25): the added lines (lines 13–20: the definition `Ñ
+  := N − dt ν`, the hypothesis 'for predictable `ψ`' and the compensation formula (2.1)) do not
+  change the reading: the compensated integral is read pathwise as `∫ ψ dN − ∫∫ ψ ν ds`, the `Ñ` of
+  line 13, and `ψ` as marked predictable.
+
+<!-- spec-review: Dissertation.PaperSpec.A.sec2_separable ed839d34f480cba1673cfd9d331f5aa6 by=claude-author source=A:sec2:separable-L2nu@90cbae8104b2345566337d2982f21d3bb10b2f024139bb058c19423bb1296d42 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.sec2_separable--claude-reviewer--2026-10-17T12_22_48Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.sec2_separable ed839d34f480cba1673cfd9d331f5aa6 by=claude-reviewer source=A:sec2:separable-L2nu@ae53c7fb64bdc4c1d458158131bce4ad8a6101350c43ccc2c48c3c458f6e166e -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.sec2_separable--claude-auditor--2026-10-19T03_34_36Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.sec2_separable ed839d34f480cba1673cfd9d331f5aa6 by=claude-auditor source=A:sec2:separable-L2nu@ae53c7fb64bdc4c1d458158131bce4ad8a6101350c43ccc2c48c3c458f6e166e -->
-<!-- spec-review: Dissertation.PaperSpec.A.sec2_infinite_activity ed839d34f480cba13a9f48f6bc72d40f by=claude-author source=A:sec2:infinite-activity-atoms@9f39b94445462cf5bd885113323065e33b702bc828630f1707c4ea24b315889e -->
+<!-- spec-review: Dissertation.PaperSpec.A.sec2_infinite_activity ed839d34f480cba13a9f48f6bc72d40f by=claude-author source=A:sec2:infinite-activity-atoms@ab13f63a3a45ffb0e21a5d101e35ead9f9fda21d3710c6d5fc3aa9a01a636835 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec2_infinite_activity--claude-reviewer--2026-10-17T12_21_04Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.sec2_infinite_activity ed839d34f480cba13a9f48f6bc72d40f by=claude-reviewer source=A:sec2:infinite-activity-atoms@9f39b94445462cf5bd885113323065e33b702bc828630f1707c4ea24b315889e -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.sec2_infinite_activity--claude-auditor--2026-10-19T03_34_37Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.sec2_infinite_activity ed839d34f480cba13a9f48f6bc72d40f by=claude-auditor source=A:sec2:infinite-activity-atoms@9f39b94445462cf5bd885113323065e33b702bc828630f1707c4ea24b315889e -->
-<!-- spec-review: Dissertation.PaperSpec.A.eq_compid ed839d34f480cba1551f4f42ffdf2fa8 by=claude-author source=A:eq:compid@a62f2f651f15297ca0005558e8980950d28aaaa1062298dd4c00ea019fe06299 -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_compid ed839d34f480cba1551f4f42ffdf2fa8 by=claude-author source=A:eq:compid@aafacd95e4ac38766dd8830cdd75ad754721232a5283759a5c9383f2d22943cd -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_compid--claude-reviewer--2026-10-17T12_11_27Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_compid ed839d34f480cba1551f4f42ffdf2fa8 by=claude-reviewer source=A:eq:compid@a62f2f651f15297ca0005558e8980950d28aaaa1062298dd4c00ea019fe06299 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_compid--claude-auditor--2026-10-19T03_31_22Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_compid ed839d34f480cba1551f4f42ffdf2fa8 by=claude-auditor source=A:eq:compid@a62f2f651f15297ca0005558e8980950d28aaaa1062298dd4c00ea019fe06299 -->
-<!-- spec-review: Dissertation.PaperSpec.A.eq_zeromean ed839d34f480cba1ca027a9d4d1614c9 by=claude-author source=A:eq:zeromean@74dcd6eaa5929b1a9d4f4a1b6af308d62e1c2dd6a28ef7f0329a7ba65184f4ee -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_zeromean ed839d34f480cba1ca027a9d4d1614c9 by=claude-author source=A:eq:zeromean@4a8de4ef68a42a19524cd25d158243c45a32a31e55ce45fb91402f26631627ea -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_zeromean--claude-reviewer--2026-10-17T12_15_00Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_zeromean ed839d34f480cba1ca027a9d4d1614c9 by=claude-reviewer source=A:eq:zeromean@74dcd6eaa5929b1a9d4f4a1b6af308d62e1c2dd6a28ef7f0329a7ba65184f4ee -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_zeromean--claude-auditor--2026-10-19T03_31_22Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_zeromean ed839d34f480cba1ca027a9d4d1614c9 by=claude-auditor source=A:eq:zeromean@74dcd6eaa5929b1a9d4f4a1b6af308d62e1c2dd6a28ef7f0329a7ba65184f4ee -->
-<!-- spec-review: Dissertation.PaperSpec.A.sec2_prp ed839d34f480cba1577f0ed2476fcdb5 by=claude-author source=A:sec2:prp@4abed1a193ffeafc8c98d073e7c33bcde2f293ba9bb58b16d1a0464060b8dcea -->
+<!-- spec-review: Dissertation.PaperSpec.A.sec2_prp ed839d34f480cba1577f0ed2476fcdb5 by=claude-author source=A:sec2:prp@db17ef09e29aaba5ae130b07f16da1d350bfcff9cfd551c68b79000b5b09063d -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec2_prp--claude-reviewer--2026-10-17T12_22_12Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.sec2_prp ed839d34f480cba1577f0ed2476fcdb5 by=claude-reviewer source=A:sec2:prp@4abed1a193ffeafc8c98d073e7c33bcde2f293ba9bb58b16d1a0464060b8dcea -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec2_prp--claude-auditor--2026-10-19T03_34_14Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.sec2_prp ed839d34f480cba1577f0ed2476fcdb5 by=claude-auditor source=A:sec2:prp@4abed1a193ffeafc8c98d073e7c33bcde2f293ba9bb58b16d1a0464060b8dcea -->
-<!-- spec-review: Dissertation.PaperSpec.A.sec2_hborel ed839d34f480cba1c7bf6ee7f1e38851 by=claude-author source=A:sec2:hborel-derivation@212a07e14afa5d0609973352865fe2ce8ae09c6d715739e9e87b738950e721a8 -->
+<!-- spec-review: Dissertation.PaperSpec.A.sec2_hborel ed839d34f480cba1c7bf6ee7f1e38851 by=claude-author source=A:sec2:hborel-derivation@8974ddb463b86c2b7de75d6a70740d5ae4b014aeb8b7b59208d0238e8cd4c9f3 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.sec2_hborel--claude-reviewer--2026-10-17T12_20_16Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.sec2_hborel ed839d34f480cba1c7bf6ee7f1e38851 by=claude-reviewer source=A:sec2:hborel-derivation@212a07e14afa5d0609973352865fe2ce8ae09c6d715739e9e87b738950e721a8 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec2_hborel--claude-auditor--2026-10-19T03_31_21Z.md`).
@@ -4192,7 +4509,18 @@ Verdict: broader: the proposition holds for every σ-finite `(X, μ)` and every 
 is its instance at `X = Ω × [0, T]` with the predictable σ-field `𝒫` and `dt ⊗ dP`, `j = m` (or
 `n`).
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_fubiniiso ed839d34f480cba1f8905adfcaf41890 by=claude-author source=A:eq:fubiniiso@597a92f6004ad8db02800eef365f8f95188c907f3f53c17cccf909c2a49ed061 -->
+Re-readings at the widened passages:
+
+* `eq_fubiniiso` (`A:eq:fubiniiso`): Re-read at the passage of lines 112–123 of
+  `02-model-assumptions.tex` (formerly lines 113–116): the added lines (line 112, 'For predictable
+  processes we use the Fubini isometry', and lines 117–123, quoted in the review above: the
+  citation, the `𝒫 ⊗ ℰ`-measurable representative unique up to null sets, the reading of every
+  Poisson integral through it, the pointwise formulas that descend to `L²(ν)`, and 'Consequently,
+  along any diagonal input,', which begins (2.5)) do not change the reading: the representative and
+  its uniqueness are in the proposition, and the reading convention is how the statements read their
+  integrands.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_fubiniiso ed839d34f480cba1f8905adfcaf41890 by=claude-author source=A:eq:fubiniiso@afa161dc6583c6a35e577920f56a78d2ffa2160398278a7afcd025eaeee73dfd -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.eq_fubiniiso--claude-reviewer--2026-10-17T12_13_20Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_fubiniiso ed839d34f480cba1f8905adfcaf41890 by=claude-reviewer source=A:eq:fubiniiso@597a92f6004ad8db02800eef365f8f95188c907f3f53c17cccf909c2a49ed061 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.eq_fubiniiso--claude-auditor--2026-10-19T03_31_21Z.md`).
@@ -4225,7 +4553,17 @@ progressive tuple, and its jump part is the marked-progressive representative at
 `CoeffRegular`, not the predictable line of (2.5); the printed first line is its instance over the
 standing basis along the tuples of the paper (diagonal inputs `Θ_s` with their laws).
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_coefmeas ed839d34f480cba11ac3211646c24c86 by=claude-author source=A:eq:coefmeas@951bc71349ab7748916546e7dcfd8ef117078c5b8dcd1e5f4e035106ef459170 -->
+Re-readings at the widened passages:
+
+* `eq_coefmeas` (`A:eq:coefmeas`): Re-read at the passage of lines 123–134 of
+  `02-model-assumptions.tex` (formerly lines 124–131): the added lines (line 123, the end of the
+  reading convention of (2.4) and 'Consequently, along any diagonal input,', quoted in the review
+  above, and lines 132–134, the well-definedness of the law flows and the independence of
+  representatives, deferred to Lemma A.1) do not change the reading: the proposition is stated along
+  every progressive tuple, which contains the diagonal inputs, and the law flows of Lemma A.1 are
+  the claim `A:lem:lawflow`.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_coefmeas ed839d34f480cba11ac3211646c24c86 by=claude-author source=A:eq:coefmeas@0109d50802d3c1896c48e997eef1423f9bb8bba68e798c4721fae63f388eccb2 -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.eq_coefmeas--claude-reviewer--2026-10-17T12_08_44Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_coefmeas ed839d34f480cba11ac3211646c24c86 by=claude-reviewer source=A:eq:coefmeas@951bc71349ab7748916546e7dcfd8ef117078c5b8dcd1e5f4e035106ef459170 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.eq_coefmeas--claude-auditor--2026-10-19T03_31_22Z.md`).
@@ -4256,7 +4594,17 @@ Verdict: broader: the proposition holds for every filtration, every predictable 
 Borel law flow `ρ`; the printed claim is its instance over the standing basis at `Θ = Θ⁻` of a tuple
 of the paper and `ρ = μ⁻`, the Borel flow of Lemma A.1, read through (2.4).
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_coefmeas_jump ed839d34f480cba1e13c6b7ca8ccca73 by=claude-author source=A:eq:coefmeas@951bc71349ab7748916546e7dcfd8ef117078c5b8dcd1e5f4e035106ef459170 -->
+Re-readings at the widened passages:
+
+* `eq_coefmeas_jump` (`A:eq:coefmeas`): Re-read at the passage of lines 123–134 of
+  `02-model-assumptions.tex` (formerly lines 124–131): the added lines (line 123, the end of the
+  reading convention of (2.4) and 'Consequently, along any diagonal input,', quoted in the review
+  above, and lines 132–134, the well-definedness of the law flows and the independence of
+  representatives, deferred to Lemma A.1) do not change the reading: the proposition is stated for
+  every predictable tuple with a Borel law flow, which contains the diagonal inputs, and the law
+  flows of Lemma A.1 are the claim `A:lem:lawflow`.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_coefmeas_jump ed839d34f480cba1e13c6b7ca8ccca73 by=claude-author source=A:eq:coefmeas@0109d50802d3c1896c48e997eef1423f9bb8bba68e798c4721fae63f388eccb2 -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.eq_coefmeas_jump--claude-reviewer--2026-10-17T16_03_52Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_coefmeas_jump ed839d34f480cba1e13c6b7ca8ccca73 by=claude-reviewer source=A:eq:coefmeas@951bc71349ab7748916546e7dcfd8ef117078c5b8dcd1e5f4e035106ef459170 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.eq_coefmeas_jump--claude-auditor--2026-10-19T03_34_12Z.md`).
@@ -4360,17 +4708,29 @@ printed claim is its instance at a system 1 that also satisfies Assumptions 2.4�
 3.1; `thm_stab_data` faithful; `thm_stab_minimal` faithful in the reading recorded (the inequality
 in `[0, ∞]`).
 
-<!-- spec-review: Dissertation.PaperSpec.A.thm_stab_companion ed839d34f480cba10ff3a550a92ccddf by=claude-author source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
+Re-readings at the widened passages:
+
+* `thm_stab_companion` (`A:thm3.1:companion`): Re-read at the passage of lines 75–81 of
+  `03-main-results.tex` (formerly line 76): the added lines (lines 75 and 77–81, the rest of the
+  paragraph quoted in the review above) do not change the reading.
+* `thm_stab_data` (`A:thm3.1:companion`): Re-read at the passage of lines 75–81 of
+  `03-main-results.tex` (formerly line 76): the added lines (lines 75 and 77–81, the rest of the
+  paragraph quoted in the review above) do not change the reading.
+* `thm_stab_minimal` (`A:thm3.1:companion`): Re-read at the passage of lines 75–81 of
+  `03-main-results.tex` (formerly line 76): the added lines (lines 75 and 77–81, the rest of the
+  paragraph quoted in the review above) do not change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.thm_stab_companion ed839d34f480cba10ff3a550a92ccddf by=claude-author source=A:thm3.1:companion@29dc4c0964f38ec55444454a5131c89d80201b311710e24619a2f05e533a8b3b -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.thm_stab_companion--claude-reviewer--2026-10-17T12_19_01Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.thm_stab_companion ed839d34f480cba10ff3a550a92ccddf by=claude-reviewer source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.thm_stab_companion--claude-auditor--2026-10-19T03_37_17Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.thm_stab_companion ed839d34f480cba10ff3a550a92ccddf by=claude-auditor source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
-<!-- spec-review: Dissertation.PaperSpec.A.thm_stab_data ed839d34f480cba1f26d5949b31ba63f by=claude-author source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
+<!-- spec-review: Dissertation.PaperSpec.A.thm_stab_data ed839d34f480cba1f26d5949b31ba63f by=claude-author source=A:thm3.1:companion@29dc4c0964f38ec55444454a5131c89d80201b311710e24619a2f05e533a8b3b -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.thm_stab_data--claude-reviewer--2026-10-17T16_05_53Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.thm_stab_data ed839d34f480cba1f26d5949b31ba63f by=claude-reviewer source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.thm_stab_data--claude-auditor--2026-10-19T03_37_06Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.thm_stab_data ed839d34f480cba1f26d5949b31ba63f by=claude-auditor source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
-<!-- spec-review: Dissertation.PaperSpec.A.thm_stab_minimal ed839d34f480cba127494e1cb3f498aa by=claude-author source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
+<!-- spec-review: Dissertation.PaperSpec.A.thm_stab_minimal ed839d34f480cba127494e1cb3f498aa by=claude-author source=A:thm3.1:companion@29dc4c0964f38ec55444454a5131c89d80201b311710e24619a2f05e533a8b3b -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.thm_stab_minimal--claude-reviewer--2026-10-17T16_05_53Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.thm_stab_minimal ed839d34f480cba127494e1cb3f498aa by=claude-reviewer source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.thm_stab_minimal--claude-auditor--2026-10-19T03_36_39Z.md`).
@@ -4415,7 +4775,17 @@ mean; the printed claim (no adapted solution of the Li–Min system on `T = 3π/
 the basis of the cited example and its initial value `x(0) = 1`, through the transcription
 `liMinCoeffs` reviewed in `definitions.md`.
 
-<!-- spec-review: Dissertation.PaperSpec.A.sec5_limin ed839d34f480cba132884b458e231942 by=claude-author source=A:sec:examples@3f24646e833f5a7b1bfdeb3449b26795f12ebfae2cde62dff93327979908d073 -->
+Re-readings at the widened passages:
+
+* `sec5_limin` (`A:sec:examples`): Re-read at the passage of lines 3–7 of `05-examples.tex`
+  (formerly line 6): the added lines (lines 3–5, 'Theorem 3.5 permits broad law dependence; the
+  restrictive hypothesis is the dissipativity of Assumption 2.5, which in applications is the one to
+  verify and which cannot be traded for Lipschitz continuity alone', quoted in part in the review
+  above, and line 7, 'adapted solution on the horizon `T = 3π/4`') do not change the reading: the
+  proposition states the system of lines 5–7, on which the inference 'cannot be traded for Lipschitz
+  continuity alone' (lines 4–5) rests, and the rest of lines 3–4 is exposition.
+
+<!-- spec-review: Dissertation.PaperSpec.A.sec5_limin ed839d34f480cba132884b458e231942 by=claude-author source=A:sec:examples@a71b654121931b92f4fc2ddf7dcec26355f85753fd5105d1715986bc59313a76 -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.sec5_limin--claude-reviewer--2026-10-17T12_25_43Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.sec5_limin ed839d34f480cba132884b458e231942 by=claude-reviewer source=A:sec:examples@3f24646e833f5a7b1bfdeb3449b26795f12ebfae2cde62dff93327979908d073 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.sec5_limin--claude-auditor--2026-10-19T03_31_22Z.md`).
@@ -4843,7 +5213,21 @@ intensity of §2, for which `L²(ν; ℝᵐ)` and `H` are infinite-dimensional w
 
 Verdict: faithful. `lemA1_polish` is stronger than the topological reading of "Polish".
 
-<!-- spec-review: Dissertation.PaperSpec.A.lemA1_polish ed839d34f480cba19bbef9c769d701cd by=claude-author source=A:lemA1:polish@cdf7e5fd3a5753faf4d5aaea2d4e017db124558fd0461ec3b81dd52a3f8527cc -->
+Re-readings at the widened passages:
+
+* `eq_coupling` (`A:lemA1:polish`): Re-read at the passage of lines 53–56 of `09-appendix.tex`
+  (formerly line 55): the added lines (lines 53–54, the start of the sentence quoted above, and the
+  start of the next sentence on line 56, the content of Lemma A.1) do not change the reading above,
+  that the first assertion is (2.8) at its square root; that reading of `eq_coupling` is now
+  recorded in an author marker for this passage.
+* `lemA1_polish` (`A:lemA1:polish`): Re-read at the passage of lines 53–56 of `09-appendix.tex`
+  (formerly line 55): the added lines (lines 53–54 and 56, quoted in the review above for lines
+  53–56: 'Step 2 (Borel flow). By the synchronous coupling bound (2.8), the law map', and the start
+  of the next sentence, 'Composing it with the Borel version of Step 1 gives a', the content of
+  Lemma A.1) do not change the reading: the next sentence is Lemma A.1, not this proposition.
+
+<!-- spec-review: Dissertation.PaperSpec.A.lemA1_polish ed839d34f480cba19bbef9c769d701cd by=claude-author source=A:lemA1:polish@4468f51e4d8fb85e1f6e3d35f1ed7799fb3dbe79faddc1003ff88fca9dc30d5d -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_coupling ed839d34f480cba17af7c36ae6c33114 by=claude-author source=A:lemA1:polish@4468f51e4d8fb85e1f6e3d35f1ed7799fb3dbe79faddc1003ff88fca9dc30d5d -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lemA1_polish--claude-auditor--2026-10-20T06_16_50Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.lemA1_polish ed839d34f480cba19bbef9c769d701cd by=claude-auditor source=A:lemA1:polish@cdf7e5fd3a5753faf4d5aaea2d4e017db124558fd0461ec3b81dd52a3f8527cc -->
 
@@ -4895,12 +5279,34 @@ square-integrable `X_T`), with no assumption beyond the Lipschitz bound used (no
 for `eq_termg` no mark space); the printed claims are their instances over the standing basis along
 `Θ ∈ ℍ` (and its `X_T`) under Assumptions 2.2–2.3.
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_coeffint ed839d34f480cba13c4b68e5e50bad34 by=claude-author source=A:sec4:coeffint@fb2d9936eeb420107ab775d3d6f5f596ace121471c667bed056241cf5805dad6 source=A:eq:coeffint@b023b2927b3894d8f6323197bfa4a597800d6a73770ec5eecad87a4fb7ae5331 -->
+Re-readings at the widened passages:
+
+* `eq_coeffint` (`A:sec4:coeffint`): Re-read at the passage of lines 72–85 of
+  `04-proof-wellposedness.tex` (formerly line 73): the added lines (lines 72 and 74–85, quoted in
+  the review above: the hypotheses (Assumptions 2.2–2.3, `Θ ∈ ℍ`), `ψ ∈ {b, σ, h, f}` in the norms
+  of Assumption 2.3, (4.2) with its justification, and (4.3) with its justification) do not change
+  the reading.
+* `eq_termg` (`A:sec4:coeffint`): Re-read at the passage of lines 72–85 of
+  `04-proof-wellposedness.tex` (formerly line 73): the added lines (lines 72 and 74–85, quoted in
+  the review above: the hypotheses (Assumptions 2.2–2.3, `Θ ∈ ℍ`), `ψ ∈ {b, σ, h, f}` in the norms
+  of Assumption 2.3, (4.2) with its justification, and (4.3) with its justification) do not change
+  the reading.
+* `eq_coeffint` (`A:eq:coeffint`): Re-read at the passage of lines 72–81 of
+  `04-proof-wellposedness.tex` (formerly lines 75–79): the added lines (lines 72–74 and 80–81,
+  quoted in the review above: the hypotheses (Assumptions 2.2–2.3, `Θ ∈ ℍ`, `ψ ∈ {b, σ, h, f}` in
+  the norms of Assumption 2.3), the justification by the Lipschitz bound and (2.8) at `μ' = δ₀`, and
+  the start of the sentence of (4.3)) do not change the reading.
+* `eq_termg` (`A:eq:termg`): Re-read at the passage of lines 81–85 of `04-proof-wellposedness.tex`
+  (formerly lines 82–84): the added lines (lines 81 and 85, quoted in the review above: the end of
+  the sentence of (4.2), 'For the terminal function the analogous bound', and 'follows in the same
+  way from (2.6) and (2.9)') do not change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_coeffint ed839d34f480cba13c4b68e5e50bad34 by=claude-author source=A:sec4:coeffint@9b4835a09d4a96730317d9a3f110c73d021c07f2818d46167bfef20bf557a734 source=A:eq:coeffint@c5122bd0c06b75cd49a895770b87c8f3418f7a1732d074261410c61a8a9d5aaf -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_coeffint--claude-reviewer--2026-10-17T12_22_13Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_coeffint ed839d34f480cba13c4b68e5e50bad34 by=claude-reviewer source=A:sec4:coeffint@fb2d9936eeb420107ab775d3d6f5f596ace121471c667bed056241cf5805dad6 source=A:eq:coeffint@b023b2927b3894d8f6323197bfa4a597800d6a73770ec5eecad87a4fb7ae5331 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.eq_coeffint--claude-auditor--2026-10-19T03_36_47Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_coeffint ed839d34f480cba13c4b68e5e50bad34 by=claude-auditor source=A:sec4:coeffint@fb2d9936eeb420107ab775d3d6f5f596ace121471c667bed056241cf5805dad6 source=A:eq:coeffint@b023b2927b3894d8f6323197bfa4a597800d6a73770ec5eecad87a4fb7ae5331 -->
-<!-- spec-review: Dissertation.PaperSpec.A.eq_termg ed839d34f480cba171988e2e6de37794 by=claude-author source=A:sec4:coeffint@fb2d9936eeb420107ab775d3d6f5f596ace121471c667bed056241cf5805dad6 source=A:eq:termg@b366da385f2d0d1704001661042e88366628f72edb9990bc82fba564a2eb90b8 -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_termg ed839d34f480cba171988e2e6de37794 by=claude-author source=A:sec4:coeffint@9b4835a09d4a96730317d9a3f110c73d021c07f2818d46167bfef20bf557a734 source=A:eq:termg@e5e65b5b630e579811ef01eae876fb0b8d2a6a7e480cc1b1489922be38a78fc2 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.eq_termg--claude-reviewer--2026-10-17T16_03_52Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_termg ed839d34f480cba171988e2e6de37794 by=claude-reviewer source=A:sec4:coeffint@fb2d9936eeb420107ab775d3d6f5f596ace121471c667bed056241cf5805dad6 source=A:eq:termg@b366da385f2d0d1704001661042e88366628f72edb9990bc82fba564a2eb90b8 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.eq_termg--claude-auditor--2026-10-19T03_31_22Z.md`).
@@ -5104,7 +5510,15 @@ sides of (c) are met at an instance of the example);
 Verdict: faithful, with "remove the Poisson channel" read as `ν = 0`, as in the review of
 `ex_brownian`.
 
-<!-- spec-review: Dissertation.PaperSpec.A.ex_brownian_reduction ed839d34f480cba16ec077c21383f1ee by=claude-author source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+Re-readings at the widened passages:
+
+* `ex_brownian_reduction` (`A:sec5:overview`): Re-read at the passage of lines 9–22 of
+  `05-examples.tex` (formerly line 10): the added lines (line 9, 'The examples illustrate both the
+  scope of the law dependence and the role of the dissipativity assumption', and lines 11–22, the
+  rest of the overview through 'In Examples 5.4 and 5.5, we take `ν ≠ 0`', quoted in the review of
+  `A:sec5:overview`) do not change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.ex_brownian_reduction ed839d34f480cba16ec077c21383f1ee by=claude-author source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_brownian_reduction--claude-reviewer--2026-10-17T16_05_53Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_brownian_reduction ed839d34f480cba16ec077c21383f1ee by=claude-reviewer source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_brownian_reduction--claude-auditor--2026-10-19T03_36_56Z.md`).
@@ -5190,25 +5604,55 @@ Verdict: faithful for `sec3_HH_inclusion`; broader for `sec3_one_null_set`,
 `sec3_cadlag_versions`, `sec3_HH_definite` and `sec3_HH_norm`, each by the instantiation given
 above.
 
-<!-- spec-review: Dissertation.PaperSpec.A.sec3_one_null_set ed839d34f480cba1209a5aa6ac298690 by=claude-author source=A:sec3:one-null-set@14d75cb86a9216c652eee2f0e1f6bebae9651e4f1f55bc1c34aacc8f595b9954 -->
+Re-readings at the widened passages:
+
+* `sec3_HH_inclusion` (`A:sec3:HH-banach`): Re-read at the passage of lines 5–32 of
+  `03-main-results.tex` (formerly line 30): the added lines (lines 5–29 and 31–32: the spaces
+  `L²_ad`, `S²`, `H²_W`, `H²_N`, `ℍ`, `ℍ_weak` and the norm of `ℍ`, the identification of
+  indistinguishable càdlàg components and of a.e.-equal `Z`- and `U`-components, quoted in the
+  review above, and the end of the inclusion sentence) do not change the reading.
+* `sec3_HH_definite` (`A:sec3:HH-banach`): Re-read at the passage of lines 5–32 of
+  `03-main-results.tex` (formerly line 30): the added lines (lines 5–29 and 31–32: the spaces
+  `L²_ad`, `S²`, `H²_W`, `H²_N`, `ℍ`, `ℍ_weak` and the norm of `ℍ`, the identification of
+  indistinguishable càdlàg components and of a.e.-equal `Z`- and `U`-components, quoted in the
+  review above, and the end of the inclusion sentence) do not change the reading.
+* `sec3_HH_norm` (`A:sec3:HH-banach`): Re-read at the passage of lines 5–32 of `03-main-results.tex`
+  (formerly line 30): the added lines (lines 5–29 and 31–32: the spaces `L²_ad`, `S²`, `H²_W`,
+  `H²_N`, `ℍ`, `ℍ_weak` and the norm of `ℍ`, the identification of indistinguishable càdlàg
+  components and of a.e.-equal `Z`- and `U`-components, quoted in the review above, and the end of
+  the inclusion sentence) do not change the reading.
+* `sec3_cadlag_versions` (`A:sec3:one-null-set`): Re-read at the passage of lines 34–37 of
+  `03-main-results.tex` (formerly line 37): the added lines (lines 34–36, the definition of a
+  solution of (1.1), quoted in the review above: a tuple of `ℍ` satisfying both identities almost
+  surely for every `t ∈ [0, T]`, with `h` at `(Θ⁻_t, μ⁻_t)`) do not change the reading: the
+  proposition is stated along every tuple of `ℍ_weak`, which contains the solutions of this
+  definition.
+* `sec3_one_null_set` (`A:sec3:one-null-set`): Re-read at the passage of lines 34–37 of
+  `03-main-results.tex` (formerly line 37): the added lines (lines 34–36, the definition of a
+  solution of (1.1), quoted in the review above: a tuple of `ℍ` satisfying both identities almost
+  surely for every `t ∈ [0, T]`, with `h` at `(Θ⁻_t, μ⁻_t)`) do not change the reading: the
+  proposition is stated for tuples of `ℍ_weak` along which the integrals of (1.1) exist, which
+  contain the solutions of this definition.
+
+<!-- spec-review: Dissertation.PaperSpec.A.sec3_one_null_set ed839d34f480cba1209a5aa6ac298690 by=claude-author source=A:sec3:one-null-set@50a645fe0ae55998cb3c0ee4547c990dc06667c7e43810173776909d6022b341 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec3_one_null_set--claude-reviewer--2026-10-17T12_16_14Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.sec3_one_null_set ed839d34f480cba1209a5aa6ac298690 by=claude-reviewer source=A:sec3:one-null-set@14d75cb86a9216c652eee2f0e1f6bebae9651e4f1f55bc1c34aacc8f595b9954 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.sec3_one_null_set--claude-auditor--2026-10-19T03_35_07Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.sec3_one_null_set ed839d34f480cba1209a5aa6ac298690 by=claude-auditor source=A:sec3:one-null-set@14d75cb86a9216c652eee2f0e1f6bebae9651e4f1f55bc1c34aacc8f595b9954 -->
-<!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_inclusion ed839d34f480cba130514b735af5f227 by=claude-author source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
+<!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_inclusion ed839d34f480cba130514b735af5f227 by=claude-author source=A:sec3:HH-banach@551286dac540371b521169b6e6a0e861b596438fd0ab4b196a659438efe4df1d -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec3_HH_inclusion--claude-reviewer--2026-10-17T12_15_35Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_inclusion ed839d34f480cba130514b735af5f227 by=claude-reviewer source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.sec3_HH_inclusion--claude-auditor--2026-10-19T03_34_37Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_inclusion ed839d34f480cba130514b735af5f227 by=claude-auditor source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
-<!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_definite ed839d34f480cba12b4c9985cfe528af by=claude-author source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
+<!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_definite ed839d34f480cba12b4c9985cfe528af by=claude-author source=A:sec3:HH-banach@551286dac540371b521169b6e6a0e861b596438fd0ab4b196a659438efe4df1d -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec3_HH_definite--claude-reviewer--2026-10-17T12_14_59Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_definite ed839d34f480cba12b4c9985cfe528af by=claude-reviewer source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.sec3_HH_definite--claude-auditor--2026-10-19T03_34_14Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_definite ed839d34f480cba12b4c9985cfe528af by=claude-auditor source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
-<!-- spec-review: Dissertation.PaperSpec.A.sec3_cadlag_versions ed839d34f480cba18328d3bafc39f8ed by=claude-author source=A:sec3:one-null-set@14d75cb86a9216c652eee2f0e1f6bebae9651e4f1f55bc1c34aacc8f595b9954 -->
+<!-- spec-review: Dissertation.PaperSpec.A.sec3_cadlag_versions ed839d34f480cba18328d3bafc39f8ed by=claude-author source=A:sec3:one-null-set@50a645fe0ae55998cb3c0ee4547c990dc06667c7e43810173776909d6022b341 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.sec3_cadlag_versions--claude-auditor--2026-10-19T05_49_14Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.sec3_cadlag_versions ed839d34f480cba18328d3bafc39f8ed by=claude-auditor source=A:sec3:one-null-set@14d75cb86a9216c652eee2f0e1f6bebae9651e4f1f55bc1c34aacc8f595b9954 -->
-<!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_norm ed839d34f480cba140aa5342c14a73fc by=claude-author source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
+<!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_norm ed839d34f480cba140aa5342c14a73fc by=claude-author source=A:sec3:HH-banach@551286dac540371b521169b6e6a0e861b596438fd0ab4b196a659438efe4df1d -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.sec3_HH_norm--claude-auditor--2026-10-19T05_49_14Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_norm ed839d34f480cba140aa5342c14a73fc by=claude-auditor source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
 
@@ -5245,7 +5689,15 @@ exhibited.
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_complete ed839d34f480cba140502fce3ed6073c by=claude-author source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
+Re-readings at the widened passages:
+
+* `sec3_HH_complete` (`A:sec3:HH-banach`): Re-read at the passage of lines 5–32 of
+  `03-main-results.tex` (formerly line 30): the added lines (lines 5–29 and 31–32: the spaces
+  `L²_ad`, `S²`, `H²_W`, `H²_N`, `ℍ`, `ℍ_weak` and the norm of `ℍ`, the identification of
+  indistinguishable càdlàg components and of a.e.-equal `Z`- and `U`-components, quoted in the
+  review above, and the end of the inclusion sentence) do not change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_complete ed839d34f480cba140502fce3ed6073c by=claude-author source=A:sec3:HH-banach@551286dac540371b521169b6e6a0e861b596438fd0ab4b196a659438efe4df1d -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec3_HH_complete--claude-reviewer--2026-10-17T12_14_16Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_complete ed839d34f480cba140502fce3ed6073c by=claude-reviewer source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec3_HH_complete--claude-auditor--2026-10-19T03_34_22Z.md`).
@@ -5286,7 +5738,17 @@ has no other hypotheses.
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.sec4_horizon_not_contractive ed839d34f480cba1fc081d81965ca7e6 by=claude-author source=A:sec4:horizon-not-contractive@3848cfec9527e65f37a2aa7ee50e7c186ffb9d3e89e5d7181ef8045b33f7557a -->
+Re-readings at the widened passages:
+
+* `sec4_horizon_not_contractive` (`A:sec4:horizon-not-contractive`): Re-read at the passage of lines
+  12–15 of `04-proof-wellposedness.tex` (formerly line 13): the added lines (line 12, the end of the
+  sentence on the mixed `G`-energy identity and 'The continuation is in the coupling strength, not
+  the horizon:', and lines 14–15, 'since the `(z, u)`-dependence of `σ, h` and the full-tuple law
+  coupling enter the contraction constant with no `T`-factor', quoted in the review above) do not
+  change the reading: the proposition gives, on every horizon, a system whose frozen map does not
+  decrease distances, through the `z`-dependence of `σ` alone; the explanation is not stated.
+
+<!-- spec-review: Dissertation.PaperSpec.A.sec4_horizon_not_contractive ed839d34f480cba1fc081d81965ca7e6 by=claude-author source=A:sec4:horizon-not-contractive@db97ce8829bc98255bc1f6086bcedce457887bbe8d9dadbdf18ce129991aa390 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec4_horizon_not_contractive--claude-reviewer--2026-10-17T12_08_17Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.sec4_horizon_not_contractive ed839d34f480cba1fc081d81965ca7e6 by=claude-reviewer source=A:sec4:horizon-not-contractive@3848cfec9527e65f37a2aa7ee50e7c186ffb9d3e89e5d7181ef8045b33f7557a -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec4_horizon_not_contractive--claude-auditor--2026-10-19T03_35_41Z.md`).
@@ -5394,7 +5856,16 @@ broader than the printed claim in the ways listed in the correspondence; the pri
 instance at the filtration of §2, the processes stopped at `T` and real-valued, as in Lemmas 4.1
 (lines 171–172) and 4.3 (lines 611–612).
 
-<!-- spec-review: Dissertation.PaperSpec.A.sec4_supremum_criterion ed839d34f480cba1f588c2071f5242ff by=claude-author source=A:sec4:supremum-criterion@1425729d99cee0bd892c371ff76585d28df00f70fcd26ef5bb10262454ff45a3 -->
+Re-readings at the widened passages:
+
+* `sec4_supremum_criterion` (`A:sec4:supremum-criterion`): Re-read at the passage of lines 17–37 of
+  `04-proof-wellposedness.tex` (formerly lines 35–37): the added lines (lines 17–34: the
+  `dt`-integral convention, the convention on constants, the citation of Itô's formula and of the
+  Burkholder–Davis–Gundy inequality with one universal `c_BDG`, quoted in the review above for lines
+  30–34) do not change the reading: the conventions and the cited inequalities are not part of the
+  criterion.
+
+<!-- spec-review: Dissertation.PaperSpec.A.sec4_supremum_criterion ed839d34f480cba1f588c2071f5242ff by=claude-author source=A:sec4:supremum-criterion@dfbd28b0a591b82703f11cc1929876e5b2383e0b09afa7d4ae6331ec55b792a3 -->
 <!-- spec-review: Dissertation.PaperSpec.A.sec4_supremum_criterion ed839d34f480cba1f588c2071f5242ff by=claude-author source=A:sec4:supremum-criterion@66f9ea22a06a00e8b6aad28172a7820750d9f1d2f2ddeb8475dddc064283e43b -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.sec4_supremum_criterion--claude-reviewer--2026-10-17T16_03_52Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.sec4_supremum_criterion ed839d34f480cba1f588c2071f5242ff by=claude-reviewer source=A:sec4:supremum-criterion@66f9ea22a06a00e8b6aad28172a7820750d9f1d2f2ddeb8475dddc064283e43b -->
@@ -5512,10 +5983,16 @@ satisfies Assumption 2.5 with `α = 1`. The antecedents inside (b) and (c) (an a
 Verdict: `rem_beta1_dich` and `rem_beta1_zero` faithful; `rem_beta1_fibre` broader, at every
 measurable mark space, the printed claim its instance at the countably generated `E` of §2.
 
+Re-readings at the widened passages:
+
+* `rem_beta1_dich` (`A:conclusion`): Re-read at the passage of lines 3–16 of `06-conclusion.tex`
+  (formerly line 3): the added lines (lines 4–16, the rest of the conclusion, quoted in the review
+  of `A:conclusion`) do not change the reading.
+
 <!-- spec-review: Dissertation.PaperSpec.A.rem_beta1_fibre ed839d34f480cba1c9fa0ba4a3588e95 by=claude-author source=A:rem:beta1-dich@20e41bdfd1e0996ebf1050ab15273a783631b8c503a6635284298cc387eea4f4 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.rem_beta1_fibre--claude-auditor--2026-10-19T03_26_06Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.rem_beta1_fibre ed839d34f480cba1c9fa0ba4a3588e95 by=claude-auditor source=A:rem:beta1-dich@20e41bdfd1e0996ebf1050ab15273a783631b8c503a6635284298cc387eea4f4 -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_beta1_dich ed839d34f480cba1312ac03d25ff8ea1 by=claude-author source=A:rem:beta1-dich@ce35242e5c61dc248a5bf9b36f678223d523cf9e6c42793d8e5d2fd12e1df0ea source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: Dissertation.PaperSpec.A.rem_beta1_dich ed839d34f480cba1312ac03d25ff8ea1 by=claude-author source=A:rem:beta1-dich@ce35242e5c61dc248a5bf9b36f678223d523cf9e6c42793d8e5d2fd12e1df0ea source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.rem_beta1_dich--claude-auditor--2026-10-19T03_34_36Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.rem_beta1_dich ed839d34f480cba1312ac03d25ff8ea1 by=claude-auditor source=A:rem:beta1-dich@20e41bdfd1e0996ebf1050ab15273a783631b8c503a6635284298cc387eea4f4 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 <!-- spec-review: Dissertation.PaperSpec.A.rem_beta1_zero ed839d34f480cba10a600b0e388b329d by=claude-author source=A:rem:beta1-dich@20e41bdfd1e0996ebf1050ab15273a783631b8c503a6635284298cc387eea4f4 -->
@@ -5721,9 +6198,13 @@ the forward equation is `δX_t = ∫_0^t δb_s ds + ∫_0^t δσ_s dW_s + ∫_0^
 By Cauchy–Schwarz, the BDG inequality and the compensation formula,
 `𝔼 sup_{0 ≤ t ≤ T} |δX_t|² ≤ C_T 𝔼 ∫_0^T (|δb_s|² + |δσ_s|²_F + ‖δh_s‖²) ds < ∞` by (3.2), so
 `δX ∈ S²(ℝⁿ)`." (lines 139–156), then (3.3) (lines 158–173, quoted in the section of (3.2) and
-(3.3)), "therefore `δY ∈ S²(ℝᵐ)`. By (3.2) and (3.3) we have `δΘ ∈ ℍ`." (lines 173–174). The
-forward estimate of lines 144–156 lies between the pinned regions of `A:eq:uniq-coeff` and
-`A:eq:uniq-bwd`, in neither.
+(3.3)), "therefore `δY ∈ S²(ℝᵐ)`. By (3.2) and (3.3) we have `δΘ ∈ ℍ`." (lines 173–174). These
+proof passages are pinned in the regions of `A:eq:uniq-coeff` (lines 110–156, with the forward
+estimate of lines 144–156) and `A:eq:uniq-bwd` (lines 158–174, with lines 173–174); the region of
+`A:rem:uniq-no-integ` is the remark itself (lines 182–196), and its scope note names those two
+claims. `eq_uniq_coeff_lip` and `eq_uniq_fwd` are also clauses of `A:eq:uniq-coeff`, and
+`eq_uniq_bwd_lip` and `rem_uniq_lip_mem` of `A:eq:uniq-bwd`, so a change of those passages reopens
+these reviews.
 
 Propositions: each for every horizon `T > 0`, coefficients with (2.3) and Assumption 2.3 with
 constant `L`, and `Θ¹, Θ²` solving (1.1) in `ℍ_weak` (`WeakSolution`) from the same initial datum
@@ -5835,16 +6316,45 @@ a clause of `A:eq:uniq-bwd` it is therefore broader, like `eq_uniq_bwd_eq` and
 positive. Verdict for this clause of `A:eq:uniq-bwd`: broader (the printed (3.3) its instance: add
 Assumptions 2.4–2.5); for `A:rem:uniq-no-integ` the verdict above stands.
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_coeff_lip ed839d34f480cba1e3e9c0b07e55c27c by=claude-author source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
+Re-readings at the widened passages:
+
+* `eq_uniq_bwd_lip` (`A:eq:uniq-bwd`): Re-read at the passage of lines 158–174 of
+  `03-main-results.tex` (formerly lines 158–172): the added lines (lines 173–174: 'therefore `δY ∈
+  S²`. By (3.2) and (3.3) we have `δΘ ∈ ℍ`', the finiteness that (3.3) states and the membership
+  `rem_uniq_lip_mem` of `A:rem:uniq-no-integ`) do not change the reading: 'therefore `δY ∈ S²`' is
+  the finiteness this proposition states.
+
+Readings of `eq_uniq_coeff_lip`, `eq_uniq_fwd` and `rem_uniq_lip_mem` as clauses of
+`A:eq:uniq-coeff` and `A:eq:uniq-bwd` as well:
+
+* `eq_uniq_coeff_lip` (`A:eq:uniq-coeff`, lines 110–156 of `03-main-results.tex`): read against that
+  passage, it is (3.2) of lines 139–142 with the same integrands (`δh` at the predictable tuples)
+  and the same finiteness, under (2.3) and Assumption 2.3 alone, the printed (3.2) being its
+  instance at the hypotheses of Theorem 3.3 (add Assumptions 2.4–2.5), so as a clause of that claim
+  it is broader, like `eq_uniq_coeff_ae`, and it is witnessed at the two distinct solutions of
+  `rem_uniq_lip_hypotheses`, where `eq_uniq_coeff` can be witnessed only at equal solutions.
+* `eq_uniq_fwd` (`A:eq:uniq-coeff`, lines 110–156): read against that passage, it states the forward
+  difference of lines 144–149, from the common initial condition, and the bound of lines 150–156
+  with `C_T` a function of `T` chosen first and its finiteness by (3.2), `δX ∈ S²` being that
+  finiteness, under (2.3) and Assumption 2.3 alone; the printed step is its instance at the
+  hypotheses of Theorem 3.3, so as a clause of that claim it is broader (add Assumptions 2.4–2.5).
+* `rem_uniq_lip_mem` (`A:eq:uniq-bwd`, lines 158–174): read against that passage, it is 'By (3.2)
+  and (3.3) we have `δΘ ∈ ℍ`' (lines 173–174), the finiteness of the squared norm of `ℍ` of `Θ¹ −
+  Θ²`, whose `δY`-part is (3.3) of this passage and whose `δX`-part is the bound of lines 150–156,
+  under (2.3) and Assumption 2.3 alone; the printed membership, the 'Furthermore' of Theorem 3.3, is
+  its instance at the hypotheses of Theorem 3.3, so as a clause of that claim it is broader (add
+  Assumptions 2.4–2.5).
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_coeff_lip ed839d34f480cba1e3e9c0b07e55c27c by=claude-author source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 source=A:eq:uniq-coeff@c5e7dae7414c6edbeb2afd8a9b9973a719f095ba7998511de1e2ebcb347197cb -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_uniq_coeff_lip--claude-auditor--2026-10-20T15_30_04Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_coeff_lip ed839d34f480cba1e3e9c0b07e55c27c by=claude-auditor source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
-<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_fwd ed839d34f480cba1001605cc82c2788b by=claude-author source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_fwd ed839d34f480cba1001605cc82c2788b by=claude-author source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 source=A:eq:uniq-coeff@c5e7dae7414c6edbeb2afd8a9b9973a719f095ba7998511de1e2ebcb347197cb -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_uniq_fwd--claude-auditor--2026-10-20T15_30_04Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_fwd ed839d34f480cba1001605cc82c2788b by=claude-auditor source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
-<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_bwd_lip ed839d34f480cba184495619099e147e by=claude-author source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 source=A:eq:uniq-bwd@a0c3e3fee8dc85540db2368978e14170d1deabb4269ae81cb99aef8cf283a2fd -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_bwd_lip ed839d34f480cba184495619099e147e by=claude-author source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 source=A:eq:uniq-bwd@2299c84c37bf6e6d07e5bf1079800d77af7ce8de795c426b59b69acde29e973a -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_uniq_bwd_lip--claude-auditor--2026-10-20T15_30_04Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_bwd_lip ed839d34f480cba184495619099e147e by=claude-auditor source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_lip_mem ed839d34f480cba1db72bd0880b4abb9 by=claude-author source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
+<!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_lip_mem ed839d34f480cba1db72bd0880b4abb9 by=claude-author source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 source=A:eq:uniq-bwd@2299c84c37bf6e6d07e5bf1079800d77af7ce8de795c426b59b69acde29e973a -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.rem_uniq_lip_mem--claude-auditor--2026-10-20T15_30_04Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_lip_mem ed839d34f480cba1db72bd0880b4abb9 by=claude-auditor source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
 
@@ -5955,22 +6465,43 @@ whose instance at such a baseline is the linear, Dirac-input case of the printed
 narrower than the sentence, which `cor_margin_continuous` reads in general, so together they cover
 it. `cor_margin_separate` and `cor_margin_findim` faithful, in the readings recorded.
 
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_channels ed839d34f480cba14127298d8cc156d9 by=claude-author source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
+Re-readings at the widened passages:
+
+* `cor_margin_channels` (`A:sec3:margin-paragraph`): Re-read at the passage of lines 280–290 of
+  `03-main-results.tex` (formerly line 280): the added lines (lines 281–290, the rest of the
+  paragraph quoted in the review above) do not change the reading.
+* `cor_margin_additive` (`A:sec3:margin-paragraph`): Re-read at the passage of lines 280–290 of
+  `03-main-results.tex` (formerly line 280): the added lines (lines 281–290, the rest of the
+  paragraph quoted in the review above) do not change the reading.
+* `cor_margin_finite` (`A:sec3:margin-paragraph`): Re-read at the passage of lines 280–290 of
+  `03-main-results.tex` (formerly line 280): the added lines (lines 281–290, the rest of the
+  paragraph quoted in the review above) do not change the reading.
+* `cor_margin_continuous` (`A:sec3:margin-paragraph`): Re-read at the passage of lines 280–290 of
+  `03-main-results.tex` (formerly line 280): the added lines (lines 281–290, the rest of the
+  paragraph quoted in the review above) do not change the reading.
+* `cor_margin_separate` (`A:sec3:margin-paragraph`): Re-read at the passage of lines 280–290 of
+  `03-main-results.tex` (formerly line 280): the added lines (lines 281–290, the rest of the
+  paragraph quoted in the review above) do not change the reading.
+* `cor_margin_findim` (`A:sec3:margin-paragraph`): Re-read at the passage of lines 280–290 of
+  `03-main-results.tex` (formerly line 280): the added lines (lines 281–290, the rest of the
+  paragraph quoted in the review above) do not change the reading.
+
+<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_channels ed839d34f480cba14127298d8cc156d9 by=claude-author source=A:sec3:margin-paragraph@23dc0984d55a23cd584d56a864ed5056b9fb123935603b3cc75fbe8fccdf422d -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.cor_margin_channels--claude-auditor--2026-10-19T03_34_36Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.cor_margin_channels ed839d34f480cba14127298d8cc156d9 by=claude-auditor source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_additive ed839d34f480cba19075028a95edf84d by=claude-author source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
+<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_additive ed839d34f480cba19075028a95edf84d by=claude-author source=A:sec3:margin-paragraph@23dc0984d55a23cd584d56a864ed5056b9fb123935603b3cc75fbe8fccdf422d -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.cor_margin_additive--claude-auditor--2026-10-19T03_34_35Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.cor_margin_additive ed839d34f480cba19075028a95edf84d by=claude-auditor source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_finite ed839d34f480cba15e05ed8a37017606 by=claude-author source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
+<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_finite ed839d34f480cba15e05ed8a37017606 by=claude-author source=A:sec3:margin-paragraph@23dc0984d55a23cd584d56a864ed5056b9fb123935603b3cc75fbe8fccdf422d -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.cor_margin_finite--claude-auditor--2026-10-19T03_34_36Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.cor_margin_finite ed839d34f480cba15e05ed8a37017606 by=claude-auditor source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_continuous ed839d34f480cba1bd840ffee2f6a13b by=claude-author source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
+<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_continuous ed839d34f480cba1bd840ffee2f6a13b by=claude-author source=A:sec3:margin-paragraph@23dc0984d55a23cd584d56a864ed5056b9fb123935603b3cc75fbe8fccdf422d -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.cor_margin_continuous--claude-auditor--2026-10-19T03_34_36Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.cor_margin_continuous ed839d34f480cba1bd840ffee2f6a13b by=claude-auditor source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_separate ed839d34f480cba1b90f9a7b02bff832 by=claude-author source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
+<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_separate ed839d34f480cba1b90f9a7b02bff832 by=claude-author source=A:sec3:margin-paragraph@23dc0984d55a23cd584d56a864ed5056b9fb123935603b3cc75fbe8fccdf422d -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.cor_margin_separate--claude-auditor--2026-10-19T03_26_48Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.cor_margin_separate ed839d34f480cba1b90f9a7b02bff832 by=claude-auditor source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_findim ed839d34f480cba153b1b629e759bb45 by=claude-author source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
+<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_findim ed839d34f480cba153b1b629e759bb45 by=claude-author source=A:sec3:margin-paragraph@23dc0984d55a23cd584d56a864ed5056b9fb123935603b3cc75fbe8fccdf422d -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.cor_margin_findim--claude-auditor--2026-10-19T03_34_36Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.cor_margin_findim ed839d34f480cba153b1b629e759bb45 by=claude-auditor source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
 
@@ -6192,11 +6723,24 @@ restated). The instantiations that give the printed claims:
 * `ex_fulllaw_affineQ`: it does not assume the features bounded; the printed claim is its
   instance at bounded Lipschitz features, `m = n` and `ν ≠ 0`.
 
+Re-readings at the widened passages:
+
+* `ex_fulllaw_beyond_radial` (`A:sec5:overview`): Re-read at the passage of lines 9–22 of
+  `05-examples.tex` (formerly line 10): the added lines (line 9, 'The examples illustrate both the
+  scope of the law dependence and the role of the dissipativity assumption', and lines 11–22, the
+  rest of the overview through 'In Examples 5.4 and 5.5, we take `ν ≠ 0`', quoted in the review of
+  `A:sec5:overview`) do not change the reading.
+* `ex_fulllaw_beyond_U_corr` (`A:sec5:overview`): Re-read at the passage of lines 9–22 of
+  `05-examples.tex` (formerly line 10): the added lines (line 9, 'The examples illustrate both the
+  scope of the law dependence and the role of the dissipativity assumption', and lines 11–22, the
+  rest of the overview through 'In Examples 5.4 and 5.5, we take `ν ≠ 0`', quoted in the review of
+  `A:sec5:overview`) do not change the reading.
+
 <!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_lip ed839d34f480cba11fea7903ed24f9f8 by=claude-author source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_pert ed839d34f480cba1e9dade95deb0a071 by=claude-author source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_wp ed839d34f480cba10404c6cf3a0cc0d0 by=claude-author source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial ed839d34f480cba1fc87ff54d30df5ad by=claude-author source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr ed839d34f480cba193f328d7c8c243ea by=claude-author source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial ed839d34f480cba1fc87ff54d30df5ad by=claude-author source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
+<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr ed839d34f480cba193f328d7c8c243ea by=claude-author source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q ed839d34f480cba12be9f13eb8df21c1 by=claude-author source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_affineQ ed839d34f480cba1b7c4d4b7307e74ea by=claude-author source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_lip ed839d34f480cba11fea7903ed24f9f8 by=claude-author source=A:ex:fulllaw@c6dac94442298fb91021e9410980558e1c560d7da7bb03b9fe21e4542a37e683 -->
@@ -6414,6 +6958,44 @@ the last also for every initial datum); for `ex_dealer_ham` and `ex_dealer_poten
 `ex_dealer_not_mean_corr` (`L²(ν) ≠ {0}` being `ν ≠ 0`), `ex_dealer_marks` with the encodings
 listed, `ex_dealer_riccati`, `ex_dealer_spec_marks` and `ex_dealer_zero`.
 
+Re-readings at the widened passages:
+
+* `ex_dealer_mono` (`A:abstract`): Re-read at the passage of lines 30–48 of `wellposedness.tex`
+  (formerly line 30): the added lines (lines 31–48, the rest of the abstract, quoted in the review
+  of `A:abstract`: the setting, the diagonal hypotheses, the three results, the method and the
+  dealer-market example) do not change the reading: 'monotone at every interaction strength' (lines
+  46–47) is this proposition.
+* `ex_dealer_wp` (`A:abstract`): Re-read at the passage of lines 30–48 of `wellposedness.tex`
+  (formerly line 30): the added lines (lines 31–48, the rest of the abstract, quoted in the review
+  of `A:abstract`: the setting, the diagonal hypotheses, the three results, the method and the
+  dealer-market example) do not change the reading: 'realises the `U`-law dependence
+  non-perturbatively' (lines 45–46) is the well-posedness at every strength.
+* `ex_dealer_marks` (`A:abstract`): Re-read at the passage of lines 30–48 of `wellposedness.tex`
+  (formerly line 30): the added lines (lines 31–48, the rest of the abstract, quoted in the review
+  of `A:abstract`: the setting, the diagonal hypotheses, the three results, the method and the
+  dealer-market example) do not change the reading: 'its mark measure has infinite activity' (line
+  48) is this proposition.
+* `ex_dealer_active` (`A:abstract`): Re-read at the passage of lines 30–48 of `wellposedness.tex`
+  (formerly line 30): the added lines (lines 31–48, the rest of the abstract, quoted in the review
+  of `A:abstract`: the setting, the diagonal hypotheses, the three results, the method and the
+  dealer-market example) do not change the reading: 'in an explicit specialisation, active along the
+  solution' (line 47) is this proposition.
+* `ex_dealer_mono` (`A:sec5:overview`): Re-read at the passage of lines 9–22 of `05-examples.tex`
+  (formerly line 10): the added lines (line 9, 'The examples illustrate both the scope of the law
+  dependence and the role of the dissipativity assumption', and lines 11–22, the rest of the
+  overview through 'In Examples 5.4 and 5.5, we take `ν ≠ 0`', quoted in the review of
+  `A:sec5:overview`) do not change the reading.
+* `ex_dealer_wp` (`A:sec5:overview`): Re-read at the passage of lines 9–22 of `05-examples.tex`
+  (formerly line 10): the added lines (line 9, 'The examples illustrate both the scope of the law
+  dependence and the role of the dissipativity assumption', and lines 11–22, the rest of the
+  overview through 'In Examples 5.4 and 5.5, we take `ν ≠ 0`', quoted in the review of
+  `A:sec5:overview`) do not change the reading.
+* `ex_dealer_active` (`A:sec5:overview`): Re-read at the passage of lines 9–22 of `05-examples.tex`
+  (formerly line 10): the added lines (line 9, 'The examples illustrate both the scope of the law
+  dependence and the role of the dissipativity assumption', and lines 11–22, the rest of the
+  overview through 'In Examples 5.4 and 5.5, we take `ν ≠ 0`', quoted in the review of
+  `A:sec5:overview`) do not change the reading.
+
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_potential ed839d34f480cba1c2e5952133294af3 by=claude-author source=A:ex:dealer@3dfd46a5ffe721a5c7560c057227552960a29e63ca7af022a17dd6989f44556c -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_dealer_potential--claude-auditor--2026-10-19T03_27_12Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_potential ed839d34f480cba1c2e5952133294af3 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
@@ -6429,10 +7011,10 @@ Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_d
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer ed839d34f480cba1e2c74601c0086824 by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_dealer--claude-auditor--2026-10-19T03_34_36Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer ed839d34f480cba1e2c74601c0086824 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_mono ed839d34f480cba17aa9ad92a733a79a by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_mono ed839d34f480cba17aa9ad92a733a79a by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_dealer_mono--claude-auditor--2026-10-19T03_34_36Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_mono ed839d34f480cba17aa9ad92a733a79a by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_wp ed839d34f480cba1382a433c842b2a2c by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_wp ed839d34f480cba1382a433c842b2a2c by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_dealer_wp--claude-auditor--2026-10-19T03_34_36Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_wp ed839d34f480cba1382a433c842b2a2c by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_twopoint ed839d34f480cba10e7a45835d5244c0 by=claude-author source=A:ex:dealer@3dfd46a5ffe721a5c7560c057227552960a29e63ca7af022a17dd6989f44556c -->
@@ -6441,7 +7023,7 @@ Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.ex_
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_mean_corr ed839d34f480cba18bab6ae8a6c6a027 by=claude-author source=A:ex:dealer@3dfd46a5ffe721a5c7560c057227552960a29e63ca7af022a17dd6989f44556c -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_dealer_mean_corr--claude-auditor--2026-10-19T03_27_19Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_mean_corr ed839d34f480cba18bab6ae8a6c6a027 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_marks ed839d34f480cba140a65f520ffefa33 by=claude-author source=A:ex:dealer@3dfd46a5ffe721a5c7560c057227552960a29e63ca7af022a17dd6989f44556c source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 -->
+<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_marks ed839d34f480cba140a65f520ffefa33 by=claude-author source=A:ex:dealer@3dfd46a5ffe721a5c7560c057227552960a29e63ca7af022a17dd6989f44556c source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_dealer_marks--claude-auditor--2026-10-19T03_27_26Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_marks ed839d34f480cba140a65f520ffefa33 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_not_mean_corr ed839d34f480cba1d76cfc2366e08961 by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
@@ -6465,7 +7047,7 @@ Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.ex_
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_symm ed839d34f480cba11753a45d7d37cdc6 by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.ex_dealer_symm--claude-auditor--2026-10-19T03_27_19Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_symm ed839d34f480cba11753a45d7d37cdc6 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_active ed839d34f480cba11684a792fea39139 by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_active ed839d34f480cba11684a792fea39139 by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.ex_dealer_active--claude-auditor--2026-10-19T03_34_35Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_active ed839d34f480cba11684a792fea39139 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 <!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_depends ed839d34f480cba1d5b82af653b55a54 by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->

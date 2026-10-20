@@ -926,7 +926,18 @@ Review by claude-auditor: faithful with representation choices (report `reports/
 * `System.diagonalInputs ν n m d ℱ P t`: the pairs `(Θ, μ)` with `Θ : Ω → H` strongly
   `ℱ_t`-measurable and square integrable and `μ = lawP2 P Θ`: `𝒟_t` of Definition 2.1, an element of
   `L²(Ω, ℱ_t; H)` being represented by a function in its class, which loses no class.
-<!-- def-review: Dissertation.WellPosedness.System.diagonalInputs 43fba323e088abc4f9c7fc5ffd25f8a4 by=claude-author source=A:def:diag@952765bd095132205c2a2ed30a292f5a88840f96e56d5a877f906f6a21524a94 -->
+
+Re-readings at the widened passages:
+
+* `diagonalInputs` (`A:def:diag`): Re-read at the passage of lines 27–84 of
+  `02-model-assumptions.tex` (formerly the environment, lines 58–67): the added lines (lines 27–56
+  and 68–84: the tuple `Θ` with values in `H`, the predictable tuple `Θ⁻` and `μ⁻` at which the jump
+  terms are evaluated, `μ`, `μ⁻` the Borel representatives of Lemma A.1, the representation property
+  (the claim `A:sec2:prp`), the convention that all hypotheses are imposed along `𝒟_t`, and the
+  difference notation for two diagonal inputs) do not change the reading: `𝒟_t` is the set of pairs
+  `(Θ, Law Θ)` with `Θ ∈ L²(Ω, ℱ_t; H)`, which the added lines use without changing it.
+
+<!-- def-review: Dissertation.WellPosedness.System.diagonalInputs 43fba323e088abc4f9c7fc5ffd25f8a4 by=claude-author source=A:def:diag@da808a0f8a8d42c5fa97ae092ee5e1b93197de0af73a487d90d7c213a0c1d01e -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.System.diagonalInputs--claude-reviewer--2026-10-17T15_06_18Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.diagonalInputs 43fba323e088abc4f9c7fc5ffd25f8a4 by=claude-reviewer source=A:def:diag@952765bd095132205c2a2ed30a292f5a88840f96e56d5a877f906f6a21524a94 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.diagonalInputs--claude-auditor--2026-10-19T03_27_24Z.md`).
@@ -1060,7 +1071,18 @@ Manuscript (§2): the coefficients are jointly Borel, `h` through (2.3); Assumpt
   for `h`), and `(x, ρ) ↦ g(x, ρ)` is Borel on `ℝⁿ × P₂(ℝⁿ)` with `W₂` (`P2W`): the joint Borel
   measurability of §2, with (2.3) for `h`. The maximum norm and the Hilbert norm give `H` the same
   topology.
-<!-- def-review: Dissertation.WellPosedness.Spec.JointBorel 4b26c5076ea2f4260000000000000000 by=claude-author source=A:eq:hborel@e96f0d4c4f81b393c2119f66e1766cb7561f3cf1fa43458d01f4d5c4892a910a -->
+
+Re-readings at the widened passages:
+
+* `JointBorel` (`A:eq:hborel`): Re-read at the passage of lines 86–106 of `02-model-assumptions.tex`
+  (formerly lines 102–106): the added lines (lines 86–101: the coefficients deterministic,
+  randomness entering only through the inputs and the forcings of §4, their signatures (`h` with
+  values in `L²(ν; ℝⁿ)`), and the joint Borel measurability of all coefficients, taken for `h` as
+  (2.3)) do not change the reading: `JointBorel` asks the Borel measurability of `b, σ, h, f` on
+  `[0, T] × H × P₂(H)` and of `g` on `ℝⁿ × P₂(ℝⁿ)`, with `h` valued in `L²(ν; ℝⁿ)`, the signatures
+  and the measurability these lines print, and the coefficients are functions of their arguments.
+
+<!-- def-review: Dissertation.WellPosedness.Spec.JointBorel 4b26c5076ea2f4260000000000000000 by=claude-author source=A:eq:hborel@f3d81f78d89578cf0708f975cb8c81d7c791427d8c9187ffca569edf249c1840 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.Spec.JointBorel--claude-reviewer--2026-10-17T15_04_38Z.md`).
 <!-- def-review: Dissertation.WellPosedness.Spec.JointBorel 4b26c5076ea2f4260000000000000000 by=claude-reviewer source=A:eq:hborel@e96f0d4c4f81b393c2119f66e1766cb7561f3cf1fa43458d01f4d5c4892a910a -->
 Review by claude-auditor: faithful (report `reports/Dissertation.WellPosedness.Spec.JointBorel--claude-auditor--2026-10-19T03_26_57Z.md`).
@@ -1201,7 +1223,20 @@ tuple `(Θ⁻_t, μ⁻_t)`"; `ℍ ⊂ ℍ_weak`.
   and `s = 0` is a `dt`-null time of the integrals of (1.1).
 
 Verdict: faithful with representation choices.
-<!-- def-review: Dissertation.PaperSpec.A.Solution bf42c97d226817aeb326b2633e3dca6b by=claude-author source=A:intro:mvfbsdej@0d85452f18880ddaaf63d57d1760fe13bf46552331679aa18ef206bbdea64300 source=A:eq:mvfbsdej@0d85452f18880ddaaf63d57d1760fe13bf46552331679aa18ef206bbdea64300 -->
+
+Re-readings at the widened passages:
+
+* `Solution` (`A:intro:mvfbsdej`, `A:eq:mvfbsdej`): Re-read at the passage of lines 3–48 of
+  `01-introduction.tex` (formerly lines 6–13): the added lines (lines 3–5, the results the paper
+  proves (Theorems 3.1, 3.3, 3.5), and 14–48: the Brownian motion `W` and the independent
+  compensated Poisson measure `Ñ` with σ-finite `ν`, the state space `H` with its norm, the tuple
+  `Θ`, the predictable tuple `Θ⁻` at which `h` is evaluated, the law flows `μ`, `μ⁻` in `P₂(H)`, and
+  the `W₂`-Lipschitz law dependence imposed along tuple–law pairs) do not change the reading:
+  `Solution` evaluates `h` at `(Θ⁻, μ⁻)` and reads `Θ` in `H` as these lines say; the Lipschitz and
+  monotonicity hypotheses they describe are Assumptions 2.3 and 2.5, not part of the solution
+  notion, and the results of lines 3–5 are the claims of Theorems 3.1, 3.3 and 3.5.
+
+<!-- def-review: Dissertation.PaperSpec.A.Solution bf42c97d226817aeb326b2633e3dca6b by=claude-author source=A:intro:mvfbsdej@5eb480b379a74b6cf3448b228b60d1dcb3f707265f25c5b1cbe6f82b684e917a source=A:eq:mvfbsdej@5eb480b379a74b6cf3448b228b60d1dcb3f707265f25c5b1cbe6f82b684e917a -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.Solution--claude-auditor--2026-10-19T05_48_40Z.md`).
 <!-- def-review: Dissertation.PaperSpec.A.Solution bf42c97d226817aeb326b2633e3dca6b by=claude-auditor source=A:intro:mvfbsdej@0d85452f18880ddaaf63d57d1760fe13bf46552331679aa18ef206bbdea64300 source=A:eq:mvfbsdej@0d85452f18880ddaaf63d57d1760fe13bf46552331679aa18ef206bbdea64300 -->
 
@@ -1338,7 +1373,17 @@ Review by claude-auditor: faithful (report `reports/Dissertation.WellPosedness.S
   `pairing27` is integrable and its expectation is at most `−β₁ 𝔼[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²]
   − β₂ 𝔼|G δX|² − c 𝔼[|δY|² + |δZ|²_F + ‖δU‖² + |δX|²]`: (2.13), with the integrability choice of
   `Mono27At`.
-<!-- def-review: Dissertation.WellPosedness.Spec.Margin213 2ad64300a1211b964de2010be9bc24c1 by=claude-author source=A:eq:monomarginu@f626420b93b36f0e86aa29e8fb81b7b1a6e5de7e8721ca40a618d662ddd39b54 -->
+
+Re-readings at the widened passages:
+
+* `Margin213` (`A:eq:monomarginu`): Re-read at the passage of lines 306–316 of
+  `02-model-assumptions.tex` (formerly lines 309–316): the added lines (lines 306–308: 'A margin `c`
+  in (2.12) therefore yields the margin `c/c_G`, which is smaller than `c` when `c_G > 1`, in the
+  unweighted form, which with margin `c > 0` reads', whose first part is the content of
+  `A:rem:margin`) do not change the reading: `Margin213` is (2.13) at a given constant `c`, and `c >
+  0` is a separate hypothesis where a margin is assumed (as in `cor_robust`).
+
+<!-- def-review: Dissertation.WellPosedness.Spec.Margin213 2ad64300a1211b964de2010be9bc24c1 by=claude-author source=A:eq:monomarginu@7a54aa98ecce9d453337bd582ab01fa94492a3ede87c7f372e4197062861568b -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.Margin213--claude-reviewer--2026-10-17T15_04_37Z.md`).
 <!-- def-review: Dissertation.WellPosedness.Spec.Margin213 2ad64300a1211b964de2010be9bc24c1 by=claude-reviewer source=A:eq:monomarginu@f626420b93b36f0e86aa29e8fb81b7b1a6e5de7e8721ca40a618d662ddd39b54 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.Margin213--claude-auditor--2026-10-19T03_26_58Z.md`).
@@ -1456,7 +1501,17 @@ Review by claude-auditor: faithful with representation choices (report `reports/
 * `PaperSpec.A.WeakForcedSolution`: some `γ` with `PaperWeakSolutionForcedInt` over
   `enlJoint 𝒢₀ D h𝒢₀`, and every path of `X` and of `Y` with left limits on `(0, T]`: (4.1) in
   `ℍ_weak` with `X_T ∈ L²`, the class of Lemma 4.3.
-<!-- def-review: Dissertation.PaperSpec.A.WeakForcedSolution 6d8e8f373c5e26dad42e89a4945d5642 by=claude-author source=A:sec4:WP-def@17962fe037ff7de888f26d2b0c9f51427d790ab6422e549a1d661ef69141a32e -->
+
+Re-readings at the widened passages:
+
+* `WeakForcedSolution` (`A:sec4:WP-def`): Re-read at the passage of lines 39–70 of
+  `04-proof-wellposedness.tex` (formerly line 66): the added lines (lines 39–65 and 67–70: the
+  forcing class and (4.1), 'for every such forcing `q`', and 'The unforced target is `WP(1)` with `q
+  ≡ 0`, so it suffices to prove that `WP(1)` holds') do not change the reading: the forced system is
+  the display (4.1), and the forcing's admissibility is `Forcing`, a class containing the printed
+  one of lines 39–53.
+
+<!-- def-review: Dissertation.PaperSpec.A.WeakForcedSolution 6d8e8f373c5e26dad42e89a4945d5642 by=claude-author source=A:sec4:WP-def@7a46d2596d9c1ba2c84b823eceaf0f8c0f3e90b8af99f5f252c9fad34e87413c -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.WeakForcedSolution--claude-reviewer--2026-10-17T16_02_24Z.md`).
 <!-- def-review: Dissertation.PaperSpec.A.WeakForcedSolution 6d8e8f373c5e26dad42e89a4945d5642 by=claude-reviewer source=A:sec4:WP-def@17962fe037ff7de888f26d2b0c9f51427d790ab6422e549a1d661ef69141a32e -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.WeakForcedSolution--claude-auditor--2026-10-19T03_38_16Z.md`).
@@ -1468,7 +1523,18 @@ Review by claude-auditor: faithful with representation choices (report `reports/
   (`ForcedSolution.paperSolutionForced`, `forcedSolution_of_paperSolutionForced`). The forcing's
   admissibility is part of the predicate (`Forcing`, where `q^h` need only be marked
   progressive); `WP` quantifies over `PredForcing`, the printed predictable class.
-<!-- def-review: Dissertation.PaperSpec.A.ForcedSolution 6d8e8f373c5e26da320d4d9860023747 by=claude-author source=A:eq:forced@134e01a0256ffc7a16425886631cfe88968f942fb53d500c263ce1cf361b3cf8 -->
+
+Re-readings at the widened passages:
+
+* `ForcedSolution` (`A:eq:forced`): Re-read at the passage of lines 39–65 of
+  `04-proof-wellposedness.tex` (formerly lines 54–65): the added lines (lines 39–53: `λ ∈ [0, 1]`
+  and the forcing class, `q^b, q^σ, q^f` progressively measurable, `q^h` predictable and `𝒫 ⊗
+  ℰ`-measurable, all square integrable, and `q^g_T ∈ L²(Ω, ℱ_T)`, which the review's manuscript line
+  quotes) do not change the reading: `ForcedSolution` carries the forcing's admissibility
+  (`Forcing`, with `q^h` marked progressive, a class containing the printed one), and `WP`
+  quantifies over the printed class (`PredForcing`).
+
+<!-- def-review: Dissertation.PaperSpec.A.ForcedSolution 6d8e8f373c5e26da320d4d9860023747 by=claude-author source=A:eq:forced@6e95d16ec0d43e3e59ac4b392a3ff8d5d36e8ba90636e0d6c6af2f8419322135 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ForcedSolution--claude-auditor--2026-10-19T05_48_40Z.md`).
 <!-- def-review: Dissertation.PaperSpec.A.ForcedSolution 6d8e8f373c5e26da320d4d9860023747 by=claude-auditor source=A:eq:forced@134e01a0256ffc7a16425886631cfe88968f942fb53d500c263ce1cf361b3cf8 -->
 * `PaperSpec.A.WP D h𝒢₀ hind₀ T λ C ξ₀`: for every `PredForcing` `q` over `enlJoint 𝒢₀ D h𝒢₀`,
@@ -1477,7 +1543,16 @@ Review by claude-auditor: faithful with representation choices (report `reports/
   identifications.
 
 Verdict: faithful with representation choices.
-<!-- def-review: Dissertation.PaperSpec.A.WP 4c83187e460bc5017fcd19712e7de906 by=claude-author source=A:sec4:WP-def@17962fe037ff7de888f26d2b0c9f51427d790ab6422e549a1d661ef69141a32e -->
+
+Re-readings at the widened passages:
+
+* `WP` (`A:sec4:WP-def`): Re-read at the passage of lines 39–70 of `04-proof-wellposedness.tex`
+  (formerly line 66): the added lines (lines 39–65 and 67–70: the forcing class and (4.1), 'for
+  every such forcing `q`', and 'The unforced target is `WP(1)` with `q ≡ 0`, so it suffices to prove
+  that `WP(1)` holds') do not change the reading: `WP` quantifies over `PredForcing`, the printed
+  class, and the last sentence is the plan of the proof of Theorem 3.5 (`A:sec4:proof-thm35`).
+
+<!-- def-review: Dissertation.PaperSpec.A.WP 4c83187e460bc5017fcd19712e7de906 by=claude-author source=A:sec4:WP-def@7a46d2596d9c1ba2c84b823eceaf0f8c0f3e90b8af99f5f252c9fad34e87413c -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.WP--claude-reviewer--2026-10-17T16_01_36Z.md`).
 <!-- def-review: Dissertation.PaperSpec.A.WP 4c83187e460bc5017fcd19712e7de906 by=claude-reviewer source=A:sec4:WP-def@17962fe037ff7de888f26d2b0c9f51427d790ab6422e549a1d661ef69141a32e -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.WP--claude-auditor--2026-10-19T03_37_30Z.md`).
@@ -1703,7 +1778,16 @@ Manuscript (Remark 2.11): (2.7) holds with margin `c > 0` if (2.12) holds.
   `pairing27` is integrable and its expectation is at most `−β₁ 𝔼[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²]
   − β₂ 𝔼|G δX|² − c 𝔼[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖² + |G δX|²]`: (2.12), with the integrability
   choice of `Mono27At`.
-<!-- def-review: Dissertation.PaperSpec.A.Margin212 2ad64300a1211b9647d3727884567824 by=claude-author source=A:eq:monomargin@3bf398680ece348005cee018ad83bc5cf40f4671bc0e6c341b0bf437325b642e -->
+
+Re-readings at the widened passages:
+
+* `Margin212` (`A:eq:monomargin`): Re-read at the passage of lines 289–297 of
+  `02-model-assumptions.tex` (formerly lines 290–297): the added lines (line 289, 'Say that (2.7)
+  holds with margin `c > 0` if') do not change the reading: `Margin212` is (2.12) at a given
+  constant `c`, and `c > 0` is a separate hypothesis where a margin is assumed (as in
+  `rem_margin_slack` and `rem_generalrank`).
+
+<!-- def-review: Dissertation.PaperSpec.A.Margin212 2ad64300a1211b9647d3727884567824 by=claude-author source=A:eq:monomargin@93d5988c3689252f9d5fece5709d721eb8ab08c6b2ef6c2ef46c7da2598c2099 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.Margin212--claude-reviewer--2026-10-17T12_22_34Z.md`).
 <!-- def-review: Dissertation.PaperSpec.A.Margin212 2ad64300a1211b9647d3727884567824 by=claude-reviewer source=A:eq:monomargin@3bf398680ece348005cee018ad83bc5cf40f4671bc0e6c341b0bf437325b642e -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.Margin212--claude-auditor--2026-10-19T03_38_08Z.md`).
