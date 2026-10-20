@@ -17,6 +17,7 @@ import Dissertation.PaperSpec.A.Sec3Rem34
 import Dissertation.PaperSpec.A.Sec3Space
 import Dissertation.PaperSpec.A.Sec4Coeff
 import Dissertation.PaperSpec.A.AppA
+import Dissertation.PaperSpec.A.AppASteps
 import Dissertation.PaperSpec.A.Sec4
 import Dissertation.PaperSpec.A.Sec4Horizon
 import Dissertation.PaperSpec.A.Sec5
@@ -38,6 +39,7 @@ import Dissertation.PaperSpec.A.Sec3Uniqueness
 import Dissertation.PaperSpec.A.Sec4Estimates
 import Dissertation.PaperSpec.A.Sec4Frozen
 import Dissertation.PaperSpec.A.Sec4Contraction
+import Dissertation.PaperSpec.A.Sec4LocalMartingales
 
 /-!
 # The statements of the paper

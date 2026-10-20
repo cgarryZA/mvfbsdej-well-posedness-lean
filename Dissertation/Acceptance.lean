@@ -17,6 +17,7 @@ import Dissertation.Acceptance.A.Sec3Rem34Translation
 import Dissertation.Acceptance.A.Sec3Space
 import Dissertation.Acceptance.A.Sec4Coeff
 import Dissertation.Acceptance.A.AppA
+import Dissertation.Acceptance.A.AppASteps
 import Dissertation.Acceptance.A.Sec4
 import Dissertation.Acceptance.A.Sec4Horizon
 import Dissertation.Acceptance.A.Sec5
@@ -46,6 +47,8 @@ import Dissertation.Acceptance.A.Sec4Frozen
 import Dissertation.Acceptance.A.WitnessFrozen
 import Dissertation.Acceptance.A.Sec4Contraction
 import Dissertation.Acceptance.A.WitnessContraction
+import Dissertation.Acceptance.A.Sec4LocalMartingales
+import Dissertation.Acceptance.A.WitnessLocal
 
 /-!
 # Proofs of the statements of the paper

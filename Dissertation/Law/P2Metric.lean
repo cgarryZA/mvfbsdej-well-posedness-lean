@@ -13,8 +13,9 @@ symmetric and satisfies the triangle inequality, so it is a pseudometric on the 
 second moment. The type synonym `P2W E` of `P2 E` carries that pseudometric, its topology and the
 Borel σ-algebra of that topology. The synonym keeps these structures apart from the evaluation
 σ-algebra on `P2 E` (`Dissertation.Law.P2.instMeasurableSpace`): the two σ-algebras are compared
-through the identity map `P2.toP2W`, not identified by instance search. Separation, the vanishing
-of the distance forcing the two laws to agree, is not used, so `P2W E` is a pseudometric space.
+through the identity map `P2.toP2W`, not identified by instance search. The structure here is a
+pseudometric; separation, the vanishing of the distance forcing the two laws to agree, is the
+instance `Dissertation.Law.P2W.instT0Space` of `Dissertation/Law/P2Separation.lean`.
 
 ## Main definitions
 

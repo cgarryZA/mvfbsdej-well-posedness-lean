@@ -10,6 +10,7 @@ site_url = "https://cgarryza.github.io/mvfbsdej-well-posedness-lean/"
 lean_root = "."
 modules = [
   "Dissertation.PaperSpec.A.AppA",
+  "Dissertation.PaperSpec.A.AppASteps",
   "Dissertation.PaperSpec.A.Sec2",
   "Dissertation.PaperSpec.A.Sec2Basics",
   "Dissertation.PaperSpec.A.Sec2Measurability",
@@ -42,9 +43,11 @@ modules = [
   "Dissertation.PaperSpec.A.Sec4Estimates",
   "Dissertation.PaperSpec.A.Sec4Frozen",
   "Dissertation.PaperSpec.A.Sec4Contraction",
+  "Dissertation.PaperSpec.A.Sec4LocalMartingales",
   "Dissertation.PaperSpec.A.Setting",
   "Dissertation.PaperSpec.A.Sec5DealerActive",
   "Dissertation.Acceptance.A.AppA",
+  "Dissertation.Acceptance.A.AppASteps",
   "Dissertation.Acceptance.A.Dealer",
   "Dissertation.Acceptance.A.Sec2",
   "Dissertation.Acceptance.A.Sec2Basics",
@@ -87,6 +90,8 @@ modules = [
   "Dissertation.Acceptance.A.Sec3MarginContinuous",
   "Dissertation.Acceptance.A.Sec3Rem34Translation",
   "Dissertation.Acceptance.A.Sec5DealerActive",
+  "Dissertation.Acceptance.A.Sec4LocalMartingales",
+  "Dissertation.Acceptance.A.WitnessLocal",
 ]
 scope_roots = ["Dissertation", "LevyStochCalc"]
 spec_prefix = "Dissertation.PaperSpec"

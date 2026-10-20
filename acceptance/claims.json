@@ -2104,10 +2104,23 @@
    "title": "(P2(H),W2) inherits Polishness from H [Villani Ch. 6]; law map is 1-Lipschitz from L2(Omega;H)",
    "location": "paper/sections/09-appendix.tex:55",
    "source_sha256": "cdf7e5fd3a5753faf4d5aaea2d4e017db124558fd0461ec3b81dd52a3f8527cc",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "clauses": [],
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "clauses": [
+    {
+     "name": "the law map Θ ↦ Law(Θ) is 1-Lipschitz from L²(Ω; H) into (P₂(H), W₂): W₂(Law Θ, Law Θ')² ≤ 𝔼‖Θ − Θ'‖²_H, the synchronous coupling bound (2.8)",
+     "spec": "Dissertation.PaperSpec.A.eq_coupling",
+     "accept": "Dissertation.Acceptance.A.eq_coupling",
+     "witness": "Dissertation.Acceptance.A.eq_coupling_hypotheses"
+    },
+    {
+     "name": "H is Polish, and (P₂(H), W₂), W₂ of the Hilbert norm of H, is a Polish metric space: W₂ separates laws, and the space is complete and separable",
+     "spec": "Dissertation.PaperSpec.A.lemA1_polish",
+     "accept": "Dissertation.Acceptance.A.lemA1_polish",
+     "witness": "Dissertation.Acceptance.A.lemA1_polish_hypotheses"
+    }
+   ],
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
     "cdf7e5fd3a5753faf4d5aaea2d4e017db124558fd0461ec3b81dd52a3f8527cc"
@@ -2122,10 +2135,29 @@
    "title": "Fubini isometry L2([0,T]x Omega;H) = L2(0,T;L2(Omega;H)) and Pettis give a Borel version of t->Theta_t^- off a null set",
    "location": "paper/sections/09-appendix.tex:48",
    "source_sha256": "4683d66c9de5e151a16b21a1e6cbac952384cffefeb3e0e4b2eb720fb4a0b746",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "clauses": [],
+   "scope": "formal",
+   "scope_note": "the clauses read the sentence of the pinned line (lines 43–51) together with its input from the preceding sentence (lines 36–42), Θ⁻ ∈ L²([0, T] × Ω; H); the predictability of Θ⁻ asserted in that preceding sentence is not used by the passage and is not stated here",
+   "scope_reviewed": false,
+   "clauses": [
+    {
+     "name": "Θ⁻ = (X₋, Y₋, Z, U) is jointly strongly measurable on [0, T] × Ω and lies in L²([0, T] × Ω; H): 𝔼 ∫_0^T ‖Θ⁻_t‖²_H dt < ∞, H with its Hilbert norm",
+     "spec": "Dissertation.PaperSpec.A.lemA1_L2",
+     "accept": "Dissertation.Acceptance.A.lemA1_L2",
+     "witness": "Dissertation.Acceptance.A.lemA1_hypotheses"
+    },
+    {
+     "name": "the Fubini isometry L²([0, T] × Ω; H) ≅ L²(0, T; L²(Ω; H)), Φ(f)(t) = f(t, ·) in L²(Ω; H) for a.e. t ∈ [0, T]",
+     "spec": "Dissertation.PaperSpec.A.lemA1_fubini",
+     "accept": "Dissertation.Acceptance.A.lemA1_fubini",
+     "witness": "Dissertation.Acceptance.A.lemA1_fubini_hypotheses"
+    },
+    {
+     "name": "t ↦ Θ⁻_t ∈ L²(Ω; H) has a version F that is strongly measurable, takes values in a closed separable subspace and is Borel measurable, with F(t) = Θ⁻_t in L²(Ω; H) for a.e. t ∈ [0, T]",
+     "spec": "Dissertation.PaperSpec.A.lemA1_pettis",
+     "accept": "Dissertation.Acceptance.A.lemA1_pettis",
+     "witness": "Dissertation.Acceptance.A.lemA1_hypotheses"
+    }
+   ],
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
     "4683d66c9de5e151a16b21a1e6cbac952384cffefeb3e0e4b2eb720fb4a0b746"

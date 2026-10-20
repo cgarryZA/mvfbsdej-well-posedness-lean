@@ -2901,9 +2901,7 @@
     {
      "accept": "Dissertation.Acceptance.A.lem41_jump_times",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.lem41_jump_times"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -2913,16 +2911,14 @@
      "spec": "Dissertation.PaperSpec.A.lem41_jump_times",
      "spec_hash": "ed839d34f480cba17f1df52f488747a1",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.sec2_infinite_activity_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.lem41_M2_integrand",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.lem41_M2_integrand"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -2932,7 +2928,7 @@
      "spec": "Dissertation.PaperSpec.A.lem41_M2_integrand",
      "spec_hash": "ed839d34f480cba118f567d673033f15",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.lem_bpbsde_hypotheses",
      "witness_ok": true
     },
@@ -2961,7 +2957,7 @@
    "scope": "formal",
    "scope_note": "the clauses read the sentence of the pinned line (lines 148–152) and the paragraph on M² (lines 173–187); the first clause reads the sentence's first assertion, that membership in H²_N does not give the quadratic integrand of M² square moments, for ν ≠ 0, the degenerate case ν = 0, in which every marked integrand vanishes, being the one Remark 2.10 sets aside",
    "scope_reviewed": false,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -2997,9 +2993,7 @@
     {
      "accept": "Dissertation.Acceptance.A.sec45_proof_thm35",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.sec45_proof_thm35"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3009,7 +3003,7 @@
      "spec": "Dissertation.PaperSpec.A.sec45_proof_thm35",
      "spec_hash": "ed839d34f480cba1227f3637481e69e0",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
      "witness_ok": true
     },
@@ -3038,7 +3032,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -3439,26 +3433,121 @@
    "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_coupling",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the law map Θ ↦ Law(Θ) is 1-Lipschitz from L²(Ω; H) into (P₂(H), W₂): W₂(Law Θ, Law Θ')² ≤ 𝔼‖Θ − Θ'‖²_H, the synchronous coupling bound (2.8)",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_coupling",
+     "spec_hash": "ed839d34f480cba17af7c36ae6c33114",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.eq_coupling_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lemA1_polish",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lemA1_polish"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "H is Polish, and (P₂(H), W₂), W₂ of the Hilbert norm of H, is a Polish metric space: W₂ separates laws, and the space is complete and separable",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lemA1_polish",
+     "spec_hash": "ed839d34f480cba19bbef9c769d701cd",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lemA1_polish_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:lemA1:polish",
    "kind": "embedded-in-proof",
    "number": "proof of Lemma A.1, step 2",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.lemA1_L2",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lemA1_L2"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "Θ⁻ = (X₋, Y₋, Z, U) is jointly strongly measurable on [0, T] × Ω and lies in L²([0, T] × Ω; H): 𝔼 ∫_0^T ‖Θ⁻_t‖²_H dt < ∞, H with its Hilbert norm",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lemA1_L2",
+     "spec_hash": "ed839d34f480cba1a6657535c81c9ed1",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lemA1_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lemA1_fubini",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lemA1_fubini"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the Fubini isometry L²([0, T] × Ω; H) ≅ L²(0, T; L²(Ω; H)), Φ(f)(t) = f(t, ·) in L²(Ω; H) for a.e. t ∈ [0, T]",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lemA1_fubini",
+     "spec_hash": "ed839d34f480cba18bb7bf3a9a35bb91",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lemA1_fubini_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lemA1_pettis",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lemA1_pettis"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "t ↦ Θ⁻_t ∈ L²(Ω; H) has a version F that is strongly measurable, takes values in a closed separable subspace and is Borel measurable, with F(t) = Θ⁻_t in L²(Ω; H) for a.e. t ∈ [0, T]",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lemA1_pettis",
+     "spec_hash": "ed839d34f480cba176ccc2a6aaf99d7c",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lemA1_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:lemA1:pettis",
    "kind": "embedded-in-proof",
    "number": "proof of Lemma A.1, step 1",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "the clauses read the sentence of the pinned line (lines 43–51) together with its input from the preceding sentence (lines 36–42), Θ⁻ ∈ L²([0, T] × Ω; H); the predictability of Θ⁻ asserted in that preceding sentence is not used by the passage and is not stated here",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
@@ -4021,9 +4110,7 @@
     {
      "accept": "Dissertation.Acceptance.A.eq_frozenfwd",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.eq_frozenfwd"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4033,7 +4120,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_frozenfwd",
      "spec_hash": "ed839d34f480cba18303299f6df7eded",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.frozen_hypotheses",
      "witness_ok": true
     }
@@ -4045,7 +4132,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -4446,9 +4533,7 @@
     {
      "accept": "Dissertation.Acceptance.A.eq_coerc_blocks",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.eq_coerc_blocks"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4458,7 +4543,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_coerc_blocks",
      "spec_hash": "ed839d34f480cba17bd256e67c544535",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
      "witness_ok": true
     }
@@ -4477,9 +4562,7 @@
     {
      "accept": "Dissertation.Acceptance.A.eq_fwd",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.eq_fwd"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4489,7 +4572,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_fwd",
      "spec_hash": "ed839d34f480cba1e1eabbb5a5cd78ba",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
      "witness_ok": true
     }
@@ -4501,7 +4584,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -4566,9 +4649,7 @@
     {
      "accept": "Dissertation.Acceptance.A.eq_wgt",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.eq_wgt"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4578,7 +4659,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_wgt",
      "spec_hash": "ed839d34f480cba149f1ed71dc85d931",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
      "witness_ok": true
     }
@@ -4590,16 +4671,14 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
     {
      "accept": "Dissertation.Acceptance.A.eq_bwd",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.eq_bwd"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4609,7 +4688,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_bwd",
      "spec_hash": "ed839d34f480cba173f30a686b4b22f5",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
      "witness_ok": true
     }
@@ -4621,7 +4700,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [],
@@ -4638,11 +4717,11 @@
  "summary": {
   "A": {
    "definition: reviewed": 11,
-   "formal: accepted": 62,
-   "formal: proved, author-reviewed": 10,
+   "formal: accepted": 68,
+   "formal: proved, author-reviewed": 6,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
-   "out of scope: proof-step": 5
+   "out of scope: proof-step": 3
   }
  }
 }

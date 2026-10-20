@@ -1051,6 +1051,8 @@ and `‖Θ¹ − Θ²‖²_ℍ = 2`, and the chain reads `1 ≤ 3 ≤ 3 ≤ 3c �
 Verdict: faithful.
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_fwddiff ed839d34f480cba1898e8661a670d8b9 by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_fwddiff--claude-auditor--2026-10-20T04_27_24Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_fwddiff ed839d34f480cba1898e8661a670d8b9 by=claude-auditor -->
 
 ## (4.11), Step 3 of the proof of Lemma 4.2: `Dissertation.PaperSpec.A.eq_terdiff`
 
@@ -1179,6 +1181,8 @@ Witness: `Dissertation.Acceptance.A.frozen_pair_hypotheses`, as for (4.10). By h
 Verdict: faithful.
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_bwddiff ed839d34f480cba1d8920d62bd288ec6 by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_bwddiff--claude-auditor--2026-10-20T04_27_38Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bwddiff ed839d34f480cba1d8920d62bd288ec6 by=claude-auditor -->
 
 ## (4.13), Step 5 of the proof of Lemma 4.2: `Dissertation.PaperSpec.A.eq_contract`
 
@@ -1218,6 +1222,8 @@ Witness: `Dissertation.Acceptance.A.frozen_pair_hypotheses`, as for (4.10); by h
 Verdict: faithful.
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_contract ed839d34f480cba1410aaf91d78575ad by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_contract--claude-auditor--2026-10-20T04_27_45Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_contract ed839d34f480cba1410aaf91d78575ad by=claude-auditor -->
 
 ## Lemma 4.3: `Dissertation.PaperSpec.A.lem_pert`
 
@@ -1518,6 +1524,8 @@ Witness: `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`, the hypothese
 Verdict: faithful.
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_coerc_insert ed839d34f480cba19e2302a704da248e by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_coerc_insert--claude-auditor--2026-10-20T04_27_54Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_coerc_insert ed839d34f480cba19e2302a704da248e by=claude-auditor -->
 
 ## (4.22), the coercivity bound in Step 2 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_coerc`, `eq_coerc_blocks`
 
@@ -2835,6 +2843,134 @@ Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.lem
 <!-- spec-review: Dissertation.PaperSpec.A.lem_lawflow_invariant ed839d34f480cba184c9d1f8d6f2b814 by=claude-reviewer -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.lem_lawflow_invariant--claude-auditor--2026-10-19T03_38_36Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.lem_lawflow_invariant ed839d34f480cba184c9d1f8d6f2b814 by=claude-auditor -->
+
+## Lemma A.1, Step 1 of the proof, the Fubini isometry and the Pettis step: `Dissertation.PaperSpec.A.lemA1_L2`, `lemA1_fubini`, `lemA1_pettis`
+
+Manuscript (proof of Lemma `lem:lawflow`, Step 1, lines 36–51): "`Θ⁻` is therefore a predictable,
+hence jointly measurable, `H`-valued field with `𝔼 ∫_0^T ‖Θ⁻_t‖²_H dt < ∞`, that is,
+`Θ⁻ ∈ L²([0, T] × Ω; H)`. The Fubini isometry of [HNVW, Proposition 1.2.24],
+`L²([0, T] × Ω; H) ≅ L²(0, T; L²(Ω; H))`, supplies a strongly measurable `L²(Ω; H)`-valued
+representative of `t ↦ Θ⁻_t`; by the Pettis measurability theorem [HNVW, Theorem 1.1.6], that map
+takes values in a separable closed subspace of `L²(Ω; H)` off a Lebesgue-null set of times, and
+therefore admits a Borel version, agreeing with it for a.e. `t`." The claim is pinned at line 48,
+in the second sentence; the first sentence is its input.
+
+Propositions:
+
+* `lemA1_L2`: under `CadlagPredTuple ℱ P ν T X Y Z U` (the hypotheses of Lemma A.1, verbatim from
+  `lem_lawflow`), `(t, ω) ↦ toL2 (Θ⁻_t(ω))` is strongly measurable on `ℝ × Ω` and lies in
+  `L²(dt|_{[0, T]} ⊗ P; H)` (`MemLp … 2`).
+* `lemA1_fubini`: for every probability space `(Ω, P)`, every `ν` σ-finite on a countably
+  generated `E`, every `n, m, d` and `T`: a linear isometric equivalence
+  `Φ : L²(dt|_{[0, T]} ⊗ P; H) ≃ L²(dt|_{[0, T]}; L²(P; H))` with `Φ(f)(t) = f(t, ·)` `P`-a.e.,
+  for almost every `t ∈ [0, T]`.
+* `lemA1_pettis`: under the same hypotheses as `lemA1_L2`, there is `F : ℝ → L²(P; H)` which is
+  strongly measurable, has `F(t) ∈ V` for every `t` for some closed separable submodule `V`, is
+  measurable for the Borel σ-algebra of `L²(P; H)`, and satisfies, for almost every `t ∈ [0, T]`,
+  `Θ⁻_t ∈ L²(P; H)` and `F(t) = [Θ⁻_t]`.
+
+Readings:
+
+* `H` is the tuple space `ℝⁿ × ℝᵐ × ℝ^{m×d} × L²(ν; ℝᵐ)` with its Hilbert norm: the reviewed type
+  `TupleL2` of the four channels, into which the reviewed `toL2` maps a tuple. `Θ⁻_t(ω)` is
+  `tupleAt ν (leftLimProc X) (leftLimProc Y) Z U t ω`, as in `lem_lawflow`. The maximum norm of
+  `TupleH` gives the same measurability and the same square-integrable functions, but another
+  isometry, so the Hilbert norm is used in all three propositions.
+* "Jointly measurable": strongly measurable on `ℝ × Ω` for the product of the Borel σ-algebra and
+  `ℱ`, which for the separable `H` is the same as measurable. "`𝔼 ∫_0^T ‖Θ⁻_t‖² dt < ∞`, that is,
+  `Θ⁻ ∈ L²([0, T] × Ω; H)`": `MemLp … 2` for Lebesgue measure on `[0, T]` times `P`. The
+  predictability of `Θ⁻`, asserted in the same sentence, is not used by the Fubini step and is not
+  stated; the scope note records this.
+* The isometry: `L²([0, T] × Ω; H)` is `Lp H 2 ((volume.restrict [0, T]).prod P)` and
+  `L²(0, T; L²(Ω; H))` is `Lp (Lp H 2 P) 2 (volume.restrict [0, T])`; "≅" is a linear isometric
+  equivalence, and the section property `Φ(f)(t) = f(t, ·)` identifies it as the Fubini
+  identification of HNVW 1.2.24. It is stated for every probability space, with no countable
+  generation of `Ω`, as the paper's filtered space requires.
+* "Supplies a strongly measurable `L²(Ω; H)`-valued representative of `t ↦ Θ⁻_t`": a map `F`
+  with `F(t) = [Θ⁻_t]` for almost every `t`. HNVW's strong measurability for Lebesgue measure (an
+  almost-everywhere limit of simple functions) is implied by `StronglyMeasurable F` (an
+  everywhere limit).
+* "Takes values in a separable closed subspace of `L²(Ω; H)` off a Lebesgue-null set of times":
+  a closed separable submodule `V` with `F(t) ∈ V` for every `t`, which is stronger.
+* "Admits a Borel version, agreeing with it for a.e. `t`": `F` itself is measurable for the Borel
+  σ-algebra of `L²(Ω; H)` (written `borel _`, since `Lp` carries no σ-algebra instance) and equals
+  `[Θ⁻_t]` for almost every `t`. The proposition gives one map with the three properties, which is
+  what the passage ends with.
+* The cited results, HNVW Proposition 1.2.24 and Theorem 1.1.6, enter the passage through their
+  conclusions about these spaces and this map; the propositions state those conclusions, not the
+  general theorems.
+
+Proofs (for the reader): `Θ⁻ = Θ` `dt ⊗ dP`-almost everywhere, since càdlàg paths meet their left
+limits off countably many times, and `𝔼 ∫_0^T ‖Θ_t‖²_H dt` is the sum of the coordinate energies.
+The isometry is the section map `fubiniEquiv`, for an arbitrary σ-finite inner space: the
+section map is strongly measurable (`stronglyMeasurable_lp_of_section`) by induction over the
+measurable rectangles for indicators cut down to sets of finite measure, then for simple
+functions and their limits, so neither the separability of `L²(Ω; H)` nor the Pettis theorem is
+assumed. `F` is the section map of `Θ⁻`; its range is separable, and `V` is the closure of its
+span.
+
+Witnesses: `Dissertation.Acceptance.A.lemA1_hypotheses` for `lemA1_L2` and `lemA1_pettis`: on
+`Bool` with the uniform law and the full filtration, `n = m = d = 1`, `ν = δ₀` on `ℝ` and `T = 1`,
+the tuple `X = Y = ξ 1_{t ≥ 1/2}` with a fair sign `ξ`, `Z = U = 1_{(0, 1]}` satisfies
+`CadlagPredTuple`; the left limit of `X` at `1/2` (`0`) differs from its value (`1` at
+`ω = true`), so `Θ⁻ ≠ Θ` there, and `X_1(true) ≠ X_1(false)`.
+`Dissertation.Acceptance.A.lemA1_fubini_hypotheses` for `lemA1_fubini`: the uniform law on `Bool`
+is a probability measure, and `ν = δ₀` is σ-finite and nonzero on the countably generated `ℝ`.
+
+Verdict: faithful. `lemA1_fubini` holds for every probability space and every `T`; the printed
+claim is its instance at the paper's `(Ω, ℱ, P)` and horizon. `lemA1_pettis` asserts the subspace
+inclusion at every time, stronger than off a null set.
+
+<!-- spec-review: Dissertation.PaperSpec.A.lemA1_L2 ed839d34f480cba1a6657535c81c9ed1 by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.lemA1_fubini ed839d34f480cba18bb7bf3a9a35bb91 by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.lemA1_pettis ed839d34f480cba176ccc2a6aaf99d7c by=claude-author -->
+
+## Lemma A.1, Step 2 of the proof, the Polish space of laws: `Dissertation.PaperSpec.A.lemA1_polish`, and `eq_coupling`
+
+Manuscript (proof of Lemma `lem:lawflow`, Step 2, lines 53–56): "By the synchronous coupling bound
+(2.8), the law map `Θ ↦ Law(Θ)` is `1`-Lipschitz from `L²(Ω; H)` into `(P₂(H), W₂)`, which
+inherits Polishness from `H` [Villani, Ch. 6]." The claim is pinned at line 55.
+
+Propositions:
+
+* The first assertion is the clause `eq_coupling`, the proposition of (2.8) (reviewed with
+  Remark 2.6): for square-integrable random tuples `Θ, Θ'` on one probability space,
+  `w2H(Law Θ, Law Θ')² ≤ 𝔼(|δX|² + |δY|² + |δZ|²_F + ‖δU‖²_{L²(ν)}) = 𝔼‖Θ − Θ'‖²_H`. Its square
+  root is the `1`-Lipschitz bound `W₂(Law Θ, Law Θ') ≤ ‖Θ − Θ'‖_{L²(Ω; H)}`; `lawP2` depends only
+  on the class of `Θ` in `L²(Ω; H)`.
+* `lemA1_polish`: for `ν` σ-finite on a countably generated `E` and every `n, m, d`:
+  `PolishSpace (TupleH ν n m d)`; `dist μ μ' = 0 → μ = μ'` on `TupleP2WH ν n m d`;
+  `CompleteSpace`, `SeparableSpace` and `PolishSpace` for `TupleP2WH ν n m d`.
+
+Readings:
+
+* `(P₂(H), W₂)` is the reviewed `TupleP2WH ν n m d`: the laws of finite second moment on `H` with
+  `dist = w2H`, the 2-Wasserstein distance of the Hilbert norm (the `W₂` of §2), and the topology
+  of that distance.
+* "Polish": Mathlib's `PolishSpace` (second countable and completely metrizable) is weaker than
+  what Villani's theorem gives and what the paper uses, that `W₂` itself is a complete separable
+  metric. The proposition states both: `W₂` separates laws (the reviewed pseudometric is a
+  metric), the space is complete for the uniformity of `W₂` and separable, and it is Polish.
+* "Inherits Polishness from `H`": `H` is Polish (`PolishSpace (TupleH …)`; the product topology of
+  `TupleH` is that of the Hilbert norm). The proposition states the conclusion for the paper's
+  `H`, not an implication from an arbitrary Polish space.
+
+Proof (for the reader): `W₂` separates laws because a coupling of cost below `r³` gives
+`μ(B) ≤ ν(B^r) + r` for the open `r`-thickening, so the Lévy–Prokhorov distance vanishes; the
+space is complete because near-optimal couplings of a fast Cauchy sequence, chained by the
+Ionescu-Tulcea theorem, give random elements that are Cauchy in `L²`, whose limit has the
+`W₂`-limit as its law; separability is the quantiser argument of `P2Borel`; and `μ ↦ toL2 # μ` is
+an isometric bijection onto the 2-Wasserstein space of the Hilbert space. Villani's result is
+proved for this `H`, not cited.
+
+Witnesses: `Dissertation.Acceptance.A.eq_coupling_hypotheses` for the first clause (reviewed with
+Remark 2.6), and `Dissertation.Acceptance.A.lemA1_polish_hypotheses` for `lemA1_polish`: Lebesgue
+measure on `ℝ`, σ-finite of infinite mass on a countably generated space, the infinite-activity
+intensity of §2, for which `L²(ν; ℝᵐ)` and `H` are infinite-dimensional when `m ≥ 1`.
+
+Verdict: faithful. `lemA1_polish` is stronger than the topological reading of "Polish".
+
+<!-- spec-review: Dissertation.PaperSpec.A.lemA1_polish ed839d34f480cba19bbef9c769d701cd by=claude-author -->
 
 ## (4.2) and (4.3), the coefficient bounds: `Dissertation.PaperSpec.A.eq_coeffint`, `eq_termg`
 
