@@ -216,6 +216,116 @@ def eq_contract_half : Prop :=
             (fun k t ω j => Z₁ k t ω j - Z₂ k t ω j) (fun k t ω e => U₁ k t ω e - U₂ k t ω e)
             ^ (1 / 2 : ℝ)
 
+/-- **The chain before (4.23), at every time.** There are functions `K₁`, `K₂`, `K₃` of
+`(T, L, ‖G‖, c_G, α, β₁, β₂)` such that: in the standing setting, under the hypotheses of Lemma 4.3
+— `T > 0`, coefficients with (2.3) and Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and
+coupling matrix `G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak`
+with `X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` — for
+every `t ∈ [0, T]`,
+`𝔼 sup_{s ≤ t} |δX_s|²
+  ≤ C₁ (𝔼|δξ₀|² + 𝔼 ∫_0^t (|δb_s|² + |δσ_s|²_F + ‖δh_s‖²_{L²(ν)}) ds + P)
+  ≤ C₂ (𝔼|δξ₀|² + 𝔼 ∫_0^t (|δX_s|² + |δY_s|² + |δZ_s|²_F + ‖δU_s‖²_{L²(ν)}) ds + P)
+  ≤ C₃ (∫_0^t 𝔼 sup_{r ≤ s} |δX_r|² ds
+    + 𝔼 ∫_0^T (|δY_s|² + |δZ_s|²_F + ‖δU_s‖²_{L²(ν)}) ds + P)`,
+and `t ↦ 𝔼 sup_{s ≤ t} |δX_s|²` is nondecreasing and finite on `[0, T]`; here
+`C_i = K_i(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂)`, `δb_s`, `δσ_s` are the coefficient differences at
+`(Θᵏ_s, Law(Θᵏ_s))`, `δh_s = h(s, Θ¹⁻_s, ·, μ¹⁻_s) − h(s, Θ²⁻_s, ·, μ²⁻_s)` is the jump coefficient
+difference at the predictable tuples, read through the canonical representative `coeffJump`, `P`
+is the data size of (4.14) of the differences of the data, and the expectations are read in
+`[0, ∞]`. -/
+def eq_fwd_chain : Prop :=
+  ∃ K₁ K₂ K₃ : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ,
+  ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
+    [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
+    (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
+    (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
+    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P),
+    0 < n → 0 < m → 0 < d → ∀ T : ℝ, 0 < T →
+    ∀ (L α β₁ β₂ : ℝ) (G : Matrix (Fin m) (Fin n) ℝ) (C : Coeffs ν n m d),
+    JointBorel T C → Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C → G.rank = min m n →
+    Assumption25 (enlJoint 𝒢₀ D h𝒢₀) P T G α β₁ β₂ C →
+    ∀ lamLow lam : ℝ, 0 < lamLow → lamLow ≤ 1 → lamLow ≤ lam → lam ≤ 1 →
+    ∀ (ξ₁ ξ₂ : Ω → EuclideanSpace ℝ (Fin n)),
+    Measurable[enlJoint 𝒢₀ D h𝒢₀ 0] ξ₁ → Measurable[enlJoint 𝒢₀ D h𝒢₀ 0] ξ₂ →
+    ∀ (qb₁ qb₂ : Fin n → Ω → ℝ → ℝ) (qσ₁ qσ₂ : Fin n → ℝ → Ω → Fin d → ℝ)
+      (qh₁ qh₂ : Fin n → ℝ → Ω → E → ℝ) (qf₁ qf₂ : Fin m → Ω → ℝ → ℝ)
+      (qg₁ qg₂ : Fin m → Ω → ℝ),
+    PredForcing (enlJoint 𝒢₀ D h𝒢₀) P ν T qb₁ qσ₁ qh₁ qf₁ qg₁ →
+    PredForcing (enlJoint 𝒢₀ D h𝒢₀) P ν T qb₂ qσ₂ qh₂ qf₂ qg₂ →
+    ∀ (X₁ X₂ : Fin n → ℝ → Ω → ℝ) (Y₁ Y₂ : Fin m → ℝ → Ω → ℝ)
+      (Z₁ Z₂ : Fin m → ℝ → Ω → Fin d → ℝ) (U₁ U₂ : Fin m → ℝ → Ω → E → ℝ),
+    WeakForcedSolution D h𝒢₀ hind₀ T lam C ξ₁ qb₁ qσ₁ qh₁ qf₁ qg₁ X₁ Y₁ Z₁ U₁ →
+    WeakForcedSolution D h𝒢₀ hind₀ T lam C ξ₂ qb₂ qσ₂ qh₂ qf₂ qg₂ X₂ Y₂ Z₂ U₂ →
+    supSize P ν T (fun i t ω => X₁ i t ω - X₂ i t ω) (fun k t ω => Y₁ k t ω - Y₂ k t ω)
+        (fun k t ω j => Z₁ k t ω j - Z₂ k t ω j) (fun k t ω e => U₁ k t ω e - U₂ k t ω e) < ⊤ →
+    (∀ t ∈ Set.Icc (0 : ℝ) T,
+      ∫⁻ ω, (⨆ s ∈ Set.Icc (0 : ℝ) t, esq (fun i => X₁ i s ω - X₂ i s ω)) ∂P
+          ≤ ENNReal.ofReal (K₁ T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂)
+            * (∫⁻ ω, esq (fun i => ξ₁ ω i - ξ₂ ω i) ∂P
+              + (∑ i, Brownian.Ito.energy P t (fun ω s => driftProc P T C X₁ Y₁ Z₁ U₁ i ω s
+                  - driftProc P T C X₂ Y₂ Z₂ U₂ i ω s)
+                + ∑ i, ∑ j, Brownian.Ito.energy P t (fun ω s =>
+                  diffusionProc P T C X₁ Y₁ Z₁ U₁ i s ω j
+                    - diffusionProc P T C X₂ Y₂ Z₂ U₂ i s ω j)
+                + ∑ i, Poisson.Compensated.markedEnergy P ν t (fun ω s e =>
+                  jumpProc T (coeffJump P T C (leftLimProc X₁) (leftLimProc Y₁) Z₁ U₁) i s ω e
+                    - jumpProc T (coeffJump P T C (leftLimProc X₂) (leftLimProc Y₂) Z₂ U₂) i s ω e))
+              + dataSize P ν T (fun i ω => ξ₁ ω i - ξ₂ ω i) (fun i ω s => qb₁ i ω s - qb₂ i ω s)
+              (fun i s ω j => qσ₁ i s ω j - qσ₂ i s ω j)
+              (fun i s ω e => qh₁ i s ω e - qh₂ i s ω e) (fun k ω s => qf₁ k ω s - qf₂ k ω s)
+              (fun k ω => qg₁ k ω - qg₂ k ω))
+        ∧ ENNReal.ofReal (K₁ T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂)
+            * (∫⁻ ω, esq (fun i => ξ₁ ω i - ξ₂ ω i) ∂P
+              + (∑ i, Brownian.Ito.energy P t (fun ω s => driftProc P T C X₁ Y₁ Z₁ U₁ i ω s
+                  - driftProc P T C X₂ Y₂ Z₂ U₂ i ω s)
+                + ∑ i, ∑ j, Brownian.Ito.energy P t (fun ω s =>
+                  diffusionProc P T C X₁ Y₁ Z₁ U₁ i s ω j
+                    - diffusionProc P T C X₂ Y₂ Z₂ U₂ i s ω j)
+                + ∑ i, Poisson.Compensated.markedEnergy P ν t (fun ω s e =>
+                  jumpProc T (coeffJump P T C (leftLimProc X₁) (leftLimProc Y₁) Z₁ U₁) i s ω e
+                    - jumpProc T (coeffJump P T C (leftLimProc X₂) (leftLimProc Y₂) Z₂ U₂) i s ω e))
+              + dataSize P ν T (fun i ω => ξ₁ ω i - ξ₂ ω i) (fun i ω s => qb₁ i ω s - qb₂ i ω s)
+              (fun i s ω j => qσ₁ i s ω j - qσ₂ i s ω j)
+              (fun i s ω e => qh₁ i s ω e - qh₂ i s ω e) (fun k ω s => qf₁ k ω s - qf₂ k ω s)
+              (fun k ω => qg₁ k ω - qg₂ k ω))
+          ≤ ENNReal.ofReal (K₂ T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂)
+            * (∫⁻ ω, esq (fun i => ξ₁ ω i - ξ₂ ω i) ∂P
+              + (∑ i, Brownian.Ito.energy P t (fun ω s => X₁ i s ω - X₂ i s ω)
+                + ∑ k, Brownian.Ito.energy P t (fun ω s => Y₁ k s ω - Y₂ k s ω)
+                + ∑ k, ∑ j, Brownian.Ito.energy P t (fun ω s => Z₁ k s ω j - Z₂ k s ω j)
+                + ∑ k, Poisson.Compensated.markedEnergy P ν t
+                  (fun ω s e => U₁ k s ω e - U₂ k s ω e))
+              + dataSize P ν T (fun i ω => ξ₁ ω i - ξ₂ ω i) (fun i ω s => qb₁ i ω s - qb₂ i ω s)
+              (fun i s ω j => qσ₁ i s ω j - qσ₂ i s ω j)
+              (fun i s ω e => qh₁ i s ω e - qh₂ i s ω e) (fun k ω s => qf₁ k ω s - qf₂ k ω s)
+              (fun k ω => qg₁ k ω - qg₂ k ω))
+        ∧ ENNReal.ofReal (K₂ T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂)
+            * (∫⁻ ω, esq (fun i => ξ₁ ω i - ξ₂ ω i) ∂P
+              + (∑ i, Brownian.Ito.energy P t (fun ω s => X₁ i s ω - X₂ i s ω)
+                + ∑ k, Brownian.Ito.energy P t (fun ω s => Y₁ k s ω - Y₂ k s ω)
+                + ∑ k, ∑ j, Brownian.Ito.energy P t (fun ω s => Z₁ k s ω j - Z₂ k s ω j)
+                + ∑ k, Poisson.Compensated.markedEnergy P ν t
+                  (fun ω s e => U₁ k s ω e - U₂ k s ω e))
+              + dataSize P ν T (fun i ω => ξ₁ ω i - ξ₂ ω i) (fun i ω s => qb₁ i ω s - qb₂ i ω s)
+              (fun i s ω j => qσ₁ i s ω j - qσ₂ i s ω j)
+              (fun i s ω e => qh₁ i s ω e - qh₂ i s ω e) (fun k ω s => qf₁ k ω s - qf₂ k ω s)
+              (fun k ω => qg₁ k ω - qg₂ k ω))
+          ≤ ENNReal.ofReal (K₃ T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂)
+            * ((∫⁻ s in Set.Icc (0 : ℝ) t,
+                ∫⁻ ω, (⨆ r ∈ Set.Icc (0 : ℝ) s, esq (fun i => X₁ i r ω - X₂ i r ω)) ∂P)
+              + (∑ k, Brownian.Ito.energy P T (fun ω s => Y₁ k s ω - Y₂ k s ω)
+                + ∑ k, ∑ j, Brownian.Ito.energy P T (fun ω s => Z₁ k s ω j - Z₂ k s ω j)
+                + ∑ k, Poisson.Compensated.markedEnergy P ν T
+                  (fun ω s e => U₁ k s ω e - U₂ k s ω e))
+              + dataSize P ν T (fun i ω => ξ₁ ω i - ξ₂ ω i) (fun i ω s => qb₁ i ω s - qb₂ i ω s)
+              (fun i s ω j => qσ₁ i s ω j - qσ₂ i s ω j)
+              (fun i s ω e => qh₁ i s ω e - qh₂ i s ω e) (fun k ω s => qf₁ k ω s - qf₂ k ω s)
+              (fun k ω => qg₁ k ω - qg₂ k ω)))
+    ∧ MonotoneOn (fun t => ∫⁻ ω, (⨆ s ∈ Set.Icc (0 : ℝ) t,
+        esq (fun i => X₁ i s ω - X₂ i s ω)) ∂P) (Set.Icc (0 : ℝ) T)
+    ∧ ∀ t ∈ Set.Icc (0 : ℝ) T,
+      ∫⁻ ω, (⨆ s ∈ Set.Icc (0 : ℝ) t, esq (fun i => X₁ i s ω - X₂ i s ω)) ∂P < ⊤
+
 /-- **The first two links of the chain before (4.27).** There are functions `K₁`, `K₂` of
 `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that: in the standing setting, under the hypotheses of Lemma 4.3
 — `T > 0`, coefficients with (2.3) and Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and

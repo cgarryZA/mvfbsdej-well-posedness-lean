@@ -10,6 +10,7 @@ import Dissertation.Acceptance.A.Sec4Contraction
 import Dissertation.Acceptance.A.Sec4Estimates
 import Dissertation.WellPosedness.BrownianPoisson.EnergyAtWeighted
 import Dissertation.WellPosedness.Stability.RateEnergy
+import Dissertation.WellPosedness.Stability.ForwardSupAt
 
 /-!
 # Further steps of the proofs of Lemmas 4.1–4.3: proofs
@@ -134,6 +135,226 @@ theorem eq_contract_half : PaperSpec.A.eq_contract_half.{u, v, w} := by
     _ = _ := by
         rw [ENNReal.mul_rpow_of_nonneg _ _ (by norm_num),
           ENNReal.ofReal_rpow_of_nonneg (by norm_num) (by norm_num), hq]
+
+/-- The chain before (4.23), at every time. -/
+theorem eq_fwd_chain : PaperSpec.A.eq_fwd_chain.{u, v, w} := by
+  refine ⟨fun T _ _ _ _ _ _ => 2 * (3 * T + 12) + 3,
+    fun T L _ _ _ _ _ => (2 * (3 * T + 12) + 3) * (10 * (2 * L) ^ 2 + 1),
+    fun T L _ _ _ _ _ => 2 * ((2 * (3 * T + 12) + 3) * (10 * (2 * L) ^ 2 + 1)), ?_⟩
+  rintro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ _ _ _ T hT L α β₁ β₂ G C hJ h23 hG h25
+    lamLow lam hlow _ hlam hlam1 ξ₁ ξ₂ _ _ qb₁ qb₂ qσ₁ qσ₂ qh₁ qh₂ qf₁ qf₂ qg₁ qg₂ _ _
+    X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ ⟨⟨γ₁, h₁⟩, hXl₁, hYl₁⟩ ⟨⟨γ₂, h₂⟩, hXl₂, hYl₂⟩ hS
+  obtain ⟨X₁', X₂', Y₁', Y₂', hXe, hYe, hD⟩ := h₁.exists_pairDiff h₂ hT.le
+    h23.interior.diagonalLipschitz_two_mul
+    (lipTerminal_iff_terminalLipschitz.mp h23.terminal).two_mul h25.diagonalMonotone
+    h25.terminalMonotone
+  have 𝒲 := crossWitnessEnl D h𝒢₀ hind₀
+  have hℱ0 := hF0_enlJoint D h𝒢₀
+  have hnull : ∀ s : Set Ω, MeasurableSet s → P s = 0 → MeasurableSet[enlJoint 𝒢₀ D h𝒢₀ 0] s :=
+    fun _ hs h0 => measurableSet_enlJoint_of_null D h𝒢₀ hs h0
+  have hlam0 : lam ≠ 0 := (hlow.trans_le hlam).ne'
+  have hl : lam ^ 2 ≤ 1 := by nlinarith
+  have hbm := hD.measurable_b hlam0
+  have hσm := hD.measurable_σ hlam0
+  have hhm := hD.measurable_h hlam0
+  -- the jump coefficient at the predictable tuples
+  have hj := h₁.ae_forcedJump_sub_leftLim_eq h₂ hT.le (jointBorel_iff.mp hJ).1.toCoeffBorel
+    hXl₁ hYl₁ hXl₂ hYl₂
+  have hjump : ∀ t ∈ Set.Icc (0 : ℝ) T, ∀ i,
+      Poisson.Compensated.markedEnergy P ν t (fun ω s e =>
+        jumpProc T (coeffJump P T C (leftLimProc X₁) (leftLimProc Y₁) Z₁ U₁) i s ω e
+          - jumpProc T (coeffJump P T C (leftLimProc X₂) (leftLimProc Y₂) Z₂ U₂) i s ω e)
+      = Poisson.Compensated.markedEnergy P ν t
+          (fun ω s e => jumpProc T γ₁ i s ω e - jumpProc T γ₂ i s ω e) := fun t ht i =>
+    markedEnergy_congr_ae_of_le ht.2 (by
+      filter_upwards [hj] with q hq
+      exact mul_left_cancel₀ hlam0 (add_right_cancel (hq i)))
+  -- the extensions agree with the solutions on `[0, T]`
+  have eX : ∀ i, ∀ s ∈ Set.Icc (0 : ℝ) T, ∀ ω, X₁' i s ω - X₂' i s ω = X₁ i s ω - X₂ i s ω :=
+    fun i s hs ω => by rw [congrFun (hXe i s hs).1 ω, congrFun (hXe i s hs).2 ω]
+  have eY : ∀ k, ∀ s ∈ Set.Icc (0 : ℝ) T, ∀ ω, Y₁' k s ω - Y₂' k s ω = Y₁ k s ω - Y₂ k s ω :=
+    fun k s hs ω => by rw [congrFun (hYe k s hs).1 ω, congrFun (hYe k s hs).2 ω]
+  have hsupX : ∀ t ∈ Set.Icc (0 : ℝ) T,
+      ∫⁻ ω, (⨆ s ∈ Set.Icc (0 : ℝ) t, esq (fun i => X₁ i s ω - X₂ i s ω)) ∂P
+        = ∫⁻ ω, (⨆ s ∈ Set.Icc (0 : ℝ) t, esq (fun i => X₁' i s ω - X₂' i s ω)) ∂P :=
+    fun t ht => lintegral_congr fun ω => iSup_congr fun s => iSup_congr fun hs => by
+      simp only [eX _ s (Set.Icc_subset_Icc le_rfl ht.2 hs) ω]
+  have heX : ∀ t ∈ Set.Icc (0 : ℝ) T, ∀ i,
+      Brownian.Ito.energy P t (fun ω s => X₁' i s ω - X₂' i s ω)
+        = Brownian.Ito.energy P t (fun ω s => X₁ i s ω - X₂ i s ω) := fun t ht i =>
+    energy_eq_of_eqOn fun s hs => funext fun ω => eX i s (Set.Icc_subset_Icc le_rfl ht.2 hs) ω
+  have heY : ∀ t ∈ Set.Icc (0 : ℝ) T, ∀ k,
+      Brownian.Ito.energy P t (fun ω s => Y₁' k s ω - Y₂' k s ω)
+        = Brownian.Ito.energy P t (fun ω s => Y₁ k s ω - Y₂ k s ω) := fun t ht k =>
+    energy_eq_of_eqOn fun s hs => funext fun ω => eY k s (Set.Icc_subset_Icc le_rfl ht.2 hs) ω
+  -- the data size
+  have hP := PairDiff.dataSize_eq_add P ν T (fun i ω => ξ₁ ω i - ξ₂ ω i)
+    (fun i ω s => qb₁ i ω s - qb₂ i ω s) (fun i s ω j => qσ₁ i s ω j - qσ₂ i s ω j)
+    (fun i s ω e => qh₁ i s ω e - qh₂ i s ω e) (fun k ω s => qf₁ k ω s - qf₂ k ω s)
+    (fun k ω => qg₁ k ω - qg₂ k ω)
+  set dS := dataSize P ν T (fun i ω => ξ₁ ω i - ξ₂ ω i) (fun i ω s => qb₁ i ω s - qb₂ i ω s)
+    (fun i s ω j => qσ₁ i s ω j - qσ₂ i s ω j) (fun i s ω e => qh₁ i s ω e - qh₂ i s ω e)
+    (fun k ω s => qf₁ k ω s - qf₂ k ω s) (fun k ω => qg₁ k ω - qg₂ k ω) with hdS
+  set a := ∫⁻ ω, esq (fun i => ξ₁ ω i - ξ₂ ω i) ∂P with ha
+  have ha_le : a ≤ dS := by
+    rw [hP]
+    exact le_self_add.trans le_self_add
+  have hQ_le : ∀ t ∈ Set.Icc (0 : ℝ) T,
+      ∑ i, Brownian.Ito.energy P t (fun ω s => qb₁ i ω s - qb₂ i ω s)
+        + ∑ i, ∑ j, Brownian.Ito.energy P t (fun ω s => qσ₁ i s ω j - qσ₂ i s ω j)
+        + ∑ i, Poisson.Compensated.markedEnergy P ν t
+          (fun ω s e => qh₁ i s ω e - qh₂ i s ω e) ≤ dS := fun t ht => by
+    have hmono : ∀ H : Ω → ℝ → ℝ, Brownian.Ito.energy P t H ≤ Brownian.Ito.energy P T H :=
+      fun H => lintegral_mono fun _ => lintegral_mono_set (Set.Icc_subset_Icc le_rfl ht.2)
+    have hmono' : ∀ H : Ω → ℝ → E → ℝ, Poisson.Compensated.markedEnergy P ν t H
+        ≤ Poisson.Compensated.markedEnergy P ν T H :=
+      fun H => lintegral_mono fun _ => lintegral_mono_set (Set.Icc_subset_Icc le_rfl ht.2)
+    rw [hP]
+    refine le_trans ?_ (le_self_add.trans le_add_self)
+    gcongr with i _ i _ j _ i _
+    · exact hmono _
+    · exact hmono _
+    · exact hmono' _
+  -- the supremum at `T` is finite
+  have hfin : ∫⁻ ω, (⨆ s ∈ Set.Icc (0 : ℝ) T, esq (fun i => X₁ i s ω - X₂ i s ω)) ∂P < ⊤ := by
+    refine lt_of_le_of_lt ?_ hS
+    unfold supSize
+    exact le_self_add.trans (le_self_add.trans le_self_add)
+  have hsup_mono : MonotoneOn (fun t => ∫⁻ ω, (⨆ s ∈ Set.Icc (0 : ℝ) t,
+      esq (fun i => X₁ i s ω - X₂ i s ω)) ∂P) (Set.Icc (0 : ℝ) T) :=
+    fun t₁ _ t₂ _ h12 => lintegral_mono fun ω =>
+      biSup_mono fun s hs => ⟨hs.1, hs.2.trans h12⟩
+  refine ⟨fun t ht => ⟨?_, ?_, ?_⟩, hsup_mono, fun t ht =>
+    (hsup_mono ht ⟨hT.le, le_rfl⟩ ht.2).trans_lt hfin⟩
+  -- the BDG link
+  · rw [hsupX t ht]
+    have hS1 := lintegral_biSup_esq_le (P := P) ht.1
+      (fun i s => ((hD.fwd i).X_adapted s).mono ((enlJoint 𝒢₀ D h𝒢₀).le s) le_rfl)
+      fun i => (hD.fwd i).X_rightCont
+    have hSi := fun i => (hD.fwd i).lintegral_biSup_sq_le_at 𝒲 hℱ0 hnull ht
+    have hR := hD.realisedEnergy_le_at hbm hσm hhm hl t
+    have hesq : ∑ i, ∫⁻ ω, (‖ξ₁ ω i - ξ₂ ω i‖₊ : ℝ≥0∞) ^ 2 ∂P = a := by
+      rw [ha]
+      unfold esq
+      exact (lintegral_finsetSum' _ fun i _ =>
+        ((hD.fwd i).ξ₀_sq.aestronglyMeasurable.aemeasurable.nnnorm.coe_nnreal_ennreal).pow_const
+          2).symm
+    refine hS1.trans ((Finset.sum_le_sum fun i _ => hSi i).trans ?_)
+    simp only [Finset.sum_add_distrib, ← Finset.mul_sum]
+    rw [hesq]
+    simp only [hjump t ht]
+    set Rb := ∑ i, Brownian.Ito.energy P t (fun ω s => lam * (driftProc P T C X₁ Y₁ Z₁ U₁ i ω s
+      - driftProc P T C X₂ Y₂ Z₂ U₂ i ω s) + (qb₁ i ω s - qb₂ i ω s)) with hRb
+    set Rσ := ∑ i, ∑ j, Brownian.Ito.energy P t (fun ω s => lam
+      * (diffusionProc P T C X₁ Y₁ Z₁ U₁ i s ω j - diffusionProc P T C X₂ Y₂ Z₂ U₂ i s ω j)
+        + (qσ₁ i s ω j - qσ₂ i s ω j)) with hRσ
+    set Rh := ∑ i, Poisson.Compensated.markedEnergy P ν t (fun ω s e => lam
+      * (jumpProc T γ₁ i s ω e - jumpProc T γ₂ i s ω e) + (qh₁ i s ω e - qh₂ i s ω e)) with hRh
+    set B := ∑ i, Brownian.Ito.energy P t (fun ω s => driftProc P T C X₁ Y₁ Z₁ U₁ i ω s
+        - driftProc P T C X₂ Y₂ Z₂ U₂ i ω s)
+      + ∑ i, ∑ j, Brownian.Ito.energy P t (fun ω s => diffusionProc P T C X₁ Y₁ Z₁ U₁ i s ω j
+        - diffusionProc P T C X₂ Y₂ Z₂ U₂ i s ω j)
+      + ∑ i, Poisson.Compensated.markedEnergy P ν t
+        (fun ω s e => jumpProc T γ₁ i s ω e - jumpProc T γ₂ i s ω e) with hB
+    set Q := ∑ i, Brownian.Ito.energy P t (fun ω s => qb₁ i ω s - qb₂ i ω s)
+      + ∑ i, ∑ j, Brownian.Ito.energy P t (fun ω s => qσ₁ i s ω j - qσ₂ i s ω j)
+      + ∑ i, Poisson.Compensated.markedEnergy P ν t
+        (fun ω s e => qh₁ i s ω e - qh₂ i s ω e) with hQ
+    have hR' : Rb + Rσ + Rh ≤ 2 * B + 2 * dS :=
+      hR.trans (by gcongr; exact hQ_le t ht)
+    have htT : ENNReal.ofReal t ≤ ENNReal.ofReal T := ENNReal.ofReal_le_ofReal ht.2
+    have hK₁ : ENNReal.ofReal (2 * (3 * T + 12) + 3) = 2 * (3 * ENNReal.ofReal T + 12) + 3 := by
+      rw [ENNReal.ofReal_add (by positivity) (by norm_num), ENNReal.ofReal_mul (by norm_num),
+        ENNReal.ofReal_add (by positivity) (by norm_num), ENNReal.ofReal_mul (by norm_num)]
+      simp only [ENNReal.ofReal_ofNat]
+    rw [hK₁]
+    clear_value Rb Rσ Rh B Q dS a
+    calc 3 * a + 3 * (ENNReal.ofReal t * Rb) + 12 * (Rσ + Rh)
+        ≤ 3 * a + 3 * (ENNReal.ofReal T * Rb) + 12 * (Rσ + Rh) := by gcongr
+      _ ≤ 3 * a + (3 * ENNReal.ofReal T + 12) * (Rb + Rσ + Rh) := by
+          have e : 3 * a + (3 * ENNReal.ofReal T + 12) * (Rb + Rσ + Rh)
+              = 3 * a + 3 * (ENNReal.ofReal T * Rb) + 12 * (Rσ + Rh)
+                + (3 * ENNReal.ofReal T * (Rσ + Rh) + 12 * Rb) := by ring
+          rw [e]
+          exact le_self_add
+      _ ≤ 3 * a + (3 * ENNReal.ofReal T + 12) * (2 * B + 2 * dS) := by gcongr
+      _ ≤ (2 * (3 * ENNReal.ofReal T + 12) + 3) * (a + B + dS) := by
+          have e : (2 * (3 * ENNReal.ofReal T + 12) + 3) * (a + B + dS)
+              = 3 * a + (3 * ENNReal.ofReal T + 12) * (2 * B + 2 * dS)
+                + (2 * (3 * ENNReal.ofReal T + 12) * a + 3 * B + 3 * dS) := by ring
+          rw [e]
+          exact le_self_add
+  -- the Lipschitz link
+  · have hc := hD.coeffEnergy_le_at hbm hσm hhm hT.le ht
+    simp only [heX t ht, heY t ht] at hc
+    simp only [hjump t ht]
+    set B := ∑ i, Brownian.Ito.energy P t (fun ω s => driftProc P T C X₁ Y₁ Z₁ U₁ i ω s
+        - driftProc P T C X₂ Y₂ Z₂ U₂ i ω s)
+      + ∑ i, ∑ j, Brownian.Ito.energy P t (fun ω s => diffusionProc P T C X₁ Y₁ Z₁ U₁ i s ω j
+        - diffusionProc P T C X₂ Y₂ Z₂ U₂ i s ω j)
+      + ∑ i, Poisson.Compensated.markedEnergy P ν t
+        (fun ω s e => jumpProc T γ₁ i s ω e - jumpProc T γ₂ i s ω e) with hB
+    set x := ∑ i, Brownian.Ito.energy P t (fun ω s => X₁ i s ω - X₂ i s ω) with hx
+    set y := ∑ k, Brownian.Ito.energy P t (fun ω s => Y₁ k s ω - Y₂ k s ω) with hy
+    set z := ∑ k, ∑ j, Brownian.Ito.energy P t (fun ω s => Z₁ k s ω j - Z₂ k s ω j) with hz
+    set u := ∑ k, Poisson.Compensated.markedEnergy P ν t
+      (fun ω s e => U₁ k s ω e - U₂ k s ω e) with hu
+    set k := ENNReal.ofReal (10 * (2 * L) ^ 2) with hk
+    set K₁ := ENNReal.ofReal (2 * (3 * T + 12) + 3) with hK₁
+    have hK₂ : ENNReal.ofReal ((2 * (3 * T + 12) + 3) * (10 * (2 * L) ^ 2 + 1))
+        = K₁ * (k + 1) := by
+      rw [ENNReal.ofReal_mul (by positivity), ENNReal.ofReal_add (by positivity) zero_le_one,
+        ENNReal.ofReal_one]
+    rw [hK₂, mul_assoc]
+    clear_value B x y z u k K₁ dS a
+    gcongr K₁ * ?_
+    have e : (k + 1) * (a + (x + y + z + u) + dS)
+        = a + k * (x + (y + z + u)) + dS + (k * a + (x + y + z + u) + k * dS) := by ring
+    rw [e]
+    exact le_trans (by gcongr) le_self_add
+  -- the integrated supremum
+  · have hmono : ∀ H : Ω → ℝ → ℝ, Brownian.Ito.energy P t H ≤ Brownian.Ito.energy P T H :=
+      fun H => lintegral_mono fun _ => lintegral_mono_set (Set.Icc_subset_Icc le_rfl ht.2)
+    have hmono' : ∀ H : Ω → ℝ → E → ℝ, Poisson.Compensated.markedEnergy P ν t H
+        ≤ Poisson.Compensated.markedEnergy P ν T H :=
+      fun H => lintegral_mono fun _ => lintegral_mono_set (Set.Icc_subset_Icc le_rfl ht.2)
+    have hI := hD.energy_le_lintegral_biSup hT.le t
+    simp only [heX t ht] at hI
+    have eI : ∫⁻ s in Set.Icc (0 : ℝ) t,
+          ∫⁻ ω, (⨆ r ∈ Set.Icc (0 : ℝ) s, esq (fun i => X₁' i r ω - X₂' i r ω)) ∂P
+        = ∫⁻ s in Set.Icc (0 : ℝ) t,
+          ∫⁻ ω, (⨆ r ∈ Set.Icc (0 : ℝ) s, esq (fun i => X₁ i r ω - X₂ i r ω)) ∂P :=
+      setLIntegral_congr_fun measurableSet_Icc fun s hs => lintegral_congr fun ω =>
+        iSup_congr fun r => iSup_congr fun hr => by
+          simp only [eX _ r ⟨hr.1, hr.2.trans (hs.2.trans ht.2)⟩ ω]
+    rw [eI] at hI
+    have hy : ∑ k, Brownian.Ito.energy P t (fun ω s => Y₁ k s ω - Y₂ k s ω)
+        ≤ ∑ k, Brownian.Ito.energy P T (fun ω s => Y₁ k s ω - Y₂ k s ω) :=
+      Finset.sum_le_sum fun k _ => hmono _
+    have hz : ∑ k, ∑ j, Brownian.Ito.energy P t (fun ω s => Z₁ k s ω j - Z₂ k s ω j)
+        ≤ ∑ k, ∑ j, Brownian.Ito.energy P T (fun ω s => Z₁ k s ω j - Z₂ k s ω j) :=
+      Finset.sum_le_sum fun k _ => Finset.sum_le_sum fun j _ => hmono _
+    have hu : ∑ k, Poisson.Compensated.markedEnergy P ν t
+          (fun ω s e => U₁ k s ω e - U₂ k s ω e)
+        ≤ ∑ k, Poisson.Compensated.markedEnergy P ν T
+          (fun ω s e => U₁ k s ω e - U₂ k s ω e) :=
+      Finset.sum_le_sum fun k _ => hmono' _
+    set K₂ := ENNReal.ofReal ((2 * (3 * T + 12) + 3) * (10 * (2 * L) ^ 2 + 1)) with hK₂
+    have hK₃ : ENNReal.ofReal (2 * ((2 * (3 * T + 12) + 3) * (10 * (2 * L) ^ 2 + 1)))
+        = 2 * K₂ := by
+      rw [ENNReal.ofReal_mul (by norm_num), ENNReal.ofReal_ofNat]
+    rw [hK₃, mul_comm 2 K₂, mul_assoc]
+    gcongr K₂ * ?_
+    have key : ∀ {a x y z u dS I y' z' u' : ℝ≥0∞}, a ≤ dS → x ≤ I → y ≤ y' → z ≤ z' →
+        u ≤ u' → a + (x + y + z + u) + dS ≤ 2 * (I + (y' + z' + u') + dS) := by
+      intro a x y z u dS I y' z' u' ha hx hy hz hu
+      calc a + (x + y + z + u) + dS ≤ dS + (I + (y' + z' + u')) + dS := by
+            have e : x + y + z + u = x + (y + z + u) := by ring
+            rw [e]
+            gcongr
+        _ ≤ dS + (I + (y' + z' + u')) + dS + (I + (y' + z' + u')) := le_self_add
+        _ = 2 * (I + (y' + z' + u') + dS) := by ring
+    exact key ha_le hI hy hz hu
 
 /-- The first two links of the chain before (4.27). -/
 theorem eq_bwd_chain : PaperSpec.A.eq_bwd_chain.{u, v, w} := by

@@ -90,6 +90,27 @@ theorem markedEnergy_indicator_Icc (t : ℝ) (H : Ω → ℝ → E → ℝ) :
   lintegral_congr fun ω => setLIntegral_congr_fun measurableSet_Icc fun s hs => by
     simp only [Set.indicator_of_mem hs]
 
+omit [IsProbabilityMeasure P] [SigmaFinite ν] in
+/-- **The marked energy on an earlier window depends only on the class of the integrand.** Two
+integrands agreeing almost everywhere for the marked energy measure on `Ω × [0, T] × E` have the
+same marked energy on `[0, t]` for every `t ≤ T`. -/
+theorem markedEnergy_congr_ae_of_le [SFinite ν] {t T : ℝ} (htT : t ≤ T)
+    {φ₁ φ₂ : Ω → ℝ → E → ℝ}
+    (h : ∀ᵐ q ∂(Poisson.Compensated.markedEnergyMeasure P ν T),
+      φ₁ q.1 q.2.1 q.2.2 = φ₂ q.1 q.2.1 q.2.2) :
+    Poisson.Compensated.markedEnergy P ν t φ₁ = Poisson.Compensated.markedEnergy P ν t φ₂ := by
+  rw [Poisson.Compensated.markedEnergyMeasure] at h
+  unfold Poisson.Compensated.markedEnergy
+  refine lintegral_congr_ae ?_
+  filter_upwards [Measure.ae_ae_of_ae_prod h] with ω hω
+  have hs := ae_restrict_of_ae_restrict_of_subset (Set.Icc_subset_Icc le_rfl htT)
+    (Measure.ae_ae_of_ae_prod hω)
+  refine lintegral_congr_ae ?_
+  filter_upwards [hs] with s hs
+  refine lintegral_congr_ae ?_
+  filter_upwards [hs] with e he
+  rw [he]
+
 namespace LinearFSDEJ
 
 variable {D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν}
@@ -100,10 +121,9 @@ variable {D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν}
   {γ : ℝ → Ω → E → ℝ}
 
 /-- **The forward equation up to an intermediate time.** A solution of the linear forward
-equation on `[0, T]` solves, on `[0, t]` for `0 < t ≤ T`, the linear forward equation whose
+equation on `[0, T]` solves, on `[0, t]` for `t ≤ T`, the linear forward equation whose
 integrands are those of the original restricted to `[0, t]`. -/
-theorem truncate (h : LinearFSDEJ D ℱ hℱW hℱN T ξ₀ b X σ γ) {t : ℝ} (ht : 0 < t)
-    (htT : t ≤ T) :
+theorem truncate (h : LinearFSDEJ D ℱ hℱW hℱN T ξ₀ b X σ γ) {t : ℝ} (htT : t ≤ T) :
     LinearFSDEJ D ℱ hℱW hℱN t ξ₀ (fun ω s => (Set.Icc (0 : ℝ) t).indicator (fun _ => b ω s) s) X
       (fun s ω j => (Set.Icc (0 : ℝ) t).indicator (fun _ => σ s ω j) s)
       (fun s ω e => (Set.Icc (0 : ℝ) t).indicator (fun _ => γ s ω e) s) := by
@@ -211,7 +231,7 @@ theorem lintegral_biSup_sq_le_at (h : LinearFSDEJ D ℱ hℱW hℱN T ξ₀ b X 
     rw [e, h0]
     refine le_trans ?_ (le_self_add.trans le_self_add)
     exact le_mul_of_one_le_left' (by norm_num)
-  · have hB := ((h.truncate hpos ht.2).linearBSDEJ hpos.le).lintegral_biSup_sq_le 𝒲 hℱ0 hnull
+  · have hB := ((h.truncate ht.2).linearBSDEJ hpos.le).lintegral_biSup_sq_le 𝒲 hℱ0 hnull
       hpos
     have eb : Brownian.Ito.energy P t
         (fun ω s => -(Set.Icc (0 : ℝ) t).indicator (fun _ => b ω s) s)
@@ -275,6 +295,73 @@ theorem measurable_h (hD : PairDiff D ℱ hℱW hℱN T lam K KT α β₁ β₂ 
   field_simp
   ring
 
+/-- **The energies of the realised integrands on `[0, t]`.** For the difference system with
+jointly measurable coefficient differences and `λ² ≤ 1`,
+
+`𝔼 ∫_0^t (|λ δb + q^b|² + |λ δσ + q^σ|²_F + ‖λ δh + q^h‖²)
+  ≤ 2 𝔼 ∫_0^t (|δb|² + |δσ|²_F + ‖δh‖²) + 2 𝔼 ∫_0^t (|q^b|² + |q^σ|²_F + ‖q^h‖²)`. -/
+theorem realisedEnergy_le_at (hD : PairDiff D ℱ hℱW hℱN T lam K KT α β₁ β₂ G ξ₀ X Y Z U b σ h f g
+    qb qσ qh qf qg) (hbm : ∀ i, Measurable (Function.uncurry (b i)))
+    (hσm : ∀ i j, Measurable (Function.uncurry fun ω s => σ i s ω j))
+    (hhm : ∀ i, Measurable fun p : Ω × ℝ × E => h i p.2.1 p.1 p.2.2) (hl : lam ^ 2 ≤ 1)
+    (t : ℝ) :
+    ∑ i, Brownian.Ito.energy P t (fun ω s => lam * b i ω s + qb i ω s)
+        + ∑ i, ∑ j, Brownian.Ito.energy P t (fun ω s => lam * σ i s ω j + qσ i s ω j)
+        + ∑ i, Poisson.Compensated.markedEnergy P ν t
+          (fun ω s e => lam * h i s ω e + qh i s ω e)
+      ≤ 2 * (∑ i, Brownian.Ito.energy P t (b i)
+          + ∑ i, ∑ j, Brownian.Ito.energy P t (fun ω s => σ i s ω j)
+          + ∑ i, Poisson.Compensated.markedEnergy P ν t (fun ω s e => h i s ω e))
+        + 2 * (∑ i, Brownian.Ito.energy P t (qb i)
+          + ∑ i, ∑ j, Brownian.Ito.energy P t (fun ω s => qσ i s ω j)
+          + ∑ i, Poisson.Compensated.markedEnergy P ν t (fun ω s e => qh i s ω e)) := by
+  have eR := lintegral_sampleEnergy_add (P := P) (ν := ν)
+    (x := fun i ω s => lam * b i ω s + qb i ω s)
+    (z := fun i j ω s => lam * σ i s ω j + qσ i s ω j)
+    (u := fun i ω s e => lam * h i s ω e + qh i s ω e) (fun i => (hD.fwd i).b_meas)
+    (fun i j => (hD.fwd i).σ_meas j) (fun i => (hD.fwd i).γ_meas) t
+  have eB := lintegral_sampleEnergy_add (P := P) (ν := ν) (x := b)
+    (z := fun i j ω s => σ i s ω j) (u := fun i ω s e => h i s ω e) hbm hσm hhm t
+  have eQ := lintegral_sampleEnergy_add (P := P) (ν := ν) (x := qb)
+    (z := fun i j ω s => qσ i s ω j) (u := fun i ω s e => qh i s ω e) hD.qb_meas
+    hD.qσ_meas hD.qh_meas t
+  have hBm := measurable_sampleEnergy_add (P := P) (ν := ν) (x := b)
+    (z := fun i j ω s => σ i s ω j) (u := fun i ω s e => h i s ω e) hbm hσm hhm
+  have hQm := measurable_sampleEnergy_add (P := P) (ν := ν) (x := qb)
+    (z := fun i j ω s => qσ i s ω j) (u := fun i ω s e => qh i s ω e) hD.qb_meas
+    hD.qσ_meas hD.qh_meas
+  have hpt : ∀ s, sampleEnergy P (fun i ω s => lam * b i ω s + qb i ω s) s
+        + ∑ i, sampleEnergy P (fun j ω s => lam * σ i s ω j + qσ i s ω j) s
+        + markedSampleEnergy P ν (fun i ω s e => lam * h i s ω e + qh i s ω e) s
+      ≤ 2 * (sampleEnergy P b s + ∑ i, sampleEnergy P (fun j ω s => σ i s ω j) s
+          + markedSampleEnergy P ν (fun i ω s e => h i s ω e) s)
+        + 2 * (sampleEnergy P qb s + ∑ i, sampleEnergy P (fun j ω s => qσ i s ω j) s
+          + markedSampleEnergy P ν (fun i ω s e => qh i s ω e) s) := fun s => by
+    have hb := sampleEnergy_mul_add_le (P := P) hl b qb s fun i =>
+      ((hD.qb_meas i).comp (measurable_id.prodMk measurable_const)).aemeasurable
+    have hσ := fun i => sampleEnergy_mul_add_le (P := P) hl (fun j ω s => σ i s ω j)
+      (fun j ω s => qσ i s ω j) s fun j =>
+        ((hD.qσ_meas i j).comp (measurable_id.prodMk measurable_const)).aemeasurable
+    have hh := markedSampleEnergy_mul_add_le (P := P) (ν := ν) hl (fun i ω s e => h i s ω e)
+      (fun i ω s e => qh i s ω e) s fun i =>
+        (hD.qh_meas i).comp (by fun_prop : Measurable fun p : Ω × E => (p.1, s, p.2))
+    refine (add_le_add (add_le_add hb (Finset.sum_le_sum fun i _ => hσ i)) hh).trans
+      (le_of_eq ?_)
+    rw [Finset.sum_add_distrib, ← Finset.mul_sum, ← Finset.mul_sum]
+    ring
+  calc _ = ∫⁻ s in Set.Icc (0 : ℝ) t,
+        (sampleEnergy P (fun i ω s => lam * b i ω s + qb i ω s) s
+          + ∑ i, sampleEnergy P (fun j ω s => lam * σ i s ω j + qσ i s ω j) s
+          + markedSampleEnergy P ν (fun i ω s e => lam * h i s ω e + qh i s ω e) s) := eR.symm
+    _ ≤ ∫⁻ s in Set.Icc (0 : ℝ) t,
+        (2 * (sampleEnergy P b s + ∑ i, sampleEnergy P (fun j ω s => σ i s ω j) s
+            + markedSampleEnergy P ν (fun i ω s e => h i s ω e) s)
+          + 2 * (sampleEnergy P qb s + ∑ i, sampleEnergy P (fun j ω s => qσ i s ω j) s
+            + markedSampleEnergy P ν (fun i ω s e => qh i s ω e) s)) := lintegral_mono hpt
+    _ = _ := by
+        rw [lintegral_add_left (hBm.const_mul 2), lintegral_const_mul _ hBm,
+          lintegral_const_mul _ hQm, eB, eQ]
+
 /-- **The expected Lipschitz bound (3.2) on `[0, t]`.** For the difference system with jointly
 measurable coefficient differences and `t ∈ [0, T]`,
 
@@ -321,6 +408,21 @@ theorem coeffEnergy_le_at (hD : PairDiff D ℱ hℱW hℱN T lam K KT α β₁ �
     _ = _ := by
         rw [lintegral_const_mul (ENNReal.ofReal K) (f := fun s => FX s + FJ s)
           (hFXm.add hFJm), lintegral_add_left hFXm, eX, eJ]
+
+/-- **The energy of the forward difference below the integrated running supremum.** For the
+difference system, `𝔼 ∫_0^t |δX_s|² ds ≤ ∫_0^t 𝔼 sup_{r ≤ s} |δX_r|² ds`. -/
+theorem energy_le_lintegral_biSup (hD : PairDiff D ℱ hℱW hℱN T lam K KT α β₁ β₂ G ξ₀ X Y Z U
+    b σ h f g qb qσ qh qf qg) (hT : 0 ≤ T) (t : ℝ) :
+    ∑ i, Brownian.Ito.energy P t (fun ω s => X i s ω)
+      ≤ ∫⁻ s in Set.Icc (0 : ℝ) t,
+        ∫⁻ ω, (⨆ r ∈ Set.Icc (0 : ℝ) s, esq (fun i => X i r ω)) ∂P := by
+  have hXm : ∀ i, Measurable (Function.uncurry fun ω s => X i s ω) := fun i =>
+    ((hD.fwd i).linearBSDEJ hT).measurable_uncurry.comp measurable_swap
+  rw [← lintegral_sampleEnergy (P := P) hXm t]
+  refine setLIntegral_mono' measurableSet_Icc fun s hs => ?_
+  refine (sum_lintegral_le _ _).trans (lintegral_mono fun ω => ?_)
+  exact le_iSup₂ (f := fun r (_ : r ∈ Set.Icc (0 : ℝ) s) => esq (fun i => X i r ω)) s
+    ⟨hs.1, le_rfl⟩
 
 end PairDiff
 
