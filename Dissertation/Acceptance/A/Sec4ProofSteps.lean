@@ -369,8 +369,8 @@ theorem eq_fwd_chain : PaperSpec.A.eq_fwd_chain.{u, v, w} := by
 
 /-- (4.25) inserted in (4.24), and the backward bound at every time. -/
 theorem eq_wgt_insert : PaperSpec.A.eq_wgt_insert.{u, v, w} := by
-  refine ⟨fun _ L _ _ _ _ _ _ => 2 * (10 * (2 * L) ^ 2) + 3,
-    fun ε κ T L _ _ _ _ _ _ =>
+  refine ⟨fun _ L _ _ _ _ _ => 2 * (10 * (2 * L) ^ 2) + 3,
+    fun ε κ T L _ _ _ _ _ =>
       Real.exp (κ * T) * max 1 ((2 * (10 * (2 * L) ^ 2) + 3) / ε) / (1 - ε), ?_⟩
   rintro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ _ _ _ T hT L α β₁ β₂ G C hJ h23 hG h25
     lamLow lam hlow _ hlam hlam1 ξ₁ ξ₂ _ _ qb₁ qb₂ qσ₁ qσ₂ qh₁ qh₂ qf₁ qf₂ qg₁ qg₂ hq₁ hq₂

@@ -346,12 +346,12 @@ def eq_fwd_chain : Prop :=
       ∫⁻ ω, (⨆ s ∈ Set.Icc (0 : ℝ) t, esq (fun i => X₁ i s ω - X₂ i s ω)) ∂P < ⊤
 
 /-- **(4.25) inserted in (4.24), and the backward bound at every time.** There are functions `K`
-of `(T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)` and `K'` of `(ε, κ, T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)` such that:
-in the standing setting, under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3) and
+of `(T, L, ‖G‖, c_G, α, β₁, β₂)` and `K'` of `(ε, κ, T, L, ‖G‖, c_G, α, β₁, β₂)` such that: in the
+standing setting, under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3) and
 Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`,
 `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak` with `X^k_T ∈ L²`, `ℱ₀`-measurable
 initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` — with `C = K(T, L, ‖G‖, s_min(G)⁻², α, β₁,
-β₂, λ̲)`: for every `ε ∈ (0, 1]`, `κ > 0` and `t ∈ [0, T]`, the functions `|δY_t|²`,
+β₂)`: for every `ε ∈ (0, 1]`, `κ > 0` and `t ∈ [0, T]`, the functions `|δY_t|²`,
 `|λ δg_T + q^g_T|²` (on `Ω`), `e^{κs} ((κ − C/ε) |δY_s|² + (1 − ε) (|δZ_s|²_F + ‖δU_s‖²_{L²(ν)}))`
 and `e^{κs} (|δX_s|² + |q^f_s|²)` (on `Ω × [t, T]`) are integrable and
 `𝔼 e^{κt} |δY_t|² + 𝔼 ∫_t^T e^{κs} ((κ − C/ε) |δY_s|² + (1 − ε) (|δZ_s|²_F + ‖δU_s‖²_{L²(ν)})) ds
@@ -360,10 +360,10 @@ and for every `ε ∈ (0, 1)`, `κ > C/ε` and `t ∈ [0, T]`, the functions
 `|δZ_s|²_F + ‖δU_s‖²_{L²(ν)}` and `|δX_s|² + |q^f_s|²` are integrable on `Ω × [t, T]` and
 `𝔼|δY_t|² + 𝔼 ∫_t^T (|δZ_s|²_F + ‖δU_s‖²_{L²(ν)}) ds
   ≤ C' (𝔼|λ δg_T + q^g_T|² + 𝔼 ∫_t^T (|δX_s|² + |q^f_s|²) ds)`
-with `C' = K'(ε, κ, T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂, λ̲)`; here `q = δq`,
+with `C' = K'(ε, κ, T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂)`; here `q = δq`,
 `δg_T = g(X¹_T, Law X¹_T) − g(X²_T, Law X²_T)` and `δf_s = f(s, Θ¹_s, μ¹_s) − f(s, Θ²_s, μ²_s)`. -/
 def eq_wgt_insert : Prop :=
-  ∃ (K : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ) (K' : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ),
+  ∃ (K : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ) (K' : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ),
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
     (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
@@ -392,7 +392,7 @@ def eq_wgt_insert : Prop :=
       ∧ Integrable (fun ω => ∑ k, (lam * (terminalVal P T C X₁ k ω - terminalVal P T C X₂ k ω)
           + (qg₁ k ω - qg₂ k ω)) ^ 2) P
       ∧ Integrable (fun p : Ω × ℝ => Real.exp (κ * p.2)
-          * ((κ - K T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ lamLow / ε)
+          * ((κ - K T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ / ε)
               * ∑ k, (Y₁ k p.2 p.1 - Y₂ k p.2 p.1) ^ 2
             + (1 - ε) * (∑ k, ∑ j, (Z₁ k p.2 p.1 j - Z₂ k p.2 p.1 j) ^ 2
               + ∑ k, ∫ e, (U₁ k p.2 p.1 e - U₂ k p.2 p.1 e) ^ 2 ∂ν)))
@@ -402,16 +402,16 @@ def eq_wgt_insert : Prop :=
         (P.prod (volume.restrict (Set.Icc t T)))
       ∧ Real.exp (κ * t) * ∫ ω, ∑ k, (Y₁ k t ω - Y₂ k t ω) ^ 2 ∂P
           + ∫ ω, ∫ s in Set.Icc t T, Real.exp (κ * s)
-            * ((κ - K T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ lamLow / ε)
+            * ((κ - K T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ / ε)
                 * ∑ k, (Y₁ k s ω - Y₂ k s ω) ^ 2
               + (1 - ε) * (∑ k, ∑ j, (Z₁ k s ω j - Z₂ k s ω j) ^ 2
                 + ∑ k, ∫ e, (U₁ k s ω e - U₂ k s ω e) ^ 2 ∂ν)) ∂volume ∂P
         ≤ Real.exp (κ * T) * ∫ ω, ∑ k, (lam * (terminalVal P T C X₁ k ω
             - terminalVal P T C X₂ k ω) + (qg₁ k ω - qg₂ k ω)) ^ 2 ∂P
-          + K T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ lamLow / ε
+          + K T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ / ε
             * ∫ ω, ∫ s in Set.Icc t T, Real.exp (κ * s)
               * (∑ i, (X₁ i s ω - X₂ i s ω) ^ 2 + ∑ k, (qf₁ k ω s - qf₂ k ω s) ^ 2) ∂volume ∂P)
-    ∧ ∀ ε : ℝ, 0 < ε → ε < 1 → ∀ κ : ℝ, K T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ lamLow / ε < κ →
+    ∧ ∀ ε : ℝ, 0 < ε → ε < 1 → ∀ κ : ℝ, K T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ / ε < κ →
       ∀ t ∈ Set.Icc (0 : ℝ) T,
       Integrable (fun p : Ω × ℝ => ∑ k, ∑ j, (Z₁ k p.2 p.1 j - Z₂ k p.2 p.1 j) ^ 2
           + ∑ k, ∫ e, (U₁ k p.2 p.1 e - U₂ k p.2 p.1 e) ^ 2 ∂ν)
@@ -422,7 +422,7 @@ def eq_wgt_insert : Prop :=
       ∧ ∫ ω, ∑ k, (Y₁ k t ω - Y₂ k t ω) ^ 2 ∂P
           + ∫ ω, ∫ s in Set.Icc t T, (∑ k, ∑ j, (Z₁ k s ω j - Z₂ k s ω j) ^ 2
             + ∑ k, ∫ e, (U₁ k s ω e - U₂ k s ω e) ^ 2 ∂ν) ∂volume ∂P
-        ≤ K' ε κ T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ lamLow
+        ≤ K' ε κ T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂
           * (∫ ω, ∑ k, (lam * (terminalVal P T C X₁ k ω - terminalVal P T C X₂ k ω)
               + (qg₁ k ω - qg₂ k ω)) ^ 2 ∂P
             + ∫ ω, ∫ s in Set.Icc t T, (∑ i, (X₁ i s ω - X₂ i s ω) ^ 2

@@ -32,7 +32,7 @@ universe u v w
 
 /-- (4.25), with `C = 2 (10 (2L)²) + 3`. -/
 theorem eq_bwdyoung : PaperSpec.A.eq_bwdyoung.{u, v, w} := by
-  refine ⟨fun _ L _ _ _ _ _ _ => 2 * (10 * (2 * L) ^ 2) + 3, ?_⟩
+  refine ⟨fun _ L _ _ _ _ _ => 2 * (10 * (2 * L) ^ 2) + 3, ?_⟩
   rintro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ _ _ _ T hT L α β₁ β₂ G C hJ h23 hG h25
     lamLow lam hlow _ hlam hlam1 ξ₁ ξ₂ _ _ qb₁ qb₂ qσ₁ qσ₂ qh₁ qh₂ qf₁ qf₂ qg₁ qg₂ _ _
     X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ ⟨⟨γ₁, h₁⟩, -, -⟩ ⟨⟨γ₂, h₂⟩, -, -⟩ _ ε hε hε1

@@ -22,8 +22,9 @@ and no monotonicity. Its Lipschitz field is the bound at almost every time, its 
 finite energy, which is (3.2), its forward coordinates obey the supremum bound of the difference
 system (`PairDiff.lintegral_biSup_fwd_le`), its backward coordinates the estimate of Lemma 4.1
 (`LinearBSDEJ.brownianPoisson_estimate`), and the whole difference has finite `ℍ`-norm
-(`supSize_lt_top_of_linear`). The jump coefficient at the predictable tuples agrees with the
-solutions' representatives almost everywhere
+(`supSize_lt_top_of_linear`). The terminal bound is (2.6) with (2.9) at the square-integrable
+`ℱ_T`-measurable terminal values (`TerminalLipschitz.lipT_pair`). The jump coefficient at the
+predictable tuples agrees with the solutions' representatives almost everywhere
 (`PaperWeakSolutionForcedInt.ae_forcedJump_sub_leftLim_eq`).
 
 ## Main statements
@@ -32,6 +33,8 @@ solutions' representatives almost everywhere
 * `Dissertation.Acceptance.A.eq_uniq_coeff_lip` — (3.2).
 * `Dissertation.Acceptance.A.eq_uniq_fwd` — the forward difference, `K(T) = 3T + 12`.
 * `Dissertation.Acceptance.A.eq_uniq_bwd_eq` — the backward difference.
+* `Dissertation.Acceptance.A.eq_uniq_bwd_terminal` — the terminal bound before (3.3),
+  `K(L) = 4 L²`.
 * `Dissertation.Acceptance.A.eq_uniq_bwd_lip` — (3.3), with `C_BP(T) = 13 e^T + 3T`.
 * `Dissertation.Acceptance.A.rem_uniq_lip_mem` — `Θ¹ − Θ² ∈ ℍ`.
 -/
@@ -211,6 +214,18 @@ theorem eq_uniq_bwd_eq : PaperSpec.A.eq_uniq_bwd_eq.{u, v, w} := by
   · filter_upwards [hB.eqn t ht] with ω e
     rw [← congrFun (hYe k t ht).1 ω, ← congrFun (hYe k t ht).2 ω]
     exact e
+
+/-- The terminal bound before (3.3), with `K(L) = 4 L²`. -/
+theorem eq_uniq_bwd_terminal : PaperSpec.A.eq_uniq_bwd_terminal.{u, v, w} := by
+  refine ⟨fun L => 4 * L ^ 2, ?_⟩
+  rintro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ _ _ _ T hT L C hJ h23 ξ₀
+    X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ ⟨⟨γ₁, h₁⟩, -, -⟩ ⟨⟨γ₂, h₂⟩, -, -⟩
+  have hT' : T ∈ Set.Icc (0 : ℝ) T := ⟨hT.le, le_rfl⟩
+  exact ⟨fun i => ⟨h₁.XT_sq i, h₂.XT_sq i⟩,
+    (lipTerminal_iff_terminalLipschitz.mp h23.terminal).lipT_pair
+      (fun i => h₁.X_adapted i T hT') (fun i => h₂.X_adapted i T hT') h₁.XT_sq h₂.XT_sq,
+    lintegral_esq_lt_top (x := fun i ω => X₁ i T ω - X₂ i T ω)
+      fun i => (h₁.XT_sq i).sub (h₂.XT_sq i)⟩
 
 /-- (3.3) under the Lipschitz condition, with `C_BP(T) = 13 e^T + 3T`. -/
 theorem eq_uniq_bwd_lip : PaperSpec.A.eq_uniq_bwd_lip.{u, v, w} := by

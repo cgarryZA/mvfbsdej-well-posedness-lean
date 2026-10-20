@@ -389,7 +389,7 @@
    "location": "paper/sections/03-main-results.tex",
    "source_sha256": "867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798",
    "scope": "formal",
-   "scope_note": "\"the proof of Theorem 3.5 uses Assumption 2.2\" describes a proof and is not a separate claim; 'we only need to show that the difference Θ¹ − Θ² belongs to ℍ, using only the Lipschitz control of coefficient differences' is read in the proof of Theorem 3.3 (lines 110–174), whose steps the last four clauses state for two solutions in ℍ_weak with the same initial datum under (2.3) and Assumption 2.3 alone (no Assumption 2.2, no monotonicity): (3.2), the forward estimate of lines 144–156, (3.3) and Θ¹ − Θ² ∈ ℍ; the bound at almost every time before (3.2) and the backward difference before (3.3) are clauses of A:eq:uniq-coeff and A:eq:uniq-bwd",
+   "scope_note": "\"the proof of Theorem 3.5 uses Assumption 2.2\" describes a proof and is not a separate claim; 'we only need to show that the difference Θ¹ − Θ² belongs to ℍ, using only the Lipschitz control of coefficient differences' is read in the proof of Theorem 3.3 (lines 110–174), whose steps the last four clauses state for two solutions in ℍ_weak with the same initial datum under (2.3) and Assumption 2.3 alone (no Assumption 2.2, no monotonicity): (3.2), the forward estimate of lines 144–156, (3.3) and Θ¹ − Θ² ∈ ℍ; the bound at almost every time before (3.2), and the backward difference and the terminal bound before (3.3), are clauses of A:eq:uniq-coeff and A:eq:uniq-bwd",
    "scope_reviewed": false,
    "clauses": [
     {
@@ -1726,11 +1726,11 @@
    "kind": "embedded-in-proof",
    "number": "proof of Lemma 4.1",
    "title": "With nu(E)=infinity localisation along jump times fails to exhaust [0,T]; M^2 handled through the compensation formula which needs only integrability",
-   "location": "paper/sections/04-proof-wellposedness.tex:151",
-   "source_sha256": "89a434caa7c84ed5e2143713d1483dde1e7fa2001de1f51afe467a70f3c9fe8f",
+   "location": "paper/sections/04-proof-wellposedness.tex:139",
+   "source_sha256": "a168d5c6b06b44afdce89e7b9de59219c5b0dca171c0a39da0bdadc228abe72e",
    "scope": "formal",
-   "scope_note": "the clauses read lines 139–187 of the proof, the paragraph on the zero-mean terms: the sentence of the pinned line (lines 148–152), the local martingales M^W and M¹ (lines 139–148 and 153–172) and the paragraph on M² (lines 173–187); the first clause reads the sentence's first assertion, that membership in H²_N does not give the quadratic integrand of M² square moments, for ν ≠ 0, the degenerate case ν = 0, in which every marked integrand vanishes, being the one Remark 2.10 sets aside; M^W and M¹ are read as local stochastic integrals (IsLocalBrownianIntegral, IsLocalCompensatedIntegral) for the filtration of the setting, which carries their local-martingale property, not stated separately; that M² is a local martingale (lines 139–141) is the clause on M² read pathwise, stated as a martingale on [0, T] (stronger), adapted up to a null set; that the stochastic-integral terms of (4.5) are M^W, M¹ and M² belongs to (4.5) (A:eq:itoY2); the first link of the chain for M¹ (line 162), the Burkholder–Davis–Gundy inequality at p = 1 in quadratic-variation form, is cited work (He, Wang and Yan, as in A:sec4:supremum-criterion) and is not stated: the bound on 𝔼 sup |M¹| it leads to is stated and proved through the predictable quadratic variation (Lenglart's inequality), and the links after it are stated",
-   "scope_reviewed": true,
+   "scope_note": "the clauses read lines 139–187 of the proof, the paragraph on the zero-mean terms: the sentence of line 151, where the claim is anchored (lines 148–152), the local martingales M^W and M¹ (lines 139–148 and 153–172) and the paragraph on M² (lines 173–187); the first clause reads the sentence's first assertion, that membership in H²_N does not give the quadratic integrand of M² square moments, for ν ≠ 0, the degenerate case ν = 0, in which every marked integrand vanishes, being the one Remark 2.10 sets aside; M^W and M¹ are read as local stochastic integrals (IsLocalBrownianIntegral, IsLocalCompensatedIntegral) for the filtration of the setting, which carries their local-martingale property, not stated separately; that M² is a local martingale (lines 139–141) is the clause on M² read pathwise, stated as a martingale on [0, T] (stronger), adapted up to a null set; that the stochastic-integral terms of (4.5) are M^W, M¹ and M² belongs to (4.5) (A:eq:itoY2); the first link of the chain for M¹ (line 162), the Burkholder–Davis–Gundy inequality at p = 1 in quadratic-variation form, is cited work (He, Wang and Yan, as in A:sec4:supremum-criterion) and is not stated: the bound on 𝔼 sup |M¹| it leads to is stated and proved through the predictable quadratic variation (Lenglart's inequality), and the links after it are stated",
+   "scope_reviewed": false,
    "clauses": [
     {
      "name": "membership δU ∈ H²_N does not give the quadratic integrand e^s|δU_s(e)|² of M² square moments (for ν ≠ 0; at ν = 0 the integrand vanishes)",
@@ -1781,9 +1781,60 @@
      "witness": "Dissertation.Acceptance.A.lem_bpbsde_nonzero_hypotheses"
     }
    ],
+   "source_region": {
+    "end_line": 187
+   },
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
-    "89a434caa7c84ed5e2143713d1483dde1e7fa2001de1f51afe467a70f3c9fe8f"
+    "cf4dcf841df6709980082c8c3f328197e192a2a168a41e88fb612b2227969853",
+    "317a4f03ac1d494a2ea11710fa44bb5e0761e5c41ed8a7db89ed4a44c488224c",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "b0fd9d5d30c5610b9ff585152a1c88badfd1348fb55480909a4cd23d7ab19d32",
+    "f610d6162a2c59b887e4f81a453c72a73dd84f9cf825431224693f9736129e43",
+    "a432b708425bc1ae949d86be6a80ff4428cfc92a2a4fd392811c31bdc908a38f",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "fc49191469ee0b82453c5a1c77f45c1f9c58004347b7053d8f75a906db9cacb1",
+    "8bb44beb0c69c109192b67020d7193706ff6b2f413531d9615b5179bf07f3458",
+    "3ee9b69685d971dec83d751efa25e407125bdde77846703ef3741cddd8f2592e",
+    "89a434caa7c84ed5e2143713d1483dde1e7fa2001de1f51afe467a70f3c9fe8f",
+    "072ce993dad6cd9721cb5b27271cb7a23967d4d768d82730a70a9226a39224dc",
+    "9954d3939f1f8c1cce32d4d47d7f9a7a3ca359f2ee511fc496987c14c40dfd62",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "65ff01308306827ce517d725ea06263e212dc16860d0aeff31f425177f64b813",
+    "82b0f31c93131f1ab90349e870dcf6e25e18c7136399f2a627a2d26ff714d3a3",
+    "75dd05c256ce1f53cc410a28904dac836d16cf98792a4ba2ce41d93b4c658e10",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "82a727281c18ee666f84a44a48071658023f7e1944e2f190020a2db07381470c",
+    "906254bd5a94e103e532f6df5ce682451168cd6e453671286246027a90e6986f",
+    "6743288f3d18393d51bc41742fa4dbf56df6f50904cab2702c43ff6a8178f374",
+    "d63b83fcefe3488457de1e1261740ef6c356733c5b2b359146e5d67a617a3cfc",
+    "c3e400104ecbf3aee404fd43e7a0a36e9c9f5a8075ae17d2fa56671480b45645",
+    "be8512fad3567aa194050b72531df89e3efaaad93a752d3dd9d9a84b732d005d",
+    "5d4617cbb948722097effbcfa0fe4cf9c13896d9f96a90728fe75dae8c452777",
+    "722bc33828a16cd3eccd31f2aaeac7c97716661db60f157242f17c39d98048a6",
+    "fd2704cb64415cffd3a355a025597022ee733dfb9b7dec65e181fd4bdc6328f7",
+    "722bc33828a16cd3eccd31f2aaeac7c97716661db60f157242f17c39d98048a6",
+    "6e72b1c145d6374d70c9144c689d547833e4564991390982a7749fd266aceaa2",
+    "174365112eed4915c4400713140d31f1f2fa6afa063a9efb32a8ac9559d1e4e5",
+    "c40d16e2f871450aa82eaca50dfe43dcd92e29226c8657f5f181f94b38c4275a",
+    "57be5796c56ef0774d8a10704fc271de2617c7d822f1d014983e8a75ebdec703",
+    "47468035d49c8aa21bb71048e1c306960f3a46059b1f1a7e99a59bfdcc6729f7",
+    "f0f812d1657ccd0cf48e1a26dc760221ffa3912570d09fe42c127ef9b295771d",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "d85b48f3a669c3d5dbe5a912dc5a9d1d6019894cffbd183e0a3abd7f92e07c08",
+    "a833480522bdec8092eabf00484aca19244dd66fad9606739c744012e6f35f52",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "5319eb079be6917b60634e7d5e98d5cd6fa240cefbbee299724d3eadfc25cb72",
+    "836b3c43fde0eed03d90e370f15f1fd1e9771177c2c23adfcf9448bb19e6fb2e",
+    "906254bd5a94e103e532f6df5ce682451168cd6e453671286246027a90e6986f",
+    "3e252ab668c140164bc2a305395ae7db97a989bdd73138a06307945e65502b8e",
+    "62b945b9aed995391fca2c34120c9fe8d8a36530c668b568a5ce91ecae0a08a1",
+    "2d2e2a07aa885c1bd328d4f102f3b9cabc95da05d2f5ff6e1e50865009e5a91b",
+    "07c7c39e72bdd25c4bef2a81e4f605fd5727dbb11000efdecb269ce3b8d0b1c7",
+    "a40acc325caad90c251676a051c7e47c3fa7c48d53562e297d521a0589ba3b6b",
+    "174365112eed4915c4400713140d31f1f2fa6afa063a9efb32a8ac9559d1e4e5"
    ]
   },
   {
@@ -2181,11 +2232,11 @@
    "kind": "embedded-in-proof",
    "number": "proof of Lemma A.1, step 1",
    "title": "Fubini isometry L2([0,T]x Omega;H) = L2(0,T;L2(Omega;H)) and Pettis give a Borel version of t->Theta_t^- off a null set",
-   "location": "paper/sections/09-appendix.tex:48",
-   "source_sha256": "4683d66c9de5e151a16b21a1e6cbac952384cffefeb3e0e4b2eb720fb4a0b746",
+   "location": "paper/sections/09-appendix.tex:25",
+   "source_sha256": "de5e663b5d7477134ab526ec981d0698551c612b4d3b24167d7ef3055e928acb",
    "scope": "formal",
-   "scope_note": "the clauses read Step 1 of the proof, lines 25–51, whose last sentence (lines 43–51) holds the pinned line 48: the left limits X₋, Y₋ (lines 25–28), the separability of H (line 28), the jump channel U (lines 29–36), Θ⁻ predictable and in L²([0, T] × Ω; H) (lines 36–42), and the Fubini isometry and the Pettis step (lines 43–51); the isometry (2.4) invoked for the jump channel (line 31) is the clause of A:eq:fubiniiso, and the clause on U states its conclusion for U; that the Z-coordinate is predictable and square integrable (lines 28–29) restates the hypotheses of Lemma A.1 (CadlagPredTuple) and is not stated separately; 'hence jointly measurable' (line 37) is the joint strong measurability of the clause Θ⁻ ∈ L²([0, T] × Ω; H)",
-   "scope_reviewed": true,
+   "scope_note": "the clauses read Step 1 of the proof, lines 25–51, whose last sentence (lines 43–51) holds line 48, where the claim is anchored: the left limits X₋, Y₋ (lines 25–28), the separability of H (line 28), the jump channel U (lines 29–36), Θ⁻ predictable and in L²([0, T] × Ω; H) (lines 36–42), and the Fubini isometry and the Pettis step (lines 43–51); the isometry (2.4) invoked for the jump channel (line 31) is the clause of A:eq:fubiniiso, and the clause on U states its conclusion for U; that the Z-coordinate is predictable and square integrable (lines 28–29) restates the hypotheses of Lemma A.1 (CadlagPredTuple) and is not stated separately; 'hence jointly measurable' (line 37) is the joint strong measurability of the clause Θ⁻ ∈ L²([0, T] × Ω; H)",
+   "scope_reviewed": false,
    "clauses": [
     {
      "name": "X₋ and Y₋ are predictable; on every path {t : X_{t−} ≠ X_t} is countable and ∫_0^T 1{X_{t−} ≠ X_t} dt = 0, and likewise for Y; X₋ = X and Y₋ = Y dt ⊗ dP-almost everywhere on [0, T] × Ω; X₋ and Y₋ have finite energy on [0, T]",
@@ -2230,9 +2281,38 @@
      "witness": "Dissertation.Acceptance.A.lemA1_hypotheses"
     }
    ],
+   "source_region": {
+    "end_line": 51
+   },
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
-    "4683d66c9de5e151a16b21a1e6cbac952384cffefeb3e0e4b2eb720fb4a0b746"
+    "bf003d2eb9be77f3c538e550a5c78ea7e4db20e90816550893586d3563088cb7",
+    "2c42b738a6a560ee0800332b278173d61f9071c087b47393e16b68a99b15618d",
+    "3c860a1c6fa4763f31783868c28d0004a2e250760bf87546caffcfcff8fda47a",
+    "b4e13ad159c2c741fdd33ca0c343eae61dd529de8bc2d7d9a0eb5ce20197d747",
+    "751de028255d3eba72e716d59e8695f5a86e4cde21322ea1aa0497a057090451",
+    "128e0ef0ec6136eb680fe3174445f2b764ae77f3db1dfacad51826491dd2d4b2",
+    "fc812e26532d1ab9dd5d65d405ee2ba24d8d11ff4c038f0bea3efdf6915dff78",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "f315deb723da90c1917db7d7471b78726b5a527fd0d83707346f951dd036d573",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "3c4be3b12ca54130824ae093aa4dcd7c62f6bf9c798e1949f3926458182e5dfa",
+    "fa87b7e071af9d0b950c957419c5b843a81eaaaef16f23471dabbb188eb6379a",
+    "b2561e72af5e9609dac532064cc29e7c40f7814fe12c56113ea8684b633309eb",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "5a684233fbd282eea6a122d28f72a2fcc2acc6617370b82bd5fdf7ab893c16f5",
+    "1a3df496e6cfae070fb750f74263a70f5b306a8665e03ae3eccdf80048f17a5f",
+    "f8dbc2725072207d2a07af47111830911f30dee7a31354d8447f3c946db34823",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "7987466c8b68d991c8ad46be103a532d22e67f2f11385f259a7f778f539bf585",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "851cac87d58f4967a4162a2a8b2751378c44919088e04181acee7dd5bb1631af",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "becc1b6adea232b1aa1b119a699c40ce1c59de1ff658dbd6f8d7639d240e4fd1",
+    "4683d66c9de5e151a16b21a1e6cbac952384cffefeb3e0e4b2eb720fb4a0b746",
+    "ce1b85bb151a85fc5b303079b6294cdbc0328aef48d42ba87a295bcb2ccaff05",
+    "20c669f55302edfd10f32df784bf619cabfe409ec69e3209270cb4674743e537",
+    "4b4449a3262a8903520b0d32b4f3febd7e0d512950815fc84228c4426ce3c104"
    ]
   },
   {
@@ -2719,10 +2799,10 @@
    "kind": "embedded-in-proof",
    "number": "(3.3)",
    "title": "equation eq:uniq-bwd [proof:Thm 3.3]",
-   "location": "paper/sections/03-main-results.tex:168",
-   "source_sha256": "9e27142522202b563f42928c519e570d6b67fdfb9d25b3a33bdd984b39c35ef8",
+   "location": "paper/sections/03-main-results.tex:158",
+   "source_sha256": "a0c3e3fee8dc85540db2368978e14170d1deabb4269ae81cb99aef8cf283a2fd",
    "scope": "formal",
-   "scope_note": "the second clause reads lines 158–163, before the pinned region (lines 168–172), and is stated under (2.3) and Assumption 2.3 alone, the hypotheses the step uses (Remark 3.4); the passage, under the hypotheses of Theorem 3.3, is its instance, at which the two solutions coincide",
+   "scope_note": "the pinned region is lines 158–172; the second clause reads the backward difference of lines 158–163 and the third the terminal bound of lines 163–166 (X^k_T ∈ L², 𝔼|δg_T|² ≤ C 𝔼|δX_T|² < ∞), both stated under (2.3) and Assumption 2.3 alone, the hypotheses the steps use (Remark 3.4); the passage, under the hypotheses of Theorem 3.3, is their instance, at which the two solutions coincide; '(3.2) gives 𝔼∫_0^T |δf_s|² ds < ∞' (lines 166–167) is the finiteness of the driver energy in (3.2) (A:eq:uniq-coeff) and in the first clause; 'By Lemma 4.1' names a justification",
    "scope_reviewed": false,
    "clauses": [
     {
@@ -2736,10 +2816,29 @@
      "spec": "Dissertation.PaperSpec.A.eq_uniq_bwd_eq",
      "accept": "Dissertation.Acceptance.A.eq_uniq_bwd_eq",
      "witness": "Dissertation.Acceptance.A.rem_uniq_lip_hypotheses"
+    },
+    {
+     "name": "the terminal bound before (3.3): X¹_T, X²_T ∈ L² and 𝔼|δg_T|² ≤ C 𝔼|δX_T|² < ∞, C a function of L, along two solutions in ℍ_weak with the same initial datum, under (2.3) and Assumption 2.3 alone",
+     "spec": "Dissertation.PaperSpec.A.eq_uniq_bwd_terminal",
+     "accept": "Dissertation.Acceptance.A.eq_uniq_bwd_terminal",
+     "witness": "Dissertation.Acceptance.A.rem_uniq_lip_hypotheses"
     }
    ],
+   "source_region": {
+    "end_line": 172
+   },
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
+    "9fbf6d9b688872b11b46684ea82956eed5808dbe9599977766b3d33d28e66aa5",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "bbb11581de73aee4e2a5787c7a9a141cc49c3d1533fe8214556c49297dd8e692",
+    "d36363377be09b17475458ae4c4337180df923167d0bb464a85c0906368a8ede",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "8a98872caee44b3bdcc0b017155e341c27b8409f39ce93b1117a7ff04031df78",
+    "c558e16af657a8f91550bbabdb292bbba910d6248d907dfd58e88aefe6186cad",
+    "dfe67769a14c2753886024834fd9a591aebd91d8759feb8dc080972cac622b10",
+    "8294e235746ba0b2a88b31d05c7d7ab33b256df56a3d65c3cf22095141f3590f",
+    "84f1823296c8fd72859aabf8f6a05e794b0c0f23e29a7621e01a837ae7462368",
     "937e56ed71142a48eaf493db8e817431b0c8769c3e48253e307a850a6d5dc870",
     "4da3996ef42319fb39c3baaaed52177f1c379d561fb880f1e73bc109cee04ef2",
     "b45bfee1861ece03445afc6add7ae823ad173e6fb46cf6ee44c77f27e2764b82",
@@ -2977,10 +3076,10 @@
    "kind": "embedded-in-proof",
    "number": "(4.6)",
    "title": "equation eq:supE [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:208",
-   "source_sha256": "f8d195505541585ca475bfa8dacd155e918c8cab4d02984f325636e45bc61066",
+   "location": "paper/sections/04-proof-wellposedness.tex:188",
+   "source_sha256": "ec71e848a496b2ac0699c793a785a071c84ef43536cb555a589400fdadc9b311",
    "scope": "formal",
-   "scope_note": "the second clause reads the display of lines 188–199, before the pinned region (lines 208–217): the expectation of (4.5) after Young's inequality, from which the proof derives the bound by R",
+   "scope_note": "the pinned region is lines 188–217; the second clause reads the display of lines 193–199, the expectation of (4.5) after Young's inequality, and the first the bound by R at every t (lines 200–205) and (4.6); the sentences of lines 188–192 and 206–207 name the justifications",
    "scope_reviewed": false,
    "clauses": [
     {
@@ -2993,11 +3092,34 @@
      "name": "the weighted inequality before the bound by R, for every t ∈ [0, T]: 𝔼 e^t |δY_t|² + 𝔼 ∫_t^T e^s (|δZ_s|²_F + ‖δU_s‖²) ds ≤ 𝔼 e^T |δξ|² + 𝔼 ∫_t^T e^s |φ_s|² ds",
      "spec": "Dissertation.PaperSpec.A.eq_supE_weighted",
      "accept": "Dissertation.Acceptance.A.eq_supE_weighted",
-     "witness": "Dissertation.Acceptance.A.lem_bpbsde_nonzero_hypotheses"
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_drift_hypotheses"
     }
    ],
+   "source_region": {
+    "end_line": 217
+   },
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
+    "8d61f6130e36289930584849e91d64419523e3add41fcb083481973c2cec45fa",
+    "a994f9efc7f5d6bcb6adc7badd5fa29ea49276c645092b1b6ad413bea2282cff",
+    "176bc7024f8bee48ef94f34162c8fe4982ceca576e986340444713b52b644fc1",
+    "10e238a2126fdc3844710ef4cf930fbf6e3ad89b1b4662e7e6d219a9e4f57022",
+    "5c247e0a6e06d458468dc7599aee5a986289c623f3284fe490226cd990b620db",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "9c0cf4ccbd8d3f847d8a944e1ba36fef0924839a7773203997a7b2ec65ea0691",
+    "05d2371bfbbb7732158d7b841f5b83cfd9797d0e2b90d5cb603bb587f6b6ac73",
+    "7a03384e6e8b85197651452d5bfaff72559b1af11aedb271b10f67c1c4e9154e",
+    "d2ada867dea8d77b9653749249093de64ab22b755676c6667dff5f67b58d36c1",
+    "558177467f2c784258994547cae28bfc3f3c622eac98ae9ec7b23249551ce2e0",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "3e5af47052e3314d237ec2a4ba57c622457a61b991a90e078182902855d7359c",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "81da34b0405be228c94136ae1c1eaa3fc8307ab6bc1ae0f6dbbb2a5edc08d57b",
+    "c30b6b64034fd30dd1caddc2bc9d5dcb602fc7faa5d72742cc0dbc5a899fbe9e",
+    "28b7655b41f6ae0432aa9b6eb4124a2534beca7b1fd73d7eaf999f37df2dcff4",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "98090b49050c7309cc0ac5651b106cbe071132a350ce68ba74e0a10055481eb7",
+    "b69709e346931e455d7d24d64a83a15f5be318ed031ebcaa9b77f883d8ec6efa",
     "92a2bc4ba1b90193adee8d79f2769267c5413a5370b0bd03b7e6e4c7469c7880",
     "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
     "c37d7cf54ed467e289b346ca585625b41bb4c43dbd4b0a6087cb8543fce75850",
@@ -3076,10 +3198,10 @@
    "kind": "embedded-in-proof",
    "number": "(4.9)",
    "title": "equation eq:coeffdiff [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:339",
-   "source_sha256": "a02482f342dcea543d3e2b9f5367fcfcc00191aef184c33ffa0477616f3b3bb3",
+   "location": "paper/sections/04-proof-wellposedness.tex:325",
+   "source_sha256": "44e0fb2c55b4da8c9bfd50bf76728b89618b1a097dd4a7ba72d5108c5121ddaa",
    "scope": "formal",
-   "scope_note": "the second clause reads lines 333–337, before the pinned region (lines 339–348): the bound at almost every time whose integral in time is the first link of (4.9)",
+   "scope_note": "the pinned region is lines 325–348; the second clause reads lines 333–337, the bound at almost every time whose integral in time is the first link of (4.9); the pointwise bound of lines 329–332 is the instance of Assumption 2.3 that it integrates, and S_s is defined at line 326",
    "scope_reviewed": false,
    "clauses": [
     {
@@ -3095,8 +3217,25 @@
      "witness": "Dissertation.Acceptance.A.frozen_pair_window_hypotheses"
     }
    ],
+   "source_region": {
+    "end_line": 348
+   },
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
+    "57f22e706fccc7d068d9290d46d861d8157e4804871fcf0133b9e29a2bc107d7",
+    "672d7c2b9f6b46b07246a7086c3915742a5dd32d1acabeb1f9b0f56973932faa",
+    "c7551804c951724bd37fe93ed3c14d08654102916a30b28785ba6e68c8e79845",
+    "64ea62de2928a9ace7ac1c20261ae3d30b0c3aa7c3404d253d3dbea1e59148f5",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "d9e83cf33802195702f5212ac8c5bf37b596f26f92e01721ea6980954859e38f",
+    "0a346bd482a7394f835d5d8c1eafdbf5acaf8a52f992b2accff293378c1706fc",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "4044feb57f9f77da41b594730a4786606b14418823963e1247bea4901d562158",
+    "1553709300f88a60ab8493abbcfd4af0397ef19572ba98cf34e1f00b61a28f14",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "0a81c2909517ccc841c8dfedef353b180fd0a5c4ecc3e8d2ddf5f5669bd058d8",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "b4cc34d335184ebbff17d10eb48de211870cefe681cc937bfd6adb324a290af8",
     "c26bfe399b8b1c2a051fd7d421e096cfd49479aac965c43535242164b1159c9c",
     "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
     "6f7b7968a04bc6ce3feef5fba41cbb4acad9e8d20cca548db06b4cfcb3e4c91e",
@@ -3116,11 +3255,11 @@
    "kind": "embedded-in-proof",
    "number": "(4.10)",
    "title": "equation eq:fwddiff [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:357",
-   "source_sha256": "77e48f26f92871ddcb580b9647738e2ba0b66be8eedc87a40ecaffa53cf9e98c",
+   "location": "paper/sections/04-proof-wellposedness.tex:350",
+   "source_sha256": "e08118fabe499dad63b6b7e0f8f3ac048defa5e6b69622f418732ac1b59e9938",
    "scope": "formal",
-   "scope_note": "the first clause reads the display before (4.10), lines 350–355, the difference of (4.7) at Θ¹ and Θ², outside the pinned region (lines 357–372); the sentence after (4.10), lines 373–374, names the justifications of its links",
-   "scope_reviewed": true,
+   "scope_note": "the first clause reads the display before (4.10), lines 350–355, the difference of (4.7) at Θ¹ and Θ²; the sentence after (4.10), lines 373–374, names the justifications of its links",
+   "scope_reviewed": false,
    "clauses": [
     {
      "name": "the forward difference before (4.10): δσ and δh meet the conditions of the Itô and compensated integrals, almost every path of δb is integrable on [0, T], and δX̄_t = λ ∫_0^t δb_s ds + λ ∫_0^t δσ_s dW_s + λ ∫_0^t ∫_E δh_s(e) Ñ(ds, de) almost surely for every t ∈ [0, T], and almost surely at every t ∈ [0, T] at once with any version of ∫ δσ dW right-continuous on [0, T)",
@@ -3135,8 +3274,18 @@
      "witness": "Dissertation.Acceptance.A.frozen_pair_window_hypotheses"
     }
    ],
+   "source_region": {
+    "end_line": 374
+   },
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
+    "b459512b6f1f9670453f8670918839d211c90db95b8f0b69be21b7b334d695fb",
+    "6a9f7d6d87d53ca3328e7a345a947cd0b012cd650287e555f6f7eb1740302c2c",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "c10bdbf3f333b96e520afcd2fc90b78e14b0df3a3e19b40114dcff121d1d0a94",
+    "dcf82c25dff1671423e677342c8e30404600867894430218005089b46a1ce58f",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "77264eb65d329a327da47713d525f1c7637b98f06198d33e23bdccb4b95e9a88",
     "469b21f5927adabb7fee93e9c2aa10426ee4e11ae8385388c2c9cdadf1b60836",
     "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
     "4d3d92546cf5895ababc25646402ca78419d46f3a5480ada411b6060aacf55fd",
@@ -3152,7 +3301,9 @@
     "cc2b2c973b0c9ff76ae66eb92f1328b2d333b195cbcc7d6ee24f412441746636",
     "aae73d0c9965ae0534d7954064041aa5858a34dc86f5b092bc7476994669d721",
     "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
-    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60",
+    "2681497a91a90e424e247d0f5c139f37526b1206b3725a24ee09372489af6844",
+    "d554cc0a7365d512c43cc90e04eaa7914b1a4d8fb4499ac34dad05d840bb4b70"
    ]
   },
   {
@@ -3194,10 +3345,10 @@
    "kind": "embedded-in-proof",
    "number": "(4.12)",
    "title": "equation eq:bwddiff [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:409",
-   "source_sha256": "de9905541b6f5056f355fb8ba0c38a5ec78c92b2259b3b8960caf0be162e2643",
+   "location": "paper/sections/04-proof-wellposedness.tex:391",
+   "source_sha256": "576283a2598fec120ba494d78c5a70d78a4149b00cc97a5d301df135124c6373",
    "scope": "formal",
-   "scope_note": "the second clause reads lines 391–397, before the pinned region (lines 409–422): the difference of (4.8) at the two trials, which is (4.4) with δξ = δξ̄ and φ_s = λ δf_s",
+   "scope_note": "the pinned region is lines 391–422; the second clause reads lines 391–397, the difference of (4.8) at the two trials, which is (4.4) with δξ = δξ̄ and φ_s = λ δf_s, with the hypotheses of Lemma 4.1 listed at lines 398–407 as its side conditions; the first clause reads (4.12)",
    "scope_reviewed": false,
    "clauses": [
     {
@@ -3213,8 +3364,29 @@
      "witness": "Dissertation.Acceptance.A.frozen_pair_window_hypotheses"
     }
    ],
+   "source_region": {
+    "end_line": 422
+   },
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
+    "29745d782a17175a2c4f27e7305cec9f43d12f34d7f75dfbbb9495626acbd410",
+    "bfb64f1cd5b1c3a80e233f361d34b3dd5e5b9070b51b483c35867226a2fff86b",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "12951febbbd932976726422efc6516094620eb5b4860810d2755cc4b7ea3f468",
+    "ce8cc2a9765caeb19fdcd954edd06dbdc19c61710c1274fdd20c1c34c4d01fdf",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "df3529cf4b3b5ced4719ed75d5cb07626cb5475cfb836503baccc16d390cb470",
+    "00c5daa5d51a7a1bb223805d8b8810a7d39f94aa7a59fb2172d46cbfded12d5c",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "909b419dd53db9f752a39cfe958c28e0d6e428eb58c24acff0e4e6e988bbd970",
+    "807d1a6db019b7f94b965fc69a51d8a53af776292fc96ec91c032d5d8fd460f2",
+    "aee5a537a62b25ed46eb3e33c5c43d4bdf220348544afe4b87649e25618b39b8",
+    "f33bcc0c82f59ec72ca26048442208a32af07b7ae7304145d61b986310093704",
+    "94260d2a729e7c92c698497eb993dc548c9215fc5817b7f021111d1489900f17",
+    "8ae0519fa6aac526955c700a2ba32b3377af6d382c2e6848f4533da2b99be2a4",
+    "c9faa4ac1f13749cc219ebda0d66a64067c8507e441409a9a617846297bf94ce",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "3511a47398382554f68034a5e116d1a83b37a9dea2be851a763f0e6f93d08d26",
     "8aee0383c039e706daf9b94b5a0408b82c53bea7ebb9e712a8c63d08847a968e",
     "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
     "ca93217ce5e840d4b60537a0ff4681fca5b7403c745a8f945fdebbf813bd3aee",
@@ -3238,10 +3410,10 @@
    "kind": "embedded-in-proof",
    "number": "(4.13)",
    "title": "equation eq:contract [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:429",
-   "source_sha256": "747835f57a1b4c1429243cdebab1cc3873022b5774d61884f0b447b1a5d04f41",
+   "location": "paper/sections/04-proof-wellposedness.tex:426",
+   "source_sha256": "98399235ee78b3677300d9820f13c5cb17179d50791de2e81a1c5597ff561eac",
    "scope": "formal",
-   "scope_note": "the sentence after (4.13), lines 440–445, outside the pinned region (lines 429–439), records the dependences L⋆ = L⋆(T, L), C_X = C_X(T, L, c_BDG), C_g = C_g(L), C_BP = C_BP(T, c_BDG) and C_Φ = C_Φ(T, L, c_BDG): the clause states every constant by its explicit formula in T, L and c, with c the value of c_BDG quantified before the data (∃ c₀ > 0, ∀ c ≥ c₀ first), so C_Φ = max{1, C_X + C_Y} is a fixed function of (T, L, c_BDG), chosen before everything else, as the sentence asserts; the same holds for the constants of (4.10) and (4.12) in A:eq:fwddiff and A:eq:bwddiff; 'the first inequality by (4.10) and (4.12)' (line 440) names a justification; the second clause reads lines 445–454, after the pinned region: λ_* = (2 √C_Φ)⁻¹ with the C_Φ of the first clause, C_Φ λ² ≤ 1/4 on [0, λ_*] and the contraction by 1/2",
+   "scope_note": "the pinned region is lines 426–454; the sentence after (4.13), lines 440–445, records the dependences L⋆ = L⋆(T, L), C_X = C_X(T, L, c_BDG), C_g = C_g(L), C_BP = C_BP(T, c_BDG) and C_Φ = C_Φ(T, L, c_BDG): the clause states every constant by its explicit formula in T, L and c, with c the value of c_BDG quantified before the data (∃ c₀ > 0, ∀ c ≥ c₀ first), so C_Φ = max{1, C_X + C_Y} is a fixed function of (T, L, c_BDG), chosen before everything else, as the sentence asserts; the same holds for the constants of (4.10) and (4.12) in A:eq:fwddiff and A:eq:bwddiff; 'the first inequality by (4.10) and (4.12)' (line 440) names a justification; the second clause reads lines 445–454: λ_* = (2 √C_Φ)⁻¹ with the C_Φ of the first clause, C_Φ λ² ≤ 1/4 on [0, λ_*] and the contraction by 1/2",
    "scope_reviewed": false,
    "clauses": [
     {
@@ -3257,8 +3429,14 @@
      "witness": "Dissertation.Acceptance.A.frozen_pair_window_lam_hypotheses"
     }
    ],
+   "source_region": {
+    "end_line": 454
+   },
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
+    "dc67db1bab805b7129dae985fcb1f53f9b1d7526f4021d7ac4e6c0e070e3d503",
+    "a07ffdad6b3125910e4f458846e76a3406fd83e57ca5a34c8af7a918cda4fcf6",
+    "80e26fce651466c01d588408cbe32b499a4b6ebf8ae3696b963814c9546057ff",
     "9911c31b0afc66bb02b8de946d63f88f53b1d71583d816b0c3717a51d7fa1445",
     "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
     "053be38e87098836c7e688ad23b7937b5ba55c011b38814848d1b79f6e427b4e",
@@ -3269,7 +3447,22 @@
     "d995c5826f297513880488305922214765f6c48c5e097519ef2eefe292947356",
     "333644cccb0e99c9afb9c4d9de46395066f102f3ff72a06d8e65afc9a48504bd",
     "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
-    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60",
+    "a651a54343bcb5660d698605bf88a7b0b095806cfa268fc245baddcdfe95c270",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "4d9a1d1c9ed6d8628a9c6d8c5ad5f8f79aea6f31a92523eb61d469357c866ff7",
+    "b16ebafdfc46ec3e26e8c58d804bf9fe109a234aa4c1c06505f7231947e4abe7",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "4fa0c376788d65038e909b52922b165360528b26681a136db73135473f4736f2",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "9a4edc2dd1a58024b7ee6c1497e76a1121d34295c543da6a22da4240a95641e5",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "f6fdc4f60ce9e92ab5bf226cbc654912ab5987a4feadf1de735ad8429fc5fa0c",
+    "3566cf23ecb6f832d67d1439e0cb3d05eb7f4ad702c6f478aa96f19812f18e8c",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "fa6417012ac3d2254b0a977f44b0d85b0c90d1c27cc8b7afdc405a86cad1f70d",
+    "69ea42334f90f1780ba0c249379b63c4918ebd7ab8308211dddaa5ab7053928a",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6"
    ]
   },
   {
@@ -3394,11 +3587,11 @@
    "kind": "embedded-in-proof",
    "number": "(4.18)",
    "title": "equation eq:bdg4 [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:581",
-   "source_sha256": "5d58d75e0ff64d35f9d623ce18ac9506f4664d0ce027e18e70d50e5e24c79b67",
+   "location": "paper/sections/04-proof-wellposedness.tex:579",
+   "source_sha256": "ed04d85188f60f8074a858e1e8398a47cf0ee28ab2aa22b0e03fecdcca1cf810",
    "scope": "formal",
    "scope_note": "the clauses read lines 579–622: the four bounds of (4.18) (lines 579–598), each with the existence of its local martingale as a local stochastic integral (IsLocalBrownianIntegral, IsLocalCompensatedIntegral), the finiteness of the bounds and the zero means the supremum criterion gives (lines 600–612), the finiteness of 𝔼∫|λδσ + q^σ|²_F and 𝔼∫‖λδh + q^h‖² (lines 606–610), the integrability of the fifth integrand (lines 612–621), and its predictability and the zero mean of the fifth term by (2.2) (lines 612–613 and 622), the last clause, with a marked predictable representative of λδh + q^h and the fifth term read pathwise, the Poisson integral minus its compensator, as for M² in A:lem4.1:M2-infinite-activity (the bounds read λδh + q^h through any representative meeting the conditions of the compensated integral, marked progressively measurable, as in (4.15)); the display at lines 600–605 is the definition of the norm of ℍ at the hypothesis Θ¹ − Θ² ∈ ℍ, whose finiteness enters each bound; not stated: that the four local martingales and the fifth term are the stochastic terms of (4.17), which belongs to (4.17) (A:eq:Gid-path, a proof step not stated); the first link of each bound, the Burkholder–Davis–Gundy inequality at p = 1 in quadratic-variation form (Davis's inequality), is cited work (He, Wang and Yan, as in A:sec4:supremum-criterion) and is not stated: each bound is stated and proved through the predictable quadratic variation (Lenglart's inequality), with the same right-hand side",
-   "scope_reviewed": true,
+   "scope_reviewed": false,
    "clauses": [
     {
      "name": "first bound of (4.18): ∫_0^t ⟨GδX_{s−}, δZ_s dW_s⟩ exists as a local Itô integral on [0, T], 𝔼 sup_{t≤T} |∫_0^t ⟨GδX_{s−}, δZ_s dW_s⟩| ≤ c_BDG ‖G‖ (𝔼 sup_{t≤T} |δX_t|²)^{1/2} (𝔼 ∫_0^T |δZ_t|²_F dt)^{1/2} < ∞, and its increments have mean zero (c_BDG every value at least some c₀ > 0)",
@@ -3437,8 +3630,13 @@
      "witness": "Dissertation.Acceptance.A.lem_pert_jump_window_hypotheses"
     }
    ],
+   "source_region": {
+    "end_line": 622
+   },
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
+    "272b66c95a883a08ded32d2ba28be7f10441871b8fe670ef6983079e3a076654",
+    "a8f77060d97d988d0a5058f99a1ccb7ac0f8c3167e2192b568de7cae529f52ac",
     "cc119107c0993e2db3aa44ba40139d2e14673d3ecbade95adf57b556559bf4c0",
     "ce0533a87944fa1c8379799a652ead26b542317597d56da8f1ae8b085a36d8b6",
     "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
@@ -3456,7 +3654,31 @@
     "dcce873dc43b77bb90104451c683e690bf4cc84f51747ce672e8cd10cf5272fb",
     "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
     "bfbbca718674aab3ed03e6439d17e1274dd262925fb890469cfe06d7b2988cc1",
-    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60",
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "eafb29e0b08927db12a29a46b91bbe5e2a58df3321ccd3d61743fb623dd474fd",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "4ad145dfc0addbd95b61614aa9f18f2b674145c099311796e6007b871618fa46",
+    "1c776fea7a58261546fdf60dde493e6ae7aefb412a7862b14a60a875092c5070",
+    "b7efa5bcdefef8a90b4f83fb9ad96f6d6fbf60ad690a3d33b080bce86f414fad",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "99a7018fe403a43a2b9977034ce43d3081402b21a082d287551b6d88037f400f",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "4f3e13241974676b9e0003c239591d5ebe9e05f1f1d1bd6f5cfb394db5e965b2",
+    "af88a677239dcc9fe5fbd35ca2c461dc334f734fa8d7bc89ce835d81da49a7ef",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "3751533564ab8b5f27c7fec226be79db12f604e4fbeb4e8cd14e6fad0bad4d97",
+    "0bfc169f86b7d2cade63ec81afb539aea3fa2f405639459fa1190b9fa393d2f6",
+    "96f8998196fb635b0dc0b6974f4a0dddf7c1b6282c83d8ba06735d8788ff0b6a",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "f6a8a2c57366e1dc4023af714411f3afbe72f1390e73e4bf767ac3add804eff8",
+    "3245a118af2cf913a9b902ad87a2584382349eb1b37a037da596213c96381d6a",
+    "d02bbca4fdbe0e8399dd1122a817ba3ee0b0283c49c54628a192eed64d104c52",
+    "6dca4919d9cc3f197996b1d393c7be5a42e28477943453a333fdc551056ae1e2",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "9401a14ed1848a8b411d9ceab09cc3a0c6f6af7d28f4d2b38cb0ae31e2efbf0f"
    ]
   },
   {
@@ -3560,10 +3782,10 @@
    "kind": "embedded-in-proof",
    "number": "(4.22)",
    "title": "equation eq:coerc [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:683",
-   "source_sha256": "28fd9c283ce2f0feb20f2c6130e074c16ed3aaced00c1a84f6c2847774c3221c",
+   "location": "paper/sections/04-proof-wellposedness.tex:657",
+   "source_sha256": "7be911d61cc73e6295d60563640cf466008e0adc9b5d7abd8b809d3a7135e9b7",
    "scope": "formal",
-   "scope_note": "the first clause reads the display that inserts (4.20) and (4.21) into (4.19), lines 670–680, and the third the sentence after (4.22), lines 694–695, both outside the pinned region (lines 683–693)",
+   "scope_note": "the pinned region is lines 657–695; the first clause reads the display that inserts (4.20) and (4.21) into (4.19), lines 670–680, the second (4.22) with P recalled at lines 657–661 and N', 𝒦 set at lines 662–669, and the third the sentence after (4.22), lines 694–695",
    "scope_reviewed": false,
    "clauses": [
     {
@@ -3585,8 +3807,37 @@
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
     }
    ],
+   "source_region": {
+    "end_line": 695
+   },
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
+    "71e2046e4c01f20a72081a8dc83202405da38fa75c2e4549fbb51c9daddbe207",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "61119d6d7aaae5b6b52554c059bbeaff9f5293d576db64b26645108323b8c768",
+    "dd6f7d13f6e60677cdc5f65089872178cf586e70b044cf0d0103c2460a15604e",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "b5a7d1771c3cfac77377194912feadc906fb95b0211f079afdc376d62266710a",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "f224db64c177f2c1f41f2b5c1daa6ae5bf727c4e4fc48a6b3084a39fe5a7dc8b",
+    "e8e0d3ad64fd82321e369c0b8a936b3c44c4051331473935b60b520df90b4ac4",
+    "f032a4b2ea4a13cfe6e32363decf60b5b6aef3dba9a159a07014d4fdd6830e14",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "b7f8c783df98ef82f02fb3d826d288c4fd773d1605b8cd68300dd71d8e655b90",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "5c5271cf93b6225a880015f97bd3ffbaba652bd96f4badb7c267bce8acbcf12b",
+    "3a8b22488606fcd83662484d79c6d47ecad02b8640d6b7c8b66b99aef476cff1",
+    "d3f34a491f1be10b2eb7e6acf6ccb4d8dee703893ddae219f301732bc7451116",
+    "3e480bc5485f8693e42447aa0902a049cef8371f16fdafa7be4b300c27884ef8",
+    "1f7a81966ea5bce33ba9359dc53bd4101321c749db49b9a2df9f3b10e0acef19",
+    "4873b3c5dad7be0940e1c1d21ae90d33af305b33c2f415443f236538a0ffd52a",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "3b28707cbdd3d54ffb6016a551456134a769974c70ee8e42d9ac54cdfe1eab9b",
+    "139ffa3d6db60fd50884b5eae6141e63b6b37a5e0480e087c7fa7733c4236216",
     "fe489ef4eed4fd89e08a469d28825a305af2936b44592398acd705f7e53ac8bc",
     "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
     "789774bb346083d4988ceef2c7ff6e2b55973e99370b6a97ce13c0c5731ed9c6",
@@ -3597,7 +3848,9 @@
     "c1c00f49505d739cfca2e6921e4bf770ccf2e2e3dd27fdbd229a302102135164",
     "95ee7267eb3054f10986b849aabd7a6b930bf0b9a3a45027321386db03dbd26e",
     "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
-    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
+    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60",
+    "188855165f3ba190e98813f50bcbbb883c113847631469b23d0f18558a8c9ca0",
+    "48bda35068f30c359b2acf61f61bb6fd3af966d9efc3abb3612a867b0af44ccd"
    ]
   },
   {
@@ -3607,10 +3860,10 @@
    "kind": "embedded-in-proof",
    "number": "(4.23)",
    "title": "equation eq:fwd [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:712",
-   "source_sha256": "ee1691dc39d0f4cefa77ed2bd65bf23b9082b6eaf7bce69caf875dc14c06ae8f",
+   "location": "paper/sections/04-proof-wellposedness.tex:697",
+   "source_sha256": "50cbc07e1eefc3af9e60a6cf881a0b28184e43ec4a81275851891a3e4498d60d",
    "scope": "formal",
-   "scope_note": "the second clause reads lines 697–711, before the pinned region (lines 712–714): the three-link chain at every t ≤ T (lines 697–709) and the sentence that t ↦ 𝔼 sup_{s ≤ t} |δX_s|² is nondecreasing and finite (lines 710–711)",
+   "scope_note": "the pinned region is lines 697–714; the second clause reads lines 697–711: the three-link chain at every t ≤ T (lines 697–709) and the sentence that t ↦ 𝔼 sup_{s ≤ t} |δX_s|² is nondecreasing and finite (lines 710–711); the first clause reads (4.23)",
    "scope_reviewed": false,
    "clauses": [
     {
@@ -3626,8 +3879,26 @@
      "witness": "Dissertation.Acceptance.A.lem_pert_backward_window_hypotheses"
     }
    ],
+   "source_region": {
+    "end_line": 714
+   },
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
+    "e9362c0bf3f9014c4cdfe7e73c165958e731663aad4d1912fa5c696dc78b49a3",
+    "a717ffec3ccfea3fc43ed2cd02ea8184c8cde22b78b3e7e1d7a30785c7ea7175",
+    "e61d67b64a3007455556e87625eeddbdb12cb9be5b51771f4d4b23ed02f018aa",
+    "deb70f4fff60cf3762a826b4b070e7102436c4c4acfb00c65c6f3018cebd8050",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "af7bcd74c7a27bb2dbae16d32dbb9f03c3db6118c89d5fd84af7aea0fd1cf1f9",
+    "694b68eb5eca6a7d134068255113978b41e2c4ddd3ee2635041883b2f8a12834",
+    "ea04ce9126c95d8015778572b780163978b61b9c5d0462011f2a660e4258bfd7",
+    "7c2c010c22e3c7a8fc6efe63cc176336ab168a0dfb320a9761f4396e523c8495",
+    "7e9c89c35ef345e1ca1975f3d6a18c94ca42f95d8913d3ce886360ab05629347",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "3e82b2abbe0f6a52b0f9888df8ab16453bca0b8d4193eb300456a7278947dc66",
+    "7b8eb47f15c2676b52768507e37c030b44e760ea95c74857f1ee826af6434919",
     "b221d93cc08c91cf0d54475fa4a4bbb7b68fe6f5c967f455e5e5107f21268364",
     "c114415c16d506866bed4f00d2a450bdee960d2bf7268e9f19711de974069e23",
     "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60"
@@ -3707,10 +3978,10 @@
    "kind": "embedded-in-proof",
    "number": "(4.26)",
    "title": "equation eq:wgt [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:756",
-   "source_sha256": "1f83bb20576ba7e561a74ddc8aa535854a49efdb61f9fb1ffc80d72ea5b14701",
+   "location": "paper/sections/04-proof-wellposedness.tex:735",
+   "source_sha256": "89423b84d237fc8987ae2907a0af9b11b3606cf9e003618e99ac88dce07ccceb",
    "scope": "formal",
-   "scope_note": "the second clause reads lines 735–752, before the pinned region (lines 756–760): the display inserting (4.25) in (4.24) (lines 735–744) and the bound at every t for ε < 1 and κ > C/ε (lines 745–752)",
+   "scope_note": "the pinned region is lines 735–760; the second clause reads lines 735–752: the display inserting (4.25) in (4.24) (lines 735–744) and the bound at every t for ε < 1 and κ > C/ε (lines 745–752); the first clause reads (4.26) with the sentence before it (lines 753–755)",
    "scope_reviewed": false,
    "clauses": [
     {
@@ -3726,8 +3997,32 @@
      "witness": "Dissertation.Acceptance.A.lem_pert_backward_window_hypotheses"
     }
    ],
+   "source_region": {
+    "end_line": 760
+   },
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
+    "ff06967ee23c39d4ca055bb03aafa60718616d36168980e8d3a4fa56828ebbe8",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "ce75845c50ebd774a1a8182a5712edd78847f6f4caca1fd4ecb4964015ce6463",
+    "face7740682278a163a0ef192aeafbd756f137cde942548e659d80218c1af387",
+    "c47af0452bc42ebcab7eb028d69b459b3ea334523df39f44c84052df80a6786f",
+    "64f9395789db1e14e64621321a6ba20f95ba115fa9da872a1b96cbe761aeb1dc",
+    "fc480d9f11522cc96a586bd62443896139d1526504f24e3f71b75aed1df5d515",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "4b4ed641655e6c95a698d4a28241bb64cff5c77e76c177d3cbcd6c5b0410eace",
+    "dbe89adb662b2765a023583e79bda37aa782b513280d96236b01ef4987db4f71",
+    "af93c903053da1280ff9ccaab2c466a8d29fc808195400588ac0f3c88409eb20",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "f158c9d203e28617dab5e80fd3c57207e8cdc50e526f318dfac65019265d1d0f",
+    "6a98d6a825d1548289a0fa63997f32278c4b111ea5dda0f8e537a3bc58270f6a",
+    "b4339b2c94ec30ec8c39c9e9ae7b72fa889b617c55314674803da650f7ce56f1",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "8997306bc4e67f0ed3ddc1c0d67405095fb8a6ea45660ae0492ebfc5cf6968af",
+    "45eebc65f278ee417dd807983d8a5a90fbec075364f16cb4adb3b0cf5f48f4c7",
+    "1be1bfe9118b09a3d27bb03d621a630cfa13502a2c7905da29a5f63f334bb8ea",
     "c68216407f632038650cfacf86e7655f06ce41acd873e027186e216206c02738",
     "e8a35ec8425226af40c247f2374adf13a9cfffbf2af1370239b19e6794b18066",
     "1c776fea7a58261546fdf60dde493e6ae7aefb412a7862b14a60a875092c5070",
@@ -3742,10 +4037,10 @@
    "kind": "embedded-in-proof",
    "number": "(4.27)",
    "title": "equation eq:bwd [proof]",
-   "location": "paper/sections/04-proof-wellposedness.tex:775",
-   "source_sha256": "3114f6e187919402a154d20d84baf24f22a2a1052d28f7faf3558a9335716cf5",
+   "location": "paper/sections/04-proof-wellposedness.tex:761",
+   "source_sha256": "c405fcc448aaf50172632c84e6a2b00969a5ee7af6e4c71d0593cd50d339eaf2",
    "scope": "formal",
-   "scope_note": "the second clause reads the first two links of the chain of lines 761–772, before the pinned region (lines 775–778): the forward-form BDG bound and the Lipschitz step; its last link, by (4.26), gives (4.27), the first clause",
+   "scope_note": "the pinned region is lines 761–778; the second clause reads the first two links of the chain of lines 761–772: the forward-form BDG bound and the Lipschitz step; its last link, by (4.26), gives (4.27), the first clause, as lines 773–774 say",
    "scope_reviewed": false,
    "clauses": [
     {
@@ -3761,8 +4056,25 @@
      "witness": "Dissertation.Acceptance.A.lem_pert_backward_window_hypotheses"
     }
    ],
+   "source_region": {
+    "end_line": 778
+   },
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
+    "688adc69cc2a7c2057720f0af70cba0d259b0f3011a914b9f2d4039028e1026d",
+    "f39d9ed4769ec9399e58dadc4beff254465560966d124f965795b4714ef447a1",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "4da3996ef42319fb39c3baaaed52177f1c379d561fb880f1e73bc109cee04ef2",
+    "2d9a456531cc91071c643cb8673291bee896cea62e183d7d440060eef2efb6b2",
+    "4200a4290606de4827f516d71070b6e29c43758038734ceda144e20f5497f6e3",
+    "30ee3ae96888d8473499a13fe45d18a9eb0a85bd821acc22a12d97d738b79ca2",
+    "e3237dddd3c7c8cb80f244e0722fb6f6da2ce338817de231073c8886266d2896",
+    "de955b669e0179f090066e4be83a42edb65216b64926f41121cc116ca934e7bd",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "da24c1c2171fdd71288b721f8b9714863b9233befef5f4d510aa6ddbfc338d5a",
+    "6b421d2d22a77a7b62dac245ce101e80f760aba6506e578a0a88a94d27064fc3",
     "cca2116d4d0a472a686da1aa3c819b122304999c153475c9552e6a8d8b2a260e",
     "2648b175abba0bb271ebcdb774f67b1c4d8c17a54559551167225e7383e5355d",
     "68d2dd7ae061ccd3fc1f2c43747a3fcbdbce572d0c5b0ddbe4e7889f89791efa",

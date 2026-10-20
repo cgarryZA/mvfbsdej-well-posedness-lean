@@ -25,6 +25,8 @@ Assumption 2.2), with `μ^k_t = Law(Θ^k_t)`, `δψ_t = ψ(t, Θ¹_t, μ¹_t) �
 
 `δY_t = δg_T + ∫_t^T δf_s ds − ∫_t^T δZ_s dW_s − ∫_t^T ∫_E δU_s(e) Ñ(ds, de)`,
 
+`X^k_T ∈ L²` and `𝔼|δg_T|² ≤ C 𝔼|δX_T|² < ∞`,
+
 `𝔼 sup_{t ≤ T} |δY_t|² ≤ C_BP (𝔼|δg_T|² + 𝔼 ∫_0^T |δf_s|² ds) < ∞`, (3.3)
 
 and `δΘ ∈ ℍ`.
@@ -35,6 +37,7 @@ and `δΘ ∈ ℍ`.
 * `Dissertation.PaperSpec.A.eq_uniq_coeff_lip` — (3.2).
 * `Dissertation.PaperSpec.A.eq_uniq_fwd` — the forward difference and its supremum bound.
 * `Dissertation.PaperSpec.A.eq_uniq_bwd_eq` — the backward difference.
+* `Dissertation.PaperSpec.A.eq_uniq_bwd_terminal` — the terminal bound before (3.3).
 * `Dissertation.PaperSpec.A.eq_uniq_bwd_lip` — (3.3).
 * `Dissertation.PaperSpec.A.rem_uniq_lip_mem` — `Θ¹ − Θ² ∈ ℍ`.
 -/
@@ -251,6 +254,31 @@ def eq_uniq_bwd_eq : Prop :=
                   - Poisson.Compensated.stochasticIntegral D.N (enlJoint 𝒢₀ D h𝒢₀)
                     (isPoissonFiltration_enlJoint D h𝒢₀ hind₀)
                     (fun ω s e => U₁ k s ω e - U₂ k s ω e) hUm hUp hUq t ω)
+
+/-- **The terminal bound before (3.3).** There is a function `K` of the Lipschitz constant such
+that: in the standing setting, for every horizon `T > 0`, if the coefficients satisfy (2.3) and
+Assumption 2.3 with constant `L`, and `Θ¹, Θ² ∈ ℍ_weak` satisfy (1.1) with the same initial datum
+`ξ₀`, then `X¹_T, X²_T ∈ L²` and `𝔼|δg_T|² ≤ K(L) 𝔼|δX_T|² < ∞`, with
+`δg_T = g(X¹_T, Law X¹_T) − g(X²_T, Law X²_T)` and `δX_T = X¹_T − X²_T`; the expectations are
+read in `[0, ∞]`. -/
+def eq_uniq_bwd_terminal : Prop :=
+  ∃ K : ℝ → ℝ,
+  ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
+    [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
+    (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
+    (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
+    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P),
+    0 < n → 0 < m → 0 < d → ∀ T : ℝ, 0 < T →
+    ∀ (L : ℝ) (C : Coeffs ν n m d),
+    JointBorel T C → Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C →
+    ∀ (ξ₀ : Ω → EuclideanSpace ℝ (Fin n)) (X₁ X₂ : Fin n → ℝ → Ω → ℝ)
+      (Y₁ Y₂ : Fin m → ℝ → Ω → ℝ) (Z₁ Z₂ : Fin m → ℝ → Ω → Fin d → ℝ)
+      (U₁ U₂ : Fin m → ℝ → Ω → E → ℝ),
+    WeakSolution D h𝒢₀ hind₀ T C ξ₀ X₁ Y₁ Z₁ U₁ → WeakSolution D h𝒢₀ hind₀ T C ξ₀ X₂ Y₂ Z₂ U₂ →
+    (∀ i : Fin n, MemLp (X₁ i T) 2 P ∧ MemLp (X₂ i T) 2 P)
+    ∧ ∫⁻ ω, esq (fun k => terminalVal P T C X₁ k ω - terminalVal P T C X₂ k ω) ∂P
+        ≤ ENNReal.ofReal (K L) * ∫⁻ ω, esq (fun i => X₁ i T ω - X₂ i T ω) ∂P
+    ∧ ∫⁻ ω, esq (fun i => X₁ i T ω - X₂ i T ω) ∂P < ⊤
 
 /-- **(3.3) under the Lipschitz condition.** There is a function `C_BP` of `T` such that: in the
 standing setting, for every horizon `T > 0`, if the coefficients satisfy (2.3) and Assumption 2.3

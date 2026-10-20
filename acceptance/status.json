@@ -797,7 +797,7 @@
    "number": "Remark 3.4",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "\"the proof of Theorem 3.5 uses Assumption 2.2\" describes a proof and is not a separate claim; 'we only need to show that the difference Θ¹ − Θ² belongs to ℍ, using only the Lipschitz control of coefficient differences' is read in the proof of Theorem 3.3 (lines 110–174), whose steps the last four clauses state for two solutions in ℍ_weak with the same initial datum under (2.3) and Assumption 2.3 alone (no Assumption 2.2, no monotonicity): (3.2), the forward estimate of lines 144–156, (3.3) and Θ¹ − Θ² ∈ ℍ; the bound at almost every time before (3.2) and the backward difference before (3.3) are clauses of A:eq:uniq-coeff and A:eq:uniq-bwd",
+   "scope_note": "\"the proof of Theorem 3.5 uses Assumption 2.2\" describes a proof and is not a separate claim; 'we only need to show that the difference Θ¹ − Θ² belongs to ℍ, using only the Lipschitz control of coefficient differences' is read in the proof of Theorem 3.3 (lines 110–174), whose steps the last four clauses state for two solutions in ℍ_weak with the same initial datum under (2.3) and Assumption 2.3 alone (no Assumption 2.2, no monotonicity): (3.2), the forward estimate of lines 144–156, (3.3) and Θ¹ − Θ² ∈ ℍ; the bound at almost every time before (3.2), and the backward difference and the terminal bound before (3.3), are clauses of A:eq:uniq-coeff and A:eq:uniq-bwd",
    "scope_reviewed": false,
    "status": "formal: accepted"
   },
@@ -3091,7 +3091,9 @@
     {
      "accept": "Dissertation.Acceptance.A.lem41_M2_no_square_moment",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lem41_M2_no_square_moment"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3102,14 +3104,16 @@
      "spec": "Dissertation.PaperSpec.A.lem41_M2_no_square_moment",
      "spec_hash": "ed839d34f480cba18ac876cdb600252c",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem41_M2_no_square_moment_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.lem41_jump_times",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lem41_jump_times"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3120,14 +3124,16 @@
      "spec": "Dissertation.PaperSpec.A.lem41_jump_times",
      "spec_hash": "ed839d34f480cba17f1df52f488747a1",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.sec2_infinite_activity_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.lem41_M2_integrand",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lem41_M2_integrand"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3138,14 +3144,16 @@
      "spec": "Dissertation.PaperSpec.A.lem41_M2_integrand",
      "spec_hash": "ed839d34f480cba118f567d673033f15",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_bpbsde_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.lem41_M2_zero_mean",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lem41_M2_zero_mean"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3156,14 +3164,16 @@
      "spec": "Dissertation.PaperSpec.A.lem41_M2_zero_mean",
      "spec_hash": "ed839d34f480cba15a569c2d7c1d42fd",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_bpbsde_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.lem41_M2_martingale",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lem41_M2_martingale"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3174,14 +3184,16 @@
      "spec": "Dissertation.PaperSpec.A.lem41_M2_martingale",
      "spec_hash": "ed839d34f480cba1983f1a786ecea56b",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_bpbsde_infinite_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.lem41_MW",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lem41_MW"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3192,14 +3204,16 @@
      "spec": "Dissertation.PaperSpec.A.lem41_MW",
      "spec_hash": "ed839d34f480cba1d59592d221a6cd18",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_bpbsde_nonzero_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.lem41_M1",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lem41_M1"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3210,14 +3224,16 @@
      "spec": "Dissertation.PaperSpec.A.lem41_M1",
      "spec_hash": "ed839d34f480cba10bd49a12773fa34d",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_bpbsde_nonzero_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.lem41_M1_chain",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lem41_M1_chain"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3228,7 +3244,7 @@
      "spec": "Dissertation.PaperSpec.A.lem41_M1_chain",
      "spec_hash": "ed839d34f480cba11e7d5cd5bc08d7ae",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_bpbsde_nonzero_hypotheses",
      "witness_ok": true
     }
@@ -3238,9 +3254,9 @@
    "number": "proof of Lemma 4.1",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the clauses read lines 139–187 of the proof, the paragraph on the zero-mean terms: the sentence of the pinned line (lines 148–152), the local martingales M^W and M¹ (lines 139–148 and 153–172) and the paragraph on M² (lines 173–187); the first clause reads the sentence's first assertion, that membership in H²_N does not give the quadratic integrand of M² square moments, for ν ≠ 0, the degenerate case ν = 0, in which every marked integrand vanishes, being the one Remark 2.10 sets aside; M^W and M¹ are read as local stochastic integrals (IsLocalBrownianIntegral, IsLocalCompensatedIntegral) for the filtration of the setting, which carries their local-martingale property, not stated separately; that M² is a local martingale (lines 139–141) is the clause on M² read pathwise, stated as a martingale on [0, T] (stronger), adapted up to a null set; that the stochastic-integral terms of (4.5) are M^W, M¹ and M² belongs to (4.5) (A:eq:itoY2); the first link of the chain for M¹ (line 162), the Burkholder–Davis–Gundy inequality at p = 1 in quadratic-variation form, is cited work (He, Wang and Yan, as in A:sec4:supremum-criterion) and is not stated: the bound on 𝔼 sup |M¹| it leads to is stated and proved through the predictable quadratic variation (Lenglart's inequality), and the links after it are stated",
-   "scope_reviewed": true,
-   "status": "formal: accepted"
+   "scope_note": "the clauses read lines 139–187 of the proof, the paragraph on the zero-mean terms: the sentence of line 151, where the claim is anchored (lines 148–152), the local martingales M^W and M¹ (lines 139–148 and 153–172) and the paragraph on M² (lines 173–187); the first clause reads the sentence's first assertion, that membership in H²_N does not give the quadratic integrand of M² square moments, for ν ≠ 0, the degenerate case ν = 0, in which every marked integrand vanishes, being the one Remark 2.10 sets aside; M^W and M¹ are read as local stochastic integrals (IsLocalBrownianIntegral, IsLocalCompensatedIntegral) for the filtration of the setting, which carries their local-martingale property, not stated separately; that M² is a local martingale (lines 139–141) is the clause on M² read pathwise, stated as a martingale on [0, T] (stronger), adapted up to a null set; that the stochastic-integral terms of (4.5) are M^W, M¹ and M² belongs to (4.5) (A:eq:itoY2); the first link of the chain for M¹ (line 162), the Burkholder–Davis–Gundy inequality at p = 1 in quadratic-variation form, is cited work (He, Wang and Yan, as in A:sec4:supremum-criterion) and is not stated: the bound on 𝔼 sup |M¹| it leads to is stated and proved through the predictable quadratic variation (Lenglart's inequality), and the links after it are stated",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
@@ -3791,7 +3807,9 @@
     {
      "accept": "Dissertation.Acceptance.A.lemA1_leftlim",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lemA1_leftlim"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3802,14 +3820,16 @@
      "spec": "Dissertation.PaperSpec.A.lemA1_leftlim",
      "spec_hash": "ed839d34f480cba130f1a54fb940f2d9",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lemA1_coin_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.lemA1_separable",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lemA1_separable"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3820,14 +3840,16 @@
      "spec": "Dissertation.PaperSpec.A.lemA1_separable",
      "spec_hash": "ed839d34f480cba1e132af851a6dd7cf",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lemA1_polish_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.lemA1_U",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lemA1_U"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3838,14 +3860,16 @@
      "spec": "Dissertation.PaperSpec.A.lemA1_U",
      "spec_hash": "ed839d34f480cba1019406c1cc1330d9",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lemA1_coin_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.lemA1_pred",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lemA1_pred"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3856,14 +3880,16 @@
      "spec": "Dissertation.PaperSpec.A.lemA1_pred",
      "spec_hash": "ed839d34f480cba136b795f0b638d045",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lemA1_coin_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.lemA1_L2",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lemA1_L2"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3874,14 +3900,16 @@
      "spec": "Dissertation.PaperSpec.A.lemA1_L2",
      "spec_hash": "ed839d34f480cba1a6657535c81c9ed1",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lemA1_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.lemA1_fubini",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lemA1_fubini"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3892,14 +3920,16 @@
      "spec": "Dissertation.PaperSpec.A.lemA1_fubini",
      "spec_hash": "ed839d34f480cba18bb7bf3a9a35bb91",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lemA1_fubini_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.lemA1_pettis",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lemA1_pettis"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3910,7 +3940,7 @@
      "spec": "Dissertation.PaperSpec.A.lemA1_pettis",
      "spec_hash": "ed839d34f480cba176ccc2a6aaf99d7c",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lemA1_hypotheses",
      "witness_ok": true
     }
@@ -3920,9 +3950,9 @@
    "number": "proof of Lemma A.1, step 1",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the clauses read Step 1 of the proof, lines 25–51, whose last sentence (lines 43–51) holds the pinned line 48: the left limits X₋, Y₋ (lines 25–28), the separability of H (line 28), the jump channel U (lines 29–36), Θ⁻ predictable and in L²([0, T] × Ω; H) (lines 36–42), and the Fubini isometry and the Pettis step (lines 43–51); the isometry (2.4) invoked for the jump channel (line 31) is the clause of A:eq:fubiniiso, and the clause on U states its conclusion for U; that the Z-coordinate is predictable and square integrable (lines 28–29) restates the hypotheses of Lemma A.1 (CadlagPredTuple) and is not stated separately; 'hence jointly measurable' (line 37) is the joint strong measurability of the clause Θ⁻ ∈ L²([0, T] × Ω; H)",
-   "scope_reviewed": true,
-   "status": "formal: accepted"
+   "scope_note": "the clauses read Step 1 of the proof, lines 25–51, whose last sentence (lines 43–51) holds line 48, where the claim is anchored: the left limits X₋, Y₋ (lines 25–28), the separability of H (line 28), the jump channel U (lines 29–36), Θ⁻ predictable and in L²([0, T] × Ω; H) (lines 36–42), and the Fubini isometry and the Pettis step (lines 43–51); the isometry (2.4) invoked for the jump channel (line 31) is the clause of A:eq:fubiniiso, and the clause on U states its conclusion for U; that the Z-coordinate is predictable and square integrable (lines 28–29) restates the hypotheses of Lemma A.1 (CadlagPredTuple) and is not stated separately; 'hence jointly measurable' (line 37) is the joint strong measurability of the clause Θ⁻ ∈ L²([0, T] × Ω; H)",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
@@ -4304,7 +4334,9 @@
     {
      "accept": "Dissertation.Acceptance.A.eq_uniq_bwd",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_uniq_bwd"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4315,7 +4347,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_uniq_bwd",
      "spec_hash": "ed839d34f480cba12aa97c204e9816a6",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses",
      "witness_ok": true
     },
@@ -4336,6 +4368,26 @@
      "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.rem_uniq_lip_hypotheses",
      "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_uniq_bwd_terminal",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_uniq_bwd_terminal"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the terminal bound before (3.3): X¹_T, X²_T ∈ L² and 𝔼|δg_T|² ≤ C 𝔼|δX_T|² < ∞, C a function of L, along two solutions in ℍ_weak with the same initial datum, under (2.3) and Assumption 2.3 alone",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_uniq_bwd_terminal",
+     "spec_hash": "ed839d34f480cba12f5e45b3317852ea",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.rem_uniq_lip_hypotheses",
+     "witness_ok": true
     }
    ],
    "id": "A:eq:uniq-bwd",
@@ -4343,9 +4395,9 @@
    "number": "(3.3)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the second clause reads lines 158–163, before the pinned region (lines 168–172), and is stated under (2.3) and Assumption 2.3 alone, the hypotheses the step uses (Remark 3.4); the passage, under the hypotheses of Theorem 3.3, is its instance, at which the two solutions coincide",
+   "scope_note": "the pinned region is lines 158–172; the second clause reads the backward difference of lines 158–163 and the third the terminal bound of lines 163–166 (X^k_T ∈ L², 𝔼|δg_T|² ≤ C 𝔼|δX_T|² < ∞), both stated under (2.3) and Assumption 2.3 alone, the hypotheses the steps use (Remark 3.4); the passage, under the hypotheses of Theorem 3.3, is their instance, at which the two solutions coincide; '(3.2) gives 𝔼∫_0^T |δf_s|² ds < ∞' (lines 166–167) is the finiteness of the driver energy in (3.2) (A:eq:uniq-coeff) and in the first clause; 'By Lemma 4.1' names a justification",
    "scope_reviewed": false,
-   "status": "formal: accepted"
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [],
@@ -4506,7 +4558,9 @@
     {
      "accept": "Dissertation.Acceptance.A.eq_supE",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_supE"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4517,7 +4571,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_supE",
      "spec_hash": "ed839d34f480cba17f3cae8e2942fb86",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_bpbsde_hypotheses",
      "witness_ok": true
     },
@@ -4536,7 +4590,7 @@
      "spec_hash": "ed839d34f480cba197b43e0802d21b08",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_bpbsde_nonzero_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_drift_hypotheses",
      "witness_ok": true
     }
    ],
@@ -4545,9 +4599,9 @@
    "number": "(4.6)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the second clause reads the display of lines 188–199, before the pinned region (lines 208–217): the expectation of (4.5) after Young's inequality, from which the proof derives the bound by R",
+   "scope_note": "the pinned region is lines 188–217; the second clause reads the display of lines 193–199, the expectation of (4.5) after Young's inequality, and the first the bound by R at every t (lines 200–205) and (4.6); the sentences of lines 188–192 and 206–207 name the justifications",
    "scope_reviewed": false,
-   "status": "formal: accepted"
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
@@ -4614,7 +4668,9 @@
     {
      "accept": "Dissertation.Acceptance.A.eq_coeffdiff",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_coeffdiff"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4625,7 +4681,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_coeffdiff",
      "spec_hash": "ed839d34f480cba1b363f744d12fe99d",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.frozen_hypotheses",
      "witness_ok": true
     },
@@ -4653,16 +4709,18 @@
    "number": "(4.9)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the second clause reads lines 333–337, before the pinned region (lines 339–348): the bound at almost every time whose integral in time is the first link of (4.9)",
+   "scope_note": "the pinned region is lines 325–348; the second clause reads lines 333–337, the bound at almost every time whose integral in time is the first link of (4.9); the pointwise bound of lines 329–332 is the instance of Assumption 2.3 that it integrates, and S_s is defined at line 326",
    "scope_reviewed": false,
-   "status": "formal: accepted"
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
     {
      "accept": "Dissertation.Acceptance.A.eq_fwddiff_identity",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_fwddiff_identity"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4673,14 +4731,16 @@
      "spec": "Dissertation.PaperSpec.A.eq_fwddiff_identity",
      "spec_hash": "ed839d34f480cba1cdc19be62d7635bf",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.frozen_pair_window_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.eq_fwddiff",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_fwddiff"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4691,7 +4751,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_fwddiff",
      "spec_hash": "ed839d34f480cba1898e8661a670d8b9",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.frozen_pair_window_hypotheses",
      "witness_ok": true
     }
@@ -4701,9 +4761,9 @@
    "number": "(4.10)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the first clause reads the display before (4.10), lines 350–355, the difference of (4.7) at Θ¹ and Θ², outside the pinned region (lines 357–372); the sentence after (4.10), lines 373–374, names the justifications of its links",
-   "scope_reviewed": true,
-   "status": "formal: accepted"
+   "scope_note": "the first clause reads the display before (4.10), lines 350–355, the difference of (4.7) at Θ¹ and Θ²; the sentence after (4.10), lines 373–374, names the justifications of its links",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
@@ -4740,7 +4800,9 @@
     {
      "accept": "Dissertation.Acceptance.A.eq_bwddiff",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_bwddiff"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4751,7 +4813,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_bwddiff",
      "spec_hash": "ed839d34f480cba1d8920d62bd288ec6",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.frozen_pair_hypotheses",
      "witness_ok": true
     },
@@ -4779,16 +4841,18 @@
    "number": "(4.12)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the second clause reads lines 391–397, before the pinned region (lines 409–422): the difference of (4.8) at the two trials, which is (4.4) with δξ = δξ̄ and φ_s = λ δf_s",
+   "scope_note": "the pinned region is lines 391–422; the second clause reads lines 391–397, the difference of (4.8) at the two trials, which is (4.4) with δξ = δξ̄ and φ_s = λ δf_s, with the hypotheses of Lemma 4.1 listed at lines 398–407 as its side conditions; the first clause reads (4.12)",
    "scope_reviewed": false,
-   "status": "formal: accepted"
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
     {
      "accept": "Dissertation.Acceptance.A.eq_contract",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_contract"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4799,7 +4863,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_contract",
      "spec_hash": "ed839d34f480cba1410aaf91d78575ad",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.frozen_pair_hypotheses",
      "witness_ok": true
     },
@@ -4827,9 +4891,9 @@
    "number": "(4.13)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the sentence after (4.13), lines 440–445, outside the pinned region (lines 429–439), records the dependences L⋆ = L⋆(T, L), C_X = C_X(T, L, c_BDG), C_g = C_g(L), C_BP = C_BP(T, c_BDG) and C_Φ = C_Φ(T, L, c_BDG): the clause states every constant by its explicit formula in T, L and c, with c the value of c_BDG quantified before the data (∃ c₀ > 0, ∀ c ≥ c₀ first), so C_Φ = max{1, C_X + C_Y} is a fixed function of (T, L, c_BDG), chosen before everything else, as the sentence asserts; the same holds for the constants of (4.10) and (4.12) in A:eq:fwddiff and A:eq:bwddiff; 'the first inequality by (4.10) and (4.12)' (line 440) names a justification; the second clause reads lines 445–454, after the pinned region: λ_* = (2 √C_Φ)⁻¹ with the C_Φ of the first clause, C_Φ λ² ≤ 1/4 on [0, λ_*] and the contraction by 1/2",
+   "scope_note": "the pinned region is lines 426–454; the sentence after (4.13), lines 440–445, records the dependences L⋆ = L⋆(T, L), C_X = C_X(T, L, c_BDG), C_g = C_g(L), C_BP = C_BP(T, c_BDG) and C_Φ = C_Φ(T, L, c_BDG): the clause states every constant by its explicit formula in T, L and c, with c the value of c_BDG quantified before the data (∃ c₀ > 0, ∀ c ≥ c₀ first), so C_Φ = max{1, C_X + C_Y} is a fixed function of (T, L, c_BDG), chosen before everything else, as the sentence asserts; the same holds for the constants of (4.10) and (4.12) in A:eq:fwddiff and A:eq:bwddiff; 'the first inequality by (4.10) and (4.12)' (line 440) names a justification; the second clause reads lines 445–454: λ_* = (2 √C_Φ)⁻¹ with the C_Φ of the first clause, C_Φ λ² ≤ 1/4 on [0, λ_*] and the contraction by 1/2",
    "scope_reviewed": false,
-   "status": "formal: accepted"
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [],
@@ -4918,7 +4982,9 @@
     {
      "accept": "Dissertation.Acceptance.A.eq_bdg4_XZ",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_bdg4_XZ"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4929,14 +4995,16 @@
      "spec": "Dissertation.PaperSpec.A.eq_bdg4_XZ",
      "spec_hash": "ed839d34f480cba1ea9600d62db2bc6a",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_pert_backward_window_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.eq_bdg4_sigmaY",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_bdg4_sigmaY"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4947,14 +5015,16 @@
      "spec": "Dissertation.PaperSpec.A.eq_bdg4_sigmaY",
      "spec_hash": "ed839d34f480cba1cb9feae8e68982b0",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_pert_forward_window_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.eq_bdg4_XU",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_bdg4_XU"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4965,14 +5035,16 @@
      "spec": "Dissertation.PaperSpec.A.eq_bdg4_XU",
      "spec_hash": "ed839d34f480cba18a39ea87912f080a",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_pert_backward_window_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.eq_bdg4_hY",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_bdg4_hY"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4983,14 +5055,16 @@
      "spec": "Dissertation.PaperSpec.A.eq_bdg4_hY",
      "spec_hash": "ed839d34f480cba11d2a86bd66838ee7",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_pert_forward_window_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.eq_bdg4_fifth",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_bdg4_fifth"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -5001,14 +5075,16 @@
      "spec": "Dissertation.PaperSpec.A.eq_bdg4_fifth",
      "spec_hash": "ed839d34f480cba1bb7df8f3a4d24d8b",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_pert_jump_window_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.eq_bdg4_fifth_mean",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_bdg4_fifth_mean"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -5019,7 +5095,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_bdg4_fifth_mean",
      "spec_hash": "ed839d34f480cba153e1a9d9480bd7ff",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_pert_jump_window_hypotheses",
      "witness_ok": true
     }
@@ -5030,8 +5106,8 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "the clauses read lines 579–622: the four bounds of (4.18) (lines 579–598), each with the existence of its local martingale as a local stochastic integral (IsLocalBrownianIntegral, IsLocalCompensatedIntegral), the finiteness of the bounds and the zero means the supremum criterion gives (lines 600–612), the finiteness of 𝔼∫|λδσ + q^σ|²_F and 𝔼∫‖λδh + q^h‖² (lines 606–610), the integrability of the fifth integrand (lines 612–621), and its predictability and the zero mean of the fifth term by (2.2) (lines 612–613 and 622), the last clause, with a marked predictable representative of λδh + q^h and the fifth term read pathwise, the Poisson integral minus its compensator, as for M² in A:lem4.1:M2-infinite-activity (the bounds read λδh + q^h through any representative meeting the conditions of the compensated integral, marked progressively measurable, as in (4.15)); the display at lines 600–605 is the definition of the norm of ℍ at the hypothesis Θ¹ − Θ² ∈ ℍ, whose finiteness enters each bound; not stated: that the four local martingales and the fifth term are the stochastic terms of (4.17), which belongs to (4.17) (A:eq:Gid-path, a proof step not stated); the first link of each bound, the Burkholder–Davis–Gundy inequality at p = 1 in quadratic-variation form (Davis's inequality), is cited work (He, Wang and Yan, as in A:sec4:supremum-criterion) and is not stated: each bound is stated and proved through the predictable quadratic variation (Lenglart's inequality), with the same right-hand side",
-   "scope_reviewed": true,
-   "status": "formal: accepted"
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
@@ -5128,7 +5204,9 @@
     {
      "accept": "Dissertation.Acceptance.A.eq_coerc_insert",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_coerc_insert"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -5139,14 +5217,16 @@
      "spec": "Dissertation.PaperSpec.A.eq_coerc_insert",
      "spec_hash": "ed839d34f480cba19e2302a704da248e",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.eq_coerc",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_coerc"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -5157,14 +5237,16 @@
      "spec": "Dissertation.PaperSpec.A.eq_coerc",
      "spec_hash": "ed839d34f480cba1763b5cdd464a968d",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.eq_coerc_blocks",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_coerc_blocks"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -5175,7 +5257,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_coerc_blocks",
      "spec_hash": "ed839d34f480cba17bd256e67c544535",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
      "witness_ok": true
     }
@@ -5185,16 +5267,18 @@
    "number": "(4.22)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the first clause reads the display that inserts (4.20) and (4.21) into (4.19), lines 670–680, and the third the sentence after (4.22), lines 694–695, both outside the pinned region (lines 683–693)",
+   "scope_note": "the pinned region is lines 657–695; the first clause reads the display that inserts (4.20) and (4.21) into (4.19), lines 670–680, the second (4.22) with P recalled at lines 657–661 and N', 𝒦 set at lines 662–669, and the third the sentence after (4.22), lines 694–695",
    "scope_reviewed": false,
-   "status": "formal: accepted"
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
     {
      "accept": "Dissertation.Acceptance.A.eq_fwd",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_fwd"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -5205,7 +5289,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_fwd",
      "spec_hash": "ed839d34f480cba1e1eabbb5a5cd78ba",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
      "witness_ok": true
     },
@@ -5233,9 +5317,9 @@
    "number": "(4.23)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the second clause reads lines 697–711, before the pinned region (lines 712–714): the three-link chain at every t ≤ T (lines 697–709) and the sentence that t ↦ 𝔼 sup_{s ≤ t} |δX_s|² is nondecreasing and finite (lines 710–711)",
+   "scope_note": "the pinned region is lines 697–714; the second clause reads lines 697–711: the three-link chain at every t ≤ T (lines 697–709) and the sentence that t ↦ 𝔼 sup_{s ≤ t} |δX_s|² is nondecreasing and finite (lines 710–711); the first clause reads (4.23)",
    "scope_reviewed": false,
-   "status": "formal: accepted"
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
@@ -5272,7 +5356,9 @@
     {
      "accept": "Dissertation.Acceptance.A.eq_bwdyoung",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_bwdyoung"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -5281,9 +5367,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.eq_bwdyoung",
-     "spec_hash": "ed839d34f480cba13db23656421cf5a0",
+     "spec_hash": "ed839d34f480cba1223fa80380d57b0f",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
      "witness_ok": true
     }
@@ -5295,14 +5381,16 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: accepted"
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
     {
      "accept": "Dissertation.Acceptance.A.eq_wgt",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_wgt"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -5313,7 +5401,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_wgt",
      "spec_hash": "ed839d34f480cba149f1ed71dc85d931",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
      "witness_ok": true
     },
@@ -5331,7 +5419,7 @@
      "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.eq_wgt_insert",
-     "spec_hash": "ed839d34f480cba14b6f1b0835c7416b",
+     "spec_hash": "ed839d34f480cba1962ea6cd220ce698",
      "spec_ok": true,
      "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_pert_backward_window_hypotheses",
@@ -5343,7 +5431,7 @@
    "number": "(4.26)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the second clause reads lines 735–752, before the pinned region (lines 756–760): the display inserting (4.25) in (4.24) (lines 735–744) and the bound at every t for ε < 1 and κ > C/ε (lines 745–752)",
+   "scope_note": "the pinned region is lines 735–760; the second clause reads lines 735–752: the display inserting (4.25) in (4.24) (lines 735–744) and the bound at every t for ε < 1 and κ > C/ε (lines 745–752); the first clause reads (4.26) with the sentence before it (lines 753–755)",
    "scope_reviewed": false,
    "status": "formal: proved, author-reviewed"
   },
@@ -5352,7 +5440,9 @@
     {
      "accept": "Dissertation.Acceptance.A.eq_bwd",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_bwd"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -5363,7 +5453,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_bwd",
      "spec_hash": "ed839d34f480cba173f30a686b4b22f5",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
      "witness_ok": true
     },
@@ -5391,9 +5481,9 @@
    "number": "(4.27)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the second clause reads the first two links of the chain of lines 761–772, before the pinned region (lines 775–778): the forward-form BDG bound and the Lipschitz step; its last link, by (4.26), gives (4.27), the first clause",
+   "scope_note": "the pinned region is lines 761–778; the second clause reads the first two links of the chain of lines 761–772: the forward-form BDG bound and the Lipschitz step; its last link, by (4.26), gives (4.27), the first clause, as lines 773–774 say",
    "scope_reviewed": false,
-   "status": "formal: accepted"
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [],
@@ -5410,8 +5500,8 @@
  "summary": {
   "A": {
    "definition: reviewed": 11,
-   "formal: accepted": 74,
-   "formal: proved, author-reviewed": 1,
+   "formal: accepted": 61,
+   "formal: proved, author-reviewed": 14,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
    "out of scope: proof-step": 2
