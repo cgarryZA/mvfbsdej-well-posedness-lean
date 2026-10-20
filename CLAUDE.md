@@ -12,7 +12,7 @@ with jumps. `README.md` is the overview, `acceptance/README.md` the acceptance p
   manuscript and what their proofs need. Results that go beyond the manuscript are not added
   here.
 - **The acceptance test is `ACCEPTANCE.md`.** A claim counts as proved only when its frozen
-  proposition in `Dissertation/PaperSpec/A/` has a theorem in `Dissertation/Acceptance/A/` whose
+  proposition in `MVFBSDEJ/PaperSpec/` has a theorem in `MVFBSDEJ/Acceptance/` whose
   type is exactly that proposition, and the proposition and the definitions it depends on are
   reviewed at their current hashes. Never change a proposition to fit what the implementation
   proves: a false printed claim is refuted beside a corrected one. When in doubt, under-claim.

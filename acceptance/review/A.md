@@ -6,7 +6,7 @@ claim's source passage as read (`source=<claim>@<digest>`); a change of the prop
 passage reopens the entry. The entries quote the manuscript at `1f67672` (`manuscript/`); a
 marker whose digest is not the passage's current one records a reading of an earlier text.
 
-## Remark 2.6, (2.8): `Dissertation.PaperSpec.A.eq_coupling`
+## Remark 2.6, (2.8): `MVFBSDEJ.PaperSpec.eq_coupling`
 
 Manuscript (§2, Remark "Wasserstein bounds"): for two
 diagonal inputs `(Θ, μ), (Θ', μ')` at the same time on the same probability space, the pair
@@ -32,13 +32,13 @@ Correspondence:
 
 Verdict: faithful (broader, printed claim an instance).
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_coupling ed839d34f480cba17af7c36ae6c33114 by=claude-author source=A:rem:wasserstein-bounds@a8c8906e45bdcd6591c7751bd3186ea3b83dd382cd95543acb4edcabc2093661 source=A:rem:freelaw@e2204cd5268c52bf28ead0e1dd0321d0914e8ca0c49f13ab56fa690ca4815fea -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_coupling ed839d34f480cba1bace4ab391e97c18 by=claude-author source=A:rem:wasserstein-bounds@a8c8906e45bdcd6591c7751bd3186ea3b83dd382cd95543acb4edcabc2093661 source=A:rem:freelaw@e2204cd5268c52bf28ead0e1dd0321d0914e8ca0c49f13ab56fa690ca4815fea -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_coupling--claude-reviewer--2026-10-17T12_12_10Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.eq_coupling ed839d34f480cba17af7c36ae6c33114 by=claude-reviewer source=A:rem:wasserstein-bounds@a8c8906e45bdcd6591c7751bd3186ea3b83dd382cd95543acb4edcabc2093661 source=A:rem:freelaw@e2204cd5268c52bf28ead0e1dd0321d0914e8ca0c49f13ab56fa690ca4815fea -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_coupling ed839d34f480cba1bace4ab391e97c18 by=claude-reviewer source=A:rem:wasserstein-bounds@a8c8906e45bdcd6591c7751bd3186ea3b83dd382cd95543acb4edcabc2093661 source=A:rem:freelaw@e2204cd5268c52bf28ead0e1dd0321d0914e8ca0c49f13ab56fa690ca4815fea -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_coupling--claude-auditor--2026-10-19T03_31_22Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.eq_coupling ed839d34f480cba17af7c36ae6c33114 by=claude-auditor source=A:rem:wasserstein-bounds@baddffc87439566a55a973b4d3634494482f991387c121349eff7592be8093ab source=A:rem:freelaw@c2b143b44403046035d85f7e9d730c306f0b5cb52b01f72f3a72ded8e56980b7 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_coupling ed839d34f480cba1bace4ab391e97c18 by=claude-auditor source=A:rem:wasserstein-bounds@baddffc87439566a55a973b4d3634494482f991387c121349eff7592be8093ab source=A:rem:freelaw@c2b143b44403046035d85f7e9d730c306f0b5cb52b01f72f3a72ded8e56980b7 -->
 
-## Remark 2.6, (2.9): `Dissertation.PaperSpec.A.eq_couplingT`
+## Remark 2.6, (2.9): `MVFBSDEJ.PaperSpec.eq_couplingT`
 
 Manuscript: `W₂(ρ, ρ')² ≤ 𝔼|X_T − X'_T|²` for the induced terminal laws `ρ = Law(X_T)`,
 `ρ' = Law(X'_T)`, "the `X`-marginal case of (2.8) at time `T`".
@@ -53,13 +53,13 @@ terminal values.
 
 Verdict: faithful (broader, printed claim an instance).
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_couplingT ed839d34f480cba1b0b3c75b14edd5d3 by=claude-author source=A:rem:wasserstein-bounds@a8c8906e45bdcd6591c7751bd3186ea3b83dd382cd95543acb4edcabc2093661 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_couplingT ed839d34f480cba14bc932fc31ff5e46 by=claude-author source=A:rem:wasserstein-bounds@a8c8906e45bdcd6591c7751bd3186ea3b83dd382cd95543acb4edcabc2093661 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.eq_couplingT--claude-reviewer--2026-10-17T12_12_34Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.eq_couplingT ed839d34f480cba1b0b3c75b14edd5d3 by=claude-reviewer source=A:rem:wasserstein-bounds@a8c8906e45bdcd6591c7751bd3186ea3b83dd382cd95543acb4edcabc2093661 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_couplingT ed839d34f480cba14bc932fc31ff5e46 by=claude-reviewer source=A:rem:wasserstein-bounds@a8c8906e45bdcd6591c7751bd3186ea3b83dd382cd95543acb4edcabc2093661 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.eq_couplingT--claude-auditor--2026-10-19T03_34_37Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.eq_couplingT ed839d34f480cba1b0b3c75b14edd5d3 by=claude-auditor source=A:rem:wasserstein-bounds@baddffc87439566a55a973b4d3634494482f991387c121349eff7592be8093ab -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_couplingT ed839d34f480cba14bc932fc31ff5e46 by=claude-auditor source=A:rem:wasserstein-bounds@baddffc87439566a55a973b4d3634494482f991387c121349eff7592be8093ab -->
 
-## Theorem 3.1: `Dissertation.PaperSpec.A.thm_stab`
+## Theorem 3.1: `MVFBSDEJ.PaperSpec.thm_stab`
 
 Manuscript (§3, Theorem `thm:stab`): system 1 satisfies
 Assumptions 2.2–2.5 with `L, α, β₁, β₂` and `G`; system 2 satisfies Assumptions 2.2–2.3 with its
@@ -93,7 +93,7 @@ Correspondence:
   shared-interior case, the minimal hypotheses on system 2) is stated separately, as
   `thm_stab_companion`, `thm_stab_data` and `thm_stab_minimal`.
 
-Witness: `Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses`. Over a probability space
+Witness: `MVFBSDEJ.Acceptance.thm_stab_nonzero_hypotheses`. Over a probability space
 carrying a Lévy driver with `d = 1` and `ν = δ₀` on `ℝ` (`LevyDriver.exists`), with `𝒢₀ = ⊥`
 (independent of everything, `indep_bot_left`), `n = m = 1` and `T = 1`, both systems are
 Example 5.1(i) with `β₁ = β₂ = 1`, `σ_c = 0`, `h_c = 0`, and the initial data are `ξ¹ ≡ e₁` and
@@ -101,7 +101,7 @@ Example 5.1(i) with `β₁ = β₂ = 1`, `σ_c = 0`, `h_c = 0`, and the initial 
 there. The witness states (2.3), Assumptions 2.2 (for `ξ¹`), 2.3 (`L = 1`), 2.4 (`G = 1`, rank
 `1 = min 1 1`) and 2.5 (`α = β₁ = β₂ = 1`) for system 1; system 2 is the same system, so its (2.3)
 and Assumption 2.3 (`L₂ = 1`) are those of system 1, and Assumption 2.2 for `ξ²` is stated; a
-`Solution` of each (from Theorem 3.5, `Dissertation.Acceptance.A.thm_cwp`); and the two sides of
+`Solution` of each (from Theorem 3.5, `MVFBSDEJ.Acceptance.thm_cwp`); and the two sides of
 (3.1) at the instance: `dataSize = 1`, as only the initial data differ (the coefficient
 differences vanish because the systems coincide), and `supSize ≥ 1`, from `X¹_0 − X²_0 = e₁`
 almost surely (`Solution.X_zero_ae`). Both sides of (3.1) are therefore positive at the instance.
@@ -113,13 +113,13 @@ it was not a trivial instance was wrong.
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.thm_stab ed839d34f480cba16bc55062de98e587 by=claude-author source=A:thm:stab@381ba74c22961e597927279a40c3d1204009169a635d33ce49e1a5962c04d6b8 source=A:thm:cwp@0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.thm_stab ed839d34f480cba14815ce65dd3b146f by=claude-author source=A:thm:stab@381ba74c22961e597927279a40c3d1204009169a635d33ce49e1a5962c04d6b8 source=A:thm:cwp@0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.thm_stab--claude-reviewer--2026-10-17T16_05_53Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.thm_stab ed839d34f480cba16bc55062de98e587 by=claude-reviewer source=A:thm:stab@381ba74c22961e597927279a40c3d1204009169a635d33ce49e1a5962c04d6b8 source=A:thm:cwp@0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.thm_stab ed839d34f480cba14815ce65dd3b146f by=claude-reviewer source=A:thm:stab@381ba74c22961e597927279a40c3d1204009169a635d33ce49e1a5962c04d6b8 source=A:thm:cwp@0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.thm_stab--claude-auditor--2026-10-19T03_36_54Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.thm_stab ed839d34f480cba16bc55062de98e587 by=claude-auditor source=A:thm:stab@381ba74c22961e597927279a40c3d1204009169a635d33ce49e1a5962c04d6b8 source=A:thm:cwp@0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.thm_stab ed839d34f480cba14815ce65dd3b146f by=claude-auditor source=A:thm:stab@381ba74c22961e597927279a40c3d1204009169a635d33ce49e1a5962c04d6b8 source=A:thm:cwp@0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 
-## Theorem 3.3: `Dissertation.PaperSpec.A.thm_uniq`
+## Theorem 3.3: `MVFBSDEJ.PaperSpec.thm_uniq`
 
 Manuscript (§3, Theorem `thm:uniq`): under Assumptions 2.3–2.5,
 (1.1) has at most one solution. More precisely, if `Θ¹, Θ² ∈ ℍ_weak` satisfy (1.1) with the same
@@ -148,7 +148,7 @@ Correspondence:
   weak solution (`PaperSolution.toWeakInt`, with the càdlàg paths unchanged); it is also the
   uniqueness clause of `thm_cwp`.
 
-Witness: `Dissertation.Acceptance.A.thm_uniq_hypotheses`: at the instance of the Theorem 3.5
+Witness: `MVFBSDEJ.Acceptance.thm_uniq_hypotheses`: at the instance of the Theorem 3.5
 witness (Example 5.1(i), `β₁ = β₂ = 1`, `n = m = d = 1`, `ν = δ₀`, `T = 1`), (2.3) and
 Assumptions 2.3–2.5 in the order of the proposition, and two tuples with `WeakSolution` for the
 datum `0` (both the solution of Theorem 3.5, as the hypotheses of a true uniqueness statement can
@@ -157,13 +157,13 @@ only be met by equal tuples).
 Verdict: faithful, with the reading of "satisfies (1.1)" by `L²` stochastic integrals recorded in
 `definitions.md`.
 
-<!-- spec-review: Dissertation.PaperSpec.A.thm_uniq ed839d34f480cba1b8815741b34ba4e5 by=claude-author source=A:thm:uniq@03292da4be100aa38ea90d55eff64159cf4e923c05926fa169ebba6ed2985189 source=A:rem:uniq-no-integ@16ace776485cb414a0ad39fba869a577ec053811b32b39e09709fb01a4e0f75e source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.thm_uniq ed839d34f480cba1c0edbd81a0b01a9e by=claude-author source=A:thm:uniq@03292da4be100aa38ea90d55eff64159cf4e923c05926fa169ebba6ed2985189 source=A:rem:uniq-no-integ@16ace776485cb414a0ad39fba869a577ec053811b32b39e09709fb01a4e0f75e source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.thm_uniq--claude-reviewer--2026-10-17T16_05_53Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.thm_uniq ed839d34f480cba1b8815741b34ba4e5 by=claude-reviewer source=A:thm:uniq@03292da4be100aa38ea90d55eff64159cf4e923c05926fa169ebba6ed2985189 source=A:rem:uniq-no-integ@16ace776485cb414a0ad39fba869a577ec053811b32b39e09709fb01a4e0f75e source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.thm_uniq ed839d34f480cba1c0edbd81a0b01a9e by=claude-reviewer source=A:thm:uniq@03292da4be100aa38ea90d55eff64159cf4e923c05926fa169ebba6ed2985189 source=A:rem:uniq-no-integ@16ace776485cb414a0ad39fba869a577ec053811b32b39e09709fb01a4e0f75e source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.thm_uniq--claude-auditor--2026-10-19T03_35_38Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.thm_uniq ed839d34f480cba1b8815741b34ba4e5 by=claude-auditor source=A:thm:uniq@03292da4be100aa38ea90d55eff64159cf4e923c05926fa169ebba6ed2985189 source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.thm_uniq ed839d34f480cba1c0edbd81a0b01a9e by=claude-auditor source=A:thm:uniq@03292da4be100aa38ea90d55eff64159cf4e923c05926fa169ebba6ed2985189 source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 
-## Theorem 3.5: `Dissertation.PaperSpec.A.thm_cwp`, and its continuous dependence
+## Theorem 3.5: `MVFBSDEJ.PaperSpec.thm_cwp`, and its continuous dependence
 
 Manuscript (§3, Theorem `thm:cwp`): for every horizon `T > 0`,
 under Assumptions 2.2–2.5 the system (1.1) admits a solution `Θ = (X, Y, Z, U) ∈ ℍ`, unique by
@@ -194,20 +194,20 @@ Correspondence:
   manuscript names the sense, the estimate itself, so no separate continuity statement (a
   modulus, or continuity of a solution map in a topology) is read into it.
 
-Witness: `Dissertation.Acceptance.A.thm_cwp_hypotheses`: at the instance of the Theorem 3.1
+Witness: `MVFBSDEJ.Acceptance.thm_cwp_hypotheses`: at the instance of the Theorem 3.1
 witness, system 1 (Example 5.1(i), `β₁ = β₂ = 1`, `σ_c = 0`, `h_c = 0`, datum `0`, `ν = δ₀`,
 `n = m = d = 1`, `T = 1`, `G = 1`, `L = α = 1`) satisfies (2.3) and Assumptions 2.2–2.5, stated in
 the order of the proposition.
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.thm_cwp ed839d34f480cba10deeabcd10e6e74d by=claude-author source=A:thm:cwp@0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:intro:limin-comparison@90030b2d20a48b0ae1854a8fb2d4053ad1be2da6ece678b13095bd33e99bda43 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.thm_cwp ed839d34f480cba12370b493940a6d61 by=claude-author source=A:thm:cwp@0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:intro:limin-comparison@90030b2d20a48b0ae1854a8fb2d4053ad1be2da6ece678b13095bd33e99bda43 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.thm_cwp--claude-reviewer--2026-10-17T16_05_53Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.thm_cwp ed839d34f480cba10deeabcd10e6e74d by=claude-reviewer source=A:thm:cwp@0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:intro:limin-comparison@90030b2d20a48b0ae1854a8fb2d4053ad1be2da6ece678b13095bd33e99bda43 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.thm_cwp ed839d34f480cba12370b493940a6d61 by=claude-reviewer source=A:thm:cwp@0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:intro:limin-comparison@90030b2d20a48b0ae1854a8fb2d4053ad1be2da6ece678b13095bd33e99bda43 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.thm_cwp--claude-auditor--2026-10-19T03_34_53Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.thm_cwp ed839d34f480cba10deeabcd10e6e74d by=claude-auditor source=A:thm:cwp@0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:intro:limin-comparison@90030b2d20a48b0ae1854a8fb2d4053ad1be2da6ece678b13095bd33e99bda43 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.thm_cwp ed839d34f480cba12370b493940a6d61 by=claude-auditor source=A:thm:cwp@0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:intro:limin-comparison@90030b2d20a48b0ae1854a8fb2d4053ad1be2da6ece678b13095bd33e99bda43 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 
-## Proposition 3.8: `Dissertation.PaperSpec.A.prop_strict`
+## Proposition 3.8: `MVFBSDEJ.PaperSpec.prop_strict`
 
 Manuscript (§3, Proposition `prop:strict`): let `n = m = 1`,
 `d ≥ 1`, `G = 1`, fix `β₁ > 0`; for every `0 < ε < β₁` the drift (3.6)
@@ -240,18 +240,18 @@ Correspondence:
   (iii), `supp` the support of the law (`Measure.support`); it holds at every `t`, as `b` does not
   depend on `t`.
 
-Witness: `Dissertation.Acceptance.A.prop_strict_hypotheses` (`ν = δ₀` on `ℝ`, `d = 1`,
+Witness: `MVFBSDEJ.Acceptance.prop_strict_hypotheses` (`ν = δ₀` on `ℝ`, `d = 1`,
 `β₁ = 2`, `ε = 1`); the hypotheses are numerical and the witness is immediate.
 
 Verdict: faithful (clause (ii) broader, printed claim an instance).
 
-<!-- spec-review: Dissertation.PaperSpec.A.prop_strict ed839d34f480cba1f1c48950c52ae4f4 by=claude-author source=A:prop:strict@b18b8a1407fec705caed58f7f0bb7604c994a084d50703fdd8cc68b071003604 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.prop_strict ed839d34f480cba187dc1facdd73b114 by=claude-author source=A:prop:strict@b18b8a1407fec705caed58f7f0bb7604c994a084d50703fdd8cc68b071003604 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.prop_strict--claude-reviewer--2026-10-17T12_11_02Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.prop_strict ed839d34f480cba1f1c48950c52ae4f4 by=claude-reviewer source=A:prop:strict@b18b8a1407fec705caed58f7f0bb7604c994a084d50703fdd8cc68b071003604 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.prop_strict ed839d34f480cba187dc1facdd73b114 by=claude-reviewer source=A:prop:strict@b18b8a1407fec705caed58f7f0bb7604c994a084d50703fdd8cc68b071003604 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.prop_strict--claude-auditor--2026-10-19T03_31_23Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.prop_strict ed839d34f480cba1f1c48950c52ae4f4 by=claude-auditor source=A:prop:strict@b18b8a1407fec705caed58f7f0bb7604c994a084d50703fdd8cc68b071003604 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.prop_strict ed839d34f480cba187dc1facdd73b114 by=claude-auditor source=A:prop:strict@b18b8a1407fec705caed58f7f0bb7604c994a084d50703fdd8cc68b071003604 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 
-## Corollary 3.6: `Dissertation.PaperSpec.A.cor_robust`, `cor_robust_wp`, `cor_robust_lip`
+## Corollary 3.6: `MVFBSDEJ.PaperSpec.cor_robust`, `cor_robust_wp`, `cor_robust_lip`
 
 Manuscript (§3, Corollary `cor:robust`): let `m = n`, the
 baseline `(b₀, σ₀, h₀, f₀, g)` with `ξ₀` satisfy Assumptions 2.2–2.5 with margin `c_diss > 0` in
@@ -295,14 +295,14 @@ Correspondence:
   every filtered probability space; it is broader, the printed claim its instance. It keeps
   `n ≥ 1` and `T > 0`, under which (3.5) forces `L_p ≥ 0`.
 
-Witnesses: `Dissertation.Acceptance.A.cor_robust_hypotheses` (for `cor_robust` and
+Witnesses: `MVFBSDEJ.Acceptance.cor_robust_hypotheses` (for `cor_robust` and
 `cor_robust_wp`): over a Lévy driver with `d = 1`, `ν = δ₀`, `𝒢₀ = ⊥`, `n = 1`, `T = 1`, the
 baseline Example 5.1(i) with `β₁ = β₂ = 2`, `σ_c = 0`, `h_c = 0`, datum `0`, with `L₀ = 2`,
 `G = 1`, `α = 1`, reduced constants `β₁ = β₂ = 1` and margin `c_diss = 1` (Remark 2.11), and the
 feedback perturbation `p_b = ε y`, `p_σ = ε z`, `p_h = ε u`, `p_f = 0`, `ε = 1/2`, with
 `L_p = c_pert = 1/2`; every hypothesis in the order of the propositions, the perturbed system's
 (2.3) through its identification with Example 5.1(i) at `(3/2, 2)`
-(`sys_two_perturb_feedback`). `Dissertation.Acceptance.A.cor_robust_lip_hypotheses`: the
+(`sys_two_perturb_feedback`). `MVFBSDEJ.Acceptance.cor_robust_lip_hypotheses`: the
 perturbation of Example 5.4 (`ε = 1/4`, the profiles `min(|r|, 1)`, `Q(s) = min(|s₁|, 1)`, the
 feature `min(‖u‖, 1)`, `w₀ = w₁ = v₀ = e₁`, `ĥ = 0`, reference laws `δ₀`), over a Lévy driver with
 `d = 1`, `ν = δ₀`, `n = 1`, `T = 1`, depends on the tuple through its law only and satisfies (3.5)
@@ -313,23 +313,23 @@ measurability recorded; `cor_robust_lip` broader: it holds on every filtered pro
 without the other hypotheses of the corollary, and the printed claim is its instance in the setting
 of the corollary.
 
-<!-- spec-review: Dissertation.PaperSpec.A.cor_robust ed839d34f480cba154326c82c977c8bd by=claude-author source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust ed839d34f480cba158154e23787dfbca by=claude-author source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.cor_robust--claude-reviewer--2026-10-17T12_24_23Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.cor_robust ed839d34f480cba154326c82c977c8bd by=claude-reviewer source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust ed839d34f480cba158154e23787dfbca by=claude-reviewer source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.cor_robust--claude-auditor--2026-10-19T03_36_02Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.cor_robust ed839d34f480cba154326c82c977c8bd by=claude-auditor source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 -->
-<!-- spec-review: Dissertation.PaperSpec.A.cor_robust_wp ed839d34f480cba16dd662e97e677716 by=claude-author source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust ed839d34f480cba158154e23787dfbca by=claude-auditor source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust_wp ed839d34f480cba1617ff136058ce573 by=claude-author source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.cor_robust_wp--claude-reviewer--2026-10-17T16_05_53Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.cor_robust_wp ed839d34f480cba16dd662e97e677716 by=claude-reviewer source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust_wp ed839d34f480cba1617ff136058ce573 by=claude-reviewer source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.cor_robust_wp--claude-auditor--2026-10-19T03_37_29Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.cor_robust_wp ed839d34f480cba16dd662e97e677716 by=claude-auditor source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
-<!-- spec-review: Dissertation.PaperSpec.A.cor_robust_lip ed839d34f480cba14b18016daa0b4aac by=claude-author source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust_wp ed839d34f480cba1617ff136058ce573 by=claude-auditor source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust_lip ed839d34f480cba129c3f998d5e8f786 by=claude-author source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.cor_robust_lip--claude-reviewer--2026-10-17T16_03_52Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.cor_robust_lip ed839d34f480cba14b18016daa0b4aac by=claude-reviewer source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust_lip ed839d34f480cba129c3f998d5e8f786 by=claude-reviewer source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.cor_robust_lip--claude-auditor--2026-10-19T03_34_13Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.cor_robust_lip ed839d34f480cba14b18016daa0b4aac by=claude-auditor source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust_lip ed839d34f480cba129c3f998d5e8f786 by=claude-auditor source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 -->
 
-## Assumption 2.4 (the bounds after "Then"): `Dissertation.PaperSpec.A.ass_G`
+## Assumption 2.4 (the bounds after "Then"): `MVFBSDEJ.PaperSpec.ass_G`
 
 Manuscript (§2, Assumption `ass:G`): `G ∈ ℝ^{m×n}` has
 full rank; `‖G‖` its operator norm, so `|Gv| ≤ ‖G‖ |v|` and `|G*v| ≤ ‖G‖ |v|`, and `s_min(G) > 0`
@@ -350,17 +350,17 @@ Correspondence: `G*` is the adjoint (`Gᵀ` for real `G`); `GX, GZ, GU, sMin` ar
 the least eigenvalue of `GᵀG` or `GGᵀ`); `c_G = (sMin G ^ 2)⁻¹`. The `U` bound is asserted for
 every measure `ν` on every measurable `E`, broader than the standing σ-finite `ν`.
 
-Witness: `Dissertation.Acceptance.A.ass_G_hypotheses` (`m = n = 1`, `G = 1`).
+Witness: `MVFBSDEJ.Acceptance.ass_G_hypotheses` (`m = n = 1`, `G = 1`).
 
 Verdict: faithful (the `U` clause broader, the printed claim an instance).
 
-<!-- spec-review: Dissertation.PaperSpec.A.ass_G ed839d34f480cba1654da9b84ef073af by=claude-author source=A:ass:G@0ca63278064f162ffc77480e11f78f5fba3573556a22730b0bd4ca763ba1886f -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ass_G ed839d34f480cba1be3399b151b019fa by=claude-author source=A:ass:G@0ca63278064f162ffc77480e11f78f5fba3573556a22730b0bd4ca763ba1886f -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ass_G--claude-reviewer--2026-10-17T12_05_30Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ass_G ed839d34f480cba1654da9b84ef073af by=claude-reviewer source=A:ass:G@0ca63278064f162ffc77480e11f78f5fba3573556a22730b0bd4ca763ba1886f -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ass_G ed839d34f480cba1be3399b151b019fa by=claude-reviewer source=A:ass:G@0ca63278064f162ffc77480e11f78f5fba3573556a22730b0bd4ca763ba1886f -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ass_G--claude-auditor--2026-10-19T03_31_21Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ass_G ed839d34f480cba1654da9b84ef073af by=claude-auditor source=A:ass:G@0ca63278064f162ffc77480e11f78f5fba3573556a22730b0bd4ca763ba1886f -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ass_G ed839d34f480cba1be3399b151b019fa by=claude-auditor source=A:ass:G@0ca63278064f162ffc77480e11f78f5fba3573556a22730b0bd4ca763ba1886f -->
 
-## Remark 2.6, (2.10): `Dissertation.PaperSpec.A.eq_lipfun`
+## Remark 2.6, (2.10): `MVFBSDEJ.PaperSpec.eq_lipfun`
 
 Manuscript: for a separable Hilbert space `K` and `φ̄ : H → K` Lipschitz, the law functional
 `μ ↦ ∫_H φ̄ dμ` is `W₂`-Lipschitz with the same constant,
@@ -376,18 +376,18 @@ the printed claim its instance at the least one. `|·|_H` is the Hilbert norm (a
 integrals are Bochner integrals, which exist since `φ` has linear growth and `μ, μ'` finite second
 moments. `W₂` is `w2H`, reviewed with (2.8).
 
-Witness: `Dissertation.Acceptance.A.eq_lipfun_hypotheses` (the projection `θ ↦ y` into `ℝ¹`,
+Witness: `MVFBSDEJ.Acceptance.eq_lipfun_hypotheses` (the projection `θ ↦ y` into `ℝ¹`,
 `L = 1`).
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_lipfun ed839d34f480cba187b5540277706218 by=claude-author source=A:rem:wasserstein-bounds@a8c8906e45bdcd6591c7751bd3186ea3b83dd382cd95543acb4edcabc2093661 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_lipfun ed839d34f480cba1b3aad8951c871a26 by=claude-author source=A:rem:wasserstein-bounds@a8c8906e45bdcd6591c7751bd3186ea3b83dd382cd95543acb4edcabc2093661 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.eq_lipfun--claude-reviewer--2026-10-17T16_03_52Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.eq_lipfun ed839d34f480cba187b5540277706218 by=claude-reviewer source=A:rem:wasserstein-bounds@a8c8906e45bdcd6591c7751bd3186ea3b83dd382cd95543acb4edcabc2093661 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_lipfun ed839d34f480cba1b3aad8951c871a26 by=claude-reviewer source=A:rem:wasserstein-bounds@a8c8906e45bdcd6591c7751bd3186ea3b83dd382cd95543acb4edcabc2093661 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_lipfun--claude-auditor--2026-10-19T03_34_14Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.eq_lipfun ed839d34f480cba187b5540277706218 by=claude-auditor source=A:rem:wasserstein-bounds@baddffc87439566a55a973b4d3634494482f991387c121349eff7592be8093ab -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_lipfun ed839d34f480cba1b3aad8951c871a26 by=claude-auditor source=A:rem:wasserstein-bounds@baddffc87439566a55a973b4d3634494482f991387c121349eff7592be8093ab -->
 
-## Remark 2.6, (2.11): `Dissertation.PaperSpec.A.eq_margproj`
+## Remark 2.6, (2.11): `MVFBSDEJ.PaperSpec.eq_margproj`
 
 Manuscript: marginal projection `P₂(H) → P₂(L²(ν))`, `μ ↦ μ^U`, is 1-Lipschitz for `W₂`:
 `W₂(μ^U, μ'^U) ≤ W₂(μ, μ')`.
@@ -401,13 +401,13 @@ hypotheses beyond the standing setting.
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_margproj ed839d34f480cba1c19abbad6d02050c by=claude-author source=A:rem:wasserstein-bounds@a8c8906e45bdcd6591c7751bd3186ea3b83dd382cd95543acb4edcabc2093661 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_margproj ed839d34f480cba1b8e0d9bc293fdb71 by=claude-author source=A:rem:wasserstein-bounds@a8c8906e45bdcd6591c7751bd3186ea3b83dd382cd95543acb4edcabc2093661 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.eq_margproj--claude-reviewer--2026-10-17T16_03_52Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.eq_margproj ed839d34f480cba1c19abbad6d02050c by=claude-reviewer source=A:rem:wasserstein-bounds@a8c8906e45bdcd6591c7751bd3186ea3b83dd382cd95543acb4edcabc2093661 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_margproj ed839d34f480cba1b8e0d9bc293fdb71 by=claude-reviewer source=A:rem:wasserstein-bounds@a8c8906e45bdcd6591c7751bd3186ea3b83dd382cd95543acb4edcabc2093661 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.eq_margproj--claude-auditor--2026-10-19T03_34_37Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.eq_margproj ed839d34f480cba1c19abbad6d02050c by=claude-auditor source=A:rem:wasserstein-bounds@baddffc87439566a55a973b4d3634494482f991387c121349eff7592be8093ab -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_margproj ed839d34f480cba1b8e0d9bc293fdb71 by=claude-auditor source=A:rem:wasserstein-bounds@baddffc87439566a55a973b4d3634494482f991387c121349eff7592be8093ab -->
 
-## Lemma 4.1: `Dissertation.PaperSpec.A.lem_bpbsde`
+## Lemma 4.1: `MVFBSDEJ.PaperSpec.lem_bpbsde`
 
 Manuscript (§4, Lemma `lem:bpbsde`): let `δY` be a càdlàg
 adapted process and `δZ ∈ H²_W`, `δU ∈ H²_N` satisfy
@@ -444,20 +444,20 @@ Correspondence:
 * Conclusion: `𝔼 sup_{t ≤ T} |δY_t|² < ∞` is `δY ∈ S²(ℝᵐ)` given the càdlàg adapted paths; the
   estimate with `|δY_t|² = Σ_k |δY^k_t|²` (`esq`), `|δZ|²_F = Σ_{k,j}`, `‖δU‖² = Σ_k`.
 
-Witness: `Dissertation.Acceptance.A.lem_bpbsde_hypotheses`: over a Lévy driver with `d = 1`,
+Witness: `MVFBSDEJ.Acceptance.lem_bpbsde_hypotheses`: over a Lévy driver with `d = 1`,
 `ν = δ₀`, `𝒢₀ = ⊥`, `T = 1`, the backward component `(Y, Z, U)` of the solution of Theorem 3.5 for
 Example 5.1(i) (`β₁ = β₂ = 1`), with `δξ = g(X_T, Law X_T)` and `φ` the driver process, meets
 every hypothesis, in the order of the proposition: the lemma's intended use.
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.lem_bpbsde ed839d34f480cba1202e3ec284da1f15 by=claude-author source=A:lem:bpbsde@d62094248f27ce8bc15117e3e39b9ea5169bf86a1af04e994e8c82a5ec2ff534 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem_bpbsde ed839d34f480cba12081ce44f806f9c8 by=claude-author source=A:lem:bpbsde@d62094248f27ce8bc15117e3e39b9ea5169bf86a1af04e994e8c82a5ec2ff534 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lem_bpbsde--claude-reviewer--2026-10-17T12_23_54Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.lem_bpbsde ed839d34f480cba1202e3ec284da1f15 by=claude-reviewer source=A:lem:bpbsde@d62094248f27ce8bc15117e3e39b9ea5169bf86a1af04e994e8c82a5ec2ff534 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem_bpbsde ed839d34f480cba12081ce44f806f9c8 by=claude-reviewer source=A:lem:bpbsde@d62094248f27ce8bc15117e3e39b9ea5169bf86a1af04e994e8c82a5ec2ff534 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lem_bpbsde--claude-auditor--2026-10-19T03_35_50Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.lem_bpbsde ed839d34f480cba1202e3ec284da1f15 by=claude-auditor source=A:lem:bpbsde@d62094248f27ce8bc15117e3e39b9ea5169bf86a1af04e994e8c82a5ec2ff534 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem_bpbsde ed839d34f480cba12081ce44f806f9c8 by=claude-auditor source=A:lem:bpbsde@d62094248f27ce8bc15117e3e39b9ea5169bf86a1af04e994e8c82a5ec2ff534 -->
 
-## Lemma 4.2: `Dissertation.PaperSpec.A.lem_small`
+## Lemma 4.2: `MVFBSDEJ.PaperSpec.lem_small`
 
 Manuscript (§4, Lemma `lem:small`): under Assumptions
 2.2–2.3 there is `λ* ∈ (0, 1]`, depending only on `T`, `L` and `c_BDG`, such that `WP(λ)` holds
@@ -470,18 +470,18 @@ Assumptions 2.2 (datum `ξ₀`) and 2.3 (constant `L`): `0 < λ*(T, L) ≤ 1` an
 Correspondence: `λ*` is a function of `(T, L)` chosen first (`c_BDG` is a universal number); its
 bounds are asserted in the situation of the lemma. `WP` is reviewed in `definitions.md`.
 
-Witness: `Dissertation.Acceptance.A.thm_cwp_hypotheses` (Example 5.1(i): (2.3) and
+Witness: `MVFBSDEJ.Acceptance.thm_cwp_hypotheses` (Example 5.1(i): (2.3) and
 Assumptions 2.2–2.5, a superset of the hypotheses here).
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.lem_small ed839d34f480cba12f6a12214671fd14 by=claude-author source=A:lem:small@bffd23b982e584c71b1ab55af148dce8ccd1f30bcb7d7cda8b1ed69982efc706 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem_small ed839d34f480cba186ae2e8b9100babf by=claude-author source=A:lem:small@bffd23b982e584c71b1ab55af148dce8ccd1f30bcb7d7cda8b1ed69982efc706 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lem_small--claude-reviewer--2026-10-17T12_26_58Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.lem_small ed839d34f480cba12f6a12214671fd14 by=claude-reviewer source=A:lem:small@bffd23b982e584c71b1ab55af148dce8ccd1f30bcb7d7cda8b1ed69982efc706 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem_small ed839d34f480cba186ae2e8b9100babf by=claude-reviewer source=A:lem:small@bffd23b982e584c71b1ab55af148dce8ccd1f30bcb7d7cda8b1ed69982efc706 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.lem_small--claude-auditor--2026-10-19T03_37_18Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.lem_small ed839d34f480cba12f6a12214671fd14 by=claude-auditor source=A:lem:small@bffd23b982e584c71b1ab55af148dce8ccd1f30bcb7d7cda8b1ed69982efc706 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem_small ed839d34f480cba186ae2e8b9100babf by=claude-auditor source=A:lem:small@bffd23b982e584c71b1ab55af148dce8ccd1f30bcb7d7cda8b1ed69982efc706 -->
 
-## Lemma 4.3: `Dissertation.PaperSpec.A.lem_pert`
+## Lemma 4.3: `MVFBSDEJ.PaperSpec.lem_pert`
 
 Manuscript (Lemma `lem:pert`): under Assumptions 2.3–2.5, for `λ̲ ∈ (0, 1]` and
 `λ ∈ [λ̲, 1]`, let `Θ¹, Θ²` solve (4.1) at `λ` with `ℱ₀`-measurable initial data `ξ₀^k` and
@@ -505,7 +505,7 @@ Correspondence:
   predictability of the difference are inherited). The proof does not use it.
 * (4.14): `supSize` and `dataSize` (reviewed with Theorem 3.1) with the differences of the data.
 
-Witness: `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`: at Example 5.1(i),
+Witness: `MVFBSDEJ.Acceptance.lem_pert_two_data_hypotheses`: at Example 5.1(i),
 `λ̲ = λ = 1` and zero forcings, the solutions of Theorem 3.5 from the initial data `0` and `e₁`
 as solutions of (4.1) in `ℍ_weak`; their difference lies in `ℍ` (by Theorem 3.1), and the data
 size on the right of (4.14) is `𝔼|δξ₀|² = 1`, so the estimate is exercised with distinct
@@ -513,13 +513,13 @@ solutions.
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.lem_pert ed839d34f480cba1eefcd4522364d865 by=claude-author source=A:lem:pert@ea2eb3fcdf75fe4c7dccc111e320388b6d82e0967dd051aa673e75f7a5f1c1e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem_pert ed839d34f480cba1ce2cfd574c200974 by=claude-author source=A:lem:pert@ea2eb3fcdf75fe4c7dccc111e320388b6d82e0967dd051aa673e75f7a5f1c1e9 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lem_pert--claude-reviewer--2026-10-17T12_26_32Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.lem_pert ed839d34f480cba1eefcd4522364d865 by=claude-reviewer source=A:lem:pert@ea2eb3fcdf75fe4c7dccc111e320388b6d82e0967dd051aa673e75f7a5f1c1e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem_pert ed839d34f480cba1ce2cfd574c200974 by=claude-reviewer source=A:lem:pert@ea2eb3fcdf75fe4c7dccc111e320388b6d82e0967dd051aa673e75f7a5f1c1e9 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lem_pert--claude-auditor--2026-10-19T03_38_06Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.lem_pert ed839d34f480cba1eefcd4522364d865 by=claude-auditor source=A:lem:pert@ea2eb3fcdf75fe4c7dccc111e320388b6d82e0967dd051aa673e75f7a5f1c1e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem_pert ed839d34f480cba1ce2cfd574c200974 by=claude-auditor source=A:lem:pert@ea2eb3fcdf75fe4c7dccc111e320388b6d82e0967dd051aa673e75f7a5f1c1e9 -->
 
-## (4.25), the Young bound in Step 4 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_bwdyoung`
+## (4.25), the Young bound in Step 4 of the proof of Lemma 4.3: `MVFBSDEJ.PaperSpec.eq_bwdyoung`
 
 Manuscript (proof of Lemma `lem:pert`, Step 4, lines 726–733): "By Assumption 2.3, the coupling
 bound (2.8), and Young's inequality, for every `0 < ε ≤ 1`,
@@ -577,7 +577,7 @@ with `K' = 10 (2L)²` (`PairDiff.ae_backwardYoung_le`,
 Young's inequality leaves are at most `(1/ε)` times the same expectations because `ε ≤ 1`. The
 proof of Lemma 4.3 in the implementation does not use (4.25) (`Stability/BackwardEnergy.lean`).
 
-Witness: `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`, the hypotheses of Lemma 4.3,
+Witness: `MVFBSDEJ.Acceptance.lem_pert_two_data_hypotheses`, the hypotheses of Lemma 4.3,
 which are those of (4.25): at Example 5.1(i) over a Lévy driver with `d = 1`, `ν = δ₀`,
 `𝒢₀ = ⊥`, `n = m = 1`, `T = 1`, the system with (2.3) and Assumptions 2.3–2.5 at `L = 1`,
 `G = 1`, `α = β₁ = β₂ = 1`; `λ̲ = λ = 1`; the zero forcing; the initial data `0` and `e₁`; the
@@ -585,11 +585,11 @@ solutions of Theorem 3.5 from them, `WeakForcedSolution`s with `supSize(Θ¹ −
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_bwdyoung ed839d34f480cba13db23656421cf5a0 by=claude-author source=A:eq:bwdyoung@6de6e9ca136a07fe246605603408e399b279d06e2d18e1d458a34b7b82ce829c -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_bwdyoung ed839d34f480cba1ae21c6f7f8e31910 by=claude-author source=A:eq:bwdyoung@6de6e9ca136a07fe246605603408e399b279d06e2d18e1d458a34b7b82ce829c -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_bwdyoung--claude-auditor--2026-10-19T18_47_22Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.eq_bwdyoung ed839d34f480cba13db23656421cf5a0 by=claude-auditor source=A:eq:bwdyoung@6de6e9ca136a07fe246605603408e399b279d06e2d18e1d458a34b7b82ce829c -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_bwdyoung ed839d34f480cba1ae21c6f7f8e31910 by=claude-auditor source=A:eq:bwdyoung@6de6e9ca136a07fe246605603408e399b279d06e2d18e1d458a34b7b82ce829c -->
 
-## Lemma 4.4: `Dissertation.PaperSpec.A.lem_cont`
+## Lemma 4.4: `MVFBSDEJ.PaperSpec.lem_cont`
 
 Manuscript (Lemma `lem:cont`): under Assumptions 2.2–2.5, with `λ*` the threshold of Lemma 4.2,
 there is `ζ₀ > 0`, depending only on `T, L, ‖G‖, c_G, α, β₁, β₂, λ*` and `c_BDG`, such that if
@@ -603,7 +603,7 @@ Correspondence: the proposition is broader than printed: it holds for every `λ*
 only the threshold of Lemma 4.2; the printed claim is its instance at that threshold (which lies
 in `(0, 1]` by `lem_small`). The positivity of `ζ₀` is asserted in the situation of the lemma.
 
-Witness: `Dissertation.Acceptance.A.lem_cont_hypotheses`: the hypotheses of the lemma at Example
+Witness: `MVFBSDEJ.Acceptance.lem_cont_hypotheses`: the hypotheses of the lemma at Example
 5.1(i) (the instance of `thm_cwp_hypotheses`, with the datum `0`), together with `λ*` and `λ₀` both
 equal to the constant `λ*(1, 1) ∈ (0, 1]` of Lemma 4.2, and `WP(λ₀)` there (from `lem_small`), so
 the premise of the continuation step is met and the step is exercised.
@@ -611,13 +611,13 @@ the premise of the continuation step is met and the step is exercised.
 Verdict: broader: `λ*` ranges over all of `(0, 1]`; the printed claim is its instance at the
 threshold of Lemma 4.2.
 
-<!-- spec-review: Dissertation.PaperSpec.A.lem_cont ed839d34f480cba15f6eb38f12c8d372 by=claude-author source=A:lem:cont@c383f5951a193b52153def310e145b684712418abdb0ed5c8405a458be4b45de -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem_cont ed839d34f480cba11d46b6b5a9e8afc8 by=claude-author source=A:lem:cont@c383f5951a193b52153def310e145b684712418abdb0ed5c8405a458be4b45de -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lem_cont--claude-reviewer--2026-10-17T12_25_19Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.lem_cont ed839d34f480cba15f6eb38f12c8d372 by=claude-reviewer source=A:lem:cont@c383f5951a193b52153def310e145b684712418abdb0ed5c8405a458be4b45de -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem_cont ed839d34f480cba11d46b6b5a9e8afc8 by=claude-reviewer source=A:lem:cont@c383f5951a193b52153def310e145b684712418abdb0ed5c8405a458be4b45de -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.lem_cont--claude-auditor--2026-10-19T03_35_26Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.lem_cont ed839d34f480cba15f6eb38f12c8d372 by=claude-auditor source=A:lem:cont@c383f5951a193b52153def310e145b684712418abdb0ed5c8405a458be4b45de -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem_cont ed839d34f480cba11d46b6b5a9e8afc8 by=claude-auditor source=A:lem:cont@c383f5951a193b52153def310e145b684712418abdb0ed5c8405a458be4b45de -->
 
-## Example 5.1(i): `Dissertation.PaperSpec.A.ex_concrete_i_ham`, `ex_concrete_i`, `ex_concrete_i_pairing`, `ex_concrete_i_wp`
+## Example 5.1(i): `MVFBSDEJ.PaperSpec.ex_concrete_i_ham`, `ex_concrete_i`, `ex_concrete_i_pairing`, `ex_concrete_i_wp`
 
 Manuscript (§5, Example `ex:concrete`, part (i)): `n = m = d = 1`,
 `G = 1`, `ν` σ-finite, `ξ₀ ∈ L²(Ω, ℱ₀; ℝⁿ)`, `σ_c ∈ ℝ`, `h_c ∈ L²(ν)`, `β₁, β₂ > 0`. The
@@ -669,7 +669,7 @@ Correspondence:
   minimiser, and the system itself is the definition `affineCoeffs`. The interpretation of
   `β₁, β₂` is exposition.
 
-Witness: `Dissertation.Acceptance.A.ex_concrete_hypotheses` (the standing setting with `ν = δ₀`,
+Witness: `MVFBSDEJ.Acceptance.ex_concrete_hypotheses` (the standing setting with `ν = δ₀`,
 `𝒢₀ = ⊥` and the datum `0`; `T = 1`, `β₁ = β₂ = 1`). `ex_concrete_i_ham` has only `β₁ > 0`.
 
 * "Unweighted with the same constant here because `G = 1` gives `c_G = 1`": at `G = 1`,
@@ -680,28 +680,28 @@ every measure `ν`, σ-finite or not, and every real `β₂`, and the printed cl
 σ-finite `ν` and `β₂ > 0`; `ex_concrete_i_pairing` broader: the pairings hold at every `t`, the
 printed claim being its instance at almost every `t ∈ [0, T]`.
 
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_ham ed839d34f480cba1cf9f26355b828c6a by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i_ham ed839d34f480cba1cf9f26355b828c6a by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.ex_concrete_i_ham--claude-reviewer--2026-10-17T12_16_01Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_ham ed839d34f480cba1cf9f26355b828c6a by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i_ham ed839d34f480cba1cf9f26355b828c6a by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_concrete_i_ham--claude-auditor--2026-10-19T03_31_21Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_ham ed839d34f480cba1cf9f26355b828c6a by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i ed839d34f480cba1d2f6e8919288ad6b by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i_ham ed839d34f480cba1cf9f26355b828c6a by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i ed839d34f480cba18c5c46dad71ae633 by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_i--claude-reviewer--2026-10-17T12_13_03Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i ed839d34f480cba1d2f6e8919288ad6b by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i ed839d34f480cba18c5c46dad71ae633 by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_i--claude-auditor--2026-10-19T03_36_52Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i ed839d34f480cba1d2f6e8919288ad6b by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_pairing ed839d34f480cba1272d037d1e16e040 by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i ed839d34f480cba18c5c46dad71ae633 by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i_pairing ed839d34f480cba1877fc9dad693a20c by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_i_pairing--claude-reviewer--2026-10-17T16_05_52Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_pairing ed839d34f480cba1272d037d1e16e040 by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i_pairing ed839d34f480cba1877fc9dad693a20c by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_i_pairing--claude-auditor--2026-10-19T03_38_21Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_pairing ed839d34f480cba1272d037d1e16e040 by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_wp ed839d34f480cba13343e4213bb7f62d by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i_pairing ed839d34f480cba1877fc9dad693a20c by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i_wp ed839d34f480cba13009edf88db6d533 by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_i_wp--claude-reviewer--2026-10-17T16_05_52Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_wp ed839d34f480cba13343e4213bb7f62d by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i_wp ed839d34f480cba13009edf88db6d533 by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_i_wp--claude-auditor--2026-10-19T03_37_01Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_wp ed839d34f480cba13343e4213bb7f62d by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i_wp ed839d34f480cba13009edf88db6d533 by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 -->
 
-## Example 5.1(i) with the drift (3.6): `Dissertation.PaperSpec.A.ex_concrete_i_clamp`, `ex_concrete_i_clamp_wp`
+## Example 5.1(i) with the drift (3.6): `MVFBSDEJ.PaperSpec.ex_concrete_i_clamp`, `ex_concrete_i_clamp_wp`
 
 Manuscript (Example `ex:concrete`, end of part (i)): replacing the drift `−β₁ y` of the baseline
 by (3.6) "leaves (2.7) intact with constants `(β₁ − ε, β₂)`, so Theorem 3.5 continues to apply".
@@ -716,22 +716,22 @@ keeps `β₁ − ε > 0`. "Theorem 3.5 continues to apply" is read as its hypoth
 (`ex_concrete_i_clamp`) and hence its conclusion (`ex_concrete_i_clamp_wp`); the example names no
 Lipschitz constant, so `L` is existential (Proposition 3.8 gives `β₁ + ε` for the drift).
 
-Witness: `Dissertation.Acceptance.A.ex_concrete_hypotheses` (also `ε = 1/2 < β₁ = 1`).
+Witness: `MVFBSDEJ.Acceptance.ex_concrete_hypotheses` (also `ε = 1/2 < β₁ = 1`).
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_clamp ed839d34f480cba1f386f903a2799dd0 by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i_clamp ed839d34f480cba164e61a64f4ae2071 by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_i_clamp--claude-reviewer--2026-10-17T12_14_00Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_clamp ed839d34f480cba1f386f903a2799dd0 by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i_clamp ed839d34f480cba164e61a64f4ae2071 by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_i_clamp--claude-auditor--2026-10-19T03_38_15Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_clamp ed839d34f480cba1f386f903a2799dd0 by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_clamp_wp ed839d34f480cba14bccae170a8d514d by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i_clamp ed839d34f480cba164e61a64f4ae2071 by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i_clamp_wp ed839d34f480cba1180a9f6b3134ed03 by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_concrete_i_clamp_wp--claude-reviewer--2026-10-17T12_15_11Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_clamp_wp ed839d34f480cba14bccae170a8d514d by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i_clamp_wp ed839d34f480cba1180a9f6b3134ed03 by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_i_clamp_wp--claude-auditor--2026-10-19T03_38_30Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_clamp_wp ed839d34f480cba14bccae170a8d514d by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i_clamp_wp ed839d34f480cba1180a9f6b3134ed03 by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 -->
 
-## Example 5.1(ii): `Dissertation.PaperSpec.A.ex_concrete_ii_mean`, `ex_concrete_ii`, `ex_concrete_ii_pairing`
+## Example 5.1(ii): `MVFBSDEJ.PaperSpec.ex_concrete_ii_mean`, `ex_concrete_ii`, `ex_concrete_ii_pairing`
 
 Manuscript (Example `ex:concrete`, part (ii)): `m_Ψ(μ) = ∫_H π_Ψ(θ) μ(dθ)`,
 `𝔟(ρ) = ∫ x ρ(dx)`; `b = −2y − m_Y(μ)`, `σ = −2z − m_Z(μ)`, `h(e) = −2u(e) − m_U(μ)(e)`,
@@ -771,28 +771,28 @@ Correspondence:
   and is not formalised; the arbitrary σ-finite `ν`, including infinite mass, is the quantifier
   over `ν`.
 
-Witness: `Dissertation.Acceptance.A.ex_concrete_hypotheses` (setting and datum `0`).
+Witness: `MVFBSDEJ.Acceptance.ex_concrete_hypotheses` (setting and datum `0`).
 `ex_concrete_ii_mean` has no hypotheses beyond the σ-finite `ν` on a countably generated space.
 
 Verdict: faithful ((2.3) and the pairings at every `t`: broader).
 
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_ii_mean ed839d34f480cba1adb40add6e4f8112 by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_ii_mean ed839d34f480cba198d518ce685dcbd5 by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_ii_mean--claude-reviewer--2026-10-17T12_19_08Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_ii_mean ed839d34f480cba1adb40add6e4f8112 by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_ii_mean ed839d34f480cba198d518ce685dcbd5 by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_concrete_ii_mean--claude-auditor--2026-10-19T03_31_21Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_ii_mean ed839d34f480cba1adb40add6e4f8112 by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_ii ed839d34f480cba1cba84bcbe1866633 by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_ii_mean ed839d34f480cba198d518ce685dcbd5 by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_ii ed839d34f480cba15cf7f3328c0ad0e6 by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_ii--claude-reviewer--2026-10-17T12_18_31Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_ii ed839d34f480cba1cba84bcbe1866633 by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_ii ed839d34f480cba15cf7f3328c0ad0e6 by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_ii--claude-auditor--2026-10-19T03_34_14Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_ii ed839d34f480cba1cba84bcbe1866633 by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_ii_pairing ed839d34f480cba16aa5f84a4f3328b5 by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_ii ed839d34f480cba15cf7f3328c0ad0e6 by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing ed839d34f480cba15f4aed2b1f37c43c by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_ii_pairing--claude-reviewer--2026-10-17T16_05_52Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_ii_pairing ed839d34f480cba16aa5f84a4f3328b5 by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing ed839d34f480cba15f4aed2b1f37c43c by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_ii_pairing--claude-auditor--2026-10-19T03_33_35Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_ii_pairing ed839d34f480cba16aa5f84a4f3328b5 by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing ed839d34f480cba15f4aed2b1f37c43c by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 -->
 
-## Example 5.2: `Dissertation.PaperSpec.A.ex_brownian`
+## Example 5.2: `MVFBSDEJ.PaperSpec.ex_brownian`
 
 Manuscript (Example `ex:brownian`): remove the Poisson channel, so that the filtration is
 generated by `W` and `ℱ₀` and the representation property is the Brownian one; delete the
@@ -835,18 +835,18 @@ Correspondence:
   Brownian representation property are `ex_brownian_reduction` and `ex_brownian_prp`, reviewed
   below.
 
-Witness: `Dissertation.Acceptance.A.ex_brownian_hypotheses` (a Lévy driver with `ν = 0` on `ℝ`,
+Witness: `MVFBSDEJ.Acceptance.ex_brownian_hypotheses` (a Lévy driver with `ν = 0` on `ℝ`,
 `d = 1`, `𝒢₀ = ⊥`, `m = 1 < n = 2`, datum `0`).
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.ex_brownian ed839d34f480cba13b36df98cbfaee33 by=claude-author source=A:rem:beta1-dich@ce35242e5c61dc248a5bf9b36f678223d523cf9e6c42793d8e5d2fd12e1df0ea source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_brownian ed839d34f480cba1549e88774dfe4a71 by=claude-author source=A:rem:beta1-dich@ce35242e5c61dc248a5bf9b36f678223d523cf9e6c42793d8e5d2fd12e1df0ea source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_brownian--claude-reviewer--2026-10-17T12_10_35Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_brownian ed839d34f480cba13b36df98cbfaee33 by=claude-reviewer source=A:rem:beta1-dich@ce35242e5c61dc248a5bf9b36f678223d523cf9e6c42793d8e5d2fd12e1df0ea source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_brownian ed839d34f480cba1549e88774dfe4a71 by=claude-reviewer source=A:rem:beta1-dich@ce35242e5c61dc248a5bf9b36f678223d523cf9e6c42793d8e5d2fd12e1df0ea source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_brownian--claude-auditor--2026-10-19T03_34_12Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_brownian ed839d34f480cba13b36df98cbfaee33 by=claude-auditor source=A:rem:beta1-dich@20e41bdfd1e0996ebf1050ab15273a783631b8c503a6635284298cc387eea4f4 source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_brownian ed839d34f480cba1549e88774dfe4a71 by=claude-auditor source=A:rem:beta1-dich@20e41bdfd1e0996ebf1050ab15273a783631b8c503a6635284298cc387eea4f4 source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 
-## Example 5.3: `Dissertation.PaperSpec.A.ex_expfunc`, `ex_expfunc_limin`, `ex_expfunc_jump`
+## Example 5.3: `MVFBSDEJ.PaperSpec.ex_expfunc`, `ex_expfunc_limin`, `ex_expfunc_jump`
 
 Manuscript (Example `ex:expfunc`): `φ̄ : [0, T] × H × H → ℝᵏ` measurable and Lipschitz in
 `(θ, θ')` uniformly in `t`, and `φ(t, θ, μ) = ∫_H φ̄(t, θ, θ') μ(dθ')`: at fixed `t, θ` this is the
@@ -896,7 +896,7 @@ Correspondence:
 * Not formalised: that the class contains the interactions of [LiMin] and that their Lévy
   measure is the `ν` of the setting (statements about cited work).
 
-Witnesses: `Dissertation.Acceptance.A.ex_expfunc_hypotheses`, `ex_expfunc_limin_hypotheses`,
+Witnesses: `MVFBSDEJ.Acceptance.ex_expfunc_hypotheses`, `ex_expfunc_limin_hypotheses`,
 `ex_expfunc_jump_hypotheses`, at `ν = δ₀` on `ℝ`, `n = m = d = k = 1` and the interaction kernel
 `x − x'` (for the jump coefficient through the library's Nemytskii class, with constant
 `max(1, ν(E)^{1/2})`).
@@ -912,23 +912,23 @@ joint Borel measurability and the origin integrability `∫_0^T ‖𝐇_t(0, 0)�
 measurability of `ψ̄` or `h̄` either), which the example imposes for the full coefficient system;
 the printed claims are their instances at kernels with those properties.
 
-<!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc ed839d34f480cba1c0ebc41bbfe679cc by=claude-author source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc ed839d34f480cba15a6f123acd31afd5 by=claude-author source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_expfunc--claude-reviewer--2026-10-17T12_20_36Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc ed839d34f480cba1c0ebc41bbfe679cc by=claude-reviewer source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc ed839d34f480cba15a6f123acd31afd5 by=claude-reviewer source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_expfunc--claude-auditor--2026-10-19T03_34_12Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc ed839d34f480cba1c0ebc41bbfe679cc by=claude-auditor source=A:ex:expfunc@6ba8e9a8bd4a3a1d756a510bfc8571612af5e4c854e3bd45a28c1b5172afaaad source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc_limin ed839d34f480cba1dc8d682dbdc81fa7 by=claude-author source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 source=A:intro:limin-comparison@90030b2d20a48b0ae1854a8fb2d4053ad1be2da6ece678b13095bd33e99bda43 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc ed839d34f480cba15a6f123acd31afd5 by=claude-auditor source=A:ex:expfunc@6ba8e9a8bd4a3a1d756a510bfc8571612af5e4c854e3bd45a28c1b5172afaaad source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_limin ed839d34f480cba1f28bceb8fea3e945 by=claude-author source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 source=A:intro:limin-comparison@90030b2d20a48b0ae1854a8fb2d4053ad1be2da6ece678b13095bd33e99bda43 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.ex_expfunc_limin--claude-reviewer--2026-10-17T16_03_52Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc_limin ed839d34f480cba1dc8d682dbdc81fa7 by=claude-reviewer source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 source=A:intro:limin-comparison@90030b2d20a48b0ae1854a8fb2d4053ad1be2da6ece678b13095bd33e99bda43 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_limin ed839d34f480cba1f28bceb8fea3e945 by=claude-reviewer source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 source=A:intro:limin-comparison@90030b2d20a48b0ae1854a8fb2d4053ad1be2da6ece678b13095bd33e99bda43 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_expfunc_limin--claude-auditor--2026-10-19T03_34_13Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc_limin ed839d34f480cba1dc8d682dbdc81fa7 by=claude-auditor source=A:ex:expfunc@6ba8e9a8bd4a3a1d756a510bfc8571612af5e4c854e3bd45a28c1b5172afaaad source=A:intro:limin-comparison@90030b2d20a48b0ae1854a8fb2d4053ad1be2da6ece678b13095bd33e99bda43 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc_jump ed839d34f480cba1e622a1683bfc9f0d by=claude-author source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_limin ed839d34f480cba1f28bceb8fea3e945 by=claude-auditor source=A:ex:expfunc@6ba8e9a8bd4a3a1d756a510bfc8571612af5e4c854e3bd45a28c1b5172afaaad source=A:intro:limin-comparison@90030b2d20a48b0ae1854a8fb2d4053ad1be2da6ece678b13095bd33e99bda43 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_jump ed839d34f480cba1e4ed71c267b0a369 by=claude-author source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.ex_expfunc_jump--claude-reviewer--2026-10-17T16_03_52Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc_jump ed839d34f480cba1e622a1683bfc9f0d by=claude-reviewer source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_jump ed839d34f480cba1e4ed71c267b0a369 by=claude-reviewer source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_expfunc_jump--claude-auditor--2026-10-19T03_31_22Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_expfunc_jump ed839d34f480cba1e622a1683bfc9f0d by=claude-auditor source=A:ex:expfunc@6ba8e9a8bd4a3a1d756a510bfc8571612af5e4c854e3bd45a28c1b5172afaaad -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_jump ed839d34f480cba1e4ed71c267b0a369 by=claude-auditor source=A:ex:expfunc@6ba8e9a8bd4a3a1d756a510bfc8571612af5e4c854e3bd45a28c1b5172afaaad -->
 
-## Remarks 2.7–2.9: `Dissertation.PaperSpec.A.rem_diag_mono`, `rem_diag_mono_converse`, `rem_intrinsic_uniform`, `rem_intrinsic_coupling`, `rem_intrinsic_basis`
+## Remarks 2.7–2.9: `MVFBSDEJ.PaperSpec.rem_diag_mono`, `rem_diag_mono_converse`, `rem_intrinsic_uniform`, `rem_intrinsic_coupling`, `rem_intrinsic_basis`
 
 Manuscript: Remark 2.7 (`rem:G-pairing`) explains the role of the full-rank `G`; its mathematical
 content, `G`-coercivity controlling the forward variables when `m ≥ n` and the backward ones when
@@ -978,7 +978,7 @@ Correspondence:
   is why (2.3) is assumed, as it is standing in the paper. "The proofs use only the expected diagonal
   form" is a statement about the proofs, not formalised.
 
-Witnesses: `Dissertation.Acceptance.A.rem_affine_hypotheses` (Example 5.1(i) with `β₁ = β₂ = 1`
+Witnesses: `MVFBSDEJ.Acceptance.rem_affine_hypotheses` (Example 5.1(i) with `β₁ = β₂ = 1`
 over a Lévy driver with `d = 1`, `ν = δ₀ ≠ 0`, `𝒢₀ = ⊥`, `T = 1`: (2.3), Assumption 2.3, the
 pointwise condition, Assumption 2.5 with `G = 1`, and `0 < 1/2 < 1`); `rem_coupling_hypotheses`
 (`δ_{(0,0)}` couples `δ₀` with itself); `ex_concrete_hypotheses`, `ex_brownian_hypotheses`.
@@ -990,43 +990,43 @@ so they hold over `enlJoint 𝒢₀ D h𝒢₀` for every `𝒢₀`, the first t
 `rem_intrinsic_uniform` for every σ-finite `ν`, countably generated or not); the printed claims are
 their instances over the standing basis, with `𝒢₀` independent of the driver.
 
-<!-- spec-review: Dissertation.PaperSpec.A.rem_diag_mono ed839d34f480cba146c1633f8e03b86c by=claude-author source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono ed839d34f480cba16dbf12782c23a6c7 by=claude-author source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.rem_diag_mono--claude-reviewer--2026-10-17T16_05_52Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_diag_mono ed839d34f480cba146c1633f8e03b86c by=claude-reviewer source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono ed839d34f480cba16dbf12782c23a6c7 by=claude-reviewer source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.rem_diag_mono--claude-auditor--2026-10-19T03_34_01Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_diag_mono ed839d34f480cba146c1633f8e03b86c by=claude-auditor source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_diag_mono_converse ed839d34f480cba14b5e4594e14d9dc7 by=claude-author source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono ed839d34f480cba16dbf12782c23a6c7 by=claude-auditor source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono_converse ed839d34f480cba121a2e85359198f21 by=claude-author source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.rem_diag_mono_converse--claude-reviewer--2026-10-17T16_05_52Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_diag_mono_converse ed839d34f480cba14b5e4594e14d9dc7 by=claude-reviewer source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono_converse ed839d34f480cba121a2e85359198f21 by=claude-reviewer source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.rem_diag_mono_converse--claude-auditor--2026-10-19T03_36_03Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_diag_mono_converse ed839d34f480cba14b5e4594e14d9dc7 by=claude-auditor source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_intrinsic_uniform ed839d34f480cba13b7a9a5f65a5b218 by=claude-author source=A:rem:intrinsic@f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono_converse ed839d34f480cba121a2e85359198f21 by=claude-auditor source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_intrinsic_uniform ed839d34f480cba19194a30e1ed5e7d9 by=claude-author source=A:rem:intrinsic@f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.rem_intrinsic_uniform--claude-reviewer--2026-10-17T16_03_52Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_intrinsic_uniform ed839d34f480cba13b7a9a5f65a5b218 by=claude-reviewer source=A:rem:intrinsic@f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_intrinsic_uniform ed839d34f480cba19194a30e1ed5e7d9 by=claude-reviewer source=A:rem:intrinsic@f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.rem_intrinsic_uniform--claude-auditor--2026-10-19T03_31_22Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_intrinsic_uniform ed839d34f480cba13b7a9a5f65a5b218 by=claude-auditor source=A:rem:intrinsic@f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166 -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_intrinsic_coupling ed839d34f480cba1ff8eb9ca359fa48b by=claude-author source=A:rem:intrinsic@f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_intrinsic_uniform ed839d34f480cba19194a30e1ed5e7d9 by=claude-auditor source=A:rem:intrinsic@f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_intrinsic_coupling ed839d34f480cba1d2f6be4ee5bbeb4e by=claude-author source=A:rem:intrinsic@f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.rem_intrinsic_coupling--claude-reviewer--2026-10-17T16_03_53Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_intrinsic_coupling ed839d34f480cba1ff8eb9ca359fa48b by=claude-reviewer source=A:rem:intrinsic@f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_intrinsic_coupling ed839d34f480cba1d2f6be4ee5bbeb4e by=claude-reviewer source=A:rem:intrinsic@f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.rem_intrinsic_coupling--claude-auditor--2026-10-19T03_36_39Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_intrinsic_coupling ed839d34f480cba1ff8eb9ca359fa48b by=claude-auditor source=A:rem:intrinsic@f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166 -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_intrinsic_basis ed839d34f480cba132c02ed3a09a0eba by=claude-author source=A:rem:intrinsic@f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_intrinsic_coupling ed839d34f480cba1d2f6be4ee5bbeb4e by=claude-auditor source=A:rem:intrinsic@f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_intrinsic_basis ed839d34f480cba16d46e7a802f817da by=claude-author source=A:rem:intrinsic@f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166 -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.rem_intrinsic_basis--claude-reviewer--2026-10-17T16_05_52Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_intrinsic_basis ed839d34f480cba132c02ed3a09a0eba by=claude-reviewer source=A:rem:intrinsic@f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_intrinsic_basis ed839d34f480cba16d46e7a802f817da by=claude-reviewer source=A:rem:intrinsic@f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.rem_intrinsic_basis--claude-auditor--2026-10-19T03_34_37Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_intrinsic_basis ed839d34f480cba132c02ed3a09a0eba by=claude-auditor source=A:rem:intrinsic@f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_intrinsic_basis ed839d34f480cba16d46e7a802f817da by=claude-auditor source=A:rem:intrinsic@f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166 -->
 
 ## The displays (1.1), (2.3), (4.1)
 
 The displays (1.1), (2.3) and (4.1) define objects and are recorded with scope `definition`: (1.1)
-is the system whose solutions in the space `ℍ` of Section 3 are `Dissertation.PaperSpec.A.Solution`;
-(2.3) is the joint Borel measurability `Dissertation.WellPosedness.Spec.JointBorel`; (4.1) is the
-forced system whose solutions are `Dissertation.PaperSpec.A.ForcedSolution`. These definitions are
+is the system whose solutions in the space `ℍ` of Section 3 are `MVFBSDEJ.PaperSpec.Solution`;
+(2.3) is the joint Borel measurability `MVFBSDEJ.WellPosedness.Spec.JointBorel`; (4.1) is the
+forced system whose solutions are `MVFBSDEJ.PaperSpec.ForcedSolution`. These definitions are
 reviewed in `definitions.md`.
 
 Verdict: faithful.
 
-## Section 2, the setting: `Dissertation.PaperSpec.A.sec2_separable`, `sec2_infinite_activity`, `eq_compid`, `eq_zeromean`, `sec2_prp`, `sec2_hborel`
+## Section 2, the setting: `MVFBSDEJ.PaperSpec.sec2_separable`, `sec2_infinite_activity`, `eq_compid`, `eq_zeromean`, `sec2_prp`, `sec2_hborel`
 
 Manuscript (§2, `sec:main-assumptions`): `ν` σ-finite on a countably generated `(E, ℰ)`, "so that
 `L²(ν; ℝʲ)` is separable for every `j ≥ 1`" (`A:sec2:separable-L2nu`); the infinite-activity
@@ -1118,38 +1118,38 @@ Lévy driver with `d = 1`, `ν = δ₀` on `ℝ`, `𝒢₀ = ⊥`:
 
 Verdict: faithful, with the readings listed (in particular "atoms" as the count of `N`).
 
-<!-- spec-review: Dissertation.PaperSpec.A.sec2_separable ed839d34f480cba1673cfd9d331f5aa6 by=claude-author source=A:sec2:separable-L2nu@ae53c7fb64bdc4c1d458158131bce4ad8a6101350c43ccc2c48c3c458f6e166e -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec2_separable ed839d34f480cba1673cfd9d331f5aa6 by=claude-author source=A:sec2:separable-L2nu@ae53c7fb64bdc4c1d458158131bce4ad8a6101350c43ccc2c48c3c458f6e166e -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.sec2_separable--claude-reviewer--2026-10-17T12_22_48Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec2_separable ed839d34f480cba1673cfd9d331f5aa6 by=claude-reviewer source=A:sec2:separable-L2nu@ae53c7fb64bdc4c1d458158131bce4ad8a6101350c43ccc2c48c3c458f6e166e -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec2_separable ed839d34f480cba1673cfd9d331f5aa6 by=claude-reviewer source=A:sec2:separable-L2nu@ae53c7fb64bdc4c1d458158131bce4ad8a6101350c43ccc2c48c3c458f6e166e -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.sec2_separable--claude-auditor--2026-10-19T03_34_36Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec2_separable ed839d34f480cba1673cfd9d331f5aa6 by=claude-auditor source=A:sec2:separable-L2nu@ae53c7fb64bdc4c1d458158131bce4ad8a6101350c43ccc2c48c3c458f6e166e -->
-<!-- spec-review: Dissertation.PaperSpec.A.sec2_infinite_activity ed839d34f480cba13a9f48f6bc72d40f by=claude-author source=A:sec2:infinite-activity-atoms@9f39b94445462cf5bd885113323065e33b702bc828630f1707c4ea24b315889e -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec2_separable ed839d34f480cba1673cfd9d331f5aa6 by=claude-auditor source=A:sec2:separable-L2nu@ae53c7fb64bdc4c1d458158131bce4ad8a6101350c43ccc2c48c3c458f6e166e -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec2_infinite_activity ed839d34f480cba13a9f48f6bc72d40f by=claude-author source=A:sec2:infinite-activity-atoms@9f39b94445462cf5bd885113323065e33b702bc828630f1707c4ea24b315889e -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec2_infinite_activity--claude-reviewer--2026-10-17T12_21_04Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec2_infinite_activity ed839d34f480cba13a9f48f6bc72d40f by=claude-reviewer source=A:sec2:infinite-activity-atoms@9f39b94445462cf5bd885113323065e33b702bc828630f1707c4ea24b315889e -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec2_infinite_activity ed839d34f480cba13a9f48f6bc72d40f by=claude-reviewer source=A:sec2:infinite-activity-atoms@9f39b94445462cf5bd885113323065e33b702bc828630f1707c4ea24b315889e -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.sec2_infinite_activity--claude-auditor--2026-10-19T03_34_37Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec2_infinite_activity ed839d34f480cba13a9f48f6bc72d40f by=claude-auditor source=A:sec2:infinite-activity-atoms@9f39b94445462cf5bd885113323065e33b702bc828630f1707c4ea24b315889e -->
-<!-- spec-review: Dissertation.PaperSpec.A.eq_compid ed839d34f480cba1551f4f42ffdf2fa8 by=claude-author source=A:eq:compid@a62f2f651f15297ca0005558e8980950d28aaaa1062298dd4c00ea019fe06299 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec2_infinite_activity ed839d34f480cba13a9f48f6bc72d40f by=claude-auditor source=A:sec2:infinite-activity-atoms@9f39b94445462cf5bd885113323065e33b702bc828630f1707c4ea24b315889e -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_compid ed839d34f480cba19bf140186b2d4c13 by=claude-author source=A:eq:compid@a62f2f651f15297ca0005558e8980950d28aaaa1062298dd4c00ea019fe06299 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_compid--claude-reviewer--2026-10-17T12_11_27Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.eq_compid ed839d34f480cba1551f4f42ffdf2fa8 by=claude-reviewer source=A:eq:compid@a62f2f651f15297ca0005558e8980950d28aaaa1062298dd4c00ea019fe06299 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_compid ed839d34f480cba19bf140186b2d4c13 by=claude-reviewer source=A:eq:compid@a62f2f651f15297ca0005558e8980950d28aaaa1062298dd4c00ea019fe06299 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_compid--claude-auditor--2026-10-19T03_31_22Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.eq_compid ed839d34f480cba1551f4f42ffdf2fa8 by=claude-auditor source=A:eq:compid@a62f2f651f15297ca0005558e8980950d28aaaa1062298dd4c00ea019fe06299 -->
-<!-- spec-review: Dissertation.PaperSpec.A.eq_zeromean ed839d34f480cba1ca027a9d4d1614c9 by=claude-author source=A:eq:zeromean@74dcd6eaa5929b1a9d4f4a1b6af308d62e1c2dd6a28ef7f0329a7ba65184f4ee -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_compid ed839d34f480cba19bf140186b2d4c13 by=claude-auditor source=A:eq:compid@a62f2f651f15297ca0005558e8980950d28aaaa1062298dd4c00ea019fe06299 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_zeromean ed839d34f480cba1ab4a0cb1d17ec7d1 by=claude-author source=A:eq:zeromean@74dcd6eaa5929b1a9d4f4a1b6af308d62e1c2dd6a28ef7f0329a7ba65184f4ee -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_zeromean--claude-reviewer--2026-10-17T12_15_00Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.eq_zeromean ed839d34f480cba1ca027a9d4d1614c9 by=claude-reviewer source=A:eq:zeromean@74dcd6eaa5929b1a9d4f4a1b6af308d62e1c2dd6a28ef7f0329a7ba65184f4ee -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_zeromean ed839d34f480cba1ab4a0cb1d17ec7d1 by=claude-reviewer source=A:eq:zeromean@74dcd6eaa5929b1a9d4f4a1b6af308d62e1c2dd6a28ef7f0329a7ba65184f4ee -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_zeromean--claude-auditor--2026-10-19T03_31_22Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.eq_zeromean ed839d34f480cba1ca027a9d4d1614c9 by=claude-auditor source=A:eq:zeromean@74dcd6eaa5929b1a9d4f4a1b6af308d62e1c2dd6a28ef7f0329a7ba65184f4ee -->
-<!-- spec-review: Dissertation.PaperSpec.A.sec2_prp ed839d34f480cba1577f0ed2476fcdb5 by=claude-author source=A:sec2:prp@4abed1a193ffeafc8c98d073e7c33bcde2f293ba9bb58b16d1a0464060b8dcea -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_zeromean ed839d34f480cba1ab4a0cb1d17ec7d1 by=claude-auditor source=A:eq:zeromean@74dcd6eaa5929b1a9d4f4a1b6af308d62e1c2dd6a28ef7f0329a7ba65184f4ee -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec2_prp ed839d34f480cba188dfff65b0dcd4e4 by=claude-author source=A:sec2:prp@4abed1a193ffeafc8c98d073e7c33bcde2f293ba9bb58b16d1a0464060b8dcea -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec2_prp--claude-reviewer--2026-10-17T12_22_12Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec2_prp ed839d34f480cba1577f0ed2476fcdb5 by=claude-reviewer source=A:sec2:prp@4abed1a193ffeafc8c98d073e7c33bcde2f293ba9bb58b16d1a0464060b8dcea -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec2_prp ed839d34f480cba188dfff65b0dcd4e4 by=claude-reviewer source=A:sec2:prp@4abed1a193ffeafc8c98d073e7c33bcde2f293ba9bb58b16d1a0464060b8dcea -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec2_prp--claude-auditor--2026-10-19T03_34_14Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec2_prp ed839d34f480cba1577f0ed2476fcdb5 by=claude-auditor source=A:sec2:prp@4abed1a193ffeafc8c98d073e7c33bcde2f293ba9bb58b16d1a0464060b8dcea -->
-<!-- spec-review: Dissertation.PaperSpec.A.sec2_hborel ed839d34f480cba1c7bf6ee7f1e38851 by=claude-author source=A:sec2:hborel-derivation@212a07e14afa5d0609973352865fe2ce8ae09c6d715739e9e87b738950e721a8 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec2_prp ed839d34f480cba188dfff65b0dcd4e4 by=claude-auditor source=A:sec2:prp@4abed1a193ffeafc8c98d073e7c33bcde2f293ba9bb58b16d1a0464060b8dcea -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec2_hborel ed839d34f480cba15aaf107e33c090c4 by=claude-author source=A:sec2:hborel-derivation@212a07e14afa5d0609973352865fe2ce8ae09c6d715739e9e87b738950e721a8 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.sec2_hborel--claude-reviewer--2026-10-17T12_20_16Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec2_hborel ed839d34f480cba1c7bf6ee7f1e38851 by=claude-reviewer source=A:sec2:hborel-derivation@212a07e14afa5d0609973352865fe2ce8ae09c6d715739e9e87b738950e721a8 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec2_hborel ed839d34f480cba15aaf107e33c090c4 by=claude-reviewer source=A:sec2:hborel-derivation@212a07e14afa5d0609973352865fe2ce8ae09c6d715739e9e87b738950e721a8 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec2_hborel--claude-auditor--2026-10-19T03_31_21Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec2_hborel ed839d34f480cba1c7bf6ee7f1e38851 by=claude-auditor source=A:sec2:hborel-derivation@212a07e14afa5d0609973352865fe2ce8ae09c6d715739e9e87b738950e721a8 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec2_hborel ed839d34f480cba15aaf107e33c090c4 by=claude-auditor source=A:sec2:hborel-derivation@212a07e14afa5d0609973352865fe2ce8ae09c6d715739e9e87b738950e721a8 -->
 
-## (2.4), the Fubini isometry: `Dissertation.PaperSpec.A.eq_fubiniiso`
+## (2.4), the Fubini isometry: `MVFBSDEJ.PaperSpec.eq_fubiniiso`
 
 Manuscript (§2, `eq:fubiniiso`): with `𝒫` the predictable σ-field on `Ω × [0, T]` under
 `dt ⊗ dP`, `L²(𝒫; L²(ν)) ≅ L²(𝒫 ⊗ ℰ)` (HNVW, Propositions 1.2.24–1.2.25), "which supplies a
@@ -1186,13 +1186,13 @@ Verdict: broader: the proposition holds for every σ-finite `(X, μ)` and every 
 is its instance at `X = Ω × [0, T]` with the predictable σ-field `𝒫` and `dt ⊗ dP`, `j = m` (or
 `n`).
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_fubiniiso ed839d34f480cba1f8905adfcaf41890 by=claude-author source=A:eq:fubiniiso@597a92f6004ad8db02800eef365f8f95188c907f3f53c17cccf909c2a49ed061 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_fubiniiso ed839d34f480cba1f8905adfcaf41890 by=claude-author source=A:eq:fubiniiso@597a92f6004ad8db02800eef365f8f95188c907f3f53c17cccf909c2a49ed061 -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.eq_fubiniiso--claude-reviewer--2026-10-17T12_13_20Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.eq_fubiniiso ed839d34f480cba1f8905adfcaf41890 by=claude-reviewer source=A:eq:fubiniiso@597a92f6004ad8db02800eef365f8f95188c907f3f53c17cccf909c2a49ed061 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_fubiniiso ed839d34f480cba1f8905adfcaf41890 by=claude-reviewer source=A:eq:fubiniiso@597a92f6004ad8db02800eef365f8f95188c907f3f53c17cccf909c2a49ed061 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.eq_fubiniiso--claude-auditor--2026-10-19T03_31_21Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.eq_fubiniiso ed839d34f480cba1f8905adfcaf41890 by=claude-auditor source=A:eq:fubiniiso@597a92f6004ad8db02800eef365f8f95188c907f3f53c17cccf909c2a49ed061 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_fubiniiso ed839d34f480cba1f8905adfcaf41890 by=claude-auditor source=A:eq:fubiniiso@597a92f6004ad8db02800eef365f8f95188c907f3f53c17cccf909c2a49ed061 -->
 
-## (2.5), the progressive coefficient processes: `Dissertation.PaperSpec.A.eq_coefmeas`
+## (2.5), the progressive coefficient processes: `MVFBSDEJ.PaperSpec.eq_coefmeas`
 
 Manuscript (§2): "All coefficients are jointly Borel
 measurable in their arguments ... Consequently, along any diagonal input, `(s, ω) ↦ ψ(s, Θ_s(ω),
@@ -1212,20 +1212,20 @@ Readings:
 * The joint Borel measurability of the coefficients is the paragraph's hypothesis, (2.3).
 * The predictable line of the display is `eq_coefmeas_jump`.
 
-Witness: `Dissertation.Acceptance.A.thm_cwp_hypotheses` ((2.3) at Example 5.1(i)).
+Witness: `MVFBSDEJ.Acceptance.thm_cwp_hypotheses` ((2.3) at Example 5.1(i)).
 
 Verdict: broader: the proposition holds for every filtration and probability, along every
 progressive tuple, and its jump part is the marked-progressive representative at `(Θ_s, μ_s)` of
 `CoeffRegular`, not the predictable line of (2.5); the printed first line is its instance over the
 standing basis along the tuples of the paper (diagonal inputs `Θ_s` with their laws).
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_coefmeas ed839d34f480cba11ac3211646c24c86 by=claude-author source=A:eq:coefmeas@951bc71349ab7748916546e7dcfd8ef117078c5b8dcd1e5f4e035106ef459170 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_coefmeas ed839d34f480cba1c9dc5757782364d2 by=claude-author source=A:eq:coefmeas@951bc71349ab7748916546e7dcfd8ef117078c5b8dcd1e5f4e035106ef459170 -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.eq_coefmeas--claude-reviewer--2026-10-17T12_08_44Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.eq_coefmeas ed839d34f480cba11ac3211646c24c86 by=claude-reviewer source=A:eq:coefmeas@951bc71349ab7748916546e7dcfd8ef117078c5b8dcd1e5f4e035106ef459170 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_coefmeas ed839d34f480cba1c9dc5757782364d2 by=claude-reviewer source=A:eq:coefmeas@951bc71349ab7748916546e7dcfd8ef117078c5b8dcd1e5f4e035106ef459170 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.eq_coefmeas--claude-auditor--2026-10-19T03_31_22Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.eq_coefmeas ed839d34f480cba11ac3211646c24c86 by=claude-auditor source=A:eq:coefmeas@951bc71349ab7748916546e7dcfd8ef117078c5b8dcd1e5f4e035106ef459170 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_coefmeas ed839d34f480cba1c9dc5757782364d2 by=claude-auditor source=A:eq:coefmeas@951bc71349ab7748916546e7dcfd8ef117078c5b8dcd1e5f4e035106ef459170 -->
 
-## (2.5), the predictable jump coefficient: `Dissertation.PaperSpec.A.eq_coefmeas_jump`
+## (2.5), the predictable jump coefficient: `MVFBSDEJ.PaperSpec.eq_coefmeas_jump`
 
 Manuscript (§2): the Fubini isometry (2.4) and "every Poisson
 integral below ... is read through such a representative ... Consequently, along any diagonal
@@ -1243,20 +1243,20 @@ Readings:
   deterministic flow; the proposition takes any predictable tuple and any Borel flow, cut off to
   the horizon. The Borel measurability of `s ↦ μ⁻_s` is part of Lemma A.1, not of (2.5).
 
-Witness: `Dissertation.Acceptance.A.thm_cwp_hypotheses` ((2.3) at Example 5.1(i); a constant tuple
+Witness: `MVFBSDEJ.Acceptance.thm_cwp_hypotheses` ((2.3) at Example 5.1(i); a constant tuple
 and a constant law flow are predictable and Borel).
 
 Verdict: broader: the proposition holds for every filtration, every predictable tuple `Θ` and every
 Borel law flow `ρ`; the printed claim is its instance over the standing basis at `Θ = Θ⁻` of a tuple
 of the paper and `ρ = μ⁻`, the Borel flow of Lemma A.1, read through (2.4).
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_coefmeas_jump ed839d34f480cba1e13c6b7ca8ccca73 by=claude-author source=A:eq:coefmeas@951bc71349ab7748916546e7dcfd8ef117078c5b8dcd1e5f4e035106ef459170 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_coefmeas_jump ed839d34f480cba16b26e31f5be9d0e8 by=claude-author source=A:eq:coefmeas@951bc71349ab7748916546e7dcfd8ef117078c5b8dcd1e5f4e035106ef459170 -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.eq_coefmeas_jump--claude-reviewer--2026-10-17T16_03_52Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.eq_coefmeas_jump ed839d34f480cba1e13c6b7ca8ccca73 by=claude-reviewer source=A:eq:coefmeas@951bc71349ab7748916546e7dcfd8ef117078c5b8dcd1e5f4e035106ef459170 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_coefmeas_jump ed839d34f480cba16b26e31f5be9d0e8 by=claude-reviewer source=A:eq:coefmeas@951bc71349ab7748916546e7dcfd8ef117078c5b8dcd1e5f4e035106ef459170 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.eq_coefmeas_jump--claude-auditor--2026-10-19T03_34_12Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.eq_coefmeas_jump ed839d34f480cba1e13c6b7ca8ccca73 by=claude-auditor source=A:eq:coefmeas@951bc71349ab7748916546e7dcfd8ef117078c5b8dcd1e5f4e035106ef459170 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_coefmeas_jump ed839d34f480cba16b26e31f5be9d0e8 by=claude-auditor source=A:eq:coefmeas@951bc71349ab7748916546e7dcfd8ef117078c5b8dcd1e5f4e035106ef459170 -->
 
-## Remark 3.2, the solution class: `Dissertation.PaperSpec.A.rem_cwp_class`
+## Remark 3.2, the solution class: `MVFBSDEJ.PaperSpec.rem_cwp_class`
 
 Manuscript (§3): "Let `Θ = (X, Y, Z, U) ∈ ℍ_weak` satisfy (1.1). Then
 `Θ ∈ ℍ`. Indeed, the coefficients evaluated along `Θ` lie in `L²(dt ⊗ dP)` by
@@ -1277,18 +1277,18 @@ Readings:
   (1.1), its coefficient processes square integrable, which the remark's "Indeed" sentence
   establishes along the way.
 
-Witness: `Dissertation.Acceptance.A.rem_cwp_class_hypotheses`: at Example 5.1(i) (2.3) and
+Witness: `MVFBSDEJ.Acceptance.rem_cwp_class_hypotheses`: at Example 5.1(i) (2.3) and
 Assumptions 2.2–2.3 hold and a tuple of `ℍ_weak` satisfies (1.1) (the solution of Theorem 3.5).
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.rem_cwp_class ed839d34f480cba1dac1a53237b9beb3 by=claude-author source=A:rem:cwp-class@391a3db056fefb35dea3e08d03c460ac0787411fb1d02916f36e10dbfe0f733a source=A:rem:uniq-no-integ@16ace776485cb414a0ad39fba869a577ec053811b32b39e09709fb01a4e0f75e -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_cwp_class ed839d34f480cba1471818a9fad44821 by=claude-author source=A:rem:cwp-class@391a3db056fefb35dea3e08d03c460ac0787411fb1d02916f36e10dbfe0f733a source=A:rem:uniq-no-integ@16ace776485cb414a0ad39fba869a577ec053811b32b39e09709fb01a4e0f75e -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.rem_cwp_class--claude-reviewer--2026-10-17T12_12_05Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_cwp_class ed839d34f480cba1dac1a53237b9beb3 by=claude-reviewer source=A:rem:cwp-class@391a3db056fefb35dea3e08d03c460ac0787411fb1d02916f36e10dbfe0f733a source=A:rem:uniq-no-integ@16ace776485cb414a0ad39fba869a577ec053811b32b39e09709fb01a4e0f75e -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_cwp_class ed839d34f480cba1471818a9fad44821 by=claude-reviewer source=A:rem:cwp-class@391a3db056fefb35dea3e08d03c460ac0787411fb1d02916f36e10dbfe0f733a source=A:rem:uniq-no-integ@16ace776485cb414a0ad39fba869a577ec053811b32b39e09709fb01a4e0f75e -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.rem_cwp_class--claude-auditor--2026-10-19T03_38_10Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_cwp_class ed839d34f480cba1dac1a53237b9beb3 by=claude-auditor source=A:rem:cwp-class@391a3db056fefb35dea3e08d03c460ac0787411fb1d02916f36e10dbfe0f733a source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_cwp_class ed839d34f480cba1471818a9fad44821 by=claude-auditor source=A:rem:cwp-class@391a3db056fefb35dea3e08d03c460ac0787411fb1d02916f36e10dbfe0f733a source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
 
-## The paragraph after Theorem 3.1: `Dissertation.PaperSpec.A.thm_stab_companion`, `thm_stab_data`, `thm_stab_minimal`
+## The paragraph after Theorem 3.1: `MVFBSDEJ.PaperSpec.thm_stab_companion`, `thm_stab_data`, `thm_stab_minimal`
 
 Manuscript (§3): "If system 2 also satisfies Assumptions 2.4–2.5, with its
 own coupling matrix and constants, exchanging the roles gives the companion bound with the
@@ -1339,7 +1339,7 @@ Readings:
   `thm_stab_minimal`, the proposition covers the solutions of system 2 whose coefficient
   processes are square integrable.
 
-Witness: `Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses` for all three: one system,
+Witness: `MVFBSDEJ.Acceptance.thm_stab_nonzero_hypotheses` for all three: one system,
 Example 5.1(i) with `β₁ = β₂ = 1`, `σ_c = h_c = 0`, taken twice, with the initial data `e₁` and
 `0`. For `thm_stab_companion` with the roles exchanged, system 2 of the proposition satisfies
 Assumptions 2.2–2.5 with `L = 1`, `G = 1`, `α = β₁ = β₂ = 1` and system 1 satisfies (2.3) and
@@ -1354,23 +1354,23 @@ printed claim is its instance at a system 1 that also satisfies Assumptions 2.4�
 3.1; `thm_stab_data` faithful; `thm_stab_minimal` faithful in the reading recorded (the inequality
 in `[0, ∞]`).
 
-<!-- spec-review: Dissertation.PaperSpec.A.thm_stab_companion ed839d34f480cba10ff3a550a92ccddf by=claude-author source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.thm_stab_companion ed839d34f480cba1c07a514f459f590c by=claude-author source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.thm_stab_companion--claude-reviewer--2026-10-17T12_19_01Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.thm_stab_companion ed839d34f480cba10ff3a550a92ccddf by=claude-reviewer source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.thm_stab_companion ed839d34f480cba1c07a514f459f590c by=claude-reviewer source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.thm_stab_companion--claude-auditor--2026-10-19T03_37_17Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.thm_stab_companion ed839d34f480cba10ff3a550a92ccddf by=claude-auditor source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
-<!-- spec-review: Dissertation.PaperSpec.A.thm_stab_data ed839d34f480cba1f26d5949b31ba63f by=claude-author source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.thm_stab_companion ed839d34f480cba1c07a514f459f590c by=claude-auditor source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.thm_stab_data ed839d34f480cba104333be660b0803f by=claude-author source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.thm_stab_data--claude-reviewer--2026-10-17T16_05_53Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.thm_stab_data ed839d34f480cba1f26d5949b31ba63f by=claude-reviewer source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.thm_stab_data ed839d34f480cba104333be660b0803f by=claude-reviewer source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.thm_stab_data--claude-auditor--2026-10-19T03_37_06Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.thm_stab_data ed839d34f480cba1f26d5949b31ba63f by=claude-auditor source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
-<!-- spec-review: Dissertation.PaperSpec.A.thm_stab_minimal ed839d34f480cba127494e1cb3f498aa by=claude-author source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.thm_stab_data ed839d34f480cba104333be660b0803f by=claude-auditor source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.thm_stab_minimal ed839d34f480cba1a1fc76e8097d81f2 by=claude-author source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.thm_stab_minimal--claude-reviewer--2026-10-17T16_05_53Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.thm_stab_minimal ed839d34f480cba127494e1cb3f498aa by=claude-reviewer source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.thm_stab_minimal ed839d34f480cba1a1fc76e8097d81f2 by=claude-reviewer source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.thm_stab_minimal--claude-auditor--2026-10-19T03_36_39Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.thm_stab_minimal ed839d34f480cba127494e1cb3f498aa by=claude-auditor source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.thm_stab_minimal ed839d34f480cba1a1fc76e8097d81f2 by=claude-auditor source=A:thm3.1:companion@11a0e3868fdbf57060a945ccaf31e655f33cacd376b0122ef3bfcbde089339f1 -->
 
-## The preamble of Section 5: `Dissertation.PaperSpec.A.sec5_limin`
+## The preamble of Section 5: `MVFBSDEJ.PaperSpec.sec5_limin`
 
 Manuscript (§5): "the restrictive hypothesis is the dissipativity of
 Assumption 2.5, ... which cannot be traded for Lipschitz continuity alone. The jump system of
@@ -1399,7 +1399,7 @@ Readings:
   implementation states it as `liMin_fails_assumption25`), so the proposition does not state it.
 * `liMinCoeffs` is the system of Example 3.2 of Li and Min, reviewed in `definitions.md`.
 
-Witness: `Dissertation.Acceptance.A.sec5_limin_hypotheses`: a probability space carrying a Lévy
+Witness: `MVFBSDEJ.Acceptance.sec5_limin_hypotheses`: a probability space carrying a Lévy
 driver with `d = 1` and `ν = δ₀` on `ℝ`, `𝒢₀ = ⊥` independent of it, and the initial datum
 `ξ₀ ≡ 1` of mean `1`.
 
@@ -1409,13 +1409,13 @@ mean; the printed claim (no adapted solution of the Li–Min system on `T = 3π/
 the basis of the cited example and its initial value `x(0) = 1`, through the transcription
 `liMinCoeffs` reviewed in `definitions.md`.
 
-<!-- spec-review: Dissertation.PaperSpec.A.sec5_limin ed839d34f480cba132884b458e231942 by=claude-author source=A:sec:examples@3f24646e833f5a7b1bfdeb3449b26795f12ebfae2cde62dff93327979908d073 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec5_limin ed839d34f480cba139dd24c614ab7445 by=claude-author source=A:sec:examples@3f24646e833f5a7b1bfdeb3449b26795f12ebfae2cde62dff93327979908d073 -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.sec5_limin--claude-reviewer--2026-10-17T12_25_43Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec5_limin ed839d34f480cba132884b458e231942 by=claude-reviewer source=A:sec:examples@3f24646e833f5a7b1bfdeb3449b26795f12ebfae2cde62dff93327979908d073 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec5_limin ed839d34f480cba139dd24c614ab7445 by=claude-reviewer source=A:sec:examples@3f24646e833f5a7b1bfdeb3449b26795f12ebfae2cde62dff93327979908d073 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.sec5_limin--claude-auditor--2026-10-19T03_31_22Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec5_limin ed839d34f480cba132884b458e231942 by=claude-auditor source=A:sec:examples@3f24646e833f5a7b1bfdeb3449b26795f12ebfae2cde62dff93327979908d073 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec5_limin ed839d34f480cba139dd24c614ab7445 by=claude-auditor source=A:sec:examples@3f24646e833f5a7b1bfdeb3449b26795f12ebfae2cde62dff93327979908d073 -->
 
-## Remark 3.7, general rank: `Dissertation.PaperSpec.A.rem_generalrank`, `rem_generalrank_wp`
+## Remark 3.7, general rank: `MVFBSDEJ.PaperSpec.rem_generalrank`, `rem_generalrank_wp`
 
 Manuscript (§3): "The restriction to `m = n` reflects only the
 unweighted bookkeeping: the same splitting of the pairing into baseline and perturbation
@@ -1442,7 +1442,7 @@ Readings:
 * Corollary 3.6's clause (3.5) ⇒ (3.4) is not part of the remark and has no weighted counterpart
   here.
 
-Witness: `Dissertation.Acceptance.A.rem_generalrank_hypotheses`, the instance of
+Witness: `MVFBSDEJ.Acceptance.rem_generalrank_hypotheses`, the instance of
 `cor_robust_hypotheses` (`n = m = 1`, `G = 1`, `ν = δ₀`, baseline Example 5.1(i) with
 `β₁ = β₂ = 2`, feedback perturbation `ε = 1/2`), with (2.12) for the baseline at
 `β₁ = β₂ = c_diss = 1` and the weighted (3.4) for the perturbation at `c_pert = 1/2`. At `G = 1`
@@ -1451,18 +1451,18 @@ but does not exhibit a case `m ≠ n`; an instance with `m ≠ n` is not formali
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.rem_generalrank ed839d34f480cba1bcd1d82734738c5b by=claude-author source=A:rem:generalrank@d7d2976d856eb17cca4f2ce81183317ed11c078bb8c7bf4a7d4da20f32b3da6d -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_generalrank ed839d34f480cba1f5373e511b0aa0f3 by=claude-author source=A:rem:generalrank@d7d2976d856eb17cca4f2ce81183317ed11c078bb8c7bf4a7d4da20f32b3da6d -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.rem_generalrank--claude-reviewer--2026-10-17T12_13_00Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_generalrank ed839d34f480cba1bcd1d82734738c5b by=claude-reviewer source=A:rem:generalrank@d7d2976d856eb17cca4f2ce81183317ed11c078bb8c7bf4a7d4da20f32b3da6d -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_generalrank ed839d34f480cba1f5373e511b0aa0f3 by=claude-reviewer source=A:rem:generalrank@d7d2976d856eb17cca4f2ce81183317ed11c078bb8c7bf4a7d4da20f32b3da6d -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.rem_generalrank--claude-auditor--2026-10-19T03_36_13Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_generalrank ed839d34f480cba1bcd1d82734738c5b by=claude-auditor source=A:rem:generalrank@d7d2976d856eb17cca4f2ce81183317ed11c078bb8c7bf4a7d4da20f32b3da6d -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_generalrank_wp ed839d34f480cba118d1835a02488a97 by=claude-author source=A:rem:generalrank@d7d2976d856eb17cca4f2ce81183317ed11c078bb8c7bf4a7d4da20f32b3da6d -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_generalrank ed839d34f480cba1f5373e511b0aa0f3 by=claude-auditor source=A:rem:generalrank@d7d2976d856eb17cca4f2ce81183317ed11c078bb8c7bf4a7d4da20f32b3da6d -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_generalrank_wp ed839d34f480cba1e559b01e430dcbd3 by=claude-author source=A:rem:generalrank@d7d2976d856eb17cca4f2ce81183317ed11c078bb8c7bf4a7d4da20f32b3da6d -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.rem_generalrank_wp--claude-reviewer--2026-10-17T16_05_53Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_generalrank_wp ed839d34f480cba118d1835a02488a97 by=claude-reviewer source=A:rem:generalrank@d7d2976d856eb17cca4f2ce81183317ed11c078bb8c7bf4a7d4da20f32b3da6d -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_generalrank_wp ed839d34f480cba1e559b01e430dcbd3 by=claude-reviewer source=A:rem:generalrank@d7d2976d856eb17cca4f2ce81183317ed11c078bb8c7bf4a7d4da20f32b3da6d -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.rem_generalrank_wp--claude-auditor--2026-10-19T03_37_46Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_generalrank_wp ed839d34f480cba118d1835a02488a97 by=claude-auditor source=A:rem:generalrank@d7d2976d856eb17cca4f2ce81183317ed11c078bb8c7bf4a7d4da20f32b3da6d -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_generalrank_wp ed839d34f480cba1e559b01e430dcbd3 by=claude-auditor source=A:rem:generalrank@d7d2976d856eb17cca4f2ce81183317ed11c078bb8c7bf4a7d4da20f32b3da6d -->
 
-## Lemma A.1, the law flows: `Dissertation.PaperSpec.A.lem_lawflow`, `lem_lawflow_invariant`
+## Lemma A.1, the law flows: `MVFBSDEJ.PaperSpec.lem_lawflow`, `lem_lawflow_invariant`
 
 Manuscript (Appendix A, Lemma `lem:lawflow`): "Let `X, Y` be càdlàg adapted and let `Z, U`
 be fixed predictable versions, with `𝔼 ∫_0^T (|X_t|² + |Y_t|² + |Z_t|²_F + ∫_E |U_t(e)|² ν(de)) dt
@@ -1491,8 +1491,8 @@ Correspondence:
 * The invariance is stated for `Θ`; for `Θ⁻` it is the same statement applied to the left limits
   `leftLimProc X, leftLimProc Y`, since `X, Y` there are arbitrary.
 
-Witnesses: `Dissertation.Acceptance.A.lem_lawflow_hypotheses` (the zero tuple on a one-point
-space satisfies `CadlagPredTuple`) and `Dissertation.Acceptance.A.lem_lawflow_invariant_hypotheses`
+Witnesses: `MVFBSDEJ.Acceptance.lem_lawflow_hypotheses` (the zero tuple on a one-point
+space satisfies `CadlagPredTuple`) and `MVFBSDEJ.Acceptance.lem_lawflow_invariant_hypotheses`
 (on a one-point space every tuple's law flow represents its laws).
 
 Verdict: broader. `lem_lawflow` holds for every filtration and probability; `lem_lawflow_invariant`
@@ -1502,18 +1502,18 @@ claims are their instances over the standing basis, at a tuple with `X, Y` càdl
 predictable (`CadlagPredTuple`), the Borel flows of `lem_lawflow` and the coefficients of the
 system.
 
-<!-- spec-review: Dissertation.PaperSpec.A.lem_lawflow ed839d34f480cba1090c1a53f2a6cf7f by=claude-author source=A:lem:lawflow@b61210309cec8802a77053643f14f17525726292aaf8f26f098a3e85223633b5 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem_lawflow ed839d34f480cba11a2b3651abedff76 by=claude-author source=A:lem:lawflow@b61210309cec8802a77053643f14f17525726292aaf8f26f098a3e85223633b5 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lem_lawflow--claude-reviewer--2026-10-17T12_27_30Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.lem_lawflow ed839d34f480cba1090c1a53f2a6cf7f by=claude-reviewer source=A:lem:lawflow@b61210309cec8802a77053643f14f17525726292aaf8f26f098a3e85223633b5 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem_lawflow ed839d34f480cba11a2b3651abedff76 by=claude-reviewer source=A:lem:lawflow@b61210309cec8802a77053643f14f17525726292aaf8f26f098a3e85223633b5 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.lem_lawflow--claude-auditor--2026-10-19T03_36_15Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.lem_lawflow ed839d34f480cba1090c1a53f2a6cf7f by=claude-auditor source=A:lem:lawflow@b61210309cec8802a77053643f14f17525726292aaf8f26f098a3e85223633b5 -->
-<!-- spec-review: Dissertation.PaperSpec.A.lem_lawflow_invariant ed839d34f480cba184c9d1f8d6f2b814 by=claude-author source=A:lem:lawflow@b61210309cec8802a77053643f14f17525726292aaf8f26f098a3e85223633b5 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem_lawflow ed839d34f480cba11a2b3651abedff76 by=claude-auditor source=A:lem:lawflow@b61210309cec8802a77053643f14f17525726292aaf8f26f098a3e85223633b5 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem_lawflow_invariant ed839d34f480cba1abc25862f5a8ac4f by=claude-author source=A:lem:lawflow@b61210309cec8802a77053643f14f17525726292aaf8f26f098a3e85223633b5 -->
 Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.lem_lawflow_invariant--claude-reviewer--2026-10-17T16_03_53Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.lem_lawflow_invariant ed839d34f480cba184c9d1f8d6f2b814 by=claude-reviewer source=A:lem:lawflow@b61210309cec8802a77053643f14f17525726292aaf8f26f098a3e85223633b5 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem_lawflow_invariant ed839d34f480cba1abc25862f5a8ac4f by=claude-reviewer source=A:lem:lawflow@b61210309cec8802a77053643f14f17525726292aaf8f26f098a3e85223633b5 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.lem_lawflow_invariant--claude-auditor--2026-10-19T03_38_36Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.lem_lawflow_invariant ed839d34f480cba184c9d1f8d6f2b814 by=claude-auditor source=A:lem:lawflow@b61210309cec8802a77053643f14f17525726292aaf8f26f098a3e85223633b5 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem_lawflow_invariant ed839d34f480cba1abc25862f5a8ac4f by=claude-auditor source=A:lem:lawflow@b61210309cec8802a77053643f14f17525726292aaf8f26f098a3e85223633b5 -->
 
-## (4.2) and (4.3), the coefficient bounds: `Dissertation.PaperSpec.A.eq_coeffint`, `eq_termg`
+## (4.2) and (4.3), the coefficient bounds: `MVFBSDEJ.PaperSpec.eq_coeffint`, `eq_termg`
 
 Manuscript (§4): "By Assumptions 2.2–2.3, the coefficient processes
 (2.5) along any `Θ ∈ ℍ` are square-integrable: for `ψ ∈ {b, σ, h, f}`, in the norms of
@@ -1551,7 +1551,7 @@ Readings:
   `P₂(H)` for the coupling (2.8).
 * The displays write `h(s, Θ_s, μ_s)`; the proposition evaluates `h` there, as printed.
 
-Witness: `Dissertation.Acceptance.A.thm_cwp_hypotheses` for both: at Example 5.1(i) Assumption 2.3
+Witness: `MVFBSDEJ.Acceptance.thm_cwp_hypotheses` for both: at Example 5.1(i) Assumption 2.3
 holds with `L = 1` (its interior and terminal parts are `LipInterior` and `LipTerminal`), and the
 zero tuple, constant in time, is adapted and square integrable at every `t`, as is `X_T = 0`.
 
@@ -1561,18 +1561,18 @@ square-integrable `X_T`), with no assumption beyond the Lipschitz bound used (no
 for `eq_termg` no mark space); the printed claims are their instances over the standing basis along
 `Θ ∈ ℍ` (and its `X_T`) under Assumptions 2.2–2.3.
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_coeffint ed839d34f480cba13c4b68e5e50bad34 by=claude-author source=A:sec4:coeffint@fb2d9936eeb420107ab775d3d6f5f596ace121471c667bed056241cf5805dad6 source=A:eq:coeffint@b023b2927b3894d8f6323197bfa4a597800d6a73770ec5eecad87a4fb7ae5331 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_coeffint ed839d34f480cba133ce0e119f63091f by=claude-author source=A:sec4:coeffint@fb2d9936eeb420107ab775d3d6f5f596ace121471c667bed056241cf5805dad6 source=A:eq:coeffint@b023b2927b3894d8f6323197bfa4a597800d6a73770ec5eecad87a4fb7ae5331 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_coeffint--claude-reviewer--2026-10-17T12_22_13Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.eq_coeffint ed839d34f480cba13c4b68e5e50bad34 by=claude-reviewer source=A:sec4:coeffint@fb2d9936eeb420107ab775d3d6f5f596ace121471c667bed056241cf5805dad6 source=A:eq:coeffint@b023b2927b3894d8f6323197bfa4a597800d6a73770ec5eecad87a4fb7ae5331 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_coeffint ed839d34f480cba133ce0e119f63091f by=claude-reviewer source=A:sec4:coeffint@fb2d9936eeb420107ab775d3d6f5f596ace121471c667bed056241cf5805dad6 source=A:eq:coeffint@b023b2927b3894d8f6323197bfa4a597800d6a73770ec5eecad87a4fb7ae5331 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.eq_coeffint--claude-auditor--2026-10-19T03_36_47Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.eq_coeffint ed839d34f480cba13c4b68e5e50bad34 by=claude-auditor source=A:sec4:coeffint@fb2d9936eeb420107ab775d3d6f5f596ace121471c667bed056241cf5805dad6 source=A:eq:coeffint@b023b2927b3894d8f6323197bfa4a597800d6a73770ec5eecad87a4fb7ae5331 -->
-<!-- spec-review: Dissertation.PaperSpec.A.eq_termg ed839d34f480cba171988e2e6de37794 by=claude-author source=A:sec4:coeffint@fb2d9936eeb420107ab775d3d6f5f596ace121471c667bed056241cf5805dad6 source=A:eq:termg@b366da385f2d0d1704001661042e88366628f72edb9990bc82fba564a2eb90b8 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_coeffint ed839d34f480cba133ce0e119f63091f by=claude-auditor source=A:sec4:coeffint@fb2d9936eeb420107ab775d3d6f5f596ace121471c667bed056241cf5805dad6 source=A:eq:coeffint@b023b2927b3894d8f6323197bfa4a597800d6a73770ec5eecad87a4fb7ae5331 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_termg ed839d34f480cba12450d1561dfcb469 by=claude-author source=A:sec4:coeffint@fb2d9936eeb420107ab775d3d6f5f596ace121471c667bed056241cf5805dad6 source=A:eq:termg@b366da385f2d0d1704001661042e88366628f72edb9990bc82fba564a2eb90b8 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.eq_termg--claude-reviewer--2026-10-17T16_03_52Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.eq_termg ed839d34f480cba171988e2e6de37794 by=claude-reviewer source=A:sec4:coeffint@fb2d9936eeb420107ab775d3d6f5f596ace121471c667bed056241cf5805dad6 source=A:eq:termg@b366da385f2d0d1704001661042e88366628f72edb9990bc82fba564a2eb90b8 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_termg ed839d34f480cba12450d1561dfcb469 by=claude-reviewer source=A:sec4:coeffint@fb2d9936eeb420107ab775d3d6f5f596ace121471c667bed056241cf5805dad6 source=A:eq:termg@b366da385f2d0d1704001661042e88366628f72edb9990bc82fba564a2eb90b8 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.eq_termg--claude-auditor--2026-10-19T03_31_22Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.eq_termg ed839d34f480cba171988e2e6de37794 by=claude-auditor source=A:sec4:coeffint@fb2d9936eeb420107ab775d3d6f5f596ace121471c667bed056241cf5805dad6 source=A:eq:termg@b366da385f2d0d1704001661042e88366628f72edb9990bc82fba564a2eb90b8 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_termg ed839d34f480cba12450d1561dfcb469 by=claude-auditor source=A:sec4:coeffint@fb2d9936eeb420107ab775d3d6f5f596ace121471c667bed056241cf5805dad6 source=A:eq:termg@b366da385f2d0d1704001661042e88366628f72edb9990bc82fba564a2eb90b8 -->
 
-## Example 5.1(i), sharpness: `Dissertation.PaperSpec.A.ex_concrete_i_sharp`
+## Example 5.1(i), sharpness: `MVFBSDEJ.PaperSpec.ex_concrete_i_sharp`
 
 Manuscript (§5): Example 5.1(i) states that the displayed identity
 `𝔼[⟨δb, δY⟩ + ⟨δσ, δZ⟩_F + ⟨−δf, δX⟩ + ∫_E ⟨δh(e), δU(e)⟩ ν(de)]
@@ -1592,18 +1592,18 @@ Readings:
   Constant tuples are diagonal inputs on every basis, so no richness of the noise is used, and
   `ν = 0` is covered.
 
-Witness: `Dissertation.Acceptance.A.ex_concrete_hypotheses`: at its instance Assumption 2.5 holds
+Witness: `MVFBSDEJ.Acceptance.ex_concrete_hypotheses`: at its instance Assumption 2.5 holds
 with the system's own `β₁, β₂`, so (2.7) holds with `β₁' = β₁`, `β₂' = β₂`.
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_sharp ed839d34f480cba19df1faec1593a821 by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i_sharp ed839d34f480cba17e1f06c7ac4fc270 by=claude-author source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_i_sharp--claude-reviewer--2026-10-17T12_17_25Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_sharp ed839d34f480cba19df1faec1593a821 by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i_sharp ed839d34f480cba17e1f06c7ac4fc270 by=claude-reviewer source=A:ex:concrete@c1a37ef0e0904d01777b03bccdee013a671a60dda2b3a63f5bcfcdc22dd81785 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.ex_concrete_i_sharp--claude-auditor--2026-10-19T03_36_07Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_concrete_i_sharp ed839d34f480cba19df1faec1593a821 by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i_sharp ed839d34f480cba17e1f06c7ac4fc270 by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 -->
 
-## Example 5.2, two further clauses: `Dissertation.PaperSpec.A.ex_brownian_not_h0`, `ex_brownian_rank_gt`
+## Example 5.2, two further clauses: `MVFBSDEJ.PaperSpec.ex_brownian_not_h0`, `ex_brownian_rank_gt`
 
 Manuscript (Example `ex:brownian`): "Merely setting `h ≡ 0` on a Brownian–Poisson basis is not a
 reduction, since the backward Poisson integral and its integrand `U` persist in the
@@ -1638,25 +1638,25 @@ Correspondence:
 * The jump coefficient in `ex_brownian_rank_gt` is an element of `L²(0; ℝᵐ) = {0}`, so no
   additive-form condition is needed.
 
-Witnesses: `Dissertation.Acceptance.A.ex_brownian_not_h0_hypotheses` (a Lévy driver with `d = 1`
-and `ν = δ₀ ≠ 0` on `ℝ`, `𝒢₀ = ⊥`); `Dissertation.Acceptance.A.ex_brownian_rank_gt_hypotheses`
+Witnesses: `MVFBSDEJ.Acceptance.ex_brownian_not_h0_hypotheses` (a Lévy driver with `d = 1`
+and `ν = δ₀ ≠ 0` on `ℝ`, `𝒢₀ = ⊥`); `MVFBSDEJ.Acceptance.ex_brownian_rank_gt_hypotheses`
 (a Lévy driver with `ν = 0` on `ℝ`, `d = 1`, `𝒢₀ = ⊥`, `n = 1 < m = 2`, datum `0`).
 
 Verdict: faithful for the two clauses stated; the reduction of the assumptions and the solution
 notions to their Brownian forms is an open clause.
 
-<!-- spec-review: Dissertation.PaperSpec.A.ex_brownian_not_h0 ed839d34f480cba13fa0ef4acc9fb310 by=claude-author source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_brownian_not_h0 ed839d34f480cba1987b9a0f5b4c9b44 by=claude-author source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_brownian_not_h0--claude-reviewer--2026-10-17T12_11_37Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_brownian_not_h0 ed839d34f480cba13fa0ef4acc9fb310 by=claude-reviewer source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_brownian_not_h0 ed839d34f480cba1987b9a0f5b4c9b44 by=claude-reviewer source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.ex_brownian_not_h0--claude-auditor--2026-10-19T03_34_13Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_brownian_not_h0 ed839d34f480cba13fa0ef4acc9fb310 by=claude-auditor source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_brownian_rank_gt ed839d34f480cba154d947c79143fab0 by=claude-author source=A:rem:beta1-dich@ce35242e5c61dc248a5bf9b36f678223d523cf9e6c42793d8e5d2fd12e1df0ea source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_brownian_not_h0 ed839d34f480cba1987b9a0f5b4c9b44 by=claude-auditor source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_brownian_rank_gt ed839d34f480cba1520b4873ef0101a2 by=claude-author source=A:rem:beta1-dich@ce35242e5c61dc248a5bf9b36f678223d523cf9e6c42793d8e5d2fd12e1df0ea source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_brownian_rank_gt--claude-reviewer--2026-10-17T16_05_52Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_brownian_rank_gt ed839d34f480cba154d947c79143fab0 by=claude-reviewer source=A:rem:beta1-dich@ce35242e5c61dc248a5bf9b36f678223d523cf9e6c42793d8e5d2fd12e1df0ea source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_brownian_rank_gt ed839d34f480cba1520b4873ef0101a2 by=claude-reviewer source=A:rem:beta1-dich@ce35242e5c61dc248a5bf9b36f678223d523cf9e6c42793d8e5d2fd12e1df0ea source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.ex_brownian_rank_gt--claude-auditor--2026-10-19T03_37_10Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_brownian_rank_gt ed839d34f480cba154d947c79143fab0 by=claude-auditor source=A:rem:beta1-dich@20e41bdfd1e0996ebf1050ab15273a783631b8c503a6635284298cc387eea4f4 source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_brownian_rank_gt ed839d34f480cba1520b4873ef0101a2 by=claude-auditor source=A:rem:beta1-dich@20e41bdfd1e0996ebf1050ab15273a783631b8c503a6635284298cc387eea4f4 source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 -->
 
-## Example 5.2, the reduction to the Brownian forms: `Dissertation.PaperSpec.A.ex_brownian_reduction`, `ex_brownian_prp`
+## Example 5.2, the reduction to the Brownian forms: `MVFBSDEJ.PaperSpec.ex_brownian_reduction`, `ex_brownian_prp`
 
 Manuscript (Example `ex:brownian`): "Remove the Poisson channel from the stochastic basis, so that
 the filtration is generated by `W` and `ℱ₀` and the representation property is the Brownian one.
@@ -1760,28 +1760,28 @@ Correspondence:
   `ν = 0` (by composition with `projB` and `projP2`), which the example does not state; and the
   forced system (4.1), a device of the proof of §4.
 
-Witnesses: `Dissertation.Acceptance.A.ex_brownian_reduction_hypotheses` (a Lévy driver with
+Witnesses: `MVFBSDEJ.Acceptance.ex_brownian_reduction_hypotheses` (a Lévy driver with
 `ν = 0` on `ℝ`, `d = 1`, `𝒢₀ = ⊥`; at `n = 1`, `m = 2`, `T = 1` and datum `0`, the linear
 generator of `ex_brownian_rank_gt` has a solution of (1.1) in `ℍ` by `thm_cwp`, so that both
 sides of (c) are met at an instance of the example);
-`Dissertation.Acceptance.A.ex_brownian_prp_hypotheses` (the same driver, with `d = 1 > 0`,
+`MVFBSDEJ.Acceptance.ex_brownian_prp_hypotheses` (the same driver, with `d = 1 > 0`,
 `T = 1`, and the martingale `0` of `ℱ^B`, square integrable at every time).
 
 Verdict: faithful, with "remove the Poisson channel" read as `ν = 0`, as in the review of
 `ex_brownian`.
 
-<!-- spec-review: Dissertation.PaperSpec.A.ex_brownian_reduction ed839d34f480cba16ec077c21383f1ee by=claude-author source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_brownian_reduction ed839d34f480cba160cc15ad2ee3a619 by=claude-author source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_brownian_reduction--claude-reviewer--2026-10-17T16_05_53Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_brownian_reduction ed839d34f480cba16ec077c21383f1ee by=claude-reviewer source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_brownian_reduction ed839d34f480cba160cc15ad2ee3a619 by=claude-reviewer source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_brownian_reduction--claude-auditor--2026-10-19T03_36_56Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_brownian_reduction ed839d34f480cba16ec077c21383f1ee by=claude-auditor source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_brownian_prp ed839d34f480cba1d54de82e0956a03e by=claude-author source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_brownian_reduction ed839d34f480cba160cc15ad2ee3a619 by=claude-auditor source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_brownian_prp ed839d34f480cba1744fb87bba1cd3e9 by=claude-author source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.ex_brownian_prp--claude-reviewer--2026-10-17T16_03_52Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_brownian_prp ed839d34f480cba1d54de82e0956a03e by=claude-reviewer source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_brownian_prp ed839d34f480cba1744fb87bba1cd3e9 by=claude-reviewer source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_brownian_prp--claude-auditor--2026-10-19T03_34_12Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_brownian_prp ed839d34f480cba1d54de82e0956a03e by=claude-auditor source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_brownian_prp ed839d34f480cba1744fb87bba1cd3e9 by=claude-auditor source=A:ex:brownian@73039b50faf59ac9d4c6bfe0d2609ec518c20d4f2edffd1960252336508e71b5 -->
 
-## §3, the solution definition and the solution space: `Dissertation.PaperSpec.A.sec3_one_null_set`, `sec3_cadlag_versions`, `sec3_HH_inclusion`, `sec3_HH_definite`, `sec3_HH_norm`
+## §3, the solution definition and the solution space: `MVFBSDEJ.PaperSpec.sec3_one_null_set`, `sec3_cadlag_versions`, `sec3_HH_inclusion`, `sec3_HH_definite`, `sec3_HH_norm`
 
 Manuscript (§3, the paragraphs on `ℍ` and on solutions): the elements of `ℍ`
 are equivalence classes (càdlàg components identified when indistinguishable, `Z` when equal
@@ -1841,44 +1841,44 @@ Correspondence:
 * The inclusion `ℍ ⊂ ℍ_weak` is read as the energy condition of `ℍ_weak` for `X` and `Y`; the
   other conditions of `ℍ_weak` are those of `ℍ`.
 
-Witness: `Dissertation.Acceptance.A.sec3_space_hypotheses` for `sec3_one_null_set` and
+Witness: `MVFBSDEJ.Acceptance.sec3_space_hypotheses` for `sec3_one_null_set` and
 `sec3_HH_definite`: over a Lévy driver with `d = 1`, `ν = δ₀`, `𝒢₀ = ⊥`, `n = m = 1`, `T = 1`,
 the solution of Example 5.1(i) (`β₁ = β₂ = 1`, `σ_c = h_c = 0`) from `ξ₀ ≡ e₁` gives a tuple of
 `ℍ_weak` with the integrals of (1.1), with `X_0 = 1` almost surely (not the zero tuple).
 `sec3_HH_inclusion` has no hypotheses beyond `T ≥ 0`.
-`Dissertation.Acceptance.A.sec3_cadlag_versions_hypotheses` for `sec3_cadlag_versions`: over the
+`MVFBSDEJ.Acceptance.sec3_cadlag_versions_hypotheses` for `sec3_cadlag_versions`: over the
 same driver, the tuple `X = Y = 1`, `Z = U = 1_{(0, 1]}` of `ℍ_weak`, along which the integrals of
 (1.1) exist for the system of Example 5.1(i), with `Z` and `U` of energy `1` (nonzero integrands).
-`Dissertation.Acceptance.A.sec3_HH_norm_hypotheses` for `sec3_HH_norm`: that tuple, taken for
+`MVFBSDEJ.Acceptance.sec3_HH_norm_hypotheses` for `sec3_HH_norm`: that tuple, taken for
 both `Θ` and `Θ'`, with `‖Θ‖²_ℍ = 4`.
 
 Verdict: faithful for `sec3_HH_inclusion`; broader for `sec3_one_null_set`,
 `sec3_cadlag_versions`, `sec3_HH_definite` and `sec3_HH_norm`, each by the instantiation given
 above.
 
-<!-- spec-review: Dissertation.PaperSpec.A.sec3_one_null_set ed839d34f480cba1209a5aa6ac298690 by=claude-author source=A:sec3:one-null-set@14d75cb86a9216c652eee2f0e1f6bebae9651e4f1f55bc1c34aacc8f595b9954 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec3_one_null_set ed839d34f480cba138f9fd9e89c0b6c3 by=claude-author source=A:sec3:one-null-set@14d75cb86a9216c652eee2f0e1f6bebae9651e4f1f55bc1c34aacc8f595b9954 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec3_one_null_set--claude-reviewer--2026-10-17T12_16_14Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec3_one_null_set ed839d34f480cba1209a5aa6ac298690 by=claude-reviewer source=A:sec3:one-null-set@14d75cb86a9216c652eee2f0e1f6bebae9651e4f1f55bc1c34aacc8f595b9954 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec3_one_null_set ed839d34f480cba138f9fd9e89c0b6c3 by=claude-reviewer source=A:sec3:one-null-set@14d75cb86a9216c652eee2f0e1f6bebae9651e4f1f55bc1c34aacc8f595b9954 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.sec3_one_null_set--claude-auditor--2026-10-19T03_35_07Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec3_one_null_set ed839d34f480cba1209a5aa6ac298690 by=claude-auditor source=A:sec3:one-null-set@14d75cb86a9216c652eee2f0e1f6bebae9651e4f1f55bc1c34aacc8f595b9954 -->
-<!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_inclusion ed839d34f480cba130514b735af5f227 by=claude-author source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec3_one_null_set ed839d34f480cba138f9fd9e89c0b6c3 by=claude-auditor source=A:sec3:one-null-set@14d75cb86a9216c652eee2f0e1f6bebae9651e4f1f55bc1c34aacc8f595b9954 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec3_HH_inclusion ed839d34f480cba13d9a37898844e038 by=claude-author source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec3_HH_inclusion--claude-reviewer--2026-10-17T12_15_35Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_inclusion ed839d34f480cba130514b735af5f227 by=claude-reviewer source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec3_HH_inclusion ed839d34f480cba13d9a37898844e038 by=claude-reviewer source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.sec3_HH_inclusion--claude-auditor--2026-10-19T03_34_37Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_inclusion ed839d34f480cba130514b735af5f227 by=claude-auditor source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
-<!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_definite ed839d34f480cba12b4c9985cfe528af by=claude-author source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec3_HH_inclusion ed839d34f480cba13d9a37898844e038 by=claude-auditor source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec3_HH_definite ed839d34f480cba1ea08606483b8ce0f by=claude-author source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec3_HH_definite--claude-reviewer--2026-10-17T12_14_59Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_definite ed839d34f480cba12b4c9985cfe528af by=claude-reviewer source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec3_HH_definite ed839d34f480cba1ea08606483b8ce0f by=claude-reviewer source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.sec3_HH_definite--claude-auditor--2026-10-19T03_34_14Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_definite ed839d34f480cba12b4c9985cfe528af by=claude-auditor source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
-<!-- spec-review: Dissertation.PaperSpec.A.sec3_cadlag_versions ed839d34f480cba18328d3bafc39f8ed by=claude-author source=A:sec3:one-null-set@14d75cb86a9216c652eee2f0e1f6bebae9651e4f1f55bc1c34aacc8f595b9954 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec3_HH_definite ed839d34f480cba1ea08606483b8ce0f by=claude-auditor source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec3_cadlag_versions ed839d34f480cba1dfafad3c01dd9c62 by=claude-author source=A:sec3:one-null-set@14d75cb86a9216c652eee2f0e1f6bebae9651e4f1f55bc1c34aacc8f595b9954 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.sec3_cadlag_versions--claude-auditor--2026-10-19T05_49_14Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec3_cadlag_versions ed839d34f480cba18328d3bafc39f8ed by=claude-auditor source=A:sec3:one-null-set@14d75cb86a9216c652eee2f0e1f6bebae9651e4f1f55bc1c34aacc8f595b9954 -->
-<!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_norm ed839d34f480cba140aa5342c14a73fc by=claude-author source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec3_cadlag_versions ed839d34f480cba1dfafad3c01dd9c62 by=claude-auditor source=A:sec3:one-null-set@14d75cb86a9216c652eee2f0e1f6bebae9651e4f1f55bc1c34aacc8f595b9954 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec3_HH_norm ed839d34f480cba1982fd9e7618d6f99 by=claude-author source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.sec3_HH_norm--claude-auditor--2026-10-19T05_49_14Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_norm ed839d34f480cba140aa5342c14a73fc by=claude-auditor source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec3_HH_norm ed839d34f480cba1982fd9e7618d6f99 by=claude-auditor source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
 
-## §3, completeness of the solution space: `Dissertation.PaperSpec.A.sec3_HH_complete`
+## §3, completeness of the solution space: `MVFBSDEJ.PaperSpec.sec3_HH_complete`
 
 Manuscript (§3, the paragraph on `ℍ`): "Under this identification
 `‖·‖_ℍ` is a norm rather than a seminorm, and `(ℍ, ‖·‖_ℍ)` is a Banach space."
@@ -1903,7 +1903,7 @@ Correspondence:
 * "`‖·‖_ℍ` is a norm" is reviewed under `sec3_HH_definite` and `sec3_HH_norm`; the closure of the
   quotient under the vector-space operations is not separately stated.
 
-Witness: `Dissertation.Acceptance.A.sec3_HH_complete_hypotheses`: over a Lévy driver with
+Witness: `MVFBSDEJ.Acceptance.sec3_HH_complete_hypotheses`: over a Lévy driver with
 `d = 1`, `ν = δ₀`, `𝒢₀ = ⊥`, `n = m = 1`, `T = 1`, the constant sequence at the tuple
 `X = Y = 1`, `Z = U = 1_{(0, 1]}` of `ℍ_weak`, with `‖Θ_j‖²_ℍ = 4`, is Cauchy. It shows the
 hypotheses can be met by a nonzero tuple; a sequence that is not eventually constant is not
@@ -1911,13 +1911,13 @@ exhibited.
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_complete ed839d34f480cba140502fce3ed6073c by=claude-author source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec3_HH_complete ed839d34f480cba105a40fd50a78c129 by=claude-author source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec3_HH_complete--claude-reviewer--2026-10-17T12_14_16Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_complete ed839d34f480cba140502fce3ed6073c by=claude-reviewer source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec3_HH_complete ed839d34f480cba105a40fd50a78c129 by=claude-reviewer source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec3_HH_complete--claude-auditor--2026-10-19T03_34_22Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec3_HH_complete ed839d34f480cba140502fce3ed6073c by=claude-auditor source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec3_HH_complete ed839d34f480cba105a40fd50a78c129 by=claude-auditor source=A:sec3:HH-banach@a0a1288695334f65fab37e82bdb88887c2310a259b83b80f05dea471d866904f -->
 
-## §4, the horizon: `Dissertation.PaperSpec.A.sec4_horizon_not_contractive`
+## §4, the horizon: `MVFBSDEJ.PaperSpec.sec4_horizon_not_contractive`
 
 Manuscript (the introduction to §4): "The continuation
 is in the coupling strength, not the horizon: shortening the horizon does not make the
@@ -1946,19 +1946,19 @@ Correspondence:
 * The output is related, not computed: the linear equations determine it up to the identification
   of `ℍ`, so the stated output is the image `Φ₁(Θ)`.
 
-Witness: `Dissertation.Acceptance.A.sec4_horizon_hypotheses`: a probability space carrying a Lévy
+Witness: `MVFBSDEJ.Acceptance.sec4_horizon_hypotheses`: a probability space carrying a Lévy
 driver with `d = 1` and `ν = 0` on a point, with `𝒢₀ = ⊥` and `T = β₁ = β₂ = 1`; the proposition
 has no other hypotheses.
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.sec4_horizon_not_contractive ed839d34f480cba1fc081d81965ca7e6 by=claude-author source=A:sec4:horizon-not-contractive@3848cfec9527e65f37a2aa7ee50e7c186ffb9d3e89e5d7181ef8045b33f7557a -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec4_horizon_not_contractive ed839d34f480cba1a81a001de59007a4 by=claude-author source=A:sec4:horizon-not-contractive@3848cfec9527e65f37a2aa7ee50e7c186ffb9d3e89e5d7181ef8045b33f7557a -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec4_horizon_not_contractive--claude-reviewer--2026-10-17T12_08_17Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec4_horizon_not_contractive ed839d34f480cba1fc081d81965ca7e6 by=claude-reviewer source=A:sec4:horizon-not-contractive@3848cfec9527e65f37a2aa7ee50e7c186ffb9d3e89e5d7181ef8045b33f7557a -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec4_horizon_not_contractive ed839d34f480cba1a81a001de59007a4 by=claude-reviewer source=A:sec4:horizon-not-contractive@3848cfec9527e65f37a2aa7ee50e7c186ffb9d3e89e5d7181ef8045b33f7557a -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec4_horizon_not_contractive--claude-auditor--2026-10-19T03_35_41Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec4_horizon_not_contractive ed839d34f480cba1fc081d81965ca7e6 by=claude-auditor source=A:sec4:horizon-not-contractive@3848cfec9527e65f37a2aa7ee50e7c186ffb9d3e89e5d7181ef8045b33f7557a -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec4_horizon_not_contractive ed839d34f480cba1a81a001de59007a4 by=claude-auditor source=A:sec4:horizon-not-contractive@3848cfec9527e65f37a2aa7ee50e7c186ffb9d3e89e5d7181ef8045b33f7557a -->
 
-## §4, the supremum criterion: `Dissertation.PaperSpec.A.sec4_supremum_criterion`
+## §4, the supremum criterion: `MVFBSDEJ.PaperSpec.sec4_supremum_criterion`
 
 Manuscript (the preamble of §4, lines 30–37): "The maximal estimates use the
 Burkholder–Davis–Gundy inequality in quadratic-variation form, at `p = 1` for the zero-mean
@@ -2012,7 +2012,7 @@ Correspondence:
   formalised). The proposition takes `τ_k → ∞`.
 * "Càdlàg": almost every path right-continuous with left limits at every `t ≥ 0` (at `t = 0` the
   left-limit clause is vacuous). The every-path reading, the convention of
-  `Dissertation.PaperSpec.A.Solution`, is an instance; under the usual conditions the two readings
+  `MVFBSDEJ.PaperSpec.Solution`, is an instance; under the usual conditions the two readings
   agree up to indistinguishability. The proof uses right-continuity only, to make `sup_{u ≤ T}
   |M_u|` almost everywhere measurable (it agrees a.s. with the supremum over a countable dense
   subset of `[0, T]` together with `T`).
@@ -2039,7 +2039,7 @@ Proof (for the reader; not part of the review): the printed one. Along the local
 equal `M_t`, `M_s` for large `k`; both are bounded by `sup_{u ≤ T} |M_u|`, which is integrable;
 dominated convergence.
 
-Witness: `Dissertation.Acceptance.A.sec4_supremum_criterion_hypotheses`: `Ω = Bool` with the
+Witness: `MVFBSDEJ.Acceptance.sec4_supremum_criterion_hypotheses`: `Ω = Bool` with the
 fair-coin law, the filtration trivial before time `1` and full from time `1`, `T = 2`, and `M_t = ξ
 1_{t ≥ 1}` with `ξ(true) = 1`, `ξ(false) = −1`: `M` is adapted, every path is càdlàg with one jump
 at `t = 1`, `M` is a martingale (so a local martingale, `τ_k = ∞`), `|M| ≤ 1`, and `M_2 ≠ M_0` on
@@ -2050,11 +2050,11 @@ Verdict: faithful. The proposition is broader than the printed claim (any filtra
 càdlàg paths, localisation with the indicator `1_{τ_k > 0}`); the printed claim, in the setting of
 §2 and as used in Lemmas 4.1 and 4.3, is an instance.
 
-<!-- spec-review: Dissertation.PaperSpec.A.sec4_supremum_criterion ed839d34f480cba1f588c2071f5242ff by=claude-author source=A:sec4:supremum-criterion@66f9ea22a06a00e8b6aad28172a7820750d9f1d2f2ddeb8475dddc064283e43b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec4_supremum_criterion ed839d34f480cba1f588c2071f5242ff by=claude-author source=A:sec4:supremum-criterion@66f9ea22a06a00e8b6aad28172a7820750d9f1d2f2ddeb8475dddc064283e43b -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.sec4_supremum_criterion--claude-reviewer--2026-10-17T16_03_52Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec4_supremum_criterion ed839d34f480cba1f588c2071f5242ff by=claude-reviewer source=A:sec4:supremum-criterion@66f9ea22a06a00e8b6aad28172a7820750d9f1d2f2ddeb8475dddc064283e43b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec4_supremum_criterion ed839d34f480cba1f588c2071f5242ff by=claude-reviewer source=A:sec4:supremum-criterion@66f9ea22a06a00e8b6aad28172a7820750d9f1d2f2ddeb8475dddc064283e43b -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec4_supremum_criterion--claude-auditor--2026-10-19T03_31_21Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.sec4_supremum_criterion ed839d34f480cba1f588c2071f5242ff by=claude-auditor source=A:sec4:supremum-criterion@66f9ea22a06a00e8b6aad28172a7820750d9f1d2f2ddeb8475dddc064283e43b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec4_supremum_criterion ed839d34f480cba1f588c2071f5242ff by=claude-auditor source=A:sec4:supremum-criterion@66f9ea22a06a00e8b6aad28172a7820750d9f1d2f2ddeb8475dddc064283e43b -->
 
 ## Abstract: the claims it summarises (`A:abstract`)
 
@@ -2096,7 +2096,7 @@ Correspondence:
 
 Verdict: each clause is the proposition named, reviewed in its own section.
 
-## Remark 2.10, the `β₁` dichotomy: `Dissertation.PaperSpec.A.rem_beta1_fibre`, `rem_beta1_dich`, `rem_beta1_zero`
+## Remark 2.10, the `β₁` dichotomy: `MVFBSDEJ.PaperSpec.rem_beta1_fibre`, `rem_beta1_dich`, `rem_beta1_zero`
 
 Manuscript (§2, Remark `rem:beta1-dich`): "Suppose `ν ≠ 0`, so that `L²(ν) ≠ {0}`. Taking
 `δX = δY = δZ = 0` and `δU` arbitrary in (2.7) reduces the interior pairing to
@@ -2154,28 +2154,28 @@ Correspondence:
   (the branch `m > n`) are recorded under this claim too and reviewed with Example 5.2.
 * The last sentence is a statement about cited work.
 
-Witnesses: `Dissertation.Acceptance.A.rem_affine_hypotheses` for `rem_beta1_fibre` and
+Witnesses: `MVFBSDEJ.Acceptance.rem_affine_hypotheses` for `rem_beta1_fibre` and
 `rem_beta1_dich`: over a Lévy driver with `d = 1` and `ν = δ₀ ≠ 0` on `ℝ`, `𝒢₀ = ⊥`, `T = 1`,
 `n = m = 1`, `G = 1` of full rank, Example 5.1(i) with `β₁ = β₂ = 1`, `σ_c = 0`, `h_c = 0`
 satisfies Assumption 2.5 with `α = 1`. The antecedents inside (b) and (c) (an additive `h`;
 `m < n`) do not hold at this instance; the witness meets the hypotheses of the proposition, and
-(a) is not vacuous there. `Dissertation.Acceptance.A.ex_brownian_hypotheses` for
+(a) is not vacuous there. `MVFBSDEJ.Acceptance.ex_brownian_hypotheses` for
 `rem_beta1_zero`: a Lévy driver with `ν = 0` independent of `𝒢₀ = ⊥`, and `T = 1`.
 
 Verdict: `rem_beta1_dich` and `rem_beta1_zero` faithful; `rem_beta1_fibre` broader, at every
 measurable mark space, the printed claim its instance at the countably generated `E` of §2.
 
-<!-- spec-review: Dissertation.PaperSpec.A.rem_beta1_fibre ed839d34f480cba1c9fa0ba4a3588e95 by=claude-author source=A:rem:beta1-dich@20e41bdfd1e0996ebf1050ab15273a783631b8c503a6635284298cc387eea4f4 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_beta1_fibre ed839d34f480cba1c9fa0ba4a3588e95 by=claude-author source=A:rem:beta1-dich@20e41bdfd1e0996ebf1050ab15273a783631b8c503a6635284298cc387eea4f4 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.rem_beta1_fibre--claude-auditor--2026-10-19T03_26_06Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_beta1_fibre ed839d34f480cba1c9fa0ba4a3588e95 by=claude-auditor source=A:rem:beta1-dich@20e41bdfd1e0996ebf1050ab15273a783631b8c503a6635284298cc387eea4f4 -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_beta1_dich ed839d34f480cba1312ac03d25ff8ea1 by=claude-author source=A:rem:beta1-dich@ce35242e5c61dc248a5bf9b36f678223d523cf9e6c42793d8e5d2fd12e1df0ea source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_beta1_fibre ed839d34f480cba1c9fa0ba4a3588e95 by=claude-auditor source=A:rem:beta1-dich@20e41bdfd1e0996ebf1050ab15273a783631b8c503a6635284298cc387eea4f4 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_beta1_dich ed839d34f480cba15923d378afdb7162 by=claude-author source=A:rem:beta1-dich@ce35242e5c61dc248a5bf9b36f678223d523cf9e6c42793d8e5d2fd12e1df0ea source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.rem_beta1_dich--claude-auditor--2026-10-19T03_34_36Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_beta1_dich ed839d34f480cba1312ac03d25ff8ea1 by=claude-auditor source=A:rem:beta1-dich@20e41bdfd1e0996ebf1050ab15273a783631b8c503a6635284298cc387eea4f4 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_beta1_zero ed839d34f480cba10a600b0e388b329d by=claude-author source=A:rem:beta1-dich@20e41bdfd1e0996ebf1050ab15273a783631b8c503a6635284298cc387eea4f4 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_beta1_dich ed839d34f480cba15923d378afdb7162 by=claude-auditor source=A:rem:beta1-dich@20e41bdfd1e0996ebf1050ab15273a783631b8c503a6635284298cc387eea4f4 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_beta1_zero ed839d34f480cba1bd1a000aedf0be51 by=claude-author source=A:rem:beta1-dich@20e41bdfd1e0996ebf1050ab15273a783631b8c503a6635284298cc387eea4f4 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.rem_beta1_zero--claude-auditor--2026-10-19T03_38_14Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_beta1_zero ed839d34f480cba10a600b0e388b329d by=claude-auditor source=A:rem:beta1-dich@20e41bdfd1e0996ebf1050ab15273a783631b8c503a6635284298cc387eea4f4 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_beta1_zero ed839d34f480cba1bd1a000aedf0be51 by=claude-auditor source=A:rem:beta1-dich@20e41bdfd1e0996ebf1050ab15273a783631b8c503a6635284298cc387eea4f4 -->
 
-## Remark 2.11, the dissipativity margin: `Dissertation.PaperSpec.A.rem_margin_reduce`, `rem_margin_unweighted`, `rem_margin_smaller`
+## Remark 2.11, the dissipativity margin: `MVFBSDEJ.PaperSpec.rem_margin_reduce`, `rem_margin_unweighted`, `rem_margin_smaller`
 
 Manuscript (§2, Remark `rem:margin`): (2.7) holds with margin `c > 0` if (2.12) holds, the bound
 of (2.7) with the further term `−c 𝔼[|G* δY|² + |G* δZ|²_F + ‖G* δU‖² + |G δX|²]`. "Suppose the
@@ -2216,29 +2216,29 @@ Correspondence:
   sentence makes no claim that the margin `c` fails in (2.13), and the proposition does not
   state one.
 
-Witnesses: `Dissertation.Acceptance.A.rem_affine_hypotheses` for `rem_margin_reduce` (over a Lévy
+Witnesses: `MVFBSDEJ.Acceptance.rem_affine_hypotheses` for `rem_margin_reduce` (over a Lévy
 driver with `d = 1`, `ν = δ₀`, `𝒢₀ = ⊥`, `T = 1`, Example 5.1(i) with `β₁ = β₂ = 1` satisfies
 Assumption 2.5 at `G = 1`, whose interior part is (2.7) with `β̄₁ = β̄₂ = 1`, and
-`0 < 1/2 < min{1, 1}`); `Dissertation.Acceptance.A.rem_margin_hypotheses` for
+`0 < 1/2 < min{1, 1}`); `MVFBSDEJ.Acceptance.rem_margin_hypotheses` for
 `rem_margin_unweighted` (the same system satisfies (2.12) at `G = 1` with the constants `1/2, 1/2`
 and margin `1/2 > 0`; at `G = 1`, `c_G = 1`, so this witness meets the hypotheses without showing
-the factor `c_G`); `Dissertation.Acceptance.A.rem_margin_smaller_hypotheses` for
+the factor `c_G`); `MVFBSDEJ.Acceptance.rem_margin_smaller_hypotheses` for
 `rem_margin_smaller` (`G = 1/2 ∈ ℝ^{1×1}`, of full rank, with `s_min(G) = 1/2`, so `c_G = 4 > 1`,
 and `c = 1`).
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.rem_margin_reduce ed839d34f480cba15843e0ffe4756126 by=claude-author source=A:rem:margin@818715d0c102417894d7fdc0dd695f91b0ee288c7ecc02af05c10a95821a090a -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_margin_reduce ed839d34f480cba1bfbaa0d4d34ae550 by=claude-author source=A:rem:margin@818715d0c102417894d7fdc0dd695f91b0ee288c7ecc02af05c10a95821a090a -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.rem_margin_reduce--claude-auditor--2026-10-19T03_34_35Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_margin_reduce ed839d34f480cba15843e0ffe4756126 by=claude-auditor source=A:rem:margin@f098128a01b0fc8e2f2ddbb98e80be357bf141638ca4f28a2161fd38cb98a896 -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_margin_unweighted ed839d34f480cba1ba4163c9b3d796bd by=claude-author source=A:rem:margin@818715d0c102417894d7fdc0dd695f91b0ee288c7ecc02af05c10a95821a090a -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_margin_reduce ed839d34f480cba1bfbaa0d4d34ae550 by=claude-auditor source=A:rem:margin@f098128a01b0fc8e2f2ddbb98e80be357bf141638ca4f28a2161fd38cb98a896 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_margin_unweighted ed839d34f480cba1ffa92fe440e0e009 by=claude-author source=A:rem:margin@818715d0c102417894d7fdc0dd695f91b0ee288c7ecc02af05c10a95821a090a -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.rem_margin_unweighted--claude-auditor--2026-10-19T03_34_35Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_margin_unweighted ed839d34f480cba1ba4163c9b3d796bd by=claude-auditor source=A:rem:margin@f098128a01b0fc8e2f2ddbb98e80be357bf141638ca4f28a2161fd38cb98a896 -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_margin_smaller ed839d34f480cba133faa12dcf2189f6 by=claude-author source=A:rem:margin@288d762606cfb331dfd032a5690173faa203ebddb7048d1201cb0e0fe1a25485 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_margin_unweighted ed839d34f480cba1ffa92fe440e0e009 by=claude-auditor source=A:rem:margin@f098128a01b0fc8e2f2ddbb98e80be357bf141638ca4f28a2161fd38cb98a896 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_margin_smaller ed839d34f480cba15a1a0b62a5a9eb54 by=claude-author source=A:rem:margin@288d762606cfb331dfd032a5690173faa203ebddb7048d1201cb0e0fe1a25485 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.rem_margin_smaller--claude-auditor--2026-10-19T18_47_31Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_margin_smaller ed839d34f480cba133faa12dcf2189f6 by=claude-auditor source=A:rem:margin@288d762606cfb331dfd032a5690173faa203ebddb7048d1201cb0e0fe1a25485 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_margin_smaller ed839d34f480cba15a1a0b62a5a9eb54 by=claude-auditor source=A:rem:margin@288d762606cfb331dfd032a5690173faa203ebddb7048d1201cb0e0fe1a25485 -->
 
-## Remark 3.4, uniqueness without origin integrability: `Dissertation.PaperSpec.A.rem_uniq_initial`, `rem_uniq_singular`, `rem_uniq_translation`
+## Remark 3.4, uniqueness without origin integrability: `MVFBSDEJ.PaperSpec.rem_uniq_initial`, `rem_uniq_singular`, `rem_uniq_translation`
 
 Manuscript (§3, Remark `rem:uniq-no-integ`): "Remark 3.2 would place each tuple `Θ ∈ ℍ_weak`
 satisfying (1.1) individually in `ℍ` if Assumption 2.2 were imposed. But the uniqueness only
@@ -2295,10 +2295,10 @@ Correspondence for `rem_uniq_translation`:
   proposition also names the translated solution and the translation back, which is the printed
   route.
 
-Witnesses: `Dissertation.Acceptance.A.rem_uniq_hypotheses` for `rem_uniq_initial` and
+Witnesses: `MVFBSDEJ.Acceptance.rem_uniq_hypotheses` for `rem_uniq_initial` and
 `rem_uniq_singular`: over a probability space carrying a Lévy driver with `d = 1`, `ν = δ₀`,
 `𝒢₀ = ⊥`, `T = 1`, the singular system has a `Solution` from `0`;
-`Dissertation.Acceptance.A.thm_cwp_hypotheses` for `rem_uniq_translation`: a system
+`MVFBSDEJ.Acceptance.thm_cwp_hypotheses` for `rem_uniq_translation`: a system
 satisfying (2.3) and Assumptions 2.2–2.5 over a standing basis with `n = m = d = 1`, with which
 any `e ≠ 0` meets the hypotheses.
 
@@ -2306,17 +2306,17 @@ Verdict: broader for `rem_uniq_initial` (its hypothesis asks of the tuple of `�
 `S²` bound of `X`; a solution in `ℍ` is an instance); faithful for `rem_uniq_singular` and
 `rem_uniq_translation`.
 
-<!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_initial ed839d34f480cba1fa628ed6b5f5989d by=claude-author source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_uniq_initial ed839d34f480cba113c4fa495f8a2efc by=claude-author source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.rem_uniq_initial--claude-auditor--2026-10-19T03_34_35Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_initial ed839d34f480cba1fa628ed6b5f5989d by=claude-auditor source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_singular ed839d34f480cba1ba6232c9763ebb54 by=claude-author source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_uniq_initial ed839d34f480cba113c4fa495f8a2efc by=claude-auditor source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_uniq_singular ed839d34f480cba1684b08269e1332e9 by=claude-author source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.rem_uniq_singular--claude-auditor--2026-10-19T05_49_14Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_singular ed839d34f480cba1ba6232c9763ebb54 by=claude-auditor source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
-<!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_translation ed839d34f480cba13b68ad605862c311 by=claude-author source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_uniq_singular ed839d34f480cba1684b08269e1332e9 by=claude-auditor source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_uniq_translation ed839d34f480cba152f8d1ce28385547 by=claude-author source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.rem_uniq_translation--claude-auditor--2026-10-19T05_49_14Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_translation ed839d34f480cba13b68ad605862c311 by=claude-auditor source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_uniq_translation ed839d34f480cba152f8d1ce28385547 by=claude-auditor source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
 
-## The paragraph after Corollary 3.6: `Dissertation.PaperSpec.A.cor_margin_channels`, `cor_margin_additive`, `cor_margin_finite`, `cor_margin_continuous`, `cor_margin_separate`, `cor_margin_findim`
+## The paragraph after Corollary 3.6: `MVFBSDEJ.PaperSpec.cor_margin_channels`, `cor_margin_additive`, `cor_margin_finite`, `cor_margin_continuous`, `cor_margin_separate`, `cor_margin_findim`
 
 Manuscript (§3, the paragraph after Corollary `cor:robust`): "The margin hypothesis is demanding in the jump channel:
 by the reduction of Remark 2.10, a margin in (2.13) forces every channel of the baseline to be
@@ -2393,24 +2393,24 @@ Readings:
 
 Witnesses:
 
-* `cor_margin_channels`: `Dissertation.Acceptance.A.cor_robust_hypotheses`, whose baseline
+* `cor_margin_channels`: `MVFBSDEJ.Acceptance.cor_robust_hypotheses`, whose baseline
   (Example 5.1(i) with `β₁ = β₂ = 2`, `ν = δ₀`) satisfies (2.13) at `G = 1` with
   `β₁ = β₂ = c = 1`.
-* `cor_margin_additive`: `Dissertation.Acceptance.A.cor_margin_additive_hypotheses`: a Lévy
+* `cor_margin_additive`: `MVFBSDEJ.Acceptance.cor_margin_additive_hypotheses`: a Lévy
   driver with `ν = δ₀ ≠ 0` and `d = 1`, `𝒢₀ = ⊥`, and Example 5.1(i) with `n = 1`, `β₁ = 0`,
   `β₂ = 1`, `σ_c = 0`, `h_c = 0`, whose jump coefficient depends on `t, x` only; `m = 1`, `T = 1`,
   `β₁ = 0`, `c = 1` meet the remaining hypotheses.
-* `cor_margin_finite`: `Dissertation.Acceptance.A.cor_margin_finite_hypotheses`: a Lévy driver
+* `cor_margin_finite`: `MVFBSDEJ.Acceptance.cor_margin_finite_hypotheses`: a Lévy driver
   with `ν` Lebesgue measure on `ℝ` and `d = 1`, `𝒢₀ = ⊥`; `L²(ν; ℝ¹)` is infinite dimensional
   (`not_finiteDimensional_Lp_volume`); and `rankOneCoeffs`, with jump coefficient
   `h = −⟨φ, u⟩ φ` for `φ = 1_{[0,1]}`, depends on `u` only through the single functional
   `ℓ u = ⟨φ, u⟩`. `T = 1`, `β₁ = 0`, `c = 1` meet the remaining hypotheses.
-* `cor_margin_continuous`: `Dissertation.Acceptance.A.cor_margin_continuous_hypotheses`: the
+* `cor_margin_continuous`: `MVFBSDEJ.Acceptance.cor_margin_continuous_hypotheses`: the
   driver and `L²(ν; ℝ¹)` of `cor_margin_finite_hypotheses`, and at every time and every law the
   jump coefficient of `rankOneCoeffs` depends on `u` only through the continuous functional
   `u ↦ ⟨φ, u⟩`; the same witness meets the hypotheses of `cor_margin_separate`
   (`L²(ν; ℝ¹)` infinite dimensional and the continuous map `u ↦ ⟨φ, u⟩` into `ℝ¹`).
-* `cor_margin_findim`: `Dissertation.Acceptance.A.cor_margin_findim_hypotheses`: a Lévy driver
+* `cor_margin_findim`: `MVFBSDEJ.Acceptance.cor_margin_findim_hypotheses`: a Lévy driver
   with `ν = δ₀` and `d = 1`, `𝒢₀ = ⊥`, and `L²(δ₀; ℝ¹)` finite dimensional; `n = 1`, `T = 1`,
   `β₁ = β₂ = 0`, `c = 1`, `σ_c = 0`, `h_c = 0` meet the remaining hypotheses.
 
@@ -2423,24 +2423,24 @@ whose instance at such a baseline is the linear, Dirac-input case of the printed
 narrower than the sentence, which `cor_margin_continuous` reads in general, so together they cover
 it. `cor_margin_separate` and `cor_margin_findim` faithful, in the readings recorded.
 
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_channels ed839d34f480cba14127298d8cc156d9 by=claude-author source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_margin_channels ed839d34f480cba1ad6475a2826a7556 by=claude-author source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.cor_margin_channels--claude-auditor--2026-10-19T03_34_36Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_channels ed839d34f480cba14127298d8cc156d9 by=claude-auditor source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_additive ed839d34f480cba19075028a95edf84d by=claude-author source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_margin_channels ed839d34f480cba1ad6475a2826a7556 by=claude-auditor source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_margin_additive ed839d34f480cba1f6b25342c98f12fe by=claude-author source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.cor_margin_additive--claude-auditor--2026-10-19T03_34_35Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_additive ed839d34f480cba19075028a95edf84d by=claude-auditor source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_finite ed839d34f480cba15e05ed8a37017606 by=claude-author source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_margin_additive ed839d34f480cba1f6b25342c98f12fe by=claude-auditor source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_margin_finite ed839d34f480cba1e2a2c92114efd4a4 by=claude-author source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.cor_margin_finite--claude-auditor--2026-10-19T03_34_36Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_finite ed839d34f480cba15e05ed8a37017606 by=claude-auditor source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_continuous ed839d34f480cba1bd840ffee2f6a13b by=claude-author source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_margin_finite ed839d34f480cba1e2a2c92114efd4a4 by=claude-auditor source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_margin_continuous ed839d34f480cba1bb8184bafca01d3f by=claude-author source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.cor_margin_continuous--claude-auditor--2026-10-19T03_34_36Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_continuous ed839d34f480cba1bd840ffee2f6a13b by=claude-auditor source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_separate ed839d34f480cba1b90f9a7b02bff832 by=claude-author source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_margin_continuous ed839d34f480cba1bb8184bafca01d3f by=claude-auditor source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_margin_separate ed839d34f480cba1b90f9a7b02bff832 by=claude-author source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.cor_margin_separate--claude-auditor--2026-10-19T03_26_48Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_separate ed839d34f480cba1b90f9a7b02bff832 by=claude-auditor source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_findim ed839d34f480cba153b1b629e759bb45 by=claude-author source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_margin_separate ed839d34f480cba1b90f9a7b02bff832 by=claude-auditor source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_margin_findim ed839d34f480cba1271f1706f481bec3 by=claude-author source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.cor_margin_findim--claude-auditor--2026-10-19T03_34_36Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.cor_margin_findim ed839d34f480cba153b1b629e759bb45 by=claude-auditor source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_margin_findim ed839d34f480cba1271f1706f481bec3 by=claude-auditor source=A:sec3:margin-paragraph@10e392992d5cc46ba3cbfa36215cf105187e98df0ba0aafcb83d6ba4e1501b17 -->
 
 ## Section 5, the overview paragraph (`A:sec5:overview`)
 
@@ -2475,7 +2475,7 @@ Correspondence:
 
 Verdict: each clause is the proposition named, reviewed in its own section.
 
-## Example 5.4, nonlinear law functionals: `Dissertation.PaperSpec.A.ex_fulllaw_lip`, `ex_fulllaw_pert`, `ex_fulllaw_wp`, `ex_fulllaw_beyond_radial`, `ex_fulllaw_beyond_U_corr`, `ex_fulllaw_beyond_Q`, `ex_fulllaw_affineQ`
+## Example 5.4, nonlinear law functionals: `MVFBSDEJ.PaperSpec.ex_fulllaw_lip`, `ex_fulllaw_pert`, `ex_fulllaw_wp`, `ex_fulllaw_beyond_radial`, `ex_fulllaw_beyond_U_corr`, `ex_fulllaw_beyond_Q`, `ex_fulllaw_affineQ`
 
 Manuscript (§5, Example `ex:fulllaw`): fix `μ₀ ∈ P₂(H)`, `Λ₀ ∈ P₂(L²(ν))`, `ε > 0`,
 `𝔮, 𝔮̃, 𝔮̂ : ℝ₊ → ℝ`, `Q : ℝᴶ → ℝ`, `φ_1, …, φ_J : L²(ν) → ℝ`, `w₀, w₁ ∈ ℝᵐ`, `v₀ ∈ ℝⁿ`,
@@ -2578,7 +2578,7 @@ Correspondence:
 
 Witnesses:
 
-* `Dissertation.Acceptance.A.ex_fulllaw_hypotheses` for `ex_fulllaw_lip`, `ex_fulllaw_pert` and
+* `MVFBSDEJ.Acceptance.ex_fulllaw_hypotheses` for `ex_fulllaw_lip`, `ex_fulllaw_pert` and
   `ex_fulllaw_wp`: over a Lévy driver with `d = 1`, `ν = δ₀` on `ℝ`, `𝒢₀ = ⊥`, `n = 1`, `T = 1`,
   the baseline Example 5.1(i) with `β₁ = β₂ = 2` and datum `0` (`L₀ = 2`, `G = 1`,
   `α = β₁ = β₂ = 1`, margin `c_diss = 1`), the baseline the example names; `ε = 1/4`,
@@ -2586,16 +2586,16 @@ Witnesses:
   `w₀ = w₁ = v₀ = e₁`, `ĥ = 0`, all Lipschitz constants `1`, so `L_p = 3/4` and (5.1) reads
   `3/4 < 1`. The jump direction `ĥ = 0` is an instance the example allows; the drift and driver
   perturbations are nonzero.
-* `Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses` for `ex_fulllaw_beyond_radial` and
+* `MVFBSDEJ.Acceptance.ex_fulllaw_beyond_hypotheses` for `ex_fulllaw_beyond_radial` and
   `ex_fulllaw_beyond_U_corr`: at `ν = δ₀` on `ℝ`, the unit vector `e₁ ≠ 0` of `L²(ν; ℝ)`, the
   profile `min{|r|, 1}` (bounded, `1`-Lipschitz, not constant on `[0, ∞)`) and the kernel `0`,
   integrable against every law; `n = 1` for the radial statistic.
-* `Dissertation.Acceptance.A.ex_fulllaw_beyond_Q_hypotheses` for `ex_fulllaw_beyond_Q`: at
+* `MVFBSDEJ.Acceptance.ex_fulllaw_beyond_Q_hypotheses` for `ex_fulllaw_beyond_Q`: at
   `ν = δ₀` on `ℝ`, `J = 1`, `φ₁(u) = min{‖u‖, 1}` (bounded, `1`-Lipschitz) and
   `Q(s) = min{|s₁|, 1/2}` (`1`-Lipschitz), not affine on the attained range: at the Dirac laws
   with `U`-channel `0`, `e₁/2`, `e₁` the feature takes the values `0, 1/2, 1` and `Q` the values
   `0, 1/2, 1/2`.
-* `Dissertation.Acceptance.A.ex_fulllaw_affineQ_hypotheses` for `ex_fulllaw_affineQ`: at
+* `MVFBSDEJ.Acceptance.ex_fulllaw_affineQ_hypotheses` for `ex_fulllaw_affineQ`: at
   `ν = δ₀` on `ℝ`, `J = 1`, the `1`-Lipschitz feature `φ₁(u) = min{‖u‖, 1}` and `Q(s) = s₁`,
   affine, with `a = 0`, `c₁ = 1`.
 
@@ -2611,29 +2611,29 @@ of the preceding examples, at general dimensions (and `ex_fulllaw_beyond_Q` with
 `ex_fulllaw_affineQ` drops the boundedness of the features; the printed claim is its instance at
 bounded Lipschitz features.
 
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_lip ed839d34f480cba11fea7903ed24f9f8 by=claude-author source=A:ex:fulllaw@c6dac94442298fb91021e9410980558e1c560d7da7bb03b9fe21e4542a37e683 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_lip ed839d34f480cba1f75f47b92e7d0c68 by=claude-author source=A:ex:fulllaw@c6dac94442298fb91021e9410980558e1c560d7da7bb03b9fe21e4542a37e683 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_fulllaw_lip--claude-auditor--2026-10-19T03_34_36Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_lip ed839d34f480cba11fea7903ed24f9f8 by=claude-auditor source=A:ex:fulllaw@4176ca3d18b96f9c52b91a364a4ddab7da82df540496d303cc1ccabf2366be8b -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_pert ed839d34f480cba1e9dade95deb0a071 by=claude-author source=A:ex:fulllaw@c6dac94442298fb91021e9410980558e1c560d7da7bb03b9fe21e4542a37e683 source=A:rem:regimes@8628790b3f61760d63f6a1cb8711d6fb055f4a005b160d92c994e6a8185b1c0c -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_lip ed839d34f480cba1f75f47b92e7d0c68 by=claude-auditor source=A:ex:fulllaw@4176ca3d18b96f9c52b91a364a4ddab7da82df540496d303cc1ccabf2366be8b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_pert ed839d34f480cba1b980c331983389db by=claude-author source=A:ex:fulllaw@c6dac94442298fb91021e9410980558e1c560d7da7bb03b9fe21e4542a37e683 source=A:rem:regimes@8628790b3f61760d63f6a1cb8711d6fb055f4a005b160d92c994e6a8185b1c0c -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_fulllaw_pert--claude-auditor--2026-10-19T03_34_36Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_pert ed839d34f480cba1e9dade95deb0a071 by=claude-auditor source=A:ex:fulllaw@4176ca3d18b96f9c52b91a364a4ddab7da82df540496d303cc1ccabf2366be8b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_wp ed839d34f480cba173d663ff51153197 by=claude-author source=A:ex:fulllaw@c6dac94442298fb91021e9410980558e1c560d7da7bb03b9fe21e4542a37e683 source=A:rem:regimes@8628790b3f61760d63f6a1cb8711d6fb055f4a005b160d92c994e6a8185b1c0c -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_pert ed839d34f480cba1b980c331983389db by=claude-auditor source=A:ex:fulllaw@4176ca3d18b96f9c52b91a364a4ddab7da82df540496d303cc1ccabf2366be8b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_wp ed839d34f480cba15517e8f4c1cfada6 by=claude-author source=A:ex:fulllaw@c6dac94442298fb91021e9410980558e1c560d7da7bb03b9fe21e4542a37e683 source=A:rem:regimes@8628790b3f61760d63f6a1cb8711d6fb055f4a005b160d92c994e6a8185b1c0c -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_fulllaw_wp--claude-auditor--2026-10-19T03_34_36Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_wp ed839d34f480cba173d663ff51153197 by=claude-auditor source=A:ex:fulllaw@4176ca3d18b96f9c52b91a364a4ddab7da82df540496d303cc1ccabf2366be8b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial ed839d34f480cba1fc87ff54d30df5ad by=claude-author source=A:ex:fulllaw@c6dac94442298fb91021e9410980558e1c560d7da7bb03b9fe21e4542a37e683 source=A:rem:regimes@8628790b3f61760d63f6a1cb8711d6fb055f4a005b160d92c994e6a8185b1c0c source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_wp ed839d34f480cba15517e8f4c1cfada6 by=claude-auditor source=A:ex:fulllaw@4176ca3d18b96f9c52b91a364a4ddab7da82df540496d303cc1ccabf2366be8b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_radial ed839d34f480cba1e35b736319ec8895 by=claude-author source=A:ex:fulllaw@c6dac94442298fb91021e9410980558e1c560d7da7bb03b9fe21e4542a37e683 source=A:rem:regimes@8628790b3f61760d63f6a1cb8711d6fb055f4a005b160d92c994e6a8185b1c0c source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial--claude-auditor--2026-10-19T03_37_07Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial ed839d34f480cba1fc87ff54d30df5ad by=claude-auditor source=A:ex:fulllaw@4176ca3d18b96f9c52b91a364a4ddab7da82df540496d303cc1ccabf2366be8b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr ed839d34f480cba193f328d7c8c243ea by=claude-author source=A:ex:fulllaw@c6dac94442298fb91021e9410980558e1c560d7da7bb03b9fe21e4542a37e683 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_radial ed839d34f480cba1e35b736319ec8895 by=claude-auditor source=A:ex:fulllaw@4176ca3d18b96f9c52b91a364a4ddab7da82df540496d303cc1ccabf2366be8b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_U_corr ed839d34f480cba10f66e794dcb439f4 by=claude-author source=A:ex:fulllaw@c6dac94442298fb91021e9410980558e1c560d7da7bb03b9fe21e4542a37e683 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr--claude-auditor--2026-10-19T03_37_48Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr ed839d34f480cba193f328d7c8c243ea by=claude-auditor source=A:ex:fulllaw@4176ca3d18b96f9c52b91a364a4ddab7da82df540496d303cc1ccabf2366be8b source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q ed839d34f480cba12be9f13eb8df21c1 by=claude-author source=A:ex:fulllaw@c6dac94442298fb91021e9410980558e1c560d7da7bb03b9fe21e4542a37e683 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_U_corr ed839d34f480cba10f66e794dcb439f4 by=claude-auditor source=A:ex:fulllaw@4176ca3d18b96f9c52b91a364a4ddab7da82df540496d303cc1ccabf2366be8b source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_Q ed839d34f480cba1461519d3798ca6c4 by=claude-author source=A:ex:fulllaw@c6dac94442298fb91021e9410980558e1c560d7da7bb03b9fe21e4542a37e683 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q--claude-auditor--2026-10-19T03_38_27Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q ed839d34f480cba12be9f13eb8df21c1 by=claude-auditor source=A:ex:fulllaw@4176ca3d18b96f9c52b91a364a4ddab7da82df540496d303cc1ccabf2366be8b -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_affineQ ed839d34f480cba1b7c4d4b7307e74ea by=claude-author source=A:ex:fulllaw@4176ca3d18b96f9c52b91a364a4ddab7da82df540496d303cc1ccabf2366be8b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_Q ed839d34f480cba1461519d3798ca6c4 by=claude-auditor source=A:ex:fulllaw@4176ca3d18b96f9c52b91a364a4ddab7da82df540496d303cc1ccabf2366be8b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_affineQ ed839d34f480cba1b8ea9fe995beebaa by=claude-author source=A:ex:fulllaw@4176ca3d18b96f9c52b91a364a4ddab7da82df540496d303cc1ccabf2366be8b -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_fulllaw_affineQ--claude-auditor--2026-10-19T03_37_37Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_fulllaw_affineQ ed839d34f480cba1b7c4d4b7307e74ea by=claude-auditor source=A:ex:fulllaw@4176ca3d18b96f9c52b91a364a4ddab7da82df540496d303cc1ccabf2366be8b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_affineQ ed839d34f480cba1b8ea9fe995beebaa by=claude-auditor source=A:ex:fulllaw@4176ca3d18b96f9c52b91a364a4ddab7da82df540496d303cc1ccabf2366be8b -->
 
-## Example 5.5, the mean-field dealer market: `Dissertation.PaperSpec.A.ex_dealer_potential`, `ex_dealer_crowd`, `ex_dealer_coeffs`, `ex_dealer_ham`, `ex_dealer`, `ex_dealer_mono`, `ex_dealer_wp`, `ex_dealer_twopoint`, `ex_dealer_mean_corr`, `ex_dealer_not_mean_corr`, `ex_dealer_affine`, `ex_dealer_marks`, `ex_dealer_riccati`, `ex_dealer_inert`, `ex_dealer_spec_marks`, `ex_dealer_zero`, `ex_dealer_symm`, `ex_dealer_active`, `ex_dealer_depends`
+## Example 5.5, the mean-field dealer market: `MVFBSDEJ.PaperSpec.ex_dealer_potential`, `ex_dealer_crowd`, `ex_dealer_coeffs`, `ex_dealer_ham`, `ex_dealer`, `ex_dealer_mono`, `ex_dealer_wp`, `ex_dealer_twopoint`, `ex_dealer_mean_corr`, `ex_dealer_not_mean_corr`, `ex_dealer_affine`, `ex_dealer_marks`, `ex_dealer_riccati`, `ex_dealer_inert`, `ex_dealer_spec_marks`, `ex_dealer_zero`, `ex_dealer_symm`, `ex_dealer_active`, `ex_dealer_depends`
 
 Manuscript (§5, Example `ex:dealer`, at `1f67672`). The crowding correction
 `A_λ(u) := ∫_{L²(ν)} ∇V(u − v) λ(dv)`, `V(w) := √(1 + ‖w‖²) − 1`, `λ ∈ P₂(L²(ν))`; "the potential
@@ -2788,7 +2788,7 @@ Correspondence:
   limit), which is modelling, and the finite-player inspiration (Cont and Xiong), which is cited
   work.
 
-Witnesses: `Dissertation.Acceptance.A.ex_dealer_hypotheses` for `ex_dealer`, `ex_dealer_mono`,
+Witnesses: `MVFBSDEJ.Acceptance.ex_dealer_hypotheses` for `ex_dealer`, `ex_dealer_mono`,
 `ex_dealer_wp`, `ex_dealer_coeffs`, `ex_dealer_ham`, `ex_dealer_potential` and `ex_dealer_crowd`
 (the mark measure
 of the example with `c_{±1} = 1/2`, `ϱ = 1`; a Lévy driver with `d = 1` on it; `𝒢₀ = ⊥`; the datum
@@ -2812,65 +2812,65 @@ the last also for every initial datum); for `ex_dealer_ham` and `ex_dealer_poten
 `ex_dealer_not_mean_corr` (`L²(ν) ≠ {0}` being `ν ≠ 0`), `ex_dealer_marks` with the encodings
 listed, `ex_dealer_riccati`, `ex_dealer_spec_marks` and `ex_dealer_zero`.
 
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_potential ed839d34f480cba1c2e5952133294af3 by=claude-author source=A:ex:dealer@3dfd46a5ffe721a5c7560c057227552960a29e63ca7af022a17dd6989f44556c -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_potential ed839d34f480cba1c2e5952133294af3 by=claude-author source=A:ex:dealer@3dfd46a5ffe721a5c7560c057227552960a29e63ca7af022a17dd6989f44556c -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_dealer_potential--claude-auditor--2026-10-19T03_27_12Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_potential ed839d34f480cba1c2e5952133294af3 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_crowd ed839d34f480cba1542ac74da98a0887 by=claude-author source=A:ex:dealer@3dfd46a5ffe721a5c7560c057227552960a29e63ca7af022a17dd6989f44556c -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_potential ed839d34f480cba1c2e5952133294af3 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_crowd ed839d34f480cba1b48a11129734eeaa by=claude-author source=A:ex:dealer@3dfd46a5ffe721a5c7560c057227552960a29e63ca7af022a17dd6989f44556c -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.ex_dealer_crowd--claude-auditor--2026-10-19T03_27_20Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_crowd ed839d34f480cba1542ac74da98a0887 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_coeffs ed839d34f480cba17c7bbab57e15328e by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_crowd ed839d34f480cba1b48a11129734eeaa by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_coeffs ed839d34f480cba19928c3a0b47228fc by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.ex_dealer_coeffs--claude-auditor--2026-10-19T03_27_20Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_coeffs ed839d34f480cba17c7bbab57e15328e by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_ham ed839d34f480cba18d97e926abe7317b by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_coeffs ed839d34f480cba19928c3a0b47228fc by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_ham ed839d34f480cba18d97e926abe7317b by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_dealer_ham--claude-auditor--2026-10-19T03_27_20Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_ham ed839d34f480cba18d97e926abe7317b by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer ed839d34f480cba1e2c74601c0086824 by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_ham ed839d34f480cba18d97e926abe7317b by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer ed839d34f480cba16509577529722f06 by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_dealer--claude-auditor--2026-10-19T03_34_36Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer ed839d34f480cba1e2c74601c0086824 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_mono ed839d34f480cba17aa9ad92a733a79a by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer ed839d34f480cba16509577529722f06 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_mono ed839d34f480cba18bebeea12a1b6e30 by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_dealer_mono--claude-auditor--2026-10-19T03_34_36Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_mono ed839d34f480cba17aa9ad92a733a79a by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_wp ed839d34f480cba1382a433c842b2a2c by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_mono ed839d34f480cba18bebeea12a1b6e30 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_wp ed839d34f480cba1169a2b8090bb4149 by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_dealer_wp--claude-auditor--2026-10-19T03_34_36Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_wp ed839d34f480cba1382a433c842b2a2c by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_twopoint ed839d34f480cba10e7a45835d5244c0 by=claude-author source=A:ex:dealer@3dfd46a5ffe721a5c7560c057227552960a29e63ca7af022a17dd6989f44556c -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_wp ed839d34f480cba1169a2b8090bb4149 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_twopoint ed839d34f480cba19106e59b87a9b227 by=claude-author source=A:ex:dealer@3dfd46a5ffe721a5c7560c057227552960a29e63ca7af022a17dd6989f44556c -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.ex_dealer_twopoint--claude-auditor--2026-10-19T03_27_19Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_twopoint ed839d34f480cba10e7a45835d5244c0 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_mean_corr ed839d34f480cba18bab6ae8a6c6a027 by=claude-author source=A:ex:dealer@3dfd46a5ffe721a5c7560c057227552960a29e63ca7af022a17dd6989f44556c -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_twopoint ed839d34f480cba19106e59b87a9b227 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_mean_corr ed839d34f480cba102e66341b336a802 by=claude-author source=A:ex:dealer@3dfd46a5ffe721a5c7560c057227552960a29e63ca7af022a17dd6989f44556c -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_dealer_mean_corr--claude-auditor--2026-10-19T03_27_19Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_mean_corr ed839d34f480cba18bab6ae8a6c6a027 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_marks ed839d34f480cba140a65f520ffefa33 by=claude-author source=A:ex:dealer@3dfd46a5ffe721a5c7560c057227552960a29e63ca7af022a17dd6989f44556c source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_mean_corr ed839d34f480cba102e66341b336a802 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_marks ed839d34f480cba140a65f520ffefa33 by=claude-author source=A:ex:dealer@3dfd46a5ffe721a5c7560c057227552960a29e63ca7af022a17dd6989f44556c source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_dealer_marks--claude-auditor--2026-10-19T03_27_26Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_marks ed839d34f480cba140a65f520ffefa33 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_not_mean_corr ed839d34f480cba1d76cfc2366e08961 by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_marks ed839d34f480cba140a65f520ffefa33 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_not_mean_corr ed839d34f480cba1dbd6dbdf35aeabbb by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_dealer_not_mean_corr--claude-auditor--2026-10-19T03_27_19Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_not_mean_corr ed839d34f480cba1d76cfc2366e08961 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_affine ed839d34f480cba14f86326a4c8f6eab by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_not_mean_corr ed839d34f480cba1dbd6dbdf35aeabbb by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_affine ed839d34f480cba1cad94cd2b0eab7be by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.ex_dealer_affine--claude-auditor--2026-10-19T03_27_20Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_affine ed839d34f480cba14f86326a4c8f6eab by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_riccati ed839d34f480cba122071b255b506300 by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_affine ed839d34f480cba1cad94cd2b0eab7be by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_riccati ed839d34f480cba122071b255b506300 by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_dealer_riccati--claude-auditor--2026-10-19T03_27_19Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_riccati ed839d34f480cba122071b255b506300 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_inert ed839d34f480cba141c76d0c8dddc879 by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_riccati ed839d34f480cba122071b255b506300 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_inert ed839d34f480cba171de9af0a400dde6 by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_dealer_inert--claude-auditor--2026-10-19T03_34_36Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_inert ed839d34f480cba141c76d0c8dddc879 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_spec_marks ed839d34f480cba1efd7d1ab7e3204fd by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_inert ed839d34f480cba171de9af0a400dde6 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_spec_marks ed839d34f480cba1e5ef7cbf2e6aa6f7 by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ex_dealer_spec_marks--claude-auditor--2026-10-19T03_26_36Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_spec_marks ed839d34f480cba1efd7d1ab7e3204fd by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_zero ed839d34f480cba1fbee3842d146d0f8 by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_spec_marks ed839d34f480cba1e5ef7cbf2e6aa6f7 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_zero ed839d34f480cba1ed9e4db67a07557a by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.ex_dealer_zero--claude-auditor--2026-10-19T03_34_36Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_zero ed839d34f480cba1fbee3842d146d0f8 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_symm ed839d34f480cba11753a45d7d37cdc6 by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_zero ed839d34f480cba1ed9e4db67a07557a by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_symm ed839d34f480cba172821167f7b0d7ee by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.ex_dealer_symm--claude-auditor--2026-10-19T03_27_19Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_symm ed839d34f480cba11753a45d7d37cdc6 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_active ed839d34f480cba11684a792fea39139 by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_symm ed839d34f480cba172821167f7b0d7ee by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_active ed839d34f480cba1a2ecf4542b86cf40 by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.ex_dealer_active--claude-auditor--2026-10-19T03_34_35Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_active ed839d34f480cba11684a792fea39139 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_depends ed839d34f480cba1d5b82af653b55a54 by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_active ed839d34f480cba1a2ecf4542b86cf40 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_depends ed839d34f480cba116acd4770ae6431c by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.ex_dealer_depends--claude-auditor--2026-10-19T05_49_14Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.ex_dealer_depends ed839d34f480cba1d5b82af653b55a54 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_depends ed839d34f480cba116acd4770ae6431c by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
 
-## Remark 5.6, the scope of the measure argument: `Dissertation.PaperSpec.A.rem_freelaw`
+## Remark 5.6, the scope of the measure argument: `MVFBSDEJ.PaperSpec.rem_freelaw`
 
 Manuscript (§5, Remark `rem:freelaw`): "The proofs consume the tuple law through a single
 mechanism: the `W₂` term of Assumption 2.3, dominated at every use by the synchronous coupling
@@ -2908,15 +2908,15 @@ Correspondence:
   …" describe the proofs and are not formalised; the scope exhibited by Example 5.5 is the content
   of `ex_dealer`–`ex_dealer_wp`.
 
-Witness: `Dissertation.Acceptance.A.rem_affine_hypotheses` (Example 5.1(i) with `β₁ = β₂ = 1`
+Witness: `MVFBSDEJ.Acceptance.rem_affine_hypotheses` (Example 5.1(i) with `β₁ = β₂ = 1`
 over a Lévy driver with `d = 1`, `ν = δ₀ ≠ 0`, `𝒢₀ = ⊥`, `T = 1`, `n = m = 1`: Assumption 2.5 at
 `G = 1`, of full rank, with `α = 1` and `β₁ = 1 > 0`).
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.rem_freelaw ed839d34f480cba105f02a9629cb6b98 by=claude-author source=A:rem:freelaw@e2204cd5268c52bf28ead0e1dd0321d0914e8ca0c49f13ab56fa690ca4815fea -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_freelaw ed839d34f480cba1385a7475966269b6 by=claude-author source=A:rem:freelaw@e2204cd5268c52bf28ead0e1dd0321d0914e8ca0c49f13ab56fa690ca4815fea -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.rem_freelaw--claude-auditor--2026-10-19T03_34_36Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.rem_freelaw ed839d34f480cba105f02a9629cb6b98 by=claude-auditor source=A:rem:freelaw@c2b143b44403046035d85f7e9d730c306f0b5cb52b01f72f3a72ded8e56980b7 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_freelaw ed839d34f480cba1385a7475966269b6 by=claude-auditor source=A:rem:freelaw@c2b143b44403046035d85f7e9d730c306f0b5cb52b01f72f3a72ded8e56980b7 -->
 
 ## Remark 5.7, perturbative and non-perturbative law dependence (`A:rem:regimes`)
 

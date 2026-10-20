@@ -18,15 +18,15 @@ import acceptance as A  # noqa: E402
 
 def clause(name, spec=True, accept_ok=None, refute_ok=None, corrects=None, review="reviewed by x",
            pending=(), changed=(), author=()):
-    c = {"name": name, "spec": f"Dissertation.PaperSpec.A.{name}" if spec else None,
+    c = {"name": name, "spec": f"MVFBSDEJ.PaperSpec.{name}" if spec else None,
          "corrects": corrects, "witness": None, "defs": [], "spec_review": review,
          "defs_pending": list(pending), "defs_changed": list(changed),
          "author_reviewed": list(author)}
     if accept_ok is not None:
-        c["accept"] = f"Dissertation.Acceptance.A.{name}"
+        c["accept"] = f"MVFBSDEJ.Acceptance.{name}"
         c["accept_ok"] = accept_ok
     if refute_ok is not None:
-        c["refute"] = f"Dissertation.Acceptance.A.{name}_false"
+        c["refute"] = f"MVFBSDEJ.Acceptance.{name}_false"
         c["refute_ok"] = refute_ok
     return c
 
@@ -68,11 +68,11 @@ class Status(unittest.TestCase):
         self.assertEqual(A.claim_status(FORMAL, cs), "formal: malformed")
 
     def test_stale_definition_hash(self):
-        cs = [clause("a", accept_ok=True, changed=["Dissertation.X"])]
+        cs = [clause("a", accept_ok=True, changed=["MVFBSDEJ.X"])]
         self.assertEqual(A.claim_status(FORMAL, cs), "formal: proved, review pending")
 
     def test_author_only_review(self):
-        cs = [clause("a", accept_ok=True, author=["Dissertation.PaperSpec.A.a"])]
+        cs = [clause("a", accept_ok=True, author=["MVFBSDEJ.PaperSpec.a"])]
         self.assertEqual(A.claim_status(FORMAL, cs), "formal: proved, author-reviewed")
 
     def test_clean(self):
@@ -133,7 +133,7 @@ class Alignment(unittest.TestCase):
             dict(claim("A:lem", [clause("lem", refute_ok=True),
                                  clause("lem_fix", accept_ok=True, corrects="lem")]),
                  number="Lemma A.1"),
-            dict(claim("A:def", [dict(clause("d", spec=False), defs=["Dissertation.D"])],
+            dict(claim("A:def", [dict(clause("d", spec=False), defs=["MVFBSDEJ.D"])],
                        scope="definition"), number="Definition 2.1"),
             dict(claim("A:part", [], scope="part-of", note="A:thm"), number="Example 5.1"),
             dict(claim("A:eq", [clause("eq", accept_ok=True)]), number="(4.2)")]}
@@ -141,9 +141,9 @@ class Alignment(unittest.TestCase):
         out = A.alignment(data, status)
         self.assertIn('source: "Theorem 3.3"', out)
         self.assertIn('source: "Lemma A.1"', out)
-        self.assertIn('"Dissertation.Acceptance.A.lem_false"', out)
-        self.assertIn('"Dissertation.Acceptance.A.lem_fix"', out)
-        self.assertIn('"Dissertation.D"', out)
+        self.assertIn('"MVFBSDEJ.Acceptance.lem_false"', out)
+        self.assertIn('"MVFBSDEJ.Acceptance.lem_fix"', out)
+        self.assertIn('"MVFBSDEJ.D"', out)
         self.assertNotIn("Example 5.1", out)
         self.assertNotIn("(4.2)", out)
 
@@ -210,7 +210,7 @@ class ReleaseGate(unittest.TestCase):
     def test_cli_passes_with_replay(self):
         import tempfile
         with tempfile.TemporaryDirectory() as ev:
-            write_evidence(ev, ENV, ["Dissertation.Acceptance.A.a"])
+            write_evidence(ev, ENV, ["MVFBSDEJ.Acceptance.a"])
             rows = self.clean_rows()
             data = {"claims": [dict(r, clauses=[{k: c.get(k) for k in ("name", "spec", "accept")}
                                                 for c in r["clauses"]]) for r in rows]}
@@ -222,8 +222,8 @@ class ReleaseGate(unittest.TestCase):
                 A.release_gate(args)
 
 
-ENV = {"toolchain": "leanprover/lean4:v4.32.0", "Dissertation": "d1", "LevyStochCalc": "l1"}
-NAME = "Dissertation.Acceptance.A.a"
+ENV = {"toolchain": "leanprover/lean4:v4.32.0", "MVFBSDEJ": "d1", "LevyStochCalc": "l1"}
+NAME = "MVFBSDEJ.Acceptance.a"
 
 
 def write_evidence(ev, env, names, exit_code=0, log="\n".join(A.COMPARATOR_OK), drift=False):
@@ -238,7 +238,7 @@ def write_evidence(ev, env, names, exit_code=0, log="\n".join(A.COMPARATOR_OK), 
     with mock.patch.object(A, "environment_binding", return_value=dict(env)), \
             mock.patch("builtins.print"):
         A.comparator_bind(argparse.Namespace(evidence=ev, stage="start", exit_code=None))
-    after = dict(env, Dissertation="changed") if drift else dict(env)
+    after = dict(env, MVFBSDEJ="changed") if drift else dict(env)
     with mock.patch.object(A, "environment_binding", return_value=after), \
             mock.patch("builtins.print"):
         A.comparator_bind(argparse.Namespace(evidence=ev, stage=None, exit_code=exit_code))
@@ -311,8 +311,8 @@ class ComparatorEvidence(unittest.TestCase):
         self.assertEqual(self.failures(), [])
 
     def test_changed_sources_same_names_rejected(self):
-        out = self.failures(env_now=dict(ENV, Dissertation="d2"))
-        self.assertTrue(any("Dissertation is not the replayed one" in m for m in out))
+        out = self.failures(env_now=dict(ENV, MVFBSDEJ="d2"))
+        self.assertTrue(any("MVFBSDEJ is not the replayed one" in m for m in out))
 
     def test_changed_dependency_or_toolchain_rejected(self):
         self.assertTrue(self.failures(env_now=dict(ENV, LevyStochCalc="l2")))
@@ -330,7 +330,7 @@ class ComparatorEvidence(unittest.TestCase):
         self.assertTrue(any("changed during the run" in m for m in out))
 
     def test_missing_proof_rejected(self):
-        out = self.failures(names=(NAME, "Dissertation.Acceptance.A.b"))
+        out = self.failures(names=(NAME, "MVFBSDEJ.Acceptance.b"))
         self.assertTrue(any("not replayed" in m for m in out))
 
     def test_absent_result_rejected(self):
@@ -362,9 +362,9 @@ class ComparatorEvidence(unittest.TestCase):
 
 H = "0123456789abcdef0123456789abcdef"
 OLD, NEW = "a" * 64, "b" * 64
-SPEC = "Dissertation.PaperSpec.A.a"
-ACC = "Dissertation.Acceptance.A.a"
-DEFN = "Dissertation.D"
+SPEC = "MVFBSDEJ.PaperSpec.a"
+ACC = "MVFBSDEJ.Acceptance.a"
+DEFN = "MVFBSDEJ.D"
 
 
 def marker(kind, name, who, *sources, h=H):
@@ -426,7 +426,7 @@ class ReviewMarkers(unittest.TestCase):
         notes = A.passage_notes(st)
         self.assertEqual(len(notes), 1)
         self.assertTrue(notes[0].startswith("A:t: its source passage changed since the reading "
-                                            "of A.a by r"))
+                                            "of a by r"))
 
     def test_reading_without_passage_is_not_a_review(self):
         rows, _ = self.status(marker("spec", SPEC, "r"))
@@ -459,9 +459,9 @@ class ReviewMarkers(unittest.TestCase):
         self.assertEqual(rows["A:d"]["clauses"][0]["passage_changed"], {DEFN: ["r"]})
 
     def test_closure_definitions_are_reviewed_at_their_hash(self):
-        closure = {SPEC: {"Dissertation.X": {"kind": "def", "hash": H, "module": "M",
+        closure = {SPEC: {"MVFBSDEJ.X": {"kind": "def", "hash": H, "module": "M",
                                              "line": 1}}}
-        text = marker("spec", SPEC, "r", ("A:t", NEW)) + marker("def", "Dissertation.X", "r")
+        text = marker("spec", SPEC, "r", ("A:t", NEW)) + marker("def", "MVFBSDEJ.X", "r")
         rows, _ = self.status(text, closure=closure)
         self.assertEqual(rows["A:t"]["status"], "formal: accepted")
 
@@ -470,7 +470,7 @@ class ReviewMarkers(unittest.TestCase):
                                           + marker("def", DEFN, "r", ("A:t", NEW)))])
         out = A.marker_failures(self.inventory(), spec, defs)
         self.assertTrue(any("A:nope, which is not a claim" in m for m in out))
-        self.assertTrue(any("def-review of Dissertation.D by r records a reading of A:t, which "
+        self.assertTrue(any("def-review of MVFBSDEJ.D by r records a reading of A:t, which "
                             "does not use it" in m for m in out))
 
 if __name__ == "__main__":

@@ -7,7 +7,7 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [
-      "Dissertation.WellPosedness.System.diagonalInputs"
+      "MVFBSDEJ.WellPosedness.System.diagonalInputs"
      ],
      "defs_changed": [],
      "defs_pending": [],
@@ -35,7 +35,7 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [
-      "Dissertation.WellPosedness.Spec.Assumption22"
+      "MVFBSDEJ.WellPosedness.Spec.Assumption22"
      ],
      "defs_changed": [],
      "defs_pending": [],
@@ -63,7 +63,7 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [
-      "Dissertation.WellPosedness.Spec.Assumption23"
+      "MVFBSDEJ.WellPosedness.Spec.Assumption23"
      ],
      "defs_changed": [],
      "defs_pending": [],
@@ -87,7 +87,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.ass_G",
+     "accept": "MVFBSDEJ.Acceptance.ass_G",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -97,11 +97,11 @@
      "name": "main",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ass_G",
-     "spec_hash": "ed839d34f480cba1654da9b84ef073af",
+     "spec": "MVFBSDEJ.PaperSpec.ass_G",
+     "spec_hash": "ed839d34f480cba1be3399b151b019fa",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ass_G_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ass_G_hypotheses",
      "witness_ok": true
     }
    ],
@@ -121,7 +121,7 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [
-      "Dissertation.WellPosedness.Spec.Assumption25"
+      "MVFBSDEJ.WellPosedness.Spec.Assumption25"
      ],
      "defs_changed": [],
      "defs_pending": [],
@@ -145,7 +145,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.eq_coupling",
+     "accept": "MVFBSDEJ.Acceptance.eq_coupling",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -154,22 +154,22 @@
      "defs_pending": [],
      "name": "(2.8)",
      "passage_changed": {
-      "Dissertation.PaperSpec.A.eq_coupling": [
+      "MVFBSDEJ.PaperSpec.eq_coupling": [
        "claude-auditor",
        "claude-author",
        "claude-reviewer"
       ]
      },
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.eq_coupling",
-     "spec_hash": "ed839d34f480cba17af7c36ae6c33114",
+     "spec": "MVFBSDEJ.PaperSpec.eq_coupling",
+     "spec_hash": "ed839d34f480cba1bace4ab391e97c18",
      "spec_ok": true,
      "spec_review": "passage changed since review",
-     "witness": "Dissertation.Acceptance.A.eq_coupling_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.eq_coupling_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.eq_couplingT",
+     "accept": "MVFBSDEJ.Acceptance.eq_couplingT",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -178,22 +178,22 @@
      "defs_pending": [],
      "name": "(2.9)",
      "passage_changed": {
-      "Dissertation.PaperSpec.A.eq_couplingT": [
+      "MVFBSDEJ.PaperSpec.eq_couplingT": [
        "claude-auditor",
        "claude-author",
        "claude-reviewer"
       ]
      },
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.eq_couplingT",
-     "spec_hash": "ed839d34f480cba1b0b3c75b14edd5d3",
+     "spec": "MVFBSDEJ.PaperSpec.eq_couplingT",
+     "spec_hash": "ed839d34f480cba14bc932fc31ff5e46",
      "spec_ok": true,
      "spec_review": "passage changed since review",
-     "witness": "Dissertation.Acceptance.A.eq_couplingT_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.eq_couplingT_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.eq_lipfun",
+     "accept": "MVFBSDEJ.Acceptance.eq_lipfun",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -202,22 +202,22 @@
      "defs_pending": [],
      "name": "(2.10)",
      "passage_changed": {
-      "Dissertation.PaperSpec.A.eq_lipfun": [
+      "MVFBSDEJ.PaperSpec.eq_lipfun": [
        "claude-auditor",
        "claude-author",
        "claude-reviewer"
       ]
      },
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.eq_lipfun",
-     "spec_hash": "ed839d34f480cba187b5540277706218",
+     "spec": "MVFBSDEJ.PaperSpec.eq_lipfun",
+     "spec_hash": "ed839d34f480cba1b3aad8951c871a26",
      "spec_ok": true,
      "spec_review": "passage changed since review",
-     "witness": "Dissertation.Acceptance.A.eq_lipfun_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.eq_lipfun_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.eq_margproj",
+     "accept": "MVFBSDEJ.Acceptance.eq_margproj",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -226,18 +226,18 @@
      "defs_pending": [],
      "name": "(2.11)",
      "passage_changed": {
-      "Dissertation.PaperSpec.A.eq_margproj": [
+      "MVFBSDEJ.PaperSpec.eq_margproj": [
        "claude-auditor",
        "claude-author",
        "claude-reviewer"
       ]
      },
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.eq_margproj",
-     "spec_hash": "ed839d34f480cba1c19abbad6d02050c",
+     "spec": "MVFBSDEJ.PaperSpec.eq_margproj",
+     "spec_hash": "ed839d34f480cba1b8e0d9bc293fdb71",
      "spec_ok": true,
      "spec_review": "passage changed since review",
-     "witness": "Dissertation.Acceptance.A.eq_margproj_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.eq_margproj_hypotheses",
      "witness_ok": true
     }
    ],
@@ -264,7 +264,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.rem_diag_mono",
+     "accept": "MVFBSDEJ.Acceptance.rem_diag_mono",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -274,15 +274,15 @@
      "name": "the pointwise condition gives Assumption 2.5, under (2.3) and Assumption 2.3",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_diag_mono",
-     "spec_hash": "ed839d34f480cba146c1633f8e03b86c",
+     "spec": "MVFBSDEJ.PaperSpec.rem_diag_mono",
+     "spec_hash": "ed839d34f480cba16dbf12782c23a6c7",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.rem_affine_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.rem_diag_mono_converse",
+     "accept": "MVFBSDEJ.Acceptance.rem_diag_mono_converse",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -292,11 +292,11 @@
      "name": "the converse fails",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_diag_mono_converse",
-     "spec_hash": "ed839d34f480cba14b5e4594e14d9dc7",
+     "spec": "MVFBSDEJ.PaperSpec.rem_diag_mono_converse",
+     "spec_hash": "ed839d34f480cba121a2e85359198f21",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     }
    ],
@@ -312,7 +312,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.rem_intrinsic_uniform",
+     "accept": "MVFBSDEJ.Acceptance.rem_intrinsic_uniform",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -322,15 +322,15 @@
      "name": "a uniform variable, a function of W1_t, at every t > 0",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_intrinsic_uniform",
-     "spec_hash": "ed839d34f480cba13b7a9a5f65a5b218",
+     "spec": "MVFBSDEJ.PaperSpec.rem_intrinsic_uniform",
+     "spec_hash": "ed839d34f480cba19194a30e1ed5e7d9",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.rem_intrinsic_coupling",
+     "accept": "MVFBSDEJ.Acceptance.rem_intrinsic_coupling",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -340,15 +340,15 @@
      "name": "every coupling is the joint law of F_t-measurable inputs, t > 0",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_intrinsic_coupling",
-     "spec_hash": "ed839d34f480cba1ff8eb9ca359fa48b",
+     "spec": "MVFBSDEJ.PaperSpec.rem_intrinsic_coupling",
+     "spec_hash": "ed839d34f480cba1d2f6be4ee5bbeb4e",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.rem_coupling_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.rem_coupling_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.rem_intrinsic_basis",
+     "accept": "MVFBSDEJ.Acceptance.rem_intrinsic_basis",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -358,11 +358,11 @@
      "name": "Assumptions 2.3 and 2.5 do not depend on the basis",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_intrinsic_basis",
-     "spec_hash": "ed839d34f480cba132c02ed3a09a0eba",
+     "spec": "MVFBSDEJ.PaperSpec.rem_intrinsic_basis",
+     "spec_hash": "ed839d34f480cba16d46e7a802f817da",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.rem_affine_hypotheses",
      "witness_ok": true
     }
    ],
@@ -378,7 +378,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.rem_beta1_fibre",
+     "accept": "MVFBSDEJ.Acceptance.rem_beta1_fibre",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -388,15 +388,15 @@
      "name": "ν ≠ 0 gives L²(ν) ≠ {0}; ν = 0 gives L²(ν) = {0}",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_beta1_fibre",
+     "spec": "MVFBSDEJ.PaperSpec.rem_beta1_fibre",
      "spec_hash": "ed839d34f480cba1c9fa0ba4a3588e95",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.rem_affine_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.rem_beta1_dich",
+     "accept": "MVFBSDEJ.Acceptance.rem_beta1_dich",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -406,15 +406,15 @@
      "name": "the reduction to the jump channel and the β₁ dichotomy, with ν ≠ 0",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_beta1_dich",
-     "spec_hash": "ed839d34f480cba1312ac03d25ff8ea1",
+     "spec": "MVFBSDEJ.PaperSpec.rem_beta1_dich",
+     "spec_hash": "ed839d34f480cba15923d378afdb7162",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.rem_affine_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.rem_beta1_zero",
+     "accept": "MVFBSDEJ.Acceptance.rem_beta1_zero",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -424,15 +424,15 @@
      "name": "at ν = 0 the restriction disappears: an additive jump coefficient allows β₁ > 0",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_beta1_zero",
-     "spec_hash": "ed839d34f480cba10a600b0e388b329d",
+     "spec": "MVFBSDEJ.PaperSpec.rem_beta1_zero",
+     "spec_hash": "ed839d34f480cba1bd1a000aedf0be51",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_brownian_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_brownian_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_brownian",
+     "accept": "MVFBSDEJ.Acceptance.ex_brownian",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -442,15 +442,15 @@
      "name": "at ν = 0 both rank branches are available: the branch m < n with an additive jump coefficient (Example 5.2)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_brownian",
-     "spec_hash": "ed839d34f480cba13b36df98cbfaee33",
+     "spec": "MVFBSDEJ.PaperSpec.ex_brownian",
+     "spec_hash": "ed839d34f480cba1549e88774dfe4a71",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_brownian_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_brownian_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_brownian_rank_gt",
+     "accept": "MVFBSDEJ.Acceptance.ex_brownian_rank_gt",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -460,11 +460,11 @@
      "name": "at ν = 0 both rank branches are available: the branch m > n (Example 5.2)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_brownian_rank_gt",
-     "spec_hash": "ed839d34f480cba154d947c79143fab0",
+     "spec": "MVFBSDEJ.PaperSpec.ex_brownian_rank_gt",
+     "spec_hash": "ed839d34f480cba1520b4873ef0101a2",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_brownian_rank_gt_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_brownian_rank_gt_hypotheses",
      "witness_ok": true
     }
    ],
@@ -480,7 +480,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.rem_margin_reduce",
+     "accept": "MVFBSDEJ.Acceptance.rem_margin_reduce",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -489,21 +489,21 @@
      "defs_pending": [],
      "name": "a bound with the constants β̄₁, β̄₂ is (2.12) with the constants β̄ᵢ − c and margin c, for 0 < c < min{β̄₁, β̄₂}",
      "passage_changed": {
-      "Dissertation.PaperSpec.A.rem_margin_reduce": [
+      "MVFBSDEJ.PaperSpec.rem_margin_reduce": [
        "claude-auditor",
        "claude-author"
       ]
      },
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_margin_reduce",
-     "spec_hash": "ed839d34f480cba15843e0ffe4756126",
+     "spec": "MVFBSDEJ.PaperSpec.rem_margin_reduce",
+     "spec_hash": "ed839d34f480cba1bfbaa0d4d34ae550",
      "spec_ok": true,
      "spec_review": "passage changed since review",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.rem_affine_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.rem_margin_unweighted",
+     "accept": "MVFBSDEJ.Acceptance.rem_margin_unweighted",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -512,21 +512,21 @@
      "defs_pending": [],
      "name": "when m = n the weighted margin c gives the margin c / c_G in the unweighted form (2.13)",
      "passage_changed": {
-      "Dissertation.PaperSpec.A.rem_margin_unweighted": [
+      "MVFBSDEJ.PaperSpec.rem_margin_unweighted": [
        "claude-auditor",
        "claude-author"
       ]
      },
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_margin_unweighted",
-     "spec_hash": "ed839d34f480cba1ba4163c9b3d796bd",
+     "spec": "MVFBSDEJ.PaperSpec.rem_margin_unweighted",
+     "spec_hash": "ed839d34f480cba1ffa92fe440e0e009",
      "spec_ok": true,
      "spec_review": "passage changed since review",
-     "witness": "Dissertation.Acceptance.A.rem_margin_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.rem_margin_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.rem_margin_smaller",
+     "accept": "MVFBSDEJ.Acceptance.rem_margin_smaller",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -536,11 +536,11 @@
      "name": "the unweighted margin c / c_G is smaller than c when c_G > 1",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_margin_smaller",
-     "spec_hash": "ed839d34f480cba133faa12dcf2189f6",
+     "spec": "MVFBSDEJ.PaperSpec.rem_margin_smaller",
+     "spec_hash": "ed839d34f480cba15a1a0b62a5a9eb54",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.rem_margin_smaller_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.rem_margin_smaller_hypotheses",
      "witness_ok": true
     }
    ],
@@ -556,7 +556,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.thm_stab",
+     "accept": "MVFBSDEJ.Acceptance.thm_stab",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -566,11 +566,11 @@
      "name": "main",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.thm_stab",
-     "spec_hash": "ed839d34f480cba16bc55062de98e587",
+     "spec": "MVFBSDEJ.PaperSpec.thm_stab",
+     "spec_hash": "ed839d34f480cba14815ce65dd3b146f",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.thm_stab_nonzero_hypotheses",
      "witness_ok": true
     }
    ],
@@ -586,7 +586,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.rem_cwp_class",
+     "accept": "MVFBSDEJ.Acceptance.rem_cwp_class",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -596,11 +596,11 @@
      "name": "Remark 3.2: a tuple of ℍ_weak satisfying (1.1) lies in ℍ",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_cwp_class",
-     "spec_hash": "ed839d34f480cba1dac1a53237b9beb3",
+     "spec": "MVFBSDEJ.PaperSpec.rem_cwp_class",
+     "spec_hash": "ed839d34f480cba1471818a9fad44821",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.rem_cwp_class_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.rem_cwp_class_hypotheses",
      "witness_ok": true
     }
    ],
@@ -616,7 +616,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.thm_uniq",
+     "accept": "MVFBSDEJ.Acceptance.thm_uniq",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -626,11 +626,11 @@
      "name": "main",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.thm_uniq",
-     "spec_hash": "ed839d34f480cba1b8815741b34ba4e5",
+     "spec": "MVFBSDEJ.PaperSpec.thm_uniq",
+     "spec_hash": "ed839d34f480cba1c0edbd81a0b01a9e",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.thm_uniq_hypotheses",
      "witness_ok": true
     }
    ],
@@ -646,7 +646,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.rem_cwp_class",
+     "accept": "MVFBSDEJ.Acceptance.rem_cwp_class",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -656,15 +656,15 @@
      "name": "Assumption 2.2 imposed, each tuple of ℍ_weak satisfying (1.1) lies in ℍ (Remark 3.2)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_cwp_class",
-     "spec_hash": "ed839d34f480cba1dac1a53237b9beb3",
+     "spec": "MVFBSDEJ.PaperSpec.rem_cwp_class",
+     "spec_hash": "ed839d34f480cba1471818a9fad44821",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.rem_cwp_class_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.rem_cwp_class_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.thm_uniq",
+     "accept": "MVFBSDEJ.Acceptance.thm_uniq",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -674,15 +674,15 @@
      "name": "the uniqueness only requires Assumptions 2.3–2.5 (Theorem 3.3)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.thm_uniq",
-     "spec_hash": "ed839d34f480cba1b8815741b34ba4e5",
+     "spec": "MVFBSDEJ.PaperSpec.thm_uniq",
+     "spec_hash": "ed839d34f480cba1c0edbd81a0b01a9e",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.thm_uniq_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.rem_uniq_initial",
+     "accept": "MVFBSDEJ.Acceptance.rem_uniq_initial",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -692,15 +692,15 @@
      "name": "the initial-data condition ξ₀ ∈ L² is necessary for a solution in ℍ",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_uniq_initial",
-     "spec_hash": "ed839d34f480cba1fa628ed6b5f5989d",
+     "spec": "MVFBSDEJ.PaperSpec.rem_uniq_initial",
+     "spec_hash": "ed839d34f480cba113c4fa495f8a2efc",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.rem_uniq_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.rem_uniq_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.rem_uniq_singular",
+     "accept": "MVFBSDEJ.Acceptance.rem_uniq_singular",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -710,15 +710,15 @@
      "name": "the origin-value conditions are not necessary: the drift t^{-1/2} added to one system of Example 5.1(i), with a solution in ℍ",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_uniq_singular",
-     "spec_hash": "ed839d34f480cba1ba6232c9763ebb54",
+     "spec": "MVFBSDEJ.PaperSpec.rem_uniq_singular",
+     "spec_hash": "ed839d34f480cba1684b08269e1332e9",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.rem_uniq_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.rem_uniq_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.rem_uniq_translation",
+     "accept": "MVFBSDEJ.Acceptance.rem_uniq_translation",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -728,11 +728,11 @@
      "name": "the drift t^{-1/2} e added to a system satisfying (2.3) and Assumptions 2.2–2.5 violates Assumption 2.2 and keeps Assumptions 2.3–2.5; the shift X ↦ X − 2√t e returns a system satisfying Assumptions 2.2–2.5, so a solution exists",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_uniq_translation",
-     "spec_hash": "ed839d34f480cba13b68ad605862c311",
+     "spec": "MVFBSDEJ.PaperSpec.rem_uniq_translation",
+     "spec_hash": "ed839d34f480cba152f8d1ce28385547",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses",
      "witness_ok": true
     }
    ],
@@ -748,7 +748,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.thm_cwp",
+     "accept": "MVFBSDEJ.Acceptance.thm_cwp",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -758,15 +758,15 @@
      "name": "existence and uniqueness",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.thm_cwp",
-     "spec_hash": "ed839d34f480cba10deeabcd10e6e74d",
+     "spec": "MVFBSDEJ.PaperSpec.thm_cwp",
+     "spec_hash": "ed839d34f480cba12370b493940a6d61",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.thm_stab",
+     "accept": "MVFBSDEJ.Acceptance.thm_stab",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -776,11 +776,11 @@
      "name": "continuous dependence (3.1)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.thm_stab",
-     "spec_hash": "ed839d34f480cba16bc55062de98e587",
+     "spec": "MVFBSDEJ.PaperSpec.thm_stab",
+     "spec_hash": "ed839d34f480cba14815ce65dd3b146f",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.thm_stab_nonzero_hypotheses",
      "witness_ok": true
     }
    ],
@@ -796,7 +796,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.cor_robust",
+     "accept": "MVFBSDEJ.Acceptance.cor_robust",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -806,15 +806,15 @@
      "name": "assumptions of the perturbed system",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.cor_robust",
-     "spec_hash": "ed839d34f480cba154326c82c977c8bd",
+     "spec": "MVFBSDEJ.PaperSpec.cor_robust",
+     "spec_hash": "ed839d34f480cba158154e23787dfbca",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.cor_robust_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.cor_robust_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.cor_robust_wp",
+     "accept": "MVFBSDEJ.Acceptance.cor_robust_wp",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -824,15 +824,15 @@
      "name": "well-posedness",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.cor_robust_wp",
-     "spec_hash": "ed839d34f480cba16dd662e97e677716",
+     "spec": "MVFBSDEJ.PaperSpec.cor_robust_wp",
+     "spec_hash": "ed839d34f480cba1617ff136058ce573",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.cor_robust_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.cor_robust_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.cor_robust_lip",
+     "accept": "MVFBSDEJ.Acceptance.cor_robust_lip",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -842,11 +842,11 @@
      "name": "(3.5) gives (3.4)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.cor_robust_lip",
-     "spec_hash": "ed839d34f480cba14b18016daa0b4aac",
+     "spec": "MVFBSDEJ.PaperSpec.cor_robust_lip",
+     "spec_hash": "ed839d34f480cba129c3f998d5e8f786",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.cor_robust_lip_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.cor_robust_lip_hypotheses",
      "witness_ok": true
     }
    ],
@@ -862,7 +862,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.rem_generalrank",
+     "accept": "MVFBSDEJ.Acceptance.rem_generalrank",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -872,15 +872,15 @@
      "name": "Remark 3.7: the perturbed system satisfies Assumptions 2.2-2.5 with margin c_diss - c_pert in (2.12), arbitrary m, n",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_generalrank",
-     "spec_hash": "ed839d34f480cba1bcd1d82734738c5b",
+     "spec": "MVFBSDEJ.PaperSpec.rem_generalrank",
+     "spec_hash": "ed839d34f480cba1f5373e511b0aa0f3",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.rem_generalrank_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.rem_generalrank_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.rem_generalrank_wp",
+     "accept": "MVFBSDEJ.Acceptance.rem_generalrank_wp",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -890,11 +890,11 @@
      "name": "Remark 3.7: the perturbed system is well-posed, arbitrary m, n",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_generalrank_wp",
-     "spec_hash": "ed839d34f480cba118d1835a02488a97",
+     "spec": "MVFBSDEJ.PaperSpec.rem_generalrank_wp",
+     "spec_hash": "ed839d34f480cba1e559b01e430dcbd3",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.rem_generalrank_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.rem_generalrank_hypotheses",
      "witness_ok": true
     }
    ],
@@ -910,7 +910,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.prop_strict",
+     "accept": "MVFBSDEJ.Acceptance.prop_strict",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -920,11 +920,11 @@
      "name": "main",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.prop_strict",
-     "spec_hash": "ed839d34f480cba1f1c48950c52ae4f4",
+     "spec": "MVFBSDEJ.PaperSpec.prop_strict",
+     "spec_hash": "ed839d34f480cba187dc1facdd73b114",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.prop_strict_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.prop_strict_hypotheses",
      "witness_ok": true
     }
    ],
@@ -940,7 +940,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.lem_bpbsde",
+     "accept": "MVFBSDEJ.Acceptance.lem_bpbsde",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -950,11 +950,11 @@
      "name": "main",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.lem_bpbsde",
-     "spec_hash": "ed839d34f480cba1202e3ec284da1f15",
+     "spec": "MVFBSDEJ.PaperSpec.lem_bpbsde",
+     "spec_hash": "ed839d34f480cba12081ce44f806f9c8",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_bpbsde_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.lem_bpbsde_hypotheses",
      "witness_ok": true
     }
    ],
@@ -970,7 +970,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.lem_small",
+     "accept": "MVFBSDEJ.Acceptance.lem_small",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -980,11 +980,11 @@
      "name": "main",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.lem_small",
-     "spec_hash": "ed839d34f480cba12f6a12214671fd14",
+     "spec": "MVFBSDEJ.PaperSpec.lem_small",
+     "spec_hash": "ed839d34f480cba186ae2e8b9100babf",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses",
      "witness_ok": true
     }
    ],
@@ -1000,7 +1000,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.lem_pert",
+     "accept": "MVFBSDEJ.Acceptance.lem_pert",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1010,11 +1010,11 @@
      "name": "main",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.lem_pert",
-     "spec_hash": "ed839d34f480cba1eefcd4522364d865",
+     "spec": "MVFBSDEJ.PaperSpec.lem_pert",
+     "spec_hash": "ed839d34f480cba1ce2cfd574c200974",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.lem_pert_two_data_hypotheses",
      "witness_ok": true
     }
    ],
@@ -1030,7 +1030,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.lem_cont",
+     "accept": "MVFBSDEJ.Acceptance.lem_cont",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1040,11 +1040,11 @@
      "name": "main",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.lem_cont",
-     "spec_hash": "ed839d34f480cba15f6eb38f12c8d372",
+     "spec": "MVFBSDEJ.PaperSpec.lem_cont",
+     "spec_hash": "ed839d34f480cba11d46b6b5a9e8afc8",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_cont_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.lem_cont_hypotheses",
      "witness_ok": true
     }
    ],
@@ -1060,7 +1060,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.ex_concrete_i_ham",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_i_ham",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1070,15 +1070,15 @@
      "name": "(i) the Hamiltonian and its minimiser",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_i_ham",
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i_ham",
      "spec_hash": "ed839d34f480cba1cf9f26355b828c6a",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_i_ham_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_i_ham_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_concrete_i",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_i",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1088,15 +1088,15 @@
      "name": "(i) the assumptions",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_i",
-     "spec_hash": "ed839d34f480cba1d2f6e8919288ad6b",
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i",
+     "spec_hash": "ed839d34f480cba18c5c46dad71ae633",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_concrete_i_pairing",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_i_pairing",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1106,15 +1106,15 @@
      "name": "(i) the exact pairings, the margin and the jump identity",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_i_pairing",
-     "spec_hash": "ed839d34f480cba1272d037d1e16e040",
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i_pairing",
+     "spec_hash": "ed839d34f480cba1877fc9dad693a20c",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_concrete_i_wp",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_i_wp",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1124,15 +1124,15 @@
      "name": "(i) well-posedness",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_i_wp",
-     "spec_hash": "ed839d34f480cba13343e4213bb7f62d",
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i_wp",
+     "spec_hash": "ed839d34f480cba13009edf88db6d533",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_concrete_i_clamp",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_i_clamp",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1142,15 +1142,15 @@
      "name": "(i) with the drift (3.6): the assumptions",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_i_clamp",
-     "spec_hash": "ed839d34f480cba1f386f903a2799dd0",
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i_clamp",
+     "spec_hash": "ed839d34f480cba164e61a64f4ae2071",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_concrete_i_clamp_wp",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_i_clamp_wp",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1160,15 +1160,15 @@
      "name": "(i) with the drift (3.6): well-posedness",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_i_clamp_wp",
-     "spec_hash": "ed839d34f480cba14bccae170a8d514d",
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i_clamp_wp",
+     "spec_hash": "ed839d34f480cba1180a9f6b3134ed03",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_concrete_ii_mean",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_ii_mean",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1178,15 +1178,15 @@
      "name": "(ii) the mean and the barycentre",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_ii_mean",
-     "spec_hash": "ed839d34f480cba1adb40add6e4f8112",
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_ii_mean",
+     "spec_hash": "ed839d34f480cba198d518ce685dcbd5",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_ii_mean_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_ii_mean_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_concrete_ii",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_ii",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1196,15 +1196,15 @@
      "name": "(ii) the assumptions",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_ii",
-     "spec_hash": "ed839d34f480cba1cba84bcbe1866633",
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_ii",
+     "spec_hash": "ed839d34f480cba15cf7f3328c0ad0e6",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_concrete_ii_pairing",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_ii_pairing",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1214,15 +1214,15 @@
      "name": "(ii) the pairings along the diagonal",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_ii_pairing",
-     "spec_hash": "ed839d34f480cba16aa5f84a4f3328b5",
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing",
+     "spec_hash": "ed839d34f480cba15f4aed2b1f37c43c",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_concrete_i_sharp",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_i_sharp",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1232,11 +1232,11 @@
      "name": "(i) the displayed identity is sharp for beta1, beta2: (2.7) with beta1', beta2' forces beta1' <= beta1, beta2' <= beta2",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_i_sharp",
-     "spec_hash": "ed839d34f480cba19df1faec1593a821",
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i_sharp",
+     "spec_hash": "ed839d34f480cba17e1f06c7ac4fc270",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     }
    ],
@@ -1252,7 +1252,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.ex_brownian",
+     "accept": "MVFBSDEJ.Acceptance.ex_brownian",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1262,15 +1262,15 @@
      "name": "main",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_brownian",
-     "spec_hash": "ed839d34f480cba13b36df98cbfaee33",
+     "spec": "MVFBSDEJ.PaperSpec.ex_brownian",
+     "spec_hash": "ed839d34f480cba1549e88774dfe4a71",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_brownian_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_brownian_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_brownian_not_h0",
+     "accept": "MVFBSDEJ.Acceptance.ex_brownian_not_h0",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1280,15 +1280,15 @@
      "name": "setting h = 0 on a Brownian-Poisson basis is not a reduction: U persists in the representation",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_brownian_not_h0",
-     "spec_hash": "ed839d34f480cba13fa0ef4acc9fb310",
+     "spec": "MVFBSDEJ.PaperSpec.ex_brownian_not_h0",
+     "spec_hash": "ed839d34f480cba1987b9a0f5b4c9b44",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_brownian_not_h0_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_brownian_not_h0_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_brownian_rank_gt",
+     "accept": "MVFBSDEJ.Acceptance.ex_brownian_rank_gt",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1298,15 +1298,15 @@
      "name": "both rank branches are available: the branch m > n",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_brownian_rank_gt",
-     "spec_hash": "ed839d34f480cba154d947c79143fab0",
+     "spec": "MVFBSDEJ.PaperSpec.ex_brownian_rank_gt",
+     "spec_hash": "ed839d34f480cba1520b4873ef0101a2",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_brownian_rank_gt_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_brownian_rank_gt_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_brownian_reduction",
+     "accept": "MVFBSDEJ.Acceptance.ex_brownian_reduction",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1316,15 +1316,15 @@
      "name": "the assumptions and the solution notions at nu = 0 reduce to their Brownian forms",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_brownian_reduction",
-     "spec_hash": "ed839d34f480cba16ec077c21383f1ee",
+     "spec": "MVFBSDEJ.PaperSpec.ex_brownian_reduction",
+     "spec_hash": "ed839d34f480cba160cc15ad2ee3a619",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_brownian_reduction_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_brownian_reduction_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_brownian_prp",
+     "accept": "MVFBSDEJ.Acceptance.ex_brownian_prp",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1334,11 +1334,11 @@
      "name": "the representation property at nu = 0 is the Brownian one",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_brownian_prp",
-     "spec_hash": "ed839d34f480cba1d54de82e0956a03e",
+     "spec": "MVFBSDEJ.PaperSpec.ex_brownian_prp",
+     "spec_hash": "ed839d34f480cba1744fb87bba1cd3e9",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_brownian_prp_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_brownian_prp_hypotheses",
      "witness_ok": true
     }
    ],
@@ -1354,7 +1354,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.ex_expfunc",
+     "accept": "MVFBSDEJ.Acceptance.ex_expfunc",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1364,15 +1364,15 @@
      "name": "the expectation-functional class",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_expfunc",
-     "spec_hash": "ed839d34f480cba1c0ebc41bbfe679cc",
+     "spec": "MVFBSDEJ.PaperSpec.ex_expfunc",
+     "spec_hash": "ed839d34f480cba15a6f123acd31afd5",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_expfunc_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_expfunc_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_expfunc_limin",
+     "accept": "MVFBSDEJ.Acceptance.ex_expfunc_limin",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1382,15 +1382,15 @@
      "name": "the kernels of independent-copy interactions",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_expfunc_limin",
-     "spec_hash": "ed839d34f480cba1dc8d682dbdc81fa7",
+     "spec": "MVFBSDEJ.PaperSpec.ex_expfunc_limin",
+     "spec_hash": "ed839d34f480cba1f28bceb8fea3e945",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_expfunc_limin_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_expfunc_limin_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_expfunc_jump",
+     "accept": "MVFBSDEJ.Acceptance.ex_expfunc_jump",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1400,11 +1400,11 @@
      "name": "the jump coefficient through the Nemytskii map",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_expfunc_jump",
-     "spec_hash": "ed839d34f480cba1e622a1683bfc9f0d",
+     "spec": "MVFBSDEJ.PaperSpec.ex_expfunc_jump",
+     "spec_hash": "ed839d34f480cba1e4ed71c267b0a369",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_expfunc_jump_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_expfunc_jump_hypotheses",
      "witness_ok": true
     }
    ],
@@ -1420,7 +1420,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_lip",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_lip",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1429,21 +1429,21 @@
      "defs_pending": [],
      "name": "the law statistics are W₂-Lipschitz, with the constants Lip(𝔮), Lip(𝔮̃), Lip(𝔮̂), L_Q",
      "passage_changed": {
-      "Dissertation.PaperSpec.A.ex_fulllaw_lip": [
+      "MVFBSDEJ.PaperSpec.ex_fulllaw_lip": [
        "claude-auditor",
        "claude-author"
       ]
      },
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_lip",
-     "spec_hash": "ed839d34f480cba11fea7903ed24f9f8",
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_lip",
+     "spec_hash": "ed839d34f480cba1f75f47b92e7d0c68",
      "spec_ok": true,
      "spec_review": "passage changed since review",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_pert",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_pert",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1452,21 +1452,21 @@
      "defs_pending": [],
      "name": "the perturbation: origin integrability, (3.5) with L_p, Assumption 2.3, and (3.4) with c_pert = ‖G‖ L_p",
      "passage_changed": {
-      "Dissertation.PaperSpec.A.ex_fulllaw_pert": [
+      "MVFBSDEJ.PaperSpec.ex_fulllaw_pert": [
        "claude-auditor",
        "claude-author"
       ]
      },
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_pert",
-     "spec_hash": "ed839d34f480cba1e9dade95deb0a071",
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_pert",
+     "spec_hash": "ed839d34f480cba1b980c331983389db",
      "spec_ok": true,
      "spec_review": "passage changed since review",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_wp",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_wp",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1475,21 +1475,21 @@
      "defs_pending": [],
      "name": "well-posedness with margin c_diss − ‖G‖ L_p under (5.1)",
      "passage_changed": {
-      "Dissertation.PaperSpec.A.ex_fulllaw_wp": [
+      "MVFBSDEJ.PaperSpec.ex_fulllaw_wp": [
        "claude-auditor",
        "claude-author"
       ]
      },
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_wp",
-     "spec_hash": "ed839d34f480cba173d663ff51153197",
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_wp",
+     "spec_hash": "ed839d34f480cba15517e8f4c1cfada6",
      "spec_ok": true,
      "spec_review": "passage changed since review",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_radial",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_radial",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1498,21 +1498,21 @@
      "defs_pending": [],
      "name": "the radial statistic of the full tuple law is no expectation functional",
      "passage_changed": {
-      "Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial": [
+      "MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_radial": [
        "claude-auditor",
        "claude-author"
       ]
      },
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial",
-     "spec_hash": "ed839d34f480cba1fc87ff54d30df5ad",
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_radial",
+     "spec_hash": "ed839d34f480cba1e35b736319ec8895",
      "spec_ok": true,
      "spec_review": "passage changed since review",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_corr",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_U_corr",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1521,21 +1521,21 @@
      "defs_pending": [],
      "name": "the U-marginal radial statistics are no expectation functionals, with L²(ν) ≠ 0",
      "passage_changed": {
-      "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr": [
+      "MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_U_corr": [
        "claude-auditor",
        "claude-author"
       ]
      },
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr",
-     "spec_hash": "ed839d34f480cba193f328d7c8c243ea",
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_U_corr",
+     "spec_hash": "ed839d34f480cba10f66e794dcb439f4",
      "spec_ok": true,
      "spec_review": "passage changed since review",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_Q",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1544,21 +1544,21 @@
      "defs_pending": [],
      "name": "the cylindrical term is no expectation functional when Q is not affine on the attained range of the features",
      "passage_changed": {
-      "Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q": [
+      "MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_Q": [
        "claude-auditor",
        "claude-author"
       ]
      },
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q",
-     "spec_hash": "ed839d34f480cba12be9f13eb8df21c1",
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_Q",
+     "spec_hash": "ed839d34f480cba1461519d3798ca6c4",
      "spec_ok": true,
      "spec_review": "passage changed since review",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_Q_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_affineQ",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_affineQ",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1567,17 +1567,17 @@
      "defs_pending": [],
      "name": "Q affine on the attained range of the features: the cylindrical term is an expectation functional of Example 5.3",
      "passage_changed": {
-      "Dissertation.PaperSpec.A.ex_fulllaw_affineQ": [
+      "MVFBSDEJ.PaperSpec.ex_fulllaw_affineQ": [
        "claude-auditor",
        "claude-author"
       ]
      },
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_affineQ",
-     "spec_hash": "ed839d34f480cba1b7c4d4b7307e74ea",
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_affineQ",
+     "spec_hash": "ed839d34f480cba1b8ea9fe995beebaa",
      "spec_ok": true,
      "spec_review": "passage changed since review",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_affineQ_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_affineQ_hypotheses",
      "witness_ok": true
     }
    ],
@@ -1593,7 +1593,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_potential",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_potential",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1603,15 +1603,15 @@
      "name": "the potential: even, convex, its gradient, bounded and 1-Lipschitz",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_potential",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_potential",
      "spec_hash": "ed839d34f480cba1c2e5952133294af3",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_crowd",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_crowd",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1621,15 +1621,15 @@
      "name": "the crowding correction is jointly Lipschitz in u and the law",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_crowd",
-     "spec_hash": "ed839d34f480cba1542ac74da98a0887",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_crowd",
+     "spec_hash": "ed839d34f480cba1b48a11129734eeaa",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_coeffs",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_coeffs",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1639,15 +1639,15 @@
      "name": "at ε = 0 and h_x = 0 the coefficients are those of Example 5.1(i)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_coeffs",
-     "spec_hash": "ed839d34f480cba17c7bbab57e15328e",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_coeffs",
+     "spec_hash": "ed839d34f480cba19928c3a0b47228fc",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_ham",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_ham",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1657,15 +1657,15 @@
      "name": "the exposure term ⟨h_x x, u⟩ of the Hamiltonian has x-derivative the added driver term ⟨h_x, u⟩",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_ham",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_ham",
      "spec_hash": "ed839d34f480cba18d97e926abe7317b",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1675,15 +1675,15 @@
      "name": "Assumptions 2.2–2.4 and (2.3), with L = max{β₁ + ε + ‖h_x‖, β₂ + ‖h_x‖, 1}",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer",
-     "spec_hash": "ed839d34f480cba1e2c74601c0086824",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer",
+     "spec_hash": "ed839d34f480cba16509577529722f06",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_mono",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_mono",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1693,15 +1693,15 @@
      "name": "the crowding interaction is monotone at every interaction strength ε ≥ 0",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_mono",
-     "spec_hash": "ed839d34f480cba17aa9ad92a733a79a",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_mono",
+     "spec_hash": "ed839d34f480cba18bebeea12a1b6e30",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_wp",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_wp",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1711,15 +1711,15 @@
      "name": "well-posedness at every interaction strength ε ≥ 0 (Theorem 3.5)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_wp",
-     "spec_hash": "ed839d34f480cba1382a433c842b2a2c",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_wp",
+     "spec_hash": "ed839d34f480cba1169a2b8090bb4149",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_twopoint",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_twopoint",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1729,15 +1729,15 @@
      "name": "the two-point laws share their mean, with the printed values",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_twopoint",
-     "spec_hash": "ed839d34f480cba10e7a45835d5244c0",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_twopoint",
+     "spec_hash": "ed839d34f480cba19106e59b87a9b227",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_unit_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_mean_corr",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_mean_corr",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1747,15 +1747,15 @@
      "name": "the crowding correction is no function of E[U], with ν ≠ 0 (so L²(ν) ≠ 0)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_mean_corr",
-     "spec_hash": "ed839d34f480cba18bab6ae8a6c6a027",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_mean_corr",
+     "spec_hash": "ed839d34f480cba102e66341b336a802",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_unit_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_marks",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_marks",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1765,15 +1765,15 @@
      "name": "the mark measure: infinite mass, square-integrable size, h_c ∈ L²(ν)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_marks",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_marks",
      "spec_hash": "ed839d34f480cba140a65f520ffefa33",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_marks_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_marks_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_not_mean_corr",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_not_mean_corr",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1783,15 +1783,15 @@
      "name": "the crowding correction is no function of the mean and is nonlinear in the valuation curves, with L²(ν) ≠ 0",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_not_mean_corr",
-     "spec_hash": "ed839d34f480cba1d76cfc2366e08961",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_not_mean_corr",
+     "spec_hash": "ed839d34f480cba1dbd6dbdf35aeabbb",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_unit_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_affine",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_affine",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1801,15 +1801,15 @@
      "name": "the crowding correction is affine in the population law: an expectation kernel of Example 5.3 with K = L²(ν)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_affine",
-     "spec_hash": "ed839d34f480cba14f86326a4c8f6eab",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_affine",
+     "spec_hash": "ed839d34f480cba1cad94cd2b0eab7be",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_unit_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_riccati",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_riccati",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1819,15 +1819,15 @@
      "name": "the Riccati function: p' = β₁p² − β₂, p(T) = 1, p > 0 on [0, T], unique",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_riccati",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_riccati",
      "spec_hash": "ed839d34f480cba122071b255b506300",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_inert_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_inert_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_inert",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_inert",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1837,15 +1837,15 @@
      "name": "for h_x = 0 the interaction is inert: Y = pX, Z = pσ_c/(1 + β₁p), U = p h_c/(1 + β₁p), Law(U_t) a Dirac mass, the correction vanishes, the tuple solves at every ε",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_inert",
-     "spec_hash": "ed839d34f480cba141c76d0c8dddc879",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_inert",
+     "spec_hash": "ed839d34f480cba171de9af0a400dde6",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_inert_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_inert_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_spec_marks",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_spec_marks",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1855,15 +1855,15 @@
      "name": "the specialisation: h_c, h_x ∈ L²(ν), ‖h_c‖ = ‖h_x‖ = 1, ⟨h_c, h_x⟩ = 0",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_spec_marks",
-     "spec_hash": "ed839d34f480cba1efd7d1ab7e3204fd",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_spec_marks",
+     "spec_hash": "ed839d34f480cba1e5ef7cbf2e6aa6f7",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_spec_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_zero",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_zero",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1873,15 +1873,15 @@
      "name": "the linear equation has a unique solution X⁰ ∈ S²; Θ⁰ solves the system at ε = 0; 𝔼X⁰ = 0, v' = −(7/4)v + ½, v = (2/7)(1 − e^{−7t/4}); 𝔼‖U⁰_t − 𝔼U⁰_t‖² = v/4 and Law(U⁰_t) is not a Dirac mass",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_zero",
-     "spec_hash": "ed839d34f480cba1fbee3842d146d0f8",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_zero",
+     "spec_hash": "ed839d34f480cba1ed9e4db67a07557a",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_spec_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_symm",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_symm",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1891,15 +1891,15 @@
      "name": "the symmetrised crowding pairing, positive unless λ is a Dirac mass",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_symm",
-     "spec_hash": "ed839d34f480cba11753a45d7d37cdc6",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_symm",
+     "spec_hash": "ed839d34f480cba172821167f7b0d7ee",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_unit_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_active",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_active",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1909,15 +1909,15 @@
      "name": "the interaction is active: A(U⁰_t) ≠ 0 with positive probability at every t ∈ (0, T], and 𝔼∫_0^T ‖ε A(U_t)‖² dt > 0 for every ε > 0",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_active",
-     "spec_hash": "ed839d34f480cba11684a792fea39139",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_active",
+     "spec_hash": "ed839d34f480cba1a2ecf4542b86cf40",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_spec_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_depends",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_depends",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1927,11 +1927,11 @@
      "name": "the solution depends on ε: a tuple solving at two strengths has vanishing correction, and in the specialisation no tuple solves at two strengths",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_depends",
-     "spec_hash": "ed839d34f480cba1d5b82af653b55a54",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_depends",
+     "spec_hash": "ed839d34f480cba116acd4770ae6431c",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_spec_hypotheses",
      "witness_ok": true
     }
    ],
@@ -1947,7 +1947,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.eq_coupling",
+     "accept": "MVFBSDEJ.Acceptance.eq_coupling",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1956,22 +1956,22 @@
      "defs_pending": [],
      "name": "the W₂ term is dominated by the synchronous coupling bound (2.8)",
      "passage_changed": {
-      "Dissertation.PaperSpec.A.eq_coupling": [
+      "MVFBSDEJ.PaperSpec.eq_coupling": [
        "claude-auditor",
        "claude-author",
        "claude-reviewer"
       ]
      },
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.eq_coupling",
-     "spec_hash": "ed839d34f480cba17af7c36ae6c33114",
+     "spec": "MVFBSDEJ.PaperSpec.eq_coupling",
+     "spec_hash": "ed839d34f480cba1bace4ab391e97c18",
      "spec_ok": true,
      "spec_review": "passage changed since review",
-     "witness": "Dissertation.Acceptance.A.eq_coupling_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.eq_coupling_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.rem_freelaw",
+     "accept": "MVFBSDEJ.Acceptance.rem_freelaw",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -1980,17 +1980,17 @@
      "defs_pending": [],
      "name": "the coefficients depend on u pointwise whenever β₁ > 0, with ν ≠ 0",
      "passage_changed": {
-      "Dissertation.PaperSpec.A.rem_freelaw": [
+      "MVFBSDEJ.PaperSpec.rem_freelaw": [
        "claude-auditor",
        "claude-author"
       ]
      },
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_freelaw",
-     "spec_hash": "ed839d34f480cba105f02a9629cb6b98",
+     "spec": "MVFBSDEJ.PaperSpec.rem_freelaw",
+     "spec_hash": "ed839d34f480cba1385a7475966269b6",
      "spec_ok": true,
      "spec_review": "passage changed since review",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.rem_affine_hypotheses",
      "witness_ok": true
     }
    ],
@@ -2006,7 +2006,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_pert",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_pert",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2016,15 +2016,15 @@
      "name": "Example 5.4: the full-tuple law perturbation satisfies (3.4) with c_pert = ‖G‖ L_p",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_pert",
-     "spec_hash": "ed839d34f480cba1e9dade95deb0a071",
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_pert",
+     "spec_hash": "ed839d34f480cba1b980c331983389db",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_wp",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_wp",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2034,15 +2034,15 @@
      "name": "Example 5.4: added below the dissipativity margin, the system stays well-posed",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_wp",
-     "spec_hash": "ed839d34f480cba173d663ff51153197",
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_wp",
+     "spec_hash": "ed839d34f480cba15517e8f4c1cfada6",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_radial",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_radial",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2052,15 +2052,15 @@
      "name": "Example 5.4: the radial statistic is a nonlinear law dependence, no expectation functional",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial",
-     "spec_hash": "ed839d34f480cba1fc87ff54d30df5ad",
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_radial",
+     "spec_hash": "ed839d34f480cba1e35b736319ec8895",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_not_mean_corr",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_not_mean_corr",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2070,15 +2070,15 @@
      "name": "Example 5.5: the U-law interaction is nonlinear in the valuation curves (and no function of the mean of the U-law), with L²(ν) ≠ 0",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_not_mean_corr",
-     "spec_hash": "ed839d34f480cba1d76cfc2366e08961",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_not_mean_corr",
+     "spec_hash": "ed839d34f480cba1dbd6dbdf35aeabbb",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_unit_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_mono",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_mono",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2088,15 +2088,15 @@
      "name": "the crowding interaction is monotone at every interaction strength ε ≥ 0",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_mono",
-     "spec_hash": "ed839d34f480cba17aa9ad92a733a79a",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_mono",
+     "spec_hash": "ed839d34f480cba18bebeea12a1b6e30",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_wp",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_wp",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2106,15 +2106,15 @@
      "name": "well-posedness at every interaction strength ε ≥ 0 (Theorem 3.5)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_wp",
-     "spec_hash": "ed839d34f480cba1382a433c842b2a2c",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_wp",
+     "spec_hash": "ed839d34f480cba1169a2b8090bb4149",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_active",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_active",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2124,11 +2124,11 @@
      "name": "Example 5.5: the interaction remains active along the solution",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_active",
-     "spec_hash": "ed839d34f480cba11684a792fea39139",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_active",
+     "spec_hash": "ed839d34f480cba1a2ecf4542b86cf40",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_spec_hypotheses",
      "witness_ok": true
     }
    ],
@@ -2144,7 +2144,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.lem_lawflow",
+     "accept": "MVFBSDEJ.Acceptance.lem_lawflow",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2154,15 +2154,15 @@
      "name": "Lemma A.1: Borel law flows mu, mu^- representing Law(Theta_t), Law(Theta^-_t), equal a.e.",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.lem_lawflow",
-     "spec_hash": "ed839d34f480cba1090c1a53f2a6cf7f",
+     "spec": "MVFBSDEJ.PaperSpec.lem_lawflow",
+     "spec_hash": "ed839d34f480cba11a2b3651abedff76",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_lawflow_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.lem_lawflow_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.lem_lawflow_invariant",
+     "accept": "MVFBSDEJ.Acceptance.lem_lawflow_invariant",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2172,11 +2172,11 @@
      "name": "Lemma A.1: uniqueness of the flows and invariance of coefficient evaluations under the representatives",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.lem_lawflow_invariant",
-     "spec_hash": "ed839d34f480cba184c9d1f8d6f2b814",
+     "spec": "MVFBSDEJ.PaperSpec.lem_lawflow_invariant",
+     "spec_hash": "ed839d34f480cba1abc25862f5a8ac4f",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_lawflow_invariant_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.lem_lawflow_invariant_hypotheses",
      "witness_ok": true
     }
    ],
@@ -2192,7 +2192,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.thm_stab",
+     "accept": "MVFBSDEJ.Acceptance.thm_stab",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2202,15 +2202,15 @@
      "name": "the a priori continuous-dependence estimate (Theorem 3.1)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.thm_stab",
-     "spec_hash": "ed839d34f480cba16bc55062de98e587",
+     "spec": "MVFBSDEJ.PaperSpec.thm_stab",
+     "spec_hash": "ed839d34f480cba14815ce65dd3b146f",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.thm_stab_nonzero_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.thm_uniq",
+     "accept": "MVFBSDEJ.Acceptance.thm_uniq",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2220,15 +2220,15 @@
      "name": "uniqueness (Theorem 3.3)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.thm_uniq",
-     "spec_hash": "ed839d34f480cba1b8815741b34ba4e5",
+     "spec": "MVFBSDEJ.PaperSpec.thm_uniq",
+     "spec_hash": "ed839d34f480cba1c0edbd81a0b01a9e",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.thm_uniq_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.thm_cwp",
+     "accept": "MVFBSDEJ.Acceptance.thm_cwp",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2238,15 +2238,15 @@
      "name": "existence and uniqueness on every finite horizon (Theorem 3.5)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.thm_cwp",
-     "spec_hash": "ed839d34f480cba10deeabcd10e6e74d",
+     "spec": "MVFBSDEJ.PaperSpec.thm_cwp",
+     "spec_hash": "ed839d34f480cba12370b493940a6d61",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.rem_diag_mono",
+     "accept": "MVFBSDEJ.Acceptance.rem_diag_mono",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2256,15 +2256,15 @@
      "name": "pointwise monotonicity gives expected diagonal monotonicity (Remark 2.8)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_diag_mono",
-     "spec_hash": "ed839d34f480cba146c1633f8e03b86c",
+     "spec": "MVFBSDEJ.PaperSpec.rem_diag_mono",
+     "spec_hash": "ed839d34f480cba16dbf12782c23a6c7",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.rem_affine_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.prop_strict",
+     "accept": "MVFBSDEJ.Acceptance.prop_strict",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2274,15 +2274,15 @@
      "name": "expected diagonal monotonicity is strictly weaker (Proposition 3.8)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.prop_strict",
-     "spec_hash": "ed839d34f480cba1f1c48950c52ae4f4",
+     "spec": "MVFBSDEJ.PaperSpec.prop_strict",
+     "spec_hash": "ed839d34f480cba187dc1facdd73b114",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.prop_strict_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.prop_strict_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.rem_diag_mono_converse",
+     "accept": "MVFBSDEJ.Acceptance.rem_diag_mono_converse",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2292,15 +2292,15 @@
      "name": "expected diagonal monotonicity is strictly weaker: a full coefficient system satisfying Assumption 2.5 without the pointwise condition (Remark 2.8)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_diag_mono_converse",
-     "spec_hash": "ed839d34f480cba14b5e4594e14d9dc7",
+     "spec": "MVFBSDEJ.PaperSpec.rem_diag_mono_converse",
+     "spec_hash": "ed839d34f480cba121a2e85359198f21",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_mono",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_mono",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2310,15 +2310,15 @@
      "name": "the dealer interaction is monotone at every interaction strength (Example 5.5)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_mono",
-     "spec_hash": "ed839d34f480cba17aa9ad92a733a79a",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_mono",
+     "spec_hash": "ed839d34f480cba18bebeea12a1b6e30",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_wp",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_wp",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2328,15 +2328,15 @@
      "name": "the dealer market is well posed at every interaction strength (Example 5.5)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_wp",
-     "spec_hash": "ed839d34f480cba1382a433c842b2a2c",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_wp",
+     "spec_hash": "ed839d34f480cba1169a2b8090bb4149",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_marks",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_marks",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2346,15 +2346,15 @@
      "name": "the dealer mark measure has infinite activity (Example 5.5)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_marks",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_marks",
      "spec_hash": "ed839d34f480cba140a65f520ffefa33",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_marks_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_marks_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_active",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_active",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2364,11 +2364,11 @@
      "name": "the dealer interaction is active along the solution in an explicit specialisation (Example 5.5)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_active",
-     "spec_hash": "ed839d34f480cba11684a792fea39139",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_active",
+     "spec_hash": "ed839d34f480cba1a2ecf4542b86cf40",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_spec_hypotheses",
      "witness_ok": true
     }
    ],
@@ -2388,7 +2388,7 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [
-      "Dissertation.PaperSpec.A.Solution"
+      "MVFBSDEJ.PaperSpec.Solution"
      ],
      "defs_changed": [],
      "defs_pending": [],
@@ -2412,7 +2412,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.thm_cwp",
+     "accept": "MVFBSDEJ.Acceptance.thm_cwp",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2422,15 +2422,15 @@
      "name": "the theorem allows W₂-dependence on the full tuple law, the law of U included, at arbitrary σ-finite activity, under the expected G-monotonicity (Theorem 3.5)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.thm_cwp",
-     "spec_hash": "ed839d34f480cba10deeabcd10e6e74d",
+     "spec": "MVFBSDEJ.PaperSpec.thm_cwp",
+     "spec_hash": "ed839d34f480cba12370b493940a6d61",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_expfunc_limin",
+     "accept": "MVFBSDEJ.Acceptance.ex_expfunc_limin",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2440,11 +2440,11 @@
      "name": "Example 5.3 details the embedding of their interaction class",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_expfunc_limin",
-     "spec_hash": "ed839d34f480cba1dc8d682dbdc81fa7",
+     "spec": "MVFBSDEJ.PaperSpec.ex_expfunc_limin",
+     "spec_hash": "ed839d34f480cba1f28bceb8fea3e945",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_expfunc_limin_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_expfunc_limin_hypotheses",
      "witness_ok": true
     }
    ],
@@ -2471,7 +2471,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.sec2_separable",
+     "accept": "MVFBSDEJ.Acceptance.sec2_separable",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2481,11 +2481,11 @@
      "name": "L2(nu; R^j) is separable",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.sec2_separable",
+     "spec": "MVFBSDEJ.PaperSpec.sec2_separable",
      "spec_hash": "ed839d34f480cba1673cfd9d331f5aa6",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.sec2_separable_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.sec2_separable_hypotheses",
      "witness_ok": true
     }
    ],
@@ -2501,7 +2501,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.sec2_infinite_activity",
+     "accept": "MVFBSDEJ.Acceptance.sec2_infinite_activity",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2511,11 +2511,11 @@
      "name": "nu(E) infinite gives infinitely many atoms on every interval",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.sec2_infinite_activity",
+     "spec": "MVFBSDEJ.PaperSpec.sec2_infinite_activity",
      "spec_hash": "ed839d34f480cba13a9f48f6bc72d40f",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.sec2_infinite_activity_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.sec2_infinite_activity_hypotheses",
      "witness_ok": true
     }
    ],
@@ -2531,7 +2531,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.sec2_prp",
+     "accept": "MVFBSDEJ.Acceptance.sec2_prp",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2541,11 +2541,11 @@
      "name": "the predictable representation property over the enlarged filtration, with uniqueness",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.sec2_prp",
-     "spec_hash": "ed839d34f480cba1577f0ed2476fcdb5",
+     "spec": "MVFBSDEJ.PaperSpec.sec2_prp",
+     "spec_hash": "ed839d34f480cba188dfff65b0dcd4e4",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.sec2_prp_nonzero_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.sec2_prp_nonzero_hypotheses",
      "witness_ok": true
     }
    ],
@@ -2561,7 +2561,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.sec2_hborel",
+     "accept": "MVFBSDEJ.Acceptance.sec2_hborel",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2571,11 +2571,11 @@
      "name": "joint pointwise measurability of h gives (2.3)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.sec2_hborel",
-     "spec_hash": "ed839d34f480cba1c7bf6ee7f1e38851",
+     "spec": "MVFBSDEJ.PaperSpec.sec2_hborel",
+     "spec_hash": "ed839d34f480cba15aaf107e33c090c4",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.sec2_hborel_nonzero_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.sec2_hborel_nonzero_hypotheses",
      "witness_ok": true
     }
    ],
@@ -2624,7 +2624,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.sec3_HH_inclusion",
+     "accept": "MVFBSDEJ.Acceptance.sec3_HH_inclusion",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2634,15 +2634,15 @@
      "name": "E int_0^T |V|^2 <= T E sup |V|^2, so HH is contained in Hweak",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.sec3_HH_inclusion",
-     "spec_hash": "ed839d34f480cba130514b735af5f227",
+     "spec": "MVFBSDEJ.PaperSpec.sec3_HH_inclusion",
+     "spec_hash": "ed839d34f480cba13d9a37898844e038",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.sec3_HH_inclusion_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.sec3_HH_inclusion_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.sec3_HH_definite",
+     "accept": "MVFBSDEJ.Acceptance.sec3_HH_definite",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2652,15 +2652,15 @@
      "name": "under the identification ||.||_HH is a norm: it vanishes exactly on the zero class",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.sec3_HH_definite",
-     "spec_hash": "ed839d34f480cba12b4c9985cfe528af",
+     "spec": "MVFBSDEJ.PaperSpec.sec3_HH_definite",
+     "spec_hash": "ed839d34f480cba1ea08606483b8ce0f",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.sec3_space_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.sec3_space_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.sec3_HH_norm",
+     "accept": "MVFBSDEJ.Acceptance.sec3_HH_norm",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2670,15 +2670,15 @@
      "name": "||.||_HH satisfies the triangle inequality and is absolutely homogeneous",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.sec3_HH_norm",
-     "spec_hash": "ed839d34f480cba140aa5342c14a73fc",
+     "spec": "MVFBSDEJ.PaperSpec.sec3_HH_norm",
+     "spec_hash": "ed839d34f480cba1982fd9e7618d6f99",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.sec3_HH_norm_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.sec3_HH_norm_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.sec3_HH_complete",
+     "accept": "MVFBSDEJ.Acceptance.sec3_HH_complete",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2688,11 +2688,11 @@
      "name": "(HH, ||.||_HH) is complete",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.sec3_HH_complete",
-     "spec_hash": "ed839d34f480cba140502fce3ed6073c",
+     "spec": "MVFBSDEJ.PaperSpec.sec3_HH_complete",
+     "spec_hash": "ed839d34f480cba105a40fd50a78c129",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.sec3_HH_complete_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.sec3_HH_complete_hypotheses",
      "witness_ok": true
     }
    ],
@@ -2708,7 +2708,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.sec3_cadlag_versions",
+     "accept": "MVFBSDEJ.Acceptance.sec3_cadlag_versions",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2718,15 +2718,15 @@
      "name": "both sides of each identity are cadlag in t: the stochastic integrals of (1.1) have adapted versions with every path cadlag",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.sec3_cadlag_versions",
-     "spec_hash": "ed839d34f480cba18328d3bafc39f8ed",
+     "spec": "MVFBSDEJ.PaperSpec.sec3_cadlag_versions",
+     "spec_hash": "ed839d34f480cba1dfafad3c01dd9c62",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.sec3_cadlag_versions_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.sec3_cadlag_versions_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.sec3_one_null_set",
+     "accept": "MVFBSDEJ.Acceptance.sec3_one_null_set",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2736,11 +2736,11 @@
      "name": "the identities of (1.1) holding almost surely for every t hold off one null set for all t",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.sec3_one_null_set",
-     "spec_hash": "ed839d34f480cba1209a5aa6ac298690",
+     "spec": "MVFBSDEJ.PaperSpec.sec3_one_null_set",
+     "spec_hash": "ed839d34f480cba138f9fd9e89c0b6c3",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.sec3_space_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.sec3_space_hypotheses",
      "witness_ok": true
     }
    ],
@@ -2756,7 +2756,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.thm_stab_companion",
+     "accept": "MVFBSDEJ.Acceptance.thm_stab_companion",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2766,15 +2766,15 @@
      "name": "(a) the companion bound: with system 2 under Assumptions 2.2–2.5, (3.1) with the differences along solution 1 and the constant of system 2",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.thm_stab_companion",
-     "spec_hash": "ed839d34f480cba10ff3a550a92ccddf",
+     "spec": "MVFBSDEJ.PaperSpec.thm_stab_companion",
+     "spec_hash": "ed839d34f480cba1c07a514f459f590c",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.thm_stab_nonzero_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.thm_stab_data",
+     "accept": "MVFBSDEJ.Acceptance.thm_stab_data",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2784,15 +2784,15 @@
      "name": "(b) systems sharing b, σ, h, f: continuous dependence on the initial and terminal data",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.thm_stab_data",
-     "spec_hash": "ed839d34f480cba1f26d5949b31ba63f",
+     "spec": "MVFBSDEJ.PaperSpec.thm_stab_data",
+     "spec_hash": "ed839d34f480cba104333be660b0803f",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.thm_stab_nonzero_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.thm_stab_minimal",
+     "accept": "MVFBSDEJ.Acceptance.thm_stab_minimal",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2802,11 +2802,11 @@
      "name": "(c) (3.1) in [0, ∞] with only (2.3) on system 2, so whenever the displayed differences are square-integrable",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.thm_stab_minimal",
-     "spec_hash": "ed839d34f480cba127494e1cb3f498aa",
+     "spec": "MVFBSDEJ.PaperSpec.thm_stab_minimal",
+     "spec_hash": "ed839d34f480cba1a1fc76e8097d81f2",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.thm_stab_nonzero_hypotheses",
      "witness_ok": true
     }
    ],
@@ -2822,7 +2822,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.cor_margin_channels",
+     "accept": "MVFBSDEJ.Acceptance.cor_margin_channels",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2832,15 +2832,15 @@
      "name": "a margin in (2.13) makes every channel strictly dissipative",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.cor_margin_channels",
-     "spec_hash": "ed839d34f480cba14127298d8cc156d9",
+     "spec": "MVFBSDEJ.PaperSpec.cor_margin_channels",
+     "spec_hash": "ed839d34f480cba1ad6475a2826a7556",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.cor_robust_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.cor_robust_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.cor_margin_additive",
+     "accept": "MVFBSDEJ.Acceptance.cor_margin_additive",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2850,15 +2850,15 @@
      "name": "an additive h₀ cannot serve as a baseline, with ν ≠ 0",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.cor_margin_additive",
-     "spec_hash": "ed839d34f480cba19075028a95edf84d",
+     "spec": "MVFBSDEJ.PaperSpec.cor_margin_additive",
+     "spec_hash": "ed839d34f480cba1f6b25342c98f12fe",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.cor_margin_additive_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.cor_margin_additive_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.cor_margin_finite",
+     "accept": "MVFBSDEJ.Acceptance.cor_margin_finite",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2868,15 +2868,15 @@
      "name": "jump feedback through finitely many functionals of u supplies no margin, with L²(ν) infinite dimensional",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.cor_margin_finite",
-     "spec_hash": "ed839d34f480cba15e05ed8a37017606",
+     "spec": "MVFBSDEJ.PaperSpec.cor_margin_finite",
+     "spec_hash": "ed839d34f480cba1e2a2c92114efd4a4",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.cor_margin_finite_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.cor_margin_finite_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.cor_margin_continuous",
+     "accept": "MVFBSDEJ.Acceptance.cor_margin_continuous",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2886,15 +2886,15 @@
      "name": "L²(ν) infinite-dimensional: jump feedback through finitely many continuous, possibly nonlinear, functionals of u, with any law dependence, supplies no margin",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.cor_margin_continuous",
-     "spec_hash": "ed839d34f480cba1bd840ffee2f6a13b",
+     "spec": "MVFBSDEJ.PaperSpec.cor_margin_continuous",
+     "spec_hash": "ed839d34f480cba1bb8184bafca01d3f",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.cor_margin_continuous_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.cor_margin_continuous_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.cor_margin_separate",
+     "accept": "MVFBSDEJ.Acceptance.cor_margin_separate",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2904,15 +2904,15 @@
      "name": "finitely many continuous functionals cannot separate the points of an infinite-dimensional space",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.cor_margin_separate",
+     "spec": "MVFBSDEJ.PaperSpec.cor_margin_separate",
      "spec_hash": "ed839d34f480cba1b90f9a7b02bff832",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.cor_margin_continuous_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.cor_margin_continuous_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.cor_margin_findim",
+     "accept": "MVFBSDEJ.Acceptance.cor_margin_findim",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2922,11 +2922,11 @@
      "name": "L²(ν) finite-dimensional: finitely many functionals determine u and such feedback carries a margin",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.cor_margin_findim",
-     "spec_hash": "ed839d34f480cba153b1b629e759bb45",
+     "spec": "MVFBSDEJ.PaperSpec.cor_margin_findim",
+     "spec_hash": "ed839d34f480cba1271f1706f481bec3",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.cor_margin_findim_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.cor_margin_findim_hypotheses",
      "witness_ok": true
     }
    ],
@@ -2942,7 +2942,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.sec4_horizon_not_contractive",
+     "accept": "MVFBSDEJ.Acceptance.sec4_horizon_not_contractive",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2952,11 +2952,11 @@
      "name": "shortening the horizon does not make the frozen-coefficient map contractive: on every horizon a system satisfying the assumptions has a frozen map that does not decrease distances",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.sec4_horizon_not_contractive",
-     "spec_hash": "ed839d34f480cba1fc081d81965ca7e6",
+     "spec": "MVFBSDEJ.PaperSpec.sec4_horizon_not_contractive",
+     "spec_hash": "ed839d34f480cba1a81a001de59007a4",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.sec4_horizon_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.sec4_horizon_hypotheses",
      "witness_ok": true
     }
    ],
@@ -2972,7 +2972,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.sec4_supremum_criterion",
+     "accept": "MVFBSDEJ.Acceptance.sec4_supremum_criterion",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -2981,18 +2981,18 @@
      "defs_pending": [],
      "name": "a càdlàg local martingale whose running supremum is integrable has zero-mean increments",
      "passage_changed": {
-      "Dissertation.PaperSpec.A.sec4_supremum_criterion": [
+      "MVFBSDEJ.PaperSpec.sec4_supremum_criterion": [
        "claude-auditor",
        "claude-author",
        "claude-reviewer"
       ]
      },
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.sec4_supremum_criterion",
+     "spec": "MVFBSDEJ.PaperSpec.sec4_supremum_criterion",
      "spec_hash": "ed839d34f480cba1f588c2071f5242ff",
      "spec_ok": true,
      "spec_review": "passage changed since review",
-     "witness": "Dissertation.Acceptance.A.sec4_supremum_criterion_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.sec4_supremum_criterion_hypotheses",
      "witness_ok": true
     }
    ],
@@ -3012,8 +3012,8 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [
-      "Dissertation.PaperSpec.A.WP",
-      "Dissertation.PaperSpec.A.WeakForcedSolution"
+      "MVFBSDEJ.PaperSpec.WP",
+      "MVFBSDEJ.PaperSpec.WeakForcedSolution"
      ],
      "defs_changed": [],
      "defs_pending": [],
@@ -3037,7 +3037,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.eq_coeffint",
+     "accept": "MVFBSDEJ.Acceptance.eq_coeffint",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3047,15 +3047,15 @@
      "name": "(4.2): E int |psi(s, Theta_s, mu_s)|^2 <= C E int (|X|^2 + |Y|^2 + |Z|^2 + ||U||^2 + |psi(s, 0, delta_0)|^2), psi in {b, sigma, h, f}",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.eq_coeffint",
-     "spec_hash": "ed839d34f480cba13c4b68e5e50bad34",
+     "spec": "MVFBSDEJ.PaperSpec.eq_coeffint",
+     "spec_hash": "ed839d34f480cba133ce0e119f63091f",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.eq_termg",
+     "accept": "MVFBSDEJ.Acceptance.eq_termg",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3065,11 +3065,11 @@
      "name": "(4.3): E |g(X_T, Law X_T)|^2 <= C (E |X_T|^2 + |g(0, delta_0)|^2)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.eq_termg",
-     "spec_hash": "ed839d34f480cba171988e2e6de37794",
+     "spec": "MVFBSDEJ.PaperSpec.eq_termg",
+     "spec_hash": "ed839d34f480cba12450d1561dfcb469",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses",
      "witness_ok": true
     }
    ],
@@ -3118,7 +3118,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.sec5_limin",
+     "accept": "MVFBSDEJ.Acceptance.sec5_limin",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3128,11 +3128,11 @@
      "name": "the system of Li–Min Example 3.2 satisfies (2.3) and Assumptions 2.2–2.3 and has no solution on T = 3π/4 from an initial datum of nonzero mean",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.sec5_limin",
-     "spec_hash": "ed839d34f480cba132884b458e231942",
+     "spec": "MVFBSDEJ.PaperSpec.sec5_limin",
+     "spec_hash": "ed839d34f480cba139dd24c614ab7445",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.sec5_limin_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.sec5_limin_hypotheses",
      "witness_ok": true
     }
    ],
@@ -3148,7 +3148,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.ex_concrete_i",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_i",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3158,15 +3158,15 @@
      "name": "Example 5.1(i) meets every assumption at arbitrary activity",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_i",
-     "spec_hash": "ed839d34f480cba1d2f6e8919288ad6b",
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i",
+     "spec_hash": "ed839d34f480cba18c5c46dad71ae633",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_concrete_ii",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_ii",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3176,15 +3176,15 @@
      "name": "Example 5.1(ii) meets every assumption at arbitrary activity",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_ii",
-     "spec_hash": "ed839d34f480cba1cba84bcbe1866633",
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_ii",
+     "spec_hash": "ed839d34f480cba15cf7f3328c0ad0e6",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_brownian",
+     "accept": "MVFBSDEJ.Acceptance.ex_brownian",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3194,15 +3194,15 @@
      "name": "Example 5.2 recovers the Brownian subclass",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_brownian",
-     "spec_hash": "ed839d34f480cba13b36df98cbfaee33",
+     "spec": "MVFBSDEJ.PaperSpec.ex_brownian",
+     "spec_hash": "ed839d34f480cba1549e88774dfe4a71",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_brownian_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_brownian_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_brownian_reduction",
+     "accept": "MVFBSDEJ.Acceptance.ex_brownian_reduction",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3212,15 +3212,15 @@
      "name": "Example 5.2: at ν = 0 the assumptions and solution notions are the Brownian ones",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_brownian_reduction",
-     "spec_hash": "ed839d34f480cba16ec077c21383f1ee",
+     "spec": "MVFBSDEJ.PaperSpec.ex_brownian_reduction",
+     "spec_hash": "ed839d34f480cba160cc15ad2ee3a619",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_brownian_reduction_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_brownian_reduction_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_expfunc",
+     "accept": "MVFBSDEJ.Acceptance.ex_expfunc",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3230,15 +3230,15 @@
      "name": "Example 5.3 recovers the expectation-functional subclass",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_expfunc",
-     "spec_hash": "ed839d34f480cba1c0ebc41bbfe679cc",
+     "spec": "MVFBSDEJ.PaperSpec.ex_expfunc",
+     "spec_hash": "ed839d34f480cba15a6f123acd31afd5",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_expfunc_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_expfunc_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_expfunc_limin",
+     "accept": "MVFBSDEJ.Acceptance.ex_expfunc_limin",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3248,15 +3248,15 @@
      "name": "Example 5.3: the kernels of the independent-copy interactions of [LiMin] embed in the class",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_expfunc_limin",
-     "spec_hash": "ed839d34f480cba1dc8d682dbdc81fa7",
+     "spec": "MVFBSDEJ.PaperSpec.ex_expfunc_limin",
+     "spec_hash": "ed839d34f480cba1f28bceb8fea3e945",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_expfunc_limin_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_expfunc_limin_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_radial",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_radial",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3266,15 +3266,15 @@
      "name": "Example 5.4: a nonlinear functional of the full tuple",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial",
-     "spec_hash": "ed839d34f480cba1fc87ff54d30df5ad",
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_radial",
+     "spec_hash": "ed839d34f480cba1e35b736319ec8895",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_corr",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_U_corr",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3284,15 +3284,15 @@
      "name": "the U-marginal radial statistics are no expectation functionals, with L²(ν) ≠ 0",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr",
-     "spec_hash": "ed839d34f480cba193f328d7c8c243ea",
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_U_corr",
+     "spec_hash": "ed839d34f480cba10f66e794dcb439f4",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_mono",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_mono",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3302,15 +3302,15 @@
      "name": "the crowding interaction is monotone at every interaction strength ε ≥ 0",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_mono",
-     "spec_hash": "ed839d34f480cba17aa9ad92a733a79a",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_mono",
+     "spec_hash": "ed839d34f480cba18bebeea12a1b6e30",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_wp",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_wp",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3320,15 +3320,15 @@
      "name": "well-posedness at every interaction strength ε ≥ 0 (Theorem 3.5)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_wp",
-     "spec_hash": "ed839d34f480cba1382a433c842b2a2c",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_wp",
+     "spec_hash": "ed839d34f480cba1169a2b8090bb4149",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.ex_dealer_active",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_active",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3338,11 +3338,11 @@
      "name": "Example 5.5: in an explicit specialisation the interaction is active along the solution",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_active",
-     "spec_hash": "ed839d34f480cba11684a792fea39139",
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_active",
+     "spec_hash": "ed839d34f480cba1a2ecf4542b86cf40",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_spec_hypotheses",
      "witness_ok": true
     }
    ],
@@ -3380,7 +3380,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.thm_stab",
+     "accept": "MVFBSDEJ.Acceptance.thm_stab",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3390,15 +3390,15 @@
      "name": "the stability estimate (Theorem 3.1)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.thm_stab",
-     "spec_hash": "ed839d34f480cba16bc55062de98e587",
+     "spec": "MVFBSDEJ.PaperSpec.thm_stab",
+     "spec_hash": "ed839d34f480cba14815ce65dd3b146f",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.thm_stab_nonzero_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.thm_uniq",
+     "accept": "MVFBSDEJ.Acceptance.thm_uniq",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3408,15 +3408,15 @@
      "name": "uniqueness (Theorem 3.3)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.thm_uniq",
-     "spec_hash": "ed839d34f480cba1b8815741b34ba4e5",
+     "spec": "MVFBSDEJ.PaperSpec.thm_uniq",
+     "spec_hash": "ed839d34f480cba1c0edbd81a0b01a9e",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.thm_uniq_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.thm_cwp",
+     "accept": "MVFBSDEJ.Acceptance.thm_cwp",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3426,15 +3426,15 @@
      "name": "existence and uniqueness on every finite horizon (Theorem 3.5)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.thm_cwp",
-     "spec_hash": "ed839d34f480cba10deeabcd10e6e74d",
+     "spec": "MVFBSDEJ.PaperSpec.thm_cwp",
+     "spec_hash": "ed839d34f480cba12370b493940a6d61",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.cor_robust_wp",
+     "accept": "MVFBSDEJ.Acceptance.cor_robust_wp",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3444,15 +3444,15 @@
      "name": "robustness at m = n below the dissipativity margin (Corollary 3.6)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.cor_robust_wp",
-     "spec_hash": "ed839d34f480cba16dd662e97e677716",
+     "spec": "MVFBSDEJ.PaperSpec.cor_robust_wp",
+     "spec_hash": "ed839d34f480cba1617ff136058ce573",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.cor_robust_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.cor_robust_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.rem_diag_mono",
+     "accept": "MVFBSDEJ.Acceptance.rem_diag_mono",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3462,15 +3462,15 @@
      "name": "pointwise monotonicity gives expected diagonal monotonicity (Remark 2.8)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_diag_mono",
-     "spec_hash": "ed839d34f480cba146c1633f8e03b86c",
+     "spec": "MVFBSDEJ.PaperSpec.rem_diag_mono",
+     "spec_hash": "ed839d34f480cba16dbf12782c23a6c7",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.rem_affine_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.prop_strict",
+     "accept": "MVFBSDEJ.Acceptance.prop_strict",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3480,15 +3480,15 @@
      "name": "expected diagonal monotonicity is strictly weaker (Proposition 3.8)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.prop_strict",
-     "spec_hash": "ed839d34f480cba1f1c48950c52ae4f4",
+     "spec": "MVFBSDEJ.PaperSpec.prop_strict",
+     "spec_hash": "ed839d34f480cba187dc1facdd73b114",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.prop_strict_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.prop_strict_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.rem_diag_mono_converse",
+     "accept": "MVFBSDEJ.Acceptance.rem_diag_mono_converse",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3498,15 +3498,15 @@
      "name": "expected diagonal monotonicity is strictly weaker: a full coefficient system satisfying Assumption 2.5 without the pointwise condition (Remark 2.8)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_diag_mono_converse",
-     "spec_hash": "ed839d34f480cba14b5e4594e14d9dc7",
+     "spec": "MVFBSDEJ.PaperSpec.rem_diag_mono_converse",
+     "spec_hash": "ed839d34f480cba121a2e85359198f21",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.rem_beta1_dich",
+     "accept": "MVFBSDEJ.Acceptance.rem_beta1_dich",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3516,11 +3516,11 @@
      "name": "the reduction to the jump channel and the β₁ dichotomy, with ν ≠ 0",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.rem_beta1_dich",
-     "spec_hash": "ed839d34f480cba1312ac03d25ff8ea1",
+     "spec": "MVFBSDEJ.PaperSpec.rem_beta1_dich",
+     "spec_hash": "ed839d34f480cba15923d378afdb7162",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.rem_affine_hypotheses",
      "witness_ok": true
     }
    ],
@@ -3562,7 +3562,7 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [
-      "Dissertation.PaperSpec.A.Solution"
+      "MVFBSDEJ.PaperSpec.Solution"
      ],
      "defs_changed": [],
      "defs_pending": [],
@@ -3586,7 +3586,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.eq_compid",
+     "accept": "MVFBSDEJ.Acceptance.eq_compid",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3596,11 +3596,11 @@
      "name": "the compensation formula",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.eq_compid",
-     "spec_hash": "ed839d34f480cba1551f4f42ffdf2fa8",
+     "spec": "MVFBSDEJ.PaperSpec.eq_compid",
+     "spec_hash": "ed839d34f480cba19bf140186b2d4c13",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.sec2_compensation_nonzero_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.sec2_compensation_nonzero_hypotheses",
      "witness_ok": true
     }
    ],
@@ -3616,7 +3616,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.eq_zeromean",
+     "accept": "MVFBSDEJ.Acceptance.eq_zeromean",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3626,11 +3626,11 @@
      "name": "the compensated integral has mean zero",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.eq_zeromean",
-     "spec_hash": "ed839d34f480cba1ca027a9d4d1614c9",
+     "spec": "MVFBSDEJ.PaperSpec.eq_zeromean",
+     "spec_hash": "ed839d34f480cba1ab4a0cb1d17ec7d1",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.sec2_compensation_nonzero_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.sec2_compensation_nonzero_hypotheses",
      "witness_ok": true
     }
    ],
@@ -3650,7 +3650,7 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [
-      "Dissertation.WellPosedness.Spec.JointBorel"
+      "MVFBSDEJ.WellPosedness.Spec.JointBorel"
      ],
      "defs_changed": [],
      "defs_pending": [],
@@ -3674,7 +3674,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.eq_fubiniiso",
+     "accept": "MVFBSDEJ.Acceptance.eq_fubiniiso",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3684,11 +3684,11 @@
      "name": "the Fubini isometry, the jointly measurable representative and its uniqueness",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.eq_fubiniiso",
+     "spec": "MVFBSDEJ.PaperSpec.eq_fubiniiso",
      "spec_hash": "ed839d34f480cba1f8905adfcaf41890",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.eq_fubiniiso_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.eq_fubiniiso_hypotheses",
      "witness_ok": true
     }
    ],
@@ -3704,7 +3704,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.eq_coefmeas",
+     "accept": "MVFBSDEJ.Acceptance.eq_coefmeas",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3714,15 +3714,15 @@
      "name": "(2.5), the first line: along any diagonal input the evaluations of b, σ and f are progressively measurable",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.eq_coefmeas",
-     "spec_hash": "ed839d34f480cba11ac3211646c24c86",
+     "spec": "MVFBSDEJ.PaperSpec.eq_coefmeas",
+     "spec_hash": "ed839d34f480cba1c9dc5757782364d2",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses",
      "witness_ok": true
     },
     {
-     "accept": "Dissertation.Acceptance.A.eq_coefmeas_jump",
+     "accept": "MVFBSDEJ.Acceptance.eq_coefmeas_jump",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3732,11 +3732,11 @@
      "name": "(2.5), the second line: the jump coefficient at the predictable tuple and its law is predictable",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.eq_coefmeas_jump",
-     "spec_hash": "ed839d34f480cba1e13c6b7ca8ccca73",
+     "spec": "MVFBSDEJ.PaperSpec.eq_coefmeas_jump",
+     "spec_hash": "ed839d34f480cba16b26e31f5be9d0e8",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses",
      "witness_ok": true
     }
    ],
@@ -3822,7 +3822,7 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [
-      "Dissertation.PaperSpec.A.Margin212"
+      "MVFBSDEJ.PaperSpec.Margin212"
      ],
      "defs_changed": [],
      "defs_pending": [],
@@ -3850,7 +3850,7 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [
-      "Dissertation.WellPosedness.Spec.Margin213"
+      "MVFBSDEJ.WellPosedness.Spec.Margin213"
      ],
      "defs_changed": [],
      "defs_pending": [],
@@ -3955,7 +3955,7 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [
-      "Dissertation.PaperSpec.A.ForcedSolution"
+      "MVFBSDEJ.PaperSpec.ForcedSolution"
      ],
      "defs_changed": [],
      "defs_pending": [],
@@ -3979,7 +3979,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.eq_coeffint",
+     "accept": "MVFBSDEJ.Acceptance.eq_coeffint",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -3989,11 +3989,11 @@
      "name": "(4.2): E int |psi(s, Theta_s, mu_s)|^2 <= C E int (|X|^2 + |Y|^2 + |Z|^2 + ||U||^2 + |psi(s, 0, delta_0)|^2), psi in {b, sigma, h, f}",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.eq_coeffint",
-     "spec_hash": "ed839d34f480cba13c4b68e5e50bad34",
+     "spec": "MVFBSDEJ.PaperSpec.eq_coeffint",
+     "spec_hash": "ed839d34f480cba133ce0e119f63091f",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses",
      "witness_ok": true
     }
    ],
@@ -4009,7 +4009,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.eq_termg",
+     "accept": "MVFBSDEJ.Acceptance.eq_termg",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -4019,11 +4019,11 @@
      "name": "(4.3): E |g(X_T, Law X_T)|^2 <= C (E |X_T|^2 + |g(0, delta_0)|^2)",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.eq_termg",
-     "spec_hash": "ed839d34f480cba171988e2e6de37794",
+     "spec": "MVFBSDEJ.PaperSpec.eq_termg",
+     "spec_hash": "ed839d34f480cba12450d1561dfcb469",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses",
      "witness_ok": true
     }
    ],
@@ -4270,7 +4270,7 @@
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.eq_bwdyoung",
+     "accept": "MVFBSDEJ.Acceptance.eq_bwdyoung",
      "accept_ok": true,
      "author_reviewed": [],
      "corrects": null,
@@ -4280,11 +4280,11 @@
      "name": "(4.25) for every 0 < ε ≤ 1, C independent of ε",
      "passage_changed": {},
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.eq_bwdyoung",
-     "spec_hash": "ed839d34f480cba13db23656421cf5a0",
+     "spec": "MVFBSDEJ.PaperSpec.eq_bwdyoung",
+     "spec_hash": "ed839d34f480cba1ae21c6f7f8e31910",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness": "MVFBSDEJ.Acceptance.lem_pert_two_data_hypotheses",
      "witness_ok": true
     }
    ],

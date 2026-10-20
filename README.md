@@ -15,12 +15,12 @@ author linked, checked and reviewed; it is not an independent certification.
 
 The formalisation is organised in three layers, and only the third decides what counts as proved:
 
-1. `Dissertation/PaperSpec/A/` — each claim of the paper (or each clause of one) as a closed
+1. `MVFBSDEJ/PaperSpec/` — each claim of the paper (or each clause of one) as a closed
    proposition, written from the manuscript;
-2. the rest of `Dissertation/` — the implementation: coefficients, laws and Wasserstein
+2. the rest of `MVFBSDEJ/` — the implementation: coefficients, laws and Wasserstein
    distances (`Law/`), the system and its assumptions, existence, uniqueness and stability
    (`WellPosedness/`);
-3. `Dissertation/Acceptance/A/` — for each proved claim, a theorem whose type is exactly the
+3. `MVFBSDEJ/Acceptance/` — for each proved claim, a theorem whose type is exactly the
    proposition of layer 1.
 
 [`ACCEPTANCE.md`](ACCEPTANCE.md) is the generated report: per claim, whether its proposition is
@@ -106,10 +106,10 @@ cd <checkout>/paper && latexmk -pdf wellposedness.tex
 
 | Path | What |
 |---|---|
-| `Dissertation/PaperSpec/A/` | the statements of the paper, one closed proposition per clause |
-| `Dissertation/Acceptance/A/` | their proofs, and witnesses that their hypotheses can be met |
-| `Dissertation/Law/` | laws of finite second moment, the 2-Wasserstein distance, law functionals |
-| `Dissertation/WellPosedness/` | the system, its assumptions, existence, uniqueness, stability and the examples |
+| `MVFBSDEJ/PaperSpec/` | the statements of the paper, one closed proposition per clause |
+| `MVFBSDEJ/Acceptance/` | their proofs, and witnesses that their hypotheses can be met |
+| `MVFBSDEJ/Law/` | laws of finite second moment, the 2-Wasserstein distance, law functionals |
+| `MVFBSDEJ/WellPosedness/` | the system, its assumptions, existence, uniqueness, stability and the examples |
 | `acceptance/` | the claim inventory (`claims.json`), the reviews (`review/`) and the policy |
 | `tools/` | the acceptance checker, its Lean probe and the comparator script |
 

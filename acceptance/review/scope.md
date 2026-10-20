@@ -37,7 +37,7 @@ their host ((2.12), (2.13), (4.1)), and the relation of Assumption 2.5 to [RSZ]/
 mostly about cited work but whose checkable part is the `ν = 0` reduction of Example 5.2.
 
 **Clause coverage.** All 47 recorded-`formal` claims were checked against the propositions in
-`Dissertation/PaperSpec/A/`. Five assertions are not covered by any clause of their claim:
+`MVFBSDEJ/PaperSpec/`. Five assertions are not covered by any clause of their claim:
 
 1. `A:sec3:one-null-set`: "Both sides of each identity are càdlàg in $t$, so the exceptional null
    set may be taken independent of $t$." `sec3_one_null_set` assumes a process `M` with almost

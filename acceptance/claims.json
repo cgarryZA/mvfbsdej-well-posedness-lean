@@ -27,7 +27,7 @@
      "name": "definition",
      "spec": null,
      "defs": [
-      "Dissertation.WellPosedness.System.diagonalInputs"
+      "MVFBSDEJ.WellPosedness.System.diagonalInputs"
      ]
     }
    ]
@@ -49,7 +49,7 @@
      "name": "definition",
      "spec": null,
      "defs": [
-      "Dissertation.WellPosedness.Spec.Assumption22"
+      "MVFBSDEJ.WellPosedness.Spec.Assumption22"
      ]
     }
    ]
@@ -71,7 +71,7 @@
      "name": "definition",
      "spec": null,
      "defs": [
-      "Dissertation.WellPosedness.Spec.Assumption23"
+      "MVFBSDEJ.WellPosedness.Spec.Assumption23"
      ]
     }
    ]
@@ -91,9 +91,9 @@
    "clauses": [
     {
      "name": "main",
-     "spec": "Dissertation.PaperSpec.A.ass_G",
-     "accept": "Dissertation.Acceptance.A.ass_G",
-     "witness": "Dissertation.Acceptance.A.ass_G_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ass_G",
+     "accept": "MVFBSDEJ.Acceptance.ass_G",
+     "witness": "MVFBSDEJ.Acceptance.ass_G_hypotheses"
     }
    ]
   },
@@ -114,7 +114,7 @@
      "name": "definition",
      "spec": null,
      "defs": [
-      "Dissertation.WellPosedness.Spec.Assumption25"
+      "MVFBSDEJ.WellPosedness.Spec.Assumption25"
      ]
     }
    ]
@@ -134,27 +134,27 @@
    "clauses": [
     {
      "name": "(2.8)",
-     "spec": "Dissertation.PaperSpec.A.eq_coupling",
-     "accept": "Dissertation.Acceptance.A.eq_coupling",
-     "witness": "Dissertation.Acceptance.A.eq_coupling_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.eq_coupling",
+     "accept": "MVFBSDEJ.Acceptance.eq_coupling",
+     "witness": "MVFBSDEJ.Acceptance.eq_coupling_hypotheses"
     },
     {
      "name": "(2.9)",
-     "spec": "Dissertation.PaperSpec.A.eq_couplingT",
-     "accept": "Dissertation.Acceptance.A.eq_couplingT",
-     "witness": "Dissertation.Acceptance.A.eq_couplingT_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.eq_couplingT",
+     "accept": "MVFBSDEJ.Acceptance.eq_couplingT",
+     "witness": "MVFBSDEJ.Acceptance.eq_couplingT_hypotheses"
     },
     {
      "name": "(2.10)",
-     "spec": "Dissertation.PaperSpec.A.eq_lipfun",
-     "accept": "Dissertation.Acceptance.A.eq_lipfun",
-     "witness": "Dissertation.Acceptance.A.eq_lipfun_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.eq_lipfun",
+     "accept": "MVFBSDEJ.Acceptance.eq_lipfun",
+     "witness": "MVFBSDEJ.Acceptance.eq_lipfun_hypotheses"
     },
     {
      "name": "(2.11)",
-     "spec": "Dissertation.PaperSpec.A.eq_margproj",
-     "accept": "Dissertation.Acceptance.A.eq_margproj",
-     "witness": "Dissertation.Acceptance.A.eq_margproj_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.eq_margproj",
+     "accept": "MVFBSDEJ.Acceptance.eq_margproj",
+     "witness": "MVFBSDEJ.Acceptance.eq_margproj_hypotheses"
     }
    ]
   },
@@ -187,15 +187,15 @@
    "clauses": [
     {
      "name": "the pointwise condition gives Assumption 2.5, under (2.3) and Assumption 2.3",
-     "spec": "Dissertation.PaperSpec.A.rem_diag_mono",
-     "accept": "Dissertation.Acceptance.A.rem_diag_mono",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.rem_diag_mono",
+     "accept": "MVFBSDEJ.Acceptance.rem_diag_mono",
+     "witness": "MVFBSDEJ.Acceptance.rem_affine_hypotheses"
     },
     {
      "name": "the converse fails",
-     "spec": "Dissertation.PaperSpec.A.rem_diag_mono_converse",
-     "accept": "Dissertation.Acceptance.A.rem_diag_mono_converse",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.rem_diag_mono_converse",
+     "accept": "MVFBSDEJ.Acceptance.rem_diag_mono_converse",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses"
     }
    ]
   },
@@ -214,21 +214,21 @@
    "clauses": [
     {
      "name": "a uniform variable, a function of W1_t, at every t > 0",
-     "spec": "Dissertation.PaperSpec.A.rem_intrinsic_uniform",
-     "accept": "Dissertation.Acceptance.A.rem_intrinsic_uniform",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.rem_intrinsic_uniform",
+     "accept": "MVFBSDEJ.Acceptance.rem_intrinsic_uniform",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses"
     },
     {
      "name": "every coupling is the joint law of F_t-measurable inputs, t > 0",
-     "spec": "Dissertation.PaperSpec.A.rem_intrinsic_coupling",
-     "accept": "Dissertation.Acceptance.A.rem_intrinsic_coupling",
-     "witness": "Dissertation.Acceptance.A.rem_coupling_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.rem_intrinsic_coupling",
+     "accept": "MVFBSDEJ.Acceptance.rem_intrinsic_coupling",
+     "witness": "MVFBSDEJ.Acceptance.rem_coupling_hypotheses"
     },
     {
      "name": "Assumptions 2.3 and 2.5 do not depend on the basis",
-     "spec": "Dissertation.PaperSpec.A.rem_intrinsic_basis",
-     "accept": "Dissertation.Acceptance.A.rem_intrinsic_basis",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.rem_intrinsic_basis",
+     "accept": "MVFBSDEJ.Acceptance.rem_intrinsic_basis",
+     "witness": "MVFBSDEJ.Acceptance.rem_affine_hypotheses"
     }
    ]
   },
@@ -247,33 +247,33 @@
    "clauses": [
     {
      "name": "ν ≠ 0 gives L²(ν) ≠ {0}; ν = 0 gives L²(ν) = {0}",
-     "spec": "Dissertation.PaperSpec.A.rem_beta1_fibre",
-     "accept": "Dissertation.Acceptance.A.rem_beta1_fibre",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.rem_beta1_fibre",
+     "accept": "MVFBSDEJ.Acceptance.rem_beta1_fibre",
+     "witness": "MVFBSDEJ.Acceptance.rem_affine_hypotheses"
     },
     {
      "name": "the reduction to the jump channel and the β₁ dichotomy, with ν ≠ 0",
-     "spec": "Dissertation.PaperSpec.A.rem_beta1_dich",
-     "accept": "Dissertation.Acceptance.A.rem_beta1_dich",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.rem_beta1_dich",
+     "accept": "MVFBSDEJ.Acceptance.rem_beta1_dich",
+     "witness": "MVFBSDEJ.Acceptance.rem_affine_hypotheses"
     },
     {
      "name": "at ν = 0 the restriction disappears: an additive jump coefficient allows β₁ > 0",
-     "spec": "Dissertation.PaperSpec.A.rem_beta1_zero",
-     "accept": "Dissertation.Acceptance.A.rem_beta1_zero",
-     "witness": "Dissertation.Acceptance.A.ex_brownian_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.rem_beta1_zero",
+     "accept": "MVFBSDEJ.Acceptance.rem_beta1_zero",
+     "witness": "MVFBSDEJ.Acceptance.ex_brownian_hypotheses"
     },
     {
      "name": "at ν = 0 both rank branches are available: the branch m < n with an additive jump coefficient (Example 5.2)",
-     "spec": "Dissertation.PaperSpec.A.ex_brownian",
-     "accept": "Dissertation.Acceptance.A.ex_brownian",
-     "witness": "Dissertation.Acceptance.A.ex_brownian_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_brownian",
+     "accept": "MVFBSDEJ.Acceptance.ex_brownian",
+     "witness": "MVFBSDEJ.Acceptance.ex_brownian_hypotheses"
     },
     {
      "name": "at ν = 0 both rank branches are available: the branch m > n (Example 5.2)",
-     "spec": "Dissertation.PaperSpec.A.ex_brownian_rank_gt",
-     "accept": "Dissertation.Acceptance.A.ex_brownian_rank_gt",
-     "witness": "Dissertation.Acceptance.A.ex_brownian_rank_gt_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_brownian_rank_gt",
+     "accept": "MVFBSDEJ.Acceptance.ex_brownian_rank_gt",
+     "witness": "MVFBSDEJ.Acceptance.ex_brownian_rank_gt_hypotheses"
     }
    ]
   },
@@ -292,21 +292,21 @@
    "clauses": [
     {
      "name": "a bound with the constants β̄₁, β̄₂ is (2.12) with the constants β̄ᵢ − c and margin c, for 0 < c < min{β̄₁, β̄₂}",
-     "spec": "Dissertation.PaperSpec.A.rem_margin_reduce",
-     "accept": "Dissertation.Acceptance.A.rem_margin_reduce",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.rem_margin_reduce",
+     "accept": "MVFBSDEJ.Acceptance.rem_margin_reduce",
+     "witness": "MVFBSDEJ.Acceptance.rem_affine_hypotheses"
     },
     {
      "name": "when m = n the weighted margin c gives the margin c / c_G in the unweighted form (2.13)",
-     "spec": "Dissertation.PaperSpec.A.rem_margin_unweighted",
-     "accept": "Dissertation.Acceptance.A.rem_margin_unweighted",
-     "witness": "Dissertation.Acceptance.A.rem_margin_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.rem_margin_unweighted",
+     "accept": "MVFBSDEJ.Acceptance.rem_margin_unweighted",
+     "witness": "MVFBSDEJ.Acceptance.rem_margin_hypotheses"
     },
     {
      "name": "the unweighted margin c / c_G is smaller than c when c_G > 1",
-     "spec": "Dissertation.PaperSpec.A.rem_margin_smaller",
-     "accept": "Dissertation.Acceptance.A.rem_margin_smaller",
-     "witness": "Dissertation.Acceptance.A.rem_margin_smaller_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.rem_margin_smaller",
+     "accept": "MVFBSDEJ.Acceptance.rem_margin_smaller",
+     "witness": "MVFBSDEJ.Acceptance.rem_margin_smaller_hypotheses"
     }
    ]
   },
@@ -325,9 +325,9 @@
    "clauses": [
     {
      "name": "main",
-     "spec": "Dissertation.PaperSpec.A.thm_stab",
-     "accept": "Dissertation.Acceptance.A.thm_stab",
-     "witness": "Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.thm_stab",
+     "accept": "MVFBSDEJ.Acceptance.thm_stab",
+     "witness": "MVFBSDEJ.Acceptance.thm_stab_nonzero_hypotheses"
     }
    ]
   },
@@ -346,9 +346,9 @@
    "clauses": [
     {
      "name": "Remark 3.2: a tuple of ℍ_weak satisfying (1.1) lies in ℍ",
-     "spec": "Dissertation.PaperSpec.A.rem_cwp_class",
-     "accept": "Dissertation.Acceptance.A.rem_cwp_class",
-     "witness": "Dissertation.Acceptance.A.rem_cwp_class_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.rem_cwp_class",
+     "accept": "MVFBSDEJ.Acceptance.rem_cwp_class",
+     "witness": "MVFBSDEJ.Acceptance.rem_cwp_class_hypotheses"
     }
    ]
   },
@@ -367,9 +367,9 @@
    "clauses": [
     {
      "name": "main",
-     "spec": "Dissertation.PaperSpec.A.thm_uniq",
-     "accept": "Dissertation.Acceptance.A.thm_uniq",
-     "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.thm_uniq",
+     "accept": "MVFBSDEJ.Acceptance.thm_uniq",
+     "witness": "MVFBSDEJ.Acceptance.thm_uniq_hypotheses"
     }
    ]
   },
@@ -388,33 +388,33 @@
    "clauses": [
     {
      "name": "Assumption 2.2 imposed, each tuple of ℍ_weak satisfying (1.1) lies in ℍ (Remark 3.2)",
-     "spec": "Dissertation.PaperSpec.A.rem_cwp_class",
-     "accept": "Dissertation.Acceptance.A.rem_cwp_class",
-     "witness": "Dissertation.Acceptance.A.rem_cwp_class_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.rem_cwp_class",
+     "accept": "MVFBSDEJ.Acceptance.rem_cwp_class",
+     "witness": "MVFBSDEJ.Acceptance.rem_cwp_class_hypotheses"
     },
     {
      "name": "the uniqueness only requires Assumptions 2.3–2.5 (Theorem 3.3)",
-     "spec": "Dissertation.PaperSpec.A.thm_uniq",
-     "accept": "Dissertation.Acceptance.A.thm_uniq",
-     "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.thm_uniq",
+     "accept": "MVFBSDEJ.Acceptance.thm_uniq",
+     "witness": "MVFBSDEJ.Acceptance.thm_uniq_hypotheses"
     },
     {
      "name": "the initial-data condition ξ₀ ∈ L² is necessary for a solution in ℍ",
-     "spec": "Dissertation.PaperSpec.A.rem_uniq_initial",
-     "accept": "Dissertation.Acceptance.A.rem_uniq_initial",
-     "witness": "Dissertation.Acceptance.A.rem_uniq_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.rem_uniq_initial",
+     "accept": "MVFBSDEJ.Acceptance.rem_uniq_initial",
+     "witness": "MVFBSDEJ.Acceptance.rem_uniq_hypotheses"
     },
     {
      "name": "the origin-value conditions are not necessary: the drift t^{-1/2} added to one system of Example 5.1(i), with a solution in ℍ",
-     "spec": "Dissertation.PaperSpec.A.rem_uniq_singular",
-     "accept": "Dissertation.Acceptance.A.rem_uniq_singular",
-     "witness": "Dissertation.Acceptance.A.rem_uniq_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.rem_uniq_singular",
+     "accept": "MVFBSDEJ.Acceptance.rem_uniq_singular",
+     "witness": "MVFBSDEJ.Acceptance.rem_uniq_hypotheses"
     },
     {
      "name": "the drift t^{-1/2} e added to a system satisfying (2.3) and Assumptions 2.2–2.5 violates Assumption 2.2 and keeps Assumptions 2.3–2.5; the shift X ↦ X − 2√t e returns a system satisfying Assumptions 2.2–2.5, so a solution exists",
-     "spec": "Dissertation.PaperSpec.A.rem_uniq_translation",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
-     "accept": "Dissertation.Acceptance.A.rem_uniq_translation"
+     "spec": "MVFBSDEJ.PaperSpec.rem_uniq_translation",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses",
+     "accept": "MVFBSDEJ.Acceptance.rem_uniq_translation"
     }
    ]
   },
@@ -433,15 +433,15 @@
    "clauses": [
     {
      "name": "existence and uniqueness",
-     "spec": "Dissertation.PaperSpec.A.thm_cwp",
-     "accept": "Dissertation.Acceptance.A.thm_cwp",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.thm_cwp",
+     "accept": "MVFBSDEJ.Acceptance.thm_cwp",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses"
     },
     {
      "name": "continuous dependence (3.1)",
-     "spec": "Dissertation.PaperSpec.A.thm_stab",
-     "accept": "Dissertation.Acceptance.A.thm_stab",
-     "witness": "Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.thm_stab",
+     "accept": "MVFBSDEJ.Acceptance.thm_stab",
+     "witness": "MVFBSDEJ.Acceptance.thm_stab_nonzero_hypotheses"
     }
    ]
   },
@@ -460,21 +460,21 @@
    "clauses": [
     {
      "name": "assumptions of the perturbed system",
-     "spec": "Dissertation.PaperSpec.A.cor_robust",
-     "accept": "Dissertation.Acceptance.A.cor_robust",
-     "witness": "Dissertation.Acceptance.A.cor_robust_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.cor_robust",
+     "accept": "MVFBSDEJ.Acceptance.cor_robust",
+     "witness": "MVFBSDEJ.Acceptance.cor_robust_hypotheses"
     },
     {
      "name": "well-posedness",
-     "spec": "Dissertation.PaperSpec.A.cor_robust_wp",
-     "accept": "Dissertation.Acceptance.A.cor_robust_wp",
-     "witness": "Dissertation.Acceptance.A.cor_robust_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.cor_robust_wp",
+     "accept": "MVFBSDEJ.Acceptance.cor_robust_wp",
+     "witness": "MVFBSDEJ.Acceptance.cor_robust_hypotheses"
     },
     {
      "name": "(3.5) gives (3.4)",
-     "spec": "Dissertation.PaperSpec.A.cor_robust_lip",
-     "accept": "Dissertation.Acceptance.A.cor_robust_lip",
-     "witness": "Dissertation.Acceptance.A.cor_robust_lip_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.cor_robust_lip",
+     "accept": "MVFBSDEJ.Acceptance.cor_robust_lip",
+     "witness": "MVFBSDEJ.Acceptance.cor_robust_lip_hypotheses"
     }
    ]
   },
@@ -493,15 +493,15 @@
    "clauses": [
     {
      "name": "Remark 3.7: the perturbed system satisfies Assumptions 2.2-2.5 with margin c_diss - c_pert in (2.12), arbitrary m, n",
-     "spec": "Dissertation.PaperSpec.A.rem_generalrank",
-     "accept": "Dissertation.Acceptance.A.rem_generalrank",
-     "witness": "Dissertation.Acceptance.A.rem_generalrank_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.rem_generalrank",
+     "accept": "MVFBSDEJ.Acceptance.rem_generalrank",
+     "witness": "MVFBSDEJ.Acceptance.rem_generalrank_hypotheses"
     },
     {
      "name": "Remark 3.7: the perturbed system is well-posed, arbitrary m, n",
-     "spec": "Dissertation.PaperSpec.A.rem_generalrank_wp",
-     "accept": "Dissertation.Acceptance.A.rem_generalrank_wp",
-     "witness": "Dissertation.Acceptance.A.rem_generalrank_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.rem_generalrank_wp",
+     "accept": "MVFBSDEJ.Acceptance.rem_generalrank_wp",
+     "witness": "MVFBSDEJ.Acceptance.rem_generalrank_hypotheses"
     }
    ]
   },
@@ -520,9 +520,9 @@
    "clauses": [
     {
      "name": "main",
-     "spec": "Dissertation.PaperSpec.A.prop_strict",
-     "accept": "Dissertation.Acceptance.A.prop_strict",
-     "witness": "Dissertation.Acceptance.A.prop_strict_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.prop_strict",
+     "accept": "MVFBSDEJ.Acceptance.prop_strict",
+     "witness": "MVFBSDEJ.Acceptance.prop_strict_hypotheses"
     }
    ]
   },
@@ -541,9 +541,9 @@
    "clauses": [
     {
      "name": "main",
-     "spec": "Dissertation.PaperSpec.A.lem_bpbsde",
-     "accept": "Dissertation.Acceptance.A.lem_bpbsde",
-     "witness": "Dissertation.Acceptance.A.lem_bpbsde_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.lem_bpbsde",
+     "accept": "MVFBSDEJ.Acceptance.lem_bpbsde",
+     "witness": "MVFBSDEJ.Acceptance.lem_bpbsde_hypotheses"
     }
    ]
   },
@@ -562,9 +562,9 @@
    "clauses": [
     {
      "name": "main",
-     "spec": "Dissertation.PaperSpec.A.lem_small",
-     "accept": "Dissertation.Acceptance.A.lem_small",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.lem_small",
+     "accept": "MVFBSDEJ.Acceptance.lem_small",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses"
     }
    ]
   },
@@ -583,9 +583,9 @@
    "clauses": [
     {
      "name": "main",
-     "spec": "Dissertation.PaperSpec.A.lem_pert",
-     "accept": "Dissertation.Acceptance.A.lem_pert",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.lem_pert",
+     "accept": "MVFBSDEJ.Acceptance.lem_pert",
+     "witness": "MVFBSDEJ.Acceptance.lem_pert_two_data_hypotheses"
     }
    ]
   },
@@ -604,9 +604,9 @@
    "clauses": [
     {
      "name": "main",
-     "spec": "Dissertation.PaperSpec.A.lem_cont",
-     "accept": "Dissertation.Acceptance.A.lem_cont",
-     "witness": "Dissertation.Acceptance.A.lem_cont_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.lem_cont",
+     "accept": "MVFBSDEJ.Acceptance.lem_cont",
+     "witness": "MVFBSDEJ.Acceptance.lem_cont_hypotheses"
     }
    ]
   },
@@ -625,63 +625,63 @@
    "clauses": [
     {
      "name": "(i) the Hamiltonian and its minimiser",
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_i_ham",
-     "accept": "Dissertation.Acceptance.A.ex_concrete_i_ham",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_i_ham_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i_ham",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_i_ham",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_i_ham_hypotheses"
     },
     {
      "name": "(i) the assumptions",
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_i",
-     "accept": "Dissertation.Acceptance.A.ex_concrete_i",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_i",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses"
     },
     {
      "name": "(i) the exact pairings, the margin and the jump identity",
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_i_pairing",
-     "accept": "Dissertation.Acceptance.A.ex_concrete_i_pairing",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i_pairing",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_i_pairing",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses"
     },
     {
      "name": "(i) well-posedness",
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_i_wp",
-     "accept": "Dissertation.Acceptance.A.ex_concrete_i_wp",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i_wp",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_i_wp",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses"
     },
     {
      "name": "(i) with the drift (3.6): the assumptions",
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_i_clamp",
-     "accept": "Dissertation.Acceptance.A.ex_concrete_i_clamp",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i_clamp",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_i_clamp",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses"
     },
     {
      "name": "(i) with the drift (3.6): well-posedness",
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_i_clamp_wp",
-     "accept": "Dissertation.Acceptance.A.ex_concrete_i_clamp_wp",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i_clamp_wp",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_i_clamp_wp",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses"
     },
     {
      "name": "(ii) the mean and the barycentre",
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_ii_mean",
-     "accept": "Dissertation.Acceptance.A.ex_concrete_ii_mean",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_ii_mean_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_ii_mean",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_ii_mean",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_ii_mean_hypotheses"
     },
     {
      "name": "(ii) the assumptions",
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_ii",
-     "accept": "Dissertation.Acceptance.A.ex_concrete_ii",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_ii",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_ii",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses"
     },
     {
      "name": "(ii) the pairings along the diagonal",
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_ii_pairing",
-     "accept": "Dissertation.Acceptance.A.ex_concrete_ii_pairing",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_ii_pairing",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses"
     },
     {
      "name": "(i) the displayed identity is sharp for beta1, beta2: (2.7) with beta1', beta2' forces beta1' <= beta1, beta2' <= beta2",
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_i_sharp",
-     "accept": "Dissertation.Acceptance.A.ex_concrete_i_sharp",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i_sharp",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_i_sharp",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses"
     }
    ]
   },
@@ -700,33 +700,33 @@
    "clauses": [
     {
      "name": "main",
-     "spec": "Dissertation.PaperSpec.A.ex_brownian",
-     "accept": "Dissertation.Acceptance.A.ex_brownian",
-     "witness": "Dissertation.Acceptance.A.ex_brownian_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_brownian",
+     "accept": "MVFBSDEJ.Acceptance.ex_brownian",
+     "witness": "MVFBSDEJ.Acceptance.ex_brownian_hypotheses"
     },
     {
      "name": "setting h = 0 on a Brownian-Poisson basis is not a reduction: U persists in the representation",
-     "spec": "Dissertation.PaperSpec.A.ex_brownian_not_h0",
-     "accept": "Dissertation.Acceptance.A.ex_brownian_not_h0",
-     "witness": "Dissertation.Acceptance.A.ex_brownian_not_h0_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_brownian_not_h0",
+     "accept": "MVFBSDEJ.Acceptance.ex_brownian_not_h0",
+     "witness": "MVFBSDEJ.Acceptance.ex_brownian_not_h0_hypotheses"
     },
     {
      "name": "both rank branches are available: the branch m > n",
-     "spec": "Dissertation.PaperSpec.A.ex_brownian_rank_gt",
-     "accept": "Dissertation.Acceptance.A.ex_brownian_rank_gt",
-     "witness": "Dissertation.Acceptance.A.ex_brownian_rank_gt_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_brownian_rank_gt",
+     "accept": "MVFBSDEJ.Acceptance.ex_brownian_rank_gt",
+     "witness": "MVFBSDEJ.Acceptance.ex_brownian_rank_gt_hypotheses"
     },
     {
      "name": "the assumptions and the solution notions at nu = 0 reduce to their Brownian forms",
-     "spec": "Dissertation.PaperSpec.A.ex_brownian_reduction",
-     "accept": "Dissertation.Acceptance.A.ex_brownian_reduction",
-     "witness": "Dissertation.Acceptance.A.ex_brownian_reduction_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_brownian_reduction",
+     "accept": "MVFBSDEJ.Acceptance.ex_brownian_reduction",
+     "witness": "MVFBSDEJ.Acceptance.ex_brownian_reduction_hypotheses"
     },
     {
      "name": "the representation property at nu = 0 is the Brownian one",
-     "spec": "Dissertation.PaperSpec.A.ex_brownian_prp",
-     "accept": "Dissertation.Acceptance.A.ex_brownian_prp",
-     "witness": "Dissertation.Acceptance.A.ex_brownian_prp_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_brownian_prp",
+     "accept": "MVFBSDEJ.Acceptance.ex_brownian_prp",
+     "witness": "MVFBSDEJ.Acceptance.ex_brownian_prp_hypotheses"
     }
    ]
   },
@@ -745,21 +745,21 @@
    "clauses": [
     {
      "name": "the expectation-functional class",
-     "spec": "Dissertation.PaperSpec.A.ex_expfunc",
-     "accept": "Dissertation.Acceptance.A.ex_expfunc",
-     "witness": "Dissertation.Acceptance.A.ex_expfunc_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_expfunc",
+     "accept": "MVFBSDEJ.Acceptance.ex_expfunc",
+     "witness": "MVFBSDEJ.Acceptance.ex_expfunc_hypotheses"
     },
     {
      "name": "the kernels of independent-copy interactions",
-     "spec": "Dissertation.PaperSpec.A.ex_expfunc_limin",
-     "accept": "Dissertation.Acceptance.A.ex_expfunc_limin",
-     "witness": "Dissertation.Acceptance.A.ex_expfunc_limin_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_expfunc_limin",
+     "accept": "MVFBSDEJ.Acceptance.ex_expfunc_limin",
+     "witness": "MVFBSDEJ.Acceptance.ex_expfunc_limin_hypotheses"
     },
     {
      "name": "the jump coefficient through the Nemytskii map",
-     "spec": "Dissertation.PaperSpec.A.ex_expfunc_jump",
-     "accept": "Dissertation.Acceptance.A.ex_expfunc_jump",
-     "witness": "Dissertation.Acceptance.A.ex_expfunc_jump_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_expfunc_jump",
+     "accept": "MVFBSDEJ.Acceptance.ex_expfunc_jump",
+     "witness": "MVFBSDEJ.Acceptance.ex_expfunc_jump_hypotheses"
     }
    ]
   },
@@ -778,45 +778,45 @@
    "clauses": [
     {
      "name": "the law statistics are W₂-Lipschitz, with the constants Lip(𝔮), Lip(𝔮̃), Lip(𝔮̂), L_Q",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_lip",
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_lip",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_lip",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_lip",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_hypotheses"
     },
     {
      "name": "the perturbation: origin integrability, (3.5) with L_p, Assumption 2.3, and (3.4) with c_pert = ‖G‖ L_p",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_pert",
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_pert",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_pert",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_pert",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_hypotheses"
     },
     {
      "name": "well-posedness with margin c_diss − ‖G‖ L_p under (5.1)",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_wp",
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_wp",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_wp",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_wp",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_hypotheses"
     },
     {
      "name": "the radial statistic of the full tuple law is no expectation functional",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial",
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_radial",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_radial",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_radial",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_hypotheses"
     },
     {
      "name": "the U-marginal radial statistics are no expectation functionals, with L²(ν) ≠ 0",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr",
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_corr",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_U_corr",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_U_corr",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_hypotheses"
     },
     {
      "name": "the cylindrical term is no expectation functional when Q is not affine on the attained range of the features",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q",
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_Q",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_Q",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_Q_hypotheses"
     },
     {
      "name": "Q affine on the attained range of the features: the cylindrical term is an expectation functional of Example 5.3",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_affineQ",
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_affineQ",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_affineQ_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_affineQ",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_affineQ",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_affineQ_hypotheses"
     }
    ]
   },
@@ -835,117 +835,117 @@
    "clauses": [
     {
      "name": "the potential: even, convex, its gradient, bounded and 1-Lipschitz",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_potential",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_potential",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_potential",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_potential",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses"
     },
     {
      "name": "the crowding correction is jointly Lipschitz in u and the law",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_crowd",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_crowd",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_crowd",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_crowd",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses"
     },
     {
      "name": "at ε = 0 and h_x = 0 the coefficients are those of Example 5.1(i)",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_coeffs",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_coeffs",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_coeffs",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_coeffs",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses"
     },
     {
      "name": "the exposure term ⟨h_x x, u⟩ of the Hamiltonian has x-derivative the added driver term ⟨h_x, u⟩",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_ham",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_ham",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_ham",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_ham",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses"
     },
     {
      "name": "Assumptions 2.2–2.4 and (2.3), with L = max{β₁ + ε + ‖h_x‖, β₂ + ‖h_x‖, 1}",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer",
-     "accept": "Dissertation.Acceptance.A.ex_dealer",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses"
     },
     {
      "name": "the crowding interaction is monotone at every interaction strength ε ≥ 0",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_mono",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_mono",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_mono",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_mono",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses"
     },
     {
      "name": "well-posedness at every interaction strength ε ≥ 0 (Theorem 3.5)",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_wp",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_wp",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_wp",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_wp",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses"
     },
     {
      "name": "the two-point laws share their mean, with the printed values",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_twopoint",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_twopoint",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_twopoint",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_twopoint",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_unit_hypotheses"
     },
     {
      "name": "the crowding correction is no function of E[U], with ν ≠ 0 (so L²(ν) ≠ 0)",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_mean_corr",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_mean_corr",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_mean_corr",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_mean_corr",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_unit_hypotheses"
     },
     {
      "name": "the mark measure: infinite mass, square-integrable size, h_c ∈ L²(ν)",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_marks",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_marks",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_marks_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_marks",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_marks",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_marks_hypotheses"
     },
     {
      "name": "the crowding correction is no function of the mean and is nonlinear in the valuation curves, with L²(ν) ≠ 0",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_not_mean_corr",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_not_mean_corr",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_not_mean_corr",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_not_mean_corr",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_unit_hypotheses"
     },
     {
      "name": "the crowding correction is affine in the population law: an expectation kernel of Example 5.3 with K = L²(ν)",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_affine",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_affine",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_affine",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_affine",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_unit_hypotheses"
     },
     {
      "name": "the Riccati function: p' = β₁p² − β₂, p(T) = 1, p > 0 on [0, T], unique",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_riccati",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_riccati",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_inert_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_riccati",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_riccati",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_inert_hypotheses"
     },
     {
      "name": "for h_x = 0 the interaction is inert: Y = pX, Z = pσ_c/(1 + β₁p), U = p h_c/(1 + β₁p), Law(U_t) a Dirac mass, the correction vanishes, the tuple solves at every ε",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_inert",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_inert",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_inert_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_inert",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_inert",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_inert_hypotheses"
     },
     {
      "name": "the specialisation: h_c, h_x ∈ L²(ν), ‖h_c‖ = ‖h_x‖ = 1, ⟨h_c, h_x⟩ = 0",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_spec_marks",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_spec_marks",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_spec_marks",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_spec_marks",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_spec_hypotheses"
     },
     {
      "name": "the linear equation has a unique solution X⁰ ∈ S²; Θ⁰ solves the system at ε = 0; 𝔼X⁰ = 0, v' = −(7/4)v + ½, v = (2/7)(1 − e^{−7t/4}); 𝔼‖U⁰_t − 𝔼U⁰_t‖² = v/4 and Law(U⁰_t) is not a Dirac mass",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_zero",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_zero",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_zero",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_zero",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_spec_hypotheses"
     },
     {
      "name": "the symmetrised crowding pairing, positive unless λ is a Dirac mass",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_symm",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_symm",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_symm",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_symm",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_unit_hypotheses"
     },
     {
      "name": "the interaction is active: A(U⁰_t) ≠ 0 with positive probability at every t ∈ (0, T], and 𝔼∫_0^T ‖ε A(U_t)‖² dt > 0 for every ε > 0",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_active",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_active",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_active",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_active",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_spec_hypotheses"
     },
     {
      "name": "the solution depends on ε: a tuple solving at two strengths has vanishing correction, and in the specialisation no tuple solves at two strengths",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_depends",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_depends",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_depends",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_depends",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_spec_hypotheses"
     }
    ]
   },
@@ -964,15 +964,15 @@
    "clauses": [
     {
      "name": "the W₂ term is dominated by the synchronous coupling bound (2.8)",
-     "spec": "Dissertation.PaperSpec.A.eq_coupling",
-     "accept": "Dissertation.Acceptance.A.eq_coupling",
-     "witness": "Dissertation.Acceptance.A.eq_coupling_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.eq_coupling",
+     "accept": "MVFBSDEJ.Acceptance.eq_coupling",
+     "witness": "MVFBSDEJ.Acceptance.eq_coupling_hypotheses"
     },
     {
      "name": "the coefficients depend on u pointwise whenever β₁ > 0, with ν ≠ 0",
-     "spec": "Dissertation.PaperSpec.A.rem_freelaw",
-     "accept": "Dissertation.Acceptance.A.rem_freelaw",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.rem_freelaw",
+     "accept": "MVFBSDEJ.Acceptance.rem_freelaw",
+     "witness": "MVFBSDEJ.Acceptance.rem_affine_hypotheses"
     }
    ]
   },
@@ -991,45 +991,45 @@
    "clauses": [
     {
      "name": "Example 5.4: the full-tuple law perturbation satisfies (3.4) with c_pert = ‖G‖ L_p",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_pert",
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_pert",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_pert",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_pert",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_hypotheses"
     },
     {
      "name": "Example 5.4: added below the dissipativity margin, the system stays well-posed",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_wp",
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_wp",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_wp",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_wp",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_hypotheses"
     },
     {
      "name": "Example 5.4: the radial statistic is a nonlinear law dependence, no expectation functional",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial",
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_radial",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_radial",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_radial",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_hypotheses"
     },
     {
      "name": "Example 5.5: the U-law interaction is nonlinear in the valuation curves (and no function of the mean of the U-law), with L²(ν) ≠ 0",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_not_mean_corr",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_not_mean_corr",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_unit_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_not_mean_corr",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_not_mean_corr",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_unit_hypotheses"
     },
     {
      "name": "the crowding interaction is monotone at every interaction strength ε ≥ 0",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_mono",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_mono",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_mono",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_mono",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses"
     },
     {
      "name": "well-posedness at every interaction strength ε ≥ 0 (Theorem 3.5)",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_wp",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_wp",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_wp",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_wp",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses"
     },
     {
      "name": "Example 5.5: the interaction remains active along the solution",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_active",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_active",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_active",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_active",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_spec_hypotheses"
     }
    ]
   },
@@ -1048,15 +1048,15 @@
    "clauses": [
     {
      "name": "Lemma A.1: Borel law flows mu, mu^- representing Law(Theta_t), Law(Theta^-_t), equal a.e.",
-     "spec": "Dissertation.PaperSpec.A.lem_lawflow",
-     "accept": "Dissertation.Acceptance.A.lem_lawflow",
-     "witness": "Dissertation.Acceptance.A.lem_lawflow_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.lem_lawflow",
+     "accept": "MVFBSDEJ.Acceptance.lem_lawflow",
+     "witness": "MVFBSDEJ.Acceptance.lem_lawflow_hypotheses"
     },
     {
      "name": "Lemma A.1: uniqueness of the flows and invariance of coefficient evaluations under the representatives",
-     "spec": "Dissertation.PaperSpec.A.lem_lawflow_invariant",
-     "accept": "Dissertation.Acceptance.A.lem_lawflow_invariant",
-     "witness": "Dissertation.Acceptance.A.lem_lawflow_invariant_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.lem_lawflow_invariant",
+     "accept": "MVFBSDEJ.Acceptance.lem_lawflow_invariant",
+     "witness": "MVFBSDEJ.Acceptance.lem_lawflow_invariant_hypotheses"
     }
    ]
   },
@@ -1075,63 +1075,63 @@
    "clauses": [
     {
      "name": "the a priori continuous-dependence estimate (Theorem 3.1)",
-     "spec": "Dissertation.PaperSpec.A.thm_stab",
-     "accept": "Dissertation.Acceptance.A.thm_stab",
-     "witness": "Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.thm_stab",
+     "accept": "MVFBSDEJ.Acceptance.thm_stab",
+     "witness": "MVFBSDEJ.Acceptance.thm_stab_nonzero_hypotheses"
     },
     {
      "name": "uniqueness (Theorem 3.3)",
-     "spec": "Dissertation.PaperSpec.A.thm_uniq",
-     "accept": "Dissertation.Acceptance.A.thm_uniq",
-     "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.thm_uniq",
+     "accept": "MVFBSDEJ.Acceptance.thm_uniq",
+     "witness": "MVFBSDEJ.Acceptance.thm_uniq_hypotheses"
     },
     {
      "name": "existence and uniqueness on every finite horizon (Theorem 3.5)",
-     "spec": "Dissertation.PaperSpec.A.thm_cwp",
-     "accept": "Dissertation.Acceptance.A.thm_cwp",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.thm_cwp",
+     "accept": "MVFBSDEJ.Acceptance.thm_cwp",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses"
     },
     {
      "name": "pointwise monotonicity gives expected diagonal monotonicity (Remark 2.8)",
-     "spec": "Dissertation.PaperSpec.A.rem_diag_mono",
-     "accept": "Dissertation.Acceptance.A.rem_diag_mono",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.rem_diag_mono",
+     "accept": "MVFBSDEJ.Acceptance.rem_diag_mono",
+     "witness": "MVFBSDEJ.Acceptance.rem_affine_hypotheses"
     },
     {
      "name": "expected diagonal monotonicity is strictly weaker (Proposition 3.8)",
-     "spec": "Dissertation.PaperSpec.A.prop_strict",
-     "accept": "Dissertation.Acceptance.A.prop_strict",
-     "witness": "Dissertation.Acceptance.A.prop_strict_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.prop_strict",
+     "accept": "MVFBSDEJ.Acceptance.prop_strict",
+     "witness": "MVFBSDEJ.Acceptance.prop_strict_hypotheses"
     },
     {
      "name": "expected diagonal monotonicity is strictly weaker: a full coefficient system satisfying Assumption 2.5 without the pointwise condition (Remark 2.8)",
-     "spec": "Dissertation.PaperSpec.A.rem_diag_mono_converse",
-     "accept": "Dissertation.Acceptance.A.rem_diag_mono_converse",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.rem_diag_mono_converse",
+     "accept": "MVFBSDEJ.Acceptance.rem_diag_mono_converse",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses"
     },
     {
      "name": "the dealer interaction is monotone at every interaction strength (Example 5.5)",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_mono",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_mono",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_mono",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_mono",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses"
     },
     {
      "name": "the dealer market is well posed at every interaction strength (Example 5.5)",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_wp",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_wp",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_wp",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_wp",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses"
     },
     {
      "name": "the dealer mark measure has infinite activity (Example 5.5)",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_marks",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_marks",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_marks_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_marks",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_marks",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_marks_hypotheses"
     },
     {
      "name": "the dealer interaction is active along the solution in an explicit specialisation (Example 5.5)",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_active",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_active",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_active",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_active",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_spec_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -1156,7 +1156,7 @@
      "name": "definition",
      "spec": null,
      "defs": [
-      "Dissertation.PaperSpec.A.Solution"
+      "MVFBSDEJ.PaperSpec.Solution"
      ]
     }
    ],
@@ -1187,15 +1187,15 @@
    "clauses": [
     {
      "name": "the theorem allows W₂-dependence on the full tuple law, the law of U included, at arbitrary σ-finite activity, under the expected G-monotonicity (Theorem 3.5)",
-     "spec": "Dissertation.PaperSpec.A.thm_cwp",
-     "accept": "Dissertation.Acceptance.A.thm_cwp",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.thm_cwp",
+     "accept": "MVFBSDEJ.Acceptance.thm_cwp",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses"
     },
     {
      "name": "Example 5.3 details the embedding of their interaction class",
-     "spec": "Dissertation.PaperSpec.A.ex_expfunc_limin",
-     "accept": "Dissertation.Acceptance.A.ex_expfunc_limin",
-     "witness": "Dissertation.Acceptance.A.ex_expfunc_limin_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_expfunc_limin",
+     "accept": "MVFBSDEJ.Acceptance.ex_expfunc_limin",
+     "witness": "MVFBSDEJ.Acceptance.ex_expfunc_limin_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -1236,9 +1236,9 @@
    "clauses": [
     {
      "name": "L2(nu; R^j) is separable",
-     "spec": "Dissertation.PaperSpec.A.sec2_separable",
-     "accept": "Dissertation.Acceptance.A.sec2_separable",
-     "witness": "Dissertation.Acceptance.A.sec2_separable_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.sec2_separable",
+     "accept": "MVFBSDEJ.Acceptance.sec2_separable",
+     "witness": "MVFBSDEJ.Acceptance.sec2_separable_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -1261,9 +1261,9 @@
    "clauses": [
     {
      "name": "nu(E) infinite gives infinitely many atoms on every interval",
-     "spec": "Dissertation.PaperSpec.A.sec2_infinite_activity",
-     "accept": "Dissertation.Acceptance.A.sec2_infinite_activity",
-     "witness": "Dissertation.Acceptance.A.sec2_infinite_activity_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.sec2_infinite_activity",
+     "accept": "MVFBSDEJ.Acceptance.sec2_infinite_activity",
+     "witness": "MVFBSDEJ.Acceptance.sec2_infinite_activity_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -1286,9 +1286,9 @@
    "clauses": [
     {
      "name": "the predictable representation property over the enlarged filtration, with uniqueness",
-     "spec": "Dissertation.PaperSpec.A.sec2_prp",
-     "accept": "Dissertation.Acceptance.A.sec2_prp",
-     "witness": "Dissertation.Acceptance.A.sec2_prp_nonzero_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.sec2_prp",
+     "accept": "MVFBSDEJ.Acceptance.sec2_prp",
+     "witness": "MVFBSDEJ.Acceptance.sec2_prp_nonzero_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -1311,9 +1311,9 @@
    "clauses": [
     {
      "name": "joint pointwise measurability of h gives (2.3)",
-     "spec": "Dissertation.PaperSpec.A.sec2_hborel",
-     "accept": "Dissertation.Acceptance.A.sec2_hborel",
-     "witness": "Dissertation.Acceptance.A.sec2_hborel_nonzero_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.sec2_hborel",
+     "accept": "MVFBSDEJ.Acceptance.sec2_hborel",
+     "witness": "MVFBSDEJ.Acceptance.sec2_hborel_nonzero_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -1425,27 +1425,27 @@
    "clauses": [
     {
      "name": "E int_0^T |V|^2 <= T E sup |V|^2, so HH is contained in Hweak",
-     "spec": "Dissertation.PaperSpec.A.sec3_HH_inclusion",
-     "accept": "Dissertation.Acceptance.A.sec3_HH_inclusion",
-     "witness": "Dissertation.Acceptance.A.sec3_HH_inclusion_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.sec3_HH_inclusion",
+     "accept": "MVFBSDEJ.Acceptance.sec3_HH_inclusion",
+     "witness": "MVFBSDEJ.Acceptance.sec3_HH_inclusion_hypotheses"
     },
     {
      "name": "under the identification ||.||_HH is a norm: it vanishes exactly on the zero class",
-     "spec": "Dissertation.PaperSpec.A.sec3_HH_definite",
-     "accept": "Dissertation.Acceptance.A.sec3_HH_definite",
-     "witness": "Dissertation.Acceptance.A.sec3_space_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.sec3_HH_definite",
+     "accept": "MVFBSDEJ.Acceptance.sec3_HH_definite",
+     "witness": "MVFBSDEJ.Acceptance.sec3_space_hypotheses"
     },
     {
      "name": "||.||_HH satisfies the triangle inequality and is absolutely homogeneous",
-     "spec": "Dissertation.PaperSpec.A.sec3_HH_norm",
-     "accept": "Dissertation.Acceptance.A.sec3_HH_norm",
-     "witness": "Dissertation.Acceptance.A.sec3_HH_norm_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.sec3_HH_norm",
+     "accept": "MVFBSDEJ.Acceptance.sec3_HH_norm",
+     "witness": "MVFBSDEJ.Acceptance.sec3_HH_norm_hypotheses"
     },
     {
      "name": "(HH, ||.||_HH) is complete",
-     "spec": "Dissertation.PaperSpec.A.sec3_HH_complete",
-     "accept": "Dissertation.Acceptance.A.sec3_HH_complete",
-     "witness": "Dissertation.Acceptance.A.sec3_HH_complete_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.sec3_HH_complete",
+     "accept": "MVFBSDEJ.Acceptance.sec3_HH_complete",
+     "witness": "MVFBSDEJ.Acceptance.sec3_HH_complete_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -1468,15 +1468,15 @@
    "clauses": [
     {
      "name": "both sides of each identity are cadlag in t: the stochastic integrals of (1.1) have adapted versions with every path cadlag",
-     "spec": "Dissertation.PaperSpec.A.sec3_cadlag_versions",
-     "accept": "Dissertation.Acceptance.A.sec3_cadlag_versions",
-     "witness": "Dissertation.Acceptance.A.sec3_cadlag_versions_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.sec3_cadlag_versions",
+     "accept": "MVFBSDEJ.Acceptance.sec3_cadlag_versions",
+     "witness": "MVFBSDEJ.Acceptance.sec3_cadlag_versions_hypotheses"
     },
     {
      "name": "the identities of (1.1) holding almost surely for every t hold off one null set for all t",
-     "spec": "Dissertation.PaperSpec.A.sec3_one_null_set",
-     "accept": "Dissertation.Acceptance.A.sec3_one_null_set",
-     "witness": "Dissertation.Acceptance.A.sec3_space_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.sec3_one_null_set",
+     "accept": "MVFBSDEJ.Acceptance.sec3_one_null_set",
+     "witness": "MVFBSDEJ.Acceptance.sec3_space_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -1499,21 +1499,21 @@
    "clauses": [
     {
      "name": "(a) the companion bound: with system 2 under Assumptions 2.2–2.5, (3.1) with the differences along solution 1 and the constant of system 2",
-     "spec": "Dissertation.PaperSpec.A.thm_stab_companion",
-     "accept": "Dissertation.Acceptance.A.thm_stab_companion",
-     "witness": "Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.thm_stab_companion",
+     "accept": "MVFBSDEJ.Acceptance.thm_stab_companion",
+     "witness": "MVFBSDEJ.Acceptance.thm_stab_nonzero_hypotheses"
     },
     {
      "name": "(b) systems sharing b, σ, h, f: continuous dependence on the initial and terminal data",
-     "spec": "Dissertation.PaperSpec.A.thm_stab_data",
-     "accept": "Dissertation.Acceptance.A.thm_stab_data",
-     "witness": "Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.thm_stab_data",
+     "accept": "MVFBSDEJ.Acceptance.thm_stab_data",
+     "witness": "MVFBSDEJ.Acceptance.thm_stab_nonzero_hypotheses"
     },
     {
      "name": "(c) (3.1) in [0, ∞] with only (2.3) on system 2, so whenever the displayed differences are square-integrable",
-     "spec": "Dissertation.PaperSpec.A.thm_stab_minimal",
-     "accept": "Dissertation.Acceptance.A.thm_stab_minimal",
-     "witness": "Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.thm_stab_minimal",
+     "accept": "MVFBSDEJ.Acceptance.thm_stab_minimal",
+     "witness": "MVFBSDEJ.Acceptance.thm_stab_nonzero_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -1536,39 +1536,39 @@
    "clauses": [
     {
      "name": "a margin in (2.13) makes every channel strictly dissipative",
-     "spec": "Dissertation.PaperSpec.A.cor_margin_channels",
-     "accept": "Dissertation.Acceptance.A.cor_margin_channels",
-     "witness": "Dissertation.Acceptance.A.cor_robust_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.cor_margin_channels",
+     "accept": "MVFBSDEJ.Acceptance.cor_margin_channels",
+     "witness": "MVFBSDEJ.Acceptance.cor_robust_hypotheses"
     },
     {
      "name": "an additive h₀ cannot serve as a baseline, with ν ≠ 0",
-     "spec": "Dissertation.PaperSpec.A.cor_margin_additive",
-     "accept": "Dissertation.Acceptance.A.cor_margin_additive",
-     "witness": "Dissertation.Acceptance.A.cor_margin_additive_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.cor_margin_additive",
+     "accept": "MVFBSDEJ.Acceptance.cor_margin_additive",
+     "witness": "MVFBSDEJ.Acceptance.cor_margin_additive_hypotheses"
     },
     {
      "name": "jump feedback through finitely many functionals of u supplies no margin, with L²(ν) infinite dimensional",
-     "spec": "Dissertation.PaperSpec.A.cor_margin_finite",
-     "accept": "Dissertation.Acceptance.A.cor_margin_finite",
-     "witness": "Dissertation.Acceptance.A.cor_margin_finite_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.cor_margin_finite",
+     "accept": "MVFBSDEJ.Acceptance.cor_margin_finite",
+     "witness": "MVFBSDEJ.Acceptance.cor_margin_finite_hypotheses"
     },
     {
      "name": "L²(ν) infinite-dimensional: jump feedback through finitely many continuous, possibly nonlinear, functionals of u, with any law dependence, supplies no margin",
-     "spec": "Dissertation.PaperSpec.A.cor_margin_continuous",
-     "witness": "Dissertation.Acceptance.A.cor_margin_continuous_hypotheses",
-     "accept": "Dissertation.Acceptance.A.cor_margin_continuous"
+     "spec": "MVFBSDEJ.PaperSpec.cor_margin_continuous",
+     "witness": "MVFBSDEJ.Acceptance.cor_margin_continuous_hypotheses",
+     "accept": "MVFBSDEJ.Acceptance.cor_margin_continuous"
     },
     {
      "name": "finitely many continuous functionals cannot separate the points of an infinite-dimensional space",
-     "spec": "Dissertation.PaperSpec.A.cor_margin_separate",
-     "accept": "Dissertation.Acceptance.A.cor_margin_separate",
-     "witness": "Dissertation.Acceptance.A.cor_margin_continuous_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.cor_margin_separate",
+     "accept": "MVFBSDEJ.Acceptance.cor_margin_separate",
+     "witness": "MVFBSDEJ.Acceptance.cor_margin_continuous_hypotheses"
     },
     {
      "name": "L²(ν) finite-dimensional: finitely many functionals determine u and such feedback carries a margin",
-     "spec": "Dissertation.PaperSpec.A.cor_margin_findim",
-     "accept": "Dissertation.Acceptance.A.cor_margin_findim",
-     "witness": "Dissertation.Acceptance.A.cor_margin_findim_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.cor_margin_findim",
+     "accept": "MVFBSDEJ.Acceptance.cor_margin_findim",
+     "witness": "MVFBSDEJ.Acceptance.cor_margin_findim_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -1591,9 +1591,9 @@
    "clauses": [
     {
      "name": "shortening the horizon does not make the frozen-coefficient map contractive: on every horizon a system satisfying the assumptions has a frozen map that does not decrease distances",
-     "spec": "Dissertation.PaperSpec.A.sec4_horizon_not_contractive",
-     "accept": "Dissertation.Acceptance.A.sec4_horizon_not_contractive",
-     "witness": "Dissertation.Acceptance.A.sec4_horizon_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.sec4_horizon_not_contractive",
+     "accept": "MVFBSDEJ.Acceptance.sec4_horizon_not_contractive",
+     "witness": "MVFBSDEJ.Acceptance.sec4_horizon_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -1616,9 +1616,9 @@
    "clauses": [
     {
      "name": "a càdlàg local martingale whose running supremum is integrable has zero-mean increments",
-     "spec": "Dissertation.PaperSpec.A.sec4_supremum_criterion",
-     "accept": "Dissertation.Acceptance.A.sec4_supremum_criterion",
-     "witness": "Dissertation.Acceptance.A.sec4_supremum_criterion_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.sec4_supremum_criterion",
+     "accept": "MVFBSDEJ.Acceptance.sec4_supremum_criterion",
+     "witness": "MVFBSDEJ.Acceptance.sec4_supremum_criterion_hypotheses"
     }
    ],
    "source_region": {
@@ -1648,8 +1648,8 @@
      "name": "definition",
      "spec": null,
      "defs": [
-      "Dissertation.PaperSpec.A.WP",
-      "Dissertation.PaperSpec.A.WeakForcedSolution"
+      "MVFBSDEJ.PaperSpec.WP",
+      "MVFBSDEJ.PaperSpec.WeakForcedSolution"
      ]
     }
    ],
@@ -1673,15 +1673,15 @@
    "clauses": [
     {
      "name": "(4.2): E int |psi(s, Theta_s, mu_s)|^2 <= C E int (|X|^2 + |Y|^2 + |Z|^2 + ||U||^2 + |psi(s, 0, delta_0)|^2), psi in {b, sigma, h, f}",
-     "spec": "Dissertation.PaperSpec.A.eq_coeffint",
-     "accept": "Dissertation.Acceptance.A.eq_coeffint",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.eq_coeffint",
+     "accept": "MVFBSDEJ.Acceptance.eq_coeffint",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses"
     },
     {
      "name": "(4.3): E |g(X_T, Law X_T)|^2 <= C (E |X_T|^2 + |g(0, delta_0)|^2)",
-     "spec": "Dissertation.PaperSpec.A.eq_termg",
-     "accept": "Dissertation.Acceptance.A.eq_termg",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.eq_termg",
+     "accept": "MVFBSDEJ.Acceptance.eq_termg",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -1758,9 +1758,9 @@
    "clauses": [
     {
      "name": "the system of Li–Min Example 3.2 satisfies (2.3) and Assumptions 2.2–2.3 and has no solution on T = 3π/4 from an initial datum of nonzero mean",
-     "spec": "Dissertation.PaperSpec.A.sec5_limin",
-     "accept": "Dissertation.Acceptance.A.sec5_limin",
-     "witness": "Dissertation.Acceptance.A.sec5_limin_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.sec5_limin",
+     "accept": "MVFBSDEJ.Acceptance.sec5_limin",
+     "witness": "MVFBSDEJ.Acceptance.sec5_limin_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -1783,69 +1783,69 @@
    "clauses": [
     {
      "name": "Example 5.1(i) meets every assumption at arbitrary activity",
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_i",
-     "accept": "Dissertation.Acceptance.A.ex_concrete_i",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_i",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses"
     },
     {
      "name": "Example 5.1(ii) meets every assumption at arbitrary activity",
-     "spec": "Dissertation.PaperSpec.A.ex_concrete_ii",
-     "accept": "Dissertation.Acceptance.A.ex_concrete_ii",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_ii",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_ii",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses"
     },
     {
      "name": "Example 5.2 recovers the Brownian subclass",
-     "spec": "Dissertation.PaperSpec.A.ex_brownian",
-     "accept": "Dissertation.Acceptance.A.ex_brownian",
-     "witness": "Dissertation.Acceptance.A.ex_brownian_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_brownian",
+     "accept": "MVFBSDEJ.Acceptance.ex_brownian",
+     "witness": "MVFBSDEJ.Acceptance.ex_brownian_hypotheses"
     },
     {
      "name": "Example 5.2: at ν = 0 the assumptions and solution notions are the Brownian ones",
-     "spec": "Dissertation.PaperSpec.A.ex_brownian_reduction",
-     "accept": "Dissertation.Acceptance.A.ex_brownian_reduction",
-     "witness": "Dissertation.Acceptance.A.ex_brownian_reduction_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_brownian_reduction",
+     "accept": "MVFBSDEJ.Acceptance.ex_brownian_reduction",
+     "witness": "MVFBSDEJ.Acceptance.ex_brownian_reduction_hypotheses"
     },
     {
      "name": "Example 5.3 recovers the expectation-functional subclass",
-     "spec": "Dissertation.PaperSpec.A.ex_expfunc",
-     "accept": "Dissertation.Acceptance.A.ex_expfunc",
-     "witness": "Dissertation.Acceptance.A.ex_expfunc_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_expfunc",
+     "accept": "MVFBSDEJ.Acceptance.ex_expfunc",
+     "witness": "MVFBSDEJ.Acceptance.ex_expfunc_hypotheses"
     },
     {
      "name": "Example 5.3: the kernels of the independent-copy interactions of [LiMin] embed in the class",
-     "spec": "Dissertation.PaperSpec.A.ex_expfunc_limin",
-     "accept": "Dissertation.Acceptance.A.ex_expfunc_limin",
-     "witness": "Dissertation.Acceptance.A.ex_expfunc_limin_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_expfunc_limin",
+     "accept": "MVFBSDEJ.Acceptance.ex_expfunc_limin",
+     "witness": "MVFBSDEJ.Acceptance.ex_expfunc_limin_hypotheses"
     },
     {
      "name": "Example 5.4: a nonlinear functional of the full tuple",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial",
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_radial",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_radial",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_radial",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_hypotheses"
     },
     {
      "name": "the U-marginal radial statistics are no expectation functionals, with L²(ν) ≠ 0",
-     "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr",
-     "accept": "Dissertation.Acceptance.A.ex_fulllaw_beyond_U_corr",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_U_corr",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_U_corr",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_hypotheses"
     },
     {
      "name": "the crowding interaction is monotone at every interaction strength ε ≥ 0",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_mono",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_mono",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_mono",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_mono",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses"
     },
     {
      "name": "well-posedness at every interaction strength ε ≥ 0 (Theorem 3.5)",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_wp",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_wp",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_wp",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_wp",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses"
     },
     {
      "name": "Example 5.5: in an explicit specialisation the interaction is active along the solution",
-     "spec": "Dissertation.PaperSpec.A.ex_dealer_active",
-     "accept": "Dissertation.Acceptance.A.ex_dealer_active",
-     "witness": "Dissertation.Acceptance.A.ex_dealer_spec_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.ex_dealer_active",
+     "accept": "MVFBSDEJ.Acceptance.ex_dealer_active",
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_spec_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -1992,51 +1992,51 @@
    "clauses": [
     {
      "name": "the stability estimate (Theorem 3.1)",
-     "spec": "Dissertation.PaperSpec.A.thm_stab",
-     "accept": "Dissertation.Acceptance.A.thm_stab",
-     "witness": "Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.thm_stab",
+     "accept": "MVFBSDEJ.Acceptance.thm_stab",
+     "witness": "MVFBSDEJ.Acceptance.thm_stab_nonzero_hypotheses"
     },
     {
      "name": "uniqueness (Theorem 3.3)",
-     "spec": "Dissertation.PaperSpec.A.thm_uniq",
-     "accept": "Dissertation.Acceptance.A.thm_uniq",
-     "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.thm_uniq",
+     "accept": "MVFBSDEJ.Acceptance.thm_uniq",
+     "witness": "MVFBSDEJ.Acceptance.thm_uniq_hypotheses"
     },
     {
      "name": "existence and uniqueness on every finite horizon (Theorem 3.5)",
-     "spec": "Dissertation.PaperSpec.A.thm_cwp",
-     "accept": "Dissertation.Acceptance.A.thm_cwp",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.thm_cwp",
+     "accept": "MVFBSDEJ.Acceptance.thm_cwp",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses"
     },
     {
      "name": "robustness at m = n below the dissipativity margin (Corollary 3.6)",
-     "spec": "Dissertation.PaperSpec.A.cor_robust_wp",
-     "accept": "Dissertation.Acceptance.A.cor_robust_wp",
-     "witness": "Dissertation.Acceptance.A.cor_robust_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.cor_robust_wp",
+     "accept": "MVFBSDEJ.Acceptance.cor_robust_wp",
+     "witness": "MVFBSDEJ.Acceptance.cor_robust_hypotheses"
     },
     {
      "name": "pointwise monotonicity gives expected diagonal monotonicity (Remark 2.8)",
-     "spec": "Dissertation.PaperSpec.A.rem_diag_mono",
-     "accept": "Dissertation.Acceptance.A.rem_diag_mono",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.rem_diag_mono",
+     "accept": "MVFBSDEJ.Acceptance.rem_diag_mono",
+     "witness": "MVFBSDEJ.Acceptance.rem_affine_hypotheses"
     },
     {
      "name": "expected diagonal monotonicity is strictly weaker (Proposition 3.8)",
-     "spec": "Dissertation.PaperSpec.A.prop_strict",
-     "accept": "Dissertation.Acceptance.A.prop_strict",
-     "witness": "Dissertation.Acceptance.A.prop_strict_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.prop_strict",
+     "accept": "MVFBSDEJ.Acceptance.prop_strict",
+     "witness": "MVFBSDEJ.Acceptance.prop_strict_hypotheses"
     },
     {
      "name": "expected diagonal monotonicity is strictly weaker: a full coefficient system satisfying Assumption 2.5 without the pointwise condition (Remark 2.8)",
-     "spec": "Dissertation.PaperSpec.A.rem_diag_mono_converse",
-     "accept": "Dissertation.Acceptance.A.rem_diag_mono_converse",
-     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.rem_diag_mono_converse",
+     "accept": "MVFBSDEJ.Acceptance.rem_diag_mono_converse",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses"
     },
     {
      "name": "the reduction to the jump channel and the β₁ dichotomy, with ν ≠ 0",
-     "spec": "Dissertation.PaperSpec.A.rem_beta1_dich",
-     "accept": "Dissertation.Acceptance.A.rem_beta1_dich",
-     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.rem_beta1_dich",
+     "accept": "MVFBSDEJ.Acceptance.rem_beta1_dich",
+     "witness": "MVFBSDEJ.Acceptance.rem_affine_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -2097,7 +2097,7 @@
      "name": "definition",
      "spec": null,
      "defs": [
-      "Dissertation.PaperSpec.A.Solution"
+      "MVFBSDEJ.PaperSpec.Solution"
      ]
     }
    ],
@@ -2128,9 +2128,9 @@
    "clauses": [
     {
      "name": "the compensation formula",
-     "spec": "Dissertation.PaperSpec.A.eq_compid",
-     "accept": "Dissertation.Acceptance.A.eq_compid",
-     "witness": "Dissertation.Acceptance.A.sec2_compensation_nonzero_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.eq_compid",
+     "accept": "MVFBSDEJ.Acceptance.eq_compid",
+     "witness": "MVFBSDEJ.Acceptance.sec2_compensation_nonzero_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -2156,9 +2156,9 @@
    "clauses": [
     {
      "name": "the compensated integral has mean zero",
-     "spec": "Dissertation.PaperSpec.A.eq_zeromean",
-     "accept": "Dissertation.Acceptance.A.eq_zeromean",
-     "witness": "Dissertation.Acceptance.A.sec2_compensation_nonzero_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.eq_zeromean",
+     "accept": "MVFBSDEJ.Acceptance.eq_zeromean",
+     "witness": "MVFBSDEJ.Acceptance.sec2_compensation_nonzero_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -2187,7 +2187,7 @@
      "name": "definition",
      "spec": null,
      "defs": [
-      "Dissertation.WellPosedness.Spec.JointBorel"
+      "MVFBSDEJ.WellPosedness.Spec.JointBorel"
      ]
     }
    ],
@@ -2215,9 +2215,9 @@
    "clauses": [
     {
      "name": "the Fubini isometry, the jointly measurable representative and its uniqueness",
-     "spec": "Dissertation.PaperSpec.A.eq_fubiniiso",
-     "accept": "Dissertation.Acceptance.A.eq_fubiniiso",
-     "witness": "Dissertation.Acceptance.A.eq_fubiniiso_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.eq_fubiniiso",
+     "accept": "MVFBSDEJ.Acceptance.eq_fubiniiso",
+     "witness": "MVFBSDEJ.Acceptance.eq_fubiniiso_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -2243,15 +2243,15 @@
    "clauses": [
     {
      "name": "(2.5), the first line: along any diagonal input the evaluations of b, σ and f are progressively measurable",
-     "spec": "Dissertation.PaperSpec.A.eq_coefmeas",
-     "accept": "Dissertation.Acceptance.A.eq_coefmeas",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.eq_coefmeas",
+     "accept": "MVFBSDEJ.Acceptance.eq_coefmeas",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses"
     },
     {
      "name": "(2.5), the second line: the jump coefficient at the predictable tuple and its law is predictable",
-     "spec": "Dissertation.PaperSpec.A.eq_coefmeas_jump",
-     "accept": "Dissertation.Acceptance.A.eq_coefmeas_jump",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.eq_coefmeas_jump",
+     "accept": "MVFBSDEJ.Acceptance.eq_coefmeas_jump",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -2416,7 +2416,7 @@
      "name": "definition",
      "spec": null,
      "defs": [
-      "Dissertation.PaperSpec.A.Margin212"
+      "MVFBSDEJ.PaperSpec.Margin212"
      ]
     }
    ],
@@ -2449,7 +2449,7 @@
      "name": "definition",
      "spec": null,
      "defs": [
-      "Dissertation.WellPosedness.Spec.Margin213"
+      "MVFBSDEJ.WellPosedness.Spec.Margin213"
      ]
     }
    ],
@@ -2666,7 +2666,7 @@
      "name": "definition",
      "spec": null,
      "defs": [
-      "Dissertation.PaperSpec.A.ForcedSolution"
+      "MVFBSDEJ.PaperSpec.ForcedSolution"
      ]
     }
    ],
@@ -2701,9 +2701,9 @@
    "clauses": [
     {
      "name": "(4.2): E int |psi(s, Theta_s, mu_s)|^2 <= C E int (|X|^2 + |Y|^2 + |Z|^2 + ||U||^2 + |psi(s, 0, delta_0)|^2), psi in {b, sigma, h, f}",
-     "spec": "Dissertation.PaperSpec.A.eq_coeffint",
-     "accept": "Dissertation.Acceptance.A.eq_coeffint",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.eq_coeffint",
+     "accept": "MVFBSDEJ.Acceptance.eq_coeffint",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -2730,9 +2730,9 @@
    "clauses": [
     {
      "name": "(4.3): E |g(X_T, Law X_T)|^2 <= C (E |X_T|^2 + |g(0, delta_0)|^2)",
-     "spec": "Dissertation.PaperSpec.A.eq_termg",
-     "accept": "Dissertation.Acceptance.A.eq_termg",
-     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.eq_termg",
+     "accept": "MVFBSDEJ.Acceptance.eq_termg",
+     "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",
@@ -3302,9 +3302,9 @@
    "clauses": [
     {
      "name": "(4.25) for every 0 < ε ≤ 1, C independent of ε",
-     "spec": "Dissertation.PaperSpec.A.eq_bwdyoung",
-     "accept": "Dissertation.Acceptance.A.eq_bwdyoung",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+     "spec": "MVFBSDEJ.PaperSpec.eq_bwdyoung",
+     "accept": "MVFBSDEJ.Acceptance.eq_bwdyoung",
+     "witness": "MVFBSDEJ.Acceptance.lem_pert_two_data_hypotheses"
     }
    ],
    "source_region": {

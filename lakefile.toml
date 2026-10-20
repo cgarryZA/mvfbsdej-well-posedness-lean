@@ -6,7 +6,7 @@ homepage = "https://github.com/cgarryZA/mvfbsdej-well-posedness-lean"
 license = "Apache-2.0"
 licenseFiles = ["LICENSE"]
 readmeFile = "README.md"
-defaultTargets = ["Dissertation"]
+defaultTargets = ["MVFBSDEJ"]
 
 [leanOptions]
 pp.unicode.fun = true
@@ -30,8 +30,8 @@ git = "https://github.com/cgarryZA/LevyStochCalc"
 rev = "984dbf0b790031eac05d56fe5a84b65e15e1e932"
 
 [[lean_lib]]
-name = "Dissertation"
-globs = ["Dissertation.*"]
+name = "MVFBSDEJ"
+globs = ["MVFBSDEJ.*"]
 
 # the challenge module that tools/acceptance.py comparator-inputs writes for comparator
 [[lean_lib]]

@@ -1,7 +1,7 @@
 import Lean.Util.CollectAxioms
 import Lean.Util.FoldConsts
-import Dissertation.PaperSpec
-import Dissertation.Acceptance
+import MVFBSDEJ.PaperSpec
+import MVFBSDEJ.Acceptance
 
 /-!
 Probe of `tools/acceptance.py`. Reads the query file named by `ACCEPTANCE_QUERY`, one request per
@@ -30,7 +30,7 @@ def moduleOf (env : Environment) (n : Name) : Name :=
 
 def inScope (env : Environment) (n : Name) : Bool :=
   let r := (moduleOf env n).getRoot
-  r == `Dissertation || r == `LevyStochCalc
+  r == `MVFBSDEJ || r == `LevyStochCalc
 
 def kindOf : ConstantInfo → String
   | .thmInfo _ => "theorem" | .defnInfo _ => "def" | .inductInfo _ => "inductive"
@@ -93,7 +93,7 @@ def checkSpec (spec : Name) : MetaM Unit := do
   let mut errs : Array String := #[]
   unless ci matches .defnInfo _ do errs := errs.push "not-a-def"
   unless ci.type == .sort .zero do errs := errs.push "type-not-Prop"
-  unless (`Dissertation.PaperSpec).isPrefixOf (moduleOf env spec) do
+  unless (`MVFBSDEJ.PaperSpec).isPrefixOf (moduleOf env spec) do
     errs := errs.push "outside-PaperSpec"
   let bad ← axiomsOf spec
   unless bad.isEmpty do errs := errs.push s!"axioms={bad.toList}"
@@ -149,7 +149,7 @@ def checkProof (tag : String) (thm spec : Name) : MetaM Unit := do
   let some ci := env.find? thm | IO.println s!"{tag} {thm} {spec} ERR:missing -"; return
   let mut errs : Array String := #[]
   unless ci matches .thmInfo _ do errs := errs.push "not-a-theorem"
-  unless (`Dissertation.Acceptance).isPrefixOf (moduleOf env thm) do
+  unless (`MVFBSDEJ.Acceptance).isPrefixOf (moduleOf env thm) do
     errs := errs.push "outside-Acceptance"
   if tag == "ACC" then
     match ci.type with
@@ -177,7 +177,7 @@ def checkLayering : CoreM Unit := do
   let names := env.header.moduleNames
   for i in [:names.size] do
     let mod := names[i]!
-    unless (`Dissertation.PaperSpec).isPrefixOf mod do continue
+    unless (`MVFBSDEJ.PaperSpec).isPrefixOf mod do continue
     let mut seen : NameSet := {}
     let mut stack : Array Name := #[mod]
     while !stack.isEmpty do
@@ -185,7 +185,7 @@ def checkLayering : CoreM Unit := do
       stack := stack.pop
       if seen.contains m then continue
       seen := seen.insert m
-      if (`Dissertation.Acceptance).isPrefixOf m then
+      if (`MVFBSDEJ.Acceptance).isPrefixOf m then
         IO.println s!"LAYER {mod} imports {m}"
       let some idx := env.getModuleIdx? m | continue
       for imp in env.header.moduleData[idx.toNat]!.imports do
