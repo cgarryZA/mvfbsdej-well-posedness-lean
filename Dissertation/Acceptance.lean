@@ -49,6 +49,7 @@ import Dissertation.Acceptance.A.Sec4Contraction
 import Dissertation.Acceptance.A.WitnessContraction
 import Dissertation.Acceptance.A.Sec4LocalMartingales
 import Dissertation.Acceptance.A.WitnessLocal
+import Dissertation.Acceptance.A.Sec4BDG
 
 /-!
 # Proofs of the statements of the paper

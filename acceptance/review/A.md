@@ -1459,6 +1459,131 @@ Review by claude-auditor: faithful with representation choices (report `reports/
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_dY--claude-auditor--2026-10-19T22_56_08Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_dY ed839d34f480cba1cc37dd9a0d2b35ad by=claude-auditor -->
 
+## (4.18), the four bounds and the fifth integrand in Step 1 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_bdg4_XZ`, `eq_bdg4_sigmaY`, `eq_bdg4_XU`, `eq_bdg4_hY`, `eq_bdg4_fifth`
+
+Manuscript (proof of Lemma `lem:pert`, lines 579–622): "Of the last five terms of (4.17), the
+first four are bounded by BDG and Cauchy–Schwarz, with (2.1) in the jump terms:
+`𝔼 sup_{t ≤ T} |∫_0^t ⟨G δX_{s−}, δZ_s dW_s⟩| ≤ c_BDG ‖G‖ (𝔼 sup_{t ≤ T} |δX_t|²)^{1/2}
+(𝔼 ∫_0^T |δZ_t|²_F dt)^{1/2}`,
+`𝔼 sup_{t ≤ T} |∫_0^t ⟨G (λ δσ_s + q^σ_s) dW_s, δY_{s−}⟩| ≤ c_BDG ‖G‖ (𝔼 sup_{t ≤ T} |δY_t|²)^{1/2}
+(𝔼 ∫_0^T |λ δσ_t + q^σ_t|²_F dt)^{1/2}`,
+`𝔼 sup_{t ≤ T} |∫_0^t ∫_E ⟨G δX_{s−}, δU_s(e)⟩ Ñ(ds, de)| ≤ c_BDG ‖G‖ (𝔼 sup_{t ≤ T} |δX_t|²)^{1/2}
+(𝔼 ∫_0^T ‖δU_t‖²_{L²(ν)} dt)^{1/2}`,
+`𝔼 sup_{t ≤ T} |∫_0^t ∫_E ⟨G (λ δh_s + q^h_s)(e), δY_{s−}⟩ Ñ(ds, de)| ≤ c_BDG ‖G‖
+(𝔼 sup_{t ≤ T} |δY_t|²)^{1/2} (𝔼 ∫_0^T ‖λ δh_t + q^h_t‖²_{L²(ν)} dt)^{1/2}`. (4.18)
+Since `Θ¹ − Θ² ∈ ℍ`, `𝔼 sup_{t ≤ T} |δX_t|² + 𝔼 sup_{t ≤ T} |δY_t|² + 𝔼 ∫_0^T (|δZ_t|²_F
++ ‖δU_t‖²_{L²(ν)}) dt = ‖Θ¹ − Θ²‖²_ℍ < ∞`, and by the computation of (4.9), with the forcings
+square-integrable, `𝔼 ∫_0^T (|λ δσ_t + q^σ_t|²_F + ‖λ δh_t + q^h_t‖²_{L²(ν)}) dt < ∞`. The four
+suprema in (4.18) are therefore integrable, so the supremum criterion applies to those four local
+martingales. The fifth has predictable integrand, and by Cauchy–Schwarz
+`𝔼 ∫_0^T ∫_E |⟨λ δh_t(e) + q^h_t(e), Gᵀ δU_t(e)⟩| ν(de) dt ≤ ‖G‖ (𝔼 ∫_0^T ‖λ δh_t + q^h_t‖²_{L²(ν)}
+dt)^{1/2} (𝔼 ∫_0^T ‖δU_t‖²_{L²(ν)} dt)^{1/2} < ∞`. Hence (2.2) applies, and all five terms have
+zero expectation." The §4 preamble (lines 30–35) fixes BDG in quadratic-variation form, at `p = 1`
+for the zero-mean arguments, with one universal constant `c_BDG`.
+
+Propositions (hypotheses: those of Lemma 4.3, `lem_pert`, verbatim, as in `eq_dX`; the bounds
+first fix `c₀ > 0` and take every `c ≥ c₀`):
+
+* `eq_bdg4_XZ`: with `L^X_s = (δX_{s−} for s ∈ (0, T], 0 otherwise)` (`leftLimProc` of
+  `X¹ − X²`), the integrand `H_s(j) = ∑_k (G L^X_s)_k δZ^{kj}_s` has a local Itô integral `M` on
+  `[0, T]` (`IsLocalBrownianIntegral D.W (enlJoint …) _ T H M`), and every such `M` satisfies
+  `∫⁻ sup_{t ∈ [0, T]} ‖M_t‖ ≤ ofReal (c ‖GX G‖) (∫⁻ sup_{t ∈ [0, T]} esq δX_t)^{1/2}
+  (∑_{k, j} energy δZ^{kj})^{1/2}`, the right side is finite, and for every `t ∈ [0, T]`,
+  `M_T − M_t` is integrable with mean zero.
+* `eq_bdg4_sigmaY`: the same for `H_s(j) = ∑_k (G Σ_{·j, s})_k L^Y_{k, s}` with
+  `Σ_{ij} = λ (diffusionProc¹ − diffusionProc²)_{ij} + (q^σ_1 − q^σ_2)_{ij}` (the expression of
+  `eq_dX`), with `esq δY` and `(∑_{i, j} energy Σ_{ij})^{1/2}` on the right.
+* `eq_bdg4_XU`: the same for the marked integrand `φ_s(e) = ∑_k (G L^X_s)_k δU^k_s(e)` and the
+  local compensated integral (`IsLocalCompensatedIntegral D.N …`), with
+  `(∑_k markedEnergy δU^k)^{1/2}` on the right.
+* `eq_bdg4_hY`: some `H : Fin n → Ω → ℝ → E → ℝ` meeting the conditions of the compensated
+  integral agrees `markedEnergyMeasure`-almost everywhere with
+  `λ (coeffJump(h, Θ¹⁻) − coeffJump(h, Θ²⁻)) + (q^h_1 − q^h_2)` (cut to `[0, T]` by `jumpProc`),
+  coordinatewise, as in `eq_dX`; and for every such `H`, the bound of `eq_bdg4_XU` holds for
+  `φ_s(e) = ∑_k (G H_s(e))_k L^Y_{k, s}`, with `esq δY` and `(∑_i markedEnergy H_i)^{1/2}` on the
+  right.
+* `eq_bdg4_fifth` (no constant): `∑_{i, j} energy Σ_{ij} < ⊤`; such an `H` exists; and for every
+  such `H`, `∑_i markedEnergy H_i < ⊤` and
+  `∫⁻ ∫⁻_{[0, T]} ∫⁻ ofReal |⟨H_s(e), Gᵀ δU_s(e)⟩| dν ds dP ≤ ofReal ‖GX G‖
+  (∑_i markedEnergy H_i)^{1/2} (∑_k markedEnergy δU^k)^{1/2}`, the right side finite.
+
+Readings:
+
+* The hypotheses are those of Lemma 4.3, written as in `lem_pert` (reviewed with Lemma 4.3); the
+  differences `δX = X¹ − X²`, …, `q = δq` and `δσ` along `Θ^k` are those of `eq_dX`, `eq_dY`.
+* The four integrals are local stochastic integrals, as `M^W` and `M¹` in the proof of Lemma 4.1
+  (`lem41_MW`): their integrands carry `δX_{s−}` or `δY_{s−}`, of which `Θ¹ − Θ² ∈ ℍ` gives only
+  the second moments of the suprema, so the integrands need not have finite energy and the `L²`
+  integrals do not apply. `IsLocalBrownianIntegral` and `IsLocalCompensatedIntegral` (reviewed in
+  `definitions.md`) determine the integral up to indistinguishability on `[0, T]`, so "every such
+  `M`" is the paper's integral; the existence conjunct is its definition. `𝔼 sup_{t ≤ T} |∫_0^t …|`
+  is the lower integral of the supremum over `[0, T]` of `‖M_t‖`.
+* `δX_{s−}`, `δY_{s−}` are the left limits at the times of `(0, T]`, where they exist on every
+  path (`WeakForcedSolution`), and the weight is set to `0` at other times: the integrals over
+  `[0, t]`, `t ≤ T`, do not see times after `T`, nor the time `0` (Lebesgue-null, and `N` charges
+  no fixed time), and off `[0, T]` the paths and the representatives `H` are unconstrained.
+* `⟨G δX_{s−}, δZ_s dW_s⟩ = ∑_j (∑_k (G δX_{s−})_k δZ^{kj}_s) dW^j_s` and
+  `⟨G Σ_s dW_s, δY_{s−}⟩ = ∑_j (∑_k (G Σ_{·j, s})_k δY^k_{s−}) dW^j_s`, the library's
+  multidimensional integral of the vector integrand; likewise with `δU_s(e)` and `H_s(e)` against
+  `Ñ`. `|·|_F² = ∑_{i, j} (·)²`, so `𝔼 ∫_0^T |·|²_F dt` is `∑ energy`, and
+  `𝔼 ∫_0^T ‖·‖²_{L²(ν)} dt` is `∑ markedEnergy`; `‖G‖` is the operator norm `‖GX G‖`; the
+  suprema of `|δX|²`, `|δY|²` are those of `esq`, as in `supSize`.
+* `λ δh + q^h`, with `δh` at the predictable tuples, enters through a representative `H`, as in
+  `eq_dX` and for the same reason: the paper makes every claim about the expression `dt`-a.e., so
+  its compensated integral is that of a representative meeting the conditions of the integral;
+  the proposition states that one exists and bounds the integral of every one, and
+  `𝔼 ∫_0^T ‖λ δh_t + q^h_t‖² dt` is the marked energy of the representative (the same for all,
+  as they agree almost everywhere).
+* `c_BDG`: as for `lem41_MW`, each bound holds for every value at least some `c₀ > 0` (here
+  `c₀ = 9`), so the bounds hold together with the paper's other uses of `c_BDG` for every value at
+  least the largest `c₀`.
+* "`< ∞`" and "the four suprema … are integrable": the finiteness of each right side, which with
+  the bound puts the running supremum in `L¹`. "The supremum criterion applies": its conclusion,
+  `𝔼[M_T − M_t] = 0` with `M_T − M_t` integrable, is stated for every `t ∈ [0, T]` (the identity
+  (4.19) uses `t = 0`).
+* The display at lines 600–605 is the definition of the norm of `ℍ` (`supSize`) at the hypothesis
+  `Θ¹ − Θ² ∈ ℍ`; it enters through that hypothesis. The display at lines 606–610 is
+  `eq_bdg4_fifth`'s first conjunct and its `∑_i markedEnergy H_i < ⊤`.
+* The first link of each bound, BDG at `p = 1` in quadratic-variation form for the local martingale
+  (Davis's inequality), is cited (He, Wang and Yan) and not stated; each bound is proved through
+  the predictable quadratic variation (Lenglart's inequality) with the paper's right-hand side.
+  (2.1) "in the jump terms" turns `𝔼 ∫∫ |·|² N(ds, de)` into `𝔼 ∫∫ |·|² ν(de) ds`; the predictable
+  quadratic variation is the latter already, so the proofs do not need it.
+* Not formalised here (recorded in `scope_note`): that the four integrals and the fifth term are
+  the stochastic terms of (4.17) (the decomposition belongs to (4.17), `A:eq:Gid-path`); "the
+  fifth has predictable integrand" and the zero mean of the fifth term by (2.2) (line 622), which
+  need the fifth term itself, the compensated integral of an integrable predictable integrand
+  (the representatives here are marked progressively measurable, as in `eq_dX`).
+
+Proofs: the weights `G δX_{s−}` and `Gᵀ δY_{s−}` cut to `(0, T]` (`matLeftLimWeight`) are
+predictable, at most `(∑ |G_{ki}|) R` before the path leaves the ball of radius `R`, and
+`|w_s|² ≤ ‖G‖² sup_{t ≤ T} |·|²` (`matLeftLimWeight_props`, with `‖Gᵀ‖ = ‖G‖`); `⟨G v, y⟩ =
+⟨Gᵀ y, v⟩` (`sum_mulVec_mul_eq`) writes the second and fourth integrands with the weight
+`Gᵀ δY_{s−}`. `localBrownian_weight` and `localCompensated_weight` (BDG at `p = 1` with constant
+`9` by Lenglart's argument, the local integral along the exit times of the frozen path, and the
+zero means by `L¹`-Cauchy convergence; see `lem41_MW`) give the existence, the bounds with
+`c₀ = 9` and the zero means, with the integrability of `δZ`, `δU` from `eq_dY`, of
+`Σ` and `H` from `eq_dX`, and `𝔼 sup |δX|², 𝔼 sup |δY|² < ∞` from `supSize < ⊤`. The fifth
+integrand: `|⟨h, Gᵀ u⟩| ≤ ‖G‖ |h| |u|` pointwise and the Cauchy–Schwarz inequality on
+`Ω × [0, T] × E` (`lintegral_abs_dotProduct_le`).
+
+Witness: `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`, the hypotheses of Lemma 4.3
+(reviewed with Lemma 4.3) at Example 5.1(i) from the two initial data `0` and `e₁`, which are those
+of all five propositions. It shows that the hypotheses can be met with `δξ₀ ≠ 0`; it does not
+exhibit nonzero integrands (at this instance the data and forcings are deterministic and nothing
+is stated about `δZ`, `δU` or `Σ`).
+
+Verdict: faithful with representation choices (local stochastic integrals for the four
+integrals; the left limits cut to `(0, T]`; `λ δh + q^h` through representatives, as in (4.15);
+`c_BDG` as every value at least `c₀`); the first link of each bound and the zero mean of the
+fifth term are recorded in `scope_note`.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bdg4_XZ ed839d34f480cba1ea9600d62db2bc6a by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bdg4_sigmaY ed839d34f480cba1cb9feae8e68982b0 by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bdg4_XU ed839d34f480cba18a39ea87912f080a by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bdg4_hY ed839d34f480cba11d2a86bd66838ee7 by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bdg4_fifth ed839d34f480cba1bb7df8f3a4d24d8b by=claude-author -->
+
 ## (4.19), the `G`-energy identity in Step 1 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_Gid`
 
 Manuscript (proof of Lemma `lem:pert`, Step 1, lines 546–632): Itô's product formula gives the

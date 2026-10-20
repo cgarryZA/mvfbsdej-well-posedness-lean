@@ -64,7 +64,7 @@ theorem eq_bdg4_XZ : PaperSpec.A.eq_bdg4_XZ.{u, v, w} := by
   have hdY := fun k => (eq_dY.{u, v, w} 𝒢₀ ν n m d P D h𝒢₀ hind₀ hn hm hd T hT L α β₁ β₂ G C hJ
     h23 hG h25 lamLow lam hlow hlow1 hlam hlam1 ξ₁ ξ₂ hξ₁ hξ₂ qb₁ qb₂ qσ₁ qσ₂ qh₁ qh₂ qf₁ qf₂ qg₁
     qg₂ hq₁ hq₂ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ hW₁ hW₂ hsize k).2.2
-  choose hZm hZp hZq hUm hUp hUq - using hdY
+  choose hZm hZp hZq hUm hUp hUq _hYeq using hdY
   obtain ⟨⟨γ₁, h₁⟩, hXl₁, -⟩ := hW₁
   obtain ⟨⟨γ₂, h₂⟩, hXl₂, -⟩ := hW₂
   have hS := hsize
@@ -116,7 +116,7 @@ theorem eq_bdg4_sigmaY : PaperSpec.A.eq_bdg4_sigmaY.{u, v, w} := by
   have hdX := fun i => (eq_dX.{u, v, w} 𝒢₀ ν n m d P D h𝒢₀ hind₀ hn hm hd T hT L α β₁ β₂ G C hJ
     h23 hG h25 lamLow lam hlow hlow1 hlam hlam1 ξ₁ ξ₂ hξ₁ hξ₂ qb₁ qb₂ qσ₁ qσ₂ qh₁ qh₂ qf₁ qf₂ qg₁
     qg₂ hq₁ hq₂ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ hW₁ hW₂ hsize i).2
-  choose hσm hσp hσq - using hdX
+  choose hσm hσp hσq _hXrest using hdX
   obtain ⟨⟨γ₁, h₁⟩, -, hYl₁⟩ := hW₁
   obtain ⟨⟨γ₂, h₂⟩, -, hYl₂⟩ := hW₂
   have hS := hsize
@@ -178,7 +178,7 @@ theorem eq_bdg4_XU : PaperSpec.A.eq_bdg4_XU.{u, v, w} := by
   have hdY := fun k => (eq_dY.{u, v, w} 𝒢₀ ν n m d P D h𝒢₀ hind₀ hn hm hd T hT L α β₁ β₂ G C hJ
     h23 hG h25 lamLow lam hlow hlow1 hlam hlam1 ξ₁ ξ₂ hξ₁ hξ₂ qb₁ qb₂ qσ₁ qσ₂ qh₁ qh₂ qf₁ qf₂ qg₁
     qg₂ hq₁ hq₂ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ hW₁ hW₂ hsize k).2.2
-  choose hZm hZp hZq hUm hUp hUq - using hdY
+  choose hZm hZp hZq hUm hUp hUq _hYeq using hdY
   obtain ⟨⟨γ₁, h₁⟩, hXl₁, -⟩ := hW₁
   obtain ⟨⟨γ₂, h₂⟩, hXl₂, -⟩ := hW₂
   have hS := hsize
@@ -230,7 +230,7 @@ theorem eq_bdg4_hY : PaperSpec.A.eq_bdg4_hY.{u, v, w} := by
   have hdX := fun i => (eq_dX.{u, v, w} 𝒢₀ ν n m d P D h𝒢₀ hind₀ hn hm hd T hT L α β₁ β₂ G C hJ
     h23 hG h25 lamLow lam hlow hlow1 hlam hlam1 ξ₁ ξ₂ hξ₁ hξ₂ qb₁ qb₂ qσ₁ qσ₂ qh₁ qh₂ qf₁ qf₂ qg₁
     qg₂ hq₁ hq₂ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ hW₁ hW₂ hsize i).2
-  choose - - - hrest using hdX
+  choose _hσm _hσp _hσq hrest using hdX
   choose H₀ hH₀m hH₀p hH₀q hH₀ae using fun i => (hrest i).1
   obtain ⟨⟨γ₁, h₁⟩, -, hYl₁⟩ := hW₁
   obtain ⟨⟨γ₂, h₂⟩, -, hYl₂⟩ := hW₂
@@ -286,9 +286,9 @@ theorem eq_bdg4_fifth : PaperSpec.A.eq_bdg4_fifth.{u, v, w} := by
   have hdY := fun k => (eq_dY.{u, v, w} 𝒢₀ ν n m d P D h𝒢₀ hind₀ hn hm hd T hT L α β₁ β₂ G C hJ
     h23 hG h25 lamLow lam hlow hlow1 hlam hlam1 ξ₁ ξ₂ hξ₁ hξ₂ qb₁ qb₂ qσ₁ qσ₂ qh₁ qh₂ qf₁ qf₂ qg₁
     qg₂ hq₁ hq₂ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ hW₁ hW₂ hsize k).2.2
-  choose - - hσq hrest using hdX
+  choose _hσm _hσp hσq hrest using hdX
   choose H₀ hH₀m hH₀p hH₀q hH₀ae using fun i => (hrest i).1
-  choose - - - hUm - hUq - using hdY
+  choose _hZm _hZp _hZq hUm _hUp _hUq _hYeq using hdY
   have hS := hsize
   simp only [supSize, ENNReal.add_lt_top] at hS
   obtain ⟨⟨⟨-, -⟩, -⟩, hSU⟩ := hS

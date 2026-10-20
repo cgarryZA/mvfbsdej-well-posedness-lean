@@ -40,6 +40,7 @@ import Dissertation.PaperSpec.A.Sec4Estimates
 import Dissertation.PaperSpec.A.Sec4Frozen
 import Dissertation.PaperSpec.A.Sec4Contraction
 import Dissertation.PaperSpec.A.Sec4LocalMartingales
+import Dissertation.PaperSpec.A.Sec4BDG
 
 /-!
 # The statements of the paper

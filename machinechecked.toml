@@ -44,6 +44,7 @@ modules = [
   "Dissertation.PaperSpec.A.Sec4Frozen",
   "Dissertation.PaperSpec.A.Sec4Contraction",
   "Dissertation.PaperSpec.A.Sec4LocalMartingales",
+  "Dissertation.PaperSpec.A.Sec4BDG",
   "Dissertation.PaperSpec.A.Setting",
   "Dissertation.PaperSpec.A.Sec5DealerActive",
   "Dissertation.Acceptance.A.AppA",
@@ -92,6 +93,7 @@ modules = [
   "Dissertation.Acceptance.A.Sec5DealerActive",
   "Dissertation.Acceptance.A.Sec4LocalMartingales",
   "Dissertation.Acceptance.A.WitnessLocal",
+  "Dissertation.Acceptance.A.Sec4BDG",
 ]
 scope_roots = ["Dissertation", "LevyStochCalc"]
 spec_prefix = "Dissertation.PaperSpec"
