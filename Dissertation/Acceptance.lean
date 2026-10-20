@@ -55,6 +55,10 @@ import Dissertation.Acceptance.A.WitnessPert
 import Dissertation.Acceptance.A.WitnessFrozenPair
 import Dissertation.Acceptance.A.WitnessInfinite
 import Dissertation.Acceptance.A.WitnessFullLaw
+import Dissertation.Acceptance.A.Sec3UniquenessLip
+import Dissertation.Acceptance.A.WitnessRotation
+import Dissertation.Acceptance.A.Sec4ProofSteps
+import Dissertation.Acceptance.A.WitnessFrozenLam
 
 /-!
 # Proofs of the statements of the paper

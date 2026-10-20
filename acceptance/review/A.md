@@ -265,6 +265,97 @@ Review by claude-auditor: faithful with representation choices (report `reports/
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_uniq_bwd--claude-auditor--2026-10-20T00_40_52Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_bwd ed839d34f480cba12aa97c204e9816a6 by=claude-auditor source=A:eq:uniq-bwd@9e27142522202b563f42928c519e570d6b67fdfb9d25b3a33bdd984b39c35ef8 -->
 
+## The bound before (3.2) and the backward difference before (3.3), in the proof of Theorem 3.3: `Dissertation.PaperSpec.A.eq_uniq_coeff_ae`, `eq_uniq_bwd_eq`
+
+Manuscript (proof of Theorem `thm:uniq`, `03-main-results.tex` lines 110–138 and 158–163): with
+`δΘ_t := Θ¹_t − Θ²_t`, `μ^k_t := Law(Θ^k_t)`, `δψ_t := ψ(t, Θ¹_t, μ¹_t) − ψ(t, Θ²_t, μ²_t)` for
+`ψ ∈ {b, σ, f}` "and, at the predictable tuples as in (1.1),
+`δh_t := h(t, Θ^{1,−}_t, ·, μ^{1,−}_t) − h(t, Θ^{2,−}_t, ·, μ^{2,−}_t)`" (lines 110–117). By
+Fubini `Θ^k_t ∈ L²(Ω, ℱ_t; H)` for a.e. `t`, "Thus `(Θ^k_t, μ^k_t) ∈ D_t` for a.e. `t`, and
+Assumption 2.3 is applicable to the pair `(Θ¹_t, μ¹_t)`, `(Θ²_t, μ²_t)`; moreover
+`W₂(μ¹_t, μ²_t)² ≤ 𝔼|δΘ_t|²_H` by (2.8). Hence Assumption 2.3 yields
+`𝔼[|δb_t|² + |δσ_t|²_F + ‖δh_t‖²_{L²(ν)} + |δf_t|²] ≤ C 𝔼|δΘ_t|²_H` for a.e. `t`, where `C` is
+independent of `t`." (lines 129–138, inside the pinned region of `A:eq:uniq-coeff`, lines
+110–142). Lines 158–163, before the pinned region of `A:eq:uniq-bwd` (lines 168–172): "For the
+backward equation, `δY_t = δg_T + ∫_t^T δf_s ds − ∫_t^T δZ_s dW_s
+− ∫_t^T ∫_E δU_s(e) Ñ(ds, de)`, where `δg_T := g(X¹_T, Law(X¹_T)) − g(X²_T, Law(X²_T))`."
+
+Propositions: each for every horizon `T > 0`, coefficients with (2.3) (`JointBorel`) and
+Assumption 2.3 with constant `L`, and `Θ¹, Θ²` solving (1.1) in `ℍ_weak` (`WeakSolution`) from the
+same initial datum `ξ₀`:
+
+* `eq_uniq_coeff_ae`: `∃ K : ℝ → ℝ`, chosen first, such that for almost every `t ∈ [0, T]`
+  `∫⁻ (|δb_t|² + ∑_i |δσ_{i,t}|² + ∑_i ∫⁻ |δh_{i,t}(e)|² ν(de) + |δf_t|²) dP
+  ≤ ofReal(K(L)) ∫⁻ (|δX_t|² + |δY_t|² + ∑_k |δZ_{k,t}|² + ∑_k ∫⁻ |δU_{k,t}(e)|² ν(de)) dP`,
+  with `δb, δσ, δf` the differences of `driftProc`, `diffusionProc`, `driverProc` along `Θ¹, Θ²`
+  and `δh_i` that of `jumpProc T (coeffJump P T C (leftLimProc X^k) (leftLimProc Y^k) Z^k U^k)`.
+* `eq_uniq_bwd_eq`: for every coordinate `k`, (a) almost every path of `δf_k` is integrable on
+  `[0, T]`; (b) `δZ_k` and `δU_k` meet the conditions of the Itô and the compensated integral
+  (the proof arguments of `stochasticIntegral`, given as data); (c) for every `t ∈ [0, T]`,
+  almost surely, `δY_{k,t} = δg_{k,T} + ∫_{[t, T]} δf_k(s) ds − ((∫ δZ_k dW)_T − (∫ δZ_k dW)_t)
+  − ((∫∫ δU_k dÑ)_T − (∫∫ δU_k dÑ)_t)`, with the library's integrals and `δg_{k,T}` the
+  difference of the `terminalVal`s.
+
+Readings:
+
+* The hypotheses are the ones the two steps use: (2.3), Assumption 2.3 (whose coupling bounds
+  (2.8) and (2.9) the step invokes) and two solutions in `ℍ_weak` with the same initial
+  condition. The passages are printed in the proof of Theorem 3.3, under Assumptions 2.3–2.5 and a
+  `G` of full rank, where Theorem 3.3 itself gives `Θ¹ = Θ²`; the scope review found that, read
+  with those hypotheses, both assertions hold with both sides zero. Remark 3.4 says the argument
+  uses "only the Lipschitz control of coefficient differences", and the propositions are stated
+  under exactly that. They imply the printed assertions: the hypotheses of Theorem 3.3 contain
+  these, with the same solution notion (`WeakSolution`, as in `thm_uniq`). The witness below has
+  two distinct solutions.
+* `C` independent of `t`: `K` is chosen before everything, as a function of the Lipschitz constant
+  `L` alone, so it depends neither on `t` nor on `T`, the data or the solutions.
+* `|δΘ_t|²_H = |δX_t|² + |δY_t|² + |δZ_t|²_F + ‖δU_t‖²_{L²(ν)}`, the norm of
+  `H = ℝⁿ × ℝᵐ × ℝ^{m × d} × L²(ν; ℝᵐ)`; the expectations are lower integrals in `[0, ∞]` (`esq`,
+  `∑_k esq` for `|·|²_F`, `∫⁻ |·|² ν(de)` for `‖·‖²_{L²(ν)}`), so the bound says nothing at a
+  time where its right side is infinite. "For a.e. `t`" is Lebesgue-almost every `t ∈ [0, T]`.
+* `δψ` through `driftProc`, `diffusionProc`, `driverProc` and `terminalVal` (reviewed in
+  `definitions.md`), and `δh` at the predictable tuples through `leftLimProc` and `coeffJump`,
+  exactly as in `eq_uniq_coeff` (reviewed with (3.2)).
+* The backward difference is the difference of the backward equations of (1.1) at the two
+  solutions, an identity of processes on `[0, T]`, read at each time almost surely: the form in
+  which (1.1) is stated (`PaperWeakSolutionInt`). `∫_t^T … dW` and `∫_t^T ∫_E … Ñ` are differences
+  of the library's integrals at `T` and `t`; (a) and (b) say the three integrals are not read at
+  junk values. The section of (3.2) and (3.3) records these two assertions as not stated; these
+  propositions state them.
+
+Proofs: two solutions in `ℍ_weak` solve the `λ`-forced system at `λ = 1` with zero forcing
+(`paperWeakSolutionForcedInt_one_zero_iff`); extended off `[0, T]`, their difference is a
+difference system (`PairDiff`) with the coupling matrix `0` and `α = β₁ = β₂ = 0`, for which
+Assumption 2.5 holds trivially (`diagonalMonotone_zero`, `terminalMonotone_zero`), so Assumption
+2.3 along the diagonal suffices (`PaperWeakSolutionForcedInt.exists_pairDiff_lip`). Its Lipschitz
+field (`PairDiff.lip`, (3.2) at almost every time, with `K = 10 (2L)²`) is the bound once the jump
+coefficient at the predictable tuples is identified with the solutions' representatives almost
+everywhere (`ae_forcedJump_sub_leftLim_eq`, read time first by
+`ae_time_ae_of_ae_markedEnergyMeasure`). Its backward coordinates are linear backward equations
+(`LinearBSDEJ`) with terminal value `δg_k` and drift `δf_k`, whose fields give (a)–(c) on `[0, T]`,
+where the extensions agree with the solutions.
+
+Witness: `Dissertation.Acceptance.A.rem_uniq_lip_hypotheses`: over a Lévy driver with `d = 1`,
+`ν = δ₀` on `ℝ`, `𝒢₀ = ⊥`, `n = m = 1`, `T = π/4`, the system of Example 5.1(i) with
+`σ_c = h_c = 0`, `β₂ = 1` and the reversed sign `β₁ = −1` (`b = y`, `σ = z`, `h = u`, `f = x`,
+`g = x`) satisfies (2.3) and Assumption 2.3 with `L = 1`; from the initial datum `0` it has the
+two solutions `(sin t, cos t, 0, 0)` and the zero tuple in `ℍ_weak`, with `δX_t = sin t` and
+`δY_t = cos t` (stated); and it satisfies Assumption 2.5 for no `G` of full rank (stated), which is
+why two distinct solutions can exist. By hand, `δb_t = cos t` and `δf_t = sin t`, so the left side
+of the bound is `cos² t + sin² t = 1` at every `t` and its right side `40 · 1`; `δσ = δh = 0`. In
+the backward difference `δg_T = sin(π/4) ≠ 0` and `∫_t^T δf_s ds = cos t − cos(π/4)`, so the
+terminal and drift terms are present; the stochastic terms vanish.
+
+Verdict: faithful; the hypotheses are those the steps use, and the printed passages, under the
+hypotheses of Theorem 3.3, are their instances.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_coeff_ae ed839d34f480cba1a9e05e97904e4b0f by=claude-author source=A:eq:uniq-coeff@2dd8f5d9caccdcd87ce71c94e62f3be5dc6ab3ef350822523ab9098d57f3d769 -->
+Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.eq_uniq_coeff_ae--claude-auditor--2026-10-20T15_30_04Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_coeff_ae ed839d34f480cba1a9e05e97904e4b0f by=claude-auditor source=A:eq:uniq-coeff@2dd8f5d9caccdcd87ce71c94e62f3be5dc6ab3ef350822523ab9098d57f3d769 -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_bwd_eq ed839d34f480cba1dacb4b647f5f4499 by=claude-author source=A:eq:uniq-bwd@9e27142522202b563f42928c519e570d6b67fdfb9d25b3a33bdd984b39c35ef8 -->
+Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.eq_uniq_bwd_eq--claude-auditor--2026-10-20T15_30_04Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_bwd_eq ed839d34f480cba1dacb4b647f5f4499 by=claude-auditor source=A:eq:uniq-bwd@9e27142522202b563f42928c519e570d6b67fdfb9d25b3a33bdd984b39c35ef8 -->
+
 ## Theorem 3.5: `Dissertation.PaperSpec.A.thm_cwp`, and its continuous dependence
 
 Manuscript (§3, Theorem `thm:cwp`): for every horizon `T > 0`,
@@ -987,6 +1078,56 @@ Verdict: faithful.
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_supE--claude-auditor--2026-10-19T22_59_53Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_supE ed839d34f480cba17f3cae8e2942fb86 by=claude-auditor source=A:eq:supE@f8d195505541585ca475bfa8dacd155e918c8cab4d02984f325636e45bc61066 -->
 
+## The weighted inequality in the proof of Lemma 4.1: `Dissertation.PaperSpec.A.eq_supE_weighted`
+
+Manuscript (proof of Lemma `lem:bpbsde`, lines 188–199), after the pathwise identity (4.5) at
+`t ∈ [0, T]` and the zero means of its three stochastic terms: "Taking expectations in (4.5)
+therefore removes the three martingale terms, and bounding the drift term by Young's inequality,
+`2⟨δY_s, φ_s⟩ ≤ |δY_s|² + |φ_s|²`, cancels the `|δY_s|²` integrals on the two sides:
+`𝔼 e^t |δY_t|² + 𝔼 ∫_t^T e^s (|δZ_s|²_F + ‖δU_s‖²_{L²(ν)}) ds ≤ 𝔼 e^T |δξ|²
++ 𝔼 ∫_t^T e^s |φ_s|² ds`." The display lies before the pinned region of `A:eq:supE` (lines
+208–217), whose bound by `R` it gives once `1 ≤ e^s ≤ e^T`.
+
+Proposition: under the hypotheses of Lemma 4.1 (those of `lem_bpbsde`, verbatim), for every
+`t ∈ [0, T]`, `ofReal(e^t) ∫⁻ |δY_t|² + ∫⁻ ∫_{[t, T]} ofReal(e^s) (∑_k |δZ_{k,s}|²
++ ∑_k ∫⁻ |δU_{k,s}(e)|² ν(de)) ds ≤ ofReal(e^T) ∫⁻ |δξ|² + ∫⁻ ∫_{[t, T]} ofReal(e^s) |φ_s|² ds`.
+
+Readings:
+
+* The hypotheses are those in force in the proof, the hypotheses of Lemma 4.1, as for (4.6).
+* "For every `t`": (4.5) is written at every `t ∈ [0, T]`, and so is the display. `∫_t^T` is over
+  `[t, T]`; `𝔼 e^t |δY_t|²` is `e^t 𝔼|δY_t|²`, the weight being deterministic. The expectations
+  are lower integrals in `[0, ∞]`, sample-outer: `|δY_t|²` and `|φ_s|²` are `esq`,
+  `|δZ_s|²_F = ∑_k |δZ_{k,s}|²` (the rows of `δZ` are its coordinates) and
+  `‖δU_s‖² = ∑_k ∫ δU_k(s, e)² ν(de)`, as in `lem_bpbsde`. The bound says nothing when its right
+  side is infinite; under the hypotheses it is finite.
+* Taking expectations in (4.5) and Young's inequality are the proof; (4.5) is not stated
+  (`A:eq:itoY2`, whose note records that the proof uses it through this display).
+* The section of (4.6) records this display as a step of the proof, not stated; it is stated
+  here.
+
+Proof: for each coordinate the equation is a linear backward equation (`LinearBSDEJ`) with a
+progressive version `ψ` of `φ`, equal to `φ` almost everywhere on `Ω × [0, T]` and of the same
+energy (`exists_linearBSDEJ_of_measurable`). The weighted second-moment identities at the weight
+`e^s` at the horizons `t` and `T` (`LinearBSDEJ.exp_mul_integral_mul_self_eq_at`, from the
+library's identity for Itô–Lévy processes) differ by the integral of their rate over `(t, T]`, in
+which Young's inequality `2 y ψ ≤ y² + ψ²` cancels the `y²` terms
+(`LinearBSDEJ.exp_lintegral_sq_at_add_energy_le`); the sum over the coordinates, with `ψ`
+replaced by `φ` in the last integral, is `brownianPoisson_weighted_at_vec_of_measurable`.
+
+Witness: `Dissertation.Acceptance.A.lem_bpbsde_nonzero_hypotheses`: over a Lévy driver with
+`d = 1`, `ν = δ₀` on `ℝ`, `𝒢₀ = ⊥`, `m = 1`, `T = 1`, the integrands `δZ = δU = 1_{(0, 1]}`,
+`φ = 0`, `δY_t = ∫_0^t δZ dW + ∫_0^t ∫_E δU Ñ(ds, de)` and `δξ = δY_1` meet the hypotheses of
+Lemma 4.1, `δZ` with energy `1` (stated). By hand `𝔼|δY_t|² = 2t`, and at `t` the inequality reads
+`2t e^t + 2(e − e^t) ≤ 2e`: the weighted `δZ`- and `δU`-integral is positive for `t < 1`, and the
+terminal term is `2e`.
+
+Verdict: faithful.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_supE_weighted ed839d34f480cba197b43e0802d21b08 by=claude-author source=A:eq:supE@f8d195505541585ca475bfa8dacd155e918c8cab4d02984f325636e45bc61066 -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_supE_weighted--claude-auditor--2026-10-20T15_31_29Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_supE_weighted ed839d34f480cba197b43e0802d21b08 by=claude-auditor source=A:eq:supE@f8d195505541585ca475bfa8dacd155e918c8cab4d02984f325636e45bc61066 -->
+
 ## Lemma 4.2: `Dissertation.PaperSpec.A.lem_small`
 
 Manuscript (§4, Lemma `lem:small`): under Assumptions
@@ -1201,6 +1342,54 @@ Verdict: faithful.
 <!-- spec-review: Dissertation.PaperSpec.A.eq_coeffdiff ed839d34f480cba1b363f744d12fe99d by=claude-author source=A:eq:coeffdiff@a02482f342dcea543d3e2b9f5367fcfcc00191aef184c33ffa0477616f3b3bb3 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_coeffdiff--claude-auditor--2026-10-20T00_44_30Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_coeffdiff ed839d34f480cba1b363f744d12fe99d by=claude-auditor source=A:eq:coeffdiff@a02482f342dcea543d3e2b9f5367fcfcc00191aef184c33ffa0477616f3b3bb3 -->
+
+## The bound before (4.9) at almost every time, Step 1 of the proof of Lemma 4.2: `Dissertation.PaperSpec.A.eq_coeffdiff_ae`
+
+Manuscript (proof of Lemma `lem:small`, Step 1, lines 325–337), with the objects of lines 312–323
+quoted in the section of (4.9): "Write `S_s := |δb_s| + |δσ_s|_F + ‖δh_s‖_{L²(ν)} + |δf_s|`.
+Assumption 2.3, applied to the diagonal inputs `(Θ¹_s, μ^{Θ¹}_s)` and `(Θ²_s, μ^{Θ²}_s)`, gives
+`S_s ≤ L(|δX_s| + |δY_s| + |δZ_s|_F + ‖δU_s‖_{L²(ν)} + W₂(μ^{Θ¹}_s, μ^{Θ²}_s))`. Squaring,
+using Cauchy–Schwarz in `ℝ⁵`, taking expectations, and bounding the deterministic Wasserstein
+term by (2.8) give `𝔼 S_s² ≤ 10L² 𝔼[|δX_s|² + |δY_s|² + |δZ_s|²_F + ‖δU_s‖²]`." Lines 333–337 lie
+before the pinned region of `A:eq:coeffdiff` (lines 339–348); the next sentence integrates the
+bound in `s`.
+
+Proposition: under the hypotheses of Lemma 4.2 (`T > 0`, (2.3), Assumptions 2.2–2.3 with `L` and
+the datum `ξ₀`), for two trials `Θ¹, Θ²` with `HTuple` over `enlJoint`, for almost every
+`s ∈ [0, T]`, `∫⁻ coeffDiffNorm(Θ¹, Θ²)_s² dP ≤ ofReal(10L²) ∫⁻ (|δX_s|² + |δY_s|²
++ ∑_k |δZ_{k,s}|² + ∑_k ∫⁻ |δU_{k,s}(e)|² ν(de)) dP`.
+
+Readings:
+
+* `S_s` is `coeffDiffNorm` at the tuples `Θᵏ_s` and their laws, as in (4.9) (reviewed in
+  `definitions.md` and with (4.9)); the right side is `|Θ¹_s − Θ²_s|²_H` written by coordinates,
+  as there. The expectations are lower integrals in `[0, ∞]`.
+* The time: the step applies Assumption 2.3 to "the diagonal inputs `(Θᵏ_s, μ^{Θᵏ}_s)`", which
+  `Θᵏ_s` is at almost every `s` (square integrable and `ℱ_s`-measurable); the bound is read at
+  almost every `s ∈ [0, T]` (Lebesgue), the times at which the step makes sense, and is what the
+  first link of (4.9) integrates. The constant `10L²` is the printed one.
+* The hypotheses are those of the enclosing statement, as for (4.9); the step uses Assumption 2.3
+  alone. The frozen images do not enter.
+* The section of (4.9) records this bound as not stated on its own; it is stated here.
+
+Proof: at almost every `s ∈ [0, T]` the trials are diagonal inputs
+(`PaperWeakTuple.stronglyMeasurable_tupleAt`, `ae_memLp_tupleAt`), and the interior bound of
+Assumption 2.3 at `s` with the coupling bound gives `𝔼 S_s² ≤ 10L² 𝔼|Θ¹_s − Θ²_s|²_H`
+(`LipInteriorAt.lintegral_sq_coeffDiff_le`), bounded by the coordinates (`tupleAt_sub`,
+`ofReal_channelSq_tupleAt_le`).
+
+Witness: `Dissertation.Acceptance.A.frozen_pair_window_hypotheses`, as for the forward difference
+before (4.10): at the system of Example 5.1(i) with `β₁ = β₂ = 1`, `σ_c = h_c = 0` (`b = −y`,
+`σ = −z`, `h = −u`, `f = x`) and `L = 1`, the trials the zero tuple and
+`(1, 1, 1_{(0, 1]}, 1_{(0, 1]})`, whose coefficient differences `δb = 1_{[0, 1]}`,
+`δσ = 1_{(0, 1]}` and `δh = 1_{(0, 1]}` have energy `1` each (stated). By hand `δf = −1`, so
+`S_s = 4` on `(0, 1]`, and the bound reads `16 ≤ 10 · (1 + 1 + 1 + 1) = 40` there.
+
+Verdict: faithful.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_coeffdiff_ae ed839d34f480cba122e3ae64778e3109 by=claude-author source=A:eq:coeffdiff@a02482f342dcea543d3e2b9f5367fcfcc00191aef184c33ffa0477616f3b3bb3 -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_coeffdiff_ae--claude-auditor--2026-10-20T15_31_29Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_coeffdiff_ae ed839d34f480cba122e3ae64778e3109 by=claude-auditor source=A:eq:coeffdiff@a02482f342dcea543d3e2b9f5367fcfcc00191aef184c33ffa0477616f3b3bb3 -->
 
 ## The forward difference before (4.10), Step 2 of the proof of Lemma 4.2: `Dissertation.PaperSpec.A.eq_fwddiff_identity`
 
@@ -1468,6 +1657,59 @@ Verdict: faithful (broader, printed claim an instance).
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.eq_terdiff--claude-auditor--2026-10-19T22_59_53Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_terdiff ed839d34f480cba104ed4a8f00254090 by=claude-auditor source=A:eq:terdiff@0caddd587e020626144250f6aae2937e7b9eb2d9473e34140e10631526acde4c -->
 
+## The backward difference before (4.12), Step 4 of the proof of Lemma 4.2: `Dissertation.PaperSpec.A.eq_bwddiff_identity`
+
+Manuscript (proof of Lemma `lem:small`, Step 4, lines 391–397), with the objects of lines 312–323
+quoted in the section of (4.10): "*Step 4: the backward difference.* Taking the difference of
+(4.8) at `Θ¹` and `Θ²`, the terms `q^g_T` and `q^f` cancelling, `δȲ_t = δξ̄ + ∫_t^T λ δf_s ds
+− ∫_t^T δZ̄_s dW_s − ∫_t^T ∫_E δŪ_s(e) Ñ(ds, de)`, which is (4.4) with `δξ = δξ̄` and
+`φ_s = λ δf_s`." Here `δξ̄ := λ [g(X̄¹_T, Law(X̄¹_T)) − g(X̄²_T, Law(X̄²_T))]` (line 378). The
+display lies before the pinned region of `A:eq:bwddiff` (lines 409–422); it is the twin of the
+forward difference before (4.10), `eq_fwddiff_identity`.
+
+Proposition: under the hypotheses of (4.10), verbatim (Lemma 4.2's `T > 0`, (2.3), Assumption 2.2
+with the datum `ξ₀`, Assumption 2.3 with `L`; `λ ∈ [0, 1]`, a forcing `q` with `PredForcing` over
+`enlJoint`, trials `Θ¹, Θ²` with `HTuple`, and `FrozenStep … Θᵏ Θ̄ᵏ` with the same `λ`, `ξ₀`,
+`q`), for every coordinate `k`, `(δȲ_k, δZ̄_k, δŪ_k)` satisfies `LinearBSDEJ` with terminal value
+`λ (terminalVal(X̄¹)_k − terminalVal(X̄²)_k)` and drift `λ δf_k`, `δf_k` the difference of the
+`driverProc`s at the trials.
+
+Readings:
+
+* `LinearBSDEJ` (reviewed in `definitions.md`) is the linear backward equation (4.4) in the
+  library's form: almost surely at each `t ∈ [0, T]`,
+  `Y_t = ξ + ∫_t^T φ_s ds − (∫_0^T Z dW − ∫_0^t Z dW) − (∫_0^T ∫_E U Ñ − ∫_0^t ∫_E U Ñ)`, with
+  `Z`, `U`, `φ` progressive, of finite energy on `[0, T]` and vanishing off it, `ξ ∈ L²` and `Y`
+  adapted with right-continuous paths. The proposition states the printed identity in that form
+  ("which is (4.4) with `δξ = δξ̄` and `φ_s = λ δf_s`"), at each time almost surely, as (4.8)
+  itself is stated in `FrozenStep`, coordinatewise. The regularity it carries is what the next
+  sentence (lines 398–407, also before the pinned region) lists as the hypotheses of Lemma 4.1
+  for the difference: `δȲ` adapted (with right-continuous paths, its left limits following from
+  the equation), `δZ̄`, `δŪ` and `λ δf` of finite energy, `δξ̄` square integrable.
+* The objects: `δȲ, δZ̄, δŪ` are the differences of the backward components of the two frozen
+  steps; `terminalVal(X̄)_k` is coordinate `k` of `g(X̄_T, Law(X̄_T))`, so the terminal value is
+  `δξ̄` (the frozen terminal values are `λ g + q^g_T`, and `q^g_T` cancels, as printed); `δf_k` is
+  the driver difference at the trials and their laws (line 316), through `driverProc`, and `λ`
+  stands outside it (`q^f` cancels).
+* The section of (4.12) records the text before its display as steps of the proof, not stated;
+  the difference equation is stated here.
+
+Proof: the difference of the two linear backward equations of the frozen steps
+(`LinearBSDEJ.sub`), whose terminal values and drifts are rewritten by `ring`.
+
+Witness: `Dissertation.Acceptance.A.frozen_pair_window_hypotheses`, as for the forward difference
+before (4.10) (`λ = 1`, the zero forcing, the trials the zero tuple and
+`(1, 1, 1_{(0, 1]}, 1_{(0, 1]})` at Example 5.1(i) with `β₁ = β₂ = 1`, `σ_c = h_c = 0`, so
+`f = x`, `g = x`). By hand `δf = −1`, and `δξ̄ = δX̄_1 = 1 + ∫_0^1 1_{(0, 1]} dW
++ ∫_0^1 ∫ 1_{(0, 1]} Ñ(ds, de)` with `𝔼|δξ̄|² = 3`: the terminal value and the drift of the
+equation are both nonzero.
+
+Verdict: faithful.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bwddiff_identity ed839d34f480cba1d4d84f3b5a301248 by=claude-author source=A:eq:bwddiff@de9905541b6f5056f355fb8ba0c38a5ec78c92b2259b3b8960caf0be162e2643 -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_bwddiff_identity--claude-auditor--2026-10-20T15_31_29Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bwddiff_identity ed839d34f480cba1d4d84f3b5a301248 by=claude-auditor source=A:eq:bwddiff@de9905541b6f5056f355fb8ba0c38a5ec78c92b2259b3b8960caf0be162e2643 -->
+
 ## (4.12), Step 4 of the proof of Lemma 4.2: `Dissertation.PaperSpec.A.eq_bwddiff`
 
 Manuscript (proof of Lemma `lem:small`, Step 4, lines 391–424), with the objects of Steps 1–3
@@ -1587,6 +1829,55 @@ Verdict: faithful.
 <!-- spec-review: Dissertation.PaperSpec.A.eq_contract ed839d34f480cba1410aaf91d78575ad by=claude-author source=A:eq:contract@747835f57a1b4c1429243cdebab1cc3873022b5774d61884f0b447b1a5d04f41 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_contract--claude-auditor--2026-10-20T04_27_45Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_contract ed839d34f480cba1410aaf91d78575ad by=claude-auditor source=A:eq:contract@747835f57a1b4c1429243cdebab1cc3873022b5774d61884f0b447b1a5d04f41 -->
+
+## `λ_*` and the contraction by `1/2`, after (4.13), in the proof of Lemma 4.2: `Dissertation.PaperSpec.A.eq_contract_half`
+
+Manuscript (proof of Lemma `lem:small`, Step 5, lines 445–454), after (4.13) and the dependences
+of its constants (quoted in the section of (4.13)): "so `C_Φ = C_Φ(T, L, c_BDG)`. Setting
+`λ_* := (2 √C_Φ)⁻¹ ∈ (0, 1/2]` gives `C_Φ λ² ≤ 1/4` for `λ ∈ [0, λ_*]`, so that (4.13) reads
+`‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖_ℍ ≤ (1/2) ‖Θ¹ − Θ²‖_ℍ`, `λ ∈ [0, λ_*]`." The sentence lies after the
+pinned region of `A:eq:contract` (lines 429–439); `lem_small` leaves its threshold an
+unspecified function of `(T, L)`, so neither the printed `λ_*` nor the contraction by `1/2` was
+stated before.
+
+Proposition: `∃ c₀ > 0` such that for every `c ≥ c₀`, under the hypotheses of Lemma 4.2 (`T > 0`,
+(2.3), Assumptions 2.2–2.3 with `L` and `ξ₀`), for all reals `C_Φ`, `λ_*` with
+`C_Φ = max{1, C_X + C_Y}` (`C_X = 3 max{T, c} · 10L² max{T, 1}`,
+`C_Y = (2e^T (5 + 4c) + 4T)(4L² C_X + 10L² max{T, 1})`, the constants of (4.13)) and
+`λ_* = (2 √C_Φ)⁻¹`: `0 < λ_* ≤ 1/2`; and for every `λ ∈ [0, λ_*]`, `C_Φ λ² ≤ 1/4` and, for a
+forcing `q` (`PredForcing`), two trials `Θ¹, Θ²` (`HTuple`) and their frozen steps at `λ`
+(`FrozenStep`, same `λ`, `ξ₀`, `q`),
+`supSize(Θ̄¹ − Θ̄²)^{1/2} ≤ ofReal(1/2) supSize(Θ¹ − Θ²)^{1/2}`.
+
+Readings:
+
+* The constants are those of (4.13), stated by the same explicit formulas in `T`, `L` and the
+  value `c` of `c_BDG`, quantified before the data as for (4.13); `λ_*` is the printed
+  `(2 √C_Φ)⁻¹`, introduced as a real equal to it, as `C_Φ` is.
+* `‖·‖_ℍ` is the square root of `supSize` (the squared norm of `ℍ` of §3) in `[0, ∞]`, `x^{1/2}`
+  as `ENNReal.rpow`; `Φ_λ(Θᵏ)` is the frozen step `Θ̄ᵏ` (`FrozenStep`), as in (4.13). "So that
+  (4.13) reads" is the contraction itself, stated for every `λ ∈ [0, λ_*]`, `λ ≤ 1/2 ≤ 1`.
+* The hypotheses are those of (4.13), with `λ` restricted to `[0, λ_*]`.
+* The section of (4.13) assigns this sentence to the conclusion of the proof of Lemma 4.2; it is
+  stated here.
+
+Proof: `C_Φ ≥ 1` gives `√C_Φ ≥ 1`, so `0 < λ_* ≤ 1/2`, and `C_Φ λ_*² = 1/4`, so
+`C_Φ λ² ≤ 1/4` for `0 ≤ λ ≤ λ_*`. The contraction is (4.13) (`eq_contract` at the same `c`) with
+`C_Φ λ² ≤ 1/4`, raised to the power `1/2` (`(1/4)^{1/2} = 1/2`).
+
+Witness: `Dissertation.Acceptance.A.frozen_pair_window_lam_hypotheses`: the instance of
+`frozen_pair_window_hypotheses` with the frozen steps at an arbitrary `λ ∈ [0, 1]`, in particular
+at every `λ ∈ [0, λ_*]` (`frozen_hypotheses`: Example 5.1(i) with `β₁ = β₂ = 1`, `σ_c = h_c = 0`,
+datum `0`, `L = 1`, the zero forcing; the trials the zero tuple and
+`(1, 1, 1_{(0, 1]}, 1_{(0, 1]})`, each with a frozen step at `λ`; `δb`, `δσ`, `δh` of energy `1`,
+stated). By hand `‖Θ¹ − Θ²‖²_ℍ = 1 + 1 + 1 + 1 = 4`, and at `λ > 0` the frozen difference has
+`δX̄_t = λ (t + ∫_0^t 1_{(0, 1]} dW + ∫_0^t ∫ 1_{(0, 1]} Ñ(ds, de))`, so both sides are positive.
+
+Verdict: faithful.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_contract_half ed839d34f480cba1a63dc37c47701d1d by=claude-author source=A:eq:contract@747835f57a1b4c1429243cdebab1cc3873022b5774d61884f0b447b1a5d04f41 -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_contract_half--claude-auditor--2026-10-20T15_31_29Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_contract_half ed839d34f480cba1a63dc37c47701d1d by=claude-auditor source=A:eq:contract@747835f57a1b4c1429243cdebab1cc3873022b5774d61884f0b447b1a5d04f41 -->
 
 ## Lemma 4.3: `Dissertation.PaperSpec.A.lem_pert`
 
@@ -2302,6 +2593,87 @@ Verdict: faithful.
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_fwd--claude-auditor--2026-10-20T02_03_32Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_fwd ed839d34f480cba1e1eabbb5a5cd78ba by=claude-auditor source=A:eq:fwd@ee1691dc39d0f4cefa77ed2bd65bf23b9082b6eaf7bce69caf875dc14c06ae8f -->
 
+## The chain before (4.23), Step 3 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_fwd_chain`
+
+Manuscript (proof of Lemma `lem:pert`, Step 3, lines 697–711), with `P` the data size and `δψ`,
+`δh` as defined at lines 511–526 ("`δψ_t := ψ(t, Θ¹_t, μ¹_t) − ψ(t, Θ²_t, μ²_t)`, … with `δh`
+evaluated at the predictable tuples `(Θ^{k,−}_t, μ^{k,−}_t)`"): "Fix `t ≤ T` and integrate
+(4.15) over `[0, s]`, `s ≤ t`, with `δX_0 = δξ₀`. Squaring, taking the supremum over `s` and
+expectations, Cauchy–Schwarz on the drift, BDG on the two martingales and Assumption 2.3 give
+`𝔼 sup_{s ≤ t} |δX_s|² ≤ C(𝔼|δξ₀|² + 𝔼 ∫_0^t (|δb_s|² + |δσ_s|²_F + ‖δh_s‖²) ds + P)
+≤ C(𝔼|δξ₀|² + 𝔼 ∫_0^t (|δX_s|² + |δY_s|² + |δZ_s|²_F + ‖δU_s‖²) ds + P)
+≤ C(∫_0^t 𝔼 sup_{r ≤ s} |δX_r|² ds + 𝔼 ∫_0^T (|δY_s|² + |δZ_s|²_F + ‖δU_s‖²) ds + P)`. The map
+`t ↦ 𝔼 sup_{s ≤ t} |δX_s|²` is nondecreasing and finite, since `Θ¹ − Θ² ∈ ℍ`, so Grönwall gives
+(4.23)". The chain and the sentence lie before the pinned region of `A:eq:fwd` (lines 712–714).
+
+Proposition: `∃ K₁ K₂ K₃` of `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that, under the hypotheses of
+Lemma 4.3 (those of `lem_pert`, verbatim), with `C_i = K_i(T, L, ‖GX G‖, s_min(G)⁻², α, β₁, β₂)`:
+for every `t ∈ [0, T]`,
+`∫⁻ sup_{s ∈ [0, t]} |δX_s|² ≤ ofReal(C₁) (∫⁻ |δξ₀|² + (∑_i energy_t(δb_i)
++ ∑_{i, j} energy_t(δσ_{ij}) + ∑_i markedEnergy_t(δh_i)) + P)`,
+`ofReal(C₁) (…) ≤ ofReal(C₂) (∫⁻ |δξ₀|² + (∑_i energy_t(δX_i) + ∑_k energy_t(δY_k)
++ ∑_{k, j} energy_t(δZ_{kj}) + ∑_k markedEnergy_t(δU_k)) + P)` and
+`ofReal(C₂) (…) ≤ ofReal(C₃) (∫_{[0, t]} ∫⁻ sup_{r ∈ [0, s]} |δX_r|² ds + (∑_k energy_T(δY_k)
++ ∑_{k, j} energy_T(δZ_{kj}) + ∑_k markedEnergy_T(δU_k)) + P)`; `t ↦ ∫⁻ sup_{s ∈ [0, t]} |δX_s|²`
+is monotone on `[0, T]`; and it is finite at every `t ∈ [0, T]`. Here `energy_t`,
+`markedEnergy_t` are the energies on `[0, t]`, `P = dataSize` of the differences of the data,
+`δb`, `δσ` the differences of `driftProc`, `diffusionProc`, and `δh_i` that of
+`jumpProc T (coeffJump P T C (leftLimProc X^k) (leftLimProc Y^k) Z^k U^k)`.
+
+Readings:
+
+* The hypotheses are those in force at Step 3, as for (4.23). The constants: each link has its
+  `C`, chosen before everything else as a function of the parameters of the §4 convention, as for
+  (4.23); in particular `C` does not depend on `t`, which is fixed after it ("Fix `t ≤ T`"), nor
+  on `λ` or `λ̲`. `ofReal` and the reading with `C ≥ 0` are as there.
+* The links are stated as printed, as three inequalities between consecutive members. `𝔼|δξ₀|²`
+  is `∫⁻ esq` of the difference of the initial data; `𝔼 ∫_0^t` is over `[0, t]`, in `[0, ∞]`
+  (`energy`, `markedEnergy` at the horizon `t`); `∫_0^t 𝔼 sup_{r ≤ s} |δX_r|² ds` is the
+  time-outer integral over `[0, t]` of the lower integral of the running supremum, as printed;
+  the last link's `𝔼 ∫_0^T` is at the horizon `T`.
+* `δb_s`, `δσ_s` are the coefficient differences at `(Θᵏ_s, μᵏ_s)`, `δh_s` the jump coefficient
+  difference at the predictable tuples (lines 519–523), through `coeffJump` of the left limits,
+  as in Theorem 3.3 (`eq_uniq_coeff`); `λ` and `q` do not appear in the first link, as printed
+  (the forcings enter through `P`).
+* "Nondecreasing and finite": `MonotoneOn` on `[0, T]` and `< ⊤` at every `t ∈ [0, T]`. "Since
+  `Θ¹ − Θ² ∈ ℍ`" is the reason, the hypothesis `supSize(Θ¹ − Θ²) < ∞`. Grönwall and (4.23) are
+  the next step, stated by `eq_fwd`.
+* The section of (4.23) records the displays at `t ≤ T` as steps of the proof, not stated; they
+  are stated here.
+
+Proof: `K₁ = 2(3T + 12) + 3`, `K₂ = K₁ (10 (2L)² + 1)`, `K₃ = 2K₂`. At the extensions of
+`exists_pairDiff`, which agree with the solutions on `[0, T]`: the forward coordinates of the
+difference system solve on `[0, t]` the forward equation with integrands restricted to `[0, t]`
+(`LinearFSDEJ.truncate`), so the `S²` bound of Lemma 4.1 holds on `[0, t]`
+(`LinearFSDEJ.lintegral_biSup_sq_le_at`, `3 𝔼|δξ₀|² + 3t 𝔼 ∫_0^t |λ δb + q^b|²
++ 12 𝔼 ∫_0^t (|λ δσ + q^σ|²_F + ‖λ δh + q^h‖²)`); with `|λx + q|² ≤ 2|x|² + 2|q|²` on `[0, t]`
+(`PairDiff.realisedEnergy_le_at`, the coefficient differences being jointly measurable because
+`λ ≥ λ̲ > 0`), `t ≤ T` and the forcings' energies on `[0, t]` at most `P`, this is the first link.
+The jump coefficient at the predictable tuples agrees with the representatives almost everywhere
+on `Ω × [0, T] × E` (`ae_forcedJump_sub_leftLim_eq`, divided by `λ ≠ 0`), so its marked energy on
+`[0, t]` is theirs (`markedEnergy_congr_ae_of_le`). The second link is (3.2) integrated over
+`[0, t]` (`PairDiff.coeffEnergy_le_at`, `K = 10 (2L)²`), the third
+`𝔼 ∫_0^t |δX_s|² ds ≤ ∫_0^t 𝔼 sup_{r ≤ s} |δX_r|² ds` (`PairDiff.energy_le_lintegral_biSup`),
+`𝔼|δξ₀|² ≤ P` and the energies on `[0, t]` at most those on `[0, T]`. The map is monotone because
+the suprema grow with `t`, and finite because it is at most `𝔼 sup_{t ≤ T} |δX_t|² ≤ supSize`.
+
+Witness: `Dissertation.Acceptance.A.lem_pert_backward_window_hypotheses` (from `affineWindow_pair`
+with `x₀ = 1`, `a = c = y₀ = 0`, `a' = c' = 1`): over a Lévy driver with `d = 1`, `ν = δ₀`,
+`𝒢₀ = ⊥`, `n = m = 1`, `T = 1`, the system of Example 5.1(i) with `β₁ = β₂ = 1`,
+`σ_c = h_c = 0` (`b = −y`, `σ = −z`, `h = −u`, `f = x`, `g = x`) with (2.3) and Assumptions
+2.3–2.5 at `L = 1`, `G = 1`, `α = β₁ = β₂ = 1`; `λ̲ = λ = 1`; two solutions of (4.1) for
+forcings of the class of the paper, from the initial data `1` and `0`, whose difference lies in
+`ℍ` and is `δX ≡ 1`, `δY = M^W + M^N`, `δZ = δU = 1_{(0, 1]}` (the energies of
+`⟨G δX_{s−}, δZ_s⟩` and `⟨G δX_{s−}, δU_s⟩` are `1`, stated). By hand, at every `t`,
+`𝔼 sup_{s ≤ t} |δX_s|² = 𝔼|δξ₀|² = 1`, the map is constant, and `δb = −δY`, `δσ = −δZ`,
+`δh = −δU` and `δZ, δU` are nonzero on `(0, t]`: every member of the chain is positive.
+
+Verdict: faithful.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_fwd_chain ed839d34f480cba15b2aba22478deb02 by=claude-author source=A:eq:fwd@ee1691dc39d0f4cefa77ed2bd65bf23b9082b6eaf7bce69caf875dc14c06ae8f -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_fwd_chain--claude-auditor--2026-10-20T15_31_29Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_fwd_chain ed839d34f480cba15b2aba22478deb02 by=claude-auditor source=A:eq:fwd@ee1691dc39d0f4cefa77ed2bd65bf23b9082b6eaf7bce69caf875dc14c06ae8f -->
+
 ## (4.24), Itô's formula in Step 4 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_bwdito`
 
 Manuscript (proof of Lemma `lem:pert`, Step 4, lines 716–725): "Itô's formula applied to
@@ -2421,6 +2793,82 @@ Verdict: faithful.
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_bwdyoung--claude-auditor--2026-10-19T18_47_22Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_bwdyoung ed839d34f480cba13db23656421cf5a0 by=claude-auditor source=A:eq:bwdyoung@6de6e9ca136a07fe246605603408e399b279d06e2d18e1d458a34b7b82ce829c -->
 
+## (4.25) inserted in (4.24), and the backward bound at every time, in Step 4 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_wgt_insert`
+
+Manuscript (proof of Lemma `lem:pert`, Step 4, lines 735–752), after (4.24) "for `κ > 0`" and
+(4.25) "for every `0 < ε ≤ 1`", "with `C` independent of `ε`" (quoted in their sections): "Insert
+(4.25) in (4.24): `𝔼 e^{κt} |δY_t|² + 𝔼 ∫_t^T e^{κs} [(κ − C/ε) |δY_s|²
++ (1 − ε)(|δZ_s|²_F + ‖δU_s‖²_{L²(ν)})] ds ≤ 𝔼 e^{κT} |λ δg_T + q^g_T|²
++ (C/ε) 𝔼 ∫_t^T e^{κs} (|δX_s|² + |q^f_s|²) ds`. Take `ε < 1` and `κ > C/ε`. The `δY`-integral
+on the left is then nonnegative and may be dropped, and the weights satisfy
+`1 ≤ e^{κs} ≤ e^{κT}` on `[0, T]`, so `𝔼|δY_t|² + 𝔼 ∫_t^T (|δZ_s|²_F + ‖δU_s‖²) ds
+≤ C(𝔼|λ δg_T + q^g_T|² + 𝔼 ∫_t^T (|δX_s|² + |q^f_s|²) ds)`." Both displays lie before the
+pinned region of `A:eq:wgt` (lines 756–760); the next sentence takes the supremum over `t`.
+
+Proposition: `∃ K` of `(T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)` and `∃ K'` of
+`(ε, κ, T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)` such that, under the hypotheses of Lemma 4.3 (those of
+`lem_pert`, verbatim), with `C = K(T, L, ‖GX G‖, s_min(G)⁻², α, β₁, β₂, λ̲)`:
+
+* for every `ε ∈ (0, 1]`, `κ > 0` and `t ∈ [0, T]`: the functions `∑_k δY_{k,t}²`,
+  `∑_k (λ δg_k + δq^g_k)²` (on `Ω`), `e^{κs} ((κ − C/ε) ∑_k δY_{k,s}² + (1 − ε)(∑_{k, j}
+  δZ_{kj,s}² + ∑_k ∫ δU_{k,s}(e)² ν(de)))` and `e^{κs} (∑_i δX_{i,s}² + ∑_k δq^f_{k,s}²)` (on
+  `Ω × [t, T]`, for `P ⊗ ds`) are integrable, and
+  `e^{κt} ∫ ∑_k δY_{k,t}² dP + ∫ ∫_{[t, T]} e^{κs} ((κ − C/ε) ∑_k δY_{k,s}² + (1 − ε)(…)) ds dP
+  ≤ e^{κT} ∫ ∑_k (λ δg_k + δq^g_k)² dP + (C/ε) ∫ ∫_{[t, T]} e^{κs} (∑_i δX_{i,s}²
+  + ∑_k δq^f_{k,s}²) ds dP`, Bochner integrals in `ℝ`;
+* for every `ε ∈ (0, 1)`, `κ > C/ε` and `t ∈ [0, T]`: `∑_{k, j} δZ_{kj,s}² + ∑_k ∫ δU_{k,s}(e)²
+  ν(de)` and `∑_i δX_{i,s}² + ∑_k δq^f_{k,s}²` are integrable on `Ω × [t, T]`, and
+  `∫ ∑_k δY_{k,t}² dP + ∫ ∫_{[t, T]} (∑_{k, j} δZ_{kj,s}² + ∑_k ∫ δU_{k,s}(e)² ν(de)) ds dP
+  ≤ C' (∫ ∑_k (λ δg_k + δq^g_k)² dP + ∫ ∫_{[t, T]} (∑_i δX_{i,s}² + ∑_k δq^f_{k,s}²) ds dP)`,
+  `C' = K'(ε, κ, T, L, ‖GX G‖, s_min(G)⁻², α, β₁, β₂, λ̲)`.
+
+Here `δg_k = terminalVal(X¹)_k − terminalVal(X²)_k`, `δq = q¹ − q²`.
+
+Readings:
+
+* The hypotheses are those in force at Step 4, as for (4.24) and (4.25); `κ > 0` and
+  `0 < ε ≤ 1` are the ranges at which (4.24) and (4.25) are printed, and the display holds for
+  all of them; the second display for every choice "`ε < 1` and `κ > C/ε`".
+* The constants. `C` is that of (4.25): chosen before `ε`, `κ` and `t`, a function of the
+  parameters of the §4 convention and of `λ̲`, read as for (4.25). The `C` of the second display
+  is a new constant: after "Take `ε < 1` and `κ > C/ε`" it may depend on the choice of `ε` and
+  `κ`, so `K'` takes them as arguments; with `ε` and `κ` fixed as functions of the structural
+  constants it is one of these.
+* The integrals are real, as in (4.24): the coefficient `κ − C/ε` of the display may be negative,
+  and the reading in `ℝ` keeps the printed display verbatim; the integrability of every integrand
+  is stated, so no integral is read at the junk value `0`. The second display is read in `ℝ` too,
+  every term being the integral of a nonnegative integrable function. `𝔼 e^{κt} |δY_t|²` is
+  `e^{κt} 𝔼|δY_t|²`, the weight being deterministic; `∫_t^T` is over `[t, T]`;
+  `|δZ_s|²_F = ∑_{k, j}`, `‖δU_s‖² = ∑_k ∫ δU_k(s, e)² ν(de)`, as in (4.24).
+* `q = δq` and `δg_T`, `δf` as in (4.24); "the `δY`-integral may be dropped" and the bounds on the
+  weights are the proof of the second display.
+* The section of (4.26) and (4.27) records the displays between (4.24) and (4.27) as steps of the
+  proof, not stated; these two and the first two links before (4.27) (`eq_bwd_chain`) are stated
+  now.
+
+Proof: `K = 2 (10 (2L)²) + 3`, the constant of (4.25), and `K' = e^{κT} max{1, K/ε}/(1 − ε)`. At
+the extensions of `exists_pairDiff`, for each backward coordinate, the weighted identity on the
+window `Ω × [t, T]` (`LinearBSDEJ.exp_mul_window_eq`, the identity behind (4.24)) is summed over
+the coordinates. The Young bound (4.25) at almost every `s` is a real inequality once its
+expectations, finite at almost every `s`, are written as real integrals (with
+`∫⁻ |δU|² dν = ofReal(∫ δU² dν)` almost everywhere); against the weight `e^{κs}` it integrates
+over `[t, T]` by Fubini's theorem (`PairDiff.integral_weighted_young_le`), and subtracting gives
+the display (`PairDiff.weighted_window_le`). For `ε < 1` and `κ > K/ε`, `(κ − K/ε) ≥ 0`,
+`1 ≤ e^{κt}`, `1 ≤ e^{κs} ≤ e^{κT}` on `[t, T]` and `1 − ε > 0` give the second display
+(`PairDiff.window_le`). The integrands are integrable by the finite energies of the difference
+system and of `δq^f` (`PairDiff.integrable_window`, `integrable_exp_mul_window`); the extensions
+agree with the solutions on `[0, T]`.
+
+Witness: `Dissertation.Acceptance.A.lem_pert_backward_window_hypotheses`, described with the
+chain before (4.23) (`λ̲ = λ = 1`, `δX ≡ 1`, `δY = M^W + M^N`, `δZ = δU = 1_{(0, 1]}`). By hand
+`𝔼|δY_t|² = 2t`, `λ δg_T + δq^g_T = δY_1` with `𝔼|δY_1|² = 2`, the weighted `δZ`- and
+`δU`-integral is `2 ∫_t^1 e^{κs} ds > 0` for `t < 1`, and `𝔼 ∫_t^1 e^{κs} |δX_s|² ds > 0`: both
+sides of both displays are positive.
+
+Verdict: faithful.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_wgt_insert ed839d34f480cba14b6f1b0835c7416b by=claude-author source=A:eq:wgt@1f83bb20576ba7e561a74ddc8aa535854a49efdb61f9fb1ffc80d72ea5b14701 -->
+
 ## (4.26) and (4.27), the backward estimates in Step 4 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_wgt`, `eq_bwd`
 
 Manuscript (proof of Lemma `lem:pert`, Step 4, lines 735–778): inserting (4.25) in (4.24), "Take
@@ -2479,6 +2927,53 @@ Review by claude-auditor: faithful with representation choices (report `reports/
 <!-- spec-review: Dissertation.PaperSpec.A.eq_bwd ed839d34f480cba173f30a686b4b22f5 by=claude-author source=A:eq:bwd@3114f6e187919402a154d20d84baf24f22a2a1052d28f7faf3558a9335716cf5 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_bwd--claude-auditor--2026-10-20T02_03_32Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_bwd ed839d34f480cba173f30a686b4b22f5 by=claude-auditor source=A:eq:bwd@3114f6e187919402a154d20d84baf24f22a2a1052d28f7faf3558a9335716cf5 -->
+
+## The first two links of the chain before (4.27), in Step 4 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_bwd_chain`
+
+Manuscript (proof of Lemma `lem:pert`, Step 4, lines 761–772): "Writing (4.16) forward from
+`δY_0`, BDG, Cauchy–Schwarz, Assumption 2.3 with the coupling bound (2.8), and (4.26) give
+`𝔼 sup_{t ≤ T} |δY_t|² ≤ C(𝔼|δY_0|² + 𝔼 ∫_0^T |λ δf_s + q^f_s|² ds
++ 𝔼 ∫_0^T (|δZ_s|²_F + ‖δU_s‖²) ds) ≤ C(𝔼|δY_0|² + 𝔼 ∫_0^T (|δX_s|² + |δY_s|² + |δZ_s|²_F
++ ‖δU_s‖²) ds + P) ≤ C(𝔼|δX_T|² + 𝔼 ∫_0^T |δX_t|² dt + P)`." The chain lies before the pinned
+region of `A:eq:bwd` (lines 775–778); its last link, by (4.26), gives (4.27).
+
+Proposition: `∃ K₁ K₂` of `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that, under the hypotheses of
+Lemma 4.3 (those of `lem_pert`, verbatim), with `C_i = K_i(T, L, ‖GX G‖, s_min(G)⁻², α, β₁, β₂)`:
+`∫⁻ sup_{t ∈ [0, T]} |δY_t|² ≤ ofReal(C₁) (∫⁻ |δY_0|² + ∑_k energy(λ δf_k + δq^f_k)
++ (∑_{k, j} energy(δZ_{kj}) + ∑_k markedEnergy(δU_k)))` and
+`ofReal(C₁) (…) ≤ ofReal(C₂) (∫⁻ |δY_0|² + (∑_i energy(δX_i) + ∑_k energy(δY_k)
++ ∑_{k, j} energy(δZ_{kj}) + ∑_k markedEnergy(δU_k)) + P)`, with `δf_k` the difference of the
+`driverProc`s and `P = dataSize` of the differences of the data.
+
+Readings:
+
+* The hypotheses are those in force at Step 4, as for (4.27); the constants, one per link, are
+  chosen first as functions of the parameters of the §4 convention, read as for (4.27) (Step 4
+  uses `λ` only through `λ ∈ [0, 1]`).
+* The first link is the forward-form BDG bound, the second the Lipschitz step: the two links
+  that (4.27) does not imply. The third link is (4.26) inserted, and gives (4.27) (`eq_bwd`,
+  with `eq_wgt`); it is not stated again.
+* Expectations are lower integrals in `[0, ∞]`: `𝔼 sup_{t ≤ T} |δY_t|²` the lower integral of the
+  running supremum of `esq`, `𝔼|δY_0|²` that of `esq` at `0`, `𝔼 ∫_0^T |λ δf_s + q^f_s|²` the
+  energies of the coordinates, `|δZ|²_F = ∑_{k, j}` and `‖δU‖² = ∑_k ∫ δU_k(e)² ν(de)`.
+
+Proof: `K₁ = 3T + 12`, `K₂ = (3T + 12)(2 · 10 (2L)² + 2)`. At the extensions of `exists_pairDiff`:
+the `S²` bound of Lemma 4.1 for each backward coordinate of the difference system
+(`LinearBSDEJ.lintegral_biSup_sq_le`, `3 𝔼|δY_0|² + 3T 𝔼 ∫ |λ δf + q^f|²
++ 12 𝔼 ∫ (|δZ|²_F + ‖δU‖²)`), summed over the coordinates with the running supremum of the vector
+by those of the coordinates (`lintegral_biSup_esq_le`), is the first link; the rate bound
+`𝔼 ∫ |λ δf + q^f|² ≤ 2 · 10 (2L)² 𝔼 ∫ (|δX|² + |δY|² + |δZ|²_F + ‖δU‖²) + 2P`
+(`PairDiff.rateEnergy_le`) the second.
+
+Witness: `Dissertation.Acceptance.A.lem_pert_backward_window_hypotheses`, described with the
+chain before (4.23). By hand `δY_0 = 0`, `𝔼 sup_{t ≤ 1} |δY_t|² ≥ 𝔼|δY_1|² = 2`, the `δZ`- and
+`δU`-energies are `1` each and `𝔼 ∫_0^1 |δX|² = 1`: every member of the chain is positive.
+
+Verdict: faithful.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bwd_chain ed839d34f480cba1bd5456c76b6d343a by=claude-author source=A:eq:bwd@3114f6e187919402a154d20d84baf24f22a2a1052d28f7faf3558a9335716cf5 -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_bwd_chain--claude-auditor--2026-10-20T15_31_29Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bwd_chain ed839d34f480cba1bd5456c76b6d343a by=claude-auditor source=A:eq:bwd@3114f6e187919402a154d20d84baf24f22a2a1052d28f7faf3558a9335716cf5 -->
 
 ## Lemma 4.4: `Dissertation.PaperSpec.A.lem_cont`
 
@@ -4642,6 +5137,104 @@ Review by claude-auditor: faithful with representation choices (report `reports/
 <!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_translation ed839d34f480cba13b68ad605862c311 by=claude-author source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.rem_uniq_translation--claude-auditor--2026-10-19T05_49_14Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_translation ed839d34f480cba13b68ad605862c311 by=claude-auditor source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
+
+## Remark 3.4, the Lipschitz control of coefficient differences: `Dissertation.PaperSpec.A.eq_uniq_coeff_lip`, `eq_uniq_fwd`, `eq_uniq_bwd_lip`, `rem_uniq_lip_mem`
+
+Manuscript (§3, Remark `rem:uniq-no-integ`, `03-main-results.tex` lines 182–187): "But the
+uniqueness only requires Assumptions 2.3–2.5, as we only need to show that the difference
+`Θ¹ − Θ²` belongs to `ℍ`, using only the Lipschitz control of coefficient differences." The
+argument it refers to is the proof of Theorem 3.3 (lines 110–174), with the objects quoted in the
+section of (3.2) and (3.3): "(3.2) `𝔼 ∫_0^T [|δb_t|² + |δσ_t|²_F + ‖δh_t‖²_{L²(ν)} + |δf_t|²] dt
+< ∞`. We next show that `Θ¹ − Θ² ∈ ℍ`. Since the two solutions have the same initial condition,
+the forward equation is `δX_t = ∫_0^t δb_s ds + ∫_0^t δσ_s dW_s + ∫_0^t ∫_E δh_s(e) Ñ(ds, de)`.
+By Cauchy–Schwarz, the BDG inequality and the compensation formula,
+`𝔼 sup_{0 ≤ t ≤ T} |δX_t|² ≤ C_T 𝔼 ∫_0^T (|δb_s|² + |δσ_s|²_F + ‖δh_s‖²) ds < ∞` by (3.2), so
+`δX ∈ S²(ℝⁿ)`." (lines 139–156), then (3.3) (lines 158–173, quoted in the section of (3.2) and
+(3.3)), "therefore `δY ∈ S²(ℝᵐ)`. By (3.2) and (3.3) we have `δΘ ∈ ℍ`." (lines 173–174). The
+forward estimate of lines 144–156 lies between the pinned regions of `A:eq:uniq-coeff` and
+`A:eq:uniq-bwd`, in neither.
+
+Propositions: each for every horizon `T > 0`, coefficients with (2.3) and Assumption 2.3 with
+constant `L`, and `Θ¹, Θ²` solving (1.1) in `ℍ_weak` (`WeakSolution`) from the same initial datum
+`ξ₀`, with `δb, δσ, δh, δf, δg` as in `eq_uniq_coeff` and `eq_uniq_bwd`:
+
+* `eq_uniq_coeff_lip`: `∑_i energy(δb_i) + ∑_{i, j} energy(δσ_{ij}) + ∑_i markedEnergy(δh_i)
+  + ∑_k energy(δf_k) < ∞` ((3.2)).
+* `eq_uniq_fwd`: `∃ K : ℝ → ℝ`, chosen first, such that, for every coordinate `i`: almost every
+  path of `δb_i` is integrable on `[0, T]`; `δσ_i` meets the conditions of the Itô integral (as
+  data); the jump integrand `δh_i` agrees almost everywhere on `Ω × [0, T] × E` with an integrand
+  that meets the conditions of the compensated integral; and for every such integrand `H` and
+  every `t ∈ [0, T]`, almost surely, `δX_{i,t} = ∫_{[0, t]} δb_i(s) ds + (∫ δσ_i dW)_t
+  + (∫∫ H dÑ)_t`; and `∫⁻ sup_{t ∈ [0, T]} |δX_t|² ≤ ofReal(K(T)) (∑_i energy(δb_i)
+  + ∑_{i, j} energy(δσ_{ij}) + ∑_i markedEnergy(δh_i))`, the right side `< ∞`.
+* `eq_uniq_bwd_lip`: `∃ C_BP : ℝ → ℝ`, chosen first, such that
+  `∫⁻ sup_{t ∈ [0, T]} |δY_t|² ≤ ofReal(C_BP(T)) (∫⁻ |δg_T|² + ∑_k energy(δf_k))` and
+  `∫⁻ |δg_T|² + ∑_k energy(δf_k) < ∞` ((3.3)).
+* `rem_uniq_lip_mem`: `supSize(Θ¹ − Θ²) < ∞`, that is `Θ¹ − Θ² ∈ ℍ`.
+
+Readings:
+
+* "Using only the Lipschitz control of coefficient differences": the hypotheses are (2.3),
+  Assumption 2.3 and two solutions in `ℍ_weak` with the same initial condition, with neither
+  Assumption 2.2 nor Assumptions 2.4–2.5. The remark's claim is that the argument of the proof
+  of Theorem 3.3, up to `δΘ ∈ ℍ`, needs no more; the four propositions are that argument's
+  conclusions under these hypotheses. Under the hypotheses of Theorem 3.3 they are the printed
+  (3.2), forward estimate, (3.3) and `δΘ ∈ ℍ` (`eq_uniq_coeff`, `eq_uniq_bwd` state the first and
+  third there).
+* `C_T` and `C_BP` are constants of `T`: `K` and `C_BP` are functions of `T` chosen before
+  everything else. "`< ∞`" is `< ⊤` of the right side, which with a real constant also bounds the
+  left side. `δX ∈ S²` and `δY ∈ S²` are the finiteness of the suprema, which the bounds give.
+* The forward difference is the difference of the forward equations of (1.1) at the two
+  solutions, from the common initial condition, read at each time almost surely, the form in
+  which (1.1) is stated. The jump integrand `δh` is the coefficient at the predictable tuples
+  through `coeffJump`, which is defined pointwise and is not asked to be predictable; the
+  proposition therefore states that it agrees almost everywhere with an integrand of the
+  library's class and that the identity holds with every such integrand, whose compensated
+  integrals agree almost surely. "By Cauchy–Schwarz, the BDG inequality and the compensation
+  formula" names the proof.
+* `Θ¹ − Θ² ∈ ℍ` is the finiteness of the squared norm of `ℍ`, `supSize` (reviewed with Lemma
+  4.3): `𝔼 sup |δX|² + 𝔼 sup |δY|² + 𝔼 ∫_0^T (|δZ|²_F + ‖δU‖²)`. The differences are adapted
+  and càdlàg because the solutions are.
+* The expectations are lower integrals in `[0, ∞]`; the objects are those of the section of (3.2)
+  and (3.3) (`driftProc`, `diffusionProc`, `driverProc`, `terminalVal`, `leftLimProc`,
+  `coeffJump`, all reviewed).
+
+Proofs: as for `eq_uniq_coeff_ae`, the difference of the two solutions, extended off `[0, T]`, is
+a difference system with coupling matrix `0` (`PaperWeakSolutionForcedInt.exists_pairDiff_lip`),
+which needs Assumption 2.3 alone. (3.2) is the finite energy of its integrands, with the jump
+coefficient identified almost everywhere
+(`PaperWeakSolutionInt.markedEnergy_coeffJump_sub_leftLim_eq`). The forward difference is its
+forward equation, with the integrand `γ¹ − γ²` replaced by any integrand equal to it almost
+everywhere (`compensatedIntegral_congr_of_markedEnergy`), and the bound is the `S²` bound of its
+forward coordinates (`PairDiff.lintegral_biSup_fwd_le`, `K(T) = 3T + 12`). (3.3) is Lemma 4.1 for
+its backward coordinates (`LinearBSDEJ.brownianPoisson_estimate`, `C_BP(T) = 13 e^T + 3T`), summed
+over the coordinates. `Θ¹ − Θ² ∈ ℍ` is `supSize_lt_top_of_linear` for the forward and backward
+coordinates, the extensions agreeing with the solutions on `[0, T]`.
+
+Witness: `Dissertation.Acceptance.A.rem_uniq_lip_hypotheses`, described with `eq_uniq_coeff_ae`:
+the system of Example 5.1(i) with `β₁ = −1`, `β₂ = 1`, `σ_c = h_c = 0` (`b = y`, `σ = z`,
+`h = u`, `f = x`, `g = x`) on `[0, π/4]` satisfies (2.3) and Assumption 2.3 with `L = 1`, has the
+two solutions `(sin t, cos t, 0, 0)` and `0` from the initial datum `0`, with `δX_t = sin t` and
+`δY_t = cos t`, and satisfies Assumption 2.5 for no `G` of full rank, so the uniqueness of
+Theorem 3.3 does not apply and the solutions differ. By hand, every bound has a nonzero left
+side: `δb = cos t`, `δf = sin t`, `δg_T = sin(π/4)` give positive energies in (3.2) and positive
+data in (3.3); `𝔼 sup_{t ≤ π/4} |δX_t|² = 1/2`, `𝔼 sup |δY_t|² = 1` and `supSize(Θ¹ − Θ²) = 3/2`.
+
+Verdict: faithful; the hypotheses are those of the remark, and under the hypotheses of Theorem 3.3
+the four propositions are the printed steps of its proof.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_coeff_lip ed839d34f480cba1e3e9c0b07e55c27c by=claude-author source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_uniq_coeff_lip--claude-auditor--2026-10-20T15_30_04Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_coeff_lip ed839d34f480cba1e3e9c0b07e55c27c by=claude-auditor source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_fwd ed839d34f480cba1001605cc82c2788b by=claude-author source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_uniq_fwd--claude-auditor--2026-10-20T15_30_04Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_fwd ed839d34f480cba1001605cc82c2788b by=claude-auditor source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_bwd_lip ed839d34f480cba184495619099e147e by=claude-author source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_uniq_bwd_lip--claude-auditor--2026-10-20T15_30_04Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_bwd_lip ed839d34f480cba184495619099e147e by=claude-auditor source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
+<!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_lip_mem ed839d34f480cba1db72bd0880b4abb9 by=claude-author source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.rem_uniq_lip_mem--claude-auditor--2026-10-20T15_30_04Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.rem_uniq_lip_mem ed839d34f480cba1db72bd0880b4abb9 by=claude-auditor source=A:rem:uniq-no-integ@867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798 -->
 
 ## The paragraph after Corollary 3.6: `Dissertation.PaperSpec.A.cor_margin_channels`, `cor_margin_additive`, `cor_margin_finite`, `cor_margin_continuous`, `cor_margin_separate`, `cor_margin_findim`
 

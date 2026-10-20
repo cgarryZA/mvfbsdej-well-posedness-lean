@@ -11,6 +11,7 @@ import Dissertation.Acceptance.A.Sec4Estimates
 import Dissertation.WellPosedness.BrownianPoisson.EnergyAtWeighted
 import Dissertation.WellPosedness.Stability.RateEnergy
 import Dissertation.WellPosedness.Stability.ForwardSupAt
+import Dissertation.WellPosedness.Stability.WeightedYoung
 
 /-!
 # Further steps of the proofs of Lemmas 4.1–4.3: proofs
@@ -21,9 +22,14 @@ horizons `t` and `T` with Young's inequality (`brownianPoisson_weighted_at_vec_o
 The bound before (4.9) is the first link of (4.9) before integration in time. The backward
 difference before (4.12) is the difference of the linear backward equations of the two frozen
 steps (`LinearBSDEJ.sub`). The contraction by `1/2` is (4.13) at `λ ≤ λ_*`, where
-`C_Φ λ² ≤ C_Φ λ_*² = 1/4`. The first two links of the chain before (4.27) are the `S²` bound of
-the backward coordinates of the difference system (`LinearBSDEJ.lintegral_biSup_sq_le`) and the
-rate bound (3.2) at the pair (`PairDiff.rateEnergy_le`).
+`C_Φ λ² ≤ C_Φ λ_*² = 1/4`. The chain before (4.23) at a time `t ≤ T` is the `S²` bound on `[0, t]`
+of the forward coordinates of the difference system (`LinearFSDEJ.lintegral_biSup_sq_le_at`), the
+expected Lipschitz bound (3.2) integrated over `[0, t]` (`PairDiff.coeffEnergy_le_at`) and
+`|δX_s|² ≤ sup_{r ≤ s} |δX_r|²`. The display inserting (4.25) in (4.24) and the backward bound
+at every time are `PairDiff.weighted_window_le` and `PairDiff.window_le`. The first two links of
+the chain before (4.27) are the `S²` bound of the backward coordinates of the difference system
+(`LinearBSDEJ.lintegral_biSup_sq_le`) and the rate bound (3.2) at the pair
+(`PairDiff.rateEnergy_le`).
 
 ## Main statements
 
@@ -31,6 +37,11 @@ rate bound (3.2) at the pair (`PairDiff.rateEnergy_le`).
 * `Dissertation.Acceptance.A.eq_coeffdiff_ae` — the bound before (4.9).
 * `Dissertation.Acceptance.A.eq_bwddiff_identity` — the backward difference before (4.12).
 * `Dissertation.Acceptance.A.eq_contract_half` — `λ_*` and the contraction by `1/2`.
+* `Dissertation.Acceptance.A.eq_fwd_chain` — the chain before (4.23), with
+  `K₁ = 2(3T + 12) + 3`, `K₂ = K₁ (10 (2L)² + 1)` and `K₃ = 2 K₂`.
+* `Dissertation.Acceptance.A.eq_wgt_insert` — (4.25) inserted in (4.24), with
+  `C = 2 · 10 (2L)² + 3`, and the backward bound at every time, with
+  `C' = e^{κT} max(1, C/ε) / (1 − ε)`.
 * `Dissertation.Acceptance.A.eq_bwd_chain` — the first two links before (4.27), with
   `K₁ = 3T + 12` and `K₂ = (3T + 12)(2 · 10 (2L)² + 2)`.
 -/
@@ -355,6 +366,100 @@ theorem eq_fwd_chain : PaperSpec.A.eq_fwd_chain.{u, v, w} := by
         _ ≤ dS + (I + (y' + z' + u')) + dS + (I + (y' + z' + u')) := le_self_add
         _ = 2 * (I + (y' + z' + u') + dS) := by ring
     exact key ha_le hI hy hz hu
+
+/-- (4.25) inserted in (4.24), and the backward bound at every time. -/
+theorem eq_wgt_insert : PaperSpec.A.eq_wgt_insert.{u, v, w} := by
+  refine ⟨fun _ L _ _ _ _ _ _ => 2 * (10 * (2 * L) ^ 2) + 3,
+    fun ε κ T L _ _ _ _ _ _ =>
+      Real.exp (κ * T) * max 1 ((2 * (10 * (2 * L) ^ 2) + 3) / ε) / (1 - ε), ?_⟩
+  rintro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ _ _ _ T hT L α β₁ β₂ G C hJ h23 hG h25
+    lamLow lam hlow _ hlam hlam1 ξ₁ ξ₂ _ _ qb₁ qb₂ qσ₁ qσ₂ qh₁ qh₂ qf₁ qf₂ qg₁ qg₂ hq₁ hq₂
+    X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ ⟨⟨γ₁, h₁⟩, -, -⟩ ⟨⟨γ₂, h₂⟩, -, -⟩ _
+  obtain ⟨X₁', X₂', Y₁', Y₂', hXe, hYe, hD⟩ := h₁.exists_pairDiff h₂ hT.le
+    h23.interior.diagonalLipschitz_two_mul
+    (lipTerminal_iff_terminalLipschitz.mp h23.terminal).two_mul h25.diagonalMonotone
+    h25.terminalMonotone
+  have 𝒲 := crossWitnessEnl D h𝒢₀ hind₀
+  have hK : (0 : ℝ) ≤ 10 * (2 * L) ^ 2 := by positivity
+  have hlam0 : 0 ≤ lam := hlow.le.trans hlam
+  have hqf : ∀ k, Brownian.Ito.energy P T (fun ω s => qf₁ k ω s - qf₂ k ω s) ≠ ⊤ := fun k =>
+    (hq₁.toForcing.sub hq₂.toForcing).qf_sq k
+  have eX : ∀ i, ∀ s ∈ Set.Icc (0 : ℝ) T, ∀ ω, X₁' i s ω - X₂' i s ω = X₁ i s ω - X₂ i s ω :=
+    fun i s hs ω => by rw [congrFun (hXe i s hs).1 ω, congrFun (hXe i s hs).2 ω]
+  have eY : ∀ k, ∀ s ∈ Set.Icc (0 : ℝ) T, ∀ ω, Y₁' k s ω - Y₂' k s ω = Y₁ k s ω - Y₂ k s ω :=
+    fun k s hs ω => by rw [congrFun (hYe k s hs).1 ω, congrFun (hYe k s hs).2 ω]
+  have hae : ∀ t ∈ Set.Icc (0 : ℝ) T, ∀ᵐ q ∂(P.prod (volume.restrict (Set.Icc t T))),
+      q.2 ∈ Set.Icc (0 : ℝ) T := fun t ht =>
+    (Measure.quasiMeasurePreserving_snd.ae (ae_restrict_mem measurableSet_Icc)).mono
+      fun q hq => ⟨ht.1.trans hq.1, hq.2⟩
+  have eYt : ∀ t ∈ Set.Icc (0 : ℝ) T, ∫ ω, ∑ k, (Y₁' k t ω - Y₂' k t ω) ^ 2 ∂P
+      = ∫ ω, ∑ k, (Y₁ k t ω - Y₂ k t ω) ^ 2 ∂P := fun t ht =>
+    integral_congr_ae (Eventually.of_forall fun ω => by simp only [eY _ t ht ω])
+  -- the forward differences on the window
+  have eXw : ∀ t ∈ Set.Icc (0 : ℝ) T,
+      (fun q : Ω × ℝ => ∑ i, (X₁' i q.2 q.1 - X₂' i q.2 q.1) ^ 2
+        + ∑ k, (qf₁ k q.1 q.2 - qf₂ k q.1 q.2) ^ 2)
+      =ᵐ[P.prod (volume.restrict (Set.Icc t T))]
+      fun q : Ω × ℝ => ∑ i, (X₁ i q.2 q.1 - X₂ i q.2 q.1) ^ 2
+        + ∑ k, (qf₁ k q.1 q.2 - qf₂ k q.1 q.2) ^ 2 := fun t ht => by
+    filter_upwards [hae t ht] with q hq
+    simp only [eX _ q.2 hq q.1]
+  refine ⟨fun ε hε hε1 κ hκ t ht => ?_, fun ε hε hε1 κ hκ t ht => ?_⟩
+  -- the inserted display
+  · obtain ⟨i1, i2, i3, i4, hle⟩ := hD.weighted_window_le 𝒲 hT hK hlam0 hlam1 hqf hε hε1 κ ht
+    set c := (2 * (10 * (2 * L) ^ 2) + 3) / ε with hc
+    have eD : (fun q : Ω × ℝ => Real.exp (κ * q.2)
+        * ((κ - c) * ∑ k, (Y₁' k q.2 q.1 - Y₂' k q.2 q.1) ^ 2
+          + (1 - ε) * ∑ k, (∑ j, (Z₁ k q.2 q.1 j - Z₂ k q.2 q.1 j) ^ 2
+            + ∫ e, (U₁ k q.2 q.1 e - U₂ k q.2 q.1 e) ^ 2 ∂ν)))
+        =ᵐ[P.prod (volume.restrict (Set.Icc t T))]
+        fun q : Ω × ℝ => Real.exp (κ * q.2)
+          * ((κ - c) * ∑ k, (Y₁ k q.2 q.1 - Y₂ k q.2 q.1) ^ 2
+            + (1 - ε) * (∑ k, ∑ j, (Z₁ k q.2 q.1 j - Z₂ k q.2 q.1 j) ^ 2
+              + ∑ k, ∫ e, (U₁ k q.2 q.1 e - U₂ k q.2 q.1 e) ^ 2 ∂ν)) := by
+      filter_upwards [hae t ht] with q hq
+      simp only [eY _ q.2 hq q.1, Finset.sum_add_distrib]
+    have eXq : (fun q : Ω × ℝ => Real.exp (κ * q.2)
+        * (∑ i, (X₁' i q.2 q.1 - X₂' i q.2 q.1) ^ 2 + ∑ k, (qf₁ k q.1 q.2 - qf₂ k q.1 q.2) ^ 2))
+        =ᵐ[P.prod (volume.restrict (Set.Icc t T))]
+        fun q : Ω × ℝ => Real.exp (κ * q.2)
+          * (∑ i, (X₁ i q.2 q.1 - X₂ i q.2 q.1) ^ 2
+            + ∑ k, (qf₁ k q.1 q.2 - qf₂ k q.1 q.2) ^ 2) := by
+      filter_upwards [eXw t ht] with q hq
+      rw [hq]
+    have i3' := i3.congr eD
+    have i4' := i4.congr eXq
+    refine ⟨?_, i2, i3', i4', ?_⟩
+    · exact i1.congr (Eventually.of_forall fun ω => by simp only [eY _ t ht ω])
+    rw [eYt t ht, integral_congr_ae eD, integral_congr_ae eXq] at hle
+    calc _ = Real.exp (κ * t) * ∫ ω, ∑ k, (Y₁ k t ω - Y₂ k t ω) ^ 2 ∂P
+          + ∫ q, Real.exp (κ * q.2)
+            * ((κ - c) * ∑ k, (Y₁ k q.2 q.1 - Y₂ k q.2 q.1) ^ 2
+              + (1 - ε) * (∑ k, ∑ j, (Z₁ k q.2 q.1 j - Z₂ k q.2 q.1 j) ^ 2
+                + ∑ k, ∫ e, (U₁ k q.2 q.1 e - U₂ k q.2 q.1 e) ^ 2 ∂ν))
+            ∂(P.prod (volume.restrict (Set.Icc t T))) := by
+          rw [integral_prod _ i3']
+      _ ≤ _ := hle
+      _ = _ := by rw [integral_prod _ i4']
+  -- the backward bound at every time
+  · obtain ⟨j1, j2, hle⟩ := hD.window_le 𝒲 hT hK hlam0 hlam1 hqf hε hε1 hκ ht
+    have eZ : (fun q : Ω × ℝ => ∑ k, (∑ j, (Z₁ k q.2 q.1 j - Z₂ k q.2 q.1 j) ^ 2
+          + ∫ e, (U₁ k q.2 q.1 e - U₂ k q.2 q.1 e) ^ 2 ∂ν))
+        = fun q : Ω × ℝ => ∑ k, ∑ j, (Z₁ k q.2 q.1 j - Z₂ k q.2 q.1 j) ^ 2
+          + ∑ k, ∫ e, (U₁ k q.2 q.1 e - U₂ k q.2 q.1 e) ^ 2 ∂ν := by
+      funext q
+      rw [Finset.sum_add_distrib]
+    rw [eZ] at j1 hle
+    have j2' := j2.congr (eXw t ht)
+    refine ⟨j1, j2', ?_⟩
+    rw [eYt t ht, integral_congr_ae (eXw t ht)] at hle
+    calc _ = ∫ ω, ∑ k, (Y₁ k t ω - Y₂ k t ω) ^ 2 ∂P
+          + ∫ q, (∑ k, ∑ j, (Z₁ k q.2 q.1 j - Z₂ k q.2 q.1 j) ^ 2
+            + ∑ k, ∫ e, (U₁ k q.2 q.1 e - U₂ k q.2 q.1 e) ^ 2 ∂ν)
+            ∂(P.prod (volume.restrict (Set.Icc t T))) := by
+          rw [integral_prod _ j1]
+      _ ≤ _ := hle
+      _ = _ := by rw [integral_prod _ j2']
 
 /-- The first two links of the chain before (4.27). -/
 theorem eq_bwd_chain : PaperSpec.A.eq_bwd_chain.{u, v, w} := by

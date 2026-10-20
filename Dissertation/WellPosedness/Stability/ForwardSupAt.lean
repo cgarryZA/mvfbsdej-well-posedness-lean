@@ -25,9 +25,13 @@ the coefficient differences there by the difference itself:
 
 ## Main statements
 
+* `markedEnergy_congr_ae_of_le` — the marked energy on `[0, t]`, `t ≤ T`, depends only on the
+  class of the integrand on `Ω × [0, T] × E`.
 * `LinearFSDEJ.truncate` — the forward equation on `[0, t]` with the restricted integrands.
 * `LinearFSDEJ.lintegral_biSup_sq_le_at` — the `S²` bound on `[0, t]`.
+* `PairDiff.realisedEnergy_le_at` — the energies of the realised integrands on `[0, t]`.
 * `PairDiff.coeffEnergy_le_at` — (3.2) integrated over `[0, t]`.
+* `PairDiff.energy_le_lintegral_biSup` — `𝔼 ∫_0^t |δX_s|² ds ≤ ∫_0^t 𝔼 sup_{r ≤ s} |δX_r|² ds`.
 -/
 
 open MeasureTheory ProbabilityTheory Filter Topology

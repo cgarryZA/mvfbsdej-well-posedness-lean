@@ -41,6 +41,8 @@ import Dissertation.PaperSpec.A.Sec4Frozen
 import Dissertation.PaperSpec.A.Sec4Contraction
 import Dissertation.PaperSpec.A.Sec4LocalMartingales
 import Dissertation.PaperSpec.A.Sec4BDG
+import Dissertation.PaperSpec.A.Sec3UniquenessLip
+import Dissertation.PaperSpec.A.Sec4ProofSteps
 
 /-!
 # The statements of the paper

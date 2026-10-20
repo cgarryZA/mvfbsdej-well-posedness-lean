@@ -89,6 +89,10 @@ alignment:
         - "Dissertation.Acceptance.A.rem_uniq_initial"
         - "Dissertation.Acceptance.A.rem_uniq_singular"
         - "Dissertation.Acceptance.A.rem_uniq_translation"
+        - "Dissertation.Acceptance.A.eq_uniq_coeff_lip"
+        - "Dissertation.Acceptance.A.eq_uniq_fwd"
+        - "Dissertation.Acceptance.A.eq_uniq_bwd_lip"
+        - "Dissertation.Acceptance.A.rem_uniq_lip_mem"
       status: "formal: accepted"
     - source: "Theorem 3.5"
       lean:

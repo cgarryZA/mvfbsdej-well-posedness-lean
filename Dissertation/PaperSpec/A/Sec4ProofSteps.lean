@@ -24,8 +24,24 @@ takes the difference of (4.8) at two trials,
 `δȲ_t = δξ̄ + ∫_t^T λ δf_s ds − ∫_t^T δZ̄_s dW_s − ∫_t^T ∫_E δŪ_s(e) Ñ(ds, de)`,
 
 which is (4.4) with `δξ = δξ̄` and `φ_s = λ δf_s`, and sets `λ_* = (2 √C_Φ)⁻¹ ∈ (0, 1/2]`, at which
-`C_Φ λ² ≤ 1/4` and `‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖_ℍ ≤ (1/2) ‖Θ¹ − Θ²‖_ℍ` for `λ ∈ [0, λ_*]`. Step 4 of the
-proof of Lemma 4.3 writes (4.16) forward from `δY_0`:
+`C_Φ λ² ≤ 1/4` and `‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖_ℍ ≤ (1/2) ‖Θ¹ − Θ²‖_ℍ` for `λ ∈ [0, λ_*]`. Step 3 of the
+proof of Lemma 4.3 bounds, at every `t ≤ T`,
+
+`𝔼 sup_{s ≤ t} |δX_s|² ≤ C (𝔼|δξ₀|² + 𝔼 ∫_0^t (|δb_s|² + |δσ_s|²_F + ‖δh_s‖²) ds + P)
+  ≤ C (𝔼|δξ₀|² + 𝔼 ∫_0^t (|δX_s|² + |δY_s|² + |δZ_s|²_F + ‖δU_s‖²) ds + P)
+  ≤ C (∫_0^t 𝔼 sup_{r ≤ s} |δX_r|² ds + 𝔼 ∫_0^T (|δY_s|² + |δZ_s|²_F + ‖δU_s‖²) ds + P)`,
+
+a nondecreasing and finite function of `t`. Step 4 inserts (4.25) in (4.24),
+
+`𝔼 e^{κt} |δY_t|² + 𝔼 ∫_t^T e^{κs} ((κ − C/ε) |δY_s|² + (1 − ε) (|δZ_s|²_F + ‖δU_s‖²)) ds
+  ≤ 𝔼 e^{κT} |λ δg_T + q^g_T|² + (C/ε) 𝔼 ∫_t^T e^{κs} (|δX_s|² + |q^f_s|²) ds`,
+
+takes `ε < 1` and `κ > C/ε`, and obtains at every `t`
+
+`𝔼|δY_t|² + 𝔼 ∫_t^T (|δZ_s|²_F + ‖δU_s‖²) ds
+  ≤ C (𝔼|λ δg_T + q^g_T|² + 𝔼 ∫_t^T (|δX_s|² + |q^f_s|²) ds)`;
+
+it then writes (4.16) forward from `δY_0`:
 
 `𝔼 sup_{t ≤ T} |δY_t|² ≤ C (𝔼|δY_0|² + 𝔼 ∫_0^T |λ δf_s + q^f_s|² ds
     + 𝔼 ∫_0^T (|δZ_s|²_F + ‖δU_s‖²) ds)
@@ -37,6 +53,9 @@ proof of Lemma 4.3 writes (4.16) forward from `δY_0`:
 * `Dissertation.PaperSpec.A.eq_coeffdiff_ae` — the bound before (4.9), at almost every time.
 * `Dissertation.PaperSpec.A.eq_bwddiff_identity` — the backward difference before (4.12).
 * `Dissertation.PaperSpec.A.eq_contract_half` — `λ_*` and the contraction by `1/2`.
+* `Dissertation.PaperSpec.A.eq_fwd_chain` — the chain before (4.23), at every time.
+* `Dissertation.PaperSpec.A.eq_wgt_insert` — (4.25) inserted in (4.24), and the backward bound
+  at every time.
 * `Dissertation.PaperSpec.A.eq_bwd_chain` — the first two links of the chain before (4.27).
 -/
 
@@ -325,6 +344,89 @@ def eq_fwd_chain : Prop :=
         esq (fun i => X₁ i s ω - X₂ i s ω)) ∂P) (Set.Icc (0 : ℝ) T)
     ∧ ∀ t ∈ Set.Icc (0 : ℝ) T,
       ∫⁻ ω, (⨆ s ∈ Set.Icc (0 : ℝ) t, esq (fun i => X₁ i s ω - X₂ i s ω)) ∂P < ⊤
+
+/-- **(4.25) inserted in (4.24), and the backward bound at every time.** There are functions `K`
+of `(T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)` and `K'` of `(ε, κ, T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)` such that:
+in the standing setting, under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3) and
+Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`,
+`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak` with `X^k_T ∈ L²`, `ℱ₀`-measurable
+initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` — with `C = K(T, L, ‖G‖, s_min(G)⁻², α, β₁,
+β₂, λ̲)`: for every `ε ∈ (0, 1]`, `κ > 0` and `t ∈ [0, T]`, the functions `|δY_t|²`,
+`|λ δg_T + q^g_T|²` (on `Ω`), `e^{κs} ((κ − C/ε) |δY_s|² + (1 − ε) (|δZ_s|²_F + ‖δU_s‖²_{L²(ν)}))`
+and `e^{κs} (|δX_s|² + |q^f_s|²)` (on `Ω × [t, T]`) are integrable and
+`𝔼 e^{κt} |δY_t|² + 𝔼 ∫_t^T e^{κs} ((κ − C/ε) |δY_s|² + (1 − ε) (|δZ_s|²_F + ‖δU_s‖²_{L²(ν)})) ds
+  ≤ 𝔼 e^{κT} |λ δg_T + q^g_T|² + (C/ε) 𝔼 ∫_t^T e^{κs} (|δX_s|² + |q^f_s|²) ds`;
+and for every `ε ∈ (0, 1)`, `κ > C/ε` and `t ∈ [0, T]`, the functions
+`|δZ_s|²_F + ‖δU_s‖²_{L²(ν)}` and `|δX_s|² + |q^f_s|²` are integrable on `Ω × [t, T]` and
+`𝔼|δY_t|² + 𝔼 ∫_t^T (|δZ_s|²_F + ‖δU_s‖²_{L²(ν)}) ds
+  ≤ C' (𝔼|λ δg_T + q^g_T|² + 𝔼 ∫_t^T (|δX_s|² + |q^f_s|²) ds)`
+with `C' = K'(ε, κ, T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂, λ̲)`; here `q = δq`,
+`δg_T = g(X¹_T, Law X¹_T) − g(X²_T, Law X²_T)` and `δf_s = f(s, Θ¹_s, μ¹_s) − f(s, Θ²_s, μ²_s)`. -/
+def eq_wgt_insert : Prop :=
+  ∃ (K : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ) (K' : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ),
+  ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
+    [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
+    (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
+    (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
+    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P),
+    0 < n → 0 < m → 0 < d → ∀ T : ℝ, 0 < T →
+    ∀ (L α β₁ β₂ : ℝ) (G : Matrix (Fin m) (Fin n) ℝ) (C : Coeffs ν n m d),
+    JointBorel T C → Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C → G.rank = min m n →
+    Assumption25 (enlJoint 𝒢₀ D h𝒢₀) P T G α β₁ β₂ C →
+    ∀ lamLow lam : ℝ, 0 < lamLow → lamLow ≤ 1 → lamLow ≤ lam → lam ≤ 1 →
+    ∀ (ξ₁ ξ₂ : Ω → EuclideanSpace ℝ (Fin n)),
+    Measurable[enlJoint 𝒢₀ D h𝒢₀ 0] ξ₁ → Measurable[enlJoint 𝒢₀ D h𝒢₀ 0] ξ₂ →
+    ∀ (qb₁ qb₂ : Fin n → Ω → ℝ → ℝ) (qσ₁ qσ₂ : Fin n → ℝ → Ω → Fin d → ℝ)
+      (qh₁ qh₂ : Fin n → ℝ → Ω → E → ℝ) (qf₁ qf₂ : Fin m → Ω → ℝ → ℝ)
+      (qg₁ qg₂ : Fin m → Ω → ℝ),
+    PredForcing (enlJoint 𝒢₀ D h𝒢₀) P ν T qb₁ qσ₁ qh₁ qf₁ qg₁ →
+    PredForcing (enlJoint 𝒢₀ D h𝒢₀) P ν T qb₂ qσ₂ qh₂ qf₂ qg₂ →
+    ∀ (X₁ X₂ : Fin n → ℝ → Ω → ℝ) (Y₁ Y₂ : Fin m → ℝ → Ω → ℝ)
+      (Z₁ Z₂ : Fin m → ℝ → Ω → Fin d → ℝ) (U₁ U₂ : Fin m → ℝ → Ω → E → ℝ),
+    WeakForcedSolution D h𝒢₀ hind₀ T lam C ξ₁ qb₁ qσ₁ qh₁ qf₁ qg₁ X₁ Y₁ Z₁ U₁ →
+    WeakForcedSolution D h𝒢₀ hind₀ T lam C ξ₂ qb₂ qσ₂ qh₂ qf₂ qg₂ X₂ Y₂ Z₂ U₂ →
+    supSize P ν T (fun i t ω => X₁ i t ω - X₂ i t ω) (fun k t ω => Y₁ k t ω - Y₂ k t ω)
+        (fun k t ω j => Z₁ k t ω j - Z₂ k t ω j) (fun k t ω e => U₁ k t ω e - U₂ k t ω e) < ⊤ →
+    (∀ ε : ℝ, 0 < ε → ε ≤ 1 → ∀ κ : ℝ, 0 < κ → ∀ t ∈ Set.Icc (0 : ℝ) T,
+      Integrable (fun ω => ∑ k, (Y₁ k t ω - Y₂ k t ω) ^ 2) P
+      ∧ Integrable (fun ω => ∑ k, (lam * (terminalVal P T C X₁ k ω - terminalVal P T C X₂ k ω)
+          + (qg₁ k ω - qg₂ k ω)) ^ 2) P
+      ∧ Integrable (fun p : Ω × ℝ => Real.exp (κ * p.2)
+          * ((κ - K T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ lamLow / ε)
+              * ∑ k, (Y₁ k p.2 p.1 - Y₂ k p.2 p.1) ^ 2
+            + (1 - ε) * (∑ k, ∑ j, (Z₁ k p.2 p.1 j - Z₂ k p.2 p.1 j) ^ 2
+              + ∑ k, ∫ e, (U₁ k p.2 p.1 e - U₂ k p.2 p.1 e) ^ 2 ∂ν)))
+        (P.prod (volume.restrict (Set.Icc t T)))
+      ∧ Integrable (fun p : Ω × ℝ => Real.exp (κ * p.2)
+          * (∑ i, (X₁ i p.2 p.1 - X₂ i p.2 p.1) ^ 2 + ∑ k, (qf₁ k p.1 p.2 - qf₂ k p.1 p.2) ^ 2))
+        (P.prod (volume.restrict (Set.Icc t T)))
+      ∧ Real.exp (κ * t) * ∫ ω, ∑ k, (Y₁ k t ω - Y₂ k t ω) ^ 2 ∂P
+          + ∫ ω, ∫ s in Set.Icc t T, Real.exp (κ * s)
+            * ((κ - K T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ lamLow / ε)
+                * ∑ k, (Y₁ k s ω - Y₂ k s ω) ^ 2
+              + (1 - ε) * (∑ k, ∑ j, (Z₁ k s ω j - Z₂ k s ω j) ^ 2
+                + ∑ k, ∫ e, (U₁ k s ω e - U₂ k s ω e) ^ 2 ∂ν)) ∂volume ∂P
+        ≤ Real.exp (κ * T) * ∫ ω, ∑ k, (lam * (terminalVal P T C X₁ k ω
+            - terminalVal P T C X₂ k ω) + (qg₁ k ω - qg₂ k ω)) ^ 2 ∂P
+          + K T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ lamLow / ε
+            * ∫ ω, ∫ s in Set.Icc t T, Real.exp (κ * s)
+              * (∑ i, (X₁ i s ω - X₂ i s ω) ^ 2 + ∑ k, (qf₁ k ω s - qf₂ k ω s) ^ 2) ∂volume ∂P)
+    ∧ ∀ ε : ℝ, 0 < ε → ε < 1 → ∀ κ : ℝ, K T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ lamLow / ε < κ →
+      ∀ t ∈ Set.Icc (0 : ℝ) T,
+      Integrable (fun p : Ω × ℝ => ∑ k, ∑ j, (Z₁ k p.2 p.1 j - Z₂ k p.2 p.1 j) ^ 2
+          + ∑ k, ∫ e, (U₁ k p.2 p.1 e - U₂ k p.2 p.1 e) ^ 2 ∂ν)
+        (P.prod (volume.restrict (Set.Icc t T)))
+      ∧ Integrable (fun p : Ω × ℝ => ∑ i, (X₁ i p.2 p.1 - X₂ i p.2 p.1) ^ 2
+          + ∑ k, (qf₁ k p.1 p.2 - qf₂ k p.1 p.2) ^ 2)
+        (P.prod (volume.restrict (Set.Icc t T)))
+      ∧ ∫ ω, ∑ k, (Y₁ k t ω - Y₂ k t ω) ^ 2 ∂P
+          + ∫ ω, ∫ s in Set.Icc t T, (∑ k, ∑ j, (Z₁ k s ω j - Z₂ k s ω j) ^ 2
+            + ∑ k, ∫ e, (U₁ k s ω e - U₂ k s ω e) ^ 2 ∂ν) ∂volume ∂P
+        ≤ K' ε κ T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ lamLow
+          * (∫ ω, ∑ k, (lam * (terminalVal P T C X₁ k ω - terminalVal P T C X₂ k ω)
+              + (qg₁ k ω - qg₂ k ω)) ^ 2 ∂P
+            + ∫ ω, ∫ s in Set.Icc t T, (∑ i, (X₁ i s ω - X₂ i s ω) ^ 2
+              + ∑ k, (qf₁ k ω s - qf₂ k ω s) ^ 2) ∂volume ∂P)
 
 /-- **The first two links of the chain before (4.27).** There are functions `K₁`, `K₂` of
 `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that: in the standing setting, under the hypotheses of Lemma 4.3
