@@ -816,8 +816,14 @@ integrals for the local martingales; the integrand at `s ≤ 0`; `c_BDG` as ever
 `scope_note`.
 
 <!-- spec-review: Dissertation.PaperSpec.A.lem41_MW ed839d34f480cba1d59592d221a6cd18 by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lem41_MW--claude-auditor--2026-10-20T08_55_13Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.lem41_MW ed839d34f480cba1d59592d221a6cd18 by=claude-auditor -->
 <!-- spec-review: Dissertation.PaperSpec.A.lem41_M1 ed839d34f480cba10bd49a12773fa34d by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lem41_M1--claude-auditor--2026-10-20T08_55_13Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.lem41_M1 ed839d34f480cba10bd49a12773fa34d by=claude-auditor -->
 <!-- spec-review: Dissertation.PaperSpec.A.lem41_M1_chain ed839d34f480cba11e7d5cd5bc08d7ae by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lem41_M1_chain--claude-auditor--2026-10-20T08_55_13Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.lem41_M1_chain ed839d34f480cba11e7d5cd5bc08d7ae by=claude-auditor -->
 
 ## `M²` is a local martingale, in the proof of Lemma 4.1: `Dissertation.PaperSpec.A.lem41_M2_martingale`
 
@@ -1778,10 +1784,20 @@ at least `c₀`); the first link of each bound is recorded in `scope_note`; the 
 the fifth integrand and the zero mean of the fifth term are `eq_bdg4_fifth_mean`.
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_bdg4_XZ ed839d34f480cba1ea9600d62db2bc6a by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_bdg4_XZ--claude-auditor--2026-10-20T08_55_37Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bdg4_XZ ed839d34f480cba1ea9600d62db2bc6a by=claude-auditor -->
 <!-- spec-review: Dissertation.PaperSpec.A.eq_bdg4_sigmaY ed839d34f480cba1cb9feae8e68982b0 by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_bdg4_sigmaY--claude-auditor--2026-10-20T08_55_37Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bdg4_sigmaY ed839d34f480cba1cb9feae8e68982b0 by=claude-auditor -->
 <!-- spec-review: Dissertation.PaperSpec.A.eq_bdg4_XU ed839d34f480cba18a39ea87912f080a by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_bdg4_XU--claude-auditor--2026-10-20T08_55_37Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bdg4_XU ed839d34f480cba18a39ea87912f080a by=claude-auditor -->
 <!-- spec-review: Dissertation.PaperSpec.A.eq_bdg4_hY ed839d34f480cba11d2a86bd66838ee7 by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_bdg4_hY--claude-auditor--2026-10-20T08_55_37Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bdg4_hY ed839d34f480cba11d2a86bd66838ee7 by=claude-auditor -->
 <!-- spec-review: Dissertation.PaperSpec.A.eq_bdg4_fifth ed839d34f480cba1bb7df8f3a4d24d8b by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_bdg4_fifth--claude-auditor--2026-10-20T08_55_37Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bdg4_fifth ed839d34f480cba1bb7df8f3a4d24d8b by=claude-auditor -->
 
 ## The fifth term of (4.17), its predictable integrand and its zero mean: `Dissertation.PaperSpec.A.eq_bdg4_fifth_mean`
 

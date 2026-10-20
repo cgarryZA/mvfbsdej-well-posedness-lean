@@ -2113,6 +2113,8 @@ Verdict: faithful with representation choices.
   gives existence. Only `[0, T]` is constrained: `M` off `[0, T]` is free, as the paper's
   `M_t`, `t ≤ T`, is.
   <!-- def-review: Dissertation.WellPosedness.Martingale.IsLocalBrownianIntegral af52a81469651df41748a271333f18f8 by=claude-author -->
+  Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.WellPosedness.Martingale.IsLocalBrownianIntegral--claude-auditor--2026-10-20T08_54_49Z.md`).
+  <!-- def-review: Dissertation.WellPosedness.Martingale.IsLocalBrownianIntegral af52a81469651df41748a271333f18f8 by=claude-auditor -->
 * `IsLocalCompensatedIntegral N ℱ hℱ T φ M`: the same for the marked integrand
   `φ : Ω → ℝ → E → ℝ` against the compensated Poisson random measure `Ñ = N − ν ⊗ ds` for the
   filtration `ℱ`: the cut-off integrands `φ_s(e) 1_{s ≤ τ_k}` meet the conditions of the library's
@@ -2124,3 +2126,5 @@ Verdict: faithful with representation choices.
   for `IsLocalBrownianIntegral`, from the locality of the compensated integral and its càdlàg
   version.
   <!-- def-review: Dissertation.WellPosedness.Martingale.IsLocalCompensatedIntegral fd70e2533ec1703ae35c9c952d53ca0a by=claude-author -->
+  Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.WellPosedness.Martingale.IsLocalCompensatedIntegral--claude-auditor--2026-10-20T08_54_49Z.md`).
+  <!-- def-review: Dissertation.WellPosedness.Martingale.IsLocalCompensatedIntegral fd70e2533ec1703ae35c9c952d53ca0a by=claude-auditor -->
