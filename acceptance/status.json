@@ -4448,15 +4448,115 @@
    "status": "out of scope: proof-step"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_bdg4_XZ",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_bdg4_XZ",
+      "Dissertation.WellPosedness.Martingale.IsLocalBrownianIntegral"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "first bound of (4.18): ∫_0^t ⟨GδX_{s−}, δZ_s dW_s⟩ exists as a local Itô integral on [0, T], 𝔼 sup_{t≤T} |∫_0^t ⟨GδX_{s−}, δZ_s dW_s⟩| ≤ c_BDG ‖G‖ (𝔼 sup_{t≤T} |δX_t|²)^{1/2} (𝔼 ∫_0^T |δZ_t|²_F dt)^{1/2} < ∞, and its increments have mean zero (c_BDG every value at least some c₀ > 0)",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_bdg4_XZ",
+     "spec_hash": "ed839d34f480cba1ea9600d62db2bc6a",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_bdg4_sigmaY",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_bdg4_sigmaY",
+      "Dissertation.WellPosedness.Martingale.IsLocalBrownianIntegral"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "second bound of (4.18): ∫_0^t ⟨G(λδσ_s + q^σ_s) dW_s, δY_{s−}⟩ exists as a local Itô integral on [0, T], 𝔼 sup_{t≤T} |∫_0^t ⟨G(λδσ_s + q^σ_s) dW_s, δY_{s−}⟩| ≤ c_BDG ‖G‖ (𝔼 sup_{t≤T} |δY_t|²)^{1/2} (𝔼 ∫_0^T |λδσ_t + q^σ_t|²_F dt)^{1/2} < ∞, and its increments have mean zero (c_BDG every value at least some c₀ > 0)",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_bdg4_sigmaY",
+     "spec_hash": "ed839d34f480cba1cb9feae8e68982b0",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_bdg4_XU",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_bdg4_XU",
+      "Dissertation.WellPosedness.Martingale.IsLocalCompensatedIntegral"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "third bound of (4.18): ∫_0^t ∫_E ⟨GδX_{s−}, δU_s(e)⟩ Ñ(ds, de) exists as a local compensated integral on [0, T], 𝔼 sup_{t≤T} |∫_0^t ∫_E ⟨GδX_{s−}, δU_s(e)⟩ Ñ(ds, de)| ≤ c_BDG ‖G‖ (𝔼 sup_{t≤T} |δX_t|²)^{1/2} (𝔼 ∫_0^T ‖δU_t‖² dt)^{1/2} < ∞, and its increments have mean zero (c_BDG every value at least some c₀ > 0)",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_bdg4_XU",
+     "spec_hash": "ed839d34f480cba18a39ea87912f080a",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_bdg4_hY",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_bdg4_hY",
+      "Dissertation.WellPosedness.Martingale.IsLocalCompensatedIntegral"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "fourth bound of (4.18): with λδh + q^h read through any representative meeting the conditions of the compensated integral (one exists), ∫_0^t ∫_E ⟨G(λδh_s + q^h_s)(e), δY_{s−}⟩ Ñ(ds, de) exists as a local compensated integral on [0, T], 𝔼 sup_{t≤T} |∫_0^t ∫_E ⟨G(λδh_s + q^h_s)(e), δY_{s−}⟩ Ñ(ds, de)| ≤ c_BDG ‖G‖ (𝔼 sup_{t≤T} |δY_t|²)^{1/2} (𝔼 ∫_0^T ‖λδh_t + q^h_t‖² dt)^{1/2} < ∞, and its increments have mean zero (c_BDG every value at least some c₀ > 0)",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_bdg4_hY",
+     "spec_hash": "ed839d34f480cba11d2a86bd66838ee7",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_bdg4_fifth",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_bdg4_fifth"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "𝔼 ∫_0^T |λδσ_t + q^σ_t|²_F dt < ∞ and 𝔼 ∫_0^T ‖λδh_t + q^h_t‖² dt < ∞; the fifth integrand is integrable: 𝔼 ∫_0^T ∫_E |⟨λδh_t(e) + q^h_t(e), GᵀδU_t(e)⟩| ν(de) dt ≤ ‖G‖ (𝔼 ∫_0^T ‖λδh_t + q^h_t‖² dt)^{1/2} (𝔼 ∫_0^T ‖δU_t‖² dt)^{1/2} < ∞",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_bdg4_fifth",
+     "spec_hash": "ed839d34f480cba1bb7df8f3a4d24d8b",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:bdg4",
    "kind": "embedded-in-proof",
    "number": "(4.18)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "the clauses read lines 579–622: the four bounds of (4.18) (lines 579–598), each with the existence of its local martingale as a local stochastic integral (IsLocalBrownianIntegral, IsLocalCompensatedIntegral), the finiteness of the bounds and the zero means the supremum criterion gives (lines 600–612), the finiteness of 𝔼∫|λδσ + q^σ|²_F and 𝔼∫‖λδh + q^h‖² (lines 606–610), and the integrability of the fifth integrand (lines 612–621); the display at lines 600–605 is the definition of the norm of ℍ at the hypothesis Θ¹ − Θ² ∈ ℍ, whose finiteness enters each bound; not stated: that the four local martingales and the fifth term are the stochastic terms of (4.17), which belongs to (4.17) (A:eq:Gid-path, a proof step not stated), the predictability of the fifth integrand (lines 612–613) and the zero mean of the fifth term by (2.2) (line 622), which need the fifth term of (4.17), the compensated integral of an integrable predictable integrand, not defined here (the representative of λδh + q^h is taken marked progressively measurable, as in (4.15)); the first link of each bound, the Burkholder–Davis–Gundy inequality at p = 1 in quadratic-variation form (Davis's inequality), is cited work (He, Wang and Yan, as in A:sec4:supremum-criterion) and is not stated: each bound is stated and proved through the predictable quadratic variation (Lenglart's inequality), with the same right-hand side",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
@@ -4769,10 +4869,10 @@
   "A": {
    "definition: reviewed": 11,
    "formal: accepted": 71,
-   "formal: proved, author-reviewed": 3,
+   "formal: proved, author-reviewed": 4,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
-   "out of scope: proof-step": 3
+   "out of scope: proof-step": 2
   }
  }
 }

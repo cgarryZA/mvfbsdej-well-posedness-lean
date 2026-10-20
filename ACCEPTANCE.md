@@ -9,7 +9,7 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | Status | A |
 |---|---|
 | formal: accepted | 71 |
-| formal: proved, author-reviewed | 3 |
+| formal: proved, author-reviewed | 4 |
 | formal: proved, review pending | 0 |
 | refuted as printed | 0 |
 | refuted as printed; corrected statement proved | 0 |
@@ -24,7 +24,7 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | definition: not yet stated | 0 |
 | out of scope: duplicate | 4 |
 | out of scope: part-of | 17 |
-| out of scope: proof-step | 3 |
+| out of scope: proof-step | 2 |
 
 ## Paper A (well-posedness, `1f67672`)
 
@@ -106,6 +106,7 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | `A:eq:contract` | (4.13) | formal: accepted | `A.eq_contract` | `A.eq_contract` | reviewed by claude-auditor, hypotheses met: `A.frozen_pair_hypotheses` |
 | `A:eq:dX` | (4.15) | formal: accepted | `A.eq_dX` | `A.eq_dX` | reviewed by claude-auditor, hypotheses met: `A.lem_pert_two_data_hypotheses` |
 | `A:eq:dY` | (4.16) | formal: accepted | `A.eq_dY` | `A.eq_dY` | reviewed by claude-auditor, hypotheses met: `A.lem_pert_two_data_hypotheses` |
+| `A:eq:bdg4` | (4.18) | formal: proved, author-reviewed | `A.eq_bdg4_XZ`, `A.eq_bdg4_sigmaY`, `A.eq_bdg4_XU`, `A.eq_bdg4_hY`, `A.eq_bdg4_fifth` | `A.eq_bdg4_XZ`, `A.eq_bdg4_sigmaY`, `A.eq_bdg4_XU`, `A.eq_bdg4_hY`, `A.eq_bdg4_fifth` | first bound of (4.18): ∫_0^t ⟨GδX_{s−}, δZ_s dW_s⟩ exists as a local Itô integral on [0, T], 𝔼 sup_{t≤T} |∫_0^t ⟨GδX_{s−}, δZ_s dW_s⟩| ≤ c_BDG ‖G‖ (𝔼 sup_{t≤T} |δX_t|²)^{1/2} (𝔼 ∫_0^T |δZ_t|²_F dt)^{1/2} < ∞, and its increments have mean zero (c_BDG every value at least some c₀ > 0): reviewed by claude-author, hypotheses met: `A.lem_pert_two_data_hypotheses`; second bound of (4.18): ∫_0^t ⟨G(λδσ_s + q^σ_s) dW_s, δY_{s−}⟩ exists as a local Itô integral on [0, T], 𝔼 sup_{t≤T} |∫_0^t ⟨G(λδσ_s + q^σ_s) dW_s, δY_{s−}⟩| ≤ c_BDG ‖G‖ (𝔼 sup_{t≤T} |δY_t|²)^{1/2} (𝔼 ∫_0^T |λδσ_t + q^σ_t|²_F dt)^{1/2} < ∞, and its increments have mean zero (c_BDG every value at least some c₀ > 0): reviewed by claude-author, hypotheses met: `A.lem_pert_two_data_hypotheses`; third bound of (4.18): ∫_0^t ∫_E ⟨GδX_{s−}, δU_s(e)⟩ Ñ(ds, de) exists as a local compensated integral on [0, T], 𝔼 sup_{t≤T} |∫_0^t ∫_E ⟨GδX_{s−}, δU_s(e)⟩ Ñ(ds, de)| ≤ c_BDG ‖G‖ (𝔼 sup_{t≤T} |δX_t|²)^{1/2} (𝔼 ∫_0^T ‖δU_t‖² dt)^{1/2} < ∞, and its increments have mean zero (c_BDG every value at least some c₀ > 0): reviewed by claude-author, hypotheses met: `A.lem_pert_two_data_hypotheses`; fourth bound of (4.18): with λδh + q^h read through any representative meeting the conditions of the compensated integral (one exists), ∫_0^t ∫_E ⟨G(λδh_s + q^h_s)(e), δY_{s−}⟩ Ñ(ds, de) exists as a local compensated integral on [0, T], 𝔼 sup_{t≤T} |∫_0^t ∫_E ⟨G(λδh_s + q^h_s)(e), δY_{s−}⟩ Ñ(ds, de)| ≤ c_BDG ‖G‖ (𝔼 sup_{t≤T} |δY_t|²)^{1/2} (𝔼 ∫_0^T ‖λδh_t + q^h_t‖² dt)^{1/2} < ∞, and its increments have mean zero (c_BDG every value at least some c₀ > 0): reviewed by claude-author, hypotheses met: `A.lem_pert_two_data_hypotheses`; 𝔼 ∫_0^T |λδσ_t + q^σ_t|²_F dt < ∞ and 𝔼 ∫_0^T ‖λδh_t + q^h_t‖² dt < ∞; the fifth integrand is integrable: 𝔼 ∫_0^T ∫_E |⟨λδh_t(e) + q^h_t(e), GᵀδU_t(e)⟩| ν(de) dt ≤ ‖G‖ (𝔼 ∫_0^T ‖λδh_t + q^h_t‖² dt)^{1/2} (𝔼 ∫_0^T ‖δU_t‖² dt)^{1/2} < ∞: reviewed by claude-author, hypotheses met: `A.lem_pert_two_data_hypotheses` |
 | `A:eq:Gid` | (4.19) | formal: accepted | `A.eq_Gid` | `A.eq_Gid` | reviewed by claude-auditor, hypotheses met: `A.lem_pert_two_data_hypotheses` |
 | `A:eq:intmono` | (4.20) | formal: accepted | `A.eq_intmono` | `A.eq_intmono` | reviewed by claude-auditor, hypotheses met: `A.lem_pert_two_data_hypotheses` |
 | `A:eq:termmono` | (4.21) | formal: accepted | `A.eq_termmono` | `A.eq_termmono` | reviewed by claude-auditor, hypotheses met: `A.lem_pert_two_data_hypotheses` |
@@ -142,5 +143,4 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | `A:eq:itoY2` | (4.5) | proof-step | a step of a printed proof | yes |
 | `A:eq:contpert` | (4.14) | part-of | A:lem:pert | yes |
 | `A:eq:Gid-path` | (4.17) | proof-step | a step of a printed proof | yes |
-| `A:eq:bdg4` | (4.18) | proof-step | a step of a printed proof | yes |
 | `A:eq:fulllaw-eps` | (5.1) | part-of | A:ex:fulllaw | yes |

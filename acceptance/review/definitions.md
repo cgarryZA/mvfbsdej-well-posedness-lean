@@ -2105,8 +2105,8 @@ Verdict: faithful with representation choices.
   any two localising sequences, agree at each `t ∈ [0, T]` almost surely (on
   `{t ≤ τ_k ∧ τ'_k}` both are the integral of `H 1_{s ≤ τ_k ∧ τ'_k}`, by the locality of the
   integral, and these events exhaust `Ω` up to a null set), hence are indistinguishable on
-  `[0, T]` by right-continuity; and against a càdlàg version `J_k` of the `k`-th integral, `M` stopped
-  at `τ_k` is `J_k` stopped at `τ_k` on `[0, T]` almost surely (on `{τ_k < T}` a later `τ_m`
+  `[0, T]` by right-continuity; and against a càdlàg version `J_k` of the `k`-th integral, `M`
+  stopped at `τ_k` is `J_k` stopped at `τ_k` on `[0, T]` almost surely (on `{τ_k < T}` a later `τ_m`
   exceeds `τ_k`), so `M` is a càdlàg local martingale on `[0, T]`, which the definition does not
   state as a separate condition. Whether such `M` exists is a condition on `H` (local square
   integrability along some `τ_k`), not part of the definition; `exists_isLocalBrownianIntegral`

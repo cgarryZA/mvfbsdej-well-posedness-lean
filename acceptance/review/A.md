@@ -755,8 +755,8 @@ Readings:
   `M²` paragraph (`lem41_M2_zero_mean`, read pathwise).
 
 Proofs: BDG at `p = 1` for the `L²` integrals (`lintegral_biSup_le_brownian`,
-`lintegral_biSup_le_compensated`, constant `9`) by Lenglart's argument (`lintegral_le_of_good_lambda`):
-the integral of the integrand cut off when its energy reaches `δ` (`energyHit`, a stopping time)
+`lintegral_biSup_le_compensated`, constant `9`) by Lenglart's argument
+(`lintegral_le_of_good_lambda`): the integral of the integrand cut off when its energy reaches `δ` (`energyHit`, a stopping time)
 agrees with the integral up to that time (the library's locality), Doob's `L²` inequality bounds
 its squared supremum by `4 𝔼 (A_T ∧ δ)`, and the tail bounds integrate over `δ`. The local
 integrals exist along the exit times of `δY` from balls (`exitSeq`), up to which
