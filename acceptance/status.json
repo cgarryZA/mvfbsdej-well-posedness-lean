@@ -2542,16 +2542,7 @@
    "clauses": [
     {
      "accept": null,
-     "author_reviewed": [
-      "Dissertation.Law.lawP2",
-      "Dissertation.WellPosedness.Existence.coeffJump",
-      "Dissertation.WellPosedness.System.TupleH",
-      "Dissertation.WellPosedness.System.diffusionProc",
-      "Dissertation.WellPosedness.System.driftProc",
-      "Dissertation.WellPosedness.System.driverProc",
-      "Dissertation.WellPosedness.System.leftLimProc",
-      "Dissertation.WellPosedness.System.tupleAt"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [
       "Dissertation.WellPosedness.System.TupleH",
@@ -2580,7 +2571,7 @@
    "scope": "definition",
    "scope_note": "the notation of §2 for the unknown: the tuple Θ = (X, Y, Z, U) with values in H, componentwise (TupleH, tupleAt), the predictable tuple Θ⁻ = (X₋, Y₋, Z, U) (tupleAt of leftLimProc X, leftLimProc Y, Z, U), the laws μ_t = Law(Θ_t) and μ⁻_t = Law(Θ⁻_t) (lawP2), and the coefficient expressions b, σ, f at (t, Θ_t, μ_t) and h at (t, Θ⁻_t, μ⁻_t), defined at every t (driftProc, diffusionProc, driverProc, coeffJump); as the Borel representatives of Lemma A.1 the Lean takes lawP2 of the tuple at every time, a Borel flow equal to the law for a.e. t by lem_lawflow (A:lem:lawflow); 'the continuous MV-FBSDEJ is the system (1.1) displayed in the introduction' (lines 28–29) refers to A:eq:mvfbsdej, and the same notation in the introduction (01-introduction.tex lines 34–43) is pinned in A:intro:mvfbsdej and A:eq:mvfbsdej; that every claim made about the coefficient expressions is dt-a.e. or time-integrated (lines 44–45) is a convention on how the claims of the paper are read, not an object",
    "scope_reviewed": false,
-   "status": "definition: author-reviewed"
+   "status": "definition: reviewed"
   },
   {
    "clauses": [
@@ -2822,17 +2813,7 @@
    "clauses": [
     {
      "accept": null,
-     "author_reviewed": [
-      "Dissertation.Law.lawP2",
-      "Dissertation.WellPosedness.Existence.coeffJump",
-      "Dissertation.WellPosedness.System.diffusionProc",
-      "Dissertation.WellPosedness.System.driftProc",
-      "Dissertation.WellPosedness.System.driverProc",
-      "Dissertation.WellPosedness.System.jumpProc",
-      "Dissertation.WellPosedness.System.leftLimProc",
-      "Dissertation.WellPosedness.System.terminalVal",
-      "Dissertation.WellPosedness.System.tupleAt"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [
       "Dissertation.WellPosedness.System.driftProc",
@@ -2862,7 +2843,7 @@
    "scope": "definition",
    "scope_note": "the notation of the comparison of two coefficient systems k = 1, 2 in (3.1): δ· = ·¹ − ·², the coordinatewise differences the propositions take; μᵏ_t := Law(Θᵏ_t) (lawP2 of tupleAt); (δψ)(t) for ψ ∈ {b, σ, f} along solution 2 (driftProc, diffusionProc, driverProc of systems 1 and 2 at Θ²); (δh)(t) at (Θ²⁻_t, μ²⁻_t) (jumpProc of coeffJump at leftLimProc X², leftLimProc Y², Z², U²); δ̂g_T (terminalVal of systems 1 and 2 at X²); the propositions that use it are thm_stab (A:thm:stab, A:thm:cwp), thm_stab_companion with the roles exchanged, thm_stab_data and thm_stab_minimal (A:thm3.1:companion), cor_robust_wp (A:cor:robust) and rem_generalrank_wp (A:rem:generalrank); 'The stability and uniqueness theorems below rest on comparing solutions of (1.1) under two coefficient systems' (lines 39–40) is exposition: the uniqueness theorem compares two solutions of one system, and its proof fixes its own differences along both solutions (lines 110–117, in A:eq:uniq-coeff)",
    "scope_reviewed": false,
-   "status": "definition: author-reviewed"
+   "status": "definition: reviewed"
   },
   {
    "clauses": [
@@ -5634,8 +5615,7 @@
  ],
  "summary": {
   "A": {
-   "definition: author-reviewed": 2,
-   "definition: reviewed": 11,
+   "definition: reviewed": 13,
    "formal: accepted": 75,
    "out of scope: duplicate": 4,
    "out of scope: expository": 1,

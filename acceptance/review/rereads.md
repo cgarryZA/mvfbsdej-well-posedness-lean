@@ -629,6 +629,96 @@ digest.
   hypotheses. The verdict (faithful) stands.
   <!-- spec-review: Dissertation.PaperSpec.A.sec2_separable ed839d34f480cba1673cfd9d331f5aa6 by=claude-auditor source=A:sec2:separable-L2nu@90cbae8104b2345566337d2982f21d3bb10b2f024139bb058c19423bb1296d42 -->
 
+## `A:sec2:tuple-notation` (paper/sections/02-model-assumptions.tex, lines 27–45)
+
+* `Dissertation.Law.lawP2` (added: lines 27–45 (a new definition claim: the whole passage)). The
+  whole region (lines 27-45) is new. lawP2 encodes mu_t = Law(Theta_t) and mu_t^- = Law(Theta_t^-)
+  (lines 27 and 37), applied to tupleAt of the tuple and of the left-limit tuple. Lines 41-43 add
+  that mu and mu^- denote the Borel representatives fixed in Lemma A.1, which agree with the laws
+  for a.e. t. The Lean takes lawP2 of the tuple at every time: the image measure when Theta_s is
+  square integrable, and the Dirac junk otherwise. That flow is one of the representatives the lemma
+  provides. The proposition of Lemma A.1 (lem_lawflow), which has a proof in the acceptance layer,
+  states that it is Borel into (P_2(H), W_2) and equals the image measure for a.e. s in [0, T]. Its
+  companion lem_lawflow_invariant states that coefficient evaluations do not depend on the
+  representative up to dt x dP-null sets. Lines 43-45 (claims are only dt-a.e. or time-integrated)
+  are the condition under which the earlier report judged the junk branch harmless. The added lines
+  confirm the reading. The verdict, faithful with representation choices, stands.
+  <!-- def-review: Dissertation.Law.lawP2 8e02ec4a91100180227c044dc87cf8fe by=claude-auditor source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+
+* `Dissertation.WellPosedness.Existence.coeffJump` (added: lines 27–45 (a new definition claim: the
+  whole passage)). The whole region (lines 27-45) is new. coeffJump encodes the jump terms
+  "evaluated at the predictable tuple Theta_t^- = (X_{t-}, Y_{t-}, Z_t, U_t), mu_t^- =
+  Law(Theta_t^-)" of lines 35-38. coeffJump is generic in the tuple. Applied to (leftLimProc X,
+  leftLimProc Y, Z, U), as every proposition passes it (the earlier report checked this, and the
+  solution predicate's jump_rep uses the same left-limit tuple), it is a jointly measurable
+  representative of h(s, Theta_s^-, ., mu_s^-) at every s in [0, T]. Here mu_s^- is lawP2 of the
+  left-limit tuple, a Borel representative of Lemma A.1 (lem_lawflow) as lines 41-43 require. Lines
+  43-45 confirm that only a.e. and time-integrated uses matter, so the junk values (uLift 0, the
+  Dirac law) are harmless. The verdict, faithful with representation choices, stands.
+  <!-- def-review: Dissertation.WellPosedness.Existence.coeffJump 90dd30b497d4dd12d6d4dda771a35c05 by=claude-auditor source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+
+* `Dissertation.WellPosedness.System.TupleH` (added: lines 27–45 (a new definition claim: the whole
+  passage)). The whole region (lines 27-45) is new. The item TupleH encodes is lines 29-34: Theta_t
+  takes values in the Hilbert space H, componentwise X_t in R^n, Y_t in R^m, Z_t in R^{m x d}, U_t
+  in L^2(nu; R^m). TupleH is exactly that product in that order (Z on Fin m x Fin d with the
+  Euclidean, i.e. Frobenius, norm; U in Lp of R^m-valued maps). "Hilbert" refers to the norm
+  |theta|_H^2 = |x|^2 + |y|^2 + |z|_F^2 + ||u||^2 fixed in the introduction. The earlier report
+  already read that norm and recorded that TupleH carries the max of the channel norms, with the
+  Hilbert norm entering through toL2/w2H and the explicit channel sums where it is used. The passage
+  adds nothing about the norm. The other lines (Theta^-, mu, mu^-, the every-t convention) concern
+  other definitions. The earlier verdict, faithful with representation choices, stands.
+  <!-- def-review: Dissertation.WellPosedness.System.TupleH fd49e3c7112f4155a292d8ceeae04f54 by=claude-auditor source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+
+* `Dissertation.WellPosedness.System.diffusionProc` (added: lines 27–45 (a new definition claim: the
+  whole passage)). The whole region (lines 27-45) is new. diffusionProc encodes the expression
+  sigma(t, Theta_t, mu_t), one of the "expressions such as b(t, Theta_t, mu_t)" of line 43. It is
+  sigma evaluated at every s at tupleAt of the current-time tuple and at lawP2 of that tuple (a
+  Borel representative of Lemma A.1 by lem_lawflow), entry (i, j), cut off to 0 off [0, T]. Lines
+  44-45 (claims only dt-a.e. or time-integrated) match the earlier finding that only its dt x dP
+  class enters. The verdict, faithful with representation choices, stands.
+  <!-- def-review: Dissertation.WellPosedness.System.diffusionProc 38de1bfa70e0d9f65621b71beed53a93 by=claude-auditor source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+
+* `Dissertation.WellPosedness.System.driftProc` (added: lines 27–45 (a new definition claim: the
+  whole passage)). The whole region (lines 27-45) is new. driftProc encodes the expression b(t,
+  Theta_t, mu_t) of line 43, "defined at every t". It is b evaluated at every s at tupleAt of the
+  current-time tuple (no left limits, as printed) and at lawP2 of that tuple, cut off to 0 off [0,
+  T]. That law flow is a Borel representative of Lemma A.1 (lem_lawflow), as lines 41-43 require.
+  The convention of lines 44-45, that every claim about such expressions is dt-a.e. or
+  time-integrated, is what the earlier report relied on: the process enters only through its dt x dP
+  class. The verdict, faithful with representation choices, stands.
+  <!-- def-review: Dissertation.WellPosedness.System.driftProc 12c9183ed27748868bc8011ce72cfb14 by=claude-auditor source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+
+* `Dissertation.WellPosedness.System.driverProc` (added: lines 27–45 (a new definition claim: the
+  whole passage)). The whole region (lines 27-45) is new. driverProc encodes the expression f(t,
+  Theta_t, mu_t), one of the "expressions such as b(t, Theta_t, mu_t)" of line 43. It is f evaluated
+  at every s at tupleAt of the current-time tuple and at lawP2 of that tuple (a Borel representative
+  of Lemma A.1 by lem_lawflow), coordinate k, cut off to 0 off [0, T]. Lines 44-45 (claims only
+  dt-a.e. or time-integrated) match the earlier finding that only its dt x dP class enters. The
+  verdict, faithful with representation choices, stands.
+  <!-- def-review: Dissertation.WellPosedness.System.driverProc 1491f35f9b5cef0eabae931fed61c587 by=claude-auditor source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+
+* `Dissertation.WellPosedness.System.leftLimProc` (added: lines 27–45 (a new definition claim: the
+  whole passage)). The whole region (lines 27-45) is new. leftLimProc encodes the left limits
+  X_{t-}, Y_{t-} in the predictable tuple of lines 35-40. It is the left limit along s < t of each
+  path (Function.leftLim), applied to X and Y only, while Z_t and U_t enter tupleAt unchanged ("the
+  integrands Z_t, U_t, already predictable, are left untouched"). The passage does not fix X_{0-}.
+  The earlier report's points (a fallback value on paths without left limits, and the value at the
+  single time 0) concern a Lebesgue-null set of times, and lines 44-45 confirm that the paper reads
+  such expressions only dt-a.e. or time-integrated. The verdict, faithful with representation
+  choices, stands.
+  <!-- def-review: Dissertation.WellPosedness.System.leftLimProc 9171262935c3b1fde4f555261cd0b9ba by=claude-auditor source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+
+* `Dissertation.WellPosedness.System.tupleAt` (added: lines 27–45 (a new definition claim: the whole
+  passage)). The whole region (lines 27-45) is new. tupleAt encodes the tuple Theta_t = (X_t, Y_t,
+  Z_t, U_t) of lines 27 and 29-34: it packs the coordinate processes at the current time s in the
+  order x, y, z, u into H, with U_s the L^2(nu) class of e -> U_s(omega, e) (uLift, which is 0 only
+  where that map is not square integrable, a dt x dP-null set for finite-energy U). The predictable
+  tuple of lines 35-40, Theta_t^- = (X_{t-}, Y_{t-}, Z_t, U_t), is tupleAt applied to (leftLimProc
+  X, leftLimProc Y, Z, U), which leaves the Z and U slots untouched as the passage says. Nothing in
+  the added lines contradicts the earlier reading. The verdict, faithful with representation
+  choices, stands.
+  <!-- def-review: Dissertation.WellPosedness.System.tupleAt 0b900ec4a75a6b31755afe5c94aee280 by=claude-auditor source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+
 ## `A:sec3:HH-banach` (paper/sections/03-main-results.tex, lines 5–32)
 
 * `Dissertation.PaperSpec.A.sec3_HH_complete` (added: lines 5–29 and 31–32). The added lines print
@@ -732,6 +822,92 @@ digest.
   integrals existing, any coefficients, and any a.s. right-continuous M in place of the cadlag
   version of the Ito integral.
   <!-- spec-review: Dissertation.PaperSpec.A.sec3_one_null_set ed839d34f480cba1209a5aa6ac298690 by=claude-auditor source=A:sec3:one-null-set@50a645fe0ae55998cb3c0ee4547c990dc06667c7e43810173776909d6022b341 -->
+
+## `A:sec3:two-system-notation` (paper/sections/03-main-results.tex, lines 39–49)
+
+* `Dissertation.Law.lawP2` (added: lines 39–49 (a new definition claim: the whole passage)). The
+  whole region (lines 39-49) is new. lawP2 encodes mu^k_t := Law(Theta^k_t) (line 41), the law
+  mu^{2,-}_t of the predictable tuple (line 46) and Law(X^2_T) in the hat-delta g_T (line 47). Each
+  is lawP2 of the corresponding tupleAt or of X^2_T. That is the image measure for square-integrable
+  arguments, which holds for a.e. t and at T for solutions in H, and the flow in t is a Borel
+  representative of Lemma A.1 (lem_lawflow), so it agrees with the section 2 reading of mu. The
+  verdict, faithful with representation choices, stands.
+  <!-- def-review: Dissertation.Law.lawP2 8e02ec4a91100180227c044dc87cf8fe by=claude-auditor source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+
+* `Dissertation.WellPosedness.Existence.coeffJump` (added: lines 39–49 (a new definition claim: the
+  whole passage)). The whole region (lines 39-49) is new. coeffJump encodes the terms of (delta
+  h)(t) := h^1(t, Theta^{2,-}_t, ., mu^{2,-}_t) - h^2(t, Theta^{2,-}_t, ., mu^{2,-}_t) (line 46).
+  The propositions take coeffJump of system k at (leftLimProc X^2, leftLimProc Y^2, Z^2, U^2) for k
+  = 1, 2. That is a jointly measurable representative of h^k at the predictable tuple of solution 2
+  and at its law lawP2 = mu^{2,-}_s, the same argument for both systems, as printed. The L^2(nu)
+  class of the difference of the two representatives is h^1 - h^2 at that point. Lines 39-40 are
+  exposition. The verdict, faithful with representation choices, stands.
+  <!-- def-review: Dissertation.WellPosedness.Existence.coeffJump 90dd30b497d4dd12d6d4dda771a35c05 by=claude-auditor source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+
+* `Dissertation.WellPosedness.System.diffusionProc` (added: lines 39–49 (a new definition claim: the
+  whole passage)). The whole region (lines 39-49) is new. diffusionProc encodes the terms of (delta
+  sigma)(t) := sigma^1(t, Theta^2_t, mu^2_t) - sigma^2(t, Theta^2_t, mu^2_t) (line 44, psi = sigma).
+  The propositions take diffusionProc of system 1 minus that of system 2, both at the coordinates of
+  solution 2. Each is sigma^k at tupleAt of Theta^2 and its law lawP2 = mu^2_s (line 41). The
+  Frobenius norm of the difference is taken in the propositions. Lines 39-40 are exposition. The
+  verdict, faithful with representation choices, stands.
+  <!-- def-review: Dissertation.WellPosedness.System.diffusionProc 38de1bfa70e0d9f65621b71beed53a93 by=claude-auditor source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+
+* `Dissertation.WellPosedness.System.driftProc` (added: lines 39–49 (a new definition claim: the
+  whole passage)). The whole region (lines 39-49) is new. driftProc encodes the terms of (delta
+  psi)(t) := psi^1(t, Theta^2_t, mu^2_t) - psi^2(t, Theta^2_t, mu^2_t) for psi = b (line 44). The
+  propositions take driftProc of system 1 minus driftProc of system 2, both at the coordinates of
+  solution 2. Each is b^k evaluated at tupleAt of Theta^2 at time s and at lawP2 of that tuple,
+  which is mu^2_s := Law(Theta^2_s) (line 41). So both systems are evaluated at the same point of
+  solution 2, as printed. Lines 39-40 are exposition and do not bear on the definition. The verdict,
+  faithful with representation choices, stands.
+  <!-- def-review: Dissertation.WellPosedness.System.driftProc 12c9183ed27748868bc8011ce72cfb14 by=claude-auditor source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+
+* `Dissertation.WellPosedness.System.driverProc` (added: lines 39–49 (a new definition claim: the
+  whole passage)). The whole region (lines 39-49) is new. driverProc encodes the terms of (delta
+  f)(t) := f^1(t, Theta^2_t, mu^2_t) - f^2(t, Theta^2_t, mu^2_t) (line 44, psi = f). The
+  propositions take driverProc of system 1 minus that of system 2, both at the coordinates of
+  solution 2. Each is f^k at tupleAt of Theta^2 and its law lawP2 = mu^2_s (line 41). Lines 39-40
+  are exposition. The verdict, faithful with representation choices, stands.
+  <!-- def-review: Dissertation.WellPosedness.System.driverProc 1491f35f9b5cef0eabae931fed61c587 by=claude-auditor source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+
+* `Dissertation.WellPosedness.System.jumpProc` (added: lines 39–49 (a new definition claim: the
+  whole passage)). The whole region (lines 39-49) is new. jumpProc is the cut-off to [0, T] of a
+  supplied pointwise jump integrand. In this notation it wraps the two representatives coeffJump of
+  systems 1 and 2 at the predictable tuple of solution 2. The propositions' difference of the two
+  jumpProc terms is therefore, on [0, T], a representative of (delta h)(t) = h^1(t, Theta^{2,-}_t,
+  ., mu^{2,-}_t) - h^2(t, Theta^{2,-}_t, ., mu^{2,-}_t) of line 46, and 0 off [0, T], where (3.1)
+  does not look. The evaluation point is supplied by the argument, as the earlier report found. The
+  verdict, faithful with representation choices, stands.
+  <!-- def-review: Dissertation.WellPosedness.System.jumpProc bfa4317d32adaf7b2cab0921e18838d1 by=claude-auditor source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+
+* `Dissertation.WellPosedness.System.leftLimProc` (added: lines 39–49 (a new definition claim: the
+  whole passage)). The whole region (lines 39-49) is new. leftLimProc encodes the left limits
+  X^2_{t-}, Y^2_{t-} in the predictable tuple Theta^{2,-}_t at which delta h is evaluated (line 46).
+  The propositions pass leftLimProc X^2 and leftLimProc Y^2 with Z^2, U^2 unchanged to coeffJump of
+  both systems. The earlier report's remarks (the value at the single time 0, the fallback on paths
+  without left limits) concern a Lebesgue-null set of times, which the time-integrated delta h term
+  does not see. The verdict, faithful with representation choices, stands.
+  <!-- def-review: Dissertation.WellPosedness.System.leftLimProc 9171262935c3b1fde4f555261cd0b9ba by=claude-auditor source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+
+* `Dissertation.WellPosedness.System.terminalVal` (added: lines 39–49 (a new definition claim: the
+  whole passage)). The whole region (lines 39-49) is new. terminalVal encodes the terms of the
+  hat-delta g_T := g^1(X^2_T, Law(X^2_T)) - g^2(X^2_T, Law(X^2_T)) of line 47. The propositions take
+  terminalVal of system 1 minus that of system 2, both at X^2. Each is g^k at the value of X^2 at
+  the horizon T and at lawP2 of X^2_T, the induced law of solution 2's terminal state. The same
+  argument enters for both systems, as printed. The junk law is reached only if X^2_T is not square
+  integrable, which solutions in the space H exclude. The verdict, faithful with representation
+  choices, stands.
+  <!-- def-review: Dissertation.WellPosedness.System.terminalVal 553a1e2dd57f8bc4ed26c8f55d7a65f7 by=claude-auditor source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+
+* `Dissertation.WellPosedness.System.tupleAt` (added: lines 39–49 (a new definition claim: the whole
+  passage)). The whole region (lines 39-49) is new. tupleAt encodes the tuples Theta^2_t (line 44)
+  and Theta^{2,-}_t (line 46) of solution 2, and Theta^k_t in mu^k_t := Law(Theta^k_t) (line 41).
+  The propositions use tupleAt of solution 2's coordinates at time s, and tupleAt of (leftLimProc
+  X^2, leftLimProc Y^2, Z^2, U^2) for the predictable tuple, inside driftProc, diffusionProc,
+  driverProc and coeffJump. This is the tuple and the predictable tuple as fixed in section 2. The
+  verdict, faithful with representation choices, stands.
+  <!-- def-review: Dissertation.WellPosedness.System.tupleAt 0b900ec4a75a6b31755afe5c94aee280 by=claude-auditor source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
 
 ## `A:sec4:WP-def` (paper/sections/04-proof-wellposedness.tex, lines 39–70)
 
