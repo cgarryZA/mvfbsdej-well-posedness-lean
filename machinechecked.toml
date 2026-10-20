@@ -47,6 +47,8 @@ modules = [
   "Dissertation.PaperSpec.A.Sec4BDG",
   "Dissertation.PaperSpec.A.Setting",
   "Dissertation.PaperSpec.A.Sec5DealerActive",
+  "Dissertation.PaperSpec.A.Sec3UniquenessLip",
+  "Dissertation.PaperSpec.A.Sec4ProofSteps",
   "Dissertation.Acceptance.A.AppA",
   "Dissertation.Acceptance.A.AppASteps",
   "Dissertation.Acceptance.A.Dealer",
@@ -99,6 +101,10 @@ modules = [
   "Dissertation.Acceptance.A.WitnessFrozenPair",
   "Dissertation.Acceptance.A.WitnessInfinite",
   "Dissertation.Acceptance.A.WitnessFullLaw",
+  "Dissertation.Acceptance.A.Sec3UniquenessLip",
+  "Dissertation.Acceptance.A.WitnessRotation",
+  "Dissertation.Acceptance.A.Sec4ProofSteps",
+  "Dissertation.Acceptance.A.WitnessFrozenLam",
 ]
 scope_roots = ["Dissertation", "LevyStochCalc"]
 spec_prefix = "Dissertation.PaperSpec"

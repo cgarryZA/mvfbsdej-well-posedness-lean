@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.eq_bwd_chain",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.eq_bwd_chain",
+  "lean": [
+   "Dissertation.PaperSpec.A.eq_bwd_chain"
+  ],
+  "claims": [
+   "A:eq:bwd"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-c260f7617fdb",
+  "project_commit": "53a4ee4fc8767ba8884b5732431dded9772b47df",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba1bd5456c76b6d343a",
+  "fingerprint": "pl-fp-v1:c6ecb7c8099eaf514ff9963554e55a8bfc7df338615e2c8424304c99408c5587",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of the clause \"the first two links of the chain before (4.27)\" of claim A:eq:bwd\n(manuscript/paper/sections/04-proof-wellposedness.tex, proof of Lemma lem:pert, Step 4,\nlines 761-770).\n\nSetting and hypotheses in force: as in Lemma lem:pert (standing basis; ass:lip, ass:G, ass:mono;\nlambdalow in (0,1], lambda in [lambdalow,1]; Theta^1, Theta^2 solve (4.1) at lambda with the same\ncoefficients, F_0-measurable initial data and square-integrable forcings q^k; X^k, Y^k cadlag\nadapted with E int (|X^k|^2 + |Y^k|^2) < infinity, X^k_T in L^2, Z^k in H^2_W, U^k in H^2_N,\nTheta^1 - Theta^2 in S). q := delta q; P as defined in the proof (initial difference, terminal\nand running forcing differences). (4.16): dY written forward from dY_0:\ndY_t = dY_0 - int_0^t (lambda df_s + q^f_s) ds + int_0^t dZ dW + int_0^t int_E dU Ntilde.\ndf_t = f(t, Theta^1_t, mu^1_t) - f(t, Theta^2_t, mu^2_t), mu^k_t = Law Theta^k_t.\n\nConstant: C > 0 depending only on T, L, ||G||, c_G, alpha, beta_1, beta_2, c_BDG (for these two\nlinks, only T, L, c_BDG), chosen before lambda, the solutions and the forcings; the two C may\ndiffer (\"not necessarily the same at each occurrence\").\n\nConclusion:\n  (i)  E sup_{t<=T} |dY_t|^2 <= C (E|dY_0|^2 + E int_0^T |lambda df_s + q^f_s|^2 ds\n                                   + E int_0^T (|dZ_s|_F^2 + ||dU_s||^2) ds);\n  (ii) the bracket of (i) is <= C (E|dY_0|^2 + E int_0^T (|dX_s|^2 + |dY_s|^2 + |dZ_s|_F^2\n                                   + ||dU_s||^2) ds + P)\n       (as a chain: C B <= C'' B' with admissible constants; equivalently B <= C''' B').\nThe third link (with (4.26)) is not part of this clause.\n\nFaithful formal statement: exists constant(s) depending only on the listed parameters such that\nfor all lambda in [lambdalow,1] (or [0,1], broader) and all solution pairs and forcings\nsatisfying the hypotheses, (i) and (ii). A single C with A <= C B and B <= C B' is equivalent;\na literal C B <= C B' (B <= B') would be stronger than printed. lambdalow is not in the\nsection's default dependence list for C (only C_B of Lemma lem:pert depends on it), and these\ntwo links need no lambdalow dependence (lambda <= 1); a constant depending on lambdalow would\nbe a slight weakening, harmless for the proof since C_B may depend on it. Expectations must be genuine (finite). A witness should\nexhibit nonzero dY (e.g. nonzero forcing difference).",
+  "locked_at": "2026-10-20T15:21:24Z"
+ },
+ "comparison": {
+  "text": "Comparison of Dissertation.PaperSpec.A.eq_bwd_chain (Dissertation/PaperSpec/A/Sec4ProofSteps.lean)\nwith the locked reading (Step 4 of the proof of Lemma lem:pert, lines 761-770).\n\nConstants and their order. \"exists K_1 K_2 : R^7 -> R\" before everything else; C_i =\nK_i(T, L, ||G||, c_G, alpha, beta_1, beta_2) (||G|| the operator norm of GX G, c_G = s_min(G)^{-2}).\nNo dependence on lamLow, lambda, t, the dimensions, the solutions, the forcings or the data;\nc_BDG absorbed (one universal number). The two links have the form A <= C_1 B and\nC_1 B <= C_2 B' (the printed chain, constants \"not necessarily the same at each occurrence\"; no\nliteral B <= B'). Match.\n\nSetting and hypotheses: identical to eq_fwd_chain and to Lemma lem:pert as printed: (2.3),\nass:lip with L, G of full rank, ass:mono; lamLow in (0,1], lambda in [lamLow, 1]; F_0-measurable\ninitial data; forcings of the paper's class; both solutions in H_weak with X_T in L^2\n(WeakForcedSolution); Theta^1 - Theta^2 in S (finite supSize). Match.\n\nConclusion.\n(i)  E sup_{t in [0,T]} |dY_t|^2 <= C_1 (E|dY_0|^2 + sum_k E int_0^T |lam df_k + dq^f_k|^2 ds\n     + E int_0^T (|dZ|_F^2 + ||dU||^2) ds), df the driver difference at (Theta^k_s, Law Theta^k_s)\n     (driverProc), q = delta q. Match.\n(ii) C_1 (that bracket) <= C_2 (E|dY_0|^2 + E int_0^T (|dX|^2 + |dY|^2 + |dZ|_F^2 + ||dU||^2) ds + P),\n     P = dataSize of the differences of the data (the proof's P with q = delta q). Match.\nExpectations in [0, infinity] (lintegral, energies), so no junk values; the third link (by\n(4.26)) is not part of the clause, as my reading required.\n\nRepresentation choices (harmless): constants as functions of the parameter tuple with c_BDG\nabsorbed and ofReal(K_i) as multipliers; coordinates; [0, infinity] expectations; the S-membership\nof the difference as finite supSize.\n\nWitness. Dissertation.Acceptance.A.lem_pert_backward_window_hypotheses (Example 5.1(i), L = 1,\nG = 1, alpha = beta_1 = beta_2 = 1, lam = lamLow = 1; difference dX = 1, dY = M^W + M^N,\ndZ = dU = 1_{(0,1]}, initial difference 1): all hypotheses supplied; E sup |dY|^2 > 0 and the\nbrackets are positive, so the chain is not 0 <= 0. An instance the paper intends.\n\nCoverage. Claim A:eq:bwd has two clauses: eq_bwd ((4.27): E sup |dY|^2 + E int (|dZ|^2 + ||dU||^2)\n<= C (E|dX_T|^2 + E int |dX|^2 + P), C a function of (T, L, ||G||, c_G, alpha, beta_1, beta_2)) and\nthis one (the first two links of lines 765-769). The third link (line 770) is implied by\neq_bwd's conclusion, and the sentence \"the first term of (4.26) may be replaced\" is (4.27)\nitself, so together the clauses state every mathematical assertion of lines 761-778. Nothing\nbeyond the passage is stated and the hypotheses are those in force. The clause reads lines\nbefore the pinned region (775-778), so a change to lines 761-770 would not by itself reopen the\nreview.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-20T15:30:30Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices, each harmless: (1) the two constants are values K_i(T, L, ||G||, c_G,\nalpha, beta_1, beta_2) of functions chosen before everything else, in the form A <= C_1 B,\nC_1 B <= C_2 B' (the printed two links with \"C not necessarily the same at each occurrence\");\nc_BDG, one universal number, is absorbed, which makes the statement at least as strong as the\nprinted dependence; (2) expectations are lower Lebesgue integrals in [0, infinity] with ofReal(K_i)\nas multipliers; (3) coordinates; (4) Theta^1 - Theta^2 in S as finite supSize of the difference.\nHypotheses (those of Lemma lem:pert), the quantities (dY_0, lambda df + q^f with q = delta q, the\n(Z, U) energies, P) and the two links match the printed step."
+ },
+ "author_review": {
+  "shown_at": "2026-10-20T15:30:49Z",
+  "disagreements": "No disagreement on substance: same hypotheses, the two links stated as printed with one constant\nper link chosen first as functions of (T, L, ||G||, c_G, alpha, beta_1, beta_2) and no lamLow\ndependence, the third link left to eq_bwd, and a nondegenerate witness. Verdict label: I record\n\"faithful with representation choices\" (c_BDG absorbed into the functions K_i; coordinates;\n[0, infinity] expectations with ofReal multipliers; Theta^1 - Theta^2 in S as finite supSize).\nProcedural remark: the clause reads lines 761-770, before the pinned region (775-778)."
+ },
+ "submitted_at": "2026-10-20T15:31:29Z",
+ "issue_draft": null
+}

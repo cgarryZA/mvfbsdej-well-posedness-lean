@@ -32,7 +32,7 @@ integrals and the same energy, so the estimate for a progressive drift applies.
   primitive has a progressive version, equal to it at almost every time on every path.
 * `exists_linearBSDEJ_of_measurable` — a solution `Y` given on `[0, T]` only, of the equation
   with a jointly measurable square-integrable drift, solves the linear backward equation with a
-  progressive drift of the same energy.
+  progressive drift of the same energy, equal to it almost everywhere.
 * `brownianPoisson_estimate_of_measurable` — the estimate of Lemma 4.1 for a jointly measurable
   square-integrable drift and a solution `Y` given on `[0, T]` only.
 * `brownianPoisson_estimate_vec_of_measurable` — the same for `ℝᵐ`-valued `Y`, coordinatewise.
@@ -168,8 +168,9 @@ carrying the driver, whose null sets lie in its time-`0` field and whose time-`0
 its fields at negative times, let `Y` be adapted on `[0, T]` with right-continuous paths on
 `[0, T)`, `Z, U` progressive of finite energy and vanishing off `[0, T]`, `ξ` square integrable and
 `φ` jointly measurable of finite energy on `[0, T]`, and let the linear backward equation hold at
-every `t ∈ [0, T]` almost surely. Then a progressive drift `ψ` with the energy of `φ`, and a process
-`Y'` equal to `Y` at every time of `[0, T]`, solve the linear backward equation. -/
+every `t ∈ [0, T]` almost surely. Then a progressive drift `ψ` with the energy of `φ`, equal to
+`φ` at almost every time of `[0, T]` on almost every path, and a process `Y'` equal to `Y` at every
+time of `[0, T]`, solve the linear backward equation. -/
 theorem exists_linearBSDEJ_of_measurable [ℱ.IsRightContinuous]
     (hℱ0 : ∀ t : ℝ, t ≤ 0 → ℱ.rightCont 0 ≤ ℱ.rightCont t)
     (hnull : ∀ s : Set Ω, MeasurableSet s → P s = 0 → MeasurableSet[ℱ 0] s) (hT : 0 < T)
@@ -196,6 +197,7 @@ theorem exists_linearBSDEJ_of_measurable [ℱ.IsRightContinuous]
               (marked_sq_int_global_of_vanishing hUv hUs) t ω)) :
     ∃ (ψ : Ω → ℝ → ℝ) (Y' : ℝ → Ω → ℝ), LinearBSDEJ D ℱ hℱW hℱN T ξ ψ Y' Z U
       ∧ Brownian.Ito.energy P T ψ = Brownian.Ito.energy P T φ
+      ∧ (∀ᵐ ω ∂P, ψ ω =ᵐ[volume.restrict (Set.Icc (0 : ℝ) T)] φ ω)
       ∧ ∀ t ∈ Set.Icc (0 : ℝ) T, Y' t = Y t := by
   classical
   have hrc : ℱ.rightCont = ℱ := Filtration.IsRightContinuous.eq
@@ -358,7 +360,8 @@ theorem exists_linearBSDEJ_of_measurable [ℱ.IsRightContinuous]
         change Y (max 0 (min t T)) ω = _
         rw [hclamp t ht, hI' ω hω t ht]
         exact h }
-  exact ⟨ψ', Y', hlin, hE, fun t ht => funext fun ω => by simp only [hY', hclamp t ht]⟩
+  exact ⟨ψ', Y', hlin, hE, hSae.mono hψ'φ,
+    fun t ht => funext fun ω => by simp only [hY', hclamp t ht]⟩
 
 /-- **The Brownian–Poisson `L²` estimate for a jointly measurable drift** (Lemma 4.1). Over a
 right-continuous filtration carrying the driver, whose null sets lie in its time-`0` field, whose
@@ -397,7 +400,8 @@ theorem brownianPoisson_estimate_of_measurable [ℱ.IsRightContinuous] (𝒲 : D
         + Poisson.Compensated.markedEnergy P ν T (fun ω s e => U s ω e)
       ≤ ENNReal.ofReal (13 * Real.exp T + 3 * T)
         * (∫⁻ ω, (‖ξ ω‖₊ : ℝ≥0∞) ^ 2 ∂P + Brownian.Ito.energy P T φ) := by
-  obtain ⟨ψ, Y', hlin, hE, hY'⟩ := exists_linearBSDEJ_of_measurable hℱ0 hnull hT hZm hZp hZv hZs
+  obtain ⟨ψ, Y', hlin, hE, -, hY'⟩ := exists_linearBSDEJ_of_measurable hℱ0 hnull hT hZm hZp hZv
+    hZs
     hUm hUp hUv hUs hφm hφs hξ hYa hYr heq
   have key := hlin.brownianPoisson_estimate 𝒲 hℱ0 hnull hT
   have hsup : ∫⁻ ω, (⨆ t ∈ Set.Icc (0 : ℝ) T, (‖Y' t ω‖₊ : ℝ≥0∞) ^ 2) ∂P

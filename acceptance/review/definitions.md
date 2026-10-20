@@ -1047,6 +1047,190 @@ Review by claude-auditor: faithful (report `reports/Dissertation.WellPosedness.S
 
 Verdict: faithful with representation choices.
 
+## The notation of §2 for the unknown (`A:sec2:tuple-notation`)
+
+Manuscript (`sections/02-model-assumptions.tex` at `1f67672`, lines 27–45): "The unknown is the
+tuple `Θ = (X, Y, Z, U)`, with law `μ_t = Law(Θ_t)` and predictable counterparts `Θ⁻_t, μ⁻_t`
+introduced below; the continuous MV-FBSDEJ is the system (1.1) displayed in the introduction. The
+tuple `Θ_t = (X_t, Y_t, Z_t, U_t)` takes values in the Hilbert space `H`, componentwise
+`X_t ∈ ℝⁿ, Y_t ∈ ℝᵐ, Z_t ∈ ℝ^{m×d}, U_t ∈ L²(ν; ℝᵐ)`. The jump terms are evaluated at the
+predictable tuple `Θ⁻_t = (X_{t−}, Y_{t−}, Z_t, U_t)`, `μ⁻_t = Law(Θ⁻_t)`, in which the forward and
+backward states are replaced by their left limits while the integrands `Z_t, U_t`, already
+predictable, are left untouched. Throughout, `μ_t` and `μ⁻_t` denote the Borel representatives
+fixed in Lemma A.1, which agree with `Law(Θ_t)` and `Law(Θ⁻_t)` for a.e. `t`. Expressions such as
+`b(t, Θ_t, μ_t)` are thereby defined at every `t`, while every claim made about them is `dt`-a.e.
+or time-integrated."
+
+The objects that encode each item:
+
+* `Θ_t` with values in `H`, componentwise: `TupleH ν n m d` is `H`, with the channels
+  `EuclideanSpace ℝ (Fin n)`, `EuclideanSpace ℝ (Fin m)`, `EuclideanSpace ℝ (Fin m × Fin d)` (the
+  Frobenius norm on `ℝ^{m×d}`) and `Lp (EuclideanSpace ℝ (Fin m)) 2 ν`; `tupleAt ν X Y Z U t ω` is
+  `Θ_t(ω)`, read from the coordinate processes, its jump channel the `L²(ν)` class `uLift` of
+  `e ↦ U_t(ω, e)`. `H` carries the maximum of the channel norms rather than its Hilbert norm, the
+  choice recorded at `TupleH` (the Hilbert norm `|·|_H` enters through `toL2`, into `TupleL2`,
+  and through `w2H`, where a statement needs it).
+* `Θ⁻_t`: `tupleAt ν (leftLimProc X) (leftLimProc Y) Z U t`, the left limits `X_{t−}, Y_{t−}` of
+  each path (`leftLimProc`) with `Z_t, U_t` unchanged, as printed.
+* `μ_t = Law(Θ_t)` and `μ⁻_t = Law(Θ⁻_t)`: `lawP2 P` of these two tuples, the law in `P₂(H)` of a
+  square-integrable tuple (the junk `δ₀` otherwise).
+* The Borel representatives of Lemma A.1: the Lean fixes as `μ` and `μ⁻` the flows
+  `t ↦ lawP2 P (tupleAt ν X Y Z U t)` and
+  `t ↦ lawP2 P (tupleAt ν (leftLimProc X) (leftLimProc Y) Z U t)`, defined at every time. For a
+  tuple under the hypotheses of Lemma A.1 (`CadlagPredTuple`), `lem_lawflow` (claim
+  `A:lem:lawflow`) proves both flows Borel into `P₂(H)` with `W₂` and equal to the image laws for
+  a.e. `t`, so they are representatives in the sense of Lemma A.1, which are unique up to null sets
+  of times; `lem_lawflow_invariant` gives the invariance of the coefficient evaluations under the
+  choice.
+* `b(t, Θ_t, μ_t)` and the other coefficient expressions, defined at every `t`: `driftProc`,
+  `diffusionProc` and `driverProc` evaluate `b`, `σ`, `f` at `(t, Θ_t(ω), μ_t)`, and `coeffJump`,
+  passed the left limits, evaluates `h` at `(t, Θ⁻_t(ω), μ⁻_t)` through a jointly measurable
+  representative in `e`; each at every `t ∈ [0, T]`, and `0` outside, where (1.1) uses no value.
+  That every claim made about them is `dt`-a.e. or time-integrated is a convention on reading the
+  claims of the paper, not an object; the propositions take these processes inside time integrals
+  (the identities of `Solution`, the right side `dataSize` of (3.1)) or for almost every `t`
+  (`eq_uniq_coeff_ae`).
+* 'The continuous MV-FBSDEJ is the system (1.1) displayed in the introduction': the definition
+  `Solution` of the claims `A:eq:mvfbsdej` and `A:intro:mvfbsdej`, read there.
+
+Verdict: faithful with representation choices (the maximum norm on `H`; the law at every time as
+the Borel representative, with the junk `δ₀` off `L²`; the cut-off to `[0, T]`).
+
+<!-- def-review: Dissertation.WellPosedness.System.TupleH fd49e3c7112f4155a292d8ceeae04f54 by=claude-author source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+<!-- def-review: Dissertation.WellPosedness.System.tupleAt 0b900ec4a75a6b31755afe5c94aee280 by=claude-author source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+<!-- def-review: Dissertation.WellPosedness.System.leftLimProc 9171262935c3b1fde4f555261cd0b9ba by=claude-author source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+<!-- def-review: Dissertation.Law.lawP2 8e02ec4a91100180227c044dc87cf8fe by=claude-author source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+<!-- def-review: Dissertation.WellPosedness.System.driftProc 12c9183ed27748868bc8011ce72cfb14 by=claude-author source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+<!-- def-review: Dissertation.WellPosedness.System.diffusionProc 38de1bfa70e0d9f65621b71beed53a93 by=claude-author source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+<!-- def-review: Dissertation.WellPosedness.System.driverProc 1491f35f9b5cef0eabae931fed61c587 by=claude-author source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+<!-- def-review: Dissertation.WellPosedness.Existence.coeffJump 90dd30b497d4dd12d6d4dda771a35c05 by=claude-author source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+
+## The difference notation of §2 (`A:sec2:difference-notation`)
+
+Manuscript (`sections/02-model-assumptions.tex` at `1f67672`, lines 69–84): "All hypotheses below
+are imposed along `𝒟_t` only: the measure argument is never varied independently of the tuple.
+Throughout, a lower-case `θ` denotes a *point* of `H` and an upper-case `Θ` denotes a *random*
+`H`-valued tuple. **Difference notation.** For two diagonal inputs `(Θ, μ), (Θ′, μ′)` at the same
+time `t` on the same probability space, `δ` denotes the difference `δX := X − X′`,
+`δψ := ψ(t, Θ, μ) − ψ(t, Θ′, μ′)`, `ψ ∈ {b, σ, h, f}`, and, with the *induced* terminal laws
+`ρ := Law(X_T)` and `ρ′ := Law(X′_T)`, `δg_T := g(X_T, ρ) − g(X′_T, ρ′)`."
+
+The passage defines the objects that Assumption 2.3, with (2.6), and Assumption 2.5 use without
+defining them (claims `A:ass:lip` and `A:ass:mono`). The objects that encode each item, with the
+coefficients `C : Coeffs ν n m d` and the inputs `p = (Θ, μ)`, `p′ = (Θ′, μ′)`:
+
+* Two diagonal inputs at the same time `t` on the same probability space: `LipInteriorAt ℱ P t L C`
+  and `Mono27At ℱ P t G β₁ β₂ C` quantify over `p, p′ ∈ diagonalInputs ν n m d ℱ P t`, one time
+  `t` and one space `(Ω, ℱ, P)` for both; membership makes `μ = lawP2 P Θ` and `μ′ = lawP2 P Θ′`
+  (Definition 2.1, read at `A:def:diag`).
+* `δX := X − X′`: the `X`-channel `(p.1 ω).1 − (p′.1 ω).1` of `Θ(ω) − Θ′(ω)` in `LipInteriorAt`
+  and `Mono27At`, and `θ.1 − θ′.1` at two points in `pairing27`. The assumptions use `δY, δZ, δU`
+  in the same sense, the other channels of `Θ − Θ′`, and the definitions write them the same way.
+* `δψ := ψ(t, Θ, μ) − ψ(t, Θ′, μ′)`, `ψ ∈ {b, σ, h, f}`: in `LipInteriorAt`,
+  `C.b t (p.1 ω) p.2 − C.b t (p′.1 ω) p′.2` and the same for `σ`, `h`, `f`, the random variable
+  `ω ↦ ψ(t, Θ(ω), μ) − ψ(t, Θ′(ω), μ′)` with the two laws fixed. `pairing27 G C t θ θ′ μ μ′`
+  writes `ψ(t, θ, μ) − ψ(t, θ′, μ′)` at two points, and `Mono27At` evaluates it at `θ = Θ(ω)`,
+  `θ′ = Θ′(ω)` with `μ, μ′` the laws of the inputs. `δh` is the difference in `L²(ν; ℝⁿ)` of the
+  values of `C.h`; in the mark integral of `pairing27` it is taken through representatives,
+  `C.h t θ μ e − C.h t θ′ μ′ e`, and the integral does not depend on them.
+* The induced terminal laws `ρ := Law(X_T)`, `ρ′ := Law(X′_T)`: `lawP2 P XT` and `lawP2 P XT'`,
+  the laws in `P₂(ℝⁿ)` of the square-integrable `X_T, X′_T` themselves (the junk `δ₀` off `L²` is
+  not reached: both are assumed in `L²`). In `LipTerminal` and in the field `terminal` of
+  `Assumption25` the measure argument of `g` is always the law of its state argument, never a
+  free measure: this is what makes the terminal conditions diagonal.
+* `δg_T := g(X_T, ρ) − g(X′_T, ρ′)`: `g (XT ω) (lawP2 P XT) − g (XT' ω) (lawP2 P XT')` in
+  `LipTerminal`, (2.6), and the same with `C.g` in `Assumption25.terminal`, whose `δX_T` is
+  `XT − XT'`. The passage introduces `X_T, X′_T` beside two diagonal inputs without a quantifier;
+  Assumptions 2.3 and 2.5 quantify them over `L²(Ω, ℱ_T; ℝⁿ)`, and the definitions take every
+  strongly `ℱ_T`-measurable square-integrable pair. The two readings agree: the `X`-channel of a
+  diagonal input at time `T` lies in `L²(Ω, ℱ_T; ℝⁿ)`, and every element of that space is the
+  `X`-channel of one (with the other channels `0`).
+* `Assumption23` (`L ≥ 0`, `LipInteriorAt` for almost every `t ∈ [0, T]`, `LipTerminal`) and
+  `Assumption25` (the terminal inequality, `Mono27At` for almost every `t ∈ [0, T]`, `Constants`)
+  assemble these; no argument of a coefficient in either is a free measure.
+* 'All hypotheses below are imposed along `𝒟_t` only: the measure argument is never varied
+  independently of the tuple' (lines 69–70): the quantification just described. The later
+  hypotheses that compare two inputs are quantified the same way: (2.12) (`Margin212`), (2.13)
+  (`Margin213`), (3.4) (`PairingBound34`) and (3.5) (`LawLip35`), over pairs of `diagonalInputs`.
+  Two hypotheses printed below the sentence compare no inputs: Assumption 2.2 evaluates the
+  coefficients at `(0, δ₀)`, the zero tuple with its own law, a point of the diagonal; and the
+  joint Borel measurability of lines 100–106, with (2.3), is stated on all of
+  `[0, T] × H × P₂(H)`, where `JointBorel` (claim `A:eq:hborel`) takes it. The sentence is read as
+  concerning the hypotheses that compare two inputs, the later sentence naming its own domain;
+  this is the one choice of meaning the reading of the passage makes.
+* 'A lower-case `θ` denotes a point of `H` and an upper-case `Θ` a random `H`-valued tuple' (lines
+  70–71): a typographical convention, which the Lean follows: the coefficients (`Coeffs`) and
+  `pairing27` take points `θ : TupleH ν n m d`, and the inputs of `diagonalInputs` are maps
+  `Θ : Ω → TupleH ν n m d`. `rem_diag_mono` and `prop_strict` state a pointwise condition at
+  points `θ, θ′` beside the expected one at random `Θ, Θ′`, as Remark 2.8 does.
+* The propositions that write the notation out: `eq_coupling` and `eq_couplingT`
+  (`A:rem:wasserstein-bounds`: the channel differences `δX, δY, δZ, δU`, and `X_T − X′_T` with the
+  induced laws), `rem_diag_mono` and `rem_diag_mono_converse` (`A:rem:diag-mono`),
+  `rem_beta1_dich` (`A:rem:beta1-dich`: `δh` and `δU`) and `prop_strict` (`A:prop:strict`);
+  `A:rem:margin` and `A:cor:robust` use it through `Mono27At` and Assumptions 2.3 and 2.5.
+
+Verdict: faithful with representation choices (the `L²` classes represented by strongly
+measurable square-integrable maps; `δh` in the mark integral through representatives; the joint
+measurability of lines 100–106 on the full product, as printed there).
+
+<!-- def-review: Dissertation.WellPosedness.Spec.Assumption23 0d5048c72ef913b60000000000000000 by=claude-author source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+<!-- def-review: Dissertation.WellPosedness.Spec.Assumption25 2ad64300a1211b960000000000000000 by=claude-author source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+<!-- def-review: Dissertation.WellPosedness.Spec.LipInteriorAt 0d5048c72ef913b66bcf6ee4c960f28a by=claude-author source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+<!-- def-review: Dissertation.WellPosedness.Spec.LipTerminal 50fea10a492649962d326ec49234e618 by=claude-author source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+<!-- def-review: Dissertation.WellPosedness.Spec.pairing27 ede49a3a3551d3de0749c24d2bf7198b by=claude-author source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+<!-- def-review: Dissertation.WellPosedness.Spec.Mono27At a59346236526d219b3e1099916102f71 by=claude-author source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+<!-- def-review: Dissertation.Law.lawP2 8e02ec4a91100180227c044dc87cf8fe by=claude-author source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+
+## The two-system notation of §3 (`A:sec3:two-system-notation`)
+
+Manuscript (`sections/03-main-results.tex` at `1f67672`, lines 39–49): "The stability and
+uniqueness theorems below rest on comparing solutions of (1.1) under two coefficient systems,
+indexed by `k = 1, 2`. We write `δ· = ·¹ − ·²`, with `μᵏ_t := Law(Θᵏ_t)`, and evaluate every
+coefficient difference along solution 2:
+`(δψ)(t) := ψ¹(t, Θ²_t, μ²_t) − ψ²(t, Θ²_t, μ²_t)`, `ψ ∈ {b, σ, f}`,
+`(δh)(t) := h¹(t, Θ^{2,−}_t, ·, μ^{2,−}_t) − h²(t, Θ^{2,−}_t, ·, μ^{2,−}_t)`,
+`δ̂g_T := g¹(X²_T, Law(X²_T)) − g²(X²_T, Law(X²_T))`."
+
+The objects that encode each item, as `thm_stab` (Theorem 3.1) takes them, with the systems
+`C₁, C₂ : Coeffs ν n m d`, the initial data `ξ₁, ξ₂` and the solutions `(Xₖ, Yₖ, Zₖ, Uₖ)`:
+
+* `δ· = ·¹ − ·²`: the propositions take the differences coordinatewise, `X₁ − X₂`, `Y₁ − Y₂`,
+  `Z₁ − Z₂`, `U₁ − U₂` (the arguments of `supSize`) and `ξ₁ − ξ₂` (of `dataSize`), written in
+  the propositions rather than through a definition.
+* `μᵏ_t := Law(Θᵏ_t)`: `lawP2 P (tupleAt ν Xₖ Yₖ Zₖ Uₖ t)`, inside the coefficient processes; the
+  passage writes the law itself, which the Lean takes at every `t`.
+* `(δψ)(t)` for `ψ ∈ {b, σ, f}`: `driftProc P T C₁ X₂ Y₂ Z₂ U₂ − driftProc P T C₂ X₂ Y₂ Z₂ U₂`, and
+  the same with `diffusionProc` and `driverProc`: both coefficient systems at `(t, Θ²_t(ω), μ²_t)`,
+  cut off to `[0, T]`.
+* `(δh)(t)`: `jumpProc T (coeffJump P T C₁ (leftLimProc X₂) (leftLimProc Y₂) Z₂ U₂)` minus the same
+  with `C₂`: jointly measurable representatives of `h¹` and `h²` at `(t, Θ^{2,−}_t, ·, μ^{2,−}_t)`,
+  the left limits of solution 2 with its own `Z₂, U₂`; their difference represents
+  `(δh)(t) ∈ L²(ν; ℝⁿ)` (`coeffJump_ae_eq`), and `dataSize` takes its `L²(ν)` norm as the sum of the
+  marked energies of the coordinates.
+* `δ̂g_T`: `terminalVal P T C₁ X₂ − terminalVal P T C₂ X₂`, `g¹` and `g²` at
+  `(X²_T, lawP2 P X²_T)`.
+* 'The stability and uniqueness theorems below rest on comparing solutions of (1.1) under two
+  coefficient systems': exposition. The statements of (3.1) use the notation: `thm_stab` (claims
+  `A:thm:stab`, `A:thm:cwp`, `A:abstract`, `A:conclusion`), `thm_stab_companion` (the roles
+  exchanged, the differences along solution 1), `thm_stab_data`, `thm_stab_minimal`, and
+  `cor_robust_wp` (`A:cor:robust`, `A:conclusion`), `rem_generalrank_wp` and `ex_fulllaw_wp`
+  (Example 5.4) (a perturbed system against system 2). Theorem 3.3 compares two solutions of one
+  system, and its proof fixes its own differences along both solutions (lines 110–117, in the
+  claim `A:eq:uniq-coeff`).
+
+Verdict: faithful with representation choices (the cut-off to `[0, T]`; `h` through a jointly
+measurable representative).
+
+<!-- def-review: Dissertation.WellPosedness.System.driftProc 12c9183ed27748868bc8011ce72cfb14 by=claude-author source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+<!-- def-review: Dissertation.WellPosedness.System.diffusionProc 38de1bfa70e0d9f65621b71beed53a93 by=claude-author source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+<!-- def-review: Dissertation.WellPosedness.System.driverProc 1491f35f9b5cef0eabae931fed61c587 by=claude-author source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+<!-- def-review: Dissertation.WellPosedness.Existence.coeffJump 90dd30b497d4dd12d6d4dda771a35c05 by=claude-author source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+<!-- def-review: Dissertation.WellPosedness.System.jumpProc bfa4317d32adaf7b2cab0921e18838d1 by=claude-author source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+<!-- def-review: Dissertation.WellPosedness.System.terminalVal 553a1e2dd57f8bc4ed26c8f55d7a65f7 by=claude-author source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+<!-- def-review: Dissertation.WellPosedness.System.tupleAt 0b900ec4a75a6b31755afe5c94aee280 by=claude-author source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+<!-- def-review: Dissertation.WellPosedness.System.leftLimProc 9171262935c3b1fde4f555261cd0b9ba by=claude-author source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+<!-- def-review: Dissertation.Law.lawP2 8e02ec4a91100180227c044dc87cf8fe by=claude-author source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+
 ## Assumptions 2.2–2.5 and (2.3) (`Dissertation/WellPosedness/Spec/Assumptions.lean`)
 
 Manuscript (§2): the coefficients are jointly Borel, `h` through (2.3); Assumption 2.2
@@ -1060,7 +1244,18 @@ Manuscript (§2): the coefficients are jointly Borel, `h` through (2.3); Assumpt
   for `h`), and `(x, ρ) ↦ g(x, ρ)` is Borel on `ℝⁿ × P₂(ℝⁿ)` with `W₂` (`P2W`): the joint Borel
   measurability of §2, with (2.3) for `h`. The maximum norm and the Hilbert norm give `H` the same
   topology.
-<!-- def-review: Dissertation.WellPosedness.Spec.JointBorel 4b26c5076ea2f4260000000000000000 by=claude-author source=A:eq:hborel@e96f0d4c4f81b393c2119f66e1766cb7561f3cf1fa43458d01f4d5c4892a910a -->
+
+Re-readings at the widened passages:
+
+* `JointBorel` (`A:eq:hborel`): Re-read at the passage of lines 86–106 of `02-model-assumptions.tex`
+  (formerly lines 102–106): the added lines (lines 86–101: the coefficients deterministic,
+  randomness entering only through the inputs and the forcings of §4, their signatures (`h` with
+  values in `L²(ν; ℝⁿ)`), and the joint Borel measurability of all coefficients, taken for `h` as
+  (2.3)) do not change the reading: `JointBorel` asks the Borel measurability of `b, σ, h, f` on
+  `[0, T] × H × P₂(H)` and of `g` on `ℝⁿ × P₂(ℝⁿ)`, with `h` valued in `L²(ν; ℝⁿ)`, the signatures
+  and the measurability these lines print, and the coefficients are functions of their arguments.
+
+<!-- def-review: Dissertation.WellPosedness.Spec.JointBorel 4b26c5076ea2f4260000000000000000 by=claude-author source=A:eq:hborel@f3d81f78d89578cf0708f975cb8c81d7c791427d8c9187ffca569edf249c1840 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.Spec.JointBorel--claude-reviewer--2026-10-17T15_04_38Z.md`).
 <!-- def-review: Dissertation.WellPosedness.Spec.JointBorel 4b26c5076ea2f4260000000000000000 by=claude-reviewer source=A:eq:hborel@e96f0d4c4f81b393c2119f66e1766cb7561f3cf1fa43458d01f4d5c4892a910a -->
 Review by claude-auditor: faithful (report `reports/Dissertation.WellPosedness.Spec.JointBorel--claude-auditor--2026-10-19T03_26_57Z.md`).
@@ -1201,7 +1396,20 @@ tuple `(Θ⁻_t, μ⁻_t)`"; `ℍ ⊂ ℍ_weak`.
   and `s = 0` is a `dt`-null time of the integrals of (1.1).
 
 Verdict: faithful with representation choices.
-<!-- def-review: Dissertation.PaperSpec.A.Solution bf42c97d226817aeb326b2633e3dca6b by=claude-author source=A:intro:mvfbsdej@0d85452f18880ddaaf63d57d1760fe13bf46552331679aa18ef206bbdea64300 source=A:eq:mvfbsdej@0d85452f18880ddaaf63d57d1760fe13bf46552331679aa18ef206bbdea64300 -->
+
+Re-readings at the widened passages:
+
+* `Solution` (`A:intro:mvfbsdej`, `A:eq:mvfbsdej`): Re-read at the passage of lines 3–48 of
+  `01-introduction.tex` (formerly lines 6–13): the added lines (lines 3–5, the results the paper
+  proves (Theorems 3.1, 3.3, 3.5), and 14–48: the Brownian motion `W` and the independent
+  compensated Poisson measure `Ñ` with σ-finite `ν`, the state space `H` with its norm, the tuple
+  `Θ`, the predictable tuple `Θ⁻` at which `h` is evaluated, the law flows `μ`, `μ⁻` in `P₂(H)`, and
+  the `W₂`-Lipschitz law dependence imposed along tuple–law pairs) do not change the reading:
+  `Solution` evaluates `h` at `(Θ⁻, μ⁻)` and reads `Θ` in `H` as these lines say; the Lipschitz and
+  monotonicity hypotheses they describe are Assumptions 2.3 and 2.5, not part of the solution
+  notion, and the results of lines 3–5 are the claims of Theorems 3.1, 3.3 and 3.5.
+
+<!-- def-review: Dissertation.PaperSpec.A.Solution bf42c97d226817aeb326b2633e3dca6b by=claude-author source=A:intro:mvfbsdej@5eb480b379a74b6cf3448b228b60d1dcb3f707265f25c5b1cbe6f82b684e917a source=A:eq:mvfbsdej@5eb480b379a74b6cf3448b228b60d1dcb3f707265f25c5b1cbe6f82b684e917a -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.Solution--claude-auditor--2026-10-19T05_48_40Z.md`).
 <!-- def-review: Dissertation.PaperSpec.A.Solution bf42c97d226817aeb326b2633e3dca6b by=claude-auditor source=A:intro:mvfbsdej@0d85452f18880ddaaf63d57d1760fe13bf46552331679aa18ef206bbdea64300 source=A:eq:mvfbsdej@0d85452f18880ddaaf63d57d1760fe13bf46552331679aa18ef206bbdea64300 -->
 
@@ -1338,7 +1546,17 @@ Review by claude-auditor: faithful (report `reports/Dissertation.WellPosedness.S
   `pairing27` is integrable and its expectation is at most `−β₁ 𝔼[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²]
   − β₂ 𝔼|G δX|² − c 𝔼[|δY|² + |δZ|²_F + ‖δU‖² + |δX|²]`: (2.13), with the integrability choice of
   `Mono27At`.
-<!-- def-review: Dissertation.WellPosedness.Spec.Margin213 2ad64300a1211b964de2010be9bc24c1 by=claude-author source=A:eq:monomarginu@f626420b93b36f0e86aa29e8fb81b7b1a6e5de7e8721ca40a618d662ddd39b54 -->
+
+Re-readings at the widened passages:
+
+* `Margin213` (`A:eq:monomarginu`): Re-read at the passage of lines 306–316 of
+  `02-model-assumptions.tex` (formerly lines 309–316): the added lines (lines 306–308: 'A margin `c`
+  in (2.12) therefore yields the margin `c/c_G`, which is smaller than `c` when `c_G > 1`, in the
+  unweighted form, which with margin `c > 0` reads', whose first part is the content of
+  `A:rem:margin`) do not change the reading: `Margin213` is (2.13) at a given constant `c`, and `c >
+  0` is a separate hypothesis where a margin is assumed (as in `cor_robust`).
+
+<!-- def-review: Dissertation.WellPosedness.Spec.Margin213 2ad64300a1211b964de2010be9bc24c1 by=claude-author source=A:eq:monomarginu@7a54aa98ecce9d453337bd582ab01fa94492a3ede87c7f372e4197062861568b -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.Margin213--claude-reviewer--2026-10-17T15_04_37Z.md`).
 <!-- def-review: Dissertation.WellPosedness.Spec.Margin213 2ad64300a1211b964de2010be9bc24c1 by=claude-reviewer source=A:eq:monomarginu@f626420b93b36f0e86aa29e8fb81b7b1a6e5de7e8721ca40a618d662ddd39b54 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.Margin213--claude-auditor--2026-10-19T03_26_58Z.md`).
@@ -1456,7 +1674,17 @@ Review by claude-auditor: faithful with representation choices (report `reports/
 * `PaperSpec.A.WeakForcedSolution`: some `γ` with `PaperWeakSolutionForcedInt` over
   `enlJoint 𝒢₀ D h𝒢₀`, and every path of `X` and of `Y` with left limits on `(0, T]`: (4.1) in
   `ℍ_weak` with `X_T ∈ L²`, the class of Lemma 4.3.
-<!-- def-review: Dissertation.PaperSpec.A.WeakForcedSolution 6d8e8f373c5e26dad42e89a4945d5642 by=claude-author source=A:sec4:WP-def@17962fe037ff7de888f26d2b0c9f51427d790ab6422e549a1d661ef69141a32e -->
+
+Re-readings at the widened passages:
+
+* `WeakForcedSolution` (`A:sec4:WP-def`): Re-read at the passage of lines 39–70 of
+  `04-proof-wellposedness.tex` (formerly line 66): the added lines (lines 39–65 and 67–70: the
+  forcing class and (4.1), 'for every such forcing `q`', and 'The unforced target is `WP(1)` with `q
+  ≡ 0`, so it suffices to prove that `WP(1)` holds') do not change the reading: the forced system is
+  the display (4.1), and the forcing's admissibility is `Forcing`, a class containing the printed
+  one of lines 39–53.
+
+<!-- def-review: Dissertation.PaperSpec.A.WeakForcedSolution 6d8e8f373c5e26dad42e89a4945d5642 by=claude-author source=A:sec4:WP-def@7a46d2596d9c1ba2c84b823eceaf0f8c0f3e90b8af99f5f252c9fad34e87413c -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.WeakForcedSolution--claude-reviewer--2026-10-17T16_02_24Z.md`).
 <!-- def-review: Dissertation.PaperSpec.A.WeakForcedSolution 6d8e8f373c5e26dad42e89a4945d5642 by=claude-reviewer source=A:sec4:WP-def@17962fe037ff7de888f26d2b0c9f51427d790ab6422e549a1d661ef69141a32e -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.WeakForcedSolution--claude-auditor--2026-10-19T03_38_16Z.md`).
@@ -1468,7 +1696,18 @@ Review by claude-auditor: faithful with representation choices (report `reports/
   (`ForcedSolution.paperSolutionForced`, `forcedSolution_of_paperSolutionForced`). The forcing's
   admissibility is part of the predicate (`Forcing`, where `q^h` need only be marked
   progressive); `WP` quantifies over `PredForcing`, the printed predictable class.
-<!-- def-review: Dissertation.PaperSpec.A.ForcedSolution 6d8e8f373c5e26da320d4d9860023747 by=claude-author source=A:eq:forced@134e01a0256ffc7a16425886631cfe88968f942fb53d500c263ce1cf361b3cf8 -->
+
+Re-readings at the widened passages:
+
+* `ForcedSolution` (`A:eq:forced`): Re-read at the passage of lines 39–65 of
+  `04-proof-wellposedness.tex` (formerly lines 54–65): the added lines (lines 39–53: `λ ∈ [0, 1]`
+  and the forcing class, `q^b, q^σ, q^f` progressively measurable, `q^h` predictable and `𝒫 ⊗
+  ℰ`-measurable, all square integrable, and `q^g_T ∈ L²(Ω, ℱ_T)`, which the review's manuscript line
+  quotes) do not change the reading: `ForcedSolution` carries the forcing's admissibility
+  (`Forcing`, with `q^h` marked progressive, a class containing the printed one), and `WP`
+  quantifies over the printed class (`PredForcing`).
+
+<!-- def-review: Dissertation.PaperSpec.A.ForcedSolution 6d8e8f373c5e26da320d4d9860023747 by=claude-author source=A:eq:forced@6e95d16ec0d43e3e59ac4b392a3ff8d5d36e8ba90636e0d6c6af2f8419322135 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.ForcedSolution--claude-auditor--2026-10-19T05_48_40Z.md`).
 <!-- def-review: Dissertation.PaperSpec.A.ForcedSolution 6d8e8f373c5e26da320d4d9860023747 by=claude-auditor source=A:eq:forced@134e01a0256ffc7a16425886631cfe88968f942fb53d500c263ce1cf361b3cf8 -->
 * `PaperSpec.A.WP D h𝒢₀ hind₀ T λ C ξ₀`: for every `PredForcing` `q` over `enlJoint 𝒢₀ D h𝒢₀`,
@@ -1477,7 +1716,16 @@ Review by claude-auditor: faithful with representation choices (report `reports/
   identifications.
 
 Verdict: faithful with representation choices.
-<!-- def-review: Dissertation.PaperSpec.A.WP 4c83187e460bc5017fcd19712e7de906 by=claude-author source=A:sec4:WP-def@17962fe037ff7de888f26d2b0c9f51427d790ab6422e549a1d661ef69141a32e -->
+
+Re-readings at the widened passages:
+
+* `WP` (`A:sec4:WP-def`): Re-read at the passage of lines 39–70 of `04-proof-wellposedness.tex`
+  (formerly line 66): the added lines (lines 39–65 and 67–70: the forcing class and (4.1), 'for
+  every such forcing `q`', and 'The unforced target is `WP(1)` with `q ≡ 0`, so it suffices to prove
+  that `WP(1)` holds') do not change the reading: `WP` quantifies over `PredForcing`, the printed
+  class, and the last sentence is the plan of the proof of Theorem 3.5 (`A:sec4:proof-thm35`).
+
+<!-- def-review: Dissertation.PaperSpec.A.WP 4c83187e460bc5017fcd19712e7de906 by=claude-author source=A:sec4:WP-def@7a46d2596d9c1ba2c84b823eceaf0f8c0f3e90b8af99f5f252c9fad34e87413c -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.WP--claude-reviewer--2026-10-17T16_01_36Z.md`).
 <!-- def-review: Dissertation.PaperSpec.A.WP 4c83187e460bc5017fcd19712e7de906 by=claude-reviewer source=A:sec4:WP-def@17962fe037ff7de888f26d2b0c9f51427d790ab6422e549a1d661ef69141a32e -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.WP--claude-auditor--2026-10-19T03_37_30Z.md`).
@@ -1703,7 +1951,16 @@ Manuscript (Remark 2.11): (2.7) holds with margin `c > 0` if (2.12) holds.
   `pairing27` is integrable and its expectation is at most `−β₁ 𝔼[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²]
   − β₂ 𝔼|G δX|² − c 𝔼[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖² + |G δX|²]`: (2.12), with the integrability
   choice of `Mono27At`.
-<!-- def-review: Dissertation.PaperSpec.A.Margin212 2ad64300a1211b9647d3727884567824 by=claude-author source=A:eq:monomargin@3bf398680ece348005cee018ad83bc5cf40f4671bc0e6c341b0bf437325b642e -->
+
+Re-readings at the widened passages:
+
+* `Margin212` (`A:eq:monomargin`): Re-read at the passage of lines 289–297 of
+  `02-model-assumptions.tex` (formerly lines 290–297): the added lines (line 289, 'Say that (2.7)
+  holds with margin `c > 0` if') do not change the reading: `Margin212` is (2.12) at a given
+  constant `c`, and `c > 0` is a separate hypothesis where a margin is assumed (as in
+  `rem_margin_slack` and `rem_generalrank`).
+
+<!-- def-review: Dissertation.PaperSpec.A.Margin212 2ad64300a1211b9647d3727884567824 by=claude-author source=A:eq:monomargin@93d5988c3689252f9d5fece5709d721eb8ab08c6b2ef6c2ef46c7da2598c2099 -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.Margin212--claude-reviewer--2026-10-17T12_22_34Z.md`).
 <!-- def-review: Dissertation.PaperSpec.A.Margin212 2ad64300a1211b9647d3727884567824 by=claude-reviewer source=A:eq:monomargin@3bf398680ece348005cee018ad83bc5cf40f4671bc0e6c341b0bf437325b642e -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.Margin212--claude-auditor--2026-10-19T03_38_08Z.md`).

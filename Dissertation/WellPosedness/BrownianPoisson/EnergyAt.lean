@@ -348,7 +348,7 @@ theorem brownianPoisson_energy_at_vec_of_measurable [ℱ.IsRightContinuous]
       ≤ ENNReal.ofReal (Real.exp T)
         * (∫⁻ ω, (‖ξ k ω‖₊ : ℝ≥0∞) ^ 2 ∂P + Brownian.Ito.energy P T (φ k)) := by
     intro k
-    obtain ⟨ψ, Y', hlin, hE, hY'⟩ := exists_linearBSDEJ_of_measurable hℱ0 hnull hT (hZm k)
+    obtain ⟨ψ, Y', hlin, hE, -, hY'⟩ := exists_linearBSDEJ_of_measurable hℱ0 hnull hT (hZm k)
       (hZp k) (hZv k) (hZs k) (hUm k) (hUp k) (hUv k) (hUs k) (hφm k) (hφs k) (hξ k) (hYa k)
       (hYr k) (heq k)
     have h := hlin.lintegral_sq_at_add_energy_le 𝒲 hT ht
