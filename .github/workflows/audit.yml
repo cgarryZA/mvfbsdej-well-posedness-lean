@@ -76,7 +76,7 @@ jobs:
       # audit (reader, data, paper) from the fields `machinechecked.toml` allows.
       - name: Build the audit
         run: |
-          pip install "machinechecked==0.1.17"
+          pip install "machinechecked==0.1.18"
           machinechecked build
           machinechecked export --out _audit
 
