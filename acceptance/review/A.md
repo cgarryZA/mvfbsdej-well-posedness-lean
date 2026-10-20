@@ -662,9 +662,13 @@ integrand clause and the third clause are faithful, the second broader than prin
 
 <!-- spec-review: Dissertation.PaperSpec.A.lem41_M2_no_square_moment ed839d34f480cba129ab935a30cef6f6 by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.lem41_M2_no_square_moment_corr ed839d34f480cba18ac876cdb600252c by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lem41_M2_no_square_moment_corr--claude-auditor--2026-10-19T22_59_53Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.lem41_M2_no_square_moment_corr ed839d34f480cba18ac876cdb600252c by=claude-auditor -->
 <!-- spec-review: Dissertation.PaperSpec.A.lem41_jump_times ed839d34f480cba17f1df52f488747a1 by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.lem41_M2_integrand ed839d34f480cba118f567d673033f15 by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.lem41_M2_zero_mean ed839d34f480cba15a569c2d7c1d42fd by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lem41_M2_zero_mean--claude-auditor--2026-10-19T22_59_53Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.lem41_M2_zero_mean ed839d34f480cba15a569c2d7c1d42fd by=claude-auditor -->
 
 ## (4.6), the bound at every time in the proof of Lemma 4.1: `Dissertation.PaperSpec.A.eq_supE`
 
@@ -708,6 +712,8 @@ backward component of the solution of Theorem 3.5 for Example 5.1(i) (reviewed w
 Verdict: faithful.
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_supE ed839d34f480cba17f3cae8e2942fb86 by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_supE--claude-auditor--2026-10-19T22_59_53Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_supE ed839d34f480cba17f3cae8e2942fb86 by=claude-auditor -->
 
 ## Lemma 4.2: `Dissertation.PaperSpec.A.lem_small`
 
@@ -956,6 +962,8 @@ values `0` and `e₁` are `ℱ_1`-measurable and square integrable.
 Verdict: faithful (broader, printed claim an instance).
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_terdiff ed839d34f480cba104ed4a8f00254090 by=claude-author -->
+Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.eq_terdiff--claude-auditor--2026-10-19T22_59_53Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_terdiff ed839d34f480cba104ed4a8f00254090 by=claude-auditor -->
 
 ## Lemma 4.3: `Dissertation.PaperSpec.A.lem_pert`
 
@@ -1072,7 +1080,11 @@ Witness: `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`, the hypothese
 Verdict: faithful.
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_dX ed839d34f480cba17f8ea34acd5ecf0b by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_dX--claude-auditor--2026-10-19T22_56_03Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_dX ed839d34f480cba17f8ea34acd5ecf0b by=claude-auditor -->
 <!-- spec-review: Dissertation.PaperSpec.A.eq_dY ed839d34f480cba1cc37dd9a0d2b35ad by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_dY--claude-auditor--2026-10-19T22_56_08Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_dY ed839d34f480cba1cc37dd9a0d2b35ad by=claude-auditor -->
 
 ## (4.19), the `G`-energy identity in Step 1 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_Gid`
 
@@ -1117,6 +1129,8 @@ Witness: `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`, the hypothese
 Verdict: faithful.
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_Gid ed839d34f480cba187a9b1634afe69c9 by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_Gid--claude-auditor--2026-10-19T22_56_14Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_Gid ed839d34f480cba187a9b1634afe69c9 by=claude-auditor -->
 
 ## (4.20), the insertion of monotonicity in Step 2 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_intmono`
 
@@ -1157,6 +1171,8 @@ Witness: `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`, the hypothese
 Verdict: faithful.
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_intmono ed839d34f480cba14dbfddebc754cdd1 by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_intmono--claude-auditor--2026-10-19T22_56_20Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_intmono ed839d34f480cba14dbfddebc754cdd1 by=claude-auditor -->
 
 ## (4.21), the terminal side in Step 2 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_termmono`
 
@@ -1187,6 +1203,8 @@ Witness: `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`, the hypothese
 Verdict: faithful.
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_termmono ed839d34f480cba1ea261f16df305b5f by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_termmono--claude-auditor--2026-10-19T22_56_25Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_termmono ed839d34f480cba1ea261f16df305b5f by=claude-auditor -->
 
 ## (4.22), the coercivity bound in Step 2 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_coerc`, `eq_coerc_blocks`
 
@@ -1251,6 +1269,8 @@ for both propositions.
 Verdict: faithful, both.
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_coerc ed839d34f480cba1763b5cdd464a968d by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_coerc--claude-auditor--2026-10-19T22_56_33Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_coerc ed839d34f480cba1763b5cdd464a968d by=claude-auditor -->
 <!-- spec-review: Dissertation.PaperSpec.A.eq_coerc_blocks ed839d34f480cba17bd256e67c544535 by=claude-author -->
 
 ## (4.23), the forward estimate in Step 3 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_fwd`
@@ -1537,6 +1557,8 @@ Assumptions 2.2–2.5 at `L = 1`, `G = 1`, `α = β₁ = β₂ = 1`).
 Verdict: faithful.
 
 <!-- spec-review: Dissertation.PaperSpec.A.sec4_uniq_homotopy ed839d34f480cba178b10f6f962eecce by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.sec4_uniq_homotopy--claude-auditor--2026-10-19T22_59_53Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.sec4_uniq_homotopy ed839d34f480cba178b10f6f962eecce by=claude-auditor -->
 
 ## §4.5, the proof of Theorem 3.5: `Dissertation.PaperSpec.A.sec45_proof_thm35`, and `thm_cwp`
 
@@ -3228,6 +3250,8 @@ Verdict: faithful.
 <!-- spec-review: Dissertation.PaperSpec.A.rem_margin_unweighted ed839d34f480cba1ba4163c9b3d796bd by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.rem_margin_smaller ed839d34f480cba133faa12dcf2189f6 by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.rem_margin_slack ed839d34f480cba1fc10bfb5bc98adb1 by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.rem_margin_slack--claude-auditor--2026-10-19T22_55_55Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.rem_margin_slack ed839d34f480cba1fc10bfb5bc98adb1 by=claude-auditor -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.rem_margin_reduce--claude-auditor--2026-10-19T03_34_35Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.rem_margin_reduce ed839d34f480cba15843e0ffe4756126 by=claude-auditor -->
 Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.rem_margin_unweighted--claude-auditor--2026-10-19T03_34_35Z.md`).

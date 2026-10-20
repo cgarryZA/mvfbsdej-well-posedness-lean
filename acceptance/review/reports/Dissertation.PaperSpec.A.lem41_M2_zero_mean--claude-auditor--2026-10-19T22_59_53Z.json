@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.lem41_M2_zero_mean",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.lem41_M2_zero_mean",
+  "lean": [
+   "Dissertation.PaperSpec.A.lem41_M2_zero_mean"
+  ],
+  "claims": [
+   "A:lem4.1:M2-infinite-activity"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-e3ac62d43966",
+  "project_commit": "6d403c197bfb10fe8808933c6e525ee0ae544fb1",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba15a569c2d7c1d42fd",
+  "fingerprint": "pl-fp-v1:3e4472679566bcc59baef822f1c2667d8f4afc93e39ecf6aea232ba99b7048a6",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "READING (locked before any Lean) -- spec:Dissertation.PaperSpec.A.lem41_M2_zero_mean\nReviewer: claude-auditor (same model family as the statements' author).\n\nPassage (proof of Lemma 4.1, \"Zero-mean terms\", the M^2 paragraph): \"For M^2 the integrand\ne^s|dU_s(e)|^2 is predictable and nonnegative and, because dU in H_N, lies in\nL^1(dP x ds x nu): E int_0^T int_E e^s|dU_s(e)|^2 nu(de) ds <= e^T E int_0^T ||dU_s||^2 ds < inf.\nBoth the Poisson integral and its compensator are therefore integrable, so the increment splits\nunder the expectation: E[M^2_T - M^2_t] = E int_t^T int_E e^s|dU|^2 Ntilde(ds,de)\n= E int_t^T int_E e^s|dU|^2 N(ds,de) - E int_t^T int_E e^s|dU|^2 nu(de) ds = 0.\"\nwith M^2_t := int_0^t int_E e^s|dU_s(e)|^2 Ntilde(ds,de).\n\nFaithful formal statement must contain:\n - Setting: the standing basis (or any filtered probability space with a PRM N of intensity\n   dt x nu, nu sigma-finite, with the compensation formula (2.1) available for predictable\n   nonnegative integrands -- i.e. N must be a Poisson random measure relative to the filtration,\n   so that the predictable compensator of N is dt x nu). T > 0 (or T >= 0).\n - Hypothesis: dU : Omega x [0,T] x E -> R^m predictable (P x E-measurable) with\n   E int_0^T ||dU_s||^2_{L^2(nu)} ds < infinity. (The lemma's other hypotheses -- dY, dZ, dxi, phi,\n   the BSDE identity -- are not needed for this step; their absence is not a loss.)\n - Conclusions, for every t in [0,T]:\n   (i)  E int_0^T int_E e^s|dU_s(e)|^2 nu(de) ds <= e^T E int_0^T ||dU_s||^2 ds, and this is finite;\n   (ii) the Poisson integral E int_(t,T] int_E e^s|dU_s(e)|^2 N(ds,de) < infinity and the\n        compensator E int_t^T int_E e^s|dU_s(e)|^2 nu(de) ds < infinity;\n   (iii) E[M^2_T - M^2_t] = 0.\n - The definition of M^2 (or of its increment) is critical. The integrand is only L^1, not L^2\n   (that is the point of the passage), so M^2_T - M^2_t must be the compensated integral of an L^1\n   predictable integrand: pathwise int_(t,T]xE psi dN - int_t^T int_E psi nu(de) ds (both finite\n   a.s.), equal to the L^1-limit of the compensated integrals of truncations. If the Lean defines\n   M^2 through an L^2 (Ito-isometry) compensated integral, the increment of a non-L^2 integrand\n   would be a junk value (e.g. 0) and (iii) would hold trivially -- that would be a mismatched\n   definition. If the increment is written explicitly as (N-integral) - (compensator integral),\n   that is faithful, and (iii) is then exactly the compensation formula (2.1) at psi 1_{(t,T]}.\n - The N-integral must be the integral against the random measure N(omega) (a lintegral in\n   [0,infinity] of a nonnegative integrand); \"E\" of a real random variable must not be a\n   Bochner junk 0 for a non-integrable variable -- integrability is part of (ii).\n - Predictability of psi_s(e) = e^s|dU_s(e)|^2 matters only for the compensation formula; it is\n   inherited from dU.",
+  "locked_at": "2026-10-19T22:48:57Z"
+ },
+ "comparison": {
+  "text": "COMPARISON -- spec:Dissertation.PaperSpec.A.lem41_M2_zero_mean\nReviewer: claude-auditor (same model family as the statements' author).\n\nLean (Sec4BrownianPoisson.lean:84-146). Hypotheses: the standing setting (LevyDriver D, G0\nindependent of the driver, filtration enlJoint), 0 < m, 0 < d, T > 0, and all hypotheses of\nLemma 4.1: dZ coordinatewise Predictable, zero off [0,T], finite energy; dU coordinatewise\nMarkedPredictable, zero off [0,T], finite markedEnergy; dxi enlJoint_T-measurable and in L^2;\nphi jointly measurable with finite energy; dY adapted on [0,T], every path right-continuous on\n[0,T) with left limits on (0,T]; and the identity (4.3) for each k and each t in [0,T] a.s., with\nthe L^2 Ito integral of the row dZ_k against the d-dim W and the (cadlag-version) L^2 compensated\nPoisson integral of dU_k. Conclusions:\n (i)  lintegral_w lintegral_{[0,T]} lintegral_E ofReal(e^s sum_k dU_k^2) dnu ds dP\n        <= ofReal(e^T) * sum_k markedEnergy(dU_k);\n (ii) that right-hand side < top;\n (iii) for every t in [0,T]: E lintegral_{(t,T] x E} ofReal(e^s sum dU^2) dN(w) < top;\n       E lintegral_{(t,T]} lintegral_E ofReal(e^s sum dU^2) dnu ds < top; and\n       E[ int_{(t,T] x E} e^s sum dU^2 dN(w) - int_{(t,T]} int_E e^s sum dU^2 dnu ds ] = 0\n       (Bochner integrals).\n\nItem by item against my locked reading:\n - Setting: the standing basis with N a PRM for enlJoint (isPoissonFiltration_enlJoint), so the\n   compensation formula is available. OK.\n - Hypotheses: those of Lemma 4.1, exactly the ones in force at this point of the printed proof\n   (more than this step needs, which is not a loss: they are the lemma's hypotheses, and the\n   witness lem_bpbsde_hypotheses shows them met at the backward equation of the solution of\n   Example 5.1(i), nu = delta_0, an instance the paper intends). OK.\n - (i), (ii): exactly the display on lines 175-178, as [0, infinity] integrals. OK.\n - (iii) finiteness of the Poisson integral and of the compensator over (t,T] x E: OK.\n - The M^2 increment: written explicitly, pathwise, as (N-integral) - (compensator integral) over\n   (t,T] x E. This is the reading my locked reading called faithful: the integrand is only L^1,\n   and the Ntilde-integral of a nonnegative L^1 predictable integrand is that difference (it is\n   how M^2 arises in (4.4), from splitting int |dU|^2 dN through N = Ntilde + ds nu). No L^2\n   isometry integral with a junk value is used.\n - Junk check on the Bochner integrals in the zero-mean conclusion: given the two finiteness\n   conclusions, for a.e. w the N-integral and the inner nu-integrals are finite for a.e. s, so the\n   Bochner integrals equal the [0, infinity]-integrals' real values off null sets; the outer\n   expectation is of an integrable function. So \"= 0\" is the genuine E[M^2_T - M^2_t] = 0 and is\n   not made trivial by a junk 0. OK.\n - \"for every t\": t in [0,T]. OK.\nRepresentation choices (harmless): coordinates for R^m; time over R with processes vanishing off\n[0,T]; energies as lintegrals; the identity (4.3) assumed \"for each t, a.s.\" (weaker than \"a.s.\nfor all t\", so the proposition is if anything broader); paths of dY cadlag for every w (the\npaper's \"cadlag adapted\"; on an augmented filtration a null-set modification is harmless); M^2\nread pathwise as N-integral minus compensator.\n\nVerdict: faithful with representation choices.\n\nCOVERAGE (claim A:lem4.1:M2-infinite-activity, lines 148-152 and 173-187): this clause states the\nM^2 paragraph (lines 173-187) except the explicit assertion that the integrand e^s|dU_s(e)|^2 is\npredictable and nonnegative (line 173), which no clause states (trivial). The intermediate\nequality E[M^2_T - M^2_t] = E int_t^T int_E ... Ntilde(ds,de) is definitional under the pathwise\nreading. Across the claim, the jump-times clause does not actually state the \"fail to exhaust\"\nassertion (junk sInf), and the every-setting no-square-moment clause is, in my reading, not the\npassage's meaning (its nu != 0 correction is). The hypotheses of this clause are exactly those in\nforce at this point of the printed proof (Lemma 4.1's), no more, no fewer.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T22:58:40Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices, each harmless: (1) R^m-valued processes as real coordinates, time over R\nwith processes required to vanish off [0,T]; (2) the L^1 bound and the finiteness statements as\nlintegrals in [0, infinity] (no junk); (3) M^2_T - M^2_t read pathwise as the integral against\nN(w) over (t,T] x E minus the compensator integral over (t,T] x E -- the correct meaning of a\ncompensated integral of a nonnegative L^1 predictable integrand, and how M^2 arises in (4.4);\nthe Bochner integrals in the zero-mean conclusion agree with the [0, infinity] integrals off null\nsets because the two finiteness conclusions are stated alongside, so the mean zero is not a junk\nvalue; (4) the identity (4.3) is assumed for each t almost surely (weaker than a.s. for all t, so\nthe proposition is if anything broader), and dY's paths are cadlag for every w (a null-set\nmodification on the augmented filtration); (5) the hypotheses are all those of Lemma 4.1, the\nones in force at this point of the proof, witnessed at the backward equation of Example 5.1(i)."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T22:58:58Z",
+  "disagreements": "No disagreement with the author's reading of this clause: M^2_T - M^2_t read pathwise as the\nN-integral minus the compensator over (t,T] x E, the L^1 bound and the two finiteness statements\nas [0, infinity] integrals, the zero mean as the Bochner expectation of the pathwise difference\n(not a junk value, given the finiteness statements), under exactly the hypotheses of Lemma 4.1.\nOne omission at the level of the claim, not of this proposition: line 173 also asserts that the\nintegrand e^s|dU_s(e)|^2 is predictable and nonnegative, and no clause of the claim states it\n(trivial, but an assertion of the passage)."
+ },
+ "submitted_at": "2026-10-19T22:59:53Z",
+ "issue_draft": null
+}
