@@ -3786,26 +3786,66 @@
    "status": "out of scope: part-of"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_uniq_coeff",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_uniq_coeff"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(3.2): along two solutions in ℍ_weak with the same initial datum, 𝔼 ∫_0^T (|δb_t|² + |δσ_t|²_F + ‖δh_t‖² + |δf_t|²) dt < ∞, δh at the predictable tuples",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_uniq_coeff",
+     "spec_hash": "ed839d34f480cba11fcb76fb4b640955",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:uniq-coeff",
    "kind": "embedded-in-proof",
    "number": "(3.2)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_uniq_bwd",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_uniq_bwd"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(3.3): 𝔼 sup_{t ≤ T} |δY_t|² ≤ C_BP (𝔼|δg_T|² + 𝔼 ∫_0^T |δf_s|² ds) < ∞, C_BP a function of T",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_uniq_bwd",
+     "spec_hash": "ed839d34f480cba12aa97c204e9816a6",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:uniq-bwd",
    "kind": "embedded-in-proof",
    "number": "(3.3)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [],
@@ -4306,26 +4346,66 @@
    "status": "formal: proved, author-reviewed"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_fwd",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_fwd"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.23): 𝔼 sup_{t ≤ T} |δX_t|² ≤ C (𝔼 ∫_0^T (|δY_t|² + |δZ_t|²_F + ‖δU_t‖²) dt + P), C a function of (T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_fwd",
+     "spec_hash": "ed839d34f480cba10818191e4f4f15f1",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:fwd",
    "kind": "embedded-in-proof",
    "number": "(4.23)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_bwdito",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_bwdito"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.24): for every κ > 0 and t ∈ [0, T], 𝔼 e^{κt} |δY_t|² + 𝔼 ∫_t^T e^{κs} (κ |δY_s|² + |δZ_s|²_F + ‖δU_s‖²) ds ≤ 𝔼 e^{κT} |λ δg_T + q^g_T|² + 2 𝔼 ∫_t^T e^{κs} ⟨δY_s, λ δf_s + q^f_s⟩ ds, the integrands integrable, q = δq",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_bwdito",
+     "spec_hash": "ed839d34f480cba1ac3ad318e96e1e46",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:bwdito",
    "kind": "embedded-in-proof",
    "number": "(4.24)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
@@ -4357,26 +4437,66 @@
    "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_wgt",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_wgt"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.26): sup_{t ≤ T} 𝔼|δY_t|² + 𝔼 ∫_0^T (|δZ_t|²_F + ‖δU_t‖²) dt ≤ C (𝔼|δX_T|² + 𝔼 ∫_0^T |δX_t|² dt + P), C a function of (T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_wgt",
+     "spec_hash": "ed839d34f480cba1de5228301c385f44",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:wgt",
    "kind": "embedded-in-proof",
    "number": "(4.26)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_bwd",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_bwd"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.27): 𝔼 sup_{t ≤ T} |δY_t|² + 𝔼 ∫_0^T (|δZ_t|²_F + ‖δU_t‖²) dt ≤ C (𝔼|δX_T|² + 𝔼 ∫_0^T |δX_t|² dt + P), C a function of (T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_bwd",
+     "spec_hash": "ed839d34f480cba107ad1a2fc1d489b5",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:bwd",
    "kind": "embedded-in-proof",
    "number": "(4.27)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [],
@@ -4394,10 +4514,10 @@
   "A": {
    "definition: reviewed": 11,
    "formal: accepted": 48,
-   "formal: proved, author-reviewed": 11,
+   "formal: proved, author-reviewed": 17,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
-   "out of scope: proof-step": 17,
+   "out of scope: proof-step": 11,
    "refuted as printed; corrected statement proved": 1
   }
  }

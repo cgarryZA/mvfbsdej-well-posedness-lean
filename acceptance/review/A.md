@@ -161,6 +161,79 @@ Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.th
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.thm_uniq--claude-auditor--2026-10-19T03_35_38Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.thm_uniq ed839d34f480cba1b8815741b34ba4e5 by=claude-auditor -->
 
+## (3.2) and (3.3), two steps of the proof of Theorem 3.3: `Dissertation.PaperSpec.A.eq_uniq_coeff`, `eq_uniq_bwd`
+
+Manuscript (proof of Theorem `thm:uniq`, `03-main-results.tex` lines 110–172): with
+`δΘ_t := Θ¹_t − Θ²_t`, `μ^k_t := Law(Θ^k_t)`, `δψ_t := ψ(t, Θ¹_t, μ¹_t) − ψ(t, Θ²_t, μ²_t)` for
+`ψ ∈ {b, σ, f}` "and, at the predictable tuples as in (1.1),
+`δh_t := h(t, Θ^{1,−}_t, ·, μ^{1,−}_t) − h(t, Θ^{2,−}_t, ·, μ^{2,−}_t)`". By Fubini
+`Θ^k_t ∈ L²(Ω, ℱ_t; H)` for a.e. `t`, so Assumption 2.3 applies to the pair and, with (2.8),
+"`𝔼[|δb_t|² + |δσ_t|²_F + ‖δh_t‖²_{L²(ν)} + |δf_t|²] ≤ C 𝔼|δΘ_t|²_H` for a.e. `t`, where `C` is
+independent of `t`. Then (3.2) `𝔼 ∫_0^T [|δb_t|² + |δσ_t|²_F + ‖δh_t‖²_{L²(ν)} + |δf_t|²] dt
+< ∞`." Lines 158–172: "For the backward equation, `δY_t = δg_T + ∫_t^T δf_s ds − ∫_t^T δZ_s dW_s
+− ∫_t^T ∫_E δU_s(e) Ñ(ds, de)`, where `δg_T := g(X¹_T, Law(X¹_T)) − g(X²_T, Law(X²_T))`. As the
+terminal conditions presuppose `Law(X^k_T) ∈ P₂(ℝⁿ)`, we have `X^k_T ∈ L²`, and Assumption 2.3
+with (2.9) gives `𝔼|δg_T|² ≤ C 𝔼|δX_T|² < ∞`. Furthermore, (3.2) gives
+`𝔼 ∫_0^T |δf_s|² ds < ∞`. By Lemma 4.1, (3.3) `𝔼 sup_{t ≤ T} |δY_t|²
+≤ C_BP (𝔼|δg_T|² + 𝔼 ∫_0^T |δf_s|² ds) < ∞`, therefore `δY ∈ S²(ℝᵐ)`."
+
+Propositions:
+
+* `eq_uniq_coeff`: under the hypotheses of Theorem 3.3 (those of `thm_uniq`, verbatim):
+  `∑_i energy(δb_i) + ∑_{i, j} energy(δσ_{ij}) + ∑_i markedEnergy(δh_i) + ∑_k energy(δf_k) < ∞`,
+  with `δb, δσ, δf` the differences of `driftProc`, `diffusionProc`, `driverProc` along `Θ¹, Θ²`,
+  and `δh_i` the difference of `jumpProc T (coeffJump P T C (leftLimProc X^k) (leftLimProc Y^k)
+  Z^k U^k)`, `k = 1, 2`.
+* `eq_uniq_bwd`: `∃ C_BP : ℝ → ℝ`, then under the same hypotheses:
+  `∫⁻ sup_{t ∈ [0, T]} |δY_t|² ≤ ofReal(C_BP(T)) (∫⁻ |δg_T|² + ∑_k energy(δf_k))`, and
+  `∫⁻ |δg_T|² + ∑_k energy(δf_k) < ∞`, with `δg_T` the difference of the `terminalVal`s.
+
+Readings:
+
+* The hypotheses are those of Theorem 3.3, written as in `thm_uniq` (reviewed with Theorem 3.3).
+  Assumption 2.2 is not assumed, as printed, so along one solution the coefficient processes need
+  not be square integrable; only their differences are claimed to be, as printed.
+* The expectations are lower integrals in `[0, ∞]` (`energy`, `markedEnergy`, `esq`) over
+  `[0, T]`; `|δσ|²_F` is `∑_{i, j}`, `‖δh‖²_{L²(ν)}` is `∑_i ∫ δh_i(e)² ν(de)`, and "`< ∞`" is
+  `< ⊤`.
+* `δψ` along `Θ^k` through `driftProc`, `diffusionProc`, `driverProc` and `terminalVal` (reviewed
+  in `definitions.md`): `ψ(t, Θ^k_t(ω), Law Θ^k_t)` for `t ∈ [0, T]`. `δh` at the predictable
+  tuples through `leftLimProc` and the canonical representative `coeffJump` (reviewed), as in
+  `thm_stab`. The paper makes every claim about these expressions `dt`-a.e. or time-integrated,
+  and the marked energy is a lower integral, so its value is that of the `dP ⊗ dt ⊗ ν`-class; the
+  expression is not asked to be measurable (at `t = 0` the left limits read the paths before `0`).
+* The bound at a.e. `t` printed before (3.2), with `C` independent of `t`, is the step that gives
+  (3.2), not the display; it is not stated.
+* (3.3): `C_BP` is the constant of Lemma 4.1, which `lem_bpbsde` reads as a function of `T`
+  chosen before everything; the proposition likewise chooses a function of `T` first, which is
+  all (3.3) asserts of it. "`< ∞`" is the finiteness of `𝔼|δg_T|² + 𝔼 ∫_0^T |δf_s|² ds`; with a
+  real constant the bound is then finite. `δY ∈ S²` is the consequence drawn from it and is not
+  stated separately.
+* The equation for `δY` printed before (3.3) is the instance of (4.16) at `λ = 1` and zero forcing
+  (`eq_dY`), and is not part of these claims.
+
+Proofs: two solutions in `ℍ_weak` solve the `λ`-forced system at `λ = 1` with zero forcing
+(`paperWeakSolutionForcedInt_one_zero_iff`); extended off `[0, T]`, their difference is a
+`PairDiff` (`PaperWeakSolutionForcedInt.exists_pairDiff`, from Assumptions 2.3 and 2.5 along the
+diagonal), whose integrands have finite energy by its definition: this is (3.2) for `δb, δσ, δf`,
+and for `δh` once the jump coefficient at the predictable tuples is identified with the solutions'
+representatives `γ¹ − γ²` almost everywhere, so with equal marked energy
+(`PaperWeakSolutionInt.markedEnergy_coeffJump_sub_leftLim_eq`, through
+`ae_forcedJump_sub_leftLim_eq` and `markedEnergy_congr_ae`). (3.3): the estimate of Lemma 4.1 for
+each backward coordinate of the difference system (`LinearBSDEJ.brownianPoisson_estimate`,
+`C_BP(T) = 13 e^T + 3T`), summed over the coordinates with
+`sup_t ∑_k |δY_{k,t}|² ≤ ∑_k sup_t |δY_{k,t}|²`; the extensions agree with the solutions on
+`[0, T]`, and the data are finite because the backward coordinates have square-integrable terminal
+values and finite-energy drivers.
+
+Witness: `Dissertation.Acceptance.A.thm_uniq_hypotheses`, the hypotheses of Theorem 3.3 (reviewed
+with Theorem 3.3), which are those of both propositions.
+
+Verdict: faithful.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_coeff ed839d34f480cba11fcb76fb4b640955 by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_bwd ed839d34f480cba12aa97c204e9816a6 by=claude-author -->
+
 ## Theorem 3.5: `Dissertation.PaperSpec.A.thm_cwp`, and its continuous dependence
 
 Manuscript (§3, Theorem `thm:cwp`): for every horizon `T > 0`,
@@ -936,6 +1009,103 @@ Verdict: faithful.
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_coerc ed839d34f480cba1763b5cdd464a968d by=claude-author -->
 
+## (4.23), the forward estimate in Step 3 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_fwd`
+
+Manuscript (proof of Lemma `lem:pert`, Step 3, lines 697–714): "Fix `t ≤ T` and integrate (4.15)
+over `[0, s]`, `s ≤ t`, with `δX_0 = δξ₀`. Squaring, taking the supremum over `s` and
+expectations, Cauchy–Schwarz on the drift, BDG on the two martingales and Assumption 2.3 give
+`𝔼 sup_{s ≤ t} |δX_s|² ≤ C(𝔼|δξ₀|² + 𝔼 ∫_0^t (|δb_s|² + |δσ_s|²_F + ‖δh_s‖²) ds + P) ≤ …
+≤ C(∫_0^t 𝔼 sup_{r ≤ s} |δX_r|² ds + 𝔼 ∫_0^T (|δY_s|² + |δZ_s|²_F + ‖δU_s‖²) ds + P)`. The map
+`t ↦ 𝔼 sup_{s ≤ t} |δX_s|²` is nondecreasing and finite, since `Θ¹ − Θ² ∈ ℍ`, so Grönwall gives
+(4.23) `𝔼 sup_{t ≤ T} |δX_t|² ≤ C(𝔼 ∫_0^T (|δY_t|² + |δZ_t|²_F + ‖δU_t‖²) dt + P)`." Here `P` is
+the data size of (4.14) of the differences of the data, and `C` follows the convention of §4: a
+positive constant depending only on `T, L, ‖G‖, c_G, α, β₁, β₂` and `c_BDG`.
+
+Proposition: `∃ K` of `(T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)` such that, in the standing setting and
+under the hypotheses of Lemma 4.3 (those of `lem_pert`, verbatim),
+`∫⁻ sup_{t ∈ [0, T]} |δX_t|² ≤ ofReal(C) (∑_k energy(δY_k) + ∑_{k, j} energy(δZ_{kj})
++ ∑_k markedEnergy(δU_k) + dataSize(δξ₀, δq^b, δq^σ, δq^h, δq^f, δq^g))` with
+`C = K(T, L, ‖GX G‖, s_min(G)⁻², α, β₁, β₂, λ̲)`.
+
+Readings:
+
+* The hypotheses are those in force at Step 3, the hypotheses of Lemma 4.3, written as in
+  `lem_pert` (reviewed with Lemma 4.3); `P` is `dataSize` (reviewed with Theorem 3.1) of the
+  differences of the initial data and of the forcings.
+* The constant: `K` is chosen before everything else, with the broadest dependence the §4
+  convention allows (`c_BDG` is a universal number) and `λ̲`, as for (4.25). The constant of the
+  proof is a function of `T` and `L` alone, so the bound holds under any narrower dependence the
+  text could mean. `ofReal` reads a negative value as `0`; since `K` is existential and the right
+  side grows with `C`, this is the reading with `C ≥ 0`.
+* The expectations are lower integrals in `[0, ∞]`: `𝔼 sup_{t ≤ T} |δX_t|²` is `∫⁻` of the
+  supremum over `t ∈ [0, T]` of `esq`, and `𝔼 ∫_0^T (|δY|² + |δZ|²_F + ‖δU‖²)` the energies on
+  `[0, T]`, coordinatewise. The bound says nothing when the right side is infinite; it is finite
+  under the hypotheses.
+* The displays at `t ≤ T` and the Grönwall argument are steps of the proof; they are not stated.
+
+Proof: `K = c_X(T, 10 (2L)²)` (`fwdSupConst`), a function of `T` and `L`: at the extensions of
+`exists_pairDiff`, which agree with the solutions on `[0, T]`, the difference system satisfies
+`𝔼 sup |δX|² ≤ 3 𝔼|δξ₀|² + 3T 𝔼 ∫ |λ δb + q^b|² + 12 𝔼 ∫ (|λ δσ + q^σ|²_F + ‖λ δh + q^h‖²)`
+(`PairDiff.lintegral_biSup_fwd_le`, the `S²` bound of Lemma 4.1 for each forward coordinate), the
+rate bound `|λ x + q|² ≤ 2|x|² + 2|q|²` with (3.2) (`PairDiff.rateEnergy_le`), and the forward
+estimate `𝔼|δX_T|² + 𝔼 ∫_0^T |δX|² ≤ k_F (J + P)` of the closure step (`PairDiff.forward_le`, a
+weighted energy bound in place of Grönwall); `PairDiff.lintegral_biSup_fwd_le_energy` assembles
+them.
+
+Witness: `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`, the hypotheses of Lemma 4.3
+(reviewed with Lemma 4.3).
+
+Verdict: faithful.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_fwd ed839d34f480cba10818191e4f4f15f1 by=claude-author -->
+
+## (4.24), Itô's formula in Step 4 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_bwdito`
+
+Manuscript (proof of Lemma `lem:pert`, Step 4, lines 716–725): "Itô's formula applied to
+`e^{κt} |δY_t|²` gives, for `κ > 0`, (4.24) `𝔼 e^{κt} |δY_t|² + 𝔼 ∫_t^T e^{κs} (κ |δY_s|²
++ |δZ_s|²_F + ‖δU_s‖²_{L²(ν)}) ds ≤ 𝔼 e^{κT} |λ δg_T + q^g_T|² + 2 𝔼 ∫_t^T e^{κs}
+⟨δY_s, λ δf_s + q^f_s⟩ ds`." The proof then inserts (4.25) under `∫_t^T e^{κs} … ds` and reads
+the result "for every `t`" (lines 745–755), taking the supremum over `t`.
+
+Proposition: under the hypotheses of Lemma 4.3 (those of `lem_pert`, verbatim), for every `κ > 0`
+and every `t ∈ [0, T]`: `|δY_t|²` and `|λ δg_T + q^g_T|²` are `P`-integrable;
+`e^{κs} (κ |δY_s|² + ∑_{k, j} δZ_{kj}(s)² + ∑_k ∫_E δU_k(s, e)² ν(de))` and
+`e^{κs} ∑_k δY_{k,s} (λ δf_{k,s} + q^f_{k,s})` are integrable for `P ⊗ ds` on `Ω × [t, T]`; and
+`e^{κt} ∫ |δY_t|² dP + ∫ ∫_{[t, T]} e^{κs} (κ |δY_s|² + |δZ_s|²_F + ‖δU_s‖²) ds dP
+≤ e^{κT} ∫ |λ δg_T + q^g_T|² dP + 2 ∫ ∫_{[t, T]} e^{κs} ⟨δY_s, λ δf_s + q^f_s⟩ ds dP`.
+
+Readings:
+
+* The hypotheses are those of Lemma 4.3, written as in `lem_pert`; `q = δq`; `δg_T` and `δf` are
+  the differences of `terminalVal` and `driverProc` along `Θ¹, Θ²` (reviewed in
+  `definitions.md`).
+* "For `κ > 0`" with `t` free: every `κ > 0` and every `t ∈ [0, T]`, as the proof uses it.
+* The expectations are Bochner integrals, those on the left and the terminal one of nonnegative
+  functions; the integrability of the four integrands is stated, so no junk value enters and the
+  inequality is between the expectations the paper means. `𝔼 ∫_t^T` is `∫ dP` of `∫_{[t, T]} ds`
+  (the same as over `(t, T]` for Lebesgue measure). In coordinates `|δY|² = ∑_k δY_k²`,
+  `|δZ|²_F = ∑_{k, j} δZ_{kj}²`, `‖δU‖²_{L²(ν)} = ∑_k ∫_E δU_k(e)² ν(de)` (a Bochner integral in
+  `e`, of an integrable function for almost every `(ω, s)`), `⟨x, y⟩ = ∑_k x_k y_k`.
+* The terminal term is printed with `|λ δg_T + q^g_T|²`, which is `|δY_T|²` almost surely by
+  (4.16); it is written with the terminal data, as printed.
+* The step holds with equality; the proposition states `≤`, as printed.
+
+Proof: each backward coordinate of the difference system (at the extensions of `exists_pairDiff`,
+which agree with the solutions on `[0, T]`) solves the linear backward equation with terminal
+value `λ δg_k + q^g_k` and drift `λ δf_k + q^f_k`. For such a solution the weighted second-moment
+identity holds on `Ω × [t, T]` (`LinearBSDEJ.exp_mul_window_eq`): read forward, the solution
+satisfies the bilinear identity `LinearFSDEJ.integral_mul_eq_at`; integrated against `e^{κs}`
+(`mul_eq_add_setIntegral_of_hasDerivAt`) and read for `P ⊗ ds` on `[0, τ]`
+(`LinearFSDEJ.setIntegral_weight_rate_eq`), it is differenced between `τ = T` and `τ = t`
+(`integral_window_split`). Summed over the coordinates and read by Fubini, it is (4.24) with
+equality. The proof of Lemma 4.3 in the implementation does not use (4.24).
+
+Witness: `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`, the hypotheses of Lemma 4.3.
+
+Verdict: faithful.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bwdito ed839d34f480cba1ac3ad318e96e1e46 by=claude-author -->
+
 ## (4.25), the Young bound in Step 4 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_bwdyoung`
 
 Manuscript (proof of Lemma `lem:pert`, Step 4, lines 726–733): "By Assumption 2.3, the coupling
@@ -1005,6 +1175,58 @@ Verdict: faithful.
 <!-- spec-review: Dissertation.PaperSpec.A.eq_bwdyoung ed839d34f480cba13db23656421cf5a0 by=claude-author -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_bwdyoung--claude-auditor--2026-10-19T18_47_22Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_bwdyoung ed839d34f480cba13db23656421cf5a0 by=claude-auditor -->
+
+## (4.26) and (4.27), the backward estimates in Step 4 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_wgt`, `eq_bwd`
+
+Manuscript (proof of Lemma `lem:pert`, Step 4, lines 735–778): inserting (4.25) in (4.24), "Take
+`ε < 1` and `κ > C/ε`. The `δY`-integral on the left is then nonnegative and may be dropped, and
+the weights satisfy `1 ≤ e^{κs} ≤ e^{κT}` on `[0, T]`, so `𝔼|δY_t|² + 𝔼 ∫_t^T (|δZ_s|²_F
++ ‖δU_s‖²) ds ≤ C(𝔼|λ δg_T + q^g_T|² + 𝔼 ∫_t^T (|δX_s|² + |q^f_s|²) ds)`. With
+`𝔼|δg_T|² ≤ C 𝔼|δX_T|²`, the forcings in `P`, and `∫_t^T ≤ ∫_0^T` on the right, the bound no
+longer depends on `t`. Taking the supremum over `t` in the first term on the left and `t = 0` in
+the second, there remains (4.26) `sup_{t ≤ T} 𝔼|δY_t|² + 𝔼 ∫_0^T (|δZ_t|²_F + ‖δU_t‖²) dt
+≤ C(𝔼|δX_T|² + 𝔼 ∫_0^T |δX_t|² dt + P)`. Writing (4.16) forward from `δY_0`, BDG,
+Cauchy–Schwarz, Assumption 2.3 with the coupling bound (2.8), and (4.26) give
+`𝔼 sup_{t ≤ T} |δY_t|² ≤ … ≤ C(𝔼|δX_T|² + 𝔼 ∫_0^T |δX_t|² dt + P)`. The first term of (4.26) may
+therefore be replaced by `𝔼 sup_{t ≤ T} |δY_t|²`: (4.27) `𝔼 sup_{t ≤ T} |δY_t|²
++ 𝔼 ∫_0^T (|δZ_t|²_F + ‖δU_t‖²) dt ≤ C(𝔼|δX_T|² + 𝔼 ∫_0^T |δX_t|² dt + P)`."
+
+Propositions: each `∃ K` of `(T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)` such that, under the hypotheses of
+Lemma 4.3 (those of `lem_pert`, verbatim), with `C = K(T, L, ‖GX G‖, s_min(G)⁻², α, β₁, β₂, λ̲)`:
+
+* `eq_wgt`: `sup_{t ∈ [0, T]} ∫⁻ |δY_t|² + (∑_{k, j} energy(δZ_{kj}) + ∑_k markedEnergy(δU_k))
+  ≤ ofReal(C) (∫⁻ |δX_T|² + ∑_i energy(δX_i) + dataSize(δξ₀, δq))`;
+* `eq_bwd`: the same with `∫⁻ sup_{t ∈ [0, T]} |δY_t|²` as the first term.
+
+Readings:
+
+* The hypotheses, the constant (chosen first, the broadest dependence allowed, `ofReal`) and `P`
+  are read as for (4.23).
+* `sup_{t ≤ T} 𝔼|δY_t|²` is the supremum over `t ∈ [0, T]` of lower integrals of `esq`;
+  `𝔼 sup_{t ≤ T} |δY_t|²` the lower integral of the supremum; `𝔼|δX_T|²` and
+  `𝔼 ∫_0^T |δX_t|² dt` are `esq` at `T` and the energies of the coordinates on `[0, T]`, all in
+  `[0, ∞]`.
+* The choices `ε < 1`, `κ > C/ε` and the displays between (4.24) and (4.27) are steps of the
+  proof; they are not stated. Each proposition chooses its own `K`.
+
+Proofs: (4.27) with `K = c_Y(T, 10 (2L)², 4 (2L)²)` (`bwdSupConst`), a function of `T` and `L`:
+at the extensions of `exists_pairDiff`, the difference system satisfies
+`𝔼 sup |δY|² ≤ 3 𝔼|δY_0|² + 3T 𝔼 ∫ |λ δf + q^f|² + 12 𝔼 ∫ (|δZ|²_F + ‖δU‖²)`
+(`PairDiff.lintegral_biSup_bwd_le`, the `S²` bound of Lemma 4.1 for each backward coordinate),
+the rate bound (`PairDiff.rateEnergy_le`), and the backward estimate of the closure step
+`𝔼|δY_0|² + 𝔼 ∫_0^T (|δY|² + |δZ|²_F + ‖δU‖²) ≤ k_B (𝔼|δX_T|² + 𝔼 ∫_0^T |δX|² + P)`
+(`PairDiff.backward_le`, a weighted energy bound in place of the choice of `ε` and `κ`);
+`PairDiff.lintegral_biSup_bwd_add_le` assembles them. (4.26) follows from (4.27) with the same
+constant, since `sup_t 𝔼|δY_t|² ≤ 𝔼 sup_t |δY_t|²`. The implementation does not pass through
+(4.24) and (4.25) here.
+
+Witness: `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`, the hypotheses of Lemma 4.3,
+which are those of both propositions.
+
+Verdict: faithful.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_wgt ed839d34f480cba1de5228301c385f44 by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bwd ed839d34f480cba107ad1a2fc1d489b5 by=claude-author -->
 
 ## Lemma 4.4: `Dissertation.PaperSpec.A.lem_cont`
 

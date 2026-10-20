@@ -9,7 +9,7 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | Status | A |
 |---|---|
 | formal: accepted | 48 |
-| formal: proved, author-reviewed | 11 |
+| formal: proved, author-reviewed | 17 |
 | formal: proved, review pending | 0 |
 | refuted as printed | 0 |
 | refuted as printed; corrected statement proved | 1 |
@@ -24,7 +24,7 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | definition: not yet stated | 0 |
 | out of scope: duplicate | 4 |
 | out of scope: part-of | 17 |
-| out of scope: proof-step | 17 |
+| out of scope: proof-step | 11 |
 
 ## Paper A (well-posedness, `1f67672`)
 
@@ -89,6 +89,8 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | `A:eq:coefmeas` | (2.5) | formal: accepted | `A.eq_coefmeas`, `A.eq_coefmeas_jump` | `A.eq_coefmeas`, `A.eq_coefmeas_jump` | (2.5), the first line: along any diagonal input the evaluations of b, σ and f are progressively measurable: reviewed by claude-auditor, hypotheses met: `A.thm_cwp_hypotheses`; (2.5), the second line: the jump coefficient at the predictable tuple and its law is predictable: reviewed by claude-auditor, hypotheses met: `A.thm_cwp_hypotheses` |
 | `A:eq:monomargin` | (2.12) | definition: reviewed | `Dissertation.PaperSpec.A.Margin212` | — | definitions |
 | `A:eq:monomarginu` | (2.13) | definition: reviewed | `Dissertation.WellPosedness.Spec.Margin213` | — | definitions |
+| `A:eq:uniq-coeff` | (3.2) | formal: proved, author-reviewed | `A.eq_uniq_coeff` | `A.eq_uniq_coeff` | reviewed by claude-author, hypotheses met: `A.thm_uniq_hypotheses` |
+| `A:eq:uniq-bwd` | (3.3) | formal: proved, author-reviewed | `A.eq_uniq_bwd` | `A.eq_uniq_bwd` | reviewed by claude-author, hypotheses met: `A.thm_uniq_hypotheses` |
 | `A:eq:forced` | (4.1) | definition: reviewed | `Dissertation.PaperSpec.A.ForcedSolution` | — | definitions |
 | `A:eq:coeffint` | (4.2) | formal: accepted | `A.eq_coeffint` | `A.eq_coeffint` | reviewed by claude-auditor, hypotheses met: `A.thm_cwp_hypotheses` |
 | `A:eq:termg` | (4.3) | formal: accepted | `A.eq_termg` | `A.eq_termg` | reviewed by claude-auditor, hypotheses met: `A.thm_cwp_hypotheses` |
@@ -100,7 +102,11 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | `A:eq:intmono` | (4.20) | formal: proved, author-reviewed | `A.eq_intmono` | `A.eq_intmono` | reviewed by claude-author, hypotheses met: `A.lem_pert_two_data_hypotheses` |
 | `A:eq:termmono` | (4.21) | formal: proved, author-reviewed | `A.eq_termmono` | `A.eq_termmono` | reviewed by claude-author, hypotheses met: `A.lem_pert_two_data_hypotheses` |
 | `A:eq:coerc` | (4.22) | formal: proved, author-reviewed | `A.eq_coerc` | `A.eq_coerc` | reviewed by claude-author, hypotheses met: `A.lem_pert_two_data_hypotheses` |
+| `A:eq:fwd` | (4.23) | formal: proved, author-reviewed | `A.eq_fwd` | `A.eq_fwd` | reviewed by claude-author, hypotheses met: `A.lem_pert_two_data_hypotheses` |
+| `A:eq:bwdito` | (4.24) | formal: proved, author-reviewed | `A.eq_bwdito` | `A.eq_bwdito` | reviewed by claude-author, hypotheses met: `A.lem_pert_two_data_hypotheses` |
 | `A:eq:bwdyoung` | (4.25) | formal: accepted | `A.eq_bwdyoung` | `A.eq_bwdyoung` | reviewed by claude-auditor, hypotheses met: `A.lem_pert_two_data_hypotheses` |
+| `A:eq:wgt` | (4.26) | formal: proved, author-reviewed | `A.eq_wgt` | `A.eq_wgt` | reviewed by claude-author, hypotheses met: `A.lem_pert_two_data_hypotheses` |
+| `A:eq:bwd` | (4.27) | formal: proved, author-reviewed | `A.eq_bwd` | `A.eq_bwd` | reviewed by claude-author, hypotheses met: `A.lem_pert_two_data_hypotheses` |
 
 ## Out of scope
 
@@ -122,8 +128,6 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | `A:eq:lipfun` | (2.10) | part-of | A:rem:wasserstein-bounds | yes |
 | `A:eq:margproj` | (2.11) | part-of | A:rem:wasserstein-bounds | yes |
 | `A:eq:stab` | (3.1) | part-of | A:thm:stab | yes |
-| `A:eq:uniq-coeff` | (3.2) | proof-step | a step of a printed proof | yes |
-| `A:eq:uniq-bwd` | (3.3) | proof-step | a step of a printed proof | yes |
 | `A:eq:pertpair` | (3.4) | part-of | A:cor:robust | yes |
 | `A:eq:pertlip` | (3.5) | part-of | A:cor:robust | yes |
 | `A:eq:bmean` | (3.6) | part-of | A:prop:strict | yes |
@@ -139,8 +143,4 @@ A claim is *accepted* when every clause has a proposition in `Dissertation.Paper
 | `A:eq:contpert` | (4.14) | part-of | A:lem:pert | yes |
 | `A:eq:Gid-path` | (4.17) | proof-step | a step of a printed proof | yes |
 | `A:eq:bdg4` | (4.18) | proof-step | a step of a printed proof | yes |
-| `A:eq:fwd` | (4.23) | proof-step | a step of a printed proof | yes |
-| `A:eq:bwdito` | (4.24) | proof-step | a step of a printed proof | yes |
-| `A:eq:wgt` | (4.26) | proof-step | a step of a printed proof | yes |
-| `A:eq:bwd` | (4.27) | proof-step | a step of a printed proof | yes |
 | `A:eq:fulllaw-eps` | (5.1) | part-of | A:ex:fulllaw | yes |

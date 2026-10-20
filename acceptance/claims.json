@@ -2551,10 +2551,17 @@
    "title": "equation eq:uniq-coeff [proof:Thm 3.3]",
    "location": "paper/sections/03-main-results.tex:139",
    "source_sha256": "f57c6c731e906121b2435b42950329c7dbdef6ba8c6f3dd936631467f41ab5dc",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "clauses": [],
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "clauses": [
+    {
+     "name": "(3.2): along two solutions in ℍ_weak with the same initial datum, 𝔼 ∫_0^T (|δb_t|² + |δσ_t|²_F + ‖δh_t‖² + |δf_t|²) dt < ∞, δh at the predictable tuples",
+     "spec": "Dissertation.PaperSpec.A.eq_uniq_coeff",
+     "accept": "Dissertation.Acceptance.A.eq_uniq_coeff",
+     "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses"
+    }
+   ],
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
     "b8ff2e9838043219793ee5e3e2d0c12015348a06f6da0bc20037b93031104413",
@@ -2572,10 +2579,17 @@
    "title": "equation eq:uniq-bwd [proof:Thm 3.3]",
    "location": "paper/sections/03-main-results.tex:168",
    "source_sha256": "9e27142522202b563f42928c519e570d6b67fdfb9d25b3a33bdd984b39c35ef8",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "clauses": [],
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "clauses": [
+    {
+     "name": "(3.3): 𝔼 sup_{t ≤ T} |δY_t|² ≤ C_BP (𝔼|δg_T|² + 𝔼 ∫_0^T |δf_s|² ds) < ∞, C_BP a function of T",
+     "spec": "Dissertation.PaperSpec.A.eq_uniq_bwd",
+     "accept": "Dissertation.Acceptance.A.eq_uniq_bwd",
+     "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses"
+    }
+   ],
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
     "937e56ed71142a48eaf493db8e817431b0c8769c3e48253e307a850a6d5dc870",
@@ -3326,10 +3340,17 @@
    "title": "equation eq:fwd [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:712",
    "source_sha256": "ee1691dc39d0f4cefa77ed2bd65bf23b9082b6eaf7bce69caf875dc14c06ae8f",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "clauses": [],
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "clauses": [
+    {
+     "name": "(4.23): 𝔼 sup_{t ≤ T} |δX_t|² ≤ C (𝔼 ∫_0^T (|δY_t|² + |δZ_t|²_F + ‖δU_t‖²) dt + P), C a function of (T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)",
+     "spec": "Dissertation.PaperSpec.A.eq_fwd",
+     "accept": "Dissertation.Acceptance.A.eq_fwd",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+    }
+   ],
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
     "b221d93cc08c91cf0d54475fa4a4bbb7b68fe6f5c967f455e5e5107f21268364",
@@ -3346,10 +3367,17 @@
    "title": "equation eq:bwdito [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:718",
    "source_sha256": "393867a8ee02929733b52a376171325b807e01b0d81452f311285bdc89d2c889",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "clauses": [],
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "clauses": [
+    {
+     "name": "(4.24): for every κ > 0 and t ∈ [0, T], 𝔼 e^{κt} |δY_t|² + 𝔼 ∫_t^T e^{κs} (κ |δY_s|² + |δZ_s|²_F + ‖δU_s‖²) ds ≤ 𝔼 e^{κT} |λ δg_T + q^g_T|² + 2 𝔼 ∫_t^T e^{κs} ⟨δY_s, λ δf_s + q^f_s⟩ ds, the integrands integrable, q = δq",
+     "spec": "Dissertation.PaperSpec.A.eq_bwdito",
+     "accept": "Dissertation.Acceptance.A.eq_bwdito",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+    }
+   ],
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
     "37a5694c4457487af0725c17ac96b9ef804cb992e2e789b8661706a8ec6a1618",
@@ -3406,10 +3434,17 @@
    "title": "equation eq:wgt [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:756",
    "source_sha256": "1f83bb20576ba7e561a74ddc8aa535854a49efdb61f9fb1ffc80d72ea5b14701",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "clauses": [],
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "clauses": [
+    {
+     "name": "(4.26): sup_{t ≤ T} 𝔼|δY_t|² + 𝔼 ∫_0^T (|δZ_t|²_F + ‖δU_t‖²) dt ≤ C (𝔼|δX_T|² + 𝔼 ∫_0^T |δX_t|² dt + P), C a function of (T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)",
+     "spec": "Dissertation.PaperSpec.A.eq_wgt",
+     "accept": "Dissertation.Acceptance.A.eq_wgt",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+    }
+   ],
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
     "c68216407f632038650cfacf86e7655f06ce41acd873e027186e216206c02738",
@@ -3428,10 +3463,17 @@
    "title": "equation eq:bwd [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:775",
    "source_sha256": "3114f6e187919402a154d20d84baf24f22a2a1052d28f7faf3558a9335716cf5",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "clauses": [],
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "clauses": [
+    {
+     "name": "(4.27): 𝔼 sup_{t ≤ T} |δY_t|² + 𝔼 ∫_0^T (|δZ_t|²_F + ‖δU_t‖²) dt ≤ C (𝔼|δX_T|² + 𝔼 ∫_0^T |δX_t|² dt + P), C a function of (T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)",
+     "spec": "Dissertation.PaperSpec.A.eq_bwd",
+     "accept": "Dissertation.Acceptance.A.eq_bwd",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+    }
+   ],
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
     "cca2116d4d0a472a686da1aa3c819b122304999c153475c9552e6a8d8b2a260e",

@@ -34,6 +34,9 @@ import Dissertation.PaperSpec.A.Sec4BrownianPoisson
 import Dissertation.PaperSpec.A.Sec4Small
 import Dissertation.PaperSpec.A.Sec4Continuation
 import Dissertation.PaperSpec.A.Sec4Difference
+import Dissertation.PaperSpec.A.Sec3Uniqueness
+import Dissertation.PaperSpec.A.Sec4Estimates
+import Dissertation.PaperSpec.A.Sec4Frozen
 
 /-!
 # The statements of the paper

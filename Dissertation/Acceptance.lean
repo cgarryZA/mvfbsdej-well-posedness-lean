@@ -40,6 +40,10 @@ import Dissertation.Acceptance.A.Sec4BrownianPoisson
 import Dissertation.Acceptance.A.Sec4Small
 import Dissertation.Acceptance.A.Sec4Continuation
 import Dissertation.Acceptance.A.Sec4Difference
+import Dissertation.Acceptance.A.Sec3Uniqueness
+import Dissertation.Acceptance.A.Sec4Estimates
+import Dissertation.Acceptance.A.Sec4Frozen
+import Dissertation.Acceptance.A.WitnessFrozen
 
 /-!
 # Proofs of the statements of the paper
