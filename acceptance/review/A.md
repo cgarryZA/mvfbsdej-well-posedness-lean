@@ -136,11 +136,6 @@ Verdict: faithful.
 
 Re-readings at the widened passages:
 
-* `thm_stab` (`A:thm:stab`): Re-read at the passage of lines 39–71 of `03-main-results.tex`
-  (formerly the environment, lines 51–71): the added lines (lines 39–49, before the theorem: two
-  coefficient systems `k = 1, 2`, `δ· = ·¹ − ·²`, `μᵏ_t := Law(Θᵏ_t)`, the coefficient differences
-  along solution 2 with `δh` at `(Θ²⁻_t, μ²⁻_t)`, and `δ̂g_T`, which the review above reads) do not
-  change the reading: they define the differences of (3.1) as the proposition takes them.
 * `thm_stab` (`A:abstract`): Re-read at the passage of lines 30–48 of `wellposedness.tex` (formerly
   line 30): the added lines (lines 31–48, the rest of the abstract, quoted in the review of
   `A:abstract`: the setting, the diagonal hypotheses, the three results, the method and the
@@ -150,7 +145,7 @@ Re-readings at the widened passages:
   line 3): the added lines (lines 4–16, the rest of the conclusion, quoted in the review of
   `A:conclusion`) do not change the reading.
 
-<!-- spec-review: Dissertation.PaperSpec.A.thm_stab ed839d34f480cba16bc55062de98e587 by=claude-author source=A:thm:stab@d9d869ac83496378709c20aa4b063f56ffd879a48b96ade6aea54acbfe427463 source=A:thm:cwp@0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3 source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
+<!-- spec-review: Dissertation.PaperSpec.A.thm_stab ed839d34f480cba16bc55062de98e587 by=claude-author source=A:thm:stab@381ba74c22961e597927279a40c3d1204009169a635d33ce49e1a5962c04d6b8 source=A:thm:cwp@0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3 source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.PaperSpec.A.thm_stab--claude-reviewer--2026-10-17T16_05_53Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.thm_stab ed839d34f480cba16bc55062de98e587 by=claude-reviewer source=A:thm:stab@381ba74c22961e597927279a40c3d1204009169a635d33ce49e1a5962c04d6b8 source=A:thm:cwp@0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.thm_stab--claude-auditor--2026-10-19T03_36_54Z.md`).
@@ -1239,6 +1234,8 @@ integrand at `s ≤ 0`; the Poisson integral as a lower integral over `(0, T] ×
 compensated integral as in `lem41_M1`).
 
 <!-- spec-review: Dissertation.PaperSpec.A.lem41_M1_bdg ed839d34f480cba1732a2bccd942e938 by=claude-author source=A:lem4.1:M2-infinite-activity@a168d5c6b06b44afdce89e7b9de59219c5b0dca171c0a39da0bdadc228abe72e -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lem41_M1_bdg--claude-auditor--2026-10-20T19_47_34Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.lem41_M1_bdg ed839d34f480cba1732a2bccd942e938 by=claude-auditor source=A:lem4.1:M2-infinite-activity@a168d5c6b06b44afdce89e7b9de59219c5b0dca171c0a39da0bdadc228abe72e -->
 
 ## `M²` is a local martingale, in the proof of Lemma 4.1: `Dissertation.PaperSpec.A.lem41_M2_martingale`
 
@@ -3650,6 +3647,8 @@ Verdict: faithful with representation choices (the constant a function of the §
 chosen first; the expectations in `[0, ∞]`).
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_wgt_terminal ed839d34f480cba1e4db1f2acd4bcb96 by=claude-author source=A:eq:wgt@89423b84d237fc8987ae2907a0af9b11b3606cf9e003618e99ac88dce07ccceb -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_wgt_terminal--claude-auditor--2026-10-20T19_47_27Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_wgt_terminal ed839d34f480cba1e4db1f2acd4bcb96 by=claude-auditor source=A:eq:wgt@89423b84d237fc8987ae2907a0af9b11b3606cf9e003618e99ac88dce07ccceb -->
 
 ## The first two links of the chain before (4.27), in Step 4 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_bwd_chain`
 

@@ -185,21 +185,6 @@ digest.
   2.3–2.5. The earlier verdict (faithful with representation choices) stands.
   <!-- spec-review: Dissertation.PaperSpec.A.thm_uniq ed839d34f480cba1b8815741b34ba4e5 by=claude-auditor source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
 
-## `A:def:diag` (paper/sections/02-model-assumptions.tex, lines 27–84)
-
-* `Dissertation.WellPosedness.System.diagonalInputs` (added: lines 27–57 and 68–84). The added lines
-  27-57 hold standing notation and the representation property. The notation covers Theta with
-  values in H, the predictable tuple Theta^- at which the jump terms are evaluated, mu and mu^- as
-  Borel representatives, and the dt-a.e. reading of coefficient expressions; the representation
-  property is the separate claim A:sec2:prp. Lines 68-84 add that all hypotheses are imposed along
-  D_t only, with theta a point and Theta a random tuple. They also fix the difference notation dX,
-  dpsi, the induced terminal laws and dg_T for two diagonal inputs on the same space. None of this
-  changes Definition 2.1: diagonalInputs is still the set of pairs (Theta, Law Theta), with Theta
-  strongly F_t-measurable and square integrable on the given filtered space. The difference notation
-  is used by the assumptions, not by this definition. The earlier verdict, faithful with
-  representation choices, stands.
-  <!-- def-review: Dissertation.WellPosedness.System.diagonalInputs 43fba323e088abc4f9c7fc5ffd25f8a4 by=claude-auditor source=A:def:diag@da808a0f8a8d42c5fa97ae092ee5e1b93197de0af73a487d90d7c213a0c1d01e -->
-
 ## `A:eq:Gid` (paper/sections/04-proof-wellposedness.tex, lines 624–632)
 
 * `Dissertation.PaperSpec.A.eq_Gid` (added: lines 624–625). The added lines 624-625 read 'Taking
@@ -971,12 +956,3 @@ digest.
   compared (system 2 under (2.3) only, (3.1) read in [0, infinity]); the other added lines are the
   companion and data clauses. The earlier verdict (faithful with representation choices) stands.
   <!-- spec-review: Dissertation.PaperSpec.A.thm_stab_minimal ed839d34f480cba127494e1cb3f498aa by=claude-auditor source=A:thm3.1:companion@29dc4c0964f38ec55444454a5131c89d80201b311710e24619a2f05e533a8b3b -->
-
-## `A:thm:stab` (paper/sections/03-main-results.tex, lines 39–71)
-
-* `Dissertation.PaperSpec.A.thm_stab` (added: lines 39–50). Lines 39-49 print the two-system
-  notation: delta = (.)^1 - (.)^2, mu^k_t = Law(Theta^k_t), the coefficient differences along
-  solution 2 with delta h at (Theta^{2,-}_t, mu^{2,-}_t), and hat delta g_T at (X^2_T, Law X^2_T).
-  The earlier reading used exactly this notation and found the right side of the proposition built
-  from these differences. The earlier verdict (faithful with representation choices) stands.
-  <!-- spec-review: Dissertation.PaperSpec.A.thm_stab ed839d34f480cba16bc55062de98e587 by=claude-auditor source=A:thm:stab@d9d869ac83496378709c20aa4b063f56ffd879a48b96ade6aea54acbfe427463 -->

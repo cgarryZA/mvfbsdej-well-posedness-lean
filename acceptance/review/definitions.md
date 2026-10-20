@@ -926,18 +926,7 @@ Review by claude-auditor: faithful with representation choices (report `reports/
 * `System.diagonalInputs ν n m d ℱ P t`: the pairs `(Θ, μ)` with `Θ : Ω → H` strongly
   `ℱ_t`-measurable and square integrable and `μ = lawP2 P Θ`: `𝒟_t` of Definition 2.1, an element of
   `L²(Ω, ℱ_t; H)` being represented by a function in its class, which loses no class.
-
-Re-readings at the widened passages:
-
-* `diagonalInputs` (`A:def:diag`): Re-read at the passage of lines 27–84 of
-  `02-model-assumptions.tex` (formerly the environment, lines 58–67): the added lines (lines 27–56
-  and 68–84: the tuple `Θ` with values in `H`, the predictable tuple `Θ⁻` and `μ⁻` at which the jump
-  terms are evaluated, `μ`, `μ⁻` the Borel representatives of Lemma A.1, the representation property
-  (the claim `A:sec2:prp`), the convention that all hypotheses are imposed along `𝒟_t`, and the
-  difference notation for two diagonal inputs) do not change the reading: `𝒟_t` is the set of pairs
-  `(Θ, Law Θ)` with `Θ ∈ L²(Ω, ℱ_t; H)`, which the added lines use without changing it.
-
-<!-- def-review: Dissertation.WellPosedness.System.diagonalInputs 43fba323e088abc4f9c7fc5ffd25f8a4 by=claude-author source=A:def:diag@da808a0f8a8d42c5fa97ae092ee5e1b93197de0af73a487d90d7c213a0c1d01e -->
+<!-- def-review: Dissertation.WellPosedness.System.diagonalInputs 43fba323e088abc4f9c7fc5ffd25f8a4 by=claude-author source=A:def:diag@952765bd095132205c2a2ed30a292f5a88840f96e56d5a877f906f6a21524a94 -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.System.diagonalInputs--claude-reviewer--2026-10-17T15_06_18Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.diagonalInputs 43fba323e088abc4f9c7fc5ffd25f8a4 by=claude-reviewer source=A:def:diag@952765bd095132205c2a2ed30a292f5a88840f96e56d5a877f906f6a21524a94 -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.diagonalInputs--claude-auditor--2026-10-19T03_27_24Z.md`).
@@ -1057,6 +1046,112 @@ Review by claude-auditor: faithful (report `reports/Dissertation.WellPosedness.S
 <!-- def-review: Dissertation.WellPosedness.Stability.dataSize f5b22d1ca3f4de88514ab122da58813f by=claude-auditor -->
 
 Verdict: faithful with representation choices.
+
+## The notation of §2 for the unknown (`A:sec2:tuple-notation`)
+
+Manuscript (`sections/02-model-assumptions.tex` at `1f67672`, lines 27–45): "The unknown is the
+tuple `Θ = (X, Y, Z, U)`, with law `μ_t = Law(Θ_t)` and predictable counterparts `Θ⁻_t, μ⁻_t`
+introduced below; the continuous MV-FBSDEJ is the system (1.1) displayed in the introduction. The
+tuple `Θ_t = (X_t, Y_t, Z_t, U_t)` takes values in the Hilbert space `H`, componentwise
+`X_t ∈ ℝⁿ, Y_t ∈ ℝᵐ, Z_t ∈ ℝ^{m×d}, U_t ∈ L²(ν; ℝᵐ)`. The jump terms are evaluated at the
+predictable tuple `Θ⁻_t = (X_{t−}, Y_{t−}, Z_t, U_t)`, `μ⁻_t = Law(Θ⁻_t)`, in which the forward and
+backward states are replaced by their left limits while the integrands `Z_t, U_t`, already
+predictable, are left untouched. Throughout, `μ_t` and `μ⁻_t` denote the Borel representatives
+fixed in Lemma A.1, which agree with `Law(Θ_t)` and `Law(Θ⁻_t)` for a.e. `t`. Expressions such as
+`b(t, Θ_t, μ_t)` are thereby defined at every `t`, while every claim made about them is `dt`-a.e.
+or time-integrated."
+
+The objects that encode each item:
+
+* `Θ_t` with values in `H`, componentwise: `TupleH ν n m d` is `H`, with the channels
+  `EuclideanSpace ℝ (Fin n)`, `EuclideanSpace ℝ (Fin m)`, `EuclideanSpace ℝ (Fin m × Fin d)` (the
+  Frobenius norm on `ℝ^{m×d}`) and `Lp (EuclideanSpace ℝ (Fin m)) 2 ν`; `tupleAt ν X Y Z U t ω` is
+  `Θ_t(ω)`, read from the coordinate processes, its jump channel the `L²(ν)` class `uLift` of
+  `e ↦ U_t(ω, e)`. `H` carries the maximum of the channel norms rather than its Hilbert norm, the
+  choice recorded at `TupleH` (`TupleL2` and `w2H` give the Hilbert norm where a statement needs
+  it).
+* `Θ⁻_t`: `tupleAt ν (leftLimProc X) (leftLimProc Y) Z U t`, the left limits `X_{t−}, Y_{t−}` of
+  each path (`leftLimProc`) with `Z_t, U_t` unchanged, as printed.
+* `μ_t = Law(Θ_t)` and `μ⁻_t = Law(Θ⁻_t)`: `lawP2 P` of these two tuples, the law in `P₂(H)` of a
+  square-integrable tuple (the junk `δ₀` otherwise).
+* The Borel representatives of Lemma A.1: the Lean fixes as `μ` and `μ⁻` the flows
+  `t ↦ lawP2 P (tupleAt ν X Y Z U t)` and
+  `t ↦ lawP2 P (tupleAt ν (leftLimProc X) (leftLimProc Y) Z U t)`, defined at every time. For a
+  tuple under the hypotheses of Lemma A.1 (`CadlagPredTuple`), `lem_lawflow` (claim
+  `A:lem:lawflow`) proves both flows Borel into `P₂(H)` with `W₂` and equal to the image laws for
+  a.e. `t`, so they are representatives in the sense of Lemma A.1, which are unique up to null sets
+  of times; `lem_lawflow_invariant` gives the invariance of the coefficient evaluations under the
+  choice.
+* `b(t, Θ_t, μ_t)` and the other coefficient expressions, defined at every `t`: `driftProc`,
+  `diffusionProc` and `driverProc` evaluate `b`, `σ`, `f` at `(t, Θ_t(ω), μ_t)`, and `coeffJump`,
+  passed the left limits, evaluates `h` at `(t, Θ⁻_t(ω), μ⁻_t)` through a jointly measurable
+  representative in `e`; each at every `t ∈ [0, T]`, and `0` outside, where (1.1) uses no value.
+  That every claim made about them is `dt`-a.e. or time-integrated is a convention on reading the
+  claims of the paper, not an object; the propositions take these processes inside time integrals
+  (the identities of `Solution`, the right side `dataSize` of (3.1)) or for almost every `t`
+  (`eq_uniq_coeff_ae`).
+* 'The continuous MV-FBSDEJ is the system (1.1) displayed in the introduction': the definition
+  `Solution` of the claims `A:eq:mvfbsdej` and `A:intro:mvfbsdej`, read there.
+
+Verdict: faithful with representation choices (the maximum norm on `H`; the law at every time as
+the Borel representative, with the junk `δ₀` off `L²`; the cut-off to `[0, T]`).
+
+<!-- def-review: Dissertation.WellPosedness.System.TupleH fd49e3c7112f4155a292d8ceeae04f54 by=claude-author source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+<!-- def-review: Dissertation.WellPosedness.System.tupleAt 0b900ec4a75a6b31755afe5c94aee280 by=claude-author source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+<!-- def-review: Dissertation.WellPosedness.System.leftLimProc 9171262935c3b1fde4f555261cd0b9ba by=claude-author source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+<!-- def-review: Dissertation.Law.lawP2 8e02ec4a91100180227c044dc87cf8fe by=claude-author source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+<!-- def-review: Dissertation.WellPosedness.System.driftProc 12c9183ed27748868bc8011ce72cfb14 by=claude-author source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+<!-- def-review: Dissertation.WellPosedness.System.diffusionProc 38de1bfa70e0d9f65621b71beed53a93 by=claude-author source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+<!-- def-review: Dissertation.WellPosedness.System.driverProc 1491f35f9b5cef0eabae931fed61c587 by=claude-author source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+<!-- def-review: Dissertation.WellPosedness.Existence.coeffJump 90dd30b497d4dd12d6d4dda771a35c05 by=claude-author source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
+
+## The two-system notation of §3 (`A:sec3:two-system-notation`)
+
+Manuscript (`sections/03-main-results.tex` at `1f67672`, lines 39–49): "The stability and
+uniqueness theorems below rest on comparing solutions of (1.1) under two coefficient systems,
+indexed by `k = 1, 2`. We write `δ· = ·¹ − ·²`, with `μᵏ_t := Law(Θᵏ_t)`, and evaluate every
+coefficient difference along solution 2:
+`(δψ)(t) := ψ¹(t, Θ²_t, μ²_t) − ψ²(t, Θ²_t, μ²_t)`, `ψ ∈ {b, σ, f}`,
+`(δh)(t) := h¹(t, Θ^{2,−}_t, ·, μ^{2,−}_t) − h²(t, Θ^{2,−}_t, ·, μ^{2,−}_t)`,
+`δ̂g_T := g¹(X²_T, Law(X²_T)) − g²(X²_T, Law(X²_T))`."
+
+The objects that encode each item, as `thm_stab` (Theorem 3.1) takes them, with the systems
+`C₁, C₂ : Coeffs ν n m d`, the initial data `ξ₁, ξ₂` and the solutions `(Xₖ, Yₖ, Zₖ, Uₖ)`:
+
+* `δ· = ·¹ − ·²`: the propositions take the differences coordinatewise, `X₁ − X₂`, `Y₁ − Y₂`,
+  `Z₁ − Z₂`, `U₁ − U₂` (the arguments of `supSize`) and `ξ₁ − ξ₂` (of `dataSize`), written in
+  the propositions rather than through a definition.
+* `μᵏ_t := Law(Θᵏ_t)`: `lawP2 P (tupleAt ν Xₖ Yₖ Zₖ Uₖ t)`, inside the coefficient processes; the
+  passage writes the law itself, which the Lean takes at every `t`.
+* `(δψ)(t)` for `ψ ∈ {b, σ, f}`: `driftProc P T C₁ X₂ Y₂ Z₂ U₂ − driftProc P T C₂ X₂ Y₂ Z₂ U₂`, and
+  the same with `diffusionProc` and `driverProc`: both coefficient systems at `(t, Θ²_t(ω), μ²_t)`,
+  cut off to `[0, T]`.
+* `(δh)(t)`: `jumpProc T (coeffJump P T C₁ (leftLimProc X₂) (leftLimProc Y₂) Z₂ U₂)` minus the same
+  with `C₂`: jointly measurable representatives of `h¹` and `h²` at `(t, Θ^{2,−}_t, ·, μ^{2,−}_t)`,
+  the left limits of solution 2 with its own `Z₂, U₂`; their difference represents
+  `(δh)(t) ∈ L²(ν; ℝⁿ)` (`coeffJump_ae_eq`), and `dataSize` takes its `L²(ν)` norm as the sum of the
+  marked energies of the coordinates.
+* `δ̂g_T`: `terminalVal P T C₁ X₂ − terminalVal P T C₂ X₂`, `g¹` and `g²` at
+  `(X²_T, lawP2 P X²_T)`.
+* 'The stability and uniqueness theorems below rest on comparing solutions of (1.1) under two
+  coefficient systems': exposition. The statements of (3.1) use the notation: `thm_stab`,
+  `thm_stab_companion` (the roles exchanged, the differences along solution 1), `thm_stab_data`,
+  `thm_stab_minimal`, and `cor_robust_wp` and `rem_generalrank_wp` (a perturbed system against
+  system 2). Theorem 3.3 compares two solutions of one system, and its proof fixes its own
+  differences along both solutions (lines 110–117, in the claim `A:eq:uniq-coeff`).
+
+Verdict: faithful with representation choices (the cut-off to `[0, T]`; `h` through a jointly
+measurable representative).
+
+<!-- def-review: Dissertation.WellPosedness.System.driftProc 12c9183ed27748868bc8011ce72cfb14 by=claude-author source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+<!-- def-review: Dissertation.WellPosedness.System.diffusionProc 38de1bfa70e0d9f65621b71beed53a93 by=claude-author source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+<!-- def-review: Dissertation.WellPosedness.System.driverProc 1491f35f9b5cef0eabae931fed61c587 by=claude-author source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+<!-- def-review: Dissertation.WellPosedness.Existence.coeffJump 90dd30b497d4dd12d6d4dda771a35c05 by=claude-author source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+<!-- def-review: Dissertation.WellPosedness.System.jumpProc bfa4317d32adaf7b2cab0921e18838d1 by=claude-author source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+<!-- def-review: Dissertation.WellPosedness.System.terminalVal 553a1e2dd57f8bc4ed26c8f55d7a65f7 by=claude-author source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+<!-- def-review: Dissertation.WellPosedness.System.tupleAt 0b900ec4a75a6b31755afe5c94aee280 by=claude-author source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+<!-- def-review: Dissertation.WellPosedness.System.leftLimProc 9171262935c3b1fde4f555261cd0b9ba by=claude-author source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+<!-- def-review: Dissertation.Law.lawP2 8e02ec4a91100180227c044dc87cf8fe by=claude-author source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
 
 ## Assumptions 2.2–2.5 and (2.3) (`Dissertation/WellPosedness/Spec/Assumptions.lean`)
 

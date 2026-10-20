@@ -24,8 +24,8 @@
    "number": "Definition 2.1",
    "paper": "A",
    "scope": "definition",
-   "scope_note": "the region (lines 27–84) holds, besides Definition 2.1 (lines 58–67), the standing notation pinned here: the unknown tuple Θ with values in H, its law μ_t and the system (1.1) of the introduction, the predictable tuple Θ⁻ and μ⁻ at which the jump terms are evaluated, μ and μ⁻ the Borel representatives of Lemma A.1, and the reading of coefficient expressions at every t with every claim about them dt-a.e. or time-integrated (lines 27–45); the convention that all hypotheses are imposed along 𝒟_t only, θ denoting a point of H and Θ a random tuple (lines 69–71); and the difference notation δX, δψ, the induced terminal laws ρ, ρ′ and δg_T for two diagonal inputs (lines 73–84); the representation property (lines 47–56) is the claim A:sec2:prp; the standing setting (lines 2–8) is pinned in A:sec2:separable-L2nu and H, P₂(H) (01-introduction.tex lines 16–43) in A:intro:mvfbsdej and A:eq:mvfbsdej",
-   "scope_reviewed": false,
+   "scope_note": "Definition 2.1 (lines 58–67); the standing setting (lines 2–8) is pinned in A:sec2:separable-L2nu and H, P₂(H) (01-introduction.tex lines 16–43) in A:intro:mvfbsdej and A:eq:mvfbsdej; the notation for the unknown printed before the definition (lines 27–45: the tuple Θ with values in H, the predictable tuple Θ⁻, the laws μ, μ⁻ as the Borel representatives of Lemma A.1, and the reading of coefficient expressions) is pinned in A:sec2:tuple-notation; the representation property (lines 47–56) is the claim A:sec2:prp; the conventions printed after the definition (lines 69–84: all hypotheses imposed along 𝒟_t only, θ a point of H and Θ a random tuple, and the difference notation δX, δψ, ρ, ρ′, δg_T for two diagonal inputs) are pinned in A:sec2:difference-notation",
+   "scope_reviewed": true,
    "status": "definition: reviewed"
   },
   {
@@ -80,7 +80,7 @@
    "number": "Assumption 2.3",
    "paper": "A",
    "scope": "definition",
-   "scope_note": "the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:def:diag; the coefficient signatures and their determinism (02-model-assumptions.tex lines 86–100) are pinned in A:eq:hborel",
+   "scope_note": "the convention that all hypotheses are imposed along 𝒟_t only and the difference notation (02-model-assumptions.tex lines 69–84) are pinned in A:sec2:difference-notation; the coefficient signatures and their determinism (02-model-assumptions.tex lines 86–100) are pinned in A:eq:hborel",
    "scope_reviewed": true,
    "status": "definition: reviewed"
   },
@@ -138,7 +138,7 @@
    "number": "Assumption 2.5",
    "paper": "A",
    "scope": "definition",
-   "scope_note": "the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:def:diag",
+   "scope_note": "the convention that all hypotheses are imposed along 𝒟_t only and the difference notation (02-model-assumptions.tex lines 69–84) are pinned in A:sec2:difference-notation",
    "scope_reviewed": true,
    "status": "definition: reviewed"
   },
@@ -222,7 +222,7 @@
    "number": "Remark 2.6",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the proof links of the chains (2.10) and (2.11), lines 213–225 (an optimal coupling π of (μ, μ′) exists, the difference written as an integral against π, the Lipschitz bound and the Jensen step, and the image of π under (θ, θ′) ↦ (u, u′) a coupling of (μ^U, μ′^U)), are steps of the proofs of eq_lipfun and eq_margproj, which state the end bounds; 'the W₂-infimum [Villani, Definition 6.1]' cites the definition of W₂; the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:def:diag",
+   "scope_note": "the proof links of the chains (2.10) and (2.11), lines 213–225 (an optimal coupling π of (μ, μ′) exists, the difference written as an integral against π, the Lipschitz bound and the Jensen step, and the image of π under (θ, θ′) ↦ (u, u′) a coupling of (μ^U, μ′^U)), are steps of the proofs of eq_lipfun and eq_margproj, which state the end bounds; 'the W₂-infimum [Villani, Definition 6.1]' cites the definition of W₂; the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:sec2:difference-notation",
    "scope_reviewed": false,
    "status": "formal: accepted"
   },
@@ -281,7 +281,7 @@
    "number": "Remark 2.8",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "'Example 5.1(i) verifies Assumption 2.5 exactly, Example 5.4 perturbatively' (lines 251–252) is the content of A:ex:concrete (ex_concrete_i) and A:ex:fulllaw (ex_fulllaw_pert, ex_fulllaw_wp); the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:def:diag",
+   "scope_note": "'Example 5.1(i) verifies Assumption 2.5 exactly, Example 5.4 perturbatively' (lines 251–252) is the content of A:ex:concrete (ex_concrete_i) and A:ex:fulllaw (ex_fulllaw_pert, ex_fulllaw_wp); the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:sec2:difference-notation",
    "scope_reviewed": false,
    "status": "formal: accepted"
   },
@@ -449,7 +449,7 @@
    "number": "Remark 2.10",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the last sentence, on domination-monotonicity results for Lévy-driven systems without mean-field dependence, is a statement about cited work; the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:def:diag",
+   "scope_note": "the last sentence, on domination-monotonicity results for Lévy-driven systems without mean-field dependence, is a statement about cited work; the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:sec2:difference-notation",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -533,7 +533,7 @@
    "number": "Remark 2.11",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the definitions (2.12) (lines 289–297) and the unweighted form (2.13) (lines 306–316) are the definition claims A:eq:monomargin and A:eq:monomarginu; the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:def:diag",
+   "scope_note": "the definitions (2.12) (lines 289–297) and the unweighted form (2.13) (lines 306–316) are the definition claims A:eq:monomargin and A:eq:monomarginu; the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:sec2:difference-notation",
    "scope_reviewed": false,
    "status": "formal: accepted"
   },
@@ -563,8 +563,8 @@
    "number": "Theorem 3.1",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the region (lines 39–71) holds, before the theorem, the notation it uses (lines 39–49: the comparison of two coefficient systems k = 1, 2, δ· = ·¹ − ·², μᵏ_t := Law(Θᵏ_t), the coefficient differences along solution 2 with δh at (Θ²⁻_t, μ²⁻_t), and δ̂g_T), pinned here and used also by A:thm3.1:companion and A:thm:cwp; the solution spaces and the norm of ℍ (03-main-results.tex lines 5–28) are pinned in A:sec3:HH-banach; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion",
-   "scope_reviewed": false,
+   "scope_note": "the two-system notation printed before the theorem (lines 39–49: two coefficient systems k = 1, 2, δ· = ·¹ − ·², μᵏ_t := Law(Θᵏ_t), the coefficient differences along solution 2 with δh at (Θ²⁻_t, μ²⁻_t), and δ̂g_T) is pinned in A:sec3:two-system-notation; the solution spaces and the norm of ℍ (03-main-results.tex lines 5–28) are pinned in A:sec3:HH-banach; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion",
+   "scope_reviewed": true,
    "status": "formal: accepted"
   },
   {
@@ -845,7 +845,7 @@
    "number": "Theorem 3.5",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the standing setting of §2 (02-model-assumptions.tex lines 2–8) is pinned in A:sec2:separable-L2nu; the coefficient signatures and their determinism (02-model-assumptions.tex lines 86–100) are pinned in A:eq:hborel; the solution spaces and the norm of ℍ (03-main-results.tex lines 5–28) are pinned in A:sec3:HH-banach; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; 'depending continuously … in the sense of the estimate (3.1)' uses the notation of 03-main-results.tex lines 39–49, pinned in A:thm:stab",
+   "scope_note": "the standing setting of §2 (02-model-assumptions.tex lines 2–8) is pinned in A:sec2:separable-L2nu; the coefficient signatures and their determinism (02-model-assumptions.tex lines 86–100) are pinned in A:eq:hborel; the solution spaces and the norm of ℍ (03-main-results.tex lines 5–28) are pinned in A:sec3:HH-banach; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; 'depending continuously … in the sense of the estimate (3.1)' uses the notation of 03-main-results.tex lines 39–49, pinned in A:sec3:two-system-notation",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -911,7 +911,7 @@
    "number": "Corollary 3.6",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:def:diag; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set",
+   "scope_note": "the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:sec2:difference-notation; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; (3.1) for the perturbed system (cor_robust_wp) uses the two-system notation of Theorem 3.1 (03-main-results.tex lines 39–49), pinned in A:sec3:two-system-notation",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -959,7 +959,7 @@
    "number": "Remark 3.7",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "(3.1) for the perturbed system (rem_generalrank_wp) uses the two-system notation of Theorem 3.1 (03-main-results.tex lines 39–49), pinned in A:sec3:two-system-notation",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -989,7 +989,7 @@
    "number": "Proposition 3.8",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:def:diag",
+   "scope_note": "the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:sec2:difference-notation",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -2541,6 +2541,50 @@
   {
    "clauses": [
     {
+     "accept": null,
+     "author_reviewed": [
+      "Dissertation.Law.lawP2",
+      "Dissertation.WellPosedness.Existence.coeffJump",
+      "Dissertation.WellPosedness.System.TupleH",
+      "Dissertation.WellPosedness.System.diffusionProc",
+      "Dissertation.WellPosedness.System.driftProc",
+      "Dissertation.WellPosedness.System.driverProc",
+      "Dissertation.WellPosedness.System.leftLimProc",
+      "Dissertation.WellPosedness.System.tupleAt"
+     ],
+     "corrects": null,
+     "defs": [
+      "Dissertation.WellPosedness.System.TupleH",
+      "Dissertation.WellPosedness.System.tupleAt",
+      "Dissertation.WellPosedness.System.leftLimProc",
+      "Dissertation.Law.lawP2",
+      "Dissertation.WellPosedness.System.driftProc",
+      "Dissertation.WellPosedness.System.diffusionProc",
+      "Dissertation.WellPosedness.System.driverProc",
+      "Dissertation.WellPosedness.Existence.coeffJump"
+     ],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "definition",
+     "passage_changed": {},
+     "refute": null,
+     "spec": null,
+     "spec_review": "n/a",
+     "witness": null
+    }
+   ],
+   "id": "A:sec2:tuple-notation",
+   "kind": "definition",
+   "number": "§2 ¶ before Definition 2.1",
+   "paper": "A",
+   "scope": "definition",
+   "scope_note": "the notation of §2 for the unknown: the tuple Θ = (X, Y, Z, U) with values in H, componentwise (TupleH, tupleAt), the predictable tuple Θ⁻ = (X₋, Y₋, Z, U) (tupleAt of leftLimProc X, leftLimProc Y, Z, U), the laws μ_t = Law(Θ_t) and μ⁻_t = Law(Θ⁻_t) (lawP2), and the coefficient expressions b, σ, f at (t, Θ_t, μ_t) and h at (t, Θ⁻_t, μ⁻_t), defined at every t (driftProc, diffusionProc, driverProc, coeffJump); as the Borel representatives of Lemma A.1 the Lean takes lawP2 of the tuple at every time, a Borel flow equal to the law for a.e. t by lem_lawflow (A:lem:lawflow); 'the continuous MV-FBSDEJ is the system (1.1) displayed in the introduction' (lines 28–29) refers to A:eq:mvfbsdej, and the same notation in the introduction (01-introduction.tex lines 34–43) is pinned in A:intro:mvfbsdej and A:eq:mvfbsdej; that every claim made about the coefficient expressions is dt-a.e. or time-integrated (lines 44–45) is a convention on how the claims of the paper are read, not an object",
+   "scope_reviewed": false,
+   "status": "definition: author-reviewed"
+  },
+  {
+   "clauses": [
+    {
      "accept": "Dissertation.Acceptance.A.sec2_prp",
      "accept_ok": true,
      "author_reviewed": [],
@@ -2567,6 +2611,17 @@
    "scope_note": "the representation property of the filtration of W and N alone (lines 47–48) is the instance of the clause with a trivial ℱ₀, and the citations (Applebaum §5.3, He, Wang and Yan Theorem 13.49) name its source; the clause is proved, the passage to the initial enlargement included",
    "scope_reviewed": false,
    "status": "formal: accepted"
+  },
+  {
+   "clauses": [],
+   "id": "A:sec2:difference-notation",
+   "kind": "definition",
+   "number": "§2 ¶ after Definition 2.1",
+   "paper": "A",
+   "scope": "expository",
+   "scope_note": "conventions, not objects. 'All hypotheses below are imposed along 𝒟_t only: the measure argument is never varied independently of the tuple' (lines 69–70) is how Assumptions 2.3 and 2.5 are stated: their interior conditions LipInteriorAt and Mono27At quantify over pairs of diagonalInputs (A:def:diag) and their terminal conditions (LipTerminal, Assumption25.terminal) over X_T, X′_T ∈ L²(Ω, ℱ_T; ℝⁿ) with their own laws, in the definitions Assumption23 and Assumption25 of A:ass:lip and A:ass:mono. 'A lower-case θ denotes a point of H and an upper-case Θ a random H-valued tuple' (lines 70–71) is typography, which the Lean follows: the coefficients (Coeffs) are evaluated at points θ of TupleH, the inputs of diagonalInputs are maps Θ : Ω → TupleH, and rem_diag_mono and prop_strict state a pointwise condition at points θ, θ′ beside an expected one at random Θ, Θ′. The difference notation for two diagonal inputs at the same time on the same space (lines 73–84: δX := X − X′, δψ := ψ(t, Θ, μ) − ψ(t, Θ′, μ′) for ψ ∈ {b, σ, h, f}, the induced terminal laws ρ := Law(X_T), ρ′ := Law(X′_T) and δg_T := g(X_T, ρ) − g(X′_T, ρ′)) is written out as differences of the coefficients at the two inputs in the definitions LipInteriorAt and LipTerminal (Assumption 2.3 with (2.6)), pairing27, Mono27At and Assumption25 (Assumption 2.5 with (2.7)), and in the propositions of A:rem:wasserstein-bounds (eq_coupling, eq_couplingT), A:rem:diag-mono (rem_diag_mono, rem_diag_mono_converse), A:rem:beta1-dich (rem_beta1_dich), A:rem:margin (through Mono27At), A:cor:robust (through Assumptions 2.3 and 2.5) and A:prop:strict (prop_strict)",
+   "scope_reviewed": false,
+   "status": "out of scope: expository"
   },
   {
    "clauses": [
@@ -2766,6 +2821,52 @@
   {
    "clauses": [
     {
+     "accept": null,
+     "author_reviewed": [
+      "Dissertation.Law.lawP2",
+      "Dissertation.WellPosedness.Existence.coeffJump",
+      "Dissertation.WellPosedness.System.diffusionProc",
+      "Dissertation.WellPosedness.System.driftProc",
+      "Dissertation.WellPosedness.System.driverProc",
+      "Dissertation.WellPosedness.System.jumpProc",
+      "Dissertation.WellPosedness.System.leftLimProc",
+      "Dissertation.WellPosedness.System.terminalVal",
+      "Dissertation.WellPosedness.System.tupleAt"
+     ],
+     "corrects": null,
+     "defs": [
+      "Dissertation.WellPosedness.System.driftProc",
+      "Dissertation.WellPosedness.System.diffusionProc",
+      "Dissertation.WellPosedness.System.driverProc",
+      "Dissertation.WellPosedness.Existence.coeffJump",
+      "Dissertation.WellPosedness.System.jumpProc",
+      "Dissertation.WellPosedness.System.terminalVal",
+      "Dissertation.WellPosedness.System.tupleAt",
+      "Dissertation.WellPosedness.System.leftLimProc",
+      "Dissertation.Law.lawP2"
+     ],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "definition",
+     "passage_changed": {},
+     "refute": null,
+     "spec": null,
+     "spec_review": "n/a",
+     "witness": null
+    }
+   ],
+   "id": "A:sec3:two-system-notation",
+   "kind": "definition",
+   "number": "§3 ¶ before Theorem 3.1",
+   "paper": "A",
+   "scope": "definition",
+   "scope_note": "the notation of the comparison of two coefficient systems k = 1, 2 in (3.1): δ· = ·¹ − ·², the coordinatewise differences the propositions take; μᵏ_t := Law(Θᵏ_t) (lawP2 of tupleAt); (δψ)(t) for ψ ∈ {b, σ, f} along solution 2 (driftProc, diffusionProc, driverProc of systems 1 and 2 at Θ²); (δh)(t) at (Θ²⁻_t, μ²⁻_t) (jumpProc of coeffJump at leftLimProc X², leftLimProc Y², Z², U²); δ̂g_T (terminalVal of systems 1 and 2 at X²); the propositions that use it are thm_stab (A:thm:stab, A:thm:cwp), thm_stab_companion with the roles exchanged, thm_stab_data and thm_stab_minimal (A:thm3.1:companion), cor_robust_wp (A:cor:robust) and rem_generalrank_wp (A:rem:generalrank); 'The stability and uniqueness theorems below rest on comparing solutions of (1.1) under two coefficient systems' (lines 39–40) is exposition: the uniqueness theorem compares two solutions of one system, and its proof fixes its own differences along both solutions (lines 110–117, in A:eq:uniq-coeff)",
+   "scope_reviewed": false,
+   "status": "definition: author-reviewed"
+  },
+  {
+   "clauses": [
+    {
      "accept": "Dissertation.Acceptance.A.thm_stab_companion",
      "accept_ok": true,
      "author_reviewed": [],
@@ -2825,7 +2926,7 @@
    "number": "¶ after Thm 3.1",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the two-system notation of Theorem 3.1 (03-main-results.tex lines 39–49) is pinned in A:thm:stab",
+   "scope_note": "the two-system notation of Theorem 3.1 (03-main-results.tex lines 39–49) is pinned in A:sec3:two-system-notation",
    "scope_reviewed": false,
    "status": "formal: accepted"
   },
@@ -3217,9 +3318,7 @@
     {
      "accept": "Dissertation.Acceptance.A.lem41_M1_bdg",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.lem41_M1_bdg"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3230,7 +3329,7 @@
      "spec": "Dissertation.PaperSpec.A.lem41_M1_bdg",
      "spec_hash": "ed839d34f480cba1732a2bccd942e938",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.lem_bpbsde_nonzero_hypotheses",
      "witness_ok": true
     },
@@ -3260,7 +3359,7 @@
    "scope": "formal",
    "scope_note": "the clauses read lines 139–187 of the proof, the paragraph on the zero-mean terms: the sentence of line 151, where the claim is anchored (lines 148–152), the local martingales M^W and M¹ (lines 139–148 and 153–172) and the paragraph on M² (lines 173–187); the first clause reads the sentence's first assertion, that membership in H²_N does not give the quadratic integrand of M² square moments, for ν ≠ 0, the degenerate case ν = 0, in which every marked integrand vanishes, being the one Remark 2.10 sets aside; M^W and M¹ are read as local stochastic integrals (IsLocalBrownianIntegral, IsLocalCompensatedIntegral) for the filtration of the setting, which carries their local-martingale property, not stated separately; that M² is a local martingale (lines 139–141) is the clause on M² read pathwise, stated as a martingale on [0, T] (stronger), adapted up to a null set; that the stochastic-integral terms of (4.5) are M^W, M¹ and M² belongs to (4.5) (A:eq:itoY2); the first link of the chain for M¹ (line 162), the Burkholder–Davis–Gundy inequality at p = 1 in quadratic-variation form for M¹ with the Cauchy–Schwarz inequality in ℝᵐ, is the eighth clause, the links after it the ninth, and the composite bound the seventh; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion",
    "scope_reviewed": false,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -5448,9 +5547,7 @@
     {
      "accept": "Dissertation.Acceptance.A.eq_wgt_terminal",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.eq_wgt_terminal"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -5461,7 +5558,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_wgt_terminal",
      "spec_hash": "ed839d34f480cba1e4db1f2acd4bcb96",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
      "witness_ok": true
     }
@@ -5473,7 +5570,7 @@
    "scope": "formal",
    "scope_note": "the pinned region is lines 735–760; the second clause reads lines 735–752: the display inserting (4.25) in (4.24) (lines 735–744) and the bound at every t for ε < 1 and κ > C/ε (lines 745–752); the third clause reads the terminal bound 𝔼|δg_T|² ≤ C 𝔼|δX_T|² of line 753; the first clause reads (4.26) with the sentence before it (lines 753–755), whose 'the forcings in P' and '∫_t^T ≤ ∫_0^T' are steps of its proof; the set-up of the proof of Lemma 4.3 (04-proof-wellposedness.tex lines 511–526: q := δq, P, δψ_t, δg_T, δh at the predictable tuples) is pinned in A:eq:dX and A:eq:dY; every unnamed C follows the convention on constants of §4 (04-proof-wellposedness.tex lines 22–25), pinned in A:sec4:supremum-criterion",
    "scope_reviewed": false,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -5537,10 +5634,11 @@
  ],
  "summary": {
   "A": {
+   "definition: author-reviewed": 2,
    "definition: reviewed": 11,
-   "formal: accepted": 73,
-   "formal: proved, author-reviewed": 2,
+   "formal: accepted": 75,
    "out of scope: duplicate": 4,
+   "out of scope: expository": 1,
    "out of scope: part-of": 17,
    "out of scope: proof-step": 2
   }

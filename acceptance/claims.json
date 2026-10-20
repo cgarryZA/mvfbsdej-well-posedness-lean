@@ -17,11 +17,11 @@
    "kind": "definition",
    "number": "Definition 2.1",
    "title": "Diagonal input",
-   "location": "paper/sections/02-model-assumptions.tex:27",
-   "source_sha256": "da808a0f8a8d42c5fa97ae092ee5e1b93197de0af73a487d90d7c213a0c1d01e",
+   "location": "paper/sections/02-model-assumptions.tex",
+   "source_sha256": "952765bd095132205c2a2ed30a292f5a88840f96e56d5a877f906f6a21524a94",
    "scope": "definition",
-   "scope_note": "the region (lines 27–84) holds, besides Definition 2.1 (lines 58–67), the standing notation pinned here: the unknown tuple Θ with values in H, its law μ_t and the system (1.1) of the introduction, the predictable tuple Θ⁻ and μ⁻ at which the jump terms are evaluated, μ and μ⁻ the Borel representatives of Lemma A.1, and the reading of coefficient expressions at every t with every claim about them dt-a.e. or time-integrated (lines 27–45); the convention that all hypotheses are imposed along 𝒟_t only, θ denoting a point of H and Θ a random tuple (lines 69–71); and the difference notation δX, δψ, the induced terminal laws ρ, ρ′ and δg_T for two diagonal inputs (lines 73–84); the representation property (lines 47–56) is the claim A:sec2:prp; the standing setting (lines 2–8) is pinned in A:sec2:separable-L2nu and H, P₂(H) (01-introduction.tex lines 16–43) in A:intro:mvfbsdej and A:eq:mvfbsdej",
-   "scope_reviewed": false,
+   "scope_note": "Definition 2.1 (lines 58–67); the standing setting (lines 2–8) is pinned in A:sec2:separable-L2nu and H, P₂(H) (01-introduction.tex lines 16–43) in A:intro:mvfbsdej and A:eq:mvfbsdej; the notation for the unknown printed before the definition (lines 27–45: the tuple Θ with values in H, the predictable tuple Θ⁻, the laws μ, μ⁻ as the Borel representatives of Lemma A.1, and the reading of coefficient expressions) is pinned in A:sec2:tuple-notation; the representation property (lines 47–56) is the claim A:sec2:prp; the conventions printed after the definition (lines 69–84: all hypotheses imposed along 𝒟_t only, θ a point of H and Θ a random tuple, and the difference notation δX, δψ, ρ, ρ′, δg_T for two diagonal inputs) are pinned in A:sec2:difference-notation",
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "definition",
@@ -30,70 +30,6 @@
       "Dissertation.WellPosedness.System.diagonalInputs"
      ]
     }
-   ],
-   "source_region": {
-    "end_line": 84
-   },
-   "source_hash_scheme": "tex-region-v1",
-   "source_line_sha256": [
-    "531954d695a721e91c54f8ed73f86f5355227921b5293135be8f1c11feb2ed24",
-    "505c453439a05b3b1fb5c5cd4e8907896cf970c01d18d9db1b5ac87ae05c7d4c",
-    "8b90894915f61fd30d1fcd8b18a15281a6c31193627fed4ef1e00c38b97d8e97",
-    "2bebaba3e1c4fe2af4312816c1b451bb80e825e4955f88f47a907b28dd284435",
-    "dd5d4c08360a40838f1b567061618cf61c44f3e053af68292528c4f71be1ab0b",
-    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
-    "ec449dfe56aa80c18e93b1058f7b746049f0b1886e7ae223cc53ccb334edef2c",
-    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
-    "61fe2ed4258cdedeb7cab4462bd24cc937fbaf53c95bc4d2d5463ee2b892deec",
-    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
-    "de38726292924eca0ce676fd7d1fad2d7f60254e26464dba4dc9d23816082dfc",
-    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
-    "25bfb90028fae1423d354b0378d9bea23b35c2e71bc8d88a9f83c9b3ec92847a",
-    "d2a6ce806c5c2a89b893815ca764792b806ed426b467b88dac7a646bac6ef673",
-    "b0d6ae2ea4337b0c3eb7626bd10687126082a9a101e5475d1cef7de5a5f0e1d6",
-    "1747cc153d48f747a013e7998e8069a99a6321b21a857403811104e3057fb4f7",
-    "f4d91dbf55f0765a93b5430c2588408f738be0faea8d1e93e260bfaa02b763ac",
-    "800dcfecef81dbda2fa9ae751892666b752dc5541508f5f7e3a92eac25cbc789",
-    "62d31776ae75e50098170fd09321b09920c250fc4bd8c73e177aa1edbb1d119b",
-    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "4abed1a193ffeafc8c98d073e7c33bcde2f293ba9bb58b16d1a0464060b8dcea",
-    "8029a50630e8030b66789d8297b59ce7b911b9d7c9f5867f0663f15de18bbb5a",
-    "2931fb23b71c380555e8d1a916c3279814e17ec54e628a62d9588b5fdbe619ec",
-    "f3469c96570b70007bbec6eb7e9d85afe99e17a13e2ed19ed46bf69048a34274",
-    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
-    "2890772d04f7cac5791c588922c70028e238107a57f5f2a1b307bbef90586a2a",
-    "8ca5bd8cdc4fb358645270536b0233373297d9f2b735ec94aae2a34040288dfc",
-    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
-    "3d118f4d12bc96eb9258a76d7e9183b9dc039a1ea7993f9fbc4eb3d8a864af32",
-    "54b6f2e363eefdc41c247c65d0e2f39c77ec0dae84ea3c7eadc8a201b1723057",
-    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "a5ddd55760ac6592e00a18dba4cfe3dc5bd776dd6a0a411f72ab8c760d56ce67",
-    "f8921191ee2b358454078d271215a858119524d130ec9c3cba60b514e7ed1e8a",
-    "ef20bd055f1e206a827319a0ff6d6610620818b9ce2aeafc06cb7f1ee1bc01a2",
-    "515826edf7e3a31de89fab265239e3c50e171e77ee8a3c71255561fabc64f4c2",
-    "7273271993e97264e6af8e187d758928dd9ae5fbecb97fca12aadecf61531e56",
-    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
-    "6b4fb05e90718904c992ecc8f73f184c0d3168af140db3de058f8792decb14e8",
-    "afb13c56df8f937fe8122cf94448abc6d458fe5857216d1eff78ba48a177f076",
-    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
-    "4152b050abdaa89a9c6e4cb4bab78216b6709c32cea635f2f4ecaece967efb34",
-    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "867575ba85ed71359dce76197c7fe8b02c4a20a445a51a6cdb84b73ba8987191",
-    "b18501bd156980a2fab5495c17e52b9a02d995e9a0756097fc14708403b187d5",
-    "24487519dd70548398c8c2c2ba89a1853b39905f726bb9d4e349cc31ca537ce7",
-    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "c7e6e86e40a76c49aaaf7860b1822b4d0a7c50c1e749d214e910cbe83c2367d0",
-    "9e1b0f3a0d33ace23c4082637643155ac7e4fab13be34137cd193a888d836ca9",
-    "321a777fd5aabfdbf41a428755ef7cb7a0ae2005e0e655263e0357750614383e",
-    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
-    "9017d658e927e1eb4eeffc472ddf5a610d386e18d18acc2d8057d71aea8adb65",
-    "e688366fc0d6ebfc0ba4711ae0b81c62b68bc2f6a4981ff7c3ddb952cf29ee99",
-    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
-    "d9ec255575cb3650980766f1b355444adcef0081c26dae4d33b8ffaf3e12c3c4",
-    "64dc4cc1a5cd31779f5c4a2307b09074a736dc74fde3346516c182c658d3fee2",
-    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
-    "da8cf5c2ccaa3fe457b67890c322a5b5370ec4453310f382d6ab9ed156d9980e",
-    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6"
    ]
   },
   {
@@ -128,7 +64,7 @@
    "location": "paper/sections/02-model-assumptions.tex",
    "source_sha256": "9c7bbbc5ca7a20286ef27d4eb7edb07d33d9787563041cadef820d833345f085",
    "scope": "definition",
-   "scope_note": "the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:def:diag; the coefficient signatures and their determinism (02-model-assumptions.tex lines 86–100) are pinned in A:eq:hborel",
+   "scope_note": "the convention that all hypotheses are imposed along 𝒟_t only and the difference notation (02-model-assumptions.tex lines 69–84) are pinned in A:sec2:difference-notation; the coefficient signatures and their determinism (02-model-assumptions.tex lines 86–100) are pinned in A:eq:hborel",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -171,7 +107,7 @@
    "location": "paper/sections/02-model-assumptions.tex",
    "source_sha256": "a60a526e8cdd9d0ae4441e25895e5af1cc39a45df41a9028fe0f60371ce998ff",
    "scope": "definition",
-   "scope_note": "the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:def:diag",
+   "scope_note": "the convention that all hypotheses are imposed along 𝒟_t only and the difference notation (02-model-assumptions.tex lines 69–84) are pinned in A:sec2:difference-notation",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -193,7 +129,7 @@
    "location": "paper/sections/02-model-assumptions.tex",
    "source_sha256": "c04119bf34c0cb8093c0843e1c7b01bf93697e1e04d779493a112bce12987835",
    "scope": "formal",
-   "scope_note": "the proof links of the chains (2.10) and (2.11), lines 213–225 (an optimal coupling π of (μ, μ′) exists, the difference written as an integral against π, the Lipschitz bound and the Jensen step, and the image of π under (θ, θ′) ↦ (u, u′) a coupling of (μ^U, μ′^U)), are steps of the proofs of eq_lipfun and eq_margproj, which state the end bounds; 'the W₂-infimum [Villani, Definition 6.1]' cites the definition of W₂; the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:def:diag",
+   "scope_note": "the proof links of the chains (2.10) and (2.11), lines 213–225 (an optimal coupling π of (μ, μ′) exists, the difference written as an integral against π, the Lipschitz bound and the Jensen step, and the image of π under (θ, θ′) ↦ (u, u′) a coupling of (μ^U, μ′^U)), are steps of the proofs of eq_lipfun and eq_margproj, which state the end bounds; 'the W₂-infimum [Villani, Definition 6.1]' cites the definition of W₂; the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:sec2:difference-notation",
    "scope_reviewed": false,
    "clauses": [
     {
@@ -246,7 +182,7 @@
    "location": "paper/sections/02-model-assumptions.tex",
    "source_sha256": "7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a",
    "scope": "formal",
-   "scope_note": "'Example 5.1(i) verifies Assumption 2.5 exactly, Example 5.4 perturbatively' (lines 251–252) is the content of A:ex:concrete (ex_concrete_i) and A:ex:fulllaw (ex_fulllaw_pert, ex_fulllaw_wp); the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:def:diag",
+   "scope_note": "'Example 5.1(i) verifies Assumption 2.5 exactly, Example 5.4 perturbatively' (lines 251–252) is the content of A:ex:concrete (ex_concrete_i) and A:ex:fulllaw (ex_fulllaw_pert, ex_fulllaw_wp); the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:sec2:difference-notation",
    "scope_reviewed": false,
    "clauses": [
     {
@@ -306,7 +242,7 @@
    "location": "paper/sections/02-model-assumptions.tex",
    "source_sha256": "20e41bdfd1e0996ebf1050ab15273a783631b8c503a6635284298cc387eea4f4",
    "scope": "formal",
-   "scope_note": "the last sentence, on domination-monotonicity results for Lévy-driven systems without mean-field dependence, is a statement about cited work; the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:def:diag",
+   "scope_note": "the last sentence, on domination-monotonicity results for Lévy-driven systems without mean-field dependence, is a statement about cited work; the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:sec2:difference-notation",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -351,7 +287,7 @@
    "location": "paper/sections/02-model-assumptions.tex",
    "source_sha256": "288d762606cfb331dfd032a5690173faa203ebddb7048d1201cb0e0fe1a25485",
    "scope": "formal",
-   "scope_note": "the definitions (2.12) (lines 289–297) and the unweighted form (2.13) (lines 306–316) are the definition claims A:eq:monomargin and A:eq:monomarginu; the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:def:diag",
+   "scope_note": "the definitions (2.12) (lines 289–297) and the unweighted form (2.13) (lines 306–316) are the definition claims A:eq:monomargin and A:eq:monomarginu; the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:sec2:difference-notation",
    "scope_reviewed": false,
    "clauses": [
     {
@@ -387,11 +323,11 @@
    "kind": "theorem",
    "number": "Theorem 3.1",
    "title": "Stability under coefficient and data perturbation",
-   "location": "paper/sections/03-main-results.tex:39",
-   "source_sha256": "d9d869ac83496378709c20aa4b063f56ffd879a48b96ade6aea54acbfe427463",
+   "location": "paper/sections/03-main-results.tex",
+   "source_sha256": "381ba74c22961e597927279a40c3d1204009169a635d33ce49e1a5962c04d6b8",
    "scope": "formal",
-   "scope_note": "the region (lines 39–71) holds, before the theorem, the notation it uses (lines 39–49: the comparison of two coefficient systems k = 1, 2, δ· = ·¹ − ·², μᵏ_t := Law(Θᵏ_t), the coefficient differences along solution 2 with δh at (Θ²⁻_t, μ²⁻_t), and δ̂g_T), pinned here and used also by A:thm3.1:companion and A:thm:cwp; the solution spaces and the norm of ℍ (03-main-results.tex lines 5–28) are pinned in A:sec3:HH-banach; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion",
-   "scope_reviewed": false,
+   "scope_note": "the two-system notation printed before the theorem (lines 39–49: two coefficient systems k = 1, 2, δ· = ·¹ − ·², μᵏ_t := Law(Θᵏ_t), the coefficient differences along solution 2 with δh at (Θ²⁻_t, μ²⁻_t), and δ̂g_T) is pinned in A:sec3:two-system-notation; the solution spaces and the norm of ℍ (03-main-results.tex lines 5–28) are pinned in A:sec3:HH-banach; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion",
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "main",
@@ -399,45 +335,6 @@
      "accept": "Dissertation.Acceptance.A.thm_stab",
      "witness": "Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses"
     }
-   ],
-   "source_region": {
-    "end_line": 71
-   },
-   "source_hash_scheme": "tex-region-v1",
-   "source_line_sha256": [
-    "eaaeb0a44c21d0ff666824871ce3e3aaf95513b1f6feae50ee200399e1f78810",
-    "f1adbc2f005c31e22792985f728963d8f60ab0b6ec3f5ad43e77509b7f59bc55",
-    "476d1d4e79446864093ba3bc27abd2494c1a1d7d5e3adb7e9874649c4ecb1341",
-    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
-    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
-    "1d83c1bc2aa182d7295f4c2ba88be2adf45096369c77a3f075082829a6b4a13c",
-    "3c5ed76d78daf509fdf0bf1bfd707f61664fd4a784627bec9be73ddc40468940",
-    "7e443ef64d6ff0da5d102f0e74616accaaf45c031054df2226dd1043406fd181",
-    "9e22f0c368967d588dbf7cdf9d091eb3d5892156262045bb7ede3495a3bf9bea",
-    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
-    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
-    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "e0ceea9515903d4e65ef479c773af6f8a0f9bdabf96a3c1b518e66c6a1d72e27",
-    "e0c36f2db07dc2389bde5f848139d8476529198968b1c1ab44069cbecba3c0ed",
-    "367e43e85d95e69207c72b5bb8aa45c03a4b1d7654b11134148a40993cd7d299",
-    "f81edd4e5b9f22fa40575e696f2b8b9de179eb7e36995e7130c70d95d1ab4c49",
-    "2a9619efa2812caff66b739a99df7b2265aff0f6ebff466d95f61d0784aa9f87",
-    "a7120abafecac486179f301a9e137931176ccf2a95697ce7072c4add9d245d03",
-    "c4dddf739159e4e400a4c5e45ce3dbae16243514e4a494320285d30867760b23",
-    "7808d02fddb3fca8f689a6bcb4bd538d058577685459526d4536ab435767686f",
-    "2a15a967f667284c29be0c26c94256e4242e00f4c925e1cdf4a2d0ff034a3791",
-    "487114b29e72e1d65eb01764edb138e9c47c85d84fab7875bce3871699fa5327",
-    "e3eb1a896c9574aae34bd3f1e6c26222c3de6bde2b075bd12cc48a84d40110ab",
-    "29c565ae34965de589dc25aae71c8a076d15872305587b981dce2353e39d3b46",
-    "e4f8ef416e2961c48d99ab160ca8133078767440bfede55c0e95fca04961354b",
-    "fabdc64bcf6c8dc0f1017a8114de4f68d0f1f5d2b5b798ead37fdb9e58b72690",
-    "6cee40f3ff5bb96ad2230717ad60ec600c5ad7f6d86ea8c45156d4853dd9fb60",
-    "21f4e9733a9c25c47447ae9ecf26d778a45767f28c91c9d240e6f078748324e5",
-    "bd95ccc16fafc3fe7940ddd38aeb62b5bdd81a16929655207058632ce1fb63c0",
-    "1fdef058691c5592d1e86f66cafbe17430f7ac224b1685a2b229d75c633f4549",
-    "ec2a525ba8fc0c24557b2069cb58ae13a5e1f2a6062974846d309786679823c0",
-    "9458721508d8bfd9e9f24cd84fc1d8b0b931ed27b968dafb73898396b3a0c3ed",
-    "3fbabb27d796b2f0c449961b3747df7ad1413bfc4efa621da57cc9ca76f95d84"
    ]
   },
   {
@@ -561,7 +458,7 @@
    "location": "paper/sections/03-main-results.tex",
    "source_sha256": "0dd6b95ee4474a8c7091ae6a816a6a0de0ea67b50d49a5c437094a757adcf5f3",
    "scope": "formal",
-   "scope_note": "the standing setting of §2 (02-model-assumptions.tex lines 2–8) is pinned in A:sec2:separable-L2nu; the coefficient signatures and their determinism (02-model-assumptions.tex lines 86–100) are pinned in A:eq:hborel; the solution spaces and the norm of ℍ (03-main-results.tex lines 5–28) are pinned in A:sec3:HH-banach; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; 'depending continuously … in the sense of the estimate (3.1)' uses the notation of 03-main-results.tex lines 39–49, pinned in A:thm:stab",
+   "scope_note": "the standing setting of §2 (02-model-assumptions.tex lines 2–8) is pinned in A:sec2:separable-L2nu; the coefficient signatures and their determinism (02-model-assumptions.tex lines 86–100) are pinned in A:eq:hborel; the solution spaces and the norm of ℍ (03-main-results.tex lines 5–28) are pinned in A:sec3:HH-banach; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; 'depending continuously … in the sense of the estimate (3.1)' uses the notation of 03-main-results.tex lines 39–49, pinned in A:sec3:two-system-notation",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -588,7 +485,7 @@
    "location": "paper/sections/03-main-results.tex",
    "source_sha256": "3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757",
    "scope": "formal",
-   "scope_note": "the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:def:diag; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set",
+   "scope_note": "the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:sec2:difference-notation; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; (3.1) for the perturbed system (cor_robust_wp) uses the two-system notation of Theorem 3.1 (03-main-results.tex lines 39–49), pinned in A:sec3:two-system-notation",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -621,7 +518,7 @@
    "location": "paper/sections/03-main-results.tex",
    "source_sha256": "d7d2976d856eb17cca4f2ce81183317ed11c078bb8c7bf4a7d4da20f32b3da6d",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "(3.1) for the perturbed system (rem_generalrank_wp) uses the two-system notation of Theorem 3.1 (03-main-results.tex lines 39–49), pinned in A:sec3:two-system-notation",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -648,7 +545,7 @@
    "location": "paper/sections/03-main-results.tex",
    "source_sha256": "b18b8a1407fec705caed58f7f0bb7604c994a084d50703fdd8cc68b071003604",
    "scope": "formal",
-   "scope_note": "the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:def:diag",
+   "scope_note": "the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:sec2:difference-notation",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -1492,6 +1389,60 @@
    ]
   },
   {
+   "id": "A:sec2:tuple-notation",
+   "paper": "A",
+   "commit": "1f67672",
+   "kind": "definition",
+   "number": "§2 ¶ before Definition 2.1",
+   "title": "The unknown Theta=(X,Y,Z,U) with values in H; the predictable tuple Theta^- and the laws mu_t, mu_t^- as the Borel representatives of Lemma A.1; coefficient expressions defined at every t, every claim about them dt-a.e. or time-integrated",
+   "location": "paper/sections/02-model-assumptions.tex:27",
+   "source_sha256": "ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256",
+   "scope": "definition",
+   "scope_note": "the notation of §2 for the unknown: the tuple Θ = (X, Y, Z, U) with values in H, componentwise (TupleH, tupleAt), the predictable tuple Θ⁻ = (X₋, Y₋, Z, U) (tupleAt of leftLimProc X, leftLimProc Y, Z, U), the laws μ_t = Law(Θ_t) and μ⁻_t = Law(Θ⁻_t) (lawP2), and the coefficient expressions b, σ, f at (t, Θ_t, μ_t) and h at (t, Θ⁻_t, μ⁻_t), defined at every t (driftProc, diffusionProc, driverProc, coeffJump); as the Borel representatives of Lemma A.1 the Lean takes lawP2 of the tuple at every time, a Borel flow equal to the law for a.e. t by lem_lawflow (A:lem:lawflow); 'the continuous MV-FBSDEJ is the system (1.1) displayed in the introduction' (lines 28–29) refers to A:eq:mvfbsdej, and the same notation in the introduction (01-introduction.tex lines 34–43) is pinned in A:intro:mvfbsdej and A:eq:mvfbsdej; that every claim made about the coefficient expressions is dt-a.e. or time-integrated (lines 44–45) is a convention on how the claims of the paper are read, not an object",
+   "scope_reviewed": false,
+   "clauses": [
+    {
+     "name": "definition",
+     "spec": null,
+     "defs": [
+      "Dissertation.WellPosedness.System.TupleH",
+      "Dissertation.WellPosedness.System.tupleAt",
+      "Dissertation.WellPosedness.System.leftLimProc",
+      "Dissertation.Law.lawP2",
+      "Dissertation.WellPosedness.System.driftProc",
+      "Dissertation.WellPosedness.System.diffusionProc",
+      "Dissertation.WellPosedness.System.driverProc",
+      "Dissertation.WellPosedness.Existence.coeffJump"
+     ]
+    }
+   ],
+   "source_region": {
+    "end_line": 45
+   },
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "531954d695a721e91c54f8ed73f86f5355227921b5293135be8f1c11feb2ed24",
+    "505c453439a05b3b1fb5c5cd4e8907896cf970c01d18d9db1b5ac87ae05c7d4c",
+    "8b90894915f61fd30d1fcd8b18a15281a6c31193627fed4ef1e00c38b97d8e97",
+    "2bebaba3e1c4fe2af4312816c1b451bb80e825e4955f88f47a907b28dd284435",
+    "dd5d4c08360a40838f1b567061618cf61c44f3e053af68292528c4f71be1ab0b",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "ec449dfe56aa80c18e93b1058f7b746049f0b1886e7ae223cc53ccb334edef2c",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "61fe2ed4258cdedeb7cab4462bd24cc937fbaf53c95bc4d2d5463ee2b892deec",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "de38726292924eca0ce676fd7d1fad2d7f60254e26464dba4dc9d23816082dfc",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "25bfb90028fae1423d354b0378d9bea23b35c2e71bc8d88a9f83c9b3ec92847a",
+    "d2a6ce806c5c2a89b893815ca764792b806ed426b467b88dac7a646bac6ef673",
+    "b0d6ae2ea4337b0c3eb7626bd10687126082a9a101e5475d1cef7de5a5f0e1d6",
+    "1747cc153d48f747a013e7998e8069a99a6321b21a857403811104e3057fb4f7",
+    "f4d91dbf55f0765a93b5430c2588408f738be0faea8d1e93e260bfaa02b763ac",
+    "800dcfecef81dbda2fa9ae751892666b752dc5541508f5f7e3a92eac25cbc789",
+    "62d31776ae75e50098170fd09321b09920c250fc4bd8c73e177aa1edbb1d119b"
+   ]
+  },
+  {
    "id": "A:sec2:prp",
    "paper": "A",
    "commit": "1f67672",
@@ -1526,6 +1477,42 @@
     "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
     "3d118f4d12bc96eb9258a76d7e9183b9dc039a1ea7993f9fbc4eb3d8a864af32",
     "54b6f2e363eefdc41c247c65d0e2f39c77ec0dae84ea3c7eadc8a201b1723057"
+   ]
+  },
+  {
+   "id": "A:sec2:difference-notation",
+   "paper": "A",
+   "commit": "1f67672",
+   "kind": "definition",
+   "number": "§2 ¶ after Definition 2.1",
+   "title": "All hypotheses imposed along D_t only; theta a point and Theta a random tuple of H; the difference notation dX, dpsi, the induced terminal laws rho, rho' and dg_T for two diagonal inputs",
+   "location": "paper/sections/02-model-assumptions.tex:69",
+   "source_sha256": "cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca",
+   "scope": "expository",
+   "scope_note": "conventions, not objects. 'All hypotheses below are imposed along 𝒟_t only: the measure argument is never varied independently of the tuple' (lines 69–70) is how Assumptions 2.3 and 2.5 are stated: their interior conditions LipInteriorAt and Mono27At quantify over pairs of diagonalInputs (A:def:diag) and their terminal conditions (LipTerminal, Assumption25.terminal) over X_T, X′_T ∈ L²(Ω, ℱ_T; ℝⁿ) with their own laws, in the definitions Assumption23 and Assumption25 of A:ass:lip and A:ass:mono. 'A lower-case θ denotes a point of H and an upper-case Θ a random H-valued tuple' (lines 70–71) is typography, which the Lean follows: the coefficients (Coeffs) are evaluated at points θ of TupleH, the inputs of diagonalInputs are maps Θ : Ω → TupleH, and rem_diag_mono and prop_strict state a pointwise condition at points θ, θ′ beside an expected one at random Θ, Θ′. The difference notation for two diagonal inputs at the same time on the same space (lines 73–84: δX := X − X′, δψ := ψ(t, Θ, μ) − ψ(t, Θ′, μ′) for ψ ∈ {b, σ, h, f}, the induced terminal laws ρ := Law(X_T), ρ′ := Law(X′_T) and δg_T := g(X_T, ρ) − g(X′_T, ρ′)) is written out as differences of the coefficients at the two inputs in the definitions LipInteriorAt and LipTerminal (Assumption 2.3 with (2.6)), pairing27, Mono27At and Assumption25 (Assumption 2.5 with (2.7)), and in the propositions of A:rem:wasserstein-bounds (eq_coupling, eq_couplingT), A:rem:diag-mono (rem_diag_mono, rem_diag_mono_converse), A:rem:beta1-dich (rem_beta1_dich), A:rem:margin (through Mono27At), A:cor:robust (through Assumptions 2.3 and 2.5) and A:prop:strict (prop_strict)",
+   "scope_reviewed": false,
+   "clauses": [],
+   "source_region": {
+    "end_line": 84
+   },
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "867575ba85ed71359dce76197c7fe8b02c4a20a445a51a6cdb84b73ba8987191",
+    "b18501bd156980a2fab5495c17e52b9a02d995e9a0756097fc14708403b187d5",
+    "24487519dd70548398c8c2c2ba89a1853b39905f726bb9d4e349cc31ca537ce7",
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "c7e6e86e40a76c49aaaf7860b1822b4d0a7c50c1e749d214e910cbe83c2367d0",
+    "9e1b0f3a0d33ace23c4082637643155ac7e4fab13be34137cd193a888d836ca9",
+    "321a777fd5aabfdbf41a428755ef7cb7a0ae2005e0e655263e0357750614383e",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "9017d658e927e1eb4eeffc472ddf5a610d386e18d18acc2d8057d71aea8adb65",
+    "e688366fc0d6ebfc0ba4711ae0b81c62b68bc2f6a4981ff7c3ddb952cf29ee99",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6",
+    "d9ec255575cb3650980766f1b355444adcef0081c26dae4d33b8ffaf3e12c3c4",
+    "64dc4cc1a5cd31779f5c4a2307b09074a736dc74fde3346516c182c658d3fee2",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "da8cf5c2ccaa3fe457b67890c322a5b5370ec4453310f382d6ab9ed156d9980e",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6"
    ]
   },
   {
@@ -1759,6 +1746,53 @@
    ]
   },
   {
+   "id": "A:sec3:two-system-notation",
+   "paper": "A",
+   "commit": "1f67672",
+   "kind": "definition",
+   "number": "§3 ¶ before Theorem 3.1",
+   "title": "Two coefficient systems k=1,2: delta = (.)^1 - (.)^2, mu^k_t = Law(Theta^k_t), the coefficient differences evaluated along solution 2 (delta h at Theta^{2,-}_t, mu^{2,-}_t) and hat delta g_T at (X^2_T, Law(X^2_T))",
+   "location": "paper/sections/03-main-results.tex:39",
+   "source_sha256": "a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6",
+   "scope": "definition",
+   "scope_note": "the notation of the comparison of two coefficient systems k = 1, 2 in (3.1): δ· = ·¹ − ·², the coordinatewise differences the propositions take; μᵏ_t := Law(Θᵏ_t) (lawP2 of tupleAt); (δψ)(t) for ψ ∈ {b, σ, f} along solution 2 (driftProc, diffusionProc, driverProc of systems 1 and 2 at Θ²); (δh)(t) at (Θ²⁻_t, μ²⁻_t) (jumpProc of coeffJump at leftLimProc X², leftLimProc Y², Z², U²); δ̂g_T (terminalVal of systems 1 and 2 at X²); the propositions that use it are thm_stab (A:thm:stab, A:thm:cwp), thm_stab_companion with the roles exchanged, thm_stab_data and thm_stab_minimal (A:thm3.1:companion), cor_robust_wp (A:cor:robust) and rem_generalrank_wp (A:rem:generalrank); 'The stability and uniqueness theorems below rest on comparing solutions of (1.1) under two coefficient systems' (lines 39–40) is exposition: the uniqueness theorem compares two solutions of one system, and its proof fixes its own differences along both solutions (lines 110–117, in A:eq:uniq-coeff)",
+   "scope_reviewed": false,
+   "clauses": [
+    {
+     "name": "definition",
+     "spec": null,
+     "defs": [
+      "Dissertation.WellPosedness.System.driftProc",
+      "Dissertation.WellPosedness.System.diffusionProc",
+      "Dissertation.WellPosedness.System.driverProc",
+      "Dissertation.WellPosedness.Existence.coeffJump",
+      "Dissertation.WellPosedness.System.jumpProc",
+      "Dissertation.WellPosedness.System.terminalVal",
+      "Dissertation.WellPosedness.System.tupleAt",
+      "Dissertation.WellPosedness.System.leftLimProc",
+      "Dissertation.Law.lawP2"
+     ]
+    }
+   ],
+   "source_region": {
+    "end_line": 49
+   },
+   "source_hash_scheme": "tex-region-v1",
+   "source_line_sha256": [
+    "eaaeb0a44c21d0ff666824871ce3e3aaf95513b1f6feae50ee200399e1f78810",
+    "f1adbc2f005c31e22792985f728963d8f60ab0b6ec3f5ad43e77509b7f59bc55",
+    "476d1d4e79446864093ba3bc27abd2494c1a1d7d5e3adb7e9874649c4ecb1341",
+    "8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e",
+    "8570ab369189af5826174a2fe9e646cdcef26ad7f72f68a0195dde0589623c81",
+    "1d83c1bc2aa182d7295f4c2ba88be2adf45096369c77a3f075082829a6b4a13c",
+    "3c5ed76d78daf509fdf0bf1bfd707f61664fd4a784627bec9be73ddc40468940",
+    "7e443ef64d6ff0da5d102f0e74616accaaf45c031054df2226dd1043406fd181",
+    "9e22f0c368967d588dbf7cdf9d091eb3d5892156262045bb7ede3495a3bf9bea",
+    "adb455679c8ed3b6cc4d1f7835bf410ba1610ac87f12bceea4b3743ce07a648c",
+    "c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6"
+   ]
+  },
+  {
    "id": "A:thm3.1:companion",
    "paper": "A",
    "commit": "1f67672",
@@ -1768,7 +1802,7 @@
    "location": "paper/sections/03-main-results.tex:75",
    "source_sha256": "29dc4c0964f38ec55444454a5131c89d80201b311710e24619a2f05e533a8b3b",
    "scope": "formal",
-   "scope_note": "the two-system notation of Theorem 3.1 (03-main-results.tex lines 39–49) is pinned in A:thm:stab",
+   "scope_note": "the two-system notation of Theorem 3.1 (03-main-results.tex lines 39–49) is pinned in A:sec3:two-system-notation",
    "scope_reviewed": false,
    "clauses": [
     {
