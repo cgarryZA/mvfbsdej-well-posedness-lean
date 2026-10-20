@@ -3801,9 +3801,7 @@
     {
      "accept": "Dissertation.Acceptance.A.eq_uniq_coeff",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.eq_uniq_coeff"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3813,7 +3811,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_uniq_coeff",
      "spec_hash": "ed839d34f480cba11fcb76fb4b640955",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses",
      "witness_ok": true
     }
@@ -3825,16 +3823,14 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
     {
      "accept": "Dissertation.Acceptance.A.eq_uniq_bwd",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.eq_uniq_bwd"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3844,7 +3840,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_uniq_bwd",
      "spec_hash": "ed839d34f480cba12aa97c204e9816a6",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses",
      "witness_ok": true
     }
@@ -3856,7 +3852,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [],
@@ -4044,8 +4040,6 @@
      "accept": "Dissertation.Acceptance.A.eq_frozenfwd",
      "accept_ok": true,
      "author_reviewed": [
-      "Dissertation.PaperSpec.A.FrozenForward",
-      "Dissertation.PaperSpec.A.HTuple",
       "Dissertation.PaperSpec.A.eq_frozenfwd"
      ],
      "corrects": null,
@@ -4076,12 +4070,7 @@
     {
      "accept": "Dissertation.Acceptance.A.eq_frozenbwd",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.FrozenForward",
-      "Dissertation.PaperSpec.A.FrozenStep",
-      "Dissertation.PaperSpec.A.HTuple",
-      "Dissertation.PaperSpec.A.eq_frozenbwd"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4091,7 +4080,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_frozenbwd",
      "spec_hash": "ed839d34f480cba178b77fba8e33d01f",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.frozen_hypotheses",
      "witness_ok": true
     }
@@ -4103,18 +4092,14 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
     {
      "accept": "Dissertation.Acceptance.A.eq_coeffdiff",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.HTuple",
-      "Dissertation.PaperSpec.A.coeffDiffNorm",
-      "Dissertation.PaperSpec.A.eq_coeffdiff"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4124,7 +4109,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_coeffdiff",
      "spec_hash": "ed839d34f480cba1b363f744d12fe99d",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.frozen_hypotheses",
      "witness_ok": true
     }
@@ -4136,18 +4121,38 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_fwddiff",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_fwddiff"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.10): for two trials Θ¹, Θ² ∈ ℍ and their frozen steps Θ̄ᵏ = Φ_λ(Θᵏ), 𝔼 sup_{t ≤ T} |δX̄_t|² ≤ 3λ² [𝔼(∫_0^T |δb_s| ds)² + 𝔼 sup_{t ≤ T} |∫_0^t δσ_s dW_s|² + 𝔼 sup_{t ≤ T} |∫_0^t ∫_E δh_s(e) Ñ(ds, de)|²] ≤ 3λ² [T 𝔼 ∫_0^T |δb_s|² ds + c_BDG 𝔼 ∫_0^T |δσ_s|²_F ds + c_BDG 𝔼 ∫_0^T ‖δh_s‖² ds] ≤ 3λ² max{T, c_BDG} 𝔼 ∫_0^T (|δb_s|² + |δσ_s|²_F + ‖δh_s‖²) ds ≤ 3λ² max{T, c_BDG} 𝔼 ∫_0^T S_s² ds ≤ C_X λ² ‖Θ¹ − Θ²‖²_ℍ, C_X = 3 max{T, c_BDG} L⋆², for every c_BDG ≥ c₀, some c₀ > 0",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_fwddiff",
+     "spec_hash": "ed839d34f480cba1898e8661a670d8b9",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.frozen_pair_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:fwddiff",
    "kind": "embedded-in-proof",
    "number": "(4.10)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
@@ -4179,26 +4184,66 @@
    "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_bwddiff",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_bwddiff"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.12): 𝔼 sup_{t ≤ T} |δȲ_t|² + 𝔼 ∫_0^T (|δZ̄_s|²_F + ‖δŪ_s‖²) ds ≤ C_BP (𝔼|δξ̄|² + λ² 𝔼 ∫_0^T |δf_s|² ds) ≤ C_BP (C_g λ² 𝔼|δX̄_T|² + L⋆² λ² ‖Θ¹ − Θ²‖²_ℍ) ≤ C_BP (C_g λ² 𝔼 sup_{t ≤ T} |δX̄_t|² + L⋆² λ² ‖Θ¹ − Θ²‖²_ℍ) ≤ C_BP (C_g C_X λ⁴ + L⋆² λ²) ‖Θ¹ − Θ²‖²_ℍ ≤ C_Y λ² ‖Θ¹ − Θ²‖²_ℍ, C_BP = 2e^T (5 + 4 c_BDG) + 4T, C_Y = C_BP (C_g C_X + L⋆²), for every c_BDG ≥ c₀, some c₀ > 0",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_bwddiff",
+     "spec_hash": "ed839d34f480cba1d8920d62bd288ec6",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.frozen_pair_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:bwddiff",
    "kind": "embedded-in-proof",
    "number": "(4.12)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_contract",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_contract"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.13): ‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖²_ℍ = 𝔼 sup_{t ≤ T} |δX̄_t|² + 𝔼 sup_{t ≤ T} |δȲ_t|² + 𝔼 ∫_0^T (|δZ̄_s|²_F + ‖δŪ_s‖²) ds ≤ (C_X + C_Y) λ² ‖Θ¹ − Θ²‖²_ℍ ≤ C_Φ λ² ‖Θ¹ − Θ²‖²_ℍ, C_Φ = max{1, C_X + C_Y}, for every c_BDG ≥ c₀, some c₀ > 0",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_contract",
+     "spec_hash": "ed839d34f480cba1410aaf91d78575ad",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.frozen_pair_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:contract",
    "kind": "embedded-in-proof",
    "number": "(4.13)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [],
@@ -4462,9 +4507,7 @@
     {
      "accept": "Dissertation.Acceptance.A.eq_bwdito",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.eq_bwdito"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4474,7 +4517,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_bwdito",
      "spec_hash": "ed839d34f480cba1ac3ad318e96e1e46",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
      "witness_ok": true
     }
@@ -4486,7 +4529,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -4594,11 +4637,11 @@
  "summary": {
   "A": {
    "definition: reviewed": 11,
-   "formal: accepted": 57,
-   "formal: proved, author-reviewed": 11,
+   "formal: accepted": 62,
+   "formal: proved, author-reviewed": 9,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
-   "out of scope: proof-step": 8,
+   "out of scope: proof-step": 5,
    "refuted as printed; corrected statement proved": 1
   }
  }

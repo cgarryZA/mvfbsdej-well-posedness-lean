@@ -33,8 +33,8 @@ with `δξ̄ = λ [g(X̄¹_T, Law(X̄¹_T)) − g(X̄²_T, Law(X̄²_T))]`, and
     + 𝔼 ∫_0^T (|δZ̄_s|²_F + ‖δŪ_s‖²) ds
   ≤ (C_X + C_Y) λ² ‖Θ¹ − Θ²‖²_ℍ ≤ C_Φ λ² ‖Θ¹ − Θ²‖²_ℍ`. (4.13)
 
-`c_BDG` is the constant of the Burkholder–Davis–Gundy inequality fixed in §4; each statement holds
-for every value of it at least some `c₀ > 0`.
+`c_BDG` is the constant of the Burkholder–Davis–Gundy inequality fixed in §4; each proposition
+asserts its chain for every value of it at least some `c₀ > 0`.
 
 ## Main definitions
 

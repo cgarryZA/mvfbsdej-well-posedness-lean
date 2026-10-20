@@ -37,6 +37,7 @@ import Dissertation.PaperSpec.A.Sec4Difference
 import Dissertation.PaperSpec.A.Sec3Uniqueness
 import Dissertation.PaperSpec.A.Sec4Estimates
 import Dissertation.PaperSpec.A.Sec4Frozen
+import Dissertation.PaperSpec.A.Sec4Contraction
 
 /-!
 # The statements of the paper

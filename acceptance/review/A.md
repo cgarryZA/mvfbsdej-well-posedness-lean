@@ -936,6 +936,123 @@ Verdict: faithful.
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_coeffdiff--claude-auditor--2026-10-20T00_44_30Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_coeffdiff ed839d34f480cba1b363f744d12fe99d by=claude-auditor -->
 
+## (4.10), Step 2 of the proof of Lemma 4.2: `Dissertation.PaperSpec.A.eq_fwddiff`
+
+Manuscript (proof of Lemma `lem:small`, Step 2, lines 350–374), with the objects of lines 312–323
+("Take `Θ¹, Θ² ∈ ℍ`, write `Θ̄ᵏ = Φ_λ(Θᵏ)`, and set
+`δψ_s := ψ(s, Θ¹_s, μ^{Θ¹}_s) − ψ(s, Θ²_s, μ^{Θ²}_s)` (`ψ ∈ {b, σ, h, f}`), `δX := X¹ − X²`,
+`δX̄ := X̄¹ − X̄²` […]; the common initial datum `ξ₀` and the fixed forcing `q` cancel in every
+difference"): "*Step 2: the forward difference.* Taking the difference of (4.7) at `Θ¹` and `Θ²`,
+`δX̄_t = λ ∫_0^t δb_s ds + λ ∫_0^t δσ_s dW_s + λ ∫_0^t ∫_E δh_s(e) Ñ(ds, de)`. Squaring, taking
+the supremum in `t`, and taking expectations, (4.10)
+`𝔼 sup_{t ≤ T} |δX̄_t|² ≤ 3λ² [𝔼 (∫_0^T |δb_s| ds)² + 𝔼 sup_{t ≤ T} |∫_0^t δσ_s dW_s|²
++ 𝔼 sup_{t ≤ T} |∫_0^t ∫_E δh_s(e) Ñ(ds, de)|²]
+≤ 3λ² [T 𝔼 ∫_0^T |δb_s|² ds + c_BDG 𝔼 ∫_0^T |δσ_s|²_F ds + c_BDG 𝔼 ∫_0^T ‖δh_s‖²_{L²(ν)} ds]
+≤ 3λ² max{T, c_BDG} 𝔼 ∫_0^T (|δb_s|² + |δσ_s|²_F + ‖δh_s‖²_{L²(ν)}) ds
+≤ 3λ² max{T, c_BDG} 𝔼 ∫_0^T S_s² ds ≤ C_X λ² ‖Θ¹ − Θ²‖²_ℍ`, `C_X := 3 max{T, c_BDG} L⋆²`, the
+jump term by (2.1), the next step since the summands of `S_s` are non-negative, and the last by
+(4.9)." The pinned region is the display, lines 357–372; `S_s` and `L⋆² = 10L² max{T, 1}` are
+those of (4.9).
+
+Proposition: `∃ c₀ > 0` such that for every `c ≥ c₀`, in the standing setting, under the
+hypotheses of Lemma 4.2 (those of `lem_small`, verbatim: `T > 0`, (2.3), Assumption 2.2 with the
+datum `ξ₀` and Assumption 2.3 with the constant `L`), for `λ ∈ [0, 1]`, a forcing `q` of the
+class of (4.1) (`PredForcing` over `enlJoint`), two trials `Θ¹, Θ²` with `HTuple` over `enlJoint`
+and `Θ̄¹, Θ̄²` with `FrozenStep … Θᵏ Θ̄ᵏ` (the same `λ`, `ξ₀` and `q`), and with
+`δb_i = driftProc(Θ¹)_i − driftProc(Θ²)_i`, `δσ_{ij} = diffusionProc(Θ¹)_{ij} −
+diffusionProc(Θ²)_{ij}`, `δh_i = coeffJump(Θ¹)_i − coeffJump(Θ²)_i`: (a) `δσ` and `δh` meet the
+conditions of the Itô and the compensated integral (the proof arguments of `stochasticIntegral`
+exist); (b) there is `Mσ` whose coordinates are versions on `[0, T]` of `∫ δσ_i dW`, almost every
+path right-continuous on `[0, T)` with left limits on `(0, T]`; (c) for every such `Mσ`,
+`∫⁻ sup_{[0, T]} |δX̄|² ≤ ofReal(3λ²) (∫⁻ (∫_{[0, T]} ‖(δb_i(s))_i‖ₑ ds)²
++ ∫⁻ sup_{[0, T]} |Mσ|² + ∫⁻ sup_{[0, T]} |(∫∫ δh_i dÑ)_i|²)
+≤ ofReal(3λ²) (ofReal T ∑_i energy(δb_i) + ofReal c ∑_{i, j} energy(δσ_{ij})
++ ofReal c ∑_i markedEnergy(δh_i))`; and (d) the remaining links
+`… ≤ ofReal(3λ² max{T, c}) (∑_i energy(δb_i) + ∑_{i, j} energy(δσ_{ij}) + ∑_i markedEnergy(δh_i))
+≤ ofReal(3λ² max{T, c}) ∫_{[0, T]} ∫⁻ coeffDiffNorm(Θ¹, Θ²)_s²
+≤ ofReal(3 max{T, c} (10L² max{T, 1}) λ²) supSize(Θ¹ − Θ²)`.
+
+Readings:
+
+* The objects. `Θ ∈ ℍ` is `HTuple` and `Θ̄ᵏ = Φ_λ(Θᵏ)` is `FrozenStep` (both reviewed in
+  `definitions.md`); by (4.8) two images of one trial are equal in `ℍ`, so the statement for any
+  images is the statement for `Φ_λ`. `δX̄` is `X̄¹ − X̄²`, coordinatewise.
+* The coefficient differences. The passage defines `δψ_s` at `(Θᵏ_s, μ^{Θᵏ}_s)` (line 316). On
+  `[0, T]` the drift and diffusion processes are the coordinates of `b` and `σ` along the tuple and
+  its law (`driftProc_of_mem`), and `coeffJump` at the tuple is the canonical representative of
+  `h(s, Θ_s, ·, μ_s)` in `L²(ν; ℝⁿ)` at every `s ∈ [0, T]` (`coeffJump_ae_eq`; `coeffJump` is
+  reviewed in `definitions.md`); all three vanish off `[0, T]`. So `|δb_s|` is the Euclidean
+  norm of `(δb_i(s))_i`, `𝔼 ∫_0^T |δb_s|² ds = ∑_i energy(δb_i)`,
+  `𝔼 ∫_0^T |δσ_s|²_F ds = ∑_{i, j} energy(δσ_{ij})` and
+  `𝔼 ∫_0^T ‖δh_s‖²_{L²(ν)} ds = ∑_i markedEnergy(δh_i)`.
+* The jump integrand of the difference. (4.7) evaluates `h` at `(Θ⁻_s, μ^{Θ,−}_s)` through a
+  representative (`FrozenForward`), while the difference displayed at line 353 has `δh_s`, defined
+  at `(Θ_s, μ^Θ_s)`. The paper's remark after (4.7) (lines 272–275: the two agree outside a
+  `dt ⊗ dP`-null set by Lemma A.1) is what makes the difference of the two forward equations an
+  equation with `δh_s`: integrands agreeing for the marked energy measure have almost surely
+  equal compensated integrals at each time. The proposition takes the passage's `δh_s` at the
+  tuple; the proof makes the replacement.
+* The two stochastic suprema. The library's Brownian integral is defined time by time, so
+  `𝔼 sup_{t ≤ T} |∫_0^t δσ_s dW_s|²` is read through a version with regular paths, as in
+  `WeakForcedSolution`: (b) asserts that a càdlàg version exists, and (c) holds for every version
+  almost every path of which is right-continuous on `[0, T)` with left limits on `(0, T]` (any
+  two are indistinguishable on `[0, T]`, so the value does not depend on the choice). The
+  compensated integral has almost surely càdlàg paths by construction and is used as it is. The
+  integrals take measurability, progressive measurability and finite energy on every horizon as
+  arguments, so (a) asserts them, as `eq_dX` does.
+* The constant `c_BDG`. The paper fixes one universal constant `c_BDG`, valid at `p = 1` and at
+  `p = 2`, Doob's inequality giving `4` at `p = 2` (lines 30–33). The proposition chooses `c₀ > 0`
+  first and asserts the chain for every value `c ≥ c₀` of the constant, so it holds for the
+  paper's `c_BDG` whenever that is at least `c₀`; it holds with `c₀ = 4`. Each of (4.10), (4.12)
+  and (4.13) chooses its own `c₀`; those of (4.12) and (4.13) are chosen at least that of (4.10)
+  (and of (4.12)), so one value of `c_BDG` at least the largest serves the three, and all the
+  bounds increase with `c`.
+* The constants are the printed ones, explicit: `3λ²`, `max{T, c}`, and
+  `C_X = 3 max{T, c} L⋆²` with `L⋆² = 10L² max{T, 1}`; `C_X` depends on `T, L, c_BDG` only, as
+  line 442 states.
+* Expectations are lower integrals in `[0, ∞]`. `𝔼 (∫_0^T |δb_s| ds)²` is `∫⁻` of the square of
+  the lower integral over `[0, T]` of `‖(δb_i(s))_i‖ₑ`; each `𝔼 sup_{t ≤ T}` is `∫⁻` of the
+  supremum over `[0, T]` of `esq`. The `𝔼 ∫` of the second and third links are the energies,
+  sample-outer; `𝔼 ∫_0^T S_s² ds` is read time-outer, `∫_{[0, T]} 𝔼`, which is the left side of
+  `eq_coeffdiff`, so that the last link is (4.9) (the two orders agree by Tonelli where the
+  integrand is jointly measurable; the proof of the fourth link swaps them for the coordinate
+  processes).
+* The justifications ("the jump term by (2.1)", the compensation formula, which identifies the
+  expected quadratic variation of the compensated integral with `𝔼 ∫_0^T ‖δh_s‖² ds`; "the next
+  step since the summands of `S_s` are non-negative"; "the last by (4.9)") are steps of the
+  proof, not stated; the difference equation displayed before (4.10) is the content of the proof
+  of the first link.
+* The hypotheses are those of Lemma 4.2, verbatim; the step uses (2.3), Assumption 2.2 (finite
+  energies of the coefficient processes) and Assumption 2.3.
+
+Proof: along each trial the integrals of (1.1) exist with `coeffJump`, which also represents the
+jump coefficient at the predictable tuple (`PaperWeakTuple.paperAdmissible_coeffJump`), so (4.7)
+holds with the jump integrand `λ coeffJump + q^h` (`ae_forcedJump_eq_of_rep`,
+`LinearFSDEJ.congr_jump`); the difference is the linear forward equation from `0` with integrands
+`λ δb, λ δσ, λ δh` (`LinearFSDEJ.sub`). On one set of full measure
+`δX̄_t = λ (∫_0^t δb_s ds + M_t + N_t)` at every `t ∈ [0, T]`, for càdlàg versions `M, N` of the
+two legs (scaling of the integrals, `ae_forall_Icc_eq_of_rightContinuous`), which with
+`|a + b + c|² ≤ 3(|a|² + |b|² + |c|²)` and `|∫_0^t δb| ≤ ∫_0^T |δb|` (`eval_integral_piLp`) gives
+the first link (`LinearFSDEJ.lintegral_biSup_esq_le_legs`). The second is Cauchy–Schwarz
+(`lintegral_sq_lintegral_toLp_le`) and Doob's inequality with the isometries, the multidimensional
+one through a cross witness (`lintegral_biSup_esq_brownian_le`,
+`lintegral_biSup_esq_compensated_le`), with `4 ≤ c`; the third is `T, c ≤ max{T, c}`; the fourth
+reads the energies through the sample energies (`lintegral_sampleEnergy_add`) and bounds them at
+each `s` by `S_s²` (`sum_energy_le_coeffDiffNorm`, with `b_sub_eq_toLp`, `σ_sub_eq_toLp`,
+`coeFn_h_sub`); the fifth is (4.9) (`eq_coeffdiff`).
+
+Witness: `Dissertation.Acceptance.A.frozen_pair_hypotheses`: at the instance of
+`frozen_hypotheses` (Example 5.1(i) with `β₁ = β₂ = 1`, `n = m = d = 1`, `T = 1`, `ν = δ₀`,
+`L = 1`, datum `0`, `λ = 1`, the zero forcing), the two distinct trials of `ℍ`, the zero tuple and
+the constant tuple `(1, 1, 0, 0)`, with frozen steps from (4.8). By hand (`b = −y`, `σ = −z`,
+`h = −u`, `f = x`, `g(x) = x`), the images are, up to indistinguishability, `Θ̄¹ = 0` and
+`X̄²_t = Ȳ²_t = −t`, `Z̄² = Ū² = 0`; so `δX̄_t = t`, `δb = 1`, `δσ = δh = 0`, `δf = −1`, `S = 2`
+and `‖Θ¹ − Θ²‖²_ℍ = 2`, and the chain reads `1 ≤ 3 ≤ 3 ≤ 3c ≤ 12c ≤ 60c`.
+
+Verdict: faithful.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_fwddiff ed839d34f480cba1898e8661a670d8b9 by=claude-author -->
+
 ## (4.11), Step 3 of the proof of Lemma 4.2: `Dissertation.PaperSpec.A.eq_terdiff`
 
 Manuscript (proof of Lemma `lem:small`, Step 3, lines 376–389): "Put
@@ -989,6 +1106,119 @@ Verdict: faithful (broader, printed claim an instance).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_terdiff ed839d34f480cba104ed4a8f00254090 by=claude-author -->
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.eq_terdiff--claude-auditor--2026-10-19T22_59_53Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_terdiff ed839d34f480cba104ed4a8f00254090 by=claude-auditor -->
+
+## (4.12), Step 4 of the proof of Lemma 4.2: `Dissertation.PaperSpec.A.eq_bwddiff`
+
+Manuscript (proof of Lemma `lem:small`, Step 4, lines 391–424), with the objects of Steps 1–3
+(lines 312–389): "*Step 4: the backward difference.* Taking the difference of (4.8) at `Θ¹` and
+`Θ²`, the terms `q^g_T` and `q^f` cancelling,
+`δȲ_t = δξ̄ + ∫_t^T λ δf_s ds − ∫_t^T δZ̄_s dW_s − ∫_t^T ∫_E δŪ_s(e) Ñ(ds, de)`, which is (4.4)
+with `δξ = δξ̄` and `φ_s = λ δf_s`. `δȲ` is càdlàg adapted, and the remaining hypotheses hold:
+`(δZ̄, δŪ) ∈ H²_W × H²_N` since `Θ̄¹, Θ̄² ∈ ℍ`, `δξ̄ ∈ L²(ℱ_T)` by (4.3),
+`λ δf ∈ L²(Ω × [0, T])` by (4.9), as `|δf| ≤ S`. By Lemma 4.1, (4.12)
+`𝔼 sup_{t ≤ T} |δȲ_t|² + 𝔼 ∫_0^T (|δZ̄_s|²_F + ‖δŪ_s‖²_{L²(ν)}) ds
+≤ C_BP (𝔼|δξ̄|² + λ² 𝔼 ∫_0^T |δf_s|² ds)
+≤ C_BP (C_g λ² 𝔼|δX̄_T|² + L⋆² λ² ‖Θ¹ − Θ²‖²_ℍ)
+≤ C_BP (C_g λ² 𝔼 sup_{t ≤ T} |δX̄_t|² + L⋆² λ² ‖Θ¹ − Θ²‖²_ℍ)
+≤ C_BP (C_g C_X λ⁴ + L⋆² λ²) ‖Θ¹ − Θ²‖²_ℍ ≤ C_Y λ² ‖Θ¹ − Θ²‖²_ℍ`,
+`C_Y := C_BP (C_g C_X + L⋆²)`, the second inequality by (4.11) and (4.9), the fourth by (4.10),
+and the last by `λ⁴ ≤ λ²` for `λ ∈ [0, 1]`." The pinned region is the display, lines 409–422.
+Here `δξ̄ := λ [g(X̄¹_T, Law(X̄¹_T)) − g(X̄²_T, Law(X̄²_T))]` and `C_g := 4L²` (lines 378, 386),
+`L⋆² = 10L² max{T, 1}` (4.9), `C_X = 3 max{T, c_BDG} L⋆²` (4.10), and
+`C_BP := C₀(5 + 4c_BDG) + 4T`, `C₀ := 2e^T`, is the constant fixed in the proof of Lemma 4.1
+(`04-proof-wellposedness.tex` lines 215, 244).
+
+Proposition: `∃ c₀ > 0` such that for every `c ≥ c₀`, under the hypotheses of (4.10) (those of
+Lemma 4.2, `λ ∈ [0, 1]`, the forcing `q`, two trials of `ℍ` and their frozen steps), with
+`C_BP = 2e^T (5 + 4c) + 4T`, `L⋆² = 10L² max{T, 1}` and `C_X = 3 max{T, c} L⋆²`:
+`∫⁻ sup_{[0, T]} |δȲ|² + (∑_{k, j} energy(δZ̄_{kj}) + ∑_k markedEnergy(δŪ_k))
+≤ ofReal(C_BP) (∫⁻ |(λ (terminalVal(X̄¹)_k − terminalVal(X̄²)_k))_k|²
++ ofReal(λ²) ∑_k energy(δf_k))
+≤ ofReal(C_BP) (ofReal(4L²λ²) ∫⁻ |δX̄_T|² + ofReal(L⋆²λ²) supSize(Θ¹ − Θ²))
+≤ ofReal(C_BP) (ofReal(4L²λ²) ∫⁻ sup_{[0, T]} |δX̄|² + ofReal(L⋆²λ²) supSize(Θ¹ − Θ²))
+≤ ofReal(C_BP) (ofReal(4L² C_X λ⁴ + L⋆²λ²) supSize(Θ¹ − Θ²))
+≤ ofReal(C_BP (4L² C_X + L⋆²) λ²) supSize(Θ¹ − Θ²)`, with
+`δf_k = driverProc(Θ¹)_k − driverProc(Θ²)_k`.
+
+Readings:
+
+* The objects. `δȲ, δZ̄, δŪ` are the differences of the backward components of the two frozen
+  steps, coordinatewise; `terminalVal(X̄)_k` is coordinate `k` of `g(X̄_T, Law(X̄_T))`, so the
+  coordinates of `δξ̄` are `λ (terminalVal(X̄¹)_k − terminalVal(X̄²)_k)` (the frozen terminal
+  values are `λ g + q^g_T`, and `q^g_T` cancels); `δf_k` is the driver difference at the tuples
+  and their laws, as `δψ` is defined (line 316), through `driverProc`, the coordinate of `f` on
+  `[0, T]`. `‖Θ¹ − Θ²‖²_ℍ` is `supSize` of the trial differences.
+* `C_BP` is the constant of Lemma 4.1. The passage takes it "by Lemma 4.1", and the proof of
+  Lemma 4.1 fixes it as `C_BP = C₀(5 + 4c_BDG) + 4T` with `C₀ = 2e^T`; the proposition states
+  this value explicitly, so the first link is Lemma 4.1 for the backward difference with the
+  constant of Lemma 4.1. (`lem_bpbsde` states Lemma 4.1 with an existential function `C_BP(T)`;
+  the explicit value is the stronger reading here.) It depends on `T` and `c_BDG` only, as line
+  443 states. `C_g = 4L²`, `L⋆²`, `C_X` and `C_Y = C_BP(C_g C_X + L⋆²)` are the printed ones,
+  explicit; `C_g C_X λ⁴` is written `4L² C_X λ⁴`.
+* The constant `c_BDG`: as for (4.10). Here `c₀` is the largest of `4` and the `c₀` of (4.10), so
+  the fourth link uses (4.10) at the same `c`.
+* Expectations are lower integrals in `[0, ∞]`: `𝔼 sup` is `∫⁻` of the supremum over `[0, T]`
+  of `esq`; `𝔼 ∫_0^T (|δZ̄|²_F + ‖δŪ‖²)` is the sum of the energies; `𝔼|δξ̄|²` and `𝔼|δX̄_T|²` are
+  `∫⁻ esq`; `λ² 𝔼 ∫_0^T |δf_s|² ds` is `ofReal(λ²)` times the sum of the energies of `δf_k`.
+* The text before the display (lines 391–407: the difference equation and the hypotheses of
+  Lemma 4.1 for it) consists of steps of the proof; they are not stated, and the proof of the
+  first link establishes them (`LinearBSDEJ.sub`).
+
+Proof: the difference of the two backward equations (4.8) is the linear backward equation with
+terminal value `δξ̄` and drift `λ δf` (`LinearBSDEJ.sub`); Lemma 4.1 in each coordinate
+(`LinearBSDEJ.brownianPoisson_estimate`, constant `13e^T + 3T ≤ C_BP` for `c ≥ 4`), the running
+supremum of the vector by those of the coordinates (`lintegral_biSup_esq_le`) and
+`energy(λ φ) = λ² energy(φ)` give the first link; (4.11) at `X_k = X̄^k_T` (`eq_terdiff`) and
+`∑_k energy(δf_k) ≤ 𝔼 ∫_0^T S_s² ds ≤ L⋆² ‖Θ¹ − Θ²‖²_ℍ` (`sum_energy_le_coeffDiffNorm`, (4.9))
+the second; `|δX̄_T|² ≤ sup_{t ≤ T} |δX̄_t|²` the third; (4.10) at the same `c` the fourth; and
+`λ⁴ ≤ λ²` the fifth.
+
+Witness: `Dissertation.Acceptance.A.frozen_pair_hypotheses`, as for (4.10). By hand,
+`δȲ_t = t`, `δZ̄ = δŪ = 0`, `δξ̄ = 1`, `δf = −1`, and with `C_X = 30c` the chain reads
+`1 ≤ 2C_BP ≤ 24C_BP ≤ 24C_BP ≤ (240c + 20) C_BP ≤ (240c + 20) C_BP`.
+
+Verdict: faithful.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bwddiff ed839d34f480cba1d8920d62bd288ec6 by=claude-author -->
+
+## (4.13), Step 5 of the proof of Lemma 4.2: `Dissertation.PaperSpec.A.eq_contract`
+
+Manuscript (proof of Lemma `lem:small`, Step 5, lines 426–445): "*Step 5: the contraction.* Since
+`Φ_λ(Θ¹) − Φ_λ(Θ²) = (δX̄, δȲ, δZ̄, δŪ)`, (4.13)
+`‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖²_ℍ = 𝔼 sup_{t ≤ T} |δX̄_t|² + 𝔼 sup_{t ≤ T} |δȲ_t|²
++ 𝔼 ∫_0^T (|δZ̄_s|²_F + ‖δŪ_s‖²_{L²(ν)}) ds ≤ (C_X + C_Y) λ² ‖Θ¹ − Θ²‖²_ℍ
+≤ C_Φ λ² ‖Θ¹ − Θ²‖²_ℍ`, `C_Φ := max{1, C_X + C_Y}`, the first inequality by (4.10) and (4.12).
+Here `L⋆ = L⋆(T, L)`, `C_X = C_X(T, L, c_BDG)`, `C_g = C_g(L)`, `C_BP = C_BP(T, c_BDG)`, so
+`C_Φ = C_Φ(T, L, c_BDG)`." The pinned region is the display, lines 429–439.
+
+Proposition: `∃ c₀ > 0` such that for every `c ≥ c₀`, under the hypotheses of (4.10), with
+`C_X = 3 max{T, c} · 10L² max{T, 1}` and `C_Y = (2e^T (5 + 4c) + 4T)(4L² C_X + 10L² max{T, 1})`:
+`supSize(Θ̄¹ − Θ̄²) = ∫⁻ sup_{[0, T]} |δX̄|² + ∫⁻ sup_{[0, T]} |δȲ|²
++ (∑_{k, j} energy(δZ̄_{kj}) + ∑_k markedEnergy(δŪ_k))
+≤ ofReal((C_X + C_Y) λ²) supSize(Θ¹ − Θ²) ≤ ofReal(max{1, C_X + C_Y} λ²) supSize(Θ¹ − Θ²)`.
+
+Readings:
+
+* `‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖²_ℍ` is `supSize` of the differences of the images (the squared norm of
+  `ℍ` of §3, reviewed with Lemma 4.3), and `Φ_λ(Θ¹) − Φ_λ(Θ²) = (δX̄, δȲ, δZ̄, δŪ)` is the
+  coordinatewise difference. The equality is the definition of `supSize`, stated with the
+  passage's grouping of the `δZ̄`- and `δŪ`-energies.
+* The constants are those of (4.10) and (4.12), explicit, and `C_Φ = max{1, C_X + C_Y}`; they
+  depend on `T, L, c_BDG` only, as lines 441–445 state.
+* The constant `c_BDG`: as for (4.10); `c₀` is the largest of those of (4.10) and (4.12).
+* "the first inequality by (4.10) and (4.12)" is the proof. The rest of the paragraph after the
+  region (lines 445–455: `λ*`, the Banach fixed-point theorem) belongs to the conclusion of the
+  proof of Lemma 4.2, whose statement is `lem_small`.
+
+Proof: the equality unfolds `supSize`; the first inequality adds the chains of (4.10) and (4.12)
+at the same `c`; the second is `C_X + C_Y ≤ max{1, C_X + C_Y}`.
+
+Witness: `Dissertation.Acceptance.A.frozen_pair_hypotheses`, as for (4.10); by hand
+`‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖²_ℍ = 1 + 1 + 0 = 2` and `‖Θ¹ − Θ²‖²_ℍ = 2`.
+
+Verdict: faithful.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_contract ed839d34f480cba1410aaf91d78575ad by=claude-author -->
 
 ## Lemma 4.3: `Dissertation.PaperSpec.A.lem_pert`
 

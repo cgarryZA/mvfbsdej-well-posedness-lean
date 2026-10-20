@@ -44,6 +44,8 @@ import Dissertation.Acceptance.A.Sec3Uniqueness
 import Dissertation.Acceptance.A.Sec4Estimates
 import Dissertation.Acceptance.A.Sec4Frozen
 import Dissertation.Acceptance.A.WitnessFrozen
+import Dissertation.Acceptance.A.Sec4Contraction
+import Dissertation.Acceptance.A.WitnessContraction
 
 /-!
 # Proofs of the statements of the paper

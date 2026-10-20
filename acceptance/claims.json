@@ -2964,10 +2964,17 @@
    "title": "equation eq:fwddiff [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:357",
    "source_sha256": "77e48f26f92871ddcb580b9647738e2ba0b66be8eedc87a40ecaffa53cf9e98c",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "clauses": [],
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "clauses": [
+    {
+     "name": "(4.10): for two trials Θ¹, Θ² ∈ ℍ and their frozen steps Θ̄ᵏ = Φ_λ(Θᵏ), 𝔼 sup_{t ≤ T} |δX̄_t|² ≤ 3λ² [𝔼(∫_0^T |δb_s| ds)² + 𝔼 sup_{t ≤ T} |∫_0^t δσ_s dW_s|² + 𝔼 sup_{t ≤ T} |∫_0^t ∫_E δh_s(e) Ñ(ds, de)|²] ≤ 3λ² [T 𝔼 ∫_0^T |δb_s|² ds + c_BDG 𝔼 ∫_0^T |δσ_s|²_F ds + c_BDG 𝔼 ∫_0^T ‖δh_s‖² ds] ≤ 3λ² max{T, c_BDG} 𝔼 ∫_0^T (|δb_s|² + |δσ_s|²_F + ‖δh_s‖²) ds ≤ 3λ² max{T, c_BDG} 𝔼 ∫_0^T S_s² ds ≤ C_X λ² ‖Θ¹ − Θ²‖²_ℍ, C_X = 3 max{T, c_BDG} L⋆², for every c_BDG ≥ c₀, some c₀ > 0",
+     "spec": "Dissertation.PaperSpec.A.eq_fwddiff",
+     "accept": "Dissertation.Acceptance.A.eq_fwddiff",
+     "witness": "Dissertation.Acceptance.A.frozen_pair_hypotheses"
+    }
+   ],
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
     "469b21f5927adabb7fee93e9c2aa10426ee4e11ae8385388c2c9cdadf1b60836",
@@ -3029,10 +3036,17 @@
    "title": "equation eq:bwddiff [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:409",
    "source_sha256": "de9905541b6f5056f355fb8ba0c38a5ec78c92b2259b3b8960caf0be162e2643",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "clauses": [],
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "clauses": [
+    {
+     "name": "(4.12): 𝔼 sup_{t ≤ T} |δȲ_t|² + 𝔼 ∫_0^T (|δZ̄_s|²_F + ‖δŪ_s‖²) ds ≤ C_BP (𝔼|δξ̄|² + λ² 𝔼 ∫_0^T |δf_s|² ds) ≤ C_BP (C_g λ² 𝔼|δX̄_T|² + L⋆² λ² ‖Θ¹ − Θ²‖²_ℍ) ≤ C_BP (C_g λ² 𝔼 sup_{t ≤ T} |δX̄_t|² + L⋆² λ² ‖Θ¹ − Θ²‖²_ℍ) ≤ C_BP (C_g C_X λ⁴ + L⋆² λ²) ‖Θ¹ − Θ²‖²_ℍ ≤ C_Y λ² ‖Θ¹ − Θ²‖²_ℍ, C_BP = 2e^T (5 + 4 c_BDG) + 4T, C_Y = C_BP (C_g C_X + L⋆²), for every c_BDG ≥ c₀, some c₀ > 0",
+     "spec": "Dissertation.PaperSpec.A.eq_bwddiff",
+     "accept": "Dissertation.Acceptance.A.eq_bwddiff",
+     "witness": "Dissertation.Acceptance.A.frozen_pair_hypotheses"
+    }
+   ],
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
     "8aee0383c039e706daf9b94b5a0408b82c53bea7ebb9e712a8c63d08847a968e",
@@ -3060,10 +3074,17 @@
    "title": "equation eq:contract [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:429",
    "source_sha256": "747835f57a1b4c1429243cdebab1cc3873022b5774d61884f0b447b1a5d04f41",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "clauses": [],
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "clauses": [
+    {
+     "name": "(4.13): ‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖²_ℍ = 𝔼 sup_{t ≤ T} |δX̄_t|² + 𝔼 sup_{t ≤ T} |δȲ_t|² + 𝔼 ∫_0^T (|δZ̄_s|²_F + ‖δŪ_s‖²) ds ≤ (C_X + C_Y) λ² ‖Θ¹ − Θ²‖²_ℍ ≤ C_Φ λ² ‖Θ¹ − Θ²‖²_ℍ, C_Φ = max{1, C_X + C_Y}, for every c_BDG ≥ c₀, some c₀ > 0",
+     "spec": "Dissertation.PaperSpec.A.eq_contract",
+     "accept": "Dissertation.Acceptance.A.eq_contract",
+     "witness": "Dissertation.Acceptance.A.frozen_pair_hypotheses"
+    }
+   ],
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
     "9911c31b0afc66bb02b8de946d63f88f53b1d71583d816b0c3717a51d7fa1445",
