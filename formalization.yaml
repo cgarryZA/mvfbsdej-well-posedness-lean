@@ -20,7 +20,7 @@ alignment:
     - source: "Definition 2.1"
       lean:
         - "Dissertation.WellPosedness.System.diagonalInputs"
-      status: "definition: author-reviewed"
+      status: "definition: reviewed"
     - source: "Assumption 2.2"
       lean:
         - "Dissertation.WellPosedness.Spec.Assumption22"
@@ -73,7 +73,7 @@ alignment:
     - source: "Theorem 3.1"
       lean:
         - "Dissertation.Acceptance.A.thm_stab"
-      status: "formal: proved, author-reviewed"
+      status: "formal: accepted"
     - source: "Remark 3.2"
       lean:
         - "Dissertation.Acceptance.A.rem_cwp_class"
