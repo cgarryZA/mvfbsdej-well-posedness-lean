@@ -122,7 +122,8 @@ theorem eq_contract_half : PaperSpec.A.eq_contract_half.{u, v, w} := by
     hl0' hl1 qb qσ qh qf qg hq X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ hΘ₁ hΘ₂ X₁' X₂' Y₁' Y₂' Z₁' Z₂' U₁' U₂' hS₁
     hS₂
   rw [← hCΦ] at h3
-  have h4 := (h2.trans h3).trans (by gcongr; exact hCl)
+  have h4 := (h2.trans h3).trans
+    (mul_le_mul_of_nonneg_right (ENNReal.ofReal_le_ofReal hCl) zero_le)
   have hq : ((1 / 4 : ℝ) ^ (1 / 2 : ℝ)) = 1 / 2 := by
     rw [← Real.sqrt_eq_rpow, show (1 / 4 : ℝ) = (1 / 2) ^ 2 by norm_num,
       Real.sqrt_sq (by norm_num)]
@@ -237,8 +238,10 @@ theorem eq_bwd_chain : PaperSpec.A.eq_bwd_chain.{u, v, w} := by
       exact le_add_self
     have hKe : ENNReal.ofReal ((3 * T + 12) * (2 * (10 * (2 * L) ^ 2) + 2))
         = ENNReal.ofReal (3 * T + 12) * (2 * k + 2) := by
-      rw [ENNReal.ofReal_mul (by positivity), ENNReal.ofReal_add (by positivity) (by norm_num),
-        ENNReal.ofReal_mul (by norm_num), ENNReal.ofReal_ofNat, ENNReal.ofReal_ofNat]
+      rw [ENNReal.ofReal_mul (by positivity)]
+      congr 1
+      rw [hk, ENNReal.ofReal_add (by positivity) (by norm_num), ENNReal.ofReal_mul (by norm_num),
+        ENNReal.ofReal_ofNat]
     have e : I + ∑ k, Brownian.Ito.energy P T (fun ω s => Y₁ k s ω - Y₂ k s ω) + jz + ju
         = I + J := by
       rw [hJd]
