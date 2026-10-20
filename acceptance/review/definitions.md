@@ -1068,8 +1068,8 @@ The objects that encode each item:
   Frobenius norm on `ℝ^{m×d}`) and `Lp (EuclideanSpace ℝ (Fin m)) 2 ν`; `tupleAt ν X Y Z U t ω` is
   `Θ_t(ω)`, read from the coordinate processes, its jump channel the `L²(ν)` class `uLift` of
   `e ↦ U_t(ω, e)`. `H` carries the maximum of the channel norms rather than its Hilbert norm, the
-  choice recorded at `TupleH` (`TupleL2` and `w2H` give the Hilbert norm where a statement needs
-  it).
+  choice recorded at `TupleH` (the Hilbert norm `|·|_H` enters through `toL2`, into `TupleL2`,
+  and through `w2H`, where a statement needs it).
 * `Θ⁻_t`: `tupleAt ν (leftLimProc X) (leftLimProc Y) Z U t`, the left limits `X_{t−}, Y_{t−}` of
   each path (`leftLimProc`) with `Z_t, U_t` unchanged, as printed.
 * `μ_t = Law(Θ_t)` and `μ⁻_t = Law(Θ⁻_t)`: `lawP2 P` of these two tuples, the law in `P₂(H)` of a
@@ -1105,6 +1105,82 @@ the Borel representative, with the junk `δ₀` off `L²`; the cut-off to `[0, T
 <!-- def-review: Dissertation.WellPosedness.System.driverProc 1491f35f9b5cef0eabae931fed61c587 by=claude-author source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
 <!-- def-review: Dissertation.WellPosedness.Existence.coeffJump 90dd30b497d4dd12d6d4dda771a35c05 by=claude-author source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 -->
 
+## The difference notation of §2 (`A:sec2:difference-notation`)
+
+Manuscript (`sections/02-model-assumptions.tex` at `1f67672`, lines 69–84): "All hypotheses below
+are imposed along `𝒟_t` only: the measure argument is never varied independently of the tuple.
+Throughout, a lower-case `θ` denotes a *point* of `H` and an upper-case `Θ` denotes a *random*
+`H`-valued tuple. **Difference notation.** For two diagonal inputs `(Θ, μ), (Θ′, μ′)` at the same
+time `t` on the same probability space, `δ` denotes the difference `δX := X − X′`,
+`δψ := ψ(t, Θ, μ) − ψ(t, Θ′, μ′)`, `ψ ∈ {b, σ, h, f}`, and, with the *induced* terminal laws
+`ρ := Law(X_T)` and `ρ′ := Law(X′_T)`, `δg_T := g(X_T, ρ) − g(X′_T, ρ′)`."
+
+The passage defines the objects that Assumption 2.3, with (2.6), and Assumption 2.5 use without
+defining them (claims `A:ass:lip` and `A:ass:mono`). The objects that encode each item, with the
+coefficients `C : Coeffs ν n m d` and the inputs `p = (Θ, μ)`, `p′ = (Θ′, μ′)`:
+
+* Two diagonal inputs at the same time `t` on the same probability space: `LipInteriorAt ℱ P t L C`
+  and `Mono27At ℱ P t G β₁ β₂ C` quantify over `p, p′ ∈ diagonalInputs ν n m d ℱ P t`, one time
+  `t` and one space `(Ω, ℱ, P)` for both; membership makes `μ = lawP2 P Θ` and `μ′ = lawP2 P Θ′`
+  (Definition 2.1, read at `A:def:diag`).
+* `δX := X − X′`: the `X`-channel `(p.1 ω).1 − (p′.1 ω).1` of `Θ(ω) − Θ′(ω)` in `LipInteriorAt`
+  and `Mono27At`, and `θ.1 − θ′.1` at two points in `pairing27`. The assumptions use `δY, δZ, δU`
+  in the same sense, the other channels of `Θ − Θ′`, and the definitions write them the same way.
+* `δψ := ψ(t, Θ, μ) − ψ(t, Θ′, μ′)`, `ψ ∈ {b, σ, h, f}`: in `LipInteriorAt`,
+  `C.b t (p.1 ω) p.2 − C.b t (p′.1 ω) p′.2` and the same for `σ`, `h`, `f`, the random variable
+  `ω ↦ ψ(t, Θ(ω), μ) − ψ(t, Θ′(ω), μ′)` with the two laws fixed. `pairing27 G C t θ θ′ μ μ′`
+  writes `ψ(t, θ, μ) − ψ(t, θ′, μ′)` at two points, and `Mono27At` evaluates it at `θ = Θ(ω)`,
+  `θ′ = Θ′(ω)` with `μ, μ′` the laws of the inputs. `δh` is the difference in `L²(ν; ℝⁿ)` of the
+  values of `C.h`; in the mark integral of `pairing27` it is taken through representatives,
+  `C.h t θ μ e − C.h t θ′ μ′ e`, and the integral does not depend on them.
+* The induced terminal laws `ρ := Law(X_T)`, `ρ′ := Law(X′_T)`: `lawP2 P XT` and `lawP2 P XT'`,
+  the laws in `P₂(ℝⁿ)` of the square-integrable `X_T, X′_T` themselves (the junk `δ₀` off `L²` is
+  not reached: both are assumed in `L²`). In `LipTerminal` and in the field `terminal` of
+  `Assumption25` the measure argument of `g` is always the law of its state argument, never a
+  free measure: this is what makes the terminal conditions diagonal.
+* `δg_T := g(X_T, ρ) − g(X′_T, ρ′)`: `g (XT ω) (lawP2 P XT) − g (XT' ω) (lawP2 P XT')` in
+  `LipTerminal`, (2.6), and the same with `C.g` in `Assumption25.terminal`, whose `δX_T` is
+  `XT − XT'`. The passage introduces `X_T, X′_T` beside two diagonal inputs without a quantifier;
+  Assumptions 2.3 and 2.5 quantify them over `L²(Ω, ℱ_T; ℝⁿ)`, and the definitions take every
+  strongly `ℱ_T`-measurable square-integrable pair. The two readings agree: the `X`-channel of a
+  diagonal input at time `T` lies in `L²(Ω, ℱ_T; ℝⁿ)`, and every element of that space is the
+  `X`-channel of one (with the other channels `0`).
+* `Assumption23` (`L ≥ 0`, `LipInteriorAt` for almost every `t ∈ [0, T]`, `LipTerminal`) and
+  `Assumption25` (the terminal inequality, `Mono27At` for almost every `t ∈ [0, T]`, `Constants`)
+  assemble these; no argument of a coefficient in either is a free measure.
+* 'All hypotheses below are imposed along `𝒟_t` only: the measure argument is never varied
+  independently of the tuple' (lines 69–70): the quantification just described. The later
+  hypotheses that compare two inputs are quantified the same way: (2.12) (`Margin212`), (2.13)
+  (`Margin213`), (3.4) (`PairingBound34`) and (3.5) (`LawLip35`), over pairs of `diagonalInputs`.
+  Two hypotheses printed below the sentence compare no inputs: Assumption 2.2 evaluates the
+  coefficients at `(0, δ₀)`, the zero tuple with its own law, a point of the diagonal; and the
+  joint Borel measurability of lines 100–106, with (2.3), is stated on all of
+  `[0, T] × H × P₂(H)`, where `JointBorel` (claim `A:eq:hborel`) takes it. The sentence is read as
+  concerning the hypotheses that compare two inputs, the later sentence naming its own domain;
+  this is the one choice of meaning the reading of the passage makes.
+* 'A lower-case `θ` denotes a point of `H` and an upper-case `Θ` a random `H`-valued tuple' (lines
+  70–71): a typographical convention, which the Lean follows: the coefficients (`Coeffs`) and
+  `pairing27` take points `θ : TupleH ν n m d`, and the inputs of `diagonalInputs` are maps
+  `Θ : Ω → TupleH ν n m d`. `rem_diag_mono` and `prop_strict` state a pointwise condition at
+  points `θ, θ′` beside the expected one at random `Θ, Θ′`, as Remark 2.8 does.
+* The propositions that write the notation out: `eq_coupling` and `eq_couplingT`
+  (`A:rem:wasserstein-bounds`: the channel differences `δX, δY, δZ, δU`, and `X_T − X′_T` with the
+  induced laws), `rem_diag_mono` and `rem_diag_mono_converse` (`A:rem:diag-mono`),
+  `rem_beta1_dich` (`A:rem:beta1-dich`: `δh` and `δU`) and `prop_strict` (`A:prop:strict`);
+  `A:rem:margin` and `A:cor:robust` use it through `Mono27At` and Assumptions 2.3 and 2.5.
+
+Verdict: faithful with representation choices (the `L²` classes represented by strongly
+measurable square-integrable maps; `δh` in the mark integral through representatives; the joint
+measurability of lines 100–106 on the full product, as printed there).
+
+<!-- def-review: Dissertation.WellPosedness.Spec.Assumption23 0d5048c72ef913b60000000000000000 by=claude-author source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+<!-- def-review: Dissertation.WellPosedness.Spec.Assumption25 2ad64300a1211b960000000000000000 by=claude-author source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+<!-- def-review: Dissertation.WellPosedness.Spec.LipInteriorAt 0d5048c72ef913b66bcf6ee4c960f28a by=claude-author source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+<!-- def-review: Dissertation.WellPosedness.Spec.LipTerminal 50fea10a492649962d326ec49234e618 by=claude-author source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+<!-- def-review: Dissertation.WellPosedness.Spec.pairing27 ede49a3a3551d3de0749c24d2bf7198b by=claude-author source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+<!-- def-review: Dissertation.WellPosedness.Spec.Mono27At a59346236526d219b3e1099916102f71 by=claude-author source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+<!-- def-review: Dissertation.Law.lawP2 8e02ec4a91100180227c044dc87cf8fe by=claude-author source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+
 ## The two-system notation of §3 (`A:sec3:two-system-notation`)
 
 Manuscript (`sections/03-main-results.tex` at `1f67672`, lines 39–49): "The stability and
@@ -1134,11 +1210,13 @@ The objects that encode each item, as `thm_stab` (Theorem 3.1) takes them, with 
 * `δ̂g_T`: `terminalVal P T C₁ X₂ − terminalVal P T C₂ X₂`, `g¹` and `g²` at
   `(X²_T, lawP2 P X²_T)`.
 * 'The stability and uniqueness theorems below rest on comparing solutions of (1.1) under two
-  coefficient systems': exposition. The statements of (3.1) use the notation: `thm_stab`,
-  `thm_stab_companion` (the roles exchanged, the differences along solution 1), `thm_stab_data`,
-  `thm_stab_minimal`, and `cor_robust_wp` and `rem_generalrank_wp` (a perturbed system against
-  system 2). Theorem 3.3 compares two solutions of one system, and its proof fixes its own
-  differences along both solutions (lines 110–117, in the claim `A:eq:uniq-coeff`).
+  coefficient systems': exposition. The statements of (3.1) use the notation: `thm_stab` (claims
+  `A:thm:stab`, `A:thm:cwp`, `A:abstract`, `A:conclusion`), `thm_stab_companion` (the roles
+  exchanged, the differences along solution 1), `thm_stab_data`, `thm_stab_minimal`, and
+  `cor_robust_wp` (`A:cor:robust`, `A:conclusion`), `rem_generalrank_wp` and `ex_fulllaw_wp`
+  (Example 5.4) (a perturbed system against system 2). Theorem 3.3 compares two solutions of one
+  system, and its proof fixes its own differences along both solutions (lines 110–117, in the
+  claim `A:eq:uniq-coeff`).
 
 Verdict: faithful with representation choices (the cut-off to `[0, T]`; `h` through a jointly
 measurable representative).
