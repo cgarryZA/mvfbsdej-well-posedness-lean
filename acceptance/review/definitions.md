@@ -2089,3 +2089,38 @@ Verdict: faithful with representation choices.
   <!-- def-review: Dissertation.PaperSpec.A.RepresentsMartBrownian 12cb148176c5045b1b2bd36a25a42656 by=claude-reviewer -->
   Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.RepresentsMartBrownian--claude-auditor--2026-10-19T03_34_12Z.md`).
   <!-- def-review: Dissertation.PaperSpec.A.RepresentsMartBrownian 12cb148176c5045b1b2bd36a25a42656 by=claude-auditor -->
+
+## Local stochastic integrals (`Dissertation/WellPosedness/Martingale/LocalIntegral.lean`)
+
+* `IsLocalBrownianIntegral W ℱ hℱ T H M`: `M` is a local Itô integral on `[0, T]` of the vector
+  integrand `H : ℝ → Ω → ℝ^d` against the multidimensional Brownian motion `W` for the filtration
+  `ℱ`: `M_t` is `ℱ_t`-measurable for `t ∈ [0, T]`, every path is right-continuous on `[0, T)` with
+  left limits on `(0, T]`, and there are `ℱ`-stopping times `τ_k` with values in `[0, ∞]`,
+  nondecreasing in `k`, almost surely at least `T` for some `k`, such that each cut-off integrand
+  `H_s 1_{s ≤ τ_k}` meets the conditions of the library's Itô integral (joint measurability,
+  progressive measurability, finite energy on every horizon; existential proof binders, so the
+  integral does not depend on them) and, for every `t ∈ [0, T]`, `M_t = ∫_0^t H_s 1_{s ≤ τ_k} dW_s`
+  almost surely on `{t ≤ τ_k}`. This is the usual local integral `∫_0^t H dW` of a locally
+  square-integrable predictable integrand (Protter, Ch. IV; He, Wang and Yan): two such `M`, for
+  any two localising sequences, agree at each `t ∈ [0, T]` almost surely (on
+  `{t ≤ τ_k ∧ τ'_k}` both are the integral of `H 1_{s ≤ τ_k ∧ τ'_k}`, by the locality of the
+  integral, and these events exhaust `Ω` up to a null set), hence are indistinguishable on
+  `[0, T]` by right-continuity; and against a càdlàg version `J_k` of the `k`-th integral, `M` stopped
+  at `τ_k` is `J_k` stopped at `τ_k` on `[0, T]` almost surely (on `{τ_k < T}` a later `τ_m`
+  exceeds `τ_k`), so `M` is a càdlàg local martingale on `[0, T]`, which the definition does not
+  state as a separate condition. Whether such `M` exists is a condition on `H` (local square
+  integrability along some `τ_k`), not part of the definition; `exists_isLocalBrownianIntegral`
+  gives existence. Only `[0, T]` is constrained: `M` off `[0, T]` is free, as the paper's
+  `M_t`, `t ≤ T`, is.
+  <!-- def-review: Dissertation.WellPosedness.Martingale.IsLocalBrownianIntegral af52a81469651df41748a271333f18f8 by=claude-author -->
+* `IsLocalCompensatedIntegral N ℱ hℱ T φ M`: the same for the marked integrand
+  `φ : Ω → ℝ → E → ℝ` against the compensated Poisson random measure `Ñ = N − ν ⊗ ds` for the
+  filtration `ℱ`: the cut-off integrands `φ_s(e) 1_{s ≤ τ_k}` meet the conditions of the library's
+  compensated integral (joint measurability on `Ω × ℝ × E`, marked progressive measurability,
+  finite energy `𝔼 ∫_0^{T'} ∫_E |·|² ν(de) ds` on every horizon) and
+  `M_t = ∫_0^t ∫_E φ_s(e) 1_{s ≤ τ_k} Ñ(ds, de)` almost surely on `{t ≤ τ_k}`, for every
+  `t ∈ [0, T]`. The local compensated integral of a locally square-integrable marked integrand;
+  uniqueness up to indistinguishability on `[0, T]` and the local-martingale property follow as
+  for `IsLocalBrownianIntegral`, from the locality of the compensated integral and its càdlàg
+  version.
+  <!-- def-review: Dissertation.WellPosedness.Martingale.IsLocalCompensatedIntegral fd70e2533ec1703ae35c9c952d53ca0a by=claude-author -->

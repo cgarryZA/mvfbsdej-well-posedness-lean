@@ -1705,7 +1705,7 @@
    "location": "paper/sections/04-proof-wellposedness.tex:151",
    "source_sha256": "89a434caa7c84ed5e2143713d1483dde1e7fa2001de1f51afe467a70f3c9fe8f",
    "scope": "formal",
-   "scope_note": "the clauses read the sentence of the pinned line (lines 148–152) and the paragraph on M² (lines 173–187); the first clause reads the sentence's first assertion, that membership in H²_N does not give the quadratic integrand of M² square moments, for ν ≠ 0, the degenerate case ν = 0, in which every marked integrand vanishes, being the one Remark 2.10 sets aside",
+   "scope_note": "the clauses read lines 139–187 of the proof, the paragraph on the zero-mean terms: the sentence of the pinned line (lines 148–152), the local martingales M^W and M¹ (lines 139–148 and 153–172) and the paragraph on M² (lines 173–187); the first clause reads the sentence's first assertion, that membership in H²_N does not give the quadratic integrand of M² square moments, for ν ≠ 0, the degenerate case ν = 0, in which every marked integrand vanishes, being the one Remark 2.10 sets aside; M^W and M¹ are read as local stochastic integrals (IsLocalBrownianIntegral, IsLocalCompensatedIntegral), which carries their local-martingale property, not stated separately; that the stochastic-integral terms of (4.5) are M^W, M¹ and M² belongs to (4.5) (A:eq:itoY2); the first link of the chain for M¹ (line 162), the Burkholder–Davis–Gundy inequality at p = 1 in quadratic-variation form, is cited work (He, Wang and Yan, as in A:sec4:supremum-criterion) and is not stated: the bound on 𝔼 sup |M¹| it leads to is stated and proved through the predictable quadratic variation (Lenglart's inequality), and the links after it are stated",
    "scope_reviewed": false,
    "clauses": [
     {
@@ -1731,6 +1731,24 @@
      "spec": "Dissertation.PaperSpec.A.lem41_M2_zero_mean",
      "accept": "Dissertation.Acceptance.A.lem41_M2_zero_mean",
      "witness": "Dissertation.Acceptance.A.lem_bpbsde_hypotheses"
+    },
+    {
+     "name": "M^W_t = ∫_0^t e^s ⟨δY_{s−}, δZ_s dW_s⟩ exists as a local Itô integral on [0, T], and 𝔼 sup_{t≤T} |M^W_t| ≤ c_BDG e^T (𝔼 sup_{t≤T} |δY_t|²)^{1/2} (𝔼 ∫_0^T |δZ_s|²_F ds)^{1/2} < ∞ and 𝔼[M^W_T − M^W_t] = 0 for every t ∈ [0, T] (c_BDG every value at least some c₀ > 0)",
+     "spec": "Dissertation.PaperSpec.A.lem41_MW",
+     "accept": "Dissertation.Acceptance.A.lem41_MW",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_nonzero_hypotheses"
+    },
+    {
+     "name": "M¹_t = ∫_0^t ∫_E e^s ⟨δY_{s−}, δU_s(e)⟩ Ñ(ds, de) exists as a local compensated integral on [0, T], and 𝔼 sup_{t≤T} |M¹_t| ≤ c_BDG e^T (𝔼 sup_{t≤T} |δY_t|²)^{1/2} (𝔼 ∫_0^T ‖δU_s‖² ds)^{1/2} < ∞ and 𝔼[M¹_T − M¹_t] = 0 for every t ∈ [0, T] (c_BDG every value at least some c₀ > 0)",
+     "spec": "Dissertation.PaperSpec.A.lem41_M1",
+     "accept": "Dissertation.Acceptance.A.lem41_M1",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_nonzero_hypotheses"
+    },
+    {
+     "name": "the links of the chain for M¹ after its first: 𝔼 (∫_0^T ∫_E e^{2s} |δY_{s−}|² |δU_s(e)|² N(ds, de))^{1/2} ≤ e^T (𝔼 sup_{t≤T} |δY_t|²)^{1/2} (𝔼 ∫_0^T ∫_E |δU_s(e)|² N(ds, de))^{1/2}, 𝔼 ∫_0^T ∫_E |δU|² N(ds, de) = 𝔼 ∫_0^T ∫_E |δU|² ν(de) ds by (2.1), = 𝔼 ∫_0^T ‖δU_s‖² ds",
+     "spec": "Dissertation.PaperSpec.A.lem41_M1_chain",
+     "accept": "Dissertation.Acceptance.A.lem41_M1_chain",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_nonzero_hypotheses"
     }
    ],
    "source_hash_scheme": "tex-region-v1",

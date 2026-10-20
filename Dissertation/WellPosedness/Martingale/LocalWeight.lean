@@ -329,8 +329,9 @@ variable {P : Measure Ω} [IsProbabilityMeasure P] {d : ℕ}
 /-- **Local Itô integrals of integrands weighted by left limits.** Let `Y` be adapted on `[0, T]`
 with paths right-continuous on `[0, T)` and `𝔼 sup_{t ≤ T} |Y_t|² < ∞`; let the weight `w` be
 progressively measurable, bounded by `C₁ R` at a time `s ≤ T` before which `|Y| ≤ R`, with
-`|w_s|² ≤ C² sup_{t ≤ T} |Y_t|²` on `[0, T]`; and let `Z` be of finite energy, vanishing off
-`[0, T]`. Then `H = ∑_k w_k Z_k` has a local Itô integral `M` on `[0, T]`; every such `M` has
+`|w_s|² ≤ C² sup_{t ≤ T} |Y_t|²` on `[0, T]`; and let `Z` be of finite energy, with `w_k` or
+`Z_k` vanishing at each time off `[0, T]`. Then `H = ∑_k w_k Z_k` has a local Itô integral `M`
+on `[0, T]`; every such `M` has
 `𝔼 sup_{t ≤ T} |M_t| ≤ 9 C (𝔼 sup_{t ≤ T} |Y_t|²)^{1/2} (𝔼 ∫_0^T |Z_s|² ds)^{1/2}`, and its
 increments `M_T − M_t` are integrable with mean zero. -/
 theorem localBrownian_weight [ℱ.IsRightContinuous]
@@ -354,7 +355,7 @@ theorem localBrownian_weight [ℱ.IsRightContinuous]
     (hZp : ∀ k j, ProgressivelyMeasurable ℱ fun ω s => Z k s ω j)
     (hZq : ∀ k j (T' : ℝ), 0 < T' →
       ∫⁻ ω, ∫⁻ s in Icc (0 : ℝ) T', (‖Z k s ω j‖₊ : ℝ≥0∞) ^ 2 ∂volume ∂P < ⊤)
-    (hZv : ∀ k ω s, s ∉ Icc (0 : ℝ) T → Z k s ω = 0) :
+    (hZv : ∀ k ω s, s ∉ Icc (0 : ℝ) T → w k s ω = 0 ∨ Z k s ω = 0) :
     (∃ M, IsLocalBrownianIntegral W ℱ hℱ T (fun s ω j => ∑ k, w k s ω * Z k s ω j) M)
     ∧ ∀ M, IsLocalBrownianIntegral W ℱ hℱ T (fun s ω j => ∑ k, w k s ω * Z k s ω j) M →
       ∫⁻ ω, ⨆ t ∈ Icc (0 : ℝ) T, (‖M t ω‖₊ : ℝ≥0∞) ∂P
@@ -405,7 +406,8 @@ theorem localBrownian_weight [ℱ.IsRightContinuous]
               exact le_abs_self C₁
           _ = (|C₁| * N) * ∑ k, |Z k s ω j| := by rw [Finset.mul_sum]
       · have : H s ω j = 0 := by
-          simp only [hHdef, hZv _ ω s hs, Pi.zero_apply, mul_zero, Finset.sum_const_zero]
+          refine Finset.sum_eq_zero fun k _ => ?_
+          rcases hZv k ω s hs with h | h <;> simp [h]
         rw [this, abs_zero]
         positivity
     · rw [abs_zero]
@@ -568,8 +570,9 @@ variable (N : Poisson.PoissonRandomMeasure P ν) (ℱ : Filtration ℝ ‹Measur
   (hℱ : Poisson.IsPoissonFiltration N ℱ)
 
 /-- **Local compensated integrals of marked integrands weighted by left limits.** With `Y` and the
-weight `w` as in `localBrownian_weight`, and a marked integrand `U` of finite energy vanishing off
-`[0, T]`, `φ = ∑_k w_k U_k` has a local compensated integral `M` on `[0, T]`; every such `M` has
+weight `w` as in `localBrownian_weight`, and a marked integrand `U` of finite energy, with `w_k` or
+`U_k` vanishing at each time off `[0, T]`, `φ = ∑_k w_k U_k` has a local compensated integral `M`
+on `[0, T]`; every such `M` has
 `𝔼 sup_{t ≤ T} |M_t| ≤ 9 C (𝔼 sup_{t ≤ T} |Y_t|²)^{1/2} (𝔼 ∫_0^T ‖U_s‖²_{L²(ν)} ds)^{1/2}`, and
 its increments `M_T − M_t` are integrable with mean zero. -/
 theorem localCompensated_weight [ℱ.IsRightContinuous]
@@ -593,7 +596,7 @@ theorem localCompensated_weight [ℱ.IsRightContinuous]
     (hUp : ∀ k, MarkedProgressivelyMeasurable ℱ fun ω s e => U k s ω e)
     (hUq : ∀ k (T' : ℝ), 0 < T' → ∫⁻ ω, ∫⁻ s in Icc (0 : ℝ) T', ∫⁻ e,
       (‖U k s ω e‖₊ : ℝ≥0∞) ^ 2 ∂ν ∂volume ∂P < ⊤)
-    (hUv : ∀ k ω s e, s ∉ Icc (0 : ℝ) T → U k s ω e = 0) :
+    (hUv : ∀ k ω s, s ∉ Icc (0 : ℝ) T → w k s ω = 0 ∨ ∀ e, U k s ω e = 0) :
     (∃ M, IsLocalCompensatedIntegral N ℱ hℱ T
       (fun ω s e => ∑ k, w k s ω * U k s ω e) M)
     ∧ ∀ M, IsLocalCompensatedIntegral N ℱ hℱ T (fun ω s e => ∑ k, w k s ω * U k s ω e) M →
@@ -646,7 +649,8 @@ theorem localCompensated_weight [ℱ.IsRightContinuous]
               exact le_abs_self C₁
           _ = (|C₁| * R) * ∑ k, |U k s ω e| := by rw [Finset.mul_sum]
       · have : φ ω s e = 0 := by
-          simp only [hφdef, hUv _ ω s e hs, mul_zero, Finset.sum_const_zero]
+          refine Finset.sum_eq_zero fun k _ => ?_
+          rcases hUv k ω s hs with h | h <;> simp [h]
         rw [this, abs_zero]
         positivity
     · rw [abs_zero]

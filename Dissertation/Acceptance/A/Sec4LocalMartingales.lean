@@ -20,6 +20,7 @@ their bounds with `c₀ = 9`, and the zero means.
 
 * `Dissertation.Acceptance.A.lem41_MW` — `M^W`.
 * `Dissertation.Acceptance.A.lem41_M1` — `M¹`.
+* `Dissertation.Acceptance.A.lem41_M1_chain` — the links of the chain for `M¹` after its first.
 -/
 
 open MeasureTheory ProbabilityTheory Filter Set
@@ -51,7 +52,8 @@ theorem lem41_MW : PaperSpec.A.lem41_MW.{u, v, w} := by
     (fun i ω t ht => hYr i ω t ht) hS hwm hwp hwb (Real.exp_pos T).le hwsq
     (Z := δZ) (fun k j => Brownian.Ito.measurable_uncurry_of_predictable (hZ k j))
     (fun k j => progressivelyMeasurable_of_predictable_of_vanish (hZ k) (hZv k) j)
-    (fun k j => BSDEJ.Solves.sq_int_global_of_vanishing (hZv k) (hZs k) j) hZv
+    (fun k j => BSDEJ.Solves.sq_int_global_of_vanishing (hZv k) (hZs k) j)
+    (fun k ω s hs => Or.inr (hZv k ω s hs))
   rw [expLeftLim_integrand_eq hZv] at key
   have hfin : ENNReal.ofReal (c * Real.exp T)
       * (∫⁻ ω, ⨆ t ∈ Icc (0 : ℝ) T, esq (fun k => δY k t ω) ∂P) ^ (1 / 2 : ℝ)
@@ -88,7 +90,8 @@ theorem lem41_M1 : PaperSpec.A.lem41_M1.{u, v, w} := by
     (fun i ω t ht => hYr i ω t ht) hS hwm hwp hwb (Real.exp_pos T).le hwsq
     (U := δU) (fun k => (hU k).mono (Probability.markedPredictableSigma_le _ ν) le_rfl)
     (fun k => (hU k).markedProgressivelyMeasurable)
-    (fun k => BSDEJ.Solves.marked_sq_int_global_of_vanishing (hUv k) (hUs k)) hUv
+    (fun k => BSDEJ.Solves.marked_sq_int_global_of_vanishing (hUv k) (hUs k))
+    (fun k ω s hs => Or.inr fun e => hUv k ω s e hs)
   rw [expLeftLim_markedIntegrand_eq hUv] at key
   have hfin : ENNReal.ofReal (c * Real.exp T)
       * (∫⁻ ω, ⨆ t ∈ Icc (0 : ℝ) T, esq (fun k => δY k t ω) ∂P) ^ (1 / 2 : ℝ)
@@ -108,5 +111,29 @@ theorem lem41_M1 : PaperSpec.A.lem41_M1.{u, v, w} := by
           * (∑ k, ∫⁻ ω, ∫⁻ s in Icc (0 : ℝ) T, ∫⁻ e, (‖δU k s ω e‖₊ : ℝ≥0∞) ^ 2
               ∂ν ∂volume ∂P) ^ (1 / 2 : ℝ) := (key.2 M1 hM1).1
     _ ≤ _ := mul_le_mul' (mul_le_mul' hc9 le_rfl) le_rfl
+
+/-- **The links of the chain for `M¹` after its first**: Cauchy–Schwarz, the compensation formula
+(2.1) and the `L²(ν)` norm. -/
+theorem lem41_M1_chain : PaperSpec.A.lem41_M1_chain.{u, v, w} := by
+  intro Ω 𝒢₀ mΩ E _ ν _ _ m d P _ D h𝒢₀ hind₀ hm hd T hT δξ φ δY δZ δU hZ hZv hZs hU hUv hUs
+    hξm hξ hφm hφs hYa hYr hYl heq
+  have hN := isPoissonFiltration_enlJoint D h𝒢₀ hind₀
+  obtain ⟨hJm, h3⟩ := poisson_sumSq_compensation (N := D.N) hN T hU
+  have hUm : ∀ k, Measurable fun p : Ω × ℝ × E => δU k p.2.1 p.1 p.2.2 := fun k =>
+    (hU k).mono (Probability.markedPredictableSigma_le _ ν) le_rfl
+  have hUω : ∀ ω, Measurable fun p : ℝ × E => ENNReal.ofReal (∑ k, δU k p.1 ω p.2 ^ 2) :=
+    fun ω => ENNReal.measurable_ofReal.comp (Finset.measurable_sum _ fun k _ =>
+      ((hUm k).comp (measurable_const.prodMk measurable_id)).pow_const 2)
+  have hSm : Measurable fun ω => ⨆ t ∈ Icc (0 : ℝ) T, ∑ k, (‖δY k t ω‖₊ : ℝ≥0∞) ^ 2 := by
+    refine Dissertation.WellPosedness.Martingale.measurable_biSup_Icc_ennreal hT.le (fun t ht =>
+      Finset.measurable_sum _ fun k _ =>
+        ((hYa k t ht).mono ((enlJoint 𝒢₀ D h𝒢₀).le t) le_rfl).nnnorm.coe_nnreal_ennreal.pow_const
+          2) fun ω t ht => ?_
+    refine tendsto_finsetSum _ fun k _ => ?_
+    exact ((ENNReal.continuous_pow 2).comp (ENNReal.continuous_coe.comp
+      continuous_nnnorm)).continuousAt.tendsto.comp (hYr k ω t ht)
+  refine ⟨?_, h3, lintegral_Ioc_sumSq_eq_markedEnergy hUm⟩
+  exact (lintegral_mono fun ω => sqrt_setLIntegral_leftLim_le ω (fun k t ht => hYl k ω t ht)
+    (D.N.N ω) (hUω ω)).trans (lintegral_mul_sqrt_le hSm.aemeasurable hJm _)
 
 end Dissertation.Acceptance.A

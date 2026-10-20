@@ -675,6 +675,119 @@ Review by claude-auditor: faithful with representation choices (report `reports/
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lem41_M2_zero_mean--claude-auditor--2026-10-19T22_59_53Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.lem41_M2_zero_mean ed839d34f480cba15a569c2d7c1d42fd by=claude-auditor -->
 
+## `M^W` and `M¹` in the proof of Lemma 4.1: `Dissertation.PaperSpec.A.lem41_MW`, `lem41_M1`, `lem41_M1_chain`
+
+Manuscript (proof of Lemma `lem:bpbsde`, lines 139–148 and 153–172; clauses of the claim pinned at
+line 151): "The stochastic-integral terms in (4.5) decompose into three local martingales
+`M^W_t := ∫_0^t e^s ⟨δY_{s−}, δZ_s dW_s⟩`, `M^1_t := ∫_0^t ∫_E e^s ⟨δY_{s−}, δU_s(e)⟩ Ñ(ds, de)`,
+`M^2_t := ∫_0^t ∫_E e^s |δU_s(e)|² Ñ(ds, de)`, each of which we now show satisfies
+`𝔼[M_T − M_t] = 0`. […] For `M^W`, BDG and Cauchy–Schwarz give
+`𝔼 sup_{t ≤ T} |M^W_t| ≤ c_BDG e^T (𝔼 sup_{t ≤ T} |δY_t|²)^{1/2} (𝔼 ∫_0^T |δZ_s|²_F ds)^{1/2} < ∞`,
+and for `M^1` BDG, Cauchy–Schwarz and (2.1) give
+`𝔼 sup_{t ≤ T} |M^1_t| ≤ c_BDG 𝔼[(∫_0^T ∫_E e^{2s} |δY_{s−}|² |δU_s(e)|² N(ds, de))^{1/2}]
+≤ c_BDG e^T (𝔼 sup_{t ≤ T} |δY_t|²)^{1/2} (𝔼 ∫_0^T ∫_E |δU_s(e)|² N(ds, de))^{1/2}
+= c_BDG e^T (𝔼 sup_{t ≤ T} |δY_t|²)^{1/2} (𝔼 ∫_0^T ∫_E |δU_s(e)|² ν(de) ds)^{1/2}
+= c_BDG e^T (𝔼 sup_{t ≤ T} |δY_t|²)^{1/2} (𝔼 ∫_0^T ‖δU_s‖²_{L²(ν)} ds)^{1/2} < ∞`.
+These bounds put the running suprema of `M^W` and `M^1` in `L¹`, so the supremum criterion gives
+`𝔼[M_T − M_t] = 0` for `M ∈ {M^W, M^1}`." The §4 preamble (lines 30–35) fixes BDG in
+quadratic-variation form, at `p = 1` for the zero-mean arguments, with one universal constant
+`c_BDG`.
+
+Propositions (hypotheses: those of Lemma 4.1, `lem_bpbsde`, verbatim):
+
+* `lem41_MW`: there is `c₀ > 0` such that for every `c ≥ c₀`: the integrand
+  `H_s(j) = e^s ∑_k δY^k_{s−} δZ^{kj}_s` (with `δY^k_{s−}` = `leftLimProc δY k s ω` for `s > 0`
+  and `0` for `s ≤ 0`) has a local Itô integral `M^W` on `[0, T]`
+  (`IsLocalBrownianIntegral D.W (enlJoint …) _ T H M^W`), and every such `M^W` satisfies
+  `∫⁻ sup_{t ∈ [0, T]} ‖M^W_t‖ ≤ ofReal (c e^T) (∫⁻ sup_{t ∈ [0, T]} esq δY_t)^{1/2}
+  (∑_{k, j} energy δZ^{kj})^{1/2}`, the right side is finite, and for every `t ∈ [0, T]`,
+  `M^W_T − M^W_t` is integrable with mean zero.
+* `lem41_M1`: the same for `φ_s(e) = e^s ∑_k δY^k_{s−} δU^k_s(e)`, the local compensated
+  integral (`IsLocalCompensatedIntegral D.N (enlJoint …) _ T φ M^1`) and
+  `(∑_k markedEnergy δU^k)^{1/2}` in place of the `δZ` energy.
+* `lem41_M1_chain`: with the Poisson integrals over `(0, T] × E` (lower integrals against
+  `D.N.N ω`), `∫⁻ (∫∫ e^{2s} |δY_{s−}|² |δU_s(e)|² dN)^{1/2} ≤ ofReal e^T
+  (∫⁻ sup esq δY)^{1/2} (∫⁻ ∫∫ |δU|² dN)^{1/2}`; `∫⁻ ∫∫ |δU|² dN = ∫⁻ ∫_{(0, T]} ∫_E |δU|² dν ds`;
+  and the latter is `∑_k markedEnergy δU^k`.
+
+Readings:
+
+* The local martingales are local stochastic integrals. Their integrands carry `δY_{s−}`, of which
+  Lemma 4.1 gives only `𝔼 sup |δY|² < ∞` (the membership step of the same proof, the first
+  conjunct of `lem_bpbsde`), so `𝔼 ∫ e^{2s} |δY_{s−}|² |δZ_s|² ds` can be infinite (for a
+  martingale `δY_t = 𝔼[δξ | ℱ_t]` with `δξ ∈ L² \ L⁴` it is), and the `L²` integrals of the
+  library do not apply; the paper's "local martingales" are the local integrals. They are
+  defined (`IsLocalBrownianIntegral`, `IsLocalCompensatedIntegral`, reviewed in `definitions.md`)
+  as càdlàg adapted processes agreeing, up to stopping times exhausting `[0, T]`, with the `L²`
+  integrals of the integrand cut off at those times; the definition determines `M` up to
+  indistinguishability on `[0, T]`, so "every such `M`" is the paper's `M^W` (resp. `M^1`), and
+  the existence conjunct is the paper's definition `M^W_t := ∫_0^t …`. The local-martingale
+  property is carried by the definition and not stated as a separate conjunct.
+* `δY_{s−}` is the left limit of `δY` at `s ∈ (0, T]`, which exists by hypothesis; at `s ≤ 0`
+  the integrand is set to `0`: Lemma 4.1 constrains `δY` on `[0, T]` only, `δZ` and `δU` vanish
+  at negative times, and the integrals do not see the time `0` (a Lebesgue-null time; `N` charges
+  no fixed time). At `s > T` the integrands vanish with `δZ`, `δU`.
+* `⟨δY_{s−}, δZ_s dW_s⟩ = ∑_j (∑_k δY^k_{s−} δZ^{kj}_s) dW^j_s`, the library's multidimensional
+  integral of the vector integrand; `|δZ_s|²_F = ∑_{k, j} (δZ^{kj}_s)²`, so `𝔼 ∫_0^T |δZ_s|²_F ds`
+  is `∑_{k, j} energy`; `𝔼 ∫_0^T ‖δU_s‖² ds = ∑_k markedEnergy`; `𝔼 sup_{t ≤ T} |δY_t|²` is the
+  lower integral of the supremum of `esq`, as in `lem_bpbsde`. Expectations of nonnegative
+  quantities are lower integrals in `[0, ∞]`; "`< ∞`" is the finiteness of the right side, which
+  with the bound puts the running suprema in `L¹` (line 171).
+* `c_BDG`: one universal constant in the paper, unspecified; each proposition asserts its bound
+  for every value of it at least some `c₀ > 0` (here `c₀ = 9`), as the other propositions with
+  `c_BDG` do, so all of them hold together for every `c_BDG` at least the largest `c₀`.
+* "`𝔼[M_T − M_t] = 0`" is read for every `t ∈ [0, T]` with the increment integrable (Bochner
+  expectation of an integrable function), the conclusion of the supremum criterion
+  (`sec4_supremum_criterion`), which the proof replaces by a direct argument.
+* The chain for `M^1`. Its first link, `𝔼 sup |M^1| ≤ c_BDG 𝔼 [M^1]_T^{1/2}` with the
+  quadratic variation `[M^1]_T = ∫∫ e^{2s} |δY_{s−}|² |δU|² N(ds, de)`, is BDG at `p = 1` in
+  quadratic-variation form for a discontinuous local martingale (Davis's inequality), cited from
+  He, Wang and Yan; it is not stated (recorded in the claim's `scope_note`, as the BDG inequality
+  is in `A:sec4:supremum-criterion`). The bound it leads to, `lem41_M1`, is stated and proved
+  through the predictable quadratic variation `⟨M^1⟩_T = ∫_0^T ∫_E e^{2s} |δY_{s−}|² |δU|² ν ds`
+  (Lenglart's inequality), with the same right-hand side. The later links are
+  `lem41_M1_chain`: the Cauchy–Schwarz link, stated without the common factor `c_BDG ≥ 0` of both
+  sides (equivalent); the compensation link (2.1) with `∫_0^T` read over `(0, T]`; and the norm
+  link, the definition of `‖δU_s‖_{L²(ν)}` (energies on `[0, T]`, which differ from `(0, T]` by
+  a null set).
+* Not formalised here: that the stochastic-integral terms of (4.5) are `M^W`, `M^1` and `M^2`
+  (the decomposition belongs to (4.5), `A:eq:itoY2`, a proof step not stated); `M^2` is the
+  `M²` paragraph (`lem41_M2_zero_mean`, read pathwise).
+
+Proofs: BDG at `p = 1` for the `L²` integrals (`lintegral_biSup_le_brownian`,
+`lintegral_biSup_le_compensated`, constant `9`) by Lenglart's argument (`lintegral_le_of_good_lambda`):
+the integral of the integrand cut off when its energy reaches `δ` (`energyHit`, a stopping time)
+agrees with the integral up to that time (the library's locality), Doob's `L²` inequality bounds
+its squared supremum by `4 𝔼 (A_T ∧ δ)`, and the tail bounds integrate over `δ`. The local
+integrals exist along the exit times of `δY` from balls (`exitSeq`), up to which
+`|δY_{s−}|` is bounded and the cut-off integrands have finite energy
+(`exists_isLocalBrownianIntegral`); BDG passes to them by monotone convergence
+(`IsLocalBrownianIntegral.lintegral_biSup_le`), and with `|e^s δY_{s−}|² ≤ e^{2T} sup |δY|²` and
+Cauchy–Schwarz (`localBrownian_weight`, `localCompensated_weight`) gives the bounds, with
+`𝔼 sup |δY|² < ∞` from `lem_bpbsde`. The zero means: the increments of the cut-off integrals have
+mean zero, converge almost surely to `M_T − M_t`, and are Cauchy in `L¹` by BDG applied to the
+differences (`integrable_and_integral_eq_zero_of_cauchy`). The chain: pathwise
+`e^{2s} |δY_{s−}|² ≤ e^{2T} sup |δY|²` and Hölder (`sqrt_setLIntegral_leftLim_le`,
+`lintegral_mul_sqrt_le`), (2.1) at the marked predictable `|δU|²` cut to the positive times
+(`poisson_sumSq_compensation`), and `Ioc` and `Icc` differing by a null set
+(`lintegral_Ioc_sumSq_eq_markedEnergy`).
+
+Witness: `Dissertation.Acceptance.A.lem_bpbsde_nonzero_hypotheses` — a Lévy driver with `d = 1`,
+`ν = δ₀`, `𝒢₀ = ⊥`, `m = 1`, `T = 1`, `δZ = δU = 1_{(0, 1]}` (energy `1` each, stated), `φ = 0`,
+`δY` the sum of everywhere-càdlàg versions of `∫_0^t δZ dW` and `∫_0^t ∫ δU dÑ`, `δξ = δY_1`: every
+hypothesis of Lemma 4.1 holds, and the integrands of `M^W`, `M^1` are not zero (the existing
+witness of Lemma 4.1, `lem_bpbsde_hypotheses`, is the zero solution of Example 5.1(i)).
+
+Verdict: `lem41_MW` and `lem41_M1` faithful with representation choices (local stochastic
+integrals for the local martingales; the integrand at `s ≤ 0`; `c_BDG` as every value at least
+`c₀`); `lem41_M1_chain` faithful with representation choices (the common factor `c_BDG` dropped,
+`(0, T]` for `∫_0^T`); the first link of the `M^1` chain is a cited result, recorded in
+`scope_note`.
+
+<!-- spec-review: Dissertation.PaperSpec.A.lem41_MW ed839d34f480cba1d59592d221a6cd18 by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.lem41_M1 ed839d34f480cba10bd49a12773fa34d by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.lem41_M1_chain ed839d34f480cba11e7d5cd5bc08d7ae by=claude-author -->
+
 ## (4.6), the bound at every time in the proof of Lemma 4.1: `Dissertation.PaperSpec.A.eq_supE`
 
 Manuscript (proof of Lemma `lem:bpbsde`, lines 188–217): taking expectations in (4.5) and Young's
