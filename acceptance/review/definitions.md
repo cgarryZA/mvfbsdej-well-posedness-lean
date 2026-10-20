@@ -1937,12 +1937,16 @@ Verdict: faithful with representation choices.
   constrained on `[0, T]` only and `Z`, `U` vanish off it, the encoding of `WeakSolution`; the
   conditions on `Θ` in `Solution` are exactly these.
   <!-- def-review: Dissertation.PaperSpec.A.HTuple f8659178ce7276554797eb3de5a8f4d0 by=claude-author -->
+  Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.HTuple--claude-auditor--2026-10-20T00_44_30Z.md`).
+  <!-- def-review: Dissertation.PaperSpec.A.HTuple f8659178ce7276554797eb3de5a8f4d0 by=claude-auditor -->
 * `PaperSpec.A.coeffDiffNorm P C Θ₁ Θ₂ s ω = ‖δb‖ₑ + ‖δσ‖ₑ + ‖δh‖ₑ + ‖δf‖ₑ` in `[0, ∞]`, with
   `δψ = ψ(s, Θ₁ s ω, lawP2 P (Θ₁ s)) − ψ(s, Θ₂ s ω, lawP2 P (Θ₂ s))`: `S_s` of Step 1 of the proof
   of Lemma 4.2 for two random tuples `Θᵏ_s` and their laws in `P₂(H)`. `‖δσ‖` is the Euclidean
   norm on `ℝ^{n × d}` (the Frobenius norm) and `‖δh‖` the norm of `L²(ν; ℝⁿ)`, the norms of
   Assumption 2.3; `lawP2` is the law of a square-integrable tuple (reviewed with the laws).
   <!-- def-review: Dissertation.PaperSpec.A.coeffDiffNorm 1d032902209e76e50e3f27b76888b87d by=claude-author -->
+  Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.coeffDiffNorm--claude-auditor--2026-10-20T00_44_30Z.md`).
+  <!-- def-review: Dissertation.PaperSpec.A.coeffDiffNorm 1d032902209e76e50e3f27b76888b87d by=claude-auditor -->
 * `PaperSpec.A.FrozenForward D h𝒢₀ hind₀ T λ C ξ₀ q^b q^σ q^h X Y Z U X'`: there is
   `γ : Fin n → ℝ → Ω → E → ℝ` with `e ↦ (γ_i s ω e)_i` equal `ν`-almost everywhere to
   `h(s, Θ⁻_s(ω), ·, Law(Θ⁻_s))` for almost every `s ∈ [0, T]`, almost surely, where
@@ -1957,6 +1961,8 @@ Verdict: faithful with representation choices.
   need. Which representative is taken does not matter: two solutions are indistinguishable
   (`eq_frozenfwd`).
   <!-- def-review: Dissertation.PaperSpec.A.FrozenForward 2d8ed447ca12534ca192702cec9f9648 by=claude-author -->
+  Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.FrozenForward--claude-auditor--2026-10-20T00_44_30Z.md`).
+  <!-- def-review: Dissertation.PaperSpec.A.FrozenForward 2d8ed447ca12534ca192702cec9f9648 by=claude-auditor -->
 * `PaperSpec.A.FrozenStep D h𝒢₀ hind₀ T λ C ξ₀ q X Y Z U X' Y' Z' U'`: `FrozenForward … X'`; each
   coordinate `(Y'_k, Z'_k, U'_k)` solves `LinearBSDEJ` over `enlJoint` with terminal value
   `λ terminalVal P T C X' k + q^g_k`, which is `λ g(X'_T, Law(X'_T)) + q^g_T`, and drift
@@ -1966,6 +1972,8 @@ Verdict: faithful with representation choices.
   `ν = 0`, `λ = 1`, `q = 0` and `ξ₀ = 0` correspond to `BrownianFrozenStep`, whose Poisson
   integrand `0` stands for the representative `γ` (with `ν = 0` the compensated integral vanishes).
   <!-- def-review: Dissertation.PaperSpec.A.FrozenStep 4c12ec59e5b0c0624baf69ddef5e32bc by=claude-author -->
+  Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.FrozenStep--claude-auditor--2026-10-20T00_44_30Z.md`).
+  <!-- def-review: Dissertation.PaperSpec.A.FrozenStep 4c12ec59e5b0c0624baf69ddef5e32bc by=claude-auditor -->
 
 ## The Brownian forms of Example 5.2 (`Dissertation/WellPosedness/Spec/BrownianForms.lean`, `Dissertation/PaperSpec/A/Sec5BrownianReduction.lean`, `Dissertation/WellPosedness/Examples/BrownianFiltration.lean`)
 

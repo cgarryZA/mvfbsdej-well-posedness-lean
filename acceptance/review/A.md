@@ -236,7 +236,11 @@ with Theorem 3.3), which are those of both propositions.
 Verdict: faithful.
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_coeff ed839d34f480cba11fcb76fb4b640955 by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_uniq_coeff--claude-auditor--2026-10-20T00_40_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_coeff ed839d34f480cba11fcb76fb4b640955 by=claude-auditor -->
 <!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_bwd ed839d34f480cba12aa97c204e9816a6 by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_uniq_bwd--claude-auditor--2026-10-20T00_40_52Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_uniq_bwd ed839d34f480cba12aa97c204e9816a6 by=claude-auditor -->
 
 ## Theorem 3.5: `Dissertation.PaperSpec.A.thm_cwp`, and its continuous dependence
 
@@ -865,6 +869,8 @@ Verdict: faithful (both true as printed; the uniqueness of (4.7) broader than pr
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_frozenfwd ed839d34f480cba18303299f6df7eded by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.eq_frozenbwd ed839d34f480cba178b77fba8e33d01f by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_frozenbwd--claude-auditor--2026-10-20T00_44_30Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_frozenbwd ed839d34f480cba178b77fba8e33d01f by=claude-auditor -->
 
 ## (4.9), Step 1 of the proof of Lemma 4.2: `Dissertation.PaperSpec.A.eq_coeffdiff`
 
@@ -927,6 +933,8 @@ and `δσ = δh = 0`, so `S_s = 2`, and the three links read `4 ≤ 20 ≤ 20 �
 Verdict: faithful.
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_coeffdiff ed839d34f480cba1b363f744d12fe99d by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_coeffdiff--claude-auditor--2026-10-20T00_44_30Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_coeffdiff ed839d34f480cba1b363f744d12fe99d by=claude-auditor -->
 
 ## (4.11), Step 3 of the proof of Lemma 4.2: `Dissertation.PaperSpec.A.eq_terdiff`
 
@@ -1389,6 +1397,8 @@ Witness: `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`, the hypothese
 Verdict: faithful.
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_bwdito ed839d34f480cba1ac3ad318e96e1e46 by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_bwdito--claude-auditor--2026-10-20T00_40_53Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bwdito ed839d34f480cba1ac3ad318e96e1e46 by=claude-auditor -->
 
 ## (4.25), the Young bound in Step 4 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_bwdyoung`
 
