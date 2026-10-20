@@ -77,9 +77,10 @@ noncomputable def coeffDiffNorm (P : Measure Ω) [IsProbabilityMeasure P] (C : C
     + ‖C.f s (Θ₁ s ω) (lawP2 P (Θ₁ s)) - C.f s (Θ₂ s ω) (lawP2 P (Θ₂ s))‖ₑ
 
 /-- `X'` solves the frozen forward equation (4.7) of Lemma 4.2 for the trial `Θ = (X, Y, Z, U)`,
-over the filtration of §2: for a representative `γ` of the jump coefficient at the predictable
-tuple, `e ↦ γ_s(ω, e)` equal to `h(s, Θ⁻_s(ω), ·, μ⁻_s)` in `L²(ν)` for almost every
-`s ∈ [0, T]`, almost surely, each coordinate satisfies, almost surely at every `t ∈ [0, T]`,
+over the filtration of §2: there is a representative `γ` of the jump coefficient at the
+predictable tuple, `e ↦ γ_s(ω, e)` equal to `h(s, Θ⁻_s(ω), ·, μ⁻_s)` in `L²(ν)` for almost every
+`s ∈ [0, T]`, almost surely, with which each coordinate satisfies, almost surely at every
+`t ∈ [0, T]`,
 `X'_t = ξ₀ + ∫_0^t (λ b(s, Θ_s, μ_s) + q^b_s) ds + ∫_0^t (λ σ(s, Θ_s, μ_s) + q^σ_s) dW_s
   + ∫_0^t ∫_E (λ γ_s(e) + q^h_s(e)) Ñ(ds, de)`,
 with `X'` adapted with right-continuous paths and the integrands meeting the conditions of the

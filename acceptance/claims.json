@@ -2865,10 +2865,17 @@
    "title": "equation eq:frozenfwd [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:266",
    "source_sha256": "4e585ce7f397c971a8de4acdb6d81d0be45f342db82a0166e9d3d3578fcb0504",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "clauses": [],
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "clauses": [
+    {
+     "name": "(4.7): along a trial Θ ∈ ℍ, 𝔼 ∫_0^T |ψ(s, Θ_s, μ_s)|² ds < ∞ for ψ ∈ {b, σ, h}; the frozen forward equation, with h at (Θ⁻_s, μ⁻_s) through a representative, has a solution X̄ with 𝔼 sup_{t ≤ T} |X̄_t|² < ∞; any two solutions are indistinguishable on [0, T]",
+     "spec": "Dissertation.PaperSpec.A.eq_frozenfwd",
+     "accept": "Dissertation.Acceptance.A.eq_frozenfwd",
+     "witness": "Dissertation.Acceptance.A.frozen_hypotheses"
+    }
+   ],
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
     "0865cca4da02a9a6573bfcc686bbde2000bd44117ed5ba6c061fc230c560e761",
@@ -2888,10 +2895,17 @@
    "title": "equation eq:frozenbwd [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:305",
    "source_sha256": "17276cb1f64eca4139ee188be1e81dc912dab34d5bd02a5596d5d4321fdb9764",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "clauses": [],
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "clauses": [
+    {
+     "name": "(4.8): for every solution X̄ of (4.7), Ξ = λ g(X̄_T, Law(X̄_T)) + q^g_T + ∫_0^T (λ f(s, Θ_s, μ_s) + q^f_s) ds lies in L²(Ω, ℱ_T; ℝᵐ); there is Θ̄ = (X̄, Ȳ, Z̄, Ū) ∈ ℍ with X̄ solving (4.7) and (Ȳ, Z̄, Ū) solving (4.8); any two such Θ̄ are equal in ℍ",
+     "spec": "Dissertation.PaperSpec.A.eq_frozenbwd",
+     "accept": "Dissertation.Acceptance.A.eq_frozenbwd",
+     "witness": "Dissertation.Acceptance.A.frozen_hypotheses"
+    }
+   ],
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
     "6fe095bee848af81f9082966d2be4cd8accc4659d4a12f521c9bf832321f7e6a",
@@ -2910,10 +2924,17 @@
    "title": "equation eq:coeffdiff [proof]",
    "location": "paper/sections/04-proof-wellposedness.tex:339",
    "source_sha256": "a02482f342dcea543d3e2b9f5367fcfcc00191aef184c33ffa0477616f3b3bb3",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
-   "scope_reviewed": true,
-   "clauses": [],
+   "scope": "formal",
+   "scope_note": "",
+   "scope_reviewed": false,
+   "clauses": [
+    {
+     "name": "(4.9): 𝔼 ∫_0^T S_s² ds ≤ 10 L² 𝔼 ∫_0^T (|δX_s|² + |δY_s|² + |δZ_s|²_F + ‖δU_s‖²) ds ≤ 10 L² (T 𝔼 sup_{t ≤ T} |δX_t|² + T 𝔼 sup_{t ≤ T} |δY_t|² + 𝔼 ∫_0^T (|δZ_s|²_F + ‖δU_s‖²) ds) ≤ 10 L² max{T, 1} ‖Θ¹ − Θ²‖²_ℍ",
+     "spec": "Dissertation.PaperSpec.A.eq_coeffdiff",
+     "accept": "Dissertation.Acceptance.A.eq_coeffdiff",
+     "witness": "Dissertation.Acceptance.A.frozen_hypotheses"
+    }
+   ],
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
     "c26bfe399b8b1c2a051fd7d421e096cfd49479aac965c43535242164b1159c9c",
