@@ -1705,20 +1705,14 @@
    "location": "paper/sections/04-proof-wellposedness.tex:151",
    "source_sha256": "89a434caa7c84ed5e2143713d1483dde1e7fa2001de1f51afe467a70f3c9fe8f",
    "scope": "formal",
-   "scope_note": "the first clause, that membership in H²_N gives the quadratic integrand of M² no square moments, read in the setting of Lemma 4.1, which admits ν = 0, is refuted: at ν = 0 every marked integrand has zero energy; it holds for ν ≠ 0. The clauses read the sentence of the pinned line (lines 148–152) and the paragraph on M² (lines 173–187)",
+   "scope_note": "the clauses read the sentence of the pinned line (lines 148–152) and the paragraph on M² (lines 173–187); the first clause reads the sentence's first assertion, that membership in H²_N does not give the quadratic integrand of M² square moments, for ν ≠ 0, the degenerate case ν = 0, in which every marked integrand vanishes, being the one Remark 2.10 sets aside",
    "scope_reviewed": false,
    "clauses": [
     {
-     "name": "membership δU ∈ H²_N gives the quadratic integrand e^s|δU_s(e)|² of M² no square moment, in every standing setting",
+     "name": "membership δU ∈ H²_N does not give the quadratic integrand e^s|δU_s(e)|² of M² square moments (for ν ≠ 0; at ν = 0 the integrand vanishes)",
      "spec": "Dissertation.PaperSpec.A.lem41_M2_no_square_moment",
-     "refute": "Dissertation.Acceptance.A.lem41_M2_no_square_moment_false"
-    },
-    {
-     "name": "membership δU ∈ H²_N gives the quadratic integrand e^s|δU_s(e)|² of M² no square moment, for ν ≠ 0",
-     "spec": "Dissertation.PaperSpec.A.lem41_M2_no_square_moment_corr",
-     "accept": "Dissertation.Acceptance.A.lem41_M2_no_square_moment_corr",
-     "corrects": "membership δU ∈ H²_N gives the quadratic integrand e^s|δU_s(e)|² of M² no square moment, in every standing setting",
-     "witness": "Dissertation.Acceptance.A.lem41_M2_no_square_moment_corr_hypotheses"
+     "accept": "Dissertation.Acceptance.A.lem41_M2_no_square_moment",
+     "witness": "Dissertation.Acceptance.A.lem41_M2_no_square_moment_hypotheses"
     },
     {
      "name": "with ν(E) = ∞, almost surely N((0, t] × E) = ∞ for every t > 0 and the jump times τ_k = inf{t ≥ 0 : N((0, t] × E) ≥ k}, read in [0, ∞], are all 0, so sup_k τ_k < T for every T > 0: they do not exhaust [0, T]",
@@ -3354,9 +3348,15 @@
    "location": "paper/sections/04-proof-wellposedness.tex:683",
    "source_sha256": "28fd9c283ce2f0feb20f2c6130e074c16ed3aaced00c1a84f6c2847774c3221c",
    "scope": "formal",
-   "scope_note": "the second clause reads the sentence after the display, lines 694–695, outside the pinned region (lines 683–693)",
+   "scope_note": "the first clause reads the display that inserts (4.20) and (4.21) into (4.19), lines 669–680, and the third the sentence after (4.22), lines 694–695, both outside the pinned region (lines 683–693)",
    "scope_reviewed": false,
    "clauses": [
+    {
+     "name": "(4.20) and (4.21) inserted into (4.19): λ α 𝔼|G δX_T|² − |𝔼⟨G δX_T, q^g_T⟩| − 𝔼⟨G δξ₀, δY_0⟩ ≤ −λ β₁ 𝔼∫[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²] − λ β₂ 𝔼∫|G δX|² + 𝔼∫(⟨q^b, Gᵀ δY⟩ + ⟨q^σ, Gᵀ δZ⟩_F + ⟨−q^f, G δX⟩ + ∫_E ⟨q^h, Gᵀ δU⟩ dν), every expectation finite",
+     "spec": "Dissertation.PaperSpec.A.eq_coerc_insert",
+     "accept": "Dissertation.Acceptance.A.eq_coerc_insert",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses"
+    },
     {
      "name": "(4.22): N' and P are finite, and λ α 𝔼|G δX_T|² + λ β₂ 𝔼∫|G δX|² + λ β₁ 𝔼∫[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²] ≤ the six pairings in absolute value ≤ 𝒦 = η N' + ‖G‖²/(4η) P for every η > 0",
      "spec": "Dissertation.PaperSpec.A.eq_coerc",

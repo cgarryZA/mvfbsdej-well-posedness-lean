@@ -26,6 +26,7 @@ Lemma 4.3, an instance of which is `Dissertation.Acceptance.A.lem_pert_two_data_
 * `Dissertation.Acceptance.A.eq_Gid` — (4.19).
 * `Dissertation.Acceptance.A.eq_intmono` — (4.20).
 * `Dissertation.Acceptance.A.eq_termmono` — (4.21).
+* `Dissertation.Acceptance.A.eq_coerc_insert` — (4.20) and (4.21) inserted into (4.19).
 * `Dissertation.Acceptance.A.eq_coerc` — (4.22).
 * `Dissertation.Acceptance.A.eq_coerc_blocks` — each coercive block of (4.22) is at most `𝒦`.
 -/
@@ -270,6 +271,132 @@ theorem eq_termmono : PaperSpec.A.eq_termmono.{u, v, w} := by
       ⬝ᵥ (fun k => qg₁ k ω - qg₂ k ω) ∂P)
     rw [← mul_assoc] at h1
     linarith
+
+/-- (4.20) and (4.21) inserted into (4.19). -/
+theorem eq_coerc_insert : PaperSpec.A.eq_coerc_insert.{u, v, w} := by
+  rintro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ _ _ _ T hT L α β₁ β₂ G C hJ h23 hG h25
+    lamLow lam hlow _ hlam hlam1 ξ₁ ξ₂ _ _ qb₁ qb₂ qσ₁ qσ₂ qh₁ qh₂ qf₁ qf₂ qg₁ qg₂ _ _
+    X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ ⟨⟨γ₁, h₁⟩, -, -⟩ ⟨⟨γ₂, h₂⟩, -, -⟩ _
+  obtain ⟨X₁', X₂', Y₁', Y₂', hXe, hYe, hD⟩ := h₁.exists_pairDiff h₂ hT.le
+    h23.interior.diagonalLipschitz_two_mul
+    (lipTerminal_iff_terminalLipschitz.mp h23.terminal).two_mul h25.diagonalMonotone
+    h25.terminalMonotone
+  have 𝒲 := crossWitnessEnl D h𝒢₀ hind₀
+  have hlpos : 0 < lam := hlow.trans_le hlam
+  have hTm : T ∈ Set.Icc (0 : ℝ) T := ⟨hT.le, le_rfl⟩
+  have h0m : (0 : ℝ) ∈ Set.Icc (0 : ℝ) T := ⟨le_rfl, hT.le⟩
+  set μ₂ := P.prod (volume.restrict (Set.Icc (0 : ℝ) T)) with hμ₂
+  have hP := (h₁.forcing.sub h₂.forcing).dataSize_ne_top_of_memLp fun i => (hD.fwd i).ξ₀_sq
+  have eXs : ∀ s ∈ Set.Icc (0 : ℝ) T, ∀ ω i, X₁' i s ω = X₁ i s ω ∧ X₂' i s ω = X₂ i s ω :=
+    fun s hs ω i => ⟨congrFun (hXe i s hs).1 ω, congrFun (hXe i s hs).2 ω⟩
+  have eYs : ∀ s ∈ Set.Icc (0 : ℝ) T, ∀ ω k, Y₁' k s ω = Y₁ k s ω ∧ Y₂' k s ω = Y₂ k s ω :=
+    fun s hs ω k => ⟨congrFun (hYe k s hs).1 ω, congrFun (hYe k s hs).2 ω⟩
+  have hset : ∀ F F' : Ω → ℝ → ℝ, (∀ ω, ∀ s ∈ Set.Icc (0 : ℝ) T, F' ω s = F ω s) →
+      ∫ ω, ∫ s in Set.Icc (0 : ℝ) T, F' ω s ∂volume ∂P
+        = ∫ ω, ∫ s in Set.Icc (0 : ℝ) T, F ω s ∂volume ∂P := fun F F' h =>
+    integral_congr_ae (ae_of_all _ fun ω => setIntegral_congr_fun measurableSet_Icc
+      fun s hs => h ω s hs)
+  have mXT : ∀ i, MemLp (fun ω => X₁ i T ω - X₂ i T ω) 2 P := fun i => by
+    have h := (hD.fwd i).memLp_terminal hT.le
+    simp only [(eXs T hTm _ i).1, (eXs T hTm _ i).2] at h
+    exact h
+  have mY0 : ∀ k, MemLp (fun ω => Y₁ k 0 ω - Y₂ k 0 ω) 2 P := fun k => by
+    have h := (hD.bwd k).memLp_initial hT.le
+    simp only [(eYs 0 h0m _ k).1, (eYs 0 h0m _ k).2] at h
+    exact h
+  have mqg : ∀ k, MemLp (fun ω => qg₁ k ω - qg₂ k ω) 2 P := fun k =>
+    (h₁.forcing.qg_sq k).sub (h₂.forcing.qg_sq k)
+  have mU := hD.memLp_markedWindow_U (T := T)
+  -- the blocks
+  have eBXT : blockXT P G (fun i t ω => X₁' i t ω - X₂' i t ω) T
+      = ∫ ω, (G *ᵥ fun i => X₁ i T ω - X₂ i T ω) ⬝ᵥ (G *ᵥ fun i => X₁ i T ω - X₂ i T ω) ∂P := by
+    simp only [blockXT, (eXs T hTm _ _).1, (eXs T hTm _ _).2]
+  have eBX : blockX P G (fun i t ω => X₁' i t ω - X₂' i t ω) T
+      = ∫ ω, ∫ s in Set.Icc (0 : ℝ) T, (G *ᵥ fun i => X₁ i s ω - X₂ i s ω)
+          ⬝ᵥ (G *ᵥ fun i => X₁ i s ω - X₂ i s ω) ∂volume ∂P := by
+    have hi := hD.integrable_blockX_window 𝒲 hT
+    unfold blockX
+    rw [← integral_prod_symm _ hi, integral_prod _ hi]
+    exact hset _ _ fun ω s hs => by simp only [(eXs s hs ω _).1, (eXs s hs ω _).2]
+  have eBY : blockY P ν G (fun k t ω => Y₁' k t ω - Y₂' k t ω)
+        (fun k t ω j => Z₁ k t ω j - Z₂ k t ω j) (fun k t ω e => U₁ k t ω e - U₂ k t ω e) T
+      = ∫ ω, ∫ s in Set.Icc (0 : ℝ) T, ((Gᵀ *ᵥ fun k => Y₁ k s ω - Y₂ k s ω)
+            ⬝ᵥ (Gᵀ *ᵥ fun k => Y₁ k s ω - Y₂ k s ω)
+          + ∑ j, (Gᵀ *ᵥ fun k => Z₁ k s ω j - Z₂ k s ω j)
+            ⬝ᵥ (Gᵀ *ᵥ fun k => Z₁ k s ω j - Z₂ k s ω j)
+          + ∫ e, (Gᵀ *ᵥ fun k => U₁ k s ω e - U₂ k s ω e)
+            ⬝ᵥ (Gᵀ *ᵥ fun k => U₁ k s ω e - U₂ k s ω e) ∂ν) ∂volume ∂P := by
+    have hi := hD.integrable_blockY_window 𝒲 hT
+    unfold blockY
+    rw [← integral_prod_symm _ hi, integral_prod _ hi]
+    exact hset _ _ fun ω s hs => by simp only [(eYs s hs ω _).1, (eYs s hs ω _).2]
+  -- the initial and the terminal pairings
+  have eA : ∫ ω, (G *ᵥ fun i => ξ₁ ω i - ξ₂ ω i) ⬝ᵥ (fun k => Y₁' k 0 ω - Y₂' k 0 ω) ∂P
+      = ∫ ω, (G *ᵥ fun i => ξ₁ ω i - ξ₂ ω i) ⬝ᵥ (fun k => Y₁ k 0 ω - Y₂ k 0 ω) ∂P := by
+    simp only [(eYs 0 h0m _ _).1, (eYs 0 h0m _ _).2]
+  have eB : ∫ ω, (fun k => qg₁ k ω - qg₂ k ω) ⬝ᵥ (G *ᵥ fun i => X₁' i T ω - X₂' i T ω) ∂P
+      = ∫ ω, (G *ᵥ fun i => X₁ i T ω - X₂ i T ω) ⬝ᵥ (fun k => qg₁ k ω - qg₂ k ω) ∂P := by
+    simp only [(eXs T hTm _ _).1, (eXs T hTm _ _).2]
+    exact integral_congr_ae (ae_of_all _ fun ω => dotProduct_comm _ _)
+  -- the forcing pairing on the window
+  have hpt : ∀ ω, ∀ s ∈ Set.Icc (0 : ℝ) T,
+      (fun i => qb₁ i ω s - qb₂ i ω s) ⬝ᵥ (Gᵀ *ᵥ fun k => Y₁' k s ω - Y₂' k s ω)
+        + ∑ j, (fun i => qσ₁ i s ω j - qσ₂ i s ω j)
+          ⬝ᵥ (Gᵀ *ᵥ fun k => Z₁ k s ω j - Z₂ k s ω j)
+        - (fun k => qf₁ k ω s - qf₂ k ω s) ⬝ᵥ (G *ᵥ fun i => X₁' i s ω - X₂' i s ω)
+        + ∫ e, (fun i => qh₁ i s ω e - qh₂ i s ω e)
+          ⬝ᵥ (Gᵀ *ᵥ fun k => U₁ k s ω e - U₂ k s ω e) ∂ν
+      = (fun i => qb₁ i ω s - qb₂ i ω s) ⬝ᵥ (Gᵀ *ᵥ fun k => Y₁ k s ω - Y₂ k s ω)
+        + ∑ j, (fun i => qσ₁ i s ω j - qσ₂ i s ω j)
+          ⬝ᵥ (Gᵀ *ᵥ fun k => Z₁ k s ω j - Z₂ k s ω j)
+        + (fun k => -(qf₁ k ω s - qf₂ k ω s)) ⬝ᵥ (G *ᵥ fun i => X₁ i s ω - X₂ i s ω)
+        + ∫ e, (fun i => qh₁ i s ω e - qh₂ i s ω e)
+          ⬝ᵥ (Gᵀ *ᵥ fun k => U₁ k s ω e - U₂ k s ω e) ∂ν := by
+    intro ω s hs
+    simp only [(eXs s hs ω _).1, (eXs s hs ω _).2, (eYs s hs ω _).1, (eYs s hs ω _).2]
+    rw [show (fun k => -(qf₁ k ω s - qf₂ k ω s)) = -(fun k => qf₁ k ω s - qf₂ k ω s) from rfl,
+      neg_dotProduct]
+    ring
+  have hFi : Integrable (fun p : Ω × ℝ => (fun i => qb₁ i p.1 p.2 - qb₂ i p.1 p.2)
+        ⬝ᵥ (Gᵀ *ᵥ fun k => Y₁' k p.2 p.1 - Y₂' k p.2 p.1)
+      + ∑ j, (fun i => qσ₁ i p.2 p.1 j - qσ₂ i p.2 p.1 j)
+        ⬝ᵥ (Gᵀ *ᵥ fun k => Z₁ k p.2 p.1 j - Z₂ k p.2 p.1 j)
+      - (fun k => qf₁ k p.1 p.2 - qf₂ k p.1 p.2) ⬝ᵥ (G *ᵥ fun i => X₁' i p.2 p.1 - X₂' i p.2 p.1)
+      + ∫ e, (fun i => qh₁ i p.2 p.1 e - qh₂ i p.2 p.1 e)
+        ⬝ᵥ (Gᵀ *ᵥ fun k => U₁ k p.2 p.1 e - U₂ k p.2 p.1 e) ∂ν) μ₂ := by
+    have hi := integrable_gPairing (ν := ν) G (hD.memLp_window_qb hP) (hD.memLp_window_qσ hP)
+      (hD.memLp_window_qf hP) (hD.memLp_markedWindow_qh hP) (hD.memLp_window_X 𝒲 hT)
+      (hD.memLp_window_Y 𝒲 hT) (hD.memLp_window_Z (T := T)) mU
+    exact hi
+  have eF : ∫ p, ((fun i => qb₁ i p.1 p.2 - qb₂ i p.1 p.2)
+        ⬝ᵥ (Gᵀ *ᵥ fun k => Y₁' k p.2 p.1 - Y₂' k p.2 p.1)
+      + ∑ j, (fun i => qσ₁ i p.2 p.1 j - qσ₂ i p.2 p.1 j)
+        ⬝ᵥ (Gᵀ *ᵥ fun k => Z₁ k p.2 p.1 j - Z₂ k p.2 p.1 j)
+      - (fun k => qf₁ k p.1 p.2 - qf₂ k p.1 p.2) ⬝ᵥ (G *ᵥ fun i => X₁' i p.2 p.1 - X₂' i p.2 p.1)
+      + ∫ e, (fun i => qh₁ i p.2 p.1 e - qh₂ i p.2 p.1 e)
+        ⬝ᵥ (Gᵀ *ᵥ fun k => U₁ k p.2 p.1 e - U₂ k p.2 p.1 e) ∂ν) ∂μ₂
+      = ∫ ω, ∫ s in Set.Icc (0 : ℝ) T, ((fun i => qb₁ i ω s - qb₂ i ω s)
+            ⬝ᵥ (Gᵀ *ᵥ fun k => Y₁ k s ω - Y₂ k s ω)
+          + ∑ j, (fun i => qσ₁ i s ω j - qσ₂ i s ω j)
+            ⬝ᵥ (Gᵀ *ᵥ fun k => Z₁ k s ω j - Z₂ k s ω j)
+          + (fun k => -(qf₁ k ω s - qf₂ k ω s)) ⬝ᵥ (G *ᵥ fun i => X₁ i s ω - X₂ i s ω)
+          + ∫ e, (fun i => qh₁ i s ω e - qh₂ i s ω e)
+            ⬝ᵥ (Gᵀ *ᵥ fun k => U₁ k s ω e - U₂ k s ω e) ∂ν) ∂volume ∂P := by
+    rw [integral_prod _ hFi]
+    exact hset _ _ fun ω s hs => hpt ω s hs
+  have hins := hD.blocks_le_pairings 𝒲 hT hlpos hP
+  rw [eBXT, eBX, eBY, eA, eB, eF] at hins
+  refine ⟨integrable_dotProduct_of_memLp (memLp_mulVec G mXT) (memLp_mulVec G mXT),
+    integrable_dotProduct_of_memLp (memLp_mulVec G mXT) mqg,
+    integrable_dotProduct_of_memLp (memLp_mulVec G fun i => (hD.fwd i).ξ₀_sq) mY0,
+    (hD.integrable_blockX_window 𝒲 hT).congr (ae_window_mem.mono fun p hp => by
+      simp only [(eXs p.2 hp p.1 _).1, (eXs p.2 hp p.1 _).2]),
+    (hD.integrable_blockY_window 𝒲 hT).congr (ae_window_mem.mono fun p hp => by
+      simp only [(eYs p.2 hp p.1 _).1, (eYs p.2 hp p.1 _).2]),
+    hFi.congr (ae_window_mem.mono fun p hp => hpt p.1 p.2 hp),
+    integrable_dotProduct_of_memLp (memLp_mulVec Gᵀ mU) (memLp_mulVec Gᵀ mU),
+    integrable_dotProduct_of_memLp (hD.memLp_markedWindow_qh hP) (memLp_mulVec Gᵀ mU), ?_⟩
+  linarith
 
 /-- (4.22), with `‖G‖` the operator norm of `GX G`. -/
 theorem eq_coerc : PaperSpec.A.eq_coerc.{u, v, w} := by

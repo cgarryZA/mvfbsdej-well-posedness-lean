@@ -17,9 +17,8 @@ integrand is predictable and nonnegative, and that the compensation formula give
 
 ## Main definitions
 
-* `Dissertation.PaperSpec.A.lem41_M2_no_square_moment` — `δU ∈ H²_N` gives `e^s |δU_s(e)|²` no
-  square moment, in every setting.
-* `Dissertation.PaperSpec.A.lem41_M2_no_square_moment_corr` — the same for `ν ≠ 0`.
+* `Dissertation.PaperSpec.A.lem41_M2_no_square_moment` — for `ν ≠ 0`, `δU ∈ H²_N` gives
+  `e^s |δU_s(e)|²` no square moment.
 * `Dissertation.PaperSpec.A.lem41_jump_times` — with `ν(E) = ∞` every `(0, t]` carries infinitely
   many jumps and the jump times, read in `[0, ∞]`, are all `0`.
 * `Dissertation.PaperSpec.A.lem41_M2_integrand` — `e^s |δU_s(e)|²` is marked predictable and
@@ -39,29 +38,11 @@ open Dissertation.WellPosedness.System Dissertation.WellPosedness.Existence
 
 universe u v w
 
-/-- The `M²` paragraph of the proof of Lemma 4.1, its first clause read in every setting: in the
-standing setting, for `m, d ≥ 1` and `T > 0`, some `δU ∈ H²_N(ℝᵐ)` — marked predictable, zero off
+/-- The `M²` paragraph of the proof of Lemma 4.1, its first clause: in the standing setting with
+`ν ≠ 0`, for `m, d ≥ 1` and `T > 0`, some `δU ∈ H²_N(ℝᵐ)` — marked predictable, zero off
 `[0, T]`, with `𝔼 ∫_0^T ‖δU_s‖²_{L²(ν)} ds < ∞` — has a quadratic integrand `e^s |δU_s(e)|²` of
 `M²` without square moment: `𝔼 ∫_0^T ∫_E (e^s |δU_s(e)|²)² ν(de) ds = ∞`. -/
 def lem41_M2_no_square_moment : Prop :=
-  ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
-    [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
-    (m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
-    (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ),
-    Indep 𝒢₀ (⨆ t, D.filtration t) P → 0 < m → 0 < d → ∀ T : ℝ, 0 < T →
-    ∃ δU : Fin m → ℝ → Ω → E → ℝ,
-      (∀ k, Probability.MarkedPredictable (enlJoint 𝒢₀ D h𝒢₀) ν fun ω s e => δU k s ω e)
-      ∧ (∀ k ω s e, s ∉ Set.Icc (0 : ℝ) T → δU k s ω e = 0)
-      ∧ (∀ k, Poisson.Compensated.markedEnergy P ν T (fun ω s e => δU k s ω e) ≠ ⊤)
-      ∧ Poisson.Compensated.markedEnergy P ν T
-          (fun ω s e => Real.exp s * ∑ k, δU k s ω e ^ 2) = ⊤
-
-/-- The `M²` paragraph of the proof of Lemma 4.1, its first clause for a nonzero intensity: in
-the standing setting with `ν ≠ 0`, for `m, d ≥ 1` and `T > 0`, some `δU ∈ H²_N(ℝᵐ)` — marked
-predictable, zero off `[0, T]`, with `𝔼 ∫_0^T ‖δU_s‖²_{L²(ν)} ds < ∞` — has a quadratic
-integrand `e^s |δU_s(e)|²` of `M²` without square moment:
-`𝔼 ∫_0^T ∫_E (e^s |δU_s(e)|²)² ν(de) ds = ∞`. -/
-def lem41_M2_no_square_moment_corr : Prop :=
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
     (m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]

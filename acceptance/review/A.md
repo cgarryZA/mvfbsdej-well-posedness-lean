@@ -536,7 +536,7 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lem_bpbsde--claude-auditor--2026-10-19T03_35_50Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.lem_bpbsde ed839d34f480cba1202e3ec284da1f15 by=claude-auditor -->
 
-## The `M²` paragraph of the proof of Lemma 4.1: `Dissertation.PaperSpec.A.lem41_M2_no_square_moment`, `lem41_M2_no_square_moment_corr`, `lem41_jump_times`, `lem41_M2_integrand`, `lem41_M2_zero_mean`
+## The `M²` paragraph of the proof of Lemma 4.1: `Dissertation.PaperSpec.A.lem41_M2_no_square_moment`, `lem41_jump_times`, `lem41_M2_integrand`, `lem41_M2_zero_mean`
 
 Manuscript (proof of Lemma `lem:bpbsde`, lines 139–152 and 173–187; the inventory pins line 151,
 inside the sentence of lines 148–152): the stochastic-integral terms of (4.5) decompose into the
@@ -554,12 +554,11 @@ expectation: `𝔼[M²_T − M²_t] = 𝔼 ∫_t^T ∫_E e^s |δU_s(e)|² Ñ(ds,
 
 Propositions:
 
-* `lem41_M2_no_square_moment`, the first clause read in the setting of the lemma: in every
-  standing setting (`enlJoint`, `ν` σ-finite on a countably generated space), for `m, d ≥ 1` and
-  `T > 0`, there is `δU : Fin m → ℝ → Ω → E → ℝ` of the class `H²_N` of Lemma 4.1 (marked
-  predictable, zero off `[0, T]`, finite energy, coordinatewise) with
-  `markedEnergy (e^s ∑_k δU_k²) = ⊤`, that is `𝔼 ∫_0^T ∫_E (e^s |δU_s(e)|²)² ν(de) ds = ∞`.
-* `lem41_M2_no_square_moment_corr`: the same with the further hypothesis `ν ≠ 0`.
+* `lem41_M2_no_square_moment`, the first clause: in every standing setting (`enlJoint`, `ν`
+  σ-finite on a countably generated space) with `ν ≠ 0`, for `m, d ≥ 1` and `T > 0`, there is
+  `δU : Fin m → ℝ → Ω → E → ℝ` of the class `H²_N` of Lemma 4.1 (marked predictable, zero off
+  `[0, T]`, finite energy, coordinatewise) with `markedEnergy (e^s ∑_k δU_k²) = ⊤`, that is
+  `𝔼 ∫_0^T ∫_E (e^s |δU_s(e)|²)² ν(de) ds = ∞`. A finite `ν` is admitted.
 * `lem41_jump_times`: for every Lévy driver with `ν(E) = ∞`, almost surely
   `N((0, t] × E) = ∞` for every `t > 0`; every jump time, read in `[0, ∞]` as
   `τ_k = ⨅ t, ⨅ (_ : 0 ≤ t ∧ k ≤ N((0, t] × E)), ofReal t`, `k ∈ ℕ`, is `0`; and
@@ -575,28 +574,26 @@ Propositions:
 
 Readings:
 
-* The first clause is a statement about the hypothesis `δU ∈ H_N`: membership gives no square
-  moments of the quadratic integrand, that is, some `δU ∈ H_N` has none. It is read where the
-  proof is made, in the setting of Lemma 4.1, for every setting the lemma covers. That setting
-  admits `ν = 0`: §2 asks only that `ν` be σ-finite, Remark 2.10 treats `ν = 0` as the Brownian
-  case of Example 5.2, and Lemma 4.1 is used at `ν = 0` through Theorem 3.5. The sentence makes
-  the localisation clause conditional ("with `ν(E) = ∞` admitted") and states no restriction on
-  the first, and where the paper needs `ν ≠ 0` it says so ("Suppose `ν ≠ 0`, so that
-  `L²(ν) ≠ {0}`", Remark 2.10). At `ν = 0` every marked integrand has zero energy, so membership
-  in `H_N` does give the quadratic integrand square moments: the clause read in every setting is
-  false (`lem41_M2_no_square_moment_false`). It holds for `ν ≠ 0`
-  (`lem41_M2_no_square_moment_corr`), the case in which `M²` is not identically `0`. The weaker
-  reading "in some setting, some `δU ∈ H_N` has no square moment" is implied by the corrected
-  clause at its witness; it was not adopted, as the inventory reads a step universally over the
-  setting of its lemma.
-* Disagreement on the first clause. Of two blind audits, one holds the refutation not valid:
-  the sentence states the general non-implication (membership in `H_N` does not give the
-  quadratic integrand square moments), and the paper treats `ν = 0` as degenerate (Remark 2.10:
-  "When `ν = 0` the fibre `L²(ν)` is trivial, `δU = 0` identically"), so that the faithful reading
-  is the clause for `ν ≠ 0`. Resolution: the propositions stand as they are, the clause read in
-  every setting refuted at `ν = 0` and the clause for `ν ≠ 0` proved beside it as its
-  correction; the manuscript's sentence will be amended to "when `ν ≠ 0`" at its next revision,
-  after which the claim is the `ν ≠ 0` clause (`lem41_M2_no_square_moment_corr`) alone.
+* The first clause is a statement about the hypothesis `δU ∈ H_N`: membership does not give the
+  quadratic integrand square moments, that is, some `δU ∈ H_N` has none. It is a general
+  non-implication about the class, read where the class is not trivial: for `ν ≠ 0`, the case in
+  which `M²` is not identically `0`. At `ν = 0` the fibre `L²(ν)` is trivial, every marked
+  integrand has zero energy and `M² = 0`; that is the degenerate case Remark 2.10 sets aside
+  ("When `ν = 0` the fibre `L²(ν)` is trivial, `δU = 0` identically, and the restriction
+  disappears"), about which the sentence says nothing. Beyond the standing setting,
+  `m, d ≥ 1` and `T > 0`, the only hypothesis is `ν ≠ 0`; a finite `ν` is admitted, `ν(E) = ∞`
+  being the hypothesis of the localisation assertion of the same sentence, not of this one.
+* Disagreement on the first clause, and its resolution. The author first read the sentence in
+  every setting Lemma 4.1 covers, `ν = 0` included (§2 asks only that `ν` be σ-finite, the lemma
+  is used at `ν = 0` through Theorem 3.5, and the sentence makes the localisation assertion
+  conditional, "with `ν(E) = ∞` admitted", while stating no restriction on the first), and
+  refuted that reading at `ν = 0`, where membership in `H_N` does give the quadratic integrand
+  square moments, with the clause for `ν ≠ 0` beside it as a correction. Two blind reviews held
+  that reading not to be the paper's: the sentence states the general non-implication, and the
+  paper treats `ν = 0` as the degenerate case (Remark 2.10), so the faithful reading is the
+  clause for `ν ≠ 0`. Resolution: the sentence is read for `ν ≠ 0`, and that clause is the
+  claim's own, not a correction of it; the manuscript's sentence will say "when `ν ≠ 0`" at its
+  next revision.
 * "Square moments of the quadratic integrand": the square integral of `e^s |δU_s(e)|²` with
   respect to `dP ⊗ ds ⊗ ν` on `[0, T] × E`, which is `markedEnergy P ν T` of
   `e^s ∑_k δU_k(s, e)²`; `|δU|² = ∑_k δU_k²` in `ℝᵐ`. `δU` is existential, with the conditions of
@@ -634,12 +631,11 @@ Readings:
   `𝔼[M²_T − M²_t] = 0` is the Bochner expectation of the pathwise difference. The hypotheses are
   those of Lemma 4.1, verbatim; the proof uses only those on `δU`.
 
-Proofs: the refutation at a Lévy driver with `d = 1` and `ν = 0` on `ℝ` (`LevyDriver.exists`),
-`𝒢₀ = ⊥`, `m = 1`, `T = 1`, where `markedEnergy` is an integral against the zero measure. The
-correction with `δU^k_s(e) = 1_{(T/2, T]}(s) 1_A(e) c` for every `k`, `A` measurable with
-`0 < ν(A) < ∞` (from σ-finiteness and `ν ≠ 0`) and `c = 1_{(0, 1]}(W¹_{T/2}) (W¹_{T/2})^{−1/4}`:
-`W¹_{T/2}` has the law `N(0, T/2)`, whose density is bounded above, and bounded below on `(0, 1]`,
-by positive constants, so `𝔼 c² ≍ ∫_0^1 x^{−1/2} dx < ∞` and `𝔼 c⁴ ≍ ∫_0^1 x^{−1} dx = ∞`; then
+Proofs: the first clause with `δU^k_s(e) = 1_{(T/2, T]}(s) 1_A(e) c` for every `k`, `A`
+measurable with `0 < ν(A) < ∞` (from σ-finiteness and `ν ≠ 0`) and
+`c = 1_{(0, 1]}(W¹_{T/2}) (W¹_{T/2})^{−1/4}`: `W¹_{T/2}` has the law `N(0, T/2)`, whose density
+is bounded above, and bounded below on `(0, 1]`, by positive constants, so
+`𝔼 c² ≍ ∫_0^1 x^{−1/2} dx < ∞` and `𝔼 c⁴ ≍ ∫_0^1 x^{−1} dx = ∞`; then
 `markedEnergy δU^k = 𝔼 c² · ν(A) · T/2` and the square moment is at least
 `𝔼 c⁴ · ν(A) · T/2 = ∞` (`exists_markedPredictable_sq_markedEnergy_eq_top`). The second clause
 from `sec2_infinite_activity`: almost surely `N((s, t] × E) = ∞` for `0 ≤ s < t`; at `s = 0`
@@ -655,23 +651,20 @@ times; nonnegativity from `e^s > 0` and the squares. The third from (2.1) and (2
 predictable `ψ = 1_{(t, T]}(s) e^s |δU_s(e)|²`, with `e^s ≤ e^T` on `[0, T]`
 (`quadratic_compensation`, `lintegral_exp_mul_sum_sq_le`).
 
-Witnesses: `Dissertation.Acceptance.A.lem41_M2_no_square_moment_corr_hypotheses` for the
-corrected clause (a Lévy driver with `d = 1`, `ν = δ₀ ≠ 0` on `ℝ`, `𝒢₀ = ⊥`, `m = 1`, `T = 1`);
+Witnesses: `Dissertation.Acceptance.A.lem41_M2_no_square_moment_hypotheses` for the first
+clause (a Lévy driver with `d = 1`, `ν = δ₀ ≠ 0` on `ℝ`, `𝒢₀ = ⊥`, `m = 1`, `T = 1`);
 `Dissertation.Acceptance.A.sec2_infinite_activity_hypotheses` for the second (Lebesgue measure
 on `ℝ`, of infinite mass, carried by a Lévy driver with `d = 1`);
 `Dissertation.Acceptance.A.lem_bpbsde_hypotheses` for the integrand clause and the third (the
 hypotheses of Lemma 4.1 at the backward component of the solution of Example 5.1(i), reviewed
 with Lemma 4.1).
 
-Verdict: the first clause, read in the setting of Lemma 4.1, is refuted at `ν = 0`
-(`lem41_M2_no_square_moment_false`) and holds for `ν ≠ 0` (`lem41_M2_no_square_moment_corr`),
-with the disagreement above resolved by the amendment of the manuscript; the second clause, the
-integrand clause and the third clause are faithful, the second broader than printed.
+Verdict: the first clause, read for `ν ≠ 0` with the disagreement above resolved, the second
+clause, the integrand clause and the third clause are faithful, the second broader than printed.
 
-<!-- spec-review: Dissertation.PaperSpec.A.lem41_M2_no_square_moment ed839d34f480cba129ab935a30cef6f6 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.lem41_M2_no_square_moment_corr ed839d34f480cba18ac876cdb600252c by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.lem41_M2_no_square_moment ed839d34f480cba18ac876cdb600252c by=claude-author -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lem41_M2_no_square_moment_corr--claude-auditor--2026-10-19T22_59_53Z.md`).
-<!-- spec-review: Dissertation.PaperSpec.A.lem41_M2_no_square_moment_corr ed839d34f480cba18ac876cdb600252c by=claude-auditor -->
+<!-- spec-review: Dissertation.PaperSpec.A.lem41_M2_no_square_moment ed839d34f480cba18ac876cdb600252c by=claude-auditor -->
 <!-- spec-review: Dissertation.PaperSpec.A.lem41_jump_times ed839d34f480cba17f1df52f488747a1 by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.lem41_M2_integrand ed839d34f480cba118f567d673033f15 by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.lem41_M2_zero_mean ed839d34f480cba15a569c2d7c1d42fd by=claude-author -->
@@ -1460,6 +1453,65 @@ Verdict: faithful.
 <!-- spec-review: Dissertation.PaperSpec.A.eq_termmono ed839d34f480cba1ea261f16df305b5f by=claude-author -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_termmono--claude-auditor--2026-10-19T22_56_25Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_termmono ed839d34f480cba1ea261f16df305b5f by=claude-auditor -->
+
+## (4.20) and (4.21) inserted into (4.19), in Step 2 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_coerc_insert`
+
+Manuscript (proof of Lemma `lem:pert`, Step 2, lines 669–680, between the region of (4.21) and
+that of (4.22), which the inventory pins at lines 683–693; the clause belongs to `A:eq:coerc`):
+"Inserting (4.20) and (4.21) into (4.19) gives
+`λ α 𝔼|G δX_T|² − |𝔼⟨G δX_T, q^g_T⟩| − 𝔼⟨G δξ₀, δY_0⟩
+≤ −λ β₁ 𝔼 ∫_0^T [|Gᵀ δY_t|² + |Gᵀ δZ_t|²_F + ‖Gᵀ δU_t‖²] dt − λ β₂ 𝔼 ∫_0^T |G δX_t|² dt
++ 𝔼 ∫_0^T (⟨q^b_t, Gᵀ δY_t⟩ + ⟨q^σ_t, Gᵀ δZ_t⟩_F + ⟨−q^f_t, G δX_t⟩
++ ∫_E ⟨q^h_t(e), Gᵀ δU_t(e)⟩ ν(de)) dt`."
+
+Proposition: under the hypotheses of Lemma 4.3 (those of `lem_pert` and of `eq_coerc`,
+verbatim): the integrands `(G δX_T) ⬝ (G δX_T)`, `(G δX_T) ⬝ q^g_T` and `(G δξ₀) ⬝ δY_0` are
+`P`-integrable; on `Ω × [0, T]`, for `P ⊗ ds`, the integrands `(G δX) ⬝ (G δX)`,
+`B = (Gᵀ δY) ⬝ (Gᵀ δY) + ∑_j (Gᵀ δZ_{·j}) ⬝ (Gᵀ δZ_{·j}) + ∫_E (Gᵀ δU(e)) ⬝ (Gᵀ δU(e)) ν(de)` and
+`F = q^b ⬝ Gᵀ δY + ∑_j q^σ_{·j} ⬝ Gᵀ δZ_{·j} + (−q^f) ⬝ G δX + ∫_E q^h(e) ⬝ Gᵀ δU(e) ν(de)` are
+integrable; on `(Ω × [0, T]) × E`, for `(P ⊗ ds) ⊗ ν`, the integrands `(Gᵀ δU) ⬝ (Gᵀ δU)` and
+`q^h ⬝ Gᵀ δU` are integrable; and
+`λ α ∫ (G δX_T) ⬝ (G δX_T) dP − |∫ (G δX_T) ⬝ q^g_T dP| − ∫ (G δξ₀) ⬝ δY_0 dP
+≤ −λ β₁ ∫ ∫_{[0, T]} B ds dP − λ β₂ ∫ ∫_{[0, T]} (G δX) ⬝ (G δX) ds dP + ∫ ∫_{[0, T]} F ds dP`.
+
+Readings:
+
+* The hypotheses are those in force at this point of Step 2, the hypotheses of Lemma 4.3, written
+  as in `eq_coerc` (reviewed with Lemma 4.3); `q = δq`, the differences of the forcings, and
+  `δξ₀ = ξ₀¹ − ξ₀²`.
+* The display, term by term and in the printed order: `λ α 𝔼|G δX_T|²`, `−|𝔼⟨G δX_T, q^g_T⟩|`
+  and `−𝔼⟨G δξ₀, δY_0⟩` on the left, the last signed, as printed; on the right the two coercive
+  terms with their factors `−λ β₁` and `−λ β₂`, and the signed forcing pairing (no absolute
+  values, as printed), whose third term is `⟨−q^f, G δX⟩` with the vector `−q^f`, as in (4.19).
+  The pairings are in coordinates as in `eq_Gid`: `⟨u, v⟩ = u ⬝ v`, `Gᵀ` the transpose,
+  `⟨A, B⟩_F = ∑_j A_{·j} ⬝ B_{·j}` over the `d` columns, so `|Gᵀ δZ|²_F` is
+  `∑_j (Gᵀ δZ_{·j}) ⬝ (Gᵀ δZ_{·j})`; `|v|² = v ⬝ v`; and `‖Gᵀ δU_t‖²` is the `L²(ν)` norm,
+  `∫_E |Gᵀ δU_t(e)|² ν(de)`. The blocks are written as in `eq_coerc`.
+* `𝔼 ∫_0^T` is `∫ dP` of `∫_{[0, T]} ds`, Bochner integrals. The finiteness of every expectation
+  the display uses is stated: the integrability of the three integrands on `Ω` and of the three on
+  `Ω × [0, T]`. Two of these contain a `ν`-integral, `‖Gᵀ δU‖²` and `∫_E ⟨q^h, Gᵀ δU⟩ dν`; the
+  integrability of their integrands on `Ω × [0, T] × E` is stated too, so that at almost every
+  `(ω, t)` they are integrals of integrable functions. No side of the inequality is a junk value.
+* "Inserting (4.20) and (4.21) into (4.19) gives": the display is the conclusion; how (4.20), a
+  bound at almost every `t`, is integrated over `[0, T]`, and how the chain of (4.21) is used, is
+  the proof's. The display involves neither `η` nor `𝒦`, defined just before it.
+
+Proof: (4.19) for the difference system (`PairDiff.integral_mulVec_dotProduct_eq`, which proves
+`eq_Gid`), its integrand split into `λ` times the coefficient part and the forcing part; the
+interior monotonicity at the pair at almost every `t` (`PairDiff.mono`, the content of (4.20))
+integrated over `[0, T]` and multiplied by `λ > 0`; the terminal identity
+`δY_T = λ δg_T + q^g_T` and the terminal monotonicity (`PairDiff.monoT`, which proves
+`eq_termmono`); and `−|x| ≤ x` (`PairDiff.blocks_le_pairings`). All at the extensions of
+`exists_pairDiff`, which agree with the solutions on `[0, T]`, read on the window by Fubini.
+The integrability from the square integrability of the coordinates on `Ω`, on the window and on
+the marked window (`integrable_dotProduct_of_memLp`, `memLp_mulVec`, `integrable_gPairing`,
+`integrable_blockX_window`, `integrable_blockY_window`).
+
+Witness: `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`, the hypotheses of Lemma 4.3.
+
+Verdict: faithful.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_coerc_insert ed839d34f480cba19e2302a704da248e by=claude-author -->
 
 ## (4.22), the coercivity bound in Step 2 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_coerc`, `eq_coerc_blocks`
 

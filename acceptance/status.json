@@ -2882,38 +2882,20 @@
   {
    "clauses": [
     {
-     "accept": null,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.lem41_M2_no_square_moment"
-     ],
+     "accept": "Dissertation.Acceptance.A.lem41_M2_no_square_moment",
+     "accept_ok": true,
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
-     "name": "membership δU ∈ H²_N gives the quadratic integrand e^s|δU_s(e)|² of M² no square moment, in every standing setting",
-     "refute": "Dissertation.Acceptance.A.lem41_M2_no_square_moment_false",
-     "refute_ok": true,
-     "spec": "Dissertation.PaperSpec.A.lem41_M2_no_square_moment",
-     "spec_hash": "ed839d34f480cba129ab935a30cef6f6",
-     "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
-     "witness": null
-    },
-    {
-     "accept": "Dissertation.Acceptance.A.lem41_M2_no_square_moment_corr",
-     "accept_ok": true,
-     "author_reviewed": [],
-     "corrects": "membership δU ∈ H²_N gives the quadratic integrand e^s|δU_s(e)|² of M² no square moment, in every standing setting",
-     "defs": [],
-     "defs_changed": [],
-     "defs_pending": [],
-     "name": "membership δU ∈ H²_N gives the quadratic integrand e^s|δU_s(e)|² of M² no square moment, for ν ≠ 0",
+     "name": "membership δU ∈ H²_N does not give the quadratic integrand e^s|δU_s(e)|² of M² square moments (for ν ≠ 0; at ν = 0 the integrand vanishes)",
      "refute": null,
-     "spec": "Dissertation.PaperSpec.A.lem41_M2_no_square_moment_corr",
+     "spec": "Dissertation.PaperSpec.A.lem41_M2_no_square_moment",
      "spec_hash": "ed839d34f480cba18ac876cdb600252c",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem41_M2_no_square_moment_corr_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem41_M2_no_square_moment_hypotheses",
      "witness_ok": true
     },
     {
@@ -2977,9 +2959,9 @@
    "number": "proof of Lemma 4.1",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the first clause, that membership in H²_N gives the quadratic integrand of M² no square moments, read in the setting of Lemma 4.1, which admits ν = 0, is refuted: at ν = 0 every marked integrand has zero energy; it holds for ν ≠ 0. The clauses read the sentence of the pinned line (lines 148–152) and the paragraph on M² (lines 173–187)",
+   "scope_note": "the clauses read the sentence of the pinned line (lines 148–152) and the paragraph on M² (lines 173–187); the first clause reads the sentence's first assertion, that membership in H²_N does not give the quadratic integrand of M² square moments, for ν ≠ 0, the degenerate case ν = 0, in which every marked integrand vanishes, being the one Remark 2.10 sets aside",
    "scope_reviewed": false,
-   "status": "refuted as printed; corrected statement proved"
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
@@ -4426,6 +4408,25 @@
   {
    "clauses": [
     {
+     "accept": "Dissertation.Acceptance.A.eq_coerc_insert",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_coerc_insert"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.20) and (4.21) inserted into (4.19): λ α 𝔼|G δX_T|² − |𝔼⟨G δX_T, q^g_T⟩| − 𝔼⟨G δξ₀, δY_0⟩ ≤ −λ β₁ 𝔼∫[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²] − λ β₂ 𝔼∫|G δX|² + 𝔼∫(⟨q^b, Gᵀ δY⟩ + ⟨q^σ, Gᵀ δZ⟩_F + ⟨−q^f, G δX⟩ + ∫_E ⟨q^h, Gᵀ δU⟩ dν), every expectation finite",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_coerc_insert",
+     "spec_hash": "ed839d34f480cba19e2302a704da248e",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness_ok": true
+    },
+    {
      "accept": "Dissertation.Acceptance.A.eq_coerc",
      "accept_ok": true,
      "author_reviewed": [],
@@ -4467,7 +4468,7 @@
    "number": "(4.22)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the second clause reads the sentence after the display, lines 694–695, outside the pinned region (lines 683–693)",
+   "scope_note": "the first clause reads the display that inserts (4.20) and (4.21) into (4.19), lines 669–680, and the third the sentence after (4.22), lines 694–695, both outside the pinned region (lines 683–693)",
    "scope_reviewed": false,
    "status": "formal: proved, author-reviewed"
   },
@@ -4638,11 +4639,10 @@
   "A": {
    "definition: reviewed": 11,
    "formal: accepted": 62,
-   "formal: proved, author-reviewed": 9,
+   "formal: proved, author-reviewed": 10,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
-   "out of scope: proof-step": 5,
-   "refuted as printed; corrected statement proved": 1
+   "out of scope: proof-step": 5
   }
  }
 }

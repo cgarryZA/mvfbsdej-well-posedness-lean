@@ -13,21 +13,18 @@ import Dissertation.Acceptance.A.Sec4
 # Steps of the proof of Lemma 4.1: proofs
 
 Statement and equation numbers refer to the well-posedness paper at `1f67672`. The first clause of
-the `M²` paragraph, that `δU ∈ H²_N` gives the quadratic integrand `e^s |δU_s(e)|²` no square
-moment, is false in a setting with `ν = 0`, where every marked integrand has zero energy; for
-`ν ≠ 0` it holds with `δU_s(e) = 1_{(T/2, T]}(s) 1_A(e) c`, `0 < ν(A) < ∞` and
-`c = 1_{(0, 1]}(W¹_{T/2}) (W¹_{T/2})^{−1/4}`, for which `𝔼 c² < ∞ = 𝔼 c⁴`.
+the `M²` paragraph, that for `ν ≠ 0` membership `δU ∈ H²_N` gives the quadratic integrand
+`e^s |δU_s(e)|²` no square moment, holds with `δU_s(e) = 1_{(T/2, T]}(s) 1_A(e) c`,
+`0 < ν(A) < ∞` and `c = 1_{(0, 1]}(W¹_{T/2}) (W¹_{T/2})^{−1/4}`, for which `𝔼 c² < ∞ = 𝔼 c⁴`.
 
 ## Main statements
 
-* `Dissertation.Acceptance.A.lem41_M2_no_square_moment_false` — the first clause read in every
-  setting is false.
-* `Dissertation.Acceptance.A.lem41_M2_no_square_moment_corr` — the first clause for `ν ≠ 0`.
+* `Dissertation.Acceptance.A.lem41_M2_no_square_moment` — the first clause.
 * `Dissertation.Acceptance.A.lem41_jump_times`, `lem41_M2_integrand`, `lem41_M2_zero_mean` — the
   other clauses.
 * `Dissertation.Acceptance.A.eq_supE` — the bound at every time and (4.6).
-* `Dissertation.Acceptance.A.lem41_M2_no_square_moment_corr_hypotheses` — the hypotheses of the
-  first clause for `ν ≠ 0` at `ν = δ₀`.
+* `Dissertation.Acceptance.A.lem41_M2_no_square_moment_hypotheses` — the hypotheses of the first
+  clause at `ν = δ₀`.
 -/
 
 open MeasureTheory ProbabilityTheory Filter
@@ -41,19 +38,9 @@ open Dissertation.WellPosedness.System Dissertation.WellPosedness.Existence
 
 universe u v w
 
-/-- The first clause of the `M²` paragraph, read in every setting, is false: with `ν = 0` every
-marked integrand has zero energy. -/
-theorem lem41_M2_no_square_moment_false :
-    ¬ PaperSpec.A.lem41_M2_no_square_moment.{0, 0, w} := by
-  intro h
-  obtain ⟨Ω, _, P, _, ⟨D⟩⟩ := LevyStochCalc.Driver.LevyDriver.exists 1 ℝ (0 : Measure ℝ)
-  have hind : Indep (⊥ : MeasurableSpace Ω) (⨆ t, D.filtration t) P := indep_bot_left _
-  obtain ⟨δU, -, -, -, hE⟩ := h ⊥ (0 : Measure ℝ) 1 1 P D bot_le hind one_pos one_pos 1 one_pos
-  simp [Poisson.Compensated.markedEnergy] at hE
-
-/-- The first clause of the `M²` paragraph for `ν ≠ 0`. -/
-theorem lem41_M2_no_square_moment_corr :
-    PaperSpec.A.lem41_M2_no_square_moment_corr.{u, v, w} := by
+/-- The first clause of the `M²` paragraph: for `ν ≠ 0`, some `δU ∈ H²_N` has a quadratic
+integrand without square moment. -/
+theorem lem41_M2_no_square_moment : PaperSpec.A.lem41_M2_no_square_moment.{u, v, w} := by
   intro Ω 𝒢₀ mΩ E _ ν _ _ m d P _ D h𝒢₀ _ hν hm hd T hT
   obtain ⟨A, hA, hA0, hAt⟩ : ∃ A : Set E, MeasurableSet A ∧ ν A ≠ 0 ∧ ν A ≠ ⊤ := by
     by_contra hcon
@@ -130,10 +117,10 @@ theorem eq_supE : PaperSpec.A.eq_supE.{u, v, w} := by
     (fun k => (hU k).mono (Probability.markedPredictableSigma_le _ ν) le_rfl)
     (fun k => (hU k).markedProgressivelyMeasurable) hUv hUs hφm hφs hξk hYa hYr heq
 
-/-- **The hypotheses of the first clause of the `M²` paragraph for `ν ≠ 0` hold.** Over a
-probability space carrying a Lévy driver with `d = 1` and `ν = δ₀ ≠ 0` on `ℝ`, `𝒢₀ = ⊥` is
-independent of the driver, and `m = 1`, `d = 1` and `T = 1` are positive. -/
-theorem lem41_M2_no_square_moment_corr_hypotheses :
+/-- **The hypotheses of the first clause of the `M²` paragraph hold.** Over a probability space
+carrying a Lévy driver with `d = 1` and `ν = δ₀ ≠ 0` on `ℝ`, `𝒢₀ = ⊥` is independent of the
+driver, and `m = 1`, `d = 1` and `T = 1` are positive. -/
+theorem lem41_M2_no_square_moment_hypotheses :
     ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)
       (D : LevyStochCalc.Driver.LevyDriver.{0, 0, w} P 1 (Measure.dirac (0 : ℝ))),
       Indep (⊥ : MeasurableSpace Ω) (⨆ t, D.filtration t) P ∧ Measure.dirac (0 : ℝ) ≠ 0

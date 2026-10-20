@@ -34,6 +34,12 @@ and Step 2 inserts Assumption 2.5: at almost every `t`,
 `𝔼⟨G δX_T, δY_T⟩ = λ 𝔼⟨G δX_T, δg_T⟩ + 𝔼⟨G δX_T, q^g_T⟩
   ≥ λ α 𝔼|G δX_T|² − |𝔼⟨G δX_T, q^g_T⟩|`, (4.21)
 
+which, inserted into (4.19), give
+
+`λ α 𝔼|G δX_T|² − |𝔼⟨G δX_T, q^g_T⟩| − 𝔼⟨G δξ₀, δY_0⟩
+  ≤ −λ β₁ 𝔼 ∫_0^T [|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²] − λ β₂ 𝔼 ∫_0^T |G δX|²
+    + 𝔼 ∫_0^T (⟨q^b, Gᵀ δY⟩ + ⟨q^σ, Gᵀ δZ⟩_F + ⟨−q^f, G δX⟩ + ∫_E ⟨q^h(e), Gᵀ δU(e)⟩ ν(de))`,
+
 and, with `N' = 𝔼|δX_T|² + 𝔼|δY_0|² + 𝔼 ∫_0^T (|δX|² + |δY|² + |δZ|²_F + ‖δU‖²) dt`, the data
 size `P` of (4.14) and `𝒦 = η N' + ‖G‖²/(4η) P` for `η > 0`,
 
@@ -48,6 +54,7 @@ size `P` of (4.14) and `𝒦 = η N' + ‖G‖²/(4η) P` for `η > 0`,
 * `Dissertation.PaperSpec.A.eq_Gid` — (4.19).
 * `Dissertation.PaperSpec.A.eq_intmono` — (4.20).
 * `Dissertation.PaperSpec.A.eq_termmono` — (4.21).
+* `Dissertation.PaperSpec.A.eq_coerc_insert` — (4.20) and (4.21) inserted into (4.19).
 * `Dissertation.PaperSpec.A.eq_coerc` — (4.22).
 * `Dissertation.PaperSpec.A.eq_coerc_blocks` — each coercive block of (4.22) is at most `𝒦`.
 -/
@@ -405,6 +412,97 @@ def eq_termmono : Prop :=
       ≤ lam * ∫ ω, (G *ᵥ fun i => X₁ i T ω - X₂ i T ω)
           ⬝ᵥ (fun k => terminalVal P T C X₁ k ω - terminalVal P T C X₂ k ω) ∂P
         + ∫ ω, (G *ᵥ fun i => X₁ i T ω - X₂ i T ω) ⬝ᵥ (fun k => qg₁ k ω - qg₂ k ω) ∂P
+
+/-- **(4.20) and (4.21) inserted into (4.19).** In the standing setting, under the hypotheses of
+Lemma 4.3 — `T > 0`, coefficients with (2.3) and Assumptions 2.3–2.5 with constants
+`L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1)
+at `λ` in `ℍ_weak` with `X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and
+`Θ¹ − Θ² ∈ ℍ` — the integrands of the expectations below are integrable: `|G δX_T|²`,
+`⟨G δX_T, q^g_T⟩` and `⟨G δξ₀, δY_0⟩` on `Ω`; `|G δX|²`,
+`|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²_{L²(ν)}` and
+`⟨q^b, Gᵀ δY⟩ + ⟨q^σ, Gᵀ δZ⟩_F + ⟨−q^f, G δX⟩ + ∫_E ⟨q^h(e), Gᵀ δU(e)⟩ ν(de)` on
+`Ω × [0, T]`; `|Gᵀ δU(e)|²` and `⟨q^h(e), Gᵀ δU(e)⟩` on `Ω × [0, T] × E`; and
+`λ α 𝔼|G δX_T|² − |𝔼⟨G δX_T, q^g_T⟩| − 𝔼⟨G δξ₀, δY_0⟩
+  ≤ −λ β₁ 𝔼 ∫_0^T [|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²] dt − λ β₂ 𝔼 ∫_0^T |G δX|² dt
+    + 𝔼 ∫_0^T (⟨q^b, Gᵀ δY⟩ + ⟨q^σ, Gᵀ δZ⟩_F + ⟨−q^f, G δX⟩
+      + ∫_E ⟨q^h(e), Gᵀ δU(e)⟩ ν(de)) dt`,
+with `q = δq`. -/
+def eq_coerc_insert : Prop :=
+  ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
+    [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
+    (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
+    (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
+    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P),
+    0 < n → 0 < m → 0 < d → ∀ T : ℝ, 0 < T →
+    ∀ (L α β₁ β₂ : ℝ) (G : Matrix (Fin m) (Fin n) ℝ) (C : Coeffs ν n m d),
+    JointBorel T C → Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C → G.rank = min m n →
+    Assumption25 (enlJoint 𝒢₀ D h𝒢₀) P T G α β₁ β₂ C →
+    ∀ lamLow lam : ℝ, 0 < lamLow → lamLow ≤ 1 → lamLow ≤ lam → lam ≤ 1 →
+    ∀ (ξ₁ ξ₂ : Ω → EuclideanSpace ℝ (Fin n)),
+    Measurable[enlJoint 𝒢₀ D h𝒢₀ 0] ξ₁ → Measurable[enlJoint 𝒢₀ D h𝒢₀ 0] ξ₂ →
+    ∀ (qb₁ qb₂ : Fin n → Ω → ℝ → ℝ) (qσ₁ qσ₂ : Fin n → ℝ → Ω → Fin d → ℝ)
+      (qh₁ qh₂ : Fin n → ℝ → Ω → E → ℝ) (qf₁ qf₂ : Fin m → Ω → ℝ → ℝ)
+      (qg₁ qg₂ : Fin m → Ω → ℝ),
+    PredForcing (enlJoint 𝒢₀ D h𝒢₀) P ν T qb₁ qσ₁ qh₁ qf₁ qg₁ →
+    PredForcing (enlJoint 𝒢₀ D h𝒢₀) P ν T qb₂ qσ₂ qh₂ qf₂ qg₂ →
+    ∀ (X₁ X₂ : Fin n → ℝ → Ω → ℝ) (Y₁ Y₂ : Fin m → ℝ → Ω → ℝ)
+      (Z₁ Z₂ : Fin m → ℝ → Ω → Fin d → ℝ) (U₁ U₂ : Fin m → ℝ → Ω → E → ℝ),
+    WeakForcedSolution D h𝒢₀ hind₀ T lam C ξ₁ qb₁ qσ₁ qh₁ qf₁ qg₁ X₁ Y₁ Z₁ U₁ →
+    WeakForcedSolution D h𝒢₀ hind₀ T lam C ξ₂ qb₂ qσ₂ qh₂ qf₂ qg₂ X₂ Y₂ Z₂ U₂ →
+    supSize P ν T (fun i t ω => X₁ i t ω - X₂ i t ω) (fun k t ω => Y₁ k t ω - Y₂ k t ω)
+        (fun k t ω j => Z₁ k t ω j - Z₂ k t ω j) (fun k t ω e => U₁ k t ω e - U₂ k t ω e) < ⊤ →
+    Integrable (fun ω => (G *ᵥ fun i => X₁ i T ω - X₂ i T ω)
+        ⬝ᵥ (G *ᵥ fun i => X₁ i T ω - X₂ i T ω)) P
+    ∧ Integrable (fun ω => (G *ᵥ fun i => X₁ i T ω - X₂ i T ω)
+        ⬝ᵥ (fun k => qg₁ k ω - qg₂ k ω)) P
+    ∧ Integrable (fun ω => (G *ᵥ fun i => ξ₁ ω i - ξ₂ ω i)
+        ⬝ᵥ (fun k => Y₁ k 0 ω - Y₂ k 0 ω)) P
+    ∧ Integrable (fun p : Ω × ℝ => (G *ᵥ fun i => X₁ i p.2 p.1 - X₂ i p.2 p.1)
+        ⬝ᵥ (G *ᵥ fun i => X₁ i p.2 p.1 - X₂ i p.2 p.1))
+      (P.prod (volume.restrict (Set.Icc (0 : ℝ) T)))
+    ∧ Integrable (fun p : Ω × ℝ => (Gᵀ *ᵥ fun k => Y₁ k p.2 p.1 - Y₂ k p.2 p.1)
+          ⬝ᵥ (Gᵀ *ᵥ fun k => Y₁ k p.2 p.1 - Y₂ k p.2 p.1)
+        + ∑ j, (Gᵀ *ᵥ fun k => Z₁ k p.2 p.1 j - Z₂ k p.2 p.1 j)
+          ⬝ᵥ (Gᵀ *ᵥ fun k => Z₁ k p.2 p.1 j - Z₂ k p.2 p.1 j)
+        + ∫ e, (Gᵀ *ᵥ fun k => U₁ k p.2 p.1 e - U₂ k p.2 p.1 e)
+          ⬝ᵥ (Gᵀ *ᵥ fun k => U₁ k p.2 p.1 e - U₂ k p.2 p.1 e) ∂ν)
+      (P.prod (volume.restrict (Set.Icc (0 : ℝ) T)))
+    ∧ Integrable (fun p : Ω × ℝ => (fun i => qb₁ i p.1 p.2 - qb₂ i p.1 p.2)
+          ⬝ᵥ (Gᵀ *ᵥ fun k => Y₁ k p.2 p.1 - Y₂ k p.2 p.1)
+        + ∑ j, (fun i => qσ₁ i p.2 p.1 j - qσ₂ i p.2 p.1 j)
+          ⬝ᵥ (Gᵀ *ᵥ fun k => Z₁ k p.2 p.1 j - Z₂ k p.2 p.1 j)
+        + (fun k => -(qf₁ k p.1 p.2 - qf₂ k p.1 p.2))
+          ⬝ᵥ (G *ᵥ fun i => X₁ i p.2 p.1 - X₂ i p.2 p.1)
+        + ∫ e, (fun i => qh₁ i p.2 p.1 e - qh₂ i p.2 p.1 e)
+          ⬝ᵥ (Gᵀ *ᵥ fun k => U₁ k p.2 p.1 e - U₂ k p.2 p.1 e) ∂ν)
+      (P.prod (volume.restrict (Set.Icc (0 : ℝ) T)))
+    ∧ Integrable (fun q : (Ω × ℝ) × E =>
+        (Gᵀ *ᵥ fun k => U₁ k q.1.2 q.1.1 q.2 - U₂ k q.1.2 q.1.1 q.2)
+          ⬝ᵥ (Gᵀ *ᵥ fun k => U₁ k q.1.2 q.1.1 q.2 - U₂ k q.1.2 q.1.1 q.2))
+      ((P.prod (volume.restrict (Set.Icc (0 : ℝ) T))).prod ν)
+    ∧ Integrable (fun q : (Ω × ℝ) × E =>
+        (fun i => qh₁ i q.1.2 q.1.1 q.2 - qh₂ i q.1.2 q.1.1 q.2)
+          ⬝ᵥ (Gᵀ *ᵥ fun k => U₁ k q.1.2 q.1.1 q.2 - U₂ k q.1.2 q.1.1 q.2))
+      ((P.prod (volume.restrict (Set.Icc (0 : ℝ) T))).prod ν)
+    ∧ lam * α * ∫ ω, (G *ᵥ fun i => X₁ i T ω - X₂ i T ω)
+          ⬝ᵥ (G *ᵥ fun i => X₁ i T ω - X₂ i T ω) ∂P
+        - |∫ ω, (G *ᵥ fun i => X₁ i T ω - X₂ i T ω) ⬝ᵥ (fun k => qg₁ k ω - qg₂ k ω) ∂P|
+        - ∫ ω, (G *ᵥ fun i => ξ₁ ω i - ξ₂ ω i) ⬝ᵥ (fun k => Y₁ k 0 ω - Y₂ k 0 ω) ∂P
+      ≤ -lam * β₁ * ∫ ω, ∫ s in Set.Icc (0 : ℝ) T, ((Gᵀ *ᵥ fun k => Y₁ k s ω - Y₂ k s ω)
+            ⬝ᵥ (Gᵀ *ᵥ fun k => Y₁ k s ω - Y₂ k s ω)
+          + ∑ j, (Gᵀ *ᵥ fun k => Z₁ k s ω j - Z₂ k s ω j)
+            ⬝ᵥ (Gᵀ *ᵥ fun k => Z₁ k s ω j - Z₂ k s ω j)
+          + ∫ e, (Gᵀ *ᵥ fun k => U₁ k s ω e - U₂ k s ω e)
+            ⬝ᵥ (Gᵀ *ᵥ fun k => U₁ k s ω e - U₂ k s ω e) ∂ν) ∂volume ∂P
+        - lam * β₂ * ∫ ω, ∫ s in Set.Icc (0 : ℝ) T, (G *ᵥ fun i => X₁ i s ω - X₂ i s ω)
+          ⬝ᵥ (G *ᵥ fun i => X₁ i s ω - X₂ i s ω) ∂volume ∂P
+        + ∫ ω, ∫ s in Set.Icc (0 : ℝ) T, ((fun i => qb₁ i ω s - qb₂ i ω s)
+            ⬝ᵥ (Gᵀ *ᵥ fun k => Y₁ k s ω - Y₂ k s ω)
+          + ∑ j, (fun i => qσ₁ i s ω j - qσ₂ i s ω j)
+            ⬝ᵥ (Gᵀ *ᵥ fun k => Z₁ k s ω j - Z₂ k s ω j)
+          + (fun k => -(qf₁ k ω s - qf₂ k ω s)) ⬝ᵥ (G *ᵥ fun i => X₁ i s ω - X₂ i s ω)
+          + ∫ e, (fun i => qh₁ i s ω e - qh₂ i s ω e)
+            ⬝ᵥ (Gᵀ *ᵥ fun k => U₁ k s ω e - U₂ k s ω e) ∂ν) ∂volume ∂P
 
 /-- **(4.22).** In the standing setting, under the hypotheses of Lemma 4.3 — `T > 0`,
 coefficients with (2.3) and Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix
