@@ -41,7 +41,8 @@ takes `ε < 1` and `κ > C/ε`, and obtains at every `t`
 `𝔼|δY_t|² + 𝔼 ∫_t^T (|δZ_s|²_F + ‖δU_s‖²) ds
   ≤ C (𝔼|λ δg_T + q^g_T|² + 𝔼 ∫_t^T (|δX_s|² + |q^f_s|²) ds)`;
 
-it then writes (4.16) forward from `δY_0`:
+it bounds the terminal difference by `𝔼|δg_T|² ≤ C 𝔼|δX_T|²` and, after (4.26), writes (4.16)
+forward from `δY_0`:
 
 `𝔼 sup_{t ≤ T} |δY_t|² ≤ C (𝔼|δY_0|² + 𝔼 ∫_0^T |λ δf_s + q^f_s|² ds
     + 𝔼 ∫_0^T (|δZ_s|²_F + ‖δU_s‖²) ds)
@@ -56,6 +57,7 @@ it then writes (4.16) forward from `δY_0`:
 * `Dissertation.PaperSpec.A.eq_fwd_chain` — the chain before (4.23), at every time.
 * `Dissertation.PaperSpec.A.eq_wgt_insert` — (4.25) inserted in (4.24), and the backward bound
   at every time.
+* `Dissertation.PaperSpec.A.eq_wgt_terminal` — the terminal bound before (4.26).
 * `Dissertation.PaperSpec.A.eq_bwd_chain` — the first two links of the chain before (4.27).
 -/
 
@@ -427,6 +429,43 @@ def eq_wgt_insert : Prop :=
               + (qg₁ k ω - qg₂ k ω)) ^ 2 ∂P
             + ∫ ω, ∫ s in Set.Icc t T, (∑ i, (X₁ i s ω - X₂ i s ω) ^ 2
               + ∑ k, (qf₁ k ω s - qf₂ k ω s) ^ 2) ∂volume ∂P)
+
+/-- **The terminal bound before (4.26).** There is a function `K` of
+`(T, L, ‖G‖, c_G, α, β₁, β₂)` such that: in the standing setting, under the hypotheses of Lemma 4.3
+— `T > 0`, coefficients with (2.3) and Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and
+coupling matrix `G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak`
+with `X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` —
+`𝔼|δg_T|² ≤ C 𝔼|δX_T|²` with `C = K(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂)`,
+`δg_T = g(X¹_T, Law X¹_T) − g(X²_T, Law X²_T)` and `δX_T = X¹_T − X²_T`; the expectations are
+read in `[0, ∞]`. -/
+def eq_wgt_terminal : Prop :=
+  ∃ K : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ,
+  ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
+    [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
+    (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
+    (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
+    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P),
+    0 < n → 0 < m → 0 < d → ∀ T : ℝ, 0 < T →
+    ∀ (L α β₁ β₂ : ℝ) (G : Matrix (Fin m) (Fin n) ℝ) (C : Coeffs ν n m d),
+    JointBorel T C → Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C → G.rank = min m n →
+    Assumption25 (enlJoint 𝒢₀ D h𝒢₀) P T G α β₁ β₂ C →
+    ∀ lamLow lam : ℝ, 0 < lamLow → lamLow ≤ 1 → lamLow ≤ lam → lam ≤ 1 →
+    ∀ (ξ₁ ξ₂ : Ω → EuclideanSpace ℝ (Fin n)),
+    Measurable[enlJoint 𝒢₀ D h𝒢₀ 0] ξ₁ → Measurable[enlJoint 𝒢₀ D h𝒢₀ 0] ξ₂ →
+    ∀ (qb₁ qb₂ : Fin n → Ω → ℝ → ℝ) (qσ₁ qσ₂ : Fin n → ℝ → Ω → Fin d → ℝ)
+      (qh₁ qh₂ : Fin n → ℝ → Ω → E → ℝ) (qf₁ qf₂ : Fin m → Ω → ℝ → ℝ)
+      (qg₁ qg₂ : Fin m → Ω → ℝ),
+    PredForcing (enlJoint 𝒢₀ D h𝒢₀) P ν T qb₁ qσ₁ qh₁ qf₁ qg₁ →
+    PredForcing (enlJoint 𝒢₀ D h𝒢₀) P ν T qb₂ qσ₂ qh₂ qf₂ qg₂ →
+    ∀ (X₁ X₂ : Fin n → ℝ → Ω → ℝ) (Y₁ Y₂ : Fin m → ℝ → Ω → ℝ)
+      (Z₁ Z₂ : Fin m → ℝ → Ω → Fin d → ℝ) (U₁ U₂ : Fin m → ℝ → Ω → E → ℝ),
+    WeakForcedSolution D h𝒢₀ hind₀ T lam C ξ₁ qb₁ qσ₁ qh₁ qf₁ qg₁ X₁ Y₁ Z₁ U₁ →
+    WeakForcedSolution D h𝒢₀ hind₀ T lam C ξ₂ qb₂ qσ₂ qh₂ qf₂ qg₂ X₂ Y₂ Z₂ U₂ →
+    supSize P ν T (fun i t ω => X₁ i t ω - X₂ i t ω) (fun k t ω => Y₁ k t ω - Y₂ k t ω)
+        (fun k t ω j => Z₁ k t ω j - Z₂ k t ω j) (fun k t ω e => U₁ k t ω e - U₂ k t ω e) < ⊤ →
+    ∫⁻ ω, esq (fun k => terminalVal P T C X₁ k ω - terminalVal P T C X₂ k ω) ∂P
+      ≤ ENNReal.ofReal (K T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂)
+        * ∫⁻ ω, esq (fun i => X₁ i T ω - X₂ i T ω) ∂P
 
 /-- **The first two links of the chain before (4.27).** There are functions `K₁`, `K₂` of
 `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that: in the standing setting, under the hypotheses of Lemma 4.3

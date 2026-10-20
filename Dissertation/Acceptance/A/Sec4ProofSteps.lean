@@ -26,7 +26,8 @@ steps (`LinearBSDEJ.sub`). The contraction by `1/2` is (4.13) at `λ ≤ λ_*`, 
 of the forward coordinates of the difference system (`LinearFSDEJ.lintegral_biSup_sq_le_at`), the
 expected Lipschitz bound (3.2) integrated over `[0, t]` (`PairDiff.coeffEnergy_le_at`) and
 `|δX_s|² ≤ sup_{r ≤ s} |δX_r|²`. The display inserting (4.25) in (4.24) and the backward bound
-at every time are `PairDiff.weighted_window_le` and `PairDiff.window_le`. The first two links of
+at every time are `PairDiff.weighted_window_le` and `PairDiff.window_le`; the terminal bound is
+(2.6) with (2.9) at the square-integrable terminal values. The first two links of
 the chain before (4.27) are the `S²` bound of the backward coordinates of the difference system
 (`LinearBSDEJ.lintegral_biSup_sq_le`) and the rate bound (3.2) at the pair
 (`PairDiff.rateEnergy_le`).
@@ -42,6 +43,8 @@ the chain before (4.27) are the `S²` bound of the backward coordinates of the d
 * `Dissertation.Acceptance.A.eq_wgt_insert` — (4.25) inserted in (4.24), with
   `C = 2 · 10 (2L)² + 3`, and the backward bound at every time, with
   `C' = e^{κT} max(1, C/ε) / (1 − ε)`.
+* `Dissertation.Acceptance.A.eq_wgt_terminal` — the terminal bound before (4.26), with
+  `C = 4L²`.
 * `Dissertation.Acceptance.A.eq_bwd_chain` — the first two links before (4.27), with
   `K₁ = 3T + 12` and `K₂ = (3T + 12)(2 · 10 (2L)² + 2)`.
 -/
@@ -460,6 +463,16 @@ theorem eq_wgt_insert : PaperSpec.A.eq_wgt_insert.{u, v, w} := by
           rw [integral_prod _ j1]
       _ ≤ _ := hle
       _ = _ := by rw [integral_prod _ j2']
+
+/-- The terminal bound before (4.26), with `C = 4L²`. -/
+theorem eq_wgt_terminal : PaperSpec.A.eq_wgt_terminal.{u, v, w} := by
+  refine ⟨fun _ L _ _ _ _ _ => 4 * L ^ 2, ?_⟩
+  rintro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ _ _ _ T hT L α β₁ β₂ G C hJ h23 hG h25
+    lamLow lam _ _ _ _ ξ₁ ξ₂ _ _ qb₁ qb₂ qσ₁ qσ₂ qh₁ qh₂ qf₁ qf₂ qg₁ qg₂ _ _
+    X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ ⟨⟨γ₁, h₁⟩, -, -⟩ ⟨⟨γ₂, h₂⟩, -, -⟩ _
+  have hT' : T ∈ Set.Icc (0 : ℝ) T := ⟨hT.le, le_rfl⟩
+  exact (lipTerminal_iff_terminalLipschitz.mp h23.terminal).lipT_pair
+    (fun i => h₁.X_adapted i T hT') (fun i => h₂.X_adapted i T hT') h₁.XT_sq h₂.XT_sq
 
 /-- The first two links of the chain before (4.27). -/
 theorem eq_bwd_chain : PaperSpec.A.eq_bwd_chain.{u, v, w} := by

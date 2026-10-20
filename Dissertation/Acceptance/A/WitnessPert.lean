@@ -26,7 +26,8 @@ the system (4.1) at `λ = 1` with the forcing `q = (0, a 1_{(0, 1]}, c 1_{(0, 1]
 `Ψ(Θ)` the coefficient processes along the tuple. Its forced diffusion and jump integrands are
 `a 1_{(0, 1]}` and `c 1_{(0, 1]}`. Paired with the solution at the parameters `0` (the zero tuple),
 three choices of parameters make the integrands of the four bounds of (4.18) and of the fifth
-term of (4.17) nonzero.
+term of (4.17) nonzero, and one makes the differences of the solutions, of the terminal values
+and of all five forcings nonzero.
 
 ## Main statements
 
@@ -39,6 +40,8 @@ term of (4.17) nonzero.
   `1_{(0, 1]}`.
 * `Dissertation.Acceptance.A.lem_pert_jump_window_hypotheses` — the forced jump integrand and
   `δU` equal to `1_{(0, 1]}`: the fifth integrand is `1_{(0, 1]}`.
+* `Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses` — `δX ≡ 1`, `δY = M^W + M^N`,
+  `δZ = δU = 1_{(0, 1]}`, `δg_T ≡ 1`, and nonzero differences of the five forcings.
 -/
 
 open MeasureTheory ProbabilityTheory Filter Matrix
@@ -337,7 +340,11 @@ theorem affineWindow_solution {MW MN : ℝ → Ω → ℝ}
       ∧ (∀ k s ω j, Z k s ω j = a' * unitWindow s)
       ∧ (∀ k s ω e, U k s ω e = c' * unitWindow s)
       ∧ (∀ i s ω j, 1 * diffusionProc P 1 sysW X Y Z U i s ω j + qσ i s ω j = a * unitWindow s)
-      ∧ ∀ i s ω e, 1 * jumpProc 1 γ i s ω e + qh i s ω e = c * unitWindow s := by
+      ∧ (∀ i s ω e, 1 * jumpProc 1 γ i s ω e + qh i s ω e = c * unitWindow s)
+      ∧ (∀ i ω s, qb i ω s = -(1 * driftProc P 1 sysW X Y Z U i ω s))
+      ∧ (∀ i s ω e, qh i s ω e = (c + c') * unitWindow s)
+      ∧ (∀ k ω s, qf k ω s = -(1 * driverProc P 1 sysW X Y Z U k ω s))
+      ∧ ∀ k ω, qg k ω = y₀ + a' * MW 1 ω + c' * MN 1 ω - 1 * terminalVal P 1 sysW X k ω := by
   set ℱ := enlJoint ⊥ D bot_le with hℱdef
   have hW := isBrownianFiltration_enlJoint D bot_le hind₀
   have hN := isPoissonFiltration_enlJoint D bot_le hind₀
@@ -459,7 +466,8 @@ theorem affineWindow_solution {MW MN : ℝ → Ω → ℝ}
     (hF0_enlJoint D bot_le) hnull one_pos
   refine ⟨_, _, _, _, _, X, Y, Z, U, γ, hpred, hpaper, fun _ ω t _ => ?_, fun _ ω t _ => ?_,
     fun _ _ _ => rfl, fun _ _ _ => rfl, fun _ _ _ _ => rfl, fun _ _ _ _ => rfl,
-    fun _ _ _ _ => by ring, fun _ _ _ _ => by ring⟩
+    fun _ _ _ _ => by ring, fun _ _ _ _ => by ring, fun _ _ _ => zero_sub _,
+    fun i s ω e => ?_, fun _ _ _ => zero_sub _, fun _ _ => rfl⟩
   · obtain ⟨L₁, h₁⟩ := (hWc ω t).2
     obtain ⟨L₂, h₂⟩ := (hNc ω t).2
     exact ⟨x₀ + a * L₁ + c * L₂, (tendsto_const_nhds.add (h₁.const_mul a)).add (h₂.const_mul c)⟩
@@ -467,10 +475,49 @@ theorem affineWindow_solution {MW MN : ℝ → Ω → ℝ}
     obtain ⟨L₂, h₂⟩ := (hNc ω t).2
     exact ⟨y₀ + a' * L₁ + c' * L₂,
       (tendsto_const_nhds.add (h₁.const_mul a')).add (h₂.const_mul c')⟩
+  · change c * unitWindow s - 1 * jumpProc 1 γ i s ω e = (c + c') * unitWindow s
+    rw [hjp]
+    ring
 
 end Solution
 
 /-! ### Pairs of explicit solutions -/
+
+section Coefficients
+
+variable {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} [IsProbabilityMeasure P]
+
+/-- The drift process of `sysW` along a tuple is `−Y`, cut to `[0, 1]`. -/
+theorem driftProc_sysW (X Y : Fin 1 → ℝ → Ω → ℝ) (Z : Fin 1 → ℝ → Ω → Fin 1 → ℝ)
+    (U : Fin 1 → ℝ → Ω → ℝ → ℝ) (i : Fin 1) (ω : Ω) (s : ℝ) :
+    driftProc P 1 sysW X Y Z U i ω s = (Set.Icc (0 : ℝ) 1).indicator (fun s => -Y i s ω) s := by
+  by_cases hs : s ∈ Set.Icc (0 : ℝ) 1
+  · simp [driftProc, Set.indicator_of_mem hs, affineCoeffs, tupleAt]
+  · simp [driftProc, Set.indicator_of_notMem hs]
+
+/-- The diffusion process of `sysW` along a tuple is `−Z`, cut to `[0, 1]`. -/
+theorem diffusionProc_sysW (X Y : Fin 1 → ℝ → Ω → ℝ) (Z : Fin 1 → ℝ → Ω → Fin 1 → ℝ)
+    (U : Fin 1 → ℝ → Ω → ℝ → ℝ) (i : Fin 1) (s : ℝ) (ω : Ω) (j : Fin 1) :
+    diffusionProc P 1 sysW X Y Z U i s ω j
+      = (Set.Icc (0 : ℝ) 1).indicator (fun s => -Z i s ω j) s := by
+  by_cases hs : s ∈ Set.Icc (0 : ℝ) 1
+  · simp [diffusionProc, Set.indicator_of_mem hs, affineCoeffs, tupleAt]
+  · simp [diffusionProc, Set.indicator_of_notMem hs]
+
+/-- The driver process of `sysW` along a tuple is `X`, cut to `[0, 1]`. -/
+theorem driverProc_sysW (X Y : Fin 1 → ℝ → Ω → ℝ) (Z : Fin 1 → ℝ → Ω → Fin 1 → ℝ)
+    (U : Fin 1 → ℝ → Ω → ℝ → ℝ) (k : Fin 1) (ω : Ω) (s : ℝ) :
+    driverProc P 1 sysW X Y Z U k ω s = (Set.Icc (0 : ℝ) 1).indicator (fun s => X k s ω) s := by
+  by_cases hs : s ∈ Set.Icc (0 : ℝ) 1
+  · simp [driverProc, Set.indicator_of_mem hs, affineCoeffs, tupleAt]
+  · simp [driverProc, Set.indicator_of_notMem hs]
+
+/-- The terminal value of `sysW` is `X_1`. -/
+theorem terminalVal_sysW (X : Fin 1 → ℝ → Ω → ℝ) (k : Fin 1) (ω : Ω) :
+    terminalVal P 1 sysW X k ω = X k 1 ω := by
+  simp [terminalVal, affineCoeffs]
+
+end Coefficients
 
 /-- **A pair of explicit solutions of (4.1).** Over a probability space carrying a Lévy driver
 with `d = 1` and `ν = δ₀` on `ℝ`, with `𝒢₀ = ⊥`, `n = m = 1` and `T = 1`, the system of Example
@@ -513,12 +560,26 @@ theorem affineWindow_pair (x₀ a c y₀ a' c' : ℝ) :
       ∧ (∀ i s ω j, 1 * (diffusionProc P 1 sysW X₁ Y₁ Z₁ U₁ i s ω j
           - diffusionProc P 1 sysW X₂ Y₂ Z₂ U₂ i s ω j) + (qσ₁ i s ω j - qσ₂ i s ω j)
             = a * unitWindow s)
-      ∧ ∀ᵐ q ∂(Poisson.Compensated.markedEnergyMeasure P (Measure.dirac (0 : ℝ)) 1), ∀ i,
+      ∧ (∀ᵐ q ∂(Poisson.Compensated.markedEnergyMeasure P (Measure.dirac (0 : ℝ)) 1), ∀ i,
           1 * (jumpProc 1 (coeffJump P 1 sysW (leftLimProc X₁) (leftLimProc Y₁) Z₁ U₁) i
               q.2.1 q.1 q.2.2
             - jumpProc 1 (coeffJump P 1 sysW (leftLimProc X₂) (leftLimProc Y₂) Z₂ U₂) i
               q.2.1 q.1 q.2.2) + (qh₁ i q.2.1 q.1 q.2.2 - qh₂ i q.2.1 q.1 q.2.2)
-            = c * unitWindow q.2.1 := by
+            = c * unitWindow q.2.1)
+      ∧ (∀ t, MW t =ᵐ[P] Brownian.Multidim.MultidimBrownianMotion.stochasticIntegral D.W
+          (enlJoint ⊥ D bot_le) (isBrownianFiltration_enlJoint D bot_le hind₀)
+          (fun s (_ : Ω) (_ : Fin 1) => unitWindow s) window_meas (window_prog _) (window_sq P) t)
+      ∧ (∀ t, MN t =ᵐ[P] Poisson.Compensated.stochasticIntegral D.N (enlJoint ⊥ D bot_le)
+          (isPoissonFiltration_enlJoint D bot_le hind₀) (fun (_ : Ω) s (_ : ℝ) => unitWindow s)
+          windowN_meas (windowN_prog _) (windowN_sq P) t)
+      ∧ (∀ i ω s, qb₁ i ω s - qb₂ i ω s
+          = (Set.Icc (0 : ℝ) 1).indicator (fun s => y₀ + a' * MW s ω + c' * MN s ω) s)
+      ∧ (∀ i s ω j, qσ₁ i s ω j - qσ₂ i s ω j = (a + a') * unitWindow s)
+      ∧ (∀ i s ω e, qh₁ i s ω e - qh₂ i s ω e = (c + c') * unitWindow s)
+      ∧ (∀ k ω s, qf₁ k ω s - qf₂ k ω s
+          = -(Set.Icc (0 : ℝ) 1).indicator (fun s => x₀ + a * MW s ω + c * MN s ω) s)
+      ∧ ∀ k ω, qg₁ k ω - qg₂ k ω
+          = (y₀ + a' * MW 1 ω + c' * MN 1 ω) - (x₀ + a * MW 1 ω + c * MN 1 ω) := by
   obtain ⟨Ω, _, P, _, ⟨D⟩⟩ := LevyStochCalc.Driver.LevyDriver.exists 1 ℝ (Measure.dirac (0 : ℝ))
   have hind₀ : Indep (⊥ : MeasurableSpace Ω) (⨆ t, D.filtration t) P := indep_bot_left _
   set ℱ := enlJoint ⊥ D bot_le with hℱdef
@@ -543,9 +604,11 @@ theorem affineWindow_pair (x₀ a c y₀ a' c' : ℝ) :
   have e : max (max (1 : ℝ) 1) 1 = 1 := by norm_num
   rw [e] at h23
   obtain ⟨qb₁, qσ₁, qh₁, qf₁, qg₁, X₁, Y₁, Z₁, U₁, γ₁, hq₁, hp₁, hXl₁, hYl₁, hX₁, hY₁, hZ₁, hU₁,
-    hσ₁, hh₁⟩ := affineWindow_solution D hind₀ hWa hNa hWc hNc hWe hNe x₀ a c y₀ a' c'
+    hσ₁, hh₁, hb₁, hqh₁, hf₁, hg₁⟩ :=
+    affineWindow_solution D hind₀ hWa hNa hWc hNc hWe hNe x₀ a c y₀ a' c'
   obtain ⟨qb₂, qσ₂, qh₂, qf₂, qg₂, X₂, Y₂, Z₂, U₂, γ₂, hq₂, hp₂, hXl₂, hYl₂, hX₂, hY₂, hZ₂, hU₂,
-    hσ₂, hh₂⟩ := affineWindow_solution D hind₀ hWa hNa hWc hNc hWe hNe 0 0 0 0 0 0
+    hσ₂, hh₂, hb₂, hqh₂, hf₂, hg₂⟩ :=
+    affineWindow_solution D hind₀ hWa hNa hWc hNc hWe hNe 0 0 0 0 0 0
   have hs₁ := forcedSolution_of_paperSolutionForced (hind₀ := hind₀)
     (ξ₀ := fun _ => (WithLp.toLp 2 fun _ => x₀ : EuclideanSpace ℝ (Fin 1))) zero_le_one hp₁
     hXl₁ hYl₁
@@ -560,7 +623,8 @@ theorem affineWindow_pair (x₀ a c y₀ a' c' : ℝ) :
     qf₁, qf₂, qg₁, qg₂, X₁, X₂, Y₁, Y₂, Z₁, Z₂, U₁, U₂, hJ, h23, hG, h25, hq₁, hq₂, hs₁, hs₂,
     ForcedSolution.supSize_sub_lt_top one_pos hJ h22.origin h23 hJ h22.origin h23 hs₁ hs₂,
     fun i t ω => ?_, fun k t ω => ?_, fun k s ω j => ?_, fun k s ω e => ?_, fun i s ω j => ?_,
-    ?_⟩
+    ?_, hWe, hNe, fun i ω s => ?_, fun i s ω j => ?_, fun i s ω e => ?_, fun k ω s => ?_,
+    fun k ω => ?_⟩
   · rw [hX₁, hX₂]
     ring
   · rw [hY₁, hY₂]
@@ -573,8 +637,32 @@ theorem affineWindow_pair (x₀ a c y₀ a' c' : ℝ) :
   · filter_upwards [hj] with q hq i
     rw [hq i]
     linear_combination hh₁ i q.2.1 q.1 q.2.2 - hh₂ i q.2.1 q.1 q.2.2
+  · rw [hb₁, hb₂, driftProc_sysW, driftProc_sysW]
+    by_cases hs : s ∈ Set.Icc (0 : ℝ) 1
+    · simp only [Set.indicator_of_mem hs, hY₁, hY₂]
+      ring
+    · simp only [Set.indicator_of_notMem hs]
+      ring
+  · have h1 := hσ₁ i s ω j
+    have h2 := hσ₂ i s ω j
+    rw [diffusionProc_sysW] at h1 h2
+    by_cases hs : s ∈ Set.Icc (0 : ℝ) 1
+    · simp only [Set.indicator_of_mem hs, hZ₁, hZ₂] at h1 h2
+      linear_combination h1 - h2
+    · simp only [Set.indicator_of_notMem hs, unitWindow_of_notMem hs] at h1 h2 ⊢
+      linear_combination h1 - h2
+  · rw [hqh₁, hqh₂]
+    ring
+  · rw [hf₁, hf₂, driverProc_sysW, driverProc_sysW]
+    by_cases hs : s ∈ Set.Icc (0 : ℝ) 1
+    · simp only [Set.indicator_of_mem hs, hX₁, hX₂]
+      ring
+    · simp only [Set.indicator_of_notMem hs]
+      ring
+  · rw [hg₁, hg₂, terminalVal_sysW, terminalVal_sysW, hX₁, hX₂]
+    ring
 
-/-! ### Three instances of Lemma 4.3 -/
+/-! ### Four instances of Lemma 4.3 -/
 
 /-- The left limit of a process that is constant in time is that constant. -/
 theorem leftLimProc_of_const {Ω : Type*} {X : Fin 1 → ℝ → Ω → ℝ} {r : ℝ}
@@ -626,7 +714,8 @@ theorem lem_pert_backward_window_hypotheses :
             leftLimProc (fun a t ω => X₁ a t ω - X₂ a t ω) i s ω else 0) k
           * (U₁ k s ω e - U₂ k s ω e)) = 1 := by
   obtain ⟨Ω, _, P, _, D, hind₀, MW, MN, qb₁, qb₂, qσ₁, qσ₂, qh₁, qh₂, qf₁, qf₂, qg₁, qg₂, X₁, X₂,
-    Y₁, Y₂, Z₁, Z₂, U₁, U₂, hJ, h23, hG, h25, hq₁, hq₂, hs₁, hs₂, hsup, hX, hY, hZ, hU, hσ, hh⟩ :=
+    Y₁, Y₂, Z₁, Z₂, U₁, U₂, hJ, h23, hG, h25, hq₁, hq₂, hs₁, hs₂, hsup, hX, hY, hZ, hU, hσ, hh,
+    -⟩ :=
     affineWindow_pair.{w} 1 0 0 0 1 1
   refine ⟨Ω, inferInstance, P, inferInstance, D, hind₀, _, _, qb₁, qb₂, qσ₁, qσ₂, qh₁, qh₂, qf₁,
     qf₂, qg₁, qg₂, X₁, X₂, Y₁, Y₂, Z₁, Z₂, U₁, U₂, hJ, h23, hG, h25, measurable_const,
@@ -694,7 +783,8 @@ theorem lem_pert_forward_window_hypotheses :
           * (if s ∈ Set.Ioc (0 : ℝ) 1 then
               leftLimProc (fun a t ω => Y₁ a t ω - Y₂ a t ω) k s ω else 0)) = 1 := by
   obtain ⟨Ω, _, P, _, D, hind₀, MW, MN, qb₁, qb₂, qσ₁, qσ₂, qh₁, qh₂, qf₁, qf₂, qg₁, qg₂, X₁, X₂,
-    Y₁, Y₂, Z₁, Z₂, U₁, U₂, hJ, h23, hG, h25, hq₁, hq₂, hs₁, hs₂, hsup, hX, hY, hZ, hU, hσ, hh⟩ :=
+    Y₁, Y₂, Z₁, Z₂, U₁, U₂, hJ, h23, hG, h25, hq₁, hq₂, hs₁, hs₂, hsup, hX, hY, hZ, hU, hσ, hh,
+    -⟩ :=
     affineWindow_pair.{w} 0 1 1 1 0 0
   refine ⟨Ω, inferInstance, P, inferInstance, D, hind₀, _, _, qb₁, qb₂, qσ₁, qσ₂, qh₁, qh₂, qf₁,
     qf₂, qg₁, qg₂, X₁, X₂, Y₁, Y₂, Z₁, Z₂, U₁, U₂, hJ, h23, hG, h25, measurable_const,
@@ -755,7 +845,8 @@ theorem lem_pert_jump_window_hypotheses :
           (fun i => H i ω s e) ⬝ᵥ ((1 : Matrix (Fin 1) (Fin 1) ℝ)ᵀ *ᵥ
             fun k => U₁ k s ω e - U₂ k s ω e)) = 1 := by
   obtain ⟨Ω, _, P, _, D, hind₀, MW, MN, qb₁, qb₂, qσ₁, qσ₂, qh₁, qh₂, qf₁, qf₂, qg₁, qg₂, X₁, X₂,
-    Y₁, Y₂, Z₁, Z₂, U₁, U₂, hJ, h23, hG, h25, hq₁, hq₂, hs₁, hs₂, hsup, hX, hY, hZ, hU, hσ, hh⟩ :=
+    Y₁, Y₂, Z₁, Z₂, U₁, U₂, hJ, h23, hG, h25, hq₁, hq₂, hs₁, hs₂, hsup, hX, hY, hZ, hU, hσ, hh,
+    -⟩ :=
     affineWindow_pair.{w} 0 0 1 0 0 1
   refine ⟨Ω, inferInstance, P, inferInstance, D, hind₀, _, _, qb₁, qb₂, qσ₁, qσ₂, qh₁, qh₂, qf₁,
     qf₂, qg₁, qg₂, X₁, X₂, Y₁, Y₂, Z₁, Z₂, U₁, U₂, hJ, h23, hG, h25, measurable_const,
@@ -766,5 +857,88 @@ theorem lem_pert_jump_window_hypotheses :
   filter_upwards [hH 0, hh] with q h1 h2
   simp only [Matrix.transpose_one, Matrix.one_mulVec, dotProduct, Fin.sum_univ_one, hU]
   rw [h1, h2 0, one_mul, unitWindow_mul_self]
+
+/-- **The hypotheses of Lemma 4.3 hold at two solutions with different initial data and different
+forcings.** At the instance of `affineWindow_pair` with `x₀ = 1`, `a = c = y₀ = 0`, `a' = c' = 1`:
+the system of Example 5.1(i) with `β₁ = β₂ = 1`, `σ_c = h_c = 0` satisfies (2.3), Assumption 2.3
+with `L = 1` and Assumption 2.5 with `G = 1`, `α = β₁ = β₂ = 1`; `λ̲ = λ = 1`; two solutions of
+(4.1) in `ℍ_weak` from the `ℱ₀`-measurable initial data `1` and `0`, for forcings of the class of
+the paper, with difference in `ℍ`. For versions `M^W`, `M^N` of `∫_0^t 1_{(0, 1]} dW` and
+`∫_0^t ∫ 1_{(0, 1]} Ñ(ds, de)`, the differences are `δX ≡ 1`, `δY = M^W + M^N`,
+`δZ = δU = 1_{(0, 1]}` and `δg_T ≡ 1`, and the differences of the forcings are
+`δq^b_s = 1_{[0, 1]}(s) (M^W_s + M^N_s)`, `δq^σ = δq^h = 1_{(0, 1]}`, `δq^f = −1_{[0, 1]}` and
+`δq^g_T = M^W_1 + M^N_1 − 1`. -/
+theorem lem_pert_data_forcing_hypotheses :
+    ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)
+      (D : LevyStochCalc.Driver.LevyDriver.{0, 0, w} P 1 (Measure.dirac (0 : ℝ)))
+      (hind₀ : Indep (⊥ : MeasurableSpace Ω) (⨆ t, D.filtration t) P) (MW MN : ℝ → Ω → ℝ)
+      (ξ₁ ξ₂ : Ω → EuclideanSpace ℝ (Fin 1))
+      (qb₁ qb₂ : Fin 1 → Ω → ℝ → ℝ) (qσ₁ qσ₂ : Fin 1 → ℝ → Ω → Fin 1 → ℝ)
+      (qh₁ qh₂ : Fin 1 → ℝ → Ω → ℝ → ℝ) (qf₁ qf₂ : Fin 1 → Ω → ℝ → ℝ) (qg₁ qg₂ : Fin 1 → Ω → ℝ)
+      (X₁ X₂ Y₁ Y₂ : Fin 1 → ℝ → Ω → ℝ) (Z₁ Z₂ : Fin 1 → ℝ → Ω → Fin 1 → ℝ)
+      (U₁ U₂ : Fin 1 → ℝ → Ω → ℝ → ℝ),
+      JointBorel 1 sysW ∧ Assumption23 (enlJoint ⊥ D bot_le) P 1 1 sysW
+      ∧ (1 : Matrix (Fin 1) (Fin 1) ℝ).rank = min 1 1
+      ∧ Assumption25 (enlJoint ⊥ D bot_le) P 1 (1 : Matrix (Fin 1) (Fin 1) ℝ) 1 1 1 sysW
+      ∧ Measurable[enlJoint ⊥ D bot_le 0] ξ₁ ∧ Measurable[enlJoint ⊥ D bot_le 0] ξ₂
+      ∧ PredForcing (enlJoint ⊥ D bot_le) P (Measure.dirac (0 : ℝ)) 1 qb₁ qσ₁ qh₁ qf₁ qg₁
+      ∧ PredForcing (enlJoint ⊥ D bot_le) P (Measure.dirac (0 : ℝ)) 1 qb₂ qσ₂ qh₂ qf₂ qg₂
+      ∧ WeakForcedSolution D bot_le hind₀ 1 1 sysW ξ₁ qb₁ qσ₁ qh₁ qf₁ qg₁ X₁ Y₁ Z₁ U₁
+      ∧ WeakForcedSolution D bot_le hind₀ 1 1 sysW ξ₂ qb₂ qσ₂ qh₂ qf₂ qg₂ X₂ Y₂ Z₂ U₂
+      ∧ supSize P (Measure.dirac (0 : ℝ)) 1 (fun i t ω => X₁ i t ω - X₂ i t ω)
+          (fun k t ω => Y₁ k t ω - Y₂ k t ω) (fun k t ω j => Z₁ k t ω j - Z₂ k t ω j)
+          (fun k t ω e => U₁ k t ω e - U₂ k t ω e) < ⊤
+      ∧ (∀ t, MW t =ᵐ[P] Brownian.Multidim.MultidimBrownianMotion.stochasticIntegral D.W
+          (enlJoint ⊥ D bot_le) (isBrownianFiltration_enlJoint D bot_le hind₀)
+          (fun s (_ : Ω) (_ : Fin 1) => unitWindow s) window_meas (window_prog _) (window_sq P) t)
+      ∧ (∀ t, MN t =ᵐ[P] Poisson.Compensated.stochasticIntegral D.N (enlJoint ⊥ D bot_le)
+          (isPoissonFiltration_enlJoint D bot_le hind₀) (fun (_ : Ω) s (_ : ℝ) => unitWindow s)
+          windowN_meas (windowN_prog _) (windowN_sq P) t)
+      ∧ (∀ i ω, ξ₁ ω i - ξ₂ ω i = 1)
+      ∧ (∀ i t ω, X₁ i t ω - X₂ i t ω = 1)
+      ∧ (∀ k t ω, Y₁ k t ω - Y₂ k t ω = MW t ω + MN t ω)
+      ∧ (∀ k s ω j, Z₁ k s ω j - Z₂ k s ω j = unitWindow s)
+      ∧ (∀ k s ω e, U₁ k s ω e - U₂ k s ω e = unitWindow s)
+      ∧ (∀ k ω, terminalVal P 1 sysW X₁ k ω - terminalVal P 1 sysW X₂ k ω = 1)
+      ∧ (∀ i ω s, qb₁ i ω s - qb₂ i ω s
+          = (Set.Icc (0 : ℝ) 1).indicator (fun s => MW s ω + MN s ω) s)
+      ∧ (∀ i s ω j, qσ₁ i s ω j - qσ₂ i s ω j = unitWindow s)
+      ∧ (∀ i s ω e, qh₁ i s ω e - qh₂ i s ω e = unitWindow s)
+      ∧ (∀ k ω s, qf₁ k ω s - qf₂ k ω s = -(Set.Icc (0 : ℝ) 1).indicator 1 s)
+      ∧ ∀ k ω, qg₁ k ω - qg₂ k ω = MW 1 ω + MN 1 ω - 1 := by
+  obtain ⟨Ω, _, P, _, D, hind₀, MW, MN, qb₁, qb₂, qσ₁, qσ₂, qh₁, qh₂, qf₁, qf₂, qg₁, qg₂, X₁, X₂,
+    Y₁, Y₂, Z₁, Z₂, U₁, U₂, hJ, h23, hG, h25, hq₁, hq₂, hs₁, hs₂, hsup, hX, hY, hZ, hU, -, -,
+    hWe, hNe, hb, hσ, hh, hf, hg⟩ := affineWindow_pair.{w} 1 0 0 0 1 1
+  refine ⟨Ω, inferInstance, P, inferInstance, D, hind₀, MW, MN, _, _, qb₁, qb₂, qσ₁, qσ₂, qh₁,
+    qh₂, qf₁, qf₂, qg₁, qg₂, X₁, X₂, Y₁, Y₂, Z₁, Z₂, U₁, U₂, hJ, h23, hG, h25, measurable_const,
+    measurable_const, hq₁, hq₂, hs₁.1, hs₂.1, hsup, hWe, hNe, fun i ω => by simp,
+    fun i t ω => ?_, fun k t ω => ?_, fun k s ω j => ?_, fun k s ω e => ?_, fun k ω => ?_,
+    fun i ω s => ?_, fun i s ω j => ?_, fun i s ω e => ?_, fun k ω s => ?_, fun k ω => ?_⟩
+  · rw [hX]
+    ring
+  · rw [hY]
+    ring
+  · rw [hZ]
+    ring
+  · rw [hU]
+    ring
+  · rw [terminalVal_sysW, terminalVal_sysW, hX]
+    ring
+  · rw [hb]
+    by_cases hs : s ∈ Set.Icc (0 : ℝ) 1
+    · simp only [Set.indicator_of_mem hs]
+      ring
+    · simp only [Set.indicator_of_notMem hs]
+  · rw [hσ]
+    ring
+  · rw [hh]
+    ring
+  · rw [hf]
+    by_cases hs : s ∈ Set.Icc (0 : ℝ) 1
+    · simp only [Set.indicator_of_mem hs, Pi.one_apply]
+      ring
+    · simp only [Set.indicator_of_notMem hs]
+  · rw [hg]
+    ring
 
 end Dissertation.Acceptance.A
