@@ -50,16 +50,27 @@ its statement matches the proposition's hypotheses is the review's judgement.
 
 ## Reviews
 
-A proposition is *reviewed* when `review/A.md` records a review of it, with a marker
-`<!-- spec-review: <name> <hash> by=<reviewer> -->` at its current hash; `by=` names the
-reviewer, and the report shows it (`claude-author` marks a review by the session that wrote the
-statement, which is not an independent review). The meaning of a proposition also
+A proposition is *reviewed* for a claim when `review/A.md` records a review of it, with a marker
+`<!-- spec-review: <name> <hash> by=<reviewer> source=<claim>@<digest> -->` at its current hash
+whose `source=` digest for that claim is the claim's current `source_sha256`: the digest of the
+claim's source passage, in the scheme of its pin, as it was read. A marker lists one `source=` for
+each claim whose passage the reading covers; a change of the printed text therefore reopens the
+review for that claim, and `check` names the claim whose passage changed since its reading. `by=`
+names the reviewer, and the report shows it (`claude-author` marks a review by the session that
+wrote the statement, which is not an independent review). The meaning of a proposition also
 depends on the definitions it uses: every declaration of `Dissertation` or `LevyStochCalc` in its
-definition closure needs a marker `<!-- def-review: <name> <hash> by=<reviewer> -->` in `review/definitions.md`
-(Mathlib and the pinned upstream libraries are taken as foundations). The hashes cover the types
-and the values of the definitions with proofs erased, so any change of meaning, here or in a
-definition the proposition depends on, reopens the review. `tools/acceptance.py hashes <name>`
-prints the current hashes.
+definition closure needs a marker `<!-- def-review: <name> <hash> by=<reviewer> -->` in
+`review/definitions.md` (Mathlib and the pinned upstream libraries are taken as foundations).
+A definition named by a definition claim is read against that claim's passage, and its marker
+records the passage digest in the same way. The hashes cover the types and the values of the
+definitions with proofs erased, so any change of meaning, here or in a definition the
+proposition depends on, reopens the review. `tools/acceptance.py hashes <name>` prints the
+current hashes, with the current passage digest of every claim that uses the name; a reviewer
+keeps only the `source=` entries of the passages actually read.
+
+The markers recorded before the digests existed carry the digest of each claim's passage at the
+manuscript revision pinned when the marker was added: `2608.23203v1`, `f598204` or `1f67672`.
+A reading of a passage that has changed since then does not count until it is read again.
 
 A review reads the manuscript passage and the proposition side by side and records, for each
 hypothesis, quantifier and conclusion, where the proposition has it; for a proposition broader
