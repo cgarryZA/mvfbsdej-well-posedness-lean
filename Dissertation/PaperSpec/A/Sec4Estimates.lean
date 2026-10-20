@@ -47,16 +47,16 @@ open Dissertation.WellPosedness.System Dissertation.WellPosedness.Existence
 
 universe u v w
 
-/-- **(4.23).** There is a function `K` of `(T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)` such that: in the
+/-- **(4.23).** There is a function `K` of `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that: in the
 standing setting, under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3) and
 Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`,
 `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak` with `X^k_T ∈ L²`, `ℱ₀`-measurable
 initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` —
 `𝔼 sup_{t ≤ T} |δX_t|² ≤ C (𝔼 ∫_0^T (|δY_t|² + |δZ_t|²_F + ‖δU_t‖²_{L²(ν)}) dt + P)`
-with `C = K(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂, λ̲)`, `P` the data size of (4.14) of the differences
+with `C = K(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂)`, `P` the data size of (4.14) of the differences
 of the data, and the expectations read in `[0, ∞]`. -/
 def eq_fwd : Prop :=
-  ∃ K : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ,
+  ∃ K : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ,
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
     (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
@@ -81,7 +81,7 @@ def eq_fwd : Prop :=
     supSize P ν T (fun i t ω => X₁ i t ω - X₂ i t ω) (fun k t ω => Y₁ k t ω - Y₂ k t ω)
         (fun k t ω j => Z₁ k t ω j - Z₂ k t ω j) (fun k t ω e => U₁ k t ω e - U₂ k t ω e) < ⊤ →
     ∫⁻ ω, (⨆ t ∈ Set.Icc (0 : ℝ) T, esq (fun i => X₁ i t ω - X₂ i t ω)) ∂P
-      ≤ ENNReal.ofReal (K T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ lamLow)
+      ≤ ENNReal.ofReal (K T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂)
         * (∑ k, Brownian.Ito.energy P T (fun ω s => Y₁ k s ω - Y₂ k s ω)
           + ∑ k, ∑ j, Brownian.Ito.energy P T (fun ω s => Z₁ k s ω j - Z₂ k s ω j)
           + ∑ k, Poisson.Compensated.markedEnergy P ν T (fun ω s e => U₁ k s ω e - U₂ k s ω e)
@@ -148,17 +148,17 @@ def eq_bwdito : Prop :=
             * (lam * (driverProc P T C X₁ Y₁ Z₁ U₁ k ω s - driverProc P T C X₂ Y₂ Z₂ U₂ k ω s)
               + (qf₁ k ω s - qf₂ k ω s)) ∂volume ∂P
 
-/-- **(4.26).** There is a function `K` of `(T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)` such that: in the
+/-- **(4.26).** There is a function `K` of `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that: in the
 standing setting, under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3) and
 Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`,
 `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak` with `X^k_T ∈ L²`, `ℱ₀`-measurable
 initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` —
 `sup_{t ≤ T} 𝔼|δY_t|² + 𝔼 ∫_0^T (|δZ_t|²_F + ‖δU_t‖²_{L²(ν)}) dt
   ≤ C (𝔼|δX_T|² + 𝔼 ∫_0^T |δX_t|² dt + P)`
-with `C = K(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂, λ̲)`, `P` the data size of (4.14) of the differences
+with `C = K(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂)`, `P` the data size of (4.14) of the differences
 of the data, and the expectations read in `[0, ∞]`. -/
 def eq_wgt : Prop :=
-  ∃ K : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ,
+  ∃ K : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ,
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
     (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
@@ -185,24 +185,24 @@ def eq_wgt : Prop :=
     (⨆ t ∈ Set.Icc (0 : ℝ) T, ∫⁻ ω, esq (fun k => Y₁ k t ω - Y₂ k t ω) ∂P)
       + ((∑ k, ∑ j, Brownian.Ito.energy P T (fun ω s => Z₁ k s ω j - Z₂ k s ω j))
         + ∑ k, Poisson.Compensated.markedEnergy P ν T (fun ω s e => U₁ k s ω e - U₂ k s ω e))
-      ≤ ENNReal.ofReal (K T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ lamLow)
+      ≤ ENNReal.ofReal (K T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂)
         * (∫⁻ ω, esq (fun i => X₁ i T ω - X₂ i T ω) ∂P
           + ∑ i, Brownian.Ito.energy P T (fun ω s => X₁ i s ω - X₂ i s ω)
           + dataSize P ν T (fun i ω => ξ₁ ω i - ξ₂ ω i) (fun i ω s => qb₁ i ω s - qb₂ i ω s)
           (fun i s ω j => qσ₁ i s ω j - qσ₂ i s ω j) (fun i s ω e => qh₁ i s ω e - qh₂ i s ω e)
           (fun k ω s => qf₁ k ω s - qf₂ k ω s) (fun k ω => qg₁ k ω - qg₂ k ω))
 
-/-- **(4.27).** There is a function `K` of `(T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)` such that: in the
+/-- **(4.27).** There is a function `K` of `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that: in the
 standing setting, under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3) and
 Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`,
 `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak` with `X^k_T ∈ L²`, `ℱ₀`-measurable
 initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` —
 `𝔼 sup_{t ≤ T} |δY_t|² + 𝔼 ∫_0^T (|δZ_t|²_F + ‖δU_t‖²_{L²(ν)}) dt
   ≤ C (𝔼|δX_T|² + 𝔼 ∫_0^T |δX_t|² dt + P)`
-with `C = K(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂, λ̲)`, `P` the data size of (4.14) of the differences
+with `C = K(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂)`, `P` the data size of (4.14) of the differences
 of the data, and the expectations read in `[0, ∞]`. -/
 def eq_bwd : Prop :=
-  ∃ K : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ,
+  ∃ K : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ,
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
     (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
@@ -229,7 +229,7 @@ def eq_bwd : Prop :=
     ∫⁻ ω, (⨆ t ∈ Set.Icc (0 : ℝ) T, esq (fun k => Y₁ k t ω - Y₂ k t ω)) ∂P
       + ((∑ k, ∑ j, Brownian.Ito.energy P T (fun ω s => Z₁ k s ω j - Z₂ k s ω j))
         + ∑ k, Poisson.Compensated.markedEnergy P ν T (fun ω s e => U₁ k s ω e - U₂ k s ω e))
-      ≤ ENNReal.ofReal (K T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ lamLow)
+      ≤ ENNReal.ofReal (K T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂)
         * (∫⁻ ω, esq (fun i => X₁ i T ω - X₂ i T ω) ∂P
           + ∑ i, Brownian.Ito.energy P T (fun ω s => X₁ i s ω - X₂ i s ω)
           + dataSize P ν T (fun i ω => ξ₁ ω i - ξ₂ ω i) (fun i ω s => qb₁ i ω s - qb₂ i ω s)

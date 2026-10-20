@@ -43,7 +43,7 @@ universe u v w
 
 /-- (4.23), with `C = c_X(T, 10 (2L)²)`. -/
 theorem eq_fwd : PaperSpec.A.eq_fwd.{u, v, w} := by
-  refine ⟨fun T L _ _ _ _ _ _ => fwdSupConst T (10 * (2 * L) ^ 2), ?_⟩
+  refine ⟨fun T L _ _ _ _ _ => fwdSupConst T (10 * (2 * L) ^ 2), ?_⟩
   rintro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ _ _ _ T hT L α β₁ β₂ G C hJ h23 hG h25
     lamLow lam hlow _ hlam hlam1 ξ₁ ξ₂ _ _ qb₁ qb₂ qσ₁ qσ₂ qh₁ qh₂ qf₁ qf₂ qg₁ qg₂ _ _
     X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ ⟨⟨γ₁, h₁⟩, -, -⟩ ⟨⟨γ₂, h₂⟩, -, -⟩ _
@@ -68,7 +68,7 @@ theorem eq_fwd : PaperSpec.A.eq_fwd.{u, v, w} := by
 
 /-- (4.27), with `C = c_Y(T, 10 (2L)², 4 (2L)²)`. -/
 theorem eq_bwd : PaperSpec.A.eq_bwd.{u, v, w} := by
-  refine ⟨fun T L _ _ _ _ _ _ => bwdSupConst T (10 * (2 * L) ^ 2) (4 * (2 * L) ^ 2), ?_⟩
+  refine ⟨fun T L _ _ _ _ _ => bwdSupConst T (10 * (2 * L) ^ 2) (4 * (2 * L) ^ 2), ?_⟩
   rintro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ _ _ _ T hT L α β₁ β₂ G C hJ h23 hG h25
     lamLow lam hlow _ hlam hlam1 ξ₁ ξ₂ _ _ qb₁ qb₂ qσ₁ qσ₂ qh₁ qh₂ qf₁ qf₂ qg₁ qg₂ _ _
     X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ ⟨⟨γ₁, h₁⟩, -, -⟩ ⟨⟨γ₂, h₂⟩, -, -⟩ _

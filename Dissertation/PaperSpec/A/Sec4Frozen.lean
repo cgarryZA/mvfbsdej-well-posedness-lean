@@ -130,8 +130,9 @@ end Defs
 with (2.3) and Assumptions 2.2–2.3 with constant `L` and initial datum `ξ₀` — for `λ ∈ [0, 1]`, a
 forcing `q` of the class of (4.1) and a trial tuple `Θ = (X, Y, Z, U)` of `ℍ`, with
 `μ_s = Law(Θ_s)`: `𝔼 ∫_0^T |ψ(s, Θ_s, μ_s)|² ds < ∞` for `ψ ∈ {b, σ, h}`, in the norms of
-Assumption 2.3; (4.7) has a solution `X̄` with `𝔼 sup_{t ≤ T} |X̄_t|² < ∞`; and any two solutions
-of (4.7) are indistinguishable on `[0, T]`. The expectations are read in `[0, ∞]`. -/
+Assumption 2.3; (4.7) has a solution `X̄ ∈ S²(0, T; ℝⁿ)`, adapted with every path right-continuous
+with left limits on `(0, T]` and `𝔼 sup_{t ≤ T} |X̄_t|² < ∞`; and any two solutions of (4.7) are
+indistinguishable on `[0, T]`. The expectations are read in `[0, ∞]`. -/
 def eq_frozenfwd : Prop :=
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
@@ -156,6 +157,7 @@ def eq_frozenfwd : Prop :=
     ∧ (∫⁻ s in Set.Icc (0 : ℝ) T,
         ∫⁻ ω, ‖C.h s (tupleAt ν X Y Z U s ω) (lawP2 P (tupleAt ν X Y Z U s))‖ₑ ^ 2 ∂P < ⊤)
     ∧ (∃ X' : Fin n → ℝ → Ω → ℝ, FrozenForward D h𝒢₀ hind₀ T lam C ξ₀ qb qσ qh X Y Z U X'
+        ∧ (∀ i ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ l : ℝ, Tendsto (fun s => X' i s ω) (𝓝[<] t) (𝓝 l))
         ∧ ∫⁻ ω, (⨆ t ∈ Set.Icc (0 : ℝ) T, esq (fun i => X' i t ω)) ∂P < ⊤)
     ∧ ∀ X₁' X₂' : Fin n → ℝ → Ω → ℝ,
       FrozenForward D h𝒢₀ hind₀ T lam C ξ₀ qb qσ qh X Y Z U X₁' →

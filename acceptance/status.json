@@ -490,9 +490,7 @@
     {
      "accept": "Dissertation.Acceptance.A.rem_margin_slack",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.rem_margin_slack"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -502,7 +500,7 @@
      "spec": "Dissertation.PaperSpec.A.rem_margin_slack",
      "spec_hash": "ed839d34f480cba1fc10bfb5bc98adb1",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.rem_margin_slack_hypotheses",
      "witness_ok": true
     }
@@ -514,7 +512,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -2904,9 +2902,7 @@
     {
      "accept": "Dissertation.Acceptance.A.lem41_M2_no_square_moment_corr",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.lem41_M2_no_square_moment_corr"
-     ],
+     "author_reviewed": [],
      "corrects": "membership δU ∈ H²_N gives the quadratic integrand e^s|δU_s(e)|² of M² no square moment, in every standing setting",
      "defs": [],
      "defs_changed": [],
@@ -2916,7 +2912,7 @@
      "spec": "Dissertation.PaperSpec.A.lem41_M2_no_square_moment_corr",
      "spec_hash": "ed839d34f480cba18ac876cdb600252c",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.lem41_M2_no_square_moment_corr_hypotheses",
      "witness_ok": true
     },
@@ -2961,9 +2957,7 @@
     {
      "accept": "Dissertation.Acceptance.A.lem41_M2_zero_mean",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.lem41_M2_zero_mean"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -2973,7 +2967,7 @@
      "spec": "Dissertation.PaperSpec.A.lem41_M2_zero_mean",
      "spec_hash": "ed839d34f480cba15a569c2d7c1d42fd",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.lem_bpbsde_hypotheses",
      "witness_ok": true
     }
@@ -2992,9 +2986,7 @@
     {
      "accept": "Dissertation.Acceptance.A.sec4_uniq_homotopy",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.sec4_uniq_homotopy"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3004,7 +2996,7 @@
      "spec": "Dissertation.PaperSpec.A.sec4_uniq_homotopy",
      "spec_hash": "ed839d34f480cba178b10f6f962eecce",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
      "witness_ok": true
     }
@@ -3016,7 +3008,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -4022,9 +4014,7 @@
     {
      "accept": "Dissertation.Acceptance.A.eq_supE",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.eq_supE"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4034,7 +4024,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_supE",
      "spec_hash": "ed839d34f480cba17f3cae8e2942fb86",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.lem_bpbsde_hypotheses",
      "witness_ok": true
     }
@@ -4046,7 +4036,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -4062,10 +4052,10 @@
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
-     "name": "(4.7): along a trial Θ ∈ ℍ, 𝔼 ∫_0^T |ψ(s, Θ_s, μ_s)|² ds < ∞ for ψ ∈ {b, σ, h}; the frozen forward equation, with h at (Θ⁻_s, μ⁻_s) through a representative, has a solution X̄ with 𝔼 sup_{t ≤ T} |X̄_t|² < ∞; any two solutions are indistinguishable on [0, T]",
+     "name": "(4.7): along a trial Θ ∈ ℍ, 𝔼 ∫_0^T |ψ(s, Θ_s, μ_s)|² ds < ∞ for ψ ∈ {b, σ, h}; the frozen forward equation, with h at (Θ⁻_s, μ⁻_s) through a representative, has a solution X̄ ∈ S²(0, T; ℝⁿ), adapted and càdlàg with 𝔼 sup_{t ≤ T} |X̄_t|² < ∞; any two solutions are indistinguishable on [0, T]",
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.eq_frozenfwd",
-     "spec_hash": "ed839d34f480cba10fb1e480e4d68889",
+     "spec_hash": "ed839d34f480cba18303299f6df7eded",
      "spec_ok": true,
      "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.frozen_hypotheses",
@@ -4164,9 +4154,7 @@
     {
      "accept": "Dissertation.Acceptance.A.eq_terdiff",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.eq_terdiff"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4176,7 +4164,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_terdiff",
      "spec_hash": "ed839d34f480cba104ed4a8f00254090",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.eq_terdiff_hypotheses",
      "witness_ok": true
     }
@@ -4188,7 +4176,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [],
@@ -4228,9 +4216,7 @@
     {
      "accept": "Dissertation.Acceptance.A.eq_dX",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.eq_dX"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4240,7 +4226,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_dX",
      "spec_hash": "ed839d34f480cba17f8ea34acd5ecf0b",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
      "witness_ok": true
     }
@@ -4252,16 +4238,14 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
     {
      "accept": "Dissertation.Acceptance.A.eq_dY",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.eq_dY"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4271,7 +4255,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_dY",
      "spec_hash": "ed839d34f480cba1cc37dd9a0d2b35ad",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
      "witness_ok": true
     }
@@ -4283,7 +4267,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [],
@@ -4312,9 +4296,7 @@
     {
      "accept": "Dissertation.Acceptance.A.eq_Gid",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.eq_Gid"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4324,7 +4306,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_Gid",
      "spec_hash": "ed839d34f480cba187a9b1634afe69c9",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
      "witness_ok": true
     }
@@ -4336,16 +4318,14 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
     {
      "accept": "Dissertation.Acceptance.A.eq_intmono",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.eq_intmono"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4355,7 +4335,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_intmono",
      "spec_hash": "ed839d34f480cba14dbfddebc754cdd1",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
      "witness_ok": true
     }
@@ -4367,16 +4347,14 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
     {
      "accept": "Dissertation.Acceptance.A.eq_termmono",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.eq_termmono"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4386,7 +4364,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_termmono",
      "spec_hash": "ed839d34f480cba1ea261f16df305b5f",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
      "witness_ok": true
     }
@@ -4398,16 +4376,14 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
     {
      "accept": "Dissertation.Acceptance.A.eq_coerc",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.eq_coerc"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4417,7 +4393,7 @@
      "spec": "Dissertation.PaperSpec.A.eq_coerc",
      "spec_hash": "ed839d34f480cba1763b5cdd464a968d",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
      "witness_ok": true
     },
@@ -4462,10 +4438,10 @@
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
-     "name": "(4.23): 𝔼 sup_{t ≤ T} |δX_t|² ≤ C (𝔼 ∫_0^T (|δY_t|² + |δZ_t|²_F + ‖δU_t‖²) dt + P), C a function of (T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)",
+     "name": "(4.23): 𝔼 sup_{t ≤ T} |δX_t|² ≤ C (𝔼 ∫_0^T (|δY_t|² + |δZ_t|²_F + ‖δU_t‖²) dt + P), C a function of (T, L, ‖G‖, c_G, α, β₁, β₂)",
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.eq_fwd",
-     "spec_hash": "ed839d34f480cba10818191e4f4f15f1",
+     "spec_hash": "ed839d34f480cba1e1eabbb5a5cd78ba",
      "spec_ok": true,
      "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
@@ -4553,10 +4529,10 @@
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
-     "name": "(4.26): sup_{t ≤ T} 𝔼|δY_t|² + 𝔼 ∫_0^T (|δZ_t|²_F + ‖δU_t‖²) dt ≤ C (𝔼|δX_T|² + 𝔼 ∫_0^T |δX_t|² dt + P), C a function of (T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)",
+     "name": "(4.26): sup_{t ≤ T} 𝔼|δY_t|² + 𝔼 ∫_0^T (|δZ_t|²_F + ‖δU_t‖²) dt ≤ C (𝔼|δX_T|² + 𝔼 ∫_0^T |δX_t|² dt + P), C a function of (T, L, ‖G‖, c_G, α, β₁, β₂)",
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.eq_wgt",
-     "spec_hash": "ed839d34f480cba1de5228301c385f44",
+     "spec_hash": "ed839d34f480cba149f1ed71dc85d931",
      "spec_ok": true,
      "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
@@ -4584,10 +4560,10 @@
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
-     "name": "(4.27): 𝔼 sup_{t ≤ T} |δY_t|² + 𝔼 ∫_0^T (|δZ_t|²_F + ‖δU_t‖²) dt ≤ C (𝔼|δX_T|² + 𝔼 ∫_0^T |δX_t|² dt + P), C a function of (T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)",
+     "name": "(4.27): 𝔼 sup_{t ≤ T} |δY_t|² + 𝔼 ∫_0^T (|δZ_t|²_F + ‖δU_t‖²) dt ≤ C (𝔼|δX_T|² + 𝔼 ∫_0^T |δX_t|² dt + P), C a function of (T, L, ‖G‖, c_G, α, β₁, β₂)",
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.eq_bwd",
-     "spec_hash": "ed839d34f480cba107ad1a2fc1d489b5",
+     "spec_hash": "ed839d34f480cba173f30a686b4b22f5",
      "spec_ok": true,
      "spec_review": "reviewed by claude-author",
      "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
@@ -4618,8 +4594,8 @@
  "summary": {
   "A": {
    "definition: reviewed": 11,
-   "formal: accepted": 48,
-   "formal: proved, author-reviewed": 20,
+   "formal: accepted": 57,
+   "formal: proved, author-reviewed": 11,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
    "out of scope: proof-step": 8,

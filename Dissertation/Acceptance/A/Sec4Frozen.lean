@@ -19,19 +19,19 @@ Statement and equation numbers refer to the well-posedness paper at `1f67672`.
   (`PaperWeakTuple.exists_paperAdmissible`), with a jump representative `γ` of the coefficient at
   the predictable tuple, and `λ Ψ(Θ) + q` is a forcing (`PaperAdmissible.forcing`); the linear
   forward equation from `ξ₀` with these integrands has a solution
-  (`Forcing.exists_linearFSDEJ`) in `S²` (`lintegral_biSup_esq_lt_top_of_linearFSDEJ`). Two
+  (`Forcing.exists_linearFSDEJ`), which set to `0` off a null set has càdlàg paths
+  (`LinearFSDEJ.indicator`), in `S²` (`lintegral_biSup_esq_lt_top_of_linearFSDEJ`). Two
   representatives of the jump coefficient give integrands that agree for the marked energy
   measure (`ae_forcedJump_eq_of_rep`), so two solutions are indistinguishable on `[0, T]`
   (`LinearFSDEJ.ae_forall_Icc_eq`).
 * (4.8): the terminal value is `ℱ_T`-measurable and square integrable by (4.3)
-  (`lintegral_esq_terminalVal_le`), and so is the drift integral. The forward solution set to `0`
-  off a null set has càdlàg paths (`LinearFSDEJ.indicator`); the terminal representation of the
-  filtration of §2 (`hasTerminalRep_enlJoint`) solves the backward equation
-  (`HasTerminalRep.exists_linearBSDEJ`), with predictable integrands
-  (`LinearBSDEJ.exists_predictable`) and `Ȳ` set to `0` off a null set
-  (`LinearBSDEJ.indicator`). Two images agree in `ℍ`: their forward coordinates by (4.7), and
-  then their terminal values almost surely, so Lemma 4.1 applied to the difference of the
-  backward coordinates (`LinearBSDEJ.eq_of_ae_eq_terminal`) gives the rest.
+  (`lintegral_esq_terminalVal_le`), and so is the drift integral. Along the càdlàg solution of
+  (4.7), the terminal representation of the filtration of §2 (`hasTerminalRep_enlJoint`) solves
+  the backward equation (`HasTerminalRep.exists_linearBSDEJ`), with predictable integrands
+  (`LinearBSDEJ.exists_predictable`) and `Ȳ` set to `0` off a null set (`LinearBSDEJ.indicator`).
+  Two images agree in `ℍ`: their forward coordinates by (4.7), and then their terminal values
+  almost surely, so Lemma 4.1 applied to the difference of the backward coordinates
+  (`LinearBSDEJ.eq_of_ae_eq_terminal`) gives the rest.
 * (4.9): at almost every time the two trials are diagonal inputs, and the interior bound of
   Assumption 2.3 in mean square (`LipInteriorAt.lintegral_sq_coeffDiff_le`, with the
   Hilbert-norm `W₂` and (2.8)) gives the first link; the second dominates the `X`- and `Y`-slots
@@ -42,6 +42,7 @@ Statement and equation numbers refer to the well-posedness paper at `1f67672`.
 ## Main statements
 
 * `Dissertation.Acceptance.A.FrozenForward.ae_forall_Icc_eq` — uniqueness for (4.7).
+* `Dissertation.Acceptance.A.FrozenForward.exists_leftLim` — a càdlàg solution of (4.7).
 * `Dissertation.Acceptance.A.eq_frozenfwd` — (4.7).
 * `Dissertation.Acceptance.A.eq_frozenbwd` — (4.8).
 * `Dissertation.Acceptance.A.eq_coeffdiff` — (4.9).
@@ -157,6 +158,48 @@ theorem FrozenForward.ae_forall_Icc_eq {X₁ X₂ : Fin n → ℝ → Ω → ℝ
       (lawP2 P (tupleAt ν (leftLimProc X) (leftLimProc Y) Z U s)))) lam qh i hr₁ hr₂
     (measurableSet_eq_fun (h₁ i).γ_meas (h₂ i).γ_meas)) hT
 
+/-- Under the hypotheses of Lemma 4.2, the frozen forward equation (4.7) of a trial of `ℍ_weak`
+has a solution every path of which has left limits on `(0, T]`. -/
+theorem FrozenForward.exists_leftLim {L : ℝ} {qf : Fin m → Ω → ℝ → ℝ} {qg : Fin m → Ω → ℝ}
+    (hT : 0 ≤ T) (hJ : JointBorel T C) (h22 : Assumption22 (enlJoint 𝒢₀ D h𝒢₀) P T C ξ₀)
+    (h23 : Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C)
+    (hq : PredForcing (enlJoint 𝒢₀ D h𝒢₀) P ν T qb qσ qh qf qg)
+    (hw : PaperWeakTuple (enlJoint 𝒢₀ D h𝒢₀) P ν T X Y Z U) :
+    ∃ X' : Fin n → ℝ → Ω → ℝ, FrozenForward D h𝒢₀ hind₀ T lam C ξ₀ qb qσ qh X Y Z U X'
+      ∧ ∀ i ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ l : ℝ,
+        Tendsto (fun s => X' i s ω) (𝓝[<] t) (𝓝 l) := by
+  have hnull : ∀ s : Set Ω, MeasurableSet s → P s = 0 → MeasurableSet[enlJoint 𝒢₀ D h𝒢₀ 0] s :=
+    fun _ hs h0 => measurableSet_enlJoint_of_null D h𝒢₀ hs h0
+  have hnullAll : ∀ s : Set Ω, MeasurableSet s → P s = 0 →
+      ∀ t, MeasurableSet[enlJoint 𝒢₀ D h𝒢₀ t] s := fun s hs h0 t => by
+    rcases le_total 0 t with ht | ht
+    · exact (enlJoint 𝒢₀ D h𝒢₀).mono ht _ (hnull s hs h0)
+    · exact enlJoint_le_of_nonpos D h𝒢₀ ht _ (hnull s hs h0)
+  -- a solution, from the forcing `λ Ψ(Θ) + q`
+  obtain ⟨γ, hγ⟩ := hw.exists_paperAdmissible hT (hJ.coeffRegular _ P)
+    (originValues_iff_coeffOrigin.mp h22.origin) h23.interior.diagonalLipschitz_two_mul
+  have hF := (hγ.forcing.smul lam).add hq.toForcing
+  obtain ⟨X0, hX0⟩ := hF.exists_linearFSDEJ (D := D)
+    (hℱW := isBrownianFiltration_enlJoint D h𝒢₀ hind₀)
+    (hℱN := isPoissonFiltration_enlJoint D h𝒢₀ hind₀) (hF0_enlJoint D h𝒢₀) hnull hT
+    (memLp_iff_forall_coord.mp h22.initial_memLp)
+    (stronglyMeasurable_iff_forall_coord.mp h22.initial_meas)
+  -- its paths, set to `0` off a null set
+  obtain ⟨S, hSae, hSm, hSsub⟩ :=
+    (ae_all_iff.mpr fun i => (hX0 i).ae_leftLim hT).exists_measurable_mem
+  have hSae' : ∀ᵐ ω ∂P, ω ∈ S := hSae
+  have hSt : ∀ t, MeasurableSet[enlJoint 𝒢₀ D h𝒢₀ t] S := fun t => by
+    simpa using (hnullAll Sᶜ hSm.compl (mem_ae_iff.mp hSae) t).compl
+  set X' : Fin n → ℝ → Ω → ℝ := fun i t => S.indicator (X0 i t) with hX'def
+  refine ⟨X', ⟨γ, hγ.jump_rep, fun i => (hX0 i).indicator hSt hSae'⟩, fun i ω => ?_⟩
+  by_cases hω : ω ∈ S
+  · simp only [hX'def, Set.indicator_of_mem hω]
+    exact hSsub ω hω i
+  · intro t _
+    refine ⟨0, ?_⟩
+    simp only [hX'def, Set.indicator_of_notMem hω]
+    exact tendsto_const_nhds
+
 end Frozen
 
 /-- (4.7). -/
@@ -193,16 +236,11 @@ theorem eq_frozenfwd : PaperSpec.A.eq_frozenfwd.{u, v, w} := by
       (setLIntegral_lintegral_add_lt_top hch
         (horig.h_memLp.aestronglyMeasurable.enorm.pow_const 2) hOh)), ?_,
     fun X₁ X₂ h₁ h₂ i => FrozenForward.ae_forall_Icc_eq h₁ h₂ hT.le i⟩
-  -- a solution, from the forcing `λ Ψ(Θ) + q`
-  obtain ⟨γ, hγ⟩ := hw.exists_paperAdmissible hT.le (hJ.coeffRegular _ P) horig
-    h23.interior.diagonalLipschitz_two_mul
-  have hF := (hγ.forcing.smul lam).add hq.toForcing
-  obtain ⟨X', hX'⟩ := hF.exists_linearFSDEJ (D := D)
-    (hℱW := isBrownianFiltration_enlJoint D h𝒢₀ hind₀)
-    (hℱN := isPoissonFiltration_enlJoint D h𝒢₀ hind₀) (hF0_enlJoint D h𝒢₀) hnull hT.le
-    (memLp_iff_forall_coord.mp h22.initial_memLp)
-    (stronglyMeasurable_iff_forall_coord.mp h22.initial_meas)
-  exact ⟨X', ⟨γ, hγ.jump_rep, hX'⟩, lintegral_biSup_esq_lt_top_of_linearFSDEJ hX'
+  -- a solution with left limits, in `S²` by Lemma 4.1
+  obtain ⟨X', hfwd, hX'l⟩ :=
+    FrozenForward.exists_leftLim (hind₀ := hind₀) (lam := lam) hT.le hJ h22 h23 hq hw
+  obtain ⟨γ', -, hX'⟩ := id hfwd
+  exact ⟨X', hfwd, hX'l, lintegral_biSup_esq_lt_top_of_linearFSDEJ hX'
     (crossWitnessEnl D h𝒢₀ hind₀) (hF0_enlJoint D h𝒢₀) hnull hT⟩
 
 /-- (4.8). -/
@@ -250,30 +288,10 @@ theorem eq_frozenbwd : PaperSpec.A.eq_frozenbwd.{u, v, w} := by
       (hξ X' hX' k).2.add
         (Ito.SecondMoment.memLp_two_setIntegral (hF.qf_meas k) hT.le (hF.qf_sq k).lt_top)⟩,
     ?_, ?_⟩
-  -- a solution: the forward equation, with paths set to `0` off a null set
-  · obtain ⟨X0, hX0⟩ := hF.exists_linearFSDEJ (D := D)
-      (hℱW := isBrownianFiltration_enlJoint D h𝒢₀ hind₀)
-      (hℱN := isPoissonFiltration_enlJoint D h𝒢₀ hind₀) hℱ0 hnull hT.le
-      (memLp_iff_forall_coord.mp h22.initial_memLp)
-      (stronglyMeasurable_iff_forall_coord.mp h22.initial_meas)
-    obtain ⟨S, hSae, hSm, hSsub⟩ :=
-      (ae_all_iff.mpr fun i => (hX0 i).ae_leftLim hT.le).exists_measurable_mem
-    have hSae' : ∀ᵐ ω ∂P, ω ∈ S := hSae
-    have hSt : ∀ t, MeasurableSet[enlJoint 𝒢₀ D h𝒢₀ t] S := fun t => by
-      simpa using (hnullAll Sᶜ hSm.compl (mem_ae_iff.mp hSae) t).compl
-    set X' : Fin n → ℝ → Ω → ℝ := fun i t => S.indicator (X0 i t) with hX'def
-    have hX' := fun i => (hX0 i).indicator hSt hSae'
-    have hX'l : ∀ i ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ l : ℝ,
-        Tendsto (fun s => X' i s ω) (𝓝[<] t) (𝓝 l) := fun i ω => by
-      by_cases hω : ω ∈ S
-      · simp only [hX'def, Set.indicator_of_mem hω]
-        exact hSsub ω hω i
-      · intro t _
-        refine ⟨0, ?_⟩
-        simp only [hX'def, Set.indicator_of_notMem hω]
-        exact tendsto_const_nhds
-    have hfwd : FrozenForward D h𝒢₀ hind₀ T lam C ξ₀ qb qσ qh X Y Z U X' :=
-      ⟨γ, hγ.jump_rep, hX'⟩
+  -- a solution: the forward equation, with left limits
+  · obtain ⟨X', hfwd, hX'l⟩ :=
+      FrozenForward.exists_leftLim (hind₀ := hind₀) (lam := lam) hT.le hJ h22 h23 hq hw
+    obtain ⟨γ', -, hX'⟩ := id hfwd
     -- the backward equation, with predictable integrands and paths set to `0` off a null set
     have hrep := hasTerminalRep_enlJoint D h𝒢₀ hind₀ hd hT
     choose Y0 Z0 U0 hY0 using fun k => hrep.exists_linearBSDEJ hnull hT.le (hξ X' hfwd k).2

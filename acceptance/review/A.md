@@ -191,8 +191,12 @@ Propositions:
 Readings:
 
 * The hypotheses are those of Theorem 3.3, written as in `thm_uniq` (reviewed with Theorem 3.3).
-  Assumption 2.2 is not assumed, as printed, so along one solution the coefficient processes need
-  not be square integrable; only their differences are claimed to be, as printed.
+  Assumption 2.2 is not assumed, as printed. Along one solution, the solution notion
+  (`WeakSolution`, through `PaperAdmissibleInt`) asks the diffusion process and the jump
+  representative `γ` to have finite energy (`σ_sq`, `γ_sq`), as the `L²` stochastic integrals of
+  (1.1) need, but asks the drift and the driver processes only for integrable paths on `[0, T]`
+  (`b_int`, `f_int`): these two need not be square integrable along one solution, and for them
+  only the differences are claimed to be, as printed.
 * The expectations are lower integrals in `[0, ∞]` (`energy`, `markedEnergy`, `esq`) over
   `[0, T]`; `|δσ|²_F` is `∑_{i, j}`, `‖δh‖²_{L²(ν)}` is `∑_i ∫ δh_i(e)² ν(de)`, and "`< ∞`" is
   `< ⊤`.
@@ -771,9 +775,9 @@ setting, `T > 0`, (2.3), Assumption 2.2 with the datum `ξ₀` and Assumption 2.
 trial `Θ` with `HTuple` over `enlJoint`:
 
 * `eq_frozenfwd`: (a) `∫_{[0, T]} ∫⁻ ‖ψ(s, Θ_s, lawP2 P Θ_s)‖ₑ² < ⊤` for `ψ ∈ {b, σ, h}`;
-  (b) there is `X̄` with `FrozenForward … Θ X̄` and `∫⁻ sup_{t ∈ [0, T]} |X̄_t|² < ⊤`; (c) any two
-  `X̄` with `FrozenForward … Θ X̄` agree, coordinatewise, at every `t ∈ [0, T]` on one set of full
-  measure.
+  (b) there is `X̄` with `FrozenForward … Θ X̄`, every path of every coordinate of `X̄` having a
+  left limit at every `t ∈ (0, T]`, and `∫⁻ sup_{t ∈ [0, T]} |X̄_t|² < ⊤`; (c) any two `X̄` with
+  `FrozenForward … Θ X̄` agree, coordinatewise, at every `t ∈ [0, T]` on one set of full measure.
 * `eq_frozenbwd`: (a) for every `X̄` with `FrozenForward … Θ X̄`, each coordinate of
   `Ξ = λ terminalVal(X̄) + q^g + ∫_{[0, T]} (λ driverProc(Θ) + q^f)` is strongly
   `ℱ_T`-measurable and in `L²(P)`; (b) there is `Θ̄` with `FrozenStep … Θ Θ̄`; (c) for any two
@@ -812,8 +816,16 @@ Readings:
 * `Ξ ∈ L²(Ω, ℱ_T; ℝᵐ)` is read coordinatewise, strongly `enlJoint_T`-measurable and in `L²(P)`,
   the drift integral the Bochner integral over `[0, T]` of each path. It is asserted for every
   solution of (4.7), which by (c) of `eq_frozenfwd` are indistinguishable.
+* `X̄ ∈ S²(0, T; ℝⁿ)`. `S²` is the space of càdlàg adapted processes `V` with
+  `𝔼 sup_{t ≤ T} |V_t|² < ∞` (`03-main-results.tex` line 9). `FrozenForward` makes `X̄` adapted
+  with every path right-continuous at every time (`LinearFSDEJ`); (b) adds that every path of
+  every coordinate has a left limit at every `t ∈ (0, T]`, in the form in which `HTuple` and
+  `WeakSolution` state the càdlàg paths of the `X`- and `Y`-slots of `ℍ`, and
+  `𝔼 sup_{t ≤ T} |X̄_t|² < ∞`. So the `X̄` of (b) is in `S²(0, T; ℝⁿ)`, every path càdlàg on
+  `[0, T]`: the existence part of "(4.7) defines a unique `X̄ ∈ S²(ℝⁿ)`" in full.
 * Uniqueness in `eq_frozenfwd` is among all solutions of `FrozenForward` (adapted, right-continuous
-  paths), not only those in `S²`: broader than printed.
+  paths, left limits not asked), not only those in `S²`: broader than printed. The `X̄` of (b) is
+  one of them, so the unique solution is the càdlàg one up to indistinguishability.
 * Not stated: that the integrands are progressively measurable and the jump integrand predictable
   (lines 281–282); `FrozenForward` asks the integrands' joint and progressive measurability, the
   jump integrand marked progressively measurable (what the compensated integral needs), not
@@ -827,16 +839,18 @@ is finite by the `𝔼 sup` bounds of `X`, `Y`, the energies of `Z`, `U`
 the integrals of (1.1) exist with a representative `γ` at the predictable tuple
 (`PaperWeakTuple.exists_paperAdmissible`, (2.5) from (2.3) by `JointBorel.coeffRegular`),
 `λ Ψ(Θ) + q` is a forcing (`PaperAdmissible.forcing`, `Forcing.smul`, `Forcing.add`), and the
-linear forward equation has a solution (`Forcing.exists_linearFSDEJ`) in `S²`
-(`lintegral_biSup_esq_lt_top_of_linearFSDEJ`, Lemma 4.1). (c): two representatives give forward
-integrands that agree for the marked energy measure (`ae_forcedJump_eq_of_rep`), so the
+linear forward equation has a solution (`Forcing.exists_linearFSDEJ`); set to `0` off a null set
+outside which its paths have left limits, it still solves (4.7) and every path is càdlàg
+(`LinearFSDEJ.ae_leftLim`, `LinearFSDEJ.indicator`; `FrozenForward.exists_leftLim`), and it is
+in `S²` (`lintegral_biSup_esq_lt_top_of_linearFSDEJ`, Lemma 4.1). (c): two representatives give
+forward integrands that agree for the marked energy measure (`ae_forcedJump_eq_of_rep`), so the
 compensated integrals agree almost surely at each time and the right-continuous solutions are
 indistinguishable (`LinearFSDEJ.ae_forall_Icc_eq`). (4.8)(a): (4.3)
 (`lintegral_esq_terminalVal_le`) with (2.3) for the measurability of `g`, and the drift integral
 of the forcing (`ProgressivelyMeasurable.stronglyMeasurable_setIntegral`,
-`memLp_two_setIntegral`). (b): the solution of (4.7)(b), set to `0` off a null set on which its
-paths have left limits (`LinearFSDEJ.indicator`); the terminal representation of `enlJoint`
-(`hasTerminalRep_enlJoint`, `HasTerminalRep.exists_linearBSDEJ`); predictable versions of `Z̄`,
+`memLp_two_setIntegral`). (b): the càdlàg solution of (4.7)(b) (`FrozenForward.exists_leftLim`);
+the terminal representation of `enlJoint` (`hasTerminalRep_enlJoint`,
+`HasTerminalRep.exists_linearBSDEJ`); predictable versions of `Z̄`,
 `Ū` (`LinearBSDEJ.exists_predictable`); `Ȳ` set to `0` off a null set (`LinearBSDEJ.indicator`);
 the `S²` bounds of Lemma 4.1. (c): the forward coordinates by (4.7)(c), so the terminal values
 agree almost surely, and Lemma 4.1 for the difference of the backward coordinates, whose data
@@ -844,12 +858,12 @@ vanish (`LinearBSDEJ.eq_of_ae_eq_terminal`).
 
 Witness: `Dissertation.Acceptance.A.frozen_hypotheses`: at the instance of `thm_cwp_hypotheses`
 (Example 5.1(i), `n = m = d = 1`, `T = 1`, `ν = δ₀`, `L = 1`, datum `0`), (2.3) and
-Assumptions 2.2–2.3, `λ = 1`, the zero forcing in the class of (4.1), and two trials of `ℍ`: the
-zero tuple and the solution of Theorem 3.5.
+Assumptions 2.2–2.3, `λ = 1`, the zero forcing in the class of (4.1), and two distinct trials of
+`ℍ`: the zero tuple and the constant tuple `(X, Y, Z, U) = (1, 1, 0, 0)` (`hTuple_const`).
 
 Verdict: faithful (both true as printed; the uniqueness of (4.7) broader than printed).
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_frozenfwd ed839d34f480cba10fb1e480e4d68889 by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_frozenfwd ed839d34f480cba18303299f6df7eded by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.eq_frozenbwd ed839d34f480cba178b77fba8e33d01f by=claude-author -->
 
 ## (4.9), Step 1 of the proof of Lemma 4.2: `Dissertation.PaperSpec.A.eq_coeffdiff`
@@ -904,8 +918,11 @@ Hilbert-norm `W₂`, gives `𝔼 S_s² ≤ 10L² 𝔼 |Θ¹_s − Θ²_s|²_H`
 extensions, equal on `[0, T]` (`PaperWeakTuple.exists_progTuple`), and reads the time integral by
 Tonelli (`setLIntegral_lintegral_coords_le`). The third is `T ≤ max{T, 1}` and `1 ≤ max{T, 1}`.
 
-Witness: `Dissertation.Acceptance.A.frozen_hypotheses`, with the zero tuple and the solution of
-Theorem 3.5 as the two trials.
+Witness: `Dissertation.Acceptance.A.frozen_hypotheses`, with two distinct trials of `ℍ`: the zero
+tuple and the constant tuple `(X, Y, Z, U) = (1, 1, 0, 0)` (`hTuple_const`). Their difference has
+`δX = δY = −1` and `δZ = δU = 0`, so `‖Θ¹ − Θ²‖²_ℍ = 2`; by hand, for the system of
+Example 5.1(i) with `β₁ = β₂ = 1` (`b = −y`, `σ = −z`, `h = −u`, `f = x`), `δb = e₁`, `δf = −e₁`
+and `δσ = δh = 0`, so `S_s = 2`, and the three links read `4 ≤ 20 ≤ 20 ≤ 20`.
 
 Verdict: faithful.
 
@@ -1285,22 +1302,25 @@ expectations, Cauchy–Schwarz on the drift, BDG on the two martingales and Assu
 the data size of (4.14) of the differences of the data, and `C` follows the convention of §4: a
 positive constant depending only on `T, L, ‖G‖, c_G, α, β₁, β₂` and `c_BDG`.
 
-Proposition: `∃ K` of `(T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)` such that, in the standing setting and
-under the hypotheses of Lemma 4.3 (those of `lem_pert`, verbatim),
+Proposition: `∃ K` of `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that, in the standing setting and under
+the hypotheses of Lemma 4.3 (those of `lem_pert`, verbatim),
 `∫⁻ sup_{t ∈ [0, T]} |δX_t|² ≤ ofReal(C) (∑_k energy(δY_k) + ∑_{k, j} energy(δZ_{kj})
 + ∑_k markedEnergy(δU_k) + dataSize(δξ₀, δq^b, δq^σ, δq^h, δq^f, δq^g))` with
-`C = K(T, L, ‖GX G‖, s_min(G)⁻², α, β₁, β₂, λ̲)`.
+`C = K(T, L, ‖GX G‖, s_min(G)⁻², α, β₁, β₂)`.
 
 Readings:
 
 * The hypotheses are those in force at Step 3, the hypotheses of Lemma 4.3, written as in
   `lem_pert` (reviewed with Lemma 4.3); `P` is `dataSize` (reviewed with Theorem 3.1) of the
   differences of the initial data and of the forcings.
-* The constant: `K` is chosen before everything else, with the broadest dependence the §4
-  convention allows (`c_BDG` is a universal number) and `λ̲`, as for (4.25). The constant of the
-  proof is a function of `T` and `L` alone, so the bound holds under any narrower dependence the
-  text could mean. `ofReal` reads a negative value as `0`; since `K` is existential and the right
-  side grows with `C`, this is the reading with `C ≥ 0`.
+* The constant: `K` is chosen before everything else, as a function of exactly the parameters of
+  the §4 convention, `T, L, ‖G‖, c_G, α, β₁, β₂` (`c_BDG` is a universal number, so a function of
+  these covers a dependence on it), with `c_G = s_min(G)⁻²`. No other dependence is stated at
+  (4.23), and Step 3 uses `λ` only through `λ ∈ [0, 1]` (in
+  `|λ δψ + q^ψ|² ≤ 2|δψ|² + 2|q^ψ|²`), so `C` depends neither on `λ` nor on the lower bound `λ̲`
+  of Lemma 4.3, which stays among the hypotheses, where it only restricts `λ` to `(0, 1]`.
+  `ofReal` reads a negative value as `0`; since `K` is existential and the right side grows with
+  `C`, this is the reading with `C ≥ 0`.
 * The expectations are lower integrals in `[0, ∞]`: `𝔼 sup_{t ≤ T} |δX_t|²` is `∫⁻` of the
   supremum over `t ∈ [0, T]` of `esq`, and `𝔼 ∫_0^T (|δY|² + |δZ|²_F + ‖δU‖²)` the energies on
   `[0, T]`, coordinatewise. The bound says nothing when the right side is infinite; it is finite
@@ -1321,7 +1341,7 @@ Witness: `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`, the hypothese
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_fwd ed839d34f480cba10818191e4f4f15f1 by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_fwd ed839d34f480cba1e1eabbb5a5cd78ba by=claude-author -->
 
 ## (4.24), Itô's formula in Step 4 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_bwdito`
 
@@ -1455,8 +1475,8 @@ Cauchy–Schwarz, Assumption 2.3 with the coupling bound (2.8), and (4.26) give
 therefore be replaced by `𝔼 sup_{t ≤ T} |δY_t|²`: (4.27) `𝔼 sup_{t ≤ T} |δY_t|²
 + 𝔼 ∫_0^T (|δZ_t|²_F + ‖δU_t‖²) dt ≤ C(𝔼|δX_T|² + 𝔼 ∫_0^T |δX_t|² dt + P)`."
 
-Propositions: each `∃ K` of `(T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)` such that, under the hypotheses of
-Lemma 4.3 (those of `lem_pert`, verbatim), with `C = K(T, L, ‖GX G‖, s_min(G)⁻², α, β₁, β₂, λ̲)`:
+Propositions: each `∃ K` of `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that, under the hypotheses of
+Lemma 4.3 (those of `lem_pert`, verbatim), with `C = K(T, L, ‖GX G‖, s_min(G)⁻², α, β₁, β₂)`:
 
 * `eq_wgt`: `sup_{t ∈ [0, T]} ∫⁻ |δY_t|² + (∑_{k, j} energy(δZ_{kj}) + ∑_k markedEnergy(δU_k))
   ≤ ofReal(C) (∫⁻ |δX_T|² + ∑_i energy(δX_i) + dataSize(δξ₀, δq))`;
@@ -1464,8 +1484,11 @@ Lemma 4.3 (those of `lem_pert`, verbatim), with `C = K(T, L, ‖GX G‖, s_min(G
 
 Readings:
 
-* The hypotheses, the constant (chosen first, the broadest dependence allowed, `ofReal`) and `P`
-  are read as for (4.23).
+* The hypotheses, the constant (chosen first, a function of exactly the parameters of the §4
+  convention, `ofReal`) and `P` are read as for (4.23). No other dependence is stated at (4.26)
+  or (4.27), and Step 4 uses `λ` only through `λ ∈ [0, 1]` (in the terminal value
+  `λ δg_T + q^g_T`, the Young bound (4.25) and the driver `λ δf + q^f`), so `C` does not depend on
+  `λ̲`.
 * `sup_{t ≤ T} 𝔼|δY_t|²` is the supremum over `t ∈ [0, T]` of lower integrals of `esq`;
   `𝔼 sup_{t ≤ T} |δY_t|²` the lower integral of the supremum; `𝔼|δX_T|²` and
   `𝔼 ∫_0^T |δX_t|² dt` are `esq` at `T` and the energies of the coordinates on `[0, T]`, all in
@@ -1489,8 +1512,8 @@ which are those of both propositions.
 
 Verdict: faithful.
 
-<!-- spec-review: Dissertation.PaperSpec.A.eq_wgt ed839d34f480cba1de5228301c385f44 by=claude-author -->
-<!-- spec-review: Dissertation.PaperSpec.A.eq_bwd ed839d34f480cba107ad1a2fc1d489b5 by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_wgt ed839d34f480cba149f1ed71dc85d931 by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bwd ed839d34f480cba173f30a686b4b22f5 by=claude-author -->
 
 ## Lemma 4.4: `Dissertation.PaperSpec.A.lem_cont`
 
