@@ -537,6 +537,148 @@ digest.
   (2.1)). The earlier verdict (faithful with representation choices) stands.
   <!-- spec-review: Dissertation.PaperSpec.A.eq_zeromean ed839d34f480cba1ca027a9d4d1614c9 by=claude-auditor source=A:eq:zeromean@4a8de4ef68a42a19524cd25d158243c45a32a31e55ce45fb91402f26631627ea -->
 
+## `A:intro:contributions` (paper/sections/01-introduction.tex, lines 101–116)
+
+* `Dissertation.PaperSpec.A.cor_robust_wp` (added: lines 101–116 (a new formal claim: the whole
+  passage, the contribution list)). The whole region (lines 101-116) is new. Item (iv) (lines
+  111-113) reads 'robustness: well-posedness survives full-tuple-law perturbations below the
+  dissipativity margin at equal forward and backward dimension (Corollary 3.6; ...)'. This is what
+  cor_robust_wp states: - Equal dimension: m = n, built into the types. - The baseline: it satisfies
+  (2.3) and Assumptions 2.2-2.5 with the unweighted margin (2.13), c_diss > 0, so it is well-posed
+  with a margin. - 'Full-tuple-law perturbations': p perturbs b, sigma, h, f, with g unchanged, and
+  its arguments are the tuple and the law of the full tuple in P_2(H). - 'Below the dissipativity
+  margin': p has origin values and the interior Lipschitz bound, and satisfies (3.4) with c_pert <
+  c_diss. - 'Survives': the perturbed system has a solution in H, is unique in H_weak and satisfies
+  (3.1). This is the sense 'well-posed by Theorems 3.1, 3.3 and 3.5' of Corollary 3.6. I also
+  considered reading 'full-tuple-law perturbations' as the tuple-independent perturbations of (3.5),
+  with 'below the margin' meaning ||G|| L_p < c_diss. Under that reading the item would be an
+  instance of this proposition, with (3.4) supplied by the second part of Corollary 3.6
+  (cor_robust_lip). But the item states the size condition through the margin, which is c_pert <
+  c_diss in (3.4), and mentions no W_2-Lipschitz constant. The first reading is therefore the
+  printed one: the item is the first part of the corollary, and Section 6 uses the same words for
+  it. The item drops no hypothesis and adds no conclusion. The earlier verdict, faithful with
+  representation choices, stands.
+  <!-- spec-review: Dissertation.PaperSpec.A.cor_robust_wp ed839d34f480cba16dd662e97e677716 by=claude-auditor source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df -->
+
+* `Dissertation.PaperSpec.A.prop_strict` (added: lines 101–116 (a new formal claim: the whole
+  passage, the contribution list)). The whole region (lines 101-116) is new. Item (v) (lines
+  114-115) cites Proposition 3.8 for the strictness, and prop_strict states that proposition in
+  full. For n = m = 1, every d >= 1, G = 1, beta_1 > 0 and 0 < eps < beta_1, the drift (3.6)
+  satisfies the expected diagonal bound (3.7) along all diagonal inputs. Yet the pointwise bound
+  <db, dy> <= -beta |dy|^2 fails for every beta >= 0 at free inputs in the supports. The proposition
+  also gives the free-measure Lipschitz constant beta_1 + eps. What the item asserts of Proposition
+  3.8 is that the expected diagonal bound holds where its pointwise form fails, and this is that
+  statement. The Lipschitz conjunct is part of Proposition 3.8, which the note records. The item
+  drops none of the proposition's hypotheses (n = m = 1, G = 1, eps < beta_1), because it states the
+  strictness as the existence of such an instance. For a full coefficient system the strictness is
+  carried by the separate clause rem_diag_mono_converse. The earlier verdict, faithful with
+  representation choices, stands.
+  <!-- spec-review: Dissertation.PaperSpec.A.prop_strict ed839d34f480cba1f1c48950c52ae4f4 by=claude-auditor source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df -->
+
+* `Dissertation.PaperSpec.A.rem_diag_mono` (added: lines 101–116 (a new formal claim: the whole
+  passage, the contribution list)). The whole region (lines 101-116) is new. Item (v) (lines
+  114-115) reads 'expected diagonal monotonicity is strictly weaker than its pointwise form
+  (Proposition 3.8)'. It contains the implication that the pointwise form gives the expected one,
+  which is Remark 2.8 and is what rem_diag_mono states. Under (2.3), suppose the inequality of (2.7)
+  holds without expectations, for a.e. t, at all points theta, theta' and all free laws mu, mu'.
+  Then for a.e. t and all pairs in D_t the expected (2.7) holds, in the extended sense. When
+  Assumption 2.3, one of the stated L^2 assumptions, supplies the integrability, it also holds in
+  the Lean form Mono27At. 'Its pointwise form' is the pointwise condition as Remark 2.8 defines it,
+  namely the inequality of (2.7), so a conclusion about the interior inequality only is right. The
+  item adds no hypothesis and no conclusion beyond the remark, which the note records for this half
+  of the strictness. The earlier verdict, faithful with representation choices, stands.
+  <!-- spec-review: Dissertation.PaperSpec.A.rem_diag_mono ed839d34f480cba146c1633f8e03b86c by=claude-auditor source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df -->
+
+* `Dissertation.PaperSpec.A.rem_diag_mono_converse` (added: lines 101–116 (a new formal claim: the
+  whole passage, the contribution list)). The whole region (lines 101-116) is new. The strictness in
+  item (v) (lines 114-115) is the failure of the converse of Remark 2.8, and rem_diag_mono_converse
+  states it for a full coefficient system. On every standing basis with n = m = d = 1 and for every
+  T > 0, some coefficients satisfy (2.3), Assumption 2.3 and Assumption 2.5 (expected along D_t,
+  terminal and interior, with G = 1 and admissible constants). For these coefficients the inequality
+  of (2.7) without expectations fails at free points and laws, for every beta >= 0 and every beta'.
+  The item claims no generality in the dimensions: strictness is the existence of an instance, as in
+  Remark 2.8's 'the converse fails' and in Proposition 3.8, which has n = m = 1. A counterexample at
+  d = 1 on every basis therefore states it, and prop_strict covers every d >= 1 for the drift
+  pairing. Nothing is dropped or added. The earlier verdict, faithful, stands.
+  <!-- spec-review: Dissertation.PaperSpec.A.rem_diag_mono_converse ed839d34f480cba14b5e4594e14d9dc7 by=claude-auditor source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df -->
+
+* `Dissertation.PaperSpec.A.rem_generalrank_wp` (added: lines 101–116 (a new formal claim: the whole
+  passage, the contribution list)). The whole region (lines 101-116) is new. 'Remark 3.7 for general
+  rank' in item (iv) (line 113) is what rem_generalrank_wp states. The setting is arbitrary n, m >=
+  1 and a full-rank G in R^{m x n}. The baseline satisfies (2.3) and Assumptions 2.2-2.5 with the
+  weighted margin (2.12), c_diss > 0. The perturbation has origin values and the interior Lipschitz
+  bound, and satisfies (3.4) in the weighted quantity of (2.12) with c_pert < c_diss. Then the
+  perturbed system has a solution in H, is unique in H_weak and satisfies (3.1). For general rank
+  the item leaves the form of 'below the dissipativity margin' to Remark 3.7, which records both the
+  margin and (3.4) in the weighted quantities, and the proposition takes exactly these. So the item
+  drops no hypothesis and adds no conclusion. The earlier verdict, faithful with representation
+  choices, stands.
+  <!-- spec-review: Dissertation.PaperSpec.A.rem_generalrank_wp ed839d34f480cba118d1835a02488a97 by=claude-auditor source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df -->
+
+* `Dissertation.PaperSpec.A.thm_cwp` (added: lines 101–116 (a new formal claim: the whole passage,
+  the contribution list)). The whole region (lines 101-116) is new. Two passages bear on this
+  proposition: 'We prove well-posedness under the stated L^2 and monotonicity assumptions' (lines
+  102-103), and item (iii) (lines 109-110), 'global existence by monotone continuation from a
+  small-coupling base case (Theorem 3.5)'. Both are what thm_cwp states, with thm_stab for the
+  continuous dependence: for every horizon T > 0, with no smallness condition, under (2.3) and
+  Assumptions 2.2-2.5, (1.1) has a solution in H, and any two solutions are equal in H. Here
+  Assumptions 2.2-2.3 are the L^2 assumptions and 2.4-2.5 the monotonicity assumptions. 'Global'
+  means existence on every finite horizon, the quantifier over all T > 0; the opening sentence of
+  the introduction and the abstract say 'on every fixed/prescribed finite horizon', so this is not a
+  claim about an infinite horizon. 'By global-in-time monotone continuation' and 'from a
+  small-coupling base case' describe the proof, which the note names (Section 4.5, Lemmas 4.2 and
+  4.4). The passage drops no hypothesis of Theorem 3.5 and asserts nothing the proposition lacks.
+  The uniqueness conjunct is part of 'well-posedness' in lines 102-103. The earlier verdict,
+  faithful with representation choices (latest report), stands.
+  <!-- spec-review: Dissertation.PaperSpec.A.thm_cwp ed839d34f480cba10deeabcd10e6e74d by=claude-auditor source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df -->
+
+* `Dissertation.PaperSpec.A.thm_stab` (added: lines 101–116 (a new formal claim: the whole passage,
+  the contribution list)). The whole region (lines 101-116, the contribution list of the
+  introduction) is new. Item (i) (lines 106-107), 'an a priori stability estimate: the full
+  difference of two solutions is controlled by the differences of their coefficients and data
+  (Theorem 3.1)', together with the continuous dependence that 'well-posedness' carries in lines
+  102-103, is what thm_stab states. Take two systems with solutions in H, system 1 under (2.3) and
+  Assumptions 2.2-2.5 and system 2 under (2.3) and Assumptions 2.2-2.3, both within 'the stated L^2
+  and monotonicity assumptions'. Then supSize of all four components of Theta^1 - Theta^2 (the full
+  difference, in the norm of H) is at most C_stab times dataSize. The terms of dataSize are the
+  differences of the initial data, of the terminal functions at X^2_T and of the four interior
+  coefficients along solution 2: these are the differences of coefficients and data, in the notation
+  the note pins in A:sec3:two-system-notation. The item drops no hypothesis of Theorem 3.1 and adds
+  no conclusion. The constant dependence the proposition carries is that of Theorem 3.1, which the
+  note records as item (i). The earlier verdict, faithful with representation choices, stands.
+  Entry-level coverage. The eight clauses together state every mathematical assertion of lines
+  101-116, and the note names the rest correctly. - Lines 101-102 describe cited work. The contrast
+  they imply, that the present results are restricted on none of the three axes, is carried by the
+  hypotheses of thm_cwp and thm_stab: the coefficients take the law of the full tuple in P_2(H),
+  U-marginal included; nu is only sigma-finite; and no smallness of the coupling is assumed. -
+  'Well-posedness under the stated L^2 and monotonicity assumptions' (lines 102-103) is thm_cwp
+  under (2.3) and Assumptions 2.2-2.5, with thm_stab for the continuous dependence. - 'By
+  global-in-time monotone continuation' and 'by monotone continuation from a small-coupling base
+  case' describe the proof: Section 4.5 and Lemmas 4.2 (small-coupling base case) and 4.4
+  (continuation), which the note numbers correctly. - Items (i)-(v) are attributed as printed. -
+  Item (iv) cites Corollary 3.6 as a whole but asserts only its well-posedness part. The corollary's
+  second part, that (3.5) gives (3.4) with c_pert = ||G|| L_p (cor_robust_lip), is not asserted by
+  the item, so it is right that no clause carries it. - Item (v), 'strictly weaker', is the
+  implication of Remark 2.8 (rem_diag_mono) together with the failure of its converse. That failure
+  is stated for the drift pairing (prop_strict) and for a full coefficient system
+  (rem_diag_mono_converse).
+  <!-- spec-review: Dissertation.PaperSpec.A.thm_stab ed839d34f480cba16bc55062de98e587 by=claude-auditor source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df -->
+
+* `Dissertation.PaperSpec.A.thm_uniq` (added: lines 101–116 (a new formal claim: the whole passage,
+  the contribution list)). The whole region (lines 101-116) is new. Item (ii) (line 108),
+  'uniqueness in the natural class (Theorem 3.3)', is what thm_uniq states. Under (2.3) and
+  Assumptions 2.3-2.5, two tuples of H_weak that satisfy (1.1) with the same initial datum have
+  indistinguishable X and Y on [0, T] and zero energy of the Z- and U-differences, and their
+  difference lies in H. These hypotheses are part of 'the stated L^2 and monotonicity assumptions'
+  of lines 102-103; Assumption 2.2 is not needed, as Remark 3.4 says. The passage does not define
+  'the natural class'. Read as H_weak, the class in which Theorem 3.3 compares two tuples, it is the
+  class of the proposition. Read as H, the solution space of Section 3, uniqueness there is an
+  instance of the proposition, since H is contained in H_weak. Either way the proposition states the
+  item. Its further conclusion, that Theta^1 - Theta^2 lies in H, is part of Theorem 3.3, which the
+  note records as item (ii); the note pins the class itself in A:sec3:HH-banach. The earlier
+  verdict, faithful with representation choices, stands.
+  <!-- spec-review: Dissertation.PaperSpec.A.thm_uniq ed839d34f480cba1b8815741b34ba4e5 by=claude-auditor source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df -->
+
 ## `A:intro:limin-comparison` (paper/sections/01-introduction.tex, lines 58–66)
 
 * `Dissertation.PaperSpec.A.ex_expfunc_limin` (added: lines 59–66). The added lines describe the

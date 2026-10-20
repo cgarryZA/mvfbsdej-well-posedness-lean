@@ -400,4 +400,42 @@ list of the introduction, which restates Theorems 3.1, 3.3 and 3.5, Corollary 3.
 Proposition 3.8 and was pinned by no claim. Like `A:abstract` and `A:conclusion` it is `formal`,
 with the clauses `thm_stab`, `thm_uniq`, `thm_cwp`, `cor_robust_wp`, `rem_generalrank_wp`,
 `rem_diag_mono`, `prop_strict` and `rem_diag_mono_converse`; its note names every sentence and
-what states it. Its scope decision is not yet reviewed (`scope_reviewed: false`).
+what states it. Its scope decision is reviewed in the next section.
+
+
+## Pinned regions and the remaining scope decisions, reviewed at `1f67672`
+
+Reviewer: `claude-auditor`, a model of the same family as the author of the decisions under
+review. Manuscript: revision `1f67672`, sources in `manuscript/paper/`.
+
+* **Uncovered assertions.** The assertions the review of the proof steps found stated by no clause
+  are now clauses (the steps of the proof of Theorem 3.3 under Assumption 2.3 alone, which is what
+  Remark 3.4 claims, and the steps of the proofs of Lemmas 4.1–4.3 and Theorem 3.5), each proved,
+  witnessed at an instance with the relevant objects nonzero, and reviewed blind.
+* **Regions.** A verifier read the region of every claim against the manuscript and found 65 that
+  held less than their claim asserts (37 displays pinned without the sentence that carries their
+  hypotheses or conclusion, 23 single lines of a longer passage, 5 others), and 29 passages that
+  formal claims rest on but that lay wholly or partly outside every region (the standing setting of
+  §2, the notation of the introduction, the conventions of §4, the set-ups of the proofs). Every
+  region now starts and ends at a sentence boundary, crosses no sectioning command, and holds what
+  its claim asserts; every sentence in it is stated by a clause or named in the scope note (for a
+  `part-of` or `duplicate` claim, whose note names its host, in the table of the author's section
+  above). A numbered environment stays pinned at its environment; the notation printed before
+  Definition 2.1 and Theorem 3.1 is pinned by three definition entries,
+  `A:sec2:tuple-notation`, `A:sec2:difference-notation` and `A:sec3:two-system-notation`, whose
+  scopes and readings were reviewed independently. The contribution list of the introduction,
+  which restates the main results, is the formal claim `A:intro:contributions`.
+* **Reviews at the widened passages.** Widening a region changes its passage digest. Every
+  proposition and definition reviewed at a narrower passage was read again at the widened one, by
+  the author and independently; no reading changed. The independent readings are recorded in
+  `rereads.md`, each with its marker at the widened passage's digest.
+* **The contribution list.** `A:intro:contributions` was added after the final check. Each of
+  its eight clauses was read against the list and confirmed the earlier independent reading of its
+  proposition (`rereads.md`). The same reading found that the clauses state every mathematical
+  assertion of the list and that the note names the rest: the cited work of lines 101–102 and the
+  description of the method, which points to §4.5 and Lemmas 4.2 and 4.4.
+* **Final check.** A last check of all 112 claims found every region of a formal or definition
+  claim sound and every standing passage pinned; the 20 regions it found too narrow, all of claims
+  without clauses, were widened as it proposed.
+
+Every claim's scope decision is recorded as reviewed (`scope_reviewed`).
