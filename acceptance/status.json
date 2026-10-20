@@ -1070,7 +1070,7 @@
      "spec_hash": "ed839d34f480cba1eefcd4522364d865",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
      "witness_ok": true
     }
    ],
@@ -3139,7 +3139,7 @@
      "spec_hash": "ed839d34f480cba118f567d673033f15",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_bpbsde_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_infinite_hypotheses",
      "witness_ok": true
     },
     {
@@ -3157,7 +3157,7 @@
      "spec_hash": "ed839d34f480cba15a569c2d7c1d42fd",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_bpbsde_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_infinite_hypotheses",
      "witness_ok": true
     },
     {
@@ -3215,6 +3215,26 @@
      "witness_ok": true
     },
     {
+     "accept": "Dissertation.Acceptance.A.lem41_M1_bdg",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lem41_M1_bdg"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the first link of the chain for M¹: every local compensated integral M¹_t = ∫_0^t ∫_E e^s ⟨δY_{s−}, δU_s(e)⟩ Ñ(ds, de) on [0, T] has 𝔼 sup_{t≤T} |M¹_t| ≤ c_BDG 𝔼 (∫_0^T ∫_E e^{2s} |δY_{s−}|² |δU_s(e)|² N(ds, de))^{1/2} (c_BDG every value at least some c₀ > 0)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lem41_M1_bdg",
+     "spec_hash": "ed839d34f480cba1732a2bccd942e938",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_nonzero_hypotheses",
+     "witness_ok": true
+    },
+    {
      "accept": "Dissertation.Acceptance.A.lem41_M1_chain",
      "accept_ok": true,
      "author_reviewed": [],
@@ -3238,9 +3258,9 @@
    "number": "proof of Lemma 4.1",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the clauses read lines 139–187 of the proof, the paragraph on the zero-mean terms: the sentence of line 151, where the claim is anchored (lines 148–152), the local martingales M^W and M¹ (lines 139–148 and 153–172) and the paragraph on M² (lines 173–187); the first clause reads the sentence's first assertion, that membership in H²_N does not give the quadratic integrand of M² square moments, for ν ≠ 0, the degenerate case ν = 0, in which every marked integrand vanishes, being the one Remark 2.10 sets aside; M^W and M¹ are read as local stochastic integrals (IsLocalBrownianIntegral, IsLocalCompensatedIntegral) for the filtration of the setting, which carries their local-martingale property, not stated separately; that M² is a local martingale (lines 139–141) is the clause on M² read pathwise, stated as a martingale on [0, T] (stronger), adapted up to a null set; that the stochastic-integral terms of (4.5) are M^W, M¹ and M² belongs to (4.5) (A:eq:itoY2); the first link of the chain for M¹ (line 162), the Burkholder–Davis–Gundy inequality at p = 1 in quadratic-variation form, is cited work (He, Wang and Yan, as in A:sec4:supremum-criterion) and is not stated: the bound on 𝔼 sup |M¹| it leads to is stated and proved through the predictable quadratic variation (Lenglart's inequality), and the links after it are stated",
+   "scope_note": "the clauses read lines 139–187 of the proof, the paragraph on the zero-mean terms: the sentence of line 151, where the claim is anchored (lines 148–152), the local martingales M^W and M¹ (lines 139–148 and 153–172) and the paragraph on M² (lines 173–187); the first clause reads the sentence's first assertion, that membership in H²_N does not give the quadratic integrand of M² square moments, for ν ≠ 0, the degenerate case ν = 0, in which every marked integrand vanishes, being the one Remark 2.10 sets aside; M^W and M¹ are read as local stochastic integrals (IsLocalBrownianIntegral, IsLocalCompensatedIntegral) for the filtration of the setting, which carries their local-martingale property, not stated separately; that M² is a local martingale (lines 139–141) is the clause on M² read pathwise, stated as a martingale on [0, T] (stronger), adapted up to a null set; that the stochastic-integral terms of (4.5) are M^W, M¹ and M² belongs to (4.5) (A:eq:itoY2); the first link of the chain for M¹ (line 162), the Burkholder–Davis–Gundy inequality at p = 1 in quadratic-variation form for M¹ with the Cauchy–Schwarz inequality in ℝᵐ, is the eighth clause, the links after it the ninth, and the composite bound the seventh",
    "scope_reviewed": false,
-   "status": "formal: accepted"
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
@@ -4354,6 +4374,26 @@
      "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.rem_uniq_lip_hypotheses",
      "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_uniq_bwd_lip",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_uniq_bwd_lip"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(3.3) under (2.3) and Assumption 2.3 alone: 𝔼 sup_{t ≤ T} |δY_t|² ≤ C_BP (𝔼|δg_T|² + 𝔼 ∫_0^T |δf_s|² ds) < ∞, C_BP a function of T, along two solutions in ℍ_weak with the same initial datum",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_uniq_bwd_lip",
+     "spec_hash": "ed839d34f480cba184495619099e147e",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.rem_uniq_lip_hypotheses",
+     "witness_ok": true
     }
    ],
    "id": "A:eq:uniq-bwd",
@@ -4361,9 +4401,9 @@
    "number": "(3.3)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the pinned region is lines 158–172; the second clause reads the backward difference of lines 158–163 and the third the terminal bound of lines 163–166 (X^k_T ∈ L², 𝔼|δg_T|² ≤ C 𝔼|δX_T|² < ∞), both stated under (2.3) and Assumption 2.3 alone, the hypotheses the steps use (Remark 3.4); the passage, under the hypotheses of Theorem 3.3, is their instance, at which the two solutions coincide; '(3.2) gives 𝔼∫_0^T |δf_s|² ds < ∞' (lines 166–167) is the finiteness of the driver energy in (3.2) (A:eq:uniq-coeff) and in the first clause; 'By Lemma 4.1' names a justification",
+   "scope_note": "the pinned region is lines 158–172; the second clause reads the backward difference of lines 158–163 and the third the terminal bound of lines 163–166 (X^k_T ∈ L², 𝔼|δg_T|² ≤ C 𝔼|δX_T|² < ∞), both stated under (2.3) and Assumption 2.3 alone, the hypotheses the steps use (Remark 3.4); the passage, under the hypotheses of Theorem 3.3, is their instance, at which the two solutions coincide; the fourth clause is (3.3) under (2.3) and Assumption 2.3 alone (also a clause of A:rem:uniq-no-integ), because the first clause, (3.3) under the hypotheses of Theorem 3.3, can be witnessed only at a pair of equal solutions (Theorem 3.3 makes any two solutions with the same initial datum coincide, so δY, δg_T and δf vanish there), while the fourth is witnessed at two distinct solutions of a system with no monotonicity; '(3.2) gives 𝔼∫_0^T |δf_s|² ds < ∞' (lines 166–167) is the finiteness of the driver energy in (3.2) (A:eq:uniq-coeff) and in the first and fourth clauses; 'By Lemma 4.1' names a justification",
    "scope_reviewed": false,
-   "status": "formal: accepted"
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [],
@@ -4536,7 +4576,7 @@
      "spec_hash": "ed839d34f480cba17f3cae8e2942fb86",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_bpbsde_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_drift_hypotheses",
      "witness_ok": true
     },
     {
@@ -4877,7 +4917,7 @@
      "spec_hash": "ed839d34f480cba17f8ea34acd5ecf0b",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
      "witness_ok": true
     }
    ],
@@ -4907,7 +4947,7 @@
      "spec_hash": "ed839d34f480cba1cc37dd9a0d2b35ad",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
      "witness_ok": true
     }
    ],
@@ -5068,7 +5108,7 @@
      "spec_hash": "ed839d34f480cba187a9b1634afe69c9",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
      "witness_ok": true
     }
    ],
@@ -5098,7 +5138,7 @@
      "spec_hash": "ed839d34f480cba14dbfddebc754cdd1",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
      "witness_ok": true
     }
    ],
@@ -5128,7 +5168,7 @@
      "spec_hash": "ed839d34f480cba1ea261f16df305b5f",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
      "witness_ok": true
     }
    ],
@@ -5158,7 +5198,7 @@
      "spec_hash": "ed839d34f480cba19e2302a704da248e",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
      "witness_ok": true
     },
     {
@@ -5176,7 +5216,7 @@
      "spec_hash": "ed839d34f480cba1763b5cdd464a968d",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
      "witness_ok": true
     },
     {
@@ -5194,7 +5234,7 @@
      "spec_hash": "ed839d34f480cba17bd256e67c544535",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
      "witness_ok": true
     }
    ],
@@ -5224,7 +5264,7 @@
      "spec_hash": "ed839d34f480cba1e1eabbb5a5cd78ba",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
      "witness_ok": true
     },
     {
@@ -5272,7 +5312,7 @@
      "spec_hash": "ed839d34f480cba1ac3ad318e96e1e46",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
      "witness_ok": true
     }
    ],
@@ -5302,7 +5342,7 @@
      "spec_hash": "ed839d34f480cba1223fa80380d57b0f",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
      "witness_ok": true
     }
    ],
@@ -5332,7 +5372,7 @@
      "spec_hash": "ed839d34f480cba149f1ed71dc85d931",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
      "witness_ok": true
     },
     {
@@ -5352,6 +5392,26 @@
      "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.lem_pert_backward_window_hypotheses",
      "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_wgt_terminal",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_wgt_terminal"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the terminal bound before (4.26): 𝔼|δg_T|² ≤ C 𝔼|δX_T|², C a function of (T, L, ‖G‖, c_G, α, β₁, β₂), under the hypotheses of Lemma 4.3",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_wgt_terminal",
+     "spec_hash": "ed839d34f480cba1e4db1f2acd4bcb96",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
+     "witness_ok": true
     }
    ],
    "id": "A:eq:wgt",
@@ -5359,9 +5419,9 @@
    "number": "(4.26)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the pinned region is lines 735–760; the second clause reads lines 735–752: the display inserting (4.25) in (4.24) (lines 735–744) and the bound at every t for ε < 1 and κ > C/ε (lines 745–752); the first clause reads (4.26) with the sentence before it (lines 753–755)",
+   "scope_note": "the pinned region is lines 735–760; the second clause reads lines 735–752: the display inserting (4.25) in (4.24) (lines 735–744) and the bound at every t for ε < 1 and κ > C/ε (lines 745–752); the third clause reads the terminal bound 𝔼|δg_T|² ≤ C 𝔼|δX_T|² of line 753; the first clause reads (4.26) with the sentence before it (lines 753–755), whose 'the forcings in P' and '∫_t^T ≤ ∫_0^T' are steps of its proof",
    "scope_reviewed": false,
-   "status": "formal: accepted"
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
@@ -5380,7 +5440,7 @@
      "spec_hash": "ed839d34f480cba173f30a686b4b22f5",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
      "witness_ok": true
     },
     {
@@ -5426,7 +5486,8 @@
  "summary": {
   "A": {
    "definition: reviewed": 11,
-   "formal: accepted": 75,
+   "formal: accepted": 72,
+   "formal: proved, author-reviewed": 3,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
    "out of scope: proof-step": 2
