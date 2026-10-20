@@ -7,12 +7,20 @@ import Dissertation.PaperSpec.A.AppASteps
 import Dissertation.Acceptance.A.WitnessNonzero
 import Dissertation.WellPosedness.System.HilbertW2Polish
 import Dissertation.WellPosedness.System.LawFlowL2
+import Dissertation.WellPosedness.System.LawFlowPredictable
 
 /-!
 # Steps of the proof of Lemma A.1 of the well-posedness paper: proofs
 
 ## Main statements
 
+* `Dissertation.Acceptance.A.lemA1_leftlim` — the left limits are the limits along the dyadic
+  grid points strictly below each time, and a càdlàg path jumps at countably many times.
+* `Dissertation.Acceptance.A.lemA1_separable` — `L²(ν; ℝᵐ)` is second countable for a σ-finite
+  `ν` on a countably generated space, and so is the product `H`.
+* `Dissertation.Acceptance.A.lemA1_U` — the `L²(ν)` class of `U_t(ω, ·)`: a marked predictable
+  process is measurable for the product of the predictable σ-algebra and that of the marks.
+* `Dissertation.Acceptance.A.lemA1_pred` — the four channels of `Θ⁻` are predictable.
 * `Dissertation.Acceptance.A.lemA1_L2` — the left-limit tuple agrees `dt ⊗ dP`-almost everywhere
   with the tuple, whose squared Hilbert norm integrates to the sum of the coordinate energies.
 * `Dissertation.Acceptance.A.lemA1_fubini` — the section map is a linear isometric equivalence
@@ -25,6 +33,8 @@ import Dissertation.WellPosedness.System.LawFlowL2
   (`Dissertation.Law.P2W.instT0Space`) and complete (`Dissertation.Law.P2W.instCompleteSpace`).
 * `Dissertation.Acceptance.A.lemA1_hypotheses` — the hypotheses of Lemma A.1 at a tuple on the
   fair coin whose `X` and `Y` jump at `t = 1/2` by a random sign.
+* `Dissertation.Acceptance.A.lemA1_coin_hypotheses` — the same tuple, for the filtration of the
+  coin revealed at `t = 1/2`.
 * `Dissertation.Acceptance.A.lemA1_fubini_hypotheses`, `lemA1_polish_hypotheses` — their
   hypotheses at `ν = δ₀` and at Lebesgue measure on `ℝ`.
 -/
@@ -37,6 +47,36 @@ namespace Dissertation.Acceptance.A
 open Dissertation.WellPosedness.System Dissertation.Law
 
 universe u v
+
+/-- Lemma A.1, Step 1: the left limits `X₋, Y₋`. -/
+theorem lemA1_leftlim : PaperSpec.A.lemA1_leftlim.{u, v} := by
+  intro Ω mΩ ℱ P _ E _ ν _ _ n m d T X Y Z U hΘ
+  refine ⟨hΘ.predictable_leftLimProc_X, hΘ.predictable_leftLimProc_Y, fun i ω => ?_,
+    fun k ω => ?_, hΘ.ae_leftLimProc_eq, fun i => ?_, fun k => ?_⟩
+  · exact ⟨hΘ.countable_setOf_leftLimProc_X_ne i ω,
+      lintegral_indicator_countable (hΘ.countable_setOf_leftLimProc_X_ne i ω)⟩
+  · exact ⟨hΘ.countable_setOf_leftLimProc_Y_ne k ω,
+      lintegral_indicator_countable (hΘ.countable_setOf_leftLimProc_Y_ne k ω)⟩
+  · rw [hΘ.energy_leftLimProc_X i]
+    exact hΘ.X_sq i
+  · rw [hΘ.energy_leftLimProc_Y k]
+    exact hΘ.Y_sq k
+
+/-- Lemma A.1, Step 1: `L²(ν; ℝᵐ)` and `H` are separable. -/
+theorem lemA1_separable : PaperSpec.A.lemA1_separable.{v} := by
+  intro E _ ν _ _ n m d
+  exact ⟨inferInstance, inferInstance⟩
+
+/-- Lemma A.1, Step 1: the predictable `L²(ν)`-valued representative of `U`. -/
+theorem lemA1_U : PaperSpec.A.lemA1_U.{u, v} := by
+  intro Ω mΩ ℱ P _ E _ ν _ _ n m d T X Y Z U hΘ
+  exact ⟨hΘ.memLp_U, fun ω s => uLift ν fun e k => U k s ω e,
+    predictable_uLift_of_markedPredictable hΘ.U_pred, hΘ.memLp_uLift, hΘ.ae_coeFn_uLift⟩
+
+/-- Lemma A.1, Step 1: `Θ⁻` is predictable. -/
+theorem lemA1_pred : PaperSpec.A.lemA1_pred.{u, v} := by
+  intro Ω mΩ ℱ P _ E _ ν _ _ n m d T X Y Z U hΘ
+  exact hΘ.predictable_toL2_tupleAt_leftLim
 
 /-- Lemma A.1, Step 1: `Θ⁻ ∈ L²([0, T] × Ω; H)`. -/
 theorem lemA1_L2 : PaperSpec.A.lemA1_L2.{u, v} := by
@@ -158,6 +198,60 @@ theorem lemA1_hypotheses :
     norm_num
   · rw [coinStep_of_le 0 true (by norm_num), coinStep_of_le 0 false (by norm_num)]
     norm_num
+
+/-- The filtration of the fair sign revealed at time `1/2`: trivial before `1/2`, the full
+σ-algebra of `Bool` from `1/2` on. -/
+noncomputable def coinFiltration : Filtration ℝ (inferInstance : MeasurableSpace Bool) where
+  seq t := if t < 1 / 2 then ⊥ else ⊤
+  mono' s t hst := by
+    dsimp only
+    split_ifs with h1 h2 h2
+    · exact le_rfl
+    · exact bot_le
+    · exact absurd (lt_of_le_of_lt hst h2) h1
+    · exact le_rfl
+  le' t := fun _ _ => MeasurableSet.of_discrete
+
+/-- **The hypotheses of Lemma A.1 hold at a tuple that moves and jumps, for the filtration it
+generates.** On `Bool` with the uniform law and the filtration `coinFiltration` of the fair sign
+`ξ` revealed at `t = 1/2`, with `n = m = d = 1`, `ν = δ₀` on `ℝ` and `T = 1`:
+`X = Y = ξ 1_{t ≥ 1/2}`, `Z = U = 1_{(0, 1]}`. Before `1/2` the filtration is trivial, so the
+event `{ξ = 1}` is not known at time `0`; the paths of `X` jump at `t = 1/2`, where the left limit
+`0` differs from the value `1` at `ω = true`; `X_1` is not almost surely constant; and `U` does not
+vanish. -/
+theorem lemA1_coin_hypotheses :
+    CadlagPredTuple coinFiltration P𝔹 (Measure.dirac (0 : ℝ)) 1 (n := 1) (m := 1) (d := 1)
+      coinStep coinStep (fun _ s _ _ => unitWindow s) (fun _ s _ _ => unitWindow s)
+    ∧ ¬ MeasurableSet[coinFiltration 0] {true}
+    ∧ leftLimProc coinStep 0 (1 / 2) true ≠ coinStep 0 (1 / 2) true
+    ∧ coinStep 0 1 true ≠ coinStep 0 1 false
+    ∧ unitWindow 1 ≠ 0 := by
+  obtain ⟨h, hjump, hconst⟩ := lemA1_hypotheses
+  have hadapt : ∀ (i : Fin 1) (t : ℝ), Measurable[coinFiltration t] (coinStep i t) := by
+    intro i t
+    by_cases ht : t < 1 / 2
+    · have e : coinStep i t = fun _ => 0 := funext fun ω => coinStep_of_lt i ω ht
+      rw [e]
+      exact measurable_const
+    · have e : coinFiltration t = ⊤ := by
+        change (if t < 1 / 2 then ⊥ else ⊤) = _
+        rw [if_neg ht]
+      rw [e]
+      exact measurable_from_top
+  refine ⟨{ h with
+    X_adapted := fun i t => hadapt i t
+    Y_adapted := fun k t => hadapt k t
+    Z_pred := fun k j => predictable_unitWindow _
+    U_pred := fun k => markedPredictable_unitWindow _ _ }, ?_, hjump, hconst, ?_⟩
+  · have e : coinFiltration 0 = ⊥ := by
+      change (if (0 : ℝ) < 1 / 2 then ⊥ else ⊤) = _
+      rw [if_pos (by norm_num)]
+    rw [e, MeasurableSpace.measurableSet_bot_iff]
+    rintro (h0 | h0)
+    · exact absurd (h0 ▸ Set.mem_singleton true) (Set.notMem_empty true)
+    · exact absurd (h0 ▸ Set.mem_univ false : false ∈ ({true} : Set Bool)) (by simp)
+  · unfold unitWindow
+    simp
 
 /-- **The hypotheses of the Fubini isometry of Lemma A.1 hold** at the uniform law on `Bool` and
 `ν = δ₀` on `ℝ`. -/

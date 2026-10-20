@@ -735,7 +735,37 @@ Readings:
   with the bound puts the running suprema in `L¹` (line 171).
 * `c_BDG`: one universal constant in the paper, unspecified; each proposition asserts its bound
   for every value of it at least some `c₀ > 0` (here `c₀ = 9`), as the other propositions with
-  `c_BDG` do, so all of them hold together for every `c_BDG` at least the largest `c₀`.
+  `c_BDG` do, so all of them hold together for every `c_BDG` at least the largest `c₀`. The
+  reading is that `c_BDG` is a sufficiently large universal constant, every value at least `c₀`;
+  it is not every constant for which Davis's inequality holds: the best constant of that
+  inequality may be smaller than `9`, and at such a value the propositions say nothing. The paper
+  fixes `c_BDG` only as one universal constant valid at `p = 1` and `p = 2` (lines 29–33) and
+  states no value of it; its later uses (the finiteness of the bounds, the supremum criterion,
+  constants such as `C_Φ = C_Φ(T, L, c_BDG)`) need only some universal value, which any value at
+  least the largest `c₀` is.
+* The filtration. The local integrals are local martingales for `enlJoint 𝒢₀ D h𝒢₀`, the usual
+  augmentation of `ℱ^{W,N}_t ∨ ℱ₀` (right-continuous, with the `P`-null sets), the filtration of
+  the paper (reviewed in `definitions.md`). The `L²` integrals cut off at the localising times
+  are the library's for that filtration (`isBrownianFiltration_enlJoint`,
+  `isPoissonFiltration_enlJoint`), martingales for it, and the localising times are its stopping
+  times; those of the proofs, the exit times of the path of `δY` from balls (`exitSeq`) and the
+  times the energy of the integrand reaches a level (`energyHit`), are stopping times because the
+  filtration is right-continuous (`isStoppingTime_exitSeq`, `isStoppingTime_energyHit`, with
+  `isRightContinuous_enlJoint`). `M` stopped at the `k`-th time is the `k`-th `L²` integral
+  stopped there (`definitions.md`), so `M` is a local martingale for that filtration.
+* Marked progressive integrands and representatives are harmless. The conditions of the library's
+  integrals, and so of the cut-off integrands in `IsLocalBrownianIntegral` and
+  `IsLocalCompensatedIntegral`, ask for progressive (on `Ω × ℝ × E`, marked progressive)
+  measurability, which predictability implies (`MarkedPredictable.markedProgressivelyMeasurable`,
+  `progressivelyMeasurable_of_predictable_of_vanish`), so the paper's predictable integrands are
+  among those admitted; and the integrals depend only on the class of the integrand up to a
+  `P ⊗ ds` (resp. `P ⊗ ds ⊗ ν`) null set on `[0, T]` (`multidimStochasticIntegral_congr_of_energy`,
+  `compensatedIntegral_congr_of_markedEnergy`), so admitting more integrands adds no other
+  integral: the integral of an admitted integrand that agrees almost everywhere with the paper's
+  predictable one is, at every time of `[0, T]` and almost surely, the paper's. Here the
+  integrands are themselves predictable: they are the products of `δZ`, `δU` (predictable by
+  hypothesis, zero after `T`) with the weight `e^s δY_{s−}` cut to `(0, T]`, which is predictable
+  (the left limits of an adapted path with left limits).
 * "`𝔼[M_T − M_t] = 0`" is read for every `t ∈ [0, T]` with the increment integrable (Bochner
   expectation of an integrable function), the conclusion of the supremum criterion
   (`sec4_supremum_criterion`), which the proof replaces by a direct argument.
@@ -752,7 +782,8 @@ Readings:
   a null set).
 * Not formalised here: that the stochastic-integral terms of (4.5) are `M^W`, `M^1` and `M^2`
   (the decomposition belongs to (4.5), `A:eq:itoY2`, a proof step not stated); `M^2` is the
-  `M²` paragraph (`lem41_M2_zero_mean`, read pathwise).
+  `M²` paragraph (`lem41_M2_zero_mean`, read pathwise), and that it is a local martingale is
+  `lem41_M2_martingale`.
 
 Proofs: BDG at `p = 1` for the `L²` integrals (`lintegral_biSup_le_brownian`,
 `lintegral_biSup_le_compensated`, constant `9`) by Lenglart's argument
@@ -787,6 +818,71 @@ integrals for the local martingales; the integrand at `s ≤ 0`; `c_BDG` as ever
 <!-- spec-review: Dissertation.PaperSpec.A.lem41_MW ed839d34f480cba1d59592d221a6cd18 by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.lem41_M1 ed839d34f480cba10bd49a12773fa34d by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.lem41_M1_chain ed839d34f480cba11e7d5cd5bc08d7ae by=claude-author -->
+
+## `M²` is a local martingale, in the proof of Lemma 4.1: `Dissertation.PaperSpec.A.lem41_M2_martingale`
+
+Manuscript (proof of Lemma `lem:bpbsde`, lines 139–145, with the paragraph on `M²` at lines
+173–187): "The stochastic-integral terms in (4.5) decompose into three local martingales […]
+`M²_t := ∫_0^t ∫_E e^s |δU_s(e)|² Ñ(ds, de)`, each of which we now show satisfies
+`𝔼[M_T − M_t] = 0`." The paragraph on `M²` reads it through the compensation formula: "the
+integrand `e^s |δU_s(e)|²` is predictable and nonnegative and, because `δU ∈ H_N`, lies in
+`L¹(dP ⊗ ds ⊗ ν)` […] Both the Poisson integral and its compensator are therefore integrable"
+(quoted in full with `lem41_M2_zero_mean`).
+
+Proposition (hypotheses: those of Lemma 4.1, `lem_bpbsde`, verbatim): with
+`M²_t = ∫_{(0, t] × E} e^s ∑_k δU_k(s, e)² N(ds, de) − ∫_{(0, t]} ∫_E e^s ∑_k δU_k(s, e)² ν(de) ds`
+(Bochner integrals against `D.N.N ω` and against `ν` and `ds`, pathwise), for every
+`t ∈ [0, T]` the lower integral `∫⁻ ∫⁻_{(0, t] × E} e^s ∑_k δU_k² dN dP` is finite, `M²_t` is
+integrable, and `M²_t` is `AEStronglyMeasurable` for `enlJoint 𝒢₀ D h𝒢₀ t`; and for
+`0 ≤ s ≤ t ≤ T`, `P[M²_t | enlJoint 𝒢₀ D h𝒢₀ s] =ᵐ[P] M²_s`.
+
+Readings:
+
+* `M²` read pathwise. The paper does not take `M²` as an `L²` compensated integral: its
+  integrand has no square moment in general (`lem41_M2_no_square_moment`), and with
+  `ν(E) = ∞` localisation along jump times fails (`lem41_jump_times`); it reads `M²` through the
+  compensation formula, as the Poisson integral minus its compensator, both integrable. That is
+  `M²` here, as in `lem41_M2_zero_mean`, with `∫_0^t` over `(0, t]` (Lebesgue-null `{0}`, and `N`
+  charges no fixed time). For an integrand whose Poisson integral is integrable, the integral
+  against `Ñ` of the general theory of integrals against random measures is that difference.
+* "Is a local martingale" (lines 139–141) is stated as "is a martingale on `[0, T]`", which is
+  stronger: a martingale on `[0, T]` is a local martingale on `[0, T]` (the localising times all
+  `T`). It holds because both terms are integrable, which the paper establishes for `M²`
+  (lines 173–179). The martingale property is read in its standard form: integrability at every
+  `t ∈ [0, T]`, adaptedness, and `𝔼[M²_t | ℱ_s] = M²_s` almost surely for `s ≤ t` in `[0, T]`,
+  where the conditional expectation sees `M²_t` only up to a null set. Adaptedness is stated up
+  to a null set (`AEStronglyMeasurable` for `ℱ_t`): the Poisson integral at time `t` is the lower
+  integral of an `ℱ_t ⊗ 𝓑 ⊗ 𝓔`-measurable function against the random measure, which is
+  `ℱ_t`-measurable off a null set; the filtration contains the `P`-null sets, so this is
+  adaptedness of a version. The finiteness of the expectation of the Poisson integral, the first
+  conjunct, is the paper's "the Poisson integral … integrable" at every `t`.
+* The filtration is `enlJoint 𝒢₀ D h𝒢₀`, the usual augmentation of `ℱ^{W,N}_t ∨ ℱ₀`, the filtration
+  of the paper and of `M^W` and `M¹` (`lem41_MW`).
+* Not stated: the regularity of the paths of `M²`, which the paper does not use; its only use of
+  `M²` is `𝔼[M²_T − M²_t] = 0`, `lem41_M2_zero_mean`.
+
+Proof: `pathwiseCompensated` (`BrownianPoisson/PathwiseMartingale.lean`). Cut to the times up to
+`t`, the marked predictable integrand is `ℱ_t ⊗ 𝓑 ⊗ 𝓔`-measurable; the random measure restricted
+to `(0, t] × A`, `ν(A) < ∞`, is `ℱ_t`-measurable and almost surely finite, and on the events
+`{N((0, t] × A) ≤ n}` a finite kernel, so the lower integral against it is `ℱ_t`-measurable off a
+null set, and exhausting `E` by sets of finite measure gives the integral on `(0, t] × E`
+(`exists_measurable_ae_eq_lintegral_N`, `aestronglyMeasurable_pathwiseCompensated`).
+Integrability from (2.1) and `𝔼 ∫_0^T ∫_E e^s |δU|² ν(de) ds ≤ e^T ∑_k markedEnergy δU^k < ∞`
+(`integrable_pathwiseCompensated`). The martingale property: for `A ∈ ℱ_s` the integrand
+`1_A 1_{(s, t]}(r) e^r |δU_r(e)|²` is marked predictable, so (2.2) gives
+`𝔼[1_A (M²_t − M²_s)] = 0` (`setIntegral_pathwiseCompensated_eq`), and the conditional
+expectation follows (`condExp_pathwiseCompensated`, by `ae_eq_condExp_of_forall_setIntegral_eq`).
+
+Witness: `Dissertation.Acceptance.A.lem_bpbsde_nonzero_hypotheses`, the hypotheses of Lemma 4.1
+with `ν = δ₀` and `δU = 1_{(0, 1]}` (energy `1`, stated), as for `lem41_MW`; there the integrand of
+`M²` is `e^s 1_{(0, 1]}(s)`, not zero, and `M²_t = ∫_{(0, t] × ℝ} e^s N(ds, de) − (e^t − 1)` for
+`t ∈ [0, 1]`.
+
+Verdict: faithful, stronger than printed (a martingale on `[0, T]` for the printed local
+martingale), with representation choices (`M²` read pathwise, as in `lem41_M2_zero_mean`;
+adaptedness up to a null set).
+
+<!-- spec-review: Dissertation.PaperSpec.A.lem41_M2_martingale ed839d34f480cba1983f1a786ecea56b by=claude-author -->
 
 ## (4.6), the bound at every time in the proof of Lemma 4.1: `Dissertation.PaperSpec.A.eq_supE`
 
@@ -1048,6 +1144,70 @@ Verdict: faithful.
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.eq_coeffdiff--claude-auditor--2026-10-20T00_44_30Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.eq_coeffdiff ed839d34f480cba1b363f744d12fe99d by=claude-auditor -->
 
+## The forward difference before (4.10), Step 2 of the proof of Lemma 4.2: `Dissertation.PaperSpec.A.eq_fwddiff_identity`
+
+Manuscript (proof of Lemma `lem:small`, Step 2, lines 350–355), with the objects of lines 312–323
+quoted in the section of (4.10): "*Step 2: the forward difference.* Taking the difference of (4.7)
+at `Θ¹` and `Θ²`, `δX̄_t = λ ∫_0^t δb_s ds + λ ∫_0^t δσ_s dW_s + λ ∫_0^t ∫_E δh_s(e) Ñ(ds, de)`."
+The display lies before the pinned region of `A:eq:fwddiff` (lines 357–372); it is that claim's
+first clause, as its scope note records.
+
+Proposition: under the hypotheses and with the objects of `eq_fwddiff`, verbatim (Lemma 4.2's
+`T > 0`, (2.3), Assumption 2.2 with the datum `ξ₀`, Assumption 2.3 with `L`; `λ ∈ [0, 1]`, a
+forcing `q` with `PredForcing` over `enlJoint`, trials `Θ¹, Θ²` with `HTuple`, and
+`FrozenStep … Θᵏ Θ̄ᵏ` with the same `λ`, `ξ₀`, `q`), but with no constant: (a) `δσ` and `δh`
+meet the conditions of the Itô and the compensated integral (the proof arguments of
+`stochasticIntegral`, as in `eq_fwddiff`); (b) for every `i`, almost every path `s ↦ δb_i(s)` is
+integrable on `[0, T]`; (c) for every `i` and every `t ∈ [0, T]`, almost surely,
+`δX̄_{i,t} = λ ∫_{[0, t]} δb_i(s) ds + λ (∫ δσ_i dW)_t + λ (∫∫ δh_i dÑ)_t`, with the library's
+integrals; (d) for every `Mσ` whose coordinates are versions on `[0, T]` of `∫ δσ_i dW` with
+almost every path right-continuous on `[0, T)`, almost surely, at every `t ∈ [0, T]` at once, the
+same identity with `Mσ_{i,t}` in place of the Brownian integral.
+
+Readings:
+
+* The objects and the coefficient differences are those of the section of (4.10): `δψ_s` at
+  `(Θᵏ_s, μ^{Θᵏ}_s)` (line 316), `δb, δσ` the differences of `driftProc` and `diffusionProc`, and
+  `δh` that of the canonical representative `coeffJump` at the tuple. (4.7) evaluates `h` at the
+  left limits `(Θ⁻_s, μ^{Θ,−}_s)` through a representative (`FrozenForward`); the remark after
+  (4.7) (lines 272–275) makes the two forms interchangeable inside the `dt ⊗ dP`-integrals, which
+  is what turns "the difference of (4.7)" into an identity with the passage's `δh_s`. The
+  proposition takes `δh_s` at the tuple; the proof makes the replacement.
+* "Taking the difference of (4.7) at `Θ¹` and `Θ²`": the common datum `ξ₀` and the fixed forcing
+  `q` cancel (lines 322–323), so the identity has neither; `λ` stands outside the three
+  integrals, as printed.
+* An identity of processes. The library's Brownian integral is defined time by time, up to
+  modification, so (c) states the identity at each time almost surely, the form in which (4.7)
+  itself is stated (`FrozenForward`, `LinearFSDEJ`). (d) is its pathwise form, with any version of
+  the Brownian integral right-continuous on `[0, T)` (one with càdlàg paths exists by
+  `eq_fwddiff` (b)): the form in which the identity enters the supremum of the first link of
+  (4.10). The compensated integral has càdlàg paths by construction and appears as it is.
+* The drift integral is the Bochner integral over `[0, t]`; (b) states that it is not read at a
+  junk value: almost every path of `δb` is integrable on `[0, T]`.
+* The hypotheses are those of Lemma 4.2, verbatim, as for (4.10); the step uses (2.3) and
+  Assumptions 2.2–2.3 (the integrals along the trials) and the frozen steps.
+
+Proof: `frozenStep_fwd_sub` (the first part of the proof of (4.10), extracted): along each trial
+the integrals of (1.1) exist with `coeffJump` (`PaperWeakTuple.paperAdmissible_coeffJump`), (4.7)
+holds with the jump integrand `λ coeffJump + q^h` (`ae_forcedJump_eq_of_rep`,
+`LinearFSDEJ.congr_jump`), and the difference is the linear forward equation from `0` with
+integrands `λ δb, λ δσ, λ δh` (`LinearFSDEJ.sub`). Its equation at each time, with the scaling of
+the two integrals (`multidimStochasticIntegral_const_mul_ae`, `compensatedIntegral_const_mul_ae`)
+and of the Bochner integral, is (c); (b) is `ae_mem_integrablePaths`. For (d), both sides are
+right-continuous on `[0, T)` almost surely (the paths of `δX̄`, the continuous drift primitive
+`driftLeg`, `Mσ` and the càdlàg compensated integral) and agree at each time almost surely, so
+they agree at every time of `[0, T]` on one set of full measure
+(`ae_forall_Icc_eq_of_ae_rightCont`).
+
+Witness: `Dissertation.Acceptance.A.frozen_pair_hypotheses`, as for (4.10): at its instance
+(`λ = 1`, the zero forcing, the trials `0` and `(1, 1, 0, 0)`), by hand `δX̄_t = t`, `δb = 1` and
+`δσ = δh = 0`, so the identity reads `t = ∫_0^t 1 ds`, with a nonzero difference.
+
+Verdict: faithful. (d) adds the pathwise form, which follows from (c) and the regularity of the
+paths.
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_fwddiff_identity ed839d34f480cba1cdc19be62d7635bf by=claude-author -->
+
 ## (4.10), Step 2 of the proof of Lemma 4.2: `Dissertation.PaperSpec.A.eq_fwddiff`
 
 Manuscript (proof of Lemma `lem:small`, Step 2, lines 350–374), with the objects of lines 312–323
@@ -1132,7 +1292,8 @@ Readings:
 * The justifications ("the jump term by (2.1)", the compensation formula, which identifies the
   expected quadratic variation of the compensated integral with `𝔼 ∫_0^T ‖δh_s‖² ds`; "the next
   step since the summands of `S_s` are non-negative"; "the last by (4.9)") are steps of the
-  proof, not stated; the difference equation displayed before (4.10) is the content of the proof
+  proof, not stated. The difference equation displayed before (4.10) is the claim's clause
+  `eq_fwddiff_identity`, reviewed in the section before this one; here it is a step of the proof
   of the first link.
 * The hypotheses are those of Lemma 4.2, verbatim; the step uses (2.3), Assumption 2.2 (finite
   energies of the coefficient processes) and Assumption 2.3.
@@ -1320,7 +1481,10 @@ Readings:
   coordinatewise difference. The equality is the definition of `supSize`, stated with the
   passage's grouping of the `δZ̄`- and `δŪ`-energies.
 * The constants are those of (4.10) and (4.12), explicit, and `C_Φ = max{1, C_X + C_Y}`; they
-  depend on `T, L, c_BDG` only, as lines 441–445 state.
+  depend on `T, L, c_BDG` only, as lines 441–445 state: each is a fixed expression in `T`, `L`
+  and the value `c` of `c_BDG`, which is quantified before the data (`∃ c₀ > 0, ∀ c ≥ c₀`
+  first), so `C_Φ` is a function of `(T, L, c_BDG)` chosen before everything else. The sentence
+  lies after the pinned region; the claim's scope note records it.
 * The constant `c_BDG`: as for (4.10); `c₀` is the largest of those of (4.10) and (4.12).
 * "the first inequality by (4.10) and (4.12)" is the proof. The rest of the paragraph after the
   region (lines 445–455: `λ*`, the Banach fixed-point theorem) belongs to the conclusion of the
@@ -1534,9 +1698,38 @@ Readings:
   the proposition states that one exists and bounds the integral of every one, and
   `𝔼 ∫_0^T ‖λ δh_t + q^h_t‖² dt` is the marked energy of the representative (the same for all,
   as they agree almost everywhere).
+* Marked progressive integrands and representatives are harmless. The representatives `H` are
+  asked to meet the conditions of the library's compensated integral: joint measurability,
+  marked progressive measurability, finite energy on every horizon. That class contains the
+  paper's: `λ δh + q^h` has a marked predictable representative, measurable for the predictable
+  σ-algebra times that of `E` (the first conjunct of `eq_bdg4_fifth_mean`), and one cut to
+  `(0, T]` is still marked predictable, so jointly measurable and marked progressively measurable
+  (`MarkedPredictable.markedProgressivelyMeasurable`), and has finite energy on every horizon
+  (that on `[0, T]`, the energy of every representative, finite by `eq_bdg4_fifth`); so the
+  bound of `eq_bdg4_hY`, stated for every admitted `H`, covers the paper's. Admitting more
+  representatives adds no other integral: the library's integrals depend only on the class of
+  the integrand up to a `P ⊗ ds` (resp. `P ⊗ ds ⊗ ν`) null set on `[0, T]`
+  (`multidimStochasticIntegral_congr_of_energy`, `compensatedIntegral_congr_of_markedEnergy`),
+  and all representatives agree almost everywhere, so their integrals agree, at every time of
+  `[0, T]`, almost surely. The same holds
+  for the progressive measurability asked of the cut-off integrands in `IsLocalBrownianIntegral`
+  and `IsLocalCompensatedIntegral`: predictability implies it, so the paper's integrands are
+  among those admitted. The first and third integrands are predictable (`δZ`, `δU` and the
+  weights cut to `(0, T]`); the second carries `Σ`, which is progressively measurable (as `q^σ`
+  is, by `Forcing`), the usual condition for an Itô integrand.
 * `c_BDG`: as for `lem41_MW`, each bound holds for every value at least some `c₀ > 0` (here
   `c₀ = 9`), so the bounds hold together with the paper's other uses of `c_BDG` for every value at
-  least the largest `c₀`.
+  least the largest `c₀`. The reading is that `c_BDG` is a sufficiently large universal constant,
+  every value at least `c₀`, not every constant for which Davis's inequality holds: the best
+  constant of that inequality may be smaller than `9`, and at such a value the propositions say
+  nothing. The paper fixes `c_BDG` only as one universal constant (lines 29–33) and states no
+  value of it; its uses need only some universal value.
+* The filtration. The four local integrals are local martingales for `enlJoint 𝒢₀ D h𝒢₀`, the
+  usual augmentation of `ℱ^{W,N}_t ∨ ℱ₀` (right-continuous, with the `P`-null sets), the filtration
+  of the paper and of the hypotheses: the cut-off `L²` integrals are the library's for it, and
+  the localising times, the exit times of the frozen path from balls (`exitSeq`), are its
+  stopping times because it is right-continuous (`isStoppingTime_exitSeq`,
+  `isRightContinuous_enlJoint`); see `lem41_MW`.
 * "`< ∞`" and "the four suprema … are integrable": the finiteness of each right side, which with
   the bound puts the running supremum in `L¹`. "The supremum criterion applies": its conclusion,
   `𝔼[M_T − M_t] = 0` with `M_T − M_t` integrable, is stated for every `t ∈ [0, T]` (the identity
@@ -1550,10 +1743,9 @@ Readings:
   (2.1) "in the jump terms" turns `𝔼 ∫∫ |·|² N(ds, de)` into `𝔼 ∫∫ |·|² ν(de) ds`; the predictable
   quadratic variation is the latter already, so the proofs do not need it.
 * Not formalised here (recorded in `scope_note`): that the four integrals and the fifth term are
-  the stochastic terms of (4.17) (the decomposition belongs to (4.17), `A:eq:Gid-path`); "the
-  fifth has predictable integrand" and the zero mean of the fifth term by (2.2) (line 622), which
-  need the fifth term itself, the compensated integral of an integrable predictable integrand
-  (the representatives here are marked progressively measurable, as in `eq_dX`).
+  the stochastic terms of (4.17) (the decomposition belongs to (4.17), `A:eq:Gid-path`). "The
+  fifth has predictable integrand" and the zero mean of the fifth term by (2.2) (lines 612–613
+  and 622) are the clause `eq_bdg4_fifth_mean`, reviewed in its own section below.
 
 Proofs: the weights `G δX_{s−}` and `Gᵀ δY_{s−}` cut to `(0, T]` (`matLeftLimWeight`) are
 predictable, at most `(∑ |G_{ki}|) R` before the path leaves the ball of radius `R`, and
@@ -1567,22 +1759,105 @@ zero means by `L¹`-Cauchy convergence; see `lem41_MW`) give the existence, the 
 integrand: `|⟨h, Gᵀ u⟩| ≤ ‖G‖ |h| |u|` pointwise and the Cauchy–Schwarz inequality on
 `Ω × [0, T] × E` (`lintegral_abs_dotProduct_le`).
 
-Witness: `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`, the hypotheses of Lemma 4.3
-(reviewed with Lemma 4.3) at Example 5.1(i) from the two initial data `0` and `e₁`, which are those
-of all five propositions. It shows that the hypotheses can be met with `δξ₀ ≠ 0`; it does not
-exhibit nonzero integrands (at this instance the data and forcings are deterministic and nothing
-is stated about `δZ`, `δU` or `Σ`).
+Witness: `Dissertation.Acceptance.A.lem_pert_forced_hypotheses`, the hypotheses of Lemma 4.3,
+which are those of all five propositions, at two solutions with different forcings. The system is
+Example 5.1(i) with `n = m = d = 1`, `ν = δ₀` on `ℝ`, `β₁ = β₂ = 1` and `σ_c = h_c = 0`, whose
+diffusion coefficient is `σ = −z`, with `G = 1`, `T = 1`, `λ̲ = λ = 1` and the initial datum `0`;
+the forcings are `0` and the forcing whose diffusion component is `q^σ = 1_{(0, 1]}` (the others
+`0`); the two solutions are those of (4.1) in `ℍ`, which exist by `WP(1)` (the proof of Theorem
+3.5). The witness states that `δZ` or `Σ = λ δσ + δq^σ` has nonzero energy on `[0, 1]`: here
+`Σ = −δZ − 1_{(0, 1]}`, so the two add up to `−1_{(0, 1]}`, of energy `1`. So the right side of
+the first or of the second bound has a nonzero energy factor. The witness does not show the
+weights `δX_{s−}`, `δY_{s−}` nonzero, nor the jump side (`δU`, `λ δh + q^h`); the former instance,
+`lem_pert_two_data_hypotheses` (initial data `0` and `e₁`, deterministic forcings), is kept.
 
 Verdict: faithful with representation choices (local stochastic integrals for the four
-integrals; the left limits cut to `(0, T]`; `λ δh + q^h` through representatives, as in (4.15);
-`c_BDG` as every value at least `c₀`); the first link of each bound and the zero mean of the
-fifth term are recorded in `scope_note`.
+integrals, for the filtration `enlJoint`; the left limits cut to `(0, T]`; `λ δh + q^h` through
+representatives, as in (4.15), which include the paper's predictable one; `c_BDG` as every value
+at least `c₀`); the first link of each bound is recorded in `scope_note`; the predictability of
+the fifth integrand and the zero mean of the fifth term are `eq_bdg4_fifth_mean`.
 
 <!-- spec-review: Dissertation.PaperSpec.A.eq_bdg4_XZ ed839d34f480cba1ea9600d62db2bc6a by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.eq_bdg4_sigmaY ed839d34f480cba1cb9feae8e68982b0 by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.eq_bdg4_XU ed839d34f480cba18a39ea87912f080a by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.eq_bdg4_hY ed839d34f480cba11d2a86bd66838ee7 by=claude-author -->
 <!-- spec-review: Dissertation.PaperSpec.A.eq_bdg4_fifth ed839d34f480cba1bb7df8f3a4d24d8b by=claude-author -->
+
+## The fifth term of (4.17), its predictable integrand and its zero mean: `Dissertation.PaperSpec.A.eq_bdg4_fifth_mean`
+
+Manuscript (proof of Lemma `lem:pert`, Step 1, lines 552–555 and 610–622): the jump covariation
+splits through `N = Ñ + dt ν` as
+`∫_0^T ∫_E ⟨G (λ δh_t + q^h_t)(e), δU_t(e)⟩ N(dt, de) = ∫_0^T ∫_E ⟨G (λ δh_t + q^h_t)(e), δU_t(e)⟩
+Ñ(dt, de) + ∫_0^T ∫_E ⟨λ δh_t(e) + q^h_t(e), Gᵀ δU_t(e)⟩ ν(de) dt`, the first term on the right
+being the fifth stochastic term of (4.17); and (lines 610–622) "The four suprema in (4.18) are
+therefore integrable, so the supremum criterion applies to those four local martingales. The
+fifth has predictable integrand, and by Cauchy–Schwarz `𝔼 ∫_0^T ∫_E |⟨λ δh_t(e) + q^h_t(e),
+Gᵀ δU_t(e)⟩| ν(de) dt ≤ ‖G‖ (…)^{1/2} (…)^{1/2} < ∞`. Hence (2.2) applies, and all five terms have
+zero expectation." (2.2) (§2, lines 20–24): "the zero-mean property of the compensated integral
+reads `𝔼 ∫_0^T ∫_E ψ_s(e) Ñ(ds, de) = 0` whenever `𝔼 ∫_0^T ∫_E |ψ_s(e)| ν(de) ds < ∞`", for
+predictable `ψ` (line 14).
+
+Proposition (hypotheses: those of Lemma 4.3, `lem_pert`, verbatim, as in `eq_bdg4_fifth`): there
+is `H : Fin n → Ω → ℝ → E → ℝ`, each coordinate `MarkedPredictable (enlJoint 𝒢₀ D h𝒢₀) ν`, equal
+`markedEnergyMeasure`-almost everywhere to
+`λ (coeffJump(h, Θ¹⁻) − coeffJump(h, Θ²⁻)) + (q^h_1 − q^h_2)` (cut to `[0, T]` by `jumpProc`),
+coordinatewise; and for every such `H`, with `ψ_s(e) = ⟨H_s(e), Gᵀ δU_s(e)⟩`: `ψ` is
+`MarkedPredictable (enlJoint 𝒢₀ D h𝒢₀) ν`; `∫⁻ ∫⁻_{(0, T] × E} ‖ψ‖ₑ dN dP < ⊤`;
+`∫⁻ ∫⁻_{(0, T]} ∫⁻ ‖ψ‖ₑ dν ds dP < ⊤`; and
+`∫ (∫_{(0, T] × E} ψ dN − ∫_{(0, T]} ∫_E ψ dν ds) dP = 0`.
+
+Readings:
+
+* The fifth term, read pathwise, is the Poisson integral minus its compensator, as `M²` is in the
+  proof of Lemma 4.1 (`lem41_M2_zero_mean`, `lem41_M2_martingale`) and as the paper's own
+  splitting through `N = Ñ + dt ν` at lines 552–555 writes it. Both parts are integrable (the
+  second and third conjuncts), so the difference is the compensated integral of the general
+  theory, and its expectation is the paper's `𝔼 ∫_0^T ∫_E ψ Ñ(ds, de)`; `∫_0^T` is over
+  `(0, T]` (Lebesgue-null `{0}`, and `N` charges no fixed time).
+* "The fifth has predictable integrand": `ψ` is marked predictable for the filtration of the
+  setting (`MarkedPredictable`, the notion used for `δU` and `q^h` in the hypotheses; as for the
+  integrand of `M²`, `lem41_M2_integrand`). The integrand `λ δh + q^h` is the paper's expression
+  at the predictable tuples, which the paper makes claims about `dt`-a.e.: the proposition states
+  that a marked predictable representative of it exists (the first conjunct) and makes its other
+  claims for every such representative, as `eq_bdg4_hY` does for the representatives of the
+  compensated integral. The representatives agree almost everywhere, and the quantities stated
+  depend only on that class (the expectation of the Poisson integral equals that of the
+  compensator by (2.1), so changing `H` on a `markedEnergyMeasure`-null set does not change
+  them); stating them for every one is the paper's "the" integrand.
+* The integrability `𝔼 ∫_0^T ∫_E |ψ| ν(de) dt < ∞` is that of `eq_bdg4_fifth`, at `(0, T]` here
+  and for the marked predictable representatives; the finiteness of `𝔼 ∫∫ |ψ| dN`, equal to it
+  by (2.1), makes the Poisson integral and so the pathwise difference integrable.
+  "All five terms have zero expectation" is, for the fifth, the last conjunct; for the other four
+  it is the zero means of `eq_bdg4_XZ`, `eq_bdg4_sigmaY`, `eq_bdg4_XU`, `eq_bdg4_hY` at `t = 0`.
+* The filtration is `enlJoint 𝒢₀ D h𝒢₀` (the usual augmentation of `ℱ^{W,N}_t ∨ ℱ₀`), that of the
+  hypotheses.
+* Not stated: that the fifth term is the stochastic term of (4.17) (it belongs to (4.17),
+  `A:eq:Gid-path`).
+
+Proofs: the representative. The tuple `Θ⁻_s = (X_{s−}, Y_{s−}, Z_s, U_s)` cut to `(0, T]` is a
+predictable field in the tuple space (`measurable_predictableSigma_tupleAt_leftLim_Ioc`, from the
+left limits of adapted paths and the predictable law flow of `LawFlowPredictable.lean`); composed
+with the jointly measurable `h` and the canonical representative `lpRep` of `L²(ν; ℝⁿ)`, and cut
+to the positive times, it gives a marked predictable integrand equal to `coeffJump(h, Θ⁻)` at
+every time of `(0, T]` (`markedPredictable_ite_comp`,
+`exists_markedPredictable_coeffJump_leftLim`); with `q^h` marked predictable (`PredForcing`) this
+gives `H`, and almost every point of `Ω × [0, T] × E` has its time in `(0, T]`
+(`ae_markedEnergyMeasure_mem_Ioc`). For every such `H`: `ψ` is a continuous function of the
+marked predictable `(H, δU)`; its energy is finite by comparison with the representative of
+`eq_bdg4_fifth` (`markedEnergy_sub_eq_zero_of_ae_eq`, `markedEnergy_add_le`); the integrability
+by Cauchy–Schwarz (`lintegral_abs_dotProduct_le`, the bound of `eq_bdg4_fifth`); the Poisson
+integral by (2.1) (`aemeasurable_and_lintegral_compensation`); and the zero mean by (2.2)
+(`integral_compensated_eq_zero`).
+
+Witness: `Dissertation.Acceptance.A.lem_pert_forced_hypotheses`, the instance of the (4.18)
+section (two solutions of Example 5.1(i) with forcings `0` and `q^σ = 1_{(0, 1]}`). It shows the
+hypotheses met at two solutions with `δZ` or `Σ` nonzero; it does not show the fifth integrand
+nonzero (there `q^h = 0`, and nothing is stated about `δU` or `δh`).
+
+Verdict: faithful with representation choices (the fifth term read pathwise; the integrand
+through its marked predictable representatives, every one of them).
+
+<!-- spec-review: Dissertation.PaperSpec.A.eq_bdg4_fifth_mean ed839d34f480cba153e1a9d9480bd7ff by=claude-author -->
 
 ## (4.19), the `G`-energy identity in Step 1 of the proof of Lemma 4.3: `Dissertation.PaperSpec.A.eq_Gid`
 
@@ -3082,6 +3357,117 @@ Review by claude-reviewer: broader (report `reports/Dissertation.PaperSpec.A.lem
 Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.lem_lawflow_invariant--claude-auditor--2026-10-19T03_38_36Z.md`).
 <!-- spec-review: Dissertation.PaperSpec.A.lem_lawflow_invariant ed839d34f480cba184c9d1f8d6f2b814 by=claude-auditor -->
 
+## Lemma A.1, Step 1 of the proof, the left limits, the separability of `H`, the jump channel and the predictable field: `Dissertation.PaperSpec.A.lemA1_leftlim`, `lemA1_separable`, `lemA1_U`, `lemA1_pred`
+
+Manuscript (proof of Lemma `lem:lawflow`, Step 1, lines 25–42): "*Step 1 (the field).* The left
+limits `X₋, Y₋` are predictable and agree with `X, Y` `dt ⊗ dP`-a.e., as càdlàg paths jump at
+countably many times, so `∫_0^T 1{X_{t−} ≠ X_t} dt = 0` almost surely; the hypothesis on `X, Y`
+thus passes to them, and `H` is separable because `L²(ν)` is. The `Z`-coordinate is predictable
+and square-integrable by assumption. For the `U`-coordinate, the integrability hypothesis and the
+Fubini isometry (2.4) give `U ∈ L²([0, T] × Ω × E) ≅ L²([0, T] × Ω; L²(ν))`, so the induced map
+`(t, ω) ↦ U_t(ω, ·)` admits a predictable, strongly measurable `L²(ν)`-valued representative.
+`Θ⁻` is therefore a predictable, hence jointly measurable, `H`-valued field with
+`𝔼 ∫_0^T ‖Θ⁻_t‖²_H dt < ∞`, that is, `Θ⁻ ∈ L²([0, T] × Ω; H)`." The claim `A:lemA1:pettis` is
+pinned at line 48, in the last sentence of Step 1 (lines 43–51); these four clauses read the
+sentences before it, as the claim's scope note records.
+
+Propositions (each, except `lemA1_separable`, under `CadlagPredTuple ℱ P ν T X Y Z U`, the
+hypotheses of Lemma A.1 verbatim from `lem_lawflow`, the setting of `lemA1_L2`):
+
+* `lemA1_leftlim`: (i) every coordinate of `leftLimProc X` and of `leftLimProc Y` is
+  `Predictable ℱ`; (ii) for every coordinate and every `ω`, the set `{t | X_{t−}(ω) ≠ X_t(ω)}` is
+  countable and `∫⁻_{[0, T]} 1_{{t | X_{t−}(ω) ≠ X_t(ω)}}(t) dt = 0`, and the same for `Y`;
+  (iii) for `dt|_{[0, T]} ⊗ P`-almost every `(t, ω)`, `X_{t−}(ω) = X_t(ω)` and
+  `Y_{t−}(ω) = Y_t(ω)` in every coordinate; (iv) every coordinate of `X₋` and of `Y₋` has finite
+  energy on `[0, T]`.
+* `lemA1_separable`: for `ν` σ-finite on a countably generated `E` and all `n, m, d`, the spaces
+  `Lp (EuclideanSpace ℝ (Fin m)) 2 ν` (`L²(ν; ℝᵐ)`) and `TupleL2 …` (`H` with its Hilbert norm)
+  are separable.
+* `lemA1_U`: `((t, ω), e) ↦ (U_{k,t}(ω, e))_k` lies in `L²` of `(dt|_{[0, T]} ⊗ P) ⊗ ν` with the
+  Euclidean norm; and there is `V : Ω → ℝ → L²(ν; ℝᵐ)` with `Predictable ℱ V`,
+  `(t, ω) ↦ V_t(ω)` in `L²(dt|_{[0, T]} ⊗ P; L²(ν; ℝᵐ))` (`MemLp … 2`), and, for
+  `dt|_{[0, T]} ⊗ P`-almost every `(t, ω)`, `V_t(ω) = (e ↦ (U_{k,t}(ω, e))_k)` `ν`-almost
+  everywhere.
+* `lemA1_pred`: `(t, ω) ↦ toL2 (Θ⁻_t(ω))` is `Predictable ℱ`, with
+  `Θ⁻_t(ω) = tupleAt ν (leftLimProc X) (leftLimProc Y) Z U t ω`, as in `lemA1_L2`.
+
+Readings:
+
+* The setting is that of `lemA1_L2`: the processes are indexed by `ℝ`, `X, Y` adapted with every
+  path right-continuous with left limits on all of `ℝ`, `Z` predictable, `U` marked predictable,
+  each of finite energy on `[0, T]`. A tuple of the paper, given on `[0, T]`, is extended to `ℝ`
+  (`X, Y` constant before `0` and after `T`, `Z` and `U` zero off `(0, T]`). The marked
+  predictable σ-algebra is generated by rectangles over times `(r, q]` with `r ≥ 0`, so a marked
+  predictable `U` takes a single value at all times `≤ 0`: the paper's `U_0`, which is only
+  measurable for `ℱ₀ ⊗ 𝓔`, is replaced by that value. The change is on the Lebesgue-null time `0`
+  and leaves every `dt`-integral, every `L²` class and every conclusion here unchanged ((iii) and
+  the representative `V` are statements `dt ⊗ dP`-almost everywhere; (i), (ii), (iv) do not
+  involve `U`).
+* "Predictable": `LevyStochCalc.Probability.Predictable ℱ`, strong measurability on `ℝ × Ω` for the
+  predictable σ-algebra generated by `(r, ∞) × A` with `A ∈ ℱ_r` and `(−∞, 0] × A` with `A ∈ ℱ₀`
+  (in the closure of `CadlagPredTuple`, reviewed in `definitions.md`); for a real process it is
+  measurability. The paper's predictable σ-field on `Ω × [0, T]` is its trace there.
+* "agree with `X, Y` `dt ⊗ dP`-a.e.": (iii), for Lebesgue measure on `[0, T]` times `P`.
+* "càdlàg paths jump at countably many times, so `∫_0^T 1{X_{t−} ≠ X_t} dt = 0` almost surely":
+  (ii), for every `ω`, which is stronger than almost surely; the integral of the indicator is a
+  lower integral in `[0, ∞]`.
+* "the hypothesis on `X, Y` thus passes to them": the hypothesis is the finite energy of the
+  coordinates of `CadlagPredTuple` (the printed `𝔼 ∫_0^T (|X_t|² + |Y_t|² + …) dt < ∞`, read
+  coordinatewise); (iv) states it for `X₋, Y₋`.
+* "`H` is separable because `L²(ν)` is": `lemA1_separable` states both separabilities, under §2's
+  standing assumption on the marks (σ-finite `ν` on a countably generated `E`, which the paper
+  gives "so that `L²(ν; ℝʲ)` is separable for every `j ≥ 1`", `sections/02-model-assumptions.tex`
+  lines 6–7). `L²(ν)` here is the jump channel `L²(ν; ℝᵐ)` of `H`. The "because" is the proof.
+* "The `Z`-coordinate is predictable and square-integrable by assumption" restates `Z_pred` and
+  `Z_sq` of `CadlagPredTuple` and is not stated separately; the scope note records it.
+* The jump channel. "`U ∈ L²([0, T] × Ω × E)`" is the first conjunct of `lemA1_U`, `U` read as an
+  `ℝᵐ`-valued function. "`≅ L²([0, T] × Ω; L²(ν))`" is the isometry (2.4), the clause
+  `eq_fubiniiso` of `A:eq:fubiniiso`, proved there for every σ-finite base, the predictable
+  σ-field with `dt ⊗ dP` included. "The induced map `(t, ω) ↦ U_t(ω, ·)` admits a predictable,
+  strongly measurable `L²(ν)`-valued representative" is `V`: `Predictable ℱ V` is literally strong
+  measurability for the predictable σ-algebra; `V` lies in `L²([0, T] × Ω; L²(ν))`; and it
+  represents the induced map, `V_t(ω) = U_t(ω, ·)` in `L²(ν)` for `dt ⊗ dP`-almost every
+  `(t, ω)`, in the form of the proposition of (2.4) (the coercion of `V_t(ω)` is `ν`-almost
+  everywhere the section, which makes the section square integrable there).
+* "`Θ⁻` is therefore a predictable, hence jointly measurable, `H`-valued field": `lemA1_pred`, in
+  `H` with the Hilbert norm. The jump channel of `tupleAt` at `(t, ω)` is the `L²(ν)` class of
+  `U_t(ω, ·)` (`uLift`, `0` where the section is not square integrable), the representative `V`
+  of the proof of `lemA1_U`. "Hence jointly measurable" and the `L²` bound are `lemA1_L2`.
+
+Proofs (for the reader): `X_{s−}` is the limit of the values of `X` at the dyadic grid points
+strictly below `s`, each known before `s`, so `X₋` is predictable
+(`measurable_predictableSigma_of_tendsto_leftGridPoint`); the jump set of a càdlàg function is
+countable (`countable_setOf_ne_leftLim`), hence Lebesgue-null; (iii) is the almost-everywhere
+equality of the tuples (`ae_toL2_tupleAt_leftLim_eq`), and the energies of `X₋` and `X` agree
+path by path. `L²(ν; ℝᵐ)` is second countable for a σ-finite `ν` on a countably generated space,
+and so are finite products of such spaces. A generator `F × (r, q] × B` of the marked predictable
+σ-algebra is the image of `((r, q] × F) × B`, a predictable set times a mark set, so a marked
+predictable `U` is measurable for the product of the predictable σ-algebra and the σ-algebra of
+the marks (`measurable_swap_markedPredictableSigma`), and the `L²(ν)` class of its sections is
+predictable (`stronglyMeasurable_uLift`, through the distances to the points of a countable dense
+set, with no Pettis theorem). That class is dominated by `‖toL2 Θ_t(ω)‖`, hence square
+integrable, and it is the class of the section wherever the section is square integrable, which
+is `dt ⊗ dP`-almost everywhere because the marked energy is finite. The four channels of `Θ⁻`
+being predictable, so is `Θ⁻`.
+
+Witnesses: `Dissertation.Acceptance.A.lemA1_coin_hypotheses` for `lemA1_leftlim`, `lemA1_U` and
+`lemA1_pred`: on `Bool` with the uniform law and the filtration `coinFiltration` of the fair sign
+`ξ` revealed at `t = 1/2` (trivial before `1/2`, so the event `{ξ = 1}` is not known at time `0`),
+`n = m = d = 1`, `ν = δ₀` on `ℝ` and `T = 1`, the tuple `X = Y = ξ 1_{t ≥ 1/2}`,
+`Z = U = 1_{(0, 1]}` satisfies `CadlagPredTuple`; `X` jumps at `1/2` (the left limit `0` differs
+from the value `1` at `ω = true`), `X_1` is not almost surely constant, and `U` does not vanish.
+`Dissertation.Acceptance.A.lemA1_polish_hypotheses` for `lemA1_separable`: Lebesgue measure on
+`ℝ`, σ-finite of infinite mass on a countably generated space, for which `L²(ν; ℝᵐ)` is
+infinite-dimensional when `m ≥ 1`.
+
+Verdict: faithful. (ii) holds for every `ω`, stronger than almost surely; `lemA1_separable` holds
+for every `n, m, d`.
+
+<!-- spec-review: Dissertation.PaperSpec.A.lemA1_leftlim ed839d34f480cba130f1a54fb940f2d9 by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.lemA1_separable ed839d34f480cba1e132af851a6dd7cf by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.lemA1_U ed839d34f480cba1019406c1cc1330d9 by=claude-author -->
+<!-- spec-review: Dissertation.PaperSpec.A.lemA1_pred ed839d34f480cba136b795f0b638d045 by=claude-author -->
+
 ## Lemma A.1, Step 1 of the proof, the Fubini isometry and the Pettis step: `Dissertation.PaperSpec.A.lemA1_L2`, `lemA1_fubini`, `lemA1_pettis`
 
 Manuscript (proof of Lemma `lem:lawflow`, Step 1, lines 36–51): "`Θ⁻` is therefore a predictable,
@@ -3109,16 +3495,25 @@ Propositions:
 
 Readings:
 
+* The hypotheses, `CadlagPredTuple`, are those of Lemma A.1 for processes indexed by `ℝ`: `X, Y`
+  adapted with every path right-continuous with left limits on all of `ℝ`, `Z` predictable, `U`
+  marked predictable. A tuple of the paper, given on `[0, T]`, is extended to `ℝ` (`X, Y` constant
+  before `0` and after `T`, `Z, U` zero off `(0, T]`). The marked predictable σ-algebra
+  (`MarkedPredictable`) is generated by rectangles over times `(r, q]` with `r ≥ 0`, so a marked
+  predictable `U` takes a single value at all times `≤ 0`, and the paper's `U_0`, only
+  `ℱ₀ ⊗ 𝓔`-measurable, is replaced by that value: a change on the Lebesgue-null time `0`, which
+  alters no `dt`-integral and no class in `L²([0, T] × Ω; H)`, and no conclusion here, all of
+  which hold `dt ⊗ dP`-almost everywhere or for almost every `t`.
 * `H` is the tuple space `ℝⁿ × ℝᵐ × ℝ^{m×d} × L²(ν; ℝᵐ)` with its Hilbert norm: the reviewed type
   `TupleL2` of the four channels, into which the reviewed `toL2` maps a tuple. `Θ⁻_t(ω)` is
   `tupleAt ν (leftLimProc X) (leftLimProc Y) Z U t ω`, as in `lem_lawflow`. The maximum norm of
   `TupleH` gives the same measurability and the same square-integrable functions, but another
   isometry, so the Hilbert norm is used in all three propositions.
-* "Jointly measurable": strongly measurable on `ℝ × Ω` for the product of the Borel σ-algebra and
-  `ℱ`, which for the separable `H` is the same as measurable. "`𝔼 ∫_0^T ‖Θ⁻_t‖² dt < ∞`, that is,
+* "Jointly measurable": strongly measurable on `ℝ × Ω` for `Borel(ℝ) ⊗` the ambient σ-algebra of
+  `Ω`, which for the separable `H` is the same as measurable. "`𝔼 ∫_0^T ‖Θ⁻_t‖² dt < ∞`, that is,
   `Θ⁻ ∈ L²([0, T] × Ω; H)`": `MemLp … 2` for Lebesgue measure on `[0, T]` times `P`. The
-  predictability of `Θ⁻`, asserted in the same sentence, is not used by the Fubini step and is not
-  stated; the scope note records this.
+  predictability of `Θ⁻`, asserted in the same sentence, is not used by the Fubini step; it is the
+  clause `lemA1_pred`, reviewed in the section before this one.
 * The isometry: `L²([0, T] × Ω; H)` is `Lp H 2 ((volume.restrict [0, T]).prod P)` and
   `L²(0, T; L²(Ω; H))` is `Lp (Lp H 2 P) 2 (volume.restrict [0, T])`; "≅" is a linear isometric
   equivalence, and the section property `Φ(f)(t) = f(t, ·)` identifies it as the Fubini
@@ -3160,8 +3555,14 @@ claim is its instance at the paper's `(Ω, ℱ, P)` and horizon. `lemA1_pettis` 
 inclusion at every time, stronger than off a null set.
 
 <!-- spec-review: Dissertation.PaperSpec.A.lemA1_L2 ed839d34f480cba1a6657535c81c9ed1 by=claude-author -->
+Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.lemA1_L2--claude-auditor--2026-10-20T06_16_50Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.lemA1_L2 ed839d34f480cba1a6657535c81c9ed1 by=claude-auditor -->
 <!-- spec-review: Dissertation.PaperSpec.A.lemA1_fubini ed839d34f480cba18bb7bf3a9a35bb91 by=claude-author -->
+Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.lemA1_fubini--claude-auditor--2026-10-20T06_16_50Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.lemA1_fubini ed839d34f480cba18bb7bf3a9a35bb91 by=claude-auditor -->
 <!-- spec-review: Dissertation.PaperSpec.A.lemA1_pettis ed839d34f480cba176ccc2a6aaf99d7c by=claude-author -->
+Review by claude-auditor: broader (report `reports/Dissertation.PaperSpec.A.lemA1_pettis--claude-auditor--2026-10-20T06_16_50Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.lemA1_pettis ed839d34f480cba176ccc2a6aaf99d7c by=claude-auditor -->
 
 ## Lemma A.1, Step 2 of the proof, the Polish space of laws: `Dissertation.PaperSpec.A.lemA1_polish`, and `eq_coupling`
 
@@ -3209,6 +3610,8 @@ intensity of §2, for which `L²(ν; ℝᵐ)` and `H` are infinite-dimensional w
 Verdict: faithful. `lemA1_polish` is stronger than the topological reading of "Polish".
 
 <!-- spec-review: Dissertation.PaperSpec.A.lemA1_polish ed839d34f480cba19bbef9c769d701cd by=claude-author -->
+Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.lemA1_polish--claude-auditor--2026-10-20T06_16_50Z.md`).
+<!-- spec-review: Dissertation.PaperSpec.A.lemA1_polish ed839d34f480cba19bbef9c769d701cd by=claude-auditor -->
 
 ## (4.2) and (4.3), the coefficient bounds: `Dissertation.PaperSpec.A.eq_coeffint`, `eq_termg`
 

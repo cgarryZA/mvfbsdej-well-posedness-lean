@@ -7,6 +7,10 @@ import Dissertation.PaperSpec.A.Sec4BDG
 import Dissertation.WellPosedness.Stability.LocalPairing
 import Dissertation.WellPosedness.Robustness.CouplingNorm
 import Dissertation.Acceptance.A.Sec4Difference
+import Dissertation.WellPosedness.System.JumpPredictable
+import Dissertation.WellPosedness.BrownianPoisson.Compensation
+import Dissertation.WellPosedness.Existence.ForcingAlgebra
+import Dissertation.WellPosedness.System.SolvesPredictable
 
 /-!
 # The four stochastic integrals of the `G`-energy identity of Lemma 4.3 and (4.18): proofs
@@ -29,6 +33,9 @@ which is `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`.
 * `Dissertation.Acceptance.A.eq_bdg4_hY` — the fourth bound of (4.18).
 * `Dissertation.Acceptance.A.eq_bdg4_fifth` — the integrability of the forced integrands and of
   the fifth integrand.
+* `Dissertation.Acceptance.A.eq_bdg4_fifth_mean` — the predictable integrand of the fifth term,
+  from the predictable left-limit tuple (`exists_markedPredictable_coeffJump_leftLim`), and its
+  zero mean by (2.2) (`integral_compensated_eq_zero`).
 -/
 
 open MeasureTheory ProbabilityTheory Filter Set Matrix
@@ -302,5 +309,100 @@ theorem eq_bdg4_fifth : PaperSpec.A.eq_bdg4_fifth.{u, v, w} := by
   exact ENNReal.mul_lt_top (ENNReal.mul_lt_top ENNReal.ofReal_lt_top
     (ENNReal.rpow_lt_top_of_nonneg (by norm_num) hHfin.ne))
     (ENNReal.rpow_lt_top_of_nonneg (by norm_num) hSU.ne)
+
+/-- **The fifth term of (4.17)**: its predictable integrand and its zero mean by (2.2). -/
+theorem eq_bdg4_fifth_mean : PaperSpec.A.eq_bdg4_fifth_mean.{u, v, w} := by
+  intro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ hn hm hd T hT L α β₁ β₂ G C hJ h23 hG h25
+    lamLow lam hlow hlow1 hlam hlam1 ξ₁ ξ₂ hξ₁ hξ₂ qb₁ qb₂ qσ₁ qσ₂ qh₁ qh₂ qf₁ qf₂ qg₁ qg₂ hq₁
+    hq₂ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ hW₁ hW₂ hsize
+  have hℱN := isPoissonFiltration_enlJoint D h𝒢₀ hind₀
+  have hB : CoeffBorel T C := (jointBorel_iff.mp hJ).1.toCoeffBorel
+  obtain ⟨-, ⟨H₀, hH₀m, -, hH₀q, hH₀ae⟩, -⟩ := eq_bdg4_fifth.{u, v, w} 𝒢₀ ν n m d P D h𝒢₀ hind₀
+    hn hm hd T hT L α β₁ β₂ G C hJ h23 hG h25 lamLow lam hlow hlow1 hlam hlam1 ξ₁ ξ₂ hξ₁ hξ₂ qb₁
+    qb₂ qσ₁ qσ₂ qh₁ qh₂ qf₁ qf₂ qg₁ qg₂ hq₁ hq₂ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ hW₁ hW₂ hsize
+  obtain ⟨⟨γ₁, hp₁⟩, hXl₁, hYl₁⟩ := hW₁
+  obtain ⟨⟨γ₂, hp₂⟩, hXl₂, hYl₂⟩ := hW₂
+  -- predictable representatives of the two jump coefficients at the left limits
+  obtain ⟨H₁, hH₁p, hH₁eq, -⟩ := exists_markedPredictable_coeffJump_leftLim (P := P) (ν := ν) hB
+    hp₁.X_adapted hXl₁ hp₁.Y_adapted hYl₁ hp₁.Z_pred hp₁.U_pred
+  obtain ⟨H₂, hH₂p, hH₂eq, -⟩ := exists_markedPredictable_coeffJump_leftLim (P := P) (ν := ν) hB
+    hp₂.X_adapted hXl₂ hp₂.Y_adapted hYl₂ hp₂.Z_pred hp₂.U_pred
+  have hIoc := ae_markedEnergyMeasure_mem_Ioc (ν := ν) (P := P) (T := T)
+  refine ⟨⟨fun i ω s e => lam * (H₁ i ω s e - H₂ i ω s e) + (qh₁ i s ω e - qh₂ i s ω e),
+    fun i => ?_, fun i => ?_⟩, fun H hHp hHae => ?_⟩
+  · unfold Probability.MarkedPredictable at hH₁p hH₂p ⊢
+    have h₁ := (hq₁.qh_pred i)
+    have h₂ := (hq₂.qh_pred i)
+    unfold Probability.MarkedPredictable at h₁ h₂
+    letI : MeasurableSpace (Ω × ℝ × E) :=
+      Probability.markedPredictableSigma (enlJoint 𝒢₀ D h𝒢₀) ν
+    exact (measurable_const.mul ((hH₁p i).sub (hH₂p i))).add (h₁.sub h₂)
+  · filter_upwards [hIoc] with p hp
+    rw [hH₁eq i p.1 p.2.1 p.2.2 hp, hH₂eq i p.1 p.2.1 p.2.2 hp]
+  -- the fifth integrand
+  set ψ : Ω × ℝ × E → ℝ := fun p =>
+    (fun i => H i p.1 p.2.1 p.2.2) ⬝ᵥ (Gᵀ *ᵥ fun k => U₁ k p.2.1 p.1 p.2.2 - U₂ k p.2.1 p.1 p.2.2)
+    with hψdef
+  have hcont : Continuous fun x : (Fin n → ℝ) × (Fin m → ℝ) => x.1 ⬝ᵥ (Gᵀ *ᵥ x.2) :=
+    continuous_fst.dotProduct (continuous_const.matrix_mulVec continuous_snd)
+  have hψp : Measurable[Probability.markedPredictableSigma (enlJoint 𝒢₀ D h𝒢₀) ν] ψ := by
+    letI : MeasurableSpace (Ω × ℝ × E) :=
+      Probability.markedPredictableSigma (enlJoint 𝒢₀ D h𝒢₀) ν
+    have hHv : Measurable fun p : Ω × ℝ × E => (fun i => H i p.1 p.2.1 p.2.2 : Fin n → ℝ) :=
+      measurable_pi_lambda _ fun i => hHp i
+    have hUv : Measurable fun p : Ω × ℝ × E =>
+        (fun k => U₁ k p.2.1 p.1 p.2.2 - U₂ k p.2.1 p.1 p.2.2 : Fin m → ℝ) :=
+      measurable_pi_lambda _ fun k => (hp₁.U_pred k).sub (hp₂.U_pred k)
+    exact hcont.measurable.comp (hHv.prodMk hUv)
+  have hHm : ∀ i, Measurable fun p : Ω × ℝ × E => H i p.1 p.2.1 p.2.2 := fun i =>
+    (hHp i).mono (Probability.markedPredictableSigma_le (enlJoint 𝒢₀ D h𝒢₀) ν) le_rfl
+  have hUm : ∀ k, Measurable fun p : Ω × ℝ × E => U₁ k p.2.1 p.1 p.2.2 - U₂ k p.2.1 p.1 p.2.2 :=
+    fun k =>
+      ((hp₁.U_pred k).mono (Probability.markedPredictableSigma_le (enlJoint 𝒢₀ D h𝒢₀) ν) le_rfl).sub
+        ((hp₂.U_pred k).mono (Probability.markedPredictableSigma_le (enlJoint 𝒢₀ D h𝒢₀) ν) le_rfl)
+  -- the energy of `H`, by comparison with the representative `H₀`
+  have hHq : ∀ i, Poisson.Compensated.markedEnergy P ν T (H i) < ⊤ := by
+    intro i
+    have hae : ∀ᵐ p ∂(Poisson.Compensated.markedEnergyMeasure P ν T),
+        H i p.1 p.2.1 p.2.2 = H₀ i p.1 p.2.1 p.2.2 := by
+      filter_upwards [hHae i, hH₀ae i] with p h1 h2
+      rw [h1, h2]
+    have h0 := markedEnergy_sub_eq_zero_of_ae_eq (P := P) (ν := ν) (T := T) (hHm i) (hH₀m i) hae
+    have hle := markedEnergy_add_le (P := P) (ν := ν) (T := T) (hH₀m i)
+      (fun ω s e => H i ω s e - H₀ i ω s e)
+    have e : (fun ω s e => H₀ i ω s e + (H i ω s e - H₀ i ω s e)) = H i := by
+      funext ω s e
+      ring
+    rw [e, h0, mul_zero, add_zero] at hle
+    exact lt_of_le_of_lt hle (ENNReal.mul_lt_top ENNReal.ofNat_lt_top (hH₀q i T hT))
+  have hS := hsize
+  simp only [supSize, ENNReal.add_lt_top] at hS
+  obtain ⟨⟨⟨-, -⟩, -⟩, hSU⟩ := hS
+  have hHfin : ∑ i, Poisson.Compensated.markedEnergy P ν T (H i) < ⊤ :=
+    ENNReal.sum_lt_top.2 fun i _ => hHq i
+  have hCS := lintegral_abs_dotProduct_le (P := P) (ν := ν) G (norm_nonneg _)
+    (transpose_mulVec_dotProduct_le G) hHm (U := fun k s ω e => U₁ k s ω e - U₂ k s ω e) hUm T
+  have hfinIcc : ∫⁻ ω, ∫⁻ s in Set.Icc (0 : ℝ) T, ∫⁻ e, ‖ψ (ω, s, e)‖ₑ ∂ν ∂volume ∂P < ⊤ := by
+    refine lt_of_le_of_lt (le_of_eq ?_) (lt_of_le_of_lt hCS (ENNReal.mul_lt_top
+      (ENNReal.mul_lt_top ENNReal.ofReal_lt_top
+        (ENNReal.rpow_lt_top_of_nonneg (by norm_num) hHfin.ne))
+      (ENNReal.rpow_lt_top_of_nonneg (by norm_num) hSU.ne)))
+    refine lintegral_congr fun ω => lintegral_congr fun s => lintegral_congr fun e => ?_
+    exact Real.enorm_eq_ofReal_abs _
+  have hfin : ∫⁻ ω, (∫⁻ s in Set.Ioc (0 : ℝ) T, ∫⁻ e, ‖ψ (ω, s, e)‖ₑ ∂ν) ∂P < ⊤ :=
+    lt_of_le_of_lt (lintegral_mono fun ω => lintegral_mono_set Set.Ioc_subset_Icc_self) hfinIcc
+  have hψe : Measurable[Probability.markedPredictableSigma (enlJoint 𝒢₀ D h𝒢₀) ν]
+      fun x => ‖ψ x‖ₑ := by
+    letI : MeasurableSpace (Ω × ℝ × E) :=
+      Probability.markedPredictableSigma (enlJoint 𝒢₀ D h𝒢₀) ν
+    exact hψp.enorm
+  have hcomp := (Dissertation.WellPosedness.BrownianPoisson.aemeasurable_and_lintegral_compensation
+    (N := D.N) hℱN T (ψ := fun x => ‖ψ x‖ₑ) hψe).2.2
+  refine ⟨hψp, ?_, hfin, Dissertation.WellPosedness.BrownianPoisson.integral_compensated_eq_zero
+    (N := D.N) hℱN T hψp hfin⟩
+  rw [lt_top_iff_ne_top, ← lt_top_iff_ne_top]
+  calc _ = ∫⁻ ω, ∫⁻ p in Set.Ioc (0 : ℝ) T ×ˢ Set.univ, ‖ψ (ω, p)‖ₑ ∂(D.N.N ω) ∂P := rfl
+    _ = _ := hcomp
+    _ < ⊤ := hfin
 
 end Dissertation.Acceptance.A

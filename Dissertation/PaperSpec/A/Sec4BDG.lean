@@ -44,6 +44,8 @@ and `0` at other times.
 * `Dissertation.PaperSpec.A.eq_bdg4_hY` — the fourth bound of (4.18).
 * `Dissertation.PaperSpec.A.eq_bdg4_fifth` — the integrability of the forced diffusion and jump
   integrands and of the fifth integrand.
+* `Dissertation.PaperSpec.A.eq_bdg4_fifth_mean` — the fifth term: its predictable integrand and
+  its zero mean.
 -/
 
 open MeasureTheory Filter ProbabilityTheory Matrix
@@ -378,5 +380,66 @@ def eq_bdg4_fifth : Prop :=
             * (∑ i, Poisson.Compensated.markedEnergy P ν T (H i)) ^ (1 / 2 : ℝ)
             * (∑ k, Poisson.Compensated.markedEnergy P ν T (fun ω s e => U₁ k s ω e - U₂ k s ω e))
                 ^ (1 / 2 : ℝ) < ⊤
+
+/-- **The fifth term of (4.17): its predictable integrand and its zero mean.** Under the
+hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3) and Assumptions 2.3–2.5 with constants
+`L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at
+`λ` in `ℍ_weak` with `X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and
+`Θ¹ − Θ² ∈ ℍ` — the forced jump integrand `λ δh + q^h` (with `q = δq` and `δh` at the predictable
+tuples) agrees almost everywhere on `Ω × [0, T] × E` with a marked predictable integrand `H`; and
+for every such `H`, the fifth integrand `ψ_s(e) = ⟨H_s(e), Gᵀ δU_s(e)⟩` is marked predictable,
+`𝔼 ∫_{(0, T] × E} |ψ| dN` and `𝔼 ∫_0^T ∫_E |ψ| ν(de) ds` are finite, and the fifth term
+`∫_{(0, T] × E} ψ dN − ∫_0^T ∫_E ψ ν(de) ds` has mean zero; the expectations of nonnegative
+quantities are read in `[0, ∞]`. -/
+def eq_bdg4_fifth_mean : Prop :=
+  ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
+    [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
+    (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
+    (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
+    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P),
+    0 < n → 0 < m → 0 < d → ∀ T : ℝ, 0 < T →
+    ∀ (L α β₁ β₂ : ℝ) (G : Matrix (Fin m) (Fin n) ℝ) (C : Coeffs ν n m d),
+    JointBorel T C → Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C → G.rank = min m n →
+    Assumption25 (enlJoint 𝒢₀ D h𝒢₀) P T G α β₁ β₂ C →
+    ∀ lamLow lam : ℝ, 0 < lamLow → lamLow ≤ 1 → lamLow ≤ lam → lam ≤ 1 →
+    ∀ (ξ₁ ξ₂ : Ω → EuclideanSpace ℝ (Fin n)),
+    Measurable[enlJoint 𝒢₀ D h𝒢₀ 0] ξ₁ → Measurable[enlJoint 𝒢₀ D h𝒢₀ 0] ξ₂ →
+    ∀ (qb₁ qb₂ : Fin n → Ω → ℝ → ℝ) (qσ₁ qσ₂ : Fin n → ℝ → Ω → Fin d → ℝ)
+      (qh₁ qh₂ : Fin n → ℝ → Ω → E → ℝ) (qf₁ qf₂ : Fin m → Ω → ℝ → ℝ)
+      (qg₁ qg₂ : Fin m → Ω → ℝ),
+    PredForcing (enlJoint 𝒢₀ D h𝒢₀) P ν T qb₁ qσ₁ qh₁ qf₁ qg₁ →
+    PredForcing (enlJoint 𝒢₀ D h𝒢₀) P ν T qb₂ qσ₂ qh₂ qf₂ qg₂ →
+    ∀ (X₁ X₂ : Fin n → ℝ → Ω → ℝ) (Y₁ Y₂ : Fin m → ℝ → Ω → ℝ)
+      (Z₁ Z₂ : Fin m → ℝ → Ω → Fin d → ℝ) (U₁ U₂ : Fin m → ℝ → Ω → E → ℝ),
+    WeakForcedSolution D h𝒢₀ hind₀ T lam C ξ₁ qb₁ qσ₁ qh₁ qf₁ qg₁ X₁ Y₁ Z₁ U₁ →
+    WeakForcedSolution D h𝒢₀ hind₀ T lam C ξ₂ qb₂ qσ₂ qh₂ qf₂ qg₂ X₂ Y₂ Z₂ U₂ →
+    supSize P ν T (fun i t ω => X₁ i t ω - X₂ i t ω) (fun k t ω => Y₁ k t ω - Y₂ k t ω)
+        (fun k t ω j => Z₁ k t ω j - Z₂ k t ω j) (fun k t ω e => U₁ k t ω e - U₂ k t ω e) < ⊤ →
+  (∃ H : Fin n → Ω → ℝ → E → ℝ,
+      (∀ i, Probability.MarkedPredictable (enlJoint 𝒢₀ D h𝒢₀) ν (H i))
+      ∧ ∀ i, ∀ᵐ p ∂(Poisson.Compensated.markedEnergyMeasure P ν T), H i p.1 p.2.1 p.2.2
+          = lam * (jumpProc T (coeffJump P T C (leftLimProc X₁) (leftLimProc Y₁) Z₁ U₁) i
+              p.2.1 p.1 p.2.2
+            - jumpProc T (coeffJump P T C (leftLimProc X₂) (leftLimProc Y₂) Z₂ U₂) i
+              p.2.1 p.1 p.2.2) + (qh₁ i p.2.1 p.1 p.2.2 - qh₂ i p.2.1 p.1 p.2.2))
+  ∧ ∀ H : Fin n → Ω → ℝ → E → ℝ,
+      (∀ i, Probability.MarkedPredictable (enlJoint 𝒢₀ D h𝒢₀) ν (H i)) →
+      (∀ i, ∀ᵐ p ∂(Poisson.Compensated.markedEnergyMeasure P ν T), H i p.1 p.2.1 p.2.2
+        = lam * (jumpProc T (coeffJump P T C (leftLimProc X₁) (leftLimProc Y₁) Z₁ U₁) i
+            p.2.1 p.1 p.2.2
+          - jumpProc T (coeffJump P T C (leftLimProc X₂) (leftLimProc Y₂) Z₂ U₂) i
+            p.2.1 p.1 p.2.2) + (qh₁ i p.2.1 p.1 p.2.2 - qh₂ i p.2.1 p.1 p.2.2)) →
+      Probability.MarkedPredictable (enlJoint 𝒢₀ D h𝒢₀) ν (fun ω s e =>
+          (fun i => H i ω s e) ⬝ᵥ (Gᵀ *ᵥ fun k => U₁ k s ω e - U₂ k s ω e))
+      ∧ ∫⁻ ω, ∫⁻ p in Set.Ioc (0 : ℝ) T ×ˢ Set.univ,
+          ‖(fun i => H i ω p.1 p.2) ⬝ᵥ (Gᵀ *ᵥ fun k => U₁ k p.1 ω p.2 - U₂ k p.1 ω p.2)‖ₑ
+          ∂(D.N.N ω) ∂P < ⊤
+      ∧ ∫⁻ ω, ∫⁻ s in Set.Ioc (0 : ℝ) T, ∫⁻ e,
+          ‖(fun i => H i ω s e) ⬝ᵥ (Gᵀ *ᵥ fun k => U₁ k s ω e - U₂ k s ω e)‖ₑ ∂ν ∂volume ∂P < ⊤
+      ∧ ∫ ω, ((∫ p in Set.Ioc (0 : ℝ) T ×ˢ Set.univ,
+            (fun i => H i ω p.1 p.2) ⬝ᵥ (Gᵀ *ᵥ fun k => U₁ k p.1 ω p.2 - U₂ k p.1 ω p.2)
+            ∂(D.N.N ω))
+          - ∫ s in Set.Ioc (0 : ℝ) T, ∫ e,
+            (fun i => H i ω s e) ⬝ᵥ (Gᵀ *ᵥ fun k => U₁ k s ω e - U₂ k s ω e) ∂ν) ∂P = 0
 
 end Dissertation.PaperSpec.A

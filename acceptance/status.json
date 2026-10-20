@@ -2950,6 +2950,25 @@
      "witness_ok": true
     },
     {
+     "accept": "Dissertation.Acceptance.A.lem41_M2_martingale",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lem41_M2_martingale"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "M²_t = ∫_{(0, t] × E} e^s|δU_s(e)|² N(ds, de) − ∫_0^t ∫_E e^s|δU_s(e)|² ν(de) ds is a local martingale: for t ∈ [0, T] the Poisson integral has finite expectation and M²_t is integrable and ℱ_t-measurable up to a null set, and 𝔼[M²_t | ℱ_s] = M²_s almost surely for 0 ≤ s ≤ t ≤ T (a martingale on [0, T])",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lem41_M2_martingale",
+     "spec_hash": "ed839d34f480cba1983f1a786ecea56b",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_nonzero_hypotheses",
+     "witness_ok": true
+    },
+    {
      "accept": "Dissertation.Acceptance.A.lem41_MW",
      "accept_ok": true,
      "author_reviewed": [
@@ -3014,7 +3033,7 @@
    "number": "proof of Lemma 4.1",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the clauses read lines 139–187 of the proof, the paragraph on the zero-mean terms: the sentence of the pinned line (lines 148–152), the local martingales M^W and M¹ (lines 139–148 and 153–172) and the paragraph on M² (lines 173–187); the first clause reads the sentence's first assertion, that membership in H²_N does not give the quadratic integrand of M² square moments, for ν ≠ 0, the degenerate case ν = 0, in which every marked integrand vanishes, being the one Remark 2.10 sets aside; M^W and M¹ are read as local stochastic integrals (IsLocalBrownianIntegral, IsLocalCompensatedIntegral), which carries their local-martingale property, not stated separately; that the stochastic-integral terms of (4.5) are M^W, M¹ and M² belongs to (4.5) (A:eq:itoY2); the first link of the chain for M¹ (line 162), the Burkholder–Davis–Gundy inequality at p = 1 in quadratic-variation form, is cited work (He, Wang and Yan, as in A:sec4:supremum-criterion) and is not stated: the bound on 𝔼 sup |M¹| it leads to is stated and proved through the predictable quadratic variation (Lenglart's inequality), and the links after it are stated",
+   "scope_note": "the clauses read lines 139–187 of the proof, the paragraph on the zero-mean terms: the sentence of the pinned line (lines 148–152), the local martingales M^W and M¹ (lines 139–148 and 153–172) and the paragraph on M² (lines 173–187); the first clause reads the sentence's first assertion, that membership in H²_N does not give the quadratic integrand of M² square moments, for ν ≠ 0, the degenerate case ν = 0, in which every marked integrand vanishes, being the one Remark 2.10 sets aside; M^W and M¹ are read as local stochastic integrals (IsLocalBrownianIntegral, IsLocalCompensatedIntegral) for the filtration of the setting, which carries their local-martingale property, not stated separately; that M² is a local martingale (lines 139–141) is the clause on M² read pathwise, stated as a martingale on [0, T] (stronger), adapted up to a null set; that the stochastic-integral terms of (4.5) are M^W, M¹ and M² belongs to (4.5) (A:eq:itoY2); the first link of the chain for M¹ (line 162), the Burkholder–Davis–Gundy inequality at p = 1 in quadratic-variation form, is cited work (He, Wang and Yan, as in A:sec4:supremum-criterion) and is not stated: the bound on 𝔼 sup |M¹| it leads to is stated and proved through the predictable quadratic variation (Lenglart's inequality), and the links after it are stated",
    "scope_reviewed": false,
    "status": "formal: proved, author-reviewed"
   },
@@ -3513,9 +3532,7 @@
     {
      "accept": "Dissertation.Acceptance.A.lemA1_polish",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.lemA1_polish"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3525,7 +3542,7 @@
      "spec": "Dissertation.PaperSpec.A.lemA1_polish",
      "spec_hash": "ed839d34f480cba19bbef9c769d701cd",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.lemA1_polish_hypotheses",
      "witness_ok": true
     }
@@ -3537,16 +3554,90 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": false,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
     {
-     "accept": "Dissertation.Acceptance.A.lemA1_L2",
+     "accept": "Dissertation.Acceptance.A.lemA1_leftlim",
      "accept_ok": true,
      "author_reviewed": [
-      "Dissertation.PaperSpec.A.lemA1_L2"
+      "Dissertation.PaperSpec.A.lemA1_leftlim"
      ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "X₋ and Y₋ are predictable; on every path {t : X_{t−} ≠ X_t} is countable and ∫_0^T 1{X_{t−} ≠ X_t} dt = 0, and likewise for Y; X₋ = X and Y₋ = Y dt ⊗ dP-almost everywhere on [0, T] × Ω; X₋ and Y₋ have finite energy on [0, T]",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lemA1_leftlim",
+     "spec_hash": "ed839d34f480cba130f1a54fb940f2d9",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lemA1_coin_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lemA1_separable",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lemA1_separable"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "L²(ν; ℝᵐ) is separable, and so is H = ℝⁿ × ℝᵐ × ℝ^{m×d} × L²(ν; ℝᵐ) with its Hilbert norm",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lemA1_separable",
+     "spec_hash": "ed839d34f480cba1e132af851a6dd7cf",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lemA1_polish_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lemA1_U",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lemA1_U"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "U ∈ L²([0, T] × Ω × E; ℝᵐ), and (t, ω) ↦ U_t(ω, ·) has a predictable, strongly measurable L²(ν; ℝᵐ)-valued representative V, square integrable on [0, T] × Ω, with V_t(ω) = U_t(ω, ·) ν-almost everywhere for dt ⊗ dP-almost every (t, ω) ∈ [0, T] × Ω",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lemA1_U",
+     "spec_hash": "ed839d34f480cba1019406c1cc1330d9",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lemA1_coin_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lemA1_pred",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.lemA1_pred"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "Θ⁻ = (X₋, Y₋, Z, U) is a predictable H-valued field: (t, ω) ↦ Θ⁻_t(ω), H with its Hilbert norm, is strongly measurable for the predictable σ-algebra",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lemA1_pred",
+     "spec_hash": "ed839d34f480cba136b795f0b638d045",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lemA1_coin_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lemA1_L2",
+     "accept_ok": true,
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3556,16 +3647,14 @@
      "spec": "Dissertation.PaperSpec.A.lemA1_L2",
      "spec_hash": "ed839d34f480cba1a6657535c81c9ed1",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.lemA1_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.lemA1_fubini",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.lemA1_fubini"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3575,16 +3664,14 @@
      "spec": "Dissertation.PaperSpec.A.lemA1_fubini",
      "spec_hash": "ed839d34f480cba18bb7bf3a9a35bb91",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.lemA1_fubini_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "Dissertation.Acceptance.A.lemA1_pettis",
      "accept_ok": true,
-     "author_reviewed": [
-      "Dissertation.PaperSpec.A.lemA1_pettis"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3594,7 +3681,7 @@
      "spec": "Dissertation.PaperSpec.A.lemA1_pettis",
      "spec_hash": "ed839d34f480cba176ccc2a6aaf99d7c",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.lemA1_hypotheses",
      "witness_ok": true
     }
@@ -3604,7 +3691,7 @@
    "number": "proof of Lemma A.1, step 1",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the clauses read the sentence of the pinned line (lines 43–51) together with its input from the preceding sentence (lines 36–42), Θ⁻ ∈ L²([0, T] × Ω; H); the predictability of Θ⁻ asserted in that preceding sentence is not used by the passage and is not stated here",
+   "scope_note": "the clauses read Step 1 of the proof, lines 25–51, whose last sentence (lines 43–51) holds the pinned line 48: the left limits X₋, Y₋ (lines 25–28), the separability of H (line 28), the jump channel U (lines 29–36), Θ⁻ predictable and in L²([0, T] × Ω; H) (lines 36–42), and the Fubini isometry and the Pettis step (lines 43–51); the isometry (2.4) invoked for the jump channel (line 31) is the clause of A:eq:fubiniiso, and the clause on U states its conclusion for U; that the Z-coordinate is predictable and square integrable (lines 28–29) restates the hypotheses of Lemma A.1 (CadlagPredTuple) and is not stated separately; 'hence jointly measurable' (line 37) is the joint strong measurability of the clause Θ⁻ ∈ L²([0, T] × Ω; H)",
    "scope_reviewed": false,
    "status": "formal: proved, author-reviewed"
   },
@@ -4254,6 +4341,25 @@
   {
    "clauses": [
     {
+     "accept": "Dissertation.Acceptance.A.eq_fwddiff_identity",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_fwddiff_identity"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the forward difference before (4.10): δσ and δh meet the conditions of the Itô and compensated integrals, almost every path of δb is integrable on [0, T], and δX̄_t = λ ∫_0^t δb_s ds + λ ∫_0^t δσ_s dW_s + λ ∫_0^t ∫_E δh_s(e) Ñ(ds, de) almost surely for every t ∈ [0, T], and almost surely at every t ∈ [0, T] at once with any version of ∫ δσ dW right-continuous on [0, T)",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_fwddiff_identity",
+     "spec_hash": "ed839d34f480cba1cdc19be62d7635bf",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.frozen_pair_hypotheses",
+     "witness_ok": true
+    },
+    {
      "accept": "Dissertation.Acceptance.A.eq_fwddiff",
      "accept_ok": true,
      "author_reviewed": [],
@@ -4276,9 +4382,9 @@
    "number": "(4.10)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the first clause reads the display before (4.10), lines 350–355, the difference of (4.7) at Θ¹ and Θ², outside the pinned region (lines 357–372); the sentence after (4.10), lines 373–374, names the justifications of its links",
    "scope_reviewed": false,
-   "status": "formal: accepted"
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
@@ -4363,7 +4469,7 @@
    "number": "(4.13)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the sentence after (4.13), lines 440–445, outside the pinned region (lines 429–439), records the dependences L⋆ = L⋆(T, L), C_X = C_X(T, L, c_BDG), C_g = C_g(L), C_BP = C_BP(T, c_BDG) and C_Φ = C_Φ(T, L, c_BDG): the clause states every constant by its explicit formula in T, L and c, with c the value of c_BDG quantified before the data (∃ c₀ > 0, ∀ c ≥ c₀ first), so C_Φ = max{1, C_X + C_Y} is a fixed function of (T, L, c_BDG), chosen before everything else, as the sentence asserts; the same holds for the constants of (4.10) and (4.12) in A:eq:fwddiff and A:eq:bwddiff; 'the first inequality by (4.10) and (4.12)' (line 440) names a justification",
    "scope_reviewed": false,
    "status": "formal: accepted"
   },
@@ -4466,7 +4572,7 @@
      "spec_hash": "ed839d34f480cba1ea9600d62db2bc6a",
      "spec_ok": true,
      "spec_review": "reviewed by claude-author",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_forced_hypotheses",
      "witness_ok": true
     },
     {
@@ -4486,7 +4592,7 @@
      "spec_hash": "ed839d34f480cba1cb9feae8e68982b0",
      "spec_ok": true,
      "spec_review": "reviewed by claude-author",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_forced_hypotheses",
      "witness_ok": true
     },
     {
@@ -4506,7 +4612,7 @@
      "spec_hash": "ed839d34f480cba18a39ea87912f080a",
      "spec_ok": true,
      "spec_review": "reviewed by claude-author",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_forced_hypotheses",
      "witness_ok": true
     },
     {
@@ -4526,7 +4632,7 @@
      "spec_hash": "ed839d34f480cba11d2a86bd66838ee7",
      "spec_ok": true,
      "spec_review": "reviewed by claude-author",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_forced_hypotheses",
      "witness_ok": true
     },
     {
@@ -4545,7 +4651,26 @@
      "spec_hash": "ed839d34f480cba1bb7df8f3a4d24d8b",
      "spec_ok": true,
      "spec_review": "reviewed by claude-author",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_forced_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_bdg4_fifth_mean",
+     "accept_ok": true,
+     "author_reviewed": [
+      "Dissertation.PaperSpec.A.eq_bdg4_fifth_mean"
+     ],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the fifth term of (4.17): λδh + q^h has a marked predictable representative H, and for every such H the fifth integrand ⟨H_t(e), GᵀδU_t(e)⟩ is marked predictable, 𝔼 ∫_{(0, T] × E} |⟨H, GᵀδU⟩| dN and 𝔼 ∫_0^T ∫_E |⟨H, GᵀδU⟩| ν(de) dt are finite, and ∫_{(0, T] × E} ⟨H, GᵀδU⟩ dN − ∫_0^T ∫_E ⟨H, GᵀδU⟩ ν(de) dt has mean zero (2.2)",
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_bdg4_fifth_mean",
+     "spec_hash": "ed839d34f480cba153e1a9d9480bd7ff",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-author",
+     "witness": "Dissertation.Acceptance.A.lem_pert_forced_hypotheses",
      "witness_ok": true
     }
    ],
@@ -4554,7 +4679,7 @@
    "number": "(4.18)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the clauses read lines 579–622: the four bounds of (4.18) (lines 579–598), each with the existence of its local martingale as a local stochastic integral (IsLocalBrownianIntegral, IsLocalCompensatedIntegral), the finiteness of the bounds and the zero means the supremum criterion gives (lines 600–612), the finiteness of 𝔼∫|λδσ + q^σ|²_F and 𝔼∫‖λδh + q^h‖² (lines 606–610), and the integrability of the fifth integrand (lines 612–621); the display at lines 600–605 is the definition of the norm of ℍ at the hypothesis Θ¹ − Θ² ∈ ℍ, whose finiteness enters each bound; not stated: that the four local martingales and the fifth term are the stochastic terms of (4.17), which belongs to (4.17) (A:eq:Gid-path, a proof step not stated), the predictability of the fifth integrand (lines 612–613) and the zero mean of the fifth term by (2.2) (line 622), which need the fifth term of (4.17), the compensated integral of an integrable predictable integrand, not defined here (the representative of λδh + q^h is taken marked progressively measurable, as in (4.15)); the first link of each bound, the Burkholder–Davis–Gundy inequality at p = 1 in quadratic-variation form (Davis's inequality), is cited work (He, Wang and Yan, as in A:sec4:supremum-criterion) and is not stated: each bound is stated and proved through the predictable quadratic variation (Lenglart's inequality), with the same right-hand side",
+   "scope_note": "the clauses read lines 579–622: the four bounds of (4.18) (lines 579–598), each with the existence of its local martingale as a local stochastic integral (IsLocalBrownianIntegral, IsLocalCompensatedIntegral), the finiteness of the bounds and the zero means the supremum criterion gives (lines 600–612), the finiteness of 𝔼∫|λδσ + q^σ|²_F and 𝔼∫‖λδh + q^h‖² (lines 606–610), the integrability of the fifth integrand (lines 612–621), and its predictability and the zero mean of the fifth term by (2.2) (lines 612–613 and 622), the last clause, with a marked predictable representative of λδh + q^h and the fifth term read pathwise, the Poisson integral minus its compensator, as for M² in A:lem4.1:M2-infinite-activity (the bounds read λδh + q^h through any representative meeting the conditions of the compensated integral, marked progressively measurable, as in (4.15)); the display at lines 600–605 is the definition of the norm of ℍ at the hypothesis Θ¹ − Θ² ∈ ℍ, whose finiteness enters each bound; not stated: that the four local martingales and the fifth term are the stochastic terms of (4.17), which belongs to (4.17) (A:eq:Gid-path, a proof step not stated); the first link of each bound, the Burkholder–Davis–Gundy inequality at p = 1 in quadratic-variation form (Davis's inequality), is cited work (He, Wang and Yan, as in A:sec4:supremum-criterion) and is not stated: each bound is stated and proved through the predictable quadratic variation (Lenglart's inequality), with the same right-hand side",
    "scope_reviewed": false,
    "status": "formal: proved, author-reviewed"
   },

@@ -37,6 +37,9 @@ largest of those of (4.10) and (4.12) for (4.13).
 
 * `Dissertation.Acceptance.A.sum_energy_le_coeffDiffNorm` — the energies of the coefficient
   differences against `𝔼 ∫_0^T S_s² ds`.
+* `Dissertation.Acceptance.A.frozenStep_fwd_sub` — the forward difference of two frozen steps
+  solves the linear forward equation from `0`.
+* `Dissertation.Acceptance.A.eq_fwddiff_identity` — the forward difference before (4.10).
 * `Dissertation.Acceptance.A.eq_fwddiff` — (4.10).
 * `Dissertation.Acceptance.A.eq_bwddiff` — (4.12).
 * `Dissertation.Acceptance.A.eq_contract` — (4.13).
@@ -173,29 +176,45 @@ theorem sum_energy_le_coeffDiffNorm {Ω : Type u} [MeasurableSpace Ω] {E : Type
           ((add_le_add (le_lintegral_add _ _) le_rfl).trans (le_lintegral_add _ _))
     _ ≤ _ := lintegral_mono hpt
 
-/-- (4.10), with `c₀ = 4`. -/
-theorem eq_fwddiff : PaperSpec.A.eq_fwddiff.{u, v, w} := by
-  refine ⟨4, by norm_num, fun c hc => ?_⟩
-  rintro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ hn hm hd T hT L C ξ₀ hJ h22 h23 lam hl0 hl1
-    qb qσ qh qf qg hq X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ hΘ₁ hΘ₂ X₁' X₂' Y₁' Y₂' Z₁' Z₂' U₁' U₂' hS₁ hS₂
-  have hnull : ∀ s : Set Ω, MeasurableSet s → P s = 0 → MeasurableSet[enlJoint 𝒢₀ D h𝒢₀ 0] s :=
-    fun _ hs h0 => measurableSet_enlJoint_of_null D h𝒢₀ hs h0
-  have hℱ0 := hF0_enlJoint D h𝒢₀
-  have 𝒲 := crossWitnessEnl D h𝒢₀ hind₀
+/-- **The forward difference of two frozen steps.** Under the hypotheses of Lemma 4.2, for two
+trials of `ℍ` and their frozen steps, the integrals of (1.1) exist along each trial with the
+representative `coeffJump` of the jump coefficient, and each coordinate of `δX̄` solves the linear
+forward equation from `0` with integrands `λ δb, λ δσ, λ δh`. -/
+theorem frozenStep_fwd_sub {Ω : Type u} {𝒢₀ : MeasurableSpace Ω} [mΩ : MeasurableSpace Ω]
+    {E : Type v} [MeasurableSpace E] {ν : Measure E} [SigmaFinite ν]
+    [MeasurableSpace.CountablyGenerated E] {n m d : ℕ} {P : Measure Ω} [IsProbabilityMeasure P]
+    (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
+    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P) {T : ℝ} (hT : 0 < T) {L : ℝ}
+    {C : Coeffs ν n m d} {ξ₀ : Ω → EuclideanSpace ℝ (Fin n)} (hJ : JointBorel T C)
+    (h22 : Assumption22 (enlJoint 𝒢₀ D h𝒢₀) P T C ξ₀)
+    (h23 : Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C) {lam : ℝ}
+    {qb : Fin n → Ω → ℝ → ℝ} {qσ : Fin n → ℝ → Ω → Fin d → ℝ} {qh : Fin n → ℝ → Ω → E → ℝ}
+    {qf : Fin m → Ω → ℝ → ℝ} {qg : Fin m → Ω → ℝ}
+    (hq : PredForcing (enlJoint 𝒢₀ D h𝒢₀) P ν T qb qσ qh qf qg)
+    {X₁ X₂ : Fin n → ℝ → Ω → ℝ} {Y₁ Y₂ : Fin m → ℝ → Ω → ℝ}
+    {Z₁ Z₂ : Fin m → ℝ → Ω → Fin d → ℝ} {U₁ U₂ : Fin m → ℝ → Ω → E → ℝ}
+    (hΘ₁ : HTuple (enlJoint 𝒢₀ D h𝒢₀) P ν T X₁ Y₁ Z₁ U₁)
+    (hΘ₂ : HTuple (enlJoint 𝒢₀ D h𝒢₀) P ν T X₂ Y₂ Z₂ U₂)
+    {X₁' X₂' : Fin n → ℝ → Ω → ℝ} {Y₁' Y₂' : Fin m → ℝ → Ω → ℝ}
+    {Z₁' Z₂' : Fin m → ℝ → Ω → Fin d → ℝ} {U₁' U₂' : Fin m → ℝ → Ω → E → ℝ}
+    (hS₁ : FrozenStep D h𝒢₀ hind₀ T lam C ξ₀ qb qσ qh qf qg X₁ Y₁ Z₁ U₁ X₁' Y₁' Z₁' U₁')
+    (hS₂ : FrozenStep D h𝒢₀ hind₀ T lam C ξ₀ qb qσ qh qf qg X₂ Y₂ Z₂ U₂ X₂' Y₂' Z₂' U₂') :
+    PaperAdmissible (enlJoint 𝒢₀ D h𝒢₀) P T C X₁ Y₁ Z₁ U₁ (coeffJump P T C X₁ Y₁ Z₁ U₁)
+    ∧ PaperAdmissible (enlJoint 𝒢₀ D h𝒢₀) P T C X₂ Y₂ Z₂ U₂ (coeffJump P T C X₂ Y₂ Z₂ U₂)
+    ∧ ∀ i, LinearFSDEJ D (enlJoint 𝒢₀ D h𝒢₀) (isBrownianFiltration_enlJoint D h𝒢₀ hind₀)
+      (isPoissonFiltration_enlJoint D h𝒢₀ hind₀) T (fun _ => 0)
+      (fun ω s => lam * (driftProc P T C X₁ Y₁ Z₁ U₁ i ω s - driftProc P T C X₂ Y₂ Z₂ U₂ i ω s))
+      (fun t ω => X₁' i t ω - X₂' i t ω)
+      (fun s ω j => lam * (diffusionProc P T C X₁ Y₁ Z₁ U₁ i s ω j
+        - diffusionProc P T C X₂ Y₂ Z₂ U₂ i s ω j))
+      (fun s ω e => lam * (coeffJump P T C X₁ Y₁ Z₁ U₁ i s ω e
+        - coeffJump P T C X₂ Y₂ Z₂ U₂ i s ω e)) := by
   have hB : CoeffBorel T C := (jointBorel_iff.mp hJ).1.toCoeffBorel
   have horig := originValues_iff_coeffOrigin.mp h22.origin
   have hL2 := h23.interior.diagonalLipschitz_two_mul
   -- the integrals of (1.1) along the trials, with `coeffJump`
   have hA₁ := hΘ₁.1.paperAdmissible_coeffJump hT.le hB horig hL2
   have hA₂ := hΘ₂.1.paperAdmissible_coeffJump hT.le hB horig hL2
-  have hD := hA₁.forcing.sub hA₂.forcing
-  have ejump : (fun i s ω e => jumpProc T (coeffJump P T C X₁ Y₁ Z₁ U₁) i s ω e
-      - jumpProc T (coeffJump P T C X₂ Y₂ Z₂ U₂) i s ω e)
-      = fun i s ω e => coeffJump P T C X₁ Y₁ Z₁ U₁ i s ω e - coeffJump P T C X₂ Y₂ Z₂ U₂ i s ω e :=
-    by funext i s ω e; simp only [jumpProc_coeffJump]
-  rw [ejump] at hD
-  have hσq := fun i => sq_int_global_of_vanishing (hD.qσ_vanish i) (hD.qσ_sq i)
-  have hhq := fun i => marked_sq_int_global_of_vanishing (hD.qh_vanish i) (hD.qh_sq i)
   -- the frozen forward equations with the jump coefficient through `coeffJump`
   obtain ⟨⟨γ₁, hr₁, hf₁⟩, -, -⟩ := hS₁
   obtain ⟨⟨γ₂, hr₂, hf₂⟩, -, -⟩ := hS₂
@@ -253,6 +272,94 @@ theorem eq_fwddiff : PaperSpec.A.eq_fwddiff.{u, v, w} := by
       simp only [jumpProc_coeffJump]
       ring
     rwa [e1, e2, e3, e4] at h
+  exact ⟨hA₁, hA₂, hδ⟩
+
+/-- The forward difference before (4.10). -/
+theorem eq_fwddiff_identity : PaperSpec.A.eq_fwddiff_identity.{u, v, w} := by
+  rintro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ hn hm hd T hT L C ξ₀ hJ h22 h23 lam hl0 hl1
+    qb qσ qh qf qg hq X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ hΘ₁ hΘ₂ X₁' X₂' Y₁' Y₂' Z₁' Z₂' U₁' U₂' hS₁ hS₂
+  obtain ⟨hA₁, hA₂, hδ⟩ := frozenStep_fwd_sub D h𝒢₀ hind₀ hT hJ h22 h23 hq hΘ₁ hΘ₂ hS₁ hS₂
+  have hD := hA₁.forcing.sub hA₂.forcing
+  have ejump : (fun i s ω e => jumpProc T (coeffJump P T C X₁ Y₁ Z₁ U₁) i s ω e
+      - jumpProc T (coeffJump P T C X₂ Y₂ Z₂ U₂) i s ω e)
+      = fun i s ω e => coeffJump P T C X₁ Y₁ Z₁ U₁ i s ω e - coeffJump P T C X₂ Y₂ Z₂ U₂ i s ω e :=
+    by funext i s ω e; simp only [jumpProc_coeffJump]
+  rw [ejump] at hD
+  have hσq := fun i => sq_int_global_of_vanishing (hD.qσ_vanish i) (hD.qσ_sq i)
+  have hhq := fun i => marked_sq_int_global_of_vanishing (hD.qh_vanish i) (hD.qh_sq i)
+  -- the identity at each time
+  have hid : ∀ i, ∀ t ∈ Set.Icc (0 : ℝ) T, ∀ᵐ ω ∂P,
+      X₁' i t ω - X₂' i t ω
+        = lam * (∫ s in Set.Icc (0 : ℝ) t,
+            driftProc P T C X₁ Y₁ Z₁ U₁ i ω s - driftProc P T C X₂ Y₂ Z₂ U₂ i ω s)
+          + lam * Brownian.Multidim.MultidimBrownianMotion.stochasticIntegral D.W
+              (enlJoint 𝒢₀ D h𝒢₀) (isBrownianFiltration_enlJoint D h𝒢₀ hind₀)
+              (fun s ω j => diffusionProc P T C X₁ Y₁ Z₁ U₁ i s ω j
+                - diffusionProc P T C X₂ Y₂ Z₂ U₂ i s ω j) (hD.qσ_meas i) (hD.qσ_prog i)
+              (hσq i) t ω
+          + lam * Poisson.Compensated.stochasticIntegral D.N (enlJoint 𝒢₀ D h𝒢₀)
+              (isPoissonFiltration_enlJoint D h𝒢₀ hind₀)
+              (fun ω s e => coeffJump P T C X₁ Y₁ Z₁ U₁ i s ω e
+                - coeffJump P T C X₂ Y₂ Z₂ U₂ i s ω e) (hD.qh_meas i) (hD.qh_prog i)
+              (hhq i) t ω := by
+    intro i t ht
+    filter_upwards [(hδ i).eqn t ht,
+      multidimStochasticIntegral_const_mul_ae D.W (isBrownianFiltration_enlJoint D h𝒢₀ hind₀)
+        (Z := fun s ω j => diffusionProc P T C X₁ Y₁ Z₁ U₁ i s ω j
+          - diffusionProc P T C X₂ Y₂ Z₂ U₂ i s ω j) lam (hD.qσ_meas i) (hD.qσ_prog i) (hσq i)
+        (hδ i).σ_meas (hδ i).σ_prog (sq_int_global_of_vanishing (hδ i).σ_vanish (hδ i).σ_sq) t,
+      compensatedIntegral_const_mul_ae D.N (isPoissonFiltration_enlJoint D h𝒢₀ hind₀)
+        (φ := fun ω s e => coeffJump P T C X₁ Y₁ Z₁ U₁ i s ω e
+          - coeffJump P T C X₂ Y₂ Z₂ U₂ i s ω e) lam (hD.qh_meas i) (hD.qh_prog i) (hhq i)
+        (hδ i).γ_meas (hδ i).γ_prog
+        (marked_sq_int_global_of_vanishing (hδ i).γ_vanish (hδ i).γ_sq) t] with ω e1 e2 e3
+    rw [e1, e2, e3, integral_const_mul]
+    ring
+  refine ⟨hD.qσ_meas, hD.qσ_prog, hσq, hD.qh_meas, hD.qh_prog, hhq,
+    fun i => (ae_mem_integrablePaths (hD.qb_meas i) (hD.qb_sq i)).mono fun _ h => h, hid, ?_⟩
+  -- the identity at every time at once, with a right-continuous version of the Brownian leg
+  intro Mσ hMv hMc i
+  have hR := ae_forall_Icc_eq_of_ae_rightCont (P := P) (T := T)
+    (Y := fun t ω => X₁' i t ω - X₂' i t ω)
+    (R := fun t ω => lam * driftLeg (fun ω s =>
+        driftProc P T C X₁ Y₁ Z₁ U₁ i ω s - driftProc P T C X₂ Y₂ Z₂ U₂ i ω s) T t ω
+      + lam * Mσ i t ω
+      + lam * Poisson.Compensated.stochasticIntegral D.N (enlJoint 𝒢₀ D h𝒢₀)
+          (isPoissonFiltration_enlJoint D h𝒢₀ hind₀)
+          (fun ω s e => coeffJump P T C X₁ Y₁ Z₁ U₁ i s ω e
+            - coeffJump P T C X₂ Y₂ Z₂ U₂ i s ω e) (hD.qh_meas i) (hD.qh_prog i) (hhq i) t ω)
+    hT.le (fun t ht => ?_) (ae_of_all _ fun ω t _ => (hδ i).X_rightCont ω t) ?_
+  · filter_upwards [hR, ae_mem_integrablePaths (hD.qb_meas i) (hD.qb_sq i)] with ω hω hg t ht
+    rw [hω t ht, driftLeg_of_mem hg]
+  · filter_upwards [hid i t ht, hMv i t ht, driftLeg_ae_eq (hD.qb_meas i) (hD.qb_sq i) t]
+      with ω e1 e2 e3
+    rw [e1, e2, e3]
+  · filter_upwards [hMc i, Poisson.Compensated.stochasticIntegral_cadlag D.N (enlJoint 𝒢₀ D h𝒢₀)
+      (isPoissonFiltration_enlJoint D h𝒢₀ hind₀) _ (hD.qh_meas i) (hD.qh_prog i) (hhq i)]
+      with ω hM hN t ht
+    have hA := ((continuous_driftLeg (hD.qb_vanish i) ω).tendsto t).mono_left
+      (nhdsWithin_le_nhds (s := Set.Ioi t))
+    exact ((hA.const_mul lam).add ((hM t ht).const_mul lam)).add ((hN t).1.const_mul lam)
+
+/-- (4.10), with `c₀ = 4`. -/
+theorem eq_fwddiff : PaperSpec.A.eq_fwddiff.{u, v, w} := by
+  refine ⟨4, by norm_num, fun c hc => ?_⟩
+  rintro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ hn hm hd T hT L C ξ₀ hJ h22 h23 lam hl0 hl1
+    qb qσ qh qf qg hq X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ hΘ₁ hΘ₂ X₁' X₂' Y₁' Y₂' Z₁' Z₂' U₁' U₂' hS₁ hS₂
+  have hnull : ∀ s : Set Ω, MeasurableSet s → P s = 0 → MeasurableSet[enlJoint 𝒢₀ D h𝒢₀ 0] s :=
+    fun _ hs h0 => measurableSet_enlJoint_of_null D h𝒢₀ hs h0
+  have hℱ0 := hF0_enlJoint D h𝒢₀
+  have 𝒲 := crossWitnessEnl D h𝒢₀ hind₀
+  -- the integrals of (1.1) along the trials, with `coeffJump`, and the forward difference
+  obtain ⟨hA₁, hA₂, hδ⟩ := frozenStep_fwd_sub D h𝒢₀ hind₀ hT hJ h22 h23 hq hΘ₁ hΘ₂ hS₁ hS₂
+  have hD := hA₁.forcing.sub hA₂.forcing
+  have ejump : (fun i s ω e => jumpProc T (coeffJump P T C X₁ Y₁ Z₁ U₁) i s ω e
+      - jumpProc T (coeffJump P T C X₂ Y₂ Z₂ U₂) i s ω e)
+      = fun i s ω e => coeffJump P T C X₁ Y₁ Z₁ U₁ i s ω e - coeffJump P T C X₂ Y₂ Z₂ U₂ i s ω e :=
+    by funext i s ω e; simp only [jumpProc_coeffJump]
+  rw [ejump] at hD
+  have hσq := fun i => sq_int_global_of_vanishing (hD.qσ_vanish i) (hD.qσ_sq i)
+  have hhq := fun i => marked_sq_int_global_of_vanishing (hD.qh_vanish i) (hD.qh_sq i)
   -- the energies against `S`, and (4.9)
   have hS := sum_energy_le_coeffDiffNorm hA₁ hA₂
   obtain ⟨h91, h92, h93⟩ := Dissertation.Acceptance.A.eq_coeffdiff.{u, v, w} 𝒢₀ ν n m d P D h𝒢₀

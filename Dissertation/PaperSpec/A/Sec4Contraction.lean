@@ -13,7 +13,11 @@ Statement and equation numbers refer to the well-posedness paper at `1f67672`. F
 `δψ_s = ψ(s, Θ¹_s, μ^{Θ¹}_s) − ψ(s, Θ²_s, μ^{Θ²}_s)` for `ψ ∈ {b, σ, h, f}`, `S_s` as in (4.9),
 `L⋆² = 10 L² max{T, 1}`, `C_X = 3 max{T, c_BDG} L⋆²`, `C_g = 4 L²`,
 `C_BP = C₀ (5 + 4 c_BDG) + 4T` with `C₀ = 2 e^T`, `C_Y = C_BP (C_g C_X + L⋆²)` and
-`C_Φ = max{1, C_X + C_Y}`:
+`C_Φ = max{1, C_X + C_Y}`: the forward difference solves
+
+`δX̄_t = λ ∫_0^t δb_s ds + λ ∫_0^t δσ_s dW_s + λ ∫_0^t ∫_E δh_s(e) Ñ(ds, de)`,
+
+and
 
 `𝔼 sup_{t ≤ T} |δX̄_t|² ≤ 3λ² [𝔼 (∫_0^T |δb_s| ds)² + 𝔼 sup_{t ≤ T} |∫_0^t δσ_s dW_s|²
     + 𝔼 sup_{t ≤ T} |∫_0^t ∫_E δh_s(e) Ñ(ds, de)|²]
@@ -38,6 +42,7 @@ asserts its chain for every value of it at least some `c₀ > 0`.
 
 ## Main definitions
 
+* `Dissertation.PaperSpec.A.eq_fwddiff_identity` — the forward difference before (4.10).
 * `Dissertation.PaperSpec.A.eq_fwddiff` — (4.10).
 * `Dissertation.PaperSpec.A.eq_bwddiff` — (4.12).
 * `Dissertation.PaperSpec.A.eq_contract` — (4.13).
@@ -54,6 +59,86 @@ open Dissertation.WellPosedness.System Dissertation.WellPosedness.Existence
   LevyStochCalc
 
 universe u v w
+
+/-- **The forward difference before (4.10).** In the standing setting, under the hypotheses of
+Lemma 4.2 — `T > 0`, coefficients with (2.3) and Assumptions 2.2–2.3 with constant `L` and initial
+datum `ξ₀` — for `λ ∈ [0, 1]`, a forcing `q` of the class of (4.1), two trial tuples `Θ¹, Θ²` of
+`ℍ` and their frozen steps `Θ̄ᵏ = Φ_λ(Θᵏ)` (`FrozenStep`, with the same `λ`, `ξ₀` and `q`), with
+`δb, δσ, δh` the coefficient differences at `(Θᵏ_s, Law(Θᵏ_s))` (the jump coefficient through its
+representative `coeffJump`): `δσ` and `δh` meet the conditions of the Itô and compensated
+integrals, almost every path of `δb` is integrable on `[0, T]`, and for every `t ∈ [0, T]`,
+almost surely,
+`δX̄_t = λ ∫_0^t δb_s ds + λ ∫_0^t δσ_s dW_s + λ ∫_0^t ∫_E δh_s(e) Ñ(ds, de)`;
+with any version of `∫_0^t δσ_s dW_s` almost every path of which is right-continuous on `[0, T)`,
+the identity holds almost surely at every `t ∈ [0, T]` at once. -/
+def eq_fwddiff_identity : Prop :=
+  ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
+    [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
+    (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
+    (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
+    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P),
+    0 < n → 0 < m → 0 < d → ∀ T : ℝ, 0 < T →
+    ∀ (L : ℝ) (C : Coeffs ν n m d) (ξ₀ : Ω → EuclideanSpace ℝ (Fin n)),
+    JointBorel T C → Assumption22 (enlJoint 𝒢₀ D h𝒢₀) P T C ξ₀ →
+    Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C →
+    ∀ lam : ℝ, 0 ≤ lam → lam ≤ 1 →
+    ∀ (qb : Fin n → Ω → ℝ → ℝ) (qσ : Fin n → ℝ → Ω → Fin d → ℝ) (qh : Fin n → ℝ → Ω → E → ℝ)
+      (qf : Fin m → Ω → ℝ → ℝ) (qg : Fin m → Ω → ℝ),
+    PredForcing (enlJoint 𝒢₀ D h𝒢₀) P ν T qb qσ qh qf qg →
+    ∀ (X₁ X₂ : Fin n → ℝ → Ω → ℝ) (Y₁ Y₂ : Fin m → ℝ → Ω → ℝ)
+      (Z₁ Z₂ : Fin m → ℝ → Ω → Fin d → ℝ) (U₁ U₂ : Fin m → ℝ → Ω → E → ℝ),
+    HTuple (enlJoint 𝒢₀ D h𝒢₀) P ν T X₁ Y₁ Z₁ U₁ → HTuple (enlJoint 𝒢₀ D h𝒢₀) P ν T X₂ Y₂ Z₂ U₂ →
+    ∀ (X₁' X₂' : Fin n → ℝ → Ω → ℝ) (Y₁' Y₂' : Fin m → ℝ → Ω → ℝ)
+      (Z₁' Z₂' : Fin m → ℝ → Ω → Fin d → ℝ) (U₁' U₂' : Fin m → ℝ → Ω → E → ℝ),
+    FrozenStep D h𝒢₀ hind₀ T lam C ξ₀ qb qσ qh qf qg X₁ Y₁ Z₁ U₁ X₁' Y₁' Z₁' U₁' →
+    FrozenStep D h𝒢₀ hind₀ T lam C ξ₀ qb qσ qh qf qg X₂ Y₂ Z₂ U₂ X₂' Y₂' Z₂' U₂' →
+    ∃ (hσm : ∀ i j, Measurable (Function.uncurry fun ω s =>
+          diffusionProc P T C X₁ Y₁ Z₁ U₁ i s ω j - diffusionProc P T C X₂ Y₂ Z₂ U₂ i s ω j))
+      (hσp : ∀ i j, Probability.ProgressivelyMeasurable (enlJoint 𝒢₀ D h𝒢₀) fun ω s =>
+          diffusionProc P T C X₁ Y₁ Z₁ U₁ i s ω j - diffusionProc P T C X₂ Y₂ Z₂ U₂ i s ω j)
+      (hσq : ∀ i j, ∀ T' : ℝ, 0 < T' → ∫⁻ ω, ∫⁻ s in Set.Icc (0 : ℝ) T',
+          (‖diffusionProc P T C X₁ Y₁ Z₁ U₁ i s ω j
+            - diffusionProc P T C X₂ Y₂ Z₂ U₂ i s ω j‖₊ : ℝ≥0∞) ^ 2 ∂volume ∂P < ⊤)
+      (hhm : ∀ i, Measurable fun p : Ω × ℝ × E =>
+          coeffJump P T C X₁ Y₁ Z₁ U₁ i p.2.1 p.1 p.2.2
+            - coeffJump P T C X₂ Y₂ Z₂ U₂ i p.2.1 p.1 p.2.2)
+      (hhp : ∀ i, Probability.MarkedProgressivelyMeasurable (enlJoint 𝒢₀ D h𝒢₀) fun ω s e =>
+          coeffJump P T C X₁ Y₁ Z₁ U₁ i s ω e - coeffJump P T C X₂ Y₂ Z₂ U₂ i s ω e)
+      (hhq : ∀ i, ∀ T' : ℝ, 0 < T' → ∫⁻ ω, ∫⁻ s in Set.Icc (0 : ℝ) T', ∫⁻ e,
+          (‖coeffJump P T C X₁ Y₁ Z₁ U₁ i s ω e
+            - coeffJump P T C X₂ Y₂ Z₂ U₂ i s ω e‖₊ : ℝ≥0∞) ^ 2 ∂ν ∂volume ∂P < ⊤),
+      (∀ i, ∀ᵐ ω ∂P, IntegrableOn (fun s =>
+          driftProc P T C X₁ Y₁ Z₁ U₁ i ω s - driftProc P T C X₂ Y₂ Z₂ U₂ i ω s)
+          (Set.Icc (0 : ℝ) T))
+      ∧ (∀ i, ∀ t ∈ Set.Icc (0 : ℝ) T, ∀ᵐ ω ∂P,
+          X₁' i t ω - X₂' i t ω
+            = lam * (∫ s in Set.Icc (0 : ℝ) t,
+                driftProc P T C X₁ Y₁ Z₁ U₁ i ω s - driftProc P T C X₂ Y₂ Z₂ U₂ i ω s)
+              + lam * Brownian.Multidim.MultidimBrownianMotion.stochasticIntegral D.W
+                  (enlJoint 𝒢₀ D h𝒢₀) (isBrownianFiltration_enlJoint D h𝒢₀ hind₀)
+                  (fun s ω j => diffusionProc P T C X₁ Y₁ Z₁ U₁ i s ω j
+                    - diffusionProc P T C X₂ Y₂ Z₂ U₂ i s ω j) (hσm i) (hσp i) (hσq i) t ω
+              + lam * Poisson.Compensated.stochasticIntegral D.N (enlJoint 𝒢₀ D h𝒢₀)
+                  (isPoissonFiltration_enlJoint D h𝒢₀ hind₀)
+                  (fun ω s e => coeffJump P T C X₁ Y₁ Z₁ U₁ i s ω e
+                    - coeffJump P T C X₂ Y₂ Z₂ U₂ i s ω e) (hhm i) (hhp i) (hhq i) t ω)
+      ∧ ∀ Mσ : Fin n → ℝ → Ω → ℝ,
+        (∀ i, ∀ t ∈ Set.Icc (0 : ℝ) T, Mσ i t =ᵐ[P]
+          Brownian.Multidim.MultidimBrownianMotion.stochasticIntegral D.W (enlJoint 𝒢₀ D h𝒢₀)
+            (isBrownianFiltration_enlJoint D h𝒢₀ hind₀)
+            (fun s ω j => diffusionProc P T C X₁ Y₁ Z₁ U₁ i s ω j
+              - diffusionProc P T C X₂ Y₂ Z₂ U₂ i s ω j) (hσm i) (hσp i) (hσq i) t) →
+        (∀ i, ∀ᵐ ω ∂P,
+          ∀ t ∈ Set.Ico (0 : ℝ) T, Tendsto (fun s => Mσ i s ω) (𝓝[>] t) (𝓝 (Mσ i t ω))) →
+        ∀ i, ∀ᵐ ω ∂P, ∀ t ∈ Set.Icc (0 : ℝ) T,
+          X₁' i t ω - X₂' i t ω
+            = lam * (∫ s in Set.Icc (0 : ℝ) t,
+                driftProc P T C X₁ Y₁ Z₁ U₁ i ω s - driftProc P T C X₂ Y₂ Z₂ U₂ i ω s)
+              + lam * Mσ i t ω
+              + lam * Poisson.Compensated.stochasticIntegral D.N (enlJoint 𝒢₀ D h𝒢₀)
+                  (isPoissonFiltration_enlJoint D h𝒢₀ hind₀)
+                  (fun ω s e => coeffJump P T C X₁ Y₁ Z₁ U₁ i s ω e
+                    - coeffJump P T C X₂ Y₂ Z₂ U₂ i s ω e) (hhm i) (hhp i) (hhq i) t ω
 
 /-- **(4.10).** There is `c₀ > 0` such that, for every value `c ≥ c₀` of the constant `c_BDG`: in
 the standing setting, under the hypotheses of Lemma 4.2 — `T > 0`, coefficients with (2.3) and

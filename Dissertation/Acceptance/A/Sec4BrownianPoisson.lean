@@ -8,6 +8,7 @@ import Dissertation.WellPosedness.BrownianPoisson.EnergyAt
 import Dissertation.WellPosedness.BrownianPoisson.NoSquareMoment
 import Dissertation.Acceptance.A.Sec2Basics
 import Dissertation.Acceptance.A.Sec4
+import Dissertation.WellPosedness.BrownianPoisson.PathwiseMartingale
 
 /-!
 # Steps of the proof of Lemma 4.1: proofs
@@ -22,6 +23,10 @@ the `M²` paragraph, that for `ν ≠ 0` membership `δU ∈ H²_N` gives the qu
 * `Dissertation.Acceptance.A.lem41_M2_no_square_moment` — the first clause.
 * `Dissertation.Acceptance.A.lem41_jump_times`, `lem41_M2_integrand`, `lem41_M2_zero_mean` — the
   other clauses.
+* `Dissertation.Acceptance.A.lem41_M2_martingale` — `M²`, read pathwise, is a martingale: the
+  integral against the random measure is measurable at time `t` off a null set (truncated
+  kernels), and the compensation formula (2.2) for `1_A 1_{(s, t]} e^s |δU|²`, `A ∈ ℱ_s`, gives the
+  martingale property (`condExp_pathwiseCompensated`).
 * `Dissertation.Acceptance.A.eq_supE` — the bound at every time and (4.6).
 * `Dissertation.Acceptance.A.lem41_M2_no_square_moment_hypotheses` — the hypotheses of the first
   clause at `ν = δ₀`.
@@ -96,6 +101,28 @@ theorem lem41_M2_zero_mean : PaperSpec.A.lem41_M2_zero_mean.{u, v, w} := by
     fun t ht => ?_⟩
   exact quadratic_compensation (N := D.N) (isPoissonFiltration_enlJoint D h𝒢₀ hind₀) ht.1 hU hUv
     hUs
+
+/-- `M²` of the proof of Lemma 4.1, read pathwise, is a martingale on `[0, T]`. -/
+theorem lem41_M2_martingale : PaperSpec.A.lem41_M2_martingale.{u, v, w} := by
+  intro Ω 𝒢₀ mΩ E _ ν _ _ m d P _ D h𝒢₀ hind₀ _ _ T hT δξ φ δY δZ δU hZ hZv hZs hU hUv hUs
+    _ _ _ _ _ _ _ _
+  have hℱN := isPoissonFiltration_enlJoint D h𝒢₀ hind₀
+  set ψ : Ω × ℝ × E → ℝ := fun p => Real.exp p.2.1 * ∑ k, δU k p.2.1 p.1 p.2.2 ^ 2 with hψdef
+  have hψ : Measurable[Probability.markedPredictableSigma (enlJoint 𝒢₀ D h𝒢₀) ν] ψ :=
+    markedPredictable_exp_mul_sum_sq hU hUv
+  have hψ0 : ∀ p, 0 ≤ ψ p := fun p =>
+    mul_nonneg (Real.exp_pos _).le (Finset.sum_nonneg fun k _ => sq_nonneg _)
+  have hfin : ∫⁻ ω, ∫⁻ s in Set.Ioc (0 : ℝ) T, ∫⁻ e, ENNReal.ofReal (ψ (ω, s, e)) ∂ν ∂volume ∂P
+      < ⊤ := by
+    refine lt_of_le_of_lt ((lintegral_mono fun ω => lintegral_mono_set
+      Set.Ioc_subset_Icc_self).trans (lintegral_exp_mul_sum_sq_le (P := P) hU hUv)) ?_
+    exact ENNReal.mul_lt_top ENNReal.ofReal_lt_top (ENNReal.sum_lt_top.mpr fun k _ =>
+      (hUs k).lt_top)
+  refine ⟨fun t ht => ⟨?_, integrable_pathwiseCompensated (N := D.N) hℱN hψ hψ0 hfin ht.2,
+    aestronglyMeasurable_pathwiseCompensated (N := D.N) (P := P) hℱN hψ hψ0 t⟩,
+    fun s t hs hst htT => condExp_pathwiseCompensated (N := D.N) hℱN hψ hψ0 hfin hs hst htT⟩
+  rw [lintegral_N_eq_compensator (N := D.N) hℱN hψ t]
+  exact (lintegral_compensator_mono (P := P) (ν := ν) (ψ := ψ) ht.2).trans_lt hfin
 
 /-- The bound at every time and (4.6), with `C₀ = 2 e^T`. -/
 theorem eq_supE : PaperSpec.A.eq_supE.{u, v, w} := by

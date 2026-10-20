@@ -24,6 +24,8 @@ integrand is predictable and nonnegative, and that the compensation formula give
 * `Dissertation.PaperSpec.A.lem41_M2_integrand` — `e^s |δU_s(e)|²` is marked predictable and
   nonnegative.
 * `Dissertation.PaperSpec.A.lem41_M2_zero_mean` — `𝔼[M²_T − M²_t] = 0`, `M²` read pathwise.
+* `Dissertation.PaperSpec.A.lem41_M2_martingale` — `M²`, read pathwise, is a martingale on
+  `[0, T]`, hence a local martingale.
 * `Dissertation.PaperSpec.A.eq_supE` — the bound at every time and (4.6).
 -/
 
@@ -184,6 +186,78 @@ def lem41_M2_zero_mean : Prop :=
       ∧ ∫ ω, ((∫ p in Set.Ioc t T ×ˢ Set.univ, Real.exp p.1 * ∑ k, δU k p.1 ω p.2 ^ 2
             ∂(D.N.N ω))
           - ∫ s in Set.Ioc t T, ∫ e, Real.exp s * ∑ k, δU k s ω e ^ 2 ∂ν) ∂P = 0
+
+/-- The `M²` paragraph of the proof of Lemma 4.1: `M²` is a local martingale. Under the hypotheses
+of Lemma 4.1 (those of `lem_bpbsde`), the process `M²`, read pathwise,
+`M²_t = ∫_{(0, t] × E} e^s |δU_s(e)|² N(ds, de) − ∫_0^t ∫_E e^s |δU_s(e)|² ν(de) ds`, is a
+martingale on `[0, T]` for the filtration of the setting, hence a local martingale: for every
+`t ∈ [0, T]` the Poisson integral has finite expectation, and `M²_t` is integrable and almost
+surely equal to an `ℱ_t`-measurable random variable; and `𝔼[M²_t | ℱ_s] = M²_s` almost surely
+for `0 ≤ s ≤ t ≤ T`. -/
+def lem41_M2_martingale : Prop :=
+  ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
+    [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
+    (m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
+    (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
+    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P),
+    0 < m → 0 < d → ∀ T : ℝ, 0 < T →
+    ∀ (δξ : Ω → EuclideanSpace ℝ (Fin m)) (φ : Fin m → Ω → ℝ → ℝ) (δY : Fin m → ℝ → Ω → ℝ)
+      (δZ : Fin m → ℝ → Ω → Fin d → ℝ) (δU : Fin m → ℝ → Ω → E → ℝ)
+      (hZ : ∀ k j, Probability.Predictable (enlJoint 𝒢₀ D h𝒢₀) fun ω s => δZ k s ω j)
+      (hZv : ∀ k ω s, s ∉ Set.Icc (0 : ℝ) T → δZ k s ω = 0)
+      (hZs : ∀ k j, Brownian.Ito.energy P T (fun ω s => δZ k s ω j) ≠ ⊤)
+      (hU : ∀ k, Probability.MarkedPredictable (enlJoint 𝒢₀ D h𝒢₀) ν
+        fun ω s e => δU k s ω e)
+      (hUv : ∀ k ω s e, s ∉ Set.Icc (0 : ℝ) T → δU k s ω e = 0)
+      (hUs : ∀ k, Poisson.Compensated.markedEnergy P ν T (fun ω s e => δU k s ω e) ≠ ⊤),
+    Measurable[enlJoint 𝒢₀ D h𝒢₀ T] δξ → MemLp δξ 2 P →
+    (∀ k, Measurable (Function.uncurry (φ k))) → (∀ k, Brownian.Ito.energy P T (φ k) ≠ ⊤) →
+    (∀ k, ∀ t ∈ Set.Icc (0 : ℝ) T, Measurable[enlJoint 𝒢₀ D h𝒢₀ t] (δY k t)) →
+    (∀ k ω, ∀ t ∈ Set.Ico (0 : ℝ) T, Tendsto (fun s => δY k s ω) (𝓝[>] t) (𝓝 (δY k t ω))) →
+    (∀ k ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ l : ℝ, Tendsto (fun s => δY k s ω) (𝓝[<] t) (𝓝 l)) →
+    (∀ k, ∀ t ∈ Set.Icc (0 : ℝ) T, ∀ᵐ ω ∂P,
+      δY k t ω = δξ ω k + (∫ s in Set.Icc t T, φ k ω s)
+        - (Brownian.Multidim.MultidimBrownianMotion.stochasticIntegral D.W (enlJoint 𝒢₀ D h𝒢₀)
+              (isBrownianFiltration_enlJoint D h𝒢₀ hind₀) (δZ k)
+              (fun j => Brownian.Ito.measurable_uncurry_of_predictable (hZ k j))
+              (progressivelyMeasurable_of_predictable_of_vanish (hZ k) (hZv k))
+              (BSDEJ.Solves.sq_int_global_of_vanishing (hZv k) (hZs k)) T ω
+            - Brownian.Multidim.MultidimBrownianMotion.stochasticIntegral D.W
+              (enlJoint 𝒢₀ D h𝒢₀) (isBrownianFiltration_enlJoint D h𝒢₀ hind₀) (δZ k)
+              (fun j => Brownian.Ito.measurable_uncurry_of_predictable (hZ k j))
+              (progressivelyMeasurable_of_predictable_of_vanish (hZ k) (hZv k))
+              (BSDEJ.Solves.sq_int_global_of_vanishing (hZv k) (hZs k)) t ω)
+        - (Poisson.Compensated.stochasticIntegral D.N (enlJoint 𝒢₀ D h𝒢₀)
+              (isPoissonFiltration_enlJoint D h𝒢₀ hind₀) (fun ω' s e => δU k s ω' e)
+              ((hU k).mono (Probability.markedPredictableSigma_le _ ν) le_rfl)
+              (hU k).markedProgressivelyMeasurable
+              (BSDEJ.Solves.marked_sq_int_global_of_vanishing (hUv k) (hUs k)) T ω
+            - Poisson.Compensated.stochasticIntegral D.N (enlJoint 𝒢₀ D h𝒢₀)
+              (isPoissonFiltration_enlJoint D h𝒢₀ hind₀) (fun ω' s e => δU k s ω' e)
+              ((hU k).mono (Probability.markedPredictableSigma_le _ ν) le_rfl)
+              (hU k).markedProgressivelyMeasurable
+              (BSDEJ.Solves.marked_sq_int_global_of_vanishing (hUv k) (hUs k)) t ω)) →
+    (∀ t ∈ Set.Icc (0 : ℝ) T,
+      ∫⁻ ω, ∫⁻ p in Set.Ioc (0 : ℝ) t ×ˢ Set.univ,
+          ENNReal.ofReal (Real.exp p.1 * ∑ k, δU k p.1 ω p.2 ^ 2) ∂(D.N.N ω) ∂P < ⊤
+      ∧ Integrable (fun ω =>
+          ((∫ p in Set.Ioc (0 : ℝ) t ×ˢ Set.univ,
+            Real.exp p.1 * ∑ k, δU k p.1 ω p.2 ^ 2 ∂(D.N.N ω))
+          - ∫ r in Set.Ioc (0 : ℝ) t, ∫ e, Real.exp r * ∑ k, δU k r ω e ^ 2 ∂ν)) P
+      ∧ AEStronglyMeasurable[enlJoint 𝒢₀ D h𝒢₀ t] (fun ω =>
+          ((∫ p in Set.Ioc (0 : ℝ) t ×ˢ Set.univ,
+            Real.exp p.1 * ∑ k, δU k p.1 ω p.2 ^ 2 ∂(D.N.N ω))
+          - ∫ r in Set.Ioc (0 : ℝ) t, ∫ e, Real.exp r * ∑ k, δU k r ω e ^ 2 ∂ν)) P)
+    ∧ ∀ s t : ℝ, 0 ≤ s → s ≤ t → t ≤ T →
+      P[fun ω =>
+          ((∫ p in Set.Ioc (0 : ℝ) t ×ˢ Set.univ,
+            Real.exp p.1 * ∑ k, δU k p.1 ω p.2 ^ 2 ∂(D.N.N ω))
+          - ∫ r in Set.Ioc (0 : ℝ) t, ∫ e, Real.exp r * ∑ k, δU k r ω e ^ 2 ∂ν)
+        | enlJoint 𝒢₀ D h𝒢₀ s]
+        =ᵐ[P] fun ω =>
+          ((∫ p in Set.Ioc (0 : ℝ) s ×ˢ Set.univ,
+            Real.exp p.1 * ∑ k, δU k p.1 ω p.2 ^ 2 ∂(D.N.N ω))
+          - ∫ r in Set.Ioc (0 : ℝ) s, ∫ e, Real.exp r * ∑ k, δU k r ω e ^ 2 ∂ν)
 
 /-- **The bound at every time and (4.6).** Under the hypotheses of Lemma 4.1 (those of
 `lem_bpbsde`), with `R = e^T (𝔼|δξ|² + 𝔼 ∫_0^T |φ_s|² ds)`: for every `t ∈ [0, T]`,
