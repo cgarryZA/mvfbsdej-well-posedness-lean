@@ -95,6 +95,10 @@ modules = [
   "Dissertation.Acceptance.A.WitnessLocal",
   "Dissertation.Acceptance.A.WitnessForced",
   "Dissertation.Acceptance.A.Sec4BDG",
+  "Dissertation.Acceptance.A.WitnessPert",
+  "Dissertation.Acceptance.A.WitnessFrozenPair",
+  "Dissertation.Acceptance.A.WitnessInfinite",
+  "Dissertation.Acceptance.A.WitnessFullLaw",
 ]
 scope_roots = ["Dissertation", "LevyStochCalc"]
 spec_prefix = "Dissertation.PaperSpec"

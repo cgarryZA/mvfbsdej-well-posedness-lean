@@ -151,3 +151,15 @@ mis-scoped:
   `A:sec4:supremum-criterion` names both exponents, and its source region is the whole sentence
   (lines 35–37 of `04-proof-wellposedness.tex`). The proof of Theorem 3.3 takes `δh` at the
   predictable tuples, a proof step with no clause.
+* `A:eq:itoY2` ((4.5), the pathwise Itô identity for `e^t |δY_t|²` in the proof of Lemma 4.1) and
+  `A:eq:Gid-path` ((4.17), the pathwise identity for `⟨G δX, δY⟩` in the proof of Lemma 4.3) stay
+  `proof-step`; their scope notes, formerly "a step of a printed proof", now say why: each is used
+  only through its expectation. What Lemma 4.1 draws from the expectation of (4.5) is `eq_supE`,
+  from the library's weighted second-moment identity for Itô–Lévy processes
+  (`Ito.SecondMoment.integral_exp_mul_self_eq_of_isItoLevyProcess`), with the zero means of the
+  stochastic terms the clauses of `A:lem4.1:M2-infinite-activity`; Step 2 of Lemma 4.3 uses
+  (4.19), `eq_Gid`, from the bilinear identity
+  (`Ito.SecondMoment.integral_mul_eq_of_isItoLevyProcess`), with the bounds behind the zero means
+  the clauses of `A:eq:bdg4`. The pathwise identities are not stated: they would need an
+  every-time Itô–Lévy formula with local stochastic integrals. `scope_reviewed` is `false` for
+  both until the notes are reviewed.

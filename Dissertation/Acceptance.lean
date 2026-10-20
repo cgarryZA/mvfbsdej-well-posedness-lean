@@ -51,6 +51,10 @@ import Dissertation.Acceptance.A.Sec4LocalMartingales
 import Dissertation.Acceptance.A.WitnessLocal
 import Dissertation.Acceptance.A.WitnessForced
 import Dissertation.Acceptance.A.Sec4BDG
+import Dissertation.Acceptance.A.WitnessPert
+import Dissertation.Acceptance.A.WitnessFrozenPair
+import Dissertation.Acceptance.A.WitnessInfinite
+import Dissertation.Acceptance.A.WitnessFullLaw
 
 /-!
 # Proofs of the statements of the paper

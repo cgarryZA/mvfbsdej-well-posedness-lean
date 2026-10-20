@@ -506,15 +506,19 @@ def ex_fulllaw_pert : Prop :=
             + ‖hhat‖ * Lqh)))
           (ex54Pert ν n d J ε q qb qh Q φ μ₀ Λ₀ w₀ w₁ v₀ hhat)
 
-/-- Example 5.4, well-posedness. In the standing setting with `m = n`, for `T > 0`, let the
-baseline `C` with initial datum `ξ₀` satisfy the hypotheses of Corollary 3.6 on the baseline:
-(2.3), Assumptions 2.2–2.5 with `L₀, G, α, β₁, β₂` and the margin `c_diss > 0` in (2.13). With
-the data of `ex_fulllaw_pert`, if (5.1),
+/-- Example 5.4, well-posedness. There is a function `C_stab` of `(T, L, ‖G‖, c_G, α, β₁, β₂)`
+such that: in the standing setting with `m = n`, for `T > 0`, let the baseline `C` with initial
+datum `ξ₀` satisfy the hypotheses of Corollary 3.6 on the baseline: (2.3), Assumptions 2.2–2.5
+with `L₀, G, α, β₁, β₂` and the margin `c_diss > 0` in (2.13). With the data of
+`ex_fulllaw_pert`, if (5.1),
 `ε ‖G‖ (|w₀| Lip(𝔮) + |v₀| Lip(𝔮̃) + |w₁| L_Q + ‖ĥ‖ Lip(𝔮̂)) < c_diss`, holds, then the perturbed
 system satisfies (2.3), Assumptions 2.2–2.5 with the baseline's `G, α, β₁, β₂` and (2.13) with
-margin `c_diss − ‖G‖ L_p`, and it is well-posed: (1.1) has a solution, and any two solutions
-are equal in `ℍ`. -/
+margin `c_diss − ‖G‖ L_p`, and it is well-posed: (1.1) has a solution in `ℍ`, any two solutions
+are equal in `ℍ`, and for every constant `L` with which the perturbed system satisfies
+Assumption 2.3, (3.1) holds with the constant `C_stab(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂)` for its
+solutions against the solutions of every system `2` satisfying (2.3) and Assumptions 2.2–2.3. -/
 def ex_fulllaw_wp : Prop :=
+  ∃ Cstab : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ,
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
     (n d J : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
@@ -551,7 +555,7 @@ def ex_fulllaw_wp : Prop :=
       ∧ (∃ (X : Fin n → ℝ → Ω → ℝ) (Y : Fin n → ℝ → Ω → ℝ) (Z : Fin n → ℝ → Ω → Fin d → ℝ)
           (U : Fin n → ℝ → Ω → E → ℝ), Solution D h𝒢₀ hind₀ T
             (C.perturb (ex54Pert ν n d J ε q qb qh Q φ μ₀ Λ₀ w₀ w₁ v₀ hhat)) ξ₀ X Y Z U)
-      ∧ ∀ (X₁ X₂ : Fin n → ℝ → Ω → ℝ) (Y₁ Y₂ : Fin n → ℝ → Ω → ℝ)
+      ∧ (∀ (X₁ X₂ : Fin n → ℝ → Ω → ℝ) (Y₁ Y₂ : Fin n → ℝ → Ω → ℝ)
         (Z₁ Z₂ : Fin n → ℝ → Ω → Fin d → ℝ) (U₁ U₂ : Fin n → ℝ → Ω → E → ℝ),
         Solution D h𝒢₀ hind₀ T
           (C.perturb (ex54Pert ν n d J ε q qb qh Q φ μ₀ Λ₀ w₀ w₁ v₀ hhat)) ξ₀ X₁ Y₁ Z₁ U₁ →
@@ -562,7 +566,43 @@ def ex_fulllaw_wp : Prop :=
           ∧ (∀ k j, LevyStochCalc.Brownian.Ito.energy P T
               (fun ω s => Z₁ k s ω j - Z₂ k s ω j) = 0)
           ∧ ∀ k, LevyStochCalc.Poisson.Compensated.markedEnergy P ν T
-              (fun ω s e => U₁ k s ω e - U₂ k s ω e) = 0
+              (fun ω s e => U₁ k s ω e - U₂ k s ω e) = 0)
+      ∧ ∀ L : ℝ, Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L
+          (C.perturb (ex54Pert ν n d J ε q qb qh Q φ μ₀ Λ₀ w₀ w₁ v₀ hhat)) →
+        ∀ (L₂ : ℝ) (C₂ : Coeffs ν n n d) (ξ₂ : Ω → EuclideanSpace ℝ (Fin n)),
+          JointBorel T C₂ → Assumption22 (enlJoint 𝒢₀ D h𝒢₀) P T C₂ ξ₂ →
+          Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L₂ C₂ →
+          ∀ (X₁ X₂ : Fin n → ℝ → Ω → ℝ) (Y₁ Y₂ : Fin n → ℝ → Ω → ℝ)
+            (Z₁ Z₂ : Fin n → ℝ → Ω → Fin d → ℝ) (U₁ U₂ : Fin n → ℝ → Ω → E → ℝ),
+          Solution D h𝒢₀ hind₀ T
+            (C.perturb (ex54Pert ν n d J ε q qb qh Q φ μ₀ Λ₀ w₀ w₁ v₀ hhat)) ξ₀ X₁ Y₁ Z₁ U₁ →
+          Solution D h𝒢₀ hind₀ T C₂ ξ₂ X₂ Y₂ Z₂ U₂ →
+          supSize P ν T (fun i t ω => X₁ i t ω - X₂ i t ω) (fun k t ω => Y₁ k t ω - Y₂ k t ω)
+              (fun k t ω j => Z₁ k t ω j - Z₂ k t ω j)
+              (fun k t ω e => U₁ k t ω e - U₂ k t ω e)
+            ≤ ENNReal.ofReal (Cstab T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂)
+              * dataSize P ν T (fun i ω => ξ₀ ω i - ξ₂ ω i)
+                (fun i ω s => driftProc P T
+                    (C.perturb (ex54Pert ν n d J ε q qb qh Q φ μ₀ Λ₀ w₀ w₁ v₀ hhat)) X₂ Y₂ Z₂ U₂
+                    i ω s
+                  - driftProc P T C₂ X₂ Y₂ Z₂ U₂ i ω s)
+                (fun i s ω j => diffusionProc P T
+                    (C.perturb (ex54Pert ν n d J ε q qb qh Q φ μ₀ Λ₀ w₀ w₁ v₀ hhat)) X₂ Y₂ Z₂ U₂
+                    i s ω j
+                  - diffusionProc P T C₂ X₂ Y₂ Z₂ U₂ i s ω j)
+                (fun i s ω e =>
+                  jumpProc T (coeffJump P T
+                      (C.perturb (ex54Pert ν n d J ε q qb qh Q φ μ₀ Λ₀ w₀ w₁ v₀ hhat))
+                      (leftLimProc X₂) (leftLimProc Y₂) Z₂ U₂) i s ω e
+                    - jumpProc T (coeffJump P T C₂ (leftLimProc X₂) (leftLimProc Y₂) Z₂ U₂)
+                      i s ω e)
+                (fun k ω s => driverProc P T
+                    (C.perturb (ex54Pert ν n d J ε q qb qh Q φ μ₀ Λ₀ w₀ w₁ v₀ hhat)) X₂ Y₂ Z₂ U₂
+                    k ω s
+                  - driverProc P T C₂ X₂ Y₂ Z₂ U₂ k ω s)
+                (fun k ω => terminalVal P T
+                    (C.perturb (ex54Pert ν n d J ε q qb qh Q φ μ₀ Λ₀ w₀ w₁ v₀ hhat)) X₂ k ω
+                  - terminalVal P T C₂ X₂ k ω)
 
 /-- Example 5.4, the affine cylindrical term. For `ν` σ-finite on a countably generated space,
 features `φ_j : L²(ν; ℝᵐ) → ℝ` Lipschitz, and `Q` affine on the attained range of the feature
