@@ -7,10 +7,10 @@
       "type": "git",
       "subDir": null,
       "scope": "",
-      "rev": "984dbf0b790031eac05d56fe5a84b65e15e1e932",
+      "rev": "e88d0e4d3a645fb45ddd4ae81c08890bc2b6cd87",
       "name": "LevyStochCalc",
       "manifestFile": "lake-manifest.json",
-      "inputRev": "984dbf0b790031eac05d56fe5a84b65e15e1e932",
+      "inputRev": "e88d0e4d3a645fb45ddd4ae81c08890bc2b6cd87",
       "inherited": false,
       "configFile": "lakefile.toml"
     },
