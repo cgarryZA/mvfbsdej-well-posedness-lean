@@ -115,17 +115,16 @@ platform badge.
 
 ## The final check
 
-On a clean clone at the release commit: `lake build`, then
-`python3 tools/acceptance.py check` (no cached results are reused: the probe elaborates every
-statement and proof afresh), then `bash tools/comparator_check.sh <dir>`: comparator
-(leanprover/comparator at the toolchain's tag) builds a challenge module holding each proved
-statement with a `sorry` proof, exports it and `Dissertation.Acceptance` with lean4export, checks
-that each proof has exactly the challenge's statement, every declaration the statement uses being
-the same in both environments, and that it uses only the three standard axioms, and replays the
-exported proofs into a fresh kernel. It rejects a proof whose type is another statement. A pass
-certifies that the listed propositions have kernel-checked proofs over the three standard axioms
-and that the reviews are current; whether each proposition says what the paper says is the
-reviews' judgement.
+On a clean clone at the release commit: `lake build`, then `python3 tools/acceptance.py check` (no
+cached results are reused: the probe elaborates every statement and proof afresh), then
+`bash tools/comparator_check.sh <dir>`: comparator (leanprover/comparator at the toolchain's tag)
+builds a challenge module holding each proved statement and the negation of each refuted one with a
+`sorry` proof, exports it and `Dissertation.Acceptance` with lean4export, checks that each proof has
+exactly the challenge's statement, every declaration the statement uses being the same in both
+environments, and that it uses only the three standard axioms, and replays the exported proofs into
+a fresh kernel. It rejects a proof whose type is another statement. A pass certifies that the listed
+propositions have kernel-checked proofs over the three standard axioms and that the reviews are
+current; whether each proposition says what the paper says is the reviews' judgement.
 
 `check` is a development consistency check: open, unspecified and unreviewed claims are statuses,
 not failures, so its PASS says nothing about the paper as a whole. The whole-paper check is

@@ -177,7 +177,13 @@ def checkProof (tag : String) (thm spec : Name) : MetaM Unit := do
   let verdict := if errs.isEmpty then "ok" else "ERR:" ++ ",".intercalate errs.toList
   let axl := if axs.isEmpty then "-" else ",".intercalate (axs.toList.map toString)
   let lv := if ci.levelParams.isEmpty then "-" else ",".intercalate (ci.levelParams.map toString)
-  IO.println s!"{tag} {thm} {spec} {verdict} {axl} {lv}"
+  -- the universe instance of the statement in the type, last on the line as it may hold spaces
+  let inst := match ci.type with
+    | .const _ ls | .app (.const ``Not []) (.const _ ls)
+    | .forallE _ (.const _ ls) (.const ``False []) _ => ls
+    | _ => []
+  let ins := if inst.isEmpty then "-" else ", ".intercalate (inst.map toString)
+  IO.println s!"{tag} {thm} {spec} {verdict} {axl} {lv} {ins}"
 
 /-- No module of the specification layer imports a module of the acceptance layer. -/
 def checkLayering : CoreM Unit := do
