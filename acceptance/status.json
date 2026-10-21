@@ -24,7 +24,7 @@
    "number": "Definition 2.1",
    "paper": "A",
    "scope": "definition",
-   "scope_note": "",
+   "scope_note": "Definition 2.1 (lines 58–67); the standing setting (lines 2–8) is pinned in A:sec2:separable-L2nu and H, P₂(H) (01-introduction.tex lines 16–43) in A:intro:mvfbsdej and A:eq:mvfbsdej; the notation for the unknown printed before the definition (lines 27–45: the tuple Θ with values in H, the predictable tuple Θ⁻, the laws μ, μ⁻ as the Borel representatives of Lemma A.1, and the reading of coefficient expressions) is pinned in A:sec2:tuple-notation; the representation property (lines 47–56) is the claim A:sec2:prp; the conventions printed after the definition (lines 69–84: all hypotheses imposed along 𝒟_t only, θ a point of H and Θ a random tuple, and the difference notation δX, δψ, ρ, ρ′, δg_T for two diagonal inputs) are pinned in A:sec2:difference-notation",
    "scope_reviewed": true,
    "status": "definition: reviewed"
   },
@@ -52,7 +52,7 @@
    "number": "Assumption 2.2",
    "paper": "A",
    "scope": "definition",
-   "scope_note": "",
+   "scope_note": "the coefficient signatures and their determinism (02-model-assumptions.tex lines 86–100) are pinned in A:eq:hborel",
    "scope_reviewed": true,
    "status": "definition: reviewed"
   },
@@ -80,7 +80,7 @@
    "number": "Assumption 2.3",
    "paper": "A",
    "scope": "definition",
-   "scope_note": "",
+   "scope_note": "the convention that all hypotheses are imposed along 𝒟_t only and the difference notation (02-model-assumptions.tex lines 69–84) are pinned in A:sec2:difference-notation; the coefficient signatures and their determinism (02-model-assumptions.tex lines 86–100) are pinned in A:eq:hborel",
    "scope_reviewed": true,
    "status": "definition: reviewed"
   },
@@ -138,7 +138,7 @@
    "number": "Assumption 2.5",
    "paper": "A",
    "scope": "definition",
-   "scope_note": "",
+   "scope_note": "the convention that all hypotheses are imposed along 𝒟_t only and the difference notation (02-model-assumptions.tex lines 69–84) are pinned in A:sec2:difference-notation",
    "scope_reviewed": true,
    "status": "definition: reviewed"
   },
@@ -153,18 +153,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "(2.8)",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.eq_coupling": [
-       "claude-auditor",
-       "claude-author",
-       "claude-reviewer"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.eq_coupling",
      "spec_hash": "ed839d34f480cba17af7c36ae6c33114",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.eq_coupling_hypotheses",
      "witness_ok": true
     },
@@ -177,18 +171,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "(2.9)",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.eq_couplingT": [
-       "claude-auditor",
-       "claude-author",
-       "claude-reviewer"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.eq_couplingT",
      "spec_hash": "ed839d34f480cba1b0b3c75b14edd5d3",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.eq_couplingT_hypotheses",
      "witness_ok": true
     },
@@ -201,18 +189,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "(2.10)",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.eq_lipfun": [
-       "claude-auditor",
-       "claude-author",
-       "claude-reviewer"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.eq_lipfun",
      "spec_hash": "ed839d34f480cba187b5540277706218",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.eq_lipfun_hypotheses",
      "witness_ok": true
     },
@@ -225,18 +207,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "(2.11)",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.eq_margproj": [
-       "claude-auditor",
-       "claude-author",
-       "claude-reviewer"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.eq_margproj",
      "spec_hash": "ed839d34f480cba1c19abbad6d02050c",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.eq_margproj_hypotheses",
      "witness_ok": true
     }
@@ -246,9 +222,9 @@
    "number": "Remark 2.6",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the proof links of the chains (2.10) and (2.11), lines 213–225 (an optimal coupling π of (μ, μ′) exists, the difference written as an integral against π, the Lipschitz bound and the Jensen step, and the image of π under (θ, θ′) ↦ (u, u′) a coupling of (μ^U, μ′^U)), are steps of the proofs of eq_lipfun and eq_margproj, which state the end bounds; 'the W₂-infimum [Villani, Definition 6.1]' cites the definition of W₂; the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:sec2:difference-notation",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [],
@@ -305,7 +281,7 @@
    "number": "Remark 2.8",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "'Example 5.1(i) verifies Assumption 2.5 exactly, Example 5.4 perturbatively' (lines 251–252) is the content of A:ex:concrete (ex_concrete_i) and A:ex:fulllaw (ex_fulllaw_pert, ex_fulllaw_wp); the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:sec2:difference-notation",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -371,7 +347,7 @@
    "number": "Remark 2.9",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "'The proofs use only the expected diagonal form' (line 263) is a statement about the proofs, not a claim",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -473,7 +449,7 @@
    "number": "Remark 2.10",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the last sentence, on domination-monotonicity results for Lévy-driven systems without mean-field dependence, is a statement about cited work",
+   "scope_note": "the last sentence, on domination-monotonicity results for Lévy-driven systems without mean-field dependence, is a statement about cited work; the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:sec2:difference-notation",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -488,17 +464,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "a bound with the constants β̄₁, β̄₂ is (2.12) with the constants β̄ᵢ − c and margin c, for 0 < c < min{β̄₁, β̄₂}",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.rem_margin_reduce": [
-       "claude-auditor",
-       "claude-author"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.rem_margin_reduce",
      "spec_hash": "ed839d34f480cba15843e0ffe4756126",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses",
      "witness_ok": true
     },
@@ -511,17 +482,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "when m = n the weighted margin c gives the margin c / c_G in the unweighted form (2.13)",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.rem_margin_unweighted": [
-       "claude-auditor",
-       "claude-author"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.rem_margin_unweighted",
      "spec_hash": "ed839d34f480cba1ba4163c9b3d796bd",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.rem_margin_hypotheses",
      "witness_ok": true
     },
@@ -542,6 +508,24 @@
      "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.rem_margin_smaller_hypotheses",
      "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.rem_margin_slack",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "recording weaker constants turns the difference into slack: (2.12) with β₁, β₂ and margin c, and a perturbation whose pairing bound (3.4) in the weighted quantity holds with 0 ≤ c_pert ≤ c, give (2.7) with β₁, β₂ for the perturbed coefficients",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.rem_margin_slack",
+     "spec_hash": "ed839d34f480cba1fc10bfb5bc98adb1",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.rem_margin_slack_hypotheses",
+     "witness_ok": true
     }
    ],
    "id": "A:rem:margin",
@@ -549,9 +533,9 @@
    "number": "Remark 2.11",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the definitions (2.12) (lines 289–297) and the unweighted form (2.13) (lines 306–316) are the definition claims A:eq:monomargin and A:eq:monomarginu; the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:sec2:difference-notation",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -579,7 +563,7 @@
    "number": "Theorem 3.1",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the two-system notation printed before the theorem (lines 39–49: two coefficient systems k = 1, 2, δ· = ·¹ − ·², μᵏ_t := Law(Θᵏ_t), the coefficient differences along solution 2 with δh at (Θ²⁻_t, μ²⁻_t), and δ̂g_T) is pinned in A:sec3:two-system-notation; the solution spaces and the norm of ℍ (03-main-results.tex lines 5–28) are pinned in A:sec3:HH-banach; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -609,7 +593,7 @@
    "number": "Remark 3.2",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the proof sentences (lines 84–100: the coefficients along Θ in L²(dt ⊗ dP) by Assumptions 2.2–2.3, 𝔼 sup|X_t|² < ∞ by Doob/BDG, g(X_T, Law(X_T)) ∈ L², Y₀ ∈ L², the forward form of Y, 𝔼 sup|Y_t|² < ∞) are steps of the proof of the clause, which states the conclusion Θ ∈ ℍ; the solution spaces and the norm of ℍ (03-main-results.tex lines 5–28) are pinned in A:sec3:HH-banach",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -639,7 +623,7 @@
    "number": "Theorem 3.3",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the solution spaces and the norm of ℍ (03-main-results.tex lines 5–28) are pinned in A:sec3:HH-banach; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -734,6 +718,78 @@
      "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
      "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_uniq_coeff_lip",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "only the Lipschitz control of coefficient differences, in the proof of Theorem 3.3: (3.2) along two solutions in ℍ_weak with the same initial datum, under (2.3) and Assumption 2.3 alone",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_uniq_coeff_lip",
+     "spec_hash": "ed839d34f480cba1e3e9c0b07e55c27c",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.rem_uniq_lip_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_uniq_fwd",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "only the Lipschitz control, in the proof of Theorem 3.3: the forward difference δX_t = ∫_0^t δb_s ds + ∫_0^t δσ_s dW_s + ∫_0^t ∫_E δh_s(e) Ñ(ds, de) and 𝔼 sup_{t ≤ T} |δX_t|² ≤ C_T 𝔼 ∫_0^T (|δb_s|² + |δσ_s|²_F + ‖δh_s‖²) ds < ∞, along two solutions in ℍ_weak with the same initial datum, under (2.3) and Assumption 2.3 alone",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_uniq_fwd",
+     "spec_hash": "ed839d34f480cba1001605cc82c2788b",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.rem_uniq_lip_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_uniq_bwd_lip",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "only the Lipschitz control, in the proof of Theorem 3.3: (3.3), 𝔼 sup_{t ≤ T} |δY_t|² ≤ C_BP (𝔼|δg_T|² + 𝔼 ∫_0^T |δf_s|² ds) < ∞, along two solutions in ℍ_weak with the same initial datum, under (2.3) and Assumption 2.3 alone",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_uniq_bwd_lip",
+     "spec_hash": "ed839d34f480cba184495619099e147e",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.rem_uniq_lip_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.rem_uniq_lip_mem",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "only the Lipschitz control: Θ¹ − Θ² ∈ ℍ, along two solutions in ℍ_weak with the same initial datum, under (2.3) and Assumption 2.3 alone",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.rem_uniq_lip_mem",
+     "spec_hash": "ed839d34f480cba1db72bd0880b4abb9",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.rem_uniq_lip_hypotheses",
+     "witness_ok": true
     }
    ],
    "id": "A:rem:uniq-no-integ",
@@ -741,7 +797,7 @@
    "number": "Remark 3.4",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "\"the proof of Theorem 3.5 uses Assumption 2.2\" describes a proof and is not a separate claim",
+   "scope_note": "\"the proof of Theorem 3.5 uses Assumption 2.2\" describes a proof and is not a separate claim; 'we only need to show that the difference Θ¹ − Θ² belongs to ℍ, using only the Lipschitz control of coefficient differences' is read in the proof of Theorem 3.3 (lines 110–174), whose steps the last four clauses state for two solutions in ℍ_weak with the same initial datum under (2.3) and Assumption 2.3 alone (no Assumption 2.2, no monotonicity): (3.2), the forward estimate of lines 144–156, (3.3) and Θ¹ − Θ² ∈ ℍ; the bound at almost every time before (3.2), and the backward difference and the terminal bound before (3.3), are clauses of A:eq:uniq-coeff and A:eq:uniq-bwd; 'the origin-value conditions are sufficient' (lines 189–190) is Theorem 3.5 (A:thm:cwp), under Assumptions 2.2–2.5; the proof passages the last four clauses read are pinned in A:eq:uniq-coeff (lines 110–156: (3.2), the bound before it and the forward estimate) and A:eq:uniq-bwd (lines 158–174: the backward difference, the terminal bound, (3.3) and δΘ ∈ ℍ); eq_uniq_coeff_lip and eq_uniq_fwd are also clauses of A:eq:uniq-coeff, and eq_uniq_bwd_lip and rem_uniq_lip_mem of A:eq:uniq-bwd, so a change of those passages reopens their reviews",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -789,7 +845,7 @@
    "number": "Theorem 3.5",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the standing setting of §2 (02-model-assumptions.tex lines 2–8) is pinned in A:sec2:separable-L2nu; the coefficient signatures and their determinism (02-model-assumptions.tex lines 86–100) are pinned in A:eq:hborel; the solution spaces and the norm of ℍ (03-main-results.tex lines 5–28) are pinned in A:sec3:HH-banach; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; 'depending continuously … in the sense of the estimate (3.1)' uses the notation of 03-main-results.tex lines 39–49, pinned in A:sec3:two-system-notation",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -855,7 +911,7 @@
    "number": "Corollary 3.6",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:sec2:difference-notation; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; (3.1) for the perturbed system (cor_robust_wp) uses the two-system notation of Theorem 3.1 (03-main-results.tex lines 39–49), pinned in A:sec3:two-system-notation",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -903,7 +959,7 @@
    "number": "Remark 3.7",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "(3.1) for the perturbed system (rem_generalrank_wp) uses the two-system notation of Theorem 3.1 (03-main-results.tex lines 39–49), pinned in A:sec3:two-system-notation",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -933,7 +989,7 @@
    "number": "Proposition 3.8",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:sec2:difference-notation",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -963,7 +1019,7 @@
    "number": "Lemma 4.1",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the solution spaces and the norm of ℍ (03-main-results.tex lines 5–28) are pinned in A:sec3:HH-banach; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion; the explicit constant of its proof (04-proof-wellposedness.tex line 244) is pinned in A:eq:supE",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -993,7 +1049,7 @@
    "number": "Lemma 4.2",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the forcing class (04-proof-wellposedness.tex lines 39–53) is pinned in A:eq:forced and A:sec4:WP-def; WP(λ) (04-proof-wellposedness.tex lines 66–68) is pinned in A:sec4:WP-def; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion; the representation property used for the backward step (02-model-assumptions.tex lines 47–56) is pinned in A:sec2:prp",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -1014,7 +1070,7 @@
      "spec_hash": "ed839d34f480cba1eefcd4522364d865",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
      "witness_ok": true
     }
    ],
@@ -1023,7 +1079,7 @@
    "number": "Lemma 4.3",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the forcing class (04-proof-wellposedness.tex lines 39–53) is pinned in A:eq:forced and A:sec4:WP-def; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -1053,7 +1109,7 @@
    "number": "Lemma 4.4",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the forcing class (04-proof-wellposedness.tex lines 39–53) is pinned in A:eq:forced and A:sec4:WP-def; WP(λ) (04-proof-wellposedness.tex lines 66–68) is pinned in A:sec4:WP-def; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -1245,7 +1301,7 @@
    "number": "Example 5.1",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the derivation of (1.1) from the control problem by the stochastic maximum principle for jump diffusions is cited work (Tang and Li) and is not stated; the clauses state the system and its properties; the attribution of (ii) to Example 3.1 of Li and Min is a statement about cited work",
+   "scope_note": "the derivation of (1.1) from the control problem by the stochastic maximum principle for jump diffusions is cited work (Tang and Li) and is not stated; the clauses state the system and its properties; the attribution of (ii) to Example 3.1 of Li and Min is a statement about cited work; the reading of β₁ as the reciprocal of the quadratic actuation cost, of β₂ as the running state weight, of the terminal weight 1 and of σ_c, h_c as the uncontrolled baseline (lines 65–66) is the modelling interpretation, not stated; 'By Remark 2.10, every instance with β₁ > 0 must carry strictly U-dissipative jump feedback' (lines 100–101) is the content of A:rem:beta1-dich (rem_beta1_dich); 'The mean-field coupling costs nothing and supplies extra dissipation' (lines 187–188) comments on the constants α = β₁ = β₂ = 2 that ex_concrete_ii states; that the monotonicity hypothesis (H3.2) of Li and Min bounds the total mass of their Lévy measure (lines 191–193) is a statement about cited work; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -1347,7 +1403,7 @@
    "number": "Example 5.2",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the comparison with condition (A1) of [BYZ] is a statement about cited work",
+   "scope_note": "the comparison with condition (A1) of [BYZ] is a statement about cited work; the representation property (02-model-assumptions.tex lines 47–56) is pinned in A:sec2:prp",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -1413,7 +1469,7 @@
    "number": "Example 5.3",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "'Their Lévy measure is the ν of the present setting' (line 224) and 'the counterpart of the origin integrability imposed in [LiMin, (H3.1)]' (lines 229–230) are statements about cited work",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -1428,18 +1484,13 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "the law statistics are W₂-Lipschitz, with the constants Lip(𝔮), Lip(𝔮̃), Lip(𝔮̂), L_Q",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.ex_fulllaw_lip": [
-       "claude-auditor",
-       "claude-author"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_lip",
      "spec_hash": "ed839d34f480cba11fea7903ed24f9f8",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses",
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_jump_hypotheses",
      "witness_ok": true
     },
     {
@@ -1451,18 +1502,13 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "the perturbation: origin integrability, (3.5) with L_p, Assumption 2.3, and (3.4) with c_pert = ‖G‖ L_p",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.ex_fulllaw_pert": [
-       "claude-auditor",
-       "claude-author"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_pert",
      "spec_hash": "ed839d34f480cba1e9dade95deb0a071",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses",
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_jump_hypotheses",
      "witness_ok": true
     },
     {
@@ -1474,18 +1520,13 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "well-posedness with margin c_diss − ‖G‖ L_p under (5.1)",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.ex_fulllaw_wp": [
-       "claude-auditor",
-       "claude-author"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_wp",
-     "spec_hash": "ed839d34f480cba173d663ff51153197",
+     "spec_hash": "ed839d34f480cba10404c6cf3a0cc0d0",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
-     "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses",
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.ex_fulllaw_jump_hypotheses",
      "witness_ok": true
     },
     {
@@ -1497,17 +1538,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "the radial statistic of the full tuple law is no expectation functional",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial": [
-       "claude-auditor",
-       "claude-author"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_radial",
      "spec_hash": "ed839d34f480cba1fc87ff54d30df5ad",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses",
      "witness_ok": true
     },
@@ -1520,17 +1556,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "the U-marginal radial statistics are no expectation functionals, with L²(ν) ≠ 0",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr": [
-       "claude-auditor",
-       "claude-author"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_U_corr",
      "spec_hash": "ed839d34f480cba193f328d7c8c243ea",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_hypotheses",
      "witness_ok": true
     },
@@ -1543,17 +1574,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "the cylindrical term is no expectation functional when Q is not affine on the attained range of the features",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q": [
-       "claude-auditor",
-       "claude-author"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_beyond_Q",
      "spec_hash": "ed839d34f480cba12be9f13eb8df21c1",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_beyond_Q_hypotheses",
      "witness_ok": true
     },
@@ -1566,17 +1592,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "Q affine on the attained range of the features: the cylindrical term is an expectation functional of Example 5.3",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.ex_fulllaw_affineQ": [
-       "claude-auditor",
-       "claude-author"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_affineQ",
      "spec_hash": "ed839d34f480cba1b7c4d4b7307e74ea",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_affineQ_hypotheses",
      "witness_ok": true
     }
@@ -1586,9 +1607,9 @@
    "number": "Example 5.4",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "'Example 5.1(i) supplies such a baseline' (line 291) is the content of A:ex:concrete (ex_concrete_i_pairing, the margin of Example 5.1(i)); 'and beyond the linear jump-integrand expectations of the cited models' (lines 312–313) is a statement about cited work; the closing sentence on the smallness and the weak-coupling route (lines 345–347) is exposition; the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -1940,7 +1961,7 @@
    "number": "Example 5.5",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the dealer-market reading (requests for quotes, valuation curves, routing, quotes affine in the curve, the uncontrolled exposure change at an event) is modelling and is not stated; the finite-player inspiration (Cont and Xiong) is a statement about cited work",
+   "scope_note": "the dealer-market reading (requests for quotes, valuation curves, routing, quotes affine in the curve, the uncontrolled exposure change at an event) is modelling and is not stated; the finite-player inspiration (Cont and Xiong) is a statement about cited work; 'The computation uses only the joint law π; no auxiliary random variable on Ω is needed' (lines 436–438) is a remark on the proof of ex_dealer_mono; 'dependence nonlinear in the law itself is that of Example 5.4' (lines 461–462) refers to A:ex:fulllaw; the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -1955,18 +1976,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "the W₂ term is dominated by the synchronous coupling bound (2.8)",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.eq_coupling": [
-       "claude-auditor",
-       "claude-author",
-       "claude-reviewer"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.eq_coupling",
      "spec_hash": "ed839d34f480cba17af7c36ae6c33114",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.eq_coupling_hypotheses",
      "witness_ok": true
     },
@@ -1979,17 +1994,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "the coefficients depend on u pointwise whenever β₁ > 0, with ν ≠ 0",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.rem_freelaw": [
-       "claude-auditor",
-       "claude-author"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.rem_freelaw",
      "spec_hash": "ed839d34f480cba105f02a9629cb6b98",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses",
      "witness_ok": true
     }
@@ -1999,9 +2009,9 @@
    "number": "Remark 5.6",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "'The proofs consume the tuple law through a single mechanism: the W₂ term of Assumption 2.3, dominated at every use by the synchronous coupling bound (2.8)' (lines 533–535) is a statement about the proofs, of which the clause eq_coupling states the bound (2.8); the closing sentence (lines 543–546: nothing is gained by restricting the coefficients to the (X, Y, Z)-marginal law, the estimates close at the full tuple law, and Example 5.5 exhibits that scope) is exposition, the scope it names being that of A:ex:dealer",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -2035,7 +2045,7 @@
      "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.ex_fulllaw_wp",
-     "spec_hash": "ed839d34f480cba173d663ff51153197",
+     "spec_hash": "ed839d34f480cba10404c6cf3a0cc0d0",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.ex_fulllaw_hypotheses",
@@ -2137,7 +2147,7 @@
    "number": "Remark 5.7",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -2377,7 +2387,7 @@
    "number": "abstract",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the descriptions of the setting (the law dependence of the coefficients in the relative clause of the first sentence, lines 30–34, the law dependence of the terminal function, lines 34–35, and the noise of σ-finite intensity, lines 35–37) and of the hypotheses (imposed along diagonal tuple–law pairs, lines 38–39) are exposition of the hypotheses of the clauses; 'by monotone continuation in the coupling strength from a small-coupling base case' (lines 44–45) describes the proof; the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -2405,7 +2415,7 @@
    "number": "(1.1)",
    "paper": "A",
    "scope": "definition",
-   "scope_note": "the system (1.1), stated through the solution notion of §3",
+   "scope_note": "the system (1.1), stated through the solution notion of §3; the region (lines 3–48) also holds 'We prove existence, uniqueness, and stability … with no smallness restriction' (lines 3–5), the content of Theorems 3.1, 3.3 and 3.5 (A:thm:stab, A:thm:uniq, A:thm:cwp), and the standing passages pinned here: the Brownian motion W and the independent compensated Poisson random measure Ñ with σ-finite ν, ν(E) = ∞ admitted (lines 14–16), the state space H and its Euclidean, Frobenius and L²(ν) norms (lines 16–32), the tuple Θ, the predictable tuple Θ⁻ at which h is evaluated and the law flows μ, μ⁻ ∈ P₂(H) (lines 34–43), and the W₂-Lipschitz law dependence, both hypotheses imposed only along tuple–law pairs (lines 44–48, the hypotheses of Assumptions 2.3 and 2.5); the same passage is the region of A:eq:mvfbsdej; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set",
    "scope_reviewed": true,
    "status": "definition: reviewed"
   },
@@ -2453,7 +2463,7 @@
    "number": "§1 ¶3",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the claims about this paper; the description of the interactions of [LiMin] is a statement about cited work",
+   "scope_note": "the claims about this paper (lines 63–66); the description of the theorem of Li and Min, of their expectation-functional interaction, of their pointwise jump integrand and of the finite total jump mass their monotonicity hypothesis imposes (lines 58–63) is a statement about cited work",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -2467,6 +2477,162 @@
    "scope_note": "A:ex:brownian",
    "scope_reviewed": true,
    "status": "out of scope: part-of"
+  },
+  {
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.thm_stab",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the a priori stability estimate (Theorem 3.1)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.thm_stab",
+     "spec_hash": "ed839d34f480cba16bc55062de98e587",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.thm_stab_nonzero_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.thm_uniq",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "uniqueness in the natural class ℍ_weak (Theorem 3.3)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.thm_uniq",
+     "spec_hash": "ed839d34f480cba1b8815741b34ba4e5",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.thm_cwp",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "global existence, with uniqueness, on every finite horizon (Theorem 3.5)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.thm_cwp",
+     "spec_hash": "ed839d34f480cba10deeabcd10e6e74d",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.cor_robust_wp",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "robustness at m = n below the dissipativity margin (Corollary 3.6)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.cor_robust_wp",
+     "spec_hash": "ed839d34f480cba16dd662e97e677716",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.cor_robust_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.rem_generalrank_wp",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "robustness for general rank, the margin and (3.4) in the weighted quantities of (2.12) (Remark 3.7)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.rem_generalrank_wp",
+     "spec_hash": "ed839d34f480cba118d1835a02488a97",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.rem_generalrank_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.rem_diag_mono",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "pointwise monotonicity gives expected diagonal monotonicity (Remark 2.8)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.rem_diag_mono",
+     "spec_hash": "ed839d34f480cba146c1633f8e03b86c",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.rem_affine_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.prop_strict",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "expected diagonal monotonicity is strictly weaker (Proposition 3.8)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.prop_strict",
+     "spec_hash": "ed839d34f480cba1f1c48950c52ae4f4",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.prop_strict_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.rem_diag_mono_converse",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "expected diagonal monotonicity is strictly weaker: a full coefficient system satisfying Assumption 2.5 without the pointwise condition (Remark 2.8)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.rem_diag_mono_converse",
+     "spec_hash": "ed839d34f480cba14b5e4594e14d9dc7",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.ex_concrete_hypotheses",
+     "witness_ok": true
+    }
+   ],
+   "id": "A:intro:contributions",
+   "kind": "prose-claim",
+   "number": "§1 ¶8",
+   "paper": "A",
+   "scope": "formal",
+   "scope_note": "'The works surveyed above are each restricted on at least one of the three axes (measure argument, jump activity, coupling strength)' (lines 101–102) is a statement about cited work; 'We prove well-posedness under the stated L² and monotonicity assumptions' (lines 102–103) is Theorem 3.5 (thm_cwp) under (2.3) and Assumptions 2.2–2.5, with its continuous dependence (3.1) (thm_stab), and 'by global-in-time monotone continuation' (lines 103–104) describes the proof (§4.5, A:sec4:proof-thm35); item (i) (lines 106–107) is Theorem 3.1 (thm_stab); item (ii) (line 108) is Theorem 3.3 (thm_uniq); item (iii) (lines 109–110) is Theorem 3.5 (thm_cwp), 'by monotone continuation from a small-coupling base case' describing its proof (Lemmas 4.2 and 4.4, A:lem:small and A:lem:cont); item (iv) (lines 111–113) is Corollary 3.6 at m = n (cor_robust_wp) and Remark 3.7 for general rank (rem_generalrank_wp); item (v) (lines 114–115) is Remark 2.8 (rem_diag_mono: the pointwise form gives the expected diagonal one) with Proposition 3.8 (prop_strict) and Remark 2.8's converse (rem_diag_mono_converse) for the strictness, as in A:abstract and A:conclusion; the solution spaces ℍ and ℍ_weak, the class of item (ii), and the solution notion (03-main-results.tex lines 5–36) are pinned in A:sec3:HH-banach and A:sec3:one-null-set, and the two-system notation of (3.1) (03-main-results.tex lines 39–49) in A:sec3:two-system-notation",
+   "scope_reviewed": true,
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -2494,7 +2660,7 @@
    "number": "§2 ¶1",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the standing setting of §2 printed in the same sentence and the next (lines 2–8: the filtered probability space with the usual conditions, the horizon T > 0, the dimensions n, m, d ≥ 1, the d-dimensional Brownian motion W and the independent Poisson random measure N on ℝ₊ × E of intensity dt ν(de), ν σ-finite on a countably generated (E, ℰ), and the filtration, the usual augmentation of the one generated by W, N and an independent ℱ₀) is the setting of every statement of the paper, pinned here; it is not a claim",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -2524,9 +2690,44 @@
    "number": "§2 ¶1",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "'We do not require ν to be finite: the infinite-activity regime … is admitted throughout, with the finite-activity case ν(E) < ∞ recovered as a special instance' (lines 9–11) is the standing admission of every σ-finite ν, pinned here; the clause states the assertion of the relative clause (line 10)",
    "scope_reviewed": true,
    "status": "formal: accepted"
+  },
+  {
+   "clauses": [
+    {
+     "accept": null,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [
+      "Dissertation.WellPosedness.System.TupleH",
+      "Dissertation.WellPosedness.System.tupleAt",
+      "Dissertation.WellPosedness.System.leftLimProc",
+      "Dissertation.Law.lawP2",
+      "Dissertation.WellPosedness.System.driftProc",
+      "Dissertation.WellPosedness.System.diffusionProc",
+      "Dissertation.WellPosedness.System.driverProc",
+      "Dissertation.WellPosedness.Existence.coeffJump"
+     ],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "definition",
+     "passage_changed": {},
+     "refute": null,
+     "spec": null,
+     "spec_review": "n/a",
+     "witness": null
+    }
+   ],
+   "id": "A:sec2:tuple-notation",
+   "kind": "definition",
+   "number": "§2 ¶ before Definition 2.1",
+   "paper": "A",
+   "scope": "definition",
+   "scope_note": "the notation of §2 for the unknown: the tuple Θ = (X, Y, Z, U) with values in H, componentwise (TupleH, tupleAt; TupleH carries the maximum of the channel norms, not the Hilbert norm |·|_H, which enters through toL2 into TupleL2 and through w2H, the W₂ distance of the Hilbert norm, the choice recorded at TupleH), the predictable tuple Θ⁻ = (X₋, Y₋, Z, U) (tupleAt of leftLimProc X, leftLimProc Y, Z, U), the laws μ_t = Law(Θ_t) and μ⁻_t = Law(Θ⁻_t) (lawP2), and the coefficient expressions b, σ, f at (t, Θ_t, μ_t) and h at (t, Θ⁻_t, μ⁻_t), defined at every t (driftProc, diffusionProc, driverProc, coeffJump); as the Borel representatives of Lemma A.1 the Lean takes lawP2 of the tuple at every time, which for a tuple under the hypotheses of Lemma A.1 (X, Y càdlàg and adapted, Z, U predictable, all of finite energy on [0, T]: CadlagPredTuple) is a Borel flow into (P₂(H), W₂) equal to the law for a.e. t, by lem_lawflow (A:lem:lawflow); 'the continuous MV-FBSDEJ is the system (1.1) displayed in the introduction' (lines 28–29) refers to A:eq:mvfbsdej, and the same notation in the introduction (01-introduction.tex lines 34–43) is pinned in A:intro:mvfbsdej and A:eq:mvfbsdej; that every claim made about the coefficient expressions is dt-a.e. or time-integrated (lines 44–45) is a convention on how the claims of the paper are read, not an object",
+   "scope_reviewed": true,
+   "status": "definition: reviewed"
   },
   {
    "clauses": [
@@ -2554,9 +2755,43 @@
    "number": "§2 PRP ¶",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the representation property of the filtration of W and N alone (lines 47–48) is the instance of the clause with a trivial ℱ₀, and the citations (Applebaum §5.3, He, Wang and Yan Theorem 13.49) name its source; the clause is proved, the passage to the initial enlargement included",
    "scope_reviewed": true,
    "status": "formal: accepted"
+  },
+  {
+   "clauses": [
+    {
+     "accept": null,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [
+      "Dissertation.WellPosedness.Spec.Assumption23",
+      "Dissertation.WellPosedness.Spec.Assumption25",
+      "Dissertation.WellPosedness.Spec.LipInteriorAt",
+      "Dissertation.WellPosedness.Spec.LipTerminal",
+      "Dissertation.WellPosedness.Spec.pairing27",
+      "Dissertation.WellPosedness.Spec.Mono27At",
+      "Dissertation.Law.lawP2"
+     ],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "definition",
+     "passage_changed": {},
+     "refute": null,
+     "spec": null,
+     "spec_review": "n/a",
+     "witness": null
+    }
+   ],
+   "id": "A:sec2:difference-notation",
+   "kind": "definition",
+   "number": "§2 ¶ after Definition 2.1",
+   "paper": "A",
+   "scope": "definition",
+   "scope_note": "the notation of §2 for comparing two inputs, which Assumptions 2.3 and 2.5 use without defining it, encoded in the definitions of A:ass:lip and A:ass:mono: for two diagonal inputs (Θ, μ), (Θ′, μ′) at the same time t on the same space (lines 73–79), δX := X − X′ (and δY, δZ, δU, the other channels of Θ − Θ′) and δψ := ψ(t, Θ, μ) − ψ(t, Θ′, μ′) for ψ ∈ {b, σ, h, f}, the coefficients at the two inputs, in LipInteriorAt (the interior bound of Assumption 2.3) and in pairing27, which Mono27At evaluates at Θ(ω), Θ′(ω), μ, μ′ ((2.7) of Assumption 2.5); the induced terminal laws ρ := Law(X_T), ρ′ := Law(X′_T) (lawP2 P X_T, lawP2 P X′_T, never a free measure) and δg_T := g(X_T, ρ) − g(X′_T, ρ′) (lines 80–84), in LipTerminal ((2.6) of Assumption 2.3) and in the terminal inequality of Assumption25; Assumption23 and Assumption25 assemble them; 'all hypotheses below are imposed along 𝒟_t only: the measure argument is never varied independently of the tuple' (lines 69–70) is how these definitions quantify: LipInteriorAt and Mono27At over pairs of diagonalInputs (A:def:diag), the terminal conditions over X_T, X′_T ∈ L²(Ω, ℱ_T; ℝⁿ) with their own laws; the sentence concerns the hypotheses that compare two inputs: the joint Borel measurability printed below it (lines 100–106) is stated on all of [0, T] × H × P₂(H), where JointBorel (A:eq:hborel) takes it; 'a lower-case θ denotes a point of H and an upper-case Θ a random H-valued tuple' (lines 70–71) is a typographical convention inside the passage, which the Lean follows: the coefficients (Coeffs) and pairing27 take points θ of TupleH, and the inputs of diagonalInputs are maps Θ : Ω → TupleH; besides Assumptions 2.3 and 2.5, the notation is written out in the propositions of A:rem:wasserstein-bounds (eq_coupling, eq_couplingT: the channel differences, and X_T − X′_T with the induced laws), A:rem:diag-mono (rem_diag_mono, rem_diag_mono_converse: a pointwise condition at points θ, θ′ beside the expected one at random Θ, Θ′), A:rem:beta1-dich (rem_beta1_dich: δh and δU), A:rem:margin (through Mono27At), A:cor:robust (through Assumptions 2.3 and 2.5) and A:prop:strict (prop_strict)",
+   "scope_reviewed": true,
+   "status": "definition: reviewed"
   },
   {
    "clauses": [
@@ -2701,7 +2936,7 @@
    "number": "§3 \"Solution space\"",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the region (lines 5–32) holds the definitions of the spaces L²_ad, S², H²_W, H²_N, ℍ, ℍ_weak and of the norm of ℍ (lines 5–25) and the identification of indistinguishable càdlàg components, of Z-components equal dt ⊗ dP-a.e. and of U-components equal dt ⊗ dP ⊗ ν-a.e. (lines 26–28), the solution spaces of every statement in ℍ or ℍ_weak, pinned here",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -2749,9 +2984,45 @@
    "number": "§3 solution definition",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the definition of a solution of (1.1) (lines 34–36: a tuple of ℍ satisfying both identities almost surely for every t ∈ [0, T], h evaluated at (Θ⁻_t, μ⁻_t)) is the solution notion, the definition Solution of A:eq:mvfbsdej and A:intro:mvfbsdej, pinned here",
    "scope_reviewed": true,
    "status": "formal: accepted"
+  },
+  {
+   "clauses": [
+    {
+     "accept": null,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [
+      "Dissertation.WellPosedness.System.driftProc",
+      "Dissertation.WellPosedness.System.diffusionProc",
+      "Dissertation.WellPosedness.System.driverProc",
+      "Dissertation.WellPosedness.Existence.coeffJump",
+      "Dissertation.WellPosedness.System.jumpProc",
+      "Dissertation.WellPosedness.System.terminalVal",
+      "Dissertation.WellPosedness.System.tupleAt",
+      "Dissertation.WellPosedness.System.leftLimProc",
+      "Dissertation.Law.lawP2"
+     ],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "definition",
+     "passage_changed": {},
+     "refute": null,
+     "spec": null,
+     "spec_review": "n/a",
+     "witness": null
+    }
+   ],
+   "id": "A:sec3:two-system-notation",
+   "kind": "definition",
+   "number": "§3 ¶ before Theorem 3.1",
+   "paper": "A",
+   "scope": "definition",
+   "scope_note": "the notation of the comparison of two coefficient systems k = 1, 2 in (3.1): δ· = ·¹ − ·², the coordinatewise differences the propositions take; μᵏ_t := Law(Θᵏ_t) (lawP2 of tupleAt); (δψ)(t) for ψ ∈ {b, σ, f} along solution 2 (driftProc, diffusionProc, driverProc of systems 1 and 2 at Θ²); (δh)(t) at (Θ²⁻_t, μ²⁻_t) (jumpProc of coeffJump at leftLimProc X², leftLimProc Y², Z², U²); δ̂g_T (terminalVal of systems 1 and 2 at X²); the propositions that use it are thm_stab (A:thm:stab, A:thm:cwp, A:abstract, A:intro:contributions, A:conclusion), thm_stab_companion with the roles exchanged, thm_stab_data and thm_stab_minimal (A:thm3.1:companion), cor_robust_wp (A:cor:robust, A:intro:contributions, A:conclusion), rem_generalrank_wp (A:rem:generalrank, A:intro:contributions) and ex_fulllaw_wp (A:ex:fulllaw, Example 5.4: the perturbed system against system 2); 'The stability and uniqueness theorems below rest on comparing solutions of (1.1) under two coefficient systems' (lines 39–40) is exposition: the uniqueness theorem compares two solutions of one system, and its proof fixes its own differences along both solutions (lines 110–117, in A:eq:uniq-coeff)",
+   "scope_reviewed": true,
+   "status": "definition: reviewed"
   },
   {
    "clauses": [
@@ -2815,7 +3086,7 @@
    "number": "¶ after Thm 3.1",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the two-system notation of Theorem 3.1 (03-main-results.tex lines 39–49) is pinned in A:sec3:two-system-notation",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -2935,7 +3206,7 @@
    "number": "¶ after Cor 3.6",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "'as in Examples 5.1(i) and 5.5' (lines 287–288) names instances, the content of A:ex:concrete (ex_concrete_i_pairing) and A:ex:dealer (ex_dealer_mono); 'as when ν is carried by finitely many atoms' (lines 288–289) is an example of the hypothesis of cor_margin_findim (L²(ν) finite-dimensional), not stated",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -2965,7 +3236,7 @@
    "number": "§4 intro",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the region (lines 12–15) begins with the end of the sentence on the mixed G-energy identity and its coercive jump term (lines 9–12), exposition of the proof of Lemma 4.3; 'since the (z, u)-dependence of σ, h and the full-tuple law coupling enter the contraction constant with no T-factor' (lines 14–15) explains the claim and is not stated: the clause states its consequence, a system on every horizon whose frozen-coefficient map does not decrease distances, through the z-dependence of σ alone",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -2980,18 +3251,12 @@
      "defs_changed": [],
      "defs_pending": [],
      "name": "a càdlàg local martingale whose running supremum is integrable has zero-mean increments",
-     "passage_changed": {
-      "Dissertation.PaperSpec.A.sec4_supremum_criterion": [
-       "claude-auditor",
-       "claude-author",
-       "claude-reviewer"
-      ]
-     },
+     "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.sec4_supremum_criterion",
      "spec_hash": "ed839d34f480cba1f588c2071f5242ff",
      "spec_ok": true,
-     "spec_review": "passage changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "Dissertation.Acceptance.A.sec4_supremum_criterion_hypotheses",
      "witness_ok": true
     }
@@ -3001,9 +3266,9 @@
    "number": "§4 preamble",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the supremum criterion is stated and proved; the Burkholder–Davis–Gundy inequality at p = 1 and p = 2 of the preceding sentence, with one constant for both exponents and Doob's constant 4 at p = 2, is cited work (He, Wang and Yan) and is not stated",
+   "scope_note": "the supremum criterion is stated and proved; the region (lines 17–37) also holds the standing conventions of §4, pinned here: inside dt-integrals X_t, Y_t are not distinguished from X_{t−}, Y_{t−}, as Θ⁻_t = Θ_t almost surely and μ⁻_t = μ_t for a.e. t by Lemma A.1 (lines 17–20); C denotes a constant depending only on T, L, ‖G‖, c_G, α, β₁, β₂ and c_BDG unless a different dependence is stated, recurring constants being fixed where they are introduced (lines 22–25); Itô's formula for Lévy-type integrals and its product form (lines 27–29) are cited work (Applebaum §4.4), not stated; the Burkholder–Davis–Gundy inequality in quadratic-variation form at p = 1 and p = 2, with one universal constant c_BDG for both exponents and Doob's constant 4 at p = 2, valid for càdlàg local martingales (lines 29–35), is cited work (He, Wang and Yan) and is not stated; its constant c_BDG is the standing constant of every statement of §§3–4 that names it, pinned here",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -3030,7 +3295,7 @@
    "number": "(4.1) + WP(lambda)",
    "paper": "A",
    "scope": "definition",
-   "scope_note": "the forced system (4.1) and the property WP(λ) used in the proof of Theorem 3.5",
+   "scope_note": "the forced system (4.1) and the property WP(λ) used in the proof of Theorem 3.5; the region (lines 39–70) holds the forcing class over which WP(λ) quantifies (lines 39–53, also pinned in A:eq:forced), the display (4.1) and the definition of WP(λ) (lines 66–68); 'The unforced target is WP(1) with q ≡ 0, so it suffices to prove that WP(1) holds' (lines 68–70) is the plan of the proof of Theorem 3.5 (A:sec4:proof-thm35, whose second clause is thm_cwp)",
    "scope_reviewed": true,
    "status": "definition: reviewed"
   },
@@ -3078,42 +3343,261 @@
    "number": "(4.2)-(4.3)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the passage states (4.2) and (4.3), which are also the claims A:eq:coeffint and A:eq:termg",
+   "scope_note": "the passage (lines 72–85) states (4.2) and (4.3), which are also the claims A:eq:coeffint and A:eq:termg; the justifications (the Lipschitz bound with (2.8) at μ' = δ₀, and (2.6) with (2.9)) are steps of their proofs; every unnamed C follows the convention on constants of §4 (04-proof-wellposedness.tex lines 22–25), pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.lem41_M2_no_square_moment",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "membership δU ∈ H²_N does not give the quadratic integrand e^s|δU_s(e)|² of M² square moments (for ν ≠ 0; at ν = 0 the integrand vanishes)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lem41_M2_no_square_moment",
+     "spec_hash": "ed839d34f480cba18ac876cdb600252c",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem41_M2_no_square_moment_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lem41_jump_times",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "with ν(E) = ∞, almost surely N((0, t] × E) = ∞ for every t > 0 and the jump times τ_k = inf{t ≥ 0 : N((0, t] × E) ≥ k}, read in [0, ∞], are all 0, so sup_k τ_k < T for every T > 0: they do not exhaust [0, T]",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lem41_jump_times",
+     "spec_hash": "ed839d34f480cba17f1df52f488747a1",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.sec2_infinite_activity_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lem41_M2_integrand",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the integrand e^s|δU_s(e)|² of M² is predictable (marked predictable for the filtration of the setting) and nonnegative",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lem41_M2_integrand",
+     "spec_hash": "ed839d34f480cba118f567d673033f15",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_infinite_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lem41_M2_zero_mean",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "𝔼∫_0^T∫_E e^s|δU_s(e)|² ν(de) ds ≤ e^T 𝔼∫_0^T ‖δU_s‖² ds < ∞; the Poisson integral and the compensator of e^s|δU|² over (t, T] × E have finite expectation, and 𝔼[M²_T − M²_t] = 0",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lem41_M2_zero_mean",
+     "spec_hash": "ed839d34f480cba15a569c2d7c1d42fd",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_infinite_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lem41_M2_martingale",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "M²_t = ∫_{(0, t] × E} e^s|δU_s(e)|² N(ds, de) − ∫_0^t ∫_E e^s|δU_s(e)|² ν(de) ds is a local martingale: for t ∈ [0, T] the Poisson integral has finite expectation and M²_t is integrable and ℱ_t-measurable up to a null set, and 𝔼[M²_t | ℱ_s] = M²_s almost surely for 0 ≤ s ≤ t ≤ T (a martingale on [0, T])",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lem41_M2_martingale",
+     "spec_hash": "ed839d34f480cba1983f1a786ecea56b",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_infinite_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lem41_MW",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "M^W_t = ∫_0^t e^s ⟨δY_{s−}, δZ_s dW_s⟩ exists as a local Itô integral on [0, T], and 𝔼 sup_{t≤T} |M^W_t| ≤ c_BDG e^T (𝔼 sup_{t≤T} |δY_t|²)^{1/2} (𝔼 ∫_0^T |δZ_s|²_F ds)^{1/2} < ∞ and 𝔼[M^W_T − M^W_t] = 0 for every t ∈ [0, T] (c_BDG every value at least some c₀ > 0)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lem41_MW",
+     "spec_hash": "ed839d34f480cba1d59592d221a6cd18",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_nonzero_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lem41_M1",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "M¹_t = ∫_0^t ∫_E e^s ⟨δY_{s−}, δU_s(e)⟩ Ñ(ds, de) exists as a local compensated integral on [0, T], and 𝔼 sup_{t≤T} |M¹_t| ≤ c_BDG e^T (𝔼 sup_{t≤T} |δY_t|²)^{1/2} (𝔼 ∫_0^T ‖δU_s‖² ds)^{1/2} < ∞ and 𝔼[M¹_T − M¹_t] = 0 for every t ∈ [0, T] (c_BDG every value at least some c₀ > 0)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lem41_M1",
+     "spec_hash": "ed839d34f480cba10bd49a12773fa34d",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_nonzero_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lem41_M1_bdg",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the first link of the chain for M¹: every local compensated integral M¹_t = ∫_0^t ∫_E e^s ⟨δY_{s−}, δU_s(e)⟩ Ñ(ds, de) on [0, T] has 𝔼 sup_{t≤T} |M¹_t| ≤ c_BDG 𝔼 (∫_0^T ∫_E e^{2s} |δY_{s−}|² |δU_s(e)|² N(ds, de))^{1/2} (c_BDG every value at least some c₀ > 0)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lem41_M1_bdg",
+     "spec_hash": "ed839d34f480cba1732a2bccd942e938",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_nonzero_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lem41_M1_chain",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the links of the chain for M¹ after its first: 𝔼 (∫_0^T ∫_E e^{2s} |δY_{s−}|² |δU_s(e)|² N(ds, de))^{1/2} ≤ e^T (𝔼 sup_{t≤T} |δY_t|²)^{1/2} (𝔼 ∫_0^T ∫_E |δU_s(e)|² N(ds, de))^{1/2}, 𝔼 ∫_0^T ∫_E |δU|² N(ds, de) = 𝔼 ∫_0^T ∫_E |δU|² ν(de) ds by (2.1), = 𝔼 ∫_0^T ‖δU_s‖² ds",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lem41_M1_chain",
+     "spec_hash": "ed839d34f480cba11e7d5cd5bc08d7ae",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_nonzero_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:lem4.1:M2-infinite-activity",
    "kind": "embedded-in-proof",
    "number": "proof of Lemma 4.1",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the clauses read lines 139–187 of the proof, the paragraph on the zero-mean terms: the sentence of line 151, where the claim is anchored (lines 148–152), the local martingales M^W and M¹ (lines 139–148 and 153–172) and the paragraph on M² (lines 173–187); the first clause reads the sentence's first assertion, that membership in H²_N does not give the quadratic integrand of M² square moments, for ν ≠ 0, the degenerate case ν = 0, in which every marked integrand vanishes, being the one Remark 2.10 sets aside; M^W and M¹ are read as local stochastic integrals (IsLocalBrownianIntegral, IsLocalCompensatedIntegral) for the filtration of the setting, which carries their local-martingale property, not stated separately; that M² is a local martingale (lines 139–141) is the clause on M² read pathwise, stated as a martingale on [0, T] (stronger), adapted up to a null set; that the stochastic-integral terms of (4.5) are M^W, M¹ and M² belongs to (4.5) (A:eq:itoY2); the first link of the chain for M¹ (line 162), the Burkholder–Davis–Gundy inequality at p = 1 in quadratic-variation form for M¹ with the Cauchy–Schwarz inequality in ℝᵐ, is the eighth clause, the links after it the ninth, and the composite bound the seventh; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.sec4_uniq_homotopy",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "with λ* the threshold of Lemma 4.2, uniqueness in ℍ at each λ ∈ [λ*, 1] (Lemma 4.3 with identical forcing and initial datum, λ̲ = λ*) and at each λ ∈ [0, λ*] (Lemma 4.2)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.sec4_uniq_homotopy",
+     "spec_hash": "ed839d34f480cba178b10f6f962eecce",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:sec4:uniqueness-along-homotopy",
    "kind": "embedded-in-proof",
    "number": "¶ before Lemma 4.4",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of the argument of Section 4 outside a proof environment: uniqueness along the homotopy is Lemma 4.3 at zero data, with Lemma 4.2 for the base case",
+   "scope": "formal",
+   "scope_note": "'It remains to prove existence up to λ = 1' (line 878) is exposition announcing Lemma 4.4; the forcing class (04-proof-wellposedness.tex lines 39–53) is pinned in A:eq:forced and A:sec4:WP-def; WP(λ) (04-proof-wellposedness.tex lines 66–68) is pinned in A:sec4:WP-def",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.sec45_proof_thm35",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "with ζ₀ > 0 the constant of Lemma 4.4 and its continuation step (WP(λ₀) ⇒ WP(λ₀ + ζ) for λ₀ ∈ [λ*, 1], ζ ∈ [0, ζ₀], λ₀ + ζ ≤ 1), λ_k = min{λ* + kζ₀, 1}: λ_0 = λ*, λ_{k+1} − λ_k ≤ ζ₀, λ_k = 1 for k ≥ ⌈(1 − λ*)/ζ₀⌉; WP(λ) on [0, λ*], WP(λ_k) for every k, and WP(1)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.sec45_proof_thm35",
+     "spec_hash": "ed839d34f480cba1227f3637481e69e0",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.thm_cwp",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "with q ≡ 0, (1.1) has a unique solution in ℍ (Theorem 3.5)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.thm_cwp",
+     "spec_hash": "ed839d34f480cba10deeabcd10e6e74d",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.thm_cwp_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:sec4:proof-thm35",
    "kind": "embedded-in-proof",
    "number": "§4.5",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the forcing class (04-proof-wellposedness.tex lines 39–53) is pinned in A:eq:forced and A:sec4:WP-def; WP(λ) (04-proof-wellposedness.tex lines 66–68) is pinned in A:sec4:WP-def",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -3141,7 +3625,7 @@
    "number": "§5 preamble",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "'Theorem 3.5 permits broad law dependence; the restrictive hypothesis is the dissipativity of Assumption 2.5, which in applications is the one to verify' (lines 3–4) is exposition; the clause states the system of [LiMin, Example 3.2] with its hypotheses and its non-existence on the horizon T = 3π/4 (lines 5–7), on which the inference that dissipativity cannot be traded for Lipschitz continuity alone (lines 4–5) rests; the non-existence is proved, not cited",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -3351,7 +3835,7 @@
    "number": "§5 ¶2",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the first sentence, 'The examples illustrate both the scope of the law dependence and the role of the dissipativity assumption' (lines 9–10), is exposition; the identification of the subclasses of Examples 5.2 and 5.3 with those of [BYZ] and [LiMin] is a statement about cited work; the description of the dealer market (the population law on valuation curves entering the jump response through a crowding operator, lines 17–20) is modelling, not stated; 'In Examples 5.4 and 5.5, we take ν ≠ 0' (line 22) is the standing hypothesis of Examples 5.4 and 5.5, pinned here and read by A:ex:fulllaw, A:ex:dealer, A:rem:regimes and the Example 5.4–5.5 clauses of this claim and of A:abstract",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -3529,31 +4013,195 @@
    "number": "§6",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "'The Lipschitz and monotonicity assumptions are imposed only along the diagonal inputs' (lines 7–8) describes the hypotheses of the clauses; 'The monotonicity of Assumption 2.5 is the principal structural assumption and is still coercive' (lines 10–11) is exposition; the last sentence (lines 12–16) names open questions and cited work",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_coupling",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the law map Θ ↦ Law(Θ) is 1-Lipschitz from L²(Ω; H) into (P₂(H), W₂): W₂(Law Θ, Law Θ')² ≤ 𝔼‖Θ − Θ'‖²_H, the synchronous coupling bound (2.8)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_coupling",
+     "spec_hash": "ed839d34f480cba17af7c36ae6c33114",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.eq_coupling_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lemA1_polish",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "H is Polish, and (P₂(H), W₂), W₂ of the Hilbert norm of H, is a Polish metric space: W₂ separates laws, and the space is complete and separable",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lemA1_polish",
+     "spec_hash": "ed839d34f480cba19bbef9c769d701cd",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lemA1_polish_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:lemA1:polish",
    "kind": "embedded-in-proof",
    "number": "proof of Lemma A.1, step 2",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the region (lines 53–56) ends with the start of the next sentence, 'Composing it with the Borel version of Step 1 gives a' (line 56), the content of Lemma A.1 (A:lem:lawflow); 'which inherits Polishness from H [Villani, Ch. 6]' cites the source of the clause lemA1_polish, which is proved",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.lemA1_leftlim",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "X₋ and Y₋ are predictable; on every path {t : X_{t−} ≠ X_t} is countable and ∫_0^T 1{X_{t−} ≠ X_t} dt = 0, and likewise for Y; X₋ = X and Y₋ = Y dt ⊗ dP-almost everywhere on [0, T] × Ω; X₋ and Y₋ have finite energy on [0, T]",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lemA1_leftlim",
+     "spec_hash": "ed839d34f480cba130f1a54fb940f2d9",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lemA1_coin_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lemA1_separable",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "L²(ν; ℝᵐ) is separable, and so is H = ℝⁿ × ℝᵐ × ℝ^{m×d} × L²(ν; ℝᵐ) with its Hilbert norm",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lemA1_separable",
+     "spec_hash": "ed839d34f480cba1e132af851a6dd7cf",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lemA1_polish_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lemA1_U",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "U ∈ L²([0, T] × Ω × E; ℝᵐ), and (t, ω) ↦ U_t(ω, ·) has a predictable, strongly measurable L²(ν; ℝᵐ)-valued representative V, square integrable on [0, T] × Ω, with V_t(ω) = U_t(ω, ·) ν-almost everywhere for dt ⊗ dP-almost every (t, ω) ∈ [0, T] × Ω",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lemA1_U",
+     "spec_hash": "ed839d34f480cba1019406c1cc1330d9",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lemA1_coin_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lemA1_pred",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "Θ⁻ = (X₋, Y₋, Z, U) is a predictable H-valued field: (t, ω) ↦ Θ⁻_t(ω), H with its Hilbert norm, is strongly measurable for the predictable σ-algebra",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lemA1_pred",
+     "spec_hash": "ed839d34f480cba136b795f0b638d045",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lemA1_coin_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lemA1_L2",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "Θ⁻ = (X₋, Y₋, Z, U) is jointly strongly measurable on [0, T] × Ω and lies in L²([0, T] × Ω; H): 𝔼 ∫_0^T ‖Θ⁻_t‖²_H dt < ∞, H with its Hilbert norm",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lemA1_L2",
+     "spec_hash": "ed839d34f480cba1a6657535c81c9ed1",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lemA1_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lemA1_fubini",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the Fubini isometry L²([0, T] × Ω; H) ≅ L²(0, T; L²(Ω; H)), Φ(f)(t) = f(t, ·) in L²(Ω; H) for a.e. t ∈ [0, T]",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lemA1_fubini",
+     "spec_hash": "ed839d34f480cba18bb7bf3a9a35bb91",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lemA1_fubini_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.lemA1_pettis",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "t ↦ Θ⁻_t ∈ L²(Ω; H) has a version F that is strongly measurable, takes values in a closed separable subspace and is Borel measurable, with F(t) = Θ⁻_t in L²(Ω; H) for a.e. t ∈ [0, T]",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.lemA1_pettis",
+     "spec_hash": "ed839d34f480cba176ccc2a6aaf99d7c",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lemA1_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:lemA1:pettis",
    "kind": "embedded-in-proof",
    "number": "proof of Lemma A.1, step 1",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the clauses read Step 1 of the proof, lines 25–51, whose last sentence (lines 43–51) holds line 48, where the claim is anchored: the left limits X₋, Y₋ (lines 25–28), the separability of H (line 28), the jump channel U (lines 29–36), Θ⁻ predictable and in L²([0, T] × Ω; H) (lines 36–42), and the Fubini isometry and the Pettis step (lines 43–51); the isometry (2.4) invoked for the jump channel (line 31) is the clause of A:eq:fubiniiso, and the clause on U states its conclusion for U; that the Z-coordinate is predictable and square integrable (lines 28–29) restates the hypotheses of Lemma A.1 (CadlagPredTuple) and is not stated separately; 'hence jointly measurable' (line 37) is the joint strong measurability of the clause Θ⁻ ∈ L²([0, T] × Ω; H)",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -3579,7 +4227,7 @@
    "number": "(1.1)",
    "paper": "A",
    "scope": "definition",
-   "scope_note": "the system (1.1) and its solutions in the space of Section 3",
+   "scope_note": "the system (1.1) and its solutions in the space of Section 3; the region (lines 3–48) also holds 'We prove existence, uniqueness, and stability … with no smallness restriction' (lines 3–5), the content of Theorems 3.1, 3.3 and 3.5 (A:thm:stab, A:thm:uniq, A:thm:cwp), and the standing passages pinned here: the Brownian motion W and the independent compensated Poisson random measure Ñ with σ-finite ν, ν(E) = ∞ admitted (lines 14–16), the state space H and its Euclidean, Frobenius and L²(ν) norms (lines 16–32), the tuple Θ, the predictable tuple Θ⁻ at which h is evaluated and the law flows μ, μ⁻ ∈ P₂(H) (lines 34–43), and the W₂-Lipschitz law dependence, both hypotheses imposed only along tuple–law pairs (lines 44–48, the hypotheses of Assumptions 2.3 and 2.5); the same passage is the region of A:intro:mvfbsdej; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set",
    "scope_reviewed": true,
    "status": "definition: reviewed"
   },
@@ -3609,7 +4257,7 @@
    "number": "(2.1)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the region (lines 14–25) also holds the end of the definition of Ñ (line 14, pinned in A:eq:zeromean) and the zero mean (2.2) (lines 20–25), the claim A:eq:zeromean",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -3639,7 +4287,7 @@
    "number": "(2.2)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the region (lines 13–25) also holds the definition Ñ := N − dt ν (lines 13–14), the standing notation of every compensated integral, pinned here, and the compensation formula (2.1), the claim A:eq:compid",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -3667,7 +4315,7 @@
    "number": "(2.3)",
    "paper": "A",
    "scope": "definition",
-   "scope_note": "the joint Borel measurability (2.3)",
+   "scope_note": "the joint Borel measurability (2.3), with the signatures of the coefficients (lines 89–99) and the joint Borel measurability of all coefficients (lines 100–101) that the definition JointBorel also carries; the region (lines 86–106) also holds the standing sentence that b, σ, h, f, g are deterministic functions of their arguments, randomness entering only through the inputs and the forcings of §4 (lines 86–89), the setting of every coefficient system, pinned here, with a remark on the ω-random coefficients of [ChenNie, LiMin], cited work not pursued",
    "scope_reviewed": true,
    "status": "definition: reviewed"
   },
@@ -3697,7 +4345,7 @@
    "number": "(2.4)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the region (lines 112–123) also holds the reading convention pinned here: every Poisson integral, and every square-integrable L²(ν)-valued predictable integrand in one, is read through a 𝒫 ⊗ ℰ-measurable representative, and a pointwise formula u(e) is meaningful only when it descends to L²(ν) (lines 119–123), the standing reading of every statement with a Poisson integral; the citation of HNVW, Propositions 1.2.24–1.2.25 names the source of the isometry, which is proved; 'Consequently, along any diagonal input,' (line 123) begins (2.5), the claim A:eq:coefmeas",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -3745,7 +4393,7 @@
    "number": "(2.5)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the region (lines 123–134) also holds the end of the reading convention of (2.4) (line 123, pinned in A:eq:fubiniiso) and the deferral to Lemma A.1 of the well-definedness of the law flows t ↦ μ_t, μ⁻_t and of the independence of time-integrated coefficient identities from the predictable representatives of Z, U (lines 132–134), the content of A:lem:lawflow, pinned here as the standing reading of μ, μ⁻ in every coefficient evaluation; the coefficient signatures and their determinism (02-model-assumptions.tex lines 86–100) are pinned in A:eq:hborel",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -3839,7 +4487,7 @@
    "number": "(2.12)",
    "paper": "A",
    "scope": "definition",
-   "scope_note": "",
+   "scope_note": "Margin212 is (2.12) at a given constant c; the positivity in 'with margin c > 0' (line 289) is a separate hypothesis of the statements that assume a margin",
    "scope_reviewed": true,
    "status": "definition: reviewed"
   },
@@ -3867,7 +4515,7 @@
    "number": "(2.13)",
    "paper": "A",
    "scope": "definition",
-   "scope_note": "",
+   "scope_note": "the first part of the sentence (lines 306–308), that a margin c in (2.12) yields the margin c/c_G, smaller than c when c_G > 1, in the unweighted form, is the content of A:rem:margin (rem_margin_unweighted, rem_margin_smaller); Margin213 is (2.13) at a given constant c; the positivity in 'with margin c > 0' (line 308) is a separate hypothesis of the statements that assume a margin",
    "scope_reviewed": true,
    "status": "definition: reviewed"
   },
@@ -3883,26 +4531,190 @@
    "status": "out of scope: part-of"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_uniq_coeff",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(3.2): along two solutions in ℍ_weak with the same initial datum, 𝔼 ∫_0^T (|δb_t|² + |δσ_t|²_F + ‖δh_t‖² + |δf_t|²) dt < ∞, δh at the predictable tuples",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_uniq_coeff",
+     "spec_hash": "ed839d34f480cba11fcb76fb4b640955",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_uniq_coeff_ae",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the bound before (3.2) at almost every t, with C independent of t: 𝔼[|δb_t|² + |δσ_t|²_F + ‖δh_t‖² + |δf_t|²] ≤ C 𝔼|δΘ_t|²_H, along two solutions in ℍ_weak with the same initial datum, under (2.3) and Assumption 2.3 alone",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_uniq_coeff_ae",
+     "spec_hash": "ed839d34f480cba1a9e05e97904e4b0f",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.rem_uniq_lip_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_uniq_coeff_lip",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(3.2) under (2.3) and Assumption 2.3 alone: 𝔼 ∫_0^T (|δb_t|² + |δσ_t|²_F + ‖δh_t‖² + |δf_t|²) dt < ∞, δh at the predictable tuples, along two solutions in ℍ_weak with the same initial datum",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_uniq_coeff_lip",
+     "spec_hash": "ed839d34f480cba1e3e9c0b07e55c27c",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.rem_uniq_lip_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_uniq_fwd",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the forward estimate after (3.2), under (2.3) and Assumption 2.3 alone: δX_t = ∫_0^t δb_s ds + ∫_0^t δσ_s dW_s + ∫_0^t ∫_E δh_s(e) Ñ(ds, de) and 𝔼 sup_{t ≤ T} |δX_t|² ≤ C_T 𝔼 ∫_0^T (|δb_s|² + |δσ_s|²_F + ‖δh_s‖²) ds < ∞, C_T a function of T, along two solutions in ℍ_weak with the same initial datum",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_uniq_fwd",
+     "spec_hash": "ed839d34f480cba1001605cc82c2788b",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.rem_uniq_lip_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:uniq-coeff",
    "kind": "embedded-in-proof",
    "number": "(3.2)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the pinned region is lines 110–156; the first clause states (3.2) and the second the bound of lines 133–138 at almost every t, stated under (2.3) and Assumption 2.3 alone, the hypotheses the step uses (Remark 3.4); the passage, under the hypotheses of Theorem 3.3, is its instance, at which the two solutions coincide; 'two such tuples' (line 110) refers to the hypotheses of Theorem 3.3 (A:thm:uniq), and lines 110–117 fix the notation (δΘ, μᵏ, δψ, δh at the predictable tuples); lines 119–132 (the square integrability of Θᵏ_t at almost every t by Fubini, the membership (Θᵏ_t, μᵏ_t) ∈ 𝒟_t, and W₂(μ¹_t, μ²_t)² ≤ 𝔼|δΘ_t|² by (2.8), the clause eq_coupling of A:rem:wasserstein-bounds) are steps of the proof of the second clause; lines 144–156 ('We next show that Θ¹ − Θ² ∈ ℍ', the forward difference equation and 𝔼 sup|δX_t|² ≤ C_T 𝔼∫(|δb|² + |δσ|²_F + ‖δh‖²) < ∞, so δX ∈ S²) are the fourth clause; the third and fourth clauses (also clauses of A:rem:uniq-no-integ) are (3.2) and the forward estimate under (2.3) and Assumption 2.3 alone, the hypotheses the steps use (Remark 3.4), the passage under the hypotheses of Theorem 3.3 being their instance; the third is in this claim beside the first because (3.2) under the hypotheses of Theorem 3.3 can be witnessed only at a pair of equal solutions (Theorem 3.3 makes any two solutions with the same initial datum coincide), while the third and fourth are witnessed at two distinct solutions of a system with no monotonicity",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_uniq_bwd",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(3.3): 𝔼 sup_{t ≤ T} |δY_t|² ≤ C_BP (𝔼|δg_T|² + 𝔼 ∫_0^T |δf_s|² ds) < ∞, C_BP a function of T",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_uniq_bwd",
+     "spec_hash": "ed839d34f480cba12aa97c204e9816a6",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.thm_uniq_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_uniq_bwd_eq",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the backward difference before (3.3): δY_t = δg_T + ∫_t^T δf_s ds − ∫_t^T δZ_s dW_s − ∫_t^T ∫_E δU_s(e) Ñ(ds, de) almost surely at every t ∈ [0, T], along two solutions in ℍ_weak with the same initial datum, under (2.3) and Assumption 2.3 alone",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_uniq_bwd_eq",
+     "spec_hash": "ed839d34f480cba1dacb4b647f5f4499",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.rem_uniq_lip_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_uniq_bwd_terminal",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the terminal bound before (3.3): X¹_T, X²_T ∈ L² and 𝔼|δg_T|² ≤ C 𝔼|δX_T|² < ∞, C a function of L, along two solutions in ℍ_weak with the same initial datum, under (2.3) and Assumption 2.3 alone",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_uniq_bwd_terminal",
+     "spec_hash": "ed839d34f480cba12f5e45b3317852ea",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.rem_uniq_lip_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_uniq_bwd_lip",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(3.3) under (2.3) and Assumption 2.3 alone: 𝔼 sup_{t ≤ T} |δY_t|² ≤ C_BP (𝔼|δg_T|² + 𝔼 ∫_0^T |δf_s|² ds) < ∞, C_BP a function of T, along two solutions in ℍ_weak with the same initial datum",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_uniq_bwd_lip",
+     "spec_hash": "ed839d34f480cba184495619099e147e",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.rem_uniq_lip_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.rem_uniq_lip_mem",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "after (3.3), under (2.3) and Assumption 2.3 alone: Θ¹ − Θ² ∈ ℍ, along two solutions in ℍ_weak with the same initial datum",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.rem_uniq_lip_mem",
+     "spec_hash": "ed839d34f480cba1db72bd0880b4abb9",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.rem_uniq_lip_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:uniq-bwd",
    "kind": "embedded-in-proof",
    "number": "(3.3)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the pinned region is lines 158–174; the second clause reads the backward difference of lines 158–163 and the third the terminal bound of lines 163–166 (X^k_T ∈ L², 𝔼|δg_T|² ≤ C 𝔼|δX_T|² < ∞), both stated under (2.3) and Assumption 2.3 alone, the hypotheses the steps use (Remark 3.4); the passage, under the hypotheses of Theorem 3.3, is their instance, at which the two solutions coincide; the fourth clause is (3.3) under (2.3) and Assumption 2.3 alone (also a clause of A:rem:uniq-no-integ), because the first clause, (3.3) under the hypotheses of Theorem 3.3, can be witnessed only at a pair of equal solutions (Theorem 3.3 makes any two solutions with the same initial datum coincide, so δY, δg_T and δf vanish there), while the fourth is witnessed at two distinct solutions of a system with no monotonicity; '(3.2) gives 𝔼∫_0^T |δf_s|² ds < ∞' (lines 166–167) is the finiteness of the driver energy in (3.2) (A:eq:uniq-coeff) and in the first and fourth clauses; 'By Lemma 4.1' names a justification; 'therefore δY ∈ S²' and 'By (3.2) and (3.3) we have δΘ ∈ ℍ' (lines 173–174) are the finiteness of (3.3) (the first and fourth clauses) and the membership Θ¹ − Θ² ∈ ℍ, the fifth clause rem_uniq_lip_mem (also a clause of A:rem:uniq-no-integ; the 'Furthermore' of Theorem 3.3, A:thm:uniq), stated under (2.3) and Assumption 2.3 alone, its δX-part being the bound of lines 150–156 (A:eq:uniq-coeff); C_BP is the constant of Lemma 4.1, defined at 04-proof-wellposedness.tex line 244 and pinned in A:eq:supE",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
    "clauses": [],
@@ -3972,7 +4784,7 @@
    "number": "(4.1)",
    "paper": "A",
    "scope": "definition",
-   "scope_note": "the forced system (4.1) and its solutions in the space of Section 3",
+   "scope_note": "the forced system (4.1) and its solutions in the space of Section 3; the region (lines 39–65) holds the forcing class of the same sentence (lines 39–53: λ ∈ [0, 1], q = (q^b, q^σ, q^h, q^f, q^g_T) square integrable, q^b, q^σ, q^f progressively measurable, q^h predictable and 𝒫 ⊗ ℰ-measurable as in (2.4)), pinned here and in A:sec4:WP-def; the definitions carry it (Forcing in ForcedSolution, PredForcing in WP)",
    "scope_reviewed": true,
    "status": "definition: reviewed"
   },
@@ -4002,7 +4814,7 @@
    "number": "(4.2)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the region (lines 72–81) holds the hypotheses and the justification of (4.2) (Assumptions 2.2–2.3, Θ ∈ ℍ, ψ ∈ {b, σ, h, f} in the norms of Assumption 2.3; the Lipschitz bound with (2.8) at μ' = δ₀) and, on its last line, the start of the sentence of (4.3), the claim A:eq:termg; every unnamed C follows the convention on constants of §4 (04-proof-wellposedness.tex lines 22–25), pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -4032,7 +4844,7 @@
    "number": "(4.3)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the region (lines 81–85) begins with the end of the sentence of (4.2), the claim A:eq:coeffint; 'follows in the same way from (2.6) and (2.9)' names the justification; the hypotheses of the passage (Assumptions 2.2–2.3, Θ ∈ ℍ, lines 72–74) are pinned in A:sec4:coeffint; every unnamed C follows the convention on constants of §4 (04-proof-wellposedness.tex lines 22–25), pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -4054,97 +4866,339 @@
    "number": "(4.5)",
    "paper": "A",
    "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope_note": "The pathwise identity (4.5) is used only through its expectation. The proof of Lemma 4.1 takes expectations in it at each time t, which removes its three stochastic terms. The later bound on E sup|δY|² squares the forward form of the lemma's equation and applies BDG to the L² martingales ∫δZ dW and ∫∫δU dÑ, without (4.5). What the proof draws from the expectation is the weighted inequality of lines 193–199, the clause eq_supE_weighted of A:eq:supE, from which it derives the bound at every time and (4.6), the clause eq_supE. Both are stated and proved from the library's weighted second-moment identity for Itô–Lévy processes (Ito.SecondMoment.integral_exp_mul_self_eq_of_isItoLevyProcess, at the weight e^s), whose difference between the horizons T and t is, coordinatewise, the expectation of (4.5). That identity needs only the square integrability of δξ and the finite energy of δZ, δU and φ that the lemma assumes. The zero means of the three stochastic terms are the clauses of A:lem4.1:M2-infinite-activity. The pathwise identity itself is not stated. It would need an every-time Itô–Lévy formula for general predictable integrands, with local stochastic integrals because δY₋δZ and δY₋δU need not have finite energy, and no claim of the paper uses more than its expectation. The region (lines 126–137) is the sentence of (4.5): its lead-in 'Itô's formula for e^t|δY_t|² then gives the pathwise identity' (lines 126–127) and the display.",
    "scope_reviewed": true,
    "status": "out of scope: proof-step"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_supE",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "for every t ≤ T, 𝔼|δY_t|² + 𝔼∫_t^T (|δZ_s|²_F + ‖δU_s‖²) ds ≤ R = e^T (𝔼|δξ|² + 𝔼∫_0^T |φ_s|² ds); (4.6): sup_{t≤T} 𝔼|δY_t|² + 𝔼∫_0^T (|δZ_s|²_F + ‖δU_s‖²) ds ≤ 2R = C₀ (𝔼|δξ|² + 𝔼∫_0^T |φ_s|² ds), C₀ = 2e^T",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_supE",
+     "spec_hash": "ed839d34f480cba17f3cae8e2942fb86",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_drift_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_supE_weighted",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the weighted inequality before the bound by R, for every t ∈ [0, T]: 𝔼 e^t |δY_t|² + 𝔼 ∫_t^T e^s (|δZ_s|²_F + ‖δU_s‖²) ds ≤ 𝔼 e^T |δξ|² + 𝔼 ∫_t^T e^s |φ_s|² ds",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_supE_weighted",
+     "spec_hash": "ed839d34f480cba197b43e0802d21b08",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_bpbsde_drift_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:supE",
    "kind": "embedded-in-proof",
    "number": "(4.6)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the pinned region is lines 188–246; the second clause reads the display of lines 193–199, the expectation of (4.5) after Young's inequality, and the first the bound by R at every t (lines 200–205) and (4.6); the sentences of lines 188–192 and 206–207 name the justifications; lines 219–246, the upgrade of sup_t 𝔼|δY_t|² to 𝔼 sup_t |δY_t|² by the forward form, BDG and (4.6), prove the conclusion of Lemma 4.1 (A:lem:bpbsde) and define C_BP := C₀(5 + 4c_BDG) + 4T (line 244), the constant that A:eq:bwddiff states and A:eq:uniq-bwd uses, pinned here",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_frozenfwd",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.7): along a trial Θ ∈ ℍ, 𝔼 ∫_0^T |ψ(s, Θ_s, μ_s)|² ds < ∞ for ψ ∈ {b, σ, h}; the frozen forward equation, with h at (Θ⁻_s, μ⁻_s) through a representative, has a solution X̄ ∈ S²(0, T; ℝⁿ), adapted and càdlàg with 𝔼 sup_{t ≤ T} |X̄_t|² < ∞; any two solutions are indistinguishable on [0, T]",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_frozenfwd",
+     "spec_hash": "ed839d34f480cba18303299f6df7eded",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.frozen_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:frozenfwd",
    "kind": "embedded-in-proof",
    "number": "(4.7)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the region (lines 258–285) holds the set-up of the proof of Lemma 4.2 (lines 258–263: λ, the forcing q, the trial Θ ∈ ℍ, μ^Θ, μ^{Θ,−} and the map Φ_λ), pinned here and used by A:eq:frozenbwd, A:eq:coeffdiff, A:eq:fwddiff, A:eq:terdiff, A:eq:bwddiff and A:eq:contract; the agreement of the left limits with (Θ_s, μ^Θ_s) off a dt ⊗ dP-null set (lines 272–275) is Lemma A.1 (A:lem:lawflow); 'The coefficients are jointly Borel, so these integrands are progressively measurable and the jump integrand is predictable' (lines 281–282) is (2.5) (A:eq:coefmeas); the citations of (4.2), Cauchy–Schwarz and Doob/BDG are steps of the proof; the forcing class (04-proof-wellposedness.tex lines 39–53) is pinned in A:eq:forced and A:sec4:WP-def; the dt-integral convention of §4 (04-proof-wellposedness.tex lines 17–20) is pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_frozenbwd",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.8): for every solution X̄ of (4.7), Ξ = λ g(X̄_T, Law(X̄_T)) + q^g_T + ∫_0^T (λ f(s, Θ_s, μ_s) + q^f_s) ds lies in L²(Ω, ℱ_T; ℝᵐ); there is Θ̄ = (X̄, Ȳ, Z̄, Ū) ∈ ℍ with X̄ solving (4.7) and (Ȳ, Z̄, Ū) solving (4.8); any two such Θ̄ are equal in ℍ",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_frozenbwd",
+     "spec_hash": "ed839d34f480cba178b77fba8e33d01f",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.frozen_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:frozenbwd",
    "kind": "embedded-in-proof",
    "number": "(4.8)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the region (lines 287–310) holds the construction of the backward step: M_t := 𝔼[Ξ | ℱ_t], its representation by the Brownian–Poisson representation property (A:sec2:prp), Ȳ := M − ∫(λf + q^f), M ∈ S² by Doob's inequality and Ȳ ∈ S² by Cauchy–Schwarz, steps of the proof of the clause, as are the citations of (4.3) and (4.2); the set-up of the proof of Lemma 4.2 (04-proof-wellposedness.tex lines 258–263) is pinned in A:eq:frozenfwd; the forcing class (04-proof-wellposedness.tex lines 39–53) is pinned in A:eq:forced and A:sec4:WP-def",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_coeffdiff",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.9): 𝔼 ∫_0^T S_s² ds ≤ 10 L² 𝔼 ∫_0^T (|δX_s|² + |δY_s|² + |δZ_s|²_F + ‖δU_s‖²) ds ≤ 10 L² (T 𝔼 sup_{t ≤ T} |δX_t|² + T 𝔼 sup_{t ≤ T} |δY_t|² + 𝔼 ∫_0^T (|δZ_s|²_F + ‖δU_s‖²) ds) ≤ 10 L² max{T, 1} ‖Θ¹ − Θ²‖²_ℍ",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_coeffdiff",
+     "spec_hash": "ed839d34f480cba1b363f744d12fe99d",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.frozen_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_coeffdiff_ae",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the bound before (4.9), at almost every s ∈ [0, T]: 𝔼 S_s² ≤ 10 L² 𝔼[|δX_s|² + |δY_s|² + |δZ_s|²_F + ‖δU_s‖²]",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_coeffdiff_ae",
+     "spec_hash": "ed839d34f480cba122e3ae64778e3109",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.frozen_pair_window_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:coeffdiff",
    "kind": "embedded-in-proof",
    "number": "(4.9)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the pinned region is lines 312–348; the notation of the contraction step (lines 312–323: the trials Θ¹, Θ² ∈ ℍ, Θ̄ᵏ = Φ_λ(Θᵏ), δψ_s along (Θᵏ_s, μ^{Θᵏ}_s), δX, δX̄ and the other component differences, the cancellation of ξ₀ and q) is pinned here and used by A:eq:fwddiff, A:eq:terdiff, A:eq:bwddiff and A:eq:contract; the second clause reads lines 333–337, the bound at almost every time whose integral in time is the first link of (4.9); the pointwise bound of lines 329–332 is the instance of Assumption 2.3 that it integrates, and S_s is defined at line 326; the set-up of the proof of Lemma 4.2 (04-proof-wellposedness.tex lines 258–263) is pinned in A:eq:frozenfwd",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_fwddiff_identity",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the forward difference before (4.10): δσ and δh meet the conditions of the Itô and compensated integrals, almost every path of δb is integrable on [0, T], and δX̄_t = λ ∫_0^t δb_s ds + λ ∫_0^t δσ_s dW_s + λ ∫_0^t ∫_E δh_s(e) Ñ(ds, de) almost surely for every t ∈ [0, T], and almost surely at every t ∈ [0, T] at once with any version of ∫ δσ dW right-continuous on [0, T)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_fwddiff_identity",
+     "spec_hash": "ed839d34f480cba1cdc19be62d7635bf",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.frozen_pair_window_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_fwddiff",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.10): for two trials Θ¹, Θ² ∈ ℍ and their frozen steps Θ̄ᵏ = Φ_λ(Θᵏ), 𝔼 sup_{t ≤ T} |δX̄_t|² ≤ 3λ² [𝔼(∫_0^T |δb_s| ds)² + 𝔼 sup_{t ≤ T} |∫_0^t δσ_s dW_s|² + 𝔼 sup_{t ≤ T} |∫_0^t ∫_E δh_s(e) Ñ(ds, de)|²] ≤ 3λ² [T 𝔼 ∫_0^T |δb_s|² ds + c_BDG 𝔼 ∫_0^T |δσ_s|²_F ds + c_BDG 𝔼 ∫_0^T ‖δh_s‖² ds] ≤ 3λ² max{T, c_BDG} 𝔼 ∫_0^T (|δb_s|² + |δσ_s|²_F + ‖δh_s‖²) ds ≤ 3λ² max{T, c_BDG} 𝔼 ∫_0^T S_s² ds ≤ C_X λ² ‖Θ¹ − Θ²‖²_ℍ, C_X = 3 max{T, c_BDG} L⋆², for every c_BDG ≥ c₀, some c₀ > 0",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_fwddiff",
+     "spec_hash": "ed839d34f480cba1898e8661a670d8b9",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.frozen_pair_window_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:fwddiff",
    "kind": "embedded-in-proof",
    "number": "(4.10)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the first clause reads the display before (4.10), lines 350–355, the difference of (4.7) at Θ¹ and Θ²; the sentence after (4.10), lines 373–374, names the justifications of its links; the set-up of the proof of Lemma 4.2 (04-proof-wellposedness.tex lines 258–263) is pinned in A:eq:frozenfwd; the differences of the contraction step (04-proof-wellposedness.tex lines 312–323) are pinned in A:eq:coeffdiff; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_terdiff",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.11): 𝔼|δξ̄|² ≤ λ²L² 𝔼(|δX̄_T| + W₂)² ≤ 2λ²L² (𝔼|δX̄_T|² + W₂²) ≤ C_g λ² 𝔼|δX̄_T|², C_g = 4L², for any two ℱ_T-measurable square-integrable terminal values",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_terdiff",
+     "spec_hash": "ed839d34f480cba104ed4a8f00254090",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.eq_terdiff_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:terdiff",
    "kind": "embedded-in-proof",
    "number": "(4.11)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the definition of δξ̄ (lines 376–379) is pinned here and used by A:eq:bwddiff; 'the first step by (2.6) and the last by (2.9)' (line 389) names the justifications; the set-up of the proof of Lemma 4.2 (04-proof-wellposedness.tex lines 258–263) is pinned in A:eq:frozenfwd",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_bwddiff",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.12): 𝔼 sup_{t ≤ T} |δȲ_t|² + 𝔼 ∫_0^T (|δZ̄_s|²_F + ‖δŪ_s‖²) ds ≤ C_BP (𝔼|δξ̄|² + λ² 𝔼 ∫_0^T |δf_s|² ds) ≤ C_BP (C_g λ² 𝔼|δX̄_T|² + L⋆² λ² ‖Θ¹ − Θ²‖²_ℍ) ≤ C_BP (C_g λ² 𝔼 sup_{t ≤ T} |δX̄_t|² + L⋆² λ² ‖Θ¹ − Θ²‖²_ℍ) ≤ C_BP (C_g C_X λ⁴ + L⋆² λ²) ‖Θ¹ − Θ²‖²_ℍ ≤ C_Y λ² ‖Θ¹ − Θ²‖²_ℍ, C_BP = 2e^T (5 + 4 c_BDG) + 4T, C_Y = C_BP (C_g C_X + L⋆²), for every c_BDG ≥ c₀, some c₀ > 0",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_bwddiff",
+     "spec_hash": "ed839d34f480cba1d8920d62bd288ec6",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.frozen_pair_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_bwddiff_identity",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the backward difference before (4.12): δȲ_t = δξ̄ + ∫_t^T λ δf_s ds − ∫_t^T δZ̄_s dW_s − ∫_t^T ∫_E δŪ_s(e) Ñ(ds, de), the linear backward equation (4.4) with δξ = δξ̄ and φ_s = λ δf_s",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_bwddiff_identity",
+     "spec_hash": "ed839d34f480cba1d4d84f3b5a301248",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.frozen_pair_window_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:bwddiff",
    "kind": "embedded-in-proof",
    "number": "(4.12)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the pinned region is lines 391–424; the second clause reads lines 391–397, the difference of (4.8) at the two trials, which is (4.4) with δξ = δξ̄ and φ_s = λ δf_s, with the hypotheses of Lemma 4.1 listed at lines 398–407 as its side conditions; the first clause reads (4.12); lines 423–424 name the justifications of its links; C_BP := C₀(5 + 4c_BDG) + 4T (04-proof-wellposedness.tex line 244) is pinned in A:eq:supE; the differences of the contraction step (04-proof-wellposedness.tex lines 312–323) are pinned in A:eq:coeffdiff; δξ̄ (lines 376–379) is pinned in A:eq:terdiff; the set-up of the proof of Lemma 4.2 (04-proof-wellposedness.tex lines 258–263) is pinned in A:eq:frozenfwd; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_contract",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.13): ‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖²_ℍ = 𝔼 sup_{t ≤ T} |δX̄_t|² + 𝔼 sup_{t ≤ T} |δȲ_t|² + 𝔼 ∫_0^T (|δZ̄_s|²_F + ‖δŪ_s‖²) ds ≤ (C_X + C_Y) λ² ‖Θ¹ − Θ²‖²_ℍ ≤ C_Φ λ² ‖Θ¹ − Θ²‖²_ℍ, C_Φ = max{1, C_X + C_Y}, for every c_BDG ≥ c₀, some c₀ > 0",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_contract",
+     "spec_hash": "ed839d34f480cba1410aaf91d78575ad",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.frozen_pair_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_contract_half",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "λ_* := (2 √C_Φ)⁻¹ ∈ (0, 1/2], C_Φ λ² ≤ 1/4 for λ ∈ [0, λ_*], and ‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖_ℍ ≤ (1/2) ‖Θ¹ − Θ²‖_ℍ for λ ∈ [0, λ_*]",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_contract_half",
+     "spec_hash": "ed839d34f480cba1a63dc37c47701d1d",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.frozen_pair_window_lam_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:contract",
    "kind": "embedded-in-proof",
    "number": "(4.13)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the pinned region is lines 426–454; the sentence after (4.13), lines 440–445, records the dependences L⋆ = L⋆(T, L), C_X = C_X(T, L, c_BDG), C_g = C_g(L), C_BP = C_BP(T, c_BDG) and C_Φ = C_Φ(T, L, c_BDG): the clause states every constant by its explicit formula in T, L and c, with c the value of c_BDG quantified before the data (∃ c₀ > 0, ∀ c ≥ c₀ first), so C_Φ = max{1, C_X + C_Y} is a fixed function of (T, L, c_BDG), chosen before everything else, as the sentence asserts; the same holds for the constants of (4.10) and (4.12) in A:eq:fwddiff and A:eq:bwddiff; 'the first inequality by (4.10) and (4.12)' (line 440) names a justification; the second clause reads lines 445–454: λ_* = (2 √C_Φ)⁻¹ with the C_Φ of the first clause, C_Φ λ² ≤ 1/4 on [0, λ_*] and the contraction by 1/2; the set-up of the proof of Lemma 4.2 (04-proof-wellposedness.tex lines 258–263) is pinned in A:eq:frozenfwd; the differences of the contraction step (04-proof-wellposedness.tex lines 312–323) are pinned in A:eq:coeffdiff; C_BP := C₀(5 + 4c_BDG) + 4T (04-proof-wellposedness.tex line 244) is pinned in A:eq:supE; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
    "clauses": [],
@@ -4158,26 +5212,64 @@
    "status": "out of scope: part-of"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_dX",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.15): each coordinate of δX satisfies δX_t = δξ₀ + ∫_0^t (λ δb + q^b) ds + ∫_0^t (λ δσ + q^σ) dW + ∫_0^t ∫_E (λ δh + q^h) Ñ(ds, de) almost surely at every t ∈ [0, T], q = δq, δh at the predictable tuples; the jump integral is that of every representative of the integrand, and one exists",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_dX",
+     "spec_hash": "ed839d34f480cba17f8ea34acd5ecf0b",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:dX",
    "kind": "embedded-in-proof",
    "number": "(4.15)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the region (lines 511–533) holds the set-up of the proof of Lemma 4.3, pinned here and used by its later steps (A:eq:bdg4, A:eq:Gid, A:eq:intmono, A:eq:termmono, A:eq:coerc, A:eq:fwd, A:eq:bwdito, A:eq:bwdyoung, A:eq:wgt, A:eq:bwd): q := δq (lines 511–512), the data quantity P (lines 513–516), δψ_t with μᵏ_t := Law(Θᵏ_t), δg_T and δh at the predictable tuples (lines 517–523); 'For a.e. t each pair (Θᵏ_t, μᵏ_t) is a diagonal input … by Fubini, and μᵏ_t is the Borel law flow of Lemma A.1' (lines 523–526) is a step of the proof, Lemma A.1 being A:lem:lawflow; the region also holds (4.16), the claim A:eq:dY; the forcing class (04-proof-wellposedness.tex lines 39–53) is pinned in A:eq:forced and A:sec4:WP-def",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_dY",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.16): each coordinate of (δY, δZ, δU) satisfies δY_T = λ δg_T + q^g_T and δY_t = λ δg_T + q^g_T + ∫_t^T (λ δf + q^f) ds − ∫_t^T δZ dW − ∫_t^T ∫_E δU Ñ(ds, de) almost surely at every t ∈ [0, T], q = δq",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_dY",
+     "spec_hash": "ed839d34f480cba1cc37dd9a0d2b35ad",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:dY",
    "kind": "embedded-in-proof",
    "number": "(4.16)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the region (lines 511–533) holds the set-up of the proof of Lemma 4.3, pinned here and used by its later steps (A:eq:bdg4, A:eq:Gid, A:eq:intmono, A:eq:termmono, A:eq:coerc, A:eq:fwd, A:eq:bwdito, A:eq:bwdyoung, A:eq:wgt, A:eq:bwd): q := δq (lines 511–512), the data quantity P (lines 513–516), δψ_t with μᵏ_t := Law(Θᵏ_t), δg_T and δh at the predictable tuples (lines 517–523); 'For a.e. t each pair (Θᵏ_t, μᵏ_t) is a diagonal input … by Fubini, and μᵏ_t is the Borel law flow of Lemma A.1' (lines 523–526) is a step of the proof, Lemma A.1 being A:lem:lawflow; the region also holds (4.15), the claim A:eq:dX; the forcing class (04-proof-wellposedness.tex lines 39–53) is pinned in A:eq:forced and A:sec4:WP-def",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
    "clauses": [],
@@ -4186,86 +5278,363 @@
    "number": "(4.17)",
    "paper": "A",
    "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope_note": "The pathwise identity (4.17) is used only through its expectation. The proof of Lemma 4.3 takes expectations in it to obtain (4.19), and Step 2 uses (4.19), not (4.17). (4.19) is A:eq:Gid, stated and proved (eq_Gid) from the library's bilinear second-moment identity for Itô–Lévy processes (Ito.SecondMoment.integral_mul_eq_of_isItoLevyProcess). That identity needs only the square integrability of the initial values and the finite energy of the integrands of the difference equations (4.15)–(4.16), which Lemma 4.3's hypotheses give. The bounds that make the stochastic terms of (4.17) mean-zero are the clauses of A:eq:bdg4. The pathwise identity itself is not stated, for the reason recorded for (4.5). The region (lines 563–578) is the sentence of (4.17): its lead-in 'Itô's product formula for ⟨GδX_t, δY_t⟩, integrated over [0, T] and using δX₀ = δξ₀, then gives the pathwise identity' (lines 563–564) and the display.",
    "scope_reviewed": true,
    "status": "out of scope: proof-step"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_bdg4_XZ",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "first bound of (4.18): ∫_0^t ⟨GδX_{s−}, δZ_s dW_s⟩ exists as a local Itô integral on [0, T], 𝔼 sup_{t≤T} |∫_0^t ⟨GδX_{s−}, δZ_s dW_s⟩| ≤ c_BDG ‖G‖ (𝔼 sup_{t≤T} |δX_t|²)^{1/2} (𝔼 ∫_0^T |δZ_t|²_F dt)^{1/2} < ∞, and its increments have mean zero (c_BDG every value at least some c₀ > 0)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_bdg4_XZ",
+     "spec_hash": "ed839d34f480cba1ea9600d62db2bc6a",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_pert_backward_window_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_bdg4_sigmaY",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "second bound of (4.18): ∫_0^t ⟨G(λδσ_s + q^σ_s) dW_s, δY_{s−}⟩ exists as a local Itô integral on [0, T], 𝔼 sup_{t≤T} |∫_0^t ⟨G(λδσ_s + q^σ_s) dW_s, δY_{s−}⟩| ≤ c_BDG ‖G‖ (𝔼 sup_{t≤T} |δY_t|²)^{1/2} (𝔼 ∫_0^T |λδσ_t + q^σ_t|²_F dt)^{1/2} < ∞, and its increments have mean zero (c_BDG every value at least some c₀ > 0)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_bdg4_sigmaY",
+     "spec_hash": "ed839d34f480cba1cb9feae8e68982b0",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_pert_forward_window_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_bdg4_XU",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "third bound of (4.18): ∫_0^t ∫_E ⟨GδX_{s−}, δU_s(e)⟩ Ñ(ds, de) exists as a local compensated integral on [0, T], 𝔼 sup_{t≤T} |∫_0^t ∫_E ⟨GδX_{s−}, δU_s(e)⟩ Ñ(ds, de)| ≤ c_BDG ‖G‖ (𝔼 sup_{t≤T} |δX_t|²)^{1/2} (𝔼 ∫_0^T ‖δU_t‖² dt)^{1/2} < ∞, and its increments have mean zero (c_BDG every value at least some c₀ > 0)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_bdg4_XU",
+     "spec_hash": "ed839d34f480cba18a39ea87912f080a",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_pert_backward_window_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_bdg4_hY",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "fourth bound of (4.18): with λδh + q^h read through any representative meeting the conditions of the compensated integral (one exists), ∫_0^t ∫_E ⟨G(λδh_s + q^h_s)(e), δY_{s−}⟩ Ñ(ds, de) exists as a local compensated integral on [0, T], 𝔼 sup_{t≤T} |∫_0^t ∫_E ⟨G(λδh_s + q^h_s)(e), δY_{s−}⟩ Ñ(ds, de)| ≤ c_BDG ‖G‖ (𝔼 sup_{t≤T} |δY_t|²)^{1/2} (𝔼 ∫_0^T ‖λδh_t + q^h_t‖² dt)^{1/2} < ∞, and its increments have mean zero (c_BDG every value at least some c₀ > 0)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_bdg4_hY",
+     "spec_hash": "ed839d34f480cba11d2a86bd66838ee7",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_pert_forward_window_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_bdg4_fifth",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "𝔼 ∫_0^T |λδσ_t + q^σ_t|²_F dt < ∞ and 𝔼 ∫_0^T ‖λδh_t + q^h_t‖² dt < ∞; the fifth integrand is integrable: 𝔼 ∫_0^T ∫_E |⟨λδh_t(e) + q^h_t(e), GᵀδU_t(e)⟩| ν(de) dt ≤ ‖G‖ (𝔼 ∫_0^T ‖λδh_t + q^h_t‖² dt)^{1/2} (𝔼 ∫_0^T ‖δU_t‖² dt)^{1/2} < ∞",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_bdg4_fifth",
+     "spec_hash": "ed839d34f480cba1bb7df8f3a4d24d8b",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_pert_jump_window_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_bdg4_fifth_mean",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the fifth term of (4.17): λδh + q^h has a marked predictable representative H, and for every such H the fifth integrand ⟨H_t(e), GᵀδU_t(e)⟩ is marked predictable, 𝔼 ∫_{(0, T] × E} |⟨H, GᵀδU⟩| dN and 𝔼 ∫_0^T ∫_E |⟨H, GᵀδU⟩| ν(de) dt are finite, and ∫_{(0, T] × E} ⟨H, GᵀδU⟩ dN − ∫_0^T ∫_E ⟨H, GᵀδU⟩ ν(de) dt has mean zero (2.2)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_bdg4_fifth_mean",
+     "spec_hash": "ed839d34f480cba153e1a9d9480bd7ff",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_pert_jump_window_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:bdg4",
    "kind": "embedded-in-proof",
    "number": "(4.18)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the clauses read lines 579–622: the four bounds of (4.18) (lines 579–598), each with the existence of its local martingale as a local stochastic integral (IsLocalBrownianIntegral, IsLocalCompensatedIntegral), the finiteness of the bounds and the zero means the supremum criterion gives (lines 600–612), the finiteness of 𝔼∫|λδσ + q^σ|²_F and 𝔼∫‖λδh + q^h‖² (lines 606–610), the integrability of the fifth integrand (lines 612–621), and its predictability and the zero mean of the fifth term by (2.2) (lines 612–613 and 622), the last clause, with a marked predictable representative of λδh + q^h and the fifth term read pathwise, the Poisson integral minus its compensator, as for M² in A:lem4.1:M2-infinite-activity (the bounds read λδh + q^h through any representative meeting the conditions of the compensated integral, marked progressively measurable, as in (4.15)); the display at lines 600–605 is the definition of the norm of ℍ at the hypothesis Θ¹ − Θ² ∈ ℍ, whose finiteness enters each bound; not stated: that the four local martingales and the fifth term are the stochastic terms of (4.17), which belongs to (4.17) (A:eq:Gid-path, a proof step not stated); the first link of each bound, the Burkholder–Davis–Gundy inequality at p = 1 in quadratic-variation form (Davis's inequality), is cited work (He, Wang and Yan, as in A:sec4:supremum-criterion) and is not stated: each bound is stated and proved through the predictable quadratic variation (Lenglart's inequality), with the same right-hand side; the set-up of the proof of Lemma 4.3 (04-proof-wellposedness.tex lines 511–526: q := δq, P, δψ_t, δg_T, δh at the predictable tuples) is pinned in A:eq:dX and A:eq:dY; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_Gid",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.19): 𝔼⟨G δX_T, δY_T⟩ − 𝔼⟨G δξ₀, δY_0⟩ = 𝔼 ∫_0^T [⟨λ δb + q^b, Gᵀ δY⟩ + ⟨λ δσ + q^σ, Gᵀ δZ⟩_F + ∫_E ⟨λ δh + q^h, Gᵀ δU⟩ dν + ⟨−λ δf − q^f, G δX⟩] dt, the three expectations existing, δh at the predictable tuples",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_Gid",
+     "spec_hash": "ed839d34f480cba187a9b1634afe69c9",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:Gid",
    "kind": "embedded-in-proof",
    "number": "(4.19)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "'Taking expectations and dropping the left limits in the drift multipliers (the dt-integral convention above)' (lines 624–625) names the step from (4.17) (A:eq:Gid-path); the dt-integral convention of §4 (04-proof-wellposedness.tex lines 17–20) is pinned in A:sec4:supremum-criterion; the set-up of the proof of Lemma 4.3 (04-proof-wellposedness.tex lines 511–526: q := δq, P, δψ_t, δg_T, δh at the predictable tuples) is pinned in A:eq:dX and A:eq:dY",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_intmono",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.20) at almost every t: λ 𝔼[⟨δb, Gᵀ δY⟩ + ⟨δσ, Gᵀ δZ⟩_F + ∫_E ⟨δh, Gᵀ δU⟩ dν + ⟨−δf, G δX⟩] ≤ −λ β₁ 𝔼[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²] − λ β₂ 𝔼|G δX|², the expectation on the left existing, δh at the predictable tuples",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_intmono",
+     "spec_hash": "ed839d34f480cba14dbfddebc754cdd1",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:intmono",
    "kind": "embedded-in-proof",
    "number": "(4.20)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the agreement of the predictable tuples with (Θᵏ_t, μᵏ_t) for dt-a.e. t (lines 634–636) is Lemma A.1 (A:lem:lawflow), and 'Assumption 2.5, applied at the common input pair' names the justification; the dt-integral convention of §4 (04-proof-wellposedness.tex lines 17–20) is pinned in A:sec4:supremum-criterion; the set-up of the proof of Lemma 4.3 (04-proof-wellposedness.tex lines 511–526: q := δq, P, δψ_t, δg_T, δh at the predictable tuples) is pinned in A:eq:dX and A:eq:dY",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_termmono",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.21): 𝔼⟨G δX_T, δY_T⟩ = λ 𝔼⟨G δX_T, δg_T⟩ + 𝔼⟨G δX_T, q^g_T⟩ ≥ λ α 𝔼|G δX_T|² − |𝔼⟨G δX_T, q^g_T⟩|, the expectations existing",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_termmono",
+     "spec_hash": "ed839d34f480cba1ea261f16df305b5f",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:termmono",
    "kind": "embedded-in-proof",
    "number": "(4.21)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "'The terminal side of (4.19) is bounded by the terminal monotonicity of Assumption 2.5' (lines 648–649) names the justification; the set-up of the proof of Lemma 4.3 (04-proof-wellposedness.tex lines 511–526: q := δq, P, δψ_t, δg_T, δh at the predictable tuples) is pinned in A:eq:dX and A:eq:dY",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_coerc_insert",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.20) and (4.21) inserted into (4.19): λ α 𝔼|G δX_T|² − |𝔼⟨G δX_T, q^g_T⟩| − 𝔼⟨G δξ₀, δY_0⟩ ≤ −λ β₁ 𝔼∫[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²] − λ β₂ 𝔼∫|G δX|² + 𝔼∫(⟨q^b, Gᵀ δY⟩ + ⟨q^σ, Gᵀ δZ⟩_F + ⟨−q^f, G δX⟩ + ∫_E ⟨q^h, Gᵀ δU⟩ dν), every expectation finite",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_coerc_insert",
+     "spec_hash": "ed839d34f480cba19e2302a704da248e",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_coerc",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.22): N' and P are finite, and λ α 𝔼|G δX_T|² + λ β₂ 𝔼∫|G δX|² + λ β₁ 𝔼∫[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²] ≤ the six pairings in absolute value ≤ 𝒦 = η N' + ‖G‖²/(4η) P for every η > 0",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_coerc",
+     "spec_hash": "ed839d34f480cba1763b5cdd464a968d",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_coerc_blocks",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "each coercive block on the left of (4.22) is at most 𝒦: λα𝔼|GδX_T|² ≤ 𝒦, λβ₂𝔼∫|GδX|² ≤ 𝒦 and λβ₁𝔼∫[|GᵀδY|² + |GᵀδZ|²_F + ‖GᵀδU‖²] ≤ 𝒦, for every η > 0",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_coerc_blocks",
+     "spec_hash": "ed839d34f480cba17bd256e67c544535",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:coerc",
    "kind": "embedded-in-proof",
    "number": "(4.22)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the pinned region is lines 657–695; the first clause reads the display that inserts (4.20) and (4.21) into (4.19), lines 670–680, the second (4.22) with P recalled at lines 657–661 and N', 𝒦 set at lines 662–669, and the third the sentence after (4.22), lines 694–695; the set-up of the proof of Lemma 4.3 (04-proof-wellposedness.tex lines 511–526: q := δq, P, δψ_t, δg_T, δh at the predictable tuples) is pinned in A:eq:dX and A:eq:dY",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_fwd",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.23): 𝔼 sup_{t ≤ T} |δX_t|² ≤ C (𝔼 ∫_0^T (|δY_t|² + |δZ_t|²_F + ‖δU_t‖²) dt + P), C a function of (T, L, ‖G‖, c_G, α, β₁, β₂)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_fwd",
+     "spec_hash": "ed839d34f480cba1e1eabbb5a5cd78ba",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_fwd_chain",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the chain fed into Grönwall, at every t ∈ [0, T]: 𝔼 sup_{s ≤ t} |δX_s|² ≤ C (𝔼|δξ₀|² + 𝔼 ∫_0^t (|δb_s|² + |δσ_s|²_F + ‖δh_s‖²) ds + P) ≤ C (𝔼|δξ₀|² + 𝔼 ∫_0^t (|δX_s|² + |δY_s|² + |δZ_s|²_F + ‖δU_s‖²) ds + P) ≤ C (∫_0^t 𝔼 sup_{r ≤ s} |δX_r|² ds + 𝔼 ∫_0^T (|δY_s|² + |δZ_s|²_F + ‖δU_s‖²) ds + P); and t ↦ 𝔼 sup_{s ≤ t} |δX_s|² is nondecreasing and finite on [0, T]",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_fwd_chain",
+     "spec_hash": "ed839d34f480cba15b2aba22478deb02",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_pert_backward_window_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:fwd",
    "kind": "embedded-in-proof",
    "number": "(4.23)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the pinned region is lines 697–714; the second clause reads lines 697–711: the three-link chain at every t ≤ T (lines 697–709) and the sentence that t ↦ 𝔼 sup_{s ≤ t} |δX_s|² is nondecreasing and finite (lines 710–711); the first clause reads (4.23); the set-up of the proof of Lemma 4.3 (04-proof-wellposedness.tex lines 511–526: q := δq, P, δψ_t, δg_T, δh at the predictable tuples) is pinned in A:eq:dX and A:eq:dY; every unnamed C follows the convention on constants of §4 (04-proof-wellposedness.tex lines 22–25), pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_bwdito",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.24): for every κ > 0 and t ∈ [0, T], 𝔼 e^{κt} |δY_t|² + 𝔼 ∫_t^T e^{κs} (κ |δY_s|² + |δZ_s|²_F + ‖δU_s‖²) ds ≤ 𝔼 e^{κT} |λ δg_T + q^g_T|² + 2 𝔼 ∫_t^T e^{κs} ⟨δY_s, λ δf_s + q^f_s⟩ ds, the integrands integrable, q = δq",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_bwdito",
+     "spec_hash": "ed839d34f480cba1ac3ad318e96e1e46",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:bwdito",
    "kind": "embedded-in-proof",
    "number": "(4.24)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "'Itô's formula applied to e^{κt}|δY_t|²' (line 716) names the justification, the Itô formula cited in §4 (04-proof-wellposedness.tex lines 27–29, pinned in A:sec4:supremum-criterion); the set-up of the proof of Lemma 4.3 (04-proof-wellposedness.tex lines 511–526: q := δq, P, δψ_t, δg_T, δh at the predictable tuples) is pinned in A:eq:dX and A:eq:dY",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -4281,10 +5650,10 @@
      "passage_changed": {},
      "refute": null,
      "spec": "Dissertation.PaperSpec.A.eq_bwdyoung",
-     "spec_hash": "ed839d34f480cba13db23656421cf5a0",
+     "spec_hash": "ed839d34f480cba1223fa80380d57b0f",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
-     "witness": "Dissertation.Acceptance.A.lem_pert_two_data_hypotheses",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
      "witness_ok": true
     }
    ],
@@ -4293,31 +5662,123 @@
    "number": "(4.25)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "",
+   "scope_note": "the set-up of the proof of Lemma 4.3 (04-proof-wellposedness.tex lines 511–526: q := δq, P, δψ_t, δg_T, δh at the predictable tuples) is pinned in A:eq:dX and A:eq:dY; every unnamed C follows the convention on constants of §4 (04-proof-wellposedness.tex lines 22–25), pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_wgt",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.26): sup_{t ≤ T} 𝔼|δY_t|² + 𝔼 ∫_0^T (|δZ_t|²_F + ‖δU_t‖²) dt ≤ C (𝔼|δX_T|² + 𝔼 ∫_0^T |δX_t|² dt + P), C a function of (T, L, ‖G‖, c_G, α, β₁, β₂)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_wgt",
+     "spec_hash": "ed839d34f480cba149f1ed71dc85d931",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_wgt_insert",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.25) inserted in (4.24), for ε ∈ (0, 1], κ > 0 and t ∈ [0, T]: 𝔼 e^{κt} |δY_t|² + 𝔼 ∫_t^T e^{κs} ((κ − C/ε) |δY_s|² + (1 − ε) (|δZ_s|²_F + ‖δU_s‖²)) ds ≤ 𝔼 e^{κT} |λ δg_T + q^g_T|² + (C/ε) 𝔼 ∫_t^T e^{κs} (|δX_s|² + |q^f_s|²) ds; and for ε < 1, κ > C/ε, at every t: 𝔼|δY_t|² + 𝔼 ∫_t^T (|δZ_s|²_F + ‖δU_s‖²) ds ≤ C' (𝔼|λ δg_T + q^g_T|² + 𝔼 ∫_t^T (|δX_s|² + |q^f_s|²) ds)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_wgt_insert",
+     "spec_hash": "ed839d34f480cba1962ea6cd220ce698",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_pert_backward_window_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_wgt_terminal",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the terminal bound before (4.26): 𝔼|δg_T|² ≤ C 𝔼|δX_T|², C a function of (T, L, ‖G‖, c_G, α, β₁, β₂), under the hypotheses of Lemma 4.3",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_wgt_terminal",
+     "spec_hash": "ed839d34f480cba1e4db1f2acd4bcb96",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:wgt",
    "kind": "embedded-in-proof",
    "number": "(4.26)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the pinned region is lines 735–760; the second clause reads lines 735–752: the display inserting (4.25) in (4.24) (lines 735–744) and the bound at every t for ε < 1 and κ > C/ε (lines 745–752); the third clause reads the terminal bound 𝔼|δg_T|² ≤ C 𝔼|δX_T|² of line 753; the first clause reads (4.26) with the sentence before it (lines 753–755), whose 'the forcings in P' and '∫_t^T ≤ ∫_0^T' are steps of its proof; the set-up of the proof of Lemma 4.3 (04-proof-wellposedness.tex lines 511–526: q := δq, P, δψ_t, δg_T, δh at the predictable tuples) is pinned in A:eq:dX and A:eq:dY; every unnamed C follows the convention on constants of §4 (04-proof-wellposedness.tex lines 22–25), pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
-   "clauses": [],
+   "clauses": [
+    {
+     "accept": "Dissertation.Acceptance.A.eq_bwd",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "(4.27): 𝔼 sup_{t ≤ T} |δY_t|² + 𝔼 ∫_0^T (|δZ_t|²_F + ‖δU_t‖²) dt ≤ C (𝔼|δX_T|² + 𝔼 ∫_0^T |δX_t|² dt + P), C a function of (T, L, ‖G‖, c_G, α, β₁, β₂)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_bwd",
+     "spec_hash": "ed839d34f480cba173f30a686b4b22f5",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses",
+     "witness_ok": true
+    },
+    {
+     "accept": "Dissertation.Acceptance.A.eq_bwd_chain",
+     "accept_ok": true,
+     "author_reviewed": [],
+     "corrects": null,
+     "defs": [],
+     "defs_changed": [],
+     "defs_pending": [],
+     "name": "the first two links of the chain before (4.27): 𝔼 sup_{t ≤ T} |δY_t|² ≤ C (𝔼|δY_0|² + 𝔼 ∫_0^T |λ δf_s + q^f_s|² ds + 𝔼 ∫_0^T (|δZ_s|²_F + ‖δU_s‖²) ds) ≤ C (𝔼|δY_0|² + 𝔼 ∫_0^T (|δX_s|² + |δY_s|² + |δZ_s|²_F + ‖δU_s‖²) ds + P)",
+     "passage_changed": {},
+     "refute": null,
+     "spec": "Dissertation.PaperSpec.A.eq_bwd_chain",
+     "spec_hash": "ed839d34f480cba1bd5456c76b6d343a",
+     "spec_ok": true,
+     "spec_review": "reviewed by claude-auditor",
+     "witness": "Dissertation.Acceptance.A.lem_pert_backward_window_hypotheses",
+     "witness_ok": true
+    }
+   ],
    "id": "A:eq:bwd",
    "kind": "embedded-in-proof",
    "number": "(4.27)",
    "paper": "A",
-   "scope": "proof-step",
-   "scope_note": "a step of a printed proof",
+   "scope": "formal",
+   "scope_note": "the pinned region is lines 761–778; the second clause reads the first two links of the chain of lines 761–772: the forward-form BDG bound and the Lipschitz step; its last link, by (4.26), gives (4.27), the first clause, as lines 773–774 say; the set-up of the proof of Lemma 4.3 (04-proof-wellposedness.tex lines 511–526: q := δq, P, δψ_t, δg_T, δh at the predictable tuples) is pinned in A:eq:dX and A:eq:dY; every unnamed C follows the convention on constants of §4 (04-proof-wellposedness.tex lines 22–25), pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
-   "status": "out of scope: proof-step"
+   "status": "formal: accepted"
   },
   {
    "clauses": [],
@@ -4333,12 +5794,11 @@
  ],
  "summary": {
   "A": {
-   "definition: reviewed": 11,
-   "formal: accepted": 44,
-   "formal: proved, review pending": 5,
+   "definition: reviewed": 14,
+   "formal: accepted": 76,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
-   "out of scope: proof-step": 28
+   "out of scope: proof-step": 2
   }
  }
 }

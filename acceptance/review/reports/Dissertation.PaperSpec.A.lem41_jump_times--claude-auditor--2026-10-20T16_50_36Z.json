@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.lem41_jump_times",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.lem41_jump_times",
+  "lean": [
+   "Dissertation.PaperSpec.A.lem41_jump_times"
+  ],
+  "claims": [
+   "A:lem4.1:M2-infinite-activity"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-afc9e48e2455",
+  "project_commit": "53a4ee4fc8767ba8884b5732431dded9772b47df",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba17f1df52f488747a1",
+  "fingerprint": "pl-fp-v1:e067139d1bf4a6441655bb2dd65c129357516501c1ca6d5fd05bbfcadb41e70c",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of spec:Dissertation.PaperSpec.A.lem41_jump_times (locked before any Lean).\n\nPassage: manuscript/paper/sections/04-proof-wellposedness.tex lines 150-152 (region 139-187 of\nclaim A:lem4.1:M2-infinite-activity): \"nor, with nu(E) = infinity admitted, does localisation along\njump times, which then fail to exhaust [0, T]\". Also Section 2 lines 9-11 (\"in the\ninfinite-activity regime N has infinitely many atoms on every nondegenerate time interval\").\n\nWhat is asserted. In the standing setting, if nu(E) = infinity, the jump times of N do not exhaust\n[0, T]: the localising sequence one would use (the successive jump times of the counting process\nt -> N((0, t] x E)) does not increase to T (or beyond), so it cannot localise on [0, T]. The\nmechanism: N((0, t] x E) is a Poisson variable of mean t nu(E) = infinity, hence (Poisson random\nmeasure, sigma-finite nu) equals infinity almost surely for each t > 0, and on a common null set\nfor all t > 0 by monotonicity in t (rational t suffices). So tau_k := inf{t >= 0 : N((0, t] x E)\n>= k}, valued in [0, infinity] with inf of the empty set = infinity, is 0 for every k >= 1 (for\nk = 0 it is 0 trivially), almost surely; hence sup_k tau_k = 0 < T.\n\nFaithful formal statement. For every setting of Section 2 (or any Poisson random measure with\nintensity dt nu, sigma-finite nu) with nu(E) = infinity, and every T > 0: almost surely,\nN((0, t] x E) = infinity for all t > 0, and the jump times tau_k (defined from N as above, in\n[0, infinity]) satisfy sup_k tau_k < T (in particular they are all 0). The quantifier \"almost\nsurely\" must come before \"for every t > 0\" (one null set for all t), or at least the conclusion\n\"sup_k tau_k < T a.s.\" must be stated; \"for each t, a.s.\" alone would not give the\nnon-exhaustion. The jump times must be those of the setting's N (not of an arbitrary process).\nOther renderings of \"fail to exhaust [0, T]\" (e.g. P(sup_k tau_k >= T) < 1, or = 0) are\nacceptable; the a.s. form with tau_k = 0 is the strongest natural one and is true. The claim\nneeds T > 0 (the setting has T > 0). No constants are involved.\n\nContext (all lem41 units). Passage: manuscript/paper/sections/04-proof-wellposedness.tex, region\nlines 139-187 (proof of Lemma 4.1, \"Zero-mean terms\"), read with the statement of Lemma 4.1\n(lines 89-102), the \"Membership\" step (lines 104-113), identity (4.x) eq:itoY2 (lines 126-137),\nthe conventions of the start of Section 4 (lines 17-37: one universal BDG constant c_BDG valid at\np = 1 and p = 2; the \"supremum criterion\"; constants C depend only on T, L, |G|, c_G, alpha,\nbeta_1, beta_2, c_BDG), the standing setting of Section 2 (lines 1-25: filtered space with the\nusual conditions, T > 0, n, m, d >= 1, d-dim Brownian motion W, independent Poisson random measure\nN on R_+ x E with intensity dt nu(de), nu sigma-finite on countably generated (E, calE), filtration\nthe usual augmentation of W, N and an independent F_0; compensation formula (2.1) for predictable\npsi >= 0 with values in [0, infinity]; zero mean (2.2) under integrability), the spaces of\nSection 3 (H^2_W: predictable R^{m x d}-valued, E int |Z|_F^2 < infinity; H^2_N: predictable\nL^2(nu; R^m)-valued, E int ||U||^2 < infinity), and the Fubini reading (2.x) eq:fubiniiso:\nevery Poisson integral and every L^2(nu)-valued predictable integrand in one is read through a\nP (x) calE-measurable representative (marked predictable), unique up to dt dP nu-null sets.\nHypotheses in force at line 139: delta Y cadlag adapted R^m-valued, delta Z in H^2_W, delta U in\nH^2_N, delta xi in L^2(F_T), phi in L^2(Omega x [0,T]), equation (eq:dYlin) for every t, and, from\nthe Membership step already done, E sup_{t<=T} |delta Y_t|^2 < infinity (delta Y in S^2).\nThe three processes on [0, T]:\n  M^W_t = int_0^t e^s <delta Y_{s-}, delta Z_s dW_s>  (= sum_{i,j} e^s dY^i_{s-} dZ^{ij}_s dW^j_s),\n  M^1_t = int_0^t int_E e^s <delta Y_{s-}, delta U_s(e)> Ntilde(ds, de),\n  M^2_t = int_0^t int_E e^s |delta U_s(e)|^2 Ntilde(ds, de).\nThe printed passage asserts, in order: (a) the stochastic-integral terms of (eq:itoY2) decompose\ninto these three local martingales; (b) each satisfies E[M_T - M_t] = 0; (c) delta U in H^2_N\ngives the quadratic integrand of M^2 no square moments, so the L^2 theory does not reach it;\n(d) with nu(E) = infinity, localisation along jump times fails, as they fail to exhaust [0, T];\n(e) the compensation formula needs only integrability; (f) the BDG bound for M^W; (g) the BDG\nchain for M^1 (four links, the third by (2.1)); (h) the supremum criterion gives\nE[M_T - M_t] = 0 for M^W, M^1; (i) the integrand of M^2 is predictable and nonnegative and lies\nin L^1(dP ds nu) with the displayed bound by e^T E int ||dU||^2; (j) the Poisson integral and its\ncompensator are integrable, so the increment splits and E[M^2_T - M^2_t] = 0 (three-line display).\n\"For every t\": the paper uses E[M_T - M_t] = 0 at every t in [0, T] (taken at every t <= T in\nline 200).",
+  "locked_at": "2026-10-20T16:39:43Z"
+ },
+ "comparison": {
+  "text": "Comparison for spec:Dissertation.PaperSpec.A.lem41_jump_times\n(Dissertation/PaperSpec/A/Sec4BrownianPoisson.lean, lem41_jump_times).\n\nReading (locked): for every setting with nu(E) = infinity and T > 0, almost surely\nN((0, t] x E) = infinity for all t > 0, and tau_k = inf{t >= 0 : N((0, t] x E) >= k} in\n[0, infinity] (inf of the empty set = infinity) are all 0, so sup_k tau_k < T; one null set for all\nt; the jump times of the setting's N.\n\nLean, item by item.\n- Setting: every probability space, every sigma-finite (E, nu) (no countable generation required),\n  every d and every Levy driver D, with nu univ = infinity. The standing setting (countably\n  generated E, G0, enlJoint) is an instance; G0 and the filtration play no role in the statement.\n  So the clause is broader than the printed setting (see detail).\n- N: D.N.N w, the setting's Poisson random measure (intensity Lebesgue on [0, infinity) x nu).\n- \"for ae w\" placed before \"forall t > 0\": one null set for all t. Matches.\n- tau_k := infimum over real t with 0 <= t and k <= N((0, t] x univ) of ofReal t, in [0, infinity];\n  the infimum of the empty family is infinity. Matches the reading's definition. The clause\n  asserts tau_k = 0 for every k in N (k = 0 included, trivially) and, for every T > 0,\n  sup_k tau_k < ofReal T. Matches \"they fail to exhaust [0, T]\".\n- Constants: none. \"Almost surely\" as the reading requires.\nNot vacuous: nu(E) = infinity with a Levy driver is realised (witness).\n\nVerdict: broader.\n\nWitness: Dissertation.Acceptance.A.sec2_infinite_activity_hypotheses: Lebesgue measure on R has\ninfinite mass, and a Levy driver with d = 1 and that intensity exists. This is the intended\ninfinite-activity regime; nondegenerate (the conclusion is about a genuinely infinite-activity N).\n\nCoverage (claim A:lem4.1:M2-infinite-activity, region lines 139-187 of\nmanuscript/paper/sections/04-proof-wellposedness.tex, read in acceptance/claims.json after show).\nIts eight clauses (lem41_M2_no_square_moment, lem41_jump_times, lem41_M2_integrand,\nlem41_M2_zero_mean, lem41_M2_martingale, lem41_MW, lem41_M1, lem41_M1_chain) state: the\nnon-implication of lines 149-150 (for nu != 0); the failure of localisation along jump times when\nnu(E) = infinity (150-151); the bound, its finiteness and the zero-mean increments of M^W\n(153-158, 171-172); the composite bound, finiteness and zero mean of M^1 and links two to four of\nits chain (159-172); the integrand of M^2 predictable and nonnegative, its L^1 bound by\ne^T E int ||dU||^2, the finiteness of the Poisson integral and of the compensator over (t, T] and\nE[M^2_T - M^2_t] = 0 (173-187); and that M^2 is a local martingale (139-147), stated as a\nmartingale on [0, T]. Not stated by any clause: (i) the first link of the M^1 chain (line 162),\nE sup_{t<=T} |M^1_t| <= c_BDG E[(int_0^T int_E e^{2s} |dY_{s-}|^2 |dU_s(e)|^2 N(ds,de))^{1/2}];\nthe scope note sets it aside as cited work (BDG at p = 1), but it is the paper's assertion about\nits own M^1 (BDG in quadratic-variation form combined with Cauchy-Schwarz in R^m), so its absence\nis a gap in coverage, mitigated by the composite bound of lem41_M1, which is stated and does not\ndepend on it; (ii) that the stochastic-integral terms of (eq:itoY2) are -2(M^W_T - M^W_t)\n- 2(M^1_T - M^1_t) - (M^2_T - M^2_t) (lines 139-141), assigned by the scope note to A:eq:itoY2,\nwhich I did not check; (iii) the local-martingale property of M^W and M^1, which is carried by\nthe definitions IsLocalBrownianIntegral / IsLocalCompensatedIntegral (adapted cadlag processes\nagreeing, up to stopping times eventually >= T, with L^2 integrals) rather than stated. The\nsentence that the compensation formula \"asks only for integrability\" is methodological and is\nembodied in lem41_M2_zero_mean. No clause states something the passage does not claim, except\nthat lem41_M2_martingale asserts a true martingale where the paper prints \"local martingale\"\n(stronger, recorded in the scope note). Hypotheses: clauses three to eight carry exactly the\nhypotheses of Lemma 4.1 in the standing setting, which are those in force at line 139 (the\nMembership step's E sup |dY|^2 < infinity is derived, and it appears as the finiteness conclusion\nof lem41_MW and lem41_M1); clause one carries the setting with nu != 0, clause two a Levy driver\nwith nu(E) = infinity.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-20T16:48:45Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "broader",
+  "detail": "Broader: the clause holds for every Levy driver with sigma-finite nu(E) = infinity on an arbitrary\nmark space, without the standing hypotheses that calE be countably generated and that an\nindependent initial sigma-algebra G0 enlarge the filtration. Instantiation giving the printed\nstep: take the setting's (E, nu) (countably generated, sigma-finite, nu(E) = infinity) and its\ndriver D; G0 and the filtration do not enter the statement, so the conclusion is the printed\nnon-exhaustion of [0, T] by the jump times of the setting's N, for every T > 0."
+ },
+ "author_review": {
+  "shown_at": "2026-10-20T16:50:15Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-20T16:50:36Z",
+ "issue_draft": null
+}

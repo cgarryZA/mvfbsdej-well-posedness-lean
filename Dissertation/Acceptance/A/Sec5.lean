@@ -446,6 +446,8 @@ theorem ex_fulllaw_pert : PaperSpec.A.ex_fulllaw_pert.{u, v, w} := by
 
 /-- Example 5.4, well-posedness. -/
 theorem ex_fulllaw_wp : PaperSpec.A.ex_fulllaw_wp.{u, v, w} := by
+  obtain ⟨Cstab, hcor⟩ := cor_robust_wp.{u, v, w}
+  refine ⟨Cstab, ?_⟩
   intro Ω 𝒢₀ mΩ E _ ν _ _ n d J P _ D h𝒢₀ hind₀ hn hd T hT L₀ α β₁ β₂ cdiss G C ξ₀ hJ h22 h23
     hG h25 h213 hcdiss ε q qb qh Q φ μ₀ Λ₀ w₀ w₁ v₀ hhat Lq Lqb Lqh LQ K hε hLq hLqb hLqh hLQ
     hq hqb hqh hQ hφ hsmall
@@ -469,7 +471,9 @@ theorem ex_fulllaw_wp : PaperSpec.A.ex_fulllaw_wp.{u, v, w} := by
     (mul_nonneg (norm_nonneg _) hLp0) hJp hc
   have hwp := thm_cwp 𝒢₀ ν n n d P D h𝒢₀ hind₀ hn hn hd T hT L α β₁ β₂ G _ ξ₀ hJp h22' h23' hG
     h25'
-  exact ⟨hJp, h22', ⟨L, h23'⟩, h25', h213', hwp.1, hwp.2⟩
+  have hstab := (hcor 𝒢₀ ν n d P D h𝒢₀ hind₀ hn hd T hT L₀ _ α β₁ β₂ cdiss _ G C _ ξ₀ hJ h22 h23
+    hG h25 h213 hcdiss horig hLI hLp0 h34 (mul_nonneg (norm_nonneg _) hLp0) hJp hc).2.2
+  exact ⟨hJp, h22', ⟨L, h23'⟩, h25', h213', hwp.1, hwp.2, hstab⟩
 
 /-- Example 5.4, the affine cylindrical term. -/
 theorem ex_fulllaw_affineQ : PaperSpec.A.ex_fulllaw_affineQ.{v} := by

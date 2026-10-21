@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.eq_supE",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.eq_supE",
+  "lean": [
+   "Dissertation.PaperSpec.A.eq_supE"
+  ],
+  "claims": [
+   "A:eq:supE"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-e3ac62d43966",
+  "project_commit": "6d403c197bfb10fe8808933c6e525ee0ae544fb1",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba17f3cae8e2942fb86",
+  "fingerprint": "pl-fp-v1:e241a26f752408caf91446781f151100334c9ecb1156a6f82b2884312e552502",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "READING (locked before any Lean) -- spec:Dissertation.PaperSpec.A.eq_supE\nReviewer: claude-auditor (same model family as the statements' author).\n\nPassage: proof of Lemma 4.1 (lem:bpbsde), after \"Taking expectations in (4.4) ...\":\n E e^t|dY_t|^2 + E int_t^T e^s(|dZ_s|_F^2+||dU_s||^2) ds <= E e^T|dxi|^2 + E int_t^T e^s|phi_s|^2 ds;\n \"Bounding 1 <= e^s <= e^T on both sides leaves, for every t <= T,\n   E|dY_t|^2 + E int_t^T (|dZ_s|_F^2 + ||dU_s||^2) ds <= R,  R := e^T(E|dxi|^2 + E int_0^T|phi_s|^2 ds).\n Both terms on the left are nonnegative and R does not depend on t, so each is bounded by R on its\n own, the first uniformly in t and the second at t = 0; adding them,\n (4.6)  sup_{t<=T} E|dY_t|^2 + E int_0^T (|dZ_s|_F^2+||dU_s||^2) ds <= 2R = C_0(E|dxi|^2 +\n        E int_0^T |phi_s|^2 ds),  C_0 := 2e^T.\"\n\nHypotheses in force at this point (those of Lemma 4.1, in the standing setting):\n - standing basis (T > 0, W d-dim BM, independent PRM N with intensity dt x nu, nu sigma-finite on\n   countably generated E, augmented filtration with F_0);\n - dY : cadlag adapted R^m-valued; dZ in H_W (predictable R^{m x d}, E int |dZ|_F^2 < inf);\n   dU in H_N (predictable, P x E-measurable, E int ||dU||^2 < inf);\n - dxi in L^2(F_T; R^m); phi in L^2(Omega x [0,T]; R^m) (jointly measurable; adaptedness is not\n   stated in the lemma; (4.3) itself forces int_0^t phi ds to be adapted);\n - the identity (4.3): a.s., for every t in [0,T],\n   dY_t = dxi + int_t^T phi_s ds - int_t^T dZ_s dW_s - int_t^T int_E dU_s(e) Ntilde(ds,de),\n   with the Ito integral and the L^2 compensated-Poisson integral (dZ, dU are L^2, so these are\n   the L^2 stochastic integrals).\n - Already derived before this step: dY in S^2 (the \"Membership\" paragraph). A statement may take\n   it as a consequence, not as an extra hypothesis; adding it as a hypothesis would be a harmless\n   strengthening only if it is derivable from the others (it is), but strictly it is not a\n   hypothesis of the lemma.\nNo other hypothesis (no assumption on the coefficients; no smallness; no finiteness of nu).\n\nConclusion: (A) for every t in [0,T]:\n   E|dY_t|^2 + E int_t^T (|dZ_s|_F^2 + ||dU_s||^2_{L^2(nu)}) ds <= e^T (E|dxi|^2 + E int_0^T |phi_s|^2 ds);\n (B) sup_{t in [0,T]} E|dY_t|^2 + E int_0^T (|dZ_s|_F^2 + ||dU_s||^2) ds <= 2e^T (E|dxi|^2 +\n   E int_0^T |phi_s|^2 ds), i.e. C_0 = 2e^T.\nConstants: C_0 = 2e^T exactly (depends on T only), R = e^T(...). The norms: Euclidean on R^m,\nFrobenius on R^{m x d}, ||u||^2 = int_E |u(e)|^2 nu(de).\nRepresentation notes: the sup over t of E|dY_t|^2 must be a genuine supremum (in R it must be\nbounded above for sSup to be meaningful -- it is, by (A) -- or in [0,infinity]); expectations of\nsquares should not be Bochner junk (integrability follows from S^2 membership and the L^2\nhypotheses). A statement that takes as HYPOTHESIS the expected Ito identity (the display before\n\"Bounding 1 <= e^s <= e^T\") rather than the BSDE (4.3) would be a different (algebraic) claim;\nthis proposition, as a step of the printed proof, is legitimately the consequence of the lemma's\nhypotheses at this point, i.e. (A) and (B) from the BSDE hypotheses.",
+  "locked_at": "2026-10-19T22:48:57Z"
+ },
+ "comparison": {
+  "text": "COMPARISON -- spec:Dissertation.PaperSpec.A.eq_supE\nReviewer: claude-auditor (same model family as the statements' author).\n\nLean (Sec4BrownianPoisson.lean:148-207). Hypotheses: identical to lem41_M2_zero_mean, i.e. the\nstanding setting and all hypotheses of Lemma 4.1 (dZ in H_W, dU in H_N, dxi in L^2(F_T), phi\njointly measurable with finite energy, dY adapted with cadlag paths on [0,T], identity (4.3) for\neach t a.s. with the genuine L^2 Ito and compensated Poisson integrals). Conclusions, all in\n[0, infinity]:\n (A) for every t in [0,T]:\n     E esq(dY_t) + E int_{[t,T]} (sum_k esq(dZ_k s) + sum_k int_E |dU_k(s,e)|^2 dnu) ds\n       <= ofReal(e^T) * (E esq(dxi) + sum_k energy(phi_k));\n (B) (sup_{t in [0,T]} E esq(dY_t)) + (sum_{k,j} energy(dZ_kj) + sum_k markedEnergy(dU_k))\n       <= ofReal(2 e^T) * (E esq(dxi) + sum_k energy(phi_k)).\n\nItem by item against my locked reading:\n - Setting and hypotheses: exactly those of Lemma 4.1 in the standing setting, nothing added\n   (no S^2 membership assumed, no coefficient assumption, no finiteness of nu). OK.\n - (A): esq = squared Euclidean norm; sum_k esq(dZ_k) = |dZ|_F^2; sum_k int |dU_k|^2 dnu =\n   ||dU||^2_{L^2(nu)}; energy(phi_k) summed = E int_0^T |phi|^2. R = e^T(...). Exactly the display\n   on lines 200-205. OK.\n - (B): the sup over t in [0,T] of E|dY_t|^2, taken in [0, infinity] (genuine supremum, no\n   R-valued sSup junk); the Z and U terms over [0,T]; constant C_0 = 2 e^T. Exactly (4.6). OK.\n - Expectations as lintegrals: no Bochner junk. OK.\n - Constants: C_0 = 2e^T, depends on T only. OK.\n - Non-vacuity: witness lem_bpbsde_hypotheses (backward equation of the solution of Theorem 3.5\n   for Example 5.1(i), nu = delta_0, m = d = 1, T = 1): an instance the paper intends.\nRepresentation choices (harmless): coordinates; time over R with vanishing off [0,T]; integrals\nover Icc t T instead of (t,T] (Lebesgue-null difference); identity (4.3) assumed for each t a.s.;\ncadlag for every path; phi only jointly measurable (as the lemma states phi in L^2(Omega x [0,T])).\n\nVerdict: faithful with representation choices.\n\nCOVERAGE (claim A:eq:supE; hashed passage lines 208-217, the display (4.6), with R from line 204):\nthe single clause states (4.6) with C_0 = 2e^T, and in addition the per-time bound of lines\n200-205 (\"for every t <= T, ... <= R\"), which the paper asserts in the sentence introducing\n(4.6), so it states nothing the paper does not claim. Every mathematical assertion of the hashed\npassage is stated. The hypotheses are exactly those in force at this point of the printed proof\n(Lemma 4.1's), no more, no fewer; the intermediate expected Ito identity of lines 193-199 is not\nassumed as a hypothesis (it is derived), which is right for a step stated from the lemma's data.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T22:58:40Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices, each harmless: (1) R^m- and R^{m x d}-valued processes as real\ncoordinates, with |.|^2 written as the coordinate sum esq and the Frobenius and L^2(nu) norms\nas coordinate sums of energies; (2) all expectations, integrals and the supremum over t in\n[0, infinity], so neither the bound nor the sup can be a junk value; (3) time over R with\nprocesses vanishing off [0,T], and int_t^T read over [t,T] (a Lebesgue-null difference from\n(t,T]); (4) the identity (4.3) assumed for each t almost surely (weaker than a.s. for all t),\ndY's paths cadlag for every w, phi only jointly measurable (as the lemma states phi in\nL^2(Omega x [0,T])); (5) the hypotheses are exactly Lemma 4.1's, witnessed at the backward\nequation of Example 5.1(i)."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T22:58:58Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-19T22:59:53Z",
+ "issue_draft": null
+}

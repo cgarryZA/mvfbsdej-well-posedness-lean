@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.eq_contract",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.eq_contract",
+  "lean": [
+   "Dissertation.PaperSpec.A.eq_contract"
+  ],
+  "claims": [
+   "A:eq:contract"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-5e3b58e3303d",
+  "project_commit": "6d403c197bfb10fe8808933c6e525ee0ae544fb1",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba1410aaf91d78575ad",
+  "fingerprint": "pl-fp-v1:a750d7bee66df939bc2b91b1b8995dd30779dfacd7dbde8a021718213b82b108",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of (4.13) (eq:contract), Step 5 of the proof of Lemma 4.2 (lem:small),\nmanuscript/paper/sections/04-proof-wellposedness.tex.\n\nSetting: the standing setting of Section 2 (as for (4.10), (4.12)).\n\nHypotheses in force: those of Lemma 4.2 (Assumptions 2.2 and 2.3 with constant L >= 0;\nlambda in [0,1]; square-integrable forcing q with the Section 4 measurability; xi_0 in\nL^2(F_0)); trials Theta^1, Theta^2 in S; images Thetabar^k = Phi_lambda(Theta^k) with Xbar^k\nthe frozen forward process (4.7) and (Ybar^k, Zbar^k, Ubar^k) the solution of the frozen linear\nBSDE (4.8) in S^2 x H^2_W x H^2_N (equivalently, every such solution, by uniqueness).\n\nConclusion (the chain):\n (o)   ||Phi_lambda(Theta^1) - Phi_lambda(Theta^2)||_S^2 = E sup_{t<=T} |deltaXbar_t|^2\n       + E sup_{t<=T} |deltaYbar_t|^2 + E int_0^T (|deltaZbar_s|_F^2 + ||deltaUbar_s||^2) ds\n       (the definition of the S-norm applied to the difference of the images);\n (i)   <= (C_X + C_Y) lambda^2 ||Theta^1 - Theta^2||_S^2      [(4.10) and (4.12)];\n (ii)  <= C_Phi lambda^2 ||Theta^1 - Theta^2||_S^2,  C_Phi = max{1, C_X + C_Y},\nwith C_X = 3 max{T, c_BDG} Lstar^2, Lstar^2 = 10 L^2 max{T,1}, C_g = 4 L^2,\nC_BP = 2 e^T (5 + 4 c_BDG) + 4T, C_Y = C_BP (C_g C_X + Lstar^2). The text after the display\nalso records the dependencies C_Phi = C_Phi(T, L, c_BDG) (automatic for explicit formulas).\nLink (ii) is trivial algebra (max), link (o) is an identity that depends on the S-norm being the\none of Section 3 (sum of the three expected quantities) and on Phi_lambda(Theta^1) -\nPhi_lambda(Theta^2) = (deltaXbar, deltaYbar, deltaZbar, deltaUbar). Expectations are true\nexpectations (finite here, or in [0, infinity]); no junk-value readings.\n\nConstants: c_BDG the paper's single universal BDG constant, the same value in C_X and inside\nC_Y (through C_X and C_BP). \"exists c_0 > 0, for all c >= c_0\" is faithful if c_0 precedes\nevery datum (T, dimensions, space, coefficients, lambda, q, trials). Not faithful if c_0 can\ndepend on the data.\n\nBreadth: lambda in [0,1] at least; extra hypotheses beyond Lemma 4.2's are a narrowing;\nwitness: a Lipschitz instance (e.g. linear coefficients) with trials in S.",
+  "locked_at": "2026-10-20T04:17:59Z"
+ },
+ "comparison": {
+  "text": "Comparison for Dissertation.PaperSpec.A.eq_contract (Dissertation/PaperSpec/A/Sec4Contraction.lean)\nagainst (4.13), manuscript/paper/sections/04-proof-wellposedness.tex lines 429-439.\n\nConstants and their place. `∃ c₀ : ℝ, 0 < c₀ ∧ ∀ c : ℝ, c₀ ≤ c → ∀ {Ω} ...`: c₀ is the first\nquantifier, universal. With the one value c: C_X = `3 * max T c * (10 * L ^ 2 * max T 1)`,\nC_BP = `2 * Real.exp T * (5 + 4 * c) + 4 * T`, C_Y = C_BP (4L² C_X + Lstar²) (= C_BP (C_g C_X +\nLstar²), C_g = 4L²), C_Phi = `max 1 (C_X + C_Y)`. All match the paper's (4.9)-(4.13) formulas.\n\nSetting and hypotheses. Identical to those of eq_fwddiff and eq_bwddiff (standing setting,\n`JointBorel`, Assumptions 2.2 and 2.3 with L, lambda in [0,1], a forcing of the class of (4.1),\ntrials in S, their frozen steps with the same lambda, xi_0, q). These are the Lemma 4.2\nhypotheses in force at Step 5; nothing added, nothing missing.\n\nConclusion.\n (o) `supSize(Θ̄¹ − Θ̄²) = ∫⁻ ⨆ esq(δX̄) + ∫⁻ ⨆ esq(δȲ) + (ΣΣ energy(δZ̄) + Σ markedEnergy(δŪ))`:\n     the identity ‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖²_S = E sup|δX̄|² + E sup|δȲ|² + E∫(|δZ̄|_F² + ‖δŪ‖²),\n     with the S-norm of Section 3 (`supSize`, the size of the coordinatewise difference of the\n     images); in Lean it is the definition of `supSize`, as in the paper it is the definition of\n     the norm. Matches.\n (i) `≤ ofReal((C_X + C_Y) λ²) supSize(Θ¹ − Θ²)`: matches the first inequality.\n (ii) `≤ ofReal(max{1, C_X + C_Y} λ²) supSize(Θ¹ − Θ²)`: matches C_Phi λ² ‖Θ¹ − Θ²‖²_S.\nExpectations in [0, infinity], no junk values. The dependence C_Phi = C_Phi(T, L, c_BDG) stated\nafter the display holds by the explicit formula.\n\nRepresentation choices (harmless; as for eq_fwddiff and eq_bwddiff): expectations as lintegrals\nin [0, infinity]; the norm of the difference of the images as `supSize` of the coordinatewise\ndifferences; trials, frozen steps and forcings as everywhere-cadlag versions cut off outside\n[0,T]; Phi_lambda(Theta) as any solution of (4.7)-(4.8) in S, unique by eq_frozenbwd.\n\nBDG constant. \"There is c₀ > 0 such that for every c ≥ c₀\", c₀ the first quantifier, with the\nsame c inside C_X and C_Y: the faithful reading of the paper's one universal c_BDG, valid at\nevery step (admissible BDG constants are up-closed, and the constants are increasing in it).\nBeing universal, c₀ cannot trivialise the chain.\n\nWitness. `Dissertation.Acceptance.A.frozen_pair_hypotheses` (Dissertation/Acceptance/A/\nWitnessContraction.lean), the Example 5.1(i) instance with two distinct trials and their frozen\nsteps: every hypothesis met by an instance the paper intends. Not vacuous.\n\nCoverage. The claim A:eq:contract has one clause, this proposition; the pinned region is the\ndisplay (4.13) (lines 429-439). The clause states the identity, both inequalities and the\nconstant C_Phi: every mathematical assertion of the display. The sentence after it (the first\ninequality by (4.10) and (4.12); L⋆ = L⋆(T, L), C_X = C_X(T, L, c_BDG), C_g = C_g(L),\nC_BP = C_BP(T, c_BDG), so C_Phi = C_Phi(T, L, c_BDG)) is outside the pinned region; its dependence\nassertions are implied by the explicit formulas of the clause. Nothing is stated beyond the\npassage. The hypotheses are those in force at Step 5 of the proof of Lemma 4.2, no more, no\nfewer.\n\nVerdict: faithful with representation choices.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-20T04:24:26Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices, each harmless:\n1. Expectations as lintegrals in [0, infinity] of nonnegative quantities (no junk values); the\n   S-norm squared of the difference of the images as `supSize` of the coordinatewise\n   differences, so the identity of (4.13) is definitional, as in the paper.\n2. Trials, frozen steps and forcings as everywhere-cadlag versions cut off outside [0,T]; the\n   filtration is complete.\n3. Phi_lambda(Theta) as any solution of (4.7)-(4.8) in S (exists, unique by eq_frozenbwd).\n4. c_BDG as \"exists c_0 > 0, for all c >= c_0\", c_0 the first quantifier (universal), with one c\n   in C_X, C_BP, C_Y and C_Phi: the faithful reading of the paper's single universal BDG constant."
+ },
+ "author_review": {
+  "shown_at": "2026-10-20T04:27:38Z",
+  "disagreements": "No disagreement on substance: the reading of the identity as the definition of `supSize` of the\ndifferences of the images, of the explicit constants C_X, C_Y and C_Phi = max{1, C_X + C_Y}, of\nc_BDG (c₀ first, at least those of (4.10) and (4.12), one c throughout) and of the hypotheses agree\nwith mine; the witness values (2 and 2) check.\n\nOne difference of classification only: I record \"faithful with representation choices\" rather\nthan \"faithful\", for the same harmless choices as in (4.10) and (4.12) (everywhere-cadlag\nversions cut off outside [0,T], Phi_lambda(Theta) as any solution of (4.7)-(4.8) in S,\nexpectations in [0, infinity])."
+ },
+ "submitted_at": "2026-10-20T04:27:45Z",
+ "issue_draft": null
+}

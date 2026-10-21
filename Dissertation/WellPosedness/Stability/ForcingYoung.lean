@@ -12,7 +12,8 @@ After Assumption 2.5 is inserted into the `G`-energy identity (4.19) of the well
 six pairings remain in the proof of (4.22): the initial term `𝔼⟨G δξ₀, δY_0⟩`, the terminal
 forcing `𝔼⟨G δX_T, q^g⟩` and the interior forcing
 `𝔼 ∫_0^T (⟨q^b, GᵀδY⟩ + ⟨q^σ, GᵀδZ⟩_F − ⟨q^f, GδX⟩ + ∫_E ⟨q^h, GᵀδU⟩ dν) dt`. With a bound
-`|G x|² ≤ g² |x|²` and `η > 0`, Young's inequality bounds each by `η` times a piece of
+`|G x|² ≤ g² |x|²` and `η > 0`, Young's inequality bounds each, in absolute value and the
+interior ones under the integral, by `η` times a piece of
 `N' = 𝔼|δX_T|² + 𝔼|δY_0|² + 𝔼 ∫_0^T (|δX|² + |δY|² + |δZ|²_F + ‖δU‖²)` plus `g²/(4η)` times the
 matching piece of the data size: `𝔼|δY_0|²` against `𝔼|δξ₀|²`, `𝔼|δX_T|²` against `𝔼|q^g|²`, and
 `𝔼 ∫_0^T (|δX|² + |δY|² + |δZ|²_F + ‖δU‖²)` against
@@ -20,9 +21,9 @@ matching piece of the data size: `𝔼|δY_0|²` against `𝔼|δξ₀|²`, `�
 
 ## Main statements
 
-* `PairDiff.initial_pairing_le` — the initial term.
-* `PairDiff.neg_terminal_forcing_le` — the terminal forcing.
-* `PairDiff.integral_forcing_le` — the interior forcing.
+* `PairDiff.abs_initial_pairing_le` — the initial term.
+* `PairDiff.abs_terminal_forcing_le` — the terminal forcing.
+* `PairDiff.integrable_abs_forcing`, `PairDiff.integral_abs_forcing_le` — the interior forcing.
 -/
 
 open MeasureTheory ProbabilityTheory Filter Topology Matrix
@@ -59,12 +60,12 @@ theorem memLp_qg
     (lintegral_mono fun ω => Finset.single_le_sum (f := fun k => (‖qg k ω‖₊ : ℝ≥0∞) ^ 2)
       (fun _ _ => by positivity) (Finset.mem_univ k)) (lt_top_of_dataSize_ne_top hP).2.1)
 
-/-- **The initial pairing**: `𝔼⟨G δξ₀, δY_0⟩ ≤ η 𝔼|δY_0|² + (g²/(4η)) 𝔼|δξ₀|²`. -/
-theorem initial_pairing_le
+/-- **The initial pairing**: `|𝔼⟨G δξ₀, δY_0⟩| ≤ η 𝔼|δY_0|² + (g²/(4η)) 𝔼|δξ₀|²`. -/
+theorem abs_initial_pairing_le
     (hD : PairDiff D ℱ hℱW hℱN T lam K KT α β₁ β₂ G ξ₀ X Y Z U b σ h f g qb qσ qh qf qg)
     (hT : 0 < T) (hGn : ∀ x : Fin n → ℝ, (G *ᵥ x) ⬝ᵥ (G *ᵥ x) ≤ gG ^ 2 * (x ⬝ᵥ x))
     (hη : 0 < η) :
-    ∫ ω, (G *ᵥ fun i => ξ₀ i ω) ⬝ᵥ (fun k => Y k 0 ω) ∂P
+    |∫ ω, (G *ᵥ fun i => ξ₀ i ω) ⬝ᵥ (fun k => Y k 0 ω) ∂P|
       ≤ η * (∫⁻ ω, esq (fun k => Y k 0 ω) ∂P).toReal
         + gG ^ 2 / (4 * η) * (∫⁻ ω, esq (fun i => ξ₀ i ω) ∂P).toReal := by
   have mY0 : ∀ k, MemLp (Y k 0) 2 P := fun k => (hD.bwd k).memLp_initial hT.le
@@ -75,15 +76,15 @@ theorem initial_pairing_le
   rw [← integral_dotProduct_self mY0, ← integral_dotProduct_self mξ,
     ← integral_const_mul, ← integral_const_mul,
     ← integral_add (hYY.const_mul η) (hξξ.const_mul _)]
-  exact integral_mono hξY ((hYY.const_mul η).add (hξξ.const_mul _)) fun ω =>
-    mulVec_dotProduct_le hGn hη _ _
+  exact abs_integral_le_integral_abs.trans (integral_mono hξY.abs
+    ((hYY.const_mul η).add (hξξ.const_mul _)) fun ω => abs_mulVec_dotProduct_le hGn hη _ _)
 
-/-- **The terminal forcing pairing**: `−𝔼⟨q^g, G δX_T⟩ ≤ η 𝔼|δX_T|² + (g²/(4η)) 𝔼|q^g|²`. -/
-theorem neg_terminal_forcing_le
+/-- **The terminal forcing pairing**: `|𝔼⟨q^g, G δX_T⟩| ≤ η 𝔼|δX_T|² + (g²/(4η)) 𝔼|q^g|²`. -/
+theorem abs_terminal_forcing_le
     (hD : PairDiff D ℱ hℱW hℱN T lam K KT α β₁ β₂ G ξ₀ X Y Z U b σ h f g qb qσ qh qf qg)
     (hT : 0 < T) (hP : dataSize P ν T ξ₀ qb qσ qh qf qg ≠ ⊤)
     (hGn : ∀ x : Fin n → ℝ, (G *ᵥ x) ⬝ᵥ (G *ᵥ x) ≤ gG ^ 2 * (x ⬝ᵥ x)) (hη : 0 < η) :
-    -∫ ω, (fun k => qg k ω) ⬝ᵥ (G *ᵥ fun i => X i T ω) ∂P
+    |∫ ω, (fun k => qg k ω) ⬝ᵥ (G *ᵥ fun i => X i T ω) ∂P|
       ≤ η * (∫⁻ ω, esq (fun i => X i T ω) ∂P).toReal
         + gG ^ 2 / (4 * η) * (∫⁻ ω, esq (fun k => qg k ω) ∂P).toReal := by
   have mXT : ∀ i, MemLp (X i T) 2 P := fun i => (hD.fwd i).memLp_terminal hT.le
@@ -91,25 +92,52 @@ theorem neg_terminal_forcing_le
   have hqgX := integrable_dotProduct_of_memLp mqg (memLp_mulVec G mXT)
   have hXX := integrable_dotProduct_of_memLp mXT mXT
   have hqq := integrable_dotProduct_of_memLp mqg mqg
-  rw [← integral_neg, ← integral_dotProduct_self mXT, ← integral_dotProduct_self mqg,
+  rw [← integral_dotProduct_self mXT, ← integral_dotProduct_self mqg,
     ← integral_const_mul, ← integral_const_mul,
     ← integral_add (hXX.const_mul η) (hqq.const_mul _)]
-  exact integral_mono hqgX.neg ((hXX.const_mul η).add (hqq.const_mul _)) fun ω =>
-    neg_dotProduct_mulVec_le hGn hη _ _
+  exact abs_integral_le_integral_abs.trans (integral_mono hqgX.abs
+    ((hXX.const_mul η).add (hqq.const_mul _)) fun ω => abs_dotProduct_mulVec_le hGn hη _ _)
 
-/-- **The interior forcing pairing of (4.19)**: over a filtration with a cross witness, for a
-finite data size,
+/-- **The interior forcing pairings of (4.19) in absolute value are integrable** on the window,
+over a filtration with a cross witness, for a finite data size: `|⟨q^b, GᵀδY⟩| + |⟨q^σ, GᵀδZ⟩_F|`
+and `|∫_E ⟨q^h, GᵀδU⟩ dν| + |⟨q^f, GδX⟩|`. -/
+theorem integrable_abs_forcing
+    (hD : PairDiff D ℱ hℱW hℱN T lam K KT α β₁ β₂ G ξ₀ X Y Z U b σ h f g qb qσ qh qf qg)
+    (𝒲 : D.CrossWitness ℱ) (hT : 0 < T) (hP : dataSize P ν T ξ₀ qb qσ qh qf qg ≠ ⊤) :
+    Integrable (fun p : Ω × ℝ => |(fun i => qb i p.1 p.2) ⬝ᵥ (Gᵀ *ᵥ fun k => Y k p.2 p.1)|
+        + |∑ j, (fun i => qσ i p.2 p.1 j) ⬝ᵥ (Gᵀ *ᵥ fun k => Z k p.2 p.1 j)|)
+        (P.prod (volume.restrict (Set.Icc (0 : ℝ) T)))
+      ∧ Integrable (fun p : Ω × ℝ =>
+        |∫ e, (fun i => qh i p.2 p.1 e) ⬝ᵥ (Gᵀ *ᵥ fun k => U k p.2 p.1 e) ∂ν|
+          + |(fun k => qf k p.1 p.2) ⬝ᵥ (G *ᵥ fun i => X i p.2 p.1)|)
+        (P.prod (volume.restrict (Set.Icc (0 : ℝ) T))) := by
+  have mX := hD.memLp_window_X 𝒲 hT
+  have mY := hD.memLp_window_Y 𝒲 hT
+  have mZ := hD.memLp_window_Z (T := T)
+  have mU := hD.memLp_markedWindow_U (T := T)
+  have mqb := hD.memLp_window_qb hP
+  have mqσ := hD.memLp_window_qσ hP
+  have mqf := hD.memLp_window_qf hP
+  have mqh := hD.memLp_markedWindow_qh hP
+  exact ⟨(integrable_dotProduct_of_memLp mqb (memLp_mulVec _ mY)).abs.add
+      (integrable_finsetSum _ fun j _ => integrable_dotProduct_of_memLp (fun i => mqσ i j)
+        (memLp_mulVec _ fun k => mZ k j)).abs,
+    (integrable_dotProduct_of_memLp mqh (memLp_mulVec _ mU)).integral_prod_left.abs.add
+      (integrable_dotProduct_of_memLp mqf (memLp_mulVec _ mX)).abs⟩
 
-`𝔼 ∫_0^T (⟨q^b, GᵀδY⟩ + ⟨q^σ, GᵀδZ⟩_F − ⟨q^f, GδX⟩ + ∫_E ⟨q^h, GᵀδU⟩ dν) dt
+/-- **The interior forcing pairings of (4.19) in absolute value**: over a filtration with a cross
+witness, for a finite data size,
+
+`𝔼 ∫_0^T (|⟨q^b, GᵀδY⟩| + |⟨q^σ, GᵀδZ⟩_F| + |∫_E ⟨q^h, GᵀδU⟩ dν| + |⟨q^f, GδX⟩|) dt
   ≤ η (I_X + J) + (g²/(4η)) 𝔼 ∫_0^T (|q^b|² + |q^σ|²_F + ‖q^h‖² + |q^f|²) dt`. -/
-theorem integral_forcing_le
+theorem integral_abs_forcing_le
     (hD : PairDiff D ℱ hℱW hℱN T lam K KT α β₁ β₂ G ξ₀ X Y Z U b σ h f g qb qσ qh qf qg)
     (𝒲 : D.CrossWitness ℱ) (hT : 0 < T) (hP : dataSize P ν T ξ₀ qb qσ qh qf qg ≠ ⊤)
     (hGn : ∀ x : Fin n → ℝ, (G *ᵥ x) ⬝ᵥ (G *ᵥ x) ≤ gG ^ 2 * (x ⬝ᵥ x)) (hη : 0 < η) :
-    ∫ p, ((fun i => qb i p.1 p.2) ⬝ᵥ (Gᵀ *ᵥ fun k => Y k p.2 p.1)
-        + ∑ j, (fun i => qσ i p.2 p.1 j) ⬝ᵥ (Gᵀ *ᵥ fun k => Z k p.2 p.1 j)
-        - (fun k => qf k p.1 p.2) ⬝ᵥ (G *ᵥ fun i => X i p.2 p.1)
-        + ∫ e, (fun i => qh i p.2 p.1 e) ⬝ᵥ (Gᵀ *ᵥ fun k => U k p.2 p.1 e) ∂ν)
+    ∫ p, ((|(fun i => qb i p.1 p.2) ⬝ᵥ (Gᵀ *ᵥ fun k => Y k p.2 p.1)|
+          + |∑ j, (fun i => qσ i p.2 p.1 j) ⬝ᵥ (Gᵀ *ᵥ fun k => Z k p.2 p.1 j)|)
+        + (|∫ e, (fun i => qh i p.2 p.1 e) ⬝ᵥ (Gᵀ *ᵥ fun k => U k p.2 p.1 e) ∂ν|
+          + |(fun k => qf k p.1 p.2) ⬝ᵥ (G *ᵥ fun i => X i p.2 p.1)|))
         ∂(P.prod (volume.restrict (Set.Icc (0 : ℝ) T)))
       ≤ η * ((∑ i, Brownian.Ito.energy P T (fun ω s => X i s ω)).toReal
           + (∑ k, Brownian.Ito.energy P T (fun ω s => Y k s ω)
@@ -129,10 +157,10 @@ theorem integral_forcing_le
   have mqσ := hD.memLp_window_qσ hP
   have mqf := hD.memLp_window_qf hP
   have mqh := hD.memLp_markedWindow_qh hP
-  set Ff : Ω × ℝ → ℝ := fun p => (fun i => qb i p.1 p.2) ⬝ᵥ (Gᵀ *ᵥ fun k => Y k p.2 p.1)
-    + ∑ j, (fun i => qσ i p.2 p.1 j) ⬝ᵥ (Gᵀ *ᵥ fun k => Z k p.2 p.1 j)
-    - (fun k => qf k p.1 p.2) ⬝ᵥ (G *ᵥ fun i => X i p.2 p.1)
-    + ∫ e, (fun i => qh i p.2 p.1 e) ⬝ᵥ (Gᵀ *ᵥ fun k => U k p.2 p.1 e) ∂ν with hFf
+  set Ff : Ω × ℝ → ℝ := fun p => (|(fun i => qb i p.1 p.2) ⬝ᵥ (Gᵀ *ᵥ fun k => Y k p.2 p.1)|
+      + |∑ j, (fun i => qσ i p.2 p.1 j) ⬝ᵥ (Gᵀ *ᵥ fun k => Z k p.2 p.1 j)|)
+    + (|∫ e, (fun i => qh i p.2 p.1 e) ⬝ᵥ (Gᵀ *ᵥ fun k => U k p.2 p.1 e) ∂ν|
+      + |(fun k => qf k p.1 p.2) ⬝ᵥ (G *ᵥ fun i => X i p.2 p.1)|) with hFf
   set Wf : Ω × ℝ → ℝ := fun p => (fun i => X i p.2 p.1) ⬝ᵥ (fun i => X i p.2 p.1)
     + ((fun k => Y k p.2 p.1) ⬝ᵥ (fun k => Y k p.2 p.1) + ∑ k, Z k p.2 p.1 ⬝ᵥ Z k p.2 p.1
       + ∫ e, (fun k => U k p.2 p.1 e) ⬝ᵥ (fun k => U k p.2 p.1 e) ∂ν) with hWf
@@ -141,7 +169,7 @@ theorem integral_forcing_le
     + ∫ e, (fun i => qh i p.2 p.1 e) ⬝ᵥ (fun i => qh i p.2 p.1 e) ∂ν
     + (fun k => qf k p.1 p.2) ⬝ᵥ (fun k => qf k p.1 p.2) with hQf
   have hFi : Integrable Ff μ₂ := by
-    have hi := integrable_gPairing (ν := ν) G mqb mqσ mqf mqh mX mY mZ mU
+    have hi := (hD.integrable_abs_forcing 𝒲 hT hP).1.add (hD.integrable_abs_forcing 𝒲 hT hP).2
     rw [hFf]
     exact hi
   have hX2 := integrable_dotProduct_of_memLp mX mX
@@ -174,16 +202,17 @@ theorem integral_forcing_le
     have h2' : Integrable (fun e => (fun k => U k p.2 p.1 e) ⬝ᵥ (fun k => U k p.2 p.1 e)) ν := h2
     have h3' : Integrable (fun e => (fun i => qh i p.2 p.1 e) ⬝ᵥ (fun i => qh i p.2 p.1 e)) ν :=
       h3
-    have hJ : ∫ e, (fun i => qh i p.2 p.1 e) ⬝ᵥ (Gᵀ *ᵥ fun k => U k p.2 p.1 e) ∂ν
+    have hJ : |∫ e, (fun i => qh i p.2 p.1 e) ⬝ᵥ (Gᵀ *ᵥ fun k => U k p.2 p.1 e) ∂ν|
         ≤ η * ∫ e, (fun k => U k p.2 p.1 e) ⬝ᵥ (fun k => U k p.2 p.1 e) ∂ν
           + gG ^ 2 / (4 * η) * ∫ e, (fun i => qh i p.2 p.1 e) ⬝ᵥ (fun i => qh i p.2 p.1 e) ∂ν := by
       rw [← integral_const_mul, ← integral_const_mul,
         ← integral_add (h2'.const_mul η) (h3'.const_mul _)]
-      refine integral_mono h1' ((h2'.const_mul η).add (h3'.const_mul _)) fun e => ?_
+      refine abs_integral_le_integral_abs.trans
+        (integral_mono h1'.abs ((h2'.const_mul η).add (h3'.const_mul _)) fun e => ?_)
       beta_reduce
       rw [dotProduct_transpose_mulVec]
-      exact mulVec_dotProduct_le hGn hη _ _
-    have key := gPairing_le hGn hη (fun i => qb i p.1 p.2) (fun i => qσ i p.2 p.1)
+      exact abs_mulVec_dotProduct_le hGn hη _ _
+    have key := abs_gPairing_le hGn hη (fun i => qb i p.1 p.2) (fun i => qσ i p.2 p.1)
       (fun k => qf k p.1 p.2) (fun i => X i p.2 p.1) (fun k => Y k p.2 p.1)
       (fun k => Z k p.2 p.1) hJ
     rw [hFf, hWf, hQf]
