@@ -1,13 +1,13 @@
 # Reviews of the definitions the statements depend on
 
-Every declaration of `Dissertation` or `LevyStochCalc` in the definition closure of a statement of
+Every declaration of `MVFBSDEJ` or `LevyStochCalc` in the definition closure of a statement of
 `MVFBSDEJ.PaperSpec` is read here against the mathematics it stands for. The marker records
 the hash reviewed (type and value, proofs erased); a change reopens the entry. A definition named
 by a definition claim of the inventory is read against that claim's passage, and its marker also
 records the passage digest as read (`source=<claim>@<digest>`); a change of the passage reopens
 it for that claim. Mathlib and the pinned upstream libraries are taken as foundations.
 
-## Laws and the 2-Wasserstein distance (`Dissertation/Law/`)
+## Laws and the 2-Wasserstein distance (`MVFBSDEJ/Law/`)
 
 * `IsCoupling μ ν γ`: `γ` is a measure on `E × E` with marginals `μ` and `ν` (`γ.fst = μ`,
   `γ.snd = ν`). The definition of a coupling (Villani, *Optimal transport*, Def. 1.1).
@@ -81,7 +81,7 @@ it for that claim. Mathlib and the pinned upstream libraries are taken as founda
   Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.Law.lawP2--claude-auditor--2026-10-19T03_27_45Z.md`).
   <!-- def-review: MVFBSDEJ.Law.lawP2 ed84cd1114f294f90f45b5f95750d4cf by=claude-auditor -->
 
-## The tuple space (`Dissertation/WellPosedness/`)
+## The tuple space (`MVFBSDEJ/WellPosedness/`)
 
 * `Tuple HX HY HZY HUY = HX × HY × HZY × HUY`, the product of the four channels, with the maximum of
   the channel norms (Mathlib's product norm), not the Hilbert norm
@@ -849,7 +849,7 @@ Review by claude-auditor: faithful with representation choices (report `reports/
 
 Verdict: faithful with representation choices.
 
-## The coefficients, the tuple and the coupling matrix (`Dissertation/WellPosedness/System/`)
+## The coefficients, the tuple and the coupling matrix (`MVFBSDEJ/WellPosedness/System/`)
 
 Manuscript (§2): `b, σ, h, f` map `[0, T] × H × P₂(H)` to `ℝⁿ`, `ℝ^{n×d}`, `L²(ν; ℝⁿ)` and `ℝᵐ`, and
 `g` maps `ℝⁿ × P₂(ℝⁿ)` to `ℝᵐ`; `Θ_t = (X_t, Y_t, Z_t, U_t)` and
@@ -1235,7 +1235,7 @@ measurable representative).
 <!-- def-review: MVFBSDEJ.WellPosedness.System.leftLimProc 9171262935c3b1fde4f555261cd0b9ba by=claude-author source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
 <!-- def-review: MVFBSDEJ.Law.lawP2 ed84cd1114f294f90f45b5f95750d4cf by=claude-author source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
 
-## Assumptions 2.2–2.5 and (2.3) (`Dissertation/WellPosedness/Spec/Assumptions.lean`)
+## Assumptions 2.2–2.5 and (2.3) (`MVFBSDEJ/WellPosedness/Spec/Assumptions.lean`)
 
 Manuscript (§2): the coefficients are jointly Borel, `h` through (2.3); Assumption 2.2
 (`ξ₀ ∈ L²(Ω, ℱ₀; ℝⁿ)` and the origin values in `L²(0, T)`), Assumption 2.3 (the interior bound along
@@ -1502,7 +1502,7 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.WeakSolution--claude-auditor--2026-10-19T03_35_36Z.md`).
 <!-- def-review: MVFBSDEJ.PaperSpec.WeakSolution 3220c6ff72b9eb82a9071b16fb195fd0 by=claude-auditor -->
 
-## The drift (3.6) of Proposition 3.8 (`Dissertation/WellPosedness/ExpectedVsPointwise*.lean`)
+## The drift (3.6) of Proposition 3.8 (`MVFBSDEJ/WellPosedness/ExpectedVsPointwise*.lean`)
 
 Manuscript (Proposition 3.8, (3.6)): `n = m = 1`, `d ≥ 1`, `b(t, θ, μ) = −β₁ y + ε g₀(y − m_Y(μ))`,
 `g₀(r) = max{−1, min{1, r}}`, `m_Y(μ) = ∫_H y μ(dθ)` the `Y`-marginal mean.
@@ -1600,7 +1600,7 @@ Review by claude-auditor: faithful (report `reports/Dissertation.WellPosedness.S
 
 Verdict: faithful with representation choices.
 
-## The `U`-marginal of a law (`Dissertation/Law/P2.lean`, `Dissertation/Law/TupleMarginal.lean`)
+## The `U`-marginal of a law (`MVFBSDEJ/Law/P2.lean`, `MVFBSDEJ/Law/TupleMarginal.lean`)
 
 Manuscript (Remark 2.6): `μ^U ∈ P₂(L²(ν))` is the `U`-marginal of `μ ∈ P₂(H)`.
 
@@ -1823,7 +1823,7 @@ Review by claude-auditor: faithful (report `reports/Dissertation.WellPosedness.S
 
 Verdict: faithful.
 
-## The perturbation of Example 5.4 (`PaperSpec/A/Sec5.lean`, `Robustness/Perturb.lean`)
+## The perturbation of Example 5.4 (`PaperSpec/Sec5.lean`, `Robustness/Perturb.lean`)
 
 Manuscript (Example 5.4): with `m = n`, `f = f₀ + ε q(W₂(μ, μ₀)) w₀ + ε Q(∫ φ_1 dμ^U, …, ∫ φ_J dμ^U)
 w₁`, `b = b₀ + ε q̃(W₂(μ^U, Λ₀)) v₀`, `h = h₀ + ε q̂(W₂(μ^U, Λ₀)) ĥ`, for `q, q̃, q̂ : ℝ₊ → ℝ`,
@@ -1854,7 +1854,7 @@ Review by claude-auditor: faithful (report `reports/Dissertation.WellPosedness.S
 
 Verdict: faithful with representation choices.
 
-## The crowding correction of Example 5.5 (`PaperSpec/A/Sec5.lean`)
+## The crowding correction of Example 5.5 (`PaperSpec/Sec5.lean`)
 
 Manuscript (Example 5.5): `𝒜_λ(u) = ∫_{L²(ν)} ∇V(u − v) λ(dv)`, `∇V(w) = w / √(1 + ‖w‖²)`,
 `λ ∈ P₂(L²(ν))`.
@@ -1873,7 +1873,7 @@ Review by claude-auditor: faithful with representation choices (report `reports/
 
 Verdict: faithful with representation choices.
 
-## The coefficients of Example 5.5 (`PaperSpec/A/Sec5Dealer.lean`)
+## The coefficients of Example 5.5 (`PaperSpec/Sec5Dealer.lean`)
 
 * `PaperSpec.A.ex55Coeffs ν β₁ β₂ σ_c h_c h_x ε`: the coefficient system of Example 5.5 at
   `n = m = d = 1`, at `θ = (x, y, z, u)` and a law `μ` of `P₂(H)`: `b = −β₁ y`,
@@ -1951,7 +1951,7 @@ Review by claude-auditor: faithful with representation choices (report `reports/
 
 Verdict: faithful with representation choices.
 
-## The weighted margin (2.12) (`PaperSpec/A/Sec2Remarks.lean`)
+## The weighted margin (2.12) (`PaperSpec/Sec2Remarks.lean`)
 
 Manuscript (Remark 2.11): (2.7) holds with margin `c > 0` if (2.12) holds.
 
@@ -1976,7 +1976,7 @@ Review by claude-auditor: faithful with representation choices (report `reports/
 
 Verdict: faithful with representation choices.
 
-## A representation of a martingale (`PaperSpec/A/Sec2Basics.lean`)
+## A representation of a martingale (`PaperSpec/Sec2Basics.lean`)
 
 Manuscript (§2): every square-integrable `(ℱ_t)`-martingale `M` can be written `M_t = M_0 + ∫_0^t
 Z_s dW_s + ∫_0^t ∫_E U_s(e) Ñ(ds, de)` for every `t ∈ [0, T]`, for an `ℱ₀`-measurable `M_0` and a
@@ -2013,7 +2013,7 @@ Verdict: faithful with representation choices.
   Review by claude-auditor: faithful (report `reports/LevyStochCalc.Poisson.Compensated.markedEnergyMeasure--claude-auditor--2026-10-19T03_34_37Z.md`).
   <!-- def-review: LevyStochCalc.Poisson.Compensated.markedEnergyMeasure 6a70d753259c930a27f458a6e2a44d87 by=claude-auditor -->
 
-## Progressive tuples and cross-evaluation (`Dissertation/WellPosedness/Existence/WPZero.lean`, `Dissertation/WellPosedness/System/CrossEval.lean`, `Dissertation/WellPosedness/System/HilbertW2Space.lean`)
+## Progressive tuples and cross-evaluation (`MVFBSDEJ/WellPosedness/Existence/WPZero.lean`, `MVFBSDEJ/WellPosedness/System/CrossEval.lean`, `MVFBSDEJ/WellPosedness/System/HilbertW2Space.lean`)
 
 * `WellPosedness.Existence.ProgTuple ℱ P ν T X Y Z U`: `X, Y` adapted with right-continuous paths,
   `Z` jointly and progressively measurable, `U` jointly and marked progressively measurable, both of
@@ -2061,7 +2061,7 @@ Verdict: faithful with representation choices.
   Review by claude-auditor: faithful (report `reports/Dissertation.WellPosedness.System.P2WH.instMeasurableSpace--claude-auditor--2026-10-19T03_31_22Z.md`).
   <!-- def-review: MVFBSDEJ.WellPosedness.System.P2WH.instMeasurableSpace 80bb9d815e50f42553ee1291a5da7bae by=claude-auditor -->
 
-## Law flows and their tuples (`Dissertation/WellPosedness/System/LawFlow.lean`, `Dissertation/WellPosedness/System/HilbertW2Space.lean`)
+## Law flows and their tuples (`MVFBSDEJ/WellPosedness/System/LawFlow.lean`, `MVFBSDEJ/WellPosedness/System/HilbertW2Space.lean`)
 
 * `WellPosedness.System.CadlagPredTuple ℱ P ν T X Y Z U`: `X, Y` adapted with right-continuous paths
   having left limits everywhere, `Z, U` predictable (marked predictable for `U`), and every
@@ -2085,7 +2085,7 @@ Verdict: faithful with representation choices.
   Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.Law.P2.toP2WH--claude-auditor--2026-10-19T03_36_21Z.md`).
   <!-- def-review: MVFBSDEJ.Law.P2.toP2WH 9f66cfadccaf0b20fcfc2344d158d542 by=claude-auditor -->
 
-## the system of Example 3.2 of Li and Min (`Dissertation/PaperSpec/A/Sec5Preamble.lean`)
+## the system of Example 3.2 of Li and Min (`MVFBSDEJ/PaperSpec/Sec5Preamble.lean`)
 
 * `liMinCoeffs ν` (`n = m = d = 1`): on `H = ℝ × ℝ × ℝ^{1×1} × L²(ν; ℝ)` with `θ = (x, y, z, u)`,
   `b(t, θ, μ) = m_Y(μ)`, `σ = 1`, `h(t, θ, μ) = u`, `f(t, θ, μ) = m_X(μ)`, `g(x, ρ) = −𝔟(ρ)`, with
@@ -2103,7 +2103,7 @@ Verdict: faithful with representation choices.
   Review by claude-auditor: faithful (report `reports/Dissertation.WellPosedness.System.liMinCoeffs--claude-auditor--2026-10-19T03_31_22Z.md`).
   <!-- def-review: MVFBSDEJ.WellPosedness.System.liMinCoeffs 4a85f9437d277c3a5bbccf7981b2432d by=claude-auditor -->
 
-## the weighted pairing bound of Remark 3.7 (`Dissertation/PaperSpec/A/Sec3GeneralRank.lean`)
+## the weighted pairing bound of Remark 3.7 (`MVFBSDEJ/PaperSpec/Sec3GeneralRank.lean`)
 
 * `PaperSpec.A.PairingBound34W ℱ P T G c p`: for almost every `t ∈ [0, T]` and all
   `(Θ, μ), (Θ', μ') ∈ 𝒟_t`, the pairing `pairing27 G p` of the perturbation differences (the
@@ -2117,7 +2117,7 @@ Verdict: faithful with representation choices.
   Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.PairingBound34W--claude-auditor--2026-10-19T03_36_24Z.md`).
   <!-- def-review: MVFBSDEJ.PaperSpec.PairingBound34W 089030da41aceea52dd1d1c86c0b71e0 by=claude-auditor -->
 
-## the singular drift against Remark 3.4 (`Dissertation/WellPosedness/Examples/SingularDrift.lean`)
+## the singular drift against Remark 3.4 (`MVFBSDEJ/WellPosedness/Examples/SingularDrift.lean`)
 
 * `WellPosedness.System.Coeffs.addDrift C c`: the coefficients `C` with the deterministic drift
   `c(t)` added to `b`, the other coefficients unchanged.
@@ -2158,7 +2158,7 @@ Verdict: faithful with representation choices.
   Review by claude-auditor: faithful (report `reports/Dissertation.PaperSpec.A.translatedCoeffs--claude-auditor--2026-10-19T03_35_50Z.md`).
   <!-- def-review: MVFBSDEJ.PaperSpec.translatedCoeffs 31edf12a7565d595f40d8fb3a4647dd0 by=claude-auditor -->
 
-## the linear backward equation and the frozen step of Lemma 4.2 (`Dissertation/WellPosedness/BrownianPoisson/Hypotheses.lean`, `Dissertation/PaperSpec/A/Sec4Horizon.lean`)
+## the linear backward equation and the frozen step of Lemma 4.2 (`MVFBSDEJ/WellPosedness/BrownianPoisson/Hypotheses.lean`, `MVFBSDEJ/PaperSpec/Sec4Horizon.lean`)
 
 * `LinearBSDEJ D ℱ hℱW hℱN T ξ φ Y Z U`: `Y` is adapted to `ℱ` with every path right-continuous;
   `Z`, `U`, `φ` are jointly measurable, progressive (`U` marked progressive), vanish off `[0, T]`
@@ -2193,7 +2193,7 @@ Verdict: faithful with representation choices.
   Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.BrownianFrozenStep--claude-auditor--2026-10-19T03_35_46Z.md`).
   <!-- def-review: MVFBSDEJ.PaperSpec.BrownianFrozenStep 638702db50f83c537b65e82c8eb52419 by=claude-auditor -->
 
-## The trial space, the frozen step and the coefficient differences of Lemma 4.2 (`Dissertation/PaperSpec/A/Sec4Frozen.lean`)
+## The trial space, the frozen step and the coefficient differences of Lemma 4.2 (`MVFBSDEJ/PaperSpec/Sec4Frozen.lean`)
 
 * `PaperSpec.A.HTuple ℱ P ν T X Y Z U`: `PaperWeakTuple ℱ P ν T X Y Z U` (reviewed with the weak
   solution notion), every path of each coordinate of `X` and `Y` with a left limit at every
@@ -2242,7 +2242,7 @@ Verdict: faithful with representation choices.
   Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.FrozenStep--claude-auditor--2026-10-20T00_44_30Z.md`).
   <!-- def-review: MVFBSDEJ.PaperSpec.FrozenStep a9403fd155b3b9985845e6ff6c17ae21 by=claude-auditor -->
 
-## The Brownian forms of Example 5.2 (`Dissertation/WellPosedness/Spec/BrownianForms.lean`, `Dissertation/PaperSpec/A/Sec5BrownianReduction.lean`, `Dissertation/WellPosedness/Examples/BrownianFiltration.lean`)
+## The Brownian forms of Example 5.2 (`MVFBSDEJ/WellPosedness/Spec/BrownianForms.lean`, `MVFBSDEJ/PaperSpec/Sec5BrownianReduction.lean`, `MVFBSDEJ/WellPosedness/Examples/BrownianFiltration.lean`)
 
 * `WellPosedness.Existence.enlBrownian 𝒢₀ W h𝒢₀`: `augFiltration (W.naturalFiltration ⊔
   Filtration.const ℝ 𝒢₀ h𝒢₀).rightCont P`, the usual augmentation (right-continuous version,
@@ -2357,7 +2357,7 @@ Verdict: faithful with representation choices.
   Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.PaperSpec.A.RepresentsMartBrownian--claude-auditor--2026-10-19T03_34_12Z.md`).
   <!-- def-review: MVFBSDEJ.PaperSpec.RepresentsMartBrownian 40f5a59e8126ece13d10efad24ece961 by=claude-auditor -->
 
-## Local stochastic integrals (`Dissertation/WellPosedness/Martingale/LocalIntegral.lean`)
+## Local stochastic integrals (`MVFBSDEJ/WellPosedness/Martingale/LocalIntegral.lean`)
 
 * `IsLocalBrownianIntegral W ℱ hℱ T H M`: `M` is a local Itô integral on `[0, T]` of the vector
   integrand `H : ℝ → Ω → ℝ^d` against the multidimensional Brownian motion `W` for the filtration
