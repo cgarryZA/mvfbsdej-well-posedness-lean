@@ -102,8 +102,8 @@ def rem_generalrank : Prop :=
 
 /-- Remark 3.7, well-posedness of the perturbed system. There is a function `C_stab` of
 `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that: under the hypotheses of `rem_generalrank`, the
-perturbed system with initial datum `ξ₀` has a solution in `ℍ`; any two tuples of `ℍ_weak`
-satisfying it with the same initial datum are equal in `ℍ_weak`; and for every constant `L` with
+perturbed system with initial datum `ξ₀` has a solution in `𝕊`; any two tuples of `ℍ²`
+satisfying it with the same initial datum are equal in `ℍ²`; and for every constant `L` with
 which the perturbed system satisfies Assumption 2.3, (3.1) holds with the constant
 `C_stab(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂)` for its solutions against the solutions of every
 system `2` satisfying (2.3) and Assumptions 2.2–2.3. -/

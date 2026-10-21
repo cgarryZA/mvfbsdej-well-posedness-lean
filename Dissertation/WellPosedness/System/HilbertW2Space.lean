@@ -4,7 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.Law.P2Borel
-import Dissertation.Law.P2Quantize
 import Dissertation.WellPosedness.System.HilbertW2
 
 /-!
@@ -57,14 +56,6 @@ def _root_.Dissertation.Law.P2.toP2WH (μ : P2 (Tuple HX HY HZY HUY)) : P2WH HX 
 /-- A point of `P2WH`, as a law of finite second moment on the tuple space. -/
 def P2WH.toP2 (μ : P2WH HX HY HZY HUY) : P2 (Tuple HX HY HZY HUY) := μ
 
-/-- `P2WH.toP2` is a left inverse of `P2.toP2WH`. -/
-@[simp]
-theorem P2WH.toP2_toP2WH (μ : P2 (Tuple HX HY HZY HUY)) : μ.toP2WH.toP2 = μ := rfl
-
-/-- `P2WH.toP2` is a right inverse of `P2.toP2WH`. -/
-@[simp]
-theorem P2WH.toP2WH_toP2 (μ : P2WH HX HY HZY HUY) : μ.toP2.toP2WH = μ := rfl
-
 variable [BorelSpace HX] [BorelSpace HY] [BorelSpace HZY] [BorelSpace HUY]
   [SecondCountableTopology HX] [SecondCountableTopology HY] [SecondCountableTopology HZY]
   [SecondCountableTopology HUY]
@@ -74,6 +65,7 @@ second moment on the tuple space with the Hilbert norm. -/
 noncomputable def lawToL2 (μ : P2 (Tuple HX HY HZY HUY)) : P2 (TupleL2 HX HY HZY HUY) :=
   μ.mapOfLe measurable_toL2 norm_toL2_le
 
+omit [SecondCountableTopology HX] in
 /-- **`μ ↦ toL2 # μ` is measurable** for the evaluation σ-algebras. -/
 theorem measurable_lawToL2 :
     Measurable (lawToL2 : P2 (Tuple HX HY HZY HUY) → P2 (TupleL2 HX HY HZY HUY)) :=

@@ -9,7 +9,7 @@ import Dissertation.PaperSpec.A.Sec4
 # The frozen step and the coefficient differences in the proof of Lemma 4.2
 
 Statement and equation numbers refer to the well-posedness paper at `1f67672`. The proof of
-Lemma 4.2 fixes `λ ∈ [0, 1]` and a forcing `q`, and sends a trial tuple `Θ = (X, Y, Z, U) ∈ ℍ`,
+Lemma 4.2 fixes `λ ∈ [0, 1]` and a forcing `q`, and sends a trial tuple `Θ = (X, Y, Z, U) ∈ 𝕊`,
 with `μ_t = Law(Θ_t)` and `μ⁻_t = Law(Θ⁻_t)`, to `Φ_λ(Θ) = Θ̄ = (X̄, Ȳ, Z̄, Ū)`:
 
 `X̄_t = ξ₀ + λ ∫_0^t b(s, Θ_s, μ_s) ds + λ ∫_0^t σ(s, Θ_s, μ_s) dW_s
@@ -23,13 +23,13 @@ and, for two trials `Θ¹, Θ²` and `S_s = |δb_s| + |δσ_s|_F + ‖δh_s‖_{
 
 `𝔼 ∫_0^T S_s² ds ≤ 10 L² 𝔼 ∫_0^T (|δX_s|² + |δY_s|² + |δZ_s|²_F + ‖δU_s‖²) ds
   ≤ 10 L² (T 𝔼 sup_{t ≤ T} |δX_t|² + T 𝔼 sup_{t ≤ T} |δY_t|²
-    + 𝔼 ∫_0^T (|δZ_s|²_F + ‖δU_s‖²) ds) ≤ L⋆² ‖Θ¹ − Θ²‖²_ℍ`,   `L⋆² = 10 L² max{T, 1}`. (4.9)
+    + 𝔼 ∫_0^T (|δZ_s|²_F + ‖δU_s‖²) ds) ≤ L⋆² ‖Θ¹ − Θ²‖²_𝕊`,   `L⋆² = 10 L² max{T, 1}`. (4.9)
 
 ## Main definitions
 
-* `Dissertation.PaperSpec.A.HTuple` — a tuple of `ℍ`.
+* `Dissertation.PaperSpec.A.HTuple` — a tuple of `𝕊`.
 * `Dissertation.PaperSpec.A.FrozenForward` — `X̄` solves (4.7).
-* `Dissertation.PaperSpec.A.FrozenStep` — `Θ̄ = Φ_λ(Θ)`: (4.7), (4.8) and `Θ̄ ∈ ℍ`.
+* `Dissertation.PaperSpec.A.FrozenStep` — `Θ̄ = Φ_λ(Θ)`: (4.7), (4.8) and `Θ̄ ∈ 𝕊`.
 * `Dissertation.PaperSpec.A.coeffDiffNorm` — `S_s`.
 * `Dissertation.PaperSpec.A.eq_frozenfwd` — (4.7).
 * `Dissertation.PaperSpec.A.eq_frozenbwd` — (4.8).
@@ -54,7 +54,7 @@ variable {Ω : Type u} {𝒢₀ : MeasurableSpace Ω} [mΩ : MeasurableSpace Ω]
   [MeasurableSpace E] {ν : Measure E} [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
   {n m d : ℕ}
 
-/-- `Θ = (X, Y, Z, U)` is a tuple of `ℍ` over the filtration `ℱ`: a tuple of `ℍ_weak`
+/-- `Θ = (X, Y, Z, U)` is a tuple of `𝕊` over the filtration `ℱ`: a tuple of `ℍ²`
 (`PaperWeakTuple`) every path of whose `X` and `Y` has left limits at every time of `(0, T]`,
 with `𝔼 sup_{t ≤ T} |X_t|² < ∞` and `𝔼 sup_{t ≤ T} |Y_t|² < ∞`. -/
 def HTuple (ℱ : Filtration ℝ mΩ) (P : Measure Ω) (ν : Measure E) (T : ℝ)
@@ -107,7 +107,7 @@ def FrozenForward {P : Measure Ω} [IsProbabilityMeasure P]
 filtration of §2: `X'` solves (4.7) (`FrozenForward`); each coordinate of `(Y', Z', U')` solves
 (4.8), `Y'_t = λ g(X'_T, Law(X'_T)) + q^g_T + ∫_t^T (λ f(s, Θ_s, μ_s) + q^f_s) ds
 − ∫_t^T Z'_s dW_s − ∫_t^T ∫_E U'_s(e) Ñ(ds, de)` almost surely at every `t ∈ [0, T]`
-(`LinearBSDEJ`); and `Θ̄ = (X', Y', Z', U')` is a tuple of `ℍ`. -/
+(`LinearBSDEJ`); and `Θ̄ = (X', Y', Z', U')` is a tuple of `𝕊`. -/
 def FrozenStep {P : Measure Ω} [IsProbabilityMeasure P]
     (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
     (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P) (T lam : ℝ) (C : Coeffs ν n m d)
@@ -128,7 +128,7 @@ end Defs
 
 /-- **(4.7).** In the standing setting, under the hypotheses of Lemma 4.2 — `T > 0`, coefficients
 with (2.3) and Assumptions 2.2–2.3 with constant `L` and initial datum `ξ₀` — for `λ ∈ [0, 1]`, a
-forcing `q` of the class of (4.1) and a trial tuple `Θ = (X, Y, Z, U)` of `ℍ`, with
+forcing `q` of the class of (4.1) and a trial tuple `Θ = (X, Y, Z, U)` of `𝕊`, with
 `μ_s = Law(Θ_s)`: `𝔼 ∫_0^T |ψ(s, Θ_s, μ_s)|² ds < ∞` for `ψ ∈ {b, σ, h}`, in the norms of
 Assumption 2.3; (4.7) has a solution `X̄ ∈ S²(0, T; ℝⁿ)`, adapted with every path right-continuous
 with left limits on `(0, T]` and `𝔼 sup_{t ≤ T} |X̄_t|² < ∞`; and any two solutions of (4.7) are
@@ -166,11 +166,11 @@ def eq_frozenfwd : Prop :=
 
 /-- **(4.8).** In the standing setting, under the hypotheses of Lemma 4.2 — `T > 0`, coefficients
 with (2.3) and Assumptions 2.2–2.3 with constant `L` and initial datum `ξ₀` — for `λ ∈ [0, 1]`, a
-forcing `q` of the class of (4.1) and a trial tuple `Θ = (X, Y, Z, U)` of `ℍ`, with
+forcing `q` of the class of (4.1) and a trial tuple `Θ = (X, Y, Z, U)` of `𝕊`, with
 `μ_s = Law(Θ_s)`: for every solution `X̄` of (4.7), each coordinate of
 `Ξ = λ g(X̄_T, Law(X̄_T)) + q^g_T + ∫_0^T (λ f(s, Θ_s, μ_s) + q^f_s) ds` is `ℱ_T`-measurable and
 square integrable; there is `Θ̄ = (X̄, Ȳ, Z̄, Ū)` with `X̄` solving (4.7), `(Ȳ, Z̄, Ū)` solving
-(4.8) and `Θ̄ ∈ ℍ` (`FrozenStep`); and any two such `Θ̄` are equal in `ℍ`: their `X̄` and their
+(4.8) and `Θ̄ ∈ 𝕊` (`FrozenStep`); and any two such `Θ̄` are equal in `𝕊`: their `X̄` and their
 `Ȳ` are indistinguishable on `[0, T]`, and the differences of their `Z̄` and of their `Ū` have zero
 energy on `[0, T]`. -/
 def eq_frozenbwd : Prop :=
@@ -209,11 +209,11 @@ def eq_frozenbwd : Prop :=
 
 /-- **(4.9).** In the standing setting, under the hypotheses of Lemma 4.2 — `T > 0`, coefficients
 with (2.3) and Assumptions 2.2–2.3 with constant `L` and initial datum `ξ₀` — for two trial tuples
-`Θ¹, Θ²` of `ℍ`, with `S_s` the sum of the norms of the coefficient differences at
+`Θ¹, Θ²` of `𝕊`, with `S_s` the sum of the norms of the coefficient differences at
 `(Θ^k_s, Law(Θ^k_s))`,
 `𝔼 ∫_0^T S_s² ds ≤ 10 L² 𝔼 ∫_0^T (|δX_s|² + |δY_s|² + |δZ_s|²_F + ‖δU_s‖²_{L²(ν)}) ds
   ≤ 10 L² (T 𝔼 sup_{t ≤ T} |δX_t|² + T 𝔼 sup_{t ≤ T} |δY_t|²
-    + 𝔼 ∫_0^T (|δZ_s|²_F + ‖δU_s‖²_{L²(ν)}) ds) ≤ 10 L² max{T, 1} ‖Θ¹ − Θ²‖²_ℍ`,
+    + 𝔼 ∫_0^T (|δZ_s|²_F + ‖δU_s‖²_{L²(ν)}) ds) ≤ 10 L² max{T, 1} ‖Θ¹ − Θ²‖²_𝕊`,
 read in `[0, ∞]`. -/
 def eq_coeffdiff : Prop :=
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}

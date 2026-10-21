@@ -4,7 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.PaperSpec.A.Setting
-import Dissertation.WellPosedness.Spec.Assumptions
+import Mathlib.RepresentationTheory.Rep.Basic
 
 /-!
 # Section 2 of the well-posedness paper: the setting

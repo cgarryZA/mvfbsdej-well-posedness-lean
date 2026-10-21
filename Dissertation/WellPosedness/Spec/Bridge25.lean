@@ -4,16 +4,15 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.Spec.Bridge23
-import Dissertation.WellPosedness.Robustness.Margin
 import Dissertation.WellPosedness.System.DiagonalAtIntegrable
 /-!
 # Assumption 2.5 in the forms the proofs consume
 
-The proofs consume Assumption 2.5 as `DiagonalMonotone`, `TerminalMonotone` and `Constants`, whose
-expectations are Bochner integrals, `0` for a function that is not integrable. The printed
-assumption presupposes that the expectations of its two pairings exist. It is therefore the
-consumed form together with the integrability of the pairings, and it implies the consumed form
-with the same constants.
+The proofs consume Assumption 2.5 as `Dissertation.WellPosedness.System.DiagonalMonotone`,
+`Dissertation.WellPosedness.System.TerminalMonotone` and `Constants`, whose expectations are Bochner
+integrals, `0` for a function that is not integrable. The printed assumption presupposes that the
+expectations of its two pairings exist. It is therefore the consumed form together with the
+integrability of the pairings, and it implies the consumed form with the same constants.
 
 The pairings are integrable under (2.3) and Assumption 2.3: the interior pairing by
 `WellPosedness.integrable_interiorPairing_of_diagonalLipschitzHAt`, and the terminal pairing
@@ -37,8 +36,8 @@ printed expectations.
 * `integrable_terminalPairing` — under (2.3) and (2.6) the terminal pairing is integrable.
 * `Assumption25.of_integrable` — the consumed form with the integrability of the pairings gives
   Assumption 2.5.
-* `Assumption25.of_monotone`, `assumption25_iff` — under (2.3) and Assumption 2.3 the consumed
-  form gives Assumption 2.5, and the two are equivalent.
+* `Assumption25.of_monotone` — under (2.3) and Assumption 2.3 the consumed form gives
+  Assumption 2.5.
 -/
 
 open MeasureTheory Filter Dissertation.Law Matrix
@@ -52,6 +51,7 @@ variable {Ω : Type*} [MeasurableSpace Ω] {E : Type*} [MeasurableSpace E] {ν :
 
 /-! ### The printed integrand and the right-hand side of (2.7) -/
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
 /-- **The printed integrand of (2.7) is the pairing `interiorPairing`** of the channel
 differences, for the coupling operators of `G`. -/
 theorem pairing27_eq (G : Matrix (Fin m) (Fin n) ℝ) (C : Coeffs ν n m d) (t : ℝ)
@@ -70,6 +70,7 @@ theorem pairing27_eq (G : Matrix (Fin m) (Fin n) ℝ) (C : Coeffs ν n m d) (t :
   simp only [diagDiff]
   rw [adjoint_GX, adjoint_GZ, hU]
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
 /-- **The expectation of the right-hand side of (2.7) splits into the printed expectations**: for
 square-integrable `Θ, Θ'`,
 `𝔼[dissipation] = −β₁ 𝔼[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²_{L²(ν)}] − β₂ 𝔼|G δX|²`. -/
@@ -198,15 +199,6 @@ theorem Assumption25.of_monotone (hJ : JointBorel T C) (h23 : Assumption23 ℱ P
       exact WellPosedness.integrable_interiorPairing_of_diagonalLipschitzHAt (G := G)
         (jointBorel_iff.mp hJ).1 htI hLt hs hs' h2 h2')
     fun _ _ hX hX' hX2 hX2' => integrable_terminalPairing hJ h23.terminal hX hX' hX2 hX2'
-
-/-- **Under (2.3) and Assumption 2.3, Assumption 2.5 is its consumed form**: `DiagonalMonotone`,
-`TerminalMonotone` and `Constants`, with the same constants. -/
-theorem assumption25_iff (hJ : JointBorel T C) (h23 : Assumption23 ℱ P T L C) :
-    Assumption25 ℱ P T G α β₁ β₂ C
-      ↔ DiagonalMonotone ℱ P T G β₁ β₂ C ∧ TerminalMonotone ℱ P T G α C.g
-        ∧ Constants n m α β₁ β₂ :=
-  ⟨fun h => ⟨h.diagonalMonotone, h.terminalMonotone, h.constants⟩,
-    fun h => Assumption25.of_monotone hJ h23 h.2.2 h.1 h.2.1⟩
 
 end Printed
 

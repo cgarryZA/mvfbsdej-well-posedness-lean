@@ -5,6 +5,10 @@ Authors: Christian Garry
 -/
 import Dissertation.Law.CrowdGrad
 import Dissertation.Law.Mixture
+import Mathlib.RingTheory.Flat.TorsionFree
+import Mathlib.RingTheory.SimpleRing.Principal
+import Mathlib.Topology.EMetricSpace.Paracompact
+import Mathlib.Topology.Separation.CompletelyRegular
 
 /-!
 # The crowding operator at symmetric two-point laws
@@ -49,6 +53,7 @@ private theorem half_mem_Icc : (1 / 2 : ℝ) ∈ Set.Icc (0 : ℝ) 1 :=
 noncomputable def P2.twoPoint (a : F) : P2 F :=
   P2.mix (1 / 2) half_mem_Icc (P2.dirac (-a)) (P2.dirac a)
 
+omit [InnerProductSpace ℝ F] in
 /-- The integral of a map against `½ (δ_{−a} + δ_a)` is the average of its values at `∓a`. -/
 theorem integral_twoPoint {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G] [CompleteSpace G]
     (f : F → G) (a : F) :

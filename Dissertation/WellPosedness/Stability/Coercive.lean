@@ -4,6 +4,9 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.Assumptions
+import Mathlib.Algebra.Order.Star.Real
+import Mathlib.LinearAlgebra.Matrix.DotProduct
+import Mathlib.MeasureTheory.Integral.Bochner.Basic
 
 /-!
 # The coupling-matrix coercivity of Assumption 2.4 in coordinates

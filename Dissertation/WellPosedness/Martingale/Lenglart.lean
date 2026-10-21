@@ -3,7 +3,6 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import Mathlib.MeasureTheory.Integral.Layercake
 import Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
 
 /-!
@@ -152,7 +151,8 @@ theorem lintegral_le_of_good_lambda [IsFiniteMeasure P] {S A : Ω → ℝ≥0∞
         + c * (∫⁻ ω, min (A ω) (g t) ∂P) / g t := by
     intro t ht
     obtain ⟨S', hS'm, hS'le, hS'sq⟩ := h (t ^ 2) (by positivity)
-    have hgt0 : g t ≠ 0 := by simp [hg]; positivity
+    have hgt0 : g t ≠ 0 := by
+      simp only [hg, ne_eq, ENNReal.ofReal_eq_zero, sq_nonpos_iff]; positivity
     have hgtt : g t ≠ ∞ := ENNReal.ofReal_ne_top
     have hsub : {ω | ENNReal.ofReal t ≤ S ω} ≤ᵐ[P]
         ({ω | ENNReal.ofReal t ≤ A ω ^ (1 / 2 : ℝ)} ∪ {ω | g t ≤ S' ω ^ 2} : Set Ω) := by

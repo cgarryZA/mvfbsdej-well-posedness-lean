@@ -4,7 +4,8 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.Spec.Thm35
-import Dissertation.WellPosedness.Examples.MeanFieldWP
+import Dissertation.WellPosedness.Examples.MeanFieldMonotone
+import LevyStochCalc.Driver.GaussianInitial
 
 /-!
 # Example 5.1(i) under the printed assumptions

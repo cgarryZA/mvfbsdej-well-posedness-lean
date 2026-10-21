@@ -16,28 +16,35 @@ Statement and equation numbers refer to the well-posedness paper at `1f67672`.
 
 * (4.7): the coefficient processes along the trial have finite energy by (4.2)
   (`Dissertation.Acceptance.A.eq_coeffint`). Along the trial the integrals of (1.1) exist
-  (`PaperWeakTuple.exists_paperAdmissible`), with a jump representative `γ` of the coefficient at
-  the predictable tuple, and `λ Ψ(Θ) + q` is a forcing (`PaperAdmissible.forcing`); the linear
-  forward equation from `ξ₀` with these integrands has a solution
-  (`Forcing.exists_linearFSDEJ`), which set to `0` off a null set has càdlàg paths
-  (`LinearFSDEJ.indicator`), in `S²` (`lintegral_biSup_esq_lt_top_of_linearFSDEJ`). Two
-  representatives of the jump coefficient give integrands that agree for the marked energy
-  measure (`ae_forcedJump_eq_of_rep`), so two solutions are indistinguishable on `[0, T]`
-  (`LinearFSDEJ.ae_forall_Icc_eq`).
+  (`Dissertation.WellPosedness.System.PaperWeakTuple.exists_paperAdmissible`), with a jump
+  representative `γ` of the coefficient at the predictable tuple, and `λ Ψ(Θ) + q` is a forcing
+  (`Dissertation.WellPosedness.System.PaperAdmissible.forcing`); the linear forward equation from
+  `ξ₀` with these integrands has a solution
+  (`Dissertation.WellPosedness.System.Forcing.exists_linearFSDEJ`), which set to `0` off a null set
+  has càdlàg paths (`Dissertation.WellPosedness.Stability.LinearFSDEJ.indicator`), in `S²`
+  (`Dissertation.WellPosedness.System.lintegral_biSup_esq_lt_top_of_linearFSDEJ`). Two
+  representatives of the jump coefficient give integrands that agree for the marked energy measure
+  (`Dissertation.WellPosedness.System.ae_forcedJump_eq_of_rep`), so two solutions are
+  indistinguishable on `[0, T]`
+  (`Dissertation.WellPosedness.Stability.LinearFSDEJ.ae_forall_Icc_eq`).
 * (4.8): the terminal value is `ℱ_T`-measurable and square integrable by (4.3)
-  (`lintegral_esq_terminalVal_le`), and so is the drift integral. Along the càdlàg solution of
-  (4.7), the terminal representation of the filtration of §2 (`hasTerminalRep_enlJoint`) solves
-  the backward equation (`HasTerminalRep.exists_linearBSDEJ`), with predictable integrands
-  (`LinearBSDEJ.exists_predictable`) and `Ȳ` set to `0` off a null set (`LinearBSDEJ.indicator`).
-  Two images agree in `ℍ`: their forward coordinates by (4.7), and then their terminal values
-  almost surely, so Lemma 4.1 applied to the difference of the backward coordinates
-  (`LinearBSDEJ.eq_of_ae_eq_terminal`) gives the rest.
+  (`Dissertation.WellPosedness.Existence.lintegral_esq_terminalVal_le`), and so is the drift
+  integral. Along the càdlàg solution of (4.7), the terminal representation of the filtration of §2
+  (`Dissertation.WellPosedness.Existence.hasTerminalRep_enlJoint`) solves the backward equation
+  (`Dissertation.WellPosedness.Existence.HasTerminalRep.exists_linearBSDEJ`), with predictable
+  integrands (`Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.exists_predictable`) and `Ȳ`
+  set to `0` off a null set (`Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.indicator`).
+  Two images agree in `𝕊`: their forward coordinates by (4.7), and then their terminal values almost
+  surely, so Lemma 4.1 applied to the difference of the backward coordinates
+  (`Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.eq_of_ae_eq_terminal`) gives the rest.
 * (4.9): at almost every time the two trials are diagonal inputs, and the interior bound of
-  Assumption 2.3 in mean square (`LipInteriorAt.lintegral_sq_coeffDiff_le`, with the
-  Hilbert-norm `W₂` and (2.8)) gives the first link; the second dominates the `X`- and `Y`-slots
-  by their suprema and reads the `Z`- and `U`-slots by Tonelli
-  (`setLIntegral_lintegral_coords_le`) along the progressive extensions of the trials
-  (`PaperWeakTuple.exists_progTuple`); the third is `T ≤ max{T, 1}` and `1 ≤ max{T, 1}`.
+  Assumption 2.3 in mean square
+  (`Dissertation.WellPosedness.Spec.LipInteriorAt.lintegral_sq_coeffDiff_le`, with the Hilbert-norm
+  `W₂` and (2.8)) gives the first link; the second dominates the `X`- and `Y`-slots by their suprema
+  and reads the `Z`- and `U`-slots by Tonelli
+  (`Dissertation.WellPosedness.System.setLIntegral_lintegral_coords_le`) along the progressive
+  extensions of the trials (`Dissertation.WellPosedness.System.PaperWeakTuple.exists_progTuple`);
+  the third is `T ≤ max{T, 1}` and `1 ≤ max{T, 1}`.
 
 ## Main statements
 
@@ -158,7 +165,7 @@ theorem FrozenForward.ae_forall_Icc_eq {X₁ X₂ : Fin n → ℝ → Ω → ℝ
       (lawP2 P (tupleAt ν (leftLimProc X) (leftLimProc Y) Z U s)))) lam qh i hr₁ hr₂
     (measurableSet_eq_fun (h₁ i).γ_meas (h₂ i).γ_meas)) hT
 
-/-- Under the hypotheses of Lemma 4.2, the frozen forward equation (4.7) of a trial of `ℍ_weak`
+/-- Under the hypotheses of Lemma 4.2, the frozen forward equation (4.7) of a trial of `ℍ²`
 has a solution every path of which has left limits on `(0, T]`. -/
 theorem FrozenForward.exists_leftLim {L : ℝ} {qf : Fin m → Ω → ℝ → ℝ} {qg : Fin m → Ω → ℝ}
     (hT : 0 ≤ T) (hJ : JointBorel T C) (h22 : Assumption22 (enlJoint 𝒢₀ D h𝒢₀) P T C ξ₀)

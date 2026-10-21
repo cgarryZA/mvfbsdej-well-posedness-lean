@@ -5,7 +5,6 @@ Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.Existence.TerminalRepEnl
 import Dissertation.WellPosedness.Existence.PaperSolution
-import Dissertation.WellPosedness.Enlarged.CrossWitness
 
 /-!
 # Solutions of (1.1) over the initially enlarged filtration

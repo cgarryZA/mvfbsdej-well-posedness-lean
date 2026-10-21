@@ -5,8 +5,6 @@ Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.Enlarged.Representation
 import Dissertation.WellPosedness.Enlarged.RepresentationUnique
-import LevyStochCalc.Brownian.PredictableIntegrand
-import LevyStochCalc.Poisson.PredictableIntegrand
 
 /-!
 # Predictable integrands over the enlarged filtration

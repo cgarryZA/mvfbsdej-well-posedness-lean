@@ -4,9 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.BrownianPoisson.QuadraticIntegrand
-import LevyStochCalc.Brownian.Construction
-import Mathlib.Analysis.SpecialFunctions.Integrability.Basic
-import Mathlib.Probability.Distributions.Gaussian.Real
 
 /-!
 # A marked integrand of finite energy whose square has infinite energy

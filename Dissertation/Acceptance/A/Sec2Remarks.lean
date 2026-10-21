@@ -4,16 +4,10 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.PaperSpec.A.Sec2Remarks
-import Dissertation.Acceptance.A.Sec5
 import Dissertation.Acceptance.A.Witness
-import Dissertation.WellPosedness.Spec.Bridge25
 import Dissertation.WellPosedness.Remarks.JumpDichotomy
-import Dissertation.WellPosedness.Remarks.Pointwise
 import Dissertation.WellPosedness.Remarks.Margin
-import Dissertation.WellPosedness.Remarks.CouplingForm
 import Dissertation.WellPosedness.Remarks.CouplingFormIntegrable
-import Dissertation.WellPosedness.Remarks.CouplingRealisation
-import Dissertation.WellPosedness.Remarks.UniformVariable
 
 /-!
 # Section 2 of the well-posedness paper: proofs of the remarks on the assumptions

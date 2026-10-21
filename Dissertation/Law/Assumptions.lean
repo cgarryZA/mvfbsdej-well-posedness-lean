@@ -4,7 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.Law.P2
-import Dissertation.Law.Wasserstein
 import Dissertation.WellPosedness.Assumptions
 
 /-!

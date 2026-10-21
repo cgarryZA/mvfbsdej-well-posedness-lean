@@ -3,7 +3,6 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import Dissertation.WellPosedness.System.HilbertW2Space
 import Dissertation.WellPosedness.System.LawFlow
 
 /-!
@@ -17,7 +16,7 @@ predictable field, in `L²([0, T] × Ω; H)`, identifies that space with `L²(0,
 Fubini isometry, and obtains a Borel version of `t ↦ Θ⁻_t ∈ L²(Ω; H)` through the Pettis
 measurability theorem; Step 2 uses that `(P₂(H), W₂)` is Polish. In Step 1 the tuple space
 `H = ℝⁿ × ℝᵐ × ℝ^{m×d} × L²(ν; ℝᵐ)` carries its Hilbert norm: it is `TupleL2 …`, into which
-`toL2` maps a tuple.
+`Dissertation.WellPosedness.System.toL2` maps a tuple.
 
 ## Main definitions
 

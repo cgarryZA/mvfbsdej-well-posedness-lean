@@ -3,9 +3,7 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import Dissertation.WellPosedness.BrownianPoisson.Estimate
 import Dissertation.WellPosedness.System.TupleLeft
-import Mathlib.MeasureTheory.Integral.IntervalIntegral.LebesgueDifferentiationThm
 import LevyStochCalc.Ito.JumpDiffusionAdapted
 import Dissertation.WellPosedness.Stability.PairDiff
 
@@ -26,8 +24,8 @@ integrals and the same energy, so the estimate for a progressive drift applies.
 
 ## Main statements
 
-* `ProgressivelyMeasurable.indicator_time` — cutting a progressive process to a Borel set of times
-  keeps it progressive.
+* `progressivelyMeasurable_indicator_of_measurableSet` — cutting a progressive process to a Borel
+  set of times keeps it progressive.
 * `exists_progressive_ae_eq` — a jointly measurable density with integrable paths and adapted
   primitive has a progressive version, equal to it at almost every time on every path.
 * `exists_linearBSDEJ_of_measurable` — a solution `Y` given on `[0, T]` only, of the equation
@@ -53,7 +51,7 @@ variable {Ω : Type*} [MeasurableSpace Ω] {ℱ : Filtration ℝ ‹MeasurableSp
 
 /-- Cutting a progressively measurable process to a Borel set of times keeps it progressively
 measurable. -/
-theorem _root_.LevyStochCalc.Probability.ProgressivelyMeasurable.indicator_time
+theorem progressivelyMeasurable_indicator_of_measurableSet
     {H : Ω → ℝ → ℝ} (h : Probability.ProgressivelyMeasurable ℱ H) {S : Set ℝ}
     (hS : MeasurableSet S) :
     Probability.ProgressivelyMeasurable ℱ fun ω r => S.indicator (H ω) r := by
@@ -314,7 +312,8 @@ theorem exists_linearBSDEJ_of_measurable [ℱ.IsRightContinuous]
   -- the progressive version of the drift, cut to `[0, T]`
   obtain ⟨ψ, -, hψp, hψe⟩ := exists_progressive_ae_eq hφ₀i hPa
   set ψ' : Ω → ℝ → ℝ := fun ω s => (Set.Icc (0 : ℝ) T).indicator (ψ ω) s with hψ'
-  have hψ'p : Probability.ProgressivelyMeasurable ℱ ψ' := hψp.indicator_time measurableSet_Icc
+  have hψ'p : Probability.ProgressivelyMeasurable ℱ ψ' :=
+    progressivelyMeasurable_indicator_of_measurableSet hψp measurableSet_Icc
   have hψ'φ : ∀ ω ∈ S, ψ' ω =ᵐ[volume.restrict (Set.Icc (0 : ℝ) T)] φ ω := fun ω hω => by
     filter_upwards [ae_restrict_mem measurableSet_Icc, ae_restrict_of_ae (hψe ω)] with s hs h
     simp only [hψ', Set.indicator_of_mem hs, h, hφ₀S ω hω s hs]

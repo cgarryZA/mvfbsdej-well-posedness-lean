@@ -5,12 +5,8 @@ Authors: Christian Garry
 -/
 import Dissertation.PaperSpec.A.Sec2Basics
 import Dissertation.WellPosedness.BrownianPoisson.Compensation
-import Dissertation.WellPosedness.Enlarged.Representation
 import Dissertation.WellPosedness.Enlarged.PredictableRepresentation
-import Dissertation.WellPosedness.Enlarged.RepresentationUnique
-import Dissertation.Law.LpSection
 import Dissertation.Law.FubiniLp
-import Dissertation.WellPosedness.Existence.AffineExample
 
 /-!
 # Section 2 of the well-posedness paper: proofs for the setting
@@ -151,40 +147,5 @@ theorem sec2_infinite_activity_hypotheses :
       (_ : IsProbabilityMeasure P),
       Nonempty (LevyStochCalc.Driver.LevyDriver P 1 (volume : Measure ℝ)) :=
   ⟨Real.volume_univ, LevyStochCalc.Driver.LevyDriver.exists 1 ℝ volume⟩
-
-/-- **The setting of §2 is realised.** Over a probability space carrying a Lévy driver with
-`d = 1` and `ν = δ₀`, `𝒢₀ = ⊥` is independent of the driver, `0 < d`, `T = 1 > 0`, the zero
-process is a square-integrable martingale of the enlarged filtration, and `ψ = 0` is measurable
-for the marked predictable σ-algebra with `𝔼 ∫_0^1 ∫ |ψ| ν(de) ds < ∞`. -/
-theorem sec2_setting_hypotheses :
-    ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)
-      (D : LevyStochCalc.Driver.LevyDriver P 1 (Measure.dirac (0 : ℝ))),
-      Indep (⊥ : MeasurableSpace Ω) (⨆ t, D.filtration t) P
-      ∧ (0 : ℕ) < 1 ∧ (0 : ℝ) < 1
-      ∧ Martingale (fun (_ : ℝ) (_ : Ω) => (0 : ℝ)) (enlJoint ⊥ D bot_le) P
-      ∧ (∀ t : ℝ, MemLp ((fun (_ : ℝ) (_ : Ω) => (0 : ℝ)) t) 2 P)
-      ∧ Measurable[LevyStochCalc.Probability.markedPredictableSigma (enlJoint ⊥ D bot_le)
-          (Measure.dirac (0 : ℝ))] (fun _ : Ω × ℝ × ℝ => (0 : ℝ))
-      ∧ ∫⁻ ω, (∫⁻ s in Set.Ioc (0 : ℝ) 1, ∫⁻ e, ‖(fun _ : Ω × ℝ × ℝ => (0 : ℝ)) (ω, s, e)‖ₑ
-          ∂(Measure.dirac (0 : ℝ))) ∂P < ⊤ := by
-  obtain ⟨Ω, _, P, _, ⟨D⟩⟩ := LevyStochCalc.Driver.LevyDriver.exists 1 ℝ (Measure.dirac (0 : ℝ))
-  refine ⟨Ω, inferInstance, P, inferInstance, D, indep_bot_left _, one_pos, one_pos,
-    martingale_zero _ _ _, fun _ => memLp_const 0, measurable_const, by simp⟩
-
-/-- **The hypotheses of the paragraph after (2.3) hold.** At `ν = δ₀`, `n = m = d = 1`, `T = 1`,
-the coefficients of Example 5.1(i) with `β₁ = β₂ = 0`, `σ_c = 0`, `h_c = 0` have `h = 0`, and the
-zero function on `([0, 1] × H × P₂(H)) × ℝ` is measurable and represents it. -/
-theorem sec2_hborel_hypotheses :
-    Measurable[(borel (Set.Icc (0 : ℝ) 1 × TupleH (Measure.dirac (0 : ℝ)) 1 1 1
-        × TupleP2WH (Measure.dirac (0 : ℝ)) 1 1 1)).prod (inferInstance : MeasurableSpace ℝ)]
-      (fun _ => (0 : EuclideanSpace ℝ (Fin 1)))
-    ∧ ∀ p : Set.Icc (0 : ℝ) 1 × TupleH (Measure.dirac (0 : ℝ)) 1 1 1
-        × TupleP2WH (Measure.dirac (0 : ℝ)) 1 1 1,
-      ((Dissertation.WellPosedness.Existence.affineCoeffs (ν := Measure.dirac (0 : ℝ)) (d := 1)
-          0 0 0 0).h p.1 p.2.1 p.2.2.toP2 : ℝ → EuclideanSpace ℝ (Fin 1))
-        =ᵐ[Measure.dirac (0 : ℝ)] fun e => (fun _ => (0 : EuclideanSpace ℝ (Fin 1))) (p, e) := by
-  refine ⟨measurable_const, fun p => ?_⟩
-  simp only [Dissertation.WellPosedness.Existence.affineCoeffs, zero_smul, sub_zero]
-  exact Lp.coeFn_zero _ _ _
 
 end Dissertation.Acceptance.A

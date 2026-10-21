@@ -18,17 +18,16 @@ Theorem 3.1 of the well-posedness paper compares solutions of two coefficient sy
 the negated coefficient differences evaluated along solution 2: the equations of `Θ²` are linear
 in their integrands, and `1 · ψ¹ + q^ψ = ψ²`.
 
-That `q` is a forcing needs the coefficients of system 1 evaluated along solution 2 to be
-measurable and square integrable. The terminal term is a function of `X²_T` alone, measurable
-once `g¹` and `g²` are Borel measurable in the state, as the paper's standing joint measurability
-of the coefficients gives. The interior terms are processes, whose joint and progressive
-measurability — (2.5) for a cross-evaluation — the paper derives from Lemma A.1; `CrossEval`
-takes it as a hypothesis, with a jointly measurable, marked progressively measurable
-representative `γ` of `e ↦ h¹(s, Θ²_s, e, μ²_s)` in `L²(ν)`. It holds along every progressive
-tuple, with a canonical `γ`, when the coefficients of system 1 are jointly measurable with the
-evaluation σ-algebra on `P₂(H)` (`CoeffBorel.crossEval`). Given measurability, `q` is square
-integrable exactly when the coefficient-difference terms of the right-hand side of (3.1) are
-finite.
+That `q` is a forcing needs the coefficients of system 1 evaluated along solution 2 to be measurable
+and square integrable. The terminal term is a function of `X²_T` alone, measurable once `g¹` and
+`g²` are Borel measurable in the state, as the paper's standing joint measurability of the
+coefficients gives. The interior terms are processes, whose joint and progressive measurability —
+(2.5) for a cross-evaluation — the paper derives from Lemma A.1; `CrossEval` takes it as a
+hypothesis, with a jointly measurable, marked progressively measurable representative `γ` of
+`e ↦ h¹(s, Θ²_s, e, μ²_s)` in `L²(ν)`. It holds along every progressive tuple, with a canonical `γ`,
+when the coefficients of system 1 are jointly measurable with the evaluation σ-algebra on `P₂(H)`
+(`Dissertation.WellPosedness.Existence.CoeffBorel.crossEval`). Given measurability, `q` is square
+integrable exactly when the coefficient-difference terms of the right-hand side of (3.1) are finite.
 
 ## Main definitions
 
@@ -79,6 +78,7 @@ theorem markedEnergy_sub_comm (a b : Ω → ℝ → E → ℝ) :
 
 variable [IsProbabilityMeasure P] [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
 /-- **The terminal value is measurable** when `g` is Borel measurable in the state: for
 `X_T` measurable for the time-`T` field of a filtration, so is `ω ↦ g(X_T(ω), Law X_T)`,
 coordinatewise. -/

@@ -6,28 +6,12 @@ Authors: Christian Garry
 import Dissertation.PaperSpec.A.Sec5
 import Dissertation.Acceptance.A.Sec3
 import Dissertation.Law.CrowdTwoPoint
-import Dissertation.WellPosedness.Examples.Dealer.CrowdAffine
-import Dissertation.WellPosedness.Examples.Dealer.Monotone
-import Dissertation.WellPosedness.Existence.PaperSolution
-import Dissertation.WellPosedness.Robustness.Corollary
-import Dissertation.WellPosedness.Existence.AffineExample
-import Dissertation.WellPosedness.Existence.GlobalEnl
-import Dissertation.WellPosedness.System.PaperUniquenessInt
-import LevyStochCalc.Driver.GaussianInitial
-import Dissertation.WellPosedness.Examples.Dealer.MarkSizes
-import Dissertation.WellPosedness.Examples.MeanFieldWP
-import Dissertation.WellPosedness.Analysis.SMin
+import Dissertation.WellPosedness.BrownianPoisson.FrozenCell
+import Dissertation.WellPosedness.Examples.LinearGenerator
+import Dissertation.WellPosedness.Enlarged.Bot
+import Dissertation.WellPosedness.Examples.MeanFieldMonotone
+import Dissertation.WellPosedness.Remarks.LinearMean
 import Dissertation.Acceptance.A.Sec4
-import Mathlib.MeasureTheory.Integral.Prod
-import Dissertation.Law.CrowdGrad
-import Dissertation.Law.LawP2
-import LevyStochCalc.Ito.PicardWellPosed
-import LevyStochCalc.Probability.ProgressiveCadlag
-import Dissertation.WellPosedness.Enlarged.Driver
-import Dissertation.WellPosedness.Existence.Congr
-import LevyStochCalc.Analysis.GronwallIntegral
-import LevyStochCalc.Ito.SecondMoment
-import Dissertation.WellPosedness.System.PaperWeakSolutionInt
 import Dissertation.WellPosedness.Stability.LinearCongr
 
 /-!
@@ -35,7 +19,8 @@ import Dissertation.WellPosedness.Stability.LinearCongr
 
 ## Main statements
 
-* `Dissertation.Acceptance.A.ex55Crowd_eq` — the crowding correction of Example 5.5 is `crowdOp`.
+* `Dissertation.Acceptance.A.ex55Crowd_eq` — the crowding correction of Example 5.5 is
+  `Dissertation.Law.crowdOp`.
 * `Dissertation.Acceptance.A.ex_dealer_potential`, `ex_dealer_crowd` — the potential, and the
   Lipschitz bound of the crowding correction.
 * `Dissertation.Acceptance.A.ex_dealer_twopoint`, `ex_dealer_not_mean_corr`, `ex_dealer_affine` —

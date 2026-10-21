@@ -4,6 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.Examples.MeanField
+import Mathlib.AlgebraicTopology.SimplexCategory.Basic
 
 /-!
 # The linear mean-field system of Li and Min

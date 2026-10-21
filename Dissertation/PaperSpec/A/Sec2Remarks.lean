@@ -4,11 +4,8 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.PaperSpec.A.Setting
-import Dissertation.WellPosedness.Spec.Assumptions
 import Dissertation.WellPosedness.Spec.CorollaryHyps
-import Dissertation.WellPosedness.Existence.AffineExample
-import Dissertation.WellPosedness.System.FullRank
-import Dissertation.Law.Wasserstein
+import Mathlib.MeasureTheory.Constructions.UnitInterval
 
 /-!
 # Section 2 of the well-posedness paper: the remarks on the assumptions

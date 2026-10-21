@@ -8,21 +8,22 @@ import Dissertation.WellPosedness.System.PaperWeakSolutionForcedIntSolves
 import Dissertation.WellPosedness.System.JumpLeftEnergy
 
 /-!
-# Two solutions of the `λ`-forced system in `ℍ_weak` and their difference
+# Two solutions of the `λ`-forced system in `ℍ²` and their difference
 
-Let `Θ¹, Θ²` solve the `λ`-forced system (4.1) of the well-posedness paper in `ℍ_weak`, in the
+Let `Θ¹, Θ²` solve the `λ`-forced system (4.1) of the well-posedness paper in `ℍ²`, in the
 sense of `PaperWeakSolutionForcedInt`, with jump representatives `γ¹, γ²`. The proof of Lemma 4.3
 works with their difference:
 
 * extended off `[0, T]`, the solutions solve `SolvesForcedInt`, and under Assumptions 2.3 and 2.5
-  along the diagonal the difference of the extensions is the difference system `PairDiff`, whose
-  coefficient processes are those along `Θ¹, Θ²` themselves;
+  along the diagonal the difference of the extensions is the difference system
+  `Dissertation.WellPosedness.Stability.PairDiff`, whose coefficient processes are those along
+  `Θ¹, Θ²` themselves;
 * the forced jump integrand `λ h(s, Θ⁻_s, ·, μ⁻_s) + q^h_s`, read through the canonical
-  representative `coeffJump` along the predictable tuple, agrees with `λ γ + q^h` almost
-  everywhere for the marked energy measure when every path of `X` and `Y` has left limits on
-  `(0, T]`. The predictable tuple at the time `0` involves the paths before `0`, on which nothing
-  is assumed; the time `0` is a null set, and the argument runs through the paths frozen outside
-  `[0, T]`.
+  representative `Dissertation.WellPosedness.Existence.coeffJump` along the predictable tuple,
+  agrees with `λ γ + q^h` almost everywhere for the marked energy measure when every path of `X` and
+  `Y` has left limits on `(0, T]`. The predictable tuple at the time `0` involves the paths before
+  `0`, on which nothing is assumed; the time `0` is a null set, and the argument runs through the
+  paths frozen outside `[0, T]`.
 
 ## Main statements
 
@@ -30,7 +31,7 @@ works with their difference:
   measure holds, at almost every point of the window, for almost every mark.
 * `ae_window_mem` — almost every point of the window has its time in `[0, T]`.
 * `PaperWeakSolutionForcedInt.exists_pairDiff` — the difference of the extended solutions is a
-  `PairDiff`.
+  `Dissertation.WellPosedness.Stability.PairDiff`.
 * `PaperWeakSolutionForcedInt.ae_forcedJump_leftLim_eq`,
   `PaperWeakSolutionForcedInt.ae_forcedJump_sub_leftLim_eq` — the forced jump integrand at the
   predictable tuple agrees with that of the representative.
@@ -63,6 +64,7 @@ theorem ae_ae_of_ae_markedEnergyMeasure {p : Ω × ℝ × E → Prop}
     MeasurableEquiv.prodAssoc.measurableEmbedding.ae_map_iff] at h
   exact Measure.ae_ae_of_ae_prod h
 
+omit [SFinite P] in
 /-- Almost every point of the window `Ω × [0, T]` has its time in `[0, T]`. -/
 theorem ae_window_mem :
     ∀ᵐ x ∂(P.prod (volume.restrict (Set.Icc (0 : ℝ) T))), x.2 ∈ Set.Icc (0 : ℝ) T :=
@@ -85,8 +87,8 @@ variable {Ω : Type u} [MeasurableSpace Ω] {E : Type v} [MeasurableSpace E] {ν
   {Z Z₁ Z₂ : Fin m → ℝ → Ω → Fin d → ℝ} {U U₁ U₂ : Fin m → ℝ → Ω → E → ℝ}
   {γ γ₁ γ₂ : Fin n → ℝ → Ω → E → ℝ} {L α β₁ β₂ : ℝ} {G : Matrix (Fin m) (Fin n) ℝ}
 
-/-- **The difference of two solutions in `ℍ_weak` is a difference system.** For two solutions of
-the `λ`-forced system in `ℍ_weak` with the same coefficients and `T ≥ 0`, satisfying Assumption
+/-- **The difference of two solutions in `ℍ²` is a difference system.** For two solutions of
+the `λ`-forced system in `ℍ²` with the same coefficients and `T ≥ 0`, satisfying Assumption
 2.3 along the diagonal with constant `L` and Assumption 2.5 along the diagonal with coupling
 matrix `G` and constants `α, β₁, β₂`, there are `X'^k, Y'^k` equal to `X^k, Y^k` at every time of
 `[0, T]` such that the difference `(X'¹ − X'², Y'¹ − Y'², δZ, δU)` is a `PairDiff` with Lipschitz
@@ -129,7 +131,7 @@ theorem PaperWeakSolutionForcedInt.exists_pairDiff
     fun k t ht => ⟨hY₁ k t ht, hY₂ k t ht⟩, hD⟩
 
 /-- **The forced jump integrand at the predictable tuple.** For a solution of the `λ`-forced
-system in `ℍ_weak` with jump representative `γ`, coefficients with the joint measurability (2.3),
+system in `ℍ²` with jump representative `γ`, coefficients with the joint measurability (2.3),
 `T ≥ 0`, and every path of `X` and `Y` with left limits at every time of `(0, T]`, the forced jump
 integrand `λ γ_{i,s}(ω, e) + q^h_{i,s}(ω, e)` agrees, almost everywhere for the marked energy
 measure on `[0, T]`, with `λ coeffJump(h, Θ⁻)_{i,s}(ω, e) + q^h_{i,s}(ω, e)`, the canonical
@@ -210,7 +212,7 @@ theorem PaperWeakSolutionForcedInt.ae_forcedJump_leftLim_eq
       rw [hθω, lawP2_congr hθ, htup] at e₂
       filter_upwards [e₂, hγω] with e h₂ h₄
       have c := congrArg (fun v : EuclideanSpace ℝ (Fin n) => v i) (h₂.trans h₄.symm)
-      simp only [PiLp.toLp_apply] at c
+      simp only at c
       simp only [jumpProc, Set.indicator_of_mem hsI, c])
   -- almost every time of the horizon lies in `(0, T]`
   have h2 := Existence.ae_markedEnergyMeasure_of_ae_ae_ae (P := P) (ν := ν) (T := T)
@@ -230,7 +232,7 @@ theorem PaperWeakSolutionForcedInt.ae_forcedJump_leftLim_eq
     Existence.coeffJump_eq_of_tupleAt_eq hqI' (hleft _ hqI)]
 
 /-- **The forced jump integrands of two solutions at the predictable tuples.** For two solutions
-of the `λ`-forced system in `ℍ_weak` with the same coefficients, with the joint measurability
+of the `λ`-forced system in `ℍ²` with the same coefficients, with the joint measurability
 (2.3), `T ≥ 0`, and every path of `X^k` and `Y^k` with left limits at every time of `(0, T]`,
 almost everywhere for the marked energy measure on `[0, T]`, for every coordinate `i`,
 `λ (coeffJump(h, Θ¹⁻) − coeffJump(h, Θ²⁻))_i + δq^h_i = λ (γ¹ − γ²)_i + δq^h_i`. -/
@@ -253,7 +255,7 @@ theorem PaperWeakSolutionForcedInt.ae_forcedJump_sub_leftLim_eq
     ae_all_iff.mpr fun i => h₂.ae_forcedJump_leftLim_eq hT hC hXl₂ hYl₂ i] with q e₁ e₂ i
   linear_combination e₁ i - e₂ i
 
-omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] [IsProbabilityMeasure P] in
 /-- **The data size of a square-integrable initial datum and a forcing is finite.** -/
 theorem Forcing.dataSize_ne_top_of_memLp
     (hq : Forcing ℱ P ν T qb qσ qh qf qg) (hξ : ∀ i, MemLp (ξ₀ i) 2 P) :

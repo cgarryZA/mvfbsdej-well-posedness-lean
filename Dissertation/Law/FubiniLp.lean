@@ -19,7 +19,7 @@ The section of a representative `g` is square integrable at almost every point b
 `g` to the points where it is (`cutSec`) gives sections in `L²(ν; F)` at every point, strongly
 measurable in the point (`stronglyMeasurable_lp_of_section`), and Tonelli gives the isometry. The
 range is closed and contains every indicator of a set of finite measure times an element of
-`L²(ν; F)`, so it is everything (`Lp.induction`).
+`L²(ν; F)`, so it is everything (`MeasureTheory.Lp.induction`).
 
 ## Main definitions
 
@@ -150,9 +150,7 @@ theorem ae_mem_goodSet {g : X × E → F} (hg : StronglyMeasurable g)
   rw [lintegral_prod _ (hg.measurable.enorm.pow_const _).aemeasurable] at hfin
   exact ae_lt_top (Measurable.lintegral_prod_right' (hg.measurable.enorm.pow_const _)) hfin.ne
 
-omit [SigmaFinite μ] in
-omit [NormedSpace ℝ F] [CompleteSpace F]
-    [SecondCountableTopology F] in
+omit [SigmaFinite μ] [NormedSpace ℝ F] [CompleteSpace F] [SecondCountableTopology F] in
 /-- **Tonelli for the sections**: the integral of the squared norms of the sections is the
 integral of the squared norm on the product. -/
 theorem lintegral_enorm_secLp_rpow {g : X × E → F} (hg : StronglyMeasurable g)
@@ -172,8 +170,7 @@ theorem lintegral_lp_rpow_lt_top {Y : Type*} [MeasurableSpace Y] {ρ : Measure Y
   rw [← eLpNorm_two_rpow]
   exact ENNReal.rpow_lt_top_of_nonneg (by norm_num) (Lp.eLpNorm_ne_top f)
 
-omit [SigmaFinite μ] in
-omit [NormedSpace ℝ F] [CompleteSpace F] in
+omit [SigmaFinite μ] [NormedSpace ℝ F] [CompleteSpace F] in
 /-- The sections of an element of `L²(μ ⊗ ν; F)` form an element of `L²(μ; L²(ν; F))`. -/
 theorem memLp_secLp_lp (f : Lp F 2 (μ.prod ν)) :
     MemLp (secLp ν (Lp.stronglyMeasurable f)) 2 μ := by
@@ -185,15 +182,13 @@ theorem memLp_secLp_lp (f : Lp F 2 (μ.prod ν)) :
 noncomputable def fubiniLp (f : Lp F 2 (μ.prod ν)) : Lp (Lp F 2 ν) 2 μ :=
   (memLp_secLp_lp f).toLp _
 
-omit [SigmaFinite μ] in
-omit [NormedSpace ℝ F] [CompleteSpace F] in
+omit [SigmaFinite μ] [NormedSpace ℝ F] [CompleteSpace F] in
 /-- `fubiniLp f` is represented by the section map. -/
 theorem coeFn_fubiniLp (f : Lp F 2 (μ.prod ν)) :
     (fubiniLp f : X → Lp F 2 ν) =ᵐ[μ] secLp ν (Lp.stronglyMeasurable f) :=
   (memLp_secLp_lp f).coeFn_toLp
 
-omit [SigmaFinite μ] in
-omit [NormedSpace ℝ F] [CompleteSpace F] in
+omit [SigmaFinite μ] [NormedSpace ℝ F] [CompleteSpace F] in
 /-- The sections of `fubiniLp f` represent `f`. -/
 theorem ae_coeFn_fubiniLp (f : Lp F 2 (μ.prod ν)) :
     ∀ᵐ x ∂μ, (fubiniLp f x : E → F) =ᵐ[ν] fun e => f (x, e) := by
@@ -203,8 +198,7 @@ theorem ae_coeFn_fubiniLp (f : Lp F 2 (μ.prod ν)) :
   filter_upwards [coeFn_secLp (Lp.stronglyMeasurable f) x] with e he
   rw [he, cutSec_apply_of_mem h2]
 
-omit [SigmaFinite μ] in
-omit [NormedSpace ℝ F] [CompleteSpace F] in
+omit [SigmaFinite μ] [NormedSpace ℝ F] [CompleteSpace F] in
 /-- The section map preserves the `L²` norm. -/
 theorem norm_fubiniLp (f : Lp F 2 (μ.prod ν)) : ‖fubiniLp f‖ = ‖f‖ := by
   have h : eLpNorm (fubiniLp f) 2 μ = eLpNorm f 2 (μ.prod ν) := by
@@ -215,9 +209,7 @@ theorem norm_fubiniLp (f : Lp F 2 (μ.prod ν)) : ‖fubiniLp f‖ = ‖f‖ := 
       lintegral_enorm_secLp_rpow _ (lintegral_lp_rpow_lt_top f)]
   rw [Lp.norm_def, Lp.norm_def, h]
 
-omit [SigmaFinite μ] in
-omit [NormedSpace ℝ F] [CompleteSpace F]
-    [SecondCountableTopology F] in
+omit [SigmaFinite μ] [NormedSpace ℝ F] [CompleteSpace F] [SecondCountableTopology F] in
 /-- Two functions on the product with almost everywhere equal sections have almost everywhere
 equal section maps. -/
 theorem ae_secLp_eq {f₁ f₂ : X × E → F} (hf₁ : StronglyMeasurable f₁)
@@ -233,8 +225,7 @@ theorem ae_secLp_eq {f₁ f₂ : X × E → F} (hf₁ : StronglyMeasurable f₁)
   rw [e1, cutSec_apply_of_mem h1, e2]
   exact e3
 
-omit [SigmaFinite μ] in
-omit [NormedSpace ℝ F] [CompleteSpace F] in
+omit [SigmaFinite μ] [NormedSpace ℝ F] [CompleteSpace F] in
 /-- The section map is additive. -/
 theorem fubiniLp_add (f f' : Lp F 2 (μ.prod ν)) :
     fubiniLp (f + f') = fubiniLp f + fubiniLp f' := by
@@ -262,8 +253,7 @@ theorem fubiniLp_add (f f' : Lp F 2 (μ.prod ν)) :
     Lp.coeFn_add (fubiniLp f) (fubiniLp f'), key] with x h1 h2 h3 h4 h5
   rw [h1, h4, Pi.add_apply, h2, h3, h5]
 
-omit [SigmaFinite μ] in
-omit [CompleteSpace F] in
+omit [SigmaFinite μ] [CompleteSpace F] in
 /-- The section map is homogeneous. -/
 theorem fubiniLp_smul (c : ℝ) (f : Lp F 2 (μ.prod ν)) : fubiniLp (c • f) = c • fubiniLp f := by
   refine Lp.ext ?_

@@ -12,8 +12,8 @@ import Dissertation.WellPosedness.System.HilbertW2Space
 The map `μ ↦ toL2 # μ` from the laws of finite second moment on the tuple space to those on the
 tuple space with the Hilbert norm is a bijection, with inverse `ρ ↦ ofL2 # ρ`, and by definition
 of `P2WH` an isometry onto the 2-Wasserstein space `P2W (TupleL2 …)`. That space is a separable
-complete metric space (`Dissertation.Law.P2W.instCompleteSpace`, `P2W.instT0Space`,
-`P2W.instSeparableSpace`), so `P2WH` is one as well, and is Polish.
+complete metric space (`Dissertation.Law.P2W.instCompleteSpace`, `Dissertation.Law.P2W.instT0Space`,
+`Dissertation.Law.P2W.instSeparableSpace`), so `P2WH` is one as well, and is Polish.
 
 ## Main statements
 

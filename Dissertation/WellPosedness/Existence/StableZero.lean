@@ -9,12 +9,12 @@ import Dissertation.WellPosedness.System.BridgeDiff
 /-!
 # Stability of the `λ = 0` system
 
-At `λ = 0` the `λ`-forced system (4.1) does not see its coefficients: the forward equation is
-the Itô process `X_t = ξ₀ + ∫_0^t q^b + ∫_0^t q^σ dW + ∫_0^t ∫_E q^h dÑ` and the backward
-equation is the linear backward equation with terminal value `q^g_T` and drift `q^f`. Two
-solutions, for coefficients `C¹, C²`, initial data `ξ₀¹, ξ₀²` and forcings `q¹, q²`, therefore
-differ by a solution of the difference system `PairDiff` of the zero coefficients, with
-Lipschitz constants `K = K_T = 0` and Assumption 2.5 holding with `G = 0` and
+At `λ = 0` the `λ`-forced system (4.1) does not see its coefficients: the forward equation is the
+Itô process `X_t = ξ₀ + ∫_0^t q^b + ∫_0^t q^σ dW + ∫_0^t ∫_E q^h dÑ` and the backward equation is
+the linear backward equation with terminal value `q^g_T` and drift `q^f`. Two solutions, for
+coefficients `C¹, C²`, initial data `ξ₀¹, ξ₀²` and forcings `q¹, q²`, therefore differ by a solution
+of the difference system `Dissertation.WellPosedness.Stability.PairDiff` of the zero coefficients,
+with Lipschitz constants `K = K_T = 0` and Assumption 2.5 holding with `G = 0` and
 `α = β₁ = β₂ = 0`. The bounds of Lemma 4.3 then close without the rank case:
 
 * the weighted forward bound at rate `c = 0` gives `𝔼|δX_T|² + 𝔼 ∫_0^T |δX|² ≤ e^{2T} P`, with
@@ -39,8 +39,8 @@ of Lemma 4.3 is not available.
 
 * `SolvesForced.fwd_sub_zero`, `SolvesForced.bwd_sub_zero` — the difference equations at
   `λ = 0`.
-* `SolvesForced.pairDiff_zero` — the difference of two `λ = 0` solutions is a `PairDiff` of the
-  zero coefficients.
+* `SolvesForced.pairDiff_zero` — the difference of two `λ = 0` solutions is a
+  `Dissertation.WellPosedness.Stability.PairDiff` of the zero coefficients.
 * `SolvesForced.supSize_sub_le_zero` — the stability estimate at `λ = 0`.
 -/
 
@@ -173,7 +173,7 @@ theorem _root_.Dissertation.WellPosedness.System.SolvesForced.supSize_sub_le_zer
     exact ENNReal.add_ne_top.mpr ⟨ENNReal.add_ne_top.mpr ⟨hbf, hσf⟩, hhf⟩
   have hF := forward_energy_le (fun i => h₁.fwd_sub_zero h₂ hT.le i) 𝒲 hT le_rfl
     (measurable_sampleEnergy_add hq.qb_meas hq.qσ_meas hq.qh_meas) hGf
-    (Eventually.of_forall fun s => by simp only [ENNReal.ofReal_zero, zero_mul, zero_add, hG,
+    (Eventually.of_forall fun s => by simp only [ENNReal.ofReal_zero, zero_mul, zero_add,
       le_refl])
   rw [add_zero, hGw, ENNReal.toReal_add (ENNReal.add_ne_top.mpr ⟨hbf, hσf⟩) hhf,
     ENNReal.toReal_add hbf hσf] at hF

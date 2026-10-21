@@ -11,20 +11,20 @@ import Dissertation.WellPosedness.Examples.SingularDrift
 
 Statement numbers refer to the well-posedness paper at `1f67672`, in the standing setting of §2.
 Remark 3.4: uniqueness (Theorem 3.3, `thm_uniq`) needs only Assumptions 2.3–2.5; the initial-data
-condition `ξ₀ ∈ L²` is necessary for a solution in `ℍ`; the origin-value conditions of
+condition `ξ₀ ∈ L²` is necessary for a solution in `𝕊`; the origin-value conditions of
 Assumption 2.2 are sufficient but not necessary, as adding the drift `t^{-1/2}` shows: the shift
 `X ↦ X − 2√t`, translating the law argument accordingly, returns a system satisfying
 Assumptions 2.2–2.5.
 
 ## Main definitions
 
-* `Dissertation.PaperSpec.A.rem_uniq_initial` — a solution in `ℍ` has `ξ₀ ∈ L²`.
+* `Dissertation.PaperSpec.A.rem_uniq_initial` — a solution in `𝕊` has `ξ₀ ∈ L²`.
 * `Dissertation.PaperSpec.A.rem_uniq_singular` — a system violating Assumption 2.2 and satisfying
-  Assumptions 2.3–2.5 with a solution in `ℍ`.
+  Assumptions 2.3–2.5 with a solution in `𝕊`.
 * `Dissertation.PaperSpec.A.translateTuple`, `Dissertation.PaperSpec.A.translatedCoeffs` — the
   translation of the forward coordinate and the coefficients translated in state and law.
 * `Dissertation.PaperSpec.A.rem_uniq_translation` — for every system satisfying (2.3) and
-  Assumptions 2.2–2.5, the drift `t^{-1/2} e` added, a solution in `ℍ` exists.
+  Assumptions 2.2–2.5, the drift `t^{-1/2} e` added, a solution in `𝕊` exists.
 -/
 
 open MeasureTheory ProbabilityTheory Filter
@@ -38,7 +38,7 @@ open Dissertation.WellPosedness.System Dissertation.WellPosedness.Existence
 
 universe u v w
 
-/-- Remark 3.4, the initial datum. In the standing setting, for `T ≥ 0`, a tuple of `ℍ_weak`
+/-- Remark 3.4, the initial datum. In the standing setting, for `T ≥ 0`, a tuple of `ℍ²`
 satisfying (1.1) with initial datum `ξ₀` whose forward component has `𝔼 sup_{t ≤ T} |X_t|² < ∞`
 has `ξ₀ ∈ L²`. -/
 def rem_uniq_initial : Prop :=
@@ -58,7 +58,7 @@ def rem_uniq_initial : Prop :=
 `β₂ = 0`, `σ_c = 0`, `h_c = 0`, with the deterministic drift `t^{-1/2}` added to `b`, satisfy
 (2.3), Assumption 2.3 with `L = 1`, Assumption 2.4 with `G = 1` and Assumption 2.5 with `G = 1`,
 `α = 1`, `β₁ = 1`, `β₂ = 0`, violate Assumption 2.2 for every initial datum, and have a solution
-of (1.1) in `ℍ` from the initial datum `0`. -/
+of (1.1) in `𝕊` from the initial datum `0`. -/
 def rem_uniq_singular : Prop :=
   ∀ {Ω : Type u} [MeasurableSpace Ω] {E : Type v} [MeasurableSpace E] (ν : Measure E)
     [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] (d : ℕ) (P : Measure Ω)
@@ -100,8 +100,8 @@ deterministic drift `t^{-1/2} e` to `b` gives a system `C⁺` that satisfies (2.
 Assumptions 2.3 and 2.5 with the same constants and violates Assumption 2.2 for every initial
 datum. The system `C̃` obtained from `C` by the shift `X ↦ X − 2√t e`, translating the law
 argument accordingly, satisfies (2.3) and Assumptions 2.2–2.5 with the same constants, and has a
-solution `Θ = (X, Y, Z, U)` in `ℍ` from `ξ₀` such that `(X + 2√t e, Y, Z, U)` is a solution of
-(1.1) for `C⁺` in `ℍ` from `ξ₀`. -/
+solution `Θ = (X, Y, Z, U)` in `𝕊` from `ξ₀` such that `(X + 2√t e, Y, Z, U)` is a solution of
+(1.1) for `C⁺` in `𝕊` from `ξ₀`. -/
 def rem_uniq_translation : Prop :=
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]

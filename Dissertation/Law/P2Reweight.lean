@@ -3,7 +3,6 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import Mathlib.Analysis.Convex.StdSimplex
 import Dissertation.Law.P2Metric
 
 /-!
@@ -66,6 +65,7 @@ noncomputable def finLaw (x : ι → E) (w : stdSimplex ℝ ι) : P2 E where
     exact ENNReal.sum_ne_top.mpr fun i _ =>
       ENNReal.mul_ne_top ENNReal.ofReal_ne_top ENNReal.ofReal_ne_top
 
+omit [SecondCountableTopology E] in
 /-- The underlying measure of `finLaw x w` is `∑ᵢ wᵢ δ_{xᵢ}`. -/
 theorem finLaw_law (x : ι → E) (w : stdSimplex ℝ ι) :
     (finLaw x w).law = ∑ i, ENNReal.ofReal (w.1 i) • Measure.dirac (x i) :=
@@ -75,6 +75,7 @@ theorem finLaw_law (x : ι → E) (w : stdSimplex ℝ ι) :
 noncomputable def matCoupling (x : ι → E) (c : ι → ι → ℝ) : Measure (E × E) :=
   ∑ i, ∑ j, ENNReal.ofReal (c i j) • Measure.dirac (x i, x j)
 
+omit [SecondCountableTopology E] in
 /-- **A matrix coupling**: a nonnegative matrix with row sums `w` and column sums `w'` gives a
 coupling of `finLaw x w` and `finLaw x w'`. -/
 theorem isCoupling_matCoupling (x : ι → E) {w w' : stdSimplex ℝ ι} {c : ι → ι → ℝ}
@@ -138,7 +139,7 @@ theorem sum_excess_eq_sum_deficit (w w' : stdSimplex ℝ ι) :
 theorem excess_eq_zero_of_sum (w w' : stdSimplex ℝ ι)
     (h : ∑ k, (w.1 k - min (w.1 k) (w'.1 k)) = 0) (i : ι) :
     w.1 i - min (w.1 i) (w'.1 i) = 0 :=
-  (Finset.sum_eq_zero_iff_of_nonneg fun k _ => sub_nonneg.mpr (min_le_left _ _)).mp h i
+  (Finset.sum_eq_zero_iff_of_nonneg fun _k _ => sub_nonneg.mpr (min_le_left _ _)).mp h i
     (Finset.mem_univ i)
 
 /-- The entries of the maximal coupling matrix are nonnegative. -/
@@ -211,7 +212,7 @@ theorem w2P_finLaw_sq_le (x : ι → E) (w w' : stdSimplex ℝ ι) {D : ℝ}
       rw [hc_def, maxCouplingMat, add_mul]
       by_cases hij : i = j
       · subst hij
-        simp only [if_pos rfl, sub_self, norm_zero]
+        simp only [ sub_self, norm_zero]
         rw [← hm]
         nlinarith [sq_nonneg D]
       · rw [if_neg hij, zero_mul, zero_add, ← hm]

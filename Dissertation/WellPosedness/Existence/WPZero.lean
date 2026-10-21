@@ -111,6 +111,7 @@ variable {P : Measure Ω} [IsProbabilityMeasure P]
   {X : Fin n → ℝ → Ω → ℝ} {Y : Fin m → ℝ → Ω → ℝ}
   {Z : Fin m → ℝ → Ω → Fin d → ℝ} {U : Fin m → ℝ → Ω → E → ℝ} {γ : Fin n → ℝ → Ω → E → ℝ}
 
+omit [MeasurableSpace.CountablyGenerated E] in
 /-- **The tuple of solutions of the linear equations is progressive**: if each coordinate of `X`
 solves a linear forward equation and each coordinate of `(Y, Z, U)` a linear backward equation
 over `ℱ`, then `(X, Y, Z, U)` is a progressive tuple. -/
@@ -142,16 +143,19 @@ namespace ProgTuple
 variable (hΘ : ProgTuple ℱ P ν T X Y Z U)
 include hΘ
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] [IsProbabilityMeasure P] in
 /-- Each coordinate of `X` of a progressive tuple is jointly measurable. -/
 theorem measurable_X (i : Fin n) : Measurable (Function.uncurry fun ω s => X i s ω) :=
   (LevyStochCalc.Probability.measurable_uncurry_of_rightContinuous (hΘ.X_adapted i)
     (hΘ.X_rightCont i)).comp measurable_swap
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] [IsProbabilityMeasure P] in
 /-- Each coordinate of `Y` of a progressive tuple is jointly measurable. -/
 theorem measurable_Y (k : Fin m) : Measurable (Function.uncurry fun ω s => Y k s ω) :=
   (LevyStochCalc.Probability.measurable_uncurry_of_rightContinuous (hΘ.Y_adapted k)
     (hΘ.Y_rightCont k)).comp measurable_swap
 
+omit [IsProbabilityMeasure P] in
 /-- The tuple `Θ_s` of a progressive tuple is strongly `ℱ_s`-measurable. -/
 theorem stronglyMeasurable_tupleAt (s : ℝ) : StronglyMeasurable[ℱ s] (tupleAt ν X Y Z U s) :=
   stronglyMeasurable_tupleAt_of (mΩ := ℱ s) (fun i => hΘ.X_adapted i s)
@@ -168,6 +172,7 @@ theorem ae_memLp_tupleAt
     (fun s _ => ((hΘ.stronglyMeasurable_tupleAt s).mono (ℱ.le s)).aestronglyMeasurable)
     hΘ.measurable_X hΘ.measurable_Y hΘ.Z_meas hΘ.U_meas hXe hYe hΘ.Z_sq hΘ.U_sq
 
+omit [MeasurableSpace.CountablyGenerated E] [IsProbabilityMeasure P] in
 /-- The expected sum of the squared coordinates of a progressive tuple at a time is the sum of
 its sample energies there. -/
 theorem lintegral_coords_eq (s : ℝ) :

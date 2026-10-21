@@ -4,9 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Mathlib.MeasureTheory.Function.StronglyMeasurable.Basic
-import Mathlib.Topology.Instances.ENNReal.Lemmas
-import Mathlib.Topology.Algebra.Order.Archimedean
-import Mathlib.Analysis.SpecificLimits.Basic
 
 /-!
 # Suprema of right-continuous paths over a horizon

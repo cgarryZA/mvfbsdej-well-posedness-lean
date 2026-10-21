@@ -24,7 +24,7 @@ takes the difference of (4.8) at two trials,
 `δȲ_t = δξ̄ + ∫_t^T λ δf_s ds − ∫_t^T δZ̄_s dW_s − ∫_t^T ∫_E δŪ_s(e) Ñ(ds, de)`,
 
 which is (4.4) with `δξ = δξ̄` and `φ_s = λ δf_s`, and sets `λ_* = (2 √C_Φ)⁻¹ ∈ (0, 1/2]`, at which
-`C_Φ λ² ≤ 1/4` and `‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖_ℍ ≤ (1/2) ‖Θ¹ − Θ²‖_ℍ` for `λ ∈ [0, λ_*]`. Step 3 of the
+`C_Φ λ² ≤ 1/4` and `‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖_𝕊 ≤ (1/2) ‖Θ¹ − Θ²‖_𝕊` for `λ ∈ [0, λ_*]`. Step 3 of the
 proof of Lemma 4.3 bounds, at every `t ≤ T`,
 
 `𝔼 sup_{s ≤ t} |δX_s|² ≤ C (𝔼|δξ₀|² + 𝔼 ∫_0^t (|δb_s|² + |δσ_s|²_F + ‖δh_s‖²) ds + P)
@@ -131,7 +131,7 @@ def eq_supE_weighted : Prop :=
 
 /-- **The bound before (4.9), at almost every time.** In the standing setting, under the
 hypotheses of Lemma 4.2 — `T > 0`, coefficients with (2.3) and Assumptions 2.2–2.3 with constant
-`L` and initial datum `ξ₀` — for two trial tuples `Θ¹, Θ²` of `ℍ`, with `S_s` the sum of the norms
+`L` and initial datum `ξ₀` — for two trial tuples `Θ¹, Θ²` of `𝕊`, with `S_s` the sum of the norms
 of the coefficient differences at `(Θ^k_s, Law(Θ^k_s))`, for almost every `s ∈ [0, T]`,
 `𝔼 S_s² ≤ 10 L² 𝔼[|δX_s|² + |δY_s|² + |δZ_s|²_F + ‖δU_s‖²_{L²(ν)}]`, read in `[0, ∞]`. -/
 def eq_coeffdiff_ae : Prop :=
@@ -157,7 +157,7 @@ def eq_coeffdiff_ae : Prop :=
 /-- **The backward difference before (4.12).** In the standing setting, under the hypotheses of
 Lemma 4.2 — `T > 0`, coefficients with (2.3) and Assumptions 2.2–2.3 with constant `L` and initial
 datum `ξ₀` — for `λ ∈ [0, 1]`, a forcing `q` of the class of (4.1), two trial tuples `Θ¹, Θ²` of
-`ℍ` and their frozen steps `Θ̄ᵏ = Φ_λ(Θᵏ)` (`FrozenStep`, with the same `λ`, `ξ₀` and `q`), each
+`𝕊` and their frozen steps `Θ̄ᵏ = Φ_λ(Θᵏ)` (`FrozenStep`, with the same `λ`, `ξ₀` and `q`), each
 coordinate `k` of `(δȲ, δZ̄, δŪ)` solves the linear backward equation (4.4) (`LinearBSDEJ`) with
 terminal value `δξ̄ = λ [g(X̄¹_T, Law(X̄¹_T)) − g(X̄²_T, Law(X̄²_T))]` and drift `φ_s = λ δf_s`,
 `δf_s` the driver difference at `(Θᵏ_s, Law(Θᵏ_s))`: almost surely at each `t ∈ [0, T]`,
@@ -198,9 +198,9 @@ value `c ≥ c₀` of the constant `c_BDG`: in the standing setting, under the h
 `ξ₀` — with `C_Φ = max{1, C_X + C_Y}` the constant of (4.13) (`L⋆² = 10 L² max{T, 1}`,
 `C_X = 3 max{T, c} L⋆²`, `C_BP = 2 e^T (5 + 4c) + 4T`, `C_Y = C_BP (4 L² C_X + L⋆²)`) and
 `λ_* = (2 √C_Φ)⁻¹`: `λ_* ∈ (0, 1/2]`; and for every `λ ∈ [0, λ_*]`, `C_Φ λ² ≤ 1/4`, and for a
-forcing `q` of the class of (4.1), two trial tuples `Θ¹, Θ²` of `ℍ` and their frozen steps
+forcing `q` of the class of (4.1), two trial tuples `Θ¹, Θ²` of `𝕊` and their frozen steps
 `Θ̄ᵏ = Φ_λ(Θᵏ)` (`FrozenStep`, with the same `λ`, `ξ₀` and `q`),
-`‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖_ℍ ≤ (1/2) ‖Θ¹ − Θ²‖_ℍ`, `‖·‖_ℍ` the square root of `supSize` in
+`‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖_𝕊 ≤ (1/2) ‖Θ¹ − Θ²‖_𝕊`, `‖·‖_𝕊` the square root of `supSize` in
 `[0, ∞]`. -/
 def eq_contract_half : Prop :=
   ∃ c₀ : ℝ, 0 < c₀ ∧ ∀ c : ℝ, c₀ ≤ c →
@@ -240,8 +240,8 @@ def eq_contract_half : Prop :=
 /-- **The chain before (4.23), at every time.** There are functions `K₁`, `K₂`, `K₃` of
 `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that: in the standing setting, under the hypotheses of Lemma 4.3
 — `T > 0`, coefficients with (2.3) and Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and
-coupling matrix `G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak`
-with `X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` — for
+coupling matrix `G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²`
+with `X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` — for
 every `t ∈ [0, T]`,
 `𝔼 sup_{s ≤ t} |δX_s|²
   ≤ C₁ (𝔼|δξ₀|² + 𝔼 ∫_0^t (|δb_s|² + |δσ_s|²_F + ‖δh_s‖²_{L²(ν)}) ds + P)
@@ -351,8 +351,8 @@ def eq_fwd_chain : Prop :=
 of `(T, L, ‖G‖, c_G, α, β₁, β₂)` and `K'` of `(ε, κ, T, L, ‖G‖, c_G, α, β₁, β₂)` such that: in the
 standing setting, under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3) and
 Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`,
-`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak` with `X^k_T ∈ L²`, `ℱ₀`-measurable
-initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` — with `C = K(T, L, ‖G‖, s_min(G)⁻², α, β₁,
+`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with `X^k_T ∈ L²`, `ℱ₀`-measurable
+initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` — with `C = K(T, L, ‖G‖, s_min(G)⁻², α, β₁,
 β₂)`: for every `ε ∈ (0, 1]`, `κ > 0` and `t ∈ [0, T]`, the functions `|δY_t|²`,
 `|λ δg_T + q^g_T|²` (on `Ω`), `e^{κs} ((κ − C/ε) |δY_s|² + (1 − ε) (|δZ_s|²_F + ‖δU_s‖²_{L²(ν)}))`
 and `e^{κs} (|δX_s|² + |q^f_s|²)` (on `Ω × [t, T]`) are integrable and
@@ -433,8 +433,8 @@ def eq_wgt_insert : Prop :=
 /-- **The terminal bound before (4.26).** There is a function `K` of
 `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that: in the standing setting, under the hypotheses of Lemma 4.3
 — `T > 0`, coefficients with (2.3) and Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and
-coupling matrix `G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak`
-with `X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` —
+coupling matrix `G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²`
+with `X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` —
 `𝔼|δg_T|² ≤ C 𝔼|δX_T|²` with `C = K(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂)`,
 `δg_T = g(X¹_T, Law X¹_T) − g(X²_T, Law X²_T)` and `δX_T = X¹_T − X²_T`; the expectations are
 read in `[0, ∞]`. -/
@@ -470,8 +470,8 @@ def eq_wgt_terminal : Prop :=
 /-- **The first two links of the chain before (4.27).** There are functions `K₁`, `K₂` of
 `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that: in the standing setting, under the hypotheses of Lemma 4.3
 — `T > 0`, coefficients with (2.3) and Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and
-coupling matrix `G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak`
-with `X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` —
+coupling matrix `G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²`
+with `X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` —
 `𝔼 sup_{t ≤ T} |δY_t|² ≤ C₁ (𝔼|δY_0|² + 𝔼 ∫_0^T |λ δf_s + q^f_s|² ds
     + 𝔼 ∫_0^T (|δZ_s|²_F + ‖δU_s‖²_{L²(ν)}) ds)
   ≤ C₂ (𝔼|δY_0|² + 𝔼 ∫_0^T (|δX_s|² + |δY_s|² + |δZ_s|²_F + ‖δU_s‖²_{L²(ν)}) ds + P)`

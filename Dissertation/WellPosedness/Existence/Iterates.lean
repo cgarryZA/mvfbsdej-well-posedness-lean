@@ -5,7 +5,6 @@ Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.Existence.ForcingLimit
 import Dissertation.WellPosedness.System.CrossEval
-import LevyStochCalc.BSDEJ.PicardLimit
 
 /-!
 # The iterates of a contraction for the data size

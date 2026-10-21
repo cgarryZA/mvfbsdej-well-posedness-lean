@@ -5,11 +5,9 @@ Authors: Christian Garry
 -/
 import Dissertation.PaperSpec.A.Sec4ProofSteps
 import Dissertation.Acceptance.A.Sec4BrownianPoisson
-import Dissertation.Acceptance.A.Sec4Frozen
 import Dissertation.Acceptance.A.Sec4Contraction
 import Dissertation.Acceptance.A.Sec4Estimates
 import Dissertation.WellPosedness.BrownianPoisson.EnergyAtWeighted
-import Dissertation.WellPosedness.Stability.RateEnergy
 import Dissertation.WellPosedness.Stability.ForwardSupAt
 import Dissertation.WellPosedness.Stability.WeightedYoung
 
@@ -17,20 +15,24 @@ import Dissertation.WellPosedness.Stability.WeightedYoung
 # Further steps of the proofs of Lemmas 4.1–4.3: proofs
 
 Statement and equation numbers refer to the well-posedness paper at `1f67672`. The weighted
-inequality of Lemma 4.1 is the difference of the weighted second-moment identities at the
-horizons `t` and `T` with Young's inequality (`brownianPoisson_weighted_at_vec_of_measurable`).
-The bound before (4.9) is the first link of (4.9) before integration in time. The backward
-difference before (4.12) is the difference of the linear backward equations of the two frozen
-steps (`LinearBSDEJ.sub`). The contraction by `1/2` is (4.13) at `λ ≤ λ_*`, where
-`C_Φ λ² ≤ C_Φ λ_*² = 1/4`. The chain before (4.23) at a time `t ≤ T` is the `S²` bound on `[0, t]`
-of the forward coordinates of the difference system (`LinearFSDEJ.lintegral_biSup_sq_le_at`), the
-expected Lipschitz bound (3.2) integrated over `[0, t]` (`PairDiff.coeffEnergy_le_at`) and
-`|δX_s|² ≤ sup_{r ≤ s} |δX_r|²`. The display inserting (4.25) in (4.24) and the backward bound
-at every time are `PairDiff.weighted_window_le` and `PairDiff.window_le`; the terminal bound is
-(2.6) with (2.9) at the square-integrable terminal values. The first two links of
-the chain before (4.27) are the `S²` bound of the backward coordinates of the difference system
-(`LinearBSDEJ.lintegral_biSup_sq_le`) and the rate bound (3.2) at the pair
-(`PairDiff.rateEnergy_le`).
+inequality of Lemma 4.1 is the difference of the weighted second-moment identities at the horizons
+`t` and `T` with Young's inequality
+(`Dissertation.WellPosedness.BrownianPoisson.brownianPoisson_weighted_at_vec_of_measurable`). The
+bound before (4.9) is the first link of (4.9) before integration in time. The backward difference
+before (4.12) is the difference of the linear backward equations of the two frozen steps
+(`Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.sub`). The contraction by `1/2` is (4.13)
+at `λ ≤ λ_*`, where `C_Φ λ² ≤ C_Φ λ_*² = 1/4`. The chain before (4.23) at a time `t ≤ T` is the `S²`
+bound on `[0, t]` of the forward coordinates of the difference system
+(`Dissertation.WellPosedness.Stability.LinearFSDEJ.lintegral_biSup_sq_le_at`), the expected
+Lipschitz bound (3.2) integrated over `[0, t]`
+(`Dissertation.WellPosedness.Stability.PairDiff.coeffEnergy_le_at`) and
+`|δX_s|² ≤ sup_{r ≤ s} |δX_r|²`. The display inserting (4.25) in (4.24) and the backward bound at
+every time are `Dissertation.WellPosedness.Stability.PairDiff.weighted_window_le` and
+`Dissertation.WellPosedness.Stability.PairDiff.window_le`; the terminal bound is (2.6) with (2.9) at
+the square-integrable terminal values. The first two links of the chain before (4.27) are the `S²`
+bound of the backward coordinates of the difference system
+(`Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.lintegral_biSup_sq_le`) and the rate bound
+(3.2) at the pair (`Dissertation.WellPosedness.Stability.PairDiff.rateEnergy_le`).
 
 ## Main statements
 

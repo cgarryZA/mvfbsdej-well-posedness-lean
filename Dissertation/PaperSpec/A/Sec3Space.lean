@@ -9,9 +9,9 @@ import Dissertation.PaperSpec.A.Setting
 # The solution space and the solution definition of §3 of the well-posedness paper
 
 Statement numbers refer to the well-posedness paper at `1f67672`, in the standing setting of §2.
-§3 identifies the elements of `ℍ` up to indistinguishability (`X, Y`) and almost-everywhere
-equality (`Z, U`), states that `‖·‖_ℍ` is then a norm, that `(ℍ, ‖·‖_ℍ)` is a Banach space and that
-`ℍ ⊂ ℍ_weak`, and observes that,
+§3 identifies the elements of `𝕊` up to indistinguishability (`X, Y`) and almost-everywhere
+equality (`Z, U`), states that `‖·‖_𝕊` is then a norm, that `(𝕊, ‖·‖_𝕊)` is a Banach space and that
+`𝕊 ⊂ ℍ²`, and observes that,
 both sides of each identity of (1.1) being càdlàg in `t`, the exceptional null set of a solution may
 be taken independent of `t`.
 
@@ -19,9 +19,9 @@ be taken independent of `t`.
 
 * `Dissertation.PaperSpec.A.sec3_one_null_set` — the identities of (1.1) for every `t` almost
   surely hold off one null set for all `t`.
-* `Dissertation.PaperSpec.A.sec3_HH_inclusion` — `𝔼 ∫_0^T |V|² ≤ T 𝔼 sup |V|²`, so `ℍ ⊂ ℍ_weak`.
-* `Dissertation.PaperSpec.A.sec3_HH_definite` — `‖Θ‖_ℍ = 0` exactly for the zero class.
-* `Dissertation.PaperSpec.A.sec3_HH_complete` — `(ℍ, ‖·‖_ℍ)` is complete.
+* `Dissertation.PaperSpec.A.sec3_HH_inclusion` — `𝔼 ∫_0^T |V|² ≤ T 𝔼 sup |V|²`, so `𝕊 ⊂ ℍ²`.
+* `Dissertation.PaperSpec.A.sec3_HH_definite` — `‖Θ‖_𝕊 = 0` exactly for the zero class.
+* `Dissertation.PaperSpec.A.sec3_HH_complete` — `(𝕊, ‖·‖_𝕊)` is complete.
 -/
 
 open MeasureTheory ProbabilityTheory Filter
@@ -36,7 +36,7 @@ universe u v w
 
 /-- §3, the solution definition: both sides of each identity of (1.1) are càdlàg in `t`, so the
 exceptional null set may be taken independent of `t`. In the standing setting, let
-`Θ = (X, Y, Z, U)` be a tuple of `ℍ_weak` (adapted `X, Y` with right-continuous paths, predictable
+`Θ = (X, Y, Z, U)` be a tuple of `ℍ²` (adapted `X, Y` with right-continuous paths, predictable
 `Z, U`, finite energies) along which the integrals of (1.1) exist, with `γ` a representative of
 the jump coefficient, and let `M` be a process with almost surely right-continuous paths on
 `[0, T)`, such as a càdlàg version of a Brownian integral. Then the forward identity
@@ -96,7 +96,7 @@ def sec3_one_null_set : Prop :=
                 (hΘ.U_pred k).markedProgressivelyMeasurable
                 (marked_sq_int_global_of_vanishing (hΘ.U_vanish k) (hΘ.U_sq k)) t ω))
 
-/-- §3, the solution space, the inclusion `ℍ ⊂ ℍ_weak`: for `T ≥ 0` and a process `V` with values
+/-- §3, the solution space, the inclusion `𝕊 ⊂ ℍ²`: for `T ≥ 0` and a process `V` with values
 in `ℝⁿ`, `𝔼 ∫_0^T |V_t|² dt ≤ T 𝔼 sup_{t ≤ T} |V_t|²`; in particular `𝔼 sup_{t ≤ T} |V_t|² < ∞`
 gives `𝔼 ∫_0^T |V_{i,t}|² dt < ∞` for every coordinate. -/
 def sec3_HH_inclusion : Prop :=
@@ -107,8 +107,8 @@ def sec3_HH_inclusion : Prop :=
         ∧ (∫⁻ ω, (⨆ t ∈ Set.Icc (0 : ℝ) T, esq (fun i => V i t ω)) ∂P < ⊤ →
           ∀ i, Brownian.Ito.energy P T (fun ω s => V i s ω) ≠ ⊤)
 
-/-- §3, the solution space, `‖·‖_ℍ` is a norm: for a tuple `Θ = (X, Y, Z, U)` of `ℍ_weak` over the
-filtration of §2, `‖Θ‖²_ℍ = 𝔼 sup|X|² + 𝔼 sup|Y|² + 𝔼 ∫ (|Z|² + ‖U‖²_{L²(ν)})` vanishes if and
+/-- §3, the solution space, `‖·‖_𝕊` is a norm: for a tuple `Θ = (X, Y, Z, U)` of `ℍ²` over the
+filtration of §2, `‖Θ‖²_𝕊 = 𝔼 sup|X|² + 𝔼 sup|Y|² + 𝔼 ∫ (|Z|² + ‖U‖²_{L²(ν)})` vanishes if and
 only if `Θ` is the zero class: `X` and `Y` are indistinguishable from `0` on `[0, T]`, `Z = 0`
 `dt ⊗ dP`-almost everywhere on `[0, T]` and `U = 0` `dt ⊗ dP ⊗ ν`-almost everywhere. -/
 def sec3_HH_definite : Prop :=
@@ -124,12 +124,12 @@ def sec3_HH_definite : Prop :=
       ∧ (∀ k j, ∀ᵐ p ∂(Brownian.Ito.energyMeasure P T), Z k p.2 p.1 j = 0)
       ∧ ∀ k, ∀ᵐ p ∂(Poisson.Compensated.markedEnergyMeasure P ν T), U k p.2.1 p.1 p.2.2 = 0)
 
-/-- §3, the solution space, `(ℍ, ‖·‖_ℍ)` is complete: over the filtration of §2, let
-`Θ_j = (X_j, Y_j, Z_j, U_j)` be tuples of `ℍ_weak` with `‖Θ_j‖_ℍ < ∞` that are Cauchy for
-`‖·‖_ℍ`, `‖Θ_j − Θ_k‖²_ℍ = 𝔼 sup|X_j − X_k|² + 𝔼 sup|Y_j − Y_k|²
+/-- §3, the solution space, `(𝕊, ‖·‖_𝕊)` is complete: over the filtration of §2, let
+`Θ_j = (X_j, Y_j, Z_j, U_j)` be tuples of `ℍ²` with `‖Θ_j‖_𝕊 < ∞` that are Cauchy for
+`‖·‖_𝕊`, `‖Θ_j − Θ_k‖²_𝕊 = 𝔼 sup|X_j − X_k|² + 𝔼 sup|Y_j − Y_k|²
 + 𝔼 ∫ (|Z_j − Z_k|² + ‖U_j − U_k‖²_{L²(ν)}) → 0` as `j, k → ∞`. Then there is a tuple
-`Θ = (X, Y, Z, U)` of `ℍ_weak` with `‖Θ‖_ℍ < ∞`, every path of `X` and of `Y` càdlàg on
-`[0, T]`, and `‖Θ_j − Θ‖_ℍ → 0`. -/
+`Θ = (X, Y, Z, U)` of `ℍ²` with `‖Θ‖_𝕊 < ∞`, every path of `X` and of `Y` càdlàg on
+`[0, T]`, and `‖Θ_j − Θ‖_𝕊 → 0`. -/
 def sec3_HH_complete : Prop :=
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]

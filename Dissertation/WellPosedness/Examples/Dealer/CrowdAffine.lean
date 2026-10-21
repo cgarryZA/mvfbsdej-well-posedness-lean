@@ -3,9 +3,6 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import Mathlib.Analysis.InnerProductSpace.Adjoint
-import Mathlib.MeasureTheory.Function.L2Space
-import Dissertation.Law.Mixture
 import Dissertation.WellPosedness.Examples.Dealer.Coeffs
 
 /-!
@@ -32,6 +29,7 @@ section Affine
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℝ F] [CompleteSpace F]
   [MeasurableSpace F] [BorelSpace F] [SecondCountableTopology F]
 
+omit [CompleteSpace F] in
 /-- **The crowding operator is affine in the law**: for finite measures `Λ₁, Λ₂` on `F` and
 `s ∈ [0, 1]`, `A_{s Λ₁ + (1 − s) Λ₂}(u) = s A_{Λ₁}(u) + (1 − s) A_{Λ₂}(u)`. -/
 theorem crowdOp_smul_add_smul (Λ₁ Λ₂ : Measure F) [IsFiniteMeasure Λ₁] [IsFiniteMeasure Λ₂]

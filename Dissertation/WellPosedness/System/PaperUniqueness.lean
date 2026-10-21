@@ -10,7 +10,7 @@ import Dissertation.WellPosedness.System.PaperSolutionSolves
 /-!
 # Theorem 3.3 for solutions in the sense of the paper
 
-Theorem 3.3 of the paper asserts that under Assumptions 2.3–2.5 two solutions of (1.1) in `ℍ²`
+Theorem 3.3 of the paper asserts that under Assumptions 2.3–2.5 two solutions of (1.1) in `𝕊`
 with the same coefficients and the same initial datum coincide: `X`, `Y` indistinguishable on
 `[0, T]` and `Z`, `U` equal in energy. `Solves.uniqueness` states it for the predicate `Solves`;
 this file shows that such a statement passes to the paper's solution notion `PaperSolution`.

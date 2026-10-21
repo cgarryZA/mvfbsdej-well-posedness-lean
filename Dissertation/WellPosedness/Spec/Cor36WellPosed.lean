@@ -3,9 +3,7 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import Dissertation.WellPosedness.Existence.GlobalEnl
 import Dissertation.WellPosedness.Robustness.Corollary
-import Dissertation.WellPosedness.Spec.Bridge22
 import Dissertation.WellPosedness.Spec.CorollaryHyps
 import Dissertation.WellPosedness.Spec.Thm31
 import Dissertation.WellPosedness.Spec.Thm33

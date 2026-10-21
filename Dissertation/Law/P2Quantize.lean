@@ -3,7 +3,6 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import Mathlib.MeasureTheory.Function.SimpleFuncDenseLp
 import Dissertation.Law.LawP2
 import Dissertation.Law.P2Metric
 
@@ -126,7 +125,7 @@ theorem P2.quantize_law (n : ℕ) (μ : P2 E) :
   rw [← Finset.sum_filter, SimpleFunc.sum_measure_preimage_singleton]
   congr 1
   ext x
-  simp [SimpleFunc.mem_range_self]
+  simp
 
 /-- **The quantisation bound**: `W₂(μ.quantize n, μ)² ≤ ∫⁻ ‖quant n x − x‖² dμ`. -/
 theorem w2sq_quantize_le (n : ℕ) (μ : P2 E) :

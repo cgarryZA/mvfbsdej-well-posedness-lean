@@ -8,9 +8,9 @@ import Dissertation.WellPosedness.System.BridgeMono
 import Dissertation.WellPosedness.System.SolvesInt
 
 /-!
-# The Lipschitz and monotonicity bounds along two solutions in `ℍ²_weak`
+# The Lipschitz and monotonicity bounds along two solutions in `ℍ²`
 
-Let `Θ¹, Θ²` solve the `λ`-forced system (4.1) in `ℍ²_weak` (`SolvesForcedInt`) with the same
+Let `Θ¹, Θ²` solve the `λ`-forced system (4.1) in `ℍ²` (`SolvesForcedInt`) with the same
 coefficients. By Fubini, the finite energies of `Θ¹, Θ²` on `[0, T]` make `Θ¹_s, Θ²_s` square
 integrable at almost every time `s ∈ [0, T]`; being strongly `ℱ_s`-measurable, `(Θ¹_s, μ¹_s)` and
 `(Θ²_s, μ²_s)` are diagonal inputs at almost every time. And `X¹_T, X²_T` are square integrable and
@@ -58,8 +58,8 @@ variable (h₁ : SolvesForcedInt D ℱ hℱW hℱN T lam C ξ₁ qb₁ qσ₁ qh
   (h₂ : SolvesForcedInt D ℱ hℱW hℱN T lam C ξ₂ qb₂ qσ₂ qh₂ qf₂ qg₂ X₂ Y₂ Z₂ U₂ γ₂)
 include h₁ h₂
 
-/-- **(3.2) along two solutions in `ℍ²_weak`.** For two solutions of the `λ`-forced system in
-`ℍ²_weak` with the same coefficients, satisfying Assumption 2.3 along the diagonal with constant
+/-- **(3.2) along two solutions in `ℍ²`.** For two solutions of the `λ`-forced system in
+`ℍ²` with the same coefficients, satisfying Assumption 2.3 along the diagonal with constant
 `L`, at almost every time `s ∈ [0, T]`,
 `𝔼[|δb_s|² + |δσ_s|²_F + ‖δh_s‖²_{L²(ν)} + |δf_s|²] ≤ 10 L² 𝔼 |δΘ_s|²`, in coordinates. -/
 theorem lip_pair (hL : DiagonalLipschitz ℱ P T L C) :
@@ -77,8 +77,8 @@ theorem lip_pair (hL : DiagonalLipschitz ℱ P T L C) :
   hL.lip_pair h₁.stronglyMeasurable_tupleAt h₂.stronglyMeasurable_tupleAt h₁.ae_memLp_tupleAt
     h₂.ae_memLp_tupleAt h₁.ae_ae_memLp_jump h₂.ae_ae_memLp_jump h₁.jump_rep h₂.jump_rep
 
-/-- **(2.6) with (2.9) along two solutions in `ℍ²_weak`.** For two solutions of the `λ`-forced
-system in `ℍ²_weak` with the same terminal function, satisfying (2.6) along the diagonal with
+/-- **(2.6) with (2.9) along two solutions in `ℍ²`.** For two solutions of the `λ`-forced
+system in `ℍ²` with the same terminal function, satisfying (2.6) along the diagonal with
 constant `L`,
 `𝔼 |δg_T|² ≤ 4 L² 𝔼 |δX_T|²`, in coordinates. -/
 theorem lipT_pair (hLT : TerminalLipschitz ℱ P T L C.g) :
@@ -87,8 +87,8 @@ theorem lipT_pair (hLT : TerminalLipschitz ℱ P T L C.g) :
   hLT.lipT_pair (fun i => (h₁.fwd i).X_adapted T) (fun i => (h₂.fwd i).X_adapted T) h₁.XT_sq
     h₂.XT_sq
 
-/-- **The expected Lipschitz bounds at a pair of solutions in `ℍ²_weak`.** Two solutions of the
-`λ`-forced system in `ℍ²_weak` with the same coefficients, satisfying Assumption 2.3 along the
+/-- **The expected Lipschitz bounds at a pair of solutions in `ℍ²`.** Two solutions of the
+`λ`-forced system in `ℍ²` with the same coefficients, satisfying Assumption 2.3 along the
 diagonal with constant `L`, satisfy `PairLipschitz` with `K = 10 L²` and `K_T = 4 L²`. -/
 theorem pairLipschitz (hL : DiagonalLipschitz ℱ P T L C) (hLT : TerminalLipschitz ℱ P T L C.g) :
     PairLipschitz P ν T (10 * L ^ 2) (4 * L ^ 2) (fun i t ω => X₁ i t ω - X₂ i t ω)
@@ -103,8 +103,8 @@ theorem pairLipschitz (hL : DiagonalLipschitz ℱ P T L C) (hLT : TerminalLipsch
   lip := h₁.lip_pair h₂ hL
   lipT := h₁.lipT_pair h₂ hLT
 
-/-- **(2.7) along two solutions in `ℍ²_weak`.** For two solutions of the `λ`-forced system in
-`ℍ²_weak` with the same coefficients, satisfying Assumption 2.5 along the diagonal, at almost every
+/-- **(2.7) along two solutions in `ℍ²`.** For two solutions of the `λ`-forced system in
+`ℍ²` with the same coefficients, satisfying Assumption 2.5 along the diagonal, at almost every
 time
 `s ∈ [0, T]`,
 `𝔼[⟨δb, Gᵀ δY⟩ + ⟨δσ, Gᵀ δZ⟩_F − ⟨δf, G δX⟩ + ∫_E ⟨δh(e), Gᵀ δU(e)⟩ ν(de)]
@@ -130,8 +130,8 @@ theorem mono_pair (hM : DiagonalMonotone ℱ P T G β₁ β₂ C) :
   hM.mono_pair h₁.stronglyMeasurable_tupleAt h₂.stronglyMeasurable_tupleAt h₁.ae_memLp_tupleAt
     h₂.ae_memLp_tupleAt h₁.ae_ae_memLp_jump h₂.ae_ae_memLp_jump h₁.jump_rep h₂.jump_rep
 
-/-- **The terminal inequality of Assumption 2.5 along two solutions in `ℍ²_weak`.** For two
-solutions of the `λ`-forced system in `ℍ²_weak` with the same terminal function, satisfying the
+/-- **The terminal inequality of Assumption 2.5 along two solutions in `ℍ²`.** For two
+solutions of the `λ`-forced system in `ℍ²` with the same terminal function, satisfying the
 terminal inequality along the diagonal, `α 𝔼|G δX_T|² ≤ 𝔼⟨δg_T, G δX_T⟩`, in coordinates. -/
 theorem monoT_pair (hMT : TerminalMonotone ℱ P T G α C.g) :
     α * ∫ ω, (G *ᵥ fun i => X₁ i T ω - X₂ i T ω) ⬝ᵥ (G *ᵥ fun i => X₁ i T ω - X₂ i T ω) ∂P
@@ -140,9 +140,9 @@ theorem monoT_pair (hMT : TerminalMonotone ℱ P T G α C.g) :
   hMT.monoT_pair (fun i => (h₁.fwd i).X_adapted T) (fun i => (h₂.fwd i).X_adapted T) h₁.XT_sq
     h₂.XT_sq
 
-/-- **Assumption 2.5 at a pair of solutions in `ℍ²_weak`.** Two solutions of the `λ`-forced system
+/-- **Assumption 2.5 at a pair of solutions in `ℍ²`.** Two solutions of the `λ`-forced system
 in
-`ℍ²_weak` with the same coefficients, satisfying Assumption 2.5 along the diagonal with coupling
+`ℍ²` with the same coefficients, satisfying Assumption 2.5 along the diagonal with coupling
 matrix `G` and constants `α, β₁, β₂`, satisfy `PairMonotone` with the same `G, α, β₁, β₂`. -/
 theorem pairMonotone (hM : DiagonalMonotone ℱ P T G β₁ β₂ C)
     (hMT : TerminalMonotone ℱ P T G α C.g) :

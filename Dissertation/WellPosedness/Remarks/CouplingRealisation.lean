@@ -7,6 +7,8 @@ import Mathlib.Probability.Kernel.Representation
 import Dissertation.Law.LawP2
 import Dissertation.WellPosedness.System.Tuple
 import Dissertation.WellPosedness.Remarks.UniformVariable
+import Mathlib.MeasureTheory.Measure.SeparableMeasure
+import Mathlib.Topology.Separation.CompletelyRegular
 
 /-!
 # Couplings realised by measurable pairs

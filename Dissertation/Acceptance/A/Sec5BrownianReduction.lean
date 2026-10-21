@@ -4,11 +4,8 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.PaperSpec.A.Sec5BrownianReduction
-import Dissertation.Acceptance.A.Sec2Basics
-import Dissertation.Acceptance.A.Sec3
 import Dissertation.Acceptance.A.Sec5Brownian
 import Dissertation.WellPosedness.Examples.BrownianSolves
-import Dissertation.WellPosedness.System.SolvesPathwise
 
 /-!
 # Example 5.2 of the well-posedness paper, the reduction to the Brownian forms: proofs
@@ -17,7 +14,8 @@ At `ν = 0` the fibres `L²(0; ℝⁿ)` and `L²(0; ℝᵐ)` have a single point
 Assumptions 2.3 and 2.5 vanishes and `W₂` on `P₂(H)` is `W₂` of the laws of `(X, Y, Z)`
 (`w2P_projP2`); the tuple `Θ_s` does not depend on `U`; and the compensated Poisson integral
 vanishes on `[0, T]` on one set of full measure, being almost surely right-continuous and almost
-surely `0` at each time. The filtration of §2 is the Brownian one (`enlJoint_nu_zero_eq`).
+surely `0` at each time. The filtration of §2 is the Brownian one
+(`Dissertation.WellPosedness.Existence.enlJoint_nu_zero_eq`).
 
 ## Main statements
 
@@ -127,24 +125,6 @@ theorem driverProc_nu_zero (T : ℝ) (C : Coeffs (0 : Measure E) n m d) (X : Fin
   rw [tupleAt_nu_zero X Y Z U]
 
 omit [MeasurableSpace.CountablyGenerated E] in
-/-- The multidimensional Brownian integral depends on the integrand only. -/
-theorem brownianIntegral_congr (W : Brownian.Multidim.MultidimBrownianMotion P d)
-    (ℱ : Filtration ℝ ‹MeasurableSpace Ω›)
-    (hℱW : ∀ j : Fin d, Brownian.IsBrownianFiltration (W.W j) ℱ) {σ σ' : ℝ → Ω → Fin d → ℝ}
-    (h : σ = σ') (hm : ∀ j : Fin d, Measurable (Function.uncurry fun ω s => σ s ω j))
-    (hp : ∀ j : Fin d, Probability.ProgressivelyMeasurable ℱ fun ω s => σ s ω j)
-    (hq : ∀ (j : Fin d) (T : ℝ), 0 < T →
-      ∫⁻ ω, ∫⁻ s in Set.Icc (0 : ℝ) T, (‖σ s ω j‖₊ : ℝ≥0∞) ^ 2 ∂volume ∂P < ⊤)
-    (hm' : ∀ j : Fin d, Measurable (Function.uncurry fun ω s => σ' s ω j))
-    (hp' : ∀ j : Fin d, Probability.ProgressivelyMeasurable ℱ fun ω s => σ' s ω j)
-    (hq' : ∀ (j : Fin d) (T : ℝ), 0 < T →
-      ∫⁻ ω, ∫⁻ s in Set.Icc (0 : ℝ) T, (‖σ' s ω j‖₊ : ℝ≥0∞) ^ 2 ∂volume ∂P < ⊤) :
-    Brownian.Multidim.MultidimBrownianMotion.stochasticIntegral W ℱ hℱW σ hm hp hq
-      = Brownian.Multidim.MultidimBrownianMotion.stochasticIntegral W ℱ hℱW σ' hm' hp' hq' := by
-  subst h
-  rfl
-
-omit [MeasurableSpace.CountablyGenerated E] in
 /-- **At `ν = 0` the compensated Poisson integral vanishes on `[0, T]` on one set of full
 measure.** -/
 theorem ae_forall_Icc_poissonIntegral_nu_zero
@@ -180,8 +160,8 @@ variable {D : Driver.LevyDriver.{u, v, w} P d (0 : Measure E)}
   {ξ₀ : Fin n → Ω → ℝ} {X : Fin n → ℝ → Ω → ℝ} {Y : Fin m → ℝ → Ω → ℝ}
   {Z : Fin m → ℝ → Ω → Fin d → ℝ} {U : Fin m → ℝ → Ω → E → ℝ}
 
-/-- **At `ν = 0` a solution of (1.1) in `ℍ_weak` is a solution of the Brownian system in
-`ℍ_weak` with a jump integrand that is `0` in `L²(dt ⊗ dP ⊗ ν)`**, over any filtration carrying
+/-- **At `ν = 0` a solution of (1.1) in `ℍ²` is a solution of the Brownian system in
+`ℍ²` with a jump integrand that is `0` in `L²(dt ⊗ dP ⊗ ν)`**, over any filtration carrying
 the driver. -/
 theorem paperWeakSolutionInt_iff_brownian :
     (∃ γ, PaperWeakSolutionInt D ℱ hℱW hℱN T C ξ₀ X Y Z U γ) ↔
@@ -222,8 +202,8 @@ theorem paperWeakSolutionInt_iff_brownian :
         refine ⟨M, fun t ht => ?_, hreg, ?_⟩
         · filter_upwards [hM t ht] with ω hω
           rw [hω]
-          exact congrFun (congrFun (brownianIntegral_congr D.W ℱ hℱW (congrFun hσ i) _ _ _ _ _ _)
-            t) ω
+          exact congrFun (congrFun (multidimStochasticIntegral_eq_of_integrand_eq D.W ℱ hℱW
+            (congrFun hσ i) _ _ _ _ _ _) t) ω
         · have hN := ae_forall_Icc_poissonIntegral_nu_zero D.N ℱ hℱN
             (fun ω' s e => jumpProc T γ i s ω' e) (h.γ_meas i) (h.γ_prog i)
             (marked_sq_int_global_of_vanishing (fun ω s e hs => jumpProc_of_notMem hs i ω e)
@@ -290,7 +270,8 @@ theorem paperWeakSolutionInt_iff_brownian :
         · filter_upwards [hM t ht] with ω hω
           rw [hω]
           exact congrFun (congrFun
-            (brownianIntegral_congr D.W ℱ hℱW (congrFun hσ i).symm _ _ _ _ _ _) t) ω
+            (multidimStochasticIntegral_eq_of_integrand_eq D.W ℱ hℱW (congrFun hσ i).symm
+              _ _ _ _ _ _) t) ω
         · have hN := ae_forall_Icc_poissonIntegral_nu_zero D.N ℱ hℱN
             (fun ω' s e => jumpProc T (0 : Fin n → ℝ → Ω → E → ℝ) i s ω' e) (hγm i) (hγp i)
             (marked_sq_int_global_of_vanishing (fun ω s e hs => jumpProc_of_notMem hs i ω e)
@@ -310,7 +291,7 @@ theorem paperWeakSolutionInt_iff_brownian :
         rw [h2 t ht, h2 T ⟨ht.1.trans ht.2, le_rfl⟩, sub_self, sub_zero, hf]
         exact h1 t ht }
 
-/-- The Brownian system in `ℍ_weak` over equal filtrations. -/
+/-- The Brownian system in `ℍ²` over equal filtrations. -/
 theorem brownianPaperWeakSolution_congr {W : Brownian.Multidim.MultidimBrownianMotion P d}
     {ℱ₁ ℱ₂ : Filtration ℝ ‹MeasurableSpace Ω›} (h : ℱ₁ = ℱ₂)
     (h₁ : ∀ j : Fin d, Brownian.IsBrownianFiltration (W.W j) ℱ₁)
@@ -375,7 +356,7 @@ theorem ex_brownian_reduction : PaperSpec.A.ex_brownian_reduction.{u, v, w} := b
 /-- **The hypotheses of the reduction of Example 5.2 can be met, at a system with a solution.**
 There is a probability space carrying a Lévy driver with `d = 1` and the intensity `ν = 0` on
 `ℝ`, with `𝒢₀ = ⊥` independent of it; and there, for `n = 1`, `m = 2`, `T = 1` and the initial
-datum `0`, a coefficient system and a solution of (1.1) in `ℍ` (the linear generator of the
+datum `0`, a coefficient system and a solution of (1.1) in `𝕊` (the linear generator of the
 branch `m > n`, with Theorem 3.5). -/
 theorem ex_brownian_reduction_hypotheses :
     ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)

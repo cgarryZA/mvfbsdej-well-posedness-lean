@@ -288,13 +288,6 @@ theorem multidim_sub {Z₁ Z₂ : ℝ → Ω → Fin d → ℝ}
   rw [← Finset.sum_sub_distrib]
   exact Finset.sum_congr rfl fun j _ => hω j
 
-/-- `|H_s 1_{s ≤ τ}| ≤ |H_s|`. -/
-theorem nnnorm_ite_le {τ : WithTop ℝ} (s x : ℝ) :
-    (‖if ((s : ℝ) : WithTop ℝ) ≤ τ then x else 0‖₊ : ℝ≥0∞) ≤ ‖x‖₊ := by
-  split_ifs
-  · exact le_rfl
-  · simp
-
 /-- **The Burkholder–Davis–Gundy inequality at `p = 1` for a local Itô integral.** Over a
 right-continuous filtration whose null sets lie in its time-`0` field,
 `𝔼 sup_{t ≤ T} |M_t| ≤ 9 𝔼 (∑_j ∫_0^T H_j(s)² ds)^{1/2}`. -/
@@ -578,6 +571,7 @@ def IsLocalCompensatedIntegral (T : ℝ) (φ : Ω → ℝ → E → ℝ) (M : �
             M t ω = Poisson.Compensated.stochasticIntegral N ℱ hℱ
               (fun ω s e => if ((s : ℝ) : WithTop ℝ) ≤ τ k ω then φ ω s e else 0) hm hp hq t ω
 
+omit [IsProbabilityMeasure P] [SigmaFinite ν] in
 /-- Finite energy passes to a pointwise smaller marked integrand. -/
 theorem markedEnergy_lt_top_of_abs_le {ψ φ : Ω → ℝ → E → ℝ}
     (h : ∀ ω s e, |ψ ω s e| ≤ |φ ω s e|)

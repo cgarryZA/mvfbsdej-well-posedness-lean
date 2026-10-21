@@ -848,8 +848,9 @@ def render(data, status, source_checked):
     for r in status["claims"]:
         by_paper[r["paper"]].append(r)
     for p, (_, pin, title) in PAPERS.items():
-        out += [f"## Paper {p} ({title}, `{pin}`)", "",
-                "| Claim | Number | Status | Proposition | Proof | Review |", "|---|---|---|---|---|---|"]
+        out += [f"## The {title} paper (`{pin}`)", "",
+                "| Claim | Number | Status | Proposition | Proof | Review |",
+                "|---|---|---|---|---|---|"]
         for r in by_paper[p]:
             if r["scope"] in OUT_OF_SCOPE:
                 continue
@@ -860,9 +861,11 @@ def render(data, status, source_checked):
                 for d in c["defs"]:
                     props.append(f"`{d}`")
                 if c.get("accept"):
-                    proofs.append(f"`{short(c['accept'])}`" + ("" if c.get("accept_ok") else " (fails)"))
+                    proofs.append(f"`{short(c['accept'])}`"
+                                  + ("" if c.get("accept_ok") else " (fails)"))
                 if c.get("refute"):
-                    proofs.append(f"¬ `{short(c['refute'])}`" + ("" if c.get("refute_ok") else " (fails)"))
+                    proofs.append(f"¬ `{short(c['refute'])}`"
+                                  + ("" if c.get("refute_ok") else " (fails)"))
                 if c["spec"]:
                     rv = c["spec_review"]
                     if c.get("witness"):
@@ -911,8 +914,8 @@ def hashes(args):
 
 
 def comparator_inputs(args):
-    """Write `AcceptanceChallenge.lean` (each proved statement as a `sorry` theorem under the name of
-    its proof, importing only the statements) and the comparator configuration."""
+    """Write `AcceptanceChallenge.lean` (each proved statement as a `sorry` theorem under the name
+    of its proof, importing only the statements) and the comparator configuration."""
     data = json.loads(pathlib.Path(CLAIMS).read_text())
     pairs = sorted({(c["accept"], c["spec"]) for e in data["claims"] for c in e["clauses"]
                     if c.get("accept")})

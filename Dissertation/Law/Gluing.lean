@@ -4,7 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Mathlib.Probability.Kernel.Composition.Lemmas
-import Mathlib.Probability.Kernel.Composition.Prod
 import Mathlib.Probability.Kernel.Disintegration.StandardBorel
 import Dissertation.Law.LipschitzFunctional
 

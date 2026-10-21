@@ -6,14 +6,14 @@ Authors: Christian Garry
 import Dissertation.WellPosedness.System.WeakPairDiff
 
 /-!
-# The jump energy of two solutions in `ℍ_weak` at the predictable tuples
+# The jump energy of two solutions in `ℍ²` at the predictable tuples
 
-The marked energy `𝔼 ∫_0^T ∫_E |φ_s(e)|² ν(de) ds` is an iterated lower integral, so it depends
-only on the class of `φ` almost everywhere for `P ⊗ ds ⊗ ν` on `Ω × [0, T] × E`, measurable or
-not. For two solutions of (1.1) of the well-posedness paper in `ℍ_weak`, the jump coefficient
+The marked energy `𝔼 ∫_0^T ∫_E |φ_s(e)|² ν(de) ds` is an iterated lower integral, so it depends only
+on the class of `φ` almost everywhere for `P ⊗ ds ⊗ ν` on `Ω × [0, T] × E`, measurable or not. For
+two solutions of (1.1) of the well-posedness paper in `ℍ²`, the jump coefficient
 `h(s, Θ^{k,−}_s, ·, μ^{k,−}_s)` at the predictable tuples, through the canonical representative
-`coeffJump`, agrees almost everywhere with the solutions' representative `γ^k`, so the
-difference of the jump coefficients has the marked energy of `γ¹ − γ²`.
+`Dissertation.WellPosedness.Existence.coeffJump`, agrees almost everywhere with the solutions'
+representative `γ^k`, so the difference of the jump coefficients has the marked energy of `γ¹ − γ²`.
 
 ## Main statements
 
@@ -60,7 +60,7 @@ variable {Ω : Type u} [MeasurableSpace Ω] {E : Type v} [MeasurableSpace E] {ν
   {Z₁ Z₂ : Fin m → ℝ → Ω → Fin d → ℝ} {U₁ U₂ : Fin m → ℝ → Ω → E → ℝ}
   {γ₁ γ₂ : Fin n → ℝ → Ω → E → ℝ}
 
-/-- **The jump energy at the predictable tuples.** For two solutions of (1.1) in `ℍ_weak` with
+/-- **The jump energy at the predictable tuples.** For two solutions of (1.1) in `ℍ²` with
 the same coefficients, with the joint measurability (2.3), `T ≥ 0`, and every path of `X^k` and
 `Y^k` with left limits at every time of `(0, T]`, coordinatewise
 `𝔼 ∫_0^T ∫_E |coeffJump(h, Θ¹⁻) − coeffJump(h, Θ²⁻)|² dν dt = 𝔼 ∫_0^T ∫_E |γ¹ − γ²|² dν dt`. -/

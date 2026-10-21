@@ -6,10 +6,10 @@ Authors: Christian Garry
 import Dissertation.WellPosedness.System.PaperSolutionSolves
 
 /-!
-# Remark 3.2: a solution in `ℍ²_weak` lies in `ℍ²`
+# Remark 3.2: a solution in `ℍ²` lies in `𝕊`
 
-Remark 3.2 of the well-posedness paper: a tuple `Θ = (X, Y, Z, U) ∈ ℍ²_weak` satisfying (1.1),
-whose `X` and `Y` are only asked `𝔼 ∫_0^T |·|² dt < ∞`, lies in `ℍ²`:
+Remark 3.2 of the well-posedness paper: a tuple `Θ = (X, Y, Z, U) ∈ ℍ²` satisfying (1.1),
+whose `X` and `Y` are only asked `𝔼 ∫_0^T |·|² dt < ∞`, lies in `𝕊`:
 `𝔼 sup_{t ≤ T} |X_t|² < ∞` and `𝔼 sup_{t ≤ T} |Y_t|² < ∞`. For `T > 0` the argument runs as
 follows.
 
@@ -39,11 +39,11 @@ follows.
 * `ae_forall_memLp_of_energy_ne_top` — a process of finite energy on `[0, T]` is square
   integrable at almost every time of `[0, T]`.
 * `PaperWeakSolution.memLp_initial`, `PaperWeakSolution.memLp_terminal` — for a solution in
-  `ℍ²_weak`, `ξ₀` and `g(X_T, Law X_T)` are square integrable.
-* `PaperWeakSolution.exists_solves` — a solution in `ℍ²_weak`, extended off `[0, T]`, is a
+  `ℍ²`, `ξ₀` and `g(X_T, Law X_T)` are square integrable.
+* `PaperWeakSolution.exists_solves` — a solution in `ℍ²`, extended off `[0, T]`, is a
   solution of `Solves`.
-* `PaperWeakSolution.toPaperSolution` — Remark 3.2: a solution in `ℍ²_weak` is a solution in
-  `ℍ²`.
+* `PaperWeakSolution.toPaperSolution` — Remark 3.2: a solution in `ℍ²` is a solution in
+  `𝕊`.
 -/
 
 open MeasureTheory Filter Topology Dissertation.Law
@@ -95,7 +95,7 @@ theorem exists_mem_Icc_of_ae {T : ℝ} (hT : 0 < T) {p : ℝ → Prop}
   obtain ⟨t, hp, ht⟩ := (h.and (ae_restrict_mem measurableSet_Icc)).exists
   exact ⟨t, ht, hp⟩
 
-/-! ### The data of a solution in `ℍ²_weak` -/
+/-! ### The data of a solution in `ℍ²` -/
 
 variable {ν : Measure E} [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] {n m d : ℕ}
   {P : Measure Ω} [IsProbabilityMeasure P] {T : ℝ} {C : Coeffs ν n m d}
@@ -105,6 +105,7 @@ variable {ν : Measure E} [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E
   {hℱW : ∀ j : Fin d, LevyStochCalc.Brownian.IsBrownianFiltration (D.W.W j) ℱ}
   {hℱN : LevyStochCalc.Poisson.IsPoissonFiltration D.N ℱ} {ξ₀ : Fin n → Ω → ℝ}
 
+omit [MeasurableSpace.CountablyGenerated E] in
 /-- The multidimensional Itô integral of a square-integrable progressive integrand is square
 integrable at every time. -/
 theorem memLp_multidimStochasticIntegral (σ : ℝ → Ω → Fin d → ℝ)
@@ -146,7 +147,7 @@ namespace PaperWeakSolution
 variable (h : PaperWeakSolution D ℱ hℱW hℱN T C ξ₀ X Y Z U γ) (hT : 0 < T)
 include h hT
 
-/-- **The initial datum of a solution in `ℍ²_weak` is square integrable**, for `T > 0`: at some
+/-- **The initial datum of a solution in `ℍ²` is square integrable**, for `T > 0`: at some
 `t ∈ [0, T]` every coordinate of `X_t` is square integrable, and the forward identity at `t`
 writes `ξ₀` as `X_t` minus square-integrable integrals. -/
 theorem memLp_initial (i : Fin n) : MemLp (ξ₀ i) 2 P := by
@@ -165,7 +166,7 @@ theorem memLp_initial (i : Fin n) : MemLp (ξ₀ i) 2 P := by
   rw [hω t ht]
   ring
 
-/-- **The terminal value of a solution in `ℍ²_weak` is square integrable**, for `T > 0`: at some
+/-- **The terminal value of a solution in `ℍ²` is square integrable**, for `T > 0`: at some
 `t ∈ [0, T]` every coordinate of `Y_t` is square integrable, and the backward identity at `t`
 writes `g(X_T, Law X_T)` as `Y_t` plus square-integrable integrals. -/
 theorem memLp_terminal (k : Fin m) : MemLp (terminalVal P T C X k) 2 P := by
@@ -187,7 +188,7 @@ theorem memLp_terminal (k : Fin m) : MemLp (terminalVal P T C X k) 2 P := by
   rw [hω t ht]
   ring
 
-/-- **A solution in `ℍ²_weak` solves `Solves`.** For `T > 0`, there are `X'`, `Y'` equal to
+/-- **A solution in `ℍ²` solves `Solves`.** For `T > 0`, there are `X'`, `Y'` equal to
 `X`, `Y` at every time of `[0, T]` — adapted with right-continuous paths, `0` before `0` and
 frozen after `T` — such that `(X', Y', Z, U)` solves the system (1.1) in the sense of `Solves`,
 with the same `γ`. -/
@@ -202,9 +203,9 @@ end PaperWeakSolution
 
 /-! ### Remark 3.2 -/
 
-/-- **Remark 3.2: a solution in `ℍ²_weak` is a solution in `ℍ²`.** Over a filtration whose null
+/-- **Remark 3.2: a solution in `ℍ²` is a solution in `𝕊`.** Over a filtration whose null
 sets lie in its time-`0` field, whose right-continuation is constant before `0` and which admits
-a cross witness, for `T > 0`, a solution `(X, Y, Z, U)` of (1.1) in `ℍ²_weak` satisfies
+a cross witness, for `T > 0`, a solution `(X, Y, Z, U)` of (1.1) in `ℍ²` satisfies
 `𝔼 sup_{t ≤ T} |X_t|² < ∞` and `𝔼 sup_{t ≤ T} |Y_t|² < ∞`, so it is a solution of (1.1) in the
 sense of the paper, with the same `γ`. -/
 theorem PaperWeakSolution.toPaperSolution (h : PaperWeakSolution D ℱ hℱW hℱN T C ξ₀ X Y Z U γ)

@@ -1,17 +1,22 @@
 # Well-posedness of fully coupled McKean–Vlasov FBSDEs with jumps, in Lean
 
-[![MachineChecked](https://machinechecked.org/papers/2608.23203/badge.svg)](https://machinechecked.org/papers/2608.23203/)
+[![MachineChecked][badge]][audit-page]
+
+[badge]: https://machinechecked.org/papers/2608.23203/badge.svg
+[audit-page]: https://machinechecked.org/papers/2608.23203/
 
 A Lean 4 + Mathlib formalisation of the paper *Well-posedness of fully coupled McKean–Vlasov
 FBSDEs with jumps under full-tuple law dependence* (Chunrong Feng and Christian Garry), in its
 revision of [arXiv:2608.23203v1](https://arxiv.org/abs/2608.23203v1) at commit
 [`1f67672`](https://github.com/cgarryZA/mvfbsdej-well-posedness/tree/1f67672).
 
-**The audit.** [Open the paper with its Lean beside it](https://cgarryza.github.io/mvfbsdej-well-posedness-lean/):
-every claim of the paper, the Lean statement and proof linked to it, and what is established, in
+**The audit.** [Open the paper with its Lean beside it][reader]: every claim of the paper, the
+Lean statement and proof linked to it, and what is established, in
 [MachineChecked](https://github.com/cgarryZA/MachineChecked)'s reader. The `Audit` workflow
 rebuilds and republishes it after every push to `main` that passes CI. An audit records what its
 author linked, checked and reviewed; it is not an independent certification.
+
+[reader]: https://cgarryza.github.io/mvfbsdej-well-posedness-lean/
 
 The formalisation is organised in three layers, and only the third decides what counts as proved:
 
@@ -19,7 +24,7 @@ The formalisation is organised in three layers, and only the third decides what 
    proposition, written from the manuscript;
 2. the rest of `Dissertation/` — the implementation: coefficients, laws and Wasserstein
    distances (`Law/`), the system and its assumptions, existence, uniqueness and stability
-   (`WellPosedness/`);
+   (`WellPosedness/`), and a topological lemma on continuous injections (`Topology/`);
 3. `Dissertation/Acceptance/A/` — for each proved claim, a theorem whose type is exactly the
    proposition of layer 1.
 
@@ -88,8 +93,7 @@ The paper is by Chunrong Feng and Christian Garry. This repository formalises it
 [arXiv:2608.23203v1](https://arxiv.org/abs/2608.23203v1) at commit
 [`1f67672`](https://github.com/cgarryZA/mvfbsdej-well-posedness/tree/1f67672) of the manuscript
 repository, whose LaTeX source is vendored in `manuscript/paper/` (the main file
-`wellposedness.tex` and its sections). A claim whose propositions are not yet stated is listed
-without clauses.
+`wellposedness.tex` and its sections).
 
 Compiling the manuscript, or an audit that shows it, needs TeX Live with `latexmk` and
 `poppler-utils`. On Debian or Ubuntu:
@@ -97,9 +101,9 @@ Compiling the manuscript, or an audit that shows it, needs TeX Live with `latexm
 ```sh
 sudo apt-get update
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-  latexmk texlive-latex-recommended texlive-latex-extra texlive-science \
-  texlive-fonts-recommended texlive-bibtex-extra lmodern poppler-utils
-cd <checkout>/paper && latexmk -pdf wellposedness.tex
+  latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended lmodern \
+  poppler-utils
+cd manuscript/paper && latexmk -pdf wellposedness.tex
 ```
 
 ## Layout
@@ -110,8 +114,11 @@ cd <checkout>/paper && latexmk -pdf wellposedness.tex
 | `Dissertation/Acceptance/A/` | their proofs, and witnesses that their hypotheses can be met |
 | `Dissertation/Law/` | laws of finite second moment, the 2-Wasserstein distance, law functionals |
 | `Dissertation/WellPosedness/` | the system, its assumptions, existence, uniqueness, stability and the examples |
+| `Dissertation/Topology/` | continuous injections into spaces of smaller dimension |
 | `acceptance/` | the claim inventory (`claims.json`), the reviews (`review/`) and the policy |
-| `tools/` | the acceptance checker, its Lean probe and the comparator script |
+| `manuscript/paper/` | the LaTeX source of the manuscript at the pinned revision |
+| `tools/` | the acceptance checker, its tests and Lean probe, the claim extractor, the comparator |
+| `.github/workflows/` | CI (build, acceptance check, comparator and release gate) and the audit |
 
 ## License
 

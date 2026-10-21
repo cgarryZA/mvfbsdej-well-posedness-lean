@@ -12,9 +12,9 @@ This directory holds the acceptance test of the formalisation. The report is
    everything else, as a function of those parameters. It may use definitions of the
    implementation (the coefficients, the filtration, the stochastic integrals, the laws) once
    they are reviewed. It is not obtained by renaming what the implementation proves.
-2. **The implementation** (the rest of `Dissertation/` and the dependency `LevyStochCalc`). It may use other
-   representations, stronger intermediate hypotheses and different proofs. None of that counts
-   towards acceptance until it is assembled into a proof of a statement of layer 1.
+2. **The implementation** (the rest of `Dissertation/` and the dependency `LevyStochCalc`). It
+   may use other representations, stronger intermediate hypotheses and different proofs. None of
+   that counts towards acceptance until it is assembled into a proof of a statement of layer 1.
 3. **The proofs** (`Dissertation/Acceptance/`). For a proved statement, a theorem
    `Dissertation.Acceptance.A.<label>` whose type is *exactly* the proposition of layer 1.
    Since the proposition is closed, the theorem takes no premise the manuscript does not state.
@@ -122,9 +122,10 @@ statement and proof afresh), then `bash tools/comparator_check.sh <dir>`: compar
 statement with a `sorry` proof, exports it and `Dissertation.Acceptance` with lean4export, checks
 that each proof has exactly the challenge's statement, every declaration the statement uses being
 the same in both environments, and that it uses only the three standard axioms, and replays the
-exported proofs into a fresh kernel. It rejects a proof whose type is another statement. A pass certifies that the listed
-propositions have kernel-checked proofs over the three standard axioms and that the reviews are
-current; whether each proposition says what the paper says is the reviews' judgement.
+exported proofs into a fresh kernel. It rejects a proof whose type is another statement. A pass
+certifies that the listed propositions have kernel-checked proofs over the three standard axioms
+and that the reviews are current; whether each proposition says what the paper says is the
+reviews' judgement.
 
 `check` is a development consistency check: open, unspecified and unreviewed claims are statuses,
 not failures, so its PASS says nothing about the paper as a whole. The whole-paper check is

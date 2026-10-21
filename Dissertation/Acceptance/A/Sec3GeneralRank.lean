@@ -4,12 +4,8 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.PaperSpec.A.Sec3GeneralRank
-import Dissertation.Acceptance.A.Sec3
 import Dissertation.Acceptance.A.Sec2Remarks
-import Dissertation.Acceptance.A.Witness
 import Dissertation.WellPosedness.Robustness.GeneralRank
-import Dissertation.WellPosedness.Spec.Cor36WellPosed
-import Dissertation.WellPosedness.Remarks.Margin
 
 /-!
 # Remark 3.7 of the well-posedness paper: proofs
@@ -91,6 +87,7 @@ theorem pairingBound34W_of_weighted {p : Coeffs ν n m d}
   rw [← integral_gWeightSq_eq G p t q.1 q'.1]
   simpa only [pairing27_eq] using hle
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
 /-- The interior pairing of a perturbed system is the sum of the pairings of the baseline and of
 the perturbation. -/
 theorem pairing27_perturb (C p : Coeffs ν n m d) (t : ℝ) (θ θ' : TupleH ν n m d)
@@ -163,7 +160,7 @@ theorem rem_generalrank_wp : PaperSpec.A.rem_generalrank_wp.{u, v, w} := by
       Y₂ Z₁ Z₂ U₁ U₂ h₁ h₂⟩
 
 /-- **The hypotheses of Remark 3.7 hold at the instance of Corollary 3.6.** At the instance of
-`Dissertation.cor_robust_hypotheses` (`n = m = 1`, `G = 1`), the baseline satisfies
+`Dissertation.Acceptance.A.cor_robust_hypotheses` (`n = m = 1`, `G = 1`), the baseline satisfies
 (2.12) with `β₁ = β₂ = c_diss = 1` and the feedback perturbation with `ε = 1/2` satisfies (3.4)
 in the weighted quantity with `c_pert = 1/2`. -/
 theorem rem_generalrank_hypotheses :

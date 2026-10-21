@@ -4,7 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Mathlib.Analysis.Calculus.Gradient.Basic
-import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.MeasureTheory.Integral.IntegrableOn
 import Dissertation.Law.LipschitzFunctional
@@ -120,11 +119,7 @@ noncomputable def crowdPot (w : F) : ℝ :=
 noncomputable def crowdGrad (w : F) : F :=
   (Real.sqrt (1 + ‖w‖ ^ 2))⁻¹ • w
 
-/-- The crowding potential vanishes at the origin. -/
-@[simp]
-theorem crowdPot_zero : crowdPot (0 : F) = 0 := by
-  simp [crowdPot]
-
+omit [InnerProductSpace ℝ F] in
 /-- The crowding potential is even. -/
 @[simp]
 theorem crowdPot_neg (w : F) : crowdPot (-w) = crowdPot w := by
@@ -158,6 +153,7 @@ theorem norm_crowdGrad_lt_one (w : F) : ‖crowdGrad w‖ < 1 := by
 theorem norm_crowdGrad_le_one (w : F) : ‖crowdGrad w‖ ≤ 1 :=
   (norm_crowdGrad_lt_one w).le
 
+omit [InnerProductSpace ℝ F] in
 /-- The scalar `1 / √(1 + ‖w‖²)` of the crowding gradient lies in `(0, 1]`. -/
 private theorem crowdScalar_mem (w : F) :
     0 < (Real.sqrt (1 + ‖w‖ ^ 2))⁻¹ ∧ (Real.sqrt (1 + ‖w‖ ^ 2))⁻¹ ≤ 1 := by
@@ -265,11 +261,13 @@ noncomputable def crowdOp (Λ : Measure F) (u : F) : F :=
 
 variable [BorelSpace F] [SecondCountableTopology F]
 
+omit [CompleteSpace F] in
 /-- The integrand `v ↦ ∇V(u − v)` of the crowding operator is strongly measurable. -/
 theorem stronglyMeasurable_crowdGrad_sub (u : F) :
     StronglyMeasurable fun v : F => crowdGrad (u - v) :=
   (continuous_crowdGrad.comp (continuous_const.sub continuous_id)).stronglyMeasurable
 
+omit [CompleteSpace F] in
 /-- The integrand `v ↦ ∇V(u − v)` of the crowding operator is integrable against every finite
 measure. -/
 theorem integrable_crowdGrad_sub (Λ : Measure F) [IsFiniteMeasure Λ] (u : F) :
@@ -277,6 +275,7 @@ theorem integrable_crowdGrad_sub (Λ : Measure F) [IsFiniteMeasure Λ] (u : F) :
   Integrable.of_bound (stronglyMeasurable_crowdGrad_sub u).aestronglyMeasurable 1
     (Filter.Eventually.of_forall fun _ => norm_crowdGrad_le_one _)
 
+omit [CompleteSpace F] [BorelSpace F] [SecondCountableTopology F] in
 /-- **The crowding operator of a probability measure has norm at most one.** -/
 theorem norm_crowdOp_le_one (Λ : Measure F) [IsProbabilityMeasure Λ] (u : F) :
     ‖crowdOp Λ u‖ ≤ 1 := by
@@ -292,6 +291,7 @@ theorem crowdOp_dirac (a u : F) : crowdOp (Measure.dirac a) u = crowdGrad (u - a
 theorem crowdOp_dirac_zero : crowdOp (Measure.dirac (0 : F)) 0 = 0 := by
   rw [crowdOp_dirac, sub_zero, crowdGrad_zero]
 
+omit [CompleteSpace F] in
 /-- **The crowding operator of a probability measure is `1`-Lipschitz**:
 `‖A_Λ(u) − A_Λ(u')‖ ≤ ‖u − u'‖`. -/
 theorem norm_crowdOp_sub_crowdOp_le (Λ : Measure F) [IsProbabilityMeasure Λ] (u u' : F) :
@@ -303,6 +303,7 @@ theorem norm_crowdOp_sub_crowdOp_le (Λ : Measure F) [IsProbabilityMeasure Λ] (
       simpa only [sub_sub_sub_cancel_right] using norm_crowdGrad_sub_le (u - v) (u' - v))
   rwa [probReal_univ, mul_one] at h
 
+omit [CompleteSpace F] in
 /-- The crowding operator of a probability measure is continuous. -/
 theorem continuous_crowdOp (Λ : Measure F) [IsProbabilityMeasure Λ] :
     Continuous (crowdOp Λ) :=
@@ -310,6 +311,7 @@ theorem continuous_crowdOp (Λ : Measure F) [IsProbabilityMeasure Λ] :
     rw [NNReal.coe_one, one_mul, dist_eq_norm, dist_eq_norm]
     exact norm_crowdOp_sub_crowdOp_le Λ u u').continuous
 
+omit [CompleteSpace F] in
 /-- **The crowding operator is jointly Lipschitz**: for laws `Λ, Λ'` of finite second moment and
 points `u, u'`, `‖A_Λ(u) − A_Λ'(u')‖ ≤ ‖u − u'‖ + W₂(Λ, Λ')`. -/
 theorem norm_crowdOp_sub_le (Λ Λ' : P2 F) (u u' : F) :

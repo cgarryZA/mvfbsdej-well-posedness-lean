@@ -26,7 +26,7 @@ the `M²` paragraph, that for `ν ≠ 0` membership `δU ∈ H²_N` gives the qu
 * `Dissertation.Acceptance.A.lem41_M2_martingale` — `M²`, read pathwise, is a martingale: the
   integral against the random measure is measurable at time `t` off a null set (truncated
   kernels), and the compensation formula (2.2) for `1_A 1_{(s, t]} e^s |δU|²`, `A ∈ ℱ_s`, gives the
-  martingale property (`condExp_pathwiseCompensated`).
+  martingale property (`Dissertation.WellPosedness.BrownianPoisson.condExp_pathwiseCompensated`).
 * `Dissertation.Acceptance.A.eq_supE` — the bound at every time and (4.6).
 * `Dissertation.Acceptance.A.lem41_M2_no_square_moment_hypotheses` — the hypotheses of the first
   clause at `ν = δ₀`.

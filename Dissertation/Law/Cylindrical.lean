@@ -4,9 +4,12 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.Law.Projection
-import Dissertation.Law.ExpectationFunctional
-import Mathlib.Analysis.InnerProductSpace.PiL2
+import Dissertation.Law.Assumptions
+import Dissertation.Law.LipschitzFunctional
 import Mathlib.MeasureTheory.SpecificCodomains.WithLp
+import Mathlib.Algebra.Order.Star.Real
+import Mathlib.Analysis.Normed.Lp.MeasurableSpace
+import Mathlib.Tactic.Positivity.Finset
 
 /-!
 # Cylindrical functionals of a law

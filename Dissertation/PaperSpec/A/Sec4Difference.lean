@@ -72,8 +72,8 @@ universe u v w
 
 /-- **(4.15).** In the standing setting, under the hypotheses of Lemma 4.3 — `T > 0`,
 coefficients with (2.3) and Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix
-`G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak` with
-`X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` — each
+`G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with
+`X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` — each
 coordinate `i` of `δX = X¹ − X²` satisfies, almost surely at every `t ∈ [0, T]`,
 `δX_t = δξ₀ + ∫_0^t (λ δb_s + q^b_s) ds + ∫_0^t (λ δσ_s + q^σ_s) dW_s
   + ∫_0^t ∫_E (λ δh_s(e) + q^h_s(e)) Ñ(ds, de)`,
@@ -151,8 +151,8 @@ def eq_dX : Prop :=
 
 /-- **(4.16).** In the standing setting, under the hypotheses of Lemma 4.3 — `T > 0`,
 coefficients with (2.3) and Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix
-`G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak` with
-`X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` — each
+`G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with
+`X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` — each
 coordinate `k` of `(δY, δZ, δU)` satisfies `δY_T = λ δg_T + q^g_T` almost surely and, almost
 surely at every `t ∈ [0, T]`,
 `δY_t = λ δg_T + q^g_T + ∫_t^T (λ δf_s + q^f_s) ds − ∫_t^T δZ_s dW_s
@@ -218,8 +218,8 @@ def eq_dY : Prop :=
 
 /-- **(4.19).** In the standing setting, under the hypotheses of Lemma 4.3 — `T > 0`,
 coefficients with (2.3) and Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix
-`G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak` with
-`X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` — the
+`G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with
+`X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` — the
 pairings `⟨G δX_T, δY_T⟩` and `⟨G δξ₀, δY_0⟩` are integrable, the integrand
 `⟨λ δb + q^b, Gᵀ δY⟩ + ⟨λ δσ + q^σ, Gᵀ δZ⟩_F + ∫_E ⟨λ δh(e) + q^h(e), Gᵀ δU(e)⟩ ν(de)
   + ⟨−λ δf − q^f, G δX⟩`
@@ -291,8 +291,8 @@ def eq_Gid : Prop :=
 
 /-- **(4.20).** In the standing setting, under the hypotheses of Lemma 4.3 — `T > 0`,
 coefficients with (2.3) and Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix
-`G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak` with
-`X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` — at almost
+`G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with
+`X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` — at almost
 every `t ∈ [0, T]` the pairing
 `⟨δb_t, Gᵀ δY_t⟩ + ⟨δσ_t, Gᵀ δZ_t⟩_F + ∫_E ⟨δh_t(e), Gᵀ δU_t(e)⟩ ν(de) + ⟨−δf_t, G δX_t⟩`,
 with `δψ_t = ψ(t, Θ¹_t, μ¹_t) − ψ(t, Θ²_t, μ²_t)` for `ψ = b, σ, f` and `δh_t` at the
@@ -366,8 +366,8 @@ def eq_intmono : Prop :=
 
 /-- **(4.21).** In the standing setting, under the hypotheses of Lemma 4.3 — `T > 0`,
 coefficients with (2.3) and Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix
-`G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak` with
-`X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` — the
+`G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with
+`X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` — the
 pairings `⟨G δX_T, δY_T⟩`, `⟨G δX_T, δg_T⟩` and `⟨G δX_T, q^g_T⟩` are integrable,
 `𝔼⟨G δX_T, δY_T⟩ = λ 𝔼⟨G δX_T, δg_T⟩ + 𝔼⟨G δX_T, q^g_T⟩`, and
 `λ 𝔼⟨G δX_T, δg_T⟩ + 𝔼⟨G δX_T, q^g_T⟩ ≥ λ α 𝔼|G δX_T|² − |𝔼⟨G δX_T, q^g_T⟩|`, with
@@ -416,8 +416,8 @@ def eq_termmono : Prop :=
 /-- **(4.20) and (4.21) inserted into (4.19).** In the standing setting, under the hypotheses of
 Lemma 4.3 — `T > 0`, coefficients with (2.3) and Assumptions 2.3–2.5 with constants
 `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1)
-at `λ` in `ℍ_weak` with `X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and
-`Θ¹ − Θ² ∈ ℍ` — the integrands of the expectations below are integrable: `|G δX_T|²`,
+at `λ` in `ℍ²` with `X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and
+`Θ¹ − Θ² ∈ 𝕊` — the integrands of the expectations below are integrable: `|G δX_T|²`,
 `⟨G δX_T, q^g_T⟩` and `⟨G δξ₀, δY_0⟩` on `Ω`; `|G δX|²`,
 `|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²_{L²(ν)}` and
 `⟨q^b, Gᵀ δY⟩ + ⟨q^σ, Gᵀ δZ⟩_F + ⟨−q^f, G δX⟩ + ∫_E ⟨q^h(e), Gᵀ δU(e)⟩ ν(de)` on
@@ -506,8 +506,8 @@ def eq_coerc_insert : Prop :=
 
 /-- **(4.22).** In the standing setting, under the hypotheses of Lemma 4.3 — `T > 0`,
 coefficients with (2.3) and Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix
-`G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak` with
-`X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` — the
+`G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with
+`X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` — the
 quantity `N' = 𝔼|δX_T|² + 𝔼|δY_0|² + 𝔼 ∫_0^T (|δX|² + |δY|² + |δZ|²_F + ‖δU‖²) dt` and the data
 size `P` of (4.14) are finite, and
 `λ α 𝔼|G δX_T|² + λ β₂ 𝔼 ∫_0^T |G δX|² + λ β₁ 𝔼 ∫_0^T [|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²]`

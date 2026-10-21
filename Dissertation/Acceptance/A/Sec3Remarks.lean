@@ -6,19 +6,17 @@ Authors: Christian Garry
 import Dissertation.PaperSpec.A.Sec3Remarks
 import Dissertation.PaperSpec.A.Sec2Measurability
 import Dissertation.Acceptance.A.Sec3
-import Dissertation.WellPosedness.Existence.CoeffPredictable
-import Dissertation.WellPosedness.Existence.PaperAdmissible
-import Dissertation.WellPosedness.Spec.Bridge22
 import Dissertation.WellPosedness.Spec.Examples
 
 /-!
 # The measurability (2.5) and Remark 3.2 of the well-posedness paper: proofs
 
 The measurability (2.5) is a consequence of the joint Borel measurability (2.3), through
-`JointBorel.coeffRegular` and `JointBorel.predictable_jump`. For Remark 3.2, along a tuple of
-`ℍ_weak` satisfying (1.1), (2.5) and Assumptions 2.2–2.3 bound the energy of the drift and driver
-processes by (4.2), so the tuple satisfies (1.1) with square-integrable coefficient processes; the
-`S²` bounds of `ℍ` then follow from the forward form of both equations.
+`Dissertation.WellPosedness.Spec.JointBorel.coeffRegular` and
+`Dissertation.WellPosedness.Spec.JointBorel.predictable_jump`. For Remark 3.2, along a tuple of `ℍ²`
+satisfying (1.1), (2.5) and Assumptions 2.2–2.3 bound the energy of the drift and driver processes
+by (4.2), so the tuple satisfies (1.1) with square-integrable coefficient processes; the `S²` bounds
+of `𝕊` then follow from the forward form of both equations.
 
 ## Main statements
 
@@ -48,8 +46,8 @@ theorem eq_coefmeas_jump : PaperSpec.A.eq_coefmeas_jump.{u, v} := by
   intro Ω mΩ ℱ E _ ν _ _ n m d T C Θ ρ hJ hΘ hρ
   exact hJ.predictable_jump hΘ hρ
 
-/-- Remark 3.2: under (2.3) and Assumptions 2.2–2.3, a tuple of `ℍ_weak` satisfying (1.1) solves
-(1.1) in `ℍ`. -/
+/-- Remark 3.2: under (2.3) and Assumptions 2.2–2.3, a tuple of `ℍ²` satisfying (1.1) solves
+(1.1) in `𝕊`. -/
 theorem rem_cwp_class : PaperSpec.A.rem_cwp_class.{u, v, w} := by
   intro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ T hT L C ξ₀ hJ h22 h23 X Y Z U hW
   obtain ⟨γ, hw⟩ := hW.1
@@ -74,7 +72,7 @@ local notation "sys " β:max =>
 /-- **The hypotheses of Remark 3.2 hold at Example 5.1(i).** Over a probability space carrying a
 Lévy driver with `d = 1` and `ν = δ₀` on `ℝ`, with `𝒢₀ = ⊥`, `n = m = 1` and `T = 1`, the system
 of Example 5.1(i) with `β₁ = β₂ = 1`, `σ_c = 0`, `h_c = 0` and initial datum `0` satisfies (2.3),
-Assumption 2.2 and Assumption 2.3 with `L = 1`, and a tuple of `ℍ_weak` satisfies (1.1) (the
+Assumption 2.2 and Assumption 2.3 with `L = 1`, and a tuple of `ℍ²` satisfies (1.1) (the
 solution of Theorem 3.5). -/
 theorem rem_cwp_class_hypotheses :
     ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)

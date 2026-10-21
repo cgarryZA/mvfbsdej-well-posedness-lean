@@ -6,7 +6,6 @@ Authors: Christian Garry
 import Dissertation.WellPosedness.Enlarged.Range
 import Dissertation.WellPosedness.Enlarged.Complement
 import Dissertation.WellPosedness.Enlarged.CrossWitness
-import Dissertation.WellPosedness.MarkCoding.Representation
 
 /-!
 # Martingale representation over the enlarged filtration

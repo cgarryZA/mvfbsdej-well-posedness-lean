@@ -9,11 +9,11 @@ import Dissertation.WellPosedness.System.Solves
 /-!
 # The channel differences of two tuples in coordinates
 
-Assumptions 2.3 and 2.5 are stated on `H` and `L²(ν)` in the Euclidean, Frobenius and `L²(ν)`
-norms and inner products, while the difference system `PairDiff` is written in the coordinates of
-the unknowns and of the coefficient processes. This file identifies the two at a time
-`s ∈ [0, T]`, for the tuples `Θ_s = tupleAt ν X Y Z U s`, `Θ'_s = tupleAt ν X' Y' Z' U' s` and
-their laws `μ_s, μ'_s`:
+Assumptions 2.3 and 2.5 are stated on `H` and `L²(ν)` in the Euclidean, Frobenius and `L²(ν)` norms
+and inner products, while the difference system `Dissertation.WellPosedness.Stability.PairDiff` is
+written in the coordinates of the unknowns and of the coefficient processes. This file identifies
+the two at a time `s ∈ [0, T]`, for the tuples `Θ_s = tupleAt ν X Y Z U s`,
+`Θ'_s = tupleAt ν X' Y' Z' U' s` and their laws `μ_s, μ'_s`:
 
 * the coefficient differences `b(s, Θ_s, μ_s) − b(s, Θ'_s, μ'_s)`, and likewise for `σ` and `f`,
   are the vectors of the differences of the coefficient processes, and the terminal difference

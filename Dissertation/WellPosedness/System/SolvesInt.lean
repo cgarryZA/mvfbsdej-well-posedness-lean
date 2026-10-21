@@ -4,14 +4,13 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.Stability.IntegrableDrift
-import Dissertation.WellPosedness.Stability.WindowIntegrable
 import Dissertation.WellPosedness.System.ChannelCoords
 import Dissertation.WellPosedness.System.SolvesMemLp
 
 /-!
-# Solutions of the system (1.1) in the class `ℍ²_weak`
+# Solutions of the system (1.1) in the class `ℍ²`
 
-Theorem 3.3 of the well-posedness paper concerns tuples `Θ = (X, Y, Z, U)` in `ℍ²_weak`, the class
+Theorem 3.3 of the well-posedness paper concerns tuples `Θ = (X, Y, Z, U)` in `ℍ²`, the class
 of progressive tuples with
 
 `𝔼 ∫_0^T (|X_t|² + |Y_t|² + |Z_t|²_F + ‖U_t‖²_{L²(ν)}) dt < ∞`,
@@ -25,12 +24,13 @@ stochastic integrals, so they have finite energy on `[0, T]`, and the terminal c
 `g(X_T, Law X_T)` presupposes `Law X_T ∈ P₂(ℝⁿ)`, that is `X_T ∈ L²`.
 
 `SolvesForcedInt` records the `λ`-forced system (4.1) in this class: the forward equations as
-`LinearFSDEJInt` and the backward ones as `LinearBSDEJInt` — the drift and the driver along the
-solution with almost surely integrable paths, and no integrability condition on the initial datum
-or on the terminal value — together with the finite energies of `X` and `Y` on `[0, T]` and the
-square integrability of `X_T`. `SolvesInt` is the case `λ = 1`, `q = 0`. Neither carries a
-condition on the origin values of the coefficients, nor a square integrability condition on `ξ₀`,
-on `b` or `f` along the solution, or on `g(X_T, Law X_T)`.
+`Dissertation.WellPosedness.Stability.LinearFSDEJInt` and the backward ones as
+`Dissertation.WellPosedness.Stability.LinearBSDEJInt` — the drift and the driver along the solution
+with almost surely integrable paths, and no integrability condition on the initial datum or on the
+terminal value — together with the finite energies of `X` and `Y` on `[0, T]` and the square
+integrability of `X_T`. `SolvesInt` is the case `λ = 1`, `q = 0`. Neither carries a condition on the
+origin values of the coefficients, nor a square integrability condition on `ξ₀`, on `b` or `f` along
+the solution, or on `g(X_T, Law X_T)`.
 
 As for `SolvesForced`, the coefficient processes are jointly and progressively measurable, (2.5),
 and the jump coefficient enters through a representative `γ`. Along a solution of
@@ -40,8 +40,8 @@ and the jump coefficient enters through a representative `γ`. Along a solution 
 
 ## Main definitions
 
-* `SolvesForcedInt` — `(X, Y, Z, U)` solves the `λ`-forced system (4.1) in `ℍ²_weak`.
-* `SolvesInt` — `(X, Y, Z, U)` solves the system (1.1) in `ℍ²_weak`.
+* `SolvesForcedInt` — `(X, Y, Z, U)` solves the `λ`-forced system (4.1) in `ℍ²`.
+* `SolvesInt` — `(X, Y, Z, U)` solves the system (1.1) in `ℍ²`.
 
 ## Main statements
 
@@ -67,7 +67,7 @@ variable {Ω : Type u} [MeasurableSpace Ω] {E : Type v} [MeasurableSpace E] {ν
   [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] {n m d : ℕ}
   {P : Measure Ω} [IsProbabilityMeasure P]
 
-/-- **`(X, Y, Z, U)` solves the `λ`-forced system (4.1) in `ℍ²_weak`** with coefficients `C`,
+/-- **`(X, Y, Z, U)` solves the `λ`-forced system (4.1) in `ℍ²`** with coefficients `C`,
 initial datum `ξ₀` and forcing `q = (q^b, q^σ, q^h, q^f, q^g)` over the filtration `ℱ` carrying the
 driver
 `D`, with `γ` a representative of the jump coefficient along the solution: `q` is a forcing, `γ`
@@ -109,7 +109,7 @@ structure SolvesForcedInt (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν)
   /-- Each coordinate of `X_T` is square integrable. -/
   XT_sq : ∀ i, MemLp (X i T) 2 P
 
-/-- **`(X, Y, Z, U)` solves the system (1.1) in `ℍ²_weak`**: the `λ`-forced system of
+/-- **`(X, Y, Z, U)` solves the system (1.1) in `ℍ²`**: the `λ`-forced system of
 `SolvesForcedInt` at `λ = 1` with zero forcing. -/
 abbrev SolvesInt (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν)
     (ℱ : Filtration ℝ ‹MeasurableSpace Ω›)

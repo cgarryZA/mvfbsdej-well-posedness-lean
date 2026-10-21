@@ -5,7 +5,6 @@ Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.BrownianPoisson.Decomposition
 import Dissertation.WellPosedness.System.Solves
-import LevyStochCalc.Ito.PicardOutputModification
 
 /-!
 # The equations of a solution on one set of full measure
@@ -19,7 +18,7 @@ equations, and with it the left limits of a solution on `(0, T]`.
 The three terms of the right-hand sides behave as follows.
 
 * The drift integral `t ↦ ∫_{[0, t]} b_s ds` is continuous along every path on which the drift is
-  integrable over `[0, T]`, hence along almost every path (`driftLeg`).
+  integrable over `[0, T]`, hence along almost every path (`LevyStochCalc.BSDEJ.Solves.driftLeg`).
 * The compensated Poisson integral is a càdlàg modification, so its paths are càdlàg almost
   surely.
 * The multidimensional Brownian integral is defined separately at each time, as a representative

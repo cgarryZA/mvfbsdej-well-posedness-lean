@@ -5,8 +5,6 @@ Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.System.FrozenLegs
 import Dissertation.WellPosedness.System.Completeness
-import Dissertation.WellPosedness.System.BridgeDiff
-import Dissertation.WellPosedness.BrownianPoisson.LegIsometry
 import Dissertation.WellPosedness.Existence.ForcingAlgebra
 
 /-!
@@ -28,8 +26,9 @@ Cauchy–Schwarz gives `𝔼 (∫_0^T |b_s| ds)² ≤ T 𝔼 ∫_0^T |b_s|² ds`
 the isometries gives `𝔼 sup_{t ≤ T} |M_t|² ≤ 4 𝔼 ∫_0^T |σ_s|²_F ds` and
 `𝔼 sup_{t ≤ T} |N_t|² ≤ 4 𝔼 ∫_0^T ‖γ_s‖²_{L²(ν)} ds`.
 
-Along a tuple of `ℍ²_weak` the canonical representative `coeffJump` of the jump coefficient at the
-tuple also represents it at the predictable tuple, and the integrals of (1.1) exist with it.
+Along a tuple of `ℍ²` the canonical representative `Dissertation.WellPosedness.Existence.coeffJump`
+of the jump coefficient at the tuple also represents it at the predictable tuple, and the integrals
+of (1.1) exist with it.
 
 ## Main statements
 
@@ -42,7 +41,8 @@ tuple also represents it at the predictable tuple, and the integrals of (1.1) ex
 * `lintegral_sq_lintegral_toLp_le` — Cauchy–Schwarz for the drift leg.
 * `LinearFSDEJ.congr_jump` — the jump integrand may be changed on a null set.
 * `LinearFSDEJ.lintegral_biSup_esq_le_legs` — the bound by the three legs.
-* `PaperWeakTuple.paperAdmissible_coeffJump` — the integrals of (1.1) exist with `coeffJump`.
+* `PaperWeakTuple.paperAdmissible_coeffJump` — the integrals of (1.1) exist with
+  `Dissertation.WellPosedness.Existence.coeffJump`.
 -/
 
 open MeasureTheory Filter Topology Dissertation.Law
@@ -607,9 +607,9 @@ variable {Ω : Type u} [MeasurableSpace Ω] {E : Type v} [MeasurableSpace E] {ν
   {T L : ℝ} {C : Coeffs ν n m d} {X : Fin n → ℝ → Ω → ℝ} {Y : Fin m → ℝ → Ω → ℝ}
   {Z : Fin m → ℝ → Ω → Fin d → ℝ} {U : Fin m → ℝ → Ω → E → ℝ}
 
-/-- **The integrals of (1.1) along a tuple of `ℍ²_weak` exist with `coeffJump`.** For `T ≥ 0`,
+/-- **The integrals of (1.1) along a tuple of `ℍ²` exist with `coeffJump`.** For `T ≥ 0`,
 coefficients with the joint measurability (2.3) of `CoeffBorel`, Assumption 2.2 and Assumption 2.3
-along the diagonal, and `Θ ∈ ℍ²_weak`, the canonical representative `coeffJump` of
+along the diagonal, and `Θ ∈ ℍ²`, the canonical representative `coeffJump` of
 `h(s, Θ_s, ·, μ_s)` also represents `h(s, Θ⁻_s, ·, μ⁻_s)`, and with it the drift, diffusion and
 driver processes and the jump integrand are jointly and progressively measurable with finite
 energy on `[0, T]`. -/

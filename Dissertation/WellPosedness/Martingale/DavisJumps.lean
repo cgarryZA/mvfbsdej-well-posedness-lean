@@ -4,7 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.Martingale.CountIntegral
-import Mathlib.MeasureTheory.Integral.MeanInequalities
 
 /-!
 # The large jumps of an integer-valued measure

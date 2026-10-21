@@ -18,13 +18,13 @@ for any reference law.
   `H = ℝⁿ × ℝᵐ × ℝ^{m×d} × L²(ν; ℝᵐ)` and `n > 0`, is not affine along mixtures for a bounded
   profile `𝔮` not constant on `[0, ∞)`; the mixtures `(1 − t) μ₀ + t δ_{R v}` along a unit vector
   `v` of the `X`-channel realise every distance to `μ₀`
-  (`not_affineAlongMixtures_of_radialProfile`).
+  (`Dissertation.Law.not_affineAlongMixtures_of_radialProfile`).
 * The same holds for the radial statistic `μ ↦ 𝔮̃(W₂(μ^U, Λ₀))` of the `U`-marginal when
   `L²(ν; ℝᵐ)` is not reduced to `0`, along the mixtures of the image of `Λ₀` under
   `u ↦ (0, 0, 0, u)` with Dirac masses in that channel.
 * If the cylindrical statistic `μ ↦ Q((∫ φ_j dμ^U)_j)` is an expectation functional, then `Q` is
   affine along the segments of the attained range of the feature vector, a convex set, so it
-  agrees there with an affine function (`exists_affine_eq_of_affine_segments`).
+  agrees there with an affine function (`Dissertation.Law.exists_affine_eq_of_affine_segments`).
 
 ## Main definitions
 

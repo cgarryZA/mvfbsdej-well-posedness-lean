@@ -50,6 +50,7 @@ noncomputable def matLeftLimWeight (G : Matrix (Fin m) (Fin n) ℝ) (Y : Fin n �
     (T : ℝ) (k : Fin m) (s : ℝ) (ω : Ω) : ℝ :=
   (G *ᵥ fun i => if s ∈ Ioc (0 : ℝ) T then leftLimProc Y i s ω else 0) k
 
+omit [MeasurableSpace Ω] in
 theorem matLeftLimWeight_eq (G : Matrix (Fin m) (Fin n) ℝ) (Y : Fin n → ℝ → Ω → ℝ) (k : Fin m)
     (s : ℝ) (ω : Ω) :
     matLeftLimWeight G Y T k s ω
@@ -59,7 +60,7 @@ theorem matLeftLimWeight_eq (G : Matrix (Fin m) (Fin n) ℝ) (Y : Fin n → ℝ 
 /-- The properties of the weight `G Y_{s−}` that `localBrownian_weight` asks for, with `C` a
 bound of `G` on `ℝⁿ`, and its vanishing off `(0, T]`. -/
 theorem matLeftLimWeight_props (hℱneg : ∀ r : ℝ, r ≤ 0 → ℱ 0 ≤ ℱ r)
-    (G : Matrix (Fin m) (Fin n) ℝ) {C : ℝ} (hC : 0 ≤ C)
+    (G : Matrix (Fin m) (Fin n) ℝ) {C : ℝ} (_hC : 0 ≤ C)
     (hG : ∀ x : Fin n → ℝ, (G *ᵥ x) ⬝ᵥ (G *ᵥ x) ≤ C ^ 2 * (x ⬝ᵥ x))
     {Y : Fin n → ℝ → Ω → ℝ} (hYad : ∀ i, ∀ t ∈ Icc (0 : ℝ) T, Measurable[ℱ t] (Y i t))
     (hYl : ∀ i ω, ∀ t ∈ Ioc (0 : ℝ) T, ∃ l : ℝ, Tendsto (fun s => Y i s ω) (𝓝[<] t) (𝓝 l)) :
@@ -143,6 +144,7 @@ section Pairing
 variable {Ω : Type*} [MeasurableSpace Ω] {E : Type*} [MeasurableSpace E] {P : Measure Ω}
   {ν : Measure E} [SFinite P] [SFinite ν]
 
+omit [SFinite P] in
 /-- An iterated integral over `Ω × [0, T] × E` is the integral against `dP ⊗ ds ⊗ ν`. -/
 theorem lintegral_iter_eq_markedEnergyMeasure {F : Ω × ℝ × E → ℝ≥0∞} (hF : Measurable F)
     (T : ℝ) :
@@ -184,6 +186,7 @@ theorem ofReal_abs_dotProduct_le {m n : ℕ} (G : Matrix (Fin m) (Fin n) ℝ) {C
     ← ENNReal.ofReal_mul (by positivity)]
   exact ENNReal.rpow_le_rpow (ENNReal.ofReal_le_ofReal hsq) (by norm_num)
 
+omit [SFinite P] in
 /-- **The pairing `⟨h, Gᵀ u⟩` of two marked integrands is integrable**:
 `𝔼 ∫_0^T ∫_E |⟨h, Gᵀ u⟩| ν(de) ds ≤ C (𝔼 ∫_0^T ‖h_s‖² ds)^{1/2} (𝔼 ∫_0^T ‖u_s‖² ds)^{1/2}`,
 with `‖·‖` the norm of `L²(ν)` and `|Gᵀ x| ≤ C |x|`. -/

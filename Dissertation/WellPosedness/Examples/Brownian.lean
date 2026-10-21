@@ -34,7 +34,7 @@ second moment on `H` under `projB` has `W₂` distances at most the Hilbert-norm
 ## Main statements
 
 * `lp_zero_subsingleton` — `L^p(0; F)` has a single point.
-* `projB_liftB`, `liftB_projB` — the identification of `H` at `ν = 0` with the reduced space.
+* `liftB_projB` — at `ν = 0`, inserting a zero jump channel after dropping it is the identity.
 * `w2P_projP2_le` — dropping the jump channel does not increase `W₂`.
 * `w2P_projP2` — at `ν = 0` the map of laws `projP2` preserves `W₂`.
 -/
@@ -80,11 +80,6 @@ def projB (θ : TupleH ν n m d) : ReducedTuple n m d :=
 noncomputable def liftB (w : ReducedTuple n m d) : TupleH ν n m d :=
   (w.fst, w.snd.fst, w.snd.snd, 0)
 
-/-- Dropping the jump channel after inserting a zero one is the identity. -/
-@[simp]
-theorem projB_liftB (w : ReducedTuple n m d) : projB (liftB (ν := ν) w) = w :=
-  rfl
-
 /-- **At `ν = 0`, inserting a zero jump channel after dropping it is the identity.** -/
 @[simp]
 theorem liftB_projB (θ : TupleH (0 : Measure E) n m d) : liftB (projB θ) = θ :=
@@ -92,11 +87,6 @@ theorem liftB_projB (θ : TupleH (0 : Measure E) n m d) : liftB (projB θ) = θ 
 
 /-- `projB` commutes with differences. -/
 theorem projB_sub (θ θ' : TupleH ν n m d) : projB (θ - θ') = projB θ - projB θ' :=
-  rfl
-
-/-- `projB` sends the origin to the origin. -/
-@[simp]
-theorem projB_zero : projB (0 : TupleH ν n m d) = 0 :=
   rfl
 
 /-- `liftB` commutes with differences. -/
@@ -153,6 +143,7 @@ noncomputable def projP2 (μ : P2 (TupleH ν n m d)) : P2 (ReducedTuple n m d) :
 
 section Wasserstein
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
 /-- Dropping the jump channel from a point of the Hilbert-norm tuple space does not increase
 distances. -/
 theorem norm_projB_ofL2_sub_le (v v' : TupleL2 (EuclideanSpace ℝ (Fin n))

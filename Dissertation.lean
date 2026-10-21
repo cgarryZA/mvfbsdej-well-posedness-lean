@@ -5,3 +5,10 @@ Authors: Christian Garry
 -/
 import Dissertation.PaperSpec
 import Dissertation.Acceptance
+
+/-!
+# The formalisation of the well-posedness paper
+
+The statements of the paper (`Dissertation.PaperSpec`), written from the manuscript, and their
+proofs (`Dissertation.Acceptance`), with the implementation they use.
+-/

@@ -1,12 +1,20 @@
+/-
+Copyright (c) 2026 Christian Garry. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Christian Garry
+-/
 import Lean.Util.CollectAxioms
 import Lean.Util.FoldConsts
 import Dissertation.PaperSpec
 import Dissertation.Acceptance
 
 /-!
+# The Lean probe of the acceptance check
+
 Probe of `tools/acceptance.py`. Reads the query file named by `ACCEPTANCE_QUERY`, one request per
-line (`SPEC <spec>`, `ACC <theorem> <spec>`, `REF <theorem> <spec>`), and prints one verdict line
-per request together with the definition closure of every specification. Not part of the library.
+line (`SPEC <spec>`, `DEF <name>`, `ACC <theorem> <spec>`, `REF <theorem> <spec>`,
+`WIT <theorem> <spec>`), and prints one verdict line per request together with the definition
+closure of every specification and definition. Not part of the library.
 -/
 
 open Lean Meta

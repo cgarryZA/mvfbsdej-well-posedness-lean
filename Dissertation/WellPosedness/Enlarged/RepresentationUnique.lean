@@ -5,7 +5,6 @@ Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.Enlarged.TimeZero
 import Dissertation.WellPosedness.Enlarged.CrossWitness
-import LevyStochCalc.Driver.JointRange
 
 /-!
 # Uniqueness of the representing pair

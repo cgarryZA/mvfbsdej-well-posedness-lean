@@ -6,17 +6,18 @@ Authors: Christian Garry
 import Dissertation.PaperSpec.A.Sec5
 import Dissertation.Acceptance.A.Sec3
 import Dissertation.WellPosedness.Spec.Examples
-import Dissertation.WellPosedness.Spec.NotAssumption25
-import Dissertation.WellPosedness.Robustness.Example
+import Dissertation.WellPosedness.Spec.LiMin
 import Dissertation.WellPosedness.Existence.ClampExample
-import Dissertation.WellPosedness.Examples.MeanFieldMonotone
-import Dissertation.WellPosedness.Analysis.SMin
+import Dissertation.WellPosedness.BrownianPoisson.FrozenCell
+import LevyStochCalc.Brownian.ItoCellIsometry
+import LevyStochCalc.Ito.CompensatedCellIsometry
+import Dissertation.WellPosedness.Enlarged.Bot
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp
+import Dissertation.WellPosedness.Remarks.LinearMean
 import Dissertation.WellPosedness.Examples.LinearGenerator
 import Dissertation.WellPosedness.Analysis.DiagMatrix
 import Dissertation.WellPosedness.Examples.BrownianFiltration
-import Dissertation.WellPosedness.Examples.Brownian
 import Dissertation.WellPosedness.Examples.Nemytskii
-import Dissertation.WellPosedness.Examples.FullLaw
 import Dissertation.WellPosedness.Examples.FullLawBeyondRef
 
 /-!
@@ -134,7 +135,7 @@ theorem ex_concrete_i : PaperSpec.A.ex_concrete_i.{u, v, w} := by
       hβ₁ hβ₂ (0 : EuclideanSpace ℝ (Fin 1))
   refine ⟨hJ, ⟨hξm, hξ, originValues_iff_coeffOrigin.mpr (coeffOrigin_affine T)⟩, h23, hG, ?_,
     h25⟩
-  rw [Dissertation.WellPosedness.sMin_one]
+  rw [sMin_one]
   norm_num
 
 /-- Example 5.1(i), the pairings. -/

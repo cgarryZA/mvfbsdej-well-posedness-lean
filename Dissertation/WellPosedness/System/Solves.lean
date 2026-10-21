@@ -47,14 +47,15 @@ Two conditions of `SolvesForced` go beyond the hypotheses of the paper.
   energy on `[0, T]`, and `g(X_T, Law X_T)` to be square integrable, since the integrals are the
   `L²` ones. Under Assumptions 2.2–2.3 this follows from (4.2)–(4.3). Without Assumption 2.2, as
   in Theorem 3.3, it asks `b` and `f` along the solution to be square integrable in time rather
-  than integrable. The equations also ask `ξ₀` to be square integrable; for a solution in `ℍ²`
+  than integrable. The equations also ask `ξ₀` to be square integrable; for a solution in `𝕊`
   this follows from the forward equation at almost every time, as the square integrability of
   the terminal value follows from the backward one.
 * **Measurability of the coefficient processes**, (2.5). For `λ ≠ 0` they are jointly and
-  progressively measurable (for `h`, its representative `γ` is). The paper derives this from
-  Lemma A.1 and the Borel measurability of the coefficients; for coefficients jointly measurable
-  with the evaluation σ-algebra on `P₂(H)`, `CoeffBorel`, it holds along every progressive tuple
-  at every time and for the exact law (`CoeffBorel.crossEval`).
+  progressively measurable (for `h`, its representative `γ` is). The paper derives this from Lemma
+  A.1 and the Borel measurability of the coefficients; for coefficients jointly measurable with the
+  evaluation σ-algebra on `P₂(H)`, `Dissertation.WellPosedness.Existence.CoeffBorel`, it holds along
+  every progressive tuple at every time and for the exact law
+  (`Dissertation.WellPosedness.Existence.CoeffBorel.crossEval`).
 
 The `L²(ν)` channel needs no condition of its own: `U` is marked progressively measurable, so for
 every time `s` the class `uLift` of `ω ↦ U_s(ω, ·) ∈ L²(ν; ℝᵐ)` is strongly `ℱ_s`-measurable

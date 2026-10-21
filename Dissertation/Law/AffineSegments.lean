@@ -4,7 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Mathlib.Analysis.Convex.Jensen
-import Mathlib.LinearAlgebra.Basis.VectorSpace
 import Mathlib.LinearAlgebra.FiniteDimensional.Defs
 import Mathlib.LinearAlgebra.Dimension.Finite
 import Mathlib.Data.Real.Basic

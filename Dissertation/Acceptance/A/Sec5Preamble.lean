@@ -5,8 +5,7 @@ Authors: Christian Garry
 -/
 import Dissertation.PaperSpec.A.Sec5Preamble
 import Dissertation.WellPosedness.Remarks.NoSolution
-import Dissertation.WellPosedness.Spec.NotAssumption25
-import LevyStochCalc.Driver.Existence
+import Dissertation.WellPosedness.Spec.LiMin
 
 /-!
 # The preamble of Section 5 of the well-posedness paper: proofs

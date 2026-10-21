@@ -35,7 +35,7 @@ universe u v w
 such that: in the standing setting, for `T > 0`, if the coefficients with initial datum `ξ₀`
 satisfy (2.3) and Assumptions 2.2–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, then
 `λ*(T, L) ∈ (0, 1]`, and for every `λ ∈ [λ*, 1]` and every `λ ∈ [0, λ*]`, every forcing `q` and
-any two solutions of (4.1) at `λ` in `ℍ` with the datum `ξ₀` and the forcing `q`, `X` and `Y` are
+any two solutions of (4.1) at `λ` in `𝕊` with the datum `ξ₀` and the forcing `q`, `X` and `Y` are
 indistinguishable on `[0, T]` and the differences of `Z` and of `U` have zero energy. -/
 def sec4_uniq_homotopy : Prop :=
   ∃ lamStar : ℝ → ℝ → ℝ,

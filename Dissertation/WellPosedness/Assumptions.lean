@@ -3,7 +3,9 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import Mathlib
+import Mathlib.Analysis.InnerProductSpace.Adjoint
+import Mathlib.MeasureTheory.Function.LpSeminorm.Basic
+import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
 
 /-!
 # The paper's structural assumptions as predicates
@@ -30,10 +32,10 @@ Expectations are absorbed into the inner products — `𝔼⟨·,·⟩` is `⟪�
 the forward operator `G : HX →L HY` pairs `δf` with `δX` and `δg_T` with `δX_T`, and its adjoint
 pairs `δb` with `δY`; the `Z` and `U` channels get their own `GZ` and `GU`, which in the concrete
 model are `G` acting on matrix- and `L²(ν)`-valued arguments. The square case `n = m` is the
-instance in which all six spaces and all three operators coincide (`SquareCoupling`).
+instance in which all six spaces and all three operators coincide.
 
-Assumption 2.3 is stated over an abstract law distance rather than `W₂` itself, so this file stays
-Mathlib-only; its instance at `W₂` on `P₂(H)` is `Dissertation.Law.LipschitzCoefficientsP2`.
+Assumption 2.3 is stated over an abstract law distance `dΛ` rather than `W₂` itself; its instance
+at `W₂` on `P₂(H)` is `Dissertation.Law.LipschitzCoefficientsP2`.
 
 ## Main definitions
 
@@ -42,7 +44,17 @@ Mathlib-only; its instance at `W₂` on `P₂(H)` is `Dissertation.Law.Lipschitz
 * `GCoerciveForward`, `GCoerciveBackward` — Assumption 2.4.
 * `Constants` — the admissible constant pattern, including the two rank cases.
 * `OriginIntegrable` — the origin-value clause of Assumption 2.2.
+* `Tuple`, `tupleNorm` — the tuple space `H` as a product of the four channels, and the sum of
+  the four channel norms.
 * `LipschitzCoefficients`, `LipschitzTerminal` — Assumption 2.3.
+
+## Main statements
+
+* `Constants.square` — in the square case the admissible constants are the nonnegative ones with
+  `α + β₁ > 0` and `β₁ + β₂ > 0`.
+* `Constants.dichotomy` — either `β₁ > 0`, or `β₁ = 0` and `α, β₂ > 0`.
+* `originIntegrable_const` — constant origin values are square integrable over a finite horizon.
+* `tupleNorm_nonneg` — the sum of the four channel norms is nonnegative.
 -/
 
 namespace Dissertation.WellPosedness
@@ -202,6 +214,11 @@ abbrev Tuple (HX HY HZY HUY : Type*) [NormedAddCommGroup HX] [InnerProductSpace 
 /-- The sum of the four channel norms, the paper's `|δX| + |δY| + |δZ|_F + ‖δU‖_{L²(ν)}`. -/
 noncomputable def tupleNorm (θ : Tuple HX HY HZY HUY) : ℝ :=
   ‖θ.1‖ + ‖θ.2.1‖ + ‖θ.2.2.1‖ + ‖θ.2.2.2‖
+
+omit [CompleteSpace HX] [CompleteSpace HY] [CompleteSpace HZY] [CompleteSpace HUY] in
+/-- The sum of the four channel norms is nonnegative. -/
+theorem tupleNorm_nonneg (θ : Tuple HX HY HZY HUY) : 0 ≤ tupleNorm θ := by
+  unfold tupleNorm; positivity
 
 /-- **Assumption 2.3, interior**: the four coefficient functions are jointly Lipschitz in the
 tuple and in the law, with one constant `L`. The law argument ranges over an abstract type `Λ`

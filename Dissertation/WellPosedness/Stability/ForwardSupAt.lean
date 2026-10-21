@@ -5,7 +5,6 @@ Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.Stability.SupUpgrade
 import LevyStochCalc.Brownian.MultidimItoCongr
-import LevyStochCalc.Ito.CompensatedLocalityWindow
 
 /-!
 # The forward difference up to an intermediate time

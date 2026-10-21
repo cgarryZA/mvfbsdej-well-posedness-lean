@@ -41,6 +41,8 @@ the constant of Example 5.3 for the Hilbert norm `|·|_H` of `H`.
 * `integrable_markIntegrand` — the integrand of `φ̄` is `ν`-integrable.
 * `markKernel_congr` — `φ̄` does not depend on the representatives of the `L²(ν)` channels.
 * `kernelLipschitzH_markKernel` — the Lipschitz bound with constant `Lip(ψ̄) max(m, m^{1/2})`.
+* `tupleNorm_le_two_mul_norm_toL2` — the sum `|x| + |y| + |z|_F + ‖u‖` of the channel norms of a
+  tuple, the norm of the tuple differences in Assumption 2.3, is at most twice its Hilbert norm.
 -/
 
 open MeasureTheory Filter Dissertation.Law
@@ -130,12 +132,14 @@ theorem norm_toL2_pointAt_sq (θ : Tuple HX HY HZY (Lp HV 2 ν)) (e : E) :
 
 variable [MeasurableSpace HV] [BorelSpace HV]
 
+omit [MeasurableSpace HV] [BorelSpace HV] in
 /-- The point of a tuple at the marks is almost everywhere strongly measurable in the mark. -/
 theorem aestronglyMeasurable_pointAt (θ : Tuple HX HY HZY (Lp HV 2 ν)) :
     AEStronglyMeasurable (pointAt θ) ν :=
   aestronglyMeasurable_const.prodMk (aestronglyMeasurable_const.prodMk
     (aestronglyMeasurable_const.prodMk (Lp.aestronglyMeasurable θ.2.2.2)))
 
+omit [MeasurableSpace HV] [BorelSpace HV] in
 /-- The squared Hilbert norm of the point of a tuple is integrable over the marks, with integral
 `ν(E) (|x|² + |y|² + |z|²_F) + ‖u‖²_{L²(ν)}`. -/
 theorem integrable_norm_toL2_pointAt_sq [IsFiniteMeasure ν] (θ : Tuple HX HY HZY (Lp HV 2 ν)) :
@@ -153,6 +157,7 @@ theorem integrable_norm_toL2_pointAt_sq [IsFiniteMeasure ν] (θ : Tuple HX HY H
   refine ⟨hc.add hu, ?_⟩
   rw [integral_add hc hu, integral_const, smul_eq_mul, ← norm_sq_eq_integral_norm_sq]
 
+omit [MeasurableSpace HV] [BorelSpace HV] in
 /-- The Hilbert norm of the point of a tuple is square integrable over the marks. -/
 theorem memLp_norm_toL2_pointAt [IsFiniteMeasure ν] (θ : Tuple HX HY HZY (Lp HV 2 ν)) :
     MemLp (fun e => ‖toL2 (pointAt θ e)‖) 2 ν :=
@@ -161,6 +166,7 @@ theorem memLp_norm_toL2_pointAt [IsFiniteMeasure ν] (θ : Tuple HX HY HZY (Lp H
       (aestronglyMeasurable_pointAt θ))).mpr
     (integrable_norm_toL2_pointAt_sq θ).1
 
+omit [MeasurableSpace HV] [BorelSpace HV] in
 /-- **The mark integral of the point norm**: for `m = ν(E) < ∞`,
 `∫_E |p_e|₂ ν(de) ≤ max(m, m^{1/2}) |θ|_H`, with `p_e = (x, y, z, u(e))`. -/
 theorem integral_norm_toL2_pointAt_le [IsFiniteMeasure ν] (θ : Tuple HX HY HZY (Lp HV 2 ν)) :
@@ -191,6 +197,7 @@ theorem integral_norm_toL2_pointAt_le [IsFiniteMeasure ν] (θ : Tuple HX HY HZY
   calc Real.sqrt (m * (m * A + D)) ≤ Real.sqrt ((M * ‖toL2 θ‖) ^ 2) := Real.sqrt_le_sqrt hle
     _ = M * ‖toL2 θ‖ := Real.sqrt_sq (by positivity)
 
+omit [MeasurableSpace HV] [BorelSpace HV] in
 /-- **The mark integral of the point distance**: for `m = ν(E) < ∞`,
 `∫_E |p_e − q_e|₂ ν(de) ≤ max(m, m^{1/2}) |θ₁ − θ₂|_H`. -/
 theorem integral_norm_toL2_pointAt_sub_le [IsFiniteMeasure ν]
@@ -225,6 +232,7 @@ noncomputable def markKernel (ν : Measure E)
     (θ θ' : Tuple HX HY HZY (Lp HV 2 ν)) : F :=
   ∫ e, ψ t (pointAt θ e) (pointAt θ' e) ∂ν
 
+omit [CompleteSpace F] in
 /-- **The mark-integrated kernel is well defined on classes**: evaluating the pointwise kernel at
 any representatives `v`, `v'` of the `L²(ν)` channels `u`, `u'` gives the same integral. -/
 theorem markKernel_congr (ψ : ℝ → Tuple HX HY HZY HV → Tuple HX HY HZY HV → F) (t : ℝ)
@@ -246,6 +254,10 @@ variable [MeasurableSpace HX] [MeasurableSpace HY] [MeasurableSpace HZY] [Measur
   [SecondCountableTopology HV]
   {ψ : ℝ → Tuple HX HY HZY HV → Tuple HX HY HZY HV → F} {L : ℝ}
 
+omit [NormedSpace ℝ F] [CompleteSpace F] [MeasurableSpace HX] [MeasurableSpace HY]
+  [MeasurableSpace HZY] [MeasurableSpace HV] [BorelSpace HX] [BorelSpace HY] [BorelSpace HZY]
+  [BorelSpace HV] [SecondCountableTopology HX] [SecondCountableTopology HY]
+  [SecondCountableTopology HZY] [SecondCountableTopology HV] in
 /-- A pointwise kernel Lipschitz for the Hilbert norm is bounded by its value at the origin and
 the Hilbert norms of its arguments. -/
 theorem KernelLipschitzH.norm_le (hψ : KernelLipschitzH L ψ) (t : ℝ)
@@ -257,6 +269,10 @@ theorem KernelLipschitzH.norm_le (hψ : KernelLipschitzH L ψ) (t : ℝ)
     _ ≤ ‖ψ t 0 0‖ + ‖ψ t p p' - ψ t 0 0‖ := norm_add_le _ _
     _ ≤ ‖ψ t 0 0‖ + L * (‖toL2 p‖ + ‖toL2 p'‖) := by linarith
 
+omit [NormedSpace ℝ F] [CompleteSpace F] [MeasurableSpace HX] [MeasurableSpace HY]
+  [MeasurableSpace HZY] [BorelSpace HX] [BorelSpace HY] [BorelSpace HZY]
+  [SecondCountableTopology HX] [SecondCountableTopology HY] [SecondCountableTopology HZY]
+  [SecondCountableTopology HV] [MeasurableSpace HV] [BorelSpace HV] in
 /-- The integrand of the mark-integrated kernel is `ν`-integrable, for a finite `ν` and a
 pointwise kernel Lipschitz for the Hilbert norm. -/
 theorem integrable_markIntegrand [IsFiniteMeasure ν] (hL : 0 ≤ L) (hψ : KernelLipschitzH L ψ)
@@ -271,6 +287,10 @@ theorem integrable_markIntegrand [IsFiniteMeasure ν] (hL : 0 ≤ L) (hψ : Kern
       ((memLp_norm_toL2_pointAt θ').integrable one_le_two)).const_mul L)
   exact hb.mono' hm (ae_of_all _ fun e => hψ.norm_le t _ _)
 
+omit [CompleteSpace F] [MeasurableSpace HX] [MeasurableSpace HY] [MeasurableSpace HZY]
+  [BorelSpace HX] [BorelSpace HY] [BorelSpace HZY] [SecondCountableTopology HX]
+  [SecondCountableTopology HY] [SecondCountableTopology HZY] [SecondCountableTopology HV]
+  [MeasurableSpace HV] [BorelSpace HV] in
 /-- **The mark-integrated kernel is Lipschitz**, for a finite `ν` with `m = ν(E)` and a pointwise
 kernel Lipschitz for the Hilbert norm with constant `Lip(ψ̄) = L`:
 `‖φ̄(t, θ₁, θ'₁) − φ̄(t, θ₂, θ'₂)‖ ≤ L max(m, m^{1/2}) (|θ₁ − θ₂|_H + |θ'₁ − θ'₂|_H)`. -/
@@ -304,11 +324,31 @@ theorem kernelLipschitzH_markKernel [IsFiniteMeasure ν] (hL : 0 ≤ L)
         · exact integral_norm_toL2_pointAt_sub_le θ'₁ θ'₂
     _ = L * M * (‖toL2 θ₁ - toL2 θ₂‖ + ‖toL2 θ'₁ - toL2 θ'₂‖) := by ring
 
+omit [BorelSpace HX] [BorelSpace HY] [BorelSpace HZY] [SecondCountableTopology HX]
+  [SecondCountableTopology HY] [SecondCountableTopology HZY] [SecondCountableTopology HV] in
 /-- The point of a tuple at the marks is measurable in the mark. -/
 theorem measurable_pointAt (θ : Tuple HX HY HZY (Lp HV 2 ν)) : Measurable (pointAt θ) :=
   measurable_const.prodMk (measurable_const.prodMk
     (measurable_const.prodMk (Lp.stronglyMeasurable θ.2.2.2).measurable))
 
 end Kernel
+
+/-! ### The sum of the channel norms -/
+
+section Norm
+
+variable {HX HY HZY HUY : Type*} [NormedAddCommGroup HX] [InnerProductSpace ℝ HX]
+  [NormedAddCommGroup HY] [InnerProductSpace ℝ HY] [NormedAddCommGroup HZY]
+  [InnerProductSpace ℝ HZY] [NormedAddCommGroup HUY] [InnerProductSpace ℝ HUY]
+
+/-- The sum of the four channel norms of a tuple is at most twice its Hilbert norm. -/
+theorem tupleNorm_le_two_mul_norm_toL2 (θ : Tuple HX HY HZY HUY) :
+    tupleNorm θ ≤ 2 * ‖toL2 θ‖ := by
+  have h := tupleNorm_sq_le θ
+  rw [← norm_toL2_sq] at h
+  exact (pow_le_pow_iff_left₀ (tupleNorm_nonneg θ) (by positivity) two_ne_zero).mp
+    (by rw [mul_pow]; linarith)
+
+end Norm
 
 end Dissertation.WellPosedness.System

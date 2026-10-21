@@ -3,7 +3,6 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import Dissertation.WellPosedness.BrownianPoisson.Estimate
 import Dissertation.WellPosedness.Stability.Sub
 import Dissertation.WellPosedness.Stability.SupUpgrade
 import Dissertation.WellPosedness.System.Solves
@@ -16,17 +15,17 @@ The solution space of the well-posedness paper is
 
 `‖Θ‖²_𝕊 = 𝔼 sup_{t ≤ T} |X_t|² + 𝔼 sup_{t ≤ T} |Y_t|² + 𝔼 ∫_0^T (|Z_t|²_F + ‖U_t‖²_{L²(ν)}) dt`,
 
-the quantity `supSize`. Along a solution of the `λ`-forced system (4.1) each coordinate of `X`
-solves a linear forward equation, which is a linear backward equation with its own terminal
-value, and each coordinate of `(Y, Z, U)` solves a linear backward equation with
-square-integrable data, so Lemma 4.1 gives `𝔼 sup_{t ≤ T} |X_{i,t}|² < ∞` and
-`𝔼 sup_{t ≤ T} |Y_{k,t}|² < ∞`; the integrands `Z, U` have finite energy by the solution
-predicate. The difference of two solutions of (4.1), at any two parameters, with any two sets of
-coefficients, initial data and forcings, has finite `𝕊`-norm, since the difference of two
-solutions of a linear equation solves the differenced linear equation. This is the finiteness of
-the left-hand side of (4.14) that the a-priori estimate absorbs, as in Remark 3.2 and in the proof
-of Theorem 3.3. The path and measurability conditions of `𝕊` are those of the solution predicate:
-`X, Y` adapted with right-continuous paths, `Z, U` progressively measurable.
+the quantity `Dissertation.WellPosedness.Stability.supSize`. Along a solution of the `λ`-forced
+system (4.1) each coordinate of `X` solves a linear forward equation, which is a linear backward
+equation with its own terminal value, and each coordinate of `(Y, Z, U)` solves a linear backward
+equation with square-integrable data, so Lemma 4.1 gives `𝔼 sup_{t ≤ T} |X_{i,t}|² < ∞` and
+`𝔼 sup_{t ≤ T} |Y_{k,t}|² < ∞`; the integrands `Z, U` have finite energy by the solution predicate.
+The difference of two solutions of (4.1), at any two parameters, with any two sets of coefficients,
+initial data and forcings, has finite `𝕊`-norm, since the difference of two solutions of a linear
+equation solves the differenced linear equation. This is the finiteness of the left-hand side of
+(4.14) that the a-priori estimate absorbs, as in Remark 3.2 and in the proof of Theorem 3.3. The
+path and measurability conditions of `𝕊` are those of the solution predicate: `X, Y` adapted with
+right-continuous paths, `Z, U` progressively measurable.
 
 The filtration is one on which Lemma 4.1 applies: its null sets lie in its time-`0` field, its
 right-continuation is constant before `0`, and it admits a cross witness.

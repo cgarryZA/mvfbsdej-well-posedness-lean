@@ -4,11 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import LevyStochCalc.BSDEJ.CadlagLegs
-import LevyStochCalc.Brownian.ItoLocality
-import LevyStochCalc.Brownian.CrossOrthogonalityLimit
-import LevyStochCalc.Poisson.CompensatedNonpos
 import LevyStochCalc.Ito.CompensatedLocalityStopping
-import LevyStochCalc.Ito.CompensatedLocalityWindow
 import LevyStochCalc.Martingale.BDGTwo
 import Dissertation.WellPosedness.Martingale.Lenglart
 import Dissertation.WellPosedness.Martingale.EnergyHitting

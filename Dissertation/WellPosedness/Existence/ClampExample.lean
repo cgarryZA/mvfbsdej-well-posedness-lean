@@ -4,7 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.Existence.ClampAffine
-import Dissertation.WellPosedness.Existence.AffineExample
 import Dissertation.WellPosedness.Existence.GlobalEnl
 import Dissertation.WellPosedness.System.PaperUniquenessInt
 import LevyStochCalc.Driver.GaussianInitial

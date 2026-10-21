@@ -20,7 +20,7 @@ Lipschitz continuity alone. The linear mean-field system of Example 3.2 of Li an
 `−dY_t = 𝔼[X_t] dt − Z_t dW_t − ∫_E U_t(e) Ñ(dt, de)`,
 `X_0 = ξ₀`, `Y_T = −𝔼[X_T]`,
 
-satisfies Assumptions 2.2 and 2.3 and (2.3), and has no solution in `ℍ²_weak` on the horizon
+satisfies Assumptions 2.2 and 2.3 and (2.3), and has no solution in `ℍ²` on the horizon
 `T = 3π/4` when `𝔼 ξ₀ ≠ 0`.
 
 Along a solution the drift `𝔼[Y_s]`, the driver `𝔼[X_s]` and the terminal value `−𝔼[X_T]` are
@@ -35,7 +35,7 @@ is square integrable. The harmonic invariant of this two-point problem gives
 `T = 3π/4`.
 
 The argument uses only the expectations of the two identities of (1.1), so it holds over any
-filtration carrying the driver, for the solutions in `ℍ²_weak` of `SolvesInt` and of
+filtration carrying the driver, for the solutions in `ℍ²` of `SolvesInt` and of
 `PaperWeakSolutionInt`.
 
 ## Main statements
@@ -47,7 +47,7 @@ filtration carrying the driver, for the solutions in `ℍ²_weak` of `SolvesInt`
 * `SolvesInt.integral_mul_cos_add_sin_liMin`,
   `PaperWeakSolutionInt.integral_mul_cos_add_sin_liMin` — along a solution,
   `𝔼 X_T (cos T + sin T) = 𝔼 ξ₀`.
-* `not_paperWeakSolutionInt_liMin` — no solution in `ℍ²_weak` at `T = 3π/4` when `𝔼 ξ₀ ≠ 0`,
+* `not_paperWeakSolutionInt_liMin` — no solution in `ℍ²` at `T = 3π/4` when `𝔼 ξ₀ ≠ 0`,
   over any filtration carrying the driver.
 -/
 
@@ -126,7 +126,7 @@ variable {Ω : Type u} [MeasurableSpace Ω] {E : Type v} [MeasurableSpace E] {ν
   {X Y : Fin 1 → ℝ → Ω → ℝ} {Z : Fin 1 → ℝ → Ω → Fin 1 → ℝ} {U : Fin 1 → ℝ → Ω → E → ℝ}
   {γ : Fin 1 → ℝ → Ω → E → ℝ}
 
-/-- **The harmonic invariant along a solution in `ℍ²_weak` of `SolvesInt`.** For `T > 0` and a
+/-- **The harmonic invariant along a solution in `ℍ²` of `SolvesInt`.** For `T > 0` and a
 solution of the system of Example 3.2 of Li and Min with initial datum `ξ₀`, over any filtration
 carrying the driver, `𝔼 X_T (cos T + sin T) = 𝔼 ξ₀`. -/
 theorem SolvesInt.integral_mul_cos_add_sin_liMin
@@ -160,7 +160,7 @@ theorem SolvesInt.integral_mul_cos_add_sin_liMin
     simp only [Set.indicator_of_mem hsI]
     exact tupleMean_lawP2_fst_apply hs
 
-/-- **The harmonic invariant along a solution in `ℍ²_weak`.** For `T > 0` and a solution of the
+/-- **The harmonic invariant along a solution in `ℍ²`.** For `T > 0` and a solution of the
 system of Example 3.2 of Li and Min with initial datum `ξ₀` in the sense of
 `PaperWeakSolutionInt`, over any filtration carrying the driver,
 `𝔼 X_T (cos T + sin T) = 𝔼 ξ₀`. -/
@@ -173,7 +173,7 @@ theorem PaperWeakSolutionInt.integral_mul_cos_add_sin_liMin
 
 /-! ### No solution at `T = 3π/4` -/
 
-/-- **No solution in `ℍ²_weak` at `T = 3π/4`.** Over any filtration carrying the driver, the
+/-- **No solution in `ℍ²` at `T = 3π/4`.** Over any filtration carrying the driver, the
 system of Example 3.2 of Li and Min has no solution in the sense of `PaperWeakSolutionInt` on the
 horizon `T = 3π/4` from an initial datum `ξ₀` with `𝔼 ξ₀ ≠ 0`. -/
 theorem not_paperWeakSolutionInt_liMin (hξ : ∫ ω, ξ₀ 0 ω ∂P ≠ 0) :

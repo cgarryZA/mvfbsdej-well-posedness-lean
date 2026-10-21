@@ -4,7 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.Enlarged.Driver
-import LevyStochCalc.Driver.JointFiltration
 import LevyStochCalc.Driver.TrivialAtNegative
 
 /-!

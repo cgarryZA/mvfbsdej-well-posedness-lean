@@ -56,6 +56,7 @@ noncomputable def nemytskiiFun (h : ℝ → Tuple HX HY HZY HV → Tuple HX HY H
     (t : ℝ) (θ θ' : Tuple HX HY HZY (Lp HV 2 ν)) : E → HW :=
   fun e => h t (pointAt θ e) (pointAt θ' e) e
 
+omit [NormedAddCommGroup HW] [InnerProductSpace ℝ HW] in
 /-- **The Nemytskii map is well defined on classes**: evaluating the kernel at any
 representatives `v`, `v'` of the `L²(ν)` channels `u`, `u'` gives a map equal to the Nemytskii
 map `ν`-almost everywhere. -/
@@ -74,6 +75,7 @@ noncomputable def nemytskii (h : ℝ → Tuple HX HY HZY HV → Tuple HX HY HZY 
     (θ θ' : Tuple HX HY HZY (Lp HV 2 ν)) : Lp HW 2 ν :=
   if hm : MemLp (nemytskiiFun h t θ θ') 2 ν then hm.toLp _ else 0
 
+omit [InnerProductSpace ℝ HW] in
 /-- For a square-integrable Nemytskii map, `nemytskii` is its class. -/
 theorem nemytskii_of_memLp {h : ℝ → Tuple HX HY HZY HV → Tuple HX HY HZY HV → E → HW} {t : ℝ}
     {θ θ' : Tuple HX HY HZY (Lp HV 2 ν)} (hm : MemLp (nemytskiiFun h t θ θ') 2 ν) :
@@ -86,6 +88,9 @@ variable [MeasurableSpace HX] [MeasurableSpace HY] [MeasurableSpace HZY] [Measur
   [SecondCountableTopology HX] [SecondCountableTopology HY] [SecondCountableTopology HZY]
   [SecondCountableTopology HV] [IsFiniteMeasure ν]
 
+omit [MeasurableSpace HX] [MeasurableSpace HY] [MeasurableSpace HZY] [BorelSpace HX] [BorelSpace HY]
+  [BorelSpace HZY] [SecondCountableTopology HX] [SecondCountableTopology HY]
+  [SecondCountableTopology HZY] [SecondCountableTopology HV] [MeasurableSpace HV] [BorelSpace HV] in
 /-- **The `L²(ν)` norm of the point norm**: for `m = ν(E) < ∞`,
 `(∫_E |p_e|₂² ν(de))^{1/2} ≤ max(1, m^{1/2}) |θ|_H`, with `p_e = (x, y, z, u(e))`. -/
 theorem norm_toLp_norm_toL2_pointAt_le (θ : Tuple HX HY HZY (Lp HV 2 ν)) :
@@ -118,6 +123,9 @@ theorem norm_toLp_norm_toL2_pointAt_le (θ : Tuple HX HY HZY (Lp HV 2 ν)) :
 
 variable {h : ℝ → Tuple HX HY HZY HV → Tuple HX HY HZY HV → E → HW} {L : ℝ}
 
+omit [InnerProductSpace ℝ HW] [BorelSpace HX] [BorelSpace HY] [BorelSpace HZY]
+  [SecondCountableTopology HX] [SecondCountableTopology HY] [SecondCountableTopology HZY]
+  [SecondCountableTopology HV] in
 /-- **The Nemytskii map is square integrable**, for a finite `ν`, a kernel jointly strongly
 measurable in `(p, p', e)` and Lipschitz for the Hilbert norm uniformly in the mark, with
 `h̄(t, 0, 0, ·) ∈ L²(ν; HW)`. -/
@@ -146,6 +154,9 @@ theorem memLp_nemytskiiFun {t : ℝ}
     _ ≤ ‖h t 0 0 e‖ + ‖h t (pointAt θ e) (pointAt θ' e) e - h t 0 0 e‖ := norm_add_le _ _
     _ ≤ _ := by linarith
 
+omit [InnerProductSpace ℝ HW] [BorelSpace HX] [BorelSpace HY] [BorelSpace HZY]
+  [SecondCountableTopology HX] [SecondCountableTopology HY] [SecondCountableTopology HZY]
+  [SecondCountableTopology HV] in
 /-- **The Nemytskii map is Lipschitz into `L²(ν; HW)`**: for a finite `ν` with `m = ν(E)`, a
 kernel jointly strongly measurable in `(p, p', e)`, Lipschitz for the Hilbert norm with a
 constant `L ≥ 0` uniform in the time and the mark, and with `h̄(t, 0, 0, ·) ∈ L²(ν; HW)` at every

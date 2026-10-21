@@ -4,6 +4,8 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.System.HilbertW2Space
+import Mathlib.MeasureTheory.Measure.SeparableMeasure
+import Mathlib.MeasureTheory.SpecificCodomains.Pi
 
 /-!
 # The `U`-marginal of a law on the tuple space

@@ -5,7 +5,9 @@ Authors: Christian Garry
 -/
 import Dissertation.Acceptance.A.Sec2Basics
 import Dissertation.Acceptance.A.Witness
-import Dissertation.WellPosedness.System.PaperSolutionSolves
+import Mathlib.RingTheory.Flat.FaithfullyFlat.Basic
+import Mathlib.RingTheory.Flat.TorsionFree
+import Mathlib.RingTheory.SimpleRing.Principal
 
 /-!
 # Nonzero instances of §2 and Theorem 3.1 of the well-posedness paper
@@ -272,7 +274,7 @@ open Dissertation.WellPosedness.System Dissertation.WellPosedness.Existence
   Dissertation.WellPosedness.Enlarged Dissertation.WellPosedness.Spec Dissertation.PaperSpec.A
   Dissertation.WellPosedness.Stability LevyStochCalc LevyStochCalc.BSDEJ.Solves
 
-/-- The forward component of a solution in `ℍ` starts at the initial datum: `X₀ = ξ₀` almost
+/-- The forward component of a solution in `𝕊` starts at the initial datum: `X₀ = ξ₀` almost
 surely, coordinatewise. -/
 theorem Solution.X_zero_ae {Ω : Type*} {𝒢₀ : MeasurableSpace Ω} [mΩ : MeasurableSpace Ω]
     {E : Type*} [MeasurableSpace E] {ν : Measure E} [SigmaFinite ν]

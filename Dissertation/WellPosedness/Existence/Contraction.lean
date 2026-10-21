@@ -6,8 +6,6 @@ Authors: Christian Garry
 import Dissertation.WellPosedness.Existence.ForcingAlgebra
 import Dissertation.WellPosedness.Existence.SizeCompare
 import Dissertation.WellPosedness.Existence.WPZero
-import Dissertation.WellPosedness.Stability.LipschitzRate
-import Dissertation.WellPosedness.System.BridgeLip
 
 /-!
 # The contraction of the continuation map on forcings
@@ -31,7 +29,7 @@ the difference of the data of `Θ¹` and `Θ²`, then, since the data size is qu
 `dataSize(ζ Ψ(Θ¹) − ζ Ψ(Θ²)) ≤ ζ² K_L C_s Δ`.
 
 The stability constant is `C₀(T)` at `λ₀ = 0` and the constant of (4.14) at `λ₀ ≥ λ̲ > 0`; both
-enter as the hypothesis on `supSize`.
+enter as the hypothesis on `Dissertation.WellPosedness.Stability.supSize`.
 
 ## Main definitions
 

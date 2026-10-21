@@ -5,7 +5,6 @@ Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.BrownianPoisson.Estimate
 import Dissertation.WellPosedness.MarkCoding.Coding
-import Dissertation.WellPosedness.BrownianPoisson.Hypotheses
 import Dissertation.WellPosedness.MarkCoding.Integral
 import LevyStochCalc.Driver.Existence
 import LevyStochCalc.Driver.AugJointRightCont

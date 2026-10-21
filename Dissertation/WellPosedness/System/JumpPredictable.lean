@@ -13,10 +13,11 @@ import Dissertation.WellPosedness.Martingale.LocalWeight
 The jump coefficient of (1.1) is evaluated at the predictable tuple
 `Θ⁻_s = (X_{s−}, Y_{s−}, Z_s, U_s)` and its law. For `X, Y` adapted on `[0, T]` with left limits on
 `(0, T]` and `Z, U` predictable, the tuple `Θ⁻`, cut to the times of `(0, T]`, is a predictable
-field in the tuple space `H`; composed with a jointly measurable function of the time, the tuple
-and the mark, and cut to the positive times, it gives a marked predictable integrand. With the
-canonical representative `lpRep` of the elements of `L²(ν; ℝⁿ)`, this gives a marked predictable
-representative of `coeffJump` at `Θ⁻`, equal to it at every time of `(0, T]`.
+field in the tuple space `H`; composed with a jointly measurable function of the time, the tuple and
+the mark, and cut to the positive times, it gives a marked predictable integrand. With the canonical
+representative `Dissertation.Law.lpRep` of the elements of `L²(ν; ℝⁿ)`, this gives a marked
+predictable representative of `Dissertation.WellPosedness.Existence.coeffJump` at `Θ⁻`, equal to it
+at every time of `(0, T]`.
 
 ## Main statements
 
@@ -24,8 +25,9 @@ representative of `coeffJump` at `Θ⁻`, equal to it at every time of `(0, T]`.
   in any measurable space and the mark, cut to the positive times, is marked predictable.
 * `measurable_predictableSigma_tupleAt_leftLim_Ioc` — the left-limit tuple cut to `(0, T]` is
   predictable.
-* `exists_markedPredictable_coeffJump_leftLim` — a marked predictable integrand equal to the
-  jump process of `coeffJump` at `Θ⁻` at every time of `(0, T]` and vanishing off `(0, T]`.
+* `exists_markedPredictable_coeffJump_leftLim` — a marked predictable integrand equal to the jump
+  process of `Dissertation.WellPosedness.Existence.coeffJump` at `Θ⁻` at every time of `(0, T]` and
+  vanishing off `(0, T]`.
 * `ae_markedEnergyMeasure_mem_Ioc` — almost every point of `Ω × [0, T] × E` has its time in
   `(0, T]`.
 -/
