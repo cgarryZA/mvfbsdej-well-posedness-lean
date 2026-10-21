@@ -293,9 +293,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.rem_diag_mono_converse",
-     "spec_hash": "ed839d34f480cba121a2e85359198f21",
+     "spec_hash": "ed839d34f480cba194f9b4ec1a6ab33d",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     }
@@ -307,7 +307,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: accepted"
+   "status": "formal: proved, review pending"
   },
   {
    "clauses": [
@@ -711,9 +711,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.rem_uniq_singular",
-     "spec_hash": "ed839d34f480cba1684b08269e1332e9",
+     "spec_hash": "ed839d34f480cba10194dd172ae858ce",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.rem_uniq_hypotheses",
      "witness_ok": true
     },
@@ -743,7 +743,7 @@
    "scope": "formal",
    "scope_note": "\"the proof of Theorem 3.5 uses Assumption 2.2\" describes a proof and is not a separate claim",
    "scope_reviewed": true,
-   "status": "formal: accepted"
+   "status": "formal: proved, review pending"
   },
   {
    "clauses": [
@@ -915,15 +915,18 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "MVFBSDEJ.WellPosedness.System.clampDrift",
+      "MVFBSDEJ.WellPosedness.System.meanY"
+     ],
      "defs_pending": [],
      "name": "main",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.prop_strict",
-     "spec_hash": "ed839d34f480cba187dc1facdd73b114",
+     "spec_hash": "ed839d34f480cba1ac9d315442ee6c22",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.prop_strict_hypotheses",
      "witness_ok": true
     }
@@ -935,7 +938,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: accepted"
+   "status": "formal: proved, review pending"
   },
   {
    "clauses": [
@@ -1071,9 +1074,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i_ham",
-     "spec_hash": "ed839d34f480cba1cf9f26355b828c6a",
+     "spec_hash": "ed839d34f480cba1de0fe729f9229481",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_concrete_i_ham_hypotheses",
      "witness_ok": true
     },
@@ -1089,9 +1092,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i",
-     "spec_hash": "ed839d34f480cba18c5c46dad71ae633",
+     "spec_hash": "ed839d34f480cba1612813db3d51eb90",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
@@ -1107,9 +1110,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i_pairing",
-     "spec_hash": "ed839d34f480cba1877fc9dad693a20c",
+     "spec_hash": "ed839d34f480cba1e3b9a4accff757f5",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
@@ -1125,9 +1128,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i_wp",
-     "spec_hash": "ed839d34f480cba13009edf88db6d533",
+     "spec_hash": "ed839d34f480cba1506dc8c6ec6c855a",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
@@ -1137,15 +1140,19 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "MVFBSDEJ.WellPosedness.Existence.clampAffineCoeffs",
+      "MVFBSDEJ.WellPosedness.System.clampDrift",
+      "MVFBSDEJ.WellPosedness.System.meanY"
+     ],
      "defs_pending": [],
      "name": "(i) with the drift (3.6): the assumptions",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i_clamp",
-     "spec_hash": "ed839d34f480cba164e61a64f4ae2071",
+     "spec_hash": "ed839d34f480cba1365ebd6fb2054619",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
@@ -1155,15 +1162,19 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "MVFBSDEJ.WellPosedness.Existence.clampAffineCoeffs",
+      "MVFBSDEJ.WellPosedness.System.clampDrift",
+      "MVFBSDEJ.WellPosedness.System.meanY"
+     ],
      "defs_pending": [],
      "name": "(i) with the drift (3.6): well-posedness",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i_clamp_wp",
-     "spec_hash": "ed839d34f480cba1180a9f6b3134ed03",
+     "spec_hash": "ed839d34f480cba14ad79e84514944bb",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
@@ -1179,9 +1190,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_concrete_ii_mean",
-     "spec_hash": "ed839d34f480cba198d518ce685dcbd5",
+     "spec_hash": "ed839d34f480cba1201ac202cfd7f160",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_concrete_ii_mean_hypotheses",
      "witness_ok": true
     },
@@ -1197,9 +1208,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_concrete_ii",
-     "spec_hash": "ed839d34f480cba15cf7f3328c0ad0e6",
+     "spec_hash": "ed839d34f480cba166211664eb867fcc",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
@@ -1215,9 +1226,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing",
-     "spec_hash": "ed839d34f480cba15f4aed2b1f37c43c",
+     "spec_hash": "ed839d34f480cba1f1b969560e6a9aa4",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
@@ -1233,9 +1244,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i_sharp",
-     "spec_hash": "ed839d34f480cba17e1f06c7ac4fc270",
+     "spec_hash": "ed839d34f480cba1dc357db7b96ed959",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     }
@@ -1247,7 +1258,7 @@
    "scope": "formal",
    "scope_note": "the derivation of (1.1) from the control problem by the stochastic maximum principle for jump diffusions is cited work (Tang and Li) and is not stated; the clauses state the system and its properties; the attribution of (ii) to Example 3.1 of Li and Min is a statement about cited work",
    "scope_reviewed": true,
-   "status": "formal: accepted"
+   "status": "formal: proved, review pending"
   },
   {
    "clauses": [
@@ -1604,9 +1615,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_potential",
-     "spec_hash": "ed839d34f480cba1c2e5952133294af3",
+     "spec_hash": "ed839d34f480cba16523fdc688d81d2e",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -1622,9 +1633,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_crowd",
-     "spec_hash": "ed839d34f480cba1b48a11129734eeaa",
+     "spec_hash": "ed839d34f480cba1a82bf9e504567577",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -1634,15 +1645,17 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "MVFBSDEJ.PaperSpec.ex55Coeffs"
+     ],
      "defs_pending": [],
      "name": "at ε = 0 and h_x = 0 the coefficients are those of Example 5.1(i)",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_coeffs",
-     "spec_hash": "ed839d34f480cba19928c3a0b47228fc",
+     "spec_hash": "ed839d34f480cba167303738811747c4",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -1658,9 +1671,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_ham",
-     "spec_hash": "ed839d34f480cba18d97e926abe7317b",
+     "spec_hash": "ed839d34f480cba1d34d57910d8efd96",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -1670,15 +1683,17 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "MVFBSDEJ.PaperSpec.ex55Coeffs"
+     ],
      "defs_pending": [],
      "name": "Assumptions 2.2–2.4 and (2.3), with L = max{β₁ + ε + ‖h_x‖, β₂ + ‖h_x‖, 1}",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer",
-     "spec_hash": "ed839d34f480cba16509577529722f06",
+     "spec_hash": "ed839d34f480cba1a0ae23b8776ff358",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -1688,15 +1703,17 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "MVFBSDEJ.PaperSpec.ex55Coeffs"
+     ],
      "defs_pending": [],
      "name": "the crowding interaction is monotone at every interaction strength ε ≥ 0",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_mono",
-     "spec_hash": "ed839d34f480cba18bebeea12a1b6e30",
+     "spec_hash": "ed839d34f480cba194f09fa2aaba28b6",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -1706,15 +1723,17 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "MVFBSDEJ.PaperSpec.ex55Coeffs"
+     ],
      "defs_pending": [],
      "name": "well-posedness at every interaction strength ε ≥ 0 (Theorem 3.5)",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_wp",
-     "spec_hash": "ed839d34f480cba1169a2b8090bb4149",
+     "spec_hash": "ed839d34f480cba11202a623204664fc",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -1730,9 +1749,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_twopoint",
-     "spec_hash": "ed839d34f480cba19106e59b87a9b227",
+     "spec_hash": "ed839d34f480cba194d65abbc01edd18",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_unit_hypotheses",
      "witness_ok": true
     },
@@ -1748,9 +1767,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_mean_corr",
-     "spec_hash": "ed839d34f480cba102e66341b336a802",
+     "spec_hash": "ed839d34f480cba1af8c6eab897cedbe",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_unit_hypotheses",
      "witness_ok": true
     },
@@ -1784,9 +1803,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_not_mean_corr",
-     "spec_hash": "ed839d34f480cba1dbd6dbdf35aeabbb",
+     "spec_hash": "ed839d34f480cba1951e3f16c9c34cb1",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_unit_hypotheses",
      "witness_ok": true
     },
@@ -1802,9 +1821,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_affine",
-     "spec_hash": "ed839d34f480cba1cad94cd2b0eab7be",
+     "spec_hash": "ed839d34f480cba18c66531422cddf42",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_unit_hypotheses",
      "witness_ok": true
     },
@@ -1832,15 +1851,17 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "MVFBSDEJ.PaperSpec.ex55Coeffs"
+     ],
      "defs_pending": [],
      "name": "for h_x = 0 the interaction is inert: Y = pX, Z = pσ_c/(1 + β₁p), U = p h_c/(1 + β₁p), Law(U_t) a Dirac mass, the correction vanishes, the tuple solves at every ε",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_inert",
-     "spec_hash": "ed839d34f480cba171de9af0a400dde6",
+     "spec_hash": "ed839d34f480cba188d139dd00a796ed",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_inert_hypotheses",
      "witness_ok": true
     },
@@ -1868,15 +1889,18 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "MVFBSDEJ.PaperSpec.ex55Coeffs",
+      "MVFBSDEJ.PaperSpec.ex55Linear"
+     ],
      "defs_pending": [],
      "name": "the linear equation has a unique solution X⁰ ∈ S²; Θ⁰ solves the system at ε = 0; 𝔼X⁰ = 0, v' = −(7/4)v + ½, v = (2/7)(1 − e^{−7t/4}); 𝔼‖U⁰_t − 𝔼U⁰_t‖² = v/4 and Law(U⁰_t) is not a Dirac mass",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_zero",
-     "spec_hash": "ed839d34f480cba1ed9e4db67a07557a",
+     "spec_hash": "ed839d34f480cba1760f8dff743aef45",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_spec_hypotheses",
      "witness_ok": true
     },
@@ -1892,9 +1916,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_symm",
-     "spec_hash": "ed839d34f480cba172821167f7b0d7ee",
+     "spec_hash": "ed839d34f480cba1fa55ab62a1f38181",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_unit_hypotheses",
      "witness_ok": true
     },
@@ -1904,15 +1928,18 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "MVFBSDEJ.PaperSpec.ex55Coeffs",
+      "MVFBSDEJ.PaperSpec.ex55Linear"
+     ],
      "defs_pending": [],
      "name": "the interaction is active: A(U⁰_t) ≠ 0 with positive probability at every t ∈ (0, T], and 𝔼∫_0^T ‖ε A(U_t)‖² dt > 0 for every ε > 0",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_active",
-     "spec_hash": "ed839d34f480cba1a2ecf4542b86cf40",
+     "spec_hash": "ed839d34f480cba1f9264e102f5aca27",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_spec_hypotheses",
      "witness_ok": true
     },
@@ -1922,15 +1949,17 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "MVFBSDEJ.PaperSpec.ex55Coeffs"
+     ],
      "defs_pending": [],
      "name": "the solution depends on ε: a tuple solving at two strengths has vanishing correction, and in the specialisation no tuple solves at two strengths",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_depends",
-     "spec_hash": "ed839d34f480cba116acd4770ae6431c",
+     "spec_hash": "ed839d34f480cba1e758772d3a0e8fd4",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_spec_hypotheses",
      "witness_ok": true
     }
@@ -1942,7 +1971,7 @@
    "scope": "formal",
    "scope_note": "the dealer-market reading (requests for quotes, valuation curves, routing, quotes affine in the curve, the uncontrolled exposure change at an event) is modelling and is not stated; the finite-player inspiration (Cont and Xiong) is a statement about cited work",
    "scope_reviewed": true,
-   "status": "formal: accepted"
+   "status": "formal: proved, review pending"
   },
   {
    "clauses": [
@@ -2071,9 +2100,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_not_mean_corr",
-     "spec_hash": "ed839d34f480cba1dbd6dbdf35aeabbb",
+     "spec_hash": "ed839d34f480cba1951e3f16c9c34cb1",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_unit_hypotheses",
      "witness_ok": true
     },
@@ -2083,15 +2112,17 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "MVFBSDEJ.PaperSpec.ex55Coeffs"
+     ],
      "defs_pending": [],
      "name": "the crowding interaction is monotone at every interaction strength ε ≥ 0",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_mono",
-     "spec_hash": "ed839d34f480cba18bebeea12a1b6e30",
+     "spec_hash": "ed839d34f480cba194f09fa2aaba28b6",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -2101,15 +2132,17 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "MVFBSDEJ.PaperSpec.ex55Coeffs"
+     ],
      "defs_pending": [],
      "name": "well-posedness at every interaction strength ε ≥ 0 (Theorem 3.5)",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_wp",
-     "spec_hash": "ed839d34f480cba1169a2b8090bb4149",
+     "spec_hash": "ed839d34f480cba11202a623204664fc",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -2119,15 +2152,18 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "MVFBSDEJ.PaperSpec.ex55Coeffs",
+      "MVFBSDEJ.PaperSpec.ex55Linear"
+     ],
      "defs_pending": [],
      "name": "Example 5.5: the interaction remains active along the solution",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_active",
-     "spec_hash": "ed839d34f480cba1a2ecf4542b86cf40",
+     "spec_hash": "ed839d34f480cba1f9264e102f5aca27",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_spec_hypotheses",
      "witness_ok": true
     }
@@ -2139,7 +2175,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: accepted"
+   "status": "formal: proved, review pending"
   },
   {
    "clauses": [
@@ -2269,15 +2305,18 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "MVFBSDEJ.WellPosedness.System.clampDrift",
+      "MVFBSDEJ.WellPosedness.System.meanY"
+     ],
      "defs_pending": [],
      "name": "expected diagonal monotonicity is strictly weaker (Proposition 3.8)",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.prop_strict",
-     "spec_hash": "ed839d34f480cba187dc1facdd73b114",
+     "spec_hash": "ed839d34f480cba1ac9d315442ee6c22",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.prop_strict_hypotheses",
      "witness_ok": true
     },
@@ -2293,9 +2332,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.rem_diag_mono_converse",
-     "spec_hash": "ed839d34f480cba121a2e85359198f21",
+     "spec_hash": "ed839d34f480cba194f9b4ec1a6ab33d",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
@@ -2305,15 +2344,17 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "MVFBSDEJ.PaperSpec.ex55Coeffs"
+     ],
      "defs_pending": [],
      "name": "the dealer interaction is monotone at every interaction strength (Example 5.5)",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_mono",
-     "spec_hash": "ed839d34f480cba18bebeea12a1b6e30",
+     "spec_hash": "ed839d34f480cba194f09fa2aaba28b6",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -2323,15 +2364,17 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "MVFBSDEJ.PaperSpec.ex55Coeffs"
+     ],
      "defs_pending": [],
      "name": "the dealer market is well posed at every interaction strength (Example 5.5)",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_wp",
-     "spec_hash": "ed839d34f480cba1169a2b8090bb4149",
+     "spec_hash": "ed839d34f480cba11202a623204664fc",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -2359,15 +2402,18 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "MVFBSDEJ.PaperSpec.ex55Coeffs",
+      "MVFBSDEJ.PaperSpec.ex55Linear"
+     ],
      "defs_pending": [],
      "name": "the dealer interaction is active along the solution in an explicit specialisation (Example 5.5)",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_active",
-     "spec_hash": "ed839d34f480cba1a2ecf4542b86cf40",
+     "spec_hash": "ed839d34f480cba1f9264e102f5aca27",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_spec_hypotheses",
      "witness_ok": true
     }
@@ -2379,7 +2425,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: accepted"
+   "status": "formal: proved, review pending"
   },
   {
    "clauses": [
@@ -2953,9 +2999,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.sec4_horizon_not_contractive",
-     "spec_hash": "ed839d34f480cba1a81a001de59007a4",
+     "spec_hash": "ed839d34f480cba13e2b5c030bd07fe9",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.sec4_horizon_hypotheses",
      "witness_ok": true
     }
@@ -2967,7 +3013,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: accepted"
+   "status": "formal: proved, review pending"
   },
   {
    "clauses": [
@@ -3129,9 +3175,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.sec5_limin",
-     "spec_hash": "ed839d34f480cba139dd24c614ab7445",
+     "spec_hash": "ed839d34f480cba180ebf7cbdd89886e",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.sec5_limin_hypotheses",
      "witness_ok": true
     }
@@ -3143,7 +3189,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: accepted"
+   "status": "formal: proved, review pending"
   },
   {
    "clauses": [
@@ -3159,9 +3205,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i",
-     "spec_hash": "ed839d34f480cba18c5c46dad71ae633",
+     "spec_hash": "ed839d34f480cba1612813db3d51eb90",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
@@ -3177,9 +3223,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_concrete_ii",
-     "spec_hash": "ed839d34f480cba15cf7f3328c0ad0e6",
+     "spec_hash": "ed839d34f480cba166211664eb867fcc",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
@@ -3297,15 +3343,17 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "MVFBSDEJ.PaperSpec.ex55Coeffs"
+     ],
      "defs_pending": [],
      "name": "the crowding interaction is monotone at every interaction strength ε ≥ 0",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_mono",
-     "spec_hash": "ed839d34f480cba18bebeea12a1b6e30",
+     "spec_hash": "ed839d34f480cba194f09fa2aaba28b6",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -3315,15 +3363,17 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "MVFBSDEJ.PaperSpec.ex55Coeffs"
+     ],
      "defs_pending": [],
      "name": "well-posedness at every interaction strength ε ≥ 0 (Theorem 3.5)",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_wp",
-     "spec_hash": "ed839d34f480cba1169a2b8090bb4149",
+     "spec_hash": "ed839d34f480cba11202a623204664fc",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -3333,15 +3383,18 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "MVFBSDEJ.PaperSpec.ex55Coeffs",
+      "MVFBSDEJ.PaperSpec.ex55Linear"
+     ],
      "defs_pending": [],
      "name": "Example 5.5: in an explicit specialisation the interaction is active along the solution",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_active",
-     "spec_hash": "ed839d34f480cba1a2ecf4542b86cf40",
+     "spec_hash": "ed839d34f480cba1f9264e102f5aca27",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_spec_hypotheses",
      "witness_ok": true
     }
@@ -3353,7 +3406,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: accepted"
+   "status": "formal: proved, review pending"
   },
   {
    "clauses": [],
@@ -3475,15 +3528,18 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [],
+     "defs_changed": [
+      "MVFBSDEJ.WellPosedness.System.clampDrift",
+      "MVFBSDEJ.WellPosedness.System.meanY"
+     ],
      "defs_pending": [],
      "name": "expected diagonal monotonicity is strictly weaker (Proposition 3.8)",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.prop_strict",
-     "spec_hash": "ed839d34f480cba187dc1facdd73b114",
+     "spec_hash": "ed839d34f480cba1ac9d315442ee6c22",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.prop_strict_hypotheses",
      "witness_ok": true
     },
@@ -3499,9 +3555,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.rem_diag_mono_converse",
-     "spec_hash": "ed839d34f480cba121a2e85359198f21",
+     "spec_hash": "ed839d34f480cba194f9b4ec1a6ab33d",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "changed since review",
      "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
@@ -3531,7 +3587,7 @@
    "scope": "formal",
    "scope_note": "",
    "scope_reviewed": true,
-   "status": "formal: accepted"
+   "status": "formal: proved, review pending"
   },
   {
    "clauses": [],
@@ -4334,8 +4390,8 @@
  "summary": {
   "A": {
    "definition: reviewed": 11,
-   "formal: accepted": 44,
-   "formal: proved, review pending": 5,
+   "formal: accepted": 33,
+   "formal: proved, review pending": 16,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
    "out of scope: proof-step": 28

@@ -4,7 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Mathlib.Algebra.Order.Archimedean.Real.Hom
-import Mathlib.AlgebraicTopology.SimplexCategory.Basic
 import Mathlib.MeasureTheory.Measure.SeparableMeasure
 import Mathlib.MeasureTheory.Measure.Support
 import MVFBSDEJ.WellPosedness.ExpectedVsPointwise

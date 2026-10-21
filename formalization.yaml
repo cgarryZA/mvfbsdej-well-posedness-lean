@@ -48,7 +48,7 @@ alignment:
       lean:
         - "MVFBSDEJ.Acceptance.rem_diag_mono"
         - "MVFBSDEJ.Acceptance.rem_diag_mono_converse"
-      status: "formal: accepted"
+      status: "formal: proved, review pending"
     - source: "Remark 2.9"
       lean:
         - "MVFBSDEJ.Acceptance.rem_intrinsic_uniform"
@@ -88,7 +88,7 @@ alignment:
         - "MVFBSDEJ.Acceptance.rem_uniq_initial"
         - "MVFBSDEJ.Acceptance.rem_uniq_singular"
         - "MVFBSDEJ.Acceptance.rem_uniq_translation"
-      status: "formal: accepted"
+      status: "formal: proved, review pending"
     - source: "Theorem 3.5"
       lean:
         - "MVFBSDEJ.Acceptance.thm_cwp"
@@ -108,7 +108,7 @@ alignment:
     - source: "Proposition 3.8"
       lean:
         - "MVFBSDEJ.Acceptance.prop_strict"
-      status: "formal: accepted"
+      status: "formal: proved, review pending"
     - source: "Lemma 4.1"
       lean:
         - "MVFBSDEJ.Acceptance.lem_bpbsde"
@@ -137,7 +137,7 @@ alignment:
         - "MVFBSDEJ.Acceptance.ex_concrete_ii"
         - "MVFBSDEJ.Acceptance.ex_concrete_ii_pairing"
         - "MVFBSDEJ.Acceptance.ex_concrete_i_sharp"
-      status: "formal: accepted"
+      status: "formal: proved, review pending"
     - source: "Example 5.2"
       lean:
         - "MVFBSDEJ.Acceptance.ex_brownian"
@@ -183,7 +183,7 @@ alignment:
         - "MVFBSDEJ.Acceptance.ex_dealer_symm"
         - "MVFBSDEJ.Acceptance.ex_dealer_active"
         - "MVFBSDEJ.Acceptance.ex_dealer_depends"
-      status: "formal: accepted"
+      status: "formal: proved, review pending"
     - source: "Remark 5.6"
       lean:
         - "MVFBSDEJ.Acceptance.eq_coupling"
@@ -198,7 +198,7 @@ alignment:
         - "MVFBSDEJ.Acceptance.ex_dealer_mono"
         - "MVFBSDEJ.Acceptance.ex_dealer_wp"
         - "MVFBSDEJ.Acceptance.ex_dealer_active"
-      status: "formal: accepted"
+      status: "formal: proved, review pending"
     - source: "Lemma A.1"
       lean:
         - "MVFBSDEJ.Acceptance.lem_lawflow"
