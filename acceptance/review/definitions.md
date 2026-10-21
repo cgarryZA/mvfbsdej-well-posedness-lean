@@ -915,9 +915,11 @@ Review by claude-reviewer: faithful with representation choices (report `reports
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.tupleAt--claude-auditor--2026-10-19T03_27_25Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.tupleAt 0b900ec4a75a6b31755afe5c94aee280 by=claude-auditor -->
 * `System.leftLimProc X i s ω = Function.leftLim (r ↦ X_i(r, ω)) s`: the left limit `X_{s−}(ω)`.
-  Where the path has no left limit, Mathlib's `leftLim` returns `X_s(ω)`, a value the statements
-  reach only on the null set of paths without left limits, the solution notions asking left limits
-  almost surely. With it, `tupleAt ν (leftLimProc X) (leftLimProc Y) Z U s` is `Θ⁻_s`.
+  Where the path has no left limit, Mathlib's `leftLim` returns `X_s(ω)`. The internal solution
+  structures ask left limits on almost every path, so there the value is reached on a null set of
+  paths; the solution notions of the propositions ask them on every path on `(0, T]`, so there it
+  is reached only at `s = 0` and off `[0, T]`. Neither set is charged by `dt ⊗ dℙ` or by the
+  Poisson measure. With it, `tupleAt ν (leftLimProc X) (leftLimProc Y) Z U s` is `Θ⁻_s`.
 <!-- def-review: Dissertation.WellPosedness.System.leftLimProc 9171262935c3b1fde4f555261cd0b9ba by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.leftLimProc--claude-reviewer--2026-10-17T15_06_18Z.md`).
 <!-- def-review: Dissertation.WellPosedness.System.leftLimProc 9171262935c3b1fde4f555261cd0b9ba by=claude-reviewer -->
@@ -2393,3 +2395,150 @@ Verdict: faithful with representation choices.
   <!-- def-review: Dissertation.WellPosedness.Martingale.IsLocalCompensatedIntegral fd70e2533ec1703ae35c9c952d53ca0a by=claude-author -->
   Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.WellPosedness.Martingale.IsLocalCompensatedIntegral--claude-auditor--2026-10-20T08_54_49Z.md`).
   <!-- def-review: Dissertation.WellPosedness.Martingale.IsLocalCompensatedIntegral fd70e2533ec1703ae35c9c952d53ca0a by=claude-auditor -->
+
+
+## Definitions named by several definition entries, read beside all their passages
+
+Reviewer: `claude-auditor`, a model of the same family as the author of the definitions.
+Manuscript: revision `1f67672`. Each definition below is named by two or three definition
+entries, and each of its passages had been read beside it separately. Here each was read once
+beside all of them together, so that the passages are seen to describe one object and the Lean
+definition to be that object; the marker records the digest of every passage read.
+
+* `Dissertation.Law.lawP2` (`A:sec2:tuple-notation`, `A:sec2:difference-notation`,
+  `A:sec3:two-system-notation`). lawP2 P Θ is the image measure of P under Θ, as a law of finite
+  second moment, when Θ is square integrable, and the Dirac mass at the origin otherwise.
+  A:sec2:tuple-notation (lines 27–45) takes it for μ_t = Law(Θ_t) and μ⁻_t = Law(Θ⁻_t) and adds
+  (lines 41–43) that these denote the Borel representatives of Lemma A.1; A:sec2:difference-notation
+  (lines 69–84) takes it for the law of a diagonal input and for the induced terminal laws ρ =
+  Law(X_T), ρ′ = Law(X′_T) on ℝⁿ; A:sec3:two-system-notation (lines 39–49) for μᵏ_t := Law(Θᵏ_t),
+  μ^{2,−}_t and Law(X²_T). Together they describe one object, the law of a square-integrable random
+  element, on H and on ℝⁿ, and the polymorphic definition is exactly that on L². The one tension, a
+  Borel representative in §2 against the exact law in §3, is resolved by taking the exact law at
+  every time, which under the hypotheses of Lemma A.1 is itself a Borel representative (a theorem,
+  not carried by the definition). The Dirac value is reached only on null sets of times for
+  finite-energy tuples, never for diagonal inputs or the terminal states of Assumptions 2.3 and 2.5,
+  assumed in L². Verdict: faithful with representation choices.
+  <!-- def-review: Dissertation.Law.lawP2 8e02ec4a91100180227c044dc87cf8fe by=claude-auditor source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+
+* `Dissertation.WellPosedness.System.tupleAt` (`A:sec2:tuple-notation`,
+  `A:sec3:two-system-notation`). tupleAt ν X Y Z U s ω is (X_s(ω), Y_s(ω), Z_s(ω), U_s(ω, ·)) in H,
+  the m×d channel indexed by (k, j) with the Euclidean, that is Frobenius, norm, and the jump
+  channel the L²(ν; ℝᵐ) class of e ↦ (U_{k,s}(ω, e))_k, set to 0 where that map is not square
+  integrable. A:sec2:tuple-notation (lines 27–45) requires Θ_t = (X_t, Y_t, Z_t, U_t) with values in
+  H componentwise (lines 29–34) and the predictable tuple Θ⁻_t = (X_{t−}, Y_{t−}, Z_t, U_t) (lines
+  35–40); A:sec3:two-system-notation (lines 39–49) uses Θᵏ_t and Θ^{2,−}_t of the solutions. The
+  passages describe one object, and the predictable tuple is tupleAt of (leftLimProc X, leftLimProc
+  Y, Z, U), Z and U untouched as line 40 says. Representation choices: the jump channel is built
+  from a mark-indexed representative, equivalent through the Fubini isometry (2.4); the junk 0 lies
+  on a dt⊗dP-null set for finite-energy U; the codomain carries the maximum of the channel norms,
+  the Hilbert norm entering where it matters through per-channel sums and the Hilbert-norm W₂. That
+  Θ⁻ is predictable is a theorem under hypotheses, not part of the definition. Verdict: faithful
+  with representation choices.
+  <!-- def-review: Dissertation.WellPosedness.System.tupleAt 0b900ec4a75a6b31755afe5c94aee280 by=claude-auditor source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+
+* `Dissertation.WellPosedness.System.leftLimProc` (`A:sec2:tuple-notation`,
+  `A:sec3:two-system-notation`). leftLimProc X i s ω is the left limit at s of r ↦ X_i(r, ω), with
+  the fallback value X_i(s, ω) when no left limit exists. A:sec2:tuple-notation (lines 35–40)
+  requires the forward and backward states to be replaced by their left limits X_{t−}, Y_{t−} in
+  Θ⁻_t, Z_t and U_t left untouched; A:sec3:two-system-notation (line 46) evaluates δh at Θ^{2,−}_t.
+  The definition is applied to X and to Y and never to Z, U, as both passages require. The fallback
+  is reached only where the path has no left limit: the internal solution structures ask left limits
+  on (0, T] for almost every path, so there it falls on a null set of paths; the frozen solution
+  notions conjoin left limits on every path on (0, T], so there the fallback, and the dependence on
+  the unconstrained values at negative times, arise only at s = 0 and off [0, T]. Both sets are null
+  for dt⊗dP and for the Poisson measure, consistent with lines 43–45. The passages call Θ⁻
+  predictable; that is a theorem under adaptedness and left limits, not part of the definition, the
+  predictable statements cutting the left limits to (0, T]. Verdict: faithful with representation
+  choices.
+  <!-- def-review: Dissertation.WellPosedness.System.leftLimProc 9171262935c3b1fde4f555261cd0b9ba by=claude-auditor source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+
+* `Dissertation.WellPosedness.Spec.Assumption23` (`A:ass:lip`, `A:sec2:difference-notation`).
+  Assumption23 ℱ P T L C has three fields: 0 ≤ L, the interior bound LipInteriorAt for almost every
+  t ∈ [0, T], and the terminal bound LipTerminal. A:ass:lip (lines 148–160) requires L ≥ 0 with, for
+  a.e. t and all pairs in 𝒟_t, almost surely |δb| + |δσ|_F + ‖δh‖ + |δf| ≤ L(|δX| + |δY| + |δZ|_F +
+  ‖δU‖ + W₂(μ, μ′)), and for all X_T, X′_T ∈ L²(Ω, ℱ_T; ℝⁿ) almost surely (2.6).
+  A:sec2:difference-notation (lines 69–84) fixes the meaning: two diagonal inputs at one time on one
+  space, δψ = ψ(t, Θ, μ) − ψ(t, Θ′, μ′), the induced laws ρ, ρ′, the measure never varied
+  independently. The definition meets each item: inputs range over diagonalInputs, the null time set
+  precedes them, the norms are Euclidean, Frobenius and L²(ν), W₂ is the Hilbert-norm distance on
+  P₂(H) and the Euclidean one on P₂(ℝⁿ), and g's law argument is the law of its state; the δg_T of
+  lines 80–84 is quantified by the assumption's own clause. Representation choices: L is a parameter
+  (the paper's 'there is L'); L² elements are strongly measurable representatives, harmless as the
+  conditions are invariant under null changes. Verdict: faithful with representation choices.
+  <!-- def-review: Dissertation.WellPosedness.Spec.Assumption23 0d5048c72ef913b60000000000000000 by=claude-auditor source=A:ass:lip@9c7bbbc5ca7a20286ef27d4eb7edb07d33d9787563041cadef820d833345f085 source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+
+* `Dissertation.WellPosedness.System.driftProc` (`A:sec2:tuple-notation`,
+  `A:sec3:two-system-notation`). driftProc P T C X Y Z U i ω s is coordinate i of b(s, Θ_s(ω), μ_s)
+  for s ∈ [0, T] and 0 off it, with Θ_s the tupleAt of the given processes at s and μ_s = lawP2 P
+  Θ_s. A:sec2:tuple-notation (lines 27–45) requires b at the current tuple and law, b(t, Θ_t, μ_t),
+  defined at every t, with μ_t a Borel representative of Lemma A.1 (lines 41–45);
+  A:sec3:two-system-notation (lines 39–49, line 44) requires (δb)(t) = b¹(t, Θ²_t, μ²_t) − b²(t,
+  Θ²_t, μ²_t) with μ²_t := Law(Θ²_t), which the statements write as driftProc of system 1 minus
+  driftProc of system 2 at the coordinates of solution 2. The definition is the same object for
+  both: no left limits, as printed for b, and a law that depends only on the tuple, so both systems
+  see one argument. Representation choices: the cut-off to [0, T], outside which (1.1) and the
+  energies of (3.1) use no value; the exact law at every time as the Borel representative, which
+  reconciles §2 with §3; the Dirac junk of lawP2 and the 0 of the jump channel on dt-null sets,
+  which lines 43–45 make harmless. Verdict: faithful with representation choices.
+  <!-- def-review: Dissertation.WellPosedness.System.driftProc 12c9183ed27748868bc8011ce72cfb14 by=claude-auditor source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+
+* `Dissertation.WellPosedness.System.diffusionProc` (`A:sec2:tuple-notation`,
+  `A:sec3:two-system-notation`). diffusionProc P T C X Y Z U i s ω j is entry (i, j) of σ(s, Θ_s(ω),
+  μ_s) for s ∈ [0, T] and 0 off it, with Θ_s the tupleAt of the given processes and μ_s = lawP2 P
+  Θ_s. A:sec2:tuple-notation (lines 27–45) requires σ at the current tuple and law, one of the
+  expressions defined at every t (line 43), with μ_t a Borel representative of Lemma A.1;
+  A:sec3:two-system-notation (lines 39–49, line 44, ψ = σ) requires (δσ)(t) = σ¹(t, Θ²_t, μ²_t) −
+  σ²(t, Θ²_t, μ²_t), written as the entrywise difference of diffusionProc of the two systems at
+  solution 2, whose Frobenius norm the propositions take as the sum of the squared entries. The two
+  passages describe one object and the definition is it, without left limits as printed for σ, the
+  law depending only on the tuple. Representation choices: the cut-off to [0, T]; the exact law at
+  every time as the Borel representative, which reconciles the representative of §2 with the exact
+  law of §3; the junk of lawP2 and of the jump channel on dt-null sets, harmless by lines 43–45.
+  Verdict: faithful with representation choices.
+  <!-- def-review: Dissertation.WellPosedness.System.diffusionProc 38de1bfa70e0d9f65621b71beed53a93 by=claude-auditor source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+
+* `Dissertation.WellPosedness.System.driverProc` (`A:sec2:tuple-notation`,
+  `A:sec3:two-system-notation`). driverProc P T C X Y Z U k ω s is coordinate k of f(s, Θ_s(ω), μ_s)
+  for s ∈ [0, T] and 0 off it, with Θ_s the tupleAt of the given processes and μ_s = lawP2 P Θ_s.
+  A:sec2:tuple-notation (lines 27–45) requires f at the current tuple and law, defined at every t
+  (line 43), with μ_t a Borel representative of Lemma A.1; A:sec3:two-system-notation (lines 39–49,
+  line 44, ψ = f) requires (δf)(t) = f¹(t, Θ²_t, μ²_t) − f²(t, Θ²_t, μ²_t), written as driverProc of
+  system 1 minus that of system 2 at the coordinates of solution 2. The passages describe one object
+  and the definition is it: no left limits, as printed for f, and one law argument for both systems.
+  Representation choices: the cut-off to [0, T], outside which (1.1) and the energies of (3.1) use
+  no value; the exact law at every time as the Borel representative; the junk of lawP2 and of the
+  jump channel on dt-null sets, harmless by lines 43–45. Verdict: faithful with representation
+  choices.
+  <!-- def-review: Dissertation.WellPosedness.System.driverProc 1491f35f9b5cef0eabae931fed61c587 by=claude-auditor source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+
+* `Dissertation.WellPosedness.Spec.Assumption25` (`A:ass:mono`, `A:sec2:difference-notation`).
+  Assumption25 ℱ P T G α β₁ β₂ C has three fields: the terminal inequality, (2.7) for almost every t
+  ∈ [0, T] (Mono27At), and the admissible constants. A:ass:mono (lines 183–199) requires E⟨δg_T,
+  GδX_T⟩ ≥ αE|GδX_T|² for all X_T, X′_T ∈ L²(Ω, ℱ_T; ℝⁿ); for a.e. t and all pairs in 𝒟_t, the
+  expected pairing ⟨δb, GᵀδY⟩ + ⟨δσ, GᵀδZ⟩_F + ⟨−δf, GδX⟩ + ∫⟨δh(e), GᵀδU(e)⟩ν(de) at most
+  −β₁E[|GᵀδY|² + |GᵀδZ|²_F + ‖GᵀδU‖²] − β₂E|GδX|²; and the sign and rank conditions on α, β₁, β₂.
+  A:sec2:difference-notation (lines 69–84) fixes δψ, δX, the induced laws and the diagonal
+  quantification. The definition meets every item, g's law argument being the law of its state and
+  the measure arguments of (2.7) the laws of the inputs. Representation choices: G and the constants
+  are parameters, full rank being Assumption 2.4; the expectations are Bochner integrals with each
+  pairing required integrable. That conjunct follows from (2.3) and Assumption 2.3, by the Lipschitz
+  bound against the zero input, but Remarks 2.10 and 5.6 take Assumption 2.5 alone, where it is an
+  added hypothesis excluding a pairing of expectation −∞ that an extended-real reading of (2.7)
+  admits. Verdict: faithful with representation choices.
+  <!-- def-review: Dissertation.WellPosedness.Spec.Assumption25 2ad64300a1211b960000000000000000 by=claude-auditor source=A:ass:mono@a60a526e8cdd9d0ae4441e25895e5af1cc39a45df41a9028fe0f60371ce998ff source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+
+* `Dissertation.WellPosedness.Existence.coeffJump` (`A:sec2:tuple-notation`,
+  `A:sec3:two-system-notation`). coeffJump P T C X Y Z U i s ω e is coordinate i of
+  lpRep(1_{[0,T]}(s) h(s, Θ_s(ω), μ_s), e): a jointly measurable representative, in the mark, of the
+  L²(ν; ℝⁿ) value of h at the tuple of the given processes and its law, 0 off [0, T].
+  A:sec2:tuple-notation (lines 35–43) requires the jump terms at the predictable tuple Θ⁻_t and μ⁻_t
+  = Law(Θ⁻_t), a Borel representative; A:sec3:two-system-notation (line 46) requires (δh)(t) = h¹ −
+  h² at (t, Θ^{2,−}_t, ·, μ^{2,−}_t). The definition does not fix the evaluation point: the passages
+  are met at the call site, coeffJump of (leftLimProc X, leftLimProc Y, Z, U), which Theorem 3.1 and
+  its companions, Corollary 3.6 and the uniqueness statements pass; the difference of the two
+  systems' representatives then represents δh, at one argument for both. Representation choices: the
+  pointwise representative lpRep, as (2.4) reads Poisson integrands; the cut-off; the junk of uLift
+  and lawP2 on null sets. The contraction statements of Lemma 4.2 pass the current tuples instead,
+  matching the δψ_s the paper prints there. Verdict: faithful with representation choices.
+  <!-- def-review: Dissertation.WellPosedness.Existence.coeffJump 90dd30b497d4dd12d6d4dda771a35c05 by=claude-auditor source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
