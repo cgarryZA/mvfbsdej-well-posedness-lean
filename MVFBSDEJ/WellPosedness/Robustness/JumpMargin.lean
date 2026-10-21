@@ -5,7 +5,6 @@ Authors: Christian Garry
 -/
 import MVFBSDEJ.WellPosedness.Robustness.Example
 import Mathlib.Algebra.Order.Archimedean.Real.Hom
-import Mathlib.AlgebraicTopology.SimplexCategory.Basic
 
 /-!
 # What a dissipativity margin demands of the jump channel
