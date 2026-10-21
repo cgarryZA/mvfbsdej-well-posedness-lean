@@ -135,8 +135,8 @@ def ex_dealer_mono : Prop :=
         (ex55Coeffs ν β₁ β₂ σc hc hx ε)
 
 /-- Example 5.5, well-posedness at every `ε ≥ 0` and every `h_x`. In the setting of `ex_dealer`,
-(1.1) with the coefficients of Example 5.5 and the initial datum `ξ₀` has a solution in `ℍ`, and
-any two solutions are equal in `ℍ`: their `X` and their `Y` are indistinguishable on `[0, T]`, and
+(1.1) with the coefficients of Example 5.5 and the initial datum `ξ₀` has a solution in `𝕊`, and
+any two solutions are equal in `𝕊`: their `X` and their `Y` are indistinguishable on `[0, T]`, and
 `𝔼 ∫_0^T |Z¹_t − Z²_t|² dt = 0` and `𝔼 ∫_0^T ‖U¹_t − U²_t‖²_{L²(ν)} dt = 0`. -/
 def ex_dealer_wp : Prop :=
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}

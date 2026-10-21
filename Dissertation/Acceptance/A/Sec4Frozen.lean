@@ -29,7 +29,7 @@ Statement and equation numbers refer to the well-posedness paper at `1f67672`.
   (4.7), the terminal representation of the filtration of §2 (`hasTerminalRep_enlJoint`) solves
   the backward equation (`HasTerminalRep.exists_linearBSDEJ`), with predictable integrands
   (`LinearBSDEJ.exists_predictable`) and `Ȳ` set to `0` off a null set (`LinearBSDEJ.indicator`).
-  Two images agree in `ℍ`: their forward coordinates by (4.7), and then their terminal values
+  Two images agree in `𝕊`: their forward coordinates by (4.7), and then their terminal values
   almost surely, so Lemma 4.1 applied to the difference of the backward coordinates
   (`LinearBSDEJ.eq_of_ae_eq_terminal`) gives the rest.
 * (4.9): at almost every time the two trials are diagonal inputs, and the interior bound of
@@ -158,7 +158,7 @@ theorem FrozenForward.ae_forall_Icc_eq {X₁ X₂ : Fin n → ℝ → Ω → ℝ
       (lawP2 P (tupleAt ν (leftLimProc X) (leftLimProc Y) Z U s)))) lam qh i hr₁ hr₂
     (measurableSet_eq_fun (h₁ i).γ_meas (h₂ i).γ_meas)) hT
 
-/-- Under the hypotheses of Lemma 4.2, the frozen forward equation (4.7) of a trial of `ℍ_weak`
+/-- Under the hypotheses of Lemma 4.2, the frozen forward equation (4.7) of a trial of `ℍ²`
 has a solution every path of which has left limits on `(0, T]`. -/
 theorem FrozenForward.exists_leftLim {L : ℝ} {qf : Fin m → Ω → ℝ → ℝ} {qg : Fin m → Ω → ℝ}
     (hT : 0 ≤ T) (hJ : JointBorel T C) (h22 : Assumption22 (enlJoint 𝒢₀ D h𝒢₀) P T C ξ₀)

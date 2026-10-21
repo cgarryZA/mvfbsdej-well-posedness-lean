@@ -3,8 +3,7 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import Dissertation.WellPosedness.Examples.Dealer.Assumptions
-import Dissertation.WellPosedness.Examples.Dealer.DiagonalMonotone
+import Dissertation.WellPosedness.Examples.Dealer.Monotone
 import Dissertation.WellPosedness.Examples.Dealer.Marks
 
 /-!
@@ -367,6 +366,6 @@ theorem dealerExp_assumptions (T : ℝ) (hβ₁ : 0 < β₁) (hβ₂ : 0 < β₂
       ∧ TerminalMonotone ℱ P T 1 1 (dealerExpCoeffs β₁ β₂ σc hc hx ε).g :=
   ⟨coeffBorelW2_dealerExp T, coeffOrigin_dealerExp T,
     diagonalLipschitzH_dealerExp hβ₁.le hβ₂.le hε, terminalLipschitz_dealerExp,
-    constants_dealer hβ₁ hβ₂, diagonalMonotone_dealerExp hε, terminalMonotone_dealerExp⟩
+    constants_affine hβ₁ hβ₂, diagonalMonotone_dealerExp hε, terminalMonotone_dealerExp⟩
 
 end Dissertation.WellPosedness.Existence

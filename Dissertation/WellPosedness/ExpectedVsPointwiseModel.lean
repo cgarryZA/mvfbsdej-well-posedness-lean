@@ -76,11 +76,6 @@ theorem inner_eq_mul_fin_one (v w : EuclideanSpace ℝ (Fin 1)) : inner ℝ v w 
 noncomputable def clampVec (v : EuclideanSpace ℝ (Fin 1)) : EuclideanSpace ℝ (Fin 1) :=
   WithLp.toLp 2 fun i => clamp01 (v i)
 
-/-- The coordinate of the clamp on `ℝ¹` is the clamp of the coordinate. -/
-@[simp]
-theorem clampVec_apply (v : EuclideanSpace ℝ (Fin 1)) (i : Fin 1) :
-    clampVec v i = clamp01 (v i) := rfl
-
 /-- The clamp is continuous. -/
 theorem continuous_clamp01 : Continuous clamp01 :=
   continuous_const.max (continuous_const.min continuous_id)

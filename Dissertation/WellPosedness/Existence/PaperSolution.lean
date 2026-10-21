@@ -9,7 +9,7 @@ import Dissertation.WellPosedness.System.PaperUniqueness
 /-!
 # Theorem 3.5 for solutions in the sense of the paper
 
-Theorem 3.5 of the well-posedness paper asserts that the system (1.1) has a solution in `ℍ²`,
+Theorem 3.5 of the well-posedness paper asserts that the system (1.1) has a solution in `𝕊`,
 unique in the sense of Theorem 3.3: `X`, `Y` indistinguishable on `[0, T]` and `Z`, `U` equal in
 energy. `exists_solves_and_uniqueness_of_rank_of_diagonalLipschitzH` states it for the predicate
 `Solves`; this file states it for the paper's solution notion `PaperSolution`, under the same

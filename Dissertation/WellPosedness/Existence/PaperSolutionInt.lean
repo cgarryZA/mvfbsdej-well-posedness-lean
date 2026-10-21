@@ -7,18 +7,18 @@ import Dissertation.WellPosedness.Existence.PaperSolution
 import Dissertation.WellPosedness.System.PaperUniquenessInt
 
 /-!
-# Theorem 3.5 with uniqueness among the paper's solutions in `ℍ²_weak`
+# Theorem 3.5 with uniqueness among the paper's solutions in `ℍ²`
 
 Theorem 3.5 of the well-posedness paper: under Assumptions 2.2–2.5 the system (1.1) has a
-solution in `ℍ²`, unique by Theorem 3.3, whose uniqueness statement ranges over the tuples of
-`ℍ²_weak` satisfying (1.1). `exists_paperSolution_and_uniqueness` states the existence in the
-sense of `PaperSolution`. A solution in `ℍ²` is a solution of `PaperWeakSolutionInt`
+solution in `𝕊`, unique by Theorem 3.3, whose uniqueness statement ranges over the tuples of
+`ℍ²` satisfying (1.1). `exists_paperSolution_and_uniqueness` states the existence in the
+sense of `PaperSolution`. A solution in `𝕊` is a solution of `PaperWeakSolutionInt`
 (`PaperSolution.toWeakInt`), and Theorem 3.3 holds for `PaperWeakSolutionInt` under Assumptions
 2.3–2.5 (`PaperWeakSolutionInt.uniqueness`); Assumption 2.3 with the Hilbert-norm `W₂` gives
 Assumption 2.3 with constant `2L` (`DiagonalLipschitzH.diagonalLipschitz`), and a full-rank
 coupling matrix gives Assumption 2.4 (`gCoerciveForward_of_rank`, `gCoerciveBackward_of_rank`).
 So the solution of Theorem 3.5 in the sense of the paper coincides with every solution of (1.1)
-in `ℍ²_weak` in the sense of `PaperWeakSolutionInt` with the same initial datum.
+in `ℍ²` in the sense of `PaperWeakSolutionInt` with the same initial datum.
 
 ## Main statements
 
@@ -49,7 +49,7 @@ variable {D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν}
   {hℱN : LevyStochCalc.Poisson.IsPoissonFiltration D.N ℱ}
 
 /-- **Theorem 3.5 for solutions in the sense of the paper, with uniqueness among solutions in
-`ℍ²_weak`.** Under the hypotheses of `exists_paperSolution_and_uniqueness` — a right-continuous
+`ℍ²`.** Under the hypotheses of `exists_paperSolution_and_uniqueness` — a right-continuous
 filtration carrying the driver, whose null sets lie in its time-`0` field, whose
 right-continuation is constant before `0`, which admits a cross witness and has the terminal
 representation property at the horizon `T > 0`; coefficients jointly Borel measurable on
@@ -58,7 +58,7 @@ Assumption 2.3 along the diagonal with constant `L` and the Hilbert-norm `W₂` 
 Borel measurable in the state, and Assumption 2.5 along the diagonal with a coupling matrix
 `G ∈ ℝ^{m×n}` of full rank and admissible constants `α, β₁, β₂`; a square-integrable
 `ℱ_0`-measurable `ξ₀` — the system (1.1) with initial datum `ξ₀` has a solution `(X, Y, Z, U)`
-in the sense of the paper, and every solution `(X', Y', Z', U')` of (1.1) in `ℍ²_weak` in the
+in the sense of the paper, and every solution `(X', Y', Z', U')` of (1.1) in `ℍ²` in the
 sense of `PaperWeakSolutionInt` with initial datum `ξ₀` coincides with it: `X, X'` and `Y, Y'`
 are indistinguishable on `[0, T]`, and `𝔼 ∫_0^T |Z − Z'|²_F = 0`,
 `𝔼 ∫_0^T ‖U − U'‖²_{L²(ν)} = 0`, coordinatewise. -/

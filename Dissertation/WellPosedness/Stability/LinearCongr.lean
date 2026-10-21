@@ -89,14 +89,6 @@ theorem _root_.Dissertation.WellPosedness.Stability.LinearFSDEJ.of_eq {ξ₀ ξ�
   subst hξ hb hX hσ hγ
   exact h
 
-/-- A solution of the linear backward equation is one for equal data. -/
-theorem _root_.Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.of_eq {ξ ξ' : Ω → ℝ}
-    {φ φ' : Ω → ℝ → ℝ} {Y Y' : ℝ → Ω → ℝ} {Z Z' : ℝ → Ω → (Fin d → ℝ)} {U U' : ℝ → Ω → E → ℝ}
-    (h : LinearBSDEJ D ℱ hℱW hℱN T ξ φ Y Z U) (hξ : ξ = ξ') (hφ : φ = φ') (hY : Y = Y')
-    (hZ : Z = Z') (hU : U = U') : LinearBSDEJ D ℱ hℱW hℱN T ξ' φ' Y' Z' U' := by
-  subst hξ hφ hY hZ hU
-  exact h
-
 end Forward
 
 end Dissertation.WellPosedness.Existence

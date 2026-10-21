@@ -6,9 +6,9 @@ Authors: Christian Garry
 import Dissertation.WellPosedness.System.PaperWeakS2
 
 /-!
-# Solutions of (1.1) in `ℍ²_weak` with pathwise drift and driver integrals
+# Solutions of (1.1) in `ℍ²` with pathwise drift and driver integrals
 
-Theorem 3.3 of the well-posedness paper concerns two tuples `Θ¹, Θ² ∈ ℍ²_weak` satisfying (1.1),
+Theorem 3.3 of the well-posedness paper concerns two tuples `Θ¹, Θ² ∈ ℍ²` satisfying (1.1),
 under Assumptions 2.3–2.5 only. Without Assumption 2.2 the drift `b(s, Θ_s, μ_s)` and the driver
 `f(s, Θ_s, μ_s)` along such a tuple need not have finite energy on `[0, T]`: they enter (1.1)
 only through the Lebesgue integrals `∫_0^t b ds` and `∫_t^T f ds`, which need almost every path
@@ -21,7 +21,7 @@ integrable.
 `PaperAdmissibleInt` is `PaperAdmissible` with the finite energy of the drift and driver
 processes on `[0, T]` replaced by the integrability of almost every path on `[0, T]`.
 `PaperWeakSolutionInt` is `PaperWeakSolution` with `PaperAdmissibleInt` in place of
-`PaperAdmissible`, together with the square integrability of `X_T`: the tuple lies in `ℍ²_weak`,
+`PaperAdmissible`, together with the square integrability of `X_T`: the tuple lies in `ℍ²`,
 the integrals of (1.1) along it exist, `γ` represents `h(s, Θ⁻_s, ·, μ⁻_s)`, and both identities
 of (1.1) hold at every `t ∈ [0, T]` on one set of full measure.
 
@@ -29,7 +29,7 @@ of (1.1) hold at every `t ∈ [0, T]` on one set of full measure.
 
 * `PaperAdmissibleInt` — the integrals of (1.1) along `(X, Y, Z, U)` exist, the drift and the
   driver along almost every path.
-* `PaperWeakSolutionInt` — `(X, Y, Z, U)` is a solution of (1.1) in `ℍ²_weak` with pathwise
+* `PaperWeakSolutionInt` — `(X, Y, Z, U)` is a solution of (1.1) in `ℍ²` with pathwise
   drift and driver integrals.
 * `PaperWeakSolutionIntAug` — the same over the augmented joint filtration `augJoint D`.
 
@@ -37,9 +37,9 @@ of (1.1) hold at every `t ∈ [0, T]` on one set of full measure.
 
 * `PaperAdmissible.toInt` — drift and driver processes of finite energy have almost surely
   integrable paths.
-* `PaperWeakSolution.toIntOfMemLp` — a solution in `ℍ²_weak` with `X_T` square integrable is a
+* `PaperWeakSolution.toIntOfMemLp` — a solution in `ℍ²` with `X_T` square integrable is a
   solution of `PaperWeakSolutionInt`.
-* `PaperSolution.toWeakInt` — a solution in `ℍ²` is a solution of `PaperWeakSolutionInt`.
+* `PaperSolution.toWeakInt` — a solution in `𝕊` is a solution of `PaperWeakSolutionInt`.
 -/
 
 open MeasureTheory Filter Topology Dissertation.Law
@@ -104,7 +104,7 @@ structure PaperAdmissibleInt (ℱ : Filtration ℝ ‹MeasurableSpace Ω›) (P 
 
 variable {P : Measure Ω} [IsProbabilityMeasure P]
 
-/-- **`(X, Y, Z, U)` is a solution of (1.1) in `ℍ²_weak` with pathwise drift and driver
+/-- **`(X, Y, Z, U)` is a solution of (1.1) in `ℍ²` with pathwise drift and driver
 integrals**, with coefficients `C` and initial datum `ξ₀`, over the filtration `ℱ` carrying the
 driver `D`, and with `γ` a representative of the jump coefficient: `X` and `Y` are adapted on
 `[0, T]` with right-continuous paths on `[0, T)`, left limits on `(0, T]` almost surely and finite
@@ -162,7 +162,7 @@ structure PaperWeakSolutionInt (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P 
               (U_pred k).markedProgressivelyMeasurable
               (marked_sq_int_global_of_vanishing (U_vanish k) (U_sq k)) t ω)
 
-/-- `(X, Y, Z, U)` is a solution of (1.1) in `ℍ²_weak` with pathwise drift and driver integrals
+/-- `(X, Y, Z, U)` is a solution of (1.1) in `ℍ²` with pathwise drift and driver integrals
 over the augmented joint filtration `augJoint D` of the driver. -/
 abbrev PaperWeakSolutionIntAug (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (T : ℝ)
     (C : Coeffs ν n m d) (ξ₀ : Fin n → Ω → ℝ) (X : Fin n → ℝ → Ω → ℝ) (Y : Fin m → ℝ → Ω → ℝ)
@@ -196,7 +196,7 @@ theorem PaperAdmissible.toInt (h : PaperAdmissible ℱ P T C X Y Z U γ) :
   f_int k := ae_mem_integrablePaths (h.f_meas k) (h.f_sq k)
   jump_rep := h.jump_rep
 
-/-- **A solution in `ℍ²_weak` with `X_T` square integrable is a solution of
+/-- **A solution in `ℍ²` with `X_T` square integrable is a solution of
 `PaperWeakSolutionInt`**, with the same `γ`. -/
 theorem PaperWeakSolution.toIntOfMemLp (h : PaperWeakSolution D ℱ hℱW hℱN T C ξ₀ X Y Z U γ)
     (hXT : ∀ i, MemLp (X i T) 2 P) : PaperWeakSolutionInt D ℱ hℱW hℱN T C ξ₀ X Y Z U γ where
@@ -206,7 +206,7 @@ theorem PaperWeakSolution.toIntOfMemLp (h : PaperWeakSolution D ℱ hℱW hℱN 
   fwd := h.fwd
   bwd := h.bwd
 
-/-- **A solution in `ℍ²` is a solution of `PaperWeakSolutionInt`**, for `T ≥ 0`, with the same
+/-- **A solution in `𝕊` is a solution of `PaperWeakSolutionInt`**, for `T ≥ 0`, with the same
 `γ`: the `S²` bound on `X` makes `X_T` square integrable. -/
 theorem PaperSolution.toWeakInt (h : PaperSolution D ℱ hℱW hℱN T C ξ₀ X Y Z U γ) (hT : 0 ≤ T) :
     PaperWeakSolutionInt D ℱ hℱW hℱN T C ξ₀ X Y Z U γ :=

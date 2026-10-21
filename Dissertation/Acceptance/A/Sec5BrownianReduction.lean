@@ -180,8 +180,8 @@ variable {D : Driver.LevyDriver.{u, v, w} P d (0 : Measure E)}
   {ξ₀ : Fin n → Ω → ℝ} {X : Fin n → ℝ → Ω → ℝ} {Y : Fin m → ℝ → Ω → ℝ}
   {Z : Fin m → ℝ → Ω → Fin d → ℝ} {U : Fin m → ℝ → Ω → E → ℝ}
 
-/-- **At `ν = 0` a solution of (1.1) in `ℍ_weak` is a solution of the Brownian system in
-`ℍ_weak` with a jump integrand that is `0` in `L²(dt ⊗ dP ⊗ ν)`**, over any filtration carrying
+/-- **At `ν = 0` a solution of (1.1) in `ℍ²` is a solution of the Brownian system in
+`ℍ²` with a jump integrand that is `0` in `L²(dt ⊗ dP ⊗ ν)`**, over any filtration carrying
 the driver. -/
 theorem paperWeakSolutionInt_iff_brownian :
     (∃ γ, PaperWeakSolutionInt D ℱ hℱW hℱN T C ξ₀ X Y Z U γ) ↔
@@ -310,7 +310,7 @@ theorem paperWeakSolutionInt_iff_brownian :
         rw [h2 t ht, h2 T ⟨ht.1.trans ht.2, le_rfl⟩, sub_self, sub_zero, hf]
         exact h1 t ht }
 
-/-- The Brownian system in `ℍ_weak` over equal filtrations. -/
+/-- The Brownian system in `ℍ²` over equal filtrations. -/
 theorem brownianPaperWeakSolution_congr {W : Brownian.Multidim.MultidimBrownianMotion P d}
     {ℱ₁ ℱ₂ : Filtration ℝ ‹MeasurableSpace Ω›} (h : ℱ₁ = ℱ₂)
     (h₁ : ∀ j : Fin d, Brownian.IsBrownianFiltration (W.W j) ℱ₁)
@@ -375,7 +375,7 @@ theorem ex_brownian_reduction : PaperSpec.A.ex_brownian_reduction.{u, v, w} := b
 /-- **The hypotheses of the reduction of Example 5.2 can be met, at a system with a solution.**
 There is a probability space carrying a Lévy driver with `d = 1` and the intensity `ν = 0` on
 `ℝ`, with `𝒢₀ = ⊥` independent of it; and there, for `n = 1`, `m = 2`, `T = 1` and the initial
-datum `0`, a coefficient system and a solution of (1.1) in `ℍ` (the linear generator of the
+datum `0`, a coefficient system and a solution of (1.1) in `𝕊` (the linear generator of the
 branch `m > n`, with Theorem 3.5). -/
 theorem ex_brownian_reduction_hypotheses :
     ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)

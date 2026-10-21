@@ -49,26 +49,6 @@ open Dissertation.WellPosedness.System Dissertation.WellPosedness.Existence
 
 /-! ### A `1 × 1` coupling matrix -/
 
-/-- For a `1 × 1` matrix `G`, `G x = G₀₀ x`. -/
-theorem GX_fin_one_apply (G : Matrix (Fin 1) (Fin 1) ℝ) (x : EuclideanSpace ℝ (Fin 1)) :
-    GX G x = G 0 0 • x := by
-  rw [← WithLp.toLp_ofLp 2 x, GX_toLp]
-  refine PiLp.ext fun i => ?_
-  fin_cases i
-  simp [Matrix.mulVec, dotProduct]
-
-/-- A `1 × 1` matrix of full rank has a nonzero entry. -/
-theorem entry_ne_zero_of_rank_eq_one {G : Matrix (Fin 1) (Fin 1) ℝ} (hG : G.rank = min 1 1) :
-    G 0 0 ≠ 0 := by
-  intro h0
-  have hz : G = 0 := by
-    ext i j
-    fin_cases i
-    fin_cases j
-    exact h0
-  rw [hz, Matrix.rank_zero] at hG
-  norm_num at hG
-
 variable {E : Type*} [MeasurableSpace E] {ν : Measure E} [SigmaFinite ν]
   [MeasurableSpace.CountablyGenerated E]
 
@@ -99,66 +79,5 @@ theorem assumption23_liMin : Assumption23 ℱ P T 2 (liMinCoeffs ν) :=
   assumption23_iff.mpr ⟨zero_le_two, diagonalLipschitzH_liMin, terminalLipschitz_liMin one_le_two⟩
 
 /-! ### Assumption 2.5 fails -/
-
-/-- **(2.7) fails for the system of Li and Min**, for every `G ≠ 0` in `ℝ^{1×1}` and all
-`β₁, β₂ ≥ 0`, at every horizon `T > 0`: it fails at a pair of deterministic inputs. -/
-theorem not_diagonalMonotone_liMin (hT : 0 < T) {G : Matrix (Fin 1) (Fin 1) ℝ} (hG : G 0 0 ≠ 0)
-    {β₁ β₂ : ℝ} (hβ₁ : 0 ≤ β₁) (hβ₂ : 0 ≤ β₂) :
-    ¬ DiagonalMonotone ℱ P T G β₁ β₂ (liMinCoeffs ν) := by
-  intro hM
-  haveI : (ae (volume.restrict (Set.Icc (0 : ℝ) T))).NeBot := by
-    rw [ae_restrict_neBot, Real.volume_Icc, sub_zero]
-    exact ENNReal.ofReal_ne_zero_iff.mpr hT
-  obtain ⟨t, ht⟩ := hM.exists
-  set c := G 0 0
-  have hGt : ∀ x : EuclideanSpace ℝ (Fin 1), GX Gᵀ x = c • x := fun x => by
-    rw [GX_fin_one_apply, transpose_apply]
-  set e : EuclideanSpace ℝ (Fin 1) := EuclideanSpace.single 0 1 with he
-  have he1 : ‖e‖ = 1 := by simp [he]
-  have key : ∀ θ : TupleH ν 1 1 1,
-      interiorPairing (GX G) (GZ G) (GU G ν)
-          (diagDiff (liMinCoeffs ν) t θ 0 (P2.dirac θ) (P2.dirac 0))
-        ≤ dissipation (GX G) (GZ G) (GU G ν) β₁ β₂
-          (diagDiff (liMinCoeffs ν) t θ 0 (P2.dirac θ) (P2.dirac 0)) := fun θ => by
-    have h := ht (fun _ => θ) (fun _ => 0) stronglyMeasurable_const stronglyMeasurable_const
-      (memLp_const _) (memLp_const _)
-    simpa only [integral_const, probReal_univ, one_smul, lawP2_const] using h
-  rcases hG.lt_or_gt with hneg | hpos
-  · have h := key ((e, 0, 0, 0) : TupleH ν 1 1 1)
-    simp only [interiorPairing, dissipation, diagDiff, liMinCoeffs, tupleMean_dirac,
-      adjoint_GX, hGt, GX_fin_one_apply, Prod.fst_zero, Prod.snd_zero, sub_zero, sub_self,
-      map_zero, inner_zero_left, inner_zero_right, norm_zero, inner_neg_left,
-      real_inner_smul_right, real_inner_self_eq_norm_sq, norm_smul, he1] at h
-    nlinarith [sq_nonneg c, mul_nonneg hβ₂ (sq_nonneg c), Real.norm_eq_abs c, sq_abs c]
-  · have h := key ((0, e, 0, 0) : TupleH ν 1 1 1)
-    simp only [interiorPairing, dissipation, diagDiff, liMinCoeffs, tupleMean_dirac,
-      adjoint_GX, hGt, GX_fin_one_apply, Prod.fst_zero, Prod.snd_zero, sub_zero, sub_self,
-      map_zero, inner_zero_left, inner_zero_right, norm_zero, inner_neg_left,
-      real_inner_smul_right, real_inner_self_eq_norm_sq, norm_smul, he1] at h
-    nlinarith [sq_nonneg c, mul_nonneg hβ₁ (sq_nonneg c), Real.norm_eq_abs c, sq_abs c]
-
-/-- **Assumption 2.5 fails for the system of Li and Min**, for every coupling matrix
-`G ∈ ℝ^{1×1}` of full rank and all constants `α, β₁, β₂`, over any filtered probability space
-and at every horizon `T > 0`. -/
-theorem not_assumption25_liMin (hT : 0 < T) {G : Matrix (Fin 1) (Fin 1) ℝ}
-    (hG : G.rank = min 1 1) (α β₁ β₂ : ℝ) :
-    ¬ Assumption25 ℱ P T G α β₁ β₂ (liMinCoeffs ν) := fun h =>
-  not_diagonalMonotone_liMin hT (entry_ne_zero_of_rank_eq_one hG) h.constants.β₁_nonneg
-    h.constants.β₂_nonneg h.diagonalMonotone
-
-/-- **The system of Li and Min fails Assumption 2.5 while the other assumptions hold.** Over any
-filtered probability space and at every horizon `T > 0`, with any deterministic initial datum
-`x₀`: (2.3), Assumption 2.2 and Assumption 2.3 with `L = 2` hold; `G = 1` satisfies
-Assumption 2.4; and for every coupling matrix `G ∈ ℝ^{1×1}` of full rank and all constants
-`α, β₁, β₂`, Assumption 2.5 fails. -/
-theorem liMin_fails_assumption25 (hT : 0 < T) (x₀ : EuclideanSpace ℝ (Fin 1)) :
-    JointBorel T (liMinCoeffs ν)
-      ∧ Assumption22 ℱ P T (liMinCoeffs ν) (fun _ => x₀)
-      ∧ Assumption23 ℱ P T 2 (liMinCoeffs ν)
-      ∧ (1 : Matrix (Fin 1) (Fin 1) ℝ).rank = min 1 1
-      ∧ ∀ G : Matrix (Fin 1) (Fin 1) ℝ, G.rank = min 1 1 →
-          ∀ α β₁ β₂ : ℝ, ¬ Assumption25 ℱ P T G α β₁ β₂ (liMinCoeffs ν) :=
-  ⟨jointBorel_liMin T, assumption22_liMin x₀, assumption23_liMin, rank_one_eq_min,
-    fun _ hG α β₁ β₂ => not_assumption25_liMin hT hG α β₁ β₂⟩
 
 end Dissertation.WellPosedness.Spec

@@ -17,13 +17,10 @@ satisfies (2.7) with equality at `G = I` and its own constants, so, as Remark 2.
 satisfies (2.13) with the constants `β₁, β₂` and margin `c`; it is a baseline for Corollary 3.6.
 Equivalently, Example 5.1(i) with constants `β₁, β₂` carries every margin `c` with the reduced
 constants `β₁ − c, β₂ − c` in the unweighted form (2.13).
-Two perturbations are treated:
 
-* the feedback `p_b = ε y`, `p_σ = ε z`, `p_h = ε u`, `p_f = 0` for `ε ≥ 0`, which raises the
-  interior pairing by `ε (|δY|² + |δZ|²_F + ‖δU‖²_{L²(ν)})` and so satisfies (3.4) with
-  `c_pert = ε`; it is the affine system with constants `−ε, 0` and origin values `0`;
-* a constant perturbation of the diffusion and jump coefficients, `p_σ = σ'`, `p_h = h'`, which
-  is independent of the tuple and satisfies (3.5) with every `L_p ≥ 0`.
+The feedback perturbation `p_b = ε y`, `p_σ = ε z`, `p_h = ε u`, `p_f = 0` for `ε ≥ 0` raises the
+interior pairing by `ε (|δY|² + |δZ|²_F + ‖δU‖²_{L²(ν)})` and so satisfies (3.4) with
+`c_pert = ε`; it is the affine system with constants `−ε, 0` and origin values `0`.
 
 ## Main statements
 
@@ -34,8 +31,6 @@ Two perturbations are treated:
   margin `c` in (2.13), with the reduced constants `β₁ − c, β₂ − c`.
 * `lipschitzCoefficientsP2_affine_feedback`, `diagonalPairingBound_affine_feedback` — the
   feedback perturbation satisfies Assumption 2.3 and (3.4) with `c_pert = ε`.
-* `tupleIndep_affine_const`, `diagonalLawLipschitzH_affine_const` — the constant perturbation is
-  independent of the tuple and satisfies (3.5).
 -/
 
 open MeasureTheory Filter WithLp Dissertation.Law
@@ -148,30 +143,5 @@ theorem diagonalPairingBound_affine_feedback (hε : 0 ≤ ε) :
   nlinarith [sq_nonneg ‖(Θ ω).1 - (Θ' ω).1‖]
 
 end Feedback
-
-section Const
-
-variable {E : Type*} [MeasurableSpace E] {ν : Measure E} {n d : ℕ}
-  {σ' : EuclideanSpace ℝ (Fin n × Fin d)} {h' : Lp (EuclideanSpace ℝ (Fin n)) 2 ν}
-
-/-- The constant perturbation `p_b = 0`, `p_σ = σ'`, `p_h = h'`, `p_f = 0` is independent of the
-tuple. -/
-theorem tupleIndep_affine_const : (affineCoeffs (ν := ν) 0 0 σ' h').TupleIndep :=
-  ⟨fun _ _ _ _ => by simp [affineCoeffs], fun _ _ _ _ => by simp [affineCoeffs],
-    fun _ _ _ _ => by simp [affineCoeffs], fun _ _ _ _ => by simp [affineCoeffs]⟩
-
-variable [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
-  {Ω : Type*} [MeasurableSpace Ω] {ℱ : Filtration ℝ ‹MeasurableSpace Ω›} {P : Measure Ω}
-  [IsProbabilityMeasure P] {T : ℝ}
-
-/-- **(3.5) for the constant perturbation**, with every constant `L_p ≥ 0`: its differences
-vanish. -/
-theorem diagonalLawLipschitzH_affine_const {Lₚ : ℝ} (hLp : 0 ≤ Lₚ) :
-    DiagonalLawLipschitzH ℱ P T Lₚ (affineCoeffs (ν := ν) 0 0 σ' h') := by
-  refine Eventually.of_forall fun t Θ Θ' _ _ _ _ => Eventually.of_forall fun ω => ?_
-  simp only [affineCoeffs, zero_smul, neg_zero, sub_zero, sub_self, norm_zero, add_zero]
-  exact mul_nonneg hLp (w2H_nonneg _ _)
-
-end Const
 
 end Dissertation.WellPosedness.Existence

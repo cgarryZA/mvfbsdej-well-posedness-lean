@@ -41,7 +41,7 @@ local notation "sysF" =>
 and `δh` nonzero.** For every `λ ∈ [0, 1]`: at the instance of `frozen_hypotheses` — the system of
 Example 5.1(i) with initial datum `0`, (2.3) and Assumptions 2.2–2.3 with `L = 1` and the zero
 forcing — the zero tuple and the tuple `(X, Y, Z, U) = (1, 1, 1_{(0, 1]}, 1_{(0, 1]})` are two
-trials of `ℍ`, each has a frozen step at `λ`, and the coefficient differences `δb = 1_{[0, 1]}`,
+trials of `𝕊`, each has a frozen step at `λ`, and the coefficient differences `δb = 1_{[0, 1]}`,
 `δσ = 1_{(0, 1]}` and `δh = 1_{(0, 1]}` (through `coeffJump`) each have energy `1` on `[0, 1]`. -/
 theorem frozen_pair_window_lam_hypotheses (lam : ℝ) (hl0 : 0 ≤ lam) (hl1 : lam ≤ 1) :
     ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)

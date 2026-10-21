@@ -9,7 +9,7 @@ import Dissertation.WellPosedness.System.PaperSolution
 # The solution notion of the paper for the `λ`-forced system (4.1)
 
 For `λ ∈ [0, 1]`, an initial datum `ξ₀` and a forcing `q = (q^b, q^σ, q^h, q^f, q^g_T)`, a
-solution of the `λ`-forced system (4.1) is a tuple `Θ = (X, Y, Z, U) ∈ ℍ²` such that, with
+solution of the `λ`-forced system (4.1) is a tuple `Θ = (X, Y, Z, U) ∈ 𝕊` such that, with
 `μ_s = Law(Θ_s)` and `μ⁻_s = Law(Θ⁻_s)`,
 
 `X_t = ξ₀ + ∫_0^t (λ b(s, Θ_s, μ_s) + q^b_s) ds + ∫_0^t (λ σ(s, Θ_s, μ_s) + q^σ_s) dW_s
@@ -18,7 +18,7 @@ solution of the `λ`-forced system (4.1) is a tuple `Θ = (X, Y, Z, U) ∈ ℍ²
 `Y_t = λ g(X_T, Law X_T) + q^g_T + ∫_t^T (λ f(s, Θ_s, μ_s) + q^f_s) ds − ∫_t^T Z_s dW_s
   − ∫_t^T ∫_E U_s(e) Ñ(ds, de)`,
 
-and (4.1) is *well posed at `λ`*, `WP(λ)`, if it has a unique solution in `ℍ²` for every forcing.
+and (4.1) is *well posed at `λ`*, `WP(λ)`, if it has a unique solution in `𝕊` for every forcing.
 At `λ = 1`, `q = 0` it is the system (1.1).
 
 `PaperSolutionForced` states this definition in the encoding of `PaperSolution`, whose fields it
@@ -45,7 +45,7 @@ representative `γ` (`jump_rep`), as in `PaperSolution`. The relation to `Solves
 
 ## Main definitions
 
-* `PaperSolutionForced` — `(X, Y, Z, U)` solves the `λ`-forced system (4.1) in `ℍ²` with forced
+* `PaperSolutionForced` — `(X, Y, Z, U)` solves the `λ`-forced system (4.1) in `𝕊` with forced
   integrands of finite energy.
 
 ## Main statements
@@ -98,7 +98,7 @@ end Vanish
 
 /-! ### The solution predicate -/
 
-/-- **`(X, Y, Z, U)` solves the `λ`-forced system (4.1) in `ℍ²` with forced integrands of finite
+/-- **`(X, Y, Z, U)` solves the `λ`-forced system (4.1) in `𝕊` with forced integrands of finite
 energy**, with
 coefficients `C`, initial datum `ξ₀` and forcing `q = (q^b, q^σ, q^h, q^f, q^g)`, over the
 filtration `ℱ` carrying the driver `D`, and with `γ` a representative of the jump coefficient:

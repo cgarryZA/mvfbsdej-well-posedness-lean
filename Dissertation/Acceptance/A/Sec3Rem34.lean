@@ -126,7 +126,7 @@ theorem rem_uniq_singular : PaperSpec.A.rem_uniq_singular.{u, v, w} := by
 
 /-- **The hypotheses of Remark 3.4 can be met.** Over a probability space carrying a Lévy driver
 with `d = 1` and `ν = δ₀` on `ℝ`, with `𝒢₀ = ⊥` independent of it and `T = 1`, the singular-drift
-system has, from the initial datum `0`, a tuple of `ℍ_weak` satisfying (1.1) whose components
+system has, from the initial datum `0`, a tuple of `ℍ²` satisfying (1.1) whose components
 have `𝔼 sup_{t ≤ 1} |X_t|² < ∞` and `𝔼 sup_{t ≤ 1} |Y_t|² < ∞`. -/
 theorem rem_uniq_hypotheses :
     ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)

@@ -524,8 +524,8 @@ with `d = 1` and `ν = δ₀` on `ℝ`, with `𝒢₀ = ⊥`, `n = m = 1` and `T
 5.1(i) with `β₁ = β₂ = 1`, `σ_c = h_c = 0` satisfies (2.3), Assumption 2.3 with `L = 1` and
 Assumption 2.5 with `G = 1`, `α = β₁ = β₂ = 1`; for reals `x₀, a, c, y₀, a', c'`, the explicit
 solutions at `λ = 1` of `affineWindow_solution` at these parameters and at the parameters `0`
-are two solutions of (4.1) in `ℍ` for forcings of the class of the paper, from the initial data
-`x₀` and `0`, whose difference lies in `ℍ` and is
+are two solutions of (4.1) in `𝕊` for forcings of the class of the paper, from the initial data
+`x₀` and `0`, whose difference lies in `𝕊` and is
 `δX = x₀ + a M^W + c M^N`, `δY = y₀ + a' M^W + c' M^N`, `δZ = a' 1_{(0, 1]}`,
 `δU = c' 1_{(0, 1]}`, for versions `M^W`, `M^N` of `∫ 1_{(0, 1]} dW`, `∫∫ 1_{(0, 1]} dÑ`; the
 difference of the forced diffusion integrands is `a 1_{(0, 1]}`, and that of the forced jump
@@ -862,8 +862,8 @@ theorem lem_pert_jump_window_hypotheses :
 forcings.** At the instance of `affineWindow_pair` with `x₀ = 1`, `a = c = y₀ = 0`, `a' = c' = 1`:
 the system of Example 5.1(i) with `β₁ = β₂ = 1`, `σ_c = h_c = 0` satisfies (2.3), Assumption 2.3
 with `L = 1` and Assumption 2.5 with `G = 1`, `α = β₁ = β₂ = 1`; `λ̲ = λ = 1`; two solutions of
-(4.1) in `ℍ_weak` from the `ℱ₀`-measurable initial data `1` and `0`, for forcings of the class of
-the paper, with difference in `ℍ`. For versions `M^W`, `M^N` of `∫_0^t 1_{(0, 1]} dW` and
+(4.1) in `ℍ²` from the `ℱ₀`-measurable initial data `1` and `0`, for forcings of the class of
+the paper, with difference in `𝕊`. For versions `M^W`, `M^N` of `∫_0^t 1_{(0, 1]} dW` and
 `∫_0^t ∫ 1_{(0, 1]} Ñ(ds, de)`, the differences are `δX ≡ 1`, `δY = M^W + M^N`,
 `δZ = δU = 1_{(0, 1]}` and `δg_T ≡ 1`, and the differences of the forcings are
 `δq^b_s = 1_{[0, 1]}(s) (M^W_s + M^N_s)`, `δq^σ = δq^h = 1_{(0, 1]}`, `δq^f = −1_{[0, 1]}` and

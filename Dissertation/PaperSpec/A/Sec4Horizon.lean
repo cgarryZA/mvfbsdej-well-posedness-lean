@@ -64,8 +64,8 @@ Brownian driver without jumps, the system of Example 5.1(i) with `σ_c = 0`, `h_
 (`b = −β₁ y`, `σ = −β₁ z`, `h = −β₁ u`, `f = β₂ x`, `g = x`) satisfies (2.3) and
 Assumptions 2.2–2.5 with `ξ₀ = 0`, `G = 1`, `α = 1`, constants that do not depend on `T`; the
 frozen step of Lemma 4.2 at `λ = 1` sends `0` to `0` and sends the trial `Θ = (0, 0, 1, 0)` of
-`ℍ` to `Θ̄ = (−β₁ W, −β₁ W, −β₁, 0)` in `ℍ`, so that
-`0 < ‖Θ − 0‖_ℍ ≤ ‖Θ̄ − 0‖_ℍ`. -/
+`𝕊` to `Θ̄ = (−β₁ W, −β₁ W, −β₁, 0)` in `𝕊`, so that
+`0 < ‖Θ − 0‖_𝕊 ≤ ‖Θ̄ − 0‖_𝕊`. -/
 def sec4_horizon_not_contractive : Prop :=
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] (P : Measure Ω)
     [IsProbabilityMeasure P] (D : LevyStochCalc.Driver.LevyDriver.{u, 0, w} P 1 (0 : Measure Unit))

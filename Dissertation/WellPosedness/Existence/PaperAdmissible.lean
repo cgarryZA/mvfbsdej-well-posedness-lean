@@ -9,14 +9,14 @@ import Dissertation.WellPosedness.System.DiagonalLipschitzH
 import Dissertation.WellPosedness.System.PaperWeakS2
 
 /-!
-# The integrals of (1.1) along a tuple of `ℍ²_weak` exist
+# The integrals of (1.1) along a tuple of `ℍ²` exist
 
-A solution of (1.1) in the sense of the well-posedness paper, in `ℍ²` or in `ℍ²_weak`, is asked
+A solution of (1.1) in the sense of the well-posedness paper, in `𝕊` or in `ℍ²`, is asked
 the conditions under which the integrals of (1.1) exist along it (`PaperAdmissible`): the joint
 and progressive measurability and the finite energy on `[0, T]` of the drift, diffusion and
 driver processes `ψ(s, Θ_s, μ_s)` and of the jump integrand `γ`, a representative of
 `h(s, Θ⁻_s, ·, μ⁻_s)` in `L²(ν)`. The paper derives them from its assumptions along every
-`Θ ∈ ℍ²_weak`: the measurability from (2.5), a consequence of the joint Borel measurability (2.3)
+`Θ ∈ ℍ²`: the measurability from (2.5), a consequence of the joint Borel measurability (2.3)
 by Lemma A.1, and the energy bounds from Assumptions 2.2–2.3. Here they follow from (2.5),
 Assumption 2.2 and Assumption 2.3 along the diagonal.
 
@@ -35,7 +35,7 @@ Assumption 2.2 and Assumption 2.3 along the diagonal.
 ## Main statements
 
 * `PaperWeakTuple.exists_paperAdmissible` — under (2.5), Assumption 2.2 and Assumption 2.3
-  along the diagonal, the integrals of (1.1) along a tuple of `ℍ²_weak` exist.
+  along the diagonal, the integrals of (1.1) along a tuple of `ℍ²` exist.
 -/
 
 open MeasureTheory Filter Topology Dissertation.Law
@@ -59,9 +59,9 @@ namespace PaperWeakTuple
 variable (hΘ : PaperWeakTuple ℱ P ν T X Y Z U)
 include hΘ
 
-/-- **The integrals of (1.1) along a tuple of `ℍ²_weak` exist.** For `T ≥ 0`, coefficients with
+/-- **The integrals of (1.1) along a tuple of `ℍ²` exist.** For `T ≥ 0`, coefficients with
 (2.5) along every progressive tuple satisfying Assumption 2.2 and Assumption 2.3 along the
-diagonal with constant `L`, and `Θ = (X, Y, Z, U) ∈ ℍ²_weak`, there is a representative `γ` of
+diagonal with constant `L`, and `Θ = (X, Y, Z, U) ∈ ℍ²`, there is a representative `γ` of
 the jump coefficient such that the drift, diffusion and driver processes along `Θ` and the jump
 integrand `γ` are jointly and progressively measurable with finite energy on `[0, T]`, and `γ`
 represents `h(s, Θ⁻_s, ·, μ⁻_s)` in `L²(ν)` at almost every time of `[0, T]`, almost surely. -/

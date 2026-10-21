@@ -12,9 +12,9 @@ import Dissertation.WellPosedness.System.SolvesIntPaper
 # A singular drift: a solution without Assumption 2.2
 
 Theorem 3.3 of the paper holds under Assumptions 2.3–2.5 only (Remark 3.4), for
-solutions in `ℍ²_weak` whose drift and driver are integrable along almost every path. This file
+solutions in `ℍ²` whose drift and driver are integrable along almost every path. This file
 gives a system that meets Assumptions 2.3 and 2.5 but not Assumption 2.2, together with a
-solution of it from the initial datum `0` in `ℍ²_weak` with pathwise drift and driver integrals,
+solution of it from the initial datum `0` in `ℍ²` with pathwise drift and driver integrals,
 over the augmented joint filtration of any Lévy driver.
 
 For `n = m = 1` and any `d`, add the deterministic drift `t ↦ t^{-1/2}` to the affine system of
@@ -305,7 +305,7 @@ theorem solvesIntAug_singularCoeffs (hT : 0 < T) :
   XT_sq _ := memLp_const _
 
 /-- **The solution of `PaperWeakSolutionInt`**: for `T > 0`, `X_t = 2√t − y_T t`, `Y ≡ y_T`,
-`Z = U = 0` solves `singularCoeffs` from `ξ₀ = 0` in `ℍ²_weak` with pathwise drift and driver
+`Z = U = 0` solves `singularCoeffs` from `ξ₀ = 0` in `ℍ²` with pathwise drift and driver
 integrals, in the sense of `PaperWeakSolutionInt` over `augJoint D`, with `γ = 0`. -/
 theorem paperWeakSolutionIntAug_singularCoeffs (hT : 0 < T) :
     PaperWeakSolutionIntAug D T (singularCoeffs (ν := ν) (d := d)) 0

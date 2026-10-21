@@ -6,12 +6,12 @@ Authors: Christian Garry
 import Dissertation.WellPosedness.System.WeakPairEnergy
 
 /-!
-# Two solutions in `ℍ_weak` under the Lipschitz condition alone
+# Two solutions in `ℍ²` under the Lipschitz condition alone
 
 The difference system `PairDiff` records, besides the difference equations and the Lipschitz
 bounds at the pair, Assumption 2.5 at the pair with a coupling matrix `G`. With `G = 0` and
 `α = β₁ = β₂ = 0` both monotonicity conditions hold for every system, so two solutions of the
-`λ`-forced system (4.1) in `ℍ_weak` whose coefficients satisfy Assumption 2.3 along the diagonal
+`λ`-forced system (4.1) in `ℍ²` whose coefficients satisfy Assumption 2.3 along the diagonal
 have a difference system with `G = 0`, whatever the monotonicity of the coefficients: the
 difference equations and the Lipschitz bounds use Assumption 2.3 alone, as in the proof of
 Theorem 3.3 of the well-posedness paper.
@@ -129,8 +129,8 @@ variable {Ω : Type u} [MeasurableSpace Ω] {E : Type v} [MeasurableSpace E] {ν
   {Z₁ Z₂ : Fin m → ℝ → Ω → Fin d → ℝ} {U₁ U₂ : Fin m → ℝ → Ω → E → ℝ}
   {γ₁ γ₂ : Fin n → ℝ → Ω → E → ℝ} {L : ℝ}
 
-/-- **The difference of two solutions in `ℍ_weak` under Assumption 2.3 alone.** For two
-solutions of the `λ`-forced system in `ℍ_weak` with the same coefficients and `T ≥ 0`, satisfying
+/-- **The difference of two solutions in `ℍ²` under Assumption 2.3 alone.** For two
+solutions of the `λ`-forced system in `ℍ²` with the same coefficients and `T ≥ 0`, satisfying
 Assumption 2.3 along the diagonal with constant `L`, there are `X'^k, Y'^k` equal to `X^k, Y^k`
 at every time of `[0, T]` such that the difference is a `PairDiff` with Lipschitz constants
 `10 L²` and `4 L²`, coupling matrix `0` and constants `α = β₁ = β₂ = 0`. -/

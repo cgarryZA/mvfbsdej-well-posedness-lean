@@ -63,8 +63,8 @@ universe u v w
 /-- **The first bound of (4.18).** There is `c₀ > 0` such that, for every value `c ≥ c₀` of the
 constant `c_BDG`, under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3) and
 Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`,
-`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak` with `X^k_T ∈ L²`, `ℱ₀`-measurable
-initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` — the integrand `⟨G δX_{s−}, δZ_s ·⟩` has a
+`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with `X^k_T ∈ L²`, `ℱ₀`-measurable
+initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` — the integrand `⟨G δX_{s−}, δZ_s ·⟩` has a
 local Itô integral `M_t = ∫_0^t ⟨G δX_{s−}, δZ_s dW_s⟩` on `[0, T]`, and every such `M` satisfies `𝔼
 sup_{t ≤ T} |M_t| ≤ c ‖G‖ (𝔼 sup_{t ≤ T} |δX_t|²)^{1/2} (𝔼 ∫_0^T |δZ_t|²_F dt)^{1/2} < ∞` and, for
 every `t ∈ [0, T]`, `𝔼[M_T − M_t] = 0` with `M_T − M_t` integrable; the expectations of nonnegative
@@ -119,8 +119,8 @@ def eq_bdg4_XZ : Prop :=
 /-- **The second bound of (4.18).** There is `c₀ > 0` such that, for every value `c ≥ c₀` of the
 constant `c_BDG`, under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3) and
 Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`,
-`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak` with `X^k_T ∈ L²`, `ℱ₀`-measurable
-initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` — the integrand
+`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with `X^k_T ∈ L²`, `ℱ₀`-measurable
+initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` — the integrand
 `⟨G (λ δσ_s + q^σ_s) ·, δY_{s−}⟩` has a local Itô integral
 `M_t = ∫_0^t ⟨G (λ δσ_s + q^σ_s) dW_s, δY_{s−}⟩` on `[0, T]`, and every such `M` satisfies `𝔼 sup_{t
 ≤ T} |M_t| ≤ c ‖G‖ (𝔼 sup_{t ≤ T} |δY_t|²)^{1/2} (𝔼 ∫_0^T |λ δσ_t + q^σ_t|²_F dt)^{1/2} < ∞` and,
@@ -182,8 +182,8 @@ def eq_bdg4_sigmaY : Prop :=
 /-- **The third bound of (4.18).** There is `c₀ > 0` such that, for every value `c ≥ c₀` of the
 constant `c_BDG`, under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3) and
 Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`,
-`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak` with `X^k_T ∈ L²`, `ℱ₀`-measurable
-initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` — the marked integrand `⟨G δX_{s−}, δU_s(e)⟩`
+`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with `X^k_T ∈ L²`, `ℱ₀`-measurable
+initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` — the marked integrand `⟨G δX_{s−}, δU_s(e)⟩`
 has a local compensated Poisson integral `M_t = ∫_0^t ∫_E ⟨G δX_{s−}, δU_s(e)⟩ Ñ(ds, de)` on
 `[0, T]`, and every such `M` satisfies `𝔼 sup_{t ≤ T} |M_t| ≤ c ‖G‖ (𝔼 sup_{t ≤ T} |δX_t|²)^{1/2} (𝔼
 ∫_0^T ‖δU_t‖²_{L²(ν)} dt)^{1/2} < ∞` and, for every `t ∈ [0, T]`, `𝔼[M_T − M_t] = 0` with
@@ -238,8 +238,8 @@ def eq_bdg4_XU : Prop :=
 /-- **The fourth bound of (4.18).** There is `c₀ > 0` such that, for every value `c ≥ c₀` of the
 constant `c_BDG`, under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3) and
 Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`,
-`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak` with `X^k_T ∈ L²`, `ℱ₀`-measurable
-initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` — the forced jump integrand `λ δh + q^h` (with
+`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with `X^k_T ∈ L²`, `ℱ₀`-measurable
+initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` — the forced jump integrand `λ δh + q^h` (with
 `q = δq` and `δh` at the predictable tuples) agrees almost everywhere on `Ω × [0, T] × E` with an
 integrand `H` meeting the conditions of the compensated integral, and for every such `H` the marked
 integrand `⟨G H_s(e), δY_{s−}⟩` has a local compensated Poisson integral
@@ -315,8 +315,8 @@ def eq_bdg4_hY : Prop :=
 /-- **The integrability of the forced integrands and of the fifth integrand of (4.17).** Under the
 hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3) and Assumptions 2.3–2.5 with constants
 `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at
-`λ` in `ℍ_weak` with `X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and
-`Θ¹ − Θ² ∈ ℍ` — `𝔼 ∫_0^T |λ δσ_t + q^σ_t|²_F dt < ∞`; the forced jump integrand `λ δh + q^h` (with
+`λ` in `ℍ²` with `X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and
+`Θ¹ − Θ² ∈ 𝕊` — `𝔼 ∫_0^T |λ δσ_t + q^σ_t|²_F dt < ∞`; the forced jump integrand `λ δh + q^h` (with
 `q = δq` and `δh` at the predictable tuples) agrees almost everywhere on `Ω × [0, T] × E` with an
 integrand `H` meeting the conditions of the compensated integral; and for every such `H`,
 `𝔼 ∫_0^T ‖λ δh_t + q^h_t‖²_{L²(ν)} dt < ∞` and `𝔼 ∫_0^T ∫_E |⟨λ δh_t(e) + q^h_t(e), Gᵀ δU_t(e)⟩|
@@ -384,8 +384,8 @@ def eq_bdg4_fifth : Prop :=
 /-- **The fifth term of (4.17): its predictable integrand and its zero mean.** Under the
 hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3) and Assumptions 2.3–2.5 with constants
 `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at
-`λ` in `ℍ_weak` with `X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and
-`Θ¹ − Θ² ∈ ℍ` — the forced jump integrand `λ δh + q^h` (with `q = δq` and `δh` at the predictable
+`λ` in `ℍ²` with `X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and
+`Θ¹ − Θ² ∈ 𝕊` — the forced jump integrand `λ δh + q^h` (with `q = δq` and `δh` at the predictable
 tuples) agrees almost everywhere on `Ω × [0, T] × E` with a marked predictable integrand `H`; and
 for every such `H`, the fifth integrand `ψ_s(e) = ⟨H_s(e), Gᵀ δU_s(e)⟩` is marked predictable,
 `𝔼 ∫_{(0, T] × E} |ψ| dN` and `𝔼 ∫_0^T ∫_E |ψ| ν(de) ds` are finite, and the fifth term

@@ -6,20 +6,20 @@ Authors: Christian Garry
 import Dissertation.WellPosedness.System.PaperSolution
 
 /-!
-# Solutions of (1.1) in the class `ℍ²_weak`
+# Solutions of (1.1) in the class `ℍ²`
 
-Besides `ℍ² = S²(ℝⁿ) × S²(ℝᵐ) × H²_W × H²_N`, the well-posedness paper uses the larger class
-`ℍ²_weak = L²(ℝⁿ) × L²(ℝᵐ) × H²_W × H²_N`, in which `L²(ℝʲ)` consists of the càdlàg adapted
+Besides `𝕊 = S²(ℝⁿ) × S²(ℝᵐ) × H²_W × H²_N`, the well-posedness paper uses the larger class
+`ℍ² = L²(ℝⁿ) × L²(ℝᵐ) × H²_W × H²_N`, in which `L²(ℝʲ)` consists of the càdlàg adapted
 processes `V` with `𝔼 ∫_0^T |V_t|² dt < ∞`: the `S²` bounds are replaced by finite energy on
-`[0, T]`. By Remark 3.2 of the paper a solution of (1.1) in `ℍ²_weak` lies in `ℍ²`
+`[0, T]`. By Remark 3.2 of the paper a solution of (1.1) in `ℍ²` lies in `𝕊`
 (`PaperWeakSolution.toPaperSolution`, in `Dissertation.WellPosedness.System.PaperWeakS2`).
 
-`PaperWeakSolution` states the solution notion in `ℍ²_weak` in the encoding of `PaperSolution`:
+`PaperWeakSolution` states the solution notion in `ℍ²` in the encoding of `PaperSolution`:
 its fields are those of `PaperSolution`, with `X_sup` and `Y_sup` replaced by `X_sq` and `Y_sq`,
 the finiteness of `𝔼 ∫_0^T |X_{i,t}|² dt` and `𝔼 ∫_0^T |Y_{k,t}|² dt`. They fall into three
 groups.
 
-* **`Θ ∈ ℍ²_weak`** (`PaperWeakTuple`): each coordinate of `X` and `Y` is adapted at every time of
+* **`Θ ∈ ℍ²`** (`PaperWeakTuple`): each coordinate of `X` and `Y` is adapted at every time of
   `[0, T]`, every path is right-continuous at every time of `[0, T)`, almost every path has left
   limits at every time of `(0, T]`, and each coordinate has finite energy on `[0, T]`; `Z` and
   `U` are predictable, vanish off `[0, T]` and have finite energy on `[0, T]`.
@@ -27,24 +27,24 @@ groups.
   measurability and the finite energy of the drift, diffusion and driver processes along `Θ` and
   of the jump integrand `γ` cut to `[0, T]`, and `γ` represents `h(s, Θ⁻_s, ·, μ⁻_s)` in `L²(ν)`
   at almost every time, almost surely. The paper derives these conditions from (2.5) and
-  Assumptions 2.2–2.3 along every `Θ ∈ ℍ²_weak`; so does `PaperWeakTuple.exists_paperAdmissible`,
+  Assumptions 2.2–2.3 along every `Θ ∈ ℍ²`; so does `PaperWeakTuple.exists_paperAdmissible`,
   in `Dissertation.WellPosedness.Existence.PaperAdmissible`.
 * **The identities** `fwd`, `bwd` of (1.1), on one set of full measure, as in `PaperSolution`.
 
 ## Main definitions
 
-* `PaperWeakTuple` — `(X, Y, Z, U)` lies in `ℍ²_weak`.
+* `PaperWeakTuple` — `(X, Y, Z, U)` lies in `ℍ²`.
 * `PaperAdmissible` — the integrals of (1.1) along `(X, Y, Z, U)` exist, with a representative
   `γ` of the jump coefficient at the predictable tuple.
-* `PaperWeakSolution` — `(X, Y, Z, U)` is a solution of (1.1) in `ℍ²_weak`.
+* `PaperWeakSolution` — `(X, Y, Z, U)` is a solution of (1.1) in `ℍ²`.
 
 ## Main statements
 
 * `energy_ne_top_of_lintegral_biSup_esq_lt_top` — a process of finite `S²`-norm has finite
   energy on `[0, T]`, coordinatewise.
-* `PaperSolution.toWeak` — a solution in `ℍ²` is a solution in `ℍ²_weak`.
-* `PaperWeakSolution.paperSolution` — a solution in `ℍ²_weak` whose `X` and `Y` have finite
-  `S²`-norm is a solution in `ℍ²`.
+* `PaperSolution.toWeak` — a solution in `𝕊` is a solution in `ℍ²`.
+* `PaperWeakSolution.paperSolution` — a solution in `ℍ²` whose `X` and `Y` have finite
+  `S²`-norm is a solution in `𝕊`.
 -/
 
 open MeasureTheory Filter Topology Dissertation.Law
@@ -72,7 +72,7 @@ theorem energy_ne_top_of_lintegral_biSup_esq_lt_top {ι : Type*} [Fintype ι] {P
 
 variable {ν : Measure E} [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] {n m d : ℕ}
 
-/-- **`Θ = (X, Y, Z, U)` lies in `ℍ²_weak`** over the filtration `ℱ` on the horizon `[0, T]`:
+/-- **`Θ = (X, Y, Z, U)` lies in `ℍ²`** over the filtration `ℱ` on the horizon `[0, T]`:
 each coordinate of `X` and `Y` is adapted at every time of `[0, T]`, has right-continuous paths
 on `[0, T)`, left limits on `(0, T]` almost surely and finite `𝔼 ∫_0^T |·|² dt`; each coordinate
 of `Z` is predictable and each coordinate of `U` is marked predictable, with finite energy on
@@ -160,7 +160,7 @@ structure PaperAdmissible (ℱ : Filtration ℝ ‹MeasurableSpace Ω›) (P : M
 
 variable {P : Measure Ω} [IsProbabilityMeasure P]
 
-/-- **`(X, Y, Z, U)` is a solution of (1.1) in `ℍ²_weak`**, with coefficients `C` and initial
+/-- **`(X, Y, Z, U)` is a solution of (1.1) in `ℍ²`**, with coefficients `C` and initial
 datum `ξ₀`, over the filtration `ℱ` carrying the driver `D`, and with `γ` a representative of the
 jump coefficient: the conditions of `PaperSolution` with the `S²` bounds on `X` and `Y` replaced
 by finite `𝔼 ∫_0^T |·|² dt`. `X` and `Y` are adapted on `[0, T]` with right-continuous paths on
@@ -221,7 +221,7 @@ variable {T : ℝ} {C : Coeffs ν n m d} {X : Fin n → ℝ → Ω → ℝ} {Y :
   {hℱW : ∀ j : Fin d, LevyStochCalc.Brownian.IsBrownianFiltration (D.W.W j) ℱ}
   {hℱN : LevyStochCalc.Poisson.IsPoissonFiltration D.N ℱ} {ξ₀ : Fin n → Ω → ℝ}
 
-/-- **A solution in `ℍ²` is a solution in `ℍ²_weak`**: the `S²` bounds on `X` and `Y` give
+/-- **A solution in `𝕊` is a solution in `ℍ²`**: the `S²` bounds on `X` and `Y` give
 finite energy on `[0, T]`. -/
 theorem PaperSolution.toWeak (h : PaperSolution D ℱ hℱW hℱN T C ξ₀ X Y Z U γ) :
     PaperWeakSolution D ℱ hℱW hℱN T C ξ₀ X Y Z U γ where
@@ -255,7 +255,7 @@ theorem PaperSolution.toWeak (h : PaperSolution D ℱ hℱW hℱN T C ξ₀ X Y 
   fwd := h.fwd
   bwd := h.bwd
 
-/-- **A solution in `ℍ²_weak` with `S²` bounds is a solution in `ℍ²`**: if moreover
+/-- **A solution in `ℍ²` with `S²` bounds is a solution in `𝕊`**: if moreover
 `𝔼 sup_{t ≤ T} |X_t|² < ∞` and `𝔼 sup_{t ≤ T} |Y_t|² < ∞`, then `(X, Y, Z, U)` is a solution of
 (1.1) in the sense of `PaperSolution`, with the same `γ`. -/
 theorem PaperWeakSolution.paperSolution (h : PaperWeakSolution D ℱ hℱW hℱN T C ξ₀ X Y Z U γ)

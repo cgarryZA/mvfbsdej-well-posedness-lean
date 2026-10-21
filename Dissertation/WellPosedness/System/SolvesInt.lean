@@ -9,9 +9,9 @@ import Dissertation.WellPosedness.System.ChannelCoords
 import Dissertation.WellPosedness.System.SolvesMemLp
 
 /-!
-# Solutions of the system (1.1) in the class `ℍ²_weak`
+# Solutions of the system (1.1) in the class `ℍ²`
 
-Theorem 3.3 of the well-posedness paper concerns tuples `Θ = (X, Y, Z, U)` in `ℍ²_weak`, the class
+Theorem 3.3 of the well-posedness paper concerns tuples `Θ = (X, Y, Z, U)` in `ℍ²`, the class
 of progressive tuples with
 
 `𝔼 ∫_0^T (|X_t|² + |Y_t|² + |Z_t|²_F + ‖U_t‖²_{L²(ν)}) dt < ∞`,
@@ -40,8 +40,8 @@ and the jump coefficient enters through a representative `γ`. Along a solution 
 
 ## Main definitions
 
-* `SolvesForcedInt` — `(X, Y, Z, U)` solves the `λ`-forced system (4.1) in `ℍ²_weak`.
-* `SolvesInt` — `(X, Y, Z, U)` solves the system (1.1) in `ℍ²_weak`.
+* `SolvesForcedInt` — `(X, Y, Z, U)` solves the `λ`-forced system (4.1) in `ℍ²`.
+* `SolvesInt` — `(X, Y, Z, U)` solves the system (1.1) in `ℍ²`.
 
 ## Main statements
 
@@ -67,7 +67,7 @@ variable {Ω : Type u} [MeasurableSpace Ω] {E : Type v} [MeasurableSpace E] {ν
   [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] {n m d : ℕ}
   {P : Measure Ω} [IsProbabilityMeasure P]
 
-/-- **`(X, Y, Z, U)` solves the `λ`-forced system (4.1) in `ℍ²_weak`** with coefficients `C`,
+/-- **`(X, Y, Z, U)` solves the `λ`-forced system (4.1) in `ℍ²`** with coefficients `C`,
 initial datum `ξ₀` and forcing `q = (q^b, q^σ, q^h, q^f, q^g)` over the filtration `ℱ` carrying the
 driver
 `D`, with `γ` a representative of the jump coefficient along the solution: `q` is a forcing, `γ`
@@ -109,7 +109,7 @@ structure SolvesForcedInt (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν)
   /-- Each coordinate of `X_T` is square integrable. -/
   XT_sq : ∀ i, MemLp (X i T) 2 P
 
-/-- **`(X, Y, Z, U)` solves the system (1.1) in `ℍ²_weak`**: the `λ`-forced system of
+/-- **`(X, Y, Z, U)` solves the system (1.1) in `ℍ²`**: the `λ`-forced system of
 `SolvesForcedInt` at `λ = 1` with zero forcing. -/
 abbrev SolvesInt (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν)
     (ℱ : Filtration ℝ ‹MeasurableSpace Ω›)

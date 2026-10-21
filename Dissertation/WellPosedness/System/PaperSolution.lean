@@ -11,7 +11,7 @@ import Dissertation.WellPosedness.System.Solves
 # The solution notion of the well-posedness paper
 
 In the well-posedness paper a *solution* of (1.1) is a tuple `Θ = (X, Y, Z, U)` of
-`ℍ² = S²(ℝⁿ) × S²(ℝᵐ) × H²_W × H²_N` satisfying both identities of (1.1) almost surely for every
+`𝕊 = S²(ℝⁿ) × S²(ℝᵐ) × H²_W × H²_N` satisfying both identities of (1.1) almost surely for every
 `t ∈ [0, T]`, with the jump coefficient `h` evaluated at the predictable tuple
 `Θ⁻_t = (X_{t−}, Y_{t−}, Z_t, U_t)` and its law `μ⁻_t`; both sides of each identity are càdlàg in
 `t`, so the exceptional null set may be taken independent of `t`. Here `S²` consists of the
@@ -22,7 +22,7 @@ càdlàg adapted processes `V` with `𝔼 sup_{t ≤ T} |V_t|² < ∞`, identifi
 `PaperSolution` states this definition for coordinate processes over a filtration `ℱ` carrying
 the driver `D`, with `γ` a representative of the jump coefficient along the solution, and asks in
 addition that the drift and driver processes along `Θ` have finite energy on `[0, T]`. Under (2.3)
-and Assumptions 2.2–2.3 the coefficient processes along a tuple of `ℍ²` have finite energy ((4.2)),
+and Assumptions 2.2–2.3 the coefficient processes along a tuple of `𝕊` have finite energy ((4.2)),
 so it is then the paper's notion.
 
 * **`X ∈ S²(ℝⁿ)`, `Y ∈ S²(ℝᵐ)`.** Each coordinate is adapted at every time of `[0, T]`, every
@@ -91,7 +91,7 @@ The square integrability of `ξ₀` and of `g(X_T, Law X_T)` is not a field: it 
 
 ## Main definitions
 
-* `PaperSolution` — `(X, Y, Z, U)` is a solution of (1.1) in `ℍ²` whose drift and driver
+* `PaperSolution` — `(X, Y, Z, U)` is a solution of (1.1) in `𝕊` whose drift and driver
   processes have finite energy.
 
 ## Main statements
@@ -193,7 +193,7 @@ theorem jumpProc_of_notMem {s : ℝ} (hs : s ∉ Set.Icc (0 : ℝ) T) (i : Fin n
 
 /-! ### The solution predicate -/
 
-/-- **`(X, Y, Z, U)` is a solution of (1.1) in `ℍ²` with drift and driver of finite energy**, with
+/-- **`(X, Y, Z, U)` is a solution of (1.1) in `𝕊` with drift and driver of finite energy**, with
 coefficients `C` and initial datum `ξ₀`, over the filtration `ℱ` carrying the driver `D`, and
 with `γ` a representative of the jump coefficient: `X` and `Y` are adapted on `[0, T]` with
 right-continuous paths on `[0, T)`, left limits on `(0, T]` almost surely and finite

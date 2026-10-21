@@ -48,14 +48,6 @@ def P2.toP2W (μ : P2 E) : P2W E := μ
 /-- A point of the 2-Wasserstein space, as a law of finite second moment. -/
 def P2W.toP2 (μ : P2W E) : P2 E := μ
 
-/-- `P2W.toP2` is a left inverse of `P2.toP2W`. -/
-@[simp]
-theorem P2W.toP2_toP2W (μ : P2 E) : μ.toP2W.toP2 = μ := rfl
-
-/-- `P2W.toP2` is a right inverse of `P2.toP2W`. -/
-@[simp]
-theorem P2.toP2W_toP2 (μ : P2W E) : μ.toP2.toP2W = μ := rfl
-
 variable [CompleteSpace E] [BorelSpace E] [SecondCountableTopology E]
 
 /-- The 2-Wasserstein pseudometric on the laws of finite second moment. -/

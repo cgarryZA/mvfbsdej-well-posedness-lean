@@ -41,7 +41,7 @@ local notation "rotW" =>
   affineCoeffs (ν := Measure.dirac (0 : ℝ)) (n := 1) (d := 1) (-1) 1 0 0
 
 /-- The solution for `a` of the system `rotW` on the horizon `π/4`, from the initial datum `0`,
-in `ℍ_weak`. -/
+in `ℍ²`. -/
 theorem weakSolution_rotation {Ω : Type} [MeasurableSpace Ω] {P : Measure Ω}
     [IsProbabilityMeasure P] (D : LevyStochCalc.Driver.LevyDriver.{0, 0, w} P 1
       (Measure.dirac (0 : ℝ)))
@@ -65,7 +65,7 @@ theorem weakSolution_rotation {Ω : Type} [MeasurableSpace Ω] {P : Measure Ω}
 solutions.** Over a probability space carrying a Lévy driver with `d = 1` and `ν = δ₀` on `ℝ`,
 with `𝒢₀ = ⊥`, `n = m = 1` and `T = π/4`: the system of Example 5.1(i) with `σ_c = h_c = 0`,
 `β₂ = 1` and `β₁ = −1` satisfies (2.3) and Assumption 2.3 with `L = 1`; the tuples
-`(sin t, cos t, 0, 0)` and `(0, 0, 0, 0)` satisfy (1.1) in `ℍ_weak` from the initial datum `0`;
+`(sin t, cos t, 0, 0)` and `(0, 0, 0, 0)` satisfy (1.1) in `ℍ²` from the initial datum `0`;
 their differences are `δX_t = sin t` and `δY_t = cos t`; and the system satisfies Assumption 2.5
 for no matrix `G` of full rank and no constants `α, β₁, β₂`. -/
 theorem rem_uniq_lip_hypotheses :

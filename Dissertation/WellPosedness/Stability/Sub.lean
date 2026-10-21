@@ -284,14 +284,6 @@ theorem _root_.Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.linComb
   rw [e₁, e₂, eφ, eWT, eWt, eNT, eNt]
   ring
 
-/-- A scalar multiple of a solution of the linear backward equation solves it with the scaled
-data. -/
-theorem _root_.Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.const_mul
-    (h : LinearBSDEJ D ℱ hℱW hℱN T ξ₁ φ₁ Y₁ Z₁ U₁) (a : ℝ) :
-    LinearBSDEJ D ℱ hℱW hℱN T (fun ω => a * ξ₁ ω) (fun ω s => a * φ₁ ω s)
-      (fun t ω => a * Y₁ t ω) (fun s ω j => a * Z₁ s ω j) (fun s ω e => a * U₁ s ω e) := by
-  simpa only [zero_mul, add_zero] using h.linComb h a 0
-
 /-- **The difference of two solutions of the linear backward equation solves it** with the
 differenced terminal value and drift. -/
 theorem _root_.Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.sub

@@ -35,8 +35,6 @@ intensity `ν = δ₀` on `ℝ` (`LevyStochCalc.Driver.LevyDriver.exists`), the 
   backward equation of the solution of Theorem 3.5 for Example 5.1(i).
 * `Dissertation.Acceptance.A.ass_G_hypotheses` — the hypotheses of the bounds of Assumption 2.4.
 * `Dissertation.Acceptance.A.prop_strict_hypotheses` — the hypotheses of Proposition 3.8.
-* `Dissertation.Acceptance.A.thm_stab_hypotheses` — the hypotheses of Theorem 3.1, at the systems
-  of Example 5.1(i) with `β₁ = β₂ = 1` (system 1) and `β₁ = β₂ = 2` (system 2).
 * `Dissertation.Acceptance.A.ex_concrete_hypotheses` — the hypotheses of Example 5.1, at the
   initial datum `0`.
 * `Dissertation.Acceptance.A.ex_brownian_hypotheses` — the hypotheses of Example 5.2, at a
@@ -88,7 +86,7 @@ theorem thm_cwp_hypotheses :
 
 /-- **The hypotheses of Theorem 3.3 hold at Example 5.1(i).** At the instance of
 `thm_cwp_hypotheses`, the system satisfies (2.3) and Assumptions 2.3–2.5, and two tuples
-satisfy (1.1) in `ℍ_weak` with the initial datum `0` (both the solution of Theorem 3.5). -/
+satisfy (1.1) in `ℍ²` with the initial datum `0` (both the solution of Theorem 3.5). -/
 theorem thm_uniq_hypotheses :
     ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)
       (D : LevyStochCalc.Driver.LevyDriver P 1 (Measure.dirac (0 : ℝ)))
@@ -112,50 +110,6 @@ theorem thm_uniq_hypotheses :
     one_pos 1 one_pos 1 1 1 1 1 _ _ hJ h22 h23 hG h25).1
   exact ⟨Ω, inferInstance, P, inferInstance, D, hind₀, hJ, h23, hG, h25, X, X, Y, Y, Z, Z, U, U,
     hw, hw⟩
-
-/-- **The hypotheses of Theorem 3.1 hold at Example 5.1(i).** Over a probability space carrying a
-Lévy driver with `d = 1` and `ν = δ₀` on `ℝ`, with `𝒢₀ = ⊥`, `n = m = 1` and `T = 1`: the system
-of Example 5.1(i) with `β₁ = β₂ = 1` (system 1) satisfies (2.3) and Assumptions 2.2–2.5 with
-`L = 1`, `G = 1` and `α = β₁ = β₂ = 1`; the system with `β₁ = β₂ = 2` (system 2) satisfies (2.3)
-and Assumptions 2.2–2.3 with `L₂ = 2`; `σ_c = 0`, `h_c = 0` and both initial data are `0`; and
-each system has a solution in the sense of `Solution`. -/
-theorem thm_stab_hypotheses :
-    ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)
-      (D : LevyStochCalc.Driver.LevyDriver P 1 (Measure.dirac (0 : ℝ)))
-      (hind₀ : Indep (⊥ : MeasurableSpace Ω) (⨆ t, D.filtration t) P),
-      JointBorel 1 (sys 1)
-      ∧ Assumption22 (enlJoint ⊥ D bot_le) P 1 (sys 1) (fun _ => 0)
-      ∧ Assumption23 (enlJoint ⊥ D bot_le) P 1 1 (sys 1)
-      ∧ (1 : Matrix (Fin 1) (Fin 1) ℝ).rank = min 1 1
-      ∧ Assumption25 (enlJoint ⊥ D bot_le) P 1 (1 : Matrix (Fin 1) (Fin 1) ℝ) 1 1 1
-          (sys 1)
-      ∧ JointBorel 1 (sys 2)
-      ∧ Assumption22 (enlJoint ⊥ D bot_le) P 1 (sys 2) (fun _ => 0)
-      ∧ Assumption23 (enlJoint ⊥ D bot_le) P 1 2 (sys 2)
-      ∧ (∃ (X : Fin 1 → ℝ → Ω → ℝ) (Y : Fin 1 → ℝ → Ω → ℝ) (Z : Fin 1 → ℝ → Ω → Fin 1 → ℝ)
-          (U : Fin 1 → ℝ → Ω → ℝ → ℝ),
-          Solution D bot_le hind₀ 1 (sys 1) (fun _ => 0) X Y Z U)
-      ∧ ∃ (X : Fin 1 → ℝ → Ω → ℝ) (Y : Fin 1 → ℝ → Ω → ℝ) (Z : Fin 1 → ℝ → Ω → Fin 1 → ℝ)
-          (U : Fin 1 → ℝ → Ω → ℝ → ℝ),
-          Solution D bot_le hind₀ 1 (sys 2) (fun _ => 0) X Y Z U := by
-  obtain ⟨Ω, _, P, _, ⟨D⟩⟩ := LevyStochCalc.Driver.LevyDriver.exists 1 ℝ (Measure.dirac (0 : ℝ))
-  have hind₀ : Indep (⊥ : MeasurableSpace Ω) (⨆ t, D.filtration t) P := indep_bot_left _
-  obtain ⟨hJ₁, h22₁, h23₁, hG₁, h25₁⟩ :=
-    affine_assumptions (ν := Measure.dirac (0 : ℝ)) (ℱ := enlJoint ⊥ D bot_le) (P := P) (T := 1)
-      (σc := 0) (hc := 0) one_pos one_pos (0 : EuclideanSpace ℝ (Fin 1))
-  obtain ⟨hJ₂, h22₂, h23₂, hG₂, h25₂⟩ :=
-    affine_assumptions (ν := Measure.dirac (0 : ℝ)) (ℱ := enlJoint ⊥ D bot_le) (P := P) (T := 1)
-      (σc := 0) (hc := 0) two_pos two_pos (0 : EuclideanSpace ℝ (Fin 1))
-  have e₁ : max (max (1 : ℝ) 1) 1 = 1 := by norm_num
-  have e₂ : max (max (2 : ℝ) 2) 1 = 2 := by norm_num
-  rw [e₁] at h23₁
-  rw [e₂] at h23₂
-  refine ⟨Ω, inferInstance, P, inferInstance, D, hind₀, hJ₁, h22₁, h23₁, hG₁, h25₁, hJ₂, h22₂,
-    h23₂, ?_, ?_⟩
-  · exact (thm_cwp ⊥ _ 1 1 1 P D bot_le hind₀ one_pos one_pos one_pos 1 one_pos 1 1 1 1 1 _ _
-      hJ₁ h22₁ h23₁ hG₁ h25₁).1
-  · exact (thm_cwp ⊥ _ 1 1 1 P D bot_le hind₀ one_pos one_pos one_pos 1 one_pos 2 1 2 2 1 _ _
-      hJ₂ h22₂ h23₂ hG₂ h25₂).1
 
 /-- The feedback perturbation `p_b = ε y`, `p_σ = ε z`, `p_h = ε u`, `p_f = 0` with `ε = 1/2`, as
 the system of Example 5.1(i) with constants `(−1/2, 0)`. -/

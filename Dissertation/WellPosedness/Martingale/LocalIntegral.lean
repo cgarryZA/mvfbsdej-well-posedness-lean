@@ -288,13 +288,6 @@ theorem multidim_sub {Z₁ Z₂ : ℝ → Ω → Fin d → ℝ}
   rw [← Finset.sum_sub_distrib]
   exact Finset.sum_congr rfl fun j _ => hω j
 
-/-- `|H_s 1_{s ≤ τ}| ≤ |H_s|`. -/
-theorem nnnorm_ite_le {τ : WithTop ℝ} (s x : ℝ) :
-    (‖if ((s : ℝ) : WithTop ℝ) ≤ τ then x else 0‖₊ : ℝ≥0∞) ≤ ‖x‖₊ := by
-  split_ifs
-  · exact le_rfl
-  · simp
-
 /-- **The Burkholder–Davis–Gundy inequality at `p = 1` for a local Itô integral.** Over a
 right-continuous filtration whose null sets lie in its time-`0` field,
 `𝔼 sup_{t ≤ T} |M_t| ≤ 9 𝔼 (∑_j ∫_0^T H_j(s)² ds)^{1/2}`. -/

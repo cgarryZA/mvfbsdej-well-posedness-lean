@@ -10,7 +10,7 @@ import Dissertation.WellPosedness.System.PaperSolutionSolves
 /-!
 # Theorem 3.1 for solutions in the sense of the paper
 
-Theorem 3.1 of the paper compares solutions `Θ¹, Θ²` of (1.1) in `ℍ²` for two coefficient
+Theorem 3.1 of the paper compares solutions `Θ¹, Θ²` of (1.1) in `𝕊` for two coefficient
 systems `C¹, C²`:
 
 `𝔼 sup_{t ≤ T} |δX_t|² + 𝔼 sup_{t ≤ T} |δY_t|² + 𝔼 ∫_0^T (|δZ_t|²_F + ‖δU_t‖²_{L²(ν)}) dt

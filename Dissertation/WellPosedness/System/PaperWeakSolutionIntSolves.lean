@@ -10,7 +10,7 @@ import Dissertation.WellPosedness.System.SolvesInt
 # Solutions of `PaperWeakSolutionInt` as solutions of `SolvesInt`
 
 `PaperWeakSolutionInt` states the solution notion of Theorem 3.3 of the well-posedness paper in
-the encoding of `PaperSolution`, and `SolvesInt` is the form of (1.1) in `ℍ²_weak` on which the
+the encoding of `PaperSolution`, and `SolvesInt` is the form of (1.1) in `ℍ²` on which the
 uniqueness proof runs. They differ as `PaperSolution` and `Solves` do, in all but the
 integrability of the data (`Dissertation.WellPosedness.System.PaperSolutionSolves`):
 
@@ -21,7 +21,7 @@ integrability of the data (`Dissertation.WellPosedness.System.PaperSolutionSolve
 * `SolvesInt` asks the identities almost surely at each time with the canonical Brownian
   integral, which a càdlàg version agrees with almost surely at each time;
 * `SolvesInt` evaluates the jump coefficient at `(Θ_s, μ_s)`, and `Θ⁻_s = Θ_s` almost surely for
-  almost every `s` along a tuple of `ℍ²_weak`
+  almost every `s` along a tuple of `ℍ²`
   (`PaperWeakTuple.ae_ae_tupleAt_leftLimProc_eq`);
 * `SolvesInt` takes `Z` and `U` progressively measurable, and a predictable integrand vanishing
   off `[0, T]` is progressively measurable.
@@ -58,7 +58,7 @@ variable {Ω : Type u} [MeasurableSpace Ω] {E : Type v} [MeasurableSpace E]
   {hℱW : ∀ j : Fin d, LevyStochCalc.Brownian.IsBrownianFiltration (D.W.W j) ℱ}
   {hℱN : LevyStochCalc.Poisson.IsPoissonFiltration D.N ℱ} {ξ₀ : Fin n → Ω → ℝ}
 
-/-- **A solution of (1.1) in `ℍ²_weak` from its unforced equations**: a representative of the
+/-- **A solution of (1.1) in `ℍ²` from its unforced equations**: a representative of the
 jump coefficient, the forward equations of `LinearFSDEJInt` from `ξ₀`, the backward equations of
 `LinearBSDEJInt` with terminal value `g(X_T, Law X_T)`, finite energy of `X` and `Y` on `[0, T]`
 and a square-integrable `X_T`. -/

@@ -170,10 +170,6 @@ Borel measurable on `[0, T] × H × P₂(H)`. -/
 theorem coeffBorelW2_dealer (T : ℝ) : CoeffBorelW2 T (dealerCoeffs β₁ β₂ σc hc ε) :=
   (coeffBorelW2_affine T).perturb (coeffBorelW2_crowdPert T ε)
 
-/-- (2.3) for the dealer system, with the evaluation σ-algebra on `P₂(H)`. -/
-theorem coeffBorel_dealer (T : ℝ) : CoeffBorel T (dealerCoeffs β₁ β₂ σc hc ε) :=
-  (coeffBorelW2_dealer T).toCoeffBorel
-
 end Measurability
 
 end Dissertation.WellPosedness.Existence

@@ -41,7 +41,7 @@ theorem ex_dealer_riccati : PaperSpec.A.ex_dealer_riccati := by
   exact ⟨exists_pos_riccati hβ₁ hβ₂, fun p q hp hpT hq hqT =>
     riccati_unique hβ₁.le hp hq (hpT.trans hqT.symm)⟩
 
-/-- For `T > 0`, `β₁, β₂ > 0` and `ε ≥ 0`, a solution of (1.1) in `ℍ` with the coefficients of
+/-- For `T > 0`, `β₁, β₂ > 0` and `ε ≥ 0`, a solution of (1.1) in `𝕊` with the coefficients of
 Example 5.5 is one in the sense of `PaperSolutionEnl`, every path of `X` and of `Y` having left
 limits on `(0, T]`. -/
 theorem ex55_paperSolutionEnl {Ω : Type u} {𝒢₀ : MeasurableSpace Ω} [mΩ : MeasurableSpace Ω]
@@ -77,10 +77,6 @@ theorem ex_dealer_inert : PaperSpec.A.ex_dealer_inert.{u, v, w} := by
   refine ⟨h1, h2, h3, h4, fun ε' _ => solution_of_paperSolutionEnl (γ := γ) hT.le ?_ hXl hYl⟩
   rw [ex55Coeffs_eq]
   exact h5 ε'
-
-/-- The signed size `ς q` of the mark of the specialisation. -/
-private theorem signedSize_eq (e : DealerMark) :
-    signedSize e = (if e.1 then 1 else -1) * (e.2 : ℝ) := rfl
 
 /-- The constants of the specialisation: `c_{±1} = (2 − ϱ)/2` gives
 `(c_{+1} + c_{−1}) / (2 − ϱ) = 1` and `c_{+1} − c_{−1} = 0`. -/

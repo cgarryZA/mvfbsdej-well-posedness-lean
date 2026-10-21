@@ -7,9 +7,9 @@ import Dissertation.WellPosedness.Stability.LipschitzRate
 import Dissertation.WellPosedness.System.SolvesIntPair
 
 /-!
-# Finite energy of the coefficient differences along two solutions in `ℍ²_weak`
+# Finite energy of the coefficient differences along two solutions in `ℍ²`
 
-Along a single solution of (1.1) in `ℍ²_weak` the drift and the driver need not be square integrable
+Along a single solution of (1.1) in `ℍ²` the drift and the driver need not be square integrable
 in time: without Assumption 2.2 their origin values `b(·, 0, δ₀)`, `f(·, 0, δ₀)` need only be
 integrable on `[0, T]`. Along two solutions
 `Θ¹, Θ²` the differences are, as in the proof of Theorem 3.3 of the well-posedness paper:
@@ -18,7 +18,7 @@ integrating the expected Lipschitz bound (3.2) at the pair over `[0, T]` gives
 `𝔼 ∫_0^T (|δb_t|² + |δσ_t|²_F + ‖δh_t‖²_{L²(ν)} + |δf_t|²) dt
   ≤ K 𝔼 ∫_0^T (|δX_t|² + |δY_t|² + |δZ_t|²_F + ‖δU_t‖²_{L²(ν)}) dt < ∞`,
 
-the right-hand side finite because both solutions lie in `ℍ²_weak`. For the `λ`-forced system the
+the right-hand side finite because both solutions lie in `ℍ²`. For the `λ`-forced system the
 drift and the driver of the difference equations are `λ δb + δq^b` and `λ δf + δq^f`, of finite
 energy since the forcings are square integrable, and the terminal difference `λ δg_T + δq^g_T` is
 square integrable by the terminal bound (2.6) with (2.9), since `X¹_T, X²_T` are.
@@ -142,7 +142,7 @@ theorem PairLipschitz.energy_le (hL : PairLipschitz P ν T K KT X Y Z U b σ h f
 
 end Integrated
 
-/-! ### Two solutions in `ℍ²_weak` -/
+/-! ### Two solutions in `ℍ²` -/
 
 variable [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
   {P : Measure Ω} [IsProbabilityMeasure P] {D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν}
@@ -162,7 +162,7 @@ variable (h₁ : SolvesForcedInt D ℱ hℱW hℱN T lam C₁ ξ₁ qb₁ qσ₁
   (h₂ : SolvesForcedInt D ℱ hℱW hℱN T lam C₂ ξ₂ qb₂ qσ₂ qh₂ qf₂ qg₂ X₂ Y₂ Z₂ U₂ γ₂)
 include h₁ h₂
 
-/-- **The difference of two solutions in `ℍ²_weak` has finite energy on `[0, T]`**:
+/-- **The difference of two solutions in `ℍ²` has finite energy on `[0, T]`**:
 `𝔼 ∫_0^T (|δX|² + |δY|² + |δZ|²_F + ‖δU‖²_{L²(ν)}) < ∞`, in coordinates. -/
 theorem diffEnergy_lt_top :
     ∑ i, Brownian.Ito.energy P T (fun ω s => X₁ i s ω - X₂ i s ω)
@@ -192,7 +192,7 @@ theorem diffEnergy_lt_top :
       lt_top_iff_ne_top.mpr (hZ k j)
   · exact ENNReal.sum_lt_top.mpr fun k _ => lt_top_iff_ne_top.mpr (hU k)
 
-/-- **The coefficient differences along two solutions in `ℍ²_weak`, integrated in time.** For
+/-- **The coefficient differences along two solutions in `ℍ²`, integrated in time.** For
 `λ ≠ 0` and the expected Lipschitz bounds at the pair with interior constant `K`,
 `𝔼 ∫_0^T (|δb|² + |δσ|²_F + ‖δγ‖²_{L²(ν)} + |δf|²) ≤ K 𝔼 ∫_0^T (|δX|² + |δY|² + |δZ|²_F + ‖δU‖²)`,
 in coordinates. -/
@@ -228,7 +228,7 @@ theorem coeffEnergy_sub_le (hlam : lam ≠ 0)
     (fun i => (h₁.measurable_jumpProc hlam i).sub (h₂.measurable_jumpProc hlam i))
     (fun k => (h₁.measurable_driverProc hlam k).sub (h₂.measurable_driverProc hlam k))
 
-/-- The drift difference along two solutions in `ℍ²_weak` has finite energy on `[0, T]`, for `λ ≠ 0`
+/-- The drift difference along two solutions in `ℍ²` has finite energy on `[0, T]`, for `λ ≠ 0`
 and the expected Lipschitz bounds at the pair. -/
 theorem energy_driftProc_sub_ne_top (hlam : lam ≠ 0)
     (hL : PairLipschitz P ν T K KT (fun i t ω => X₁ i t ω - X₂ i t ω)
@@ -247,7 +247,7 @@ theorem energy_driftProc_sub_ne_top (hlam : lam ≠ 0)
   simp only [ENNReal.add_lt_top, ENNReal.sum_lt_top, Finset.mem_univ, true_implies] at hsum
   exact (hsum.1.1.1 i).ne
 
-/-- The driver difference along two solutions in `ℍ²_weak` has finite energy on `[0, T]`, for
+/-- The driver difference along two solutions in `ℍ²` has finite energy on `[0, T]`, for
 `λ ≠ 0` and the expected Lipschitz bounds at the pair. -/
 theorem energy_driverProc_sub_ne_top (hlam : lam ≠ 0)
     (hL : PairLipschitz P ν T K KT (fun i t ω => X₁ i t ω - X₂ i t ω)

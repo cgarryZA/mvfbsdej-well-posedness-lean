@@ -24,7 +24,7 @@ passage is that of `Solves.paperSolution`, with two changes.
   this gives left limits on `(0, T]` (`LinearFSDEJInt.ae_leftLim`, `LinearBSDEJInt.ae_leftLim`).
 
 The representative `γ` of `h(s, Θ_s, ·, μ_s)` represents `h(s, Θ⁻_s, ·, μ⁻_s)`, since
-`Θ⁻_s = Θ_s` almost surely at almost every time along a tuple of `ℍ²_weak`
+`Θ⁻_s = Θ_s` almost surely at almost every time along a tuple of `ℍ²`
 (`PaperWeakTuple.ae_ae_tupleAt_leftLimProc_eq`).
 
 ## Main statements
@@ -222,7 +222,7 @@ theorem linearBSDEJInt (k : Fin m) :
 /-- **A solution of `SolvesInt` with predictable integrands is a solution of
 `PaperWeakSolutionInt`.** For `T ≥ 0`, a solution `(X, Y, Z, U)` of (1.1) in the sense of
 `SolvesInt` with `Z` predictable and `U` marked predictable, coordinatewise, is a solution of
-(1.1) in `ℍ²_weak` with pathwise drift and driver integrals in the sense of
+(1.1) in `ℍ²` with pathwise drift and driver integrals in the sense of
 `PaperWeakSolutionInt`, with the same `γ`, over any filtration. -/
 theorem paperWeakSolutionInt (hZ : ∀ k j, Probability.Predictable ℱ fun ω s => Z k s ω j)
     (hU : ∀ k, Probability.MarkedPredictable ℱ ν fun ω s e => U k s ω e) (hT : 0 ≤ T) :

@@ -11,7 +11,7 @@ import LevyStochCalc.Poisson.PredictableIntegrand
 /-!
 # Predictable versions of the martingale integrands of a solution
 
-The solution space `ℍ²` of the paper takes the integrands `Z` and `U` predictable, while the
+The solution space `𝕊` of the paper takes the integrands `Z` and `U` predictable, while the
 solution predicate `SolvesForced` takes them progressively measurable and marked progressively
 measurable. Every such integrand of finite energy agrees almost everywhere with a predictable one
 (`LevyStochCalc.Probability.exists_predictable_ae_eq`,

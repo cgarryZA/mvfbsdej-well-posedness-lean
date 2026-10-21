@@ -54,11 +54,6 @@ variable {E : Type*} [NormedAddCommGroup E] [MeasurableSpace E] [BorelSpace E]
 noncomputable def featureMap {J : ℕ} (φ : Fin J → E → ℝ) (x : E) : EuclideanSpace ℝ (Fin J) :=
   WithLp.toLp 2 fun j => φ j x
 
-omit [NormedAddCommGroup E] [MeasurableSpace E] [BorelSpace E] [SecondCountableTopology E] in
-/-- The `j`-th coordinate of the feature map is the value of the `j`-th feature. -/
-theorem featureMap_apply {J : ℕ} (φ : Fin J → E → ℝ) (x : E) (j : Fin J) :
-    featureMap φ x j = φ j x := rfl
-
 omit [MeasurableSpace E] [BorelSpace E] [SecondCountableTopology E] in
 /-- The feature map of features with termwise Lipschitz bounds is Lipschitz with constant the
 Euclidean norm of the vector of those bounds. -/
@@ -70,7 +65,7 @@ theorem norm_featureMap_sub_le {J : ℕ} {φ : Fin J → E → ℝ} {K : Fin J �
     rw [Finset.sum_mul]
     refine Finset.sum_le_sum fun j _ => ?_
     have h1 : ‖(featureMap φ x - featureMap φ y) j‖ = |φ j x - φ j y| := by
-      simp [PiLp.sub_apply, featureMap_apply, Real.norm_eq_abs]
+      simp [PiLp.sub_apply, Real.norm_eq_abs]
     rw [h1]
     have h2 := hlip j x y
     have h3 : (0 : ℝ) ≤ |φ j x - φ j y| := abs_nonneg _

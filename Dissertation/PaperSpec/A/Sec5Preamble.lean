@@ -32,7 +32,7 @@ universe u v w
 /-- The preamble of §5. In the standing setting with `d = 1`, on the horizon `T = 3π/4`, the
 system of Example 3.2 of Li and Min satisfies (2.3), Assumption 2.2 with every deterministic
 initial datum and Assumption 2.3 with some constant, and from an initial datum `ξ₀` with
-`𝔼 ξ₀ ≠ 0` it has no tuple of `ℍ_weak` satisfying (1.1), so no solution. -/
+`𝔼 ξ₀ ≠ 0` it has no tuple of `ℍ²` satisfying (1.1), so no solution. -/
 def sec5_limin : Prop :=
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]

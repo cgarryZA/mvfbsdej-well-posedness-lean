@@ -75,11 +75,6 @@ noncomputable def toL2CLM : Tuple HX HY HZY HUY →L[ℝ] TupleL2 HX HY HZY HUY 
       map_smul' := fun _ _ => rfl }
     2 norm_toL2_le
 
-/-- `toL2CLM` is `toL2`. -/
-@[simp]
-theorem toL2CLM_apply (θ : Tuple HX HY HZY HUY) : toL2CLM θ = toL2 θ :=
-  rfl
-
 /-- The Hilbert inner product of two tuples is the sum of the inner products of their channels. -/
 theorem inner_toL2 (θ θ' : Tuple HX HY HZY HUY) :
     inner ℝ (toL2 θ) (toL2 θ') = inner ℝ θ.1 θ'.1 + inner ℝ θ.2.1 θ'.2.1

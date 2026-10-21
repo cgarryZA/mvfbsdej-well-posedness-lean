@@ -11,7 +11,7 @@ import Dissertation.WellPosedness.System.PaperSolutionForcedSolves
 # `WP(λ)` in the sense of the paper: Lemmas 4.2 and 4.4
 
 The paper calls the forced system (4.1) well posed at `λ`, `WP(λ)`, if it has a unique solution
-in `ℍ²` for every forcing `q`. `ForcedSolvable`, `ForcedUnique` and `ForcedWP` state `WP(λ)` for
+in `𝕊` for every forcing `q`. `ForcedSolvable`, `ForcedUnique` and `ForcedWP` state `WP(λ)` for
 the predicate `SolvesForced`; `PaperForcedSolvable`, `PaperForcedUnique` and `PaperForcedWP` state
 it for the paper's solution notion `PaperSolutionForced`, with the same quantifiers: every forcing
 in the sense of `Forcing` has a solution, and any two solutions with the same forcing coincide in

@@ -279,7 +279,7 @@ theorem solvesIntAug_rotation (a : ℝ) :
   Y_sq _ := energy_const_mul_ne_top Real.abs_cos_le_one a
   XT_sq _ := memLp_const _
 
-/-- **The solution for `a` in `ℍ²_weak`**: `X_t = a sin t`, `Y_t = a cos t`, `Z = U = 0` solves
+/-- **The solution for `a` in `ℍ²`**: `X_t = a sin t`, `Y_t = a cos t`, `Z = U = 0` solves
 `rotC` from `ξ₀ = 0` on the horizon `π/4` in the sense of `PaperWeakSolutionInt` over
 `augJoint D`, with `γ = 0`. -/
 theorem paperWeakSolutionIntAug_rotation (a : ℝ) :

@@ -191,7 +191,7 @@ instance measurableSingletonClass_tupleH_volume :
   @Prod.instMeasurableSingletonClass _ _ _ _ _ (@Prod.instMeasurableSingletonClass _ _ _ _ _
     inferInstance)
 
-/-- Rank-one jump feedback on `ℍ` with `n = m = d = 1` and `ν` Lebesgue measure on `ℝ`:
+/-- Rank-one jump feedback on `𝕊` with `n = m = d = 1` and `ν` Lebesgue measure on `ℝ`:
 `b = σ = f = g = 0` and `h(t, θ, μ) = −⟨φ, u⟩ φ`, with `φ = unitIndicator`. -/
 noncomputable def rankOneCoeffs : Coeffs (volume : Measure ℝ) 1 1 1 where
   b _ _ _ := 0

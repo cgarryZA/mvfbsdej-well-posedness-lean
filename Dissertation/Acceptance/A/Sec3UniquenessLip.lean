@@ -14,14 +14,14 @@ import Dissertation.Acceptance.A.Sec3Uniqueness
 # The proof of Theorem 3.3 under the Lipschitz condition alone: proofs
 
 Statement and equation numbers refer to the well-posedness paper at `1f67672`. Two solutions of
-(1.1) in `ℍ_weak` solve the `λ`-forced system (4.1) at `λ = 1` with zero forcing
+(1.1) in `ℍ²` solve the `λ`-forced system (4.1) at `λ = 1` with zero forcing
 (`paperWeakSolutionForcedInt_one_zero_iff`); extended off `[0, T]`, their difference is the
 difference system of the implementation with the coupling matrix `0`
 (`PaperWeakSolutionForcedInt.exists_pairDiff_lip`), which needs Assumption 2.3 along the diagonal
 and no monotonicity. Its Lipschitz field is the bound at almost every time, its integrands have
 finite energy, which is (3.2), its forward coordinates obey the supremum bound of the difference
 system (`PairDiff.lintegral_biSup_fwd_le`), its backward coordinates the estimate of Lemma 4.1
-(`LinearBSDEJ.brownianPoisson_estimate`), and the whole difference has finite `ℍ`-norm
+(`LinearBSDEJ.brownianPoisson_estimate`), and the whole difference has finite `𝕊`-norm
 (`supSize_lt_top_of_linear`). The terminal bound is (2.6) with (2.9) at the square-integrable
 `ℱ_T`-measurable terminal values (`TerminalLipschitz.lipT_pair`). The jump coefficient at the
 predictable tuples agrees with the solutions' representatives almost everywhere
@@ -36,7 +36,7 @@ predictable tuples agrees with the solutions' representatives almost everywhere
 * `Dissertation.Acceptance.A.eq_uniq_bwd_terminal` — the terminal bound before (3.3),
   `K(L) = 4 L²`.
 * `Dissertation.Acceptance.A.eq_uniq_bwd_lip` — (3.3), with `C_BP(T) = 13 e^T + 3T`.
-* `Dissertation.Acceptance.A.rem_uniq_lip_mem` — `Θ¹ − Θ² ∈ ℍ`.
+* `Dissertation.Acceptance.A.rem_uniq_lip_mem` — `Θ¹ − Θ² ∈ 𝕊`.
 -/
 
 open MeasureTheory ProbabilityTheory Filter
@@ -270,7 +270,7 @@ theorem eq_uniq_bwd_lip : PaperSpec.A.eq_uniq_bwd_lip.{u, v, w} := by
     (fun k t => ((hD.bwd k).Y_adapted t).mono ((enlJoint 𝒢₀ D h𝒢₀).le t) le_rfl)
     fun k => (hD.bwd k).Y_rightCont).trans (Finset.sum_le_sum fun k _ => hest k)
 
-/-- `Θ¹ − Θ² ∈ ℍ` under the Lipschitz condition. -/
+/-- `Θ¹ − Θ² ∈ 𝕊` under the Lipschitz condition. -/
 theorem rem_uniq_lip_mem : PaperSpec.A.rem_uniq_lip_mem.{u, v, w} := by
   rintro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ _ _ _ T hT L C hJ h23 ξ₀
     X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ ⟨⟨γ₁, h₁⟩, -, -⟩ ⟨⟨γ₂, h₂⟩, -, -⟩

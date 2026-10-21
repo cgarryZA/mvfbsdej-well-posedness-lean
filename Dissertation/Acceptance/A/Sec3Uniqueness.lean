@@ -12,7 +12,7 @@ import Dissertation.WellPosedness.BrownianPoisson.Estimate
 # Two steps of the proof of Theorem 3.3: proofs
 
 Statement and equation numbers refer to the well-posedness paper at `1f67672`. Two solutions of
-(1.1) in `ℍ_weak` solve the `λ`-forced system (4.1) at `λ = 1` with zero forcing
+(1.1) in `ℍ²` solve the `λ`-forced system (4.1) at `λ = 1` with zero forcing
 (`paperWeakSolutionForcedInt_one_zero_iff`); extended off `[0, T]`, their difference is the
 difference system of the implementation (`PaperWeakSolutionForcedInt.exists_pairDiff`), whose
 integrands have finite energy, which is (3.2), and whose backward coordinates satisfy the estimate

@@ -7,9 +7,9 @@ import Dissertation.WellPosedness.Existence.PaperAdmissible
 import Dissertation.WellPosedness.System.SolvesMemLp
 
 /-!
-# A tuple of `ℍ²_weak` as a progressive tuple
+# A tuple of `ℍ²` as a progressive tuple
 
-A tuple `Θ = (X, Y, Z, U)` of `ℍ²_weak` (`PaperWeakTuple`) constrains `X` and `Y` on `[0, T]`
+A tuple `Θ = (X, Y, Z, U)` of `ℍ²` (`PaperWeakTuple`) constrains `X` and `Y` on `[0, T]`
 only. Extended by `0` before `0` and frozen after `T` (`exists_adapted_rightCont_extension`), it
 is a progressive tuple with the same values on `[0, T]`, so its tuple `Θ_s` is strongly
 `ℱ_s`-measurable at every `s ∈ [0, T]` and square integrable at almost every `s ∈ [0, T]`, and
@@ -137,7 +137,7 @@ theorem setLIntegral_lintegral_coords_le {T : ℝ} {X : Fin n → ℝ → Ω →
 
 end Coords
 
-/-! ### The extension of a tuple of `ℍ²_weak` -/
+/-! ### The extension of a tuple of `ℍ²` -/
 
 variable {Ω : Type u} [MeasurableSpace Ω] {E : Type v} [MeasurableSpace E] {ν : Measure E}
   [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] {n m d : ℕ}
@@ -151,7 +151,7 @@ variable (hΘ : PaperWeakTuple ℱ P ν T X Y Z U)
 include hΘ
 
 omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] [IsProbabilityMeasure P] in
-/-- **A tuple of `ℍ²_weak` extends to a progressive tuple.** For `T ≥ 0` there are `X'`, `Y'`
+/-- **A tuple of `ℍ²` extends to a progressive tuple.** For `T ≥ 0` there are `X'`, `Y'`
 equal to `X`, `Y` at every time of `[0, T]` such that `(X', Y', Z, U)` is a progressive tuple,
 the coordinates of `X'` and `Y'` having finite energy on `[0, T]`. -/
 theorem exists_progTuple (hT : 0 ≤ T) :
@@ -180,7 +180,7 @@ theorem exists_progTuple (hT : 0 ≤ T) :
   · rw [energy_eq_of_eqOn (hYe k)]
     exact hΘ.Y_sq k
 
-/-- The tuple `Θ_s` of a tuple of `ℍ²_weak` is strongly `ℱ_s`-measurable at every time of
+/-- The tuple `Θ_s` of a tuple of `ℍ²` is strongly `ℱ_s`-measurable at every time of
 `[0, T]`. -/
 theorem stronglyMeasurable_tupleAt {s : ℝ} (hs : s ∈ Set.Icc (0 : ℝ) T) :
     StronglyMeasurable[ℱ s] (tupleAt ν X Y Z U s) := by
@@ -188,7 +188,7 @@ theorem stronglyMeasurable_tupleAt {s : ℝ} (hs : s ∈ Set.Icc (0 : ℝ) T) :
   rw [← tupleAt_eq_of_eqOn hXe hYe hs]
   exact hP.stronglyMeasurable_tupleAt s
 
-/-- The tuple `Θ_s` of a tuple of `ℍ²_weak` is square integrable at almost every time of
+/-- The tuple `Θ_s` of a tuple of `ℍ²` is square integrable at almost every time of
 `[0, T]`. -/
 theorem ae_memLp_tupleAt (hT : 0 ≤ T) :
     ∀ᵐ s ∂(volume.restrict (Set.Icc (0 : ℝ) T)), MemLp (tupleAt ν X Y Z U s) 2 P := by
@@ -197,7 +197,7 @@ theorem ae_memLp_tupleAt (hT : 0 ≤ T) :
   rwa [tupleAt_eq_of_eqOn hXe hYe hs] at h
 
 omit [MeasurableSpace.CountablyGenerated E] in
-/-- The jump channel of a tuple of `ℍ²_weak` is square integrable in the mark at almost every
+/-- The jump channel of a tuple of `ℍ²` is square integrable in the mark at almost every
 time of `[0, T]`, almost surely. -/
 theorem ae_ae_memLp_jump :
     ∀ᵐ s ∂(volume.restrict (Set.Icc (0 : ℝ) T)), ∀ᵐ ω ∂P, ∀ k,

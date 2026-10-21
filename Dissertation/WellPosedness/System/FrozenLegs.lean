@@ -42,7 +42,7 @@ the step uses.
 * `LinearFSDEJ.ae_forall_Icc_eq` — uniqueness for the linear forward equation.
 * `LinearBSDEJ.eq_of_ae_eq_terminal` — uniqueness for the linear backward equation.
 * `PaperWeakTuple.setLIntegral_lintegral_channels_lt_top` — the time integral of the expected
-  squared channels of a tuple of `ℍ²_weak` with finite running suprema is finite.
+  squared channels of a tuple of `ℍ²` with finite running suprema is finite.
 -/
 
 open MeasureTheory Filter Topology Dissertation.Law
@@ -291,13 +291,13 @@ theorem _root_.Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.eq_of_ae_e
 
 end Backward
 
-/-! ### Tuples of `ℍ²_weak` with finite running suprema -/
+/-! ### Tuples of `ℍ²` with finite running suprema -/
 
 variable [MeasurableSpace.CountablyGenerated E] {n m : ℕ}
   {X : Fin n → ℝ → Ω → ℝ} {Y : Fin m → ℝ → Ω → ℝ} {Z : Fin m → ℝ → Ω → Fin d → ℝ}
   {U : Fin m → ℝ → Ω → E → ℝ}
 
-/-- **The expected squared channels of a tuple of `ℍ²_weak` have finite time integral** when the
+/-- **The expected squared channels of a tuple of `ℍ²` have finite time integral** when the
 running suprema of `X` and `Y` have finite expectation:
 `∫_0^T 𝔼(|X_s|² + |Y_s|² + |Z_s|²_F + ‖U_s‖²_{L²(ν)}) ds < ∞`. -/
 theorem PaperWeakTuple.setLIntegral_lintegral_channels_lt_top

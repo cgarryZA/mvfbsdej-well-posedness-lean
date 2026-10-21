@@ -30,7 +30,7 @@ uniform law; `θ₁ ∈ H` is the point all of whose channels are `1`, its `U`-c
   vectors `1_{true} e₁` and `1_{false} e₁`.
 * `Dissertation.Acceptance.A.eq_margproj_hypotheses` — the hypotheses of (2.11), at the Dirac
   masses at `0` and `θ₁`.
-* `Dissertation.Acceptance.A.sec3_HH_inclusion_hypotheses` — the hypotheses of `ℍ ⊂ ℍ_weak`, at
+* `Dissertation.Acceptance.A.sec3_HH_inclusion_hypotheses` — the hypotheses of `𝕊 ⊂ ℍ²`, at
   the forward component of the solution of Example 5.1(i) from `ξ₀ ≡ e₁`.
 * `Dissertation.Acceptance.A.ex_concrete_i_ham_hypotheses` — the hypotheses of the Hamiltonian
   claim of Example 5.1(i), at `ν = δ₀` and `β₁ = 1`.
@@ -141,7 +141,7 @@ theorem eq_margproj_hypotheses :
 
 /-! ### §3 -/
 
-/-- **The hypotheses of the inclusion `ℍ ⊂ ℍ_weak` hold at a nonzero process of `ℍ`.** Over a
+/-- **The hypotheses of the inclusion `𝕊 ⊂ ℍ²` hold at a nonzero process of `𝕊`.** Over a
 probability space carrying a Lévy driver with `d = 1` and `ν = δ₀` on `ℝ`, with `𝒢₀ = ⊥`,
 `n = m = 1` and `T = 1 ≥ 0`, the forward component `X` of the solution of Example 5.1(i)
 (`β₁ = β₂ = 1`, `σ_c = h_c = 0`) from `ξ₀ ≡ e₁` has `𝔼 sup_{t ≤ 1} |X_t|² < ∞` and `X_0 = 1`

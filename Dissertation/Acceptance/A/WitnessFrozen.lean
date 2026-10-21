@@ -17,9 +17,9 @@ that of `Dissertation.Acceptance.A.thm_cwp_hypotheses`: a Lévy driver with `d =
 ## Main statements
 
 * `Dissertation.Acceptance.A.hTuple_const` — a tuple with constant `X`, `Y` and zero `Z`, `U` lies
-  in `ℍ`.
+  in `𝕊`.
 * `Dissertation.Acceptance.A.frozen_hypotheses` — the hypotheses of (4.7)–(4.9) at `λ = 1`, the
-  zero forcing and two distinct trial tuples of `ℍ`: the zero tuple and the constant tuple
+  zero forcing and two distinct trial tuples of `𝕊`: the zero tuple and the constant tuple
   `(1, 1, 0, 0)`.
 -/
 
@@ -39,7 +39,7 @@ universe w
 local notation "sys " β:max =>
   affineCoeffs (ν := Measure.dirac (0 : ℝ)) (n := 1) (d := 1) β β 0 0
 
-/-- A tuple with constant `X ≡ a`, `Y ≡ b` and zero `Z`, `U` lies in `ℍ` over every filtration,
+/-- A tuple with constant `X ≡ a`, `Y ≡ b` and zero `Z`, `U` lies in `𝕊` over every filtration,
 for every finite measure and on every horizon. -/
 theorem hTuple_const {Ω : Type*} [MeasurableSpace Ω] {E : Type*} [MeasurableSpace E]
     {ν : Measure E} [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] {n m d : ℕ}
@@ -76,7 +76,7 @@ theorem hTuple_const {Ω : Type*} [MeasurableSpace Ω] {E : Type*} [MeasurableSp
 /-- **The hypotheses of the frozen step of Lemma 4.2 hold at Example 5.1(i).** At the instance of
 `thm_cwp_hypotheses`, the system with initial datum `0` satisfies (2.3) and Assumptions 2.2–2.3
 with `L = 1`; the zero forcing is a forcing of (4.1) in the class of the paper; and the zero tuple
-and the constant tuple `(X, Y, Z, U) = (1, 1, 0, 0)` are two distinct trial tuples of `ℍ`. -/
+and the constant tuple `(X, Y, Z, U) = (1, 1, 0, 0)` are two distinct trial tuples of `𝕊`. -/
 theorem frozen_hypotheses :
     ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)
       (D : LevyStochCalc.Driver.LevyDriver.{0, 0, w} P 1 (Measure.dirac (0 : ℝ)))

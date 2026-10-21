@@ -57,14 +57,6 @@ def _root_.Dissertation.Law.P2.toP2WH (μ : P2 (Tuple HX HY HZY HUY)) : P2WH HX 
 /-- A point of `P2WH`, as a law of finite second moment on the tuple space. -/
 def P2WH.toP2 (μ : P2WH HX HY HZY HUY) : P2 (Tuple HX HY HZY HUY) := μ
 
-/-- `P2WH.toP2` is a left inverse of `P2.toP2WH`. -/
-@[simp]
-theorem P2WH.toP2_toP2WH (μ : P2 (Tuple HX HY HZY HUY)) : μ.toP2WH.toP2 = μ := rfl
-
-/-- `P2WH.toP2` is a right inverse of `P2.toP2WH`. -/
-@[simp]
-theorem P2WH.toP2WH_toP2 (μ : P2WH HX HY HZY HUY) : μ.toP2.toP2WH = μ := rfl
-
 variable [BorelSpace HX] [BorelSpace HY] [BorelSpace HZY] [BorelSpace HUY]
   [SecondCountableTopology HX] [SecondCountableTopology HY] [SecondCountableTopology HZY]
   [SecondCountableTopology HUY]

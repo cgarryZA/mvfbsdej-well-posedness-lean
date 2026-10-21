@@ -19,11 +19,11 @@ Statement and equation numbers refer to the well-posedness paper at `1f67672`. T
 `G δX_{s−}` and `Gᵀ δY_{s−}`, cut to `(0, T]`, are predictable, bounded before `δX` (or `δY`)
 leaves a ball, and at most `‖G‖ sup_{t ≤ T} |δX_t|` (or `|δY_t|`); `⟨G v, y⟩ = ⟨Gᵀ y, v⟩` writes
 the second and fourth integrands with the weight `Gᵀ δY_{s−}`. With `𝔼 sup |δX|², 𝔼 sup |δY|²`
-finite (`Θ¹ − Θ² ∈ ℍ`) and the integrability of `δZ`, `δU`, `λ δσ + q^σ` and `λ δh + q^h` from
+finite (`Θ¹ − Θ² ∈ 𝕊`) and the integrability of `δZ`, `δU`, `λ δσ + q^σ` and `λ δh + q^h` from
 (4.15) and (4.16), `localBrownian_weight` and `localCompensated_weight` give the local integrals,
 the bounds with `c₀ = 9` and the zero means. The fifth integrand is bounded by the Cauchy–Schwarz
 inequality (`lintegral_abs_dotProduct_le`). The hypotheses are those of Lemma 4.3, an instance of
-which is `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`.
+which is `Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses`.
 
 ## Main statements
 

@@ -13,13 +13,13 @@ Statement and equation numbers refer to the well-posedness paper at `1f67672`. T
 that of `Dissertation.Acceptance.A.frozen_hypotheses`: a Lévy driver with `d = 1` and `ν = δ₀` on
 `ℝ`, `𝒢₀ = ⊥`, `n = m = 1`, `T = 1`, the system of Example 5.1(i) with `β₁ = β₂ = 1`,
 `σ_c = h_c = 0` (`b = −y`, `σ = −z`, `h = −u`) and initial datum `0`, `λ = 1` and the zero
-forcing, with the two trials of `ℍ` the zero tuple and `(X, Y, Z, U) = (1, 1, 1_{(0, 1]},
+forcing, with the two trials of `𝕊` the zero tuple and `(X, Y, Z, U) = (1, 1, 1_{(0, 1]},
 1_{(0, 1]})`. The coefficient differences are `δb = 1_{[0, 1]}`, `δσ = δh = 1_{(0, 1]}`.
 
 ## Main statements
 
 * `Dissertation.Acceptance.A.hTuple_const_window` — a tuple with constant `X`, `Y` and
-  `Z = U = 1_{(0, 1]}` lies in `ℍ`.
+  `Z = U = 1_{(0, 1]}` lies in `𝕊`.
 * `Dissertation.Acceptance.A.coeffJump_affine` — the canonical representative of `h = −u` at a
   tuple, at the mark `0`.
 * `Dissertation.Acceptance.A.frozen_pair_window_hypotheses` — the hypotheses of the forward
@@ -42,7 +42,7 @@ universe w
 local notation "sysF" =>
   affineCoeffs (ν := Measure.dirac (0 : ℝ)) (n := 1) (d := 1) 1 1 0 0
 
-/-- A tuple with constant `X ≡ a`, `Y ≡ b` and `Z = U = 1_{(0, 1]}` lies in `ℍ` on `[0, 1]` at
+/-- A tuple with constant `X ≡ a`, `Y ≡ b` and `Z = U = 1_{(0, 1]}` lies in `𝕊` on `[0, 1]` at
 `ν = δ₀`, over every filtration. -/
 theorem hTuple_const_window {Ω : Type*} [MeasurableSpace Ω] (ℱ : Filtration ℝ ‹MeasurableSpace Ω›)
     (P : Measure Ω) [IsProbabilityMeasure P] (a b : ℝ) :
@@ -107,7 +107,7 @@ theorem driftProc_affine {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω}
 /-- **The hypotheses of the forward difference before (4.10) hold with `δb`, `δσ` and `δh`
 nonzero.** At the instance of `frozen_hypotheses` — the system of Example 5.1(i) with initial
 datum `0`, (2.3) and Assumptions 2.2–2.3 with `L = 1`, `λ = 1` and the zero forcing — the zero
-tuple and the tuple `(X, Y, Z, U) = (1, 1, 1_{(0, 1]}, 1_{(0, 1]})` are two trials of `ℍ`, each
+tuple and the tuple `(X, Y, Z, U) = (1, 1, 1_{(0, 1]}, 1_{(0, 1]})` are two trials of `𝕊`, each
 has a frozen step, and the coefficient differences `δb = 1_{[0, 1]}`, `δσ = 1_{(0, 1]}` and
 `δh = 1_{(0, 1]}` (through `coeffJump`) each have energy `1` on `[0, 1]`. -/
 theorem frozen_pair_window_hypotheses :

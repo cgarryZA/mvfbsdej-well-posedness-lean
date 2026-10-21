@@ -177,7 +177,7 @@ theorem sum_energy_le_coeffDiffNorm {Ω : Type u} [MeasurableSpace Ω] {E : Type
     _ ≤ _ := lintegral_mono hpt
 
 /-- **The forward difference of two frozen steps.** Under the hypotheses of Lemma 4.2, for two
-trials of `ℍ` and their frozen steps, the integrals of (1.1) exist along each trial with the
+trials of `𝕊` and their frozen steps, the integrals of (1.1) exist along each trial with the
 representative `coeffJump` of the jump coefficient, and each coordinate of `δX̄` solves the linear
 forward equation from `0` with integrands `λ δb, λ δσ, λ δh`. -/
 theorem frozenStep_fwd_sub {Ω : Type u} {𝒢₀ : MeasurableSpace Ω} [mΩ : MeasurableSpace Ω]

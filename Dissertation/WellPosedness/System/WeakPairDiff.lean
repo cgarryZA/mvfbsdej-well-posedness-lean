@@ -8,9 +8,9 @@ import Dissertation.WellPosedness.System.PaperWeakSolutionForcedIntSolves
 import Dissertation.WellPosedness.System.JumpLeftEnergy
 
 /-!
-# Two solutions of the `λ`-forced system in `ℍ_weak` and their difference
+# Two solutions of the `λ`-forced system in `ℍ²` and their difference
 
-Let `Θ¹, Θ²` solve the `λ`-forced system (4.1) of the well-posedness paper in `ℍ_weak`, in the
+Let `Θ¹, Θ²` solve the `λ`-forced system (4.1) of the well-posedness paper in `ℍ²`, in the
 sense of `PaperWeakSolutionForcedInt`, with jump representatives `γ¹, γ²`. The proof of Lemma 4.3
 works with their difference:
 
@@ -85,8 +85,8 @@ variable {Ω : Type u} [MeasurableSpace Ω] {E : Type v} [MeasurableSpace E] {ν
   {Z Z₁ Z₂ : Fin m → ℝ → Ω → Fin d → ℝ} {U U₁ U₂ : Fin m → ℝ → Ω → E → ℝ}
   {γ γ₁ γ₂ : Fin n → ℝ → Ω → E → ℝ} {L α β₁ β₂ : ℝ} {G : Matrix (Fin m) (Fin n) ℝ}
 
-/-- **The difference of two solutions in `ℍ_weak` is a difference system.** For two solutions of
-the `λ`-forced system in `ℍ_weak` with the same coefficients and `T ≥ 0`, satisfying Assumption
+/-- **The difference of two solutions in `ℍ²` is a difference system.** For two solutions of
+the `λ`-forced system in `ℍ²` with the same coefficients and `T ≥ 0`, satisfying Assumption
 2.3 along the diagonal with constant `L` and Assumption 2.5 along the diagonal with coupling
 matrix `G` and constants `α, β₁, β₂`, there are `X'^k, Y'^k` equal to `X^k, Y^k` at every time of
 `[0, T]` such that the difference `(X'¹ − X'², Y'¹ − Y'², δZ, δU)` is a `PairDiff` with Lipschitz
@@ -129,7 +129,7 @@ theorem PaperWeakSolutionForcedInt.exists_pairDiff
     fun k t ht => ⟨hY₁ k t ht, hY₂ k t ht⟩, hD⟩
 
 /-- **The forced jump integrand at the predictable tuple.** For a solution of the `λ`-forced
-system in `ℍ_weak` with jump representative `γ`, coefficients with the joint measurability (2.3),
+system in `ℍ²` with jump representative `γ`, coefficients with the joint measurability (2.3),
 `T ≥ 0`, and every path of `X` and `Y` with left limits at every time of `(0, T]`, the forced jump
 integrand `λ γ_{i,s}(ω, e) + q^h_{i,s}(ω, e)` agrees, almost everywhere for the marked energy
 measure on `[0, T]`, with `λ coeffJump(h, Θ⁻)_{i,s}(ω, e) + q^h_{i,s}(ω, e)`, the canonical
@@ -230,7 +230,7 @@ theorem PaperWeakSolutionForcedInt.ae_forcedJump_leftLim_eq
     Existence.coeffJump_eq_of_tupleAt_eq hqI' (hleft _ hqI)]
 
 /-- **The forced jump integrands of two solutions at the predictable tuples.** For two solutions
-of the `λ`-forced system in `ℍ_weak` with the same coefficients, with the joint measurability
+of the `λ`-forced system in `ℍ²` with the same coefficients, with the joint measurability
 (2.3), `T ≥ 0`, and every path of `X^k` and `Y^k` with left limits at every time of `(0, T]`,
 almost everywhere for the marked energy measure on `[0, T]`, for every coordinate `i`,
 `λ (coeffJump(h, Θ¹⁻) − coeffJump(h, Θ²⁻))_i + δq^h_i = λ (γ¹ − γ²)_i + δq^h_i`. -/

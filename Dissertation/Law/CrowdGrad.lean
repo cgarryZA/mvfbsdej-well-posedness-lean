@@ -120,11 +120,6 @@ noncomputable def crowdPot (w : F) : ℝ :=
 noncomputable def crowdGrad (w : F) : F :=
   (Real.sqrt (1 + ‖w‖ ^ 2))⁻¹ • w
 
-/-- The crowding potential vanishes at the origin. -/
-@[simp]
-theorem crowdPot_zero : crowdPot (0 : F) = 0 := by
-  simp [crowdPot]
-
 /-- The crowding potential is even. -/
 @[simp]
 theorem crowdPot_neg (w : F) : crowdPot (-w) = crowdPot w := by

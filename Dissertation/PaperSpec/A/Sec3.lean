@@ -89,10 +89,10 @@ def thm_stab : Prop :=
 
 /-- Theorem 3.3 (uniqueness). In the standing setting, for every horizon `T > 0`, if the
 coefficients satisfy (2.3) and Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling
-matrix `G`, and `Θ¹, Θ² ∈ ℍ_weak` satisfy (1.1) with the same initial datum `ξ₀`, then
-`Θ¹ = Θ²` in `ℍ_weak`: their `X` and their `Y` are indistinguishable on `[0, T]`, and
+matrix `G`, and `Θ¹, Θ² ∈ ℍ²` satisfy (1.1) with the same initial datum `ξ₀`, then
+`Θ¹ = Θ²` in `ℍ²`: their `X` and their `Y` are indistinguishable on `[0, T]`, and
 `𝔼 ∫_0^T |Z¹_t − Z²_t|²_F dt = 0` and `𝔼 ∫_0^T ‖U¹_t − U²_t‖²_{L²(ν)} dt = 0`, coordinatewise;
-furthermore `Θ¹ − Θ² ∈ ℍ`: `‖Θ¹ − Θ²‖²_ℍ < ∞`. -/
+furthermore `Θ¹ − Θ² ∈ 𝕊`: `‖Θ¹ − Θ²‖²_𝕊 < ∞`. -/
 def thm_uniq : Prop :=
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
@@ -119,7 +119,7 @@ def thm_uniq : Prop :=
 /-- Theorem 3.5 (global well-posedness), existence and uniqueness. In the standing setting, for
 every horizon `T > 0`, if the coefficients with initial datum `ξ₀` satisfy (2.3) and
 Assumptions 2.2–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, then (1.1) has a
-solution `Θ = (X, Y, Z, U)` in `ℍ`, and any two solutions are equal in `ℍ`: their `X` and their
+solution `Θ = (X, Y, Z, U)` in `𝕊`, and any two solutions are equal in `𝕊`: their `X` and their
 `Y` are indistinguishable on `[0, T]`, and `𝔼 ∫_0^T |Z¹_t − Z²_t|²_F dt = 0` and
 `𝔼 ∫_0^T ‖U¹_t − U²_t‖²_{L²(ν)} dt = 0`, coordinatewise. -/
 def thm_cwp : Prop :=
@@ -178,8 +178,8 @@ def cor_robust : Prop :=
 
 /-- Corollary 3.6, well-posedness of the perturbed system. There is a function `C_stab` of
 `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that: under the hypotheses of `cor_robust`, the perturbed
-system with initial datum `ξ₀` has a solution in `ℍ`; any two tuples of `ℍ_weak` satisfying it
-with the same initial datum are equal in `ℍ_weak`; and for every constant `L` with which the
+system with initial datum `ξ₀` has a solution in `𝕊`; any two tuples of `ℍ²` satisfying it
+with the same initial datum are equal in `ℍ²`; and for every constant `L` with which the
 perturbed system satisfies Assumption 2.3, (3.1) holds with the constant
 `C_stab(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂)` for its solutions against the solutions of every
 system `2` satisfying (2.3) and Assumptions 2.2–2.3. -/

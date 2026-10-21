@@ -6,9 +6,9 @@ Authors: Christian Garry
 import Dissertation.WellPosedness.System.SolvesIntEnergy
 
 /-!
-# The difference of two solutions of the `λ`-forced system in `ℍ²_weak`
+# The difference of two solutions of the `λ`-forced system in `ℍ²`
 
-Let `Θ¹, Θ²` solve the `λ`-forced system (4.1) in `ℍ²_weak` (`SolvesForcedInt`) with coefficients
+Let `Θ¹, Θ²` solve the `λ`-forced system (4.1) in `ℍ²` (`SolvesForcedInt`) with coefficients
 `C¹, C²`, initial data `ξ₀¹, ξ₀²` and forcings `q¹, q²`, at the same `λ`, and let the expected
 Lipschitz bounds (`PairLipschitz`) and Assumption 2.5 (`PairMonotone`) hold at the pair. The
 equations of each solution are those of `LinearFSDEJInt` and `LinearBSDEJInt`, whose drifts need
@@ -66,7 +66,7 @@ variable (h₁ : SolvesForcedInt D ℱ hℱW hℱN T lam C₁ ξ₁ qb₁ qσ₁
   (h₂ : SolvesForcedInt D ℱ hℱW hℱN T lam C₂ ξ₂ qb₂ qσ₂ qh₂ qf₂ qg₂ X₂ Y₂ Z₂ U₂ γ₂)
 include h₁ h₂
 
-/-- **The forward difference equation (4.15) in `ℍ²_weak`**: for `T ≥ 0` and the expected Lipschitz
+/-- **The forward difference equation (4.15) in `ℍ²`**: for `T ≥ 0` and the expected Lipschitz
 bounds at the pair, coordinate `i` of `δX` solves the linear forward equation of `LinearFSDEJ`
 from `δξ₀` with drift `λ δb + δq^b`, diffusion `λ δσ + δq^σ` and jump integrand
 `λ δγ + δq^h`. -/
@@ -92,7 +92,7 @@ theorem fwd_sub (hT : 0 ≤ T)
   have hξ := (h₁.fwd i).memLp_initial_sub (h₂.fwd i) hT hb ((h₁.XT_sq i).sub (h₂.XT_sq i))
   convert (h₁.fwd i).sub (h₂.fwd i) hb hξ using 1 <;> ext <;> ring
 
-/-- **The backward difference equation (4.16) in `ℍ²_weak`**: for `T ≥ 0` and the expected Lipschitz
+/-- **The backward difference equation (4.16) in `ℍ²`**: for `T ≥ 0` and the expected Lipschitz
 bounds at the pair, coordinate `k` of `(δY, δZ, δU)` solves the linear backward equation of
 `LinearBSDEJ` with terminal value `λ δg + δq^g` and drift `λ δf + δq^f`. -/
 theorem bwd_sub (hT : 0 ≤ T)
@@ -115,8 +115,8 @@ theorem bwd_sub (hT : 0 ≤ T)
   convert (h₁.bwd k).sub (h₂.bwd k) (h₁.energy_driver_sub_ne_top h₂ hL k)
     (h₁.memLp_terminal_sub h₂ hT hL k) using 1 <;> ext <;> ring
 
-/-- **The difference of two solutions in `ℍ²_weak` is a `PairDiff`.** For two solutions of the
-`λ`-forced system in `ℍ²_weak` at the same `λ`, with coefficients `C¹, C²`, initial data `ξ₀¹, ξ₀²`
+/-- **The difference of two solutions in `ℍ²` is a `PairDiff`.** For two solutions of the
+`λ`-forced system in `ℍ²` at the same `λ`, with coefficients `C¹, C²`, initial data `ξ₀¹, ξ₀²`
 and forcings `q¹, q²`, and `T ≥ 0`, the difference `(δX, δY, δZ, δU)` with the coefficient
 differences along the pair `(δb, δσ, δγ, δf, δg)` and the forcing difference `δq` is a `PairDiff`
 with initial difference `δξ₀`, given the expected Lipschitz bounds and Assumption 2.5 at the
@@ -158,9 +158,9 @@ end SolvesForcedInt
 
 variable {C : Coeffs ν n m d} {L : ℝ}
 
-/-- **The difference of two solutions in `ℍ²_weak` is a difference system.** For two solutions of
+/-- **The difference of two solutions in `ℍ²` is a difference system.** For two solutions of
 the
-`λ`-forced system in `ℍ²_weak` with the same coefficients and `T ≥ 0`, satisfying Assumption 2.3
+`λ`-forced system in `ℍ²` with the same coefficients and `T ≥ 0`, satisfying Assumption 2.3
 along the diagonal with constant `L` and Assumption 2.5 along the diagonal with coupling matrix `G`
 and constants `α, β₁, β₂`, the difference is a `PairDiff` with Lipschitz constants `10 L²` and
 `4 L²`. -/

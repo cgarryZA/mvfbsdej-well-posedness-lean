@@ -12,7 +12,7 @@ import Dissertation.Acceptance.A.Sec4Frozen
 Statement and equation numbers refer to the well-posedness paper at `1f67672`. The instance is
 that of `Dissertation.Acceptance.A.frozen_hypotheses`: a Lévy driver with `d = 1` and `ν = δ₀` on
 `ℝ`, `𝒢₀ = ⊥`, `n = m = 1`, `T = 1`, the system of Example 5.1(i) with `β₁ = β₂ = 1`,
-`σ_c = h_c = 0` and initial datum `0`, `λ = 1`, the zero forcing, and the two trials of `ℍ`, the
+`σ_c = h_c = 0` and initial datum `0`, `λ = 1`, the zero forcing, and the two trials of `𝕊`, the
 zero tuple and the constant tuple `(1, 1, 0, 0)`; their frozen steps exist by (4.8).
 
 ## Main statements
@@ -39,7 +39,7 @@ local notation "sys " β:max =>
 
 /-- **The hypotheses of the contraction chain of Lemma 4.2 hold at Example 5.1(i).** At the
 instance of `frozen_hypotheses` — the system with initial datum `0`, (2.3) and Assumptions
-2.2–2.3 with `L = 1`, the zero forcing, and the two distinct trials of `ℍ`, the zero tuple and
+2.2–2.3 with `L = 1`, the zero forcing, and the two distinct trials of `𝕊`, the zero tuple and
 the constant tuple `(X, Y, Z, U) = (1, 1, 0, 0)` — each trial has a frozen step at `λ = 1`. -/
 theorem frozen_pair_hypotheses :
     ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)

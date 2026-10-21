@@ -114,8 +114,8 @@ def lem_small : Prop :=
 /-- Lemma 4.3 (continuous perturbation stability along the homotopy). There is a function `C_B`
 of `(T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)` such that: in the standing setting, for `T > 0`, if the
 coefficients satisfy (2.3) and Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling
-matrix `G`, `λ̲ ∈ (0, 1]` and `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solve (4.1) at `λ` in `ℍ_weak`, with
-`X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k` and forcings `q^k`, and `Θ¹ − Θ² ∈ ℍ`, then
+matrix `G`, `λ̲ ∈ (0, 1]` and `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solve (4.1) at `λ` in `ℍ²`, with
+`X^k_T ∈ L²`, `ℱ₀`-measurable initial data `ξ₀^k` and forcings `q^k`, and `Θ¹ − Θ² ∈ 𝕊`, then
 `𝔼 sup_{t ≤ T} |δX_t|² + 𝔼 sup_{t ≤ T} |δY_t|² + 𝔼 ∫_0^T (|δZ_t|²_F + ‖δU_t‖²) dt
   ≤ C_B (𝔼|δξ₀|² + 𝔼|δq^g_T|² + 𝔼 ∫_0^T (|δq^b|² + |δq^σ|²_F + ‖δq^h‖² + |δq^f|²) dt)`
 with `C_B = C_B(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂, λ̲)`. -/

@@ -30,7 +30,7 @@ integral, read in `[0, ∞]` through its positive part.
 * `ofReal_two_mul_integral_sum_mul_le` — its expectation, in `[0, ∞]`.
 * `PairDiff.ae_backwardYoung_le` — the bound for the difference system.
 * `PaperWeakSolutionForcedInt.ae_backwardYoung_le` — the bound for two solutions of the
-  `λ`-forced system (4.1) in `ℍ²_weak`, with `K = 10 L²` for Assumption 2.3 with constant `L`.
+  `λ`-forced system (4.1) in `ℍ²`, with `K = 10 L²` for Assumption 2.3 with constant `L`.
 -/
 
 open MeasureTheory Filter
@@ -248,7 +248,7 @@ variable {Ω : Type u} [MeasurableSpace Ω] {E : Type v} [MeasurableSpace E] {ν
   {γ₁ γ₂ : Fin n → ℝ → Ω → E → ℝ} {L α β₁ β₂ : ℝ} {G : Matrix (Fin m) (Fin n) ℝ}
   {D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν}
 
-/-- **The Young bound of the driver pairing for two solutions in `ℍ²_weak`.** For two solutions
+/-- **The Young bound of the driver pairing for two solutions in `ℍ²`.** For two solutions
 of the `λ`-forced system (4.1) in the sense of `PaperWeakSolutionForcedInt`, `λ ∈ [0, 1]`, with
 the same coefficients satisfying Assumption 2.3 along the diagonal with constant `L` and
 Assumption 2.5 along the diagonal, and `ε ∈ (0, 1]`, at almost every `s ∈ [0, T]`, with

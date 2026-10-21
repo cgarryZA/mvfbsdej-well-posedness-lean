@@ -135,26 +135,4 @@ theorem PairingBound34.diagonalPairingBound (h : PairingBound34 ℱ P T G c p) :
     DiagonalPairingBound ℱ P T G c p :=
   pairingBound34_iff.mp h
 
-/-- A difference of two maps measurable into the Borel σ-algebra of a space with measurable
-subtraction is measurable. -/
-theorem measurable_borel_sub {α W : Type*} {mα : MeasurableSpace α} [TopologicalSpace W]
-    [MeasurableSpace W] [BorelSpace W] [Sub W] [MeasurableSub₂ W] {f g : α → W}
-    (hf : Measurable[mα, borel W] f) (hg : Measurable[mα, borel W] g) :
-    Measurable[mα, borel W] fun a => f a - g a := by
-  rw [← BorelSpace.measurable_eq (α := W)] at hf hg ⊢
-  exact hf.sub hg
-
-/-- **(2.3) for the baseline and for the perturbed system gives `CoeffBorelW2` for the
-perturbation**: `ψ_p = (ψ₀ + ψ_p) − ψ₀`, `ψ ∈ {b, σ, h, f}`. -/
-theorem JointBorel.coeffBorelW2_of_perturb (hC : JointBorel T C)
-    (hCp : JointBorel T (C.perturb p)) : CoeffBorelW2 T p where
-  b_meas := by
-    simpa [Coeffs.perturb] using measurable_borel_sub hCp.b_meas hC.b_meas
-  σ_meas := by
-    simpa [Coeffs.perturb] using measurable_borel_sub hCp.σ_meas hC.σ_meas
-  h_meas := by
-    simpa [Coeffs.perturb] using measurable_borel_sub hCp.h_meas hC.h_meas
-  f_meas := by
-    simpa [Coeffs.perturb] using measurable_borel_sub hCp.f_meas hC.f_meas
-
 end Dissertation.WellPosedness.Spec

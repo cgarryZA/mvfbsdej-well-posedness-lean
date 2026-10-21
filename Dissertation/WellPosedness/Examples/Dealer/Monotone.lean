@@ -49,10 +49,9 @@ and (2.7) holds with `G = I` and the constants `β₁, β₂` of Example 5.1(i),
 * `Dissertation.Law.integral_inner_crowdOp_lawP2_sub_nonneg` — the same for square-integrable
   random elements and their laws of finite second moment.
 * `interiorPairing_dealer` — the interior pairing of the dealer system at `G = I`.
-* `integral_inner_jump_dealer_le` — the jump pairing is at most `−β₁ 𝔼 ‖δU‖²`.
 * `diagonalMonotone_dealer` — Assumption 2.5, interior, with `G = I` and the constants `β₁, β₂`,
   for every `ε ≥ 0`.
-* `constants_dealer` — the admissible constants.
+* `terminalMonotone_dealer` — Assumption 2.5, terminal, with `G = I` and `α = 1`.
 -/
 
 open MeasureTheory Filter
@@ -216,40 +215,6 @@ theorem integrable_inner_crowdOp_margU_sub {Θ Θ' : Ω → TupleH ν n n d} (h�
   rw [margU_lawP2 hΘ, margU_lawP2 hΘ']
   exact integrable_inner_crowdOp_lawP2_sub hΘ.snd.snd.snd hΘ'.snd.snd.snd
 
-/-- **The crowding correction improves the jump pairing.** For `ε ≥ 0` and two
-square-integrable tuples `Θ, Θ'` with laws `μ, μ'`, the jump coefficient of the dealer system
-satisfies `𝔼 ∫_E ⟨δh(e), δU(e)⟩ ν(de) ≤ −β₁ 𝔼 ‖δU‖²_{L²(ν)}`, `δh = h(t, Θ, μ) − h(t, Θ', μ')`. -/
-theorem integral_inner_jump_dealer_le (hε : 0 ≤ ε) (t : ℝ) {Θ Θ' : Ω → TupleH ν n n d}
-    (hΘ : MemLp Θ 2 P) (hΘ' : MemLp Θ' 2 P) :
-    ∫ ω, ⟪(dealerCoeffs β₁ β₂ σc hc ε).h t (Θ ω) (lawP2 P Θ)
-        - (dealerCoeffs β₁ β₂ σc hc ε).h t (Θ' ω) (lawP2 P Θ'), (Θ ω).2.2.2 - (Θ' ω).2.2.2⟫ ∂P
-      ≤ -β₁ * ∫ ω, ‖(Θ ω).2.2.2 - (Θ' ω).2.2.2‖ ^ 2 ∂P := by
-  have hU := hΘ.snd.snd.snd
-  have hU' := hΘ'.snd.snd.snd
-  have hsq : Integrable (fun ω => ‖(Θ ω).2.2.2 - (Θ' ω).2.2.2‖ ^ 2) P :=
-    (hU.sub hU').integrable_norm_pow two_ne_zero
-  have hA := integrable_inner_crowdOp_margU_sub hΘ hΘ'
-  have hA0 := integral_inner_crowdOp_margU_sub_nonneg hΘ hΘ'
-  have e : ∀ ω, ⟪(dealerCoeffs β₁ β₂ σc hc ε).h t (Θ ω) (lawP2 P Θ)
-        - (dealerCoeffs β₁ β₂ σc hc ε).h t (Θ' ω) (lawP2 P Θ'), (Θ ω).2.2.2 - (Θ' ω).2.2.2⟫
-      = -β₁ * ‖(Θ ω).2.2.2 - (Θ' ω).2.2.2‖ ^ 2
-        - ε * ⟪crowdOp (lawP2 P Θ).margU.law (Θ ω).2.2.2
-          - crowdOp (lawP2 P Θ').margU.law (Θ' ω).2.2.2, (Θ ω).2.2.2 - (Θ' ω).2.2.2⟫ := by
-    intro ω
-    rw [dealerCoeffs_h, dealerCoeffs_h]
-    have e' : hc - β₁ • (Θ ω).2.2.2 - ε • crowdOp (lawP2 P Θ).margU.law (Θ ω).2.2.2
-        - (hc - β₁ • (Θ' ω).2.2.2 - ε • crowdOp (lawP2 P Θ').margU.law (Θ' ω).2.2.2)
-        = -(β₁ • ((Θ ω).2.2.2 - (Θ' ω).2.2.2)) - ε • (crowdOp (lawP2 P Θ).margU.law (Θ ω).2.2.2
-          - crowdOp (lawP2 P Θ').margU.law (Θ' ω).2.2.2) := by
-      rw [smul_sub, smul_sub]
-      abel
-    rw [e', inner_sub_left, inner_neg_left, real_inner_smul_left, real_inner_smul_left,
-      real_inner_self_eq_norm_sq]
-    ring
-  rw [integral_congr_ae (Eventually.of_forall e), integral_sub (hsq.const_mul _) (hA.const_mul _),
-    integral_const_mul, integral_const_mul]
-  nlinarith [mul_nonneg hε hA0]
-
 /-- **Assumption 2.5, interior, along the diagonal, for the dealer system**, at every interaction
 strength `ε ≥ 0`: with `G = I` and the constants `β₁, β₂` of Example 5.1(i),
 `𝔼[⟨δb, δY⟩ + ⟨δσ, δZ⟩_F − ⟨δf, δX⟩ + ∫_E ⟨δh(e), δU(e)⟩ ν(de)]
@@ -266,8 +231,10 @@ theorem diagonalMonotone_dealer (hε : 0 ≤ ε) :
   nlinarith [mul_nonneg hε hA0]
 
 omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
-/-- The constants `α = 1`, `β₁, β₂ > 0` of the dealer system are admissible. -/
-theorem constants_dealer (hβ₁ : 0 < β₁) (hβ₂ : 0 < β₂) : Constants n n 1 β₁ β₂ :=
-  constants_affine hβ₁ hβ₂
+/-- **Assumption 2.5, terminal, along the diagonal, for the dealer system**, with `G = I` and
+`α = 1`: `𝔼|δX_T|² = 𝔼⟨δg_T, δX_T⟩`. -/
+theorem terminalMonotone_dealer :
+    TerminalMonotone ℱ P T (1 : Matrix (Fin n) (Fin n) ℝ) 1 (dealerCoeffs β₁ β₂ σc hc ε).g :=
+  terminalMonotone_affine (β₁ := β₁) (β₂ := β₂) (σc := σc) (hc := hc)
 
 end Dissertation.WellPosedness.Existence

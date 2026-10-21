@@ -37,8 +37,8 @@ printed expectations.
 * `integrable_terminalPairing` — under (2.3) and (2.6) the terminal pairing is integrable.
 * `Assumption25.of_integrable` — the consumed form with the integrability of the pairings gives
   Assumption 2.5.
-* `Assumption25.of_monotone`, `assumption25_iff` — under (2.3) and Assumption 2.3 the consumed
-  form gives Assumption 2.5, and the two are equivalent.
+* `Assumption25.of_monotone` — under (2.3) and Assumption 2.3 the consumed form gives
+  Assumption 2.5.
 -/
 
 open MeasureTheory Filter Dissertation.Law Matrix
@@ -198,15 +198,6 @@ theorem Assumption25.of_monotone (hJ : JointBorel T C) (h23 : Assumption23 ℱ P
       exact WellPosedness.integrable_interiorPairing_of_diagonalLipschitzHAt (G := G)
         (jointBorel_iff.mp hJ).1 htI hLt hs hs' h2 h2')
     fun _ _ hX hX' hX2 hX2' => integrable_terminalPairing hJ h23.terminal hX hX' hX2 hX2'
-
-/-- **Under (2.3) and Assumption 2.3, Assumption 2.5 is its consumed form**: `DiagonalMonotone`,
-`TerminalMonotone` and `Constants`, with the same constants. -/
-theorem assumption25_iff (hJ : JointBorel T C) (h23 : Assumption23 ℱ P T L C) :
-    Assumption25 ℱ P T G α β₁ β₂ C
-      ↔ DiagonalMonotone ℱ P T G β₁ β₂ C ∧ TerminalMonotone ℱ P T G α C.g
-        ∧ Constants n m α β₁ β₂ :=
-  ⟨fun h => ⟨h.diagonalMonotone, h.terminalMonotone, h.constants⟩,
-    fun h => Assumption25.of_monotone hJ h23 h.2.2 h.1 h.2.1⟩
 
 end Printed
 
