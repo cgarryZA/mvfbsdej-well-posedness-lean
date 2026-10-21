@@ -2542,3 +2542,19 @@ definition to be that object; the marker records the digest of every passage rea
   and lawP2 on null sets. The contraction statements of Lemma 4.2 pass the current tuples instead,
   matching the δψ_s the paper prints there. Verdict: faithful with representation choices.
   <!-- def-review: Dissertation.WellPosedness.Existence.coeffJump 90dd30b497d4dd12d6d4dda771a35c05 by=claude-auditor source=A:sec2:tuple-notation@ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256 source=A:sec3:two-system-notation@a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6 -->
+
+* `Dissertation.PaperSpec.A.Solution` (`A:intro:mvfbsdej`, `A:eq:mvfbsdej`). Solution is
+  WeakSolution with E sup|X|², E sup|Y|² finite over [0, T]; WeakSolution asks a representative γ of
+  h and the structure behind it, over the usual augmentation of the filtration of W, N and an
+  independent initial σ-field, plus left limits on every path on (0, T]. A:intro:mvfbsdej and
+  A:eq:mvfbsdej pin one region, lines 3–48 of the introduction. It requires the identities of (1.1)
+  (lines 6–13), driven by W and an independent compensated Poisson measure, ν σ-finite (lines
+  14–16), with b, σ, f at (Θ_s, μ_s), h at (Θ⁻_s, μ⁻_s), μ_t and μ⁻_t their laws (lines 34–43). The
+  definition carries these: both identities for all t ∈ [0, T] on one null set, g(X_T, Law X_T) with
+  X_T ∈ L², X, Y adapted and right-continuous, Z, U predictable of finite energy. Representation
+  choices: L² stochastic integrals, so σ, γ have finite energy (no loss under Assumption 2.3, by my
+  reading); b and f only pathwise integrable; γ only marked progressive; laws at every time, Dirac
+  junk off L²; Z, U zero off [0, T]. Lines 3–5 and 44–48 concern theorems and assumptions; the norm
+  of H (lines 16–32) enters only through square integrability. Verdict: faithful with representation
+  choices.
+  <!-- def-review: Dissertation.PaperSpec.A.Solution bf42c97d226817aeb326b2633e3dca6b by=claude-auditor source=A:eq:mvfbsdej@5eb480b379a74b6cf3448b228b60d1dcb3f707265f25c5b1cbe6f82b684e917a source=A:intro:mvfbsdej@5eb480b379a74b6cf3448b228b60d1dcb3f707265f25c5b1cbe6f82b684e917a -->
