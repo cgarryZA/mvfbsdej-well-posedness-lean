@@ -1,12 +1,15 @@
-# MachineChecked: the audit of this repository against arXiv 2608.23203v1. `machinechecked build`
-# reads the inventory and reviews of acceptance/ (the same inputs as tools/acceptance.py) and
-# writes the reader; `machinechecked export` writes the public audit that CI publishes.
+# MachineChecked: the audit of this repository against arXiv 2608.23203v1, published at /v1/ of the
+# repository's GitHub Pages by main's Audit workflow. This branch (audit-v1) is commit ba94c06 with
+# only that audit's configuration added: the paper's published identity (below), and the source
+# region of each line-located claim of acceptance/claims.json pinned at arXiv v1 (tex-region-v1).
+# Its Lean is never changed. `machinechecked build` reads the inventory and reviews of acceptance/
+# and writes the reader; `machinechecked export` writes the public audit.
 [project]
 name = "mvfbsdej-well-posedness-lean"
 author = "Christian Garry"
 repository = "cgarryZA/mvfbsdej-well-posedness-lean"
 issues = "cgarryZA/mvfbsdej-well-posedness-lean"
-site_url = "https://cgarryza.github.io/mvfbsdej-well-posedness-lean/"
+site_url = "https://cgarryza.github.io/mvfbsdej-well-posedness-lean/v1/"
 lean_root = "."
 modules = [
   "Dissertation.PaperSpec.A.AppA",
@@ -78,6 +81,7 @@ ai_reviewers = ["claude*"]
 
 [[paper]]
 id = "A"
+published = "arXiv:2608.23203v1"
 title = "Well-posedness of fully coupled McKean-Vlasov FBSDEs with jumps under full-tuple law dependence"
 source = { path = "manuscript" }
 root = "paper/wellposedness.tex"
