@@ -74,7 +74,7 @@ it for that claim. Mathlib and the pinned upstream libraries are taken as founda
   <!-- def-review: Dissertation.Law.w2P 588aff30f5cf1efb222cb5540209de44 by=claude-auditor -->
 * `lawP2 P Θ`: the law `P ∘ Θ⁻¹` of `Θ` when `Θ ∈ L²(P)`, and `δ₀` otherwise. The manuscripts
   take laws of square-integrable variables only; the value off `L²` is a convention, and a
-  statement quantifying over `L²` variables never reaches it (`REPRESENTATION_CHOICES.md` R9).
+  statement quantifying over `L²` variables never reaches it.
   <!-- def-review: Dissertation.Law.lawP2 8e02ec4a91100180227c044dc87cf8fe by=claude-author -->
   Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.Law.lawP2--claude-reviewer--2026-10-17T12_12_13Z.md`).
   <!-- def-review: Dissertation.Law.lawP2 8e02ec4a91100180227c044dc87cf8fe by=claude-reviewer -->

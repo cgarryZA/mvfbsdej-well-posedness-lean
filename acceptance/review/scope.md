@@ -2,9 +2,9 @@
 
 Reviewer: `claude-auditor`, a model of the same family as the author of the decisions. Paper:
 "Well-posedness of fully coupled McKean–Vlasov FBSDEs with jumps under full-tuple law
-dependence", revision `f598204`. The blind decisions (`pass1.json`) were taken from the
-manuscript alone, before the recorded scopes, `claims.json` or any Lean file were opened. The
-comparison is in `pass2.json`.
+dependence", revision `f598204`. The blind decisions were taken from the manuscript alone,
+before the recorded scopes, `claims.json` or any Lean file were opened, and then compared with the
+recorded ones; the comparison follows.
 
 ## Account
 
