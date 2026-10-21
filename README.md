@@ -10,13 +10,19 @@ FBSDEs with jumps under full-tuple law dependence* (Chunrong Feng and Christian 
 revision of [arXiv:2608.23203v1](https://arxiv.org/abs/2608.23203v1) at commit
 [`1f67672`](https://github.com/cgarryZA/mvfbsdej-well-posedness/tree/1f67672).
 
-**The audit.** [Open the paper with its Lean beside it][reader]: every claim of the paper, the
-Lean statement and proof linked to it, and what is established, in
-[MachineChecked](https://github.com/cgarryZA/MachineChecked)'s reader. The `Audit` workflow
-rebuilds and republishes it after every push to `main` that passes CI. An audit records what its
-author linked, checked and reviewed; it is not an independent certification.
+**The audits.** Open the paper with its Lean beside it, in
+[MachineChecked](https://github.com/cgarryZA/MachineChecked)'s reader: every claim of the paper,
+the Lean statement and proof linked to it, and what is established.
 
-[reader]: https://cgarryza.github.io/mvfbsdej-well-posedness-lean/
+- [The latest manuscript](https://cgarryza.github.io/mvfbsdej-well-posedness-lean/latest/)
+  (commit `1f67672`), built from `main`.
+- [arXiv v1](https://cgarryza.github.io/mvfbsdej-well-posedness-lean/v1/), built from the branch
+  `audit-v1`: the Lean of commit `ba94c06`, frozen, with its audit configuration (the paper's
+  published identity and its claims' source regions pinned at arXiv v1).
+
+The `Audit` workflow rebuilds and republishes both after every push to `main` that passes CI.
+An audit records what its author linked, checked and reviewed; it is not an independent
+certification.
 
 The formalisation is organised in three layers, and only the third decides what counts as proved:
 

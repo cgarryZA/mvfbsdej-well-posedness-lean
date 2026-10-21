@@ -1,4 +1,6 @@
-# MachineChecked: the audit of this repository against the manuscript at 1f67672.
+# MachineChecked: the audit of this repository against the latest manuscript (commit 1f67672),
+# published at /latest/ of the repository's GitHub Pages (and at its root) by the Audit workflow,
+# beside the audit of arXiv v1 at /v1/ (built from the branch audit-v1).
 # `machinechecked build` reads the inventory and reviews of acceptance/ (the same inputs as
 # tools/acceptance.py) and writes the reader; `machinechecked export` writes the public audit
 # that CI publishes.
@@ -7,7 +9,7 @@ name = "mvfbsdej-well-posedness-lean"
 author = "Christian Garry"
 repository = "cgarryZA/mvfbsdej-well-posedness-lean"
 issues = "cgarryZA/mvfbsdej-well-posedness-lean"
-site_url = "https://cgarryza.github.io/mvfbsdej-well-posedness-lean/"
+site_url = "https://cgarryza.github.io/mvfbsdej-well-posedness-lean/latest/"
 lean_root = "."
 modules = [
   "Dissertation.PaperSpec.A.AppA",
@@ -119,6 +121,9 @@ ai_reviewers = ["claude*"]
 
 [[paper]]
 id = "A"
+# The public paper, arXiv 2608.23203, of which this manuscript is the latest revision: sites match
+# the audit to the paper's listing by it. The audit pins the manuscript, not arXiv v1.
+published = "arXiv:2608.23203v1"
 title = "Well-posedness of fully coupled McKean-Vlasov FBSDEs with jumps under full-tuple law dependence"
 # The vendored manuscript is the manuscript repository at this commit; the audit pins that
 # unpublished revision, and `build` checks that the inventory is pinned to the same one.
