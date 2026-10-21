@@ -5,13 +5,9 @@ Authors: Christian Garry
 -/
 import Dissertation.PaperSpec.A.Sec4
 import Dissertation.WellPosedness.BrownianPoisson.MeasurableDrift
-import Dissertation.WellPosedness.Spec.Bridge22
-import Dissertation.WellPosedness.Spec.Thm33
 import Dissertation.WellPosedness.Existence.PredictableWP
-import Dissertation.WellPosedness.Existence.PaperForcedWP
 import Dissertation.WellPosedness.Existence.CadlagVersion
 import Dissertation.WellPosedness.System.PaperPerturbationInt
-import Dissertation.WellPosedness.Existence.GlobalEnl
 import Dissertation.Acceptance.A.Solution
 
 /-!
@@ -71,6 +67,7 @@ variable {Ω : Type u} {𝒢₀ : MeasurableSpace Ω} [mΩ : MeasurableSpace Ω]
   {hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P} {T L lam : ℝ} {C : Coeffs ν n m d}
   {ξ₀ : Ω → EuclideanSpace ℝ (Fin n)}
 
+omit [MeasurableSpace.CountablyGenerated E] in
 /-- Every field of `enlJoint` contains the null sets. -/
 theorem measurableSet_enlJoint_of_null_all (s : Set Ω) (hs : MeasurableSet s) (h0 : P s = 0)
     (t : ℝ) : MeasurableSet[enlJoint 𝒢₀ D h𝒢₀ t] s := by

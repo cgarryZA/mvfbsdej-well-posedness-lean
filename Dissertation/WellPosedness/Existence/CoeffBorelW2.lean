@@ -22,7 +22,7 @@ space.
 σ-algebra, for the coefficients cut off to `[0, T]` on `ℝ × H × P₂(H)`. The Borel σ-algebra of
 the product topology is the product of the Borel σ-algebras of the factors, since `[0, T]` and
 `H` are second countable; every Borel set of `(P₂(H), W₂)` is in the evaluation σ-algebra
-(`measurable_toP2WH`); and `[0, T]` is a measurable subset of `ℝ`.
+(`Dissertation.WellPosedness.System.measurable_toP2WH`); and `[0, T]` is a measurable subset of `ℝ`.
 
 ## Main definitions
 

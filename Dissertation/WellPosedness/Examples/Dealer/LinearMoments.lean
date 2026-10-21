@@ -183,7 +183,7 @@ theorem DealerLinear.expectation_eq_zero (h : DealerLinear D ℱ hℱW hℱN T �
   have hm : ∀ s ∈ Set.Icc (0 : ℝ) T, m s = 0 + ∫ r in Set.Icc (0 : ℝ) s, (-1 * m r + 0) := by
     intro s hs
     have key := LinearFSDEJ.integral_mul_eq_at h h1 𝒲 hT hs
-    simp only [mul_one, zero_mul, integral_zero, zero_add] at key
+    simp only [mul_one, integral_zero, zero_add] at key
     rw [zero_add]
     refine key.trans (setIntegral_congr_fun measurableSet_Icc fun r hr => ?_)
     have := hrate r (Set.Icc_subset_Icc le_rfl hs.2 hr)
@@ -200,7 +200,7 @@ theorem DealerLinear.ae_rate_eq (h : DealerLinear D ℱ hℱW hℱN T ηc ηx X)
     ∀ᵐ s ∂(volume.restrict (Set.Icc (0 : ℝ) T)),
       (∫ ω, (X s ω * (Set.Icc (0 : ℝ) T).indicator (fun s => -X s ω) s
           + X s ω * (Set.Icc (0 : ℝ) T).indicator (fun s => -X s ω) s) ∂P
-        + ∑ j : Fin 1, ∫ ω, (Set.Icc (0 : ℝ) T).indicator (fun _ => (1 / 2 : ℝ)) s
+        + ∑ _j : Fin 1, ∫ _ω, (Set.Icc (0 : ℝ) T).indicator (fun _ => (1 / 2 : ℝ)) s
             * (Set.Icc (0 : ℝ) T).indicator (fun _ => (1 / 2 : ℝ)) s ∂P
         + ∫ ω, ∫ e, (Set.Ioc (0 : ℝ) T).indicator (fun s => 1 / 2 * (ηc e + ηx e
             * leftLimProc (fun _ : Fin 1 => X) 0 s ω)) s

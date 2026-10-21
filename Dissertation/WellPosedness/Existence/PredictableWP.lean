@@ -9,21 +9,26 @@ import Dissertation.WellPosedness.System.PredictableForcing
 /-!
 # `WP(λ)` over the predictable forcings
 
-The paper calls the forced system (4.1) well posed at `λ`, `WP(λ)`, if it has a unique solution
-for every forcing `q` whose jump component `q^h` is predictable. `PaperForcedWP` quantifies over
-the larger class `Forcing`, in which `q^h` is marked progressively measurable. This file states
-`WP(λ)` over the paper's class `PredForcing`, for the paper's solution notion
-`PaperSolutionForced` (`PaperForcedSolvablePred`, `PaperForcedUniquePred`, `PaperForcedWPPred`),
-and shows that each is equivalent to its form over `Forcing`, with no condition on the
-coefficients, the filtration or the horizon.
+The paper calls the forced system (4.1) well posed at `λ`, `WP(λ)`, if it has a unique solution for
+every forcing `q` whose jump component `q^h` is predictable. `PaperForcedWP` quantifies over the
+larger class `Dissertation.WellPosedness.System.Forcing`, in which `q^h` is marked progressively
+measurable. This file states `WP(λ)` over the paper's class
+`Dissertation.WellPosedness.System.PredForcing`, for the paper's solution notion
+`Dissertation.WellPosedness.System.PaperSolutionForced` (`PaperForcedSolvablePred`,
+`PaperForcedUniquePred`, `PaperForcedWPPred`), and shows that each is equivalent to its form over
+`Dissertation.WellPosedness.System.Forcing`, with no condition on the coefficients, the filtration
+or the horizon.
 
-* Every forcing in the paper's class is a forcing, so the form over `Forcing` gives the form over
-  `PredForcing`.
-* Every forcing `q` has a predictable version `q'`, differing from `q` only in its jump
-  component and by zero marked energy (`Forcing.exists_predForcing`), and the solutions for `q`
-  and for `q'` are the same (`PaperSolutionForced.congr_qh`). A solution for `q'` is thus one
-  for `q`, and two solutions for `q` are two solutions for `q'`: the form over `PredForcing`
-  gives the form over `Forcing`.
+* Every forcing in the paper's class is a forcing, so the form over
+  `Dissertation.WellPosedness.System.Forcing` gives the form over
+  `Dissertation.WellPosedness.System.PredForcing`.
+* Every forcing `q` has a predictable version `q'`, differing from `q` only in its jump component
+  and by zero marked energy (`Dissertation.WellPosedness.System.Forcing.exists_predForcing`), and
+  the solutions for `q` and for `q'` are the same
+  (`Dissertation.WellPosedness.System.PaperSolutionForced.congr_qh`). A solution for `q'` is thus
+  one for `q`, and two solutions for `q` are two solutions for `q'`: the form over
+  `Dissertation.WellPosedness.System.PredForcing` gives the form over
+  `Dissertation.WellPosedness.System.Forcing`.
 
 In particular Lemma 4.4 holds with its hypothesis `WP(λ₀)` taken over the paper's class
 (`PaperForcedWPPred.add_of_le`), under the hypotheses of `PaperForcedWP.add_of_le`.
@@ -110,6 +115,7 @@ variable {D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν}
 
 /-! ### The two classes of forcings give the same `WP(λ)` -/
 
+omit [MeasurableSpace.CountablyGenerated E] [IsProbabilityMeasure P] in
 /-- The jump components of a forcing and of a predictable version of it, agreeing
 `dP ⊗ ds ⊗ ν`-almost everywhere on `Ω × [0, T] × E`, differ by zero marked energy, in either
 order. -/

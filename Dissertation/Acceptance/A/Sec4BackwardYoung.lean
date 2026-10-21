@@ -12,7 +12,7 @@ import Dissertation.Acceptance.A.Sec4
 
 Statement and equation numbers refer to the well-posedness paper at `1f67672`. For
 `ε ∈ (0, 1]` the bound (4.25) holds with `C = 2 (10 (2L)²) + 3`. Its hypotheses are those of
-Lemma 4.3, an instance of which is `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`.
+Lemma 4.3, an instance of which is `Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses`.
 
 ## Main statements
 

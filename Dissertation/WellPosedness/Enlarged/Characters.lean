@@ -51,7 +51,7 @@ theorem iSup_comap_indicator_eq {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) :
         inferInstance] s := by
       refine ⟨{1}, measurableSet_singleton 1, ?_⟩
       ext ω
-      by_cases hω : ω ∈ s <;> simp [Set.indicator_apply, hω]
+      by_cases hω : ω ∈ s <;> simp [ hω]
     exact le_iSup (fun A : {A : Set Ω // MeasurableSet[𝒢₀] A} =>
       MeasurableSpace.comap ((A : Set Ω).indicator fun _ => (1 : ℝ)) inferInstance) ⟨s, hs⟩ s hs'
 

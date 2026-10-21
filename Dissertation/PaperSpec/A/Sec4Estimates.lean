@@ -50,8 +50,8 @@ universe u v w
 /-- **(4.23).** There is a function `K` of `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that: in the
 standing setting, under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3) and
 Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`,
-`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak` with `X^k_T ∈ L²`, `ℱ₀`-measurable
-initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` —
+`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with `X^k_T ∈ L²`, `ℱ₀`-measurable
+initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` —
 `𝔼 sup_{t ≤ T} |δX_t|² ≤ C (𝔼 ∫_0^T (|δY_t|² + |δZ_t|²_F + ‖δU_t‖²_{L²(ν)}) dt + P)`
 with `C = K(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂)`, `P` the data size of (4.14) of the differences
 of the data, and the expectations read in `[0, ∞]`. -/
@@ -91,8 +91,8 @@ def eq_fwd : Prop :=
 
 /-- **(4.24).** In the standing setting, under the hypotheses of Lemma 4.3 — `T > 0`, coefficients
 with (2.3) and Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`,
-`λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak` with `X^k_T ∈ L²`,
-`ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` —
+`λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with `X^k_T ∈ L²`,
+`ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` —
 for every `κ > 0` and every `t ∈ [0, T]`, the functions `|δY_t|²`, `|λ δg_T + q^g_T|²` (on `Ω`),
 `e^{κs} (κ |δY_s|² + |δZ_s|²_F + ‖δU_s‖²_{L²(ν)})` and `e^{κs} ⟨δY_s, λ δf_s + q^f_s⟩` (on
 `Ω × [t, T]`) are integrable, and
@@ -151,8 +151,8 @@ def eq_bwdito : Prop :=
 /-- **(4.26).** There is a function `K` of `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that: in the
 standing setting, under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3) and
 Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`,
-`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak` with `X^k_T ∈ L²`, `ℱ₀`-measurable
-initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` —
+`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with `X^k_T ∈ L²`, `ℱ₀`-measurable
+initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` —
 `sup_{t ≤ T} 𝔼|δY_t|² + 𝔼 ∫_0^T (|δZ_t|²_F + ‖δU_t‖²_{L²(ν)}) dt
   ≤ C (𝔼|δX_T|² + 𝔼 ∫_0^T |δX_t|² dt + P)`
 with `C = K(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂)`, `P` the data size of (4.14) of the differences
@@ -195,8 +195,8 @@ def eq_wgt : Prop :=
 /-- **(4.27).** There is a function `K` of `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that: in the
 standing setting, under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3) and
 Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`,
-`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak` with `X^k_T ∈ L²`, `ℱ₀`-measurable
-initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` —
+`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with `X^k_T ∈ L²`, `ℱ₀`-measurable
+initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` —
 `𝔼 sup_{t ≤ T} |δY_t|² + 𝔼 ∫_0^T (|δZ_t|²_F + ‖δU_t‖²_{L²(ν)}) dt
   ≤ C (𝔼|δX_T|² + 𝔼 ∫_0^T |δX_t|² dt + P)`
 with `C = K(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂)`, `P` the data size of (4.14) of the differences

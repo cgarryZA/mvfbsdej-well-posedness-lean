@@ -14,10 +14,12 @@ import Dissertation.Acceptance.A.Sec4
 Statement and equation numbers refer to the well-posedness paper at `1f67672`. The weight
 `w_s = e^s δY_{s−} 1_{(0, T]}(s)` is predictable, bounded by `e^T R` before `δY` leaves the ball of
 radius `R`, and satisfies `|w_s|² ≤ e^{2T} sup_{t ≤ T} |δY_t|²`; with `𝔼 sup_{t ≤ T} |δY_t|² < ∞`
-from Lemma 4.1, `localBrownian_weight` and `localCompensated_weight` give the local integrals,
-their bounds with `c₀ = 9`, and the zero means. The integrand of `M¹` is marked predictable and
-vanishes at the nonpositive times, so the Burkholder–Davis–Gundy inequality in quadratic-variation
-form for local compensated integrals (`IsLocalCompensatedIntegral.lintegral_biSup_le_count`,
+from Lemma 4.1, `Dissertation.WellPosedness.Martingale.localBrownian_weight` and
+`Dissertation.WellPosedness.Martingale.localCompensated_weight` give the local integrals, their
+bounds with `c₀ = 9`, and the zero means. The integrand of `M¹` is marked predictable and vanishes
+at the nonpositive times, so the Burkholder–Davis–Gundy inequality in quadratic-variation form for
+local compensated integrals
+(`Dissertation.WellPosedness.Martingale.IsLocalCompensatedIntegral.lintegral_biSup_le_count`,
 constant `24`) and the Cauchy–Schwarz inequality in `ℝᵐ` give the first link of its chain.
 
 ## Main statements

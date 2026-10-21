@@ -38,15 +38,16 @@ For two of them, `δψ = ψ(t, Θ, μ) − ψ(t, Θ', μ')`, and the four predic
 carries the maximum of its four channel norms, which lies between one half of the paper's Hilbert
 norm and that norm; so `W₂` here lies between one half of the paper's `W₂` and it, and
 `DiagonalLipschitz` at `L` implies the paper's interior bound at `L`, which in turn implies
-`DiagonalLipschitz` at `2L`. The pointwise conditions `LipschitzCoefficientsP2` and
-`LipschitzTerminalP2`, imposed at every pair of points and laws, imply the diagonal ones.
+`DiagonalLipschitz` at `2L`. The pointwise conditions `Dissertation.Law.LipschitzCoefficientsP2` and
+`Dissertation.Law.LipschitzTerminalP2`, imposed at every pair of points and laws, imply the diagonal
+ones.
 
 A forcing of the `λ`-system (4.1) is `q = (q^b, q^σ, q^h, q^f, q^g_T)` with `q^b, q^σ, q^f`
 progressively measurable, `q^h` measurable in the predictable-times-mark sense, each square
 integrable over `Ω × [0, T]` (and `ν`), and `q^g_T ∈ L²(Ω, ℱ_T; ℝᵐ)`. `Forcing` records this in
-coordinates, with two conventions: each process is represented by its extension by `0` off
-`[0, T]`, as the integrands of `LinearBSDEJ` are, and `q^h` is marked progressively measurable
-rather than predictable.
+coordinates, with two conventions: each process is represented by its extension by `0` off `[0, T]`,
+as the integrands of `Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ` are, and `q^h` is
+marked progressively measurable rather than predictable.
 
 ## Main definitions
 

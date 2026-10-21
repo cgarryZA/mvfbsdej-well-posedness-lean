@@ -4,7 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.PaperSpec.A.Setting
-import Dissertation.WellPosedness.Spec.Assumptions
 
 /-!
 # The remarks of Section 3 of the well-posedness paper
@@ -13,8 +12,8 @@ Statement numbers refer to the well-posedness paper at `1f67672`, in the standin
 
 ## Main definitions
 
-* `Dissertation.PaperSpec.A.rem_cwp_class` — Remark 3.2: a tuple of `ℍ_weak` satisfying (1.1) lies
-  in `ℍ`.
+* `Dissertation.PaperSpec.A.rem_cwp_class` — Remark 3.2: a tuple of `ℍ²` satisfying (1.1) lies
+  in `𝕊`.
 -/
 
 open MeasureTheory Filter ProbabilityTheory
@@ -28,7 +27,7 @@ universe u v w
 
 /-- Remark 3.2 (solution class). In the standing setting, for `T > 0`, coefficients satisfying
 (2.3), Assumption 2.2 with initial datum `ξ₀` and Assumption 2.3 with a constant `L`: a tuple
-`Θ = (X, Y, Z, U)` of `ℍ_weak` satisfying (1.1) lies in `ℍ`, that is, it solves (1.1) in `ℍ`. -/
+`Θ = (X, Y, Z, U)` of `ℍ²` satisfying (1.1) lies in `𝕊`, that is, it solves (1.1) in `𝕊`. -/
 def rem_cwp_class : Prop :=
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]

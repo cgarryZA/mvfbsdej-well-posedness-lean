@@ -5,6 +5,7 @@ Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.System.Tuple
 import Dissertation.Law.LawP2
+import Mathlib.MeasureTheory.Measure.SeparableMeasure
 
 /-!
 # The tuple of coordinate processes as a random element of `H`

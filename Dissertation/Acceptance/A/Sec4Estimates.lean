@@ -12,14 +12,16 @@ import Dissertation.WellPosedness.Stability.WeightedWindow
 # Steps 3 and 4 of the proof of Lemma 4.3: proofs
 
 Statement and equation numbers refer to the well-posedness paper at `1f67672`. Extended off
-`[0, T]`, two solutions of (4.1) in `ℍ_weak` have as difference the difference system of the
-implementation (`PaperWeakSolutionForcedInt.exists_pairDiff`, with Lipschitz constants
-`K = 10 (2L)²` and `K_T = 4 (2L)²`). Its supremum bounds give (4.23) and (4.27)
-(`PairDiff.lintegral_biSup_fwd_le_energy`, `PairDiff.lintegral_biSup_bwd_add_le`), and (4.26)
-follows from (4.27) since `sup_t 𝔼|δY_t|² ≤ 𝔼 sup_t |δY_t|²`. The weighted second-moment identity
-of the backward coordinates on `Ω × [t, T]` (`LinearBSDEJ.exp_mul_window_eq`), summed over the
-coordinates, is (4.24) with equality. The hypotheses are those of Lemma 4.3, an instance of which
-is `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`.
+`[0, T]`, two solutions of (4.1) in `ℍ²` have as difference the difference system of the
+implementation (`Dissertation.WellPosedness.System.PaperWeakSolutionForcedInt.exists_pairDiff`, with
+Lipschitz constants `K = 10 (2L)²` and `K_T = 4 (2L)²`). Its supremum bounds give (4.23) and (4.27)
+(`Dissertation.WellPosedness.Stability.PairDiff.lintegral_biSup_fwd_le_energy`,
+`Dissertation.WellPosedness.Stability.PairDiff.lintegral_biSup_bwd_add_le`), and (4.26) follows from
+(4.27) since `sup_t 𝔼|δY_t|² ≤ 𝔼 sup_t |δY_t|²`. The weighted second-moment identity of the backward
+coordinates on `Ω × [t, T]`
+(`Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.exp_mul_window_eq`), summed over the
+coordinates, is (4.24) with equality. The hypotheses are those of Lemma 4.3, an instance of which is
+`Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses`.
 
 ## Main statements
 

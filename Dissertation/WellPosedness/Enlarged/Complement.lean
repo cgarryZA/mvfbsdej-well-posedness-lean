@@ -6,7 +6,6 @@ Authors: Christian Garry
 import Dissertation.WellPosedness.Enlarged.Driver
 import Dissertation.WellPosedness.Enlarged.Pairing
 import Dissertation.WellPosedness.Enlarged.Characters
-import LevyStochCalc.Brownian.PRPPerpBridge
 
 /-!
 # The orthogonal complement of the joint ranges over the enlarged filtration

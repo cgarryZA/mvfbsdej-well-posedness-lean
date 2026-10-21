@@ -4,8 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.PaperSpec.A.Setting
-import Dissertation.WellPosedness.Existence.CoeffBorel
-import Dissertation.WellPosedness.Existence.CoeffBorelW2
 
 /-!
 # The measurability of the coefficient evaluations, (2.5)
@@ -15,6 +13,11 @@ Borel in their arguments (§2). Along a diagonal input, the drift, diffusion and
 are progressively measurable processes, and the jump coefficient, evaluated at the predictable
 tuple and its law, is predictable as an `L²(ν)`-valued process, read through a
 `𝒫 ⊗ ℰ`-measurable representative by (2.4).
+
+## Main definitions
+
+* `Dissertation.PaperSpec.A.eq_coefmeas` — the first line of (2.5).
+* `Dissertation.PaperSpec.A.eq_coefmeas_jump` — the second line of (2.5).
 -/
 
 open MeasureTheory ProbabilityTheory Filter Topology

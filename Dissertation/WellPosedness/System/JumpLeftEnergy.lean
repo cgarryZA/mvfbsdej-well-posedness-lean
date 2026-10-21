@@ -3,8 +3,6 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import Dissertation.WellPosedness.System.TupleLeft
-import Dissertation.WellPosedness.System.PaperSolutionSolves
 import Dissertation.WellPosedness.Existence.PaperStabilityBorel
 
 /-!
@@ -287,7 +285,7 @@ theorem _root_.Dissertation.WellPosedness.System.PaperSolution.markedEnergy_coef
   filter_upwards [e₁, e₂, e₃, hγω] with e h₁ h₂ h₃ h₄
   have c₁ := congrArg (fun v : EuclideanSpace ℝ (Fin n) => v i) (h₁.trans h₂.symm)
   have c₂ := congrArg (fun v : EuclideanSpace ℝ (Fin n) => v i) (h₄.trans h₃.symm)
-  simp only [PiLp.toLp_apply] at c₁ c₂
+  simp only at c₁ c₂
   simp only [jumpProc, Set.indicator_of_mem hsI, c₁, c₂]
 
 end Dissertation.WellPosedness.Existence

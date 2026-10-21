@@ -6,8 +6,8 @@ Authors: Christian Garry
 import Dissertation.PaperSpec.A.AppASteps
 import Dissertation.Acceptance.A.WitnessNonzero
 import Dissertation.WellPosedness.System.HilbertW2Polish
-import Dissertation.WellPosedness.System.LawFlowL2
 import Dissertation.WellPosedness.System.LawFlowPredictable
+import Mathlib.Probability.Distributions.Uniform
 
 /-!
 # Steps of the proof of Lemma A.1 of the well-posedness paper: proofs

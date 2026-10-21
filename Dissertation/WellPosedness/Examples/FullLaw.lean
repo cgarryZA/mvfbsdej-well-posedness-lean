@@ -5,7 +5,6 @@ Authors: Christian Garry
 -/
 import Dissertation.Law.TupleMarginal
 import Dissertation.Law.Cylindrical
-import Dissertation.Law.Triangle
 import Dissertation.WellPosedness.Robustness.LawPerturb
 import Dissertation.WellPosedness.Robustness.Regular
 

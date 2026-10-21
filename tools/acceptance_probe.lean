@@ -1,12 +1,20 @@
+/-
+Copyright (c) 2026 Christian Garry. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Christian Garry
+-/
 import Lean.Util.CollectAxioms
 import Lean.Util.FoldConsts
 import Dissertation.PaperSpec
 import Dissertation.Acceptance
 
 /-!
+# The Lean probe of the acceptance check
+
 Probe of `tools/acceptance.py`. Reads the query file named by `ACCEPTANCE_QUERY`, one request per
-line (`SPEC <spec>`, `ACC <theorem> <spec>`, `REF <theorem> <spec>`), and prints one verdict line
-per request together with the definition closure of every specification. Not part of the library.
+line (`SPEC <spec>`, `DEF <name>`, `ACC <theorem> <spec>`, `REF <theorem> <spec>`,
+`WIT <theorem> <spec>`), and prints one verdict line per request together with the definition
+closure of every specification and definition. Not part of the library.
 -/
 
 open Lean Meta
@@ -169,7 +177,13 @@ def checkProof (tag : String) (thm spec : Name) : MetaM Unit := do
   let verdict := if errs.isEmpty then "ok" else "ERR:" ++ ",".intercalate errs.toList
   let axl := if axs.isEmpty then "-" else ",".intercalate (axs.toList.map toString)
   let lv := if ci.levelParams.isEmpty then "-" else ",".intercalate (ci.levelParams.map toString)
-  IO.println s!"{tag} {thm} {spec} {verdict} {axl} {lv}"
+  -- the universe instance of the statement in the type, last on the line as it may hold spaces
+  let inst := match ci.type with
+    | .const _ ls | .app (.const ``Not []) (.const _ ls)
+    | .forallE _ (.const _ ls) (.const ``False []) _ => ls
+    | _ => []
+  let ins := if inst.isEmpty then "-" else ", ".intercalate (inst.map toString)
+  IO.println s!"{tag} {thm} {spec} {verdict} {axl} {lv} {ins}"
 
 /-- No module of the specification layer imports a module of the acceptance layer. -/
 def checkLayering : CoreM Unit := do

@@ -6,12 +6,11 @@ Authors: Christian Garry
 import Dissertation.WellPosedness.Existence.Congr
 import Dissertation.WellPosedness.Existence.WPZero
 import Dissertation.WellPosedness.System.LawFlow
-import LevyStochCalc.Poisson.PredictableIntegrand
 
 /-!
 # Predictable versions of the martingale integrands of a solution
 
-The solution space `ℍ²` of the paper takes the integrands `Z` and `U` predictable, while the
+The solution space `𝕊` of the paper takes the integrands `Z` and `U` predictable, while the
 solution predicate `SolvesForced` takes them progressively measurable and marked progressively
 measurable. Every such integrand of finite energy agrees almost everywhere with a predictable one
 (`LevyStochCalc.Probability.exists_predictable_ae_eq`,
@@ -26,11 +25,12 @@ such versions `(Z', U')` gives again a solution, with the same `X`, `Y` and jump
 * The tuples `Θ = (X, Y, Z, U)` and `Θ' = (X, Y, Z', U')` agree `dP ⊗ ds`-almost everywhere, and
   their laws at almost every time (`ae_tupleAt_eq_of_ae_eq`), so the coefficient processes along
   them agree `dP ⊗ ds`-almost everywhere and `γ` represents the jump coefficient along `Θ'`.
-* The coefficient processes along `Θ'` must still be jointly and progressively measurable, and
-  the solution predicate constrains the coefficients only along `Θ`. This is (2.5) along `Θ'`,
-  which the theorem takes from `CoeffRegular`, (2.5) along every progressive tuple; that follows
-  from the joint measurability (2.3) of the coefficients (`CoeffBorel.coeffRegular`,
-  `CoeffBorelW2.toCoeffBorel`).
+* The coefficient processes along `Θ'` must still be jointly and progressively measurable, and the
+  solution predicate constrains the coefficients only along `Θ`. This is (2.5) along `Θ'`, which the
+  theorem takes from `Dissertation.WellPosedness.Existence.CoeffRegular`, (2.5) along every
+  progressive tuple; that follows from the joint measurability (2.3) of the coefficients
+  (`Dissertation.WellPosedness.Existence.CoeffBorel.coeffRegular`,
+  `Dissertation.WellPosedness.Existence.CoeffBorelW2.toCoeffBorel`).
 
 ## Main statements
 

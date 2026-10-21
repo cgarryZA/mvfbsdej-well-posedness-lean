@@ -5,6 +5,8 @@ Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.BrownianPoisson.Compensation
 import LevyStochCalc.Probability.MarkedPredictableComp
+import LevyStochCalc.Ito.JumpCoefficientPredictableCriteria
+import LevyStochCalc.Poisson.CompensatedIntegrandComplete
 
 /-!
 # The quadratic integrand of the Poisson martingale `M²`

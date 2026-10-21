@@ -5,7 +5,6 @@ Authors: Christian Garry
 -/
 import Dissertation.PaperSpec.A.Sec4Continuation
 import Dissertation.Acceptance.A.Sec4
-import Dissertation.WellPosedness.Existence.Unique
 
 /-!
 # Sections 4.4 and 4.5 of the well-posedness paper: proofs
@@ -15,7 +14,7 @@ Statement and equation numbers refer to the well-posedness paper at `1f67672`.
 ## Main statements
 
 * `Dissertation.Acceptance.A.ForcedSolution.supSize_sub_lt_top` — the difference of two solutions
-  of (4.1) in `ℍ` lies in `ℍ`.
+  of (4.1) in `𝕊` lies in `𝕊`.
 * `Dissertation.Acceptance.A.ForcedSolution.eq_of_supSize_sub_eq_zero` — zero size of the
   difference is uniqueness.
 * `Dissertation.Acceptance.A.sec4_uniq_homotopy` — uniqueness along the homotopy, with `λ*` the
@@ -48,7 +47,7 @@ variable {Ω : Type u} {𝒢₀ : MeasurableSpace Ω} [mΩ : MeasurableSpace Ω]
   {X₁ X₂ : Fin n → ℝ → Ω → ℝ} {Y₁ Y₂ : Fin m → ℝ → Ω → ℝ}
   {Z₁ Z₂ : Fin m → ℝ → Ω → Fin d → ℝ} {U₁ U₂ : Fin m → ℝ → Ω → E → ℝ}
 
-/-- A solution of (4.1) in `ℍ` for coefficients with (2.3), the origin bounds of Assumption 2.2
+/-- A solution of (4.1) in `𝕊` for coefficients with (2.3), the origin bounds of Assumption 2.2
 and Assumption 2.3 agrees on `[0, T]` with a solution of `SolvesForced`. -/
 theorem ForcedSolution.exists_solvesForced {L₁ : ℝ} (hT : 0 ≤ T) (hJ : JointBorel T C₁)
     (horig : OriginValues T C₁) (h23 : Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L₁ C₁)
@@ -63,7 +62,7 @@ theorem ForcedSolution.exists_solvesForced {L₁ : ℝ} (hT : 0 ≤ T) (hJ : Joi
   obtain ⟨X', Y', hX, hY, hS⟩ := hs.exists_solvesForced hT
   exact ⟨X', Y', γ, hX, hY, hS⟩
 
-/-- **The difference of two solutions of (4.1) in `ℍ` lies in `ℍ`**, for coefficients with (2.3),
+/-- **The difference of two solutions of (4.1) in `𝕊` lies in `𝕊`**, for coefficients with (2.3),
 the origin bounds of Assumption 2.2 and Assumption 2.3, at any parameters, initial data and
 forcings. -/
 theorem ForcedSolution.supSize_sub_lt_top {L₁ L₂ : ℝ} (hT : 0 < T) (hJ₁ : JointBorel T C₁)
@@ -88,7 +87,7 @@ theorem ForcedSolution.supSize_sub_lt_top {L₁ L₂ : ℝ} (hT : 0 < T) (hJ₁ 
   exact hS₁.supSize_sub_lt_top hS₂ (crossWitnessEnl D h𝒢₀ hind₀) (hF0_enlJoint D h𝒢₀)
     (fun _ hs h0 => measurableSet_enlJoint_of_null D h𝒢₀ hs h0) hT
 
-/-- **Zero size of the difference of two solutions of (4.1) in `ℍ` is uniqueness**, for
+/-- **Zero size of the difference of two solutions of (4.1) in `𝕊` is uniqueness**, for
 coefficients with (2.3), the origin bounds of Assumption 2.2 and Assumption 2.3. -/
 theorem ForcedSolution.eq_of_supSize_sub_eq_zero {L₁ L₂ : ℝ} (hT : 0 ≤ T)
     (hJ₁ : JointBorel T C₁) (horig₁ : OriginValues T C₁)

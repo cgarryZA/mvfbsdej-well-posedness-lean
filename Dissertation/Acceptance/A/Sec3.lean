@@ -4,8 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.PaperSpec.A.Sec3
-import Dissertation.WellPosedness.Spec.Thm31
-import Dissertation.WellPosedness.System.JumpLeftEnergy
 import Dissertation.WellPosedness.Spec.Thm35
 import Dissertation.WellPosedness.Existence.CadlagVersion
 import Dissertation.WellPosedness.Spec.Cor36WellPosed

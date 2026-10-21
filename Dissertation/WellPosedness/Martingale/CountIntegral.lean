@@ -7,7 +7,6 @@ import LevyStochCalc.Poisson.Compensator
 import LevyStochCalc.Poisson.Simplicity
 import LevyStochCalc.Poisson.Atomic
 import LevyStochCalc.Ito.JumpCoefficientPredictableCriteria
-import Mathlib.Probability.Process.Stopping
 
 /-!
 # Integrals against a Poisson random measure, as processes in time

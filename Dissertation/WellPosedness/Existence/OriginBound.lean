@@ -5,7 +5,8 @@ Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.Existence.WPZero
 import Dissertation.WellPosedness.Existence.SizeCompare
-import Dissertation.WellPosedness.System.BridgeLip
+import Mathlib.Topology.EMetricSpace.Paracompact
+import Mathlib.Topology.Separation.CompletelyRegular
 
 /-!
 # Square integrability of the coefficient processes, (4.2)

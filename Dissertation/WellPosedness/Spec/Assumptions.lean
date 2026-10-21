@@ -5,7 +5,8 @@ Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.System.DiagonalInputs
 import Dissertation.WellPosedness.Existence.CoeffBorelW2
-import Dissertation.Law.P2Borel
+import Mathlib.Topology.EMetricSpace.Paracompact
+import Mathlib.Topology.Separation.CompletelyRegular
 
 /-!
 # Assumptions 2.2, 2.3 and 2.5 of the well-posedness paper, as printed
@@ -32,13 +33,13 @@ space `(Ω, ℱ, P)`, a horizon `T` and coefficients `C = (b, σ, h, f, g)` on t
     ≤ −β₁ 𝔼[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²_{L²(ν)}] − β₂ 𝔼|G δX|²`;
   and `α, β₁, β₂` are admissible.
 
-Here `𝒟_t` is the diagonal of Definition 2.1, `diagonalInputs`, whose elements are pairs of a
-strongly `ℱ_t`-measurable square-integrable `Θ : Ω → H` and its law. An element of an `L²` space is
-represented by a strongly measurable square-integrable map. The expectations of Assumption 2.5 are
-Bochner integrals; the two expectations of pairings are required to exist, as integrability of the
-integrands, and the others exist for square-integrable inputs. The interior conditions of
-Assumptions 2.3 and 2.5 at a fixed time `t`, `LipInteriorAt` and `Mono27At`, are the conditions
-the two assumptions impose for almost every `t ∈ [0, T]`.
+Here `𝒟_t` is the diagonal of Definition 2.1, `Dissertation.WellPosedness.System.diagonalInputs`,
+whose elements are pairs of a strongly `ℱ_t`-measurable square-integrable `Θ : Ω → H` and its law.
+An element of an `L²` space is represented by a strongly measurable square-integrable map. The
+expectations of Assumption 2.5 are Bochner integrals; the two expectations of pairings are required
+to exist, as integrability of the integrands, and the others exist for square-integrable inputs. The
+interior conditions of Assumptions 2.3 and 2.5 at a fixed time `t`, `LipInteriorAt` and `Mono27At`,
+are the conditions the two assumptions impose for almost every `t ∈ [0, T]`.
 
 ## Main definitions
 

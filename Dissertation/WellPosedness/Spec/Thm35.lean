@@ -11,16 +11,17 @@ import Dissertation.WellPosedness.Existence.PaperSolutionInt
 # Theorem 3.5 under the printed assumptions
 
 Theorem 3.5 of the well-posedness paper: for every horizon `T > 0`, under Assumptions 2.2–2.5 the
-system (1.1) has a solution in `ℍ²`, unique by Theorem 3.3, that is among the tuples of
-`ℍ²_weak` satisfying (1.1) with the same initial condition. This file states it over the paper's
-filtration `enlJoint 𝒢₀ D h𝒢₀`, for the solution notions `PaperSolution` and
-`PaperWeakSolutionInt`, with the hypotheses of the paper: the standing setting, the measurability
-(2.3), Assumption 2.2 with the initial datum `ξ₀ : Ω → ℝⁿ`, Assumption 2.3 with a constant `L`,
-Assumption 2.4 as the full rank of `G`, and Assumption 2.5.
+system (1.1) has a solution in `𝕊`, unique by Theorem 3.3, that is among the tuples of `ℍ²`
+satisfying (1.1) with the same initial condition. This file states it over the paper's filtration
+`enlJoint 𝒢₀ D h𝒢₀`, for the solution notions `Dissertation.WellPosedness.System.PaperSolution` and
+`Dissertation.WellPosedness.System.PaperWeakSolutionInt`, with the hypotheses of the paper: the
+standing setting, the measurability (2.3), Assumption 2.2 with the initial datum `ξ₀ : Ω → ℝⁿ`,
+Assumption 2.3 with a constant `L`, Assumption 2.4 as the full rank of `G`, and Assumption 2.5.
 
-The proof applies `exists_paperSolution_unique_paperWeakSolutionInt`, which takes the initial
-datum by its coordinates `ξ₀^i` and the terminal function by its sections `x ↦ g(x, ρ)`. The
-positivity of `n` and `m` is part of the standing setting and is not used.
+The proof applies
+`Dissertation.WellPosedness.Existence.exists_paperSolution_unique_paperWeakSolutionInt`, which takes
+the initial datum by its coordinates `ξ₀^i` and the terminal function by its sections `x ↦ g(x, ρ)`.
+The positivity of `n` and `m` is part of the standing setting and is not used.
 
 ## Main statements
 
@@ -47,12 +48,12 @@ and `T > 0`, let the coefficients satisfy the measurability (2.3), Assumption 2.
 datum `ξ₀`, Assumption 2.3 with a constant `L`, Assumption 2.4 (`G` of full rank) and
 Assumption 2.5 with `G` and constants `α, β₁, β₂`. Then (1.1) with initial datum `ξ₀` has a
 solution `(X, Y, Z, U)` in the sense of `PaperSolution`, and every solution `(X', Y', Z', U')` in
-`ℍ²_weak` in the sense of `PaperWeakSolutionInt` with initial datum `ξ₀` coincides with it:
+`ℍ²` in the sense of `PaperWeakSolutionInt` with initial datum `ξ₀` coincides with it:
 `X, X'` and `Y, Y'` are indistinguishable on `[0, T]`, and `𝔼 ∫_0^T |Z − Z'|²_F = 0`,
 `𝔼 ∫_0^T ‖U − U'‖²_{L²(ν)} = 0`, coordinatewise. -/
 theorem exists_paperSolutionEnl_unique_of_assumptions
     (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
-    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P) (hn : 0 < n) (hm : 0 < m) (hd : 0 < d)
+    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P) (_hn : 0 < n) (_hm : 0 < m) (hd : 0 < d)
     (hT : 0 < T) (hJ : JointBorel T C) (h22 : Assumption22 (enlJoint 𝒢₀ D h𝒢₀) P T C ξ₀)
     (h23 : Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C) (hG : G.rank = min m n)
     (h25 : Assumption25 (enlJoint 𝒢₀ D h𝒢₀) P T G α β₁ β₂ C) :

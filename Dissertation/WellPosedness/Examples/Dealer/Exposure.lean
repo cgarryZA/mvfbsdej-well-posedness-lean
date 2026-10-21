@@ -3,9 +3,8 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import Dissertation.WellPosedness.Examples.Dealer.Assumptions
-import Dissertation.WellPosedness.Examples.Dealer.DiagonalMonotone
 import Dissertation.WellPosedness.Examples.Dealer.Marks
+import Mathlib.Algebra.Order.Archimedean.Real.Hom
 
 /-!
 # Example 5.5: the exposure-sensitive dealer market
@@ -34,6 +33,8 @@ Example 5.1(i), and they enlarge the Lipschitz constant to
 * `dealerExpCoeffs_h`, `dealerExpCoeffs_f`, `dealerExpCoeffs_h_origin` — the jump coefficient and
   the driver, and the origin value `h_c` of the jump coefficient.
 * `interiorPairing_exposurePert` — the exposure terms do not enter the interior pairing.
+* `integral_jump_driver_dealerExp_le` — the jump and driver channels in expectation,
+  `𝔼[⟨δh, δU⟩ + ⟨−δf, δX⟩] ≤ −β₁ 𝔼 ‖δU‖² − β₂ 𝔼 |δX|²`.
 * `dealerExp_assumptions` — (2.3), Assumptions 2.2, 2.3 and 2.5.
 -/
 
@@ -69,6 +70,7 @@ noncomputable abbrev dealerExpCoeffs (β₁ β₂ : ℝ) (σc : EuclideanSpace �
 variable {β₁ β₂ ε : ℝ} {σc : EuclideanSpace ℝ (Fin 1 × Fin d)}
   {hc hx : Lp (EuclideanSpace ℝ (Fin 1)) 2 ν}
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
 /-- **At `h_x = 0` the exposure-sensitive system is the dealer system.** -/
 theorem dealerExpCoeffs_zero (β₁ β₂ : ℝ) (σc : EuclideanSpace ℝ (Fin 1 × Fin d))
     (hc : Lp (EuclideanSpace ℝ (Fin 1)) 2 ν) (ε : ℝ) :
@@ -77,6 +79,7 @@ theorem dealerExpCoeffs_zero (β₁ β₂ : ℝ) (σc : EuclideanSpace ℝ (Fin 
   simp only [dealerExpCoeffs, Coeffs.perturb, exposurePert, smul_zero, add_zero, inner_zero_left,
     h0]
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
 /-- The jump coefficient of the exposure-sensitive system,
 `h(t, θ, μ) = h_c − β₁ u − ε A_{μ^U}(u) + h_x x`. -/
 theorem dealerExpCoeffs_h (t : ℝ) (θ : TupleH ν 1 1 d) (μ : P2 (TupleH ν 1 1 d)) :
@@ -85,6 +88,7 @@ theorem dealerExpCoeffs_h (t : ℝ) (θ : TupleH ν 1 1 d) (μ : P2 (TupleH ν 1
   change (dealerCoeffs β₁ β₂ σc hc ε).h t θ μ + θ.1 0 • hx = _
   rw [dealerCoeffs_h]
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
 /-- The driver of the exposure-sensitive system, `f(t, θ, μ) = β₂ x + ⟨h_x, u⟩`. -/
 theorem dealerExpCoeffs_f (t : ℝ) (θ : TupleH ν 1 1 d) (μ : P2 (TupleH ν 1 1 d)) :
     (dealerExpCoeffs β₁ β₂ σc hc hx ε).f t θ μ
@@ -236,6 +240,7 @@ theorem terminalLipschitz_dealerExp :
 
 /-! ### Assumption 2.5 -/
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
 /-- **The exposure terms do not enter the interior pairing**: at `G = I`,
 `⟨h_x δx, δu⟩ − ⟨h_x, δu⟩ δx = 0`. -/
 theorem interiorPairing_exposurePert (t : ℝ) (θ θ' : TupleH ν 1 1 d)
@@ -254,6 +259,7 @@ theorem interiorPairing_exposurePert (t : ℝ) (θ θ' : TupleH ν 1 1 d)
     Fin.sum_univ_one, if_true, RCLike.inner_apply, conj_trivial]
   ring
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
 /-- **The interior pairing of the exposure-sensitive system** at `G = I` is that of the dealer
 system. -/
 theorem interiorPairing_dealerExp (t : ℝ) (θ θ' : TupleH ν 1 1 d) (μ μ' : P2 (TupleH ν 1 1 d)) :
@@ -274,6 +280,7 @@ theorem diagonalMonotone_dealerExp (hε : 0 ≤ ε) :
   simp_rw [interiorPairing_dealerExp, dissipation_diagDiff_perturb]
   exact ht Θ Θ' hΘt hΘ't hΘ hΘ'
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
 /-- **The jump and driver channels of the exposure-sensitive system.** The exposure terms cancel
 between the two channels:
 `⟨δh, δu⟩ + ⟨−δf, δx⟩ = −β₁ ‖δu‖² − ε ⟨A_{μ^U}(u) − A_{μ'^U}(u'), δu⟩ − β₂ |δx|²`. -/
@@ -300,8 +307,7 @@ theorem inner_jump_driver_dealerExp (t : ℝ) (θ θ' : TupleH ν 1 1 d)
     abel
   have hs : ⟪(PiLp.single 2 (0 : Fin 1) ⟪hx, θ.2.2.2 - θ'.2.2.2⟫ : EuclideanSpace ℝ (Fin 1)),
       θ.1 - θ'.1⟫ = ⟪hx, θ.2.2.2 - θ'.2.2.2⟫ * (θ.1 - θ'.1) 0 := by
-    simp [PiLp.inner_apply, PiLp.single_apply, Fin.sum_univ_one, RCLike.inner_apply,
-      conj_trivial, mul_comm]
+    simp [PiLp.inner_apply, PiLp.single_apply, RCLike.inner_apply, mul_comm]
   rw [eh, ef, inner_add_left, inner_sub_left, inner_neg_left, real_inner_smul_left,
     real_inner_smul_left, real_inner_smul_left, real_inner_self_eq_norm_sq, inner_neg_left,
     inner_add_left, real_inner_smul_left, real_inner_self_eq_norm_sq, hs]
@@ -367,6 +373,6 @@ theorem dealerExp_assumptions (T : ℝ) (hβ₁ : 0 < β₁) (hβ₂ : 0 < β₂
       ∧ TerminalMonotone ℱ P T 1 1 (dealerExpCoeffs β₁ β₂ σc hc hx ε).g :=
   ⟨coeffBorelW2_dealerExp T, coeffOrigin_dealerExp T,
     diagonalLipschitzH_dealerExp hβ₁.le hβ₂.le hε, terminalLipschitz_dealerExp,
-    constants_dealer hβ₁ hβ₂, diagonalMonotone_dealerExp hε, terminalMonotone_dealerExp⟩
+    constants_affine hβ₁ hβ₂, diagonalMonotone_dealerExp hε, terminalMonotone_dealerExp⟩
 
 end Dissertation.WellPosedness.Existence

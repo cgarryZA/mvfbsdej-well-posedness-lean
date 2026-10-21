@@ -5,8 +5,6 @@ Authors: Christian Garry
 -/
 import Dissertation.PaperSpec.A.Sec3Stability
 import Dissertation.Acceptance.A.Sec3
-import Dissertation.WellPosedness.Existence.CoeffPredictable
-import Dissertation.WellPosedness.Existence.PaperAdmissible
 
 /-!
 # The paragraph after Theorem 3.1 of the well-posedness paper: proofs

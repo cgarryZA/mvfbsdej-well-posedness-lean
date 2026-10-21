@@ -6,13 +6,17 @@ description: >-
 sources:
   - id: "cgarryZA/mvfbsdej-well-posedness@1f67672"
     url: "https://github.com/cgarryZA/mvfbsdej-well-posedness/tree/1f67672"
-    title: "Well-posedness of fully coupled McKean-Vlasov FBSDEs with jumps under full-tuple law dependence"
+    title: >-
+      Well-posedness of fully coupled McKean-Vlasov FBSDEs with jumps under full-tuple law
+      dependence
     authors: ["Chunrong Feng", "Christian Garry"]
     relationship: formalizes
 review:
   status: >-
-    Per-claim status in ACCEPTANCE.md and the MachineChecked audit; the statements are reviewed
-    by their author.
+    Per-claim status in ACCEPTANCE.md and the MachineChecked audit. Every statement, and every
+    definition the statements and the definition claims depend on, is reviewed by its author and
+    by at least one AI reviewer of the same model family (claude-reviewer or claude-auditor); no
+    human review is recorded.
   audit: "https://cgarryza.github.io/mvfbsdej-well-posedness-lean/"
 # The alignment below is generated from acceptance/ by `tools/acceptance.py check --write`.
 alignment:

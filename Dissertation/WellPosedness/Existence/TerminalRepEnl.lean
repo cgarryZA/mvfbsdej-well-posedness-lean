@@ -5,7 +5,6 @@ Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.Existence.TerminalRep
 import Dissertation.WellPosedness.Enlarged.Representation
-import LevyStochCalc.BSDEJ.CadlagLegs
 
 /-!
 # The terminal representation property from martingale representation

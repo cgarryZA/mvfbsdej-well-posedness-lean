@@ -4,7 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Mathlib.MeasureTheory.Function.L2Space
-import Mathlib.MeasureTheory.Constructions.Polish.StronglyMeasurable
 
 /-!
 # A jointly measurable representative of the elements of `L²`

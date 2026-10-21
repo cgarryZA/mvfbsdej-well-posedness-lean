@@ -124,6 +124,7 @@ theorem abs_leftLim_le {f : ℝ → ℝ} {s R : ℝ} (hs : 0 < s) {l : ℝ}
     exact hb u (le_of_lt hu0) hu
   exact le_of_tendsto (continuous_abs.continuousAt.tendsto.comp hl) hev
 
+omit [MeasurableSpace Ω] in
 /-- The squared length of the left limit at `s ∈ (0, T]` of a path is at most the supremum of
 its squared length over `[0, T]`. -/
 theorem ofReal_sum_leftLim_sq_le {Y : Fin m → ℝ → Ω → ℝ} {ω : Ω} {s : ℝ}
@@ -161,6 +162,7 @@ noncomputable def frozenPath (Y : Fin m → ℝ → Ω → ℝ) (T : ℝ) : Ω �
 noncomputable def exitSeq (Y : Fin m → ℝ → Ω → ℝ) (T : ℝ) : ℕ → Ω → WithTop ℝ :=
   fun N => openExitTime (frozenPath Y T) (N : ℝ)
 
+omit [MeasurableSpace Ω] in
 theorem frozenPath_of_mem {Y : Fin m → ℝ → Ω → ℝ} {ω : Ω} {r : ℝ} (hr : r ∈ Icc (0 : ℝ) T)
     (i : Fin m) : frozenPath Y T ω r i = Y i r ω := by
   simp only [frozenPath, min_eq_left hr.2, max_eq_right hr.1]
@@ -180,7 +182,8 @@ theorem adapted_frozenPath (hT : 0 ≤ T) (hℱneg : ∀ r : ℝ, r ≤ 0 → �
     have hcr : max 0 (min r T) ≤ r := max_le hr (min_le_left _ _)
     exact (hYad i _ hc).mono (ℱ.mono hcr) le_rfl
 
-theorem rightCont_frozenPath (hT : 0 ≤ T) {Y : Fin m → ℝ → Ω → ℝ}
+omit [MeasurableSpace Ω] in
+theorem rightCont_frozenPath (_hT : 0 ≤ T) {Y : Fin m → ℝ → Ω → ℝ}
     (hYr : ∀ i ω, ∀ t ∈ Ico (0 : ℝ) T, Tendsto (fun s => Y i s ω) (𝓝[>] t) (𝓝 (Y i t ω)))
     (ω : Ω) (s : ℝ) : Tendsto (frozenPath Y T ω) (𝓝[>] s) (𝓝 (frozenPath Y T ω s)) := by
   refine tendsto_pi_nhds.2 fun i => ?_
@@ -214,10 +217,12 @@ theorem isStoppingTime_exitSeq [ℱ.IsRightContinuous] (hT : 0 ≤ T)
   rw [Filtration.IsRightContinuous.eq] at h
   exact h
 
+omit [MeasurableSpace Ω] in
 theorem monotone_exitSeq (Y : Fin m → ℝ → Ω → ℝ) (T : ℝ) (ω : Ω) :
     Monotone fun N => exitSeq Y T N ω := fun _ _ h =>
   openExitTime_mono _ ω (by exact_mod_cast h)
 
+omit [MeasurableSpace Ω] in
 /-- Strictly before a time `s ≤ T` that the exit time has not passed, the path stays in the
 ball. -/
 theorem abs_le_of_le_exitSeq {Y : Fin m → ℝ → Ω → ℝ} {N : ℕ} {ω : Ω} {s u : ℝ} (hsT : s ≤ T)
@@ -229,6 +234,7 @@ theorem abs_le_of_le_exitSeq {Y : Fin m → ℝ → Ω → ℝ} {N : ℕ} {ω : 
   have hi := (norm_le_pi_norm (frozenPath Y T ω u) i).trans h
   rwa [frozenPath_of_mem ⟨hu, hus.le.trans hsT⟩, Real.norm_eq_abs] at hi
 
+omit [MeasurableSpace Ω] in
 /-- A path with finite supremum of `|Y_t|²` on `[0, T]` has not exited a large ball by `T`. -/
 theorem exists_le_exitSeq {Y : Fin m → ℝ → Ω → ℝ} {ω : Ω}
     (h : ⨆ t ∈ Icc (0 : ℝ) T, ∑ i, (‖Y i t ω‖₊ : ℝ≥0∞) ^ 2 < ⊤) :

@@ -4,19 +4,10 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.PaperSpec.A.Setting
-import Dissertation.WellPosedness.Spec.Assumptions
-import Dissertation.WellPosedness.Spec.CorollaryHyps
-import Dissertation.WellPosedness.Existence.ClampAffine
 import Dissertation.WellPosedness.Examples.MeanField
 import Dissertation.WellPosedness.Examples.Brownian
-import Dissertation.WellPosedness.Robustness.Perturb
 import Dissertation.WellPosedness.Spec.Cor36Law
-import Dissertation.Law.TupleMarginal
-import Dissertation.WellPosedness.Examples.Dealer.CrowdAffine
 import LevyStochCalc.Ito.PicardWellPosed
-import LevyStochCalc.Probability.ProgressiveCadlag
-import Dissertation.WellPosedness.Enlarged.Driver
-import Dissertation.WellPosedness.Existence.Congr
 import Dissertation.WellPosedness.Examples.Dealer.MarkSizes
 
 /-!
@@ -147,8 +138,8 @@ def ex_concrete_i_pairing : Prop :=
         = -β₁ * ‖θ.2.2.2 - θ'.2.2.2‖ ^ 2
 
 /-- Example 5.1(i), well-posedness. In the setting of `ex_concrete_i`, (1.1) with the affine
-coefficients and the initial datum `ξ₀` has a solution in `ℍ`, and any two solutions are equal
-in `ℍ`: their `X` and their `Y` are indistinguishable on `[0, T]`, and
+coefficients and the initial datum `ξ₀` has a solution in `𝕊`, and any two solutions are equal
+in `𝕊`: their `X` and their `Y` are indistinguishable on `[0, T]`, and
 `𝔼 ∫_0^T |Z¹_t − Z²_t|² dt = 0` and `𝔼 ∫_0^T ‖U¹_t − U²_t‖²_{L²(ν)} dt = 0`. -/
 def ex_concrete_i_wp : Prop :=
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
@@ -197,7 +188,7 @@ def ex_concrete_i_clamp : Prop :=
           (clampAffineCoeffs β₁ β₂ ε σc hc)
 
 /-- Example 5.1(i) with the drift (3.6), well-posedness: in the setting of
-`ex_concrete_i_clamp`, (1.1) has a solution in `ℍ`, and any two solutions are equal in `ℍ`, as
+`ex_concrete_i_clamp`, (1.1) has a solution in `𝕊`, and any two solutions are equal in `𝕊`, as
 in `ex_concrete_i_wp`. -/
 def ex_concrete_i_clamp_wp : Prop :=
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
@@ -513,8 +504,8 @@ with `L₀, G, α, β₁, β₂` and the margin `c_diss > 0` in (2.13). With the
 `ex_fulllaw_pert`, if (5.1),
 `ε ‖G‖ (|w₀| Lip(𝔮) + |v₀| Lip(𝔮̃) + |w₁| L_Q + ‖ĥ‖ Lip(𝔮̂)) < c_diss`, holds, then the perturbed
 system satisfies (2.3), Assumptions 2.2–2.5 with the baseline's `G, α, β₁, β₂` and (2.13) with
-margin `c_diss − ‖G‖ L_p`, and it is well-posed: (1.1) has a solution in `ℍ`, any two solutions
-are equal in `ℍ`, and for every constant `L` with which the perturbed system satisfies
+margin `c_diss − ‖G‖ L_p`, and it is well-posed: (1.1) has a solution in `𝕊`, any two solutions
+are equal in `𝕊`, and for every constant `L` with which the perturbed system satisfies
 Assumption 2.3, (3.1) holds with the constant `C_stab(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂)` for its
 solutions against the solutions of every system `2` satisfying (2.3) and Assumptions 2.2–2.3. -/
 def ex_fulllaw_wp : Prop :=

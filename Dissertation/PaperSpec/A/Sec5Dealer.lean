@@ -135,8 +135,8 @@ def ex_dealer_mono : Prop :=
         (ex55Coeffs ν β₁ β₂ σc hc hx ε)
 
 /-- Example 5.5, well-posedness at every `ε ≥ 0` and every `h_x`. In the setting of `ex_dealer`,
-(1.1) with the coefficients of Example 5.5 and the initial datum `ξ₀` has a solution in `ℍ`, and
-any two solutions are equal in `ℍ`: their `X` and their `Y` are indistinguishable on `[0, T]`, and
+(1.1) with the coefficients of Example 5.5 and the initial datum `ξ₀` has a solution in `𝕊`, and
+any two solutions are equal in `𝕊`: their `X` and their `Y` are indistinguishable on `[0, T]`, and
 `𝔼 ∫_0^T |Z¹_t − Z²_t|² dt = 0` and `𝔼 ∫_0^T ‖U¹_t − U²_t‖²_{L²(ν)} dt = 0`. -/
 def ex_dealer_wp : Prop :=
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
@@ -164,7 +164,8 @@ def ex_dealer_wp : Prop :=
             (fun ω s e => U₁ k s ω e - U₂ k s ω e) = 0
 
 /-- Example 5.5, the crowding correction is no function of the mean when the fibre is
-nontrivial: `ex_dealer_mean` with `L²(ν)` not reduced to `0` (for `ν ≠ 0`). -/
+nontrivial: if `L²(ν)` is not reduced to `0`, no map `Φ` gives `A_Λ(u) = Φ(∫ v Λ(dv), u)` for
+every law `Λ ∈ P₂(L²(ν))` and every `u ∈ L²(ν)`. -/
 def ex_dealer_mean_corr : Prop :=
   ∀ {E : Type v} [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν]
     [MeasurableSpace.CountablyGenerated E],

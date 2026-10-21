@@ -4,12 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.PaperSpec.A.Sec3SpaceNorm
-import Dissertation.WellPosedness.System.Completeness
-import Dissertation.WellPosedness.Existence.PaperAdmissible
-import Dissertation.WellPosedness.Existence.CoeffPredictable
 import Dissertation.Acceptance.A.Sec3Complete
-import LevyStochCalc.Brownian.CadlagVectorIntegral
-import LevyStochCalc.Poisson.CompensatedCadlagMod
 
 /-!
 # The norm of the solution space and the càdlàg integrals of §3: proofs
@@ -21,12 +16,12 @@ import LevyStochCalc.Poisson.CompensatedCadlagMod
   every path is càdlàg on `[0, T]`.
 * `Dissertation.Acceptance.A.finset_sum_rpow_half_le` — Minkowski's inequality for square roots
   of finite sums in `[0, ∞]`.
-* `Dissertation.Acceptance.A.supSize_const_mul` — `‖c Θ‖²_ℍ = |c|² ‖Θ‖²_ℍ`.
+* `Dissertation.Acceptance.A.supSize_const_mul` — `‖c Θ‖²_𝕊 = |c|² ‖Θ‖²_𝕊`.
 * `Dissertation.Acceptance.A.sec3_cadlag_versions`, `sec3_HH_norm`.
-* `Dissertation.Acceptance.A.sec3_cadlag_versions_hypotheses` — a tuple of `ℍ_weak` along which
+* `Dissertation.Acceptance.A.sec3_cadlag_versions_hypotheses` — a tuple of `ℍ²` along which
   the integrals of (1.1) exist, with `Z = U = 1_{(0, 1]}` of energy `1`.
-* `Dissertation.Acceptance.A.sec3_HH_norm_hypotheses` — two tuples of `ℍ_weak` with
-  `‖·‖²_ℍ = 4`.
+* `Dissertation.Acceptance.A.sec3_HH_norm_hypotheses` — two tuples of `ℍ²` with
+  `‖·‖²_𝕊 = 4`.
 -/
 
 open MeasureTheory ProbabilityTheory Filter WithLp
@@ -92,7 +87,7 @@ theorem sec3_cadlag_versions : PaperSpec.A.sec3_cadlag_versions.{u, v, w} := by
         (hΘ.U_pred k).markedProgressivelyMeasurable
         (marked_sq_int_global_of_vanishing (hΘ.U_vanish k) (hΘ.U_sq k)) h0 hnull)
 
-/-! ### The norm of `ℍ` -/
+/-! ### The norm of `𝕊` -/
 
 /-- `(x²)^{1/2} = x` in `[0, ∞]`. -/
 theorem rpow_half_sq (x : ℝ≥0∞) : (x ^ 2) ^ (1 / 2 : ℝ) = x := by
@@ -192,7 +187,7 @@ theorem markedEnergy_add_rpow_half_le {Ω : Type*} [MeasurableSpace Ω] {P : Mea
     (g := fun p : Ω × ℝ × E => ψ p.1 p.2.1 p.2.2)
     hφ.aestronglyMeasurable hψ.aestronglyMeasurable one_le_two
 
-/-- **`‖c Θ‖²_ℍ = |c|² ‖Θ‖²_ℍ`**, the scalar multiple taken coordinatewise. -/
+/-- **`‖c Θ‖²_𝕊 = |c|² ‖Θ‖²_𝕊`**, the scalar multiple taken coordinatewise. -/
 theorem supSize_const_mul {Ω : Type*} [MeasurableSpace Ω] {E : Type*} [MeasurableSpace E]
     (P : Measure Ω) (ν : Measure E) {n m d : ℕ} (T c : ℝ) (X : Fin n → ℝ → Ω → ℝ)
     (Y : Fin m → ℝ → Ω → ℝ) (Z : Fin m → ℝ → Ω → Fin d → ℝ) (U : Fin m → ℝ → Ω → E → ℝ) :
@@ -223,7 +218,7 @@ theorem supSize_const_mul {Ω : Type*} [MeasurableSpace Ω] {E : Type*} [Measura
       lintegral_const_mul' _ _ hκt]
   simp only [supSize, hsup, hen, hmen, ← Finset.mul_sum, ← mul_add]
 
-/-- §3, `‖·‖_ℍ` satisfies the triangle inequality and is absolutely homogeneous. -/
+/-- §3, `‖·‖_𝕊` satisfies the triangle inequality and is absolutely homogeneous. -/
 theorem sec3_HH_norm : PaperSpec.A.sec3_HH_norm.{u, v, w} := by
   intro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ T X X' Y Y' Z Z' U U' hΘ hΘ'
   set ℱ := enlJoint 𝒢₀ D h𝒢₀
@@ -255,7 +250,7 @@ theorem sec3_HH_norm : PaperSpec.A.sec3_HH_norm.{u, v, w} := by
 /-- **The hypotheses of the càdlàg versions of the integrals of (1.1) can be met with nonzero
 integrands.** Over a probability space carrying a Lévy driver with `d = 1` and `ν = δ₀` on `ℝ`,
 with `𝒢₀ = ⊥`, `n = m = 1` and `T = 1`, the tuple `X = Y = 1`, `Z = U = 1_{(0, 1]}` is a tuple of
-`ℍ_weak` along which the integrals of (1.1) for the system of Example 5.1(i) (`β₁ = β₂ = 1`,
+`ℍ²` along which the integrals of (1.1) for the system of Example 5.1(i) (`β₁ = β₂ = 1`,
 `σ_c = h_c = 0`) exist, and `Z` and `U` have energy `1`. -/
 theorem sec3_cadlag_versions_hypotheses :
     ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)
@@ -304,10 +299,10 @@ theorem sec3_cadlag_versions_hypotheses :
       (by norm_num))
   exact ⟨Ω, inferInstance, P, inferInstance, D, hind₀, _, _, _, _, γ, hΘ, hadm.toInt, hE, hEm⟩
 
-/-- **The hypotheses of the norm properties of `‖·‖_ℍ` can be met by nonzero tuples.** Over a
+/-- **The hypotheses of the norm properties of `‖·‖_𝕊` can be met by nonzero tuples.** Over a
 probability space carrying a Lévy driver with `d = 1` and `ν = δ₀` on `ℝ`, with `𝒢₀ = ⊥`,
 `n = m = 1` and `T = 1`, the tuple `X = Y = 1`, `Z = U = 1_{(0, 1]}`, taken for both `Θ` and
-`Θ'`, is a tuple of `ℍ_weak` with `‖Θ‖²_ℍ = 4`. -/
+`Θ'`, is a tuple of `ℍ²` with `‖Θ‖²_𝕊 = 4`. -/
 theorem sec3_HH_norm_hypotheses :
     ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)
       (D : LevyStochCalc.Driver.LevyDriver P 1 (Measure.dirac (0 : ℝ)))

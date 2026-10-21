@@ -1,7 +1,7 @@
 name = "MVFBSDEJWellPosedness"
 version = "0.1.0"
 keywords = ["math", "probability", "FBSDE", "McKean-Vlasov", "jumps"]
-description = "Lean 4 formalisation of the well-posedness of fully coupled McKean-Vlasov FBSDEs with jumps."
+description = "Well-posedness of fully coupled McKean-Vlasov FBSDEs with jumps, in Lean 4."
 homepage = "https://github.com/cgarryZA/mvfbsdej-well-posedness-lean"
 license = "Apache-2.0"
 licenseFiles = ["LICENSE"]
@@ -13,11 +13,6 @@ pp.unicode.fun = true
 relaxedAutoImplicit = false
 weak.linter.mathlibStandardSet = true
 maxSynthPendingDepth = 3
-weak.linter.flexible = false
-weak.linter.unusedSimpArgs = false
-weak.linter.unnecessarySimpa = false
-weak.linter.unusedSectionVars = false
-weak.linter.unusedVariables = false
 
 [[require]]
 name = "mathlib"

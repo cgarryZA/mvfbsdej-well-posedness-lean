@@ -9,7 +9,7 @@ import Dissertation.PaperSpec.A.Sec3
 # Two steps of the proof of Theorem 3.3 of the well-posedness paper
 
 Statement and equation numbers refer to the well-posedness paper at `1f67672`. Along two solutions
-`Θ¹, Θ² ∈ ℍ_weak` of (1.1) with the same initial condition, with `μ^k_t = Law(Θ^k_t)`,
+`Θ¹, Θ² ∈ ℍ²` of (1.1) with the same initial condition, with `μ^k_t = Law(Θ^k_t)`,
 `δψ_t = ψ(t, Θ¹_t, μ¹_t) − ψ(t, Θ²_t, μ²_t)` for `ψ ∈ {b, σ, f}`,
 `δh_t = h(t, Θ^{1,−}_t, ·, μ^{1,−}_t) − h(t, Θ^{2,−}_t, ·, μ^{2,−}_t)` at the predictable tuples and
 `δg_T = g(X¹_T, Law X¹_T) − g(X²_T, Law X²_T)`, the proof of Theorem 3.3 shows
@@ -39,7 +39,7 @@ universe u v w
 
 /-- **(3.2).** In the standing setting, for every horizon `T > 0`, if the coefficients satisfy
 (2.3) and Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, and
-`Θ¹, Θ² ∈ ℍ_weak` satisfy (1.1) with the same initial datum `ξ₀`, then
+`Θ¹, Θ² ∈ ℍ²` satisfy (1.1) with the same initial datum `ξ₀`, then
 `𝔼 ∫_0^T (|δb_t|² + |δσ_t|²_F + ‖δh_t‖²_{L²(ν)} + |δf_t|²) dt < ∞`, with
 `δψ_t = ψ(t, Θ¹_t, μ¹_t) − ψ(t, Θ²_t, μ²_t)` for `ψ ∈ {b, σ, f}`, `μ^k_t = Law(Θ^k_t)`, and
 `δh_t = h(t, Θ^{1,−}_t, ·, μ^{1,−}_t) − h(t, Θ^{2,−}_t, ·, μ^{2,−}_t)` at the predictable tuples,
@@ -72,7 +72,7 @@ def eq_uniq_coeff : Prop :=
 
 /-- **(3.3).** There is a function `C_BP` of `T` such that: in the standing setting, for every
 horizon `T > 0`, if the coefficients satisfy (2.3) and Assumptions 2.3–2.5 with constants
-`L, α, β₁, β₂` and coupling matrix `G`, and `Θ¹, Θ² ∈ ℍ_weak` satisfy (1.1) with the same initial
+`L, α, β₁, β₂` and coupling matrix `G`, and `Θ¹, Θ² ∈ ℍ²` satisfy (1.1) with the same initial
 datum `ξ₀`, then
 `𝔼 sup_{t ≤ T} |δY_t|² ≤ C_BP(T) (𝔼|δg_T|² + 𝔼 ∫_0^T |δf_s|² ds) < ∞`, with
 `δg_T = g(X¹_T, Law X¹_T) − g(X²_T, Law X²_T)`, `δf_s = f(s, Θ¹_s, μ¹_s) − f(s, Θ²_s, μ²_s)` and

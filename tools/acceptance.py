@@ -187,7 +187,9 @@ def run_probe(queries, tmp):
             levels = parts[5] if len(parts) > 5 else "-"
             res["proof"][parts[1]] = {"kind": tag, "spec": parts[2], "verdict": parts[3],
                                       "axioms": parts[4] if len(parts) > 4 else "-",
-                                      "levels": [] if levels == "-" else levels.split(",")}
+                                      "levels": [] if levels == "-" else levels.split(","),
+                                      "instance": "" if parts[6:] in ([], ["-"])
+                                      else " ".join(parts[6:])}
         elif tag == "LAYER":
             res["layer"].append(line)
         elif tag == "SPECMODULE":
@@ -657,8 +659,8 @@ def release_failures(data, status, consistency, source_checked, paper, comparato
 
 def release_gate(args):
     data, consistency, status, source_checked = evaluate(args.paper or PAPER_DIR)
-    names = sorted({c["accept"] for e in data["claims"] if e["paper"] == "A"
-                    for c in e["clauses"] if c.get("accept")})
+    names = sorted({c[key] for e in data["claims"] if e["paper"] == "A"
+                    for c in e["clauses"] for key in ("accept", "refute") if c.get(key)})
     path = args.comparator_result
     result = json.loads(pathlib.Path(path).read_text()) if path and os.path.exists(path) else None
     comparator = comparator_failures(result, names, environment_binding(),
@@ -848,8 +850,9 @@ def render(data, status, source_checked):
     for r in status["claims"]:
         by_paper[r["paper"]].append(r)
     for p, (_, pin, title) in PAPERS.items():
-        out += [f"## Paper {p} ({title}, `{pin}`)", "",
-                "| Claim | Number | Status | Proposition | Proof | Review |", "|---|---|---|---|---|---|"]
+        out += [f"## The {title} paper (`{pin}`)", "",
+                "| Claim | Number | Status | Proposition | Proof | Review |",
+                "|---|---|---|---|---|---|"]
         for r in by_paper[p]:
             if r["scope"] in OUT_OF_SCOPE:
                 continue
@@ -860,9 +863,11 @@ def render(data, status, source_checked):
                 for d in c["defs"]:
                     props.append(f"`{d}`")
                 if c.get("accept"):
-                    proofs.append(f"`{short(c['accept'])}`" + ("" if c.get("accept_ok") else " (fails)"))
+                    proofs.append(f"`{short(c['accept'])}`"
+                                  + ("" if c.get("accept_ok") else " (fails)"))
                 if c.get("refute"):
-                    proofs.append(f"¬ `{short(c['refute'])}`" + ("" if c.get("refute_ok") else " (fails)"))
+                    proofs.append(f"¬ `{short(c['refute'])}`"
+                                  + ("" if c.get("refute_ok") else " (fails)"))
                 if c["spec"]:
                     rv = c["spec_review"]
                     if c.get("witness"):
@@ -910,25 +915,32 @@ def hashes(args):
                   f"{info['module'].replace('.', '/')}.lean:{info['line']}")
 
 
+def challenge_line(thm, spec, kind, levels, instance):
+    """The statement of the theorem `thm` as a `sorry` theorem: `spec` for a proof (`ACC`), its
+    negation for a refutation (`REF`), with the universe parameters `levels` of `thm` and the
+    universe instance `instance` of `spec` in its type."""
+    params = f".{{{', '.join(levels)}}}" if levels else ""
+    inst = f".{{{instance}}}" if instance else ""
+    return f"theorem {thm}{params} : {'¬ ' if kind == 'REF' else ''}{spec}{inst} := sorry\n"
+
+
 def comparator_inputs(args):
-    """Write `AcceptanceChallenge.lean` (each proved statement as a `sorry` theorem under the name of
-    its proof, importing only the statements) and the comparator configuration."""
+    """Write `AcceptanceChallenge.lean` (each proved statement, and the negation of each refuted
+    one, as a `sorry` theorem under the name of its proof, importing only the statements) and the
+    comparator configuration."""
     data = json.loads(pathlib.Path(CLAIMS).read_text())
-    pairs = sorted({(c["accept"], c["spec"]) for e in data["claims"] for c in e["clauses"]
-                    if c.get("accept")})
+    pairs = sorted({(c[key], c["spec"], kind) for e in data["claims"] for c in e["clauses"]
+                    for key, kind in (("accept", "ACC"), ("refute", "REF")) if c.get(key)})
     with tempfile.TemporaryDirectory() as tmp:
-        probe = run_probe([f"ACC {a} {s}" for a, s in pairs], tmp)
+        probe = run_probe([f"{kind} {t} {s}" for t, s, kind in pairs], tmp)
     lines = ["import Dissertation.PaperSpec", ""]
     names = []
-    for acc, spec in pairs:
-        r = probe["proof"][acc]
+    for thm, spec, kind in pairs:
+        r = probe["proof"][thm]
         if r["verdict"] != "ok":
             continue
-        lv = r["levels"]
-        head = f"universe {' '.join(lv)} in\n" if lv else ""
-        inst = f".{{{', '.join(lv)}}}" if lv else ""
-        lines.append(f"{head}theorem {acc} : {spec}{inst} := sorry\n")
-        names.append(acc)
+        lines.append(challenge_line(thm, spec, kind, r["levels"], r["instance"]))
+        names.append(thm)
     with open(os.path.join(ROOT, "AcceptanceChallenge.lean"), "w") as _f:
         _f.write("\n".join(lines))
     cfg = {"challenge_module": "AcceptanceChallenge", "solution_module": "Dissertation.Acceptance",

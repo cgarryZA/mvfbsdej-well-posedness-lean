@@ -4,31 +4,38 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.Spec.Assumptions
+import Mathlib.MeasureTheory.Category.MeasCat
 
 /-!
 # Assumption 2.3 and the measurability (2.3) in the forms the proofs consume
 
 The interior half of Assumption 2.3, quantified over pairs of elements of the diagonal `𝒟_t`, is
-`DiagonalLipschitzH` with the same constant, and the terminal half (2.6) is `TerminalLipschitz`.
-The contraction steps of the proofs use `DiagonalLipschitz`, the interior bound with the
-2-Wasserstein distance of the maximum of the four channel norms of `H`. As
-`w2P ≤ w2H ≤ 2 w2P`, the interior bound with the constant `L` gives `DiagonalLipschitz` with the
-constant `2L`, and `DiagonalLipschitz` with the constant `L` gives the interior bound with `L`.
+`Dissertation.WellPosedness.System.DiagonalLipschitzH` with the same constant, and the terminal half
+(2.6) is `Dissertation.WellPosedness.System.TerminalLipschitz`. The contraction steps of the proofs
+use `Dissertation.WellPosedness.System.DiagonalLipschitz`, the interior bound with the 2-Wasserstein
+distance of the maximum of the four channel norms of `H`. As `w2P ≤ w2H ≤ 2 w2P`, the interior bound
+with the constant `L` gives `Dissertation.WellPosedness.System.DiagonalLipschitz` with the constant
+`2L`, and `Dissertation.WellPosedness.System.DiagonalLipschitz` with the constant `L` gives the
+interior bound with `L`.
 
-The measurability (2.3) is `CoeffBorelW2` for `b, σ, h, f` together with the Borel measurability
-of `g` on `ℝⁿ × P₂(ℝⁿ)`. It gives the Borel measurability of every section `x ↦ g(x, ρ)`, since
-`ℝⁿ` and `P₂(ℝⁿ)` are second countable, and `CoeffBorel`.
+The measurability (2.3) is `Dissertation.WellPosedness.Existence.CoeffBorelW2` for `b, σ, h, f`
+together with the Borel measurability of `g` on `ℝⁿ × P₂(ℝⁿ)`. It gives the Borel measurability of
+every section `x ↦ g(x, ρ)`, since `ℝⁿ` and `P₂(ℝⁿ)` are second countable, and
+`Dissertation.WellPosedness.Existence.CoeffBorel`.
 
 ## Main statements
 
 * `lipInterior_iff_diagonalLipschitzH`, `lipTerminal_iff_terminalLipschitz` — the two halves of
   Assumption 2.3 with the same constant.
-* `assumption23_iff` — Assumption 2.3 as `0 ≤ L`, `DiagonalLipschitzH` and `TerminalLipschitz`.
+* `assumption23_iff` — Assumption 2.3 as `0 ≤ L`,
+  `Dissertation.WellPosedness.System.DiagonalLipschitzH` and
+  `Dissertation.WellPosedness.System.TerminalLipschitz`.
 * `LipInterior.diagonalLipschitz_two_mul` — the interior bound with `L` gives
-  `DiagonalLipschitz` with `2L`.
-* `LipInterior.of_diagonalLipschitz` — `DiagonalLipschitz` with `L` gives the interior bound
-  with `L`.
-* `jointBorel_iff` — (2.3) as `CoeffBorelW2` and the Borel measurability of `g`.
+  `Dissertation.WellPosedness.System.DiagonalLipschitz` with `2L`.
+* `LipInterior.of_diagonalLipschitz` — `Dissertation.WellPosedness.System.DiagonalLipschitz` with
+  `L` gives the interior bound with `L`.
+* `jointBorel_iff` — (2.3) as `Dissertation.WellPosedness.Existence.CoeffBorelW2` and the Borel
+  measurability of `g`.
 * `JointBorel.measurable_g_section` — every section `x ↦ g(x, ρ)` is Borel measurable.
 -/
 

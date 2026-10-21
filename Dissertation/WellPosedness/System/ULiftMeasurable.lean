@@ -5,6 +5,7 @@ Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.System.Tuple
 import LevyStochCalc.Probability.Progressive
+import Mathlib.MeasureTheory.Measure.SeparableMeasure
 
 /-!
 # Measurability of the `L²(ν)` channel

@@ -4,7 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.Existence.Step
-import Dissertation.WellPosedness.System.BridgeDiff
 
 /-!
 # A solution of the `λ = 0` system as a solution at every `λ`

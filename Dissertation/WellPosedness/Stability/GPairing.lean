@@ -26,7 +26,7 @@ Step 2 of the proof of Lemma 4.3 of the well-posedness paper inserts Assumption 
 * `dotProduct_le_add_div`, `mulVec_dotProduct_le`, `transpose_mulVec_dotProduct_le`,
   `neg_dotProduct_mulVec_le`, `abs_mulVec_dotProduct_le`, `abs_dotProduct_mulVec_le` — Young's
   inequality for `G`-pairings.
-* `gPairing_le`, `abs_gPairing_le` — Young's inequality for the forcing pairing of (4.19).
+* `abs_gPairing_le` — Young's inequality for the forcing pairing of (4.19).
 * `integrable_dotProduct_of_memLp`, `memLp_mulVec` — pairings of square-integrable coordinates.
 * `neg_sub_dotProduct`, `integral_dotProduct_congr_ae` — rewriting pairings.
 * `memLp_markedWindow` — marked integrands of finite energy on the marked window.
@@ -135,32 +135,6 @@ theorem sum_col_dotProduct_self {d : ℕ} (z : Fin m → Fin d → ℝ) :
     ∑ j, (fun k => z k j) ⬝ᵥ (fun k => z k j) = ∑ k, z k ⬝ᵥ z k := by
   simp only [dotProduct]
   exact Finset.sum_comm
-
-/-- **Young's inequality for the forcing pairing of (4.19).** With `|G x|² ≤ g² |x|²` and
-`η > 0`, for a drift `b`, diffusion columns `s_{· j}`, driver `f`, solution `(x, y, z)` and a mark
-term `J ≤ η J_W + (g²/(4η)) J_Q`,
-
-`b ⬝ Gᵀy + ∑_j s_{·j} ⬝ Gᵀz_{·j} − f ⬝ Gx + J
-  ≤ η (|x|² + |y|² + |z|²_F + J_W) + (g²/(4η)) (|b|² + |s|²_F + J_Q + |f|²)`. -/
-theorem gPairing_le {d : ℕ}
-    (hGn : ∀ x : Fin n → ℝ, (G *ᵥ x) ⬝ᵥ (G *ᵥ x) ≤ gG ^ 2 * (x ⬝ᵥ x)) (hη : 0 < η)
-    (b : Fin n → ℝ) (s : Fin n → Fin d → ℝ) (f : Fin m → ℝ) (x : Fin n → ℝ) (y : Fin m → ℝ)
-    (z : Fin m → Fin d → ℝ) {J JW JQ : ℝ} (hJ : J ≤ η * JW + gG ^ 2 / (4 * η) * JQ) :
-    b ⬝ᵥ (Gᵀ *ᵥ y) + ∑ j, (fun i => s i j) ⬝ᵥ (Gᵀ *ᵥ fun k => z k j) - f ⬝ᵥ (G *ᵥ x) + J
-      ≤ η * (x ⬝ᵥ x + y ⬝ᵥ y + ∑ k, z k ⬝ᵥ z k + JW)
-        + gG ^ 2 / (4 * η) * (b ⬝ᵥ b + ∑ i, s i ⬝ᵥ s i + JQ + f ⬝ᵥ f) := by
-  have h1 : b ⬝ᵥ (Gᵀ *ᵥ y) ≤ η * (y ⬝ᵥ y) + gG ^ 2 / (4 * η) * (b ⬝ᵥ b) := by
-    rw [dotProduct_transpose_mulVec]
-    exact mulVec_dotProduct_le hGn hη b y
-  have h2 : ∑ j, (fun i => s i j) ⬝ᵥ (Gᵀ *ᵥ fun k => z k j)
-      ≤ η * ∑ k, z k ⬝ᵥ z k + gG ^ 2 / (4 * η) * ∑ i, s i ⬝ᵥ s i := by
-    rw [← sum_col_dotProduct_self z, ← sum_col_dotProduct_self (m := n) s, Finset.mul_sum,
-      Finset.mul_sum, ← Finset.sum_add_distrib]
-    refine Finset.sum_le_sum fun j _ => ?_
-    rw [dotProduct_transpose_mulVec]
-    exact mulVec_dotProduct_le hGn hη _ _
-  have h3 := neg_dotProduct_mulVec_le hGn hη f x
-  nlinarith
 
 /-- **Young's inequality for a `G`-pairing, in absolute value**: with `|G x|² ≤ g² |x|²`,
 `|G a ⬝ c| ≤ η |c|² + (g²/(4η)) |a|²`. -/

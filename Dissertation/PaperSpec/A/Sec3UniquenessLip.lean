@@ -10,7 +10,7 @@ import Dissertation.PaperSpec.A.Sec3
 
 Statement and equation numbers refer to the well-posedness paper at `1f67672`. Remark 3.4 says that
 the uniqueness argument needs only the Lipschitz control of the coefficient differences to place
-the difference of two solutions in `ℍ`. Along two solutions `Θ¹, Θ² ∈ ℍ_weak` of (1.1) with the
+the difference of two solutions in `𝕊`. Along two solutions `Θ¹, Θ² ∈ ℍ²` of (1.1) with the
 same initial condition, whose coefficients satisfy (2.3) and Assumption 2.3 (no monotonicity, no
 Assumption 2.2), with `μ^k_t = Law(Θ^k_t)`, `δψ_t = ψ(t, Θ¹_t, μ¹_t) − ψ(t, Θ²_t, μ²_t)` for
 `ψ ∈ {b, σ, f}`, `δh_t` at the predictable tuples and
@@ -29,7 +29,7 @@ Assumption 2.2), with `μ^k_t = Law(Θ^k_t)`, `δψ_t = ψ(t, Θ¹_t, μ¹_t) �
 
 `𝔼 sup_{t ≤ T} |δY_t|² ≤ C_BP (𝔼|δg_T|² + 𝔼 ∫_0^T |δf_s|² ds) < ∞`, (3.3)
 
-and `δΘ ∈ ℍ`.
+and `δΘ ∈ 𝕊`.
 
 ## Main definitions
 
@@ -39,7 +39,7 @@ and `δΘ ∈ ℍ`.
 * `Dissertation.PaperSpec.A.eq_uniq_bwd_eq` — the backward difference.
 * `Dissertation.PaperSpec.A.eq_uniq_bwd_terminal` — the terminal bound before (3.3).
 * `Dissertation.PaperSpec.A.eq_uniq_bwd_lip` — (3.3).
-* `Dissertation.PaperSpec.A.rem_uniq_lip_mem` — `Θ¹ − Θ² ∈ ℍ`.
+* `Dissertation.PaperSpec.A.rem_uniq_lip_mem` — `Θ¹ − Θ² ∈ 𝕊`.
 -/
 
 open MeasureTheory Filter ProbabilityTheory
@@ -55,7 +55,7 @@ universe u v w
 
 /-- **The bound before (3.2), at almost every time.** There is a function `K` of the Lipschitz
 constant such that: in the standing setting, for every horizon `T > 0`, if the coefficients
-satisfy (2.3) and Assumption 2.3 with constant `L`, and `Θ¹, Θ² ∈ ℍ_weak` satisfy (1.1) with the
+satisfy (2.3) and Assumption 2.3 with constant `L`, and `Θ¹, Θ² ∈ ℍ²` satisfy (1.1) with the
 same initial datum `ξ₀`, then for almost every `t ∈ [0, T]`
 `𝔼[|δb_t|² + |δσ_t|²_F + ‖δh_t‖²_{L²(ν)} + |δf_t|²]
   ≤ K(L) 𝔼[|δX_t|² + |δY_t|² + |δZ_t|²_F + ‖δU_t‖²_{L²(ν)}]`,
@@ -92,7 +92,7 @@ def eq_uniq_coeff_ae : Prop :=
           + ∑ k, ∫⁻ e, (‖U₁ k t ω e - U₂ k t ω e‖₊ : ℝ≥0∞) ^ 2 ∂ν) ∂P
 
 /-- **(3.2) under the Lipschitz condition.** In the standing setting, for every horizon `T > 0`,
-if the coefficients satisfy (2.3) and Assumption 2.3 with constant `L`, and `Θ¹, Θ² ∈ ℍ_weak`
+if the coefficients satisfy (2.3) and Assumption 2.3 with constant `L`, and `Θ¹, Θ² ∈ ℍ²`
 satisfy (1.1) with the same initial datum `ξ₀`, then
 `𝔼 ∫_0^T (|δb_t|² + |δσ_t|²_F + ‖δh_t‖²_{L²(ν)} + |δf_t|²) dt < ∞`, the coefficient differences
 as in `eq_uniq_coeff_ae`, the expectation read in `[0, ∞]`. -/
@@ -123,7 +123,7 @@ def eq_uniq_coeff_lip : Prop :=
 
 /-- **The forward difference in the proof of Theorem 3.3, and its supremum bound.** There is a
 function `K` of the horizon such that: in the standing setting, for every horizon `T > 0`, if the
-coefficients satisfy (2.3) and Assumption 2.3 with constant `L`, and `Θ¹, Θ² ∈ ℍ_weak` satisfy
+coefficients satisfy (2.3) and Assumption 2.3 with constant `L`, and `Θ¹, Θ² ∈ ℍ²` satisfy
 (1.1) with the same initial datum `ξ₀`, then each coordinate `i` of `δX = X¹ − X²` satisfies,
 almost surely at every `t ∈ [0, T]`,
 `δX_t = ∫_0^t δb_s ds + ∫_0^t δσ_s dW_s + ∫_0^t ∫_E δh_s(e) Ñ(ds, de)`:
@@ -206,7 +206,7 @@ def eq_uniq_fwd : Prop :=
 
 /-- **The backward difference in the proof of Theorem 3.3.** In the standing setting, for every
 horizon `T > 0`, if the coefficients satisfy (2.3) and Assumption 2.3 with constant `L`, and
-`Θ¹, Θ² ∈ ℍ_weak` satisfy (1.1) with the same initial datum `ξ₀`, then each coordinate `k` of
+`Θ¹, Θ² ∈ ℍ²` satisfy (1.1) with the same initial datum `ξ₀`, then each coordinate `k` of
 `(δY, δZ, δU)` satisfies, almost surely at every `t ∈ [0, T]`,
 `δY_t = δg_T + ∫_t^T δf_s ds − ∫_t^T δZ_s dW_s − ∫_t^T ∫_E δU_s(e) Ñ(ds, de)`,
 `δg_T = g(X¹_T, Law(X¹_T)) − g(X²_T, Law(X²_T))`: the driver has almost surely integrable paths on
@@ -257,7 +257,7 @@ def eq_uniq_bwd_eq : Prop :=
 
 /-- **The terminal bound before (3.3).** There is a function `K` of the Lipschitz constant such
 that: in the standing setting, for every horizon `T > 0`, if the coefficients satisfy (2.3) and
-Assumption 2.3 with constant `L`, and `Θ¹, Θ² ∈ ℍ_weak` satisfy (1.1) with the same initial datum
+Assumption 2.3 with constant `L`, and `Θ¹, Θ² ∈ ℍ²` satisfy (1.1) with the same initial datum
 `ξ₀`, then `X¹_T, X²_T ∈ L²` and `𝔼|δg_T|² ≤ K(L) 𝔼|δX_T|² < ∞`, with
 `δg_T = g(X¹_T, Law X¹_T) − g(X²_T, Law X²_T)` and `δX_T = X¹_T − X²_T`; the expectations are
 read in `[0, ∞]`. -/
@@ -282,7 +282,7 @@ def eq_uniq_bwd_terminal : Prop :=
 
 /-- **(3.3) under the Lipschitz condition.** There is a function `C_BP` of `T` such that: in the
 standing setting, for every horizon `T > 0`, if the coefficients satisfy (2.3) and Assumption 2.3
-with constant `L`, and `Θ¹, Θ² ∈ ℍ_weak` satisfy (1.1) with the same initial datum `ξ₀`, then
+with constant `L`, and `Θ¹, Θ² ∈ ℍ²` satisfy (1.1) with the same initial datum `ξ₀`, then
 `𝔼 sup_{t ≤ T} |δY_t|² ≤ C_BP(T) (𝔼|δg_T|² + 𝔼 ∫_0^T |δf_s|² ds) < ∞`, with
 `δg_T = g(X¹_T, Law X¹_T) − g(X²_T, Law X²_T)`, `δf_s = f(s, Θ¹_s, μ¹_s) − f(s, Θ²_s, μ²_s)` and
 `μ^k_s = Law(Θ^k_s)`; the expectations are read in `[0, ∞]`. -/
@@ -309,9 +309,9 @@ def eq_uniq_bwd_lip : Prop :=
           + ∑ k, LevyStochCalc.Brownian.Ito.energy P T
             (fun ω s => driverProc P T C X₁ Y₁ Z₁ U₁ k ω s - driverProc P T C X₂ Y₂ Z₂ U₂ k ω s) < ⊤
 
-/-- **`Θ¹ − Θ² ∈ ℍ` under the Lipschitz condition** (Remark 3.4). In the standing setting, for
+/-- **`Θ¹ − Θ² ∈ 𝕊` under the Lipschitz condition** (Remark 3.4). In the standing setting, for
 every horizon `T > 0`, if the coefficients satisfy (2.3) and Assumption 2.3 with constant `L`, and
-`Θ¹, Θ² ∈ ℍ_weak` satisfy (1.1) with the same initial datum `ξ₀`, then `‖Θ¹ − Θ²‖²_ℍ < ∞`:
+`Θ¹, Θ² ∈ ℍ²` satisfy (1.1) with the same initial datum `ξ₀`, then `‖Θ¹ − Θ²‖²_𝕊 < ∞`:
 `𝔼 sup_{t ≤ T} |δX_t|² + 𝔼 sup_{t ≤ T} |δY_t|² + 𝔼 ∫_0^T (|δZ_t|²_F + ‖δU_t‖²_{L²(ν)}) dt < ∞`. -/
 def rem_uniq_lip_mem : Prop :=
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}

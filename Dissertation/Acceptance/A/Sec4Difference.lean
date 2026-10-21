@@ -5,19 +5,18 @@ Authors: Christian Garry
 -/
 import Dissertation.PaperSpec.A.Sec4Difference
 import Dissertation.WellPosedness.System.WeakPairDiff
-import Dissertation.WellPosedness.Stability.Coercivity
 import Dissertation.Acceptance.A.Sec4
 
 /-!
 # Steps 1 and 2 of the proof of Lemma 4.3: proofs
 
 Statement and equation numbers refer to the well-posedness paper at `1f67672`. Extended off
-`[0, T]`, two solutions of (4.1) in `ℍ_weak` have as difference the difference system of the
+`[0, T]`, two solutions of (4.1) in `ℍ²` have as difference the difference system of the
 implementation (`PaperWeakSolutionForcedInt.exists_pairDiff`), whose equations, `G`-energy
 identity, monotonicity and coercivity give (4.15)–(4.22); the jump coefficient at the predictable
 tuples agrees with the solutions' representatives almost everywhere
 (`PaperWeakSolutionForcedInt.ae_forcedJump_sub_leftLim_eq`). The hypotheses are those of
-Lemma 4.3, an instance of which is `Dissertation.Acceptance.A.lem_pert_two_data_hypotheses`.
+Lemma 4.3, an instance of which is `Dissertation.Acceptance.A.lem_pert_data_forcing_hypotheses`.
 
 ## Main statements
 

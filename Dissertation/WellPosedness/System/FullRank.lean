@@ -3,7 +3,6 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import Mathlib.Analysis.Matrix.PosDef
 import Dissertation.WellPosedness.System.Operators
 
 /-!
@@ -37,6 +36,8 @@ so every eigenvalue of that product is nonzero, and it is nonnegative, so `s_min
   `c_G = s_min(G)⁻²`.
 * `gCoerciveForward_of_rank`, `gCoerciveBackward_of_rank` — Assumption 2.4 for the operator
   `x ↦ G x`, with `c_G = s_min(G)⁻²`, for `G` of full rank `rank G = min(m, n)`.
+* `GX_one`, `GZ_one`, `GU_one` — the coupling operators of the identity matrix are the identity.
+* `rank_one_eq_min`, `sMin_one` — the identity matrix has full rank and `s_min(I) = 1`.
 -/
 
 open Matrix WithLp
@@ -203,5 +204,58 @@ theorem gCoerciveForward_of_rank (hG : G.rank = min m n) (h : n ≤ m) :
 theorem gCoerciveBackward_of_rank (hG : G.rank = min m n) (h : m ≤ n) :
     GCoerciveBackward (GX G) (sMin G ^ 2)⁻¹ :=
   (gCoerciveBackward_GX_iff G _).mpr (backwardCoercive_of_rank h (by rw [hG, min_eq_left h]))
+
+/-! ### The identity matrix -/
+
+section Identity
+
+open MeasureTheory
+
+variable {E : Type*} [MeasurableSpace E] {n d : ℕ}
+
+/-- The coupling operator of the identity matrix is the identity. -/
+theorem GX_one : GX (1 : Matrix (Fin n) (Fin n) ℝ) = ContinuousLinearMap.id ℝ _ := by
+  ext x : 1
+  rw [← WithLp.toLp_ofLp 2 x, GX_toLp, Matrix.one_mulVec]
+  rfl
+
+/-- The coupling operator of the identity matrix on `n × d` matrices is the identity. -/
+theorem GZ_one :
+    GZ (d := d) (1 : Matrix (Fin n) (Fin n) ℝ) = ContinuousLinearMap.id ℝ _ := by
+  ext z : 1
+  refine PiLp.ext fun p => ?_
+  rw [← toLp_ofLp 2 z, GZ_toLp_apply, Matrix.one_mulVec]
+  rfl
+
+variable (ν : Measure E) in
+/-- The coupling operator of the identity matrix on `L²(ν; ℝⁿ)` is the identity. -/
+theorem GU_one :
+    GU (1 : Matrix (Fin n) (Fin n) ℝ) ν = ContinuousLinearMap.id ℝ _ := by
+  ext u : 1
+  refine Lp.ext ?_
+  filter_upwards [coeFn_GU (1 : Matrix (Fin n) (Fin n) ℝ) ν u] with e he
+  rw [he, GX_one]
+  rfl
+
+/-- The identity matrix has full rank. -/
+theorem rank_one_eq_min : (1 : Matrix (Fin n) (Fin n) ℝ).rank = min n n := by
+  rw [Matrix.rank_one, Fintype.card_fin, min_self]
+
+/-- **`s_min(I) = 1`** for the identity matrix of size `n ≥ 1`: every eigenvalue of `Iᵀ I = I`
+lies in the spectrum `{1}`. -/
+theorem sMin_one [NeZero n] : sMin (1 : Matrix (Fin n) (Fin n) ℝ) = 1 := by
+  have h : ∀ i,
+      (isHermitian_conjTranspose_mul_self (1 : Matrix (Fin n) (Fin n) ℝ)).eigenvalues i = 1 := by
+    intro i
+    have hs : spectrum ℝ ((1 : Matrix (Fin n) (Fin n) ℝ)ᴴ * 1) = {1} := by
+      rw [conjTranspose_one, one_mul, spectrum.one_eq]
+    have hi := (isHermitian_conjTranspose_mul_self
+      (1 : Matrix (Fin n) (Fin n) ℝ)).eigenvalues_mem_spectrum_real i
+    rw [hs] at hi
+    exact hi
+  rw [sMin, if_pos le_rfl]
+  simp only [h, ciInf_const, Real.sqrt_one]
+
+end Identity
 
 end Dissertation.WellPosedness.System

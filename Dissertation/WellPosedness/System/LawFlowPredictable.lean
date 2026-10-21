@@ -4,9 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.System.LawFlowL2
-import LevyStochCalc.Analysis.CadlagJumps
-import LevyStochCalc.Ito.JumpCoefficientPredictableCriteria
-import LevyStochCalc.Probability.PredictableModification
 
 /-!
 # The predictable left-limit tuple

@@ -5,6 +5,8 @@ Authors: Christian Garry
 -/
 import Dissertation.Law.Mixture
 import Dissertation.Law.TupleMarginal
+import Mathlib.Topology.EMetricSpace.Paracompact
+import Mathlib.Topology.Separation.CompletelyRegular
 
 /-!
 # Mixtures and Dirac masses on the tuple space

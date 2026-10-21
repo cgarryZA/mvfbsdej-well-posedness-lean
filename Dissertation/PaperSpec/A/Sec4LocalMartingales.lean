@@ -16,9 +16,10 @@ integral terms of (4.5) are the local martingales
 
 and `M²` (the third, read pathwise, is `lem41_M2_zero_mean`). Their integrands carry the factor
 `δY_{s−}`, which has no moment beyond the second, so they are local stochastic integrals
-(`IsLocalBrownianIntegral`, `IsLocalCompensatedIntegral`): `L²` integrals up to stopping times
-that exhaust `[0, T]`. The Burkholder–Davis–Gundy inequality at `p = 1`, in quadratic-variation
-form for `M¹`,
+(`Dissertation.WellPosedness.Martingale.IsLocalBrownianIntegral`,
+`Dissertation.WellPosedness.Martingale.IsLocalCompensatedIntegral`): `L²` integrals up to stopping
+times that exhaust `[0, T]`. The Burkholder–Davis–Gundy inequality at `p = 1`, in
+quadratic-variation form for `M¹`,
 
 `𝔼 sup_{t ≤ T} |M¹_t| ≤ c_BDG 𝔼 (∫_0^T ∫_E e^{2s} |δY_{s−}|² |δU_s(e)|² N(ds, de))^{1/2}`,
 

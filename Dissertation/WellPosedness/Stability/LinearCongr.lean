@@ -3,25 +3,11 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import LevyStochCalc.Probability.MarkedPredictable
 import LevyStochCalc.Probability.Predictable
-import Mathlib.Analysis.Real.Sqrt
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp
-import Mathlib.MeasureTheory.Function.ConditionalExpectation.CondJensen
-import Mathlib.MeasureTheory.Integral.Prod
-import Mathlib.Probability.Process.Filtration
-import Mathlib.Algebra.Order.Chebyshev
-import Mathlib.MeasureTheory.Integral.Lebesgue.Basic
-import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
-import Mathlib.Algebra.Order.Floor.Semiring
-import Mathlib.Analysis.Calculus.MeanValue
-import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Dissertation.WellPosedness.Stability.Sub
 import LevyStochCalc.Brownian.ItoCellIsometry
-import LevyStochCalc.Brownian.MultidimIto
 import LevyStochCalc.Ito.CompensatedCellIsometry
-import LevyStochCalc.Poisson.CompensatedLinear
-import LevyStochCalc.BSDEJ.DriftLeg
 import Dissertation.WellPosedness.Existence.ForwardZero
 import Dissertation.WellPosedness.System.ChannelCoords
 
@@ -29,13 +15,13 @@ import Dissertation.WellPosedness.System.ChannelCoords
 # Linear equations with deterministic integrands and equal data
 
 A deterministic measurable process `(ω, s) ↦ g(s)` is predictable, the predictable σ-algebra
-containing the sets `(r, ∞) × Ω`. A solution of the linear forward or backward equation is one for
-any equal data.
+containing the sets `(r, ∞) × Ω`. A solution of the linear forward equation is one for any equal
+data.
 
 ## Main statements
 
 * `predictable_of_measurable_time` — deterministic integrands are predictable.
-* `LinearFSDEJ.of_eq`, `LinearBSDEJ.of_eq` — the linear equations for equal data.
+* `LinearFSDEJ.of_eq` — the linear forward equation for equal data.
 -/
 
 open MeasureTheory Filter Topology
@@ -87,14 +73,6 @@ theorem _root_.Dissertation.WellPosedness.Stability.LinearFSDEJ.of_eq {ξ₀ ξ�
     (h : LinearFSDEJ D ℱ hℱW hℱN T ξ₀ b X σ γ) (hξ : ξ₀ = ξ₀') (hb : b = b') (hX : X = X')
     (hσ : σ = σ') (hγ : γ = γ') : LinearFSDEJ D ℱ hℱW hℱN T ξ₀' b' X' σ' γ' := by
   subst hξ hb hX hσ hγ
-  exact h
-
-/-- A solution of the linear backward equation is one for equal data. -/
-theorem _root_.Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.of_eq {ξ ξ' : Ω → ℝ}
-    {φ φ' : Ω → ℝ → ℝ} {Y Y' : ℝ → Ω → ℝ} {Z Z' : ℝ → Ω → (Fin d → ℝ)} {U U' : ℝ → Ω → E → ℝ}
-    (h : LinearBSDEJ D ℱ hℱW hℱN T ξ φ Y Z U) (hξ : ξ = ξ') (hφ : φ = φ') (hY : Y = Y')
-    (hZ : Z = Z') (hU : U = U') : LinearBSDEJ D ℱ hℱW hℱN T ξ' φ' Y' Z' U' := by
-  subst hξ hφ hY hZ hU
   exact h
 
 end Forward

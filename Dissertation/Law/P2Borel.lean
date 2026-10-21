@@ -65,7 +65,7 @@ theorem quantWeightVec_mem (n : ℕ) (μ : P2 E) :
     SimpleFunc.sum_measure_preimage_singleton]
   have h : (quant n : E → E) ⁻¹' ((quant n : SimpleFunc E E).range : Set E) = Set.univ := by
     ext x
-    simp [SimpleFunc.mem_range_self]
+    simp
   rw [h, measure_univ, ENNReal.toReal_one]
 
 /-- The weight vector of the `n`-th quantised law, as a point of the standard simplex. -/

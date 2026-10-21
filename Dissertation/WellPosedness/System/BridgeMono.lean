@@ -3,7 +3,6 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import Mathlib.MeasureTheory.SpecificCodomains.Pi
 import Dissertation.WellPosedness.System.ChannelCoords
 import Dissertation.WellPosedness.System.SolvesMemLp
 
@@ -236,6 +235,7 @@ theorem DiagonalMonotone.mono_pair (hM : DiagonalMonotone ℱ P T G β₁ β₂ 
         rw [integral_congr_ae hA,
           integral_congr_ae (ae_of_all _ fun ω => norm_sq_GX_tupleAt (G := G) (ω := ω))]
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
 /-- **The terminal inequality of Assumption 2.5 along two processes.** For a terminal function
 satisfying the terminal inequality along the diagonal, and two processes whose values at the
 horizon are `ℱ_T`-measurable and square integrable, `α 𝔼|G δX_T|² ≤ 𝔼⟨δg_T, G δX_T⟩`, in

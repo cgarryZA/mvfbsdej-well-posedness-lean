@@ -4,9 +4,9 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.PaperSpec.A.Sec3Margin
-import Dissertation.WellPosedness.Robustness.JumpMargin
 import Dissertation.Acceptance.A.Witness
-import LevyStochCalc.Driver.Existence
+import Mathlib.RingTheory.Flat.TorsionFree
+import Mathlib.RingTheory.SimpleRing.Principal
 
 /-!
 # The paragraph after Corollary 3.6 of the well-posedness paper: proofs
@@ -191,7 +191,7 @@ instance measurableSingletonClass_tupleH_volume :
   @Prod.instMeasurableSingletonClass _ _ _ _ _ (@Prod.instMeasurableSingletonClass _ _ _ _ _
     inferInstance)
 
-/-- Rank-one jump feedback on `ℍ` with `n = m = d = 1` and `ν` Lebesgue measure on `ℝ`:
+/-- Rank-one jump feedback on `𝕊` with `n = m = d = 1` and `ν` Lebesgue measure on `ℝ`:
 `b = σ = f = g = 0` and `h(t, θ, μ) = −⟨φ, u⟩ φ`, with `φ = unitIndicator`. -/
 noncomputable def rankOneCoeffs : Coeffs (volume : Measure ℝ) 1 1 1 where
   b _ _ _ := 0

@@ -16,22 +16,22 @@ properties of the coefficients, not of the standing basis. Two diagonal inputs
 coupling of `μ` and `μ'`: an expectation along the pair is the integral against `γ`, and an
 almost sure bound along the pair is a `γ`-almost everywhere bound. Conversely, when `ℱ_t`
 carries a uniform variable, every coupling `γ` of two laws of finite second moment is the joint
-law of two diagonal inputs at time `t`. So each diagonal condition at time `t` is equivalent to
-the same condition over all couplings of all pairs of laws in `P₂(H)`, a statement about the
-coefficients alone:
+law of two diagonal inputs at time `t`. So each diagonal condition of Assumption 2.3 at time `t`
+is equivalent to the same condition over all couplings of all pairs of laws in `P₂(H)`, a
+statement about the coefficients alone:
 
 * `CouplingLipschitzH` — for almost every `t ∈ [0, T]`, every pair of laws `μ, μ'` and every
   coupling `γ`, for `γ`-almost every `(θ, θ')`,
   `|δb| + |δσ|_F + ‖δh‖_{L²(ν)} + |δf| ≤ L (|δx| + |δy| + |δz|_F + ‖δu‖_{L²(ν)} + W₂(μ, μ'))`;
-* `CouplingMonotone` — (2.7) with the expectations replaced by integrals against `γ`;
-* `CouplingTerminalLipschitz`, `CouplingTerminalMonotone` — the terminal conditions over the
-  couplings of pairs of laws in `P₂(ℝⁿ)`.
+* `CouplingTerminalLipschitz` — the terminal condition over the couplings of pairs of laws in
+  `P₂(ℝⁿ)`.
 
-The transfer between the two forms needs the integrands to be measurable on `H × H`, which the
-joint measurability (2.3) of the coefficients provides (`CoeffBorel`), and the Borel measurability
-of `x ↦ g(x, ρ)` for the terminal conditions; both are standing in the paper. Without them an
-integrand on `H × H` need not be measurable for `γ`; its integral against `γ` is then `0` by the
-Bochner convention and need not equal the expectation along the pair.
+The transfer between the two forms needs the integrands to be measurable on `H × H`, which the joint
+measurability (2.3) of the coefficients provides
+(`Dissertation.WellPosedness.Existence.CoeffBorel`), and the Borel measurability of `x ↦ g(x, ρ)`
+for the terminal conditions; both are standing in the paper. Without them an integrand on `H × H`
+need not be measurable for `γ`; its integral against `γ` is then `0` by the Bochner convention and
+need not equal the expectation along the pair.
 
 The uniform variable is needed only in the direction from the diagonal form to the coupling form,
 and only at the times where the condition is imposed. The interior conditions are imposed for
@@ -42,21 +42,17 @@ carrying a Brownian motion satisfies, and no condition on `ℱ_0`.
 
 ## Main definitions
 
-* `CouplingLipschitzH`, `CouplingMonotone` — the interior conditions of
-  Assumptions 2.3 and 2.5 over couplings.
-* `CouplingTerminalLipschitz`, `CouplingTerminalMonotone` — the terminal conditions over
-  couplings.
+* `CouplingLipschitzH` — the interior condition of Assumption 2.3 over couplings.
+* `CouplingTerminalLipschitz` — the terminal condition of Assumption 2.3 over couplings.
 
 ## Main statements
 
 * `isCoupling_of_mem_diagonalInputs`, `SupportsUniform.exists_mem_diagonalInputs` — the joint law
   of two diagonal inputs couples their laws, and for `t > 0` every coupling arises so.
 * `lipschitzAlong_iff_coupling`, `diagonalLipschitzH_iff_coupling`,
-  `diagonalMonotone_iff_coupling`, `terminalLipschitz_iff_coupling`,
-  `terminalMonotone_iff_coupling` — each diagonal condition is equivalent to its coupling form.
-* `diagonalLipschitzH_congr_basis`, `diagonalMonotone_congr_basis`,
-  `terminalLipschitz_congr_basis`, `terminalMonotone_congr_basis` — each holds on one basis if and
-  only if it holds on another.
+  `terminalLipschitz_iff_coupling` — each diagonal condition is equivalent to its coupling form.
+* `diagonalLipschitzH_congr_basis`, `terminalLipschitz_congr_basis` — each holds on one basis if
+  and only if it holds on another.
 -/
 
 open MeasureTheory Filter Dissertation.Law
@@ -83,19 +79,6 @@ def CouplingLipschitzH (T L : ℝ) (C : Coeffs ν n m d) : Prop :=
         + ‖C.h t p.1 μ - C.h t p.2 μ'‖ + ‖C.f t p.1 μ - C.f t p.2 μ'‖
       ≤ L * (tupleNorm (p.1 - p.2) + w2H μ μ')
 
-/-- **Assumption 2.5, interior, over couplings**: for almost every `t ∈ [0, T]`, every two laws
-`μ, μ'` of finite second moment on `H` and every coupling `γ` of them, (2.7) with the
-expectations replaced by integrals against `γ`:
-`∫ [⟨δb, Gᵀ δy⟩ + ⟨δσ, Gᵀ δz⟩_F − ⟨δf, G δx⟩ + ⟨δh, Gᵀ δu⟩_{L²(ν)}] dγ
-  ≤ ∫ [−β₁ (|Gᵀ δy|² + |Gᵀ δz|²_F + ‖Gᵀ δu‖²_{L²(ν)}) − β₂ |G δx|²] dγ`,
-with `δψ = ψ(t, θ, μ) − ψ(t, θ', μ')`. -/
-def CouplingMonotone (T : ℝ) (G : Matrix (Fin m) (Fin n) ℝ) (β₁ β₂ : ℝ) (C : Coeffs ν n m d) :
-    Prop :=
-  ∀ᵐ t ∂(volume.restrict (Set.Icc (0 : ℝ) T)), ∀ (μ μ' : P2 (TupleH ν n m d))
-    (γ : Measure (TupleH ν n m d × TupleH ν n m d)), IsCoupling μ.law μ'.law γ →
-    ∫ p, interiorPairing (GX G) (GZ G) (GU G ν) (diagDiff C t p.1 p.2 μ μ') ∂γ
-      ≤ ∫ p, dissipation (GX G) (GZ G) (GU G ν) β₁ β₂ (diagDiff C t p.1 p.2 μ μ') ∂γ
-
 end Defs
 
 /-- **Assumption 2.3, terminal (2.6), over couplings**: for every two laws `ρ, ρ'` of finite
@@ -108,18 +91,6 @@ def CouplingTerminalLipschitz (L : ℝ)
     (γ : Measure (EuclideanSpace ℝ (Fin n) × EuclideanSpace ℝ (Fin n))),
     IsCoupling ρ.law ρ'.law γ →
     ∀ᵐ p ∂γ, ‖g p.1 ρ - g p.2 ρ'‖ ≤ L * (‖p.1 - p.2‖ + w2P ρ ρ')
-
-/-- **Assumption 2.5, terminal, over couplings**: for every two laws `ρ, ρ'` of finite second
-moment on `ℝⁿ` and every coupling `γ` of them,
-`α ∫ |G (x − x')|² dγ ≤ ∫ ⟨g(x, ρ) − g(x', ρ'), G (x − x')⟩ dγ`. -/
-def CouplingTerminalMonotone (G : Matrix (Fin m) (Fin n) ℝ) (α : ℝ)
-    (g : EuclideanSpace ℝ (Fin n) → P2 (EuclideanSpace ℝ (Fin n)) → EuclideanSpace ℝ (Fin m)) :
-    Prop :=
-  ∀ (ρ ρ' : P2 (EuclideanSpace ℝ (Fin n)))
-    (γ : Measure (EuclideanSpace ℝ (Fin n) × EuclideanSpace ℝ (Fin n))),
-    IsCoupling ρ.law ρ'.law γ →
-    α * ∫ p, ‖GX G (p.1 - p.2)‖ ^ 2 ∂γ
-      ≤ ∫ p, inner ℝ (g p.1 ρ - g p.2 ρ') (GX G (p.1 - p.2)) ∂γ
 
 /-! ### Joint laws of diagonal inputs -/
 
@@ -298,33 +269,6 @@ theorem diagonalLipschitzH_iff_coupling (hC : Existence.CoeffBorel T C)
     (hU : SupportsUniform ℱ P) : DiagonalLipschitzH ℱ P T L C ↔ CouplingLipschitzH T L C :=
   lipschitzAlong_iff_coupling hC hU w2H
 
-/-- **Assumption 2.5, interior, is intrinsic** (Remark 2.9): for jointly measurable coefficients
-(2.3) and a filtration supporting a uniform variable at every positive time, (2.7) holds along
-the diagonal if and only if it holds over every coupling of every two laws in `P₂(H)`. -/
-theorem diagonalMonotone_iff_coupling (hC : Existence.CoeffBorel T C)
-    (hU : SupportsUniform ℱ P) :
-    DiagonalMonotone ℱ P T G β₁ β₂ C ↔ CouplingMonotone T G β₁ β₂ C := by
-  rw [diagonalMonotone_iff_diagonalInputs]
-  constructor
-  · intro h
-    filter_upwards [h, ae_restrict_mem measurableSet_Icc, ae_restrict_Icc_pos T]
-      with t ht htI htpos μ μ' γ hγ
-    obtain ⟨p, hp, p', hp', rfl, rfl, hmap⟩ := hU.exists_mem_diagonalInputs htpos hγ
-    have key := ht p hp p' hp'
-    subst hmap
-    have hae : AEMeasurable (fun ω => (p.1 ω, p'.1 ω)) P :=
-      hp.2.1.aestronglyMeasurable.aemeasurable.prodMk hp'.2.1.aestronglyMeasurable.aemeasurable
-    rwa [integral_map hae (aestronglyMeasurable_interiorPairing_of_coeffBorel hC htI G _ _ _),
-      integral_map hae (aestronglyMeasurable_dissipation_diagDiff G β₁ β₂ C t _ _ _)]
-  · intro h
-    filter_upwards [h, ae_restrict_mem measurableSet_Icc] with t ht htI p hp p' hp'
-    have hae : AEMeasurable (fun ω => (p.1 ω, p'.1 ω)) P :=
-      hp.2.1.aestronglyMeasurable.aemeasurable.prodMk hp'.2.1.aestronglyMeasurable.aemeasurable
-    have key := ht p.2 p'.2 _ (isCoupling_of_mem_diagonalInputs hp hp')
-    rwa [integral_map hae (aestronglyMeasurable_interiorPairing_of_coeffBorel hC htI G _ _ _),
-      integral_map hae (aestronglyMeasurable_dissipation_diagDiff G β₁ β₂ C t _ _ _)]
-      at key
-
 end Interior
 
 /-! ### The terminal conditions -/
@@ -356,37 +300,6 @@ theorem terminalLipschitz_iff_coupling (hg : ∀ ρ, Measurable fun x => g x ρ)
     exact ae_of_ae_map (hL.aestronglyMeasurable.aemeasurable.prodMk
       hL'.aestronglyMeasurable.aemeasurable) (h _ _ _ (isCoupling_lawP2_map hL hL'))
 
-/-- **Assumption 2.5, terminal, is intrinsic** (Remark 2.9): if `x ↦ g(x, ρ)` is measurable for
-every law `ρ` and `ℱ_T`, `T > 0`, carries a uniform variable, then
-`α 𝔼|G δX_T|² ≤ 𝔼⟨δg_T, G δX_T⟩` holds along the diagonal if and only if it holds over every
-coupling of every two laws in `P₂(ℝⁿ)`. -/
-theorem terminalMonotone_iff_coupling (hg : ∀ ρ, Measurable fun x => g x ρ)
-    (hU : SupportsUniform ℱ P) (hT : 0 < T) :
-    TerminalMonotone ℱ P T G α g ↔ CouplingTerminalMonotone G α g := by
-  have hsq : Continuous fun p : EuclideanSpace ℝ (Fin n) × EuclideanSpace ℝ (Fin n) =>
-      ‖GX G (p.1 - p.2)‖ ^ 2 := by fun_prop
-  have hin : ∀ ρ ρ' : P2 (EuclideanSpace ℝ (Fin n)),
-      Measurable fun p : EuclideanSpace ℝ (Fin n) × EuclideanSpace ℝ (Fin n) =>
-        inner ℝ (g p.1 ρ - g p.2 ρ') (GX G (p.1 - p.2)) := fun ρ ρ' =>
-    (((hg ρ).comp measurable_fst).sub ((hg ρ').comp measurable_snd)).inner
-      ((GX G).continuous.measurable.comp (measurable_fst.sub measurable_snd))
-  constructor
-  · intro h ρ ρ' γ hγ
-    obtain ⟨ξ, ξ', hξ, hξ', hL, hL', hmap, hlaw, hlaw'⟩ := hU.exists_pair_map_eq hT hγ
-    have key := h ξ ξ' hξ hξ' hL hL'
-    rw [hlaw, hlaw'] at key
-    subst hmap
-    have hae : AEMeasurable (fun ω => (ξ ω, ξ' ω)) P :=
-      hL.aestronglyMeasurable.aemeasurable.prodMk hL'.aestronglyMeasurable.aemeasurable
-    rwa [integral_map hae hsq.aestronglyMeasurable,
-      integral_map hae (hin ρ ρ').aestronglyMeasurable]
-  · intro h ξ ξ' _ _ hL hL'
-    have hae : AEMeasurable (fun ω => (ξ ω, ξ' ω)) P :=
-      hL.aestronglyMeasurable.aemeasurable.prodMk hL'.aestronglyMeasurable.aemeasurable
-    have key := h _ _ _ (isCoupling_lawP2_map hL hL')
-    rwa [integral_map hae hsq.aestronglyMeasurable,
-      integral_map hae (hin _ _).aestronglyMeasurable] at key
-
 end Terminal
 
 /-! ### Independence of the basis -/
@@ -406,14 +319,6 @@ theorem diagonalLipschitzH_congr_basis (hC : Existence.CoeffBorel T C)
     DiagonalLipschitzH ℱ P T L C ↔ DiagonalLipschitzH ℱ' P' T L C :=
   (diagonalLipschitzH_iff_coupling hC hU).trans (diagonalLipschitzH_iff_coupling hC hU').symm
 
-/-- **Assumption 2.5, interior, does not depend on the basis**: for jointly measurable
-coefficients (2.3), (2.7) holds along the diagonal of one filtered probability space supporting
-a uniform variable at every positive time if and only if it holds along that of another. -/
-theorem diagonalMonotone_congr_basis (hC : Existence.CoeffBorel T C) (hU : SupportsUniform ℱ P)
-    (hU' : SupportsUniform ℱ' P') :
-    DiagonalMonotone ℱ P T G β₁ β₂ C ↔ DiagonalMonotone ℱ' P' T G β₁ β₂ C :=
-  (diagonalMonotone_iff_coupling hC hU).trans (diagonalMonotone_iff_coupling hC hU').symm
-
 /-- **Assumption 2.3, terminal, does not depend on the basis**: if `x ↦ g(x, ρ)` is measurable
 for every law `ρ` and `T > 0`, (2.6) holds on one filtered probability space supporting a uniform
 variable at every positive time if and only if it holds on another. -/
@@ -423,16 +328,6 @@ theorem terminalLipschitz_congr_basis
     (hU' : SupportsUniform ℱ' P') (hT : 0 < T) :
     TerminalLipschitz ℱ P T L g ↔ TerminalLipschitz ℱ' P' T L g :=
   (terminalLipschitz_iff_coupling hg hU hT).trans (terminalLipschitz_iff_coupling hg hU' hT).symm
-
-/-- **Assumption 2.5, terminal, does not depend on the basis**: if `x ↦ g(x, ρ)` is measurable
-for every law `ρ` and `T > 0`, it holds on one filtered probability space supporting a uniform
-variable at every positive time if and only if it holds on another. -/
-theorem terminalMonotone_congr_basis
-    {g : EuclideanSpace ℝ (Fin n) → P2 (EuclideanSpace ℝ (Fin n)) → EuclideanSpace ℝ (Fin m)}
-    (hg : ∀ ρ, Measurable fun x => g x ρ) (hU : SupportsUniform ℱ P)
-    (hU' : SupportsUniform ℱ' P') (hT : 0 < T) :
-    TerminalMonotone ℱ P T G α g ↔ TerminalMonotone ℱ' P' T G α g :=
-  (terminalMonotone_iff_coupling hg hU hT).trans (terminalMonotone_iff_coupling hg hU' hT).symm
 
 end Basis
 

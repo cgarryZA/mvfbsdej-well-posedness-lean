@@ -145,7 +145,7 @@ theorem PaperSolution.dealer_crowd_eq_zero_of_two
     simp only [jumpProc, Set.indicator_of_mem hsI] at h0
     refine PiLp.ext fun i => ?_
     obtain rfl : i = 0 := Subsingleton.elim _ _
-    simp only [PiLp.toLp_apply]
+    simp only
     linarith
   rw [dealerExpCoeffs_h, dealerExpCoeffs_h] at hheq
   have hsm : (ε' - ε) • crowdOp

@@ -5,7 +5,6 @@ Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.Martingale.DavisJumps
 import Dissertation.WellPosedness.Martingale.CompensatedPathwise
-import Dissertation.WellPosedness.Martingale.BDGOne
 import LevyStochCalc.Probability.MarkedPredictableComp
 
 /-!
@@ -137,6 +136,7 @@ theorem abs_smallJumps_le (ω : Ω) (s : ℝ) (e : E) : |smallJumps N φ ω s e|
   simp only [smallJumps]
   split_ifs <;> simp
 
+omit [SigmaFinite ν] in
 theorem measurable_sqDensity (hφ : MarkedPredictable ℱ ν φ) :
     Measurable[markedPredictableSigma ℱ ν] (sqDensity φ) :=
   (measurable_enorm.comp hφ).pow_const 2
@@ -194,6 +194,7 @@ variable {Ω : Type u} [MeasurableSpace Ω] {E : Type v} [MeasurableSpace E]
   {P : Measure Ω} [IsProbabilityMeasure P] {ν : Measure E} [SigmaFinite ν]
   (N : Poisson.PoissonRandomMeasure.{u, v, w} P ν) {φ : Ω → ℝ → E → ℝ}
 
+omit [MeasurableSpace Ω] in
 /-- The pathwise compensated integral over `(0, t]` is bounded by the absolute integrals over
 `(0, T]`, `t ≤ T`. -/
 theorem enorm_pathwise_le {ψ : Ω → ℝ → E → ℝ} (ω : Ω) {t T : ℝ} (htT : t ≤ T)
@@ -235,6 +236,7 @@ theorem ae_lintegral_bigJumps_le (hφm : Measurable fun p : Ω × ℝ × E => φ
   simp only [bigJumps, countIntLeft_of_mem N hG, sqDensity, hx0, true_and]
   split_ifs <;> simp
 
+omit [MeasurableSpace.CountablyGenerated E] in
 /-- **The rest, stopped when `A` reaches `δ`, has energy against `N` at most `2 (A_T ∧ δ)`**, on
 the good event at a sample point at which every positive time carries at most one point. -/
 theorem lintegral_markedStopped_smallJumps_le {ω : Ω} (hG : ω ∈ countGood N)

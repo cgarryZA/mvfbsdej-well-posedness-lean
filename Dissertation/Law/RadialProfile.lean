@@ -4,7 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.Law.Mixture
-import Dissertation.Law.Triangle
 
 /-!
 # Radial law functionals with an arbitrary reference law

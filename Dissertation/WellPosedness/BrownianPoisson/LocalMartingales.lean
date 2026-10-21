@@ -27,7 +27,8 @@ The integrands `e^s ⟨δY_{s−}, δZ_s ·⟩` and `e^s ⟨δY_{s−}, δU_s(e)
 * `Dissertation.WellPosedness.BrownianPoisson.expLeftLim_integrand_eq`,
   `Dissertation.WellPosedness.BrownianPoisson.expLeftLim_markedIntegrand_eq` — the integrands as
   weighted sums.
-* `Dissertation.WellPosedness.BrownianPoisson.poisson_sq_chain` — the Cauchy–Schwarz and
+* `Dissertation.WellPosedness.BrownianPoisson.sqrt_setLIntegral_leftLim_le`,
+  `Dissertation.WellPosedness.BrownianPoisson.poisson_sumSq_compensation` — the Cauchy–Schwarz and
   compensation links for the quadratic variation of `M¹`.
 -/
 
@@ -48,7 +49,7 @@ noncomputable def expLeftLimWeight (Y : Fin m → ℝ → Ω → ℝ) (T : ℝ) 
   Real.exp s * (if s ∈ Ioc (0 : ℝ) T then leftLimProc Y k s ω else 0)
 
 /-- The properties of the weight `e^s δY_{s−}` that `localBrownian_weight` asks for. -/
-theorem expLeftLimWeight_props (hT : 0 ≤ T) (hℱneg : ∀ r : ℝ, r ≤ 0 → ℱ 0 ≤ ℱ r)
+theorem expLeftLimWeight_props (_hT : 0 ≤ T) (hℱneg : ∀ r : ℝ, r ≤ 0 → ℱ 0 ≤ ℱ r)
     {Y : Fin m → ℝ → Ω → ℝ} (hYad : ∀ k, ∀ t ∈ Icc (0 : ℝ) T, Measurable[ℱ t] (Y k t))
     (hYl : ∀ k ω, ∀ t ∈ Ioc (0 : ℝ) T, ∃ l : ℝ, Tendsto (fun s => Y k s ω) (𝓝[<] t) (𝓝 l)) :
     (∀ k, Measurable (Function.uncurry fun ω s => expLeftLimWeight Y T k s ω))
@@ -99,7 +100,7 @@ theorem expLeftLim_integrand_eq {Ω : Type*} {m d : ℕ} {T : ℝ} {Y : Fin m �
   by_cases hs : s ∈ Ioc (0 : ℝ) T
   · simp only [expLeftLimWeight, if_pos hs, if_pos hs.1, Finset.mul_sum, mul_assoc]
   · rcases le_or_gt s 0 with hs0 | hs0
-    · simp [expLeftLimWeight, if_neg hs, not_lt.mpr hs0]
+    · simp [expLeftLimWeight, not_lt.mpr hs0]
     · have hsT : s ∉ Icc (0 : ℝ) T := fun h => hs ⟨hs0, h.2⟩
       simp [expLeftLimWeight, hZv _ ω s hsT]
 
@@ -112,7 +113,7 @@ theorem expLeftLim_markedIntegrand_eq {Ω E : Type*} {m : ℕ} {T : ℝ} {Y : Fi
   by_cases hs : s ∈ Ioc (0 : ℝ) T
   · simp only [expLeftLimWeight, if_pos hs, if_pos hs.1, Finset.mul_sum, mul_assoc]
   · rcases le_or_gt s 0 with hs0 | hs0
-    · simp [expLeftLimWeight, if_neg hs, not_lt.mpr hs0]
+    · simp [expLeftLimWeight, not_lt.mpr hs0]
     · have hsT : s ∉ Icc (0 : ℝ) T := fun h => hs ⟨hs0, h.2⟩
       simp [expLeftLimWeight, hUv _ ω s e hsT]
 
@@ -137,6 +138,7 @@ theorem measurable_sumSq_pos {ν : Measure E} [SigmaFinite ν]
     (Y := fun (_ : Ω) (_ : ℝ) => (0 : ℝ)) measurable_const hΓ
   exact hcomp
 
+omit [MeasurableSpace Ω] in
 /-- The quadratic variation `∫_{(0, s]} ∫_E e^{2r} |Y_{r−}|² |U_r(e)|²` of `M¹` against any measure:
 its square root is at most `e^T (sup_{t ≤ T} |Y_t|²)^{1/2} (∫∫ |U|²)^{1/2}`. -/
 theorem sqrt_setLIntegral_leftLim_le {T : ℝ} {m : ℕ} {Y : Fin m → ℝ → Ω → ℝ}

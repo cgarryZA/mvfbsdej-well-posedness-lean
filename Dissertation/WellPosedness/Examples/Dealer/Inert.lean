@@ -5,7 +5,8 @@ Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.Examples.Dealer.Decoupling
 import Dissertation.WellPosedness.System.JumpLeftEnergy
-import Dissertation.WellPosedness.System.SolvesMemLp
+import Mathlib.RingTheory.Flat.TorsionFree
+import Mathlib.RingTheory.SimpleRing.Principal
 
 /-!
 # Example 5.5: without the exposure term the interaction is inert

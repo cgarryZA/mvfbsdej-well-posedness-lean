@@ -6,6 +6,9 @@ Authors: Christian Garry
 import Dissertation.WellPosedness.ExpectedVsPointwise
 import Dissertation.WellPosedness.System.HilbertLipschitz
 import Mathlib.MeasureTheory.Measure.Support
+import Mathlib.Algebra.Order.Archimedean.Real.Hom
+import Mathlib.AlgebraicTopology.SimplexCategory.Basic
+import Mathlib.MeasureTheory.Measure.SeparableMeasure
 
 /-!
 # Expected diagonal monotonicity is strictly weaker than pointwise monotonicity, on the model
@@ -187,6 +190,7 @@ section Expected
 variable [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
   {Ω : Type*} {mΩ : MeasurableSpace Ω} {P : Measure Ω} [IsProbabilityMeasure P]
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] [IsProbabilityMeasure P] in
 /-- The `Y`-coordinate of a square-integrable random tuple is square integrable. -/
 theorem memLp_y_apply {Θ : Ω → TupleH ν 1 1 d} (hΘ : MemLp Θ 2 P) :
     MemLp (fun ω => (Θ ω).2.1 0) 2 P := by
@@ -335,6 +339,7 @@ variable [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
 noncomputable def pointY (ν : Measure E) (d : ℕ) (c : ℝ) : TupleH ν 1 1 d :=
   (0, WithLp.toLp 2 fun _ => c, 0, 0)
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
 /-- The `Y`-coordinate of `(0, c, 0, 0)` is `c`. -/
 @[simp]
 theorem pointY_y_apply (c : ℝ) (i : Fin 1) : (pointY ν d c).2.1 i = c := rfl

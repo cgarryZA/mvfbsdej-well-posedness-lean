@@ -4,7 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.PaperSpec.A.Sec5Dealer
-import Dissertation.Acceptance.A.Sec3
 import Dissertation.Acceptance.A.Dealer
 import Dissertation.WellPosedness.Examples.Dealer.Exposure
 
@@ -14,7 +13,7 @@ import Dissertation.WellPosedness.Examples.Dealer.Exposure
 ## Main statements
 
 * `Dissertation.Acceptance.A.ex55Coeffs_eq` — the coefficients of Example 5.5 are
-  `dealerExpCoeffs`.
+  `Dissertation.WellPosedness.Existence.dealerExpCoeffs`.
 * `Dissertation.Acceptance.A.ex_dealer_coeffs`, `ex_dealer_ham`, `ex_dealer`, `ex_dealer_mono`,
   `ex_dealer_wp` —
   the coefficients at `ε = 0`, the Hamiltonian, the assumptions, the monotonicity and
@@ -73,7 +72,7 @@ theorem ex_dealer : PaperSpec.A.ex_dealer.{u, v, w} := by
     ⟨hξm, hξ, originValues_iff_coeffOrigin.mpr hO⟩,
     ⟨zero_le_one.trans (le_max_right _ _), lipInterior_iff_diagonalLipschitzH.mpr hL,
       lipTerminal_iff_terminalLipschitz.mpr hLT⟩, rank_one_eq_min, ?_⟩
-  rw [Dissertation.WellPosedness.sMin_one]
+  rw [sMin_one]
   norm_num
 
 /-- Example 5.5, monotonicity at every `ε ≥ 0`. -/

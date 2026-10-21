@@ -4,8 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Mathlib.MeasureTheory.Function.SimpleFuncDenseLp
-import Mathlib.MeasureTheory.Function.LpSpace.Indicator
-import Mathlib.MeasureTheory.Measure.Prod
 
 /-!
 # Strong measurability of sections into `L²`
@@ -332,6 +330,7 @@ theorem exists_isClosed_isSeparable_submodule_of_stronglyMeasurable {f : X → G
     exact hf.isSeparable_range.span.closure
   · exact Submodule.le_topologicalClosure _ (Submodule.subset_span ⟨x, rfl⟩)
 
+omit [NormedSpace ℝ G] in
 /-- A strongly measurable map into a normed space is measurable for the Borel σ-algebra. -/
 theorem measurable_borel_of_stronglyMeasurable {f : X → G} (hf : StronglyMeasurable f) :
     @Measurable X G _ (borel G) f := by

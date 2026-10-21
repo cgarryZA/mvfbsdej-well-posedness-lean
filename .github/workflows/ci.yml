@@ -78,11 +78,12 @@ jobs:
             --out "$RUNNER_TEMP/lean-cache"
 
       # Every statement and proof is elaborated afresh by the probe, and every claim's source hash
-      # is checked against the manuscript in manuscript/paper/; the report must be the committed one.
+      # is checked against the manuscript in manuscript/paper/; the report, the status and the
+      # alignment of formalization.yaml must be the committed ones.
       - name: Acceptance check
         run: |
           python3 tools/acceptance.py check --write
-          git diff --exit-code -- acceptance/status.json ACCEPTANCE.md
+          git diff --exit-code -- acceptance/status.json ACCEPTANCE.md formalization.yaml
 
   # The release gate on evidence this workflow produces: comparator replays every proof of the
   # paper into a fresh kernel in a Landlock sandbox (tools/comparator_check.sh), and the gate

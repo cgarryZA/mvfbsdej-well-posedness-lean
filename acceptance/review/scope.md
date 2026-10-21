@@ -1,10 +1,10 @@
-# The scope decisions of paper A, reviewed
+# The scope decisions of the well-posedness paper, reviewed
 
 Reviewer: `claude-auditor`, a model of the same family as the author of the decisions. Paper:
 "Well-posedness of fully coupled McKean–Vlasov FBSDEs with jumps under full-tuple law
-dependence", revision `f598204`. The blind decisions (`pass1.json`) were taken from the
-manuscript alone, before the recorded scopes, `claims.json` or any Lean file were opened. The
-comparison is in `pass2.json`.
+dependence", revision `f598204`. The blind decisions were taken from the manuscript alone,
+before the recorded scopes, `claims.json` or any Lean file were opened, and then compared with the
+recorded ones; the comparison follows.
 
 ## Account
 
@@ -124,9 +124,9 @@ mis-scoped:
 ## Changes made after the review
 
 * Items 1 and 2: `A:sec3:one-null-set` has the clause `sec3_cadlag_versions` (each stochastic
-  integral of (1.1) along a tuple of `ℍ_weak` has an adapted version with every path càdlàg), and
+  integral of (1.1) along a tuple of `ℍ²` has an adapted version with every path càdlàg), and
   `A:sec3:HH-banach` the clause `sec3_HH_norm` (the triangle inequality and the absolute
-  homogeneity of `‖·‖_ℍ`).
+  homogeneity of `‖·‖_𝕊`).
 * Items 3–5: `A:abstract` and `A:conclusion` list `rem_diag_mono_converse`, and `A:sec5:overview`
   lists `ex_brownian_reduction` and `ex_expfunc_limin`.
 * The docstring of `rem_uniq_singular` names "the affine coefficients of Example 5.1(i) taken at
@@ -136,33 +136,32 @@ mis-scoped:
 * The scope notes of `A:ex:concrete` and `A:ex:brownian` record the attribution of (ii) to
   [LiMin, Ex. 3.1] and the comparison with [BYZ, (A1)] as statements about cited work.
 * `A:eq:bwdyoung`, the Young bound (4.25) in Step 4 of the proof of Lemma 4.3, recorded as a
-  `proof-step`, is `formal`: an external review found the printed bound, for every `ε > 0` with
-  `C` independent of `ε`, false. Its clauses are the printed reading `eq_bwdyoung`, refuted, and
-  the reading for `0 < ε ≤ 1`, the range the proof uses, `eq_bwdyoung_corr`; its source region is
-  extended to the sentence that governs the display (lines 724–731 of
-  `04-proof-wellposedness.tex`).
-* The manuscript is pinned at `1f67672`, the corrections of a proof-step check of `f598204`. (4.25) is printed
-  for `0 < ε ≤ 1`: `A:eq:bwdyoung` has the one clause `eq_bwdyoung`, the former corrected
-  reading, and the refuted reading is gone. Remark 2.11 no longer says that the margin `c` fails
-  in (2.13); its third clause is `rem_margin_smaller` (`c / c_G < c` when `c_G > 1`), in place
-  of `rem_margin_sharp`. (2.9) is printed at `X_T`, Remark 5.6 gives the argument for its
-  pointwise dependence, Example 5.4 drops "infinite-dimensional", and the §4 preamble cites BDG
-  at `p = 1` and `p = 2`: the clauses are unchanged, the scope note of
-  `A:sec4:supremum-criterion` names both exponents, and its source region is the whole sentence
-  (lines 35–37 of `04-proof-wellposedness.tex`). The proof of Theorem 3.3 takes `δh` at the
-  predictable tuples, a proof step with no clause.
+  `proof-step`, is `formal`: an external review found the bound printed at `f598204`, for every
+  `ε > 0` with `C` independent of `ε`, false. Its source region holds the sentence that governs
+  the display.
+* The manuscript is pinned at `1f67672`, the corrections of a proof-step check of `f598204`.
+  (4.25) is printed for `0 < ε ≤ 1`, the range the proof uses: `A:eq:bwdyoung` has the one clause
+  `eq_bwdyoung`, for every `0 < ε ≤ 1` with `C` independent of `ε`. Remark 2.11 no longer says
+  that the margin `c` fails in (2.13); its third clause is `rem_margin_smaller` (`c / c_G < c`
+  when `c_G > 1`), in place of `rem_margin_sharp`. (2.9) is printed at `X_T`, Remark 5.6 gives the
+  argument for its pointwise dependence, Example 5.4 drops "infinite-dimensional", and the §4
+  preamble cites BDG at `p = 1` and `p = 2`: the clauses are unchanged, the scope note of
+  `A:sec4:supremum-criterion` names both exponents, and its source region holds the whole
+  sentence (lines 35–37 of `04-proof-wellposedness.tex`). The proof of Theorem 3.3 takes `δh` at
+  the predictable tuples, as the clauses of its steps (`A:eq:uniq-coeff`, `A:eq:uniq-bwd`) do.
 * `A:eq:itoY2` ((4.5), the pathwise Itô identity for `e^t |δY_t|²` in the proof of Lemma 4.1) and
   `A:eq:Gid-path` ((4.17), the pathwise identity for `⟨G δX, δY⟩` in the proof of Lemma 4.3) stay
   `proof-step`; their scope notes, formerly "a step of a printed proof", now say why: each is used
-  only through its expectation. What Lemma 4.1 draws from the expectation of (4.5) is `eq_supE`,
-  from the library's weighted second-moment identity for Itô–Lévy processes
+  only through its expectation. What Lemma 4.1 draws from the expectation of (4.5) is the
+  weighted inequality `eq_supE_weighted` and from it `eq_supE`, both from the library's weighted
+  second-moment identity for Itô–Lévy processes
   (`Ito.SecondMoment.integral_exp_mul_self_eq_of_isItoLevyProcess`), with the zero means of the
   stochastic terms the clauses of `A:lem4.1:M2-infinite-activity`; Step 2 of Lemma 4.3 uses
   (4.19), `eq_Gid`, from the bilinear identity
   (`Ito.SecondMoment.integral_mul_eq_of_isItoLevyProcess`), with the bounds behind the zero means
   the clauses of `A:eq:bdg4`. The pathwise identities are not stated: they would need an
-  every-time Itô–Lévy formula with local stochastic integrals. `scope_reviewed` is `false` for
-  both until the notes are reviewed.
+  every-time Itô–Lévy formula with local stochastic integrals. Both scope decisions are reviewed
+  in the next section.
 
 
 ## The scope decisions of the proof steps, reviewed at `1f67672`

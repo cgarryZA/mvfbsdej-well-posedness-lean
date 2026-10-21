@@ -7,7 +7,6 @@ import Dissertation.WellPosedness.Existence.CoeffForcing
 import Dissertation.WellPosedness.Existence.SelfRegular
 import Dissertation.WellPosedness.Existence.StableZero
 import Dissertation.WellPosedness.Existence.Step
-import Dissertation.WellPosedness.System.Perturbation
 
 /-!
 # Lemmas 4.2 and 4.4

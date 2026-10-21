@@ -5,8 +5,6 @@ Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.Stability.ForwardEq
 import Dissertation.WellPosedness.System.Coefficients
-import LevyStochCalc.BSDEJ.CadlagLegs
-import LevyStochCalc.BSDEJ.DriftLeg
 
 /-!
 # The forward equation of the `λ = 0` system
@@ -16,13 +14,13 @@ linear forward equation with jumps
 
 `X_t = ξ₀ + ∫_0^t b_s ds + ∫_0^t σ_s dW_s + ∫_0^t ∫_E γ_s(e) Ñ(ds, de)`,   `t ∈ [0, T]`,
 
-with given integrands `b = q^b`, `σ = q^σ`, `γ = q^h`, and its solution is the right-hand side.
-To meet the path regularity of `LinearFSDEJ`, the drift integral is taken to be the drift leg
-`driftLeg b T`, which has continuous paths, and each stochastic integral is replaced by its
-version that is right-continuous with left limits at every sample point. Those versions are
-adapted to the right-continuation `ℱ₊` of the filtration; for a right-continuous filtration
-whose right-continuation is constant before `0` and whose time-`0` field contains the null sets
-the sum is adapted to `ℱ` itself, given an `ℱ_0`-measurable initial value.
+with given integrands `b = q^b`, `σ = q^σ`, `γ = q^h`, and its solution is the right-hand side. To
+meet the path regularity of `Dissertation.WellPosedness.Stability.LinearFSDEJ`, the drift integral
+is taken to be the drift leg `driftLeg b T`, which has continuous paths, and each stochastic
+integral is replaced by its version that is right-continuous with left limits at every sample point.
+Those versions are adapted to the right-continuation `ℱ₊` of the filtration; for a right-continuous
+filtration whose right-continuation is constant before `0` and whose time-`0` field contains the
+null sets the sum is adapted to `ℱ` itself, given an `ℱ_0`-measurable initial value.
 
 ## Main statements
 

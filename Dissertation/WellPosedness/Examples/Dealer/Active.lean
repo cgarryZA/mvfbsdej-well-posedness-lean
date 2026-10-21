@@ -30,6 +30,8 @@ where the correction is nonzero with positive probability.
   probability.
 * `lintegral_crowd_eq_zero_iff` — the energy of the crowding correction vanishes iff the
   correction vanishes at almost every time, almost surely.
+* `PaperSolution.dealer_active` — in the specialisation, the interaction is active: for `ε ≠ 0`
+  every solution from `0` has `𝔼 ∫_0^T ‖ε A_{Law(U_t)}(U_t)‖² dt > 0`.
 -/
 
 open MeasureTheory Filter Topology Dissertation.Law
@@ -167,6 +169,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℝ F] [CompleteS
   [MeasurableSpace F] [BorelSpace F] [SecondCountableTopology F] {P : Measure Ω}
   [IsProbabilityMeasure P] {T : ℝ}
 
+omit [CompleteSpace F] in
 /-- **The energy of the crowding correction vanishes iff the correction vanishes.** For a jointly
 measurable `V : Ω → ℝ → F` and laws `λ_s` equal to `Law(V_s)` at almost every `s ∈ [0, T]`,
 `∫_Ω ∫_0^T ‖ε A_{λ_s}(V_s)‖² ds dP = 0` iff `ε A_{λ_s}(V_s) = 0` almost surely at almost every

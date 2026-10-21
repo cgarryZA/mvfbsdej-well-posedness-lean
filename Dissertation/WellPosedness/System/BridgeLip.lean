@@ -181,6 +181,7 @@ theorem DiagonalLipschitz.lip_pair (hL : DiagonalLipschitz ℱ P T L C)
         rw [h10]
         ring
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
 /-- **(2.6) with (2.9) along two tuples.** For a terminal function satisfying (2.6) along the
 diagonal with constant `L`, and two processes whose values at the horizon are `ℱ_T`-measurable
 and square integrable, `𝔼 |δg_T|² ≤ 4 L² 𝔼 |δX_T|²`, in coordinates. -/

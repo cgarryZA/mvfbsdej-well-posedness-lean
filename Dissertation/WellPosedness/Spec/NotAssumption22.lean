@@ -6,12 +6,14 @@ Authors: Christian Garry
 import Dissertation.WellPosedness.Spec.Bridge22
 import Dissertation.WellPosedness.Spec.Bridge25
 import Dissertation.WellPosedness.Examples.SingularDrift
-import Dissertation.WellPosedness.Examples.MeanFieldWP
+import Dissertation.WellPosedness.Examples.MeanFieldMonotone
+import Dissertation.WellPosedness.Existence.GlobalEnl
+import LevyStochCalc.Driver.GaussianInitial
 
 /-!
 # A system failing Assumption 2.2: the singular drift
 
-The system `singularCoeffs`, with `n = m = 1` and any `d`,
+The system `Dissertation.WellPosedness.System.singularCoeffs`, with `n = m = 1` and any `d`,
 
 `b(t, x, y, z, u) = t^{-1/2} − y`, `σ = −z`, `h = −u`, `f = 0`, `g(x, ρ) = x`,
 
@@ -28,7 +30,8 @@ and 2.5.
 ## Main statements
 
 * `measurable_singularDrift` — the drift `t ↦ t^{-1/2}` is measurable.
-* `coeffBorelW2_addDrift` — a measurable deterministic drift keeps `CoeffBorelW2`.
+* `coeffBorelW2_addDrift` — a measurable deterministic drift keeps
+  `Dissertation.WellPosedness.Existence.CoeffBorelW2`.
 * `jointBorel_singularCoeffs`, `assumption23_singularCoeffs`, `assumption25_singularCoeffs` —
   (2.3), Assumption 2.3 and Assumption 2.5.
 * `not_assumption22_singularCoeffs` — Assumption 2.2 fails for every initial datum.
@@ -82,6 +85,7 @@ theorem assumption25_singularCoeffs :
   Assumption25.of_monotone (jointBorel_singularCoeffs T) assumption23_singularCoeffs
     constants_singularCoeffs diagonalMonotone_singularCoeffs terminalMonotone_singularCoeffs
 
+omit [IsProbabilityMeasure P] in
 /-- **Assumption 2.2 fails for the singular drift**, for every initial datum and every horizon
 `T > 0`: the origin value `b(t, 0, δ₀) = t^{-1/2}` is not square integrable on `(0, T)`. -/
 theorem not_assumption22_singularCoeffs (hT : 0 < T) (ξ₀ : Ω → EuclideanSpace ℝ (Fin 1)) :

@@ -14,20 +14,27 @@ import Dissertation.WellPosedness.System.FrozenDifference
 Statement and equation numbers refer to the well-posedness paper at `1f67672`.
 
 * (4.10): along each trial the integrals of (1.1) exist with the canonical representative
-  `coeffJump` of the jump coefficient at the tuple, which also represents it at the predictable
-  tuple (`PaperWeakTuple.paperAdmissible_coeffJump`), so the frozen forward equation (4.7) holds
-  with the jump integrand `λ coeffJump + q^h` (`ae_forcedJump_eq_of_rep`, `LinearFSDEJ.congr_jump`).
-  The difference of the two forward equations is the linear forward equation from `0` with
-  integrands `λ δb, λ δσ, λ δh` (`LinearFSDEJ.sub`); its running supremum is bounded by those of
-  its three legs (`LinearFSDEJ.lintegral_biSup_esq_le_legs`), Cauchy–Schwarz bounds the drift leg
-  (`lintegral_sq_lintegral_toLp_le`) and Doob's inequality with the isometries the two stochastic
-  legs, with the constant `4 ≤ c` (`lintegral_biSup_esq_brownian_le`,
-  `lintegral_biSup_esq_compensated_le`). The energies of the coordinate differences are at most
-  `𝔼 ∫_0^T S_s² ds` (`sum_energy_le_coeffDiffNorm`), and (4.9) gives the last link.
+  `Dissertation.WellPosedness.Existence.coeffJump` of the jump coefficient at the tuple, which also
+  represents it at the predictable tuple
+  (`Dissertation.WellPosedness.System.PaperWeakTuple.paperAdmissible_coeffJump`), so the frozen
+  forward equation (4.7) holds with the jump integrand `λ coeffJump + q^h`
+  (`Dissertation.WellPosedness.System.ae_forcedJump_eq_of_rep`,
+  `Dissertation.WellPosedness.Stability.LinearFSDEJ.congr_jump`). The difference of the two forward
+  equations is the linear forward equation from `0` with integrands `λ δb, λ δσ, λ δh`
+  (`Dissertation.WellPosedness.Stability.LinearFSDEJ.sub`); its running supremum is bounded by those
+  of its three legs
+  (`Dissertation.WellPosedness.Stability.LinearFSDEJ.lintegral_biSup_esq_le_legs`), Cauchy–Schwarz
+  bounds the drift leg (`Dissertation.WellPosedness.System.lintegral_sq_lintegral_toLp_le`) and
+  Doob's inequality with the isometries the two stochastic legs, with the constant `4 ≤ c`
+  (`Dissertation.WellPosedness.System.lintegral_biSup_esq_brownian_le`,
+  `Dissertation.WellPosedness.System.lintegral_biSup_esq_compensated_le`). The energies of the
+  coordinate differences are at most `𝔼 ∫_0^T S_s² ds` (`sum_energy_le_coeffDiffNorm`), and (4.9)
+  gives the last link.
 * (4.12): the difference of the two backward equations (4.8) is the linear backward equation with
-  terminal value `δξ̄` and drift `λ δf` (`LinearBSDEJ.sub`), and Lemma 4.1
-  (`LinearBSDEJ.brownianPoisson_estimate`, with `13 e^T + 3T ≤ C_BP`) gives the first link; (4.11),
-  (4.9) and (4.10) the others.
+  terminal value `δξ̄` and drift `λ δf`
+  (`Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.sub`), and Lemma 4.1
+  (`Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.brownianPoisson_estimate`, with
+  `13 e^T + 3T ≤ C_BP`) gives the first link; (4.11), (4.9) and (4.10) the others.
 * (4.13): the sum of (4.10) and (4.12).
 
 The constant `c₀` is `4` for (4.10), the largest of `4` and that of (4.10) for (4.12), and the
@@ -177,7 +184,7 @@ theorem sum_energy_le_coeffDiffNorm {Ω : Type u} [MeasurableSpace Ω] {E : Type
     _ ≤ _ := lintegral_mono hpt
 
 /-- **The forward difference of two frozen steps.** Under the hypotheses of Lemma 4.2, for two
-trials of `ℍ` and their frozen steps, the integrals of (1.1) exist along each trial with the
+trials of `𝕊` and their frozen steps, the integrals of (1.1) exist along each trial with the
 representative `coeffJump` of the jump coefficient, and each coordinate of `δX̄` solves the linear
 forward equation from `0` with integrands `λ δb, λ δσ, λ δh`. -/
 theorem frozenStep_fwd_sub {Ω : Type u} {𝒢₀ : MeasurableSpace Ω} [mΩ : MeasurableSpace Ω]

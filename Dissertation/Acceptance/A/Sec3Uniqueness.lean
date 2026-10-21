@@ -5,21 +5,22 @@ Authors: Christian Garry
 -/
 import Dissertation.PaperSpec.A.Sec3Uniqueness
 import Dissertation.WellPosedness.System.WeakPairEnergy
-import Dissertation.WellPosedness.Stability.SupUpgrade
-import Dissertation.WellPosedness.BrownianPoisson.Estimate
 
 /-!
 # Two steps of the proof of Theorem 3.3: proofs
 
 Statement and equation numbers refer to the well-posedness paper at `1f67672`. Two solutions of
-(1.1) in `ℍ_weak` solve the `λ`-forced system (4.1) at `λ = 1` with zero forcing
-(`paperWeakSolutionForcedInt_one_zero_iff`); extended off `[0, T]`, their difference is the
-difference system of the implementation (`PaperWeakSolutionForcedInt.exists_pairDiff`), whose
-integrands have finite energy, which is (3.2), and whose backward coordinates satisfy the estimate
-of Lemma 4.1 (`LinearBSDEJ.brownianPoisson_estimate`), which is (3.3). The jump coefficient at the
-predictable tuples has the marked energy of the solutions' representatives
-(`PaperWeakSolutionInt.markedEnergy_coeffJump_sub_leftLim_eq`). The hypotheses are those of
-Theorem 3.3, an instance of which is `Dissertation.Acceptance.A.thm_uniq_hypotheses`.
+(1.1) in `ℍ²` solve the `λ`-forced system (4.1) at `λ = 1` with zero forcing
+(`Dissertation.WellPosedness.System.paperWeakSolutionForcedInt_one_zero_iff`); extended off
+`[0, T]`, their difference is the difference system of the implementation
+(`Dissertation.WellPosedness.System.PaperWeakSolutionForcedInt.exists_pairDiff`), whose integrands
+have finite energy, which is (3.2), and whose backward coordinates satisfy the estimate of Lemma 4.1
+(`Dissertation.WellPosedness.BrownianPoisson.LinearBSDEJ.brownianPoisson_estimate`), which is (3.3).
+The jump coefficient at the predictable tuples has the marked energy of the solutions'
+representatives
+(`Dissertation.WellPosedness.System.PaperWeakSolutionInt.markedEnergy_coeffJump_sub_leftLim_eq`).
+The hypotheses are those of Theorem 3.3, an instance of which is
+`Dissertation.Acceptance.A.thm_uniq_hypotheses`.
 
 ## Main statements
 

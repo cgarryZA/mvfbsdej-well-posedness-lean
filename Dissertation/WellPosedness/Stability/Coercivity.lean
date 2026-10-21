@@ -38,9 +38,6 @@ in the form of the hypothesis of the closure step, with `N' = A + Y₀ + I_X + J
 * `PairDiff.blocks_le_pairings` — (4.20) and (4.21) inserted into (4.19).
 * `PairDiff.blocks_le_abs_pairings` — the first inequality of (4.22).
 * `PairDiff.coercivity` — (4.22) for every `η > 0`.
-* `PairDiff.rankCase_blocks` — the rank case of Assumption 2.4 bounds `J`, or `A` and `I_X`, by
-  the matching blocks.
-* `PairDiff.toReal_diffSize` — `N' = A + Y₀ + I_X + J`.
 -/
 
 open MeasureTheory ProbabilityTheory Filter Topology Matrix

@@ -4,7 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Dissertation.WellPosedness.Examples.Dealer.Zero
-import Dissertation.WellPosedness.System.TupleLeft
 
 /-!
 # Example 5.5: the linear equation of the specialisation
