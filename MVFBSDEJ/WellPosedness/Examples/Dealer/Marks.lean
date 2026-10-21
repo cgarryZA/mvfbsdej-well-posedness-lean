@@ -3,12 +3,12 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import Mathlib.Analysis.SpecialFunctions.Integrability.Basic
 import MVFBSDEJ.WellPosedness.Examples.Dealer.Monotone
 import MVFBSDEJ.WellPosedness.Existence.GlobalEnl
 import MVFBSDEJ.WellPosedness.Robustness.Corollary
 import MVFBSDEJ.WellPosedness.System.PaperUniquenessInt
 import LevyStochCalc.Driver.GaussianInitial
+import Mathlib.AlgebraicTopology.SimplexCategory.Basic
 
 /-!
 # Example 5.5: the mark space of the dealer market
@@ -37,6 +37,7 @@ total mass is infinite, `ν(E) = ∞`, while for `ϱ < 2` the aggregate size is 
 * `markSide` — the side `ς ∈ {−1, +1}` of a mark.
 * `sizeLeb` — Lebesgue measure on the sizes `(0, 1]`.
 * `dealerMarks` — the mark measure `ν(dς, dq) = c_ς q^{−1−ϱ} dς dq`.
+* `signedSize` — the signed size `ς q` of a mark.
 * `dealerJump` — the signed size `h_c(ς, q) = ς q`, as an element of `L²(ν; ℝ¹)`.
 
 ## Main statements

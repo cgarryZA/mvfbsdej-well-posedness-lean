@@ -41,10 +41,6 @@ namespace MVFBSDEJ.Law
 noncomputable def cdfUnit (μ : Measure ℝ) (x : ℝ) : I :=
   ⟨cdf μ x, cdf_nonneg μ x, cdf_le_one μ x⟩
 
-/-- The value of `cdfUnit μ` is the distribution function. -/
-@[simp]
-theorem coe_cdfUnit (μ : Measure ℝ) (x : ℝ) : (cdfUnit μ x : ℝ) = cdf μ x := rfl
-
 /-- The distribution function, as a map into `[0, 1]`, is measurable. -/
 @[fun_prop]
 theorem measurable_cdfUnit (μ : Measure ℝ) : Measurable (cdfUnit μ) :=

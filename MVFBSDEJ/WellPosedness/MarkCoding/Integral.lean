@@ -5,7 +5,6 @@ Authors: Christian Garry
 -/
 import MVFBSDEJ.WellPosedness.MarkCoding.PullMarks
 import MVFBSDEJ.WellPosedness.MarkCoding.Exhaustion
-import LevyStochCalc.Poisson.PathwiseIdentity
 import LevyStochCalc.Poisson.PredictableIntegrand
 import LevyStochCalc.Poisson.CompensatedCongr
 import LevyStochCalc.Ito.JumpSplittingAllTimes

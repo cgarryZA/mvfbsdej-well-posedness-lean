@@ -7,7 +7,6 @@ import MVFBSDEJ.WellPosedness.Existence.CoeffForcing
 import MVFBSDEJ.WellPosedness.Existence.SelfRegular
 import MVFBSDEJ.WellPosedness.Existence.StableZero
 import MVFBSDEJ.WellPosedness.Existence.Step
-import MVFBSDEJ.WellPosedness.System.Perturbation
 
 /-!
 # Lemmas 4.2 and 4.4

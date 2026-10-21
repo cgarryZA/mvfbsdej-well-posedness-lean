@@ -12,9 +12,9 @@ This directory holds the acceptance test of the formalisation. The report is
    everything else, as a function of those parameters. It may use definitions of the
    implementation (the coefficients, the filtration, the stochastic integrals, the laws) once
    they are reviewed. It is not obtained by renaming what the implementation proves.
-2. **The implementation** (the rest of `MVFBSDEJ/` and the dependency `LevyStochCalc`). It may use other
-   representations, stronger intermediate hypotheses and different proofs. None of that counts
-   towards acceptance until it is assembled into a proof of a statement of layer 1.
+2. **The implementation** (the rest of `MVFBSDEJ/` and the dependency `LevyStochCalc`). It
+   may use other representations, stronger intermediate hypotheses and different proofs. None of
+   that counts towards acceptance until it is assembled into a proof of a statement of layer 1.
 3. **The proofs** (`MVFBSDEJ/Acceptance/`). For a proved statement, a theorem
    `MVFBSDEJ.Acceptance.<label>` whose type is *exactly* the proposition of layer 1.
    Since the proposition is closed, the theorem takes no premise the manuscript does not state.
@@ -115,14 +115,14 @@ platform badge.
 
 ## The final check
 
-On a clean clone at the release commit: `lake build`, then
-`python3 tools/acceptance.py check` (no cached results are reused: the probe elaborates every
-statement and proof afresh), then `bash tools/comparator_check.sh <dir>`: comparator
-(leanprover/comparator at the toolchain's tag) builds a challenge module holding each proved
-statement with a `sorry` proof, exports it and `MVFBSDEJ.Acceptance` with lean4export, checks
-that each proof has exactly the challenge's statement, every declaration the statement uses being
-the same in both environments, and that it uses only the three standard axioms, and replays the
-exported proofs into a fresh kernel. It rejects a proof whose type is another statement. A pass certifies that the listed
+On a clean clone at the release commit: `lake build`, then `python3 tools/acceptance.py check` (no
+cached results are reused: the probe elaborates every statement and proof afresh), then
+`bash tools/comparator_check.sh <dir>`: comparator (leanprover/comparator at the toolchain's tag)
+builds a challenge module holding each proved statement and the negation of each refuted one with a
+`sorry` proof, exports it and `MVFBSDEJ.Acceptance` with lean4export, checks that each proof has
+exactly the challenge's statement, every declaration the statement uses being the same in both
+environments, and that it uses only the three standard axioms, and replays the exported proofs into
+a fresh kernel. It rejects a proof whose type is another statement. A pass certifies that the listed
 propositions have kernel-checked proofs over the three standard axioms and that the reviews are
 current; whether each proposition says what the paper says is the reviews' judgement.
 

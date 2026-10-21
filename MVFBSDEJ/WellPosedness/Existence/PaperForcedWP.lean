@@ -10,38 +10,42 @@ import MVFBSDEJ.WellPosedness.System.PaperSolutionForcedSolves
 /-!
 # `WP(λ)` in the sense of the paper: Lemmas 4.2 and 4.4
 
-The paper calls the forced system (4.1) well posed at `λ`, `WP(λ)`, if it has a unique solution
-in `ℍ²` for every forcing `q`. `ForcedSolvable`, `ForcedUnique` and `ForcedWP` state `WP(λ)` for
-the predicate `SolvesForced`; `PaperForcedSolvable`, `PaperForcedUnique` and `PaperForcedWP` state
-it for the paper's solution notion `PaperSolutionForced`, with the same quantifiers: every forcing
-in the sense of `Forcing` has a solution, and any two solutions with the same forcing coincide in
-the sense of Theorem 3.3. The jump component of a `Forcing` is marked progressively measurable,
-where the paper takes it predictable, so the quantifiers range over a class of forcings
-containing the paper's (normalised to vanish off `[0, T]`).
+The paper calls the forced system (4.1) well posed at `λ`, `WP(λ)`, if it has a unique solution in
+`𝕊` for every forcing `q`. `ForcedSolvable`, `ForcedUnique` and `ForcedWP` state `WP(λ)` for the
+predicate `MVFBSDEJ.WellPosedness.System.SolvesForced`; `PaperForcedSolvable`,
+`PaperForcedUnique` and `PaperForcedWP` state it for the paper's solution notion
+`MVFBSDEJ.WellPosedness.System.PaperSolutionForced`, with the same quantifiers: every forcing in
+the sense of `MVFBSDEJ.WellPosedness.System.Forcing` has a solution, and any two solutions with
+the same forcing coincide in the sense of Theorem 3.3. The jump component of a
+`MVFBSDEJ.WellPosedness.System.Forcing` is marked progressively measurable, where the paper
+takes it predictable, so the quantifiers range over a class of forcings containing the paper's
+(normalised to vanish off `[0, T]`).
 
 The two forms pass into each other through the bridges of
 `MVFBSDEJ.WellPosedness.System.PaperSolutionForcedSolves`.
 
 * **Uniqueness.** A solution in the sense of the paper, extended off `[0, T]`, is a solution of
-  `SolvesForced` with the same `Z`, `U` and the same values on `[0, T]`, and the conclusion of
-  Theorem 3.3 sees `X`, `Y` only on `[0, T]`: `ForcedUnique` gives `PaperForcedUnique` with no
-  condition on the coefficients (`ForcedUnique.paperForcedUnique`).
-* **Existence.** A solution of `SolvesForced` is one in the sense of the paper after passing to
-  predictable versions of `(Z, U)`, which needs the measurability (2.5) along every progressive
-  tuple, `CoeffRegular`, and the `S²` bounds of Lemma 4.1: `ForcedSolvable` gives
-  `PaperForcedSolvable` for `CoeffRegular` coefficients over a filtration on which Lemma 4.1
-  applies (`ForcedSolvable.paperForcedSolvable`). Conversely `PaperForcedSolvable` gives
-  `ForcedSolvable` with no condition on the coefficients (`PaperForcedSolvable.forcedSolvable`).
+  `MVFBSDEJ.WellPosedness.System.SolvesForced` with the same `Z`, `U` and the same values on
+  `[0, T]`, and the conclusion of Theorem 3.3 sees `X`, `Y` only on `[0, T]`: `ForcedUnique` gives
+  `PaperForcedUnique` with no condition on the coefficients (`ForcedUnique.paperForcedUnique`).
+* **Existence.** A solution of `MVFBSDEJ.WellPosedness.System.SolvesForced` is one in the sense
+  of the paper after passing to predictable versions of `(Z, U)`, which needs the measurability
+  (2.5) along every progressive tuple, `CoeffRegular`, and the `S²` bounds of Lemma 4.1:
+  `ForcedSolvable` gives `PaperForcedSolvable` for `CoeffRegular` coefficients over a filtration on
+  which Lemma 4.1 applies (`ForcedSolvable.paperForcedSolvable`). Conversely `PaperForcedSolvable`
+  gives `ForcedSolvable` with no condition on the coefficients
+  (`PaperForcedSolvable.forcedSolvable`).
 
-Lemma 4.2 is stated for `SolvesForced` under the joint Borel measurability (2.3), `CoeffBorelW2`,
-which gives `CoeffRegular` (`CoeffBorelW2.toCoeffBorel`, `CoeffBorel.coeffRegular`); in the sense
-of the paper it holds under the same hypotheses (`paperForcedWP_of_le_smallCoupling`). Lemma 4.4
-is stated for `SolvesForced` without a measurability hypothesis, since for `λ₀ ≠ 0` and `g` Borel
-measurable in the state the coefficient processes along a solution of `SolvesForced` are
-forcings by the solution predicate itself; in the sense of the paper it takes `CoeffRegular` for
-the passage to predictable versions at `λ₀ + ζ` (`PaperForcedWP.add_of_le`). Uniqueness at
-`λ₀ + ζ` follows from the stability (4.14) at `λ₀` (`ForcedStable.forcedUnique_add`), so of
-`WP(λ₀)` only the existence half enters.
+Lemma 4.2 is stated for `MVFBSDEJ.WellPosedness.System.SolvesForced` under the joint Borel
+measurability (2.3), `CoeffBorelW2`, which gives `CoeffRegular` (`CoeffBorelW2.toCoeffBorel`,
+`CoeffBorel.coeffRegular`); in the sense of the paper it holds under the same hypotheses
+(`paperForcedWP_of_le_smallCoupling`). Lemma 4.4 is stated for
+`MVFBSDEJ.WellPosedness.System.SolvesForced` without a measurability hypothesis, since for
+`λ₀ ≠ 0` and `g` Borel measurable in the state the coefficient processes along a solution of
+`MVFBSDEJ.WellPosedness.System.SolvesForced` are forcings by the solution predicate itself; in
+the sense of the paper it takes `CoeffRegular` for the passage to predictable versions at `λ₀ + ζ`
+(`PaperForcedWP.add_of_le`). Uniqueness at `λ₀ + ζ` follows from the stability (4.14) at `λ₀`
+(`ForcedStable.forcedUnique_add`), so of `WP(λ₀)` only the existence half enters.
 
 ## Main definitions
 

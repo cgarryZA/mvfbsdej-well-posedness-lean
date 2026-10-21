@@ -25,12 +25,12 @@ terminal value `λ g(X_T, Law X_T) + q^g_T` in place of `g(X_T, Law X_T)`.
 * A solution of `SolvesForced` with predictable `(Z, U)` is a solution in the sense of the paper
   (`SolvesForced.paperSolutionForced`), over a filtration on which Lemma 4.1 gives the `S²`
   bounds; every solution has predictable versions of `(Z, U)` with which it is again a solution,
-  under (2.5) along every progressive tuple, `CoeffRegular`
+  under (2.5) along every progressive tuple, `MVFBSDEJ.WellPosedness.Existence.CoeffRegular`
   (`SolvesForced.exists_paperSolutionForced`).
 
 ## Main statements
 
-* `PaperSolutionForced.toPaperWeakTuple` — the tuple of a solution lies in `ℍ²_weak`.
+* `PaperSolutionForced.toPaperWeakTuple` — the tuple of a solution lies in `ℍ²`.
 * `PaperSolutionForced.memLp_initial`, `PaperSolutionForced.memLp_terminal` — `ξ₀` and
   `λ g(X_T, Law X_T) + q^g_T` are square integrable.
 * `PaperSolutionForced.ae_ae_tupleAt_leftLimProc_eq`, `PaperSolutionForced.jump_rep_tupleAt` —
@@ -72,7 +72,7 @@ namespace PaperSolutionForced
 variable (h : PaperSolutionForced D ℱ hℱW hℱN T lam C ξ₀ qb qσ qh qf qg X Y Z U γ)
 include h
 
-/-- **The tuple of a solution lies in `ℍ²_weak`**: the `S²` bounds on `X` and `Y` give finite
+/-- **The tuple of a solution lies in `ℍ²`**: the `S²` bounds on `X` and `Y` give finite
 energy on `[0, T]`. -/
 theorem toPaperWeakTuple : PaperWeakTuple ℱ P ν T X Y Z U where
   X_adapted := h.X_adapted

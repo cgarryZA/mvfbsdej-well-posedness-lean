@@ -1,16 +1,19 @@
-# MachineChecked: the audit of this repository against the manuscript at 1f67672.
+# MachineChecked: the audit of this repository against the latest manuscript (commit 1f67672),
+# published at /latest/ of the repository's GitHub Pages (and at its root) by the Audit workflow,
+# beside the audit of arXiv v1 at /v1/ (built from the branch audit-v1).
 # `machinechecked build` reads the inventory and reviews of acceptance/ (the same inputs as
-# tools/acceptance.py) and writes the reader; `machinechecked export` writes the public audit that
-# CI publishes.
+# tools/acceptance.py) and writes the reader; `machinechecked export` writes the public audit
+# that CI publishes.
 [project]
 name = "mvfbsdej-well-posedness-lean"
 author = "Christian Garry"
 repository = "cgarryZA/mvfbsdej-well-posedness-lean"
 issues = "cgarryZA/mvfbsdej-well-posedness-lean"
-site_url = "https://cgarryza.github.io/mvfbsdej-well-posedness-lean/"
+site_url = "https://cgarryza.github.io/mvfbsdej-well-posedness-lean/latest/"
 lean_root = "."
 modules = [
   "MVFBSDEJ.PaperSpec.AppA",
+  "MVFBSDEJ.PaperSpec.AppASteps",
   "MVFBSDEJ.PaperSpec.Sec2",
   "MVFBSDEJ.PaperSpec.Sec2Basics",
   "MVFBSDEJ.PaperSpec.Sec2Measurability",
@@ -23,54 +26,89 @@ modules = [
   "MVFBSDEJ.PaperSpec.Sec3Space",
   "MVFBSDEJ.PaperSpec.Sec3SpaceNorm",
   "MVFBSDEJ.PaperSpec.Sec3Stability",
+  "MVFBSDEJ.PaperSpec.Sec3Uniqueness",
+  "MVFBSDEJ.PaperSpec.Sec3UniquenessLip",
   "MVFBSDEJ.PaperSpec.Sec4",
+  "MVFBSDEJ.PaperSpec.Sec4BDG",
+  "MVFBSDEJ.PaperSpec.Sec4BackwardYoung",
+  "MVFBSDEJ.PaperSpec.Sec4BrownianPoisson",
   "MVFBSDEJ.PaperSpec.Sec4Coeff",
+  "MVFBSDEJ.PaperSpec.Sec4Continuation",
+  "MVFBSDEJ.PaperSpec.Sec4Contraction",
+  "MVFBSDEJ.PaperSpec.Sec4Difference",
+  "MVFBSDEJ.PaperSpec.Sec4Estimates",
+  "MVFBSDEJ.PaperSpec.Sec4Frozen",
   "MVFBSDEJ.PaperSpec.Sec4Horizon",
+  "MVFBSDEJ.PaperSpec.Sec4LocalMartingales",
+  "MVFBSDEJ.PaperSpec.Sec4ProofSteps",
+  "MVFBSDEJ.PaperSpec.Sec4Small",
+  "MVFBSDEJ.PaperSpec.Sec4Supremum",
   "MVFBSDEJ.PaperSpec.Sec5",
   "MVFBSDEJ.PaperSpec.Sec5Brownian",
+  "MVFBSDEJ.PaperSpec.Sec5BrownianReduction",
+  "MVFBSDEJ.PaperSpec.Sec5Dealer",
+  "MVFBSDEJ.PaperSpec.Sec5DealerActive",
   "MVFBSDEJ.PaperSpec.Sec5FreeLaw",
   "MVFBSDEJ.PaperSpec.Sec5Preamble",
-  "MVFBSDEJ.PaperSpec.Sec5Dealer",
   "MVFBSDEJ.PaperSpec.Sec5Sharp",
-  "MVFBSDEJ.PaperSpec.Sec5BrownianReduction",
-  "MVFBSDEJ.PaperSpec.Sec4Supremum",
-  "MVFBSDEJ.PaperSpec.Sec4BackwardYoung",
   "MVFBSDEJ.PaperSpec.Setting",
-  "MVFBSDEJ.PaperSpec.Sec5DealerActive",
   "MVFBSDEJ.Acceptance.AppA",
+  "MVFBSDEJ.Acceptance.AppASteps",
   "MVFBSDEJ.Acceptance.Dealer",
   "MVFBSDEJ.Acceptance.Sec2",
   "MVFBSDEJ.Acceptance.Sec2Basics",
   "MVFBSDEJ.Acceptance.Sec2Remarks",
   "MVFBSDEJ.Acceptance.Sec3",
+  "MVFBSDEJ.Acceptance.Sec3Complete",
   "MVFBSDEJ.Acceptance.Sec3GeneralRank",
   "MVFBSDEJ.Acceptance.Sec3Margin",
+  "MVFBSDEJ.Acceptance.Sec3MarginContinuous",
   "MVFBSDEJ.Acceptance.Sec3Rem34",
+  "MVFBSDEJ.Acceptance.Sec3Rem34Translation",
   "MVFBSDEJ.Acceptance.Sec3Remarks",
   "MVFBSDEJ.Acceptance.Sec3Space",
   "MVFBSDEJ.Acceptance.Sec3SpaceNorm",
   "MVFBSDEJ.Acceptance.Sec3Stability",
+  "MVFBSDEJ.Acceptance.Sec3Uniqueness",
+  "MVFBSDEJ.Acceptance.Sec3UniquenessLip",
   "MVFBSDEJ.Acceptance.Sec4",
+  "MVFBSDEJ.Acceptance.Sec4BDG",
+  "MVFBSDEJ.Acceptance.Sec4BackwardYoung",
+  "MVFBSDEJ.Acceptance.Sec4BrownianPoisson",
   "MVFBSDEJ.Acceptance.Sec4Coeff",
+  "MVFBSDEJ.Acceptance.Sec4Continuation",
+  "MVFBSDEJ.Acceptance.Sec4Contraction",
+  "MVFBSDEJ.Acceptance.Sec4Difference",
+  "MVFBSDEJ.Acceptance.Sec4Estimates",
+  "MVFBSDEJ.Acceptance.Sec4Frozen",
   "MVFBSDEJ.Acceptance.Sec4Horizon",
+  "MVFBSDEJ.Acceptance.Sec4LocalMartingales",
+  "MVFBSDEJ.Acceptance.Sec4ProofSteps",
+  "MVFBSDEJ.Acceptance.Sec4Small",
+  "MVFBSDEJ.Acceptance.Sec4Supremum",
   "MVFBSDEJ.Acceptance.Sec5",
   "MVFBSDEJ.Acceptance.Sec5Brownian",
+  "MVFBSDEJ.Acceptance.Sec5BrownianReduction",
+  "MVFBSDEJ.Acceptance.Sec5Dealer",
+  "MVFBSDEJ.Acceptance.Sec5DealerActive",
   "MVFBSDEJ.Acceptance.Sec5FreeLaw",
   "MVFBSDEJ.Acceptance.Sec5Preamble",
   "MVFBSDEJ.Acceptance.Sec5Sharp",
-  "MVFBSDEJ.Acceptance.Witness",
-  "MVFBSDEJ.Acceptance.WitnessNonzero",
-  "MVFBSDEJ.Acceptance.Sec3Complete",
-  "MVFBSDEJ.Acceptance.Sec5Dealer",
-  "MVFBSDEJ.Acceptance.WitnessHyp",
-  "MVFBSDEJ.Acceptance.Sec5BrownianReduction",
-  "MVFBSDEJ.Acceptance.Sec4Supremum",
-  "MVFBSDEJ.Acceptance.Sec4BackwardYoung",
-  "MVFBSDEJ.Acceptance.WitnessSec4",
-  "MVFBSDEJ.Acceptance.Sec3MarginContinuous",
-  "MVFBSDEJ.Acceptance.Sec3Rem34Translation",
-  "MVFBSDEJ.Acceptance.Sec5DealerActive",
   "MVFBSDEJ.Acceptance.Solution",
+  "MVFBSDEJ.Acceptance.Witness",
+  "MVFBSDEJ.Acceptance.WitnessContraction",
+  "MVFBSDEJ.Acceptance.WitnessForced",
+  "MVFBSDEJ.Acceptance.WitnessFrozen",
+  "MVFBSDEJ.Acceptance.WitnessFrozenLam",
+  "MVFBSDEJ.Acceptance.WitnessFrozenPair",
+  "MVFBSDEJ.Acceptance.WitnessFullLaw",
+  "MVFBSDEJ.Acceptance.WitnessHyp",
+  "MVFBSDEJ.Acceptance.WitnessInfinite",
+  "MVFBSDEJ.Acceptance.WitnessLocal",
+  "MVFBSDEJ.Acceptance.WitnessNonzero",
+  "MVFBSDEJ.Acceptance.WitnessPert",
+  "MVFBSDEJ.Acceptance.WitnessRotation",
+  "MVFBSDEJ.Acceptance.WitnessSec4",
 ]
 scope_roots = ["MVFBSDEJ", "LevyStochCalc"]
 spec_prefix = "MVFBSDEJ.PaperSpec"
@@ -83,6 +121,9 @@ ai_reviewers = ["claude*"]
 
 [[paper]]
 id = "A"
+# The public paper, arXiv 2608.23203, of which this manuscript is the latest revision: sites match
+# the audit to the paper's listing by it. The audit pins the manuscript, not arXiv v1.
+published = "arXiv:2608.23203v1"
 title = "Well-posedness of fully coupled McKean-Vlasov FBSDEs with jumps under full-tuple law dependence"
 # The vendored manuscript is the manuscript repository at this commit; the audit pins that
 # unpublished revision, and `build` checks that the inventory is pinned to the same one.

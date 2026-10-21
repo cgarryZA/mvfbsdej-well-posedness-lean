@@ -13,8 +13,9 @@ symmetric and satisfies the triangle inequality, so it is a pseudometric on the 
 second moment. The type synonym `P2W E` of `P2 E` carries that pseudometric, its topology and the
 Borel σ-algebra of that topology. The synonym keeps these structures apart from the evaluation
 σ-algebra on `P2 E` (`MVFBSDEJ.Law.P2.instMeasurableSpace`): the two σ-algebras are compared
-through the identity map `P2.toP2W`, not identified by instance search. Separation, the vanishing
-of the distance forcing the two laws to agree, is not used, so `P2W E` is a pseudometric space.
+through the identity map `P2.toP2W`, not identified by instance search. The structure here is a
+pseudometric; separation, the vanishing of the distance forcing the two laws to agree, is the
+instance `MVFBSDEJ.Law.P2W.instT0Space` of `MVFBSDEJ/Law/P2Separation.lean`.
 
 ## Main definitions
 
@@ -46,14 +47,6 @@ def P2.toP2W (μ : P2 E) : P2W E := μ
 
 /-- A point of the 2-Wasserstein space, as a law of finite second moment. -/
 def P2W.toP2 (μ : P2W E) : P2 E := μ
-
-/-- `P2W.toP2` is a left inverse of `P2.toP2W`. -/
-@[simp]
-theorem P2W.toP2_toP2W (μ : P2 E) : μ.toP2W.toP2 = μ := rfl
-
-/-- `P2W.toP2` is a right inverse of `P2.toP2W`. -/
-@[simp]
-theorem P2.toP2W_toP2 (μ : P2W E) : μ.toP2.toP2W = μ := rfl
 
 variable [CompleteSpace E] [BorelSpace E] [SecondCountableTopology E]
 

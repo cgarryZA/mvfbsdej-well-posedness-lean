@@ -6,7 +6,6 @@ Authors: Christian Garry
 import MVFBSDEJ.WellPosedness.Enlarged.Range
 import MVFBSDEJ.WellPosedness.Enlarged.Complement
 import MVFBSDEJ.WellPosedness.Enlarged.CrossWitness
-import MVFBSDEJ.WellPosedness.MarkCoding.Representation
 
 /-!
 # Martingale representation over the enlarged filtration

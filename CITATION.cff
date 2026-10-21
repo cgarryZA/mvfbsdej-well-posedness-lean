@@ -23,3 +23,18 @@ references:
         alias: cgarryZA
     repository-code: "https://github.com/cgarryZA/LevyStochCalc"
     commit: 984dbf0b790031eac05d56fe5a84b65e15e1e932
+preferred-citation:
+  type: article
+  title: >-
+    Well-posedness of fully coupled McKean–Vlasov FBSDEs with jumps under full-tuple law
+    dependence
+  authors:
+    - family-names: Feng
+      given-names: Chunrong
+    - family-names: Garry
+      given-names: Christian
+  identifiers:
+    - type: other
+      value: "arXiv:2608.23203"
+      description: The arXiv preprint.
+  url: "https://arxiv.org/abs/2608.23203"

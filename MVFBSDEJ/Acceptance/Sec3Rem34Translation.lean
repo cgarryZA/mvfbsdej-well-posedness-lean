@@ -6,7 +6,6 @@ Authors: Christian Garry
 import MVFBSDEJ.PaperSpec.Sec3Rem34
 import MVFBSDEJ.Acceptance.Sec3
 import MVFBSDEJ.WellPosedness.Spec.NotAssumption22
-import MVFBSDEJ.WellPosedness.System.PaperStability
 
 /-!
 # Remark 3.4 of the well-posedness paper: the translation of the singular drift
@@ -30,12 +29,12 @@ without the drift `c`.
   differences, so Assumptions 2.3 and 2.5 hold for `C̃` with the constants of `C`. Assumption 2.3
   at the deterministic inputs `(r_t, 0)` and `0` bounds the difference of the origin values of
   `C̃` and `C` by `2L |r_t|`, and `r` is bounded on `[0, T]`, so Assumption 2.2 holds for `C̃`.
-* **The solution.** For a solution `Θ = (X, Y, Z, U)` of (1.1) for `C̃` in `ℍ`, the tuple `Θ_s`
+* **The solution.** For a solution `Θ = (X, Y, Z, U)` of (1.1) for `C̃` in `𝕊`, the tuple `Θ_s`
   is square integrable at almost every time; there the coefficient processes of `C⁺` along
   `Θ⁺ = (X + r, Y, Z, U)` are those of `C̃` along `Θ`, the drift with `c_s` added. The left
   limits of `X + r` are those of `X` shifted by the continuous `r`, `g̃(X_T, Law X_T)` is
   `g(X_T + r_T, Law(X_T + r_T))`, and `∫_0^t c_s ds = r_t`. So `Θ⁺` satisfies (1.1) for `C⁺` in
-  `ℍ_weak`, the drift integral read pathwise, and keeps the `S²` bounds of `Θ`.
+  `ℍ²`, the drift integral read pathwise, and keeps the `S²` bounds of `Θ`.
 
 ## Main statements
 
@@ -543,7 +542,7 @@ variable {D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν}
 with `∫_0^t c_s ds = r_t` for `t ∈ [0, T]`, `r` continuous, and let `C` with the drift `c` added
 satisfy (2.3) with the evaluation σ-algebra on `P₂(H)`. If `(X, Y, Z, U)` solves (1.1) for
 `translatedCoeffs C r T` in the sense of the paper, with jump representative `γ`, then
-`(X + r, Y, Z, U)` solves (1.1) for `C` with the drift `c` added in `ℍ²_weak`, with pathwise drift
+`(X + r, Y, Z, U)` solves (1.1) for `C` with the drift `c` added in `ℍ²`, with pathwise drift
 and driver integrals and the same `γ`. -/
 theorem paperWeakSolutionInt_addDrift_of_translated (hT : 0 ≤ T) (hr : Continuous r)
     (hc : ∀ i, IntegrableOn (fun s => c s i) (Set.Icc (0 : ℝ) T))

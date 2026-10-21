@@ -4,7 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.Law.CrowdGrad
-import MVFBSDEJ.Law.P2
 import Mathlib.MeasureTheory.Function.L2Space
 import Mathlib.MeasureTheory.Integral.Prod
 
@@ -36,11 +35,13 @@ namespace MVFBSDEJ.Law
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℝ F] [CompleteSpace F]
   [MeasurableSpace F] [BorelSpace F] [SecondCountableTopology F]
 
+omit [CompleteSpace F] [MeasurableSpace F] [BorelSpace F] [SecondCountableTopology F] in
 /-- `⟨∇V(w), w⟩ = ‖w‖² / √(1 + ‖w‖²)`. -/
 theorem inner_crowdGrad_self (w : F) :
     ⟪crowdGrad w, w⟫ = ‖w‖ ^ 2 / Real.sqrt (1 + ‖w‖ ^ 2) := by
   rw [crowdGrad, real_inner_smul_left, real_inner_self_eq_norm_sq, div_eq_inv_mul]
 
+omit [CompleteSpace F] in
 /-- The symmetrised integrand is integrable for `λ ⊗ λ` when `λ` has finite first moment. -/
 theorem integrable_sq_div_sqrt_prod (Λ : Measure F) [IsProbabilityMeasure Λ]
     (hΛ : Integrable (fun u : F => ‖u‖) Λ) :

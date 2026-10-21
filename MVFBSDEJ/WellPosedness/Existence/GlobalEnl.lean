@@ -5,7 +5,6 @@ Authors: Christian Garry
 -/
 import MVFBSDEJ.WellPosedness.Existence.TerminalRepEnl
 import MVFBSDEJ.WellPosedness.Existence.PaperSolution
-import MVFBSDEJ.WellPosedness.Enlarged.CrossWitness
 
 /-!
 # Solutions of (1.1) over the initially enlarged filtration

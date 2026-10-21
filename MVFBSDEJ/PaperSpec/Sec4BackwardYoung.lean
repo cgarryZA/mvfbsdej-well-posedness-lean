@@ -33,19 +33,19 @@ open MVFBSDEJ.WellPosedness.System MVFBSDEJ.WellPosedness.Existence
 
 universe u v w
 
-/-- **(4.25).** There is a function `K` of `(T, L, ‖G‖, c_G, α, β₁, β₂, λ̲)` such
-that: in the standing setting, under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with
+/-- **(4.25).** There is a function `K` of `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that: in the
+standing setting, under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with
 (2.3) and Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`,
-`λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ_weak` with `X^k_T ∈ L²`,
-`ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ ℍ` — for every `ε ∈ (0, 1]`, at
+`λ̲ ∈ (0, 1]`, `λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with `X^k_T ∈ L²`,
+`ℱ₀`-measurable initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` — for every `ε ∈ (0, 1]`, at
 almost every `s ∈ [0, T]`,
 `2 𝔼⟨δY_s, λ δf_s + δq^f_s⟩ ≤ (C/ε) 𝔼|δY_s|² + ε 𝔼(|δZ_s|²_F + ‖δU_s‖²_{L²(ν)})
   + (C/ε) 𝔼(|δX_s|² + |δq^f_s|²)`,
-with `C = K(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂, λ̲)`, `δf_s = f(s, Θ¹_s, μ¹_s) − f(s, Θ²_s, μ²_s)`
+with `C = K(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂)`, `δf_s = f(s, Θ¹_s, μ¹_s) − f(s, Θ²_s, μ²_s)`
 and `μ^k_s = Law(Θ^k_s)`. The expectations on the right are read in `[0, ∞]`, and the left side,
 a Bochner integral, through its positive part. -/
 def eq_bwdyoung : Prop :=
-  ∃ K : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ,
+  ∃ K : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ,
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
     (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
@@ -74,11 +74,11 @@ def eq_bwdyoung : Prop :=
       ENNReal.ofReal (2 * ∫ ω, ∑ k, (Y₁ k s ω - Y₂ k s ω)
           * (lam * (driverProc P T C X₁ Y₁ Z₁ U₁ k ω s - driverProc P T C X₂ Y₂ Z₂ U₂ k ω s)
             + (qf₁ k ω s - qf₂ k ω s)) ∂P)
-        ≤ ENNReal.ofReal (K T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ lamLow / ε)
+        ≤ ENNReal.ofReal (K T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ / ε)
             * ∫⁻ ω, esq (fun k => Y₁ k s ω - Y₂ k s ω) ∂P
           + ENNReal.ofReal ε * ∫⁻ ω, (∑ k, esq (fun j => Z₁ k s ω j - Z₂ k s ω j)
               + ∑ k, ∫⁻ e, (‖U₁ k s ω e - U₂ k s ω e‖₊ : ℝ≥0∞) ^ 2 ∂ν) ∂P
-          + ENNReal.ofReal (K T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ lamLow / ε)
+          + ENNReal.ofReal (K T L ‖GX G‖ (sMin G ^ 2)⁻¹ α β₁ β₂ / ε)
             * ∫⁻ ω, (esq (fun i => X₁ i s ω - X₂ i s ω)
               + esq (fun k => qf₁ k ω s - qf₂ k ω s)) ∂P
 

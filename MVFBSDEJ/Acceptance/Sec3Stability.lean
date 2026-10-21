@@ -5,8 +5,6 @@ Authors: Christian Garry
 -/
 import MVFBSDEJ.PaperSpec.Sec3Stability
 import MVFBSDEJ.Acceptance.Sec3
-import MVFBSDEJ.WellPosedness.Existence.CoeffPredictable
-import MVFBSDEJ.WellPosedness.Existence.PaperAdmissible
 
 /-!
 # The paragraph after Theorem 3.1 of the well-posedness paper: proofs

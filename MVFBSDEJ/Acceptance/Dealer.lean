@@ -6,28 +6,12 @@ Authors: Christian Garry
 import MVFBSDEJ.PaperSpec.Sec5
 import MVFBSDEJ.Acceptance.Sec3
 import MVFBSDEJ.Law.CrowdTwoPoint
-import MVFBSDEJ.WellPosedness.Examples.Dealer.CrowdAffine
-import MVFBSDEJ.WellPosedness.Examples.Dealer.Monotone
-import MVFBSDEJ.WellPosedness.Existence.PaperSolution
-import MVFBSDEJ.WellPosedness.Robustness.Corollary
-import MVFBSDEJ.WellPosedness.Existence.AffineExample
-import MVFBSDEJ.WellPosedness.Existence.GlobalEnl
-import MVFBSDEJ.WellPosedness.System.PaperUniquenessInt
-import LevyStochCalc.Driver.GaussianInitial
-import MVFBSDEJ.WellPosedness.Examples.Dealer.MarkSizes
-import MVFBSDEJ.WellPosedness.Examples.MeanFieldWP
-import MVFBSDEJ.WellPosedness.Analysis.SMin
+import MVFBSDEJ.WellPosedness.BrownianPoisson.FrozenCell
+import MVFBSDEJ.WellPosedness.Examples.LinearGenerator
+import MVFBSDEJ.WellPosedness.Enlarged.Bot
+import MVFBSDEJ.WellPosedness.Examples.MeanFieldMonotone
+import MVFBSDEJ.WellPosedness.Remarks.LinearMean
 import MVFBSDEJ.Acceptance.Sec4
-import Mathlib.MeasureTheory.Integral.Prod
-import MVFBSDEJ.Law.CrowdGrad
-import MVFBSDEJ.Law.LawP2
-import LevyStochCalc.Ito.PicardWellPosed
-import LevyStochCalc.Probability.ProgressiveCadlag
-import MVFBSDEJ.WellPosedness.Enlarged.Driver
-import MVFBSDEJ.WellPosedness.Existence.Congr
-import LevyStochCalc.Analysis.GronwallIntegral
-import LevyStochCalc.Ito.SecondMoment
-import MVFBSDEJ.WellPosedness.System.PaperWeakSolutionInt
 import MVFBSDEJ.WellPosedness.Stability.LinearCongr
 
 /-!
@@ -35,7 +19,8 @@ import MVFBSDEJ.WellPosedness.Stability.LinearCongr
 
 ## Main statements
 
-* `MVFBSDEJ.Acceptance.ex55Crowd_eq` — the crowding correction of Example 5.5 is `crowdOp`.
+* `MVFBSDEJ.Acceptance.ex55Crowd_eq` — the crowding correction of Example 5.5 is
+  `MVFBSDEJ.Law.crowdOp`.
 * `MVFBSDEJ.Acceptance.ex_dealer_potential`, `ex_dealer_crowd` — the potential, and the
   Lipschitz bound of the crowding correction.
 * `MVFBSDEJ.Acceptance.ex_dealer_twopoint`, `ex_dealer_not_mean_corr`, `ex_dealer_affine` —

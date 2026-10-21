@@ -4,21 +4,22 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.Law.LpSection
+import MVFBSDEJ.Law.LpSectionStrong
 
 /-!
 # The Fubini isometry `L²(μ ⊗ ν; F) ≃ L²(μ; L²(ν; F))`
 
-For σ-finite measures `μ` on `X` and `ν` on a countably generated `E`, and a separable Banach space
-`F`, taking a function on `X × E` to the family of its sections is a linear isometric equivalence
+For σ-finite measures `μ` on `X` and `ν` on `E`, and a separable Banach space `F`, taking a
+function on `X × E` to the family of its sections is a linear isometric equivalence
 `L²(μ ⊗ ν; F) ≃ L²(μ; L²(ν; F))`, the identification (2.4) of the well-posedness paper. Each
 element of `L²(μ; L²(ν; F))` therefore has a jointly measurable representative, and two jointly
 measurable representatives of the same sections agree `μ ⊗ ν`-almost everywhere.
 
 The section of a representative `g` is square integrable at almost every point by Tonelli; cutting
-`g` to the points where it is (`cutSec`) gives sections in `L²(ν; F)` at every point, measurable in
-the point (`measurable_lp_of_measurable_uncurry`), and Tonelli gives the isometry. The range is
-closed and contains every indicator of a set of finite measure times an element of `L²(ν; F)`, so
-it is everything (`Lp.induction`).
+`g` to the points where it is (`cutSec`) gives sections in `L²(ν; F)` at every point, strongly
+measurable in the point (`stronglyMeasurable_lp_of_section`), and Tonelli gives the isometry. The
+range is closed and contains every indicator of a set of finite measure times an element of
+`L²(ν; F)`, so it is everything (`MeasureTheory.Lp.induction`).
 
 ## Main definitions
 
@@ -59,7 +60,7 @@ theorem memLp_two_of_lintegral_lt_top {f : α → F} (hf : AEStronglyMeasurable 
 end Two
 
 variable {X E F : Type*} [MeasurableSpace X] [MeasurableSpace E] {μ : Measure X} {ν : Measure E}
-  [SigmaFinite μ] [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
+  [SigmaFinite μ] [SigmaFinite ν]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F] [MeasurableSpace F] [BorelSpace F]
   [SecondCountableTopology F]
 
@@ -67,7 +68,7 @@ variable {X E F : Type*} [MeasurableSpace X] [MeasurableSpace E] {μ : Measure X
 def goodSet (ν : Measure E) (g : X × E → F) : Set X :=
   {x | ∫⁻ e, ‖g (x, e)‖ₑ ^ (2 : ℝ) ∂ν < ⊤}
 
-omit [MeasurableSpace.CountablyGenerated E] [NormedSpace ℝ F] [CompleteSpace F]
+omit [NormedSpace ℝ F] [CompleteSpace F]
     [SecondCountableTopology F] in
 /-- The points with a square-integrable section form a measurable set. -/
 theorem measurableSet_goodSet {g : X × E → F} (hg : StronglyMeasurable g) :
@@ -79,14 +80,14 @@ theorem measurableSet_goodSet {g : X × E → F} (hg : StronglyMeasurable g) :
 noncomputable def cutSec (ν : Measure E) (g : X × E → F) : X × E → F :=
   (goodSet ν g ×ˢ Set.univ).indicator g
 
-omit [MeasurableSpace.CountablyGenerated E] [NormedSpace ℝ F] [CompleteSpace F]
+omit [NormedSpace ℝ F] [CompleteSpace F]
     [SecondCountableTopology F] in
 /-- The cut function is strongly measurable. -/
 theorem stronglyMeasurable_cutSec {g : X × E → F} (hg : StronglyMeasurable g) :
     StronglyMeasurable (cutSec ν g) :=
   hg.indicator ((measurableSet_goodSet hg).prod MeasurableSet.univ)
 
-omit [MeasurableSpace X] [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
+omit [MeasurableSpace X] [SigmaFinite ν]
     [NormedSpace ℝ F] [CompleteSpace F] [MeasurableSpace F] [BorelSpace F]
     [SecondCountableTopology F] in
 /-- At a point with a square-integrable section the cut function is the function. -/
@@ -94,7 +95,7 @@ theorem cutSec_apply_of_mem {g : X × E → F} {x : X} (hx : x ∈ goodSet ν g)
     cutSec ν g (x, e) = g (x, e) :=
   Set.indicator_of_mem (Set.mk_mem_prod hx (Set.mem_univ e)) g
 
-omit [MeasurableSpace X] [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
+omit [MeasurableSpace X] [SigmaFinite ν]
     [NormedSpace ℝ F] [CompleteSpace F] [MeasurableSpace F] [BorelSpace F]
     [SecondCountableTopology F] in
 /-- At a point without a square-integrable section the cut function vanishes. -/
@@ -102,7 +103,7 @@ theorem cutSec_apply_of_notMem {g : X × E → F} {x : X} (hx : x ∉ goodSet ν
     cutSec ν g (x, e) = 0 :=
   Set.indicator_of_notMem (fun h => hx h.1) g
 
-omit [MeasurableSpace.CountablyGenerated E] [NormedSpace ℝ F] [CompleteSpace F]
+omit [NormedSpace ℝ F] [CompleteSpace F]
     [SecondCountableTopology F] in
 /-- Every section of the cut function is square integrable. -/
 theorem memLp_cutSec {g : X × E → F} (hg : StronglyMeasurable g) (x : X) :
@@ -120,7 +121,7 @@ noncomputable def secLp (ν : Measure E) [SigmaFinite ν] {g : X × E → F}
     (hg : StronglyMeasurable g) (x : X) : Lp F 2 ν :=
   (memLp_cutSec (ν := ν) hg x).toLp _
 
-omit [MeasurableSpace.CountablyGenerated E] [NormedSpace ℝ F] [CompleteSpace F]
+omit [NormedSpace ℝ F] [CompleteSpace F]
     [SecondCountableTopology F] in
 /-- The section in `L²(ν; F)` is represented by the section of the cut function. -/
 theorem coeFn_secLp {g : X × E → F} (hg : StronglyMeasurable g) (x : X) :
@@ -130,21 +131,17 @@ theorem coeFn_secLp {g : X × E → F} (hg : StronglyMeasurable g) (x : X) :
 omit [NormedSpace ℝ F] [CompleteSpace F] in
 /-- The section map is strongly measurable into `L²(ν; F)`. -/
 theorem stronglyMeasurable_secLp {g : X × E → F} (hg : StronglyMeasurable g) :
-    StronglyMeasurable (secLp ν hg) := by
-  letI : MeasurableSpace (Lp F 2 ν) := borel _
-  haveI : BorelSpace (Lp F 2 ν) := ⟨rfl⟩
-  haveI : Fact ((2 : ℝ≥0∞) ≠ ⊤) := ⟨ENNReal.ofNat_ne_top⟩
-  exact (measurable_lp_of_measurable_uncurry (stronglyMeasurable_cutSec hg).measurable
-    (coeFn_secLp hg)).stronglyMeasurable
+    StronglyMeasurable (secLp ν hg) :=
+  stronglyMeasurable_lp_of_section (stronglyMeasurable_cutSec hg) (coeFn_secLp hg)
 
-omit [MeasurableSpace.CountablyGenerated E] [NormedSpace ℝ F] [CompleteSpace F]
+omit [NormedSpace ℝ F] [CompleteSpace F]
     [SecondCountableTopology F] in
 /-- The squared norm of a section is the integral of the squared norm of the cut function. -/
 theorem enorm_secLp_rpow {g : X × E → F} (hg : StronglyMeasurable g) (x : X) :
     ‖secLp ν hg x‖ₑ ^ (2 : ℝ) = ∫⁻ e, ‖cutSec ν g (x, e)‖ₑ ^ (2 : ℝ) ∂ν := by
   rw [Lp.enorm_def, eLpNorm_congr_ae (coeFn_secLp hg x), eLpNorm_two_rpow]
 
-omit [SigmaFinite μ] [MeasurableSpace.CountablyGenerated E] [NormedSpace ℝ F] [CompleteSpace F]
+omit [SigmaFinite μ] [NormedSpace ℝ F] [CompleteSpace F]
     [SecondCountableTopology F] in
 /-- A function with finite integral of the squared norm on the product has square-integrable
 sections at almost every point. -/
@@ -153,9 +150,7 @@ theorem ae_mem_goodSet {g : X × E → F} (hg : StronglyMeasurable g)
   rw [lintegral_prod _ (hg.measurable.enorm.pow_const _).aemeasurable] at hfin
   exact ae_lt_top (Measurable.lintegral_prod_right' (hg.measurable.enorm.pow_const _)) hfin.ne
 
-omit [SigmaFinite μ] in
-omit [MeasurableSpace.CountablyGenerated E] [NormedSpace ℝ F] [CompleteSpace F]
-    [SecondCountableTopology F] in
+omit [SigmaFinite μ] [NormedSpace ℝ F] [CompleteSpace F] [SecondCountableTopology F] in
 /-- **Tonelli for the sections**: the integral of the squared norms of the sections is the
 integral of the squared norm on the product. -/
 theorem lintegral_enorm_secLp_rpow {g : X × E → F} (hg : StronglyMeasurable g)
@@ -175,8 +170,7 @@ theorem lintegral_lp_rpow_lt_top {Y : Type*} [MeasurableSpace Y] {ρ : Measure Y
   rw [← eLpNorm_two_rpow]
   exact ENNReal.rpow_lt_top_of_nonneg (by norm_num) (Lp.eLpNorm_ne_top f)
 
-omit [SigmaFinite μ] in
-omit [NormedSpace ℝ F] [CompleteSpace F] in
+omit [SigmaFinite μ] [NormedSpace ℝ F] [CompleteSpace F] in
 /-- The sections of an element of `L²(μ ⊗ ν; F)` form an element of `L²(μ; L²(ν; F))`. -/
 theorem memLp_secLp_lp (f : Lp F 2 (μ.prod ν)) :
     MemLp (secLp ν (Lp.stronglyMeasurable f)) 2 μ := by
@@ -188,15 +182,13 @@ theorem memLp_secLp_lp (f : Lp F 2 (μ.prod ν)) :
 noncomputable def fubiniLp (f : Lp F 2 (μ.prod ν)) : Lp (Lp F 2 ν) 2 μ :=
   (memLp_secLp_lp f).toLp _
 
-omit [SigmaFinite μ] in
-omit [NormedSpace ℝ F] [CompleteSpace F] in
+omit [SigmaFinite μ] [NormedSpace ℝ F] [CompleteSpace F] in
 /-- `fubiniLp f` is represented by the section map. -/
 theorem coeFn_fubiniLp (f : Lp F 2 (μ.prod ν)) :
     (fubiniLp f : X → Lp F 2 ν) =ᵐ[μ] secLp ν (Lp.stronglyMeasurable f) :=
   (memLp_secLp_lp f).coeFn_toLp
 
-omit [SigmaFinite μ] in
-omit [NormedSpace ℝ F] [CompleteSpace F] in
+omit [SigmaFinite μ] [NormedSpace ℝ F] [CompleteSpace F] in
 /-- The sections of `fubiniLp f` represent `f`. -/
 theorem ae_coeFn_fubiniLp (f : Lp F 2 (μ.prod ν)) :
     ∀ᵐ x ∂μ, (fubiniLp f x : E → F) =ᵐ[ν] fun e => f (x, e) := by
@@ -206,8 +198,7 @@ theorem ae_coeFn_fubiniLp (f : Lp F 2 (μ.prod ν)) :
   filter_upwards [coeFn_secLp (Lp.stronglyMeasurable f) x] with e he
   rw [he, cutSec_apply_of_mem h2]
 
-omit [SigmaFinite μ] in
-omit [NormedSpace ℝ F] [CompleteSpace F] in
+omit [SigmaFinite μ] [NormedSpace ℝ F] [CompleteSpace F] in
 /-- The section map preserves the `L²` norm. -/
 theorem norm_fubiniLp (f : Lp F 2 (μ.prod ν)) : ‖fubiniLp f‖ = ‖f‖ := by
   have h : eLpNorm (fubiniLp f) 2 μ = eLpNorm f 2 (μ.prod ν) := by
@@ -218,9 +209,7 @@ theorem norm_fubiniLp (f : Lp F 2 (μ.prod ν)) : ‖fubiniLp f‖ = ‖f‖ := 
       lintegral_enorm_secLp_rpow _ (lintegral_lp_rpow_lt_top f)]
   rw [Lp.norm_def, Lp.norm_def, h]
 
-omit [SigmaFinite μ] in
-omit [MeasurableSpace.CountablyGenerated E] [NormedSpace ℝ F] [CompleteSpace F]
-    [SecondCountableTopology F] in
+omit [SigmaFinite μ] [NormedSpace ℝ F] [CompleteSpace F] [SecondCountableTopology F] in
 /-- Two functions on the product with almost everywhere equal sections have almost everywhere
 equal section maps. -/
 theorem ae_secLp_eq {f₁ f₂ : X × E → F} (hf₁ : StronglyMeasurable f₁)
@@ -236,8 +225,7 @@ theorem ae_secLp_eq {f₁ f₂ : X × E → F} (hf₁ : StronglyMeasurable f₁)
   rw [e1, cutSec_apply_of_mem h1, e2]
   exact e3
 
-omit [SigmaFinite μ] in
-omit [NormedSpace ℝ F] [CompleteSpace F] in
+omit [SigmaFinite μ] [NormedSpace ℝ F] [CompleteSpace F] in
 /-- The section map is additive. -/
 theorem fubiniLp_add (f f' : Lp F 2 (μ.prod ν)) :
     fubiniLp (f + f') = fubiniLp f + fubiniLp f' := by
@@ -265,8 +253,7 @@ theorem fubiniLp_add (f f' : Lp F 2 (μ.prod ν)) :
     Lp.coeFn_add (fubiniLp f) (fubiniLp f'), key] with x h1 h2 h3 h4 h5
   rw [h1, h4, Pi.add_apply, h2, h3, h5]
 
-omit [SigmaFinite μ] in
-omit [CompleteSpace F] in
+omit [SigmaFinite μ] [CompleteSpace F] in
 /-- The section map is homogeneous. -/
 theorem fubiniLp_smul (c : ℝ) (f : Lp F 2 (μ.prod ν)) : fubiniLp (c • f) = c • fubiniLp f := by
   refine Lp.ext ?_
@@ -356,7 +343,7 @@ theorem ae_coeFn_fubiniEquiv (f : Lp F 2 (μ.prod ν)) :
     ∀ᵐ x ∂μ, (fubiniEquiv f x : E → F) =ᵐ[ν] fun e => f (x, e) :=
   ae_coeFn_fubiniLp f
 
-omit [SigmaFinite μ] [MeasurableSpace.CountablyGenerated E] [NormedSpace ℝ F] [CompleteSpace F]
+omit [SigmaFinite μ] [NormedSpace ℝ F] [CompleteSpace F]
     [MeasurableSpace F] [BorelSpace F] [SecondCountableTopology F] in
 /-- **Two jointly measurable representatives of the same sections agree almost everywhere.** -/
 theorem ae_eq_of_ae_sections {u : X → Lp F 2 ν} {g g' : X × E → F} (hg : StronglyMeasurable g)

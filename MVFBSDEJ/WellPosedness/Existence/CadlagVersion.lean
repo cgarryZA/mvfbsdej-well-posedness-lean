@@ -4,7 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.WellPosedness.System.JumpLeftEnergy
-import MVFBSDEJ.WellPosedness.Existence.ZeroEnergy
 import MVFBSDEJ.WellPosedness.System.PaperSolutionForced
 
 /-!
@@ -43,6 +42,7 @@ variable {Ω : Type u} [MeasurableSpace Ω] {E : Type v} [MeasurableSpace E] {ν
   {ξ₀ : Fin n → Ω → ℝ} {X : Fin n → ℝ → Ω → ℝ} {Y : Fin m → ℝ → Ω → ℝ}
   {Z : Fin m → ℝ → Ω → Fin d → ℝ} {U : Fin m → ℝ → Ω → E → ℝ} {γ : Fin n → ℝ → Ω → E → ℝ}
 
+omit [MeasurableSpace Ω] [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
 /-- Tuples of processes agreeing at a sample point and a time have the same value there. -/
 theorem tupleAt_apply_eq_of_eq {X' : Fin n → ℝ → Ω → ℝ} {Y' : Fin m → ℝ → Ω → ℝ} {s : ℝ}
     {ω : Ω} (hx : ∀ i, X' i s ω = X i s ω) (hy : ∀ k, Y' k s ω = Y k s ω) :

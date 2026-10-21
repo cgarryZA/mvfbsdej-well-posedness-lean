@@ -3,8 +3,6 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import Mathlib.Analysis.Normed.Group.Basic
-import Mathlib.Order.Interval.Set.Basic
 import Mathlib.Probability.Moments.Variance
 import Mathlib.Tactic
 
@@ -34,6 +32,7 @@ open Set
 /-- The clamp `g₀(r) = max(-1, min(1, r))` truncating a real to `[-1, 1]`. -/
 noncomputable def clamp01 (r : ℝ) : ℝ := max (-1) (min 1 r)
 
+/-- The clamp takes values in `[-1, 1]`. -/
 theorem clamp01_mem (r : ℝ) : clamp01 r ∈ Icc (-1 : ℝ) 1 := by
   constructor
   · exact le_max_left _ _
@@ -50,11 +49,13 @@ theorem clamp01_lipschitz (r s : ℝ) : |clamp01 r - clamp01 s| ≤ |r - s| := b
             split_ifs <;> linarith [abs_nonneg (r - s), le_abs_self (r - s),
               neg_abs_le (r - s)]
 
+/-- The clamp is `1` from `1` on. -/
 theorem clamp01_eq_one {r : ℝ} (h : 1 ≤ r) : clamp01 r = 1 := by
   unfold clamp01
   rw [min_eq_left h]
   norm_num
 
+/-- The clamp is `-1` up to `-1`. -/
 theorem clamp01_eq_neg_one {r : ℝ} (h : r ≤ -1) : clamp01 r = -1 := by
   unfold clamp01
   rw [min_eq_right (by linarith), max_eq_left h]

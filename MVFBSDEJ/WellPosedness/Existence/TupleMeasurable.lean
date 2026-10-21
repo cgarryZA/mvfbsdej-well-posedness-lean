@@ -14,12 +14,12 @@ of the tuple space `H`, with its jump channel the `L²(ν)` class `uLift`, is jo
 `(ω, s)` and progressively measurable as an `H`-valued process, and its law flow `s ↦ Law(Θ_s)`
 is measurable for the evaluation σ-algebra on `P₂(H)`, at every time and for the exact law.
 
-A map into `H` is measurable when its four channels are; the jump channel is the `L²(ν)` class of
-a family jointly measurable in the parameter and the mark (`measurable_uLift`), with no
-integrability needed. Joint measurability takes the parameter `(ω, s)` with the product of the
-ambient σ-algebra and the Borel one; progressive measurability at time `t` takes the truncation
-`1_{s ≤ t} Θ_s(ω)` with `ℱ_t ⊗ 𝔅`, the truncated jump channel being the class of the truncated
-family since `uLift ν 0 = 0`. The law flow is then measurable by `measurable_lawP2_flow`.
+A map into `H` is measurable when its four channels are; the jump channel is the `L²(ν)` class of a
+family jointly measurable in the parameter and the mark (`measurable_uLift`), with no integrability
+needed. Joint measurability takes the parameter `(ω, s)` with the product of the ambient σ-algebra
+and the Borel one; progressive measurability at time `t` takes the truncation `1_{s ≤ t} Θ_s(ω)`
+with `ℱ_t ⊗ 𝔅`, the truncated jump channel being the class of the truncated family since
+`uLift ν 0 = 0`. The law flow is then measurable by `MVFBSDEJ.Law.measurable_lawP2_flow`.
 
 ## Main statements
 
@@ -74,6 +74,7 @@ variable {Ω : Type*} [MeasurableSpace Ω] {E : Type*} [MeasurableSpace E] {ν :
 
 namespace ProgTuple
 
+omit [IsProbabilityMeasure P] in
 /-- **The tuple of a progressive tuple is jointly measurable** in the sample point and the
 time. -/
 theorem measurable_tupleAt (hΘ : ProgTuple ℱ P ν T X Y Z U) :

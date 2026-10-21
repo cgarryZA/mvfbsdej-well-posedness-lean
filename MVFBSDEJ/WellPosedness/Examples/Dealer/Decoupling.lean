@@ -5,7 +5,6 @@ Authors: Christian Garry
 -/
 import MVFBSDEJ.WellPosedness.Examples.Dealer.Exposure
 import MVFBSDEJ.WellPosedness.Stability.MomentAt
-import MVFBSDEJ.WellPosedness.System.PaperSolutionSolves
 
 /-!
 # Example 5.5: decoupling residuals of the dealer market
@@ -70,6 +69,7 @@ theorem driverProc_dealerExp {s : ℝ} (hs : s ∈ Set.Icc (0 : ℝ) T)
   simp [driverProc, Set.indicator_of_mem hs, dealerExpCoeffs, dealerCoeffs, Coeffs.perturb,
     affineCoeffs, crowdPert, exposurePert, tupleAt]
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
 /-- The terminal value of the dealer system is `X_T`. -/
 theorem terminalVal_dealerExp (ω : Ω) :
     terminalVal P T (dealerExpCoeffs β₁ β₂ σc hc hx ε) X 0 ω = X 0 T ω := by

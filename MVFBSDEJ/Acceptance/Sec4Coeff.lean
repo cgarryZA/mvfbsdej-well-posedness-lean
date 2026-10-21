@@ -4,7 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.PaperSpec.Sec4Coeff
-import MVFBSDEJ.WellPosedness.Robustness.JumpMargin
 
 /-!
 # The coefficient bounds (4.2) and (4.3) of the well-posedness paper: proofs

@@ -4,7 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.WellPosedness.Existence.GlobalEnl
-import MVFBSDEJ.WellPosedness.Robustness.Corollary
 import MVFBSDEJ.WellPosedness.Spec.Bridge22
 import MVFBSDEJ.WellPosedness.Spec.CorollaryHyps
 import MVFBSDEJ.WellPosedness.Robustness.JumpMargin
@@ -18,11 +17,11 @@ The last paragraph of Corollary 3.6 takes perturbations that are independent of 
 
 `|δp_b| + |δp_σ|_F + ‖δp_h‖_{L²(ν)} + |δp_f| ≤ L_p W₂(μ, μ')`
 
-for almost every `t ∈ [0, T]` and all `(Θ, μ), (Θ', μ') ∈ 𝒟_t`. This file states (3.5) as
-printed, `LawLip35`, with the differences compared almost surely as in Assumption 2.3, and
-identifies it with `DiagonalLawLipschitzH` at the same constant. With `n ≥ 1` and `T > 0`, (3.5)
-forces `L_p ≥ 0`: at the deterministic inputs `(e₁, 0, 0, 0)` and `0` the right-hand side is
-`L_p`.
+for almost every `t ∈ [0, T]` and all `(Θ, μ), (Θ', μ') ∈ 𝒟_t`. This file states (3.5) as printed,
+`LawLip35`, with the differences compared almost surely as in Assumption 2.3, and identifies it with
+`MVFBSDEJ.WellPosedness.System.DiagonalLawLipschitzH` at the same constant. With `n ≥ 1` and
+`T > 0`, (3.5) forces `L_p ≥ 0`: at the deterministic inputs `(e₁, 0, 0, 0)` and `0` the right-hand
+side is `L_p`.
 
 ## Main definitions
 
@@ -30,7 +29,7 @@ forces `L_p ≥ 0`: at the deterministic inputs `(e₁, 0, 0, 0)` and `0` the ri
 
 ## Main statements
 
-* `lawLip35_iff` — (3.5) as printed is `DiagonalLawLipschitzH`.
+* `lawLip35_iff` — (3.5) as printed is `MVFBSDEJ.WellPosedness.System.DiagonalLawLipschitzH`.
 * `LawLip35.nonneg` — (3.5) forces `L_p ≥ 0` for `n ≥ 1`, `T > 0`.
 -/
 

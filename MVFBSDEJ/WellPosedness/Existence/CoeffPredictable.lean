@@ -4,8 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.WellPosedness.Spec.Bridge23
-import MVFBSDEJ.WellPosedness.Existence.CoeffBorel
-import MVFBSDEJ.WellPosedness.Existence.CoeffBorelW2
 import LevyStochCalc.Probability.Predictable
 
 /-!

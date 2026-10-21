@@ -4,7 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.PaperSpec.Sec5Dealer
-import MVFBSDEJ.Acceptance.Sec3
 import MVFBSDEJ.Acceptance.Dealer
 import MVFBSDEJ.WellPosedness.Examples.Dealer.Exposure
 
@@ -14,7 +13,7 @@ import MVFBSDEJ.WellPosedness.Examples.Dealer.Exposure
 ## Main statements
 
 * `MVFBSDEJ.Acceptance.ex55Coeffs_eq` — the coefficients of Example 5.5 are
-  `dealerExpCoeffs`.
+  `MVFBSDEJ.WellPosedness.Existence.dealerExpCoeffs`.
 * `MVFBSDEJ.Acceptance.ex_dealer_coeffs`, `ex_dealer_ham`, `ex_dealer`, `ex_dealer_mono`,
   `ex_dealer_wp` —
   the coefficients at `ε = 0`, the Hamiltonian, the assumptions, the monotonicity and
@@ -73,7 +72,7 @@ theorem ex_dealer : PaperSpec.ex_dealer.{u, v, w} := by
     ⟨hξm, hξ, originValues_iff_coeffOrigin.mpr hO⟩,
     ⟨zero_le_one.trans (le_max_right _ _), lipInterior_iff_diagonalLipschitzH.mpr hL,
       lipTerminal_iff_terminalLipschitz.mpr hLT⟩, rank_one_eq_min, ?_⟩
-  rw [MVFBSDEJ.WellPosedness.sMin_one]
+  rw [sMin_one]
   norm_num
 
 /-- Example 5.5, monotonicity at every `ε ≥ 0`. -/

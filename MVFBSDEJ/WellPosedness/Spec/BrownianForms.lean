@@ -4,30 +4,29 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.WellPosedness.Spec.Assumptions
-import MVFBSDEJ.WellPosedness.System.PaperSolution
 import MVFBSDEJ.WellPosedness.System.PaperWeakSolutionInt
 import MVFBSDEJ.WellPosedness.Examples.Brownian
 import MVFBSDEJ.WellPosedness.Examples.BrownianFiltration
 
 /-!
-# The Brownian forms of the assumptions and of the solution notions
+# The Brownian forms of the assumptions and of the solution notion in `ℍ²`
 
 Example 5.2 of the well-posedness paper removes the Poisson channel. Inside the paper's model this
-is the intensity `ν = 0`: the jump channel `L²(0; ℝᵐ)` of `H` and the fibre `L²(0; ℝⁿ)` of the
-jump coefficient are trivial, and `W₂` on `P₂(H)` is `W₂` on the laws of `(X, Y, Z)`
-(`w2P_projP2`). This file states, for a coefficient system `C` at `ν = 0`, Assumptions 2.3 and
-2.5 and the solution notions of §3 with every term of the jump channel deleted.
+is the intensity `ν = 0`: the jump channel `L²(0; ℝᵐ)` of `H` and the fibre `L²(0; ℝⁿ)` of the jump
+coefficient are trivial, and `W₂` on `P₂(H)` is `W₂` on the laws of `(X, Y, Z)`
+(`MVFBSDEJ.WellPosedness.System.w2P_projP2`). This file states, for a coefficient system `C` at
+`ν = 0`, Assumptions 2.3 and 2.5 and the solution notion of `ℍ²` of §3 with every term of the jump
+channel deleted.
 
 * **Assumption 2.3.** `|δb| + |δσ|_F + |δf| ≤ L (|δX| + |δY| + |δZ|_F + W₂(μ^{XYZ}, μ'^{XYZ}))`
   along the diagonal, with `μ^{XYZ}` the law of `(X, Y, Z)` (`projP2 μ`), and the terminal
   bound (2.6) unchanged.
 * **Assumption 2.5.** (2.7) without the jump pairing and without `‖Gᵀ δU‖²`, the terminal
   inequality and the admissible constants unchanged.
-* **The solution notions.** The equations of (1.1) without the compensated Poisson integrals,
-  driven by a `d`-dimensional Brownian motion `W` over a filtration for which each coordinate of
-  `W` is a Brownian motion, in `ℍ` (`BrownianPaperSolution`) and in `ℍ_weak`
-  (`BrownianPaperWeakSolution`); the coefficient processes are evaluated at
-  `Θ_s = (X_s, Y_s, Z_s, 0)`, the jump channel of `H` being `{0}`.
+* **The solution notion in `ℍ²`.** The equations of (1.1) without the compensated Poisson
+  integrals, driven by a `d`-dimensional Brownian motion `W` over a filtration for which each
+  coordinate of `W` is a Brownian motion, in `ℍ²` (`BrownianPaperWeakSolution`); the coefficient
+  processes are evaluated at `Θ_s = (X_s, Y_s, Z_s, 0)`, the jump channel of `H` being `{0}`.
 
 ## Main definitions
 
@@ -35,8 +34,7 @@ jump coefficient are trivial, and `W₂` on `P₂(H)` is `W₂` on the laws of `
   `ν = 0` with the jump terms deleted.
 * `brownianPairing`, `BrownianMonoAt`, `BrownianAssumption25` — Assumption 2.5 at `ν = 0` with
   the jump terms deleted.
-* `BrownianPaperSolution`, `BrownianPaperWeakSolution` — the Brownian forward–backward system
-  in `ℍ` and in `ℍ_weak`.
+* `BrownianPaperWeakSolution` — the Brownian forward–backward system in `ℍ²`.
 
 ## Main statements
 
@@ -143,101 +141,11 @@ def BrownianAssumption25 (ℱ : Filtration ℝ ‹MeasurableSpace Ω›) (P : Me
   ∧ (∀ᵐ t ∂(volume.restrict (Set.Icc (0 : ℝ) T)), BrownianMonoAt ℱ P t G β₁ β₂ C)
   ∧ Constants n m α β₁ β₂
 
-/-! ### The solution notions -/
+/-! ### The solution notion -/
 
 variable {P : Measure Ω} [IsProbabilityMeasure P]
 
-/-- **`(X, Y, Z)` solves the Brownian forward–backward system in `ℍ`**, with coefficients `C` at
-`ν = 0` and initial datum `ξ₀`, over a filtration `ℱ` for which each coordinate of the Brownian
-motion `W` is a Brownian motion: `PaperSolution` with the jump channel deleted. `X` and `Y` are
-adapted on `[0, T]` with right-continuous paths on `[0, T)`, left limits on `(0, T]` almost
-surely and finite `𝔼 sup_{t ≤ T} |·|²`; `Z` is predictable with finite energy and vanishes off
-`[0, T]`; the drift, diffusion and driver processes along `Θ_s = (X_s, Y_s, Z_s, 0)` meet the
-conditions for the integrals to exist; and on one set of full measure, at every `t ∈ [0, T]`,
-
-`X_t = ξ₀ + ∫_0^t b(s, Θ_s, μ_s) ds + ∫_0^t σ(s, Θ_s, μ_s) dW_s`,
-
-`Y_t = g(X_T, Law X_T) + ∫_t^T f(s, Θ_s, μ_s) ds − ∫_t^T Z_s dW_s`,
-
-with càdlàg versions of the Brownian integrals. -/
-structure BrownianPaperSolution (W : Brownian.Multidim.MultidimBrownianMotion P d)
-    (ℱ : Filtration ℝ ‹MeasurableSpace Ω›)
-    (hℱW : ∀ j : Fin d, Brownian.IsBrownianFiltration (W.W j) ℱ) (T : ℝ)
-    (C : Coeffs (0 : Measure E) n m d) (ξ₀ : Fin n → Ω → ℝ) (X : Fin n → ℝ → Ω → ℝ)
-    (Y : Fin m → ℝ → Ω → ℝ) (Z : Fin m → ℝ → Ω → Fin d → ℝ) : Prop where
-  /-- Each coordinate of `X` is adapted on the horizon. -/
-  X_adapted : ∀ i, ∀ t ∈ Set.Icc (0 : ℝ) T, Measurable[ℱ t] (X i t)
-  /-- Every path of each coordinate of `X` is right-continuous on `[0, T)`. -/
-  X_rightCont : ∀ i ω, ∀ t ∈ Set.Ico (0 : ℝ) T,
-    Tendsto (fun s => X i s ω) (𝓝[>] t) (𝓝 (X i t ω))
-  /-- Almost every path of each coordinate of `X` has left limits on `(0, T]`. -/
-  X_leftLim : ∀ i, ∀ᵐ ω ∂P, ∀ t ∈ Set.Ioc (0 : ℝ) T,
-    ∃ L : ℝ, Tendsto (fun s => X i s ω) (𝓝[<] t) (𝓝 L)
-  /-- `𝔼 sup_{t ≤ T} |X_t|² < ∞`. -/
-  X_sup : ∫⁻ ω, (⨆ t ∈ Set.Icc (0 : ℝ) T, Stability.esq (fun i => X i t ω)) ∂P < ⊤
-  /-- Each coordinate of `Y` is adapted on the horizon. -/
-  Y_adapted : ∀ k, ∀ t ∈ Set.Icc (0 : ℝ) T, Measurable[ℱ t] (Y k t)
-  /-- Every path of each coordinate of `Y` is right-continuous on `[0, T)`. -/
-  Y_rightCont : ∀ k ω, ∀ t ∈ Set.Ico (0 : ℝ) T,
-    Tendsto (fun s => Y k s ω) (𝓝[>] t) (𝓝 (Y k t ω))
-  /-- Almost every path of each coordinate of `Y` has left limits on `(0, T]`. -/
-  Y_leftLim : ∀ k, ∀ᵐ ω ∂P, ∀ t ∈ Set.Ioc (0 : ℝ) T,
-    ∃ L : ℝ, Tendsto (fun s => Y k s ω) (𝓝[<] t) (𝓝 L)
-  /-- `𝔼 sup_{t ≤ T} |Y_t|² < ∞`. -/
-  Y_sup : ∫⁻ ω, (⨆ t ∈ Set.Icc (0 : ℝ) T, Stability.esq (fun k => Y k t ω)) ∂P < ⊤
-  /-- Each coordinate of `Z` is predictable. -/
-  Z_pred : ∀ k j, Probability.Predictable ℱ fun ω s => Z k s ω j
-  /-- `Z` vanishes off the horizon. -/
-  Z_vanish : ∀ k ω s, s ∉ Set.Icc (0 : ℝ) T → Z k s ω = 0
-  /-- Each coordinate of `Z` has finite energy on the horizon. -/
-  Z_sq : ∀ k j, Brownian.Ito.energy P T (fun ω s => Z k s ω j) ≠ ⊤
-  /-- The drift process is jointly measurable. -/
-  b_meas : ∀ i, Measurable (Function.uncurry (driftProc P T C X Y Z 0 i))
-  /-- The drift process is progressively measurable. -/
-  b_prog : ∀ i, Probability.ProgressivelyMeasurable ℱ (driftProc P T C X Y Z 0 i)
-  /-- The drift process has finite energy on the horizon. -/
-  b_sq : ∀ i, Brownian.Ito.energy P T (driftProc P T C X Y Z 0 i) ≠ ⊤
-  /-- The diffusion process is jointly measurable. -/
-  σ_meas : ∀ i j,
-    Measurable (Function.uncurry fun ω s => diffusionProc P T C X Y Z 0 i s ω j)
-  /-- The diffusion process is progressively measurable. -/
-  σ_prog : ∀ i j,
-    Probability.ProgressivelyMeasurable ℱ fun ω s => diffusionProc P T C X Y Z 0 i s ω j
-  /-- The diffusion process has finite energy on the horizon. -/
-  σ_sq : ∀ i j,
-    Brownian.Ito.energy P T (fun ω s => diffusionProc P T C X Y Z 0 i s ω j) ≠ ⊤
-  /-- The driver process is jointly measurable. -/
-  f_meas : ∀ k, Measurable (Function.uncurry (driverProc P T C X Y Z 0 k))
-  /-- The driver process is progressively measurable. -/
-  f_prog : ∀ k, Probability.ProgressivelyMeasurable ℱ (driverProc P T C X Y Z 0 k)
-  /-- The driver process has finite energy on the horizon. -/
-  f_sq : ∀ k, Brownian.Ito.energy P T (driverProc P T C X Y Z 0 k) ≠ ⊤
-  /-- The forward identity at every time of the horizon on one set of full measure, with a
-  càdlàg version `M` of the Brownian integral. -/
-  fwd : ∀ i, ∃ M : ℝ → Ω → ℝ,
-    (∀ t ∈ Set.Icc (0 : ℝ) T, M t =ᵐ[P]
-      Brownian.Multidim.MultidimBrownianMotion.stochasticIntegral W ℱ hℱW
-        (diffusionProc P T C X Y Z 0 i) (σ_meas i) (σ_prog i)
-        (sq_int_global_of_vanishing (fun ω _ hs => diffusionProc_of_notMem hs i ω) (σ_sq i)) t)
-    ∧ (∀ᵐ ω ∂P, (∀ t ∈ Set.Ico (0 : ℝ) T, Tendsto (fun s => M s ω) (𝓝[>] t) (𝓝 (M t ω)))
-      ∧ ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ L : ℝ, Tendsto (fun s => M s ω) (𝓝[<] t) (𝓝 L))
-    ∧ ∀ᵐ ω ∂P, ∀ t ∈ Set.Icc (0 : ℝ) T,
-      X i t ω = ξ₀ i ω + (∫ s in Set.Icc (0 : ℝ) t, driftProc P T C X Y Z 0 i ω s) + M t ω
-  /-- The backward identity at every time of the horizon on one set of full measure, with a
-  càdlàg version `M` of the Brownian integral. -/
-  bwd : ∀ k, ∃ M : ℝ → Ω → ℝ,
-    (∀ t ∈ Set.Icc (0 : ℝ) T, M t =ᵐ[P]
-      Brownian.Multidim.MultidimBrownianMotion.stochasticIntegral W ℱ hℱW (Z k)
-        (fun j => Brownian.Ito.measurable_uncurry_of_predictable (Z_pred k j))
-        (progressivelyMeasurable_of_predictable_of_vanish (Z_pred k) (Z_vanish k))
-        (sq_int_global_of_vanishing (Z_vanish k) (Z_sq k)) t)
-    ∧ (∀ᵐ ω ∂P, (∀ t ∈ Set.Ico (0 : ℝ) T, Tendsto (fun s => M s ω) (𝓝[>] t) (𝓝 (M t ω)))
-      ∧ ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ L : ℝ, Tendsto (fun s => M s ω) (𝓝[<] t) (𝓝 L))
-    ∧ ∀ᵐ ω ∂P, ∀ t ∈ Set.Icc (0 : ℝ) T,
-      Y k t ω = terminalVal P T C X k ω + (∫ s in Set.Icc t T, driverProc P T C X Y Z 0 k ω s)
-        - (M T ω - M t ω)
-
-/-- **`(X, Y, Z)` solves the Brownian forward–backward system in `ℍ_weak`**, with pathwise drift
+/-- **`(X, Y, Z)` solves the Brownian forward–backward system in `ℍ²`**, with pathwise drift
 and driver integrals, coefficients `C` at `ν = 0` and initial datum `ξ₀`, over a filtration `ℱ`
 for which each coordinate of the Brownian motion `W` is a Brownian motion:
 `PaperWeakSolutionInt` with the jump channel deleted. `X` and `Y` are adapted on `[0, T]` with

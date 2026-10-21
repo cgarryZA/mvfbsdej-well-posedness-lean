@@ -6,7 +6,6 @@ Authors: Christian Garry
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
-import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
 /-!
 # The harmonic two-point problem of Li and Min

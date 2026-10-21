@@ -4,8 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.PaperSpec.Sec3
-import MVFBSDEJ.WellPosedness.Spec.Thm31
-import MVFBSDEJ.WellPosedness.System.JumpLeftEnergy
 import MVFBSDEJ.WellPosedness.Spec.Thm35
 import MVFBSDEJ.WellPosedness.Existence.CadlagVersion
 import MVFBSDEJ.WellPosedness.Spec.Cor36WellPosed

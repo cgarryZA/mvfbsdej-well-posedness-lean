@@ -8,7 +8,7 @@ import MVFBSDEJ.WellPosedness.System.PaperWeakSolutionForcedIntSolves
 import MVFBSDEJ.WellPosedness.System.UniquenessInt
 
 /-!
-# Lemma 4.3 in the paper's solution notion, in `ℍ²_weak`
+# Lemma 4.3 in the paper's solution notion, in `ℍ²`
 
 Lemma 4.3 of the well-posedness paper: under Assumptions 2.3–2.5, for `λ ∈ [λ̲, 1]`, `λ̲ > 0`,
 two solutions `Θ¹, Θ²` of the `λ`-forced system (4.1) with the same coefficients, initial data
@@ -33,13 +33,13 @@ A solution of `PaperWeakSolutionForcedInt`, extended off `[0, T]`, is a solution
 So `SolvesForcedInt.supSize_sub_le` gives the lemma.
 
 Two hypotheses of the paper's statement are absent. The initial data need not be
-`ℱ_0`-measurable: by the forward identity at `0`, `ξ₀ = X_0` almost surely. And `Θ¹ − Θ² ∈ ℍ²`
+`ℱ_0`-measurable: by the forward identity at `0`, `ξ₀ = X_0` almost surely. And `Θ¹ − Θ² ∈ 𝕊`
 is not a hypothesis of `SolvesForcedInt.supSize_sub_le`.
 
 ## Main statements
 
 * `PaperWeakSolutionForcedInt.supSize_sub_le` — Lemma 4.3 in the paper's solution notion, in
-  `ℍ²_weak`.
+  `ℍ²`.
 -/
 
 open MeasureTheory Filter Matrix
@@ -63,7 +63,7 @@ variable {Ω : Type u} [MeasurableSpace Ω] {E : Type v} [MeasurableSpace E] {ν
   {γ₁ γ₂ : Fin n → ℝ → Ω → E → ℝ} {L cG α β₁ β₂ : ℝ} {G : Matrix (Fin m) (Fin n) ℝ}
   {D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν}
 
-/-- **Lemma 4.3 in the paper's solution notion, in `ℍ²_weak`.** Let the coefficients satisfy
+/-- **Lemma 4.3 in the paper's solution notion, in `ℍ²`.** Let the coefficients satisfy
 Assumption 2.3 along the diagonal with constant `L`, Assumption 2.4 with coupling matrix `G` and
 constant `c_G ≥ 0` (the forward bound when `n ≤ m`, the backward one when `m ≤ n`) and
 Assumption 2.5 along the diagonal with admissible constants `α, β₁, β₂`, and let `λ ∈ [λ̲, 1]`,

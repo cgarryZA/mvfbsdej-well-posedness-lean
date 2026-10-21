@@ -76,6 +76,7 @@ variable [SigmaFinite ν] {P : Measure Ω} [IsProbabilityMeasure P]
   {qb : Fin n → Ω → ℝ → ℝ} {qσ : Fin n → ℝ → Ω → Fin d → ℝ} {qh qh' : Fin n → ℝ → Ω → E → ℝ}
   {qf : Fin m → Ω → ℝ → ℝ} {qg : Fin m → Ω → ℝ}
 
+omit [SigmaFinite ν] [IsProbabilityMeasure P] in
 /-- For `T ≤ 0` the product of `P`, Lebesgue measure on `[0, T]` and `ν` is zero. -/
 theorem markedEnergyMeasure_eq_zero_of_nonpos (hT : T ≤ 0) :
     Poisson.Compensated.markedEnergyMeasure P ν T = 0 := by

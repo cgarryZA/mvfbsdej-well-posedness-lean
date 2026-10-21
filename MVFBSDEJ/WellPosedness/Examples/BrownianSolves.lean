@@ -7,7 +7,6 @@ import MVFBSDEJ.WellPosedness.Examples.Brownian
 import MVFBSDEJ.WellPosedness.Existence.CoeffBorelW2
 import MVFBSDEJ.WellPosedness.Existence.OriginBound
 import MVFBSDEJ.WellPosedness.System.DiagonalLipschitzH
-import MVFBSDEJ.WellPosedness.System.Solves
 
 /-!
 # Example 5.2: the linear Brownian equations at zero intensity
@@ -20,8 +19,9 @@ equations
 
 `Y_t = ξ + ∫_t^T φ_s ds − ∫_t^T Z_s dW_s`,
 
-with the Brownian integrals the canonical ones: the linear equations with jumps `LinearFSDEJ`,
-`LinearBSDEJ` without their jump terms.
+with the Brownian integrals the canonical ones: the linear equations with jumps
+`MVFBSDEJ.WellPosedness.Stability.LinearFSDEJ`,
+`MVFBSDEJ.WellPosedness.BrownianPoisson.LinearBSDEJ` without their jump terms.
 
 At the zero intensity `ν = 0` the Poisson random measure of a Lévy driver carries no
 compensated integral: every marked integrand has zero marked energy, so by the Itô–Lévy isometry

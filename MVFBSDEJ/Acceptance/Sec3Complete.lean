@@ -12,9 +12,9 @@ import MVFBSDEJ.Acceptance.WitnessNonzero
 
 ## Main statements
 
-* `MVFBSDEJ.Acceptance.sec3_HH_complete` — `(ℍ, ‖·‖_ℍ)` is complete.
+* `MVFBSDEJ.Acceptance.sec3_HH_complete` — `(𝕊, ‖·‖_𝕊)` is complete.
 * `MVFBSDEJ.Acceptance.sec3_HH_complete_hypotheses` — the constant sequence at the tuple
-  `(1, 1, 1_{(0, 1]}, 1_{(0, 1]})` of `ℍ_weak`, with `‖·‖²_ℍ = 4`, is Cauchy.
+  `(1, 1, 1_{(0, 1]}, 1_{(0, 1]})` of `ℍ²`, with `‖·‖²_𝕊 = 4`, is Cauchy.
 -/
 
 open MeasureTheory ProbabilityTheory Filter
@@ -27,16 +27,16 @@ open MVFBSDEJ.WellPosedness.System MVFBSDEJ.WellPosedness.Stability
 
 universe u v w
 
-/-- §3, `(ℍ, ‖·‖_ℍ)` is complete. -/
+/-- §3, `(𝕊, ‖·‖_𝕊)` is complete. -/
 theorem sec3_HH_complete : PaperSpec.sec3_HH_complete.{u, v, w} := by
   intro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ T X Y Z U hΘ hfin hcau
   exact PaperWeakTuple.exists_supSize_limit (enlJoint 𝒢₀ D h𝒢₀)
     (fun _ hs h0 => measurableSet_enlJoint_of_null D h𝒢₀ hs h0) hΘ hfin hcau
 
-/-- **The hypotheses of the completeness of `ℍ` can be met by a nonzero sequence.** Over a
+/-- **The hypotheses of the completeness of `𝕊` can be met by a nonzero sequence.** Over a
 probability space carrying a Lévy driver with `d = 1` and `ν = δ₀` on `ℝ`, with `𝒢₀ = ⊥`,
 `n = m = 1` and `T = 1`, the constant sequence at `X = Y = 1`, `Z = U = 1_{(0, 1]}` is a sequence
-of tuples of `ℍ_weak` with `‖Θ_j‖²_ℍ = 4`, and it is Cauchy for `‖·‖_ℍ`. -/
+of tuples of `ℍ²` with `‖Θ_j‖²_𝕊 = 4`, and it is Cauchy for `‖·‖_𝕊`. -/
 theorem sec3_HH_complete_hypotheses :
     ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)
       (D : LevyStochCalc.Driver.LevyDriver P 1 (Measure.dirac (0 : ℝ)))

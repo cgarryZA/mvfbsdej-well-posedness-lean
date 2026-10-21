@@ -5,7 +5,8 @@
 #
 # For every clause of acceptance/claims.json with a proof, `tools/acceptance.py comparator-inputs`
 # writes `AcceptanceChallenge.lean`: the theorem of the proof's name typed by the statement of
-# `MVFBSDEJ.PaperSpec`, proved by `sorry`, importing only the statements. Comparator then builds
+# `MVFBSDEJ.PaperSpec` (by its negation for a refutation), proved by `sorry`, importing only
+# the statements. Comparator then builds
 # the challenge and `MVFBSDEJ.Acceptance` in a landrun sandbox, exports both with lean4export,
 # checks that each proof has the statement of its challenge (every declaration the statement uses
 # being the same in both environments) and uses only propext, Classical.choice and Quot.sound, and

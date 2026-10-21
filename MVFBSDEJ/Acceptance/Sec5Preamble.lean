@@ -5,8 +5,7 @@ Authors: Christian Garry
 -/
 import MVFBSDEJ.PaperSpec.Sec5Preamble
 import MVFBSDEJ.WellPosedness.Remarks.NoSolution
-import MVFBSDEJ.WellPosedness.Spec.NotAssumption25
-import LevyStochCalc.Driver.Existence
+import MVFBSDEJ.WellPosedness.Spec.LiMin
 
 /-!
 # The preamble of Section 5 of the well-posedness paper: proofs

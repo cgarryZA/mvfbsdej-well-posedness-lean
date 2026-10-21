@@ -4,10 +4,8 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.PaperSpec.Sec3Rem34
-import MVFBSDEJ.WellPosedness.System.PaperSolutionSolves
 import MVFBSDEJ.WellPosedness.Spec.NotAssumption22
 import MVFBSDEJ.WellPosedness.Enlarged.Bot
-import LevyStochCalc.Driver.Existence
 
 /-!
 # Remark 3.4 of the well-posedness paper: proofs
@@ -126,7 +124,7 @@ theorem rem_uniq_singular : PaperSpec.rem_uniq_singular.{u, v, w} := by
 
 /-- **The hypotheses of Remark 3.4 can be met.** Over a probability space carrying a Lévy driver
 with `d = 1` and `ν = δ₀` on `ℝ`, with `𝒢₀ = ⊥` independent of it and `T = 1`, the singular-drift
-system has, from the initial datum `0`, a tuple of `ℍ_weak` satisfying (1.1) whose components
+system has, from the initial datum `0`, a tuple of `ℍ²` satisfying (1.1) whose components
 have `𝔼 sup_{t ≤ 1} |X_t|² < ∞` and `𝔼 sup_{t ≤ 1} |Y_t|² < ∞`. -/
 theorem rem_uniq_hypotheses :
     ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)

@@ -14,7 +14,7 @@ import MVFBSDEJ.Acceptance.WitnessNonzero
 * `MVFBSDEJ.Acceptance.ae_forall_Icc_eq_of_rightCont` — processes with right-continuous
   paths that agree almost surely at every time are indistinguishable.
 * `MVFBSDEJ.Acceptance.sec3_one_null_set`, `sec3_HH_inclusion`, `sec3_HH_definite`.
-* `MVFBSDEJ.Acceptance.sec3_space_hypotheses` — a tuple of `ℍ_weak` along which the
+* `MVFBSDEJ.Acceptance.sec3_space_hypotheses` — a tuple of `ℍ²` along which the
   integrals of (1.1) exist, with `X_0 = 1` almost surely.
 -/
 
@@ -187,7 +187,7 @@ theorem lintegral_iSup_esq_eq_zero_iff {Ω : Type*} [MeasurableSpace Ω] {P : Me
     filter_upwards [h] with ω hω
     exact le_antisymm (iSup₂_le fun t ht => ((esq_eq_zero_iff _).mpr (hω t ht)).le) zero_le
 
-/-- §3, `‖·‖_ℍ` is a norm on the identified tuples. -/
+/-- §3, `‖·‖_𝕊` is a norm on the identified tuples. -/
 theorem sec3_HH_definite : PaperSpec.sec3_HH_definite.{u, v, w} := by
   intro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ T X Y Z U hΘ
   set ℱ := enlJoint 𝒢₀ D h𝒢₀
@@ -218,7 +218,7 @@ theorem sec3_HH_definite : PaperSpec.sec3_HH_definite.{u, v, w} := by
 /-- **The hypotheses of the §3 statements can be met by a nonzero tuple.** Over a probability
 space carrying a Lévy driver with `d = 1` and `ν = δ₀` on `ℝ`, with `𝒢₀ = ⊥`, `n = m = 1` and
 `T = 1`, the solution of Example 5.1(i) (`β₁ = β₂ = 1`, `σ_c = h_c = 0`) from `ξ₀ ≡ e₁` is a
-tuple of `ℍ_weak` along which the integrals of (1.1) exist, with `X_0 = 1` almost surely. -/
+tuple of `ℍ²` along which the integrals of (1.1) exist, with `X_0 = 1` almost surely. -/
 theorem sec3_space_hypotheses :
     ∃ (Ω : Type) (_ : MeasurableSpace Ω) (P : Measure Ω) (_ : IsProbabilityMeasure P)
       (D : LevyStochCalc.Driver.LevyDriver P 1 (Measure.dirac (0 : ℝ)))

@@ -15,8 +15,8 @@ on which the squared 2-Wasserstein distance is finite, so the real-valued `w2` i
 of that squared distance rather than the value `0` that an infinite squared distance produces.
 
 As for `w2`, reflexivity and symmetry are available for `w2P` here, and on a separable Banach
-space so is the triangle inequality, in `MVFBSDEJ/Law/Triangle.lean`; separation, the
-vanishing of the distance forcing the two laws to agree, is not established.
+space so are the triangle inequality, in `MVFBSDEJ/Law/Triangle.lean`, and separation, the
+vanishing of the distance forcing the two laws to agree, in `MVFBSDEJ/Law/P2Separation.lean`.
 
 ## Main definitions
 

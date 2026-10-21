@@ -5,7 +5,6 @@ Authors: Christian Garry
 -/
 import MVFBSDEJ.Law.TupleMarginal
 import MVFBSDEJ.Law.Cylindrical
-import MVFBSDEJ.Law.Triangle
 import MVFBSDEJ.WellPosedness.Robustness.LawPerturb
 import MVFBSDEJ.WellPosedness.Robustness.Regular
 

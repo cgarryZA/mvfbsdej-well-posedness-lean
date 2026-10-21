@@ -4,7 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.Law.CrowdGrad
-import MVFBSDEJ.Law.TupleMarginal
 import MVFBSDEJ.WellPosedness.Examples.FullLawBeyond
 import MVFBSDEJ.WellPosedness.Robustness.Regular
 import MVFBSDEJ.WellPosedness.Existence.AffineExample
@@ -41,7 +40,7 @@ evaluation σ-algebra on `P₂(H)`.
 * `continuous_crowdOp_margU` — `(θ, μ) ↦ A_{μ^U}(u)` is continuous on `H × P₂(H)`.
 * `coeffOrigin_dealer` — Assumption 2.2.
 * `norm_crowdOp_margU_sub_le` — `(θ, μ) ↦ A_{μ^U}(u)` is Lipschitz in the tuple and the law.
-* `coeffBorelW2_dealer`, `coeffBorel_dealer` — (2.3).
+* `coeffBorelW2_dealer` — (2.3).
 -/
 
 open MeasureTheory Filter MVFBSDEJ.Law
@@ -79,12 +78,14 @@ noncomputable abbrev dealerCoeffs (β₁ β₂ : ℝ) (σc : EuclideanSpace ℝ 
 variable {β₁ β₂ ε : ℝ} {σc : EuclideanSpace ℝ (Fin n × Fin d)}
   {hc : Lp (EuclideanSpace ℝ (Fin n)) 2 ν}
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
 /-- **At `ε = 0` the dealer system is Example 5.1(i).** -/
 theorem dealerCoeffs_zero (β₁ β₂ : ℝ) (σc : EuclideanSpace ℝ (Fin n × Fin d))
     (hc : Lp (EuclideanSpace ℝ (Fin n)) 2 ν) :
     dealerCoeffs β₁ β₂ σc hc 0 = affineCoeffs β₁ β₂ σc hc := by
   simp only [dealerCoeffs, Coeffs.perturb, crowdPert, zero_smul, neg_zero, add_zero]
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
 /-- The jump coefficient of the dealer system, `h(t, θ, μ) = h_c − β₁ u − ε A_{μ^U}(u)`. -/
 theorem dealerCoeffs_h (t : ℝ) (θ : TupleH ν n n d) (μ : P2 (TupleH ν n n d)) :
     (dealerCoeffs β₁ β₂ σc hc ε).h t θ μ = hc - β₁ • θ.2.2.2 - ε • crowdOp μ.margU.law θ.2.2.2 := by
@@ -169,10 +170,6 @@ theorem coeffBorelW2_crowdPert (T ε : ℝ) :
 Borel measurable on `[0, T] × H × P₂(H)`. -/
 theorem coeffBorelW2_dealer (T : ℝ) : CoeffBorelW2 T (dealerCoeffs β₁ β₂ σc hc ε) :=
   (coeffBorelW2_affine T).perturb (coeffBorelW2_crowdPert T ε)
-
-/-- (2.3) for the dealer system, with the evaluation σ-algebra on `P₂(H)`. -/
-theorem coeffBorel_dealer (T : ℝ) : CoeffBorel T (dealerCoeffs β₁ β₂ σc hc ε) :=
-  (coeffBorelW2_dealer T).toCoeffBorel
 
 end Measurability
 

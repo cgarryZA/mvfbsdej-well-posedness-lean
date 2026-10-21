@@ -375,6 +375,7 @@ theorem integrableOn_rate (h₁ : LinearFSDEJ D ℱ hℱW hℱN T ξ₁ b₁ X�
     (integrable_finsetSum _ fun j _ => (hB j).integral_prod_right)).add hJ.integral_prod_right
 
 
+omit [SigmaFinite ν] in
 /-- `∫_E (a − c b)² dν = ∫_E a² dν − 2 c ∫_E b a dν + c² ∫_E b² dν` for `a², ba, b²` integrable. -/
 theorem integral_sub_mul_sq_eq {a b : E → ℝ} (c : ℝ) (haa : Integrable (fun e => a e * a e) ν)
     (hba : Integrable (fun e => b e * a e) ν) (hbb : Integrable (fun e => b e * b e) ν) :

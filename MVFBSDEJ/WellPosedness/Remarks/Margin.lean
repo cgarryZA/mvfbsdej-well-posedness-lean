@@ -4,20 +4,12 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.WellPosedness.Robustness.JumpMargin
-import MVFBSDEJ.WellPosedness.System.FullRank
 
 /-!
 # Dissipativity margins obtained from Assumption 2.5
 
-Remark 2.11 of the well-posedness paper records the margins that Assumption 2.5 supplies. The
-right-hand side of (2.7) satisfies, pointwise and for every `c`,
-
-`−β̄₁ (|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²) − β̄₂ |G δX|²`
-`  = −(β̄₁ − c)(|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²) − (β̄₂ − c) |G δX|² − c Q_G`,
-
-with `Q_G = |Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖² + |G δX|²` the weighted quantity of (2.12). Both
-sides are integrable along square-integrable tuples, so (2.7) with the constants `β̄₁, β̄₂` is
-(2.12) with the constants `β̄₁ − c, β̄₂ − c` and margin `c`.
+Remark 2.11 of the well-posedness paper records the margins that Assumption 2.5 supplies. With
+`Q_G = |Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖² + |G δX|²` the weighted quantity of (2.12):
 
 **The unweighted form.** Let `m = n` and let `G` satisfy both bounds of Assumption 2.4 with a
 constant `c_G`. The backward bound on `ℝⁿ` extends column by column to `ℝ^{n×d}` and mark by mark
@@ -31,9 +23,6 @@ the unweighted margin `c / c_G` is smaller than `c` for `c > 0`.
 
 ## Main statements
 
-* `dissipation_eq_sub_gWeightSq`, `integral_dissipation_diagDiff_eq_sub` — the identity above.
-* `diagonalMonotone_iff_weightedMargin_sub` — (2.7) with `β̄₁, β̄₂` is (2.12) with
-  `β̄₁ − c, β̄₂ − c` and margin `c`.
 * `gCoerciveBackward_GZ`, `gCoerciveBackward_GU` — the backward bound of Assumption 2.4 on the
   `Z` and `U` channels.
 * `channelSq_le_mul_gWeightSq` — `Q ≤ c_G Q_G`.
@@ -47,70 +36,6 @@ open MeasureTheory Filter MVFBSDEJ.Law
 open scoped ENNReal Matrix
 
 namespace MVFBSDEJ.WellPosedness.System
-
-/-! ### The identity behind the reduced constants -/
-
-section Identity
-
-variable {HX HY HZX HZY HUX HUY : Type*}
-  [NormedAddCommGroup HX] [InnerProductSpace ℝ HX] [CompleteSpace HX]
-  [NormedAddCommGroup HY] [InnerProductSpace ℝ HY] [CompleteSpace HY]
-  [NormedAddCommGroup HZX] [InnerProductSpace ℝ HZX] [CompleteSpace HZX]
-  [NormedAddCommGroup HZY] [InnerProductSpace ℝ HZY] [CompleteSpace HZY]
-  [NormedAddCommGroup HUX] [InnerProductSpace ℝ HUX] [CompleteSpace HUX]
-  [NormedAddCommGroup HUY] [InnerProductSpace ℝ HUY] [CompleteSpace HUY]
-  (A : HX →L[ℝ] HY) (AZ : HZX →L[ℝ] HZY) (AU : HUX →L[ℝ] HUY)
-
-/-- **The right-hand side of (2.7) with the constants reduced by `c`**: for every `c`, the
-dissipation at `β₁, β₂` is that at `β₁ − c, β₂ − c` minus `c` times the weighted quantity of
-(2.12). -/
-theorem dissipation_eq_sub_gWeightSq (β₁ β₂ c : ℝ) (q : ChannelDiff HX HY HZX HZY HUX HUY) :
-    dissipation A AZ AU β₁ β₂ q
-      = dissipation A AZ AU (β₁ - c) (β₂ - c) q - c * gWeightSq A AZ AU q := by
-  simp only [dissipation, gWeightSq]
-  ring
-
-end Identity
-
-section Reduced
-
-variable {E : Type*} [MeasurableSpace E] {ν : Measure E} {n m d : ℕ}
-  {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {Θ Θ' : Ω → TupleH ν n m d}
-
-/-- **The expected dissipation with the constants reduced by `c`**: along two square-integrable
-tuples,
-`𝔼[−β₁ (…) − β₂ |G δX|²] = 𝔼[−(β₁ − c)(…) − (β₂ − c) |G δX|²] − c 𝔼 Q_G`. -/
-theorem integral_dissipation_diagDiff_eq_sub (G : Matrix (Fin m) (Fin n) ℝ) (β₁ β₂ c : ℝ)
-    (C : Coeffs ν n m d) (t : ℝ) (μ μ' : P2 (TupleH ν n m d)) (hΘ : MemLp Θ 2 P)
-    (hΘ' : MemLp Θ' 2 P) :
-    ∫ ω, dissipation (GX G) (GZ G) (GU G ν) β₁ β₂ (diagDiff C t (Θ ω) (Θ' ω) μ μ') ∂P
-      = ∫ ω, dissipation (GX G) (GZ G) (GU G ν) (β₁ - c) (β₂ - c)
-          (diagDiff C t (Θ ω) (Θ' ω) μ μ') ∂P
-        - c * ∫ ω, gWeightSq (GX G) (GZ G) (GU G ν) (diagDiff C t (Θ ω) (Θ' ω) μ μ') ∂P := by
-  rw [← integral_const_mul, ← integral_sub
-    (integrable_dissipation_diagDiff _ _ _ _ _ C t μ μ' hΘ hΘ')
-    ((integrable_gWeightSq_diagDiff _ _ _ C t μ μ' hΘ hΘ').const_mul c)]
-  exact integral_congr_ae (ae_of_all _ fun ω => dissipation_eq_sub_gWeightSq _ _ _ _ _ _ _)
-
-variable [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
-  {ℱ : Filtration ℝ ‹MeasurableSpace Ω›} [IsProbabilityMeasure P] {T α β₁ β₂ c : ℝ}
-  {G : Matrix (Fin m) (Fin n) ℝ} {C : Coeffs ν n m d}
-
-/-- **Assumption 2.5, interior, is (2.12) with reduced constants** (Remark 2.11): for every `c`,
-(2.7) with the constants `β₁, β₂` holds along the diagonal if and only if (2.12) with the
-constants `β₁ − c, β₂ − c` and margin `c` does. -/
-theorem diagonalMonotone_iff_weightedMargin_sub (c : ℝ) :
-    DiagonalMonotone ℱ P T G β₁ β₂ C
-      ↔ DiagonalMonotoneWeightedMargin ℱ P T G (β₁ - c) (β₂ - c) c C := by
-  refine ⟨fun h => ?_, fun h => ?_⟩
-  · filter_upwards [h] with t ht Θ Θ' hΘ hΘ' hΘ2 hΘ2'
-    rw [← integral_dissipation_diagDiff_eq_sub G β₁ β₂ c C t _ _ hΘ2 hΘ2']
-    exact ht Θ Θ' hΘ hΘ' hΘ2 hΘ2'
-  · filter_upwards [h] with t ht Θ Θ' hΘ hΘ' hΘ2 hΘ2'
-    rw [integral_dissipation_diagDiff_eq_sub G β₁ β₂ c C t _ _ hΘ2 hΘ2']
-    exact ht Θ Θ' hΘ hΘ' hΘ2 hΘ2'
-
-end Reduced
 
 /-! ### Assumption 2.4 on the `Z` and `U` channels -/
 

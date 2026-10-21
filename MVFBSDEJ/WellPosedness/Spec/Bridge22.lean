@@ -5,17 +5,16 @@ Authors: Christian Garry
 -/
 import MVFBSDEJ.WellPosedness.Spec.Assumptions
 import MVFBSDEJ.WellPosedness.Existence.OriginBound
-import MVFBSDEJ.WellPosedness.System.ChannelCoords
 
 /-!
 # Assumption 2.2 and its coordinate form
 
-Assumption 2.2 asks `ξ₀ ∈ L²(Ω, ℱ₀; ℝⁿ)` and the origin values of the coefficients in
-`L²(0, T)`. The existence theorems take the initial datum by its coordinates `ξ₀^i`, each square
-integrable and `ℱ₀`-measurable, and the origin values in `L²` of the closed interval `[0, T]`,
-`CoeffOrigin`. The two forms are equivalent: a vector is square integrable, or strongly
-measurable, exactly when its coordinates are square integrable, or measurable, and `(0, T)` and
-`[0, T]` differ by a null set.
+Assumption 2.2 asks `ξ₀ ∈ L²(Ω, ℱ₀; ℝⁿ)` and the origin values of the coefficients in `L²(0, T)`.
+The existence theorems take the initial datum by its coordinates `ξ₀^i`, each square integrable and
+`ℱ₀`-measurable, and the origin values in `L²` of the closed interval `[0, T]`,
+`MVFBSDEJ.WellPosedness.Existence.CoeffOrigin`. The two forms are equivalent: a vector is square
+integrable, or strongly measurable, exactly when its coordinates are square integrable, or
+measurable, and `(0, T)` and `[0, T]` differ by a null set.
 
 ## Main statements
 
@@ -23,7 +22,7 @@ measurable, exactly when its coordinates are square integrable, or measurable, a
   integrable, or strongly measurable, if and only if its coordinates are square integrable, or
   measurable.
 * `originValues_iff_coeffOrigin` — the origin values of Assumption 2.2 in `L²(0, T)` are
-  `CoeffOrigin`.
+  `MVFBSDEJ.WellPosedness.Existence.CoeffOrigin`.
 -/
 
 open MeasureTheory Filter MVFBSDEJ.Law
@@ -41,6 +40,7 @@ theorem memLp_iff_forall_coord {P : Measure Ω} {ξ : Ω → EuclideanSpace ℝ 
   · exact (EuclideanSpace.proj i : EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ).comp_memLp' h
   · simpa using memLp_toLp_of_forall (u := fun ω i => ξ ω i) h
 
+omit [MeasurableSpace Ω] in
 /-- A vector of `ℝⁿ` is strongly measurable if and only if its coordinates are measurable. -/
 theorem stronglyMeasurable_iff_forall_coord {m₀ : MeasurableSpace Ω}
     {ξ : Ω → EuclideanSpace ℝ (Fin n)} :

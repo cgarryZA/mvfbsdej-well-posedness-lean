@@ -84,6 +84,7 @@ theorem dissipation_clampAffine (t : ℝ) (θ θ' : TupleH ν 1 1 d)
 variable [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
   {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} [IsProbabilityMeasure P]
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] [IsProbabilityMeasure P] in
 /-- A continuous map of the tuple space that does not increase distances sends two
 square-integrable tuples to maps whose difference has integrable squared norm. -/
 theorem integrable_norm_sub_sq_of_lipschitz {F : Type*} [NormedAddCommGroup F]

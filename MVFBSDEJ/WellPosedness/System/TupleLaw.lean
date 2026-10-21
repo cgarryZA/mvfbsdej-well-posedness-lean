@@ -3,9 +3,9 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import Mathlib.MeasureTheory.Measure.SeparableMeasure
-import MVFBSDEJ.Law.LawP2
 import MVFBSDEJ.WellPosedness.System.Tuple
+import MVFBSDEJ.Law.LawP2
+import Mathlib.MeasureTheory.Measure.SeparableMeasure
 
 /-!
 # The tuple of coordinate processes as a random element of `H`

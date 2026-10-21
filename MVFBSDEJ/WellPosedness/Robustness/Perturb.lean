@@ -60,11 +60,6 @@ noncomputable def Coeffs.perturb (C p : Coeffs ν n m d) : Coeffs ν n m d where
   f t θ μ := C.f t θ μ + p.f t θ μ
   g := C.g
 
-/-- The terminal function of the perturbed system is that of the baseline. -/
-@[simp]
-theorem Coeffs.perturb_g (C p : Coeffs ν n m d) : (C.perturb p).g = C.g :=
-  rfl
-
 /-- **The interior pairing of a perturbed system splits** into the baseline bracket and the
 perturbation bracket, for any three coupling operators. -/
 theorem interiorPairing_diagDiff_perturb

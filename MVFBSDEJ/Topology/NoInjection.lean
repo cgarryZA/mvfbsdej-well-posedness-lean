@@ -3,13 +3,8 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.InnerProductSpace.Calculus
-import Mathlib.Analysis.InnerProductSpace.PiL2
-import Mathlib.Analysis.SpecialFunctions.Sqrt
-import Mathlib.LinearAlgebra.Dimension.Free
 import Mathlib.LinearAlgebra.Lagrange
-import Mathlib.LinearAlgebra.Matrix.Polynomial
 import Mathlib.MeasureTheory.Function.Jacobian
 import Mathlib.Topology.ContinuousMap.StoneWeierstrass
 import Mathlib.Topology.MetricSpace.Contracting

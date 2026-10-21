@@ -5,7 +5,6 @@ Authors: Christian Garry
 -/
 import MVFBSDEJ.WellPosedness.Stability.PairDiff
 import LevyStochCalc.Brownian.MultidimItoCongr
-import LevyStochCalc.Poisson.CompensatedCongr
 
 /-!
 # Integrands that differ by zero energy

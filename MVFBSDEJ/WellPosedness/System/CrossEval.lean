@@ -26,8 +26,8 @@ coefficients gives. The interior terms are processes, whose joint and progressiv
 hypothesis, with a jointly measurable, marked progressively measurable representative `γ` of
 `e ↦ h¹(s, Θ²_s, e, μ²_s)` in `L²(ν)`. It holds along every progressive tuple, with a canonical `γ`,
 when the coefficients of system 1 are jointly measurable with the evaluation σ-algebra on `P₂(H)`
-(`Existence.CoeffBorel.crossEval`). Given measurability, `q` is square integrable exactly when the
-coefficient-difference terms of the right-hand side of (3.1) are finite.
+(`MVFBSDEJ.WellPosedness.Existence.CoeffBorel.crossEval`). Given measurability, `q` is square
+integrable exactly when the coefficient-difference terms of the right-hand side of (3.1) are finite.
 
 ## Main definitions
 
@@ -78,6 +78,7 @@ theorem markedEnergy_sub_comm (a b : Ω → ℝ → E → ℝ) :
 
 variable [IsProbabilityMeasure P] [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
 /-- **The terminal value is measurable** when `g` is Borel measurable in the state: for
 `X_T` measurable for the time-`T` field of a filtration, so is `ω ↦ g(X_T(ω), Law X_T)`,
 coordinatewise. -/

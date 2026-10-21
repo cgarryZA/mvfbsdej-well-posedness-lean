@@ -5,7 +5,6 @@ Authors: Christian Garry
 -/
 import MVFBSDEJ.WellPosedness.Existence.TerminalRep
 import MVFBSDEJ.WellPosedness.System.Coefficients
-import LevyStochCalc.BSDEJ.DriftLeg
 
 /-!
 # The linear backward equation with a random drift

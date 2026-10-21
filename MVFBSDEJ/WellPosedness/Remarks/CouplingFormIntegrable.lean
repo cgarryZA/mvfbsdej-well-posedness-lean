@@ -5,6 +5,7 @@ Authors: Christian Garry
 -/
 import MVFBSDEJ.WellPosedness.Remarks.CouplingForm
 import MVFBSDEJ.WellPosedness.Spec.Bridge25
+import Mathlib.MeasureTheory.Function.SpecialFunctions.Inner
 
 /-!
 # Assumption 2.5 as printed, in coupling form

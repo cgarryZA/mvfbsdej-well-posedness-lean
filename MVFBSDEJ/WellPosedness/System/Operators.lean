@@ -22,9 +22,10 @@ between Hilbert spaces is the operator induced by `L*`, since
 
 `⟪L ∘ u, v⟫ = ∫_E ⟪L u(e), v(e)⟫ ν(de) = ∫_E ⟪u(e), L* v(e)⟫ ν(de) = ⟪u, L* ∘ v⟫`.
 
-In coordinates, `|G x|² ≤ ‖G‖² |x|²` and `|Gᵀ y|² ≤ ‖G‖² |y|²` with `‖G‖` the operator norm of
-`GX`, and the two coercivity bounds of Assumption 2.4 on `GX` are the coordinate bounds
-`Stability.ForwardCoercive` and `Stability.BackwardCoercive`.
+In coordinates, `|G x|² ≤ ‖G‖² |x|²` and `|Gᵀ y|² ≤ ‖G‖² |y|²` with `‖G‖` the operator norm of `GX`,
+and the two coercivity bounds of Assumption 2.4 on `GX` are the coordinate bounds
+`MVFBSDEJ.WellPosedness.Stability.ForwardCoercive` and
+`MVFBSDEJ.WellPosedness.Stability.BackwardCoercive`.
 
 ## Main definitions
 
@@ -38,8 +39,7 @@ In coordinates, `|G x|² ≤ ‖G‖² |x|²` and `|Gᵀ y|² ≤ ‖G‖² |y|�
 * `adjoint_GX`, `adjoint_GZ`, `adjoint_GU` — the adjoints are the operators of `Gᵀ`.
 * `GX_toLp`, `adjoint_GX_toLp`, `GZ_toLp_apply`, `adjoint_GZ_toLp_apply`, `coeFn_GU`,
   `coeFn_adjoint_GU` — the operators and their adjoints in coordinates.
-* `mulVec_dotProduct_le`, `Stability.transpose_mulVec_dotProduct_le` — `|G x|² ≤ ‖G‖² |x|²` and
-  `|Gᵀ y|² ≤ ‖G‖² |y|²`.
+* `mulVec_dotProduct_le` — `|G x|² ≤ ‖G‖² |x|²`.
 * `gCoerciveForward_GX_iff`, `gCoerciveBackward_GX_iff` — Assumption 2.4 in coordinates.
 -/
 

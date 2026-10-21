@@ -3,7 +3,6 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import LevyStochCalc.Driver.JointComplement
 import MVFBSDEJ.WellPosedness.MarkCoding.Representation
 
 /-!
@@ -299,32 +298,6 @@ theorem pairing_char_joint_mul_eq_zero (hd : 0 < d)
     simp [hB]
   · exact pairing_char_joint_mul_eq_zero_of_nonempty W N ℱ hd hℱi hℱB hℱN hℱ0 hnull hT hZ2 hZm
       hperp hZcomp hgm hgb hZg F G w v
-
-/- For the constant weight `g = 1` the pairing reduces to that of a weight of mean zero with
-the product characters. -/
-example (hd : 0 < d)
-    (hℱi : ∀ i, IsBrownianFiltration (W.W i) ℱ)
-    (hℱB : ∀ {c : Fin d → ℝ} (hc : ∑ i, c i ^ 2 = 1),
-      IsBrownianFiltration (MultidimBrownianMotion.combineBM W hc) ℱ)
-    (hℱN : IsPoissonFiltration N ℱ)
-    (hℱ0 : ∀ t : ℝ, t ≤ 0 → ℱ 0 ≤ ℱ t)
-    (hnull : ∀ s : Set Ω, MeasurableSet s → P s = 0 → MeasurableSet[ℱ 0] s)
-    (hT : 0 < T) {Z : Ω → ℝ} (hZ2 : MemLp Z 2 P) (hZm : AEStronglyMeasurable[ℱ T] Z P)
-    (hperp : ∀ i, PerpItoIntegrals (W.W i) ℱ (hℱi i) fun ω => (Z ω : ℂ))
-    (hZcomp : ∀ G' : MarkedHorizonIntegrand P ν ℱ T, ∫ ω, Z ω * G'.integral N hℱN ω ∂P = 0)
-    (hZ0 : ∫ ω, Z ω ∂P = 0) (F : Finset (Fin d × Set.Iic T))
-    (G : Finset (Poisson.WindowSet E ν T)) (w : F → ℝ) (v : G → ℝ) :
-    ∫ ω, Complex.exp (((∑ p : F, (W.W p.1.1).W (p.1.2 : ℝ) ω * w p : ℝ) : ℂ) * Complex.I)
-      * Complex.exp (((∑ B : G,
-          (N.N ω ((B : Poisson.WindowSet E ν T) : Set (ℝ × E))).toReal * v B : ℝ) : ℂ)
-        * Complex.I) * ((Z ω : ℝ) : ℂ) ∂P = 0 := by
-  have hZg : ∫ ω, ((Z ω : ℝ) : ℂ) * (fun _ => (1 : ℂ)) ω ∂P = 0 := by
-    simp only [mul_one]
-    rw [integral_complex_ofReal, hZ0, Complex.ofReal_zero]
-  have h := pairing_char_joint_mul_eq_zero W N ℱ hd hℱi hℱB hℱN hℱ0 hnull hT hZ2 hZm hperp
-    hZcomp (g := fun _ => (1 : ℂ)) stronglyMeasurable_const (Mg := 1)
-    (fun _ => by rw [norm_one]) hZg F G w v
-  simpa only [mul_one] using h
 
 end Characters
 

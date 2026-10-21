@@ -136,7 +136,7 @@ theorem uLift_half_add {ηc ηx : E → ℝ} (hcm : MemLp ηc 2 ν) (hxm : MemLp
   rw [h1, h2, Pi.smul_apply, h3, Pi.add_apply, h4, Pi.smul_apply, h5, h6]
   refine PiLp.ext fun k => ?_
   obtain rfl : k = 0 := Subsingleton.elim _ _
-  simp [PiLp.single_apply]
+  simp
   ring
 
 omit [MeasurableSpace Ω] in
@@ -381,8 +381,8 @@ theorem Solves.dealerLinear {Xs : Fin 1 → ℝ → Ω → ℝ} {Y : Fin 1 → �
       fun _ => (hcm.add (hxm.mul_const _)).const_mul _
     filter_upwards [hωr, hrep'] with e he1 he2
     have he := congrArg (fun x : EuclideanSpace ℝ (Fin 1) => x 0) (he1.trans he2.symm)
-    simp only [PiLp.toLp_apply] at he
-    simp only [jumpProc, Set.indicator_of_mem hIcc, dealerZeroU, Set.indicator_of_mem hIoc]
+    simp only at he
+    simp only [jumpProc, Set.indicator_of_mem hIcc, Set.indicator_of_mem hIoc]
     rw [he]
     change 1 / 2 * (ηc e + ηx e * Xs 0 s ω)
       - 1 / 2 * (ηc e + ηx e * leftLimProc (fun _ : Fin 1 => Xs 0) 0 s ω) = 0

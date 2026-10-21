@@ -44,6 +44,7 @@ variable {HX HY HZY HUY : Type*} [NormedAddCommGroup HX] [InnerProductSpace ℝ 
   [SecondCountableTopology HUY]
   {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
+omit [NormedSpace ℝ F] in
 /-- A map from the tuple space with a Lipschitz bound for the Hilbert norm is strongly
 measurable. -/
 theorem stronglyMeasurable_of_norm_sub_le_toL2 {φ : Tuple HX HY HZY HUY → F} {K : ℝ}
@@ -59,6 +60,7 @@ theorem stronglyMeasurable_of_norm_sub_le_toL2 {φ : Tuple HX HY HZY HUY → F} 
       _ = 2 * K * ‖θ - θ'‖ := by ring
   exact hL.continuous.stronglyMeasurable
 
+omit [NormedSpace ℝ F] in
 /-- A map from the tuple space with a Lipschitz bound for the Hilbert norm is integrable against
 every law of finite second moment. -/
 theorem integrable_of_norm_sub_le_toL2 {φ : Tuple HX HY HZY HUY → F} {K : ℝ} (hK : 0 ≤ K)

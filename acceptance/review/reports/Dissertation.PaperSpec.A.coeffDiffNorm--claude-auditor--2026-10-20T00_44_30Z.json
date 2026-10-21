@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "def:Dissertation.PaperSpec.A.coeffDiffNorm",
+  "kind": "def",
+  "name": "Dissertation.PaperSpec.A.coeffDiffNorm",
+  "lean": [
+   "Dissertation.PaperSpec.A.coeffDiffNorm"
+  ],
+  "claims": [
+   "A:eq:coeffdiff"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-858cd49eefc5",
+  "project_commit": "6d403c197bfb10fe8808933c6e525ee0ae544fb1",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "1d032902209e76e50e3f27b76888b87d",
+  "fingerprint": "pl-fp-v1:7c26034f9edf2415fdefd8745d6aa29d3dde63e96a03cbe27f8501d57db71adb",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "Reading of the notion behind coeffDiffNorm: the coefficient-difference magnitude S_s of Step 1\nof the contraction in the proof of Lemma 4.2 (manuscript/paper/sections/04-proof-wellposedness.tex,\nlines 312-331), used in (4.9).\n\nPaper's notion: for two trial tuples Theta^1, Theta^2 in S with Borel law flows mu^{Theta^k}_s\n(Lemma A.1),\n  delta psi_s := psi(s, Theta^1_s, mu^{Theta^1}_s) - psi(s, Theta^2_s, mu^{Theta^2}_s),\n  psi in {b, sigma, h, f},\n  S_s := |delta b_s| + |delta sigma_s|_F + ||delta h_s||_{L^2(nu)} + |delta f_s|,\na nonnegative function of (s, omega). |.| is the Euclidean norm on R^n, R^m, |.|_F the Frobenius\nnorm on R^{n x d}, ||.||_{L^2(nu)} the norm of L^2(nu; R^n) (for h, which takes values in\nL^2(nu;R^n); if h is represented pointwise in e, the norm is (int_E |delta h(e)|^2 nu(de))^{1/2}).\nFor h the paper allows evaluation at the left-limit tuple (Theta_s^-, mu^{Theta,-}_s) or at\n(Theta_s, mu^Theta_s): the two agree dt x dP-a.e. (text after (4.7)), and S only enters\ndt x dP-integrals.\n\nWhat a faithful Lean definition must be: a function of (the two tuples or their values at s, the\ntwo laws or law flows, the coefficients, s, omega) returning the real number above, with exactly\nthese four summands, the Euclidean / Frobenius / L^2(nu) norms (not sup norms), and the law\narguments the (Borel) laws of Theta^k_s (or Theta^{k,-}_s for h) under P, in P_2(\\mathcal H).\nEdge cases: if h is given as a pointwise function of e and the L^2(nu) norm is a Bochner or\nlintegral expression, a non-square-integrable difference must not be sent to a junk value that\nchanges the meaning (for coefficients with values in L^2(nu) this cannot happen; for a pointwise\nrepresentation the norm should be the ENNReal lintegral or the L^2 class norm); the norm of a\nmatrix must be Frobenius (Lean's default operator/sup norm on matrices would differ). The\nargument order (Theta^1 minus Theta^2) is immaterial for norms.",
+  "locked_at": "2026-10-20T00:30:26Z"
+ },
+ "comparison": {
+  "text": "Comparison of Dissertation.PaperSpec.A.coeffDiffNorm (Dissertation/PaperSpec/A/Sec4Frozen.lean)\nwith S_s of Step 1 of the contraction in the proof of Lemma 4.2\n(manuscript/paper/sections/04-proof-wellposedness.tex, lines 312-326: delta psi_s at lines\n315-317, S_s at line 326). That passage defines the notion.\n\ncoeffDiffNorm P C Theta1 Theta2 s omega :=\n  ||b(s, Theta1 s omega, lawP2 P (Theta1 s)) - b(s, Theta2 s omega, lawP2 P (Theta2 s))||_e\n  + same for sigma, h, f, in [0, infinity].\n- Four summands b, sigma, h, f: as printed.\n- Norms: b, f take values in EuclideanSpace (Euclidean norm), sigma in EuclideanSpace on\n  Fin n x Fin d (Frobenius norm), h in Lp(EuclideanSpace R^n, 2, nu) (L^2(nu; R^n) norm). As\n  printed; no sup norm.\n- Arguments: the H-valued values Theta^k_s(omega) and the laws lawP2 P (Theta^k_s), i.e. Law(Theta^k_s)\n  when Theta^k_s is square integrable and the Dirac mass at 0 otherwise. The paper uses the Borel\n  representative mu^{Theta^k}_s of Lemma A.1, equal to Law(Theta^k_s) for a.e. s; for a trial in S,\n  Theta^k_s is square integrable for a.e. s, so the two agree off a Lebesgue-null set of times,\n  which is all that matters as S_s enters only dt x dP-integrals.\n- h at (Theta_s, mu_s) rather than at the left-limit tuple: the text after (4.7) allows either form\n  inside dt x dP integrals.\n- [0, infinity]-valued (sum of extended norms), which is the same nonnegative real.\n\nRepresentation choices (harmless): extended-real value; pointwise law (with a Dirac junk value off\nL^2) in place of the Borel law flow; h at (Theta_s, mu_s); the definition takes arbitrary H-valued\nprocesses (it is applied to tupleAt of the trials, whose U channel is the L^2(nu) class of the\ncoordinates, 0 off L^2(nu), a dt x dP-null set for a tuple of S).",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-20T00:43:39Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices, each harmless:\n(1) The value lies in [0, infinity] as a sum of extended norms. It is the same nonnegative number.\n(2) The law argument is lawP2 P (Theta^k_s): the actual law when Theta^k_s is square integrable,\nand the Dirac mass at 0 otherwise. The paper uses the Borel representative of Lemma A.1. For a\ntuple of S the two agree for a.e. s, and S_s enters only dt x dP-integrals.\n(3) h is evaluated at (Theta_s, mu_s) rather than at the left-limit tuple, which the text after\n(4.7) allows.\n(4) The norms are Euclidean on R^n and R^m, Frobenius on n x d matrices (EuclideanSpace on index\npairs) and L^2(nu) for h, as printed."
+ },
+ "author_review": {
+  "shown_at": "2026-10-20T00:43:45Z",
+  "disagreements": "No disagreement. Two harmless conventions the review leaves implicit. First, the law argument is\nthe pointwise law lawP2 (a Dirac mass at 0 off L^2), not the Borel representative of Lemma A.1;\nthey agree for a.e. s for a tuple of S, and S_s enters only dt x dP-integrals. Second, h is\nevaluated at (Theta_s, mu_s) rather than at the left-limit tuple, which the text after (4.7)\npermits."
+ },
+ "submitted_at": "2026-10-20T00:44:30Z",
+ "issue_draft": null
+}

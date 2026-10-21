@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.sec4_supremum_criterion",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.sec4_supremum_criterion",
+  "lean": [
+   "Dissertation.PaperSpec.A.sec4_supremum_criterion"
+  ],
+  "claims": [
+   "A:sec4:supremum-criterion"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-acf2a57b4863",
+  "project_commit": "d3e594defeeeb94a6d05c33c666bcb870d584302",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba1f588c2071f5242ff",
+  "fingerprint": "pl-fp-v1:668939571700f8b456579ffca8e5ba6bd4a5ecc7ce80e70d20901f671b16ef0c",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "# Reading: sec4_supremum_criterion — Section 4 preamble (\"supremum criterion\")\n\nPassage (04-proof-wellposedness.tex, preamble): \"By localisation and dominated convergence, a\ncadlag local martingale whose running supremum is integrable has zero-mean increments (the\nsupremum criterion below).\" Used for real-valued stochastic integrals M on [0,T] w.r.t. the\nstanding filtration, to get E[M_T - M_t] = 0.\n\nFaithful statement. Setting: a filtered probability space (the standing one, or any filtered\nprobability space; the usual conditions are available in the paper), horizon T > 0 (or time\nset [0,infinity) restricted to [0,T]). M : [0,T] x Omega -> R (real-valued; vector-valued is a\nharmless broadening) adapted with cadlag paths, a local martingale: there are stopping times\ntau_k increasing with tau_k -> infinity (or >= T eventually) a.s. such that each stopped process\nM^{tau_k} is a martingale (a variant with M - M_0 stopped is equivalent here since the hypothesis\nmakes M_0 integrable). Hypothesis: E sup_{t <= T} |M_t| < infinity (the running supremum is\nintegrable). Conclusion: zero-mean increments, E[M_t - M_s] = 0 for all 0 <= s <= t <= T\n(at least E[M_T - M_t] = 0 for all t <= T, which is the use). A stronger conclusion (M is a true\nmartingale on [0,T]) is acceptable as broader.\n\nFaithfulness points: the local-martingale notion must be the genuine one (localising sequence\nof stopping times tending to infinity / exhausting [0,T], stopped processes martingales); the\nsupremum must be over the whole interval [0,T] (measurable or as an lintegral/upper integral);\n\"zero-mean increments\" must be the expectation of the increment, with integrability of M_t\nderivable (it is, from the supremum); the cadlag hypothesis may be dropped (broader) only if the\nstatement is still true. The BDG sentence is not part of this clause.",
+  "locked_at": "2026-10-20T11:09:24Z"
+ },
+ "comparison": {
+  "text": "# Decision: spec:Dissertation.PaperSpec.A.sec4_supremum_criterion (Dissertation/PaperSpec/A/Sec4Supremum.lean)\n\nVerdict: faithful with representation choices.\n\nComparison with the locked reading.\n- Setting: any probability space (Ω, P) with a filtration 𝓕 indexed by ℝ≥0 (no usual conditions\n  needed). The passage states the criterion for càdlàg local martingales in general (it is then\n  applied on the standing basis), so a general filtered space is what it says; time [0, ∞) with a\n  horizon T >= 0 represents the paper's [0, T] (a process on [0, T] extends by stopping at T,\n  keeping the local-martingale property and the running supremum).\n- M real-valued, `Adapted 𝓕 M` (each M_t is 𝓕_t-measurable).\n- Càdlàg: almost surely, at every t, right-continuous (`ContinuousWithinAt … (Set.Ici t) t`) and\n  with a left limit (`Tendsto … (𝓝[<] t) (𝓝 l)` for some l; vacuous at t = 0). \"Almost surely\n  càdlàg\" is the usual reading and no stronger than \"càdlàg\".\n- Local martingale: Mathlib's `Locally (fun X => Martingale X 𝓕 P) 𝓕 M P`\n  (Mathlib/Probability/Process/LocalProperty.lean): there is a localizing sequence of stopping\n  times (a.s. nondecreasing, a.s. tending to ⊤) such that each stopped process of\n  1_{τ_n > 0} M is a martingale. This is the standard definition (the indicator handles a possibly\n  non-integrable M_0, the usual convention); Mathlib's `Martingale` is strong adaptedness plus the\n  conditional-expectation identity, which forces integrability, so it is the genuine notion.\n- Hypothesis: `∫⁻ ω, ⨆ u ≤ T, ‖M u ω‖ₑ ∂P < ∞`, E sup_{u <= T} |M_u| < ∞. The lower Lebesgue\n  integral of a possibly non-measurable supremum; since the paths are a.s. càdlàg the supremum\n  agrees a.s. with a countable one and the lintegral respects a.e. equality, so this is the\n  genuine expectation of the running supremum.\n- Conclusion: M_t integrable for t <= T and E[M_t - M_s] = 0 for s <= t <= T: zero-mean\n  increments (the use in §4 is E[M_T - M_t] = 0). The integrability conjunct is a by-product the\n  paper takes for granted.\nRepresentation choices: time index ℝ≥0 with a horizon T instead of [0, T]; the a.s. càdlàg\nencoding; Mathlib's `Locally` convention for local martingales; the supremum as a lintegral; the\nadded integrability conclusion. None changes the meaning.\n\nCurrent text. Read at 1f67672 (§4 preamble: \"By localisation and dominated convergence, a\ncàdlàg local martingale whose running supremum is integrable has zero-mean increments (the\nsupremum criterion below)\"). I have not seen the earlier text, so I cannot say what changed; the\nproposition states the current sentence, for real-valued processes, which is how §4 uses it (the\nscalar processes M^W, M^1 of Lemma 4.1 and the four local martingales of the display eq:bdg4).\n\nWitness. `Dissertation.Acceptance.A.sec4_supremum_criterion_hypotheses` (Dissertation/\nAcceptance/A/Sec4Supremum.lean): on Bool with a fair coin, the filtration trivial before time 1 and\nfull from time 1, M_t = ξ 1_{t >= 1} with ξ = ±1, T = 2: adapted, càdlàg, a (local) martingale\nwith integrable running supremum, and M_T ≠ M_0 on every path. A nonconstant genuine instance;\nthe paper's instances are stochastic integrals on the standing basis, but the criterion is stated\nfor general càdlàg local martingales, so this is an instance the passage covers.\n\nCoverage (claim A:sec4:supremum-criterion, one clause). The passage region also states the BDG\ninequality at p = 1 and p = 2 with one constant, Doob's constant 4, and that BDG for càdlàg local\nmartingales covers the compensated-Poisson martingales; the claim's scope note records these as\ncited work (He, Wang and Yan), not stated, which I accept: they are statements of a cited theorem\nand of its applicability. The one clause states the only mathematical assertion the passage makes\non its own account; it states nothing more, under the hypotheses the passage gives.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-20T11:23:01Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "faithful with representation choices",
+  "detail": "Representation choices, each harmless:\n1. Time ℝ≥0 with a horizon T >= 0 instead of the interval [0, T]; a process on [0, T] extends\n   past T by stopping, keeping both hypotheses, and the conclusion concerns only s <= t <= T.\n2. Càdlàg is \"almost surely right-continuous with left limits at every time\".\n3. \"Local martingale\" is Mathlib's `Locally (Martingale · 𝓕 P)`: a localizing sequence with\n   each stopped process of 1_{τ_n > 0} M a martingale (the standard convention for a possibly\n   non-integrable M_0); Mathlib's martingales are integrable.\n4. The integrability of the running supremum is a lintegral of the (a.s. countable) supremum.\n5. The conclusion adds the integrability of each M_t, t <= T, a by-product of the hypothesis."
+ },
+ "author_review": {
+  "shown_at": "2026-10-20T11:23:28Z",
+  "disagreements": "none"
+ },
+ "submitted_at": "2026-10-20T11:24:08Z",
+ "issue_draft": null
+}

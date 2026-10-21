@@ -7,7 +7,6 @@ import MVFBSDEJ.PaperSpec.Sec5DealerActive
 import MVFBSDEJ.Acceptance.Sec5Dealer
 import MVFBSDEJ.WellPosedness.Examples.Dealer.Riccati
 import MVFBSDEJ.WellPosedness.Examples.Dealer.Depends
-import MVFBSDEJ.WellPosedness.Examples.Dealer.MarkSizes
 
 /-!
 # Example 5.5 of the well-posedness paper: the interaction is active, proofs
@@ -41,7 +40,7 @@ theorem ex_dealer_riccati : PaperSpec.ex_dealer_riccati := by
   exact ⟨exists_pos_riccati hβ₁ hβ₂, fun p q hp hpT hq hqT =>
     riccati_unique hβ₁.le hp hq (hpT.trans hqT.symm)⟩
 
-/-- For `T > 0`, `β₁, β₂ > 0` and `ε ≥ 0`, a solution of (1.1) in `ℍ` with the coefficients of
+/-- For `T > 0`, `β₁, β₂ > 0` and `ε ≥ 0`, a solution of (1.1) in `𝕊` with the coefficients of
 Example 5.5 is one in the sense of `PaperSolutionEnl`, every path of `X` and of `Y` having left
 limits on `(0, T]`. -/
 theorem ex55_paperSolutionEnl {Ω : Type u} {𝒢₀ : MeasurableSpace Ω} [mΩ : MeasurableSpace Ω]
@@ -78,13 +77,9 @@ theorem ex_dealer_inert : PaperSpec.ex_dealer_inert.{u, v, w} := by
   rw [ex55Coeffs_eq]
   exact h5 ε'
 
-/-- The signed size `ς q` of the mark of the specialisation. -/
-private theorem signedSize_eq (e : DealerMark) :
-    signedSize e = (if e.1 then 1 else -1) * (e.2 : ℝ) := rfl
-
 /-- The constants of the specialisation: `c_{±1} = (2 − ϱ)/2` gives
 `(c_{+1} + c_{−1}) / (2 − ϱ) = 1` and `c_{+1} − c_{−1} = 0`. -/
-private theorem spec_moments {ϱ : ℝ} (hϱ0 : 0 < ϱ) (hϱ2 : ϱ < 2) :
+private theorem spec_moments {ϱ : ℝ} (_hϱ0 : 0 < ϱ) (hϱ2 : ϱ < 2) :
     ∫ e, ((if e.1 then 1 else -1) * (e.2 : ℝ)) ^ 2 ∂PaperSpec.ex55Marks ϱ = 1
       ∧ ∫ e, (e.2 : ℝ) ^ 2 ∂PaperSpec.ex55Marks ϱ = 1
       ∧ ∫ e, (if e.1 then 1 else -1) * (e.2 : ℝ) * e.2 ∂PaperSpec.ex55Marks ϱ = 0 := by
@@ -135,7 +130,7 @@ private theorem spec_data {ϱ : ℝ} (hϱ0 : 0 < ϱ) (hϱ2 : ϱ < 2)
 /-- `σ_c = 1` in the coordinates of `ℝ^{1 × 1}`. -/
 private theorem single_one_apply :
     (EuclideanSpace.single (0, 0) (1 : ℝ) : EuclideanSpace ℝ (Fin 1 × Fin 1)) (0, 0) = 1 := by
-  simp [PiLp.single_apply]
+  simp
 
 /-- Example 5.5, the linear equation, the solution at `ε = 0` and its moments. -/
 theorem ex_dealer_zero : PaperSpec.ex_dealer_zero.{u, w} := by

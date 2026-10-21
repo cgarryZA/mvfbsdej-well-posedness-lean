@@ -9,19 +9,21 @@ import MVFBSDEJ.WellPosedness.System.PaperUniqueness
 /-!
 # Theorem 3.5 for solutions in the sense of the paper
 
-Theorem 3.5 of the well-posedness paper asserts that the system (1.1) has a solution in `ℍ²`,
+Theorem 3.5 of the well-posedness paper asserts that the system (1.1) has a solution in `𝕊`,
 unique in the sense of Theorem 3.3: `X`, `Y` indistinguishable on `[0, T]` and `Z`, `U` equal in
 energy. `exists_solves_and_uniqueness_of_rank_of_diagonalLipschitzH` states it for the predicate
 `Solves`; this file states it for the paper's solution notion `PaperSolution`, under the same
 hypotheses.
 
-* **Existence.** A solution of `Solves` becomes a solution in the sense of the paper after
-  passing to predictable versions of `(Z, U)` (`Solves.exists_paperSolution`), which needs the
-  measurability (2.5) along every progressive tuple, a consequence of (2.3)
-  (`CoeffBorelW2.toCoeffBorel`, `CoeffBorel.coeffRegular`).
+* **Existence.** A solution of `Solves` becomes a solution in the sense of the paper after passing
+  to predictable versions of `(Z, U)`
+  (`MVFBSDEJ.WellPosedness.System.Solves.exists_paperSolution`), which needs the measurability
+  (2.5) along every progressive tuple, a consequence of (2.3) (`CoeffBorelW2.toCoeffBorel`,
+  `CoeffBorel.coeffRegular`).
 * **Uniqueness.** A solution in the sense of the paper, extended off `[0, T]`, is a solution of
-  `Solves` with the same `Z`, `U` and the same values on `[0, T]` (`PaperSolution.exists_solves`),
-  so the uniqueness of `Solves` applies (`PaperSolution.uniqueness_of_solves_uniqueness`).
+  `Solves` with the same `Z`, `U` and the same values on `[0, T]`
+  (`MVFBSDEJ.WellPosedness.System.PaperSolution.exists_solves`), so the uniqueness of `Solves`
+  applies (`MVFBSDEJ.WellPosedness.System.PaperSolution.uniqueness_of_solves_uniqueness`).
 
 ## Main statements
 

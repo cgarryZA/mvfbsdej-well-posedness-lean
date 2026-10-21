@@ -27,8 +27,8 @@ conditions quantified over `𝒟_t`.
 ## Main statements
 
 * `mk_mem_diagonalInputs` — a tuple together with its law lies in `𝒟_t`.
-* `diagonalMonotone_iff_diagonalInputs`, `diagonalLipschitzH_iff_diagonalInputs` — Assumptions
-  2.5 and 2.3 along the diagonal, as conditions at pairs of elements of `𝒟_t`.
+* `diagonalLipschitzH_iff_diagonalInputs` — Assumption 2.3 along the diagonal, as a condition at
+  pairs of elements of `𝒟_t`.
 -/
 
 open MeasureTheory Filter MVFBSDEJ.Law
@@ -54,23 +54,6 @@ theorem mk_mem_diagonalInputs {Θ : Ω → TupleH ν n m d} (hΘ : StronglyMeasu
   ⟨hΘ, hΘ2, rfl⟩
 
 variable {T β₁ β₂ L : ℝ} {G : Matrix (Fin m) (Fin n) ℝ} {C : Coeffs ν n m d}
-
-/-- **Assumption 2.5, interior, over `𝒟_t`**: (2.7) along the diagonal holds if and only if, for
-almost every `t ∈ [0, T]`, it holds at every pair `(Θ, μ), (Θ', μ')` of elements of `𝒟_t`. -/
-theorem diagonalMonotone_iff_diagonalInputs :
-    DiagonalMonotone ℱ P T G β₁ β₂ C ↔ ∀ᵐ t ∂(volume.restrict (Set.Icc (0 : ℝ) T)),
-      ∀ p ∈ diagonalInputs ν n m d ℱ P t, ∀ p' ∈ diagonalInputs ν n m d ℱ P t,
-        ∫ ω, interiorPairing (GX G) (GZ G) (GU G ν) (diagDiff C t (p.1 ω) (p'.1 ω) p.2 p'.2) ∂P
-          ≤ ∫ ω, dissipation (GX G) (GZ G) (GU G ν) β₁ β₂
-            (diagDiff C t (p.1 ω) (p'.1 ω) p.2 p'.2) ∂P := by
-  refine eventually_congr (Eventually.of_forall fun t => ⟨fun h p hp p' hp' => ?_,
-    fun h Θ Θ' hΘ hΘ' hΘ2 hΘ2' =>
-      h (Θ, lawP2 P Θ) (mk_mem_diagonalInputs hΘ hΘ2) (Θ', lawP2 P Θ')
-        (mk_mem_diagonalInputs hΘ' hΘ2')⟩)
-  obtain ⟨hs, hL, he⟩ := hp
-  obtain ⟨hs', hL', he'⟩ := hp'
-  rw [he, he']
-  exact h _ _ hs hs' hL hL'
 
 /-- **Assumption 2.3, interior, with the Hilbert-norm `W₂`, over `𝒟_t`**: the diagonal Lipschitz
 bound holds if and only if, for almost every `t ∈ [0, T]`, it holds almost surely at every pair

@@ -4,6 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.PaperSpec.AppA
+import Mathlib.AlgebraicTopology.SimplexCategory.Basic
 
 /-!
 # Lemma A.1 of the well-posedness paper: proofs

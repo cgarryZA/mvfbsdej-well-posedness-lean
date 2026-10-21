@@ -4,21 +4,19 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.PaperSpec.Setting
-import MVFBSDEJ.WellPosedness.Spec.Assumptions
 import MVFBSDEJ.WellPosedness.Spec.Bridge22
 import MVFBSDEJ.WellPosedness.Existence.CoeffPredictable
 import MVFBSDEJ.WellPosedness.Existence.PaperAdmissible
-import MVFBSDEJ.WellPosedness.System.PaperSolutionForcedSolves
 
 /-!
 # The solutions of the well-posedness paper and those of the implementation
 
-A solution of (1.1) in `ℍ` (`PaperSpec.Solution`) is a solution in `ℍ_weak` with
+A solution of (1.1) in `𝕊` (`PaperSpec.Solution`) is a solution in `ℍ²` with
 `𝔼 sup_{t ≤ T} |X_t|² < ∞` and `𝔼 sup_{t ≤ T} |Y_t|² < ∞`; its drift and driver integrals are
-pathwise. The implementation's solutions (`PaperSolutionEnl`, `PaperSolutionForced`) also ask the
-drift and driver processes to have finite energy on `[0, T]`. Under (2.3) and Assumptions 2.2–2.3
-the two notions coincide, since the coefficient processes along a tuple of `ℍ_weak` then have finite
-energy ((4.2)).
+pathwise. The implementation's solutions (`MVFBSDEJ.WellPosedness.Existence.PaperSolutionEnl`,
+`MVFBSDEJ.WellPosedness.System.PaperSolutionForced`) also ask the drift and driver processes to
+have finite energy on `[0, T]`. Under (2.3) and Assumptions 2.2–2.3 the two notions coincide, since
+the coefficient processes along a tuple of `ℍ²` then have finite energy ((4.2)).
 
 ## Main statements
 
@@ -50,7 +48,7 @@ variable {Ω : Type u} {𝒢₀ : MeasurableSpace Ω} [mΩ : MeasurableSpace Ω]
   {qf : Fin m → Ω → ℝ → ℝ} {qg : Fin m → Ω → ℝ}
 
 /-- For `T ≥ 0`, a solution of (1.1) in the sense of `PaperSolutionEnl` whose every path of `X`
-and of `Y` has left limits on `(0, T]` is a solution in `ℍ`. -/
+and of `Y` has left limits on `(0, T]` is a solution in `𝕊`. -/
 theorem solution_of_paperSolutionEnl (hT : 0 ≤ T)
     (h : PaperSolutionEnl D h𝒢₀ hind₀ T C (fun i ω => ξ₀ ω i) X Y Z U γ)
     (hX : ∀ i ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ l : ℝ, Tendsto (fun s => X i s ω) (𝓝[<] t) (𝓝 l))
@@ -59,7 +57,7 @@ theorem solution_of_paperSolutionEnl (hT : 0 ≤ T)
   ⟨⟨⟨γ, h.toWeakInt hT⟩, hX, hY⟩, h.X_sup, h.Y_sup⟩
 
 /-- For `T ≥ 0` and coefficients with (2.3), the origin bounds of Assumption 2.2 and Assumption 2.3
-with a constant `L`, a solution of (1.1) in `ℍ` is a solution in the sense of `PaperSolutionEnl`
+with a constant `L`, a solution of (1.1) in `𝕊` is a solution in the sense of `PaperSolutionEnl`
 whose every path of `X` and of `Y` has left limits on `(0, T]`. -/
 theorem Solution.paperSolutionEnl (hT : 0 ≤ T) (hJ : JointBorel T C) (horig : OriginValues T C)
     (h23 : Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C)
@@ -80,7 +78,7 @@ theorem Solution.paperSolutionEnl (hT : 0 ≤ T) (hJ : JointBorel T C) (horig : 
   exact ⟨⟨γ, hpw.paperSolution hXs hYs⟩, hXl, hYl⟩
 
 /-- For `T ≥ 0`, a solution of the `λ`-forced system (4.1) in the sense of `PaperSolutionForced`
-is one in `ℍ_weak` with `X_T` square integrable. -/
+is one in `ℍ²` with `X_T` square integrable. -/
 theorem paperWeakSolutionForcedInt_of_paperSolutionForced (hT : 0 ≤ T)
     (h : PaperSolutionForced D (enlJoint 𝒢₀ D h𝒢₀) (isBrownianFiltration_enlJoint D h𝒢₀ hind₀)
       (isPoissonFiltration_enlJoint D h𝒢₀ hind₀) T lam C (fun i ω => ξ₀ ω i) qb qσ qh qf qg
@@ -109,7 +107,7 @@ theorem paperWeakSolutionForcedInt_of_paperSolutionForced (hT : 0 ≤ T)
   bwd := h.bwd
 
 /-- For `T ≥ 0`, a solution of the `λ`-forced system (4.1) in the sense of `PaperSolutionForced`
-whose every path of `X` and of `Y` has left limits on `(0, T]` is a solution in `ℍ`. -/
+whose every path of `X` and of `Y` has left limits on `(0, T]` is a solution in `𝕊`. -/
 theorem forcedSolution_of_paperSolutionForced (hT : 0 ≤ T)
     (h : PaperSolutionForced D (enlJoint 𝒢₀ D h𝒢₀) (isBrownianFiltration_enlJoint D h𝒢₀ hind₀)
       (isPoissonFiltration_enlJoint D h𝒢₀ hind₀) T lam C (fun i ω => ξ₀ ω i) qb qσ qh qf qg
@@ -121,7 +119,7 @@ theorem forcedSolution_of_paperSolutionForced (hT : 0 ≤ T)
     h.Y_sup⟩
 
 /-- For `T ≥ 0` and coefficients with (2.3), the origin bounds of Assumption 2.2 and Assumption 2.3
-with a constant `L`, a solution of the `λ`-forced system (4.1) in `ℍ` is a solution in the sense of
+with a constant `L`, a solution of the `λ`-forced system (4.1) in `𝕊` is a solution in the sense of
 `PaperSolutionForced` whose every path of `X` and of `Y` has left limits on `(0, T]`. -/
 theorem ForcedSolution.paperSolutionForced (hT : 0 ≤ T) (hJ : JointBorel T C)
     (horig : OriginValues T C)

@@ -5,3 +5,10 @@ Authors: Christian Garry
 -/
 import MVFBSDEJ.PaperSpec
 import MVFBSDEJ.Acceptance
+
+/-!
+# The formalisation of the well-posedness paper
+
+The statements of the paper (`MVFBSDEJ.PaperSpec`), written from the manuscript, and their
+proofs (`MVFBSDEJ.Acceptance`), with the implementation they use.
+-/

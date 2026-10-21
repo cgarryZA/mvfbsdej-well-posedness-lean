@@ -4,8 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.WellPosedness.Existence.CoeffBorel
-import MVFBSDEJ.WellPosedness.System.Stability
-import MVFBSDEJ.WellPosedness.System.Uniqueness
 import MVFBSDEJ.WellPosedness.System.PaperStability
 
 /-!

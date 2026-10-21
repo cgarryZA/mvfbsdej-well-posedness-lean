@@ -4,11 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.PaperSpec.Setting
-import MVFBSDEJ.WellPosedness.Spec.Assumptions
 import MVFBSDEJ.WellPosedness.Spec.CorollaryHyps
-import MVFBSDEJ.WellPosedness.Existence.AffineExample
-import MVFBSDEJ.WellPosedness.System.FullRank
-import MVFBSDEJ.Law.Wasserstein
 import Mathlib.MeasureTheory.Constructions.UnitInterval
 
 /-!

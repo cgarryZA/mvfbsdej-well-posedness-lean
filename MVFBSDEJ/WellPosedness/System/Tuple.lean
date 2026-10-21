@@ -37,6 +37,7 @@ the `L²(ν)` channel contributing `∑_k ∫_E U_{k,s}(ω, e)² ν(de)`.
 ## Main definitions
 
 * `TupleH` — the tuple space `H`.
+* `lpMeasurableSpace`, `lpBorelSpace` — the Borel σ-algebra on `L²(ν; F)`, a scoped instance.
 * `channelSq` — the sum `|x|² + |y|² + |z|²_F + ‖u‖²` of the squared channel norms.
 * `uLift` — the `L²(ν)` class of a mark-indexed vector.
 * `tupleAt` — the tuple of the coordinate processes at a time.

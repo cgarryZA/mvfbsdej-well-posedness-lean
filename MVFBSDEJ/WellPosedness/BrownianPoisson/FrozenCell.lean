@@ -3,24 +3,14 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import Mathlib.MeasureTheory.Function.ConditionalExpectation.Basic
-import Mathlib.MeasureTheory.Function.ConditionalExpectation.PullOut
-import Mathlib.MeasureTheory.Function.L2Space
-import Mathlib.MeasureTheory.Integral.SetToL1
-import Mathlib.Probability.ConditionalExpectation
-import Mathlib.Probability.Distributions.Gaussian.Real
-import Mathlib.Probability.Independence.Integration
-import Mathlib.Probability.Moments.Variance
-import Mathlib.Tactic
-import LevyStochCalc.Brownian.AugmentedFiltration
-import LevyStochCalc.Brownian.ItoFinsetSum
-import LevyStochCalc.Brownian.ItoIntegrandComplete
 import LevyStochCalc.Brownian.ItoPullOut
+import LevyStochCalc.Brownian.ItoFinsetSum
 import LevyStochCalc.Brownian.MultidimIto
+import LevyStochCalc.Brownian.ItoIntegrandComplete
 import LevyStochCalc.Driver.CellProfileStep
-import LevyStochCalc.Driver.VectorIncrement
-import LevyStochCalc.Poisson.CompensatedIsometry
 import LevyStochCalc.Poisson.CompensatedProfileLinear
+import LevyStochCalc.Brownian.AugmentedFiltration
+import Mathlib.Tactic
 
 /-!
 # The Brownian integral of a coefficient frozen over a cell
@@ -67,11 +57,13 @@ variable {Ω : Type u}
 noncomputable def frozenCell (s t : ℝ) (V : Ω → ℝ) (ω : Ω) (r : ℝ) : ℝ :=
   (Set.Ioc s t).indicator (fun _ => V ω) r
 
+/-- The frozen integrand is bounded by the frozen coefficient. -/
 theorem nnnorm_frozenCell_le (s t : ℝ) (V : Ω → ℝ) (ω : Ω) (r : ℝ) :
     ‖frozenCell s t V ω r‖₊ ≤ ‖V ω‖₊ := by
   simp only [frozenCell, Set.indicator_apply]
   split_ifs <;> simp
 
+/-- The difference of two frozen integrands is the frozen integrand of the difference. -/
 theorem frozenCell_sub (s t : ℝ) (V V' : Ω → ℝ) (ω : Ω) (r : ℝ) :
     frozenCell s t V ω r - frozenCell s t V' ω r = frozenCell s t (fun ω => V ω - V' ω) ω r := by
   simp only [frozenCell, Set.indicator_apply]
@@ -79,6 +71,7 @@ theorem frozenCell_sub (s t : ℝ) (V V' : Ω → ℝ) (ω : Ω) (r : ℝ) :
 
 variable [mΩ : MeasurableSpace Ω]
 
+/-- The frozen integrand is the coefficient times the indicator of the cell. -/
 theorem frozenCell_eq_mul_indIoc (s t : ℝ) (V : Ω → ℝ) (ω : Ω) (r : ℝ) :
     frozenCell s t V ω r = V ω * indIoc Ω s t ω r := by
   simp only [frozenCell, indIoc, Set.indicator_apply]
@@ -125,6 +118,7 @@ theorem progressivelyMeasurable_frozenCell {ℱ : MeasureTheory.Filtration ℝ m
 
 variable {P : Measure Ω}
 
+/-- A square-integrable random variable has finite second moment. -/
 theorem lintegral_nnnorm_sq_lt_top {V : Ω → ℝ} (hV : MemLp V 2 P) :
     ∫⁻ ω, (‖V ω‖₊ : ℝ≥0∞) ^ 2 ∂P < ⊤ := by
   rw [← eLpNorm_sq_eq_lintegral]

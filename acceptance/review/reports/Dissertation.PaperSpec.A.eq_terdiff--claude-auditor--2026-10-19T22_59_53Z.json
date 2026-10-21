@@ -1,0 +1,56 @@
+{
+ "schema": "prooflens/review-report@1",
+ "unit": {
+  "id": "spec:Dissertation.PaperSpec.A.eq_terdiff",
+  "kind": "spec",
+  "name": "Dissertation.PaperSpec.A.eq_terdiff",
+  "lean": [
+   "Dissertation.PaperSpec.A.eq_terdiff"
+  ],
+  "claims": [
+   "A:eq:terdiff"
+  ],
+  "papers": [
+   "A"
+  ]
+ },
+ "pins": {
+  "release": "r-e3ac62d43966",
+  "project_commit": "6d403c197bfb10fe8808933c6e525ee0ae544fb1",
+  "manuscripts": {
+   "A": null
+  },
+  "legacy_hash": "ed839d34f480cba104ed4a8f00254090",
+  "fingerprint": "pl-fp-v1:0a60383fdb137fd8cf3a8b738c7a0ad5d748b5032f1aa8132eb076758b7c5ad0",
+  "fingerprints": null
+ },
+ "reviewer": {
+  "id": "claude-auditor",
+  "kind": "model",
+  "name": "claude-auditor",
+  "model": "claude",
+  "same_family_as_author": "yes",
+  "identity": "self-declared"
+ },
+ "reading": {
+  "text": "READING (locked before any Lean) -- spec:Dissertation.PaperSpec.A.eq_terdiff\nReviewer: claude-auditor (same model family as the statements' author).\n\nPassage: proof of Lemma 4.2 (lem:small), Step 3 (the terminal difference):\n delta xibar := lambda [ g(Xbar^1_T, Law(Xbar^1_T)) - g(Xbar^2_T, Law(Xbar^2_T)) ];\n (4.11) E|dxibar|^2 <= lambda^2 L^2 E(|dXbar_T| + W_2(Law Xbar^1_T, Law Xbar^2_T))^2\n                   <= 2 lambda^2 L^2 (E|dXbar_T|^2 + W_2(...)^2)\n                   <= C_g lambda^2 E|dXbar_T|^2,   C_g := 4L^2,\n \"the first step by (2.6) [eq:lipT] and the last by (2.10) [eq:couplingT]\".\n\nHypotheses in force: Lemma 4.2 assumes Assumptions 2.2-2.3; this step uses only the terminal part\nof Assumption 2.3: g : R^n x P_2(R^n) -> R^m (jointly Borel, deterministic) and L >= 0 such that\nfor all X_T, X'_T in L^2(Omega, F_T; R^n): |g(X_T, Law X_T) - g(X'_T, Law X'_T)| <= L(|X_T - X'_T|\n+ W_2(Law X_T, Law X'_T)) a.s. (the DIAGONAL form: laws are the laws of the inputs, not free\nmeasures). lambda in [0,1] in Lemma 4.2 (the chain holds for any real lambda).\nXbar^1_T, Xbar^2_T: in the proof they are the terminal values of the frozen forward dynamics,\nF_T-measurable, in L^2 (Xbar in S^2). The clause abstracts: \"for any two F_T-measurable\nsquare-integrable terminal values\" -- a broader but harmless statement (every pair of frozen\nterminal values is such a pair).\n\nFaithful formal statement must contain:\n - Setting: probability space with F_T (the standing basis or any probability space with a\n   sub-sigma-algebra F_T); n, m >= 1; W_2 the quadratic Wasserstein distance on P_2(R^n);\n   Law = pushforward of P.\n - Hypotheses: L >= 0 (or real L, the bound forces >= 0 when nondegenerate); g satisfying the\n   diagonal terminal Lipschitz bound above (a POINTWISE/free-measure Lipschitz hypothesis on g\n   would be stronger -> narrower statement); g Borel (needed for measurability of dxibar);\n   lambda real (or in [0,1]); X^1, X^2 F_T-measurable, square-integrable.\n - Conclusion: the three inequalities of the chain (or at least the outer one\n   E|dxibar|^2 <= 4 L^2 lambda^2 E|X^1 - X^2|^2), with C_g = 4L^2 exactly. The middle\n   expressions use W_2 of the two laws (a deterministic number).\n - Expectations: E|dxibar|^2 must not be a Bochner junk 0 if non-integrable (it is integrable\n   from the hypotheses); E(|dX|+W_2)^2 likewise.\n - Note the passage's own justification: the last step uses W_2(Law X^1, Law X^2)^2 <=\n   E|X^1 - X^2|^2 (synchronous coupling), giving 2L^2(E|dX|^2 + E|dX|^2) = 4L^2 E|dX|^2.",
+  "locked_at": "2026-10-19T22:48:57Z"
+ },
+ "comparison": {
+  "text": "COMPARISON -- spec:Dissertation.PaperSpec.A.eq_terdiff\nReviewer: claude-auditor (same model family as the statements' author).\n\nLean (PaperSpec/A/Sec4Small.lean:29-51): for every probability space with ANY filtration F, n, m,\nreal T, L, lam, and g : R^n -> P2(R^n) -> R^m with LipTerminal F P T L g, and all X1, X2 strongly\nF_T-measurable and in L^2: with dxi = lam (g(X1, lawP2 X1) - g(X2, lawP2 X2)), in [0, infinity],\n  E||dxi||^2 <= ofReal(lam^2 L^2) E(||X1 - X2|| + W2)^2\n             <= ofReal(2 lam^2 L^2)(E||X1 - X2||^2 + ofReal(W2^2))\n             <= ofReal(4 L^2 lam^2) E||X1 - X2||^2,      W2 = w2P(lawP2 X1, lawP2 X2).\n\nItem by item against my locked reading:\n - Hypothesis on g: LipTerminal is the DIAGONAL form of (2.6): for all strongly F_T-measurable\n   square-integrable XT, XT', a.s. ||g(XT, Law XT) - g(XT', Law XT')|| <= L(||XT - XT'|| +\n   W2(Law XT, Law XT')). Not a pointwise/free-measure hypothesis. OK.\n - Laws and W2: lawP2 P X = P.map X for X in L^2 (a Dirac junk only off L^2, never used here since\n   X1, X2 are in L^2); w2P = sqrt of the infimum over couplings of the quadratic transport cost.\n   Genuine W_2 on P_2(R^n). OK.\n - Conclusion: the three inequalities of (4.11) with C_g = 4L^2, expectations as lintegrals of\n   extended norms (no Bochner junk). OK.\n - No Borel measurability of g is assumed: the lintegral chain holds without it (lintegral_mono_ae)\n   -- broader, harmless.\n - Broader than the printed step in four harmless ways: any filtration and time T (the paper's is\n   the standing filtration at the horizon T); any real lam (paper: lam in [0,1]); any real L\n   (paper: L >= 0 from Assumption 2.3); any two F_T-measurable L^2 terminal values (paper: the\n   terminal values Xbar^1_T, Xbar^2_T of the frozen forward dynamics); and only the terminal bound\n   (2.6) is assumed (the paper has Assumptions 2.2-2.3 in force). The clause itself is named \"for any\n   two F_T-measurable square-integrable terminal values\".\n - Instantiation giving the printed claim: F = enlJoint (the standing filtration), T the horizon,\n   L the constant of Assumption 2.3 (LipTerminal is its field Assumption23.terminal), g = C.g,\n   lam in [0,1], X1 = Xbar^1_T, X2 = Xbar^2_T (F_T-measurable as Xbar is adapted; in L^2 as Xbar is\n   in S^2). Then dxi = dxibar and the chain is (4.11) verbatim.\n - Non-vacuity: eq_terdiff_hypotheses (Example 5.1(i)'s g(x, rho) = x, L = 1, terminal values 0 and\n   e_1 on the standing setting with nu = delta_0): an intended instance.\n\nVerdict: broader.\n\nCOVERAGE (claim A:eq:terdiff; hashed passage lines 381-388, the display (4.11) with C_g = 4L^2):\nthe single clause states all three inequalities and the constant, so every mathematical assertion\nof the passage is stated; the justification sentence (first step by (2.6), last by (2.10)) is\nreflected in the hypothesis (only (2.6)) and the proof. The clause states nothing the passage does\nnot claim, but it is stated under FEWER hypotheses than are in force at Step 3 of the proof of\nLemma 4.2 (only the terminal bound (2.6); arbitrary L^2 terminal values instead of the frozen ones;\nlam real) -- a broader statement whose instance is the printed step, which is legitimate here.",
+  "witness": "",
+  "checklist": {},
+  "decided_at": "2026-10-19T22:58:40Z"
+ },
+ "verdict": {
+  "group": "matches",
+  "value": "broader",
+  "detail": "The proposition holds on any filtered probability space, any T, any real lam and L, for any two\nF_T-measurable square-integrable terminal values, under the terminal diagonal Lipschitz bound\n(2.6) alone. The printed claim is the instance: F = enlJoint (the standing filtration), T the\nhorizon, L the constant of Assumption 2.3 (LipTerminal is Assumption23.terminal), g = C.g,\nlam in [0,1], X1 = Xbar^1_T and X2 = Xbar^2_T (the terminal values of the frozen forward\ndynamics, F_T-measurable and in L^2 because Xbar is adapted and in S^2). There dxi is the paper's\ndxibar, and the three inequalities with C_g = 4L^2 are (4.11) verbatim (expectations read in\n[0, infinity])."
+ },
+ "author_review": {
+  "shown_at": "2026-10-19T22:59:04Z",
+  "disagreements": "No disagreement: the author's \"faithful (broader, printed claim an instance)\" and my \"broader\"\nrecord the same judgement, with the same instantiation (X_k = Xbar^k_T, lam in [0,1], g = C.g,\nL from Assumption23.terminal, the standing filtration and horizon). Erratum in my own decision\nfile, not a disagreement: I cited the coupling bound eq:couplingT as (2.10); it is (2.9), as the\nauthor writes."
+ },
+ "submitted_at": "2026-10-19T22:59:53Z",
+ "issue_draft": null
+}

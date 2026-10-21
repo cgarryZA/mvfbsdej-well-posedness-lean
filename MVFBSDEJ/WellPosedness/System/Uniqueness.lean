@@ -50,7 +50,7 @@ variable {Ω : Type u} [MeasurableSpace Ω] {E : Type v} [MeasurableSpace E] {ν
   {Z₁ Z₂ : Fin m → ℝ → Ω → Fin d → ℝ} {U₁ U₂ : Fin m → ℝ → Ω → E → ℝ}
   {γ₁ γ₂ : Fin n → ℝ → Ω → E → ℝ} {L cG α β₁ β₂ : ℝ} {G : Matrix (Fin m) (Fin n) ℝ}
 
-omit [IsProbabilityMeasure P] [SigmaFinite ν] in
+omit [IsProbabilityMeasure P] [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
 /-- Zero forcings and a common initial datum have zero data size. -/
 theorem dataSize_sub_self_zero (T : ℝ) (ξ₀ : Fin n → Ω → ℝ) :
     dataSize P ν T (fun i ω => ξ₀ i ω - ξ₀ i ω)

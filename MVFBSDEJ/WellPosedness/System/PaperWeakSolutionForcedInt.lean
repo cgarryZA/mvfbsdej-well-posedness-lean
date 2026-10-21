@@ -8,7 +8,7 @@ import MVFBSDEJ.WellPosedness.System.PaperSolutionForcedSolves
 import MVFBSDEJ.WellPosedness.System.PaperWeakSolutionInt
 
 /-!
-# Solutions of the `λ`-forced system (4.1) in `ℍ²_weak` with pathwise drift and driver integrals
+# Solutions of the `λ`-forced system (4.1) in `ℍ²` with pathwise drift and driver integrals
 
 Lemma 4.3 compares, under Assumptions 2.3–2.5 only, two solutions of the `λ`-forced system (4.1)
 whose `X` and `Y` are càdlàg adapted with `𝔼 ∫_0^T (|X_t|² + |Y_t|²) dt < ∞`, whose `X_T` is square
@@ -20,7 +20,7 @@ and jump integrands enter through the `L²` stochastic integrals and keep finite
 the initial datum nor the terminal value `λ g(X_T, Law X_T) + q^g_T` need be square integrable.
 
 `PaperWeakSolutionForcedInt` is `PaperSolutionForced` with three changes: the `S²` bounds on `X`
-and `Y` are replaced by finite energy on `[0, T]`, so that the tuple lies in `ℍ²_weak`
+and `Y` are replaced by finite energy on `[0, T]`, so that the tuple lies in `ℍ²`
 (`PaperWeakTuple`); the finite energy of the forced drift and driver is replaced by the
 integrability of almost every path on `[0, T]`; and `X_T` is square integrable. The forcing, the
 forced integrands `λ ψ + q^ψ`, the representative `γ` of `h(s, Θ⁻_s, ·, μ⁻_s)` and the two
@@ -29,7 +29,7 @@ identities of (4.1) are those of `PaperSolutionForced`. At `λ = 1` and `q = 0` 
 
 ## Main definitions
 
-* `PaperWeakSolutionForcedInt` — `(X, Y, Z, U)` solves the `λ`-forced system (4.1) in `ℍ²_weak`
+* `PaperWeakSolutionForcedInt` — `(X, Y, Z, U)` solves the `λ`-forced system (4.1) in `ℍ²`
   with pathwise drift and driver integrals.
 
 ## Main statements
@@ -52,7 +52,7 @@ variable {Ω : Type u} [MeasurableSpace Ω] {E : Type v} [MeasurableSpace E] {ν
   [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] {n m d : ℕ}
   {P : Measure Ω} [IsProbabilityMeasure P]
 
-/-- **`(X, Y, Z, U)` solves the `λ`-forced system (4.1) in `ℍ²_weak` with pathwise drift and
+/-- **`(X, Y, Z, U)` solves the `λ`-forced system (4.1) in `ℍ²` with pathwise drift and
 driver integrals**, with coefficients `C`, initial datum `ξ₀` and forcing
 `q = (q^b, q^σ, q^h, q^f, q^g)`, over the filtration `ℱ` carrying the driver `D`, and with `γ` a
 representative of the jump coefficient: `X` and `Y` are adapted on `[0, T]` with
@@ -173,7 +173,7 @@ variable {T lam : ℝ} {C : Coeffs ν n m d} {ξ₀ : Fin n → Ω → ℝ}
   {hℱW : ∀ j : Fin d, LevyStochCalc.Brownian.IsBrownianFiltration (D.W.W j) ℱ}
   {hℱN : LevyStochCalc.Poisson.IsPoissonFiltration D.N ℱ}
 
-/-- **The forced system at `λ = 1` with zero forcing is (1.1), in `ℍ²_weak` with pathwise drift
+/-- **The forced system at `λ = 1` with zero forcing is (1.1), in `ℍ²` with pathwise drift
 and driver integrals**: `(X, Y, Z, U)` solves the `λ`-forced system (4.1) at `λ = 1` with
 forcing `q = 0` in the sense of `PaperWeakSolutionForcedInt` if and only if it solves the system
 (1.1) in the sense of `PaperWeakSolutionInt`, with the same `γ`. -/

@@ -4,16 +4,10 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.PaperSpec.Sec2Remarks
-import MVFBSDEJ.Acceptance.Sec5
 import MVFBSDEJ.Acceptance.Witness
-import MVFBSDEJ.WellPosedness.Spec.Bridge25
 import MVFBSDEJ.WellPosedness.Remarks.JumpDichotomy
-import MVFBSDEJ.WellPosedness.Remarks.Pointwise
 import MVFBSDEJ.WellPosedness.Remarks.Margin
-import MVFBSDEJ.WellPosedness.Remarks.CouplingForm
 import MVFBSDEJ.WellPosedness.Remarks.CouplingFormIntegrable
-import MVFBSDEJ.WellPosedness.Remarks.CouplingRealisation
-import MVFBSDEJ.WellPosedness.Remarks.UniformVariable
 
 /-!
 # Section 2 of the well-posedness paper: proofs of the remarks on the assumptions

@@ -24,8 +24,11 @@ Step 2 of the proof of Lemma 4.3 of the well-posedness paper inserts Assumption 
 ## Main statements
 
 * `dotProduct_le_add_div`, `mulVec_dotProduct_le`, `transpose_mulVec_dotProduct_le`,
-  `neg_dotProduct_mulVec_le` — Young's inequality for `G`-pairings.
+  `neg_dotProduct_mulVec_le`, `abs_mulVec_dotProduct_le`, `abs_dotProduct_mulVec_le` — Young's
+  inequality for `G`-pairings.
+* `abs_gPairing_le` — Young's inequality for the forcing pairing of (4.19).
 * `integrable_dotProduct_of_memLp`, `memLp_mulVec` — pairings of square-integrable coordinates.
+* `neg_sub_dotProduct`, `integral_dotProduct_congr_ae` — rewriting pairings.
 * `memLp_markedWindow` — marked integrands of finite energy on the marked window.
 * `integral_dotProduct_self_window`, `integral_integral_dotProduct_self_markedWindow`,
   `integral_dotProduct_self` — the integrals of `|x|²` are the energies.
@@ -116,6 +119,12 @@ theorem neg_dotProduct_mulVec_le
   gcongr
   exact transpose_mulVec_dotProduct_le hGn c
 
+/-- `(−a − b) ⬝ w = −((a + b) ⬝ w)`. -/
+theorem neg_sub_dotProduct {ι : Type*} [Fintype ι] (a b w : ι → ℝ) :
+    (fun k => -a k - b k) ⬝ᵥ w = -((fun k => a k + b k) ⬝ᵥ w) := by
+  simp only [dotProduct, ← Finset.sum_neg_distrib]
+  exact Finset.sum_congr rfl fun k _ => by ring
+
 /-- `(λ a + c) ⬝ v = λ (a ⬝ v) + c ⬝ v`. -/
 theorem dotProduct_mul_add {ι : Type*} [Fintype ι] (l : ℝ) (a c v : ι → ℝ) :
     (fun i => l * a i + c i) ⬝ᵥ v = l * (a ⬝ᵥ v) + c ⬝ᵥ v := by
@@ -127,30 +136,56 @@ theorem sum_col_dotProduct_self {d : ℕ} (z : Fin m → Fin d → ℝ) :
   simp only [dotProduct]
   exact Finset.sum_comm
 
-/-- **Young's inequality for the forcing pairing of (4.19).** With `|G x|² ≤ g² |x|²` and
-`η > 0`, for a drift `b`, diffusion columns `s_{· j}`, driver `f`, solution `(x, y, z)` and a mark
-term `J ≤ η J_W + (g²/(4η)) J_Q`,
+/-- **Young's inequality for a `G`-pairing, in absolute value**: with `|G x|² ≤ g² |x|²`,
+`|G a ⬝ c| ≤ η |c|² + (g²/(4η)) |a|²`. -/
+theorem abs_mulVec_dotProduct_le
+    (hGn : ∀ x : Fin n → ℝ, (G *ᵥ x) ⬝ᵥ (G *ᵥ x) ≤ gG ^ 2 * (x ⬝ᵥ x)) (hη : 0 < η)
+    (a : Fin n → ℝ) (c : Fin m → ℝ) :
+    |(G *ᵥ a) ⬝ᵥ c| ≤ η * (c ⬝ᵥ c) + gG ^ 2 / (4 * η) * (a ⬝ᵥ a) := by
+  refine abs_le.mpr ⟨?_, mulVec_dotProduct_le hGn hη a c⟩
+  have h := mulVec_dotProduct_le hGn hη a (-c)
+  simp only [dotProduct_neg, neg_dotProduct, neg_neg] at h
+  linarith
 
-`b ⬝ Gᵀy + ∑_j s_{·j} ⬝ Gᵀz_{·j} − f ⬝ Gx + J
+/-- **Young's inequality for a transposed `G`-pairing, in absolute value**: with
+`|G x|² ≤ g² |x|²`, `|c ⬝ G x| ≤ η |x|² + (g²/(4η)) |c|²`. -/
+theorem abs_dotProduct_mulVec_le
+    (hGn : ∀ x : Fin n → ℝ, (G *ᵥ x) ⬝ᵥ (G *ᵥ x) ≤ gG ^ 2 * (x ⬝ᵥ x)) (hη : 0 < η)
+    (c : Fin m → ℝ) (x : Fin n → ℝ) :
+    |c ⬝ᵥ (G *ᵥ x)| ≤ η * (x ⬝ᵥ x) + gG ^ 2 / (4 * η) * (c ⬝ᵥ c) := by
+  refine abs_le.mpr ⟨?_, ?_⟩
+  · have h := neg_dotProduct_mulVec_le hGn hη c x
+    linarith
+  · have h := neg_dotProduct_mulVec_le hGn hη (-c) x
+    simp only [neg_dotProduct, neg_neg, dotProduct_neg] at h
+    linarith
+
+/-- **Young's inequality for the forcing pairing of (4.19), in absolute value.** With
+`|G x|² ≤ g² |x|²` and `η > 0`, for a drift `b`, diffusion columns `s_{· j}`, driver `f`,
+solution `(x, y, z)` and a mark term `|J| ≤ η J_W + (g²/(4η)) J_Q`,
+
+`|b ⬝ Gᵀy| + |∑_j s_{·j} ⬝ Gᵀz_{·j}| + |J| + |f ⬝ Gx|
   ≤ η (|x|² + |y|² + |z|²_F + J_W) + (g²/(4η)) (|b|² + |s|²_F + J_Q + |f|²)`. -/
-theorem gPairing_le {d : ℕ}
+theorem abs_gPairing_le {d : ℕ}
     (hGn : ∀ x : Fin n → ℝ, (G *ᵥ x) ⬝ᵥ (G *ᵥ x) ≤ gG ^ 2 * (x ⬝ᵥ x)) (hη : 0 < η)
     (b : Fin n → ℝ) (s : Fin n → Fin d → ℝ) (f : Fin m → ℝ) (x : Fin n → ℝ) (y : Fin m → ℝ)
-    (z : Fin m → Fin d → ℝ) {J JW JQ : ℝ} (hJ : J ≤ η * JW + gG ^ 2 / (4 * η) * JQ) :
-    b ⬝ᵥ (Gᵀ *ᵥ y) + ∑ j, (fun i => s i j) ⬝ᵥ (Gᵀ *ᵥ fun k => z k j) - f ⬝ᵥ (G *ᵥ x) + J
+    (z : Fin m → Fin d → ℝ) {J JW JQ : ℝ} (hJ : |J| ≤ η * JW + gG ^ 2 / (4 * η) * JQ) :
+    |b ⬝ᵥ (Gᵀ *ᵥ y)| + |∑ j, (fun i => s i j) ⬝ᵥ (Gᵀ *ᵥ fun k => z k j)| + |J|
+        + |f ⬝ᵥ (G *ᵥ x)|
       ≤ η * (x ⬝ᵥ x + y ⬝ᵥ y + ∑ k, z k ⬝ᵥ z k + JW)
         + gG ^ 2 / (4 * η) * (b ⬝ᵥ b + ∑ i, s i ⬝ᵥ s i + JQ + f ⬝ᵥ f) := by
-  have h1 : b ⬝ᵥ (Gᵀ *ᵥ y) ≤ η * (y ⬝ᵥ y) + gG ^ 2 / (4 * η) * (b ⬝ᵥ b) := by
+  have h1 : |b ⬝ᵥ (Gᵀ *ᵥ y)| ≤ η * (y ⬝ᵥ y) + gG ^ 2 / (4 * η) * (b ⬝ᵥ b) := by
     rw [dotProduct_transpose_mulVec]
-    exact mulVec_dotProduct_le hGn hη b y
-  have h2 : ∑ j, (fun i => s i j) ⬝ᵥ (Gᵀ *ᵥ fun k => z k j)
+    exact abs_mulVec_dotProduct_le hGn hη b y
+  have h2 : |∑ j, (fun i => s i j) ⬝ᵥ (Gᵀ *ᵥ fun k => z k j)|
       ≤ η * ∑ k, z k ⬝ᵥ z k + gG ^ 2 / (4 * η) * ∑ i, s i ⬝ᵥ s i := by
+    refine (Finset.abs_sum_le_sum_abs _ _).trans ?_
     rw [← sum_col_dotProduct_self z, ← sum_col_dotProduct_self (m := n) s, Finset.mul_sum,
       Finset.mul_sum, ← Finset.sum_add_distrib]
     refine Finset.sum_le_sum fun j _ => ?_
     rw [dotProduct_transpose_mulVec]
-    exact mulVec_dotProduct_le hGn hη _ _
-  have h3 := neg_dotProduct_mulVec_le hGn hη f x
+    exact abs_mulVec_dotProduct_le hGn hη _ _
+  have h3 := abs_dotProduct_mulVec_le hGn hη f x
   nlinarith
 
 end Algebra
@@ -167,6 +202,12 @@ theorem integrable_dotProduct_of_memLp {ι : Type*} [Fintype ι] {v w : ι → �
     Integrable (fun p => (fun i => v i p) ⬝ᵥ (fun i => w i p)) μ := by
   simp only [dotProduct]
   exact integrable_finsetSum _ fun i _ => (hv i).integrable_mul (hw i)
+
+/-- Pairings with integrands that agree coordinatewise almost everywhere have the same
+integral. -/
+theorem integral_dotProduct_congr_ae {ι : Type*} [Fintype ι] {u v w : α → ι → ℝ}
+    (h : ∀ᵐ p ∂μ, ∀ i, u p i = v p i) : ∫ p, u p ⬝ᵥ w p ∂μ = ∫ p, v p ⬝ᵥ w p ∂μ :=
+  integral_congr_ae (h.mono fun p hp => by simp only [funext hp])
 
 /-- The matrix image `A v` of square-integrable coordinates has square-integrable
 coordinates. -/

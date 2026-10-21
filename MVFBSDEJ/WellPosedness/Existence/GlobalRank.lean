@@ -10,12 +10,13 @@ import MVFBSDEJ.WellPosedness.System.FullRank
 /-!
 # Theorem 3.5 for a coupling matrix of full rank
 
-Theorem 3.5, `exists_solves_and_uniqueness`, takes Assumption 2.4 in the form of the two
-coercivity bounds `|x|² ≤ c_G |G x|²` (`n ≤ m`) and `|y|² ≤ c_G |Gᵀ y|²` (`m ≤ n`) with a constant
-`c_G ≥ 0`. The paper states Assumption 2.4 as the full rank of `G ∈ ℝ^{m×n}` and derives the two
-bounds with `c_G = s_min(G)⁻²`, `s_min(G)` the smallest singular value
-(`gCoerciveForward_of_rank`, `gCoerciveBackward_of_rank`). This file states Theorem 3.5 with the
-full rank `rank G = min(m, n)` of the coupling matrix of Assumption 2.5 in place of the
+Theorem 3.5, `exists_solves_and_uniqueness`, takes Assumption 2.4 in the form of the two coercivity
+bounds `|x|² ≤ c_G |G x|²` (`n ≤ m`) and `|y|² ≤ c_G |Gᵀ y|²` (`m ≤ n`) with a constant `c_G ≥ 0`.
+The paper states Assumption 2.4 as the full rank of `G ∈ ℝ^{m×n}` and derives the two bounds with
+`c_G = s_min(G)⁻²`, `s_min(G)` the smallest singular value
+(`MVFBSDEJ.WellPosedness.System.gCoerciveForward_of_rank`,
+`MVFBSDEJ.WellPosedness.System.gCoerciveBackward_of_rank`). This file states Theorem 3.5 with
+the full rank `rank G = min(m, n)` of the coupling matrix of Assumption 2.5 in place of the
 coercivity bounds, over a filtration carrying the driver.
 
 ## Main statements

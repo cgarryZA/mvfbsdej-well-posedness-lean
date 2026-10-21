@@ -25,10 +25,11 @@ with `C_B = aprioriConst T (10 L²) (4 L²) ‖G‖ c_G α β₁ β₂ λ̲`, `�
 dimensions, of `ν(E)` and of the Burkholder–Davis–Gundy constant, and is at most its value at
 `λ̲ = 1` divided by `λ̲²`.
 
-The difference of the two solutions is a difference system `PairDiff`: Assumption 2.3 with the
-coupling bounds (2.8)–(2.9) gives the expected Lipschitz bounds at the pair with `K = 10 L²` and
-`K_T = 4 L²`, and Assumption 2.5 at the pair holds. Assumption 2.4 with the admissible
-constants of Assumption 2.5 selects the rank case, and `PairDiff.apriori` gives (4.14).
+The difference of the two solutions is a difference system
+`MVFBSDEJ.WellPosedness.Stability.PairDiff`: Assumption 2.3 with the coupling bounds (2.8)–(2.9)
+gives the expected Lipschitz bounds at the pair with `K = 10 L²` and `K_T = 4 L²`, and Assumption
+2.5 at the pair holds. Assumption 2.4 with the admissible constants of Assumption 2.5 selects the
+rank case, and `MVFBSDEJ.WellPosedness.Stability.PairDiff.apriori` gives (4.14).
 
 The solutions are those of `SolvesForced`, which goes beyond the paper in two conditions: the
 coefficient processes along each solution are square integrable in `dt ⊗ dP`, and they are
@@ -40,7 +41,8 @@ before `0`, and it admits a cross witness.
 ## Main statements
 
 * `rankCase_of_coercive` — Assumptions 2.4 and 2.5 select the rank case of the closure step.
-* `SolvesForced.pairDiff_of_assumptions` — the difference of two solutions is a `PairDiff`.
+* `SolvesForced.pairDiff_of_assumptions` — the difference of two solutions is a
+  `MVFBSDEJ.WellPosedness.Stability.PairDiff`.
 * `SolvesForced.supSize_sub_le` — Lemma 4.3, the estimate (4.14).
 -/
 

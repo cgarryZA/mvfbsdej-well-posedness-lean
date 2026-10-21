@@ -5,7 +5,6 @@ Authors: Christian Garry
 -/
 import MVFBSDEJ.WellPosedness.Enlarged.TimeZero
 import MVFBSDEJ.WellPosedness.Enlarged.CrossWitness
-import LevyStochCalc.Driver.JointRange
 
 /-!
 # Uniqueness of the representing pair

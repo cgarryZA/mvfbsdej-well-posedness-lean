@@ -4,8 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import Mathlib.Analysis.ODE.ExistUnique
-import Mathlib.Analysis.SpecialFunctions.ExpDeriv
-import Mathlib.Analysis.SpecialFunctions.Sqrt
 
 /-!
 # The Riccati function of the dealer market
@@ -91,7 +89,7 @@ theorem riccati_unique {β₁ β₂ T : ℝ} (hβ₁ : 0 ≤ β₁) {p q : ℝ �
       LipschitzOnWith ⟨2 * β₁ * M, by positivity⟩ (fun x : ℝ => β₁ * x ^ 2 - β₂) (Icc (-M) M) := by
     intro t _
     refine LipschitzOnWith.of_dist_le_mul fun x hx y hy => ?_
-    simp only [Real.dist_eq, NNReal.coe_mk]
+    simp only [Real.dist_eq]
     have e : β₁ * x ^ 2 - β₂ - (β₁ * y ^ 2 - β₂) = β₁ * (x + y) * (x - y) := by ring
     rw [e, abs_mul, abs_mul, abs_of_nonneg hβ₁]
     have hxy : |x + y| ≤ 2 * M := by

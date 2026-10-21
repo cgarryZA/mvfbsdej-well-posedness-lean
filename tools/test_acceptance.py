@@ -221,6 +221,42 @@ class ReleaseGate(unittest.TestCase):
                     mock.patch("builtins.print"):
                 A.release_gate(args)
 
+    def test_refutation_must_be_replayed(self):
+        import tempfile
+        rows = [claim("X:a", [clause("printed", refute_ok=True),
+                              clause("fixed", accept_ok=True, corrects="printed")])]
+        keys = ("name", "spec", "accept", "refute")
+        data = {"claims": [dict(r, clauses=[{k: c.get(k) for k in keys} for c in r["clauses"]])
+                           for r in rows]}
+        printed = []
+        with tempfile.TemporaryDirectory() as ev:
+            write_evidence(ev, ENV, ["MVFBSDEJ.Acceptance.fixed"])
+            args = argparse.Namespace(paper=None,
+                                      comparator_result=os.path.join(ev, A.COMPARATOR_RESULT))
+            with mock.patch.object(A, "evaluate", return_value=(data, [], status_of(rows), True)), \
+                    mock.patch.object(A, "environment_binding", return_value=dict(ENV)), \
+                    mock.patch("builtins.print",
+                               side_effect=lambda *a: printed.append(" ".join(map(str, a)))):
+                with self.assertRaises(SystemExit):
+                    A.release_gate(args)
+        self.assertTrue(any("not replayed, e.g. MVFBSDEJ.Acceptance.printed_false" in m
+                            for m in printed))
+
+
+class Challenge(unittest.TestCase):
+    """The statements `comparator-inputs` writes for the replay."""
+
+    def test_refutation_is_the_negation(self):
+        self.assertEqual(A.challenge_line("R", "S", "REF", ["w"], "0, 0, w"),
+                         "theorem R.{w} : ¬ S.{0, 0, w} := sorry\n")
+
+    def test_universe_order_of_the_proof(self):
+        self.assertEqual(A.challenge_line("T", "S", "ACC", ["u", "v"], "v, u"),
+                         "theorem T.{u, v} : S.{v, u} := sorry\n")
+
+    def test_no_universes(self):
+        self.assertEqual(A.challenge_line("T", "S", "ACC", [], ""), "theorem T : S := sorry\n")
+
 
 ENV = {"toolchain": "leanprover/lean4:v4.32.0", "MVFBSDEJ": "d1", "LevyStochCalc": "l1"}
 NAME = "MVFBSDEJ.Acceptance.a"

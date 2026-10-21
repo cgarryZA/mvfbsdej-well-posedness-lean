@@ -39,7 +39,7 @@ solution jointly and progressively measurable and square integrable), the statem
   jointly and progressively measurable, with a jointly measurable, marked progressively
   measurable representative `γ` of the jump coefficient `h¹` along solution 2. The paper derives
   this from Lemma A.1. For `C¹` jointly measurable with the evaluation σ-algebra on `P₂(H)` it
-  holds with a canonical `γ` (`Existence.CoeffBorel.crossEval`).
+  holds with a canonical `γ` (`MVFBSDEJ.WellPosedness.Existence.CoeffBorel.crossEval`).
 
 The filtration is one on which Lemma 4.1 applies: its null sets lie in its time-`0` field, its
 right-continuation is constant before `0`, and it admits a cross witness.

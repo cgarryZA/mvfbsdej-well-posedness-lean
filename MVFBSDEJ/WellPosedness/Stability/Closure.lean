@@ -93,7 +93,7 @@ variable {A Y₀ IX J P GXT GIX GIY kF kB gG cG α β₁ β₂ lam lamLow : ℝ}
 `J ≤ c_G · 𝔼 ∫ (|GᵀδY|² + |GᵀδZ|²_F + ‖GᵀδU‖²)`, the `β₁`-block of (4.22) controls `J`, the
 forward estimate then controls `A + I_X` and the backward estimate `Y₀`, and absorption gives
 `N' ≤ C_A P`. -/
-theorem closure_caseA (hA : 0 ≤ A) (hY₀ : 0 ≤ Y₀) (hIX : 0 ≤ IX) (hJ : 0 ≤ J) (hP : 0 ≤ P)
+theorem closure_caseA (hA : 0 ≤ A) (hY₀ : 0 ≤ Y₀) (hIX : 0 ≤ IX) (hJ : 0 ≤ J) (_hP : 0 ≤ P)
     (hGXT : 0 ≤ GXT) (hGIX : 0 ≤ GIX) (hGIY : 0 ≤ GIY) (hkF : 0 ≤ kF) (hkB : 0 ≤ kB)
     (hcG : 0 ≤ cG) (hα : 0 ≤ α) (hβ₂ : 0 ≤ β₂) (hlow : 0 < lamLow) (hlam : lamLow ≤ lam)
     (hF : A + IX ≤ kF * (J + P)) (hB : Y₀ + J ≤ kB * (A + IX + P))

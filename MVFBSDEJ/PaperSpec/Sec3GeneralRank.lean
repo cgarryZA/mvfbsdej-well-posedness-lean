@@ -13,11 +13,15 @@ Statement and equation numbers refer to the well-posedness paper at `1f67672`, i
 setting of §2. Corollary 3.6 is stated for `m = n` with the margin and the pairing bound (3.4)
 recorded in the unweighted quantity `|δX|² + |δY|² + |δZ|²_F + ‖δU‖²_{L²(ν)}`. Remark 3.7: with
 both recorded in the weighted quantity `|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²_{L²(ν)} + |G δX|²` of
-(2.12), the conclusion of Corollary 3.6 holds for arbitrary `m, n`.
+(2.12), the conclusion of Corollary 3.6 holds for arbitrary `m, n`. The same weighted pairing bound
+states the clause of Remark 2.11 that a perturbation raising the interior pairing by at most the
+margin of (2.12) leaves (2.7) with the recorded constants intact.
 
 ## Main definitions
 
 * `MVFBSDEJ.PaperSpec.PairingBound34W` — (3.4) in the weighted quantity of (2.12).
+* `MVFBSDEJ.PaperSpec.rem_margin_slack` — Remark 2.11: a perturbation raising the interior
+  pairing by at most the margin leaves (2.7) with the recorded constants intact.
 * `MVFBSDEJ.PaperSpec.rem_generalrank` — the assumptions of the perturbed system.
 * `MVFBSDEJ.PaperSpec.rem_generalrank_wp` — its well-posedness.
 -/
@@ -49,6 +53,22 @@ def PairingBound34W {Ω : Type*} [MeasurableSpace Ω] {E : Type*} [MeasurableSpa
               + ‖GZ Gᵀ ((q.1 ω).2.2.1 - (q'.1 ω).2.2.1)‖ ^ 2
               + ‖GU Gᵀ ν ((q.1 ω).2.2.2 - (q'.1 ω).2.2.2)‖ ^ 2
               + ‖GX G ((q.1 ω).1 - (q'.1 ω).1)‖ ^ 2) ∂P
+
+/-- Remark 2.11, the slack. In the standing setting, if the coefficients `C` satisfy (2.12) with
+the constants `β₁, β₂` and margin `c > 0`, and the perturbation `p` satisfies (3.4) in the
+weighted quantity of (2.12) with a constant `c_pert`, `0 ≤ c_pert ≤ c`, then for almost every
+`t ∈ [0, T]` the perturbed coefficients `C + p` satisfy (2.7) with the constants `β₁, β₂`. -/
+def rem_margin_slack : Prop :=
+  ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
+    [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
+    (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
+    (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ),
+    Indep 𝒢₀ (⨆ t, D.filtration t) P →
+    ∀ (T β₁ β₂ c cpert : ℝ) (G : Matrix (Fin m) (Fin n) ℝ) (C p : Coeffs ν n m d),
+    Margin212 (enlJoint 𝒢₀ D h𝒢₀) P T G β₁ β₂ c C → 0 < c →
+    PairingBound34W (enlJoint 𝒢₀ D h𝒢₀) P T G cpert p → 0 ≤ cpert → cpert ≤ c →
+    ∀ᵐ t ∂(volume.restrict (Set.Icc (0 : ℝ) T)),
+      Mono27At (enlJoint 𝒢₀ D h𝒢₀) P t G β₁ β₂ (C.perturb p)
 
 /-- Remark 3.7, the assumptions of the perturbed system. In the standing setting with
 `n, m, d ≥ 1`, for every horizon `T > 0`, let the baseline system `C` with initial datum `ξ₀`
@@ -82,8 +102,8 @@ def rem_generalrank : Prop :=
 
 /-- Remark 3.7, well-posedness of the perturbed system. There is a function `C_stab` of
 `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that: under the hypotheses of `rem_generalrank`, the
-perturbed system with initial datum `ξ₀` has a solution in `ℍ`; any two tuples of `ℍ_weak`
-satisfying it with the same initial datum are equal in `ℍ_weak`; and for every constant `L` with
+perturbed system with initial datum `ξ₀` has a solution in `𝕊`; any two tuples of `ℍ²`
+satisfying it with the same initial datum are equal in `ℍ²`; and for every constant `L` with
 which the perturbed system satisfies Assumption 2.3, (3.1) holds with the constant
 `C_stab(T, L, ‖G‖, s_min(G)⁻², α, β₁, β₂)` for its solutions against the solutions of every
 system `2` satisfying (2.3) and Assumptions 2.2–2.3. -/

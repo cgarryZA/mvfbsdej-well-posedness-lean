@@ -27,7 +27,7 @@ and which has the terminal representation property at the horizon; the coefficie
 The joint measurability (2.3) of the coefficients, with the evaluation σ-algebra on `P₂(H)`,
 gives (2.5) along every progressive tuple (`CoeffBorel.coeffRegular`).
 The continuous dependence on the coefficients and data, (3.1) of Theorem 3.1, is
-`Solves.supSize_sub_le`.
+`MVFBSDEJ.WellPosedness.System.Solves.supSize_sub_le`.
 
 ## Main statements
 

@@ -6,13 +6,17 @@ description: >-
 sources:
   - id: "cgarryZA/mvfbsdej-well-posedness@1f67672"
     url: "https://github.com/cgarryZA/mvfbsdej-well-posedness/tree/1f67672"
-    title: "Well-posedness of fully coupled McKean-Vlasov FBSDEs with jumps under full-tuple law dependence"
+    title: >-
+      Well-posedness of fully coupled McKean-Vlasov FBSDEs with jumps under full-tuple law
+      dependence
     authors: ["Chunrong Feng", "Christian Garry"]
     relationship: formalizes
 review:
   status: >-
-    Per-claim status in ACCEPTANCE.md, which names the reviewers of each claim's statements, and
-    in the MachineChecked audit; the reviews are recorded in acceptance/review/.
+    Per-claim status in ACCEPTANCE.md and the MachineChecked audit. Every statement, and every
+    definition the statements and the definition claims depend on, is reviewed by its author and
+    by at least one AI reviewer of the same model family (claude-reviewer or claude-auditor); no
+    human review is recorded.
   audit: "https://cgarryza.github.io/mvfbsdej-well-posedness-lean/"
 # The alignment below is generated from acceptance/ by `tools/acceptance.py check --write`.
 alignment:
@@ -43,7 +47,7 @@ alignment:
         - "MVFBSDEJ.Acceptance.eq_couplingT"
         - "MVFBSDEJ.Acceptance.eq_lipfun"
         - "MVFBSDEJ.Acceptance.eq_margproj"
-      status: "formal: proved, review pending"
+      status: "formal: accepted"
     - source: "Remark 2.8"
       lean:
         - "MVFBSDEJ.Acceptance.rem_diag_mono"
@@ -68,7 +72,8 @@ alignment:
         - "MVFBSDEJ.Acceptance.rem_margin_reduce"
         - "MVFBSDEJ.Acceptance.rem_margin_unweighted"
         - "MVFBSDEJ.Acceptance.rem_margin_smaller"
-      status: "formal: proved, review pending"
+        - "MVFBSDEJ.Acceptance.rem_margin_slack"
+      status: "formal: accepted"
     - source: "Theorem 3.1"
       lean:
         - "MVFBSDEJ.Acceptance.thm_stab"
@@ -88,7 +93,11 @@ alignment:
         - "MVFBSDEJ.Acceptance.rem_uniq_initial"
         - "MVFBSDEJ.Acceptance.rem_uniq_singular"
         - "MVFBSDEJ.Acceptance.rem_uniq_translation"
-      status: "formal: proved, review pending"
+        - "MVFBSDEJ.Acceptance.eq_uniq_coeff_lip"
+        - "MVFBSDEJ.Acceptance.eq_uniq_fwd"
+        - "MVFBSDEJ.Acceptance.eq_uniq_bwd_lip"
+        - "MVFBSDEJ.Acceptance.rem_uniq_lip_mem"
+      status: "formal: accepted"
     - source: "Theorem 3.5"
       lean:
         - "MVFBSDEJ.Acceptance.thm_cwp"
@@ -161,7 +170,7 @@ alignment:
         - "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_U_corr"
         - "MVFBSDEJ.Acceptance.ex_fulllaw_beyond_Q"
         - "MVFBSDEJ.Acceptance.ex_fulllaw_affineQ"
-      status: "formal: proved, review pending"
+      status: "formal: accepted"
     - source: "Example 5.5"
       lean:
         - "MVFBSDEJ.Acceptance.ex_dealer_potential"
@@ -183,12 +192,12 @@ alignment:
         - "MVFBSDEJ.Acceptance.ex_dealer_symm"
         - "MVFBSDEJ.Acceptance.ex_dealer_active"
         - "MVFBSDEJ.Acceptance.ex_dealer_depends"
-      status: "formal: proved, review pending"
+      status: "formal: accepted"
     - source: "Remark 5.6"
       lean:
         - "MVFBSDEJ.Acceptance.eq_coupling"
         - "MVFBSDEJ.Acceptance.rem_freelaw"
-      status: "formal: proved, review pending"
+      status: "formal: accepted"
     - source: "Remark 5.7"
       lean:
         - "MVFBSDEJ.Acceptance.ex_fulllaw_pert"
@@ -198,7 +207,7 @@ alignment:
         - "MVFBSDEJ.Acceptance.ex_dealer_mono"
         - "MVFBSDEJ.Acceptance.ex_dealer_wp"
         - "MVFBSDEJ.Acceptance.ex_dealer_active"
-      status: "formal: proved, review pending"
+      status: "formal: accepted"
     - source: "Lemma A.1"
       lean:
         - "MVFBSDEJ.Acceptance.lem_lawflow"

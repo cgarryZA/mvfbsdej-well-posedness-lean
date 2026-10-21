@@ -49,7 +49,7 @@ theorem integral_sq_sub_smul_eq_norm_sq {u γf : E → Fin 1 → ℝ}
     e h1 h2 h3 h4
   rw [h1, Pi.sub_apply, h2, h3, Pi.smul_apply, ← h4]
   simp only [PiLp.inner_apply, Fin.sum_univ_one, PiLp.sub_apply, PiLp.smul_apply,
-    WithLp.ofLp_toLp, RCLike.inner_apply, conj_trivial, smul_eq_mul]
+    RCLike.inner_apply, conj_trivial, smul_eq_mul]
   ring
 
 variable [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] {P : Measure Ω}

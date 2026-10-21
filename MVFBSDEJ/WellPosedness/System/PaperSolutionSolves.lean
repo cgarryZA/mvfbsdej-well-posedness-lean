@@ -22,11 +22,12 @@ following ways, and this file passes between them.
   along it are those along `X`, since they only see `[0, T]` (`driftProc_eq_of_eqOn` and its
   analogues).
 * `Solves` asks the identities almost surely at each time with the canonical Brownian integral,
-  `PaperSolution` on one set of full measure with a càdlàg version of it. A version agrees
-  almost surely with the canonical integral at each time; conversely, the identities of a
-  solution of `Solves` hold on one set of full measure with any version with almost surely
-  right-continuous paths (`LinearFSDEJ.ae_forall_eq`, `LinearBSDEJ.ae_forall_eq`), and a càdlàg
-  version exists (`exists_ae_cadlag_brownianIntegral`).
+  `PaperSolution` on one set of full measure with a càdlàg version of it. A version agrees almost
+  surely with the canonical integral at each time; conversely, the identities of a solution of
+  `Solves` hold on one set of full measure with any version with almost surely right-continuous
+  paths (`MVFBSDEJ.WellPosedness.Stability.LinearFSDEJ.ae_forall_eq`,
+  `MVFBSDEJ.WellPosedness.BrownianPoisson.LinearBSDEJ.ae_forall_eq`), and a càdlàg version
+  exists (`exists_ae_cadlag_brownianIntegral`).
 * `Solves` evaluates the jump coefficient at `(Θ_s, μ_s)`, `PaperSolution` at `(Θ⁻_s, μ⁻_s)`.
   Almost every path of a solution in either sense has left limits on `(0, T]`, so it meets its
   left limits off a countable set of times, and `Θ⁻_s = Θ_s` almost surely for almost every `s`
@@ -36,16 +37,16 @@ following ways, and this file passes between them.
   integrand vanishing off `[0, T]` is progressively measurable
   (`progressivelyMeasurable_of_predictable_of_vanish`); a solution of `Solves` has predictable
   versions of `(Z, U)` with which it is again a solution (`SolvesForced.exists_predictable`),
-  under (2.5) along every progressive tuple, `CoeffRegular`.
+  under (2.5) along every progressive tuple, `MVFBSDEJ.WellPosedness.Existence.CoeffRegular`.
 * `Solves` asks `ξ₀` and `g(X_T, Law X_T)` to be square integrable, `PaperSolution` asks the
   `S²` bounds; each gives the other, the second through Lemma 4.1 over a filtration whose null
   sets lie in its time-`0` field, whose right-continuation is constant before `0` and which
   admits a cross witness (`SolvesForced.lintegral_biSup_X_lt_top`).
 
 The passage to `Solves` uses the `S²` bounds only for the square integrability of `ξ₀` and
-`g(X_T, Law X_T)`, so it is stated for solutions in `ℍ²_weak` with these two conditions
+`g(X_T, Law X_T)`, so it is stated for solutions in `ℍ²` with these two conditions
 (`PaperWeakSolution.exists_solves_of_memLp`), and the path argument for `Θ⁻_s = Θ_s` for tuples
-of `ℍ²_weak` (`PaperWeakTuple.ae_ae_tupleAt_leftLimProc_eq`).
+of `ℍ²` (`PaperWeakTuple.ae_ae_tupleAt_leftLimProc_eq`).
 
 ## Main statements
 
@@ -57,12 +58,13 @@ of `ℍ²_weak` (`PaperWeakTuple.ae_ae_tupleAt_leftLimProc_eq`).
 * `memLp_of_lintegral_biSup_esq_lt_top` — the coordinates of a process with finite `S²`-norm are
   square integrable at every time.
 * `PaperWeakTuple.ae_ae_tupleAt_leftLimProc_eq`, `PaperWeakSolution.jump_rep_tupleAt` —
-  `Θ⁻_s = Θ_s` almost surely at almost every time, for a tuple of `ℍ²_weak`.
-* `PaperWeakSolution.exists_solves_of_memLp` — a solution in `ℍ²_weak` with square-integrable
+  `Θ⁻_s = Θ_s` almost surely at almost every time, for a tuple of `ℍ²`.
+* `PaperWeakSolution.exists_solves_of_memLp` — a solution in `ℍ²` with square-integrable
   `ξ₀` and `g(X_T, Law X_T)`, extended off `[0, T]`, is a solution of `Solves`.
 * `PaperSolution.memLp_initial`, `PaperSolution.memLp_terminal` — `ξ₀` and `g(X_T, Law X_T)` are
   square integrable.
-* `PaperSolution.jump_rep_tupleAt` — `Θ⁻_s = Θ_s` almost surely at almost every time, so `γ` represents `h(s, Θ_s, ·, μ_s)`.
+* `PaperSolution.jump_rep_tupleAt` — `Θ⁻_s = Θ_s` almost surely at almost every time, so `γ`
+  represents `h(s, Θ_s, ·, μ_s)`.
 * `PaperSolution.exists_solves` — a solution in the sense of the paper, extended off `[0, T]`,
   is a solution of `Solves`.
 * `Solves.paperSolution` — a solution of `Solves` with predictable integrands is a solution in
@@ -201,6 +203,7 @@ theorem driverProc_eq_of_eqOn (hX : ∀ i, ∀ t ∈ Set.Icc (0 : ℝ) T, X' i t
   · simp only [driverProc, Set.indicator_of_mem hs, tupleAt_eq_of_eqOn hX hY hs]
   · rw [driverProc_of_notMem hs, driverProc_of_notMem hs]
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
 /-- **The terminal value sees `X` only at `T`**: if `X'_T = X_T`, then
 `g(X'_T, Law X'_T) = g(X_T, Law X_T)`. -/
 theorem terminalVal_eq_of_eq (hX : ∀ i, X' i T = X i T) :
@@ -210,9 +213,10 @@ theorem terminalVal_eq_of_eq (hX : ∀ i, X' i T = X i T) :
 
 end Congr
 
-/-! ### Tuples and solutions of `ℍ²_weak` as solutions of `Solves` -/
+/-! ### Tuples and solutions of `ℍ²` as solutions of `Solves` -/
 
-/-- **The predictable tuple of a tuple of `ℍ²_weak` is its tuple at almost every time**: for
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
+/-- **The predictable tuple of a tuple of `ℍ²` is its tuple at almost every time**: for
 almost every `s ∈ [0, T]`, `Θ⁻_s = (X_{s−}, Y_{s−}, Z_s, U_s)` equals `Θ_s` almost surely. -/
 theorem PaperWeakTuple.ae_ae_tupleAt_leftLimProc_eq (h : PaperWeakTuple ℱ P ν T X Y Z U)
     (hT : 0 ≤ T) :
@@ -281,7 +285,7 @@ namespace PaperWeakSolution
 variable (h : PaperWeakSolution D ℱ hℱW hℱN T C ξ₀ X Y Z U γ) (hT : 0 ≤ T)
 include h hT
 
-/-- **The jump coefficient at the tuple**: for a solution in `ℍ²_weak`, `γ` also represents
+/-- **The jump coefficient at the tuple**: for a solution in `ℍ²`, `γ` also represents
 `e ↦ h(s, Θ_s(ω), e, μ_s)` in `L²(ν)` for almost every `s ∈ [0, T]` and almost every `ω`. -/
 theorem jump_rep_tupleAt :
     ∀ᵐ s ∂(volume.restrict (Set.Icc (0 : ℝ) T)), ∀ᵐ ω ∂P,
@@ -292,7 +296,7 @@ theorem jump_rep_tupleAt :
   rw [← hωeq, ← lawP2_congr heq]
   exact hω
 
-/-- **A solution in `ℍ²_weak` with square-integrable initial datum and terminal value solves
+/-- **A solution in `ℍ²` with square-integrable initial datum and terminal value solves
 `Solves`.** For `T ≥ 0`, if `ξ₀` and `g(X_T, Law X_T)` are square integrable, there are `X'`,
 `Y'` equal to `X`, `Y` at every time of `[0, T]` — adapted with right-continuous paths, `0` before
 `0` and frozen after `T` — such that `(X', Y', Z, U)` solves the system (1.1) in the sense of

@@ -11,7 +11,7 @@ import MVFBSDEJ.WellPosedness.System.SolvesInt
 
 `PaperWeakSolutionForcedInt` states the class of Lemma 4.3 of the well-posedness paper in the
 encoding of `PaperSolutionForced`, and `SolvesForcedInt` is the form of the `λ`-forced system
-(4.1) in `ℍ²_weak` on which the proof of Lemma 4.3 runs. They differ as `PaperWeakSolutionInt`
+(4.1) in `ℍ²` on which the proof of Lemma 4.3 runs. They differ as `PaperWeakSolutionInt`
 and `SolvesInt` do (`MVFBSDEJ.WellPosedness.System.PaperWeakSolutionIntSolves`), with the
 forced integrands `λ ψ + q^ψ` in place of the coefficient processes `ψ` and the terminal value
 `λ g(X_T, Law X_T) + q^g_T` in place of `g(X_T, Law X_T)`:
@@ -23,7 +23,7 @@ forced integrands `λ ψ + q^ψ` in place of the coefficient processes `ψ` and 
 * `SolvesForcedInt` asks the identities almost surely at each time with the canonical Brownian
   integral, which a càdlàg version agrees with almost surely at each time;
 * `SolvesForcedInt` evaluates the jump coefficient at `(Θ_s, μ_s)`, and `Θ⁻_s = Θ_s` almost
-  surely for almost every `s` along a tuple of `ℍ²_weak`
+  surely for almost every `s` along a tuple of `ℍ²`
   (`PaperWeakTuple.ae_ae_tupleAt_leftLimProc_eq`);
 * `SolvesForcedInt` takes `Z` and `U` progressively measurable, and a predictable integrand
   vanishing off `[0, T]` is progressively measurable.

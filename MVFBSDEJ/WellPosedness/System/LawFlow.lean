@@ -3,15 +3,13 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import MVFBSDEJ.Law.P2Measurable
 import MVFBSDEJ.WellPosedness.System.HilbertW2Space
 import MVFBSDEJ.WellPosedness.System.TupleLaw
 import MVFBSDEJ.WellPosedness.System.ULiftMeasurable
-import LevyStochCalc.Analysis.CadlagJumps
 import LevyStochCalc.Brownian.PredictableIntegrand
 import LevyStochCalc.Ito.LeftLimIntegrandRegularity
-import LevyStochCalc.Poisson.CompensatedIntegrandComplete
-import LevyStochCalc.Probability.MarkedPredictable
+import Mathlib.Topology.EMetricSpace.Paracompact
+import Mathlib.Topology.Separation.CompletelyRegular
 
 /-!
 # The law flow of a tuple and its predictable counterpart
@@ -131,6 +129,7 @@ variable [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] {P : Measure Ω
   [IsProbabilityMeasure P] {X : Fin n → ℝ → Ω → ℝ} {Y : Fin m → ℝ → Ω → ℝ}
   {Z : Fin m → ℝ → Ω → Fin d → ℝ} {U : Fin m → ℝ → Ω → E → ℝ}
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
 /-- **The tuple meets its left-limit tuple at almost every time, almost surely**: for jointly
 measurable càdlàg `X, Y`, for almost every `s` the tuples `Θ⁻_s = (X_{s−}, Y_{s−}, Z_s, U_s)` and
 `Θ_s = (X_s, Y_s, Z_s, U_s)` agree almost surely. -/
@@ -217,6 +216,7 @@ variable [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] {P : Measure Ω
   [IsProbabilityMeasure P] {T : ℝ} {X : Fin n → ℝ → Ω → ℝ} {Y : Fin m → ℝ → Ω → ℝ}
   {Z Z' : Fin m → ℝ → Ω → Fin d → ℝ} {U U' : Fin m → ℝ → Ω → E → ℝ}
 
+omit [MeasurableSpace.CountablyGenerated E] in
 /-- **Two versions of `(Z, U)` give the same tuple `dP ⊗ dt`-almost everywhere**: if `Z = Z'`
 `dP ⊗ dt`-a.e. on `Ω × [0, T]` and `U = U'` `dP ⊗ dt ⊗ ν`-a.e. on `Ω × [0, T] × E`, coordinatewise,
 then `Θ_t(ω) = Θ'_t(ω)` for `dP ⊗ dt`-a.e. `(ω, t)`, the jump channels agreeing in `L²(ν)`. -/
@@ -242,6 +242,7 @@ theorem ae_tupleAt_eq_of_ae_eq
     exact he k
   simp only [tupleAt, uLift_congr_ae hu, hpZ]
 
+omit [MeasurableSpace.CountablyGenerated E] in
 /-- **Two versions of `(Z, U)` give the same tuple, almost surely, at almost every time** of
 `[0, T]`. -/
 theorem ae_ae_tupleAt_eq_of_ae_eq
@@ -256,6 +257,7 @@ theorem ae_ae_tupleAt_eq_of_ae_eq
   exact Measure.ae_ae_of_ae_prod
     ((MeasurableEquiv.prodComm (α := ℝ) (β := Ω)).measurableEmbedding.ae_map_iff.mp h)
 
+omit [MeasurableSpace.CountablyGenerated E] in
 /-- **Coefficient evaluations are invariant under the choice of versions and representatives.**
 Let `Z = Z'` `dP ⊗ dt`-a.e. and `U = U'` `dP ⊗ dt ⊗ ν`-a.e., coordinatewise, and let `ρ, ρ'` be
 representatives of the law flows of `Θ = (X, Y, Z, U)` and `Θ' = (X, Y, Z', U')`: maps into

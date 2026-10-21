@@ -19,7 +19,7 @@ By Tonelli's theorem, at almost every time `s ∈ [0, T]`:
 * the tuple `Θ_s = (X_s, Y_s, Z_s, U_s)` is square integrable, so, being strongly
   `ℱ_s`-measurable, it lies in `L²(Ω, ℱ_s; H)`.
 
-So `(Θ_s, Law Θ_s)` is a diagonal input at almost every time, as for a solution in `ℍ²` in the
+So `(Θ_s, Law Θ_s)` is a diagonal input at almost every time, as for a solution in `𝕊` in the
 well-posedness paper.
 
 ## Main statements

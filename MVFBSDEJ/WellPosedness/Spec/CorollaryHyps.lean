@@ -22,9 +22,7 @@ and, for the perturbation `p`, the pairing bound (3.4),
   ≤ c_pert 𝔼[|δX|² + |δY|² + |δZ|²_F + ‖δU‖²_{L²(ν)}]`,
 
 each for almost every `t ∈ [0, T]` and all `(Θ, μ), (Θ', μ') ∈ 𝒟_t`. As in Assumption 2.5, the
-expectations of the pairings are required to exist. The perturbed system `C.perturb p` is a
-coefficient system in the sense of the standing setting, so (2.3) holds for it; with (2.3) for
-`C` this gives (2.3) for `b_p, σ_p, h_p, f_p`, the differences of the two.
+expectations of the pairings are required to exist.
 
 ## Main definitions
 
@@ -34,12 +32,10 @@ coefficient system in the sense of the standing setting, so (2.3) holds for it; 
 ## Main statements
 
 * `Margin213.diagonalMonotoneMargin`, `margin213_iff` — (2.13) as printed gives
-  `DiagonalMonotoneMargin` with the same constants, and for `c > 0`, `β₁, β₂ ≥ 0` the two are
-  equivalent.
+  `MVFBSDEJ.WellPosedness.System.DiagonalMonotoneMargin` with the same constants, and for
+  `c > 0`, `β₁, β₂ ≥ 0` the two are equivalent.
 * `pairingBound34_iff`, `PairingBound34.diagonalPairingBound` — (3.4) as printed is
-  `DiagonalPairingBound`.
-* `JointBorel.coeffBorelW2_of_perturb` — (2.3) for `C` and for `C.perturb p` gives
-  `CoeffBorelW2` for `p`.
+  `MVFBSDEJ.WellPosedness.System.DiagonalPairingBound`.
 -/
 
 open MeasureTheory Filter MVFBSDEJ.Law Matrix
@@ -85,6 +81,7 @@ def PairingBound34 (ℱ : Filtration ℝ ‹MeasurableSpace Ω›) (P : Measure 
 variable {ℱ : Filtration ℝ ‹MeasurableSpace Ω›} {P : Measure Ω} [IsProbabilityMeasure P]
   {T β₁ β₂ c : ℝ} {G : Matrix (Fin m) (Fin n) ℝ} {C p : Coeffs ν n m d}
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] [IsProbabilityMeasure P] in
 /-- The unweighted quantity of (2.13), in the printed order, is `channelSq` of the difference. -/
 theorem integral_margin_eq (Θ Θ' : Ω → TupleH ν n m d) :
     ∫ ω, (‖(Θ ω).2.1 - (Θ' ω).2.1‖ ^ 2 + ‖(Θ ω).2.2.1 - (Θ' ω).2.2.1‖ ^ 2
@@ -134,27 +131,5 @@ theorem pairingBound34_iff : PairingBound34 ℱ P T G c p ↔ DiagonalPairingBou
 theorem PairingBound34.diagonalPairingBound (h : PairingBound34 ℱ P T G c p) :
     DiagonalPairingBound ℱ P T G c p :=
   pairingBound34_iff.mp h
-
-/-- A difference of two maps measurable into the Borel σ-algebra of a space with measurable
-subtraction is measurable. -/
-theorem measurable_borel_sub {α W : Type*} {mα : MeasurableSpace α} [TopologicalSpace W]
-    [MeasurableSpace W] [BorelSpace W] [Sub W] [MeasurableSub₂ W] {f g : α → W}
-    (hf : Measurable[mα, borel W] f) (hg : Measurable[mα, borel W] g) :
-    Measurable[mα, borel W] fun a => f a - g a := by
-  rw [← BorelSpace.measurable_eq (α := W)] at hf hg ⊢
-  exact hf.sub hg
-
-/-- **(2.3) for the baseline and for the perturbed system gives `CoeffBorelW2` for the
-perturbation**: `ψ_p = (ψ₀ + ψ_p) − ψ₀`, `ψ ∈ {b, σ, h, f}`. -/
-theorem JointBorel.coeffBorelW2_of_perturb (hC : JointBorel T C)
-    (hCp : JointBorel T (C.perturb p)) : CoeffBorelW2 T p where
-  b_meas := by
-    simpa [Coeffs.perturb] using measurable_borel_sub hCp.b_meas hC.b_meas
-  σ_meas := by
-    simpa [Coeffs.perturb] using measurable_borel_sub hCp.σ_meas hC.σ_meas
-  h_meas := by
-    simpa [Coeffs.perturb] using measurable_borel_sub hCp.h_meas hC.h_meas
-  f_meas := by
-    simpa [Coeffs.perturb] using measurable_borel_sub hCp.f_meas hC.f_meas
 
 end MVFBSDEJ.WellPosedness.Spec

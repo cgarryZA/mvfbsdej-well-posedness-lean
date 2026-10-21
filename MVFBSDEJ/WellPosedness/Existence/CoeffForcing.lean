@@ -50,6 +50,7 @@ variable {Ω : Type u} [MeasurableSpace Ω] {E : Type v} [MeasurableSpace E] {ν
   {T L : ℝ} {C : Coeffs ν n m d} {X : Fin n → ℝ → Ω → ℝ} {Y : Fin m → ℝ → Ω → ℝ}
   {Z : Fin m → ℝ → Ω → Fin d → ℝ} {U : Fin m → ℝ → Ω → E → ℝ} {γ : Fin n → ℝ → Ω → E → ℝ}
 
+omit [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E] in
 /-- **(4.3), the terminal value is square integrable.** For `X_T` strongly `ℱ_T`-measurable and
 square integrable, and `g` satisfying (2.6) along the diagonal with constant `L`,
 

@@ -20,13 +20,14 @@ solve (1.1) for system `k`. Then
   ≤ C_stab (𝔼|δξ₀|² + 𝔼|δ̂g_T|² + 𝔼 ∫_0^T (|δb|² + |δσ|²_F + ‖δh‖² + |δf|²))`,
 
 with the coefficient differences evaluated along `Θ²`. This file states it over the paper's
-filtration `enlJoint 𝒢₀ D h𝒢₀`, for the solution notion `PaperSolution`, with the hypotheses of
-the paper and the measurability (2.3) of both systems.
+filtration `enlJoint 𝒢₀ D h𝒢₀`, for the solution notion
+`MVFBSDEJ.WellPosedness.System.PaperSolution`, with the hypotheses of the paper and the
+measurability (2.3) of both systems.
 
-The proof applies `PaperSolution.supSize_sub_le_of_coeffBorel` with the Lipschitz constant `2L`
-of the maximum-norm form of Assumption 2.3 and `c_G = s_min(G)⁻²`, so that
-`C_stab = aprioriConst T (10 (2L)²) (4 (2L)²) ‖G‖ c_G α β₁ β₂ 1`. The bound holds in `[0, ∞]`,
-and Assumption 2.2 for either system, Assumption 2.3 for system `2`, the positivity of the
+The proof applies `MVFBSDEJ.WellPosedness.System.PaperSolution.supSize_sub_le_of_coeffBorel`
+with the Lipschitz constant `2L` of the maximum-norm form of Assumption 2.3 and `c_G = s_min(G)⁻²`,
+so that `C_stab = aprioriConst T (10 (2L)²) (4 (2L)²) ‖G‖ c_G α β₁ β₂ 1`. The bound holds in
+`[0, ∞]`, and Assumption 2.2 for either system, Assumption 2.3 for system `2`, the positivity of the
 dimensions and the measurability of system `2` beyond its terminal sections are not used; in the
 paper they make the right-hand side finite.
 
@@ -66,12 +67,12 @@ canonical representative `coeffJump` of `h¹` along `Θ²` and `γ²`, and
 `C_stab = aprioriConst T (10 (2L)²) (4 (2L)²) ‖G‖ s_min(G)⁻² α β₁ β₂ 1`. -/
 theorem PaperSolutionEnl.supSize_sub_le_of_assumptions
     (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
-    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P) (hn : 0 < n) (hm : 0 < m) (hd : 0 < d)
-    (hT : 0 < T) (hJ₁ : JointBorel T C₁) (h22₁ : Assumption22 (enlJoint 𝒢₀ D h𝒢₀) P T C₁ ξ₁)
+    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P) (_hn : 0 < n) (_hm : 0 < m) (_hd : 0 < d)
+    (hT : 0 < T) (hJ₁ : JointBorel T C₁) (_h22₁ : Assumption22 (enlJoint 𝒢₀ D h𝒢₀) P T C₁ ξ₁)
     (h23₁ : Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C₁) (hG : G.rank = min m n)
     (h25₁ : Assumption25 (enlJoint 𝒢₀ D h𝒢₀) P T G α β₁ β₂ C₁) (hJ₂ : JointBorel T C₂)
-    (h22₂ : Assumption22 (enlJoint 𝒢₀ D h𝒢₀) P T C₂ ξ₂)
-    (h23₂ : Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L₂ C₂) :
+    (_h22₂ : Assumption22 (enlJoint 𝒢₀ D h𝒢₀) P T C₂ ξ₂)
+    (_h23₂ : Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L₂ C₂) :
     ∀ (X₁ X₂ : Fin n → ℝ → Ω → ℝ) (Y₁ Y₂ : Fin m → ℝ → Ω → ℝ)
       (Z₁ Z₂ : Fin m → ℝ → Ω → Fin d → ℝ) (U₁ U₂ : Fin m → ℝ → Ω → E → ℝ)
       (γ₁ γ₂ : Fin n → ℝ → Ω → E → ℝ),

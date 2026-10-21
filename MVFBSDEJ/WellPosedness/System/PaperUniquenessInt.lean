@@ -7,9 +7,9 @@ import MVFBSDEJ.WellPosedness.System.PaperWeakSolutionIntSolves
 import MVFBSDEJ.WellPosedness.System.UniquenessInt
 
 /-!
-# Theorem 3.3 in the paper's solution notion, in `ℍ²_weak`
+# Theorem 3.3 in the paper's solution notion, in `ℍ²`
 
-Theorem 3.3 of the well-posedness paper: under Assumptions 2.3–2.5, if `Θ¹, Θ² ∈ ℍ²_weak` satisfy
+Theorem 3.3 of the well-posedness paper: under Assumptions 2.3–2.5, if `Θ¹, Θ² ∈ ℍ²` satisfy
 (1.1) with the same initial condition, then `Θ¹ = Θ²`. Assumption 2.2 is not used (Remark 3.4):
 along each solution the drift and the driver need only have almost surely integrable paths on
 `[0, T]`, and the initial datum need not be square integrable. The terminal condition
@@ -30,7 +30,7 @@ the theorem.
 * `PaperWeakSolutionInt.uniqueness_of_solvesInt_uniqueness` — uniqueness for `SolvesInt` gives
   uniqueness for `PaperWeakSolutionInt`.
 * `PaperWeakSolutionInt.uniqueness` — Theorem 3.3 in the paper's solution notion, in
-  `ℍ²_weak`.
+  `ℍ²`.
 -/
 
 open MeasureTheory Filter Matrix
@@ -91,9 +91,9 @@ theorem PaperWeakSolutionInt.uniqueness_of_solvesInt_uniqueness (hT : 0 ≤ T)
     rw [← congrFun (hY₁ k t ht) ω, ← congrFun (hY₂ k t ht) ω]
     exact hω t ht
 
-/-- **Theorem 3.3 in the paper's solution notion, in `ℍ²_weak`.** Under Assumption 2.3 along the
+/-- **Theorem 3.3 in the paper's solution notion, in `ℍ²`.** Under Assumption 2.3 along the
 diagonal, Assumption 2.4 with `c_G ≥ 0` and Assumption 2.5 along the diagonal with admissible
-constants, two solutions of (1.1) in `ℍ²_weak` in the sense of `PaperWeakSolutionInt` — drift and
+constants, two solutions of (1.1) in `ℍ²` in the sense of `PaperWeakSolutionInt` — drift and
 driver integrable along almost every path, `X_T` square integrable — with the same coefficients
 and the same initial datum coincide: `X¹, X²` and `Y¹, Y²` are indistinguishable on `[0, T]`, and
 `𝔼 ∫_0^T |Z¹ − Z²|²_F = 0`, `𝔼 ∫_0^T ‖U¹ − U²‖²_{L²(ν)} = 0`, coordinatewise, over a filtration

@@ -10,14 +10,16 @@ import MVFBSDEJ.WellPosedness.System.DiagonalLipschitzH
 /-!
 # Theorem 3.5 with Assumption 2.3 in the Hilbert norm
 
-Assumption 2.3 of the well-posedness paper measures the law argument in the 2-Wasserstein
-distance of the Hilbert norm of the tuple space, `DiagonalLipschitzH`. Theorem 3.5,
-`exists_solves_and_uniqueness`, is stated with `DiagonalLipschitz`, the same bound for the
-2-Wasserstein distance of the maximum of the four channel norms. `DiagonalLipschitzH` at `L` gives
-`DiagonalLipschitz` at `2L`, and the terminal bound (2.6) at `L` gives it at `2L`, so Theorem 3.5
-holds under the paper's Assumption 2.3; the conclusion carries no constant. This file states it,
-combined with `exists_solves_and_uniqueness_of_rank`, with Assumption 2.4 as the full rank of the
-coupling matrix, over a general filtration carrying a Lévy driver.
+Assumption 2.3 of the well-posedness paper measures the law argument in the 2-Wasserstein distance
+of the Hilbert norm of the tuple space, `MVFBSDEJ.WellPosedness.System.DiagonalLipschitzH`.
+Theorem 3.5, `exists_solves_and_uniqueness`, is stated with
+`MVFBSDEJ.WellPosedness.System.DiagonalLipschitz`, the same bound for the 2-Wasserstein distance
+of the maximum of the four channel norms. `MVFBSDEJ.WellPosedness.System.DiagonalLipschitzH` at
+`L` gives `MVFBSDEJ.WellPosedness.System.DiagonalLipschitz` at `2L`, and the terminal bound
+(2.6) at `L` gives it at `2L`, so Theorem 3.5 holds under the paper's Assumption 2.3; the conclusion
+carries no constant. This file states it, combined with `exists_solves_and_uniqueness_of_rank`, with
+Assumption 2.4 as the full rank of the coupling matrix, over a general filtration carrying a Lévy
+driver.
 
 This form takes the joint Borel measurability (2.3) of the coefficients, `CoeffBorelW2`, with
 `P₂(H)` carrying the Hilbert-norm `W₂`, in place of the measurability (2.5) of the coefficient

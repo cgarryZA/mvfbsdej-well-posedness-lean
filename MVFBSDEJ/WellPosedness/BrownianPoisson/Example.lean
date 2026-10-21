@@ -5,7 +5,6 @@ Authors: Christian Garry
 -/
 import MVFBSDEJ.WellPosedness.BrownianPoisson.Estimate
 import MVFBSDEJ.WellPosedness.MarkCoding.Coding
-import MVFBSDEJ.WellPosedness.BrownianPoisson.Hypotheses
 import MVFBSDEJ.WellPosedness.MarkCoding.Integral
 import LevyStochCalc.Driver.Existence
 import LevyStochCalc.Driver.AugJointRightCont

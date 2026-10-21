@@ -23,11 +23,12 @@ linear in the integrands, so the difference `(δX, δY, δZ, δU)` solves
 `δX_0 = δξ₀`,
 `dδY_t = −(λ δf_t + δq^f_t) dt + δZ_t dW_t + ∫_E δU_t(e) Ñ(dt, de)`,  `δY_T = λ δg_T + δq^g_T`,
 
-the difference equations (4.15)–(4.16), and the difference `δq` of two forcings is a forcing.
-These are the equation and forcing fields of the difference system `PairDiff`. Its other two
-groups of fields are conditions on the differences alone: the expected Lipschitz bounds (3.2) and
-(2.6) with (2.9) at the pair, `PairLipschitz`, and Assumption 2.5 at the pair, `PairMonotone`.
-Given both, the difference of two solutions is a `PairDiff`.
+the difference equations (4.15)–(4.16), and the difference `δq` of two forcings is a forcing. These
+are the equation and forcing fields of the difference system
+`MVFBSDEJ.WellPosedness.Stability.PairDiff`. Its other two groups of fields are conditions on
+the differences alone: the expected Lipschitz bounds (3.2) and (2.6) with (2.9) at the pair,
+`PairLipschitz`, and Assumption 2.5 at the pair, `PairMonotone`. Given both, the difference of two
+solutions is a `MVFBSDEJ.WellPosedness.Stability.PairDiff`.
 
 The two coefficient systems may differ, as in the comparison of two systems of Theorem 3.1;
 Lemma 4.3 is the case `C¹ = C²`.
@@ -35,17 +36,18 @@ Lemma 4.3 is the case `C¹ = C²`.
 ## Main definitions
 
 * `PairLipschitz` — the expected Lipschitz bounds at the pair, the `lip`, `lipT` fields of
-  `PairDiff`.
-* `PairMonotone` — Assumption 2.5 at the pair, the `mono`, `monoT` fields of `PairDiff`.
+  `MVFBSDEJ.WellPosedness.Stability.PairDiff`.
+* `PairMonotone` — Assumption 2.5 at the pair, the `mono`, `monoT` fields of
+  `MVFBSDEJ.WellPosedness.Stability.PairDiff`.
 
 ## Main statements
 
 * `Forcing.sub` — the difference of two forcings is a forcing.
 * `SolvesForced.fwd_sub`, `SolvesForced.bwd_sub` — the difference equations (4.15)–(4.16).
 * `pairDiff_of_legs` — the difference equations, a forcing, `PairLipschitz` and `PairMonotone`
-  give a `PairDiff`.
-* `SolvesForced.pairDiff` — the difference of two solutions is a `PairDiff`, given
-  `PairLipschitz` and `PairMonotone` for it.
+  give a `MVFBSDEJ.WellPosedness.Stability.PairDiff`.
+* `SolvesForced.pairDiff` — the difference of two solutions is a
+  `MVFBSDEJ.WellPosedness.Stability.PairDiff`, given `PairLipschitz` and `PairMonotone` for it.
 -/
 
 open MeasureTheory Filter Matrix MVFBSDEJ.Law

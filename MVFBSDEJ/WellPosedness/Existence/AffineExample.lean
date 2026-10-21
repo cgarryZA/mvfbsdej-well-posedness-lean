@@ -6,7 +6,7 @@ Authors: Christian Garry
 import MVFBSDEJ.WellPosedness.Existence.CoeffBorelW2
 import MVFBSDEJ.WellPosedness.Existence.Global
 import MVFBSDEJ.WellPosedness.System.Stability
-import MVFBSDEJ.WellPosedness.System.Example
+import MVFBSDEJ.WellPosedness.System.FullRank
 
 /-!
 # Example 5.1(i): a fully coupled affine system
@@ -35,8 +35,6 @@ measurable on `[0, T] × H × P₂(H)` for the Hilbert-norm `W₂`, (2.3). The p
 
 ## Main statements
 
-* `GZ_one`, `GU_one` — the coupling operators of `G = I` on the `Z` and `U` channels are the
-  identity.
 * `interiorPairing_affine` — the interior inequality (2.7) with equality, pointwise.
 * `jumpPairing_affine` — the jump coefficient is `U`-dissipative with equality.
 * `lipschitzCoefficientsP2_affine`, `lipschitzTerminalP2_affine`, `diagonalLipschitz_affine`,
@@ -73,24 +71,6 @@ noncomputable def affineCoeffs (β₁ β₂ : ℝ) (σc : EuclideanSpace ℝ (Fi
   h _ θ _ := hc - β₁ • θ.2.2.2
   f _ θ _ := β₂ • θ.1
   g x _ := x
-
-/-- The coupling operator of the identity matrix on `n × d` matrices is the identity. -/
-theorem _root_.MVFBSDEJ.WellPosedness.System.GZ_one :
-    GZ (d := d) (1 : Matrix (Fin n) (Fin n) ℝ) = ContinuousLinearMap.id ℝ _ := by
-  ext z : 1
-  refine PiLp.ext fun p => ?_
-  rw [← toLp_ofLp 2 z, GZ_toLp_apply, Matrix.one_mulVec]
-  rfl
-
-variable (ν) in
-/-- The coupling operator of the identity matrix on `L²(ν; ℝⁿ)` is the identity. -/
-theorem _root_.MVFBSDEJ.WellPosedness.System.GU_one :
-    GU (1 : Matrix (Fin n) (Fin n) ℝ) ν = ContinuousLinearMap.id ℝ _ := by
-  ext u : 1
-  refine Lp.ext ?_
-  filter_upwards [coeFn_GU (1 : Matrix (Fin n) (Fin n) ℝ) ν u] with e he
-  rw [he, GX_one]
-  rfl
 
 variable {β₁ β₂ : ℝ} {σc : EuclideanSpace ℝ (Fin n × Fin d)}
   {hc : Lp (EuclideanSpace ℝ (Fin n)) 2 ν}

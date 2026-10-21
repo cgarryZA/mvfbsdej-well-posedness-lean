@@ -5,7 +5,6 @@ Authors: Christian Garry
 -/
 import MVFBSDEJ.WellPosedness.Existence.ForcingLimit
 import MVFBSDEJ.WellPosedness.System.CrossEval
-import LevyStochCalc.BSDEJ.PicardLimit
 
 /-!
 # The iterates of a contraction for the data size

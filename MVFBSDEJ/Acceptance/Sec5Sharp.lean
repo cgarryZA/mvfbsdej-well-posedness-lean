@@ -4,7 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.PaperSpec.Sec5Sharp
-import MVFBSDEJ.WellPosedness.Spec.Bridge25
 
 /-!
 # Example 5.1(i) of the well-posedness paper: sharpness, proof
@@ -13,7 +12,7 @@ import MVFBSDEJ.WellPosedness.Spec.Bridge25
 
 * `MVFBSDEJ.Acceptance.ex_concrete_i_sharp` — (2.7) for the coefficients of Example 5.1(i)
   with constants `β₁', β₂'` forces `β₁' ≤ β₁` and `β₂' ≤ β₂`, by the deterministic test tuples of
-  `not_diagonalMonotone_affine_of_lt`.
+  `MVFBSDEJ.WellPosedness.Existence.not_diagonalMonotone_affine_of_lt`.
 -/
 
 open MeasureTheory Filter ProbabilityTheory

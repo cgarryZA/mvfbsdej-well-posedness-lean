@@ -3,14 +3,12 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import Mathlib.Algebra.Order.Star.Real
-import Mathlib.Analysis.InnerProductSpace.PiL2
-import Mathlib.Analysis.Normed.Lp.MeasurableSpace
-import Mathlib.MeasureTheory.SpecificCodomains.WithLp
-import MVFBSDEJ.Law.ExpectationFunctional
-import MVFBSDEJ.Law.LipschitzFunctional
-import MVFBSDEJ.Law.P2
 import MVFBSDEJ.Law.Projection
+import MVFBSDEJ.Law.Assumptions
+import MVFBSDEJ.Law.LipschitzFunctional
+import Mathlib.MeasureTheory.SpecificCodomains.WithLp
+import Mathlib.Algebra.Order.Star.Real
+import Mathlib.Analysis.Normed.Lp.MeasurableSpace
 import Mathlib.Tactic.Positivity.Finset
 
 /-!

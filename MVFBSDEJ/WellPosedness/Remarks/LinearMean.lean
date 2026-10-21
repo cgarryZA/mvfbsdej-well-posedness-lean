@@ -116,6 +116,7 @@ namespace LinearFSDEJInt
 variable {ξ : Ω → ℝ} {b : Ω → ℝ → ℝ} {X : ℝ → Ω → ℝ} {σ : ℝ → Ω → (Fin d → ℝ)}
   {γ : ℝ → Ω → E → ℝ}
 
+omit [MeasurableSpace.CountablyGenerated E] in
 /-- **The mean of a solution of the linear forward equation with a deterministic drift**: if
 `b_s(ω) = β(s)` for every `ω` and `s` and `ξ₀` is integrable, then `𝔼 X_t = 𝔼 ξ₀ + ∫_0^t β` for
 every `t ∈ [0, T]`. -/
@@ -142,6 +143,7 @@ theorem integral_eq_of_deterministic (h : LinearFSDEJInt D ℱ hℱW hℱN T ξ 
     integral_compensatedStochasticIntegral_eq_zero _ _ _ _ _ _ ht.1]
   simp
 
+omit [MeasurableSpace.CountablyGenerated E] in
 /-- **A solution of the linear forward equation with a deterministic drift has an integrable
 initial value** when `X_T` is integrable, for `T ≥ 0`: by the equation at `T`, `ξ₀` is `X_T`
 minus a constant and two square-integrable stochastic integrals. -/
@@ -159,6 +161,7 @@ theorem integrable_initial_of_deterministic (h : LinearFSDEJInt D ℱ hℱW hℱ
 
 end LinearFSDEJInt
 
+omit [MeasurableSpace.CountablyGenerated E] in
 /-- **The mean of a solution of the linear backward equation with a deterministic drift**: if
 `φ_s(ω) = β(s)` for every `ω` and `s` and the terminal value `ξ` is integrable, then
 `𝔼 Y_t = 𝔼 ξ + ∫_t^T β` for every `t ∈ [0, T]`. -/

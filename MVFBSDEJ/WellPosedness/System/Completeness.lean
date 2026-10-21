@@ -7,17 +7,16 @@ import MVFBSDEJ.WellPosedness.System.PaperWeakSolution
 import MVFBSDEJ.WellPosedness.System.ChannelCoords
 import MVFBSDEJ.WellPosedness.BrownianPoisson.MeasurableDrift
 import MVFBSDEJ.WellPosedness.Stability.SupUpgrade
-import LevyStochCalc.Brownian.PredictableIntegrand
 import LevyStochCalc.Probability.MarkedPredictableModification
 
 /-!
-# Completeness of the solution space `ℍ`
+# Completeness of the solution space `𝕊`
 
-The solution space of the well-posedness paper is `ℍ = S²(ℝⁿ) × S²(ℝᵐ) × H²_W × H²_N` with
-`‖Θ‖²_ℍ = 𝔼 sup_{t ≤ T} |X_t|² + 𝔼 sup_{t ≤ T} |Y_t|² + 𝔼 ∫_0^T (|Z_t|² + ‖U_t‖²_{L²(ν)}) dt`
-(`supSize`). Over a filtration whose time-`0` field contains the null sets, every sequence of
-tuples of `ℍ_weak` of finite norm that is Cauchy for `‖·‖_ℍ` has a limit in `ℍ_weak`, of finite
-norm, whose forward and backward components have càdlàg paths.
+The solution space of the well-posedness paper is `𝕊 = S²(ℝⁿ) × S²(ℝᵐ) × H²_W × H²_N` with
+`‖Θ‖²_𝕊 = 𝔼 sup_{t ≤ T} |X_t|² + 𝔼 sup_{t ≤ T} |Y_t|² + 𝔼 ∫_0^T (|Z_t|² + ‖U_t‖²_{L²(ν)}) dt`
+(`MVFBSDEJ.WellPosedness.Stability.supSize`). Over a filtration whose time-`0` field contains
+the null sets, every sequence of tuples of `ℍ²` of finite norm that is Cauchy for `‖·‖_𝕊` has a
+limit in `ℍ²`, of finite norm, whose forward and backward components have càdlàg paths.
 
 For the `S²` components, a subsequence with `𝔼 sup |x_{n_{l+1}} − x_{n_l}|² < 2^{-3l}` has, by
 the Markov inequality and the Borel–Cantelli lemma, `sup |x_{n_{l+1}} − x_{n_l}| < 2^{-l}`
@@ -37,7 +36,7 @@ an almost everywhere convergent subsequence is a predictable representative of t
   `S²`-norm.
 * `exists_predictable_energy_limit`, `exists_markedPredictable_energy_limit` — completeness of
   the predictable integrands of finite energy.
-* `PaperWeakTuple.exists_supSize_limit` — completeness of `(ℍ, ‖·‖_ℍ)`.
+* `PaperWeakTuple.exists_supSize_limit` — completeness of `(𝕊, ‖·‖_𝕊)`.
 -/
 
 open MeasureTheory Filter Topology
@@ -464,10 +463,10 @@ section Tuple
 
 variable [SigmaFinite ν] {n m d : ℕ}
 
-/-- **Completeness of `(ℍ, ‖·‖_ℍ)`.** Over a filtration whose time-`0` field contains the null
-sets, let `Θ_j = (X_j, Y_j, Z_j, U_j)` be tuples of `ℍ_weak` with `‖Θ_j‖²_ℍ = supSize < ∞`, Cauchy
-for `‖·‖_ℍ`. Then there is a tuple `Θ = (X, Y, Z, U)` of `ℍ_weak`, every path of `X` and of `Y`
-having left limits on `(0, T]`, with `‖Θ‖_ℍ < ∞` and `‖Θ_j − Θ‖_ℍ → 0`. -/
+/-- **Completeness of `(𝕊, ‖·‖_𝕊)`.** Over a filtration whose time-`0` field contains the null
+sets, let `Θ_j = (X_j, Y_j, Z_j, U_j)` be tuples of `ℍ²` with `‖Θ_j‖²_𝕊 = supSize < ∞`, Cauchy
+for `‖·‖_𝕊`. Then there is a tuple `Θ = (X, Y, Z, U)` of `ℍ²`, every path of `X` and of `Y`
+having left limits on `(0, T]`, with `‖Θ‖_𝕊 < ∞` and `‖Θ_j − Θ‖_𝕊 → 0`. -/
 theorem PaperWeakTuple.exists_supSize_limit (ℱ : Filtration ℝ ‹MeasurableSpace Ω›)
     (hnull : ∀ s : Set Ω, MeasurableSet s → P s = 0 → MeasurableSet[ℱ 0] s) {T : ℝ}
     {X : ℕ → Fin n → ℝ → Ω → ℝ} {Y : ℕ → Fin m → ℝ → Ω → ℝ}

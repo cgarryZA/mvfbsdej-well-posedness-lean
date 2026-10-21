@@ -4,13 +4,8 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.PaperSpec.Sec4Horizon
-import MVFBSDEJ.WellPosedness.Spec.Examples
 import MVFBSDEJ.WellPosedness.Examples.BrownianSolves
 import MVFBSDEJ.WellPosedness.Stability.LinearCongr
-import MVFBSDEJ.WellPosedness.Enlarged.CrossWitness
-import MVFBSDEJ.WellPosedness.BrownianPoisson.SupBound
-import MVFBSDEJ.WellPosedness.BrownianPoisson.Example
-import MVFBSDEJ.WellPosedness.BrownianPoisson.FrozenCell
 import MVFBSDEJ.Acceptance.Sec3Space
 
 /-!

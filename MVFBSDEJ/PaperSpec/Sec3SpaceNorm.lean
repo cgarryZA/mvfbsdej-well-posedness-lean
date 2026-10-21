@@ -9,8 +9,8 @@ import MVFBSDEJ.PaperSpec.Setting
 # The norm of the solution space and the càdlàg integrals of §3 of the well-posedness paper
 
 Statement numbers refer to the well-posedness paper at `1f67672`, in the standing setting of §2.
-§3 states that, after the identification of tuples of `ℍ` that agree up to indistinguishability
-(`X, Y`) and almost-everywhere equality (`Z, U`), `‖·‖_ℍ` is a norm rather than a seminorm, and,
+§3 states that, after the identification of tuples of `𝕊` that agree up to indistinguishability
+(`X, Y`) and almost-everywhere equality (`Z, U`), `‖·‖_𝕊` is a norm rather than a seminorm, and,
 in the solution definition, that both sides of each identity of (1.1) are càdlàg in `t`. The
 Brownian integral `∫_0^t Z_s dW_s` is an `L²`-limit taken separately at each time, with no path
 regularity, and the compensated Poisson integral has càdlàg paths only almost surely, so the
@@ -19,8 +19,8 @@ càdlàg paths of the stochastic integrals of (1.1) are those of versions.
 ## Main definitions
 
 * `MVFBSDEJ.PaperSpec.sec3_cadlag_versions` — the stochastic integrals of (1.1) along a
-  tuple of `ℍ_weak` have adapted versions whose every path is càdlàg on `[0, T]`.
-* `MVFBSDEJ.PaperSpec.sec3_HH_norm` — `‖·‖_ℍ` satisfies the triangle inequality and is
+  tuple of `ℍ²` have adapted versions whose every path is càdlàg on `[0, T]`.
+* `MVFBSDEJ.PaperSpec.sec3_HH_norm` — `‖·‖_𝕊` satisfies the triangle inequality and is
   absolutely homogeneous.
 -/
 
@@ -35,7 +35,7 @@ open MVFBSDEJ.WellPosedness.System MVFBSDEJ.WellPosedness.Stability
 universe u v w
 
 /-- §3, the solution definition: the stochastic integrals of (1.1) are càdlàg in `t`. In the
-standing setting, let `Θ = (X, Y, Z, U)` be a tuple of `ℍ_weak` (adapted `X, Y` with
+standing setting, let `Θ = (X, Y, Z, U)` be a tuple of `ℍ²` (adapted `X, Y` with
 right-continuous paths, predictable `Z, U` with finite energies vanishing off `[0, T]`) along which
 the integrals of (1.1) exist, with `γ` a representative of the jump coefficient. Then each
 coordinate of each stochastic integral of (1.1), the Brownian integral `∫_0^t σ(s, Θ_s, μ_s) dW_s`
@@ -91,12 +91,12 @@ def sec3_cadlag_versions : Prop :=
       ∧ (∀ ω, ∀ t ∈ Set.Ico (0 : ℝ) T, Tendsto (fun s => M s ω) (𝓝[>] t) (𝓝 (M t ω)))
       ∧ ∀ ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ L : ℝ, Tendsto (fun s => M s ω) (𝓝[<] t) (𝓝 L)
 
-/-- §3, the solution space, `‖·‖_ℍ` is a norm rather than a seminorm, the triangle inequality and
+/-- §3, the solution space, `‖·‖_𝕊` is a norm rather than a seminorm, the triangle inequality and
 the absolute homogeneity (the definiteness is `sec3_HH_definite`): over the filtration of §2, for
-tuples `Θ = (X, Y, Z, U)` and `Θ' = (X', Y', Z', U')` of `ℍ_weak` and `c ∈ ℝ`, with
-`‖Θ‖_ℍ = (𝔼 sup|X|² + 𝔼 sup|Y|² + 𝔼 ∫ (|Z|² + ‖U‖²_{L²(ν)}))^{1/2}` in `[0, ∞]` and sums and
-scalar multiples taken coordinatewise, `‖Θ + Θ'‖_ℍ ≤ ‖Θ‖_ℍ + ‖Θ'‖_ℍ` and
-`‖c Θ‖_ℍ = |c| ‖Θ‖_ℍ`. -/
+tuples `Θ = (X, Y, Z, U)` and `Θ' = (X', Y', Z', U')` of `ℍ²` and `c ∈ ℝ`, with
+`‖Θ‖_𝕊 = (𝔼 sup|X|² + 𝔼 sup|Y|² + 𝔼 ∫ (|Z|² + ‖U‖²_{L²(ν)}))^{1/2}` in `[0, ∞]` and sums and
+scalar multiples taken coordinatewise, `‖Θ + Θ'‖_𝕊 ≤ ‖Θ‖_𝕊 + ‖Θ'‖_𝕊` and
+`‖c Θ‖_𝕊 = |c| ‖Θ‖_𝕊`. -/
 def sec3_HH_norm : Prop :=
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]

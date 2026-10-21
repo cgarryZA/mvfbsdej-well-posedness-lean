@@ -4,7 +4,8 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.WellPosedness.Spec.Thm35
-import MVFBSDEJ.WellPosedness.Examples.MeanFieldWP
+import MVFBSDEJ.WellPosedness.Examples.MeanFieldMonotone
+import LevyStochCalc.Driver.GaussianInitial
 
 /-!
 # Example 5.1(i) under the printed assumptions

@@ -4,9 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.WellPosedness.System.DiagonalAt
-import MVFBSDEJ.WellPosedness.System.DiagonalLipschitzH
 import MVFBSDEJ.WellPosedness.Remarks.Pointwise
-import MVFBSDEJ.WellPosedness.Robustness.CouplingNorm
 
 /-!
 # Integrability of the interior pairing at a fixed time

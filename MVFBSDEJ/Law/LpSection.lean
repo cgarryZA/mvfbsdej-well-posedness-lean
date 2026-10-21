@@ -3,9 +3,7 @@ Copyright (c) 2026 Christian Garry. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
-import Mathlib.MeasureTheory.Function.SimpleFuncDenseLp
 import Mathlib.MeasureTheory.Measure.SeparableMeasure
-import Mathlib.MeasureTheory.Measure.Prod
 
 /-!
 # Measurability of sections into `L²`
