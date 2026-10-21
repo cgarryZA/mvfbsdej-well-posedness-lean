@@ -1012,9 +1012,11 @@ Review by claude-auditor: faithful with representation choices (report `reports/
   `lpRep (1_{[0, T]}(s) h(s, Θ_s(ω), μ_s), e)`, with `Θ_s` and `μ_s` taken from the tuple
   `(X, Y, Z, U)` it is given: a jointly measurable representative of the jump coefficient along that
   tuple at every `s ∈ [0, T]` (`coeffJump_ae_eq`), `0` off `[0, T]`. The definition is generic in
-  the tuple; every statement passes it the left limits, `coeffJump P T C (leftLimProc X)
-  (leftLimProc Y) Z U`, so it is evaluated at `Θ⁻_s` and `μ⁻_s = Law(Θ⁻_s)`, as (3.1) prescribes for
-  `δh`.
+  the tuple. The statements of §3, of Lemmas 4.1 and 4.3 and of §5 pass it the left limits,
+  `coeffJump P T C (leftLimProc X) (leftLimProc Y) Z U`, so it is evaluated at `Θ⁻_s` and
+  `μ⁻_s = Law(Θ⁻_s)`, as (3.1) prescribes for `δh`. The contraction statements of Lemma 4.2 pass it
+  the current tuples, as the paper prints `δψ_s` there (§4.3, `δψ_s := ψ(s, Θ¹_s, μ^{Θ¹}_s) − …`);
+  the paper notes before them that the two forms agree outside a `dt ⊗ dℙ`-null set.
 <!-- def-review: Dissertation.WellPosedness.Existence.coeffJump 90dd30b497d4dd12d6d4dda771a35c05 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Existence.coeffJump--claude-reviewer--2026-10-17T15_04_37Z.md`).
 <!-- def-review: Dissertation.WellPosedness.Existence.coeffJump 90dd30b497d4dd12d6d4dda771a35c05 by=claude-reviewer -->
@@ -1353,7 +1355,11 @@ Review by claude-auditor: faithful (report `reports/Dissertation.WellPosedness.S
   (Bochner integrals): (2.7) at one time. Choice: the existence of the expectation of the pairing is
   asked, which the printed display presupposes; under (2.3) and Assumption 2.3 it holds at almost
   every time for all square-integrable inputs, the coefficient differences being then measurable and
-  square integrable.
+  square integrable. Remarks 2.10 and 5.6 take Assumption 2.5 without Assumption 2.3; there the
+  integrability is part of their hypothesis, and it excludes a pairing whose expectation is `−∞`,
+  which an extended-valued reading of (2.7) would admit. Those two statements are therefore
+  stated under the finite reading of the expectation: their hypothesis is narrower than under the
+  extended reading, so they claim less than that reading would, never more.
 <!-- def-review: Dissertation.WellPosedness.Spec.Mono27At a59346236526d219b3e1099916102f71 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.Spec.Mono27At--claude-reviewer--2026-10-17T15_04_37Z.md`).
 <!-- def-review: Dissertation.WellPosedness.Spec.Mono27At a59346236526d219b3e1099916102f71 by=claude-reviewer -->
