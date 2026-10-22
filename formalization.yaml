@@ -52,7 +52,7 @@ alignment:
       lean:
         - "MVFBSDEJ.Acceptance.rem_diag_mono"
         - "MVFBSDEJ.Acceptance.rem_diag_mono_converse"
-      status: "formal: proved, review pending"
+      status: "formal: accepted"
     - source: "Remark 2.9"
       lean:
         - "MVFBSDEJ.Acceptance.rem_intrinsic_uniform"
@@ -117,7 +117,7 @@ alignment:
     - source: "Proposition 3.8"
       lean:
         - "MVFBSDEJ.Acceptance.prop_strict"
-      status: "formal: proved, review pending"
+      status: "formal: accepted"
     - source: "Lemma 4.1"
       lean:
         - "MVFBSDEJ.Acceptance.lem_bpbsde"
@@ -146,7 +146,7 @@ alignment:
         - "MVFBSDEJ.Acceptance.ex_concrete_ii"
         - "MVFBSDEJ.Acceptance.ex_concrete_ii_pairing"
         - "MVFBSDEJ.Acceptance.ex_concrete_i_sharp"
-      status: "formal: proved, review pending"
+      status: "formal: accepted"
     - source: "Example 5.2"
       lean:
         - "MVFBSDEJ.Acceptance.ex_brownian"

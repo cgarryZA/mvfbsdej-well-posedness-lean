@@ -1522,17 +1522,17 @@ Review by claude-auditor: faithful (report `reports/Dissertation.WellPosedness.S
 * `System.meanY μ = ∫_H y μ(dθ)` (Bochner) for `μ ∈ P₂(H)`, `H = ℝ × ℝ × ℝ^{1×d} × L²(ν; ℝ)`:
   `m_Y(μ)`. The `Y`-channel is integrable under a law of finite second moment and takes values in
   `ℝ¹`, so the integral is the mean and never Lean's junk value.
-<!-- def-review: MVFBSDEJ.WellPosedness.System.meanY b1bbcb6b80a91cb129a220d0bfbb8cc1 by=claude-author -->
+<!-- def-review: MVFBSDEJ.WellPosedness.System.meanY a2e6788536912703e11514cf691ef761 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices (report `reports/Dissertation.WellPosedness.System.meanY--claude-reviewer--2026-10-17T15_01_50Z.md`).
-<!-- def-review: MVFBSDEJ.WellPosedness.System.meanY b1bbcb6b80a91cb129a220d0bfbb8cc1 by=claude-reviewer -->
+<!-- def-review: MVFBSDEJ.WellPosedness.System.meanY a2e6788536912703e11514cf691ef761 by=claude-reviewer -->
 Review by claude-auditor: faithful (report `reports/Dissertation.WellPosedness.System.meanY--claude-auditor--2026-10-19T03_31_21Z.md`).
-<!-- def-review: MVFBSDEJ.WellPosedness.System.meanY b1bbcb6b80a91cb129a220d0bfbb8cc1 by=claude-auditor -->
+<!-- def-review: MVFBSDEJ.WellPosedness.System.meanY a2e6788536912703e11514cf691ef761 by=claude-auditor -->
 * `System.clampDrift β₁ ε t θ μ = −β₁ y + ε g₀(y − m_Y(μ))`: (3.6), at every `d` and `ν`.
-<!-- def-review: MVFBSDEJ.WellPosedness.System.clampDrift b25f794b96410650c732095ab6aa7055 by=claude-author -->
+<!-- def-review: MVFBSDEJ.WellPosedness.System.clampDrift 3bf835e228d1bde5351627bc15f77338 by=claude-author -->
 Review by claude-reviewer: faithful (report `reports/Dissertation.WellPosedness.System.clampDrift--claude-reviewer--2026-10-17T15_06_17Z.md`).
-<!-- def-review: MVFBSDEJ.WellPosedness.System.clampDrift b25f794b96410650c732095ab6aa7055 by=claude-reviewer -->
+<!-- def-review: MVFBSDEJ.WellPosedness.System.clampDrift 3bf835e228d1bde5351627bc15f77338 by=claude-reviewer -->
 Review by claude-auditor: faithful (report `reports/Dissertation.WellPosedness.System.clampDrift--claude-auditor--2026-10-19T03_31_21Z.md`).
-<!-- def-review: MVFBSDEJ.WellPosedness.System.clampDrift b25f794b96410650c732095ab6aa7055 by=claude-auditor -->
+<!-- def-review: MVFBSDEJ.WellPosedness.System.clampDrift 3bf835e228d1bde5351627bc15f77338 by=claude-auditor -->
 
 Verdict: faithful.
 
@@ -1760,11 +1760,11 @@ Review by claude-auditor: broader (report `reports/Dissertation.WellPosedness.Ex
 * `Existence.clampAffineCoeffs β₁ β₂ ε σ_c h_c`: `affineCoeffs` at `n = m = 1` with the drift
   replaced by `clampDrift β₁ ε`, the system of "replacing its drift `−β₁ y` by (3.6)", for every
   `d`: broader, the printed system at `d = 1`.
-<!-- def-review: MVFBSDEJ.WellPosedness.Existence.clampAffineCoeffs 5dc0669bb7724f483dd7fd8e2ba08292 by=claude-author -->
+<!-- def-review: MVFBSDEJ.WellPosedness.Existence.clampAffineCoeffs 790587bb9ac7016aab019d17c1bb924f by=claude-author -->
 Review by claude-reviewer: broader (report `reports/Dissertation.WellPosedness.Existence.clampAffineCoeffs--claude-reviewer--2026-10-17T15_04_36Z.md`).
-<!-- def-review: MVFBSDEJ.WellPosedness.Existence.clampAffineCoeffs 5dc0669bb7724f483dd7fd8e2ba08292 by=claude-reviewer -->
+<!-- def-review: MVFBSDEJ.WellPosedness.Existence.clampAffineCoeffs 790587bb9ac7016aab019d17c1bb924f by=claude-reviewer -->
 Review by claude-auditor: faithful with representation choices (report `reports/Dissertation.WellPosedness.Existence.clampAffineCoeffs--claude-auditor--2026-10-19T03_31_21Z.md`).
-<!-- def-review: MVFBSDEJ.WellPosedness.Existence.clampAffineCoeffs 5dc0669bb7724f483dd7fd8e2ba08292 by=claude-auditor -->
+<!-- def-review: MVFBSDEJ.WellPosedness.Existence.clampAffineCoeffs 790587bb9ac7016aab019d17c1bb924f by=claude-auditor -->
 * `Existence.meanFieldCoeffs ν n d`: the coefficients of (ii) on `TupleH ν n n d`, `m_Ψ(μ)` the
   channels of `tupleMean μ` and `𝔟` the `barycentre`, for general `n = m` and `d`: broader, the
   printed system at `n = d = 1`, the instance the statements use.
