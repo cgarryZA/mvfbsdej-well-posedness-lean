@@ -642,11 +642,11 @@ than its pointwise form (Proposition 3.8)', is what this proposition states for 
 (3.7) along all diagonal inputs while the pointwise bound fails for every `β ≥ 0` at free inputs in
 the supports, so the reading stands.
 
-<!-- spec-review: MVFBSDEJ.PaperSpec.prop_strict ed839d34f480cba1f1c48950c52ae4f4 by=claude-author source=A:prop:strict@b18b8a1407fec705caed58f7f0bb7604c994a084d50703fdd8cc68b071003604 source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.prop_strict ed839d34f480cba1ac9d315442ee6c22 by=claude-author source=A:prop:strict@b18b8a1407fec705caed58f7f0bb7604c994a084d50703fdd8cc68b071003604 source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
 Review by claude-reviewer: faithful with representation choices.
-<!-- spec-review: MVFBSDEJ.PaperSpec.prop_strict ed839d34f480cba1f1c48950c52ae4f4 by=claude-reviewer source=A:prop:strict@b18b8a1407fec705caed58f7f0bb7604c994a084d50703fdd8cc68b071003604 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.prop_strict ed839d34f480cba1ac9d315442ee6c22 by=claude-reviewer source=A:prop:strict@b18b8a1407fec705caed58f7f0bb7604c994a084d50703fdd8cc68b071003604 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-auditor: faithful with representation choices.
-<!-- spec-review: MVFBSDEJ.PaperSpec.prop_strict ed839d34f480cba1f1c48950c52ae4f4 by=claude-auditor source=A:prop:strict@b18b8a1407fec705caed58f7f0bb7604c994a084d50703fdd8cc68b071003604 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.prop_strict ed839d34f480cba1ac9d315442ee6c22 by=claude-auditor source=A:prop:strict@b18b8a1407fec705caed58f7f0bb7604c994a084d50703fdd8cc68b071003604 source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 
 ## Corollary 3.6: `MVFBSDEJ.PaperSpec.cor_robust`, `cor_robust_wp`, `cor_robust_lip`
 
@@ -4296,7 +4296,7 @@ this proposition states (`prop_strict` states it for the drift pairing of Propos
 reading stands.
 
 <!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono ed839d34f480cba16dbf12782c23a6c7 by=claude-author source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
-<!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono_converse ed839d34f480cba14b5e4594e14d9dc7 by=claude-author source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono_converse ed839d34f480cba194f9b4ec1a6ab33d by=claude-author source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
 <!-- spec-review: MVFBSDEJ.PaperSpec.rem_intrinsic_uniform ed839d34f480cba19194a30e1ed5e7d9 by=claude-author source=A:rem:intrinsic@f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166 -->
 <!-- spec-review: MVFBSDEJ.PaperSpec.rem_intrinsic_coupling ed839d34f480cba1d2f6be4ee5bbeb4e by=claude-author source=A:rem:intrinsic@f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166 -->
 <!-- spec-review: MVFBSDEJ.PaperSpec.rem_intrinsic_basis ed839d34f480cba16d46e7a802f817da by=claude-author source=A:rem:intrinsic@f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166 -->
@@ -4305,9 +4305,9 @@ Review by claude-reviewer: broader.
 Review by claude-auditor: faithful with representation choices.
 <!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono ed839d34f480cba16dbf12782c23a6c7 by=claude-auditor source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-reviewer: faithful.
-<!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono_converse ed839d34f480cba14b5e4594e14d9dc7 by=claude-reviewer source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono_converse ed839d34f480cba194f9b4ec1a6ab33d by=claude-reviewer source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-auditor: faithful.
-<!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono_converse ed839d34f480cba14b5e4594e14d9dc7 by=claude-auditor source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono_converse ed839d34f480cba194f9b4ec1a6ab33d by=claude-auditor source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a source=A:abstract@3e98e9839e7e2470c7619601cd0e8f5468477dfdc4dc1f5681314fc4ca1483a9 source=A:conclusion@c886edc62e0561a1e17a961ffd1d0527a5bae43a5607635ce8e247276c91a829 -->
 Review by claude-reviewer: faithful.
 <!-- spec-review: MVFBSDEJ.PaperSpec.rem_intrinsic_uniform ed839d34f480cba19194a30e1ed5e7d9 by=claude-reviewer source=A:rem:intrinsic@f295e589f911d066b117817c51144d266f818d7cbded73c7095853895483c166 -->
 Review by claude-auditor: broader.
@@ -5764,11 +5764,11 @@ Re-readings at the widened passages:
   change the reading: the proposition gives, on every horizon, a system whose frozen map does not
   decrease distances, through the `z`-dependence of `σ` alone; the explanation is not stated.
 
-<!-- spec-review: MVFBSDEJ.PaperSpec.sec4_horizon_not_contractive ed839d34f480cba1fc081d81965ca7e6 by=claude-author source=A:sec4:horizon-not-contractive@db97ce8829bc98255bc1f6086bcedce457887bbe8d9dadbdf18ce129991aa390 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec4_horizon_not_contractive ed839d34f480cba13e2b5c030bd07fe9 by=claude-author source=A:sec4:horizon-not-contractive@db97ce8829bc98255bc1f6086bcedce457887bbe8d9dadbdf18ce129991aa390 -->
 Review by claude-reviewer: faithful with representation choices.
-<!-- spec-review: MVFBSDEJ.PaperSpec.sec4_horizon_not_contractive ed839d34f480cba1fc081d81965ca7e6 by=claude-reviewer source=A:sec4:horizon-not-contractive@3848cfec9527e65f37a2aa7ee50e7c186ffb9d3e89e5d7181ef8045b33f7557a -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec4_horizon_not_contractive ed839d34f480cba13e2b5c030bd07fe9 by=claude-reviewer source=A:sec4:horizon-not-contractive@3848cfec9527e65f37a2aa7ee50e7c186ffb9d3e89e5d7181ef8045b33f7557a -->
 Review by claude-auditor: faithful with representation choices.
-<!-- spec-review: MVFBSDEJ.PaperSpec.sec4_horizon_not_contractive ed839d34f480cba1fc081d81965ca7e6 by=claude-auditor source=A:sec4:horizon-not-contractive@3848cfec9527e65f37a2aa7ee50e7c186ffb9d3e89e5d7181ef8045b33f7557a -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec4_horizon_not_contractive ed839d34f480cba13e2b5c030bd07fe9 by=claude-auditor source=A:sec4:horizon-not-contractive@3848cfec9527e65f37a2aa7ee50e7c186ffb9d3e89e5d7181ef8045b33f7557a -->
 
 ## §4, the supremum criterion: `MVFBSDEJ.PaperSpec.sec4_supremum_criterion`
 

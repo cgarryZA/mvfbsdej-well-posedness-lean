@@ -271,7 +271,7 @@
      "spec": "MVFBSDEJ.PaperSpec.rem_diag_mono_converse",
      "spec_hash": "ed839d34f480cba194f9b4ec1a6ab33d",
      "spec_ok": true,
-     "spec_review": "changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     }
@@ -283,7 +283,7 @@
    "scope": "formal",
    "scope_note": "'Example 5.1(i) verifies Assumption 2.5 exactly, Example 5.4 perturbatively' (lines 251–252) is the content of A:ex:concrete (ex_concrete_i) and A:ex:fulllaw (ex_fulllaw_pert, ex_fulllaw_wp); the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:sec2:difference-notation",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -971,10 +971,7 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [
-      "MVFBSDEJ.WellPosedness.System.clampDrift",
-      "MVFBSDEJ.WellPosedness.System.meanY"
-     ],
+     "defs_changed": [],
      "defs_pending": [],
      "name": "main",
      "passage_changed": {},
@@ -982,7 +979,7 @@
      "spec": "MVFBSDEJ.PaperSpec.prop_strict",
      "spec_hash": "ed839d34f480cba1ac9d315442ee6c22",
      "spec_ok": true,
-     "spec_review": "changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.prop_strict_hypotheses",
      "witness_ok": true
     }
@@ -994,7 +991,7 @@
    "scope": "formal",
    "scope_note": "the difference notation (02-model-assumptions.tex lines 73–84) is pinned in A:sec2:difference-notation",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -1196,11 +1193,7 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [
-      "MVFBSDEJ.WellPosedness.Existence.clampAffineCoeffs",
-      "MVFBSDEJ.WellPosedness.System.clampDrift",
-      "MVFBSDEJ.WellPosedness.System.meanY"
-     ],
+     "defs_changed": [],
      "defs_pending": [],
      "name": "(i) with the drift (3.6): the assumptions",
      "passage_changed": {},
@@ -1218,11 +1211,7 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [
-      "MVFBSDEJ.WellPosedness.Existence.clampAffineCoeffs",
-      "MVFBSDEJ.WellPosedness.System.clampDrift",
-      "MVFBSDEJ.WellPosedness.System.meanY"
-     ],
+     "defs_changed": [],
      "defs_pending": [],
      "name": "(i) with the drift (3.6): well-posedness",
      "passage_changed": {},
@@ -1314,7 +1303,7 @@
    "scope": "formal",
    "scope_note": "the derivation of (1.1) from the control problem by the stochastic maximum principle for jump diffusions is cited work (Tang and Li) and is not stated; the clauses state the system and its properties; the attribution of (ii) to Example 3.1 of Li and Min is a statement about cited work; the reading of β₁ as the reciprocal of the quadratic actuation cost, of β₂ as the running state weight, of the terminal weight 1 and of σ_c, h_c as the uncontrolled baseline (lines 65–66) is the modelling interpretation, not stated; 'By Remark 2.10, every instance with β₁ > 0 must carry strictly U-dissipative jump feedback' (lines 100–101) is the content of A:rem:beta1-dich (rem_beta1_dich); 'The mean-field coupling costs nothing and supplies extra dissipation' (lines 187–188) comments on the constants α = β₁ = β₂ = 2 that ex_concrete_ii states; that the monotonicity hypothesis (H3.2) of Li and Min bounds the total mass of their Lévy measure (lines 191–193) is a statement about cited work; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -2290,10 +2279,7 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [
-      "MVFBSDEJ.WellPosedness.System.clampDrift",
-      "MVFBSDEJ.WellPosedness.System.meanY"
-     ],
+     "defs_changed": [],
      "defs_pending": [],
      "name": "expected diagonal monotonicity is strictly weaker (Proposition 3.8)",
      "passage_changed": {},
@@ -2301,7 +2287,7 @@
      "spec": "MVFBSDEJ.PaperSpec.prop_strict",
      "spec_hash": "ed839d34f480cba1ac9d315442ee6c22",
      "spec_ok": true,
-     "spec_review": "changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.prop_strict_hypotheses",
      "witness_ok": true
     },
@@ -2319,7 +2305,7 @@
      "spec": "MVFBSDEJ.PaperSpec.rem_diag_mono_converse",
      "spec_hash": "ed839d34f480cba194f9b4ec1a6ab33d",
      "spec_ok": true,
-     "spec_review": "changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
@@ -2403,7 +2389,7 @@
    "scope": "formal",
    "scope_note": "the descriptions of the setting (the law dependence of the coefficients in the relative clause of the first sentence, lines 30–34, the law dependence of the terminal function, lines 34–35, and the noise of σ-finite intensity, lines 35–37) and of the hypotheses (imposed along diagonal tuple–law pairs, lines 38–39) are exposition of the hypotheses of the clauses; 'by monotone continuation in the coupling strength from a small-coupling base case' (lines 44–45) describes the proof; the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -2608,10 +2594,7 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [
-      "MVFBSDEJ.WellPosedness.System.clampDrift",
-      "MVFBSDEJ.WellPosedness.System.meanY"
-     ],
+     "defs_changed": [],
      "defs_pending": [],
      "name": "expected diagonal monotonicity is strictly weaker (Proposition 3.8)",
      "passage_changed": {},
@@ -2619,7 +2602,7 @@
      "spec": "MVFBSDEJ.PaperSpec.prop_strict",
      "spec_hash": "ed839d34f480cba1ac9d315442ee6c22",
      "spec_ok": true,
-     "spec_review": "changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.prop_strict_hypotheses",
      "witness_ok": true
     },
@@ -2637,7 +2620,7 @@
      "spec": "MVFBSDEJ.PaperSpec.rem_diag_mono_converse",
      "spec_hash": "ed839d34f480cba194f9b4ec1a6ab33d",
      "spec_ok": true,
-     "spec_review": "changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     }
@@ -2649,7 +2632,7 @@
    "scope": "formal",
    "scope_note": "'The works surveyed above are each restricted on at least one of the three axes (measure argument, jump activity, coupling strength)' (lines 101–102) is a statement about cited work; 'We prove well-posedness under the stated L² and monotonicity assumptions' (lines 102–103) is Theorem 3.5 (thm_cwp) under (2.3) and Assumptions 2.2–2.5, with its continuous dependence (3.1) (thm_stab), and 'by global-in-time monotone continuation' (lines 103–104) describes the proof (§4.5, A:sec4:proof-thm35); item (i) (lines 106–107) is Theorem 3.1 (thm_stab); item (ii) (line 108) is Theorem 3.3 (thm_uniq); item (iii) (lines 109–110) is Theorem 3.5 (thm_cwp), 'by monotone continuation from a small-coupling base case' describing its proof (Lemmas 4.2 and 4.4, A:lem:small and A:lem:cont); item (iv) (lines 111–113) is Corollary 3.6 at m = n (cor_robust_wp) and Remark 3.7 for general rank (rem_generalrank_wp); item (v) (lines 114–115) is Remark 2.8 (rem_diag_mono: the pointwise form gives the expected diagonal one) with Proposition 3.8 (prop_strict) and Remark 2.8's converse (rem_diag_mono_converse) for the strictness, as in A:abstract and A:conclusion; the solution spaces ℍ and ℍ_weak, the class of item (ii), and the solution notion (03-main-results.tex lines 5–36) are pinned in A:sec3:HH-banach and A:sec3:one-null-set, and the two-system notation of (3.1) (03-main-results.tex lines 39–49) in A:sec3:two-system-notation",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -3243,7 +3226,7 @@
      "spec": "MVFBSDEJ.PaperSpec.sec4_horizon_not_contractive",
      "spec_hash": "ed839d34f480cba13e2b5c030bd07fe9",
      "spec_ok": true,
-     "spec_review": "changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.sec4_horizon_hypotheses",
      "witness_ok": true
     }
@@ -3255,7 +3238,7 @@
    "scope": "formal",
    "scope_note": "the region (lines 12–15) begins with the end of the sentence on the mixed G-energy identity and its coercive jump term (lines 9–12), exposition of the proof of Lemma 4.3; 'since the (z, u)-dependence of σ, h and the full-tuple law coupling enter the contraction constant with no T-factor' (lines 14–15) explains the claim and is not stated: the clause states its consequence, a system on every horizon whose frozen-coefficient map does not decrease distances, through the z-dependence of σ alone",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -3976,10 +3959,7 @@
      "author_reviewed": [],
      "corrects": null,
      "defs": [],
-     "defs_changed": [
-      "MVFBSDEJ.WellPosedness.System.clampDrift",
-      "MVFBSDEJ.WellPosedness.System.meanY"
-     ],
+     "defs_changed": [],
      "defs_pending": [],
      "name": "expected diagonal monotonicity is strictly weaker (Proposition 3.8)",
      "passage_changed": {},
@@ -3987,7 +3967,7 @@
      "spec": "MVFBSDEJ.PaperSpec.prop_strict",
      "spec_hash": "ed839d34f480cba1ac9d315442ee6c22",
      "spec_ok": true,
-     "spec_review": "changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.prop_strict_hypotheses",
      "witness_ok": true
     },
@@ -4005,7 +3985,7 @@
      "spec": "MVFBSDEJ.PaperSpec.rem_diag_mono_converse",
      "spec_hash": "ed839d34f480cba194f9b4ec1a6ab33d",
      "spec_ok": true,
-     "spec_review": "changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
@@ -4035,7 +4015,7 @@
    "scope": "formal",
    "scope_note": "'The Lipschitz and monotonicity assumptions are imposed only along the diagonal inputs' (lines 7–8) describes the hypotheses of the clauses; 'The monotonicity of Assumption 2.5 is the principal structural assumption and is still coercive' (lines 10–11) is exposition; the last sentence (lines 12–16) names open questions and cited work",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -5815,8 +5795,7 @@
  "summary": {
   "A": {
    "definition: reviewed": 14,
-   "formal: accepted": 69,
-   "formal: proved, review pending": 7,
+   "formal: accepted": 76,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
    "out of scope: proof-step": 2

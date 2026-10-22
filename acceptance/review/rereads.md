@@ -51,7 +51,7 @@ digest.
   their laws. For every beta >= 0 there are free points and laws, the points in the supports, at
   which the pointwise bound fails. The other added lines describe the setting, the main theorems and
   the dealer example. The earlier verdict, faithful with representation choices, stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.prop_strict ed839d34f480cba1f1c48950c52ae4f4 by=claude-auditor source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 -->
+  <!-- spec-review: MVFBSDEJ.PaperSpec.prop_strict ed839d34f480cba1ac9d315442ee6c22 by=claude-auditor source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 -->
 
 * `MVFBSDEJ.PaperSpec.rem_diag_mono` (added: lines 31–48). The added lines 38-40 read: 'Both
   the Lipschitz and monotonicity hypotheses are imposed only along diagonal tuple-law pairs; we show
@@ -68,7 +68,7 @@ digest.
   and the full Assumption 2.5 with G = 1, for which the pointwise inequality of (2.7) fails for
   every beta >= 0 and every beta'. The rest of the added text is setting, the main theorems and the
   dealer example, none of which bears on this clause. The earlier verdict, faithful, stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono_converse ed839d34f480cba14b5e4594e14d9dc7 by=claude-auditor source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 -->
+  <!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono_converse ed839d34f480cba194f9b4ec1a6ab33d by=claude-auditor source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 -->
 
 * `MVFBSDEJ.PaperSpec.thm_cwp` (added: lines 31–48). For this clause the added lines say
   'existence on every prescribed finite horizon'. thm_cwp states this for every T > 0, under (2.3)
@@ -127,7 +127,7 @@ digest.
   fails the pointwise bound for every β ≥ 0 at points in the supports. The full-system form is the
   separate clause rem_diag_mono_converse. The other added lines are other clauses or are named in
   the scope note. The verdict (faithful with representation choices) stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.prop_strict ed839d34f480cba1f1c48950c52ae4f4 by=claude-auditor source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
+  <!-- spec-review: MVFBSDEJ.PaperSpec.prop_strict ed839d34f480cba1ac9d315442ee6c22 by=claude-auditor source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
 
 * `MVFBSDEJ.PaperSpec.rem_beta1_dich` (added: lines 4–16). Lines 10–12 state that in the m < n
   regime with ν ≠ 0, Assumption 2.5 forces strictly U-dissipative jump feedback (Remark 2.10). That
@@ -154,7 +154,7 @@ digest.
   (2.7) fails for every β ≥ 0 and every β′. That is the strictness, for a full system. The other
   added lines are other clauses or are named in the scope note. The earlier verdict (faithful)
   stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono_converse ed839d34f480cba14b5e4594e14d9dc7 by=claude-auditor source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
+  <!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono_converse ed839d34f480cba194f9b4ec1a6ab33d by=claude-auditor source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
 
 * `MVFBSDEJ.PaperSpec.thm_cwp` (added: lines 4–16). The added lines 4–5 complete the sentence
   on Theorems 3.1, 3.3 and 3.5. Global well-posedness for every horizon, for the system whose
@@ -573,7 +573,7 @@ digest.
   strictness as the existence of such an instance. For a full coefficient system the strictness is
   carried by the separate clause rem_diag_mono_converse. The earlier verdict, faithful with
   representation choices, stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.prop_strict ed839d34f480cba1f1c48950c52ae4f4 by=claude-auditor source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df -->
+  <!-- spec-review: MVFBSDEJ.PaperSpec.prop_strict ed839d34f480cba1ac9d315442ee6c22 by=claude-auditor source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df -->
 
 * `MVFBSDEJ.PaperSpec.rem_diag_mono` (added: lines 101–116 (a new formal claim: the whole
   passage, the contribution list)). The whole region (lines 101-116) is new. Item (v) (lines
@@ -600,7 +600,7 @@ digest.
   Remark 2.8's 'the converse fails' and in Proposition 3.8, which has n = m = 1. A counterexample at
   d = 1 on every basis therefore states it, and prop_strict covers every d >= 1 for the drift
   pairing. Nothing is dropped or added. The earlier verdict, faithful, stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono_converse ed839d34f480cba14b5e4594e14d9dc7 by=claude-auditor source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df -->
+  <!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono_converse ed839d34f480cba194f9b4ec1a6ab33d by=claude-auditor source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df -->
 
 * `MVFBSDEJ.PaperSpec.rem_generalrank_wp` (added: lines 101–116 (a new formal claim: the whole
   passage, the contribution list)). The whole region (lines 101-116) is new. 'Remark 3.7 for general
@@ -1192,7 +1192,7 @@ digest.
   read as motivation. The proposition (on every horizon, an Example 5.1(i) system satisfying the
   assumptions whose frozen map at lambda = 1 does not decrease the distance of a trial from 0) is
   unaffected; the earlier verdict (faithful with representation choices) stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.sec4_horizon_not_contractive ed839d34f480cba1fc081d81965ca7e6 by=claude-auditor source=A:sec4:horizon-not-contractive@db97ce8829bc98255bc1f6086bcedce457887bbe8d9dadbdf18ce129991aa390 -->
+  <!-- spec-review: MVFBSDEJ.PaperSpec.sec4_horizon_not_contractive ed839d34f480cba13e2b5c030bd07fe9 by=claude-auditor source=A:sec4:horizon-not-contractive@db97ce8829bc98255bc1f6086bcedce457887bbe8d9dadbdf18ce129991aa390 -->
 
 ## `A:sec4:proof-thm35` (paper/sections/04-proof-wellposedness.tex, lines 942–951)
 
