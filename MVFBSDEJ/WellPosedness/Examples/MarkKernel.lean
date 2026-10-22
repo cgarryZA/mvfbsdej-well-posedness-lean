@@ -4,6 +4,8 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.WellPosedness.Examples.ExpFunctional
+import Mathlib.MeasureTheory.Integral.Prod
+import Mathlib.MeasureTheory.Measure.SeparableMeasure
 
 /-!
 # The finite-activity mark-kernel embedding
@@ -41,6 +43,7 @@ the constant of Example 5.3 for the Hilbert norm `|·|_H` of `H`.
 * `integrable_markIntegrand` — the integrand of `φ̄` is `ν`-integrable.
 * `markKernel_congr` — `φ̄` does not depend on the representatives of the `L²(ν)` channels.
 * `kernelLipschitzH_markKernel` — the Lipschitz bound with constant `Lip(ψ̄) max(m, m^{1/2})`.
+* `stronglyMeasurable_markKernel` — `φ̄` is jointly measurable in `(t, θ, θ')`.
 * `tupleNorm_le_two_mul_norm_toL2` — the sum `|x| + |y| + |z|_F + ‖u‖` of the channel norms of a
   tuple, the norm of the tuple differences in Assumption 2.3, is at most twice its Hilbert norm.
 -/
@@ -330,6 +333,34 @@ omit [BorelSpace HX] [BorelSpace HY] [BorelSpace HZY] [SecondCountableTopology H
 theorem measurable_pointAt (θ : Tuple HX HY HZY (Lp HV 2 ν)) : Measurable (pointAt θ) :=
   measurable_const.prodMk (measurable_const.prodMk
     (measurable_const.prodMk (Lp.stronglyMeasurable θ.2.2.2).measurable))
+
+/-- **The mark-integrated kernel is jointly measurable**, for a finite `ν` on a countably
+generated space and a pointwise kernel jointly measurable in `(t, p, p')` and Lipschitz for the
+Hilbert norm: `(t, θ, θ') ↦ φ̄(t, θ, θ')` is strongly measurable on `ℝ × H × H`. -/
+theorem stronglyMeasurable_markKernel [MeasurableSpace.CountablyGenerated E] [IsFiniteMeasure ν]
+    [MeasurableSpace F] [BorelSpace F] [SecondCountableTopology F] (hL : 0 ≤ L)
+    (hψ : KernelLipschitzH L ψ)
+    (hψm : Measurable fun p : ℝ × Tuple HX HY HZY HV × Tuple HX HY HZY HV => ψ p.1 p.2.1 p.2.2) :
+    StronglyMeasurable fun p : ℝ × Tuple HX HY HZY (Lp HV 2 ν) × Tuple HX HY HZY (Lp HV 2 ν) =>
+      markKernel ν ψ p.1 p.2.1 p.2.2 := by
+  have hcont : ∀ t : ℝ, Continuous fun q : Tuple HX HY HZY (Lp HV 2 ν)
+      × Tuple HX HY HZY (Lp HV 2 ν) => markKernel ν ψ t q.1 q.2 :=
+    (kernelLipschitzH_markKernel hL hψ).continuous
+      (mul_nonneg hL (le_max_of_le_right (Real.sqrt_nonneg _)))
+  have hmeas : ∀ q : Tuple HX HY HZY (Lp HV 2 ν) × Tuple HX HY HZY (Lp HV 2 ν),
+      StronglyMeasurable fun t : ℝ => markKernel ν ψ t q.1 q.2 := by
+    intro q
+    have h2 : StronglyMeasurable fun x : ℝ × E => ψ x.1 (pointAt q.1 x.2) (pointAt q.2 x.2) :=
+      (hψm.comp (measurable_fst.prodMk (((measurable_pointAt q.1).comp measurable_snd).prodMk
+        ((measurable_pointAt q.2).comp measurable_snd)))).stronglyMeasurable
+    exact MeasureTheory.StronglyMeasurable.integral_prod_right' (ν := ν) h2
+  haveI : SecondCountableTopology (Lp HV 2 ν) := Lp.SecondCountableTopology
+  haveI : SecondCountableTopology (Tuple HX HY HZY (Lp HV 2 ν)) := inferInstance
+  haveI : OpensMeasurableSpace (Tuple HX HY HZY (Lp HV 2 ν)) := inferInstance
+  have h := stronglyMeasurable_uncurry_of_continuous_of_stronglyMeasurable
+    (u := fun (q : Tuple HX HY HZY (Lp HV 2 ν) × Tuple HX HY HZY (Lp HV 2 ν)) (t : ℝ) =>
+      markKernel ν ψ t q.1 q.2) hcont hmeas
+  exact h.comp_measurable ((measurable_snd.fst.prodMk measurable_snd.snd).prodMk measurable_fst)
 
 end Kernel
 

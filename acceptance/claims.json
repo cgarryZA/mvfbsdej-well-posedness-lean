@@ -411,7 +411,7 @@
      "witness": "MVFBSDEJ.Acceptance.rem_uniq_hypotheses"
     },
     {
-     "name": "the origin-value conditions are not necessary: the drift t^{-1/2} added to one system of Example 5.1(i), with a solution in 𝕊",
+     "name": "the origin-value conditions are not necessary: the drift t^{-1/2} added to the affine system b = −y, σ = −z, h = −u, f = 0, g = x, with a solution in 𝕊",
      "spec": "MVFBSDEJ.PaperSpec.rem_uniq_singular",
      "accept": "MVFBSDEJ.Acceptance.rem_uniq_singular",
      "witness": "MVFBSDEJ.Acceptance.rem_uniq_hypotheses"
@@ -566,14 +566,14 @@
    "location": "paper/sections/04-proof-wellposedness.tex",
    "source_sha256": "d62094248f27ce8bc15117e3e39b9ea5169bf86a1af04e994e8c82a5ec2ff534",
    "scope": "formal",
-   "scope_note": "the solution spaces and the norm of ℍ (03-main-results.tex lines 5–28) are pinned in A:sec3:HH-banach; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion; the explicit constant of its proof (04-proof-wellposedness.tex line 244) is pinned in A:eq:supE",
+   "scope_note": "the solution spaces and the norm of ℍ (03-main-results.tex lines 5–28) are pinned in A:sec3:HH-banach; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion; the conclusion with the explicit constant of its proof (04-proof-wellposedness.tex line 244) is the clause lem_bpbsde_explicit of A:eq:supE",
    "scope_reviewed": true,
    "clauses": [
     {
      "name": "main",
      "spec": "MVFBSDEJ.PaperSpec.lem_bpbsde",
      "accept": "MVFBSDEJ.Acceptance.lem_bpbsde",
-     "witness": "MVFBSDEJ.Acceptance.lem_bpbsde_hypotheses"
+     "witness": "MVFBSDEJ.Acceptance.lem_bpbsde_drift_hypotheses"
     }
    ]
   },
@@ -770,7 +770,7 @@
    "location": "paper/sections/05-examples.tex",
    "source_sha256": "6ba8e9a8bd4a3a1d756a510bfc8571612af5e4c854e3bd45a28c1b5172afaaad",
    "scope": "formal",
-   "scope_note": "'Their Lévy measure is the ν of the present setting' (line 224) and 'the counterpart of the origin integrability imposed in [LiMin, (H3.1)]' (lines 229–230) are statements about cited work",
+   "scope_note": "'Their Lévy measure is the ν of the present setting' (line 224) and 'the counterpart of the origin integrability imposed in [LiMin, (H3.1)]' (lines 229–230) are statements about cited work; the joint measurability of ψ̄, a hypothesis of ex_expfunc_limin needed for the measurability of φ̄ that the class requires, is not printed among the hypotheses of lines 225–230 and is read from 'the deterministic-coefficient … interactions of [LiMin]' (line 223), whose coefficients are measurable; the standing countably generated mark space of §2 is assumed",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -803,7 +803,7 @@
    "location": "paper/sections/05-examples.tex",
    "source_sha256": "5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38",
    "scope": "formal",
-   "scope_note": "'Example 5.1(i) supplies such a baseline' (line 291) is the content of A:ex:concrete (ex_concrete_i_pairing, the margin of Example 5.1(i)); 'and beyond the linear jump-integrand expectations of the cited models' (lines 312–313) is a statement about cited work; the closing sentence on the smallness and the weak-coupling route (lines 345–347) is exposition; the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set",
+   "scope_note": "'Example 5.1(i) supplies such a baseline' (line 291) is the content of A:ex:concrete (ex_concrete_i_pairing, the margin of Example 5.1(i)); 'and beyond the linear jump-integrand expectations of the cited models' (lines 312–313) is a statement about cited work; the closing sentence on the smallness and the weak-coupling route (lines 345–347) is exposition; the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; 'an expectation functional already covered by Example 5.3' (lines 316–318) is ex_fulllaw_affineQ: the identity, and the measurability and the Lipschitz bound of the kernel θ' ↦ a + Σ_j c_j φ_j(u') that the class of Example 5.3 requires",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -860,7 +860,7 @@
    "location": "paper/sections/05-examples.tex",
    "source_sha256": "08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b",
    "scope": "formal",
-   "scope_note": "the dealer-market reading (requests for quotes, valuation curves, routing, quotes affine in the curve, the uncontrolled exposure change at an event) is modelling and is not stated; the finite-player inspiration (Cont and Xiong) is a statement about cited work; 'The computation uses only the joint law π; no auxiliary random variable on Ω is needed' (lines 436–438) is a remark on the proof of ex_dealer_mono; 'dependence nonlinear in the law itself is that of Example 5.4' (lines 461–462) refers to A:ex:fulllaw; the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set",
+   "scope_note": "the dealer-market reading (requests for quotes, valuation curves, routing, quotes affine in the curve, the uncontrolled exposure change at an event) is modelling and is not stated; the finite-player inspiration (Cont and Xiong) is a statement about cited work; 'The computation uses only the joint law π; no auxiliary random variable on Ω is needed' (lines 436–438) is a remark on the proof of ex_dealer_mono; 'dependence nonlinear in the law itself is that of Example 5.4' (lines 461–462) refers to A:ex:fulllaw; the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; 'an expectation kernel in the sense of Example 5.3, with L²(ν) in the role of K' (lines 460–461) is ex_dealer_affine: the representation, the measurability and the Lipschitz bound of the kernel (θ, θ') ↦ ∇V(u − u'), whose origin value ∇V(0) = 0 makes the origin condition of the jump class of Example 5.3 hold trivially",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -1100,7 +1100,7 @@
    "location": "paper/wellposedness.tex:30",
    "source_sha256": "4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3",
    "scope": "formal",
-   "scope_note": "the descriptions of the setting (the law dependence of the coefficients in the relative clause of the first sentence, lines 30–34, the law dependence of the terminal function, lines 34–35, and the noise of σ-finite intensity, lines 35–37) and of the hypotheses (imposed along diagonal tuple–law pairs, lines 38–39) are exposition of the hypotheses of the clauses; 'by monotone continuation in the coupling strength from a small-coupling base case' (lines 44–45) describes the proof; the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview",
+   "scope_note": "the descriptions of the setting (the law dependence of the coefficients in the relative clause of the first sentence, lines 30–34, the law dependence of the terminal function, lines 34–35, and the noise of σ-finite intensity, lines 35–37) and of the hypotheses (imposed along diagonal tuple–law pairs, lines 38–39) are exposition of the hypotheses of the clauses; 'by monotone continuation in the coupling strength from a small-coupling base case' (lines 44–45) describes the proof; the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; the first sentence (lines 30–34) is read with the hypotheses the abstract names: the Lipschitz and monotonicity hypotheses (line 38) and the jump-extended G-monotonicity condition under which the results are established (line 42), that is Assumptions 2.2–2.5 with the standing setting of §2, whose mark space is countably generated (02-model-assumptions.tex lines 5–7)",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -1274,7 +1274,7 @@
    "location": "paper/sections/01-introduction.tex:58",
    "source_sha256": "28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998",
    "scope": "formal",
-   "scope_note": "the claims about this paper (lines 63–66); the description of the theorem of Li and Min, of their expectation-functional interaction, of their pointwise jump integrand and of the finite total jump mass their monotonicity hypothesis imposes (lines 58–63) is a statement about cited work",
+   "scope_note": "the claims about this paper (lines 63–66); the description of the theorem of Li and Min, of their expectation-functional interaction, of their pointwise jump integrand and of the finite total jump mass their monotonicity hypothesis imposes (lines 58–63) is a statement about cited work; 'Example 5.3 details the embedding of their interaction class' (line 66) is ex_expfunc_limin (the deterministic-coefficient, finite-activity interactions of Example 5.3, line 223: the embedded kernel is measurable and Lipschitz) with ex_expfunc and ex_expfunc_jump (the class it lands in); that the present monotonicity hypothesis does not impose finite total jump mass ('removes all three restrictions … at arbitrary σ-finite activity', lines 63–65) is ex_concrete_ii, Example 5.1(ii) meeting Assumption 2.5 at every σ-finite ν; σ-finite intensities are on the countably generated mark space of the standing setting (02-model-assumptions.tex lines 5–7)",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -1288,6 +1288,24 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_expfunc_limin",
      "accept": "MVFBSDEJ.Acceptance.ex_expfunc_limin",
      "witness": "MVFBSDEJ.Acceptance.ex_expfunc_limin_hypotheses"
+    },
+    {
+     "name": "the class of Example 5.3 into which their kernels embed: the expectation functional of a measurable kernel Lipschitz in (θ, θ') is W₂-Lipschitz",
+     "spec": "MVFBSDEJ.PaperSpec.ex_expfunc",
+     "accept": "MVFBSDEJ.Acceptance.ex_expfunc",
+     "witness": "MVFBSDEJ.Acceptance.ex_expfunc_hypotheses"
+    },
+    {
+     "name": "the embedding of their jump coefficient through the Nemytskii map",
+     "spec": "MVFBSDEJ.PaperSpec.ex_expfunc_jump",
+     "accept": "MVFBSDEJ.Acceptance.ex_expfunc_jump",
+     "witness": "MVFBSDEJ.Acceptance.ex_expfunc_jump_hypotheses"
+    },
+    {
+     "name": "the monotonicity hypothesis admits arbitrary σ-finite activity: Example 5.1(ii) meets every assumption at every σ-finite ν",
+     "spec": "MVFBSDEJ.PaperSpec.ex_concrete_ii",
+     "accept": "MVFBSDEJ.Acceptance.ex_concrete_ii",
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses"
     }
    ],
    "source_region": {
@@ -1800,6 +1818,12 @@
      "spec": "MVFBSDEJ.PaperSpec.sec3_HH_complete",
      "accept": "MVFBSDEJ.Acceptance.sec3_HH_complete",
      "witness": "MVFBSDEJ.Acceptance.sec3_HH_complete_hypotheses"
+    },
+    {
+     "name": "𝕊 is a linear space: sums and real multiples of tuples of ℍ² are tuples of ℍ²",
+     "spec": "MVFBSDEJ.PaperSpec.sec3_HH_linear",
+     "accept": "MVFBSDEJ.Acceptance.sec3_HH_linear",
+     "witness": "MVFBSDEJ.Acceptance.sec3_HH_norm_hypotheses"
     }
    ],
    "source_region": {
@@ -2185,7 +2209,7 @@
    "location": "paper/sections/04-proof-wellposedness.tex:72",
    "source_sha256": "9b4835a09d4a96730317d9a3f110c73d021c07f2818d46167bfef20bf557a734",
    "scope": "formal",
-   "scope_note": "the passage (lines 72–85) states (4.2) and (4.3), which are also the claims A:eq:coeffint and A:eq:termg; the justifications (the Lipschitz bound with (2.8) at μ' = δ₀, and (2.6) with (2.9)) are steps of their proofs; every unnamed C follows the convention on constants of §4 (04-proof-wellposedness.tex lines 22–25), pinned in A:sec4:supremum-criterion",
+   "scope_note": "the passage (lines 72–85) states (4.2) and (4.3), which are also the claims A:eq:coeffint and A:eq:termg, and that the coefficient processes (2.5) along any Θ ∈ 𝕊 are square integrable (lines 72–73), the third clause; the justifications (the Lipschitz bound with (2.8) at μ' = δ₀, and (2.6) with (2.9)) are steps of their proofs; every unnamed C follows the convention on constants of §4 (04-proof-wellposedness.tex lines 22–25), pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -2199,6 +2223,12 @@
      "spec": "MVFBSDEJ.PaperSpec.eq_termg",
      "accept": "MVFBSDEJ.Acceptance.eq_termg",
      "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses"
+    },
+    {
+     "name": "the coefficient processes (2.5) along any tuple of 𝕊 are square integrable: b, σ, f at (Θ_s, μ_s) and h at the predictable tuple (Θ_{s−}, μ⁻_s)",
+     "spec": "MVFBSDEJ.PaperSpec.sec4_coeff_sq",
+     "accept": "MVFBSDEJ.Acceptance.sec4_coeff_sq",
+     "witness": "MVFBSDEJ.Acceptance.frozen_pair_window_hypotheses"
     }
    ],
    "source_region": {
@@ -3901,7 +3931,7 @@
    "location": "paper/sections/04-proof-wellposedness.tex:72",
    "source_sha256": "c5122bd0c06b75cd49a895770b87c8f3418f7a1732d074261410c61a8a9d5aaf",
    "scope": "formal",
-   "scope_note": "the region (lines 72–81) holds the hypotheses and the justification of (4.2) (Assumptions 2.2–2.3, Θ ∈ ℍ, ψ ∈ {b, σ, h, f} in the norms of Assumption 2.3; the Lipschitz bound with (2.8) at μ' = δ₀) and, on its last line, the start of the sentence of (4.3), the claim A:eq:termg; every unnamed C follows the convention on constants of §4 (04-proof-wellposedness.tex lines 22–25), pinned in A:sec4:supremum-criterion",
+   "scope_note": "the region (lines 72–81) holds the square integrability of the coefficient processes (2.5) along any Θ ∈ 𝕊 (lines 72–73), the second clause, and the hypotheses and the justification of (4.2) (Assumptions 2.2–2.3, Θ ∈ ℍ, ψ ∈ {b, σ, h, f} in the norms of Assumption 2.3; the Lipschitz bound with (2.8) at μ' = δ₀) and, on its last line, the start of the sentence of (4.3), the claim A:eq:termg; every unnamed C follows the convention on constants of §4 (04-proof-wellposedness.tex lines 22–25), pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -3909,6 +3939,12 @@
      "spec": "MVFBSDEJ.PaperSpec.eq_coeffint",
      "accept": "MVFBSDEJ.Acceptance.eq_coeffint",
      "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses"
+    },
+    {
+     "name": "the coefficient processes (2.5) along any tuple of 𝕊 are square integrable: b, σ, f at (Θ_s, μ_s) and h at the predictable tuple (Θ_{s−}, μ⁻_s)",
+     "spec": "MVFBSDEJ.PaperSpec.sec4_coeff_sq",
+     "accept": "MVFBSDEJ.Acceptance.sec4_coeff_sq",
+     "witness": "MVFBSDEJ.Acceptance.frozen_pair_window_hypotheses"
     }
    ],
    "source_region": {
@@ -4028,7 +4064,7 @@
    "location": "paper/sections/04-proof-wellposedness.tex:188",
    "source_sha256": "69066031ecb004372ea47f44623161352a6f6ead47cb3d38fdb991579e47bd8f",
    "scope": "formal",
-   "scope_note": "the pinned region is lines 188–246; the second clause reads the display of lines 193–199, the expectation of (4.5) after Young's inequality, and the first the bound by R at every t (lines 200–205) and (4.6); the sentences of lines 188–192 and 206–207 name the justifications; lines 219–246, the upgrade of sup_t 𝔼|δY_t|² to 𝔼 sup_t |δY_t|² by the forward form, BDG and (4.6), prove the conclusion of Lemma 4.1 (A:lem:bpbsde) and define C_BP := C₀(5 + 4c_BDG) + 4T (line 244), the constant that A:eq:bwddiff states and A:eq:uniq-bwd uses, pinned here",
+   "scope_note": "the pinned region is lines 188–246; the second clause reads the display of lines 193–199, the expectation of (4.5) after Young's inequality, and the first the bound by R at every t (lines 200–205) and (4.6); the sentences of lines 188–192 and 206–207 name the justifications; lines 219–246, the upgrade of sup_t 𝔼|δY_t|² to 𝔼 sup_t |δY_t|² by the forward form, BDG and (4.6), prove the conclusion of Lemma 4.1 (A:lem:bpbsde) and define C_BP := C₀(5 + 4c_BDG) + 4T (line 244), the constant that A:eq:bwddiff states and A:eq:uniq-bwd uses; the conclusion of Lemma 4.1 with this constant is the third clause, and the display of lines 226–243 is a step of its proof",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -4041,6 +4077,12 @@
      "name": "the weighted inequality before the bound by R, for every t ∈ [0, T]: 𝔼 e^t |δY_t|² + 𝔼 ∫_t^T e^s (|δZ_s|²_F + ‖δU_s‖²) ds ≤ 𝔼 e^T |δξ|² + 𝔼 ∫_t^T e^s |φ_s|² ds",
      "spec": "MVFBSDEJ.PaperSpec.eq_supE_weighted",
      "accept": "MVFBSDEJ.Acceptance.eq_supE_weighted",
+     "witness": "MVFBSDEJ.Acceptance.lem_bpbsde_drift_hypotheses"
+    },
+    {
+     "name": "the conclusion of Lemma 4.1 with C_BP := C₀(5 + 4c_BDG) + 4T, C₀ = 2e^T (line 244), for every value c_BDG ≥ c₀",
+     "spec": "MVFBSDEJ.PaperSpec.lem_bpbsde_explicit",
+     "accept": "MVFBSDEJ.Acceptance.lem_bpbsde_explicit",
      "witness": "MVFBSDEJ.Acceptance.lem_bpbsde_drift_hypotheses"
     }
    ],
@@ -4226,7 +4268,7 @@
    "location": "paper/sections/04-proof-wellposedness.tex:312",
    "source_sha256": "dbfe072b5d719a544ec43b251110f77f32c3ceb9a4d075f5cbdefe4a901196bd",
    "scope": "formal",
-   "scope_note": "the pinned region is lines 312–348; the notation of the contraction step (lines 312–323: the trials Θ¹, Θ² ∈ ℍ, Θ̄ᵏ = Φ_λ(Θᵏ), δψ_s along (Θᵏ_s, μ^{Θᵏ}_s), δX, δX̄ and the other component differences, the cancellation of ξ₀ and q) is pinned here and used by A:eq:fwddiff, A:eq:terdiff, A:eq:bwddiff and A:eq:contract; the second clause reads lines 333–337, the bound at almost every time whose integral in time is the first link of (4.9); the pointwise bound of lines 329–332 is the instance of Assumption 2.3 that it integrates, and S_s is defined at line 326; the set-up of the proof of Lemma 4.2 (04-proof-wellposedness.tex lines 258–263) is pinned in A:eq:frozenfwd",
+   "scope_note": "the pinned region is lines 312–348; the notation of the contraction step (lines 312–323: the trials Θ¹, Θ² ∈ ℍ, Θ̄ᵏ = Φ_λ(Θᵏ), δψ_s along (Θᵏ_s, μ^{Θᵏ}_s), δX, δX̄ and the other component differences, the cancellation of ξ₀ and q) is pinned here and used by A:eq:fwddiff, A:eq:terdiff, A:eq:bwddiff and A:eq:contract; the second clause reads lines 333–337, the bound at almost every time whose integral in time is the first link of (4.9); the pointwise bound of lines 329–332, the instance of Assumption 2.3 that the second clause integrates, is the fourth clause, the assertion that (Θᵏ_s, μ^{Θᵏ}_s) are diagonal inputs (lines 326–327) is the third, and S_s is defined at line 326; the set-up of the proof of Lemma 4.2 (04-proof-wellposedness.tex lines 258–263) is pinned in A:eq:frozenfwd",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -4239,6 +4281,18 @@
      "name": "the bound before (4.9), at almost every s ∈ [0, T]: 𝔼 S_s² ≤ 10 L² 𝔼[|δX_s|² + |δY_s|² + |δZ_s|²_F + ‖δU_s‖²]",
      "spec": "MVFBSDEJ.PaperSpec.eq_coeffdiff_ae",
      "accept": "MVFBSDEJ.Acceptance.eq_coeffdiff_ae",
+     "witness": "MVFBSDEJ.Acceptance.frozen_pair_window_hypotheses"
+    },
+    {
+     "name": "for a.e. t each pair (Θ_t, Law(Θ_t)) along a tuple of 𝕊 is a diagonal input: Θ_t ∈ L²(Ω, ℱ_t; H), by Fubini",
+     "spec": "MVFBSDEJ.PaperSpec.sec4_diag_input",
+     "accept": "MVFBSDEJ.Acceptance.sec4_diag_input",
+     "witness": "MVFBSDEJ.Acceptance.frozen_pair_window_hypotheses"
+    },
+    {
+     "name": "the pointwise bound S_s ≤ L(|δX_s| + |δY_s| + |δZ_s|_F + ‖δU_s‖ + W₂(μ^{Θ¹}_s, μ^{Θ²}_s)) at a.e. s, almost surely",
+     "spec": "MVFBSDEJ.PaperSpec.eq_coeffdiff_pointwise",
+     "accept": "MVFBSDEJ.Acceptance.eq_coeffdiff_pointwise",
      "witness": "MVFBSDEJ.Acceptance.frozen_pair_window_hypotheses"
     }
    ],
@@ -4562,7 +4616,7 @@
    "location": "paper/sections/04-proof-wellposedness.tex:511",
    "source_sha256": "9dd172cef01f1026aa495e51fb68721f4460fd5f4d55467771aae4ff86cab79b",
    "scope": "formal",
-   "scope_note": "the region (lines 511–533) holds the set-up of the proof of Lemma 4.3, pinned here and used by its later steps (A:eq:bdg4, A:eq:Gid, A:eq:intmono, A:eq:termmono, A:eq:coerc, A:eq:fwd, A:eq:bwdito, A:eq:bwdyoung, A:eq:wgt, A:eq:bwd): q := δq (lines 511–512), the data quantity P (lines 513–516), δψ_t with μᵏ_t := Law(Θᵏ_t), δg_T and δh at the predictable tuples (lines 517–523); 'For a.e. t each pair (Θᵏ_t, μᵏ_t) is a diagonal input … by Fubini, and μᵏ_t is the Borel law flow of Lemma A.1' (lines 523–526) is a step of the proof, Lemma A.1 being A:lem:lawflow; the region also holds (4.16), the claim A:eq:dY; the forcing class (04-proof-wellposedness.tex lines 39–53) is pinned in A:eq:forced and A:sec4:WP-def",
+   "scope_note": "the region (lines 511–533) holds the set-up of the proof of Lemma 4.3, pinned here and used by its later steps (A:eq:bdg4, A:eq:Gid, A:eq:intmono, A:eq:termmono, A:eq:coerc, A:eq:fwd, A:eq:bwdito, A:eq:bwdyoung, A:eq:wgt, A:eq:bwd): q := δq (lines 511–512), the data quantity P (lines 513–516), δψ_t with μᵏ_t := Law(Θᵏ_t), δg_T and δh at the predictable tuples (lines 517–523); 'For a.e. t each pair (Θᵏ_t, μᵏ_t) is a diagonal input in the sense of Definition 2.1: Θᵏ_t ∈ L²(Ω, ℱ_t; H) for a.e. t by Fubini' (lines 523–525) is the second clause, stated for every tuple of 𝕊, and 'μᵏ_t is the Borel law flow of Lemma A.1' (lines 525–526) is A:lem:lawflow; the region also holds (4.16), the claim A:eq:dY; the forcing class (04-proof-wellposedness.tex lines 39–53) is pinned in A:eq:forced and A:sec4:WP-def",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -4570,6 +4624,12 @@
      "spec": "MVFBSDEJ.PaperSpec.eq_dX",
      "accept": "MVFBSDEJ.Acceptance.eq_dX",
      "witness": "MVFBSDEJ.Acceptance.lem_pert_data_forcing_hypotheses"
+    },
+    {
+     "name": "for a.e. t each pair (Θ_t, Law(Θ_t)) along a tuple of 𝕊 is a diagonal input: Θ_t ∈ L²(Ω, ℱ_t; H), by Fubini",
+     "spec": "MVFBSDEJ.PaperSpec.sec4_diag_input",
+     "accept": "MVFBSDEJ.Acceptance.sec4_diag_input",
+     "witness": "MVFBSDEJ.Acceptance.frozen_pair_window_hypotheses"
     }
    ],
    "source_region": {

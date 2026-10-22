@@ -6323,6 +6323,12 @@ meaning agreed). Two points the first reading did not record:
   The same argument applies to `h`, with `‖·‖_{L²(ν)}` and the compensated integral. The drift
   and the driver are not asked for finite energy, which keeps the remark's example, whose drift
   `t^{-1/2}` is not square integrable at `0` (`rem_uniq_singular`).
+  Note (claude-author, after the adversarial audit of 2026-10-22): the transfer to `h` is not
+  verbatim. A compensated integral exists locally under
+  `∫_0^T ∫_E (|h|² ∧ |h|) ν(de) dt < ∞` almost surely, which is weaker than finite energy, so for
+  `h` the requirement `γ_sq` is the paper's reading of every Poisson integral through a
+  square-integrable integrand (§2, `02-model-assumptions.tex` lines 119–121) rather than a
+  consequence of the existence of the integral.
 * The witness. At `rem_uniq_lip_hypotheses`, `σ = z`, `h = u` and `Z = U = 0` for both solutions,
   so `δσ = δh = δZ = δU = 0`, and `ν = δ₀` is finite: the Brownian and Poisson channels of the
   forward identity, of the estimates and of the membership are `0` there, and neither the

@@ -13,6 +13,7 @@ Statement and equation numbers refer to the well-posedness paper at `1f67672`.
 ## Main definitions
 
 * `MVFBSDEJ.PaperSpec.lem_bpbsde` — Lemma 4.1.
+* `MVFBSDEJ.PaperSpec.lem_bpbsde_explicit` — Lemma 4.1 with the constant `C_BP` of its proof.
 * `MVFBSDEJ.PaperSpec.lem_small` — Lemma 4.2.
 * `MVFBSDEJ.PaperSpec.lem_pert` — Lemma 4.3.
 * `MVFBSDEJ.PaperSpec.lem_cont` — Lemma 4.4.
@@ -88,6 +89,63 @@ def lem_bpbsde : Prop :=
         + (∑ k, ∑ j, Brownian.Ito.energy P T (fun ω s => δZ k s ω j))
         + ∑ k, Poisson.Compensated.markedEnergy P ν T (fun ω s e => δU k s ω e)
       ≤ ENNReal.ofReal (CBP T)
+        * (∫⁻ ω, (esq fun k => δξ ω k) ∂P + ∑ k, Brownian.Ito.energy P T (φ k))
+
+/-- Lemma 4.1 with the constant of its proof. There is `c₀ > 0` such that, for every value
+`c ≥ c₀` of the constant `c_BDG`, the conclusion of Lemma 4.1 holds with
+`C_BP = C₀ (5 + 4 c) + 4T`, `C₀ = 2 e^T`: in the standing setting, for `m ≥ 1` and `T > 0`,
+under the hypotheses of `lem_bpbsde`, `δY ∈ S²(ℝᵐ)` and
+`𝔼 sup_{t ≤ T} |δY_t|² + 𝔼 ∫_0^T (|δZ_s|²_F + ‖δU_s‖²_{L²(ν)}) ds
+  ≤ (2 e^T (5 + 4c) + 4T) (𝔼|δξ|² + 𝔼 ∫_0^T |φ_s|² ds)`. -/
+def lem_bpbsde_explicit : Prop :=
+  ∃ c₀ : ℝ, 0 < c₀ ∧ ∀ c : ℝ, c₀ ≤ c →
+  ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
+    [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
+    (m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
+    (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
+    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P),
+    0 < m → 0 < d → ∀ T : ℝ, 0 < T →
+    ∀ (δξ : Ω → EuclideanSpace ℝ (Fin m)) (φ : Fin m → Ω → ℝ → ℝ) (δY : Fin m → ℝ → Ω → ℝ)
+      (δZ : Fin m → ℝ → Ω → Fin d → ℝ) (δU : Fin m → ℝ → Ω → E → ℝ)
+      (hZ : ∀ k j, Probability.Predictable (enlJoint 𝒢₀ D h𝒢₀) fun ω s => δZ k s ω j)
+      (hZv : ∀ k ω s, s ∉ Set.Icc (0 : ℝ) T → δZ k s ω = 0)
+      (hZs : ∀ k j, Brownian.Ito.energy P T (fun ω s => δZ k s ω j) ≠ ⊤)
+      (hU : ∀ k, Probability.MarkedPredictable (enlJoint 𝒢₀ D h𝒢₀) ν
+        fun ω s e => δU k s ω e)
+      (hUv : ∀ k ω s e, s ∉ Set.Icc (0 : ℝ) T → δU k s ω e = 0)
+      (hUs : ∀ k, Poisson.Compensated.markedEnergy P ν T (fun ω s e => δU k s ω e) ≠ ⊤),
+    Measurable[enlJoint 𝒢₀ D h𝒢₀ T] δξ → MemLp δξ 2 P →
+    (∀ k, Measurable (Function.uncurry (φ k))) → (∀ k, Brownian.Ito.energy P T (φ k) ≠ ⊤) →
+    (∀ k, ∀ t ∈ Set.Icc (0 : ℝ) T, Measurable[enlJoint 𝒢₀ D h𝒢₀ t] (δY k t)) →
+    (∀ k ω, ∀ t ∈ Set.Ico (0 : ℝ) T, Tendsto (fun s => δY k s ω) (𝓝[>] t) (𝓝 (δY k t ω))) →
+    (∀ k ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ l : ℝ, Tendsto (fun s => δY k s ω) (𝓝[<] t) (𝓝 l)) →
+    (∀ k, ∀ t ∈ Set.Icc (0 : ℝ) T, ∀ᵐ ω ∂P,
+      δY k t ω = δξ ω k + (∫ s in Set.Icc t T, φ k ω s)
+        - (Brownian.Multidim.MultidimBrownianMotion.stochasticIntegral D.W (enlJoint 𝒢₀ D h𝒢₀)
+              (isBrownianFiltration_enlJoint D h𝒢₀ hind₀) (δZ k)
+              (fun j => Brownian.Ito.measurable_uncurry_of_predictable (hZ k j))
+              (progressivelyMeasurable_of_predictable_of_vanish (hZ k) (hZv k))
+              (BSDEJ.Solves.sq_int_global_of_vanishing (hZv k) (hZs k)) T ω
+            - Brownian.Multidim.MultidimBrownianMotion.stochasticIntegral D.W
+              (enlJoint 𝒢₀ D h𝒢₀) (isBrownianFiltration_enlJoint D h𝒢₀ hind₀) (δZ k)
+              (fun j => Brownian.Ito.measurable_uncurry_of_predictable (hZ k j))
+              (progressivelyMeasurable_of_predictable_of_vanish (hZ k) (hZv k))
+              (BSDEJ.Solves.sq_int_global_of_vanishing (hZv k) (hZs k)) t ω)
+        - (Poisson.Compensated.stochasticIntegral D.N (enlJoint 𝒢₀ D h𝒢₀)
+              (isPoissonFiltration_enlJoint D h𝒢₀ hind₀) (fun ω' s e => δU k s ω' e)
+              ((hU k).mono (Probability.markedPredictableSigma_le _ ν) le_rfl)
+              (hU k).markedProgressivelyMeasurable
+              (BSDEJ.Solves.marked_sq_int_global_of_vanishing (hUv k) (hUs k)) T ω
+            - Poisson.Compensated.stochasticIntegral D.N (enlJoint 𝒢₀ D h𝒢₀)
+              (isPoissonFiltration_enlJoint D h𝒢₀ hind₀) (fun ω' s e => δU k s ω' e)
+              ((hU k).mono (Probability.markedPredictableSigma_le _ ν) le_rfl)
+              (hU k).markedProgressivelyMeasurable
+              (BSDEJ.Solves.marked_sq_int_global_of_vanishing (hUv k) (hUs k)) t ω)) →
+    (∫⁻ ω, (⨆ t ∈ Set.Icc (0 : ℝ) T, esq fun k => δY k t ω) ∂P < ⊤)
+    ∧ ∫⁻ ω, (⨆ t ∈ Set.Icc (0 : ℝ) T, esq fun k => δY k t ω) ∂P
+        + (∑ k, ∑ j, Brownian.Ito.energy P T (fun ω s => δZ k s ω j))
+        + ∑ k, Poisson.Compensated.markedEnergy P ν T (fun ω s e => δU k s ω e)
+      ≤ ENNReal.ofReal (2 * Real.exp T * (5 + 4 * c) + 4 * T)
         * (∫⁻ ω, (esq fun k => δξ ω k) ∂P + ∑ k, Brownian.Ito.energy P T (φ k))
 
 /-- Lemma 4.2 (small-coupling base case). There is a function `λ*` of `(T, L)` such that: in the

@@ -21,7 +21,7 @@ filtration `ℱ`, and a function `ψ` measurable for the marked predictable σ-a
 ## Main statements
 
 * `aemeasurable_and_lintegral_compensation` — (2.1).
-* `integral_compensated_eq_zero` — (2.2).
+* `integrable_and_integral_compensated_eq_zero`, `integral_compensated_eq_zero` — (2.2).
 -/
 
 open MeasureTheory Filter
@@ -98,14 +98,15 @@ theorem integral_eq_toReal_sub_toReal {α : Type*} [MeasurableSpace α] {μ : Me
   integral_eq_lintegral_pos_part_sub_lintegral_neg_part
     ⟨hf.aestronglyMeasurable, lt_top_iff_ne_top.mpr hfin⟩
 
-/-- **The compensated integral has mean zero (2.2).** For a filtration carrying `N` and a real
-function `ψ` measurable for the marked predictable σ-algebra with
-`𝔼 ∫_0^T ∫_E |ψ| ν(de) ds < ∞`, the pathwise compensated integral
-`∫_{(0, T] × E} ψ dN − ∫_0^T ∫_E ψ ν(de) ds` has mean zero. -/
-theorem integral_compensated_eq_zero (hℱN : Poisson.IsPoissonFiltration N ℱ) (T : ℝ)
-    {ψ : Ω × ℝ × E → ℝ} (hψ : Measurable[Probability.markedPredictableSigma ℱ ν] ψ)
+/-- For a filtration carrying `N` and a real function `ψ` measurable for the marked predictable
+σ-algebra with `𝔼 ∫_0^T ∫_E |ψ| ν(de) ds < ∞`, the pathwise compensated integral
+`∫_{(0, T] × E} ψ dN − ∫_0^T ∫_E ψ ν(de) ds` is integrable and has mean zero. -/
+theorem integrable_and_integral_compensated_eq_zero (hℱN : Poisson.IsPoissonFiltration N ℱ)
+    (T : ℝ) {ψ : Ω × ℝ × E → ℝ} (hψ : Measurable[Probability.markedPredictableSigma ℱ ν] ψ)
     (hfin : ∫⁻ ω, (∫⁻ s in Set.Ioc (0 : ℝ) T, ∫⁻ e, ‖ψ (ω, s, e)‖ₑ ∂ν) ∂P < ⊤) :
-    ∫ ω, ((∫ p in Set.Ioc (0 : ℝ) T ×ˢ Set.univ, ψ (ω, p) ∂(N.N ω))
+    Integrable (fun ω => (∫ p in Set.Ioc (0 : ℝ) T ×ˢ Set.univ, ψ (ω, p) ∂(N.N ω))
+      - ∫ s in Set.Ioc (0 : ℝ) T, ∫ e, ψ (ω, s, e) ∂ν) P
+    ∧ ∫ ω, ((∫ p in Set.Ioc (0 : ℝ) T ×ˢ Set.univ, ψ (ω, p) ∂(N.N ω))
       - ∫ s in Set.Ioc (0 : ℝ) T, ∫ e, ψ (ω, s, e) ∂ν) ∂P = 0 := by
   set R : Set (ℝ × E) := Set.Ioc (0 : ℝ) T ×ˢ Set.univ with hR
   set lam : Measure (ℝ × E) := (volume.restrict (Set.Ioc (0 : ℝ) T)).prod ν with hlam
@@ -171,9 +172,21 @@ theorem integral_compensated_eq_zero (hℱN : Poisson.IsPoissonFiltration N ℱ)
   have t2 := integral_toReal hp.2.1 (ae_lt_top' hp.2.1 hfinp)
   have t3 := integral_toReal hm.1 (ae_lt_top' hm.1 hfinNm)
   have t4 := integral_toReal hm.2.1 (ae_lt_top' hm.2.1 hfinm)
+  refine ⟨((i1.sub i2).sub (i3.sub i4)).congr (hae.mono fun ω h => h.symm), ?_⟩
   rw [integral_congr_ae hae, integral_sub, integral_sub, integral_sub, t1, t2, t3, t4, hp.2.2,
     hm.2.2]
   · ring
   all_goals first | exact i1 | exact i2 | exact i3 | exact i4 | exact i1.sub i2 | exact i3.sub i4
+
+/-- **The compensated integral has mean zero (2.2).** For a filtration carrying `N` and a real
+function `ψ` measurable for the marked predictable σ-algebra with
+`𝔼 ∫_0^T ∫_E |ψ| ν(de) ds < ∞`, the pathwise compensated integral
+`∫_{(0, T] × E} ψ dN − ∫_0^T ∫_E ψ ν(de) ds` has mean zero. -/
+theorem integral_compensated_eq_zero (hℱN : Poisson.IsPoissonFiltration N ℱ) (T : ℝ)
+    {ψ : Ω × ℝ × E → ℝ} (hψ : Measurable[Probability.markedPredictableSigma ℱ ν] ψ)
+    (hfin : ∫⁻ ω, (∫⁻ s in Set.Ioc (0 : ℝ) T, ∫⁻ e, ‖ψ (ω, s, e)‖ₑ ∂ν) ∂P < ⊤) :
+    ∫ ω, ((∫ p in Set.Ioc (0 : ℝ) T ×ˢ Set.univ, ψ (ω, p) ∂(N.N ω))
+      - ∫ s in Set.Ioc (0 : ℝ) T, ∫ e, ψ (ω, s, e) ∂ν) ∂P = 0 :=
+  (integrable_and_integral_compensated_eq_zero hℱN T hψ hfin).2
 
 end MVFBSDEJ.WellPosedness.BrownianPoisson

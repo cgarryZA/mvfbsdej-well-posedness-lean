@@ -54,8 +54,9 @@ def rem_uniq_initial : Prop :=
     ∀ i, MemLp (fun ω => ξ₀ ω i) 2 P
 
 /-- Remark 3.4, the singular drift. In the standing setting with `𝒢₀ = ⊥`, `n = m = 1` and any
-`d`, on every horizon `T > 0`: the affine coefficients of Example 5.1(i) taken at `β₁ = 1`,
-`β₂ = 0`, `σ_c = 0`, `h_c = 0`, with the deterministic drift `t^{-1/2}` added to `b`, satisfy
+`d`, on every horizon `T > 0`: the affine coefficients `b = −y`, `σ = −z`, `h = −u`, `f = 0`,
+`g = x` (`affineCoeffs` at `β₁ = 1`, `β₂ = 0`, `σ_c = 0`, `h_c = 0`), with the deterministic drift
+`t^{-1/2}` added to `b`, satisfy
 (2.3), Assumption 2.3 with `L = 1`, Assumption 2.4 with `G = 1` and Assumption 2.5 with `G = 1`,
 `α = 1`, `β₁ = 1`, `β₂ = 0`, violate Assumption 2.2 for every initial datum, and have a solution
 of (1.1) in `𝕊` from the initial datum `0`. -/

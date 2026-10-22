@@ -30,8 +30,9 @@ open MVFBSDEJ.WellPosedness.System MVFBSDEJ.Law
 universe u v w
 
 /-- Lemma A.1, the Borel law flows. For `X, Y` càdlàg adapted and `Z, U` predictable, all of
-finite energy on `[0, T]`, the flows `s ↦ Law(Θ_s)` and `s ↦ Law(Θ⁻_s)`, `Θ⁻_s = (X_{s−}, Y_{s−},
-Z_s, U_s)`, are Borel into `(P₂(H), W₂)`, and for almost every `s ∈ [0, T]` they are the laws
+finite energy on `[0, T]`, the flows `s ↦ lawP2 P Θ_s` and `s ↦ lawP2 P Θ⁻_s`,
+`Θ⁻_s = (X_{s−}, Y_{s−}, Z_s, U_s)` (the law where the tuple is square integrable, `δ₀`
+elsewhere), are Borel into `(P₂(H), W₂)`, and for almost every `s ∈ [0, T]` they are the laws
 `P ∘ Θ_s⁻¹` and `P ∘ (Θ⁻_s)⁻¹` and coincide. -/
 def lem_lawflow : Prop :=
   ∀ {Ω : Type u} [mΩ : MeasurableSpace Ω] (ℱ : Filtration ℝ mΩ)

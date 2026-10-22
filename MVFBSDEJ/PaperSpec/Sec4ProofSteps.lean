@@ -154,6 +154,82 @@ def eq_coeffdiff_ae : Prop :=
             + ∑ k, esq (fun j => Z₁ k s ω j - Z₂ k s ω j)
             + ∑ k, ∫⁻ e, (‖U₁ k s ω e - U₂ k s ω e‖₊ : ℝ≥0∞) ^ 2 ∂ν) ∂P
 
+/-- **The coefficient processes (2.5) along a tuple of `𝕊` are square integrable, before (4.2).**
+In the standing setting, for `T > 0`, if the coefficients with initial datum `ξ₀` satisfy (2.3)
+and Assumptions 2.2–2.3 with constant `L`, then along every tuple `Θ = (X, Y, Z, U)` of `𝕊`, with
+`μ_s = Law(Θ_s)`, `Θ⁻_s = (X_{s−}, Y_{s−}, Z_s, U_s)` and `μ⁻_s = Law(Θ⁻_s)`, coordinatewise:
+`𝔼 ∫_0^T |ψ(s, Θ_s, μ_s)|² ds < ∞` for `ψ ∈ {b, σ, f}`, and
+`𝔼 ∫_0^T ‖h(s, Θ⁻_s, ·, μ⁻_s)‖²_{L²(ν)} ds < ∞`, the jump coefficient read through its
+representative `coeffJump` at the predictable tuple. -/
+def sec4_coeff_sq : Prop :=
+  ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
+    [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
+    (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
+    (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ),
+    Indep 𝒢₀ (⨆ t, D.filtration t) P →
+    0 < n → 0 < m → 0 < d → ∀ T : ℝ, 0 < T →
+    ∀ (L : ℝ) (C : Coeffs ν n m d) (ξ₀ : Ω → EuclideanSpace ℝ (Fin n)),
+    JointBorel T C → Assumption22 (enlJoint 𝒢₀ D h𝒢₀) P T C ξ₀ →
+    Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C →
+    ∀ (X : Fin n → ℝ → Ω → ℝ) (Y : Fin m → ℝ → Ω → ℝ) (Z : Fin m → ℝ → Ω → Fin d → ℝ)
+      (U : Fin m → ℝ → Ω → E → ℝ),
+    HTuple (enlJoint 𝒢₀ D h𝒢₀) P ν T X Y Z U →
+    (∀ i, Brownian.Ito.energy P T (driftProc P T C X Y Z U i) ≠ ⊤)
+    ∧ (∀ i j, Brownian.Ito.energy P T (fun ω s => diffusionProc P T C X Y Z U i s ω j) ≠ ⊤)
+    ∧ (∀ i, Poisson.Compensated.markedEnergy P ν T (fun ω s e =>
+        jumpProc T (coeffJump P T C (leftLimProc X) (leftLimProc Y) Z U) i s ω e) ≠ ⊤)
+    ∧ ∀ k, Brownian.Ito.energy P T (driverProc P T C X Y Z U k) ≠ ⊤
+
+/-- **The trial tuples are diagonal inputs, before (4.9) and (4.19).** In the standing setting,
+for `T > 0` and a tuple `Θ = (X, Y, Z, U)` of `𝕊`, at almost every `t ∈ [0, T]` the pair
+`(Θ_t, Law(Θ_t))` is a diagonal input in the sense of Definition 2.1:
+`Θ_t ∈ L²(Ω, ℱ_t; H)`. -/
+def sec4_diag_input : Prop :=
+  ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
+    [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
+    (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
+    (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ),
+    Indep 𝒢₀ (⨆ t, D.filtration t) P → ∀ T : ℝ, 0 < T →
+    ∀ (X : Fin n → ℝ → Ω → ℝ) (Y : Fin m → ℝ → Ω → ℝ) (Z : Fin m → ℝ → Ω → Fin d → ℝ)
+      (U : Fin m → ℝ → Ω → E → ℝ),
+    HTuple (enlJoint 𝒢₀ D h𝒢₀) P ν T X Y Z U →
+    ∀ᵐ t ∂(volume.restrict (Set.Icc (0 : ℝ) T)),
+      (tupleAt ν X Y Z U t, lawP2 P (tupleAt ν X Y Z U t))
+        ∈ diagonalInputs ν n m d (enlJoint 𝒢₀ D h𝒢₀) P t
+
+/-- **The pointwise bound before (4.9).** In the standing setting, under the hypotheses of
+Lemma 4.2 — `T > 0`, coefficients with (2.3) and Assumptions 2.2–2.3 with constant `L` and initial
+datum `ξ₀` — for two trial tuples `Θ¹, Θ²` of `𝕊`, at almost every `s ∈ [0, T]`, almost surely,
+`S_s ≤ L (|δX_s| + |δY_s| + |δZ_s|_F + ‖δU_s‖_{L²(ν)} + W₂(μ^{Θ¹}_s, μ^{Θ²}_s))`, with `S_s` the
+sum of the norms of the coefficient differences at `(Θᵏ_s, μ^{Θᵏ}_s)`, `μ^{Θᵏ}_s = Law(Θᵏ_s)`. -/
+def eq_coeffdiff_pointwise : Prop :=
+  ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
+    [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
+    (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
+    (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ),
+    Indep 𝒢₀ (⨆ t, D.filtration t) P →
+    0 < n → 0 < m → 0 < d → ∀ T : ℝ, 0 < T →
+    ∀ (L : ℝ) (C : Coeffs ν n m d) (ξ₀ : Ω → EuclideanSpace ℝ (Fin n)),
+    JointBorel T C → Assumption22 (enlJoint 𝒢₀ D h𝒢₀) P T C ξ₀ →
+    Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C →
+    ∀ (X₁ X₂ : Fin n → ℝ → Ω → ℝ) (Y₁ Y₂ : Fin m → ℝ → Ω → ℝ)
+      (Z₁ Z₂ : Fin m → ℝ → Ω → Fin d → ℝ) (U₁ U₂ : Fin m → ℝ → Ω → E → ℝ),
+    HTuple (enlJoint 𝒢₀ D h𝒢₀) P ν T X₁ Y₁ Z₁ U₁ → HTuple (enlJoint 𝒢₀ D h𝒢₀) P ν T X₂ Y₂ Z₂ U₂ →
+    ∀ᵐ s ∂(volume.restrict (Set.Icc (0 : ℝ) T)), ∀ᵐ ω ∂P,
+      ‖C.b s (tupleAt ν X₁ Y₁ Z₁ U₁ s ω) (lawP2 P (tupleAt ν X₁ Y₁ Z₁ U₁ s))
+          - C.b s (tupleAt ν X₂ Y₂ Z₂ U₂ s ω) (lawP2 P (tupleAt ν X₂ Y₂ Z₂ U₂ s))‖
+        + ‖C.σ s (tupleAt ν X₁ Y₁ Z₁ U₁ s ω) (lawP2 P (tupleAt ν X₁ Y₁ Z₁ U₁ s))
+          - C.σ s (tupleAt ν X₂ Y₂ Z₂ U₂ s ω) (lawP2 P (tupleAt ν X₂ Y₂ Z₂ U₂ s))‖
+        + ‖C.h s (tupleAt ν X₁ Y₁ Z₁ U₁ s ω) (lawP2 P (tupleAt ν X₁ Y₁ Z₁ U₁ s))
+          - C.h s (tupleAt ν X₂ Y₂ Z₂ U₂ s ω) (lawP2 P (tupleAt ν X₂ Y₂ Z₂ U₂ s))‖
+        + ‖C.f s (tupleAt ν X₁ Y₁ Z₁ U₁ s ω) (lawP2 P (tupleAt ν X₁ Y₁ Z₁ U₁ s))
+          - C.f s (tupleAt ν X₂ Y₂ Z₂ U₂ s ω) (lawP2 P (tupleAt ν X₂ Y₂ Z₂ U₂ s))‖
+      ≤ L * (‖(tupleAt ν X₁ Y₁ Z₁ U₁ s ω).1 - (tupleAt ν X₂ Y₂ Z₂ U₂ s ω).1‖
+        + ‖(tupleAt ν X₁ Y₁ Z₁ U₁ s ω).2.1 - (tupleAt ν X₂ Y₂ Z₂ U₂ s ω).2.1‖
+        + ‖(tupleAt ν X₁ Y₁ Z₁ U₁ s ω).2.2.1 - (tupleAt ν X₂ Y₂ Z₂ U₂ s ω).2.2.1‖
+        + ‖(tupleAt ν X₁ Y₁ Z₁ U₁ s ω).2.2.2 - (tupleAt ν X₂ Y₂ Z₂ U₂ s ω).2.2.2‖
+        + w2H (lawP2 P (tupleAt ν X₁ Y₁ Z₁ U₁ s)) (lawP2 P (tupleAt ν X₂ Y₂ Z₂ U₂ s)))
+
 /-- **The backward difference before (4.12).** In the standing setting, under the hypotheses of
 Lemma 4.2 — `T > 0`, coefficients with (2.3) and Assumptions 2.2–2.3 with constant `L` and initial
 datum `ξ₀` — for `λ ∈ [0, 1]`, a forcing `q` of the class of (4.1), two trial tuples `Θ¹, Θ²` of
@@ -163,7 +239,9 @@ terminal value `δξ̄ = λ [g(X̄¹_T, Law(X̄¹_T)) − g(X̄²_T, Law(X̄²_T
 `δf_s` the driver difference at `(Θᵏ_s, Law(Θᵏ_s))`: almost surely at each `t ∈ [0, T]`,
 `δȲ_t = δξ̄ + ∫_t^T λ δf_s ds − ∫_t^T δZ̄_s dW_s − ∫_t^T ∫_E δŪ_s(e) Ñ(ds, de)`, with `δZ̄`, `δŪ`
 and `λ δf` progressive, of finite energy on `[0, T]` and vanishing off it, `δξ̄` square integrable
-and `δȲ` adapted with right-continuous paths. -/
+and `δȲ` adapted with right-continuous paths; and the remaining hypotheses of Lemma 4.1 hold:
+`δZ̄` is predictable, `δŪ` marked predictable, every path of `δȲ` has left limits on `(0, T]`
+and `δξ̄` is `ℱ_T`-measurable. -/
 def eq_bwddiff_identity : Prop :=
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
@@ -191,6 +269,14 @@ def eq_bwddiff_identity : Prop :=
       (fun ω s => lam * (driverProc P T C X₁ Y₁ Z₁ U₁ k ω s - driverProc P T C X₂ Y₂ Z₂ U₂ k ω s))
       (fun t ω => Y₁' k t ω - Y₂' k t ω) (fun s ω j => Z₁' k s ω j - Z₂' k s ω j)
       (fun s ω e => U₁' k s ω e - U₂' k s ω e)
+    ∧ (∀ j, Probability.Predictable (enlJoint 𝒢₀ D h𝒢₀)
+        fun ω s => Z₁' k s ω j - Z₂' k s ω j)
+    ∧ Probability.MarkedPredictable (enlJoint 𝒢₀ D h𝒢₀) ν
+        (fun ω s e => U₁' k s ω e - U₂' k s ω e)
+    ∧ (∀ ω, ∀ t ∈ Set.Ioc (0 : ℝ) T, ∃ l : ℝ,
+        Tendsto (fun s => Y₁' k s ω - Y₂' k s ω) (𝓝[<] t) (𝓝 l))
+    ∧ Measurable[enlJoint 𝒢₀ D h𝒢₀ T]
+        (fun ω => lam * (terminalVal P T C X₁' k ω - terminalVal P T C X₂' k ω))
 
 /-- **`λ_*` and the contraction by `1/2`, after (4.13).** There is `c₀ > 0` such that, for every
 value `c ≥ c₀` of the constant `c_BDG`: in the standing setting, under the hypotheses of Lemma 4.2

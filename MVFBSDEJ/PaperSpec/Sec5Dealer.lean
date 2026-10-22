@@ -134,11 +134,16 @@ def ex_dealer_mono : Prop :=
     ∧ Assumption25 (enlJoint 𝒢₀ D h𝒢₀) P T (1 : Matrix (Fin 1) (Fin 1) ℝ) 1 β₁ β₂
         (ex55Coeffs ν β₁ β₂ σc hc hx ε)
 
-/-- Example 5.5, well-posedness at every `ε ≥ 0` and every `h_x`. In the setting of `ex_dealer`,
-(1.1) with the coefficients of Example 5.5 and the initial datum `ξ₀` has a solution in `𝕊`, and
-any two solutions are equal in `𝕊`: their `X` and their `Y` are indistinguishable on `[0, T]`, and
-`𝔼 ∫_0^T |Z¹_t − Z²_t|² dt = 0` and `𝔼 ∫_0^T ‖U¹_t − U²_t‖²_{L²(ν)} dt = 0`. -/
+/-- Example 5.5, well-posedness at every `ε ≥ 0` and every `h_x`: the conclusion of Theorem 3.5.
+There is a function `C_stab` of `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that, in the setting of
+`ex_dealer`, (1.1) with the coefficients of Example 5.5 and the initial datum `ξ₀` has a solution
+in `𝕊`; any two solutions are equal in `𝕊`: their `X` and their `Y` are indistinguishable on
+`[0, T]`, and `𝔼 ∫_0^T |Z¹_t − Z²_t|² dt = 0` and `𝔼 ∫_0^T ‖U¹_t − U²_t‖²_{L²(ν)} dt = 0`; and for
+every constant `L` with which the coefficients satisfy Assumption 2.3, (3.1) holds with the
+constant `C_stab(T, L, ‖G‖, s_min(G)⁻², 1, β₁, β₂)` at `G = 1` for its solutions against the
+solutions of every system `2` satisfying (2.3) and Assumptions 2.2–2.3. -/
 def ex_dealer_wp : Prop :=
+  ∃ Cstab : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ,
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
     (P : Measure Ω) [IsProbabilityMeasure P]
@@ -152,7 +157,7 @@ def ex_dealer_wp : Prop :=
     (∃ (X : Fin 1 → ℝ → Ω → ℝ) (Y : Fin 1 → ℝ → Ω → ℝ) (Z : Fin 1 → ℝ → Ω → Fin 1 → ℝ)
       (U : Fin 1 → ℝ → Ω → E → ℝ),
       Solution D h𝒢₀ hind₀ T (ex55Coeffs ν β₁ β₂ σc hc hx ε) ξ₀ X Y Z U)
-    ∧ ∀ (X₁ X₂ : Fin 1 → ℝ → Ω → ℝ) (Y₁ Y₂ : Fin 1 → ℝ → Ω → ℝ)
+    ∧ (∀ (X₁ X₂ : Fin 1 → ℝ → Ω → ℝ) (Y₁ Y₂ : Fin 1 → ℝ → Ω → ℝ)
       (Z₁ Z₂ : Fin 1 → ℝ → Ω → Fin 1 → ℝ) (U₁ U₂ : Fin 1 → ℝ → Ω → E → ℝ),
       Solution D h𝒢₀ hind₀ T (ex55Coeffs ν β₁ β₂ σc hc hx ε) ξ₀ X₁ Y₁ Z₁ U₁ →
       Solution D h𝒢₀ hind₀ T (ex55Coeffs ν β₁ β₂ σc hc hx ε) ξ₀ X₂ Y₂ Z₂ U₂ →
@@ -161,7 +166,35 @@ def ex_dealer_wp : Prop :=
         ∧ (∀ k j, LevyStochCalc.Brownian.Ito.energy P T
             (fun ω s => Z₁ k s ω j - Z₂ k s ω j) = 0)
         ∧ ∀ k, LevyStochCalc.Poisson.Compensated.markedEnergy P ν T
-            (fun ω s e => U₁ k s ω e - U₂ k s ω e) = 0
+            (fun ω s e => U₁ k s ω e - U₂ k s ω e) = 0)
+    ∧ ∀ L : ℝ, Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L (ex55Coeffs ν β₁ β₂ σc hc hx ε) →
+      ∀ (L₂ : ℝ) (C₂ : Coeffs ν 1 1 1) (ξ₂ : Ω → EuclideanSpace ℝ (Fin 1)),
+        JointBorel T C₂ → Assumption22 (enlJoint 𝒢₀ D h𝒢₀) P T C₂ ξ₂ →
+        Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L₂ C₂ →
+        ∀ (X₁ X₂ : Fin 1 → ℝ → Ω → ℝ) (Y₁ Y₂ : Fin 1 → ℝ → Ω → ℝ)
+          (Z₁ Z₂ : Fin 1 → ℝ → Ω → Fin 1 → ℝ) (U₁ U₂ : Fin 1 → ℝ → Ω → E → ℝ),
+        Solution D h𝒢₀ hind₀ T (ex55Coeffs ν β₁ β₂ σc hc hx ε) ξ₀ X₁ Y₁ Z₁ U₁ →
+        Solution D h𝒢₀ hind₀ T C₂ ξ₂ X₂ Y₂ Z₂ U₂ →
+        supSize P ν T (fun i t ω => X₁ i t ω - X₂ i t ω) (fun k t ω => Y₁ k t ω - Y₂ k t ω)
+            (fun k t ω j => Z₁ k t ω j - Z₂ k t ω j) (fun k t ω e => U₁ k t ω e - U₂ k t ω e)
+          ≤ ENNReal.ofReal (Cstab T L ‖GX (1 : Matrix (Fin 1) (Fin 1) ℝ)‖
+              (sMin (1 : Matrix (Fin 1) (Fin 1) ℝ) ^ 2)⁻¹ 1 β₁ β₂)
+            * dataSize P ν T (fun i ω => ξ₀ ω i - ξ₂ ω i)
+              (fun i ω s =>
+                driftProc P T (ex55Coeffs ν β₁ β₂ σc hc hx ε) X₂ Y₂ Z₂ U₂ i ω s
+                - driftProc P T C₂ X₂ Y₂ Z₂ U₂ i ω s)
+              (fun i s ω j =>
+                diffusionProc P T (ex55Coeffs ν β₁ β₂ σc hc hx ε) X₂ Y₂ Z₂ U₂ i s ω j
+                - diffusionProc P T C₂ X₂ Y₂ Z₂ U₂ i s ω j)
+              (fun i s ω e =>
+                jumpProc T (coeffJump P T (ex55Coeffs ν β₁ β₂ σc hc hx ε)
+                    (leftLimProc X₂) (leftLimProc Y₂) Z₂ U₂) i s ω e
+                  - jumpProc T (coeffJump P T C₂ (leftLimProc X₂) (leftLimProc Y₂) Z₂ U₂) i s ω e)
+              (fun k ω s =>
+                driverProc P T (ex55Coeffs ν β₁ β₂ σc hc hx ε) X₂ Y₂ Z₂ U₂ k ω s
+                - driverProc P T C₂ X₂ Y₂ Z₂ U₂ k ω s)
+              (fun k ω => terminalVal P T (ex55Coeffs ν β₁ β₂ σc hc hx ε) X₂ k ω
+                - terminalVal P T C₂ X₂ k ω)
 
 /-- Example 5.5, the crowding correction is no function of the mean when the fibre is
 nontrivial: if `L²(ν)` is not reduced to `0`, no map `Φ` gives `A_Λ(u) = Φ(∫ v Λ(dv), u)` for

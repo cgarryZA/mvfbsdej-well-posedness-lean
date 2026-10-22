@@ -37,9 +37,13 @@ open MVFBSDEJ.WellPosedness.System MVFBSDEJ.WellPosedness.Existence
 
 universe u v w
 
+private lemma le_neg_mul_of_le {a A B β c : ℝ} (hβ : 0 ≤ β) (h : a ≤ -β * A - c * B)
+    (hA : 0 ≤ A) : a ≤ -c * B := by
+  nlinarith [mul_nonneg hβ hA]
+
 /-- The paragraph after Corollary 3.6, every channel. -/
 theorem cor_margin_channels : PaperSpec.cor_margin_channels.{u, v, w} := by
-  intro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ _ T β₁ β₂ c G C h
+  intro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ _ T β₁ β₂ c G C hβ₁ hβ₂ _ h
   filter_upwards [h] with t ht p hp p' hp'
   obtain ⟨-, hle⟩ := ht p hp p' hp'
   refine ⟨fun heq => ?_, fun heq => ?_, fun heq => ?_, fun heq => ?_⟩
@@ -60,7 +64,9 @@ theorem cor_margin_channels : PaperSpec.cor_margin_channels.{u, v, w} := by
       simp [h2, h3, h4]
     rw [integral_congr_ae (ae_of_all _ e1), integral_congr_ae (ae_of_all _ e2),
       integral_congr_ae (ae_of_all _ e3), integral_zero, mul_zero] at hle
-    linarith
+    have hA : 0 ≤ ∫ ω, ‖GX G ((p.1 ω).1 - (p'.1 ω).1)‖ ^ 2 ∂P :=
+      integral_nonneg fun _ => sq_nonneg _
+    nlinarith [mul_nonneg hβ₂ hA]
   · have e1 : ∀ ω, pairing27 G C t (p.1 ω) (p'.1 ω) p.2 p'.2
         = inner ℝ (C.b t (p.1 ω) p.2 - C.b t (p'.1 ω) p'.2)
             (GX Gᵀ ((p.1 ω).2.1 - (p'.1 ω).2.1)) := fun ω => by
@@ -83,7 +89,7 @@ theorem cor_margin_channels : PaperSpec.cor_margin_channels.{u, v, w} := by
     rw [integral_congr_ae (ae_of_all _ e1), integral_congr_ae (ae_of_all _ e2),
       integral_congr_ae (ae_of_all _ e3), integral_congr_ae (ae_of_all _ e4), integral_zero,
       mul_zero, sub_zero] at hle
-    exact hle
+    exact le_neg_mul_of_le hβ₁ hle (integral_nonneg fun _ => sq_nonneg _)
   · have e1 : ∀ ω, pairing27 G C t (p.1 ω) (p'.1 ω) p.2 p'.2
         = inner ℝ (C.σ t (p.1 ω) p.2 - C.σ t (p'.1 ω) p'.2)
             (GZ Gᵀ ((p.1 ω).2.2.1 - (p'.1 ω).2.2.1)) := fun ω => by
@@ -106,7 +112,7 @@ theorem cor_margin_channels : PaperSpec.cor_margin_channels.{u, v, w} := by
     rw [integral_congr_ae (ae_of_all _ e1), integral_congr_ae (ae_of_all _ e2),
       integral_congr_ae (ae_of_all _ e3), integral_congr_ae (ae_of_all _ e4), integral_zero,
       mul_zero, sub_zero] at hle
-    exact hle
+    exact le_neg_mul_of_le hβ₁ hle (integral_nonneg fun _ => sq_nonneg _)
   · have e1 : ∀ ω, pairing27 G C t (p.1 ω) (p'.1 ω) p.2 p'.2
         = ∫ e, inner ℝ (C.h t (p.1 ω) p.2 e - C.h t (p'.1 ω) p'.2 e)
             (GX Gᵀ ((p.1 ω).2.2.2 e - (p'.1 ω).2.2.2 e)) ∂ν := fun ω => by
@@ -129,7 +135,7 @@ theorem cor_margin_channels : PaperSpec.cor_margin_channels.{u, v, w} := by
     rw [integral_congr_ae (ae_of_all _ e1), integral_congr_ae (ae_of_all _ e2),
       integral_congr_ae (ae_of_all _ e3), integral_congr_ae (ae_of_all _ e4), integral_zero,
       mul_zero, sub_zero] at hle
-    exact hle
+    exact le_neg_mul_of_le hβ₁ hle (integral_nonneg fun _ => sq_nonneg _)
 
 /-- The paragraph after Corollary 3.6, the additive jump coefficient. -/
 theorem cor_margin_additive : PaperSpec.cor_margin_additive.{u, v, w} := by

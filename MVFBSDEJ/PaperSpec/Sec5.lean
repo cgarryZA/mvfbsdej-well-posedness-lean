@@ -14,8 +14,10 @@ import MVFBSDEJ.WellPosedness.Examples.Dealer.MarkSizes
 # Section 5 of the well-posedness paper: the examples
 
 Statement and equation numbers refer to the well-posedness paper at `1f67672`. The standing
-setting is that of §2 (see `MVFBSDEJ.PaperSpec.thm_cwp`), here with `n = m = d = 1` and
-`G = 1`.
+setting is that of §2 (see `MVFBSDEJ.PaperSpec.thm_cwp`), with `n = m = d = 1` and `G = 1` for
+Examples 5.1 and 5.2; Examples 5.3 and 5.4 are stated at general dimensions (`m = n` and a
+full-rank `G ∈ ℝ^{n×n}` for the perturbation of Example 5.4). Kernels and coefficients depend on
+a time `t ∈ ℝ`, the time interval `[0, T]` extended to `ℝ`.
 
 ## Main definitions
 
@@ -137,11 +139,16 @@ def ex_concrete_i_pairing : Prop :=
           - (affineCoeffs β₁ β₂ σc hc).h t θ' μ' e) (θ.2.2.2 e - θ'.2.2.2 e) ∂ν
         = -β₁ * ‖θ.2.2.2 - θ'.2.2.2‖ ^ 2
 
-/-- Example 5.1(i), well-posedness. In the setting of `ex_concrete_i`, (1.1) with the affine
-coefficients and the initial datum `ξ₀` has a solution in `𝕊`, and any two solutions are equal
+/-- Example 5.1(i), well-posedness: the conclusion of Theorem 3.5. There is a function `C_stab`
+of `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that, in the setting of `ex_concrete_i`, (1.1) with the
+affine coefficients and the initial datum `ξ₀` has a solution in `𝕊`; any two solutions are equal
 in `𝕊`: their `X` and their `Y` are indistinguishable on `[0, T]`, and
-`𝔼 ∫_0^T |Z¹_t − Z²_t|² dt = 0` and `𝔼 ∫_0^T ‖U¹_t − U²_t‖²_{L²(ν)} dt = 0`. -/
+`𝔼 ∫_0^T |Z¹_t − Z²_t|² dt = 0` and `𝔼 ∫_0^T ‖U¹_t − U²_t‖²_{L²(ν)} dt = 0`; and for every
+constant `L` with which the coefficients satisfy Assumption 2.3, (3.1) holds with the constant
+`C_stab(T, L, ‖G‖, s_min(G)⁻², 1, β₁, β₂)` at `G = 1` for its solutions against the solutions of
+every system `2` satisfying (2.3) and Assumptions 2.2–2.3. -/
 def ex_concrete_i_wp : Prop :=
+  ∃ Cstab : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ,
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
     (P : Measure Ω) [IsProbabilityMeasure P]
@@ -154,7 +161,7 @@ def ex_concrete_i_wp : Prop :=
     (∃ (X : Fin 1 → ℝ → Ω → ℝ) (Y : Fin 1 → ℝ → Ω → ℝ) (Z : Fin 1 → ℝ → Ω → Fin 1 → ℝ)
       (U : Fin 1 → ℝ → Ω → E → ℝ),
       Solution D h𝒢₀ hind₀ T (affineCoeffs β₁ β₂ σc hc) ξ₀ X Y Z U)
-    ∧ ∀ (X₁ X₂ : Fin 1 → ℝ → Ω → ℝ) (Y₁ Y₂ : Fin 1 → ℝ → Ω → ℝ)
+    ∧ (∀ (X₁ X₂ : Fin 1 → ℝ → Ω → ℝ) (Y₁ Y₂ : Fin 1 → ℝ → Ω → ℝ)
       (Z₁ Z₂ : Fin 1 → ℝ → Ω → Fin 1 → ℝ) (U₁ U₂ : Fin 1 → ℝ → Ω → E → ℝ),
       Solution D h𝒢₀ hind₀ T (affineCoeffs β₁ β₂ σc hc) ξ₀ X₁ Y₁ Z₁ U₁ →
       Solution D h𝒢₀ hind₀ T (affineCoeffs β₁ β₂ σc hc) ξ₀ X₂ Y₂ Z₂ U₂ →
@@ -163,7 +170,35 @@ def ex_concrete_i_wp : Prop :=
         ∧ (∀ k j, LevyStochCalc.Brownian.Ito.energy P T
             (fun ω s => Z₁ k s ω j - Z₂ k s ω j) = 0)
         ∧ ∀ k, LevyStochCalc.Poisson.Compensated.markedEnergy P ν T
-            (fun ω s e => U₁ k s ω e - U₂ k s ω e) = 0
+            (fun ω s e => U₁ k s ω e - U₂ k s ω e) = 0)
+    ∧ ∀ L : ℝ, Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L (affineCoeffs β₁ β₂ σc hc) →
+      ∀ (L₂ : ℝ) (C₂ : Coeffs ν 1 1 1) (ξ₂ : Ω → EuclideanSpace ℝ (Fin 1)),
+        JointBorel T C₂ → Assumption22 (enlJoint 𝒢₀ D h𝒢₀) P T C₂ ξ₂ →
+        Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L₂ C₂ →
+        ∀ (X₁ X₂ : Fin 1 → ℝ → Ω → ℝ) (Y₁ Y₂ : Fin 1 → ℝ → Ω → ℝ)
+          (Z₁ Z₂ : Fin 1 → ℝ → Ω → Fin 1 → ℝ) (U₁ U₂ : Fin 1 → ℝ → Ω → E → ℝ),
+        Solution D h𝒢₀ hind₀ T (affineCoeffs β₁ β₂ σc hc) ξ₀ X₁ Y₁ Z₁ U₁ →
+        Solution D h𝒢₀ hind₀ T C₂ ξ₂ X₂ Y₂ Z₂ U₂ →
+        supSize P ν T (fun i t ω => X₁ i t ω - X₂ i t ω) (fun k t ω => Y₁ k t ω - Y₂ k t ω)
+            (fun k t ω j => Z₁ k t ω j - Z₂ k t ω j) (fun k t ω e => U₁ k t ω e - U₂ k t ω e)
+          ≤ ENNReal.ofReal (Cstab T L ‖GX (1 : Matrix (Fin 1) (Fin 1) ℝ)‖
+              (sMin (1 : Matrix (Fin 1) (Fin 1) ℝ) ^ 2)⁻¹ 1 β₁ β₂)
+            * dataSize P ν T (fun i ω => ξ₀ ω i - ξ₂ ω i)
+              (fun i ω s =>
+                driftProc P T (affineCoeffs β₁ β₂ σc hc) X₂ Y₂ Z₂ U₂ i ω s
+                - driftProc P T C₂ X₂ Y₂ Z₂ U₂ i ω s)
+              (fun i s ω j =>
+                diffusionProc P T (affineCoeffs β₁ β₂ σc hc) X₂ Y₂ Z₂ U₂ i s ω j
+                - diffusionProc P T C₂ X₂ Y₂ Z₂ U₂ i s ω j)
+              (fun i s ω e =>
+                jumpProc T (coeffJump P T (affineCoeffs β₁ β₂ σc hc)
+                    (leftLimProc X₂) (leftLimProc Y₂) Z₂ U₂) i s ω e
+                  - jumpProc T (coeffJump P T C₂ (leftLimProc X₂) (leftLimProc Y₂) Z₂ U₂) i s ω e)
+              (fun k ω s =>
+                driverProc P T (affineCoeffs β₁ β₂ σc hc) X₂ Y₂ Z₂ U₂ k ω s
+                - driverProc P T C₂ X₂ Y₂ Z₂ U₂ k ω s)
+              (fun k ω => terminalVal P T (affineCoeffs β₁ β₂ σc hc) X₂ k ω
+                - terminalVal P T C₂ X₂ k ω)
 
 /-- Example 5.1(i) with the drift (3.6), the assumptions. In the setting of `ex_concrete_i`, for
 every `0 < ε < β₁`, replacing the drift `−β₁ y` by (3.6),
@@ -187,10 +222,15 @@ def ex_concrete_i_clamp : Prop :=
       ∧ Assumption25 (enlJoint 𝒢₀ D h𝒢₀) P T (1 : Matrix (Fin 1) (Fin 1) ℝ) 1 (β₁ - ε) β₂
           (clampAffineCoeffs β₁ β₂ ε σc hc)
 
-/-- Example 5.1(i) with the drift (3.6), well-posedness: in the setting of
-`ex_concrete_i_clamp`, (1.1) has a solution in `𝕊`, and any two solutions are equal in `𝕊`, as
-in `ex_concrete_i_wp`. -/
+/-- Example 5.1(i) with the drift (3.6), well-posedness: the conclusion of Theorem 3.5. There is
+a function `C_stab` of `(T, L, ‖G‖, c_G, α, β₁, β₂)` such that, in the setting of
+`ex_concrete_i_clamp`, (1.1) has a solution in `𝕊`, any two solutions are equal in `𝕊`, as in
+`ex_concrete_i_wp`, and for every constant `L` with which the coefficients satisfy
+Assumption 2.3, (3.1) holds with the constant `C_stab(T, L, ‖G‖, s_min(G)⁻², 1, β₁ − ε, β₂)` at
+`G = 1` for its solutions against the solutions of every system `2` satisfying (2.3) and
+Assumptions 2.2–2.3. -/
 def ex_concrete_i_clamp_wp : Prop :=
+  ∃ Cstab : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ → ℝ,
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
     (P : Measure Ω) [IsProbabilityMeasure P]
@@ -203,7 +243,7 @@ def ex_concrete_i_clamp_wp : Prop :=
     (∃ (X : Fin 1 → ℝ → Ω → ℝ) (Y : Fin 1 → ℝ → Ω → ℝ) (Z : Fin 1 → ℝ → Ω → Fin 1 → ℝ)
       (U : Fin 1 → ℝ → Ω → E → ℝ),
       Solution D h𝒢₀ hind₀ T (clampAffineCoeffs β₁ β₂ ε σc hc) ξ₀ X Y Z U)
-    ∧ ∀ (X₁ X₂ : Fin 1 → ℝ → Ω → ℝ) (Y₁ Y₂ : Fin 1 → ℝ → Ω → ℝ)
+    ∧ (∀ (X₁ X₂ : Fin 1 → ℝ → Ω → ℝ) (Y₁ Y₂ : Fin 1 → ℝ → Ω → ℝ)
       (Z₁ Z₂ : Fin 1 → ℝ → Ω → Fin 1 → ℝ) (U₁ U₂ : Fin 1 → ℝ → Ω → E → ℝ),
       Solution D h𝒢₀ hind₀ T (clampAffineCoeffs β₁ β₂ ε σc hc) ξ₀ X₁ Y₁ Z₁ U₁ →
       Solution D h𝒢₀ hind₀ T (clampAffineCoeffs β₁ β₂ ε σc hc) ξ₀ X₂ Y₂ Z₂ U₂ →
@@ -212,7 +252,35 @@ def ex_concrete_i_clamp_wp : Prop :=
         ∧ (∀ k j, LevyStochCalc.Brownian.Ito.energy P T
             (fun ω s => Z₁ k s ω j - Z₂ k s ω j) = 0)
         ∧ ∀ k, LevyStochCalc.Poisson.Compensated.markedEnergy P ν T
-            (fun ω s e => U₁ k s ω e - U₂ k s ω e) = 0
+            (fun ω s e => U₁ k s ω e - U₂ k s ω e) = 0)
+    ∧ ∀ L : ℝ, Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L (clampAffineCoeffs β₁ β₂ ε σc hc) →
+      ∀ (L₂ : ℝ) (C₂ : Coeffs ν 1 1 1) (ξ₂ : Ω → EuclideanSpace ℝ (Fin 1)),
+        JointBorel T C₂ → Assumption22 (enlJoint 𝒢₀ D h𝒢₀) P T C₂ ξ₂ →
+        Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L₂ C₂ →
+        ∀ (X₁ X₂ : Fin 1 → ℝ → Ω → ℝ) (Y₁ Y₂ : Fin 1 → ℝ → Ω → ℝ)
+          (Z₁ Z₂ : Fin 1 → ℝ → Ω → Fin 1 → ℝ) (U₁ U₂ : Fin 1 → ℝ → Ω → E → ℝ),
+        Solution D h𝒢₀ hind₀ T (clampAffineCoeffs β₁ β₂ ε σc hc) ξ₀ X₁ Y₁ Z₁ U₁ →
+        Solution D h𝒢₀ hind₀ T C₂ ξ₂ X₂ Y₂ Z₂ U₂ →
+        supSize P ν T (fun i t ω => X₁ i t ω - X₂ i t ω) (fun k t ω => Y₁ k t ω - Y₂ k t ω)
+            (fun k t ω j => Z₁ k t ω j - Z₂ k t ω j) (fun k t ω e => U₁ k t ω e - U₂ k t ω e)
+          ≤ ENNReal.ofReal (Cstab T L ‖GX (1 : Matrix (Fin 1) (Fin 1) ℝ)‖
+              (sMin (1 : Matrix (Fin 1) (Fin 1) ℝ) ^ 2)⁻¹ 1 (β₁ - ε) β₂)
+            * dataSize P ν T (fun i ω => ξ₀ ω i - ξ₂ ω i)
+              (fun i ω s =>
+                driftProc P T (clampAffineCoeffs β₁ β₂ ε σc hc) X₂ Y₂ Z₂ U₂ i ω s
+                - driftProc P T C₂ X₂ Y₂ Z₂ U₂ i ω s)
+              (fun i s ω j =>
+                diffusionProc P T (clampAffineCoeffs β₁ β₂ ε σc hc) X₂ Y₂ Z₂ U₂ i s ω j
+                - diffusionProc P T C₂ X₂ Y₂ Z₂ U₂ i s ω j)
+              (fun i s ω e =>
+                jumpProc T (coeffJump P T (clampAffineCoeffs β₁ β₂ ε σc hc)
+                    (leftLimProc X₂) (leftLimProc Y₂) Z₂ U₂) i s ω e
+                  - jumpProc T (coeffJump P T C₂ (leftLimProc X₂) (leftLimProc Y₂) Z₂ U₂) i s ω e)
+              (fun k ω s =>
+                driverProc P T (clampAffineCoeffs β₁ β₂ ε σc hc) X₂ Y₂ Z₂ U₂ k ω s
+                - driverProc P T C₂ X₂ Y₂ Z₂ U₂ k ω s)
+              (fun k ω => terminalVal P T (clampAffineCoeffs β₁ β₂ ε σc hc) X₂ k ω
+                - terminalVal P T C₂ X₂ k ω)
 
 /-- Example 5.1(ii), the mean and the barycentre. For `ν` σ-finite and laws `μ, μ' ∈ P₂(H)`
 (`n = m = d = 1`) and `ρ, ρ' ∈ P₂(ℝ)`: the mean `∫_H θ μ(dθ)` has the marginal means
@@ -338,7 +406,7 @@ def ex_brownian : Prop :=
         ∧ Assumption25 (enlJoint 𝒢₀ D h𝒢₀) P T G α β₁ β₂ C ∧ 0 < β₁
 
 /-- Example 5.3 (expectation-functional interactions), the class. For `ν` σ-finite on a countably
-generated space, dimensions `n, m, d, k`, and `φ̄ : [0, T] × H × H → ℝᵏ` measurable and Lipschitz
+generated space, dimensions `n, m, d, k`, and `φ̄ : ℝ × H × H → ℝᵏ` measurable and Lipschitz
 in `(θ, θ')` uniformly in `t` with constant `L ≥ 0`,
 `|φ̄(t, θ₁, θ₁') − φ̄(t, θ₂, θ₂')| ≤ L (|θ₁ − θ₂|_H + |θ₁' − θ₂'|_H)`: at each `t` and `θ` the
 kernel `φ̄(t, θ, ·)` is `L`-Lipschitz, and `φ(t, θ, μ) = ∫_H φ̄(t, θ, θ') μ(dθ')` satisfies
@@ -355,24 +423,35 @@ def ex_expfunc : Prop :=
       ∧ ∀ μ μ' : P2 (TupleH ν n m d),
         ‖(∫ θ', φbar t θ θ' ∂μ.law) - ∫ θ', φbar t θ θ' ∂μ'.law‖ ≤ L * w2H μ μ'
 
-/-- Example 5.3, the kernels of independent-copy interactions. For a finite measure `ν`, a
-kernel `ψ̄ : [0, T] × B × B → ℝᵏ` on the blocks `B = ℝⁿ × ℝᵐ × ℝ^{m×d} × ℝᵐ`, Lipschitz with
-constant `Lip ≥ 0` for the Euclidean norm on each argument block `(x, y, z, u(e))`,
-`(x', y', z', u'(e))`, uniformly in `t`: at every `t` and `θ, θ' ∈ H`, the integrand of
-`φ̄(t, θ, θ') = ∫_E ψ̄(t, x, y, z, u(e), x', y', z', u'(e)) ν(de)` is `ν`-integrable;
+/-- Example 5.3, the kernels of independent-copy interactions. For a finite measure `ν` on a
+countably generated space, a kernel `ψ̄ : ℝ × B × B → ℝᵏ` on the blocks
+`B = ℝⁿ × ℝᵐ × ℝ^{m×d} × ℝᵐ`, jointly measurable and Lipschitz with constant `Lip ≥ 0` for the
+Euclidean norm on each argument block `(x, y, z, u(e))`, `(x', y', z', u'(e))`, uniformly in `t`
+(the time interval extended to `ℝ`): the kernel
+`φ̄(t, θ, θ') = ∫_E ψ̄(t, x, y, z, u(e), x', y', z', u'(e)) ν(de)` is measurable on `ℝ × H × H`;
+at every `t` and `θ, θ' ∈ H` its integrand is `ν`-integrable;
 `|φ̄(t, θ₁, θ₁') − φ̄(t, θ₂, θ₂')| ≤ Lip max{ν(E), ν(E)^{1/2}} (|θ₁ − θ₂|_H + |θ₁' − θ₂'|_H)`; and
 changing `u, u'` on a `ν`-null set does not change `φ̄`. -/
 def ex_expfunc_limin : Prop :=
-  ∀ {E : Type v} [MeasurableSpace E] (ν : Measure E) [IsFiniteMeasure ν] (n m d k : ℕ)
+  ∀ {E : Type v} [MeasurableSpace E] (ν : Measure E) [IsFiniteMeasure ν]
+    [MeasurableSpace.CountablyGenerated E] (n m d k : ℕ)
     (ψbar : ℝ → (EuclideanSpace ℝ (Fin n) × EuclideanSpace ℝ (Fin m)
         × EuclideanSpace ℝ (Fin m × Fin d) × EuclideanSpace ℝ (Fin m))
       → (EuclideanSpace ℝ (Fin n) × EuclideanSpace ℝ (Fin m)
         × EuclideanSpace ℝ (Fin m × Fin d) × EuclideanSpace ℝ (Fin m))
       → EuclideanSpace ℝ (Fin k)) (Lip : ℝ), 0 ≤ Lip →
+    Measurable (fun p : ℝ × (EuclideanSpace ℝ (Fin n) × EuclideanSpace ℝ (Fin m)
+        × EuclideanSpace ℝ (Fin m × Fin d) × EuclideanSpace ℝ (Fin m))
+      × (EuclideanSpace ℝ (Fin n) × EuclideanSpace ℝ (Fin m)
+        × EuclideanSpace ℝ (Fin m × Fin d) × EuclideanSpace ℝ (Fin m)) =>
+      ψbar p.1 p.2.1 p.2.2) →
     (∀ t a a' b b', ‖ψbar t a a' - ψbar t b b'‖ ≤ Lip * (Real.sqrt (‖a.1 - b.1‖ ^ 2
       + ‖a.2.1 - b.2.1‖ ^ 2 + ‖a.2.2.1 - b.2.2.1‖ ^ 2 + ‖a.2.2.2 - b.2.2.2‖ ^ 2)
       + Real.sqrt (‖a'.1 - b'.1‖ ^ 2 + ‖a'.2.1 - b'.2.1‖ ^ 2 + ‖a'.2.2.1 - b'.2.2.1‖ ^ 2
         + ‖a'.2.2.2 - b'.2.2.2‖ ^ 2))) →
+    Measurable (fun p : ℝ × TupleH ν n m d × TupleH ν n m d =>
+      ∫ e, ψbar p.1 (p.2.1.1, p.2.1.2.1, p.2.1.2.2.1, p.2.1.2.2.2 e)
+        (p.2.2.1, p.2.2.2.1, p.2.2.2.2.1, p.2.2.2.2.2 e) ∂ν) ∧
     ∀ t : ℝ,
       (∀ θ θ' : TupleH ν n m d, Integrable (fun e => ψbar t (θ.1, θ.2.1, θ.2.2.1, θ.2.2.2 e)
         (θ'.1, θ'.2.1, θ'.2.2.1, θ'.2.2.2 e)) ν)
@@ -390,7 +469,7 @@ def ex_expfunc_limin : Prop :=
             (θ'.1, θ'.2.1, θ'.2.2.1, θ'.2.2.2 e) ∂ν
 
 /-- Example 5.3, the jump coefficient. For `ν` σ-finite on a countably generated space and a
-kernel `h̄ : [0, T] × B × B × E → ℝⁿ` on the blocks `B = ℝⁿ × ℝᵐ × ℝ^{m×d} × ℝᵐ`: the Nemytskii
+kernel `h̄ : ℝ × B × B × E → ℝⁿ` on the blocks `B = ℝⁿ × ℝᵐ × ℝ^{m×d} × ℝᵐ`: the Nemytskii
 map `[𝐇_t(θ, θ')](e) = h̄(t, x, y, z, u(e), x', y', z', u'(e), e)` is well defined on equivalence
 classes, changing `u, u'` on a `ν`-null set changing it on a `ν`-null set; and if
 `𝐇_t : H × H → L²(ν; ℝⁿ)` represents it and is Lipschitz with constant `C ≥ 0`,
@@ -596,9 +675,12 @@ def ex_fulllaw_wp : Prop :=
                   - terminalVal P T C₂ X₂ k ω)
 
 /-- Example 5.4, the affine cylindrical term. For `ν` σ-finite on a countably generated space,
-features `φ_j : L²(ν; ℝᵐ) → ℝ` Lipschitz, and `Q` affine on the attained range of the feature
-vector, `Q(s) = a + ∑_j c_j s_j` at every `s = (∫ φ_j dμ^U)_j`, `μ ∈ P₂(H)`: the `Q`-term is the
-expectation functional `Q((∫ φ_j dμ^U)_j) = ∫_H (a + ∑_j c_j φ_j(u')) μ(dθ')` of Example 5.3. -/
+features `φ_j : L²(ν; ℝᵐ) → ℝ` with `|φ_j(u) − φ_j(u')| ≤ K_j ‖u − u'‖`, and `Q` affine on the
+attained range of the feature vector, `Q(s) = a + ∑_j c_j s_j` at every `s = (∫ φ_j dμ^U)_j`,
+`μ ∈ P₂(H)`: the `Q`-term is the expectation functional
+`Q((∫ φ_j dμ^U)_j) = ∫_H (a + ∑_j c_j φ_j(u')) μ(dθ')`, whose kernel
+`θ' ↦ a + ∑_j c_j φ_j(u')` is measurable on `H` and Lipschitz for `|·|_H` with constant
+`∑_j |c_j| |K_j|`: a kernel of Example 5.3. -/
 def ex_fulllaw_affineQ : Prop :=
   ∀ {E : Type v} [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν]
     [MeasurableSpace.CountablyGenerated E] (n m d J : ℕ)
@@ -607,8 +689,12 @@ def ex_fulllaw_affineQ : Prop :=
     (∀ j u u', |φ j u - φ j u'| ≤ K j * ‖u - u'‖) →
     (∀ μ : P2 (TupleH ν n m d), Q (WithLp.toLp 2 fun j => ∫ u, φ j u ∂μ.margU.law)
       = a + ∑ j, c j * ∫ u, φ j u ∂μ.margU.law) →
-    ∀ μ : P2 (TupleH ν n m d), Q (WithLp.toLp 2 fun j => ∫ u, φ j u ∂μ.margU.law)
-      = ∫ θ', (a + ∑ j, c j * φ j θ'.2.2.2) ∂μ.law
+    (∀ μ : P2 (TupleH ν n m d), Q (WithLp.toLp 2 fun j => ∫ u, φ j u ∂μ.margU.law)
+      = ∫ θ', (a + ∑ j, c j * φ j θ'.2.2.2) ∂μ.law)
+    ∧ Measurable (fun θ' : TupleH ν n m d => a + ∑ j, c j * φ j θ'.2.2.2)
+    ∧ ∀ θ₁' θ₂' : TupleH ν n m d,
+      |(a + ∑ j, c j * φ j θ₁'.2.2.2) - (a + ∑ j, c j * φ j θ₂'.2.2.2)|
+        ≤ (∑ j, |c j| * |K j|) * ‖toL2 θ₁' - toL2 θ₂'‖
 
 /-- Example 5.4, the radial statistic of the full law is no expectation functional. For `ν`
 σ-finite on a countably generated space, `n ≥ 1`, a bounded Lipschitz profile `𝔮` not constant on
@@ -716,8 +802,9 @@ def ex_dealer_not_mean_corr : Prop :=
 σ-finite on a countably generated space: for `λ₁, λ₂ ∈ P₂(L²(ν))`, `s ∈ [0, 1]` and `u ∈ L²(ν)`,
 `A_{s λ₁ + (1 − s) λ₂}(u) = s A_{λ₁}(u) + (1 − s) A_{λ₂}(u)`; for `μ ∈ P₂(H)` and `u ∈ L²(ν)`,
 `A_{μ^U}(u) = ∫_H 𝐇(u, u') μ(dθ')` with `θ' = (x', y', z', u')` and `𝐇(u, u') = ∇V(u − u')`;
-and `‖∇V(u₁ − u₁') − ∇V(u₂ − u₂')‖ ≤ |θ₁ − θ₂|_H + |θ₁' − θ₂'|_H` at all points of `H`: the
-kernel of Example 5.3 with `K = L²(ν)`. -/
+the kernel `(θ, θ') ↦ ∇V(u − u')` is measurable on `H × H`; and
+`‖∇V(u₁ − u₁') − ∇V(u₂ − u₂')‖ ≤ |θ₁ − θ₂|_H + |θ₁' − θ₂'|_H` at all points of `H`: a kernel of
+Example 5.3 with `K = L²(ν)`. -/
 def ex_dealer_affine : Prop :=
   ∀ {E : Type v} [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν]
     [MeasurableSpace.CountablyGenerated E],
@@ -728,6 +815,8 @@ def ex_dealer_affine : Prop :=
     ∧ (∀ (μ : P2 (TupleH ν 1 1 1)) (u : Lp (EuclideanSpace ℝ (Fin 1)) 2 ν),
       ex55Crowd μ.margU.law u
         = ∫ θ', (Real.sqrt (1 + ‖u - θ'.2.2.2‖ ^ 2))⁻¹ • (u - θ'.2.2.2) ∂μ.law)
+    ∧ Measurable (fun p : TupleH ν 1 1 1 × TupleH ν 1 1 1 =>
+      (Real.sqrt (1 + ‖p.1.2.2.2 - p.2.2.2.2‖ ^ 2))⁻¹ • (p.1.2.2.2 - p.2.2.2.2))
     ∧ ∀ θ₁ θ₁' θ₂ θ₂' : TupleH ν 1 1 1,
       ‖(Real.sqrt (1 + ‖θ₁.2.2.2 - θ₁'.2.2.2‖ ^ 2))⁻¹ • (θ₁.2.2.2 - θ₁'.2.2.2)
           - (Real.sqrt (1 + ‖θ₂.2.2.2 - θ₂'.2.2.2‖ ^ 2))⁻¹ • (θ₂.2.2.2 - θ₂'.2.2.2)‖

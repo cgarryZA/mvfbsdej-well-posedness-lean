@@ -66,7 +66,7 @@ theorem ex55_paperSolutionEnl {Ω : Type u} {𝒢₀ : MeasurableSpace Ω} [mΩ 
 theorem ex_dealer_inert : PaperSpec.ex_dealer_inert.{u, v, w} := by
   intro Ω 𝒢₀ mΩ E _ ν _ _ P _ D h𝒢₀ hind₀ T hT β₁ β₂ hβ₁ hβ₂ σc hc ε hε ξ₀ hξm hξ p hp hpT
     hp0
-  refine ⟨(ex_dealer_wp 𝒢₀ ν P D h𝒢₀ hind₀ T hT β₁ β₂ hβ₁ hβ₂ σc hc 0 ε hε ξ₀ hξm hξ).1,
+  refine ⟨(ex_dealer_wp.choose_spec 𝒢₀ ν P D h𝒢₀ hind₀ T hT β₁ β₂ hβ₁ hβ₂ σc hc 0 ε hε ξ₀ hξm hξ).1,
     fun X Y Z U hsol => ?_⟩
   obtain ⟨⟨γ, hPS⟩, hXl, hYl⟩ := ex55_paperSolutionEnl hT hβ₁ hβ₂ hε hsol
   rw [ex55Coeffs_eq] at hPS
@@ -147,7 +147,7 @@ theorem ex_dealer_zero : PaperSpec.ex_dealer_zero.{u, w} := by
     (if e.1 then 1 else -1) * (e.2 : ℝ)) (ηx := fun e : DealerMark => (e.2 : ℝ)) h₁ h₂ 𝒲 hT hηx,
     fun X0 hlin0 hXl => ?_⟩
   · -- existence, from the well-posedness of the system at `ε = 0`
-    obtain ⟨X, Y, Z, U, hsol⟩ := (ex_dealer_wp 𝒢₀ (PaperSpec.ex55Marks ϱ) P D h𝒢₀
+    obtain ⟨X, Y, Z, U, hsol⟩ := (ex_dealer_wp.choose_spec 𝒢₀ (PaperSpec.ex55Marks ϱ) P D h𝒢₀
       hind₀ T hT 1 (1 / 2) one_pos one_half_pos (EuclideanSpace.single (0, 0) 1) hc hx 0
       le_rfl 0 stronglyMeasurable_const (memLp_const _)).1
     obtain ⟨⟨γ, hPS⟩, hXl, -⟩ := ex55_paperSolutionEnl hT one_pos one_half_pos le_rfl hsol

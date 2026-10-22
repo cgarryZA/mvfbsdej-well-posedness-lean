@@ -109,13 +109,18 @@ theorem ex_dealer_mono : PaperSpec.ex_dealer_mono.{u, v, w} := by
 
 /-- Example 5.5, well-posedness at every `ε ≥ 0`. -/
 theorem ex_dealer_wp : PaperSpec.ex_dealer_wp.{u, v, w} := by
+  obtain ⟨Cstab, hstab⟩ := thm_stab.{u, v, w}
+  refine ⟨Cstab, ?_⟩
   intro Ω 𝒢₀ mΩ E _ ν _ _ P _ D h𝒢₀ hind₀ T hT β₁ β₂ hβ₁ hβ₂ σc hc hx ε hε ξ₀ hξm hξ
   obtain ⟨-, hJ, h22, h23, hG, -⟩ :=
     ex_dealer 𝒢₀ ν P D h𝒢₀ hind₀ T hT β₁ β₂ hβ₁ hβ₂ σc hc hx ε hε ξ₀ hξm hξ
   obtain ⟨-, -, -, h25⟩ :=
     ex_dealer_mono 𝒢₀ ν P D h𝒢₀ hind₀ T hT β₁ β₂ hβ₁ hβ₂ σc hc hx ε hε
-  exact thm_cwp 𝒢₀ ν 1 1 1 P D h𝒢₀ hind₀ one_pos one_pos one_pos T hT _ 1 β₁ β₂ 1 _ ξ₀ hJ h22
-    h23 hG h25
+  have hwp := thm_cwp 𝒢₀ ν 1 1 1 P D h𝒢₀ hind₀ one_pos one_pos one_pos T hT _ 1 β₁ β₂ 1 _ ξ₀ hJ
+    h22 h23 hG h25
+  exact ⟨hwp.1, hwp.2, fun L hL L₂ C₂ ξ₂ hJ₂ h22₂ h23₂ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ h₁ h₂ =>
+    hstab 𝒢₀ ν 1 1 1 P D h𝒢₀ hind₀ one_pos one_pos one_pos T hT L L₂ 1 β₁ β₂ 1 _ C₂ ξ₀ ξ₂ hJ
+      h22 hL hG h25 hJ₂ h22₂ h23₂ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ h₁ h₂⟩
 
 /-- Example 5.5, the crowding correction is no function of the mean when `L²(ν) ≠ 0`. -/
 theorem ex_dealer_mean_corr : PaperSpec.ex_dealer_mean_corr.{v} := by
