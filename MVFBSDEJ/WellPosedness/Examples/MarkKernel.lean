@@ -334,6 +334,7 @@ theorem measurable_pointAt (θ : Tuple HX HY HZY (Lp HV 2 ν)) : Measurable (poi
   measurable_const.prodMk (measurable_const.prodMk
     (measurable_const.prodMk (Lp.stronglyMeasurable θ.2.2.2).measurable))
 
+omit [CompleteSpace F] in
 /-- **The mark-integrated kernel is jointly measurable**, for a finite `ν` on a countably
 generated space and a pointwise kernel jointly measurable in `(t, p, p')` and Lipschitz for the
 Hilbert norm: `(t, θ, θ') ↦ φ̄(t, θ, θ')` is strongly measurable on `ℝ × H × H`. -/

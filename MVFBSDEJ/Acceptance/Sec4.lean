@@ -62,9 +62,8 @@ theorem lem_bpbsde : PaperSpec.lem_bpbsde.{u, v, w} := by
 
 /-- Lemma 4.1 with the constant of its proof. -/
 theorem lem_bpbsde_explicit : PaperSpec.lem_bpbsde_explicit.{u, v, w} := by
-  refine ⟨1, one_pos, fun c hc => ?_⟩
-  intro Ω 𝒢₀ mΩ E _ ν _ _ m d P _ D h𝒢₀ hind₀ _ _ T hT δξ φ δY δZ δU hZ hZv hZs hU hUv hUs
-    _ hξ hφm hφs hYa hYr _ heq
+  intro c hc Ω 𝒢₀ mΩ E _ ν _ _ m d P _ D h𝒢₀ hind₀ _ _ T hT δξ φ δY δZ δU hZ hZv hZs hU hUv
+    hUs _ hξ hφm hφs hYa hYr _ heq
   have hξk : ∀ k, MemLp (fun ω => δξ ω k) 2 P := memLp_iff_forall_coord.mp hξ
   have key := brownianPoisson_estimate_vec_of_measurable (crossWitnessEnl D h𝒢₀ hind₀)
     (hF0_enlJoint D h𝒢₀) (fun _ hs h0 => measurableSet_enlJoint_of_null D h𝒢₀ hs h0) hT

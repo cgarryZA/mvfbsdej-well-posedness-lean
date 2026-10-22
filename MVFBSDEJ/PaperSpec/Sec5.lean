@@ -426,8 +426,8 @@ def ex_expfunc : Prop :=
 /-- Example 5.3, the kernels of independent-copy interactions. For a finite measure `ν` on a
 countably generated space, a kernel `ψ̄ : ℝ × B × B → ℝᵏ` on the blocks
 `B = ℝⁿ × ℝᵐ × ℝ^{m×d} × ℝᵐ`, jointly measurable and Lipschitz with constant `Lip ≥ 0` for the
-Euclidean norm on each argument block `(x, y, z, u(e))`, `(x', y', z', u'(e))`, uniformly in `t`
-(the time interval extended to `ℝ`): the kernel
+sum of the Euclidean norms of the argument blocks `(x, y, z, u(e))`, `(x', y', z', u'(e))`,
+uniformly in `t` (the time interval extended to `ℝ`): the kernel
 `φ̄(t, θ, θ') = ∫_E ψ̄(t, x, y, z, u(e), x', y', z', u'(e)) ν(de)` is measurable on `ℝ × H × H`;
 at every `t` and `θ, θ' ∈ H` its integrand is `ν`-integrable;
 `|φ̄(t, θ₁, θ₁') − φ̄(t, θ₂, θ₂')| ≤ Lip max{ν(E), ν(E)^{1/2}} (|θ₁ − θ₂|_H + |θ₁' − θ₂'|_H)`; and

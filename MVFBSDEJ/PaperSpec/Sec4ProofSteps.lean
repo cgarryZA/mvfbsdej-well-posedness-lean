@@ -180,9 +180,9 @@ def sec4_coeff_sq : Prop :=
         jumpProc T (coeffJump P T C (leftLimProc X) (leftLimProc Y) Z U) i s ω e) ≠ ⊤)
     ∧ ∀ k, Brownian.Ito.energy P T (driverProc P T C X Y Z U k) ≠ ⊤
 
-/-- **The trial tuples are diagonal inputs, before (4.9) and (4.19).** In the standing setting,
-for `T > 0` and a tuple `Θ = (X, Y, Z, U)` of `𝕊`, at almost every `t ∈ [0, T]` the pair
-`(Θ_t, Law(Θ_t))` is a diagonal input in the sense of Definition 2.1:
+/-- **The tuples of `ℍ²` are diagonal inputs at almost every time, before (4.9) and (4.15).** In
+the standing setting, for `T > 0` and a tuple `Θ = (X, Y, Z, U)` of `ℍ²`, at almost every
+`t ∈ [0, T]` the pair `(Θ_t, Law(Θ_t))` is a diagonal input in the sense of Definition 2.1:
 `Θ_t ∈ L²(Ω, ℱ_t; H)`. -/
 def sec4_diag_input : Prop :=
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
@@ -192,7 +192,7 @@ def sec4_diag_input : Prop :=
     Indep 𝒢₀ (⨆ t, D.filtration t) P → ∀ T : ℝ, 0 < T →
     ∀ (X : Fin n → ℝ → Ω → ℝ) (Y : Fin m → ℝ → Ω → ℝ) (Z : Fin m → ℝ → Ω → Fin d → ℝ)
       (U : Fin m → ℝ → Ω → E → ℝ),
-    HTuple (enlJoint 𝒢₀ D h𝒢₀) P ν T X Y Z U →
+    PaperWeakTuple (enlJoint 𝒢₀ D h𝒢₀) P ν T X Y Z U →
     ∀ᵐ t ∂(volume.restrict (Set.Icc (0 : ℝ) T)),
       (tupleAt ν X Y Z U t, lawP2 P (tupleAt ν X Y Z U t))
         ∈ diagonalInputs ν n m d (enlJoint 𝒢₀ D h𝒢₀) P t

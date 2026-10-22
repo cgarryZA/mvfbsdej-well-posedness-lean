@@ -91,9 +91,9 @@ theorem eq_coeffdiff_ae : PaperSpec.eq_coeffdiff_ae.{u, v, w} := by
   rw [tupleAt_sub h₁ h₂]
   exact ofReal_channelSq_tupleAt_le s ω
 
-/-- The trial tuples are diagonal inputs, before (4.9) and (4.19). -/
+/-- The tuples of `ℍ²` are diagonal inputs at almost every time, before (4.9) and (4.15). -/
 theorem sec4_diag_input : PaperSpec.sec4_diag_input.{u, v, w} := by
-  rintro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ _ T hT X Y Z U ⟨hw, -, -, -, -⟩
+  rintro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ _ T hT X Y Z U hw
   filter_upwards [hw.ae_memLp_tupleAt hT.le, ae_restrict_mem measurableSet_Icc] with t hm ht
   exact mk_mem_diagonalInputs (hw.stronglyMeasurable_tupleAt ht) hm
 

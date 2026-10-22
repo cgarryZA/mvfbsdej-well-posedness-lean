@@ -770,7 +770,7 @@
    "location": "paper/sections/05-examples.tex",
    "source_sha256": "6ba8e9a8bd4a3a1d756a510bfc8571612af5e4c854e3bd45a28c1b5172afaaad",
    "scope": "formal",
-   "scope_note": "'Their Lévy measure is the ν of the present setting' (line 224) and 'the counterpart of the origin integrability imposed in [LiMin, (H3.1)]' (lines 229–230) are statements about cited work; the joint measurability of ψ̄, a hypothesis of ex_expfunc_limin needed for the measurability of φ̄ that the class requires, is not printed among the hypotheses of lines 225–230 and is read from 'the deterministic-coefficient … interactions of [LiMin]' (line 223), whose coefficients are measurable; the standing countably generated mark space of §2 is assumed",
+   "scope_note": "'Their Lévy measure is the ν of the present setting' (line 224) and 'the counterpart of the origin integrability imposed in [LiMin, (H3.1)]' (lines 229–230) are statements about cited work; the joint measurability of ψ̄, a hypothesis of ex_expfunc_limin needed for the measurability of φ̄ that the class requires, is not printed among the hypotheses of lines 225–230 and is read from 'the deterministic-coefficient … interactions of [LiMin]' (line 223), whose coefficients are measurable; the standing countably generated mark space of §2 is assumed; the origin conditions of lines 228–230 and 264 and the joint Borel measurability of 𝐇 (line 258) are hypotheses of the embedding whose consequences for the embedded coefficients (the origin values of Assumption 2.2, (2.3) for h) are not claimed, lines 220–221 leaving the state-variable Lipschitz and integrability requirements to the full coefficient system",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -1274,7 +1274,7 @@
    "location": "paper/sections/01-introduction.tex:58",
    "source_sha256": "28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998",
    "scope": "formal",
-   "scope_note": "the claims about this paper (lines 63–66); the description of the theorem of Li and Min, of their expectation-functional interaction, of their pointwise jump integrand and of the finite total jump mass their monotonicity hypothesis imposes (lines 58–63) is a statement about cited work; 'Example 5.3 details the embedding of their interaction class' (line 66) is ex_expfunc_limin (the deterministic-coefficient, finite-activity interactions of Example 5.3, line 223: the embedded kernel is measurable and Lipschitz) with ex_expfunc and ex_expfunc_jump (the class it lands in); that the present monotonicity hypothesis does not impose finite total jump mass ('removes all three restrictions … at arbitrary σ-finite activity', lines 63–65) is ex_concrete_ii, Example 5.1(ii) meeting Assumption 2.5 at every σ-finite ν; σ-finite intensities are on the countably generated mark space of the standing setting (02-model-assumptions.tex lines 5–7)",
+   "scope_note": "the claims about this paper (lines 63–66); the description of the theorem of Li and Min, of their expectation-functional interaction, of their pointwise jump integrand and of the finite total jump mass their monotonicity hypothesis imposes (lines 58–63) is a statement about cited work; 'Example 5.3 details the embedding of their interaction class' (line 66) is ex_expfunc_limin (the deterministic-coefficient, finite-activity interactions of Example 5.3, line 223: the embedded kernel is measurable and Lipschitz) with ex_expfunc and ex_expfunc_jump (the class it lands in); that the present monotonicity hypothesis does not impose finite total jump mass ('removes all three restrictions … at arbitrary σ-finite activity', lines 63–65) is ex_concrete_ii, Example 5.1(ii) meeting Assumption 2.5 at every σ-finite ν; σ-finite intensities are on the countably generated mark space of the standing setting (02-model-assumptions.tex lines 5–7); 'removes all three restrictions' is read as 'does not impose them': the hypotheses of thm_cwp admit W₂-dependence on the full tuple law and on the law of U, beyond expectation functionals (ex_fulllaw_beyond_radial, ex_fulllaw_beyond_U_corr and ex_dealer_not_mean_corr, reviewed under Examples 5.4 and 5.5)",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -1305,7 +1305,7 @@
      "name": "the monotonicity hypothesis admits arbitrary σ-finite activity: Example 5.1(ii) meets every assumption at every σ-finite ν",
      "spec": "MVFBSDEJ.PaperSpec.ex_concrete_ii",
      "accept": "MVFBSDEJ.Acceptance.ex_concrete_ii",
-     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses"
+     "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses"
     }
    ],
    "source_region": {
@@ -1820,7 +1820,7 @@
      "witness": "MVFBSDEJ.Acceptance.sec3_HH_complete_hypotheses"
     },
     {
-     "name": "𝕊 is a linear space: sums and real multiples of tuples of ℍ² are tuples of ℍ²",
+     "name": "𝕊 is a linear space: sums and real multiples of tuples of ℍ² are tuples of ℍ², of finite ‖·‖_𝕊 when the summands are",
      "spec": "MVFBSDEJ.PaperSpec.sec3_HH_linear",
      "accept": "MVFBSDEJ.Acceptance.sec3_HH_linear",
      "witness": "MVFBSDEJ.Acceptance.sec3_HH_norm_hypotheses"
@@ -3128,7 +3128,7 @@
    "scope_reviewed": true,
    "clauses": [
     {
-     "name": "the compensated integral has mean zero",
+     "name": "the compensated integral is integrable and has mean zero",
      "spec": "MVFBSDEJ.PaperSpec.eq_zeromean",
      "accept": "MVFBSDEJ.Acceptance.eq_zeromean",
      "witness": "MVFBSDEJ.Acceptance.sec2_compensation_nonzero_hypotheses"
@@ -4080,7 +4080,7 @@
      "witness": "MVFBSDEJ.Acceptance.lem_bpbsde_drift_hypotheses"
     },
     {
-     "name": "the conclusion of Lemma 4.1 with C_BP := C₀(5 + 4c_BDG) + 4T, C₀ = 2e^T (line 244), for every value c_BDG ≥ c₀",
+     "name": "the conclusion of Lemma 4.1 with C_BP := C₀(5 + 4c) + 4T, C₀ = 2e^T (line 244), for every c ≥ 1, every value of c_BDG among them",
      "spec": "MVFBSDEJ.PaperSpec.lem_bpbsde_explicit",
      "accept": "MVFBSDEJ.Acceptance.lem_bpbsde_explicit",
      "witness": "MVFBSDEJ.Acceptance.lem_bpbsde_drift_hypotheses"
@@ -4284,7 +4284,7 @@
      "witness": "MVFBSDEJ.Acceptance.frozen_pair_window_hypotheses"
     },
     {
-     "name": "for a.e. t each pair (Θ_t, Law(Θ_t)) along a tuple of 𝕊 is a diagonal input: Θ_t ∈ L²(Ω, ℱ_t; H), by Fubini",
+     "name": "for a.e. t each pair (Θ_t, Law(Θ_t)) along a tuple of ℍ² is a diagonal input: Θ_t ∈ L²(Ω, ℱ_t; H), by Fubini",
      "spec": "MVFBSDEJ.PaperSpec.sec4_diag_input",
      "accept": "MVFBSDEJ.Acceptance.sec4_diag_input",
      "witness": "MVFBSDEJ.Acceptance.frozen_pair_window_hypotheses"
@@ -4459,7 +4459,7 @@
      "witness": "MVFBSDEJ.Acceptance.frozen_pair_hypotheses"
     },
     {
-     "name": "the backward difference before (4.12): δȲ_t = δξ̄ + ∫_t^T λ δf_s ds − ∫_t^T δZ̄_s dW_s − ∫_t^T ∫_E δŪ_s(e) Ñ(ds, de), the linear backward equation (4.4) with δξ = δξ̄ and φ_s = λ δf_s",
+     "name": "the backward difference before (4.12): δȲ_t = δξ̄ + ∫_t^T λ δf_s ds − ∫_t^T δZ̄_s dW_s − ∫_t^T ∫_E δŪ_s(e) Ñ(ds, de), the linear backward equation (4.4) with δξ = δξ̄ and φ_s = λ δf_s; δZ̄ predictable, δŪ marked predictable, left limits of δȲ and δξ̄ ℱ_T-measurable: the remaining hypotheses of Lemma 4.1 (lines 398–407)",
      "spec": "MVFBSDEJ.PaperSpec.eq_bwddiff_identity",
      "accept": "MVFBSDEJ.Acceptance.eq_bwddiff_identity",
      "witness": "MVFBSDEJ.Acceptance.frozen_pair_window_hypotheses"
@@ -4616,7 +4616,7 @@
    "location": "paper/sections/04-proof-wellposedness.tex:511",
    "source_sha256": "9dd172cef01f1026aa495e51fb68721f4460fd5f4d55467771aae4ff86cab79b",
    "scope": "formal",
-   "scope_note": "the region (lines 511–533) holds the set-up of the proof of Lemma 4.3, pinned here and used by its later steps (A:eq:bdg4, A:eq:Gid, A:eq:intmono, A:eq:termmono, A:eq:coerc, A:eq:fwd, A:eq:bwdito, A:eq:bwdyoung, A:eq:wgt, A:eq:bwd): q := δq (lines 511–512), the data quantity P (lines 513–516), δψ_t with μᵏ_t := Law(Θᵏ_t), δg_T and δh at the predictable tuples (lines 517–523); 'For a.e. t each pair (Θᵏ_t, μᵏ_t) is a diagonal input in the sense of Definition 2.1: Θᵏ_t ∈ L²(Ω, ℱ_t; H) for a.e. t by Fubini' (lines 523–525) is the second clause, stated for every tuple of 𝕊, and 'μᵏ_t is the Borel law flow of Lemma A.1' (lines 525–526) is A:lem:lawflow; the region also holds (4.16), the claim A:eq:dY; the forcing class (04-proof-wellposedness.tex lines 39–53) is pinned in A:eq:forced and A:sec4:WP-def",
+   "scope_note": "the region (lines 511–533) holds the set-up of the proof of Lemma 4.3, pinned here and used by its later steps (A:eq:bdg4, A:eq:Gid, A:eq:intmono, A:eq:termmono, A:eq:coerc, A:eq:fwd, A:eq:bwdito, A:eq:bwdyoung, A:eq:wgt, A:eq:bwd): q := δq (lines 511–512), the data quantity P (lines 513–516), δψ_t with μᵏ_t := Law(Θᵏ_t), δg_T and δh at the predictable tuples (lines 517–523); 'For a.e. t each pair (Θᵏ_t, μᵏ_t) is a diagonal input in the sense of Definition 2.1: Θᵏ_t ∈ L²(Ω, ℱ_t; H) for a.e. t by Fubini' (lines 523–525) is the second clause, stated for every tuple of ℍ², and 'μᵏ_t is the Borel law flow of Lemma A.1' (lines 525–526) is A:lem:lawflow; the region also holds (4.16), the claim A:eq:dY; the forcing class (04-proof-wellposedness.tex lines 39–53) is pinned in A:eq:forced and A:sec4:WP-def",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -4626,7 +4626,7 @@
      "witness": "MVFBSDEJ.Acceptance.lem_pert_data_forcing_hypotheses"
     },
     {
-     "name": "for a.e. t each pair (Θ_t, Law(Θ_t)) along a tuple of 𝕊 is a diagonal input: Θ_t ∈ L²(Ω, ℱ_t; H), by Fubini",
+     "name": "for a.e. t each pair (Θ_t, Law(Θ_t)) along a tuple of ℍ² is a diagonal input: Θ_t ∈ L²(Ω, ℱ_t; H), by Fubini",
      "spec": "MVFBSDEJ.PaperSpec.sec4_diag_input",
      "accept": "MVFBSDEJ.Acceptance.sec4_diag_input",
      "witness": "MVFBSDEJ.Acceptance.frozen_pair_window_hypotheses"
