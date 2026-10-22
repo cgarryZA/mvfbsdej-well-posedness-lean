@@ -1522,17 +1522,24 @@ Review by claude-auditor: faithful.
 * `System.meanY μ = ∫_H y μ(dθ)` (Bochner) for `μ ∈ P₂(H)`, `H = ℝ × ℝ × ℝ^{1×d} × L²(ν; ℝ)`:
   `m_Y(μ)`. The `Y`-channel is integrable under a law of finite second moment and takes values in
   `ℝ¹`, so the integral is the mean and never Lean's junk value.
-<!-- def-review: MVFBSDEJ.WellPosedness.System.meanY a2e6788536912703e11514cf691ef761 by=claude-author -->
+<!-- def-review: MVFBSDEJ.WellPosedness.System.meanY b1bbcb6b80a91cb129a220d0bfbb8cc1 by=claude-author -->
 Review by claude-reviewer: faithful with representation choices.
-<!-- def-review: MVFBSDEJ.WellPosedness.System.meanY a2e6788536912703e11514cf691ef761 by=claude-reviewer -->
+<!-- def-review: MVFBSDEJ.WellPosedness.System.meanY b1bbcb6b80a91cb129a220d0bfbb8cc1 by=claude-reviewer -->
 Review by claude-auditor: faithful.
-<!-- def-review: MVFBSDEJ.WellPosedness.System.meanY a2e6788536912703e11514cf691ef761 by=claude-auditor -->
+<!-- def-review: MVFBSDEJ.WellPosedness.System.meanY b1bbcb6b80a91cb129a220d0bfbb8cc1 by=claude-auditor -->
+Read again at the standard instances on `Fin`: `meanY` elaborates with `Fin.fintype`, and every
+`Fintype` structure on a type is the same, so the Bochner integral in `EuclideanSpace ℝ (Fin 1)`
+is the `Y`-marginal mean `m_Y(μ)`, as before.
+<!-- def-review: MVFBSDEJ.WellPosedness.System.meanY a2e6788536912703e11514cf691ef761 by=claude-author -->
 * `System.clampDrift β₁ ε t θ μ = −β₁ y + ε g₀(y − m_Y(μ))`: (3.6), at every `d` and `ν`.
-<!-- def-review: MVFBSDEJ.WellPosedness.System.clampDrift 3bf835e228d1bde5351627bc15f77338 by=claude-author -->
+<!-- def-review: MVFBSDEJ.WellPosedness.System.clampDrift b25f794b96410650c732095ab6aa7055 by=claude-author -->
 Review by claude-reviewer: faithful.
-<!-- def-review: MVFBSDEJ.WellPosedness.System.clampDrift 3bf835e228d1bde5351627bc15f77338 by=claude-reviewer -->
+<!-- def-review: MVFBSDEJ.WellPosedness.System.clampDrift b25f794b96410650c732095ab6aa7055 by=claude-reviewer -->
 Review by claude-auditor: faithful.
-<!-- def-review: MVFBSDEJ.WellPosedness.System.clampDrift 3bf835e228d1bde5351627bc15f77338 by=claude-auditor -->
+<!-- def-review: MVFBSDEJ.WellPosedness.System.clampDrift b25f794b96410650c732095ab6aa7055 by=claude-auditor -->
+Read again at the standard instances on `Fin`: `clampDrift` elaborates with `Fin.fintype`, and
+every `Fintype` structure on a type is the same, so it is (3.6), as before.
+<!-- def-review: MVFBSDEJ.WellPosedness.System.clampDrift 3bf835e228d1bde5351627bc15f77338 by=claude-author -->
 
 Verdict: faithful.
 
@@ -1760,11 +1767,15 @@ Review by claude-auditor: broader.
 * `Existence.clampAffineCoeffs β₁ β₂ ε σ_c h_c`: `affineCoeffs` at `n = m = 1` with the drift
   replaced by `clampDrift β₁ ε`, the system of "replacing its drift `−β₁ y` by (3.6)", for every
   `d`: broader, the printed system at `d = 1`.
-<!-- def-review: MVFBSDEJ.WellPosedness.Existence.clampAffineCoeffs 790587bb9ac7016aab019d17c1bb924f by=claude-author -->
+<!-- def-review: MVFBSDEJ.WellPosedness.Existence.clampAffineCoeffs 5dc0669bb7724f483dd7fd8e2ba08292 by=claude-author -->
 Review by claude-reviewer: broader.
-<!-- def-review: MVFBSDEJ.WellPosedness.Existence.clampAffineCoeffs 790587bb9ac7016aab019d17c1bb924f by=claude-reviewer -->
+<!-- def-review: MVFBSDEJ.WellPosedness.Existence.clampAffineCoeffs 5dc0669bb7724f483dd7fd8e2ba08292 by=claude-reviewer -->
 Review by claude-auditor: faithful with representation choices.
-<!-- def-review: MVFBSDEJ.WellPosedness.Existence.clampAffineCoeffs 790587bb9ac7016aab019d17c1bb924f by=claude-auditor -->
+<!-- def-review: MVFBSDEJ.WellPosedness.Existence.clampAffineCoeffs 5dc0669bb7724f483dd7fd8e2ba08292 by=claude-auditor -->
+Read again at the standard instances on `Fin`: `clampAffineCoeffs` elaborates with `Fin.fintype`,
+and every `Fintype` structure on a type is the same, so it is the system of Example 5.1(i) with
+the drift (3.6), broader in `d`, as before.
+<!-- def-review: MVFBSDEJ.WellPosedness.Existence.clampAffineCoeffs 790587bb9ac7016aab019d17c1bb924f by=claude-author -->
 * `Existence.meanFieldCoeffs ν n d`: the coefficients of (ii) on `TupleH ν n n d`, `m_Ψ(μ)` the
   channels of `tupleMean μ` and `𝔟` the `barycentre`, for general `n = m` and `d`: broader, the
   printed system at `n = d = 1`, the instance the statements use.

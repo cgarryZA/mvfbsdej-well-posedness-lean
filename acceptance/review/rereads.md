@@ -51,7 +51,7 @@ digest.
   their laws. For every beta >= 0 there are free points and laws, the points in the supports, at
   which the pointwise bound fails. The other added lines describe the setting, the main theorems and
   the dealer example. The earlier verdict, faithful with representation choices, stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.prop_strict ed839d34f480cba1ac9d315442ee6c22 by=claude-auditor source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 -->
+  <!-- spec-review: MVFBSDEJ.PaperSpec.prop_strict ed839d34f480cba1f1c48950c52ae4f4 by=claude-auditor source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 -->
 
 * `MVFBSDEJ.PaperSpec.rem_diag_mono` (added: lines 31–48). The added lines 38-40 read: 'Both
   the Lipschitz and monotonicity hypotheses are imposed only along diagonal tuple-law pairs; we show
@@ -68,7 +68,7 @@ digest.
   and the full Assumption 2.5 with G = 1, for which the pointwise inequality of (2.7) fails for
   every beta >= 0 and every beta'. The rest of the added text is setting, the main theorems and the
   dealer example, none of which bears on this clause. The earlier verdict, faithful, stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono_converse ed839d34f480cba194f9b4ec1a6ab33d by=claude-auditor source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 -->
+  <!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono_converse ed839d34f480cba14b5e4594e14d9dc7 by=claude-auditor source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 -->
 
 * `MVFBSDEJ.PaperSpec.thm_cwp` (added: lines 31–48). For this clause the added lines say
   'existence on every prescribed finite horizon'. thm_cwp states this for every T > 0, under (2.3)
@@ -127,7 +127,7 @@ digest.
   fails the pointwise bound for every β ≥ 0 at points in the supports. The full-system form is the
   separate clause rem_diag_mono_converse. The other added lines are other clauses or are named in
   the scope note. The verdict (faithful with representation choices) stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.prop_strict ed839d34f480cba1ac9d315442ee6c22 by=claude-auditor source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
+  <!-- spec-review: MVFBSDEJ.PaperSpec.prop_strict ed839d34f480cba1f1c48950c52ae4f4 by=claude-auditor source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
 
 * `MVFBSDEJ.PaperSpec.rem_beta1_dich` (added: lines 4–16). Lines 10–12 state that in the m < n
   regime with ν ≠ 0, Assumption 2.5 forces strictly U-dissipative jump feedback (Remark 2.10). That
@@ -154,7 +154,7 @@ digest.
   (2.7) fails for every β ≥ 0 and every β′. That is the strictness, for a full system. The other
   added lines are other clauses or are named in the scope note. The earlier verdict (faithful)
   stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono_converse ed839d34f480cba194f9b4ec1a6ab33d by=claude-auditor source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
+  <!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono_converse ed839d34f480cba14b5e4594e14d9dc7 by=claude-auditor source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
 
 * `MVFBSDEJ.PaperSpec.thm_cwp` (added: lines 4–16). The added lines 4–5 complete the sentence
   on Theorems 3.1, 3.3 and 3.5. Global well-posedness for every horizon, for the system whose
@@ -573,7 +573,7 @@ digest.
   strictness as the existence of such an instance. For a full coefficient system the strictness is
   carried by the separate clause rem_diag_mono_converse. The earlier verdict, faithful with
   representation choices, stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.prop_strict ed839d34f480cba1ac9d315442ee6c22 by=claude-auditor source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df -->
+  <!-- spec-review: MVFBSDEJ.PaperSpec.prop_strict ed839d34f480cba1f1c48950c52ae4f4 by=claude-auditor source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df -->
 
 * `MVFBSDEJ.PaperSpec.rem_diag_mono` (added: lines 101–116 (a new formal claim: the whole
   passage, the contribution list)). The whole region (lines 101-116) is new. Item (v) (lines
@@ -600,7 +600,7 @@ digest.
   Remark 2.8's 'the converse fails' and in Proposition 3.8, which has n = m = 1. A counterexample at
   d = 1 on every basis therefore states it, and prop_strict covers every d >= 1 for the drift
   pairing. Nothing is dropped or added. The earlier verdict, faithful, stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono_converse ed839d34f480cba194f9b4ec1a6ab33d by=claude-auditor source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df -->
+  <!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono_converse ed839d34f480cba14b5e4594e14d9dc7 by=claude-auditor source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df -->
 
 * `MVFBSDEJ.PaperSpec.rem_generalrank_wp` (added: lines 101–116 (a new formal claim: the whole
   passage, the contribution list)). The whole region (lines 101-116) is new. 'Remark 3.7 for general
@@ -1192,7 +1192,7 @@ digest.
   read as motivation. The proposition (on every horizon, an Example 5.1(i) system satisfying the
   assumptions whose frozen map at lambda = 1 does not decrease the distance of a trial from 0) is
   unaffected; the earlier verdict (faithful with representation choices) stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.sec4_horizon_not_contractive ed839d34f480cba13e2b5c030bd07fe9 by=claude-auditor source=A:sec4:horizon-not-contractive@db97ce8829bc98255bc1f6086bcedce457887bbe8d9dadbdf18ce129991aa390 -->
+  <!-- spec-review: MVFBSDEJ.PaperSpec.sec4_horizon_not_contractive ed839d34f480cba1fc081d81965ca7e6 by=claude-auditor source=A:sec4:horizon-not-contractive@db97ce8829bc98255bc1f6086bcedce457887bbe8d9dadbdf18ce129991aa390 -->
 
 ## `A:sec4:proof-thm35` (paper/sections/04-proof-wellposedness.tex, lines 942–951)
 
@@ -1368,3 +1368,80 @@ digest.
   compared (system 2 under (2.3) only, (3.1) read in [0, infinity]); the other added lines are the
   companion and data clauses. The earlier verdict (faithful with representation choices) stands.
   <!-- spec-review: MVFBSDEJ.PaperSpec.thm_stab_minimal ed839d34f480cba1a1fc76e8097d81f2 by=claude-auditor source=A:thm3.1:companion@29dc4c0964f38ec55444454a5131c89d80201b311710e24619a2f05e533a8b3b -->
+
+## The declarations that elaborate with the standard instances on `Fin`
+
+Six declarations whose source is unchanged now elaborate with the standard instances on `Fin`
+(`Fin.fintype`, `Fin.instOfNat`); each is read at its new hash beside every passage that names it
+(for a definition, beside the passage that defines it).
+
+* `MVFBSDEJ.PaperSpec.prop_strict` (`A:abstract`, `A:conclusion`, `A:intro:contributions`,
+  `A:prop:strict`). A:prop:strict asks, at n = m = 1, d ≥ 1, G = 1, β₁ > 0, 0 < ε < β₁, that the
+  drift (3.6) be free-measure W₂-Lipschitz with constant β₁ + ε, satisfy (3.7) along all diagonal
+  inputs, and violate the pointwise bound for every β ≥ 0 at points of the supports; A:abstract,
+  A:conclusion and A:intro:contributions cite it for the strictness. The proposition states these
+  for `clampDrift` on `TupleH ν 1 1 d`: `|δb| ≤ (β₁ + ε)(|δy| + W₂(μ, μ'))` everywhere, `W₂` of the
+  Hilbert norm; (3.7) with an integrable pairing for square-integrable `Θ, Θ'` on any probability
+  space (broader: no `ℱ_t`-measurability); the failure, for every `β ≥ 0`, at points of the
+  supports. It now elaborates with `Fin.fintype` and its product instance; every `Fintype` structure
+  on `Fin k` is the same, so the norms and inner product of ℝ¹ and ℝ^{1×d} are as before. Verdict:
+  faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.prop_strict ed839d34f480cba1ac9d315442ee6c22 by=claude-auditor source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df source=A:prop:strict@b18b8a1407fec705caed58f7f0bb7604c994a084d50703fdd8cc68b071003604 -->
+
+* `MVFBSDEJ.PaperSpec.rem_diag_mono_converse` (`A:abstract`, `A:conclusion`,
+  `A:intro:contributions`, `A:rem:diag-mono`). A:rem:diag-mono says the converse of "the pointwise
+  condition gives Assumption 2.5" fails, citing Proposition 3.8; A:abstract, A:conclusion and
+  A:intro:contributions state this strictness. The proposition gives, over every standing basis with
+  n = m = d = 1 and every `T > 0`, coefficients satisfying (2.3), Assumption 2.3 with some `L` and
+  Assumption 2.5 with `G = 1` and some `α, β₁, β₂`, for which no `β ≥ 0` and real `β'` make the
+  inequality of (2.7) hold without expectations at all points and laws for almost every `t`: a
+  counterexample to the converse. It now elaborates with `Fin.fintype`; every `Fintype` structure on
+  `Fin 1` is the same, so at the matrix `1` (which uses only decidable equality) `GX`, `GZ`, `GU`
+  are identities and the Euclidean norms are `|v 0|` and Frobenius, as before; the meaning is
+  unchanged. Verdict: faithful.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.rem_diag_mono_converse ed839d34f480cba194f9b4ec1a6ab33d by=claude-auditor source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df source=A:rem:diag-mono@7928dd1d49b99eb2d2a145a7e4d29d2497427effb69158a6c0887b5532f9856a -->
+
+* `MVFBSDEJ.PaperSpec.sec4_horizon_not_contractive` (`A:sec4:horizon-not-contractive`).
+  A:sec4:horizon-not-contractive says shortening the horizon does not make the frozen-coefficient
+  map contractive. The proposition gives, for every `T > 0`, `β₁ ≥ 1`, `β₂ > 0`, on a scalar
+  Brownian basis without jumps, the system of Example 5.1(i) with `σ_c = h_c = 0`, satisfying (2.3)
+  and Assumptions 2.2–2.5 with constants independent of `T` (`L = β₁ + β₂`, `G = 1`, `α = 1`); its
+  frozen step at `λ = 1` relates `0` to `0` and the trial `(0, 0, 1, 0)` to `(−β₁W, −β₁W, −β₁, 0)`,
+  with `0 < ‖trial‖²_𝕊 ≤ ‖image‖²_𝕊 < ∞`. Representation choices: one example, through the
+  `z`-dependence of `σ` only; the explanation is unstated. It now elaborates with `Fin.fintype`, so
+  the sums of `supSize` and the rank of `1` range over `Fin 1 = {0}`, and with `Fin.instOfNat`,
+  under which the index `0 : Fin 1` is its only element; meaning unchanged. Verdict: faithful with
+  representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.sec4_horizon_not_contractive ed839d34f480cba13e2b5c030bd07fe9 by=claude-auditor source=A:sec4:horizon-not-contractive@db97ce8829bc98255bc1f6086bcedce457887bbe8d9dadbdf18ce129991aa390 -->
+
+* `MVFBSDEJ.WellPosedness.System.meanY`. The context passage A:prop:strict defines `m_Y(μ) = ∫_H
+  y μ(dθ)`, the `Y`-marginal mean of `μ ∈ P₂(H)`, at n = m = 1. `meanY μ` is the Bochner integral of
+  `θ ↦ θ.2.1` against `μ.law`, a law of finite second moment on `TupleH ν 1 1 d`, with values in ℝ¹
+  = `EuclideanSpace ℝ (Fin 1)`. Representation choices: the mean as a vector of ℝ¹, and the Bochner
+  integral, whose junk value does not arise because the `Y`-channel is integrable under a finite
+  second moment; along a square-integrable tuple it is the expectation of the `Y`-coordinate
+  (`meanY_lawP2_apply`). It now elaborates with `Fin.fintype`; every `Fintype` structure on `Fin 1`
+  is the same, so the norm of ℝ¹ is `|v 0|` and the integral is the same vector as before. Verdict:
+  faithful with representation choices.
+  <!-- def-review: MVFBSDEJ.WellPosedness.System.meanY a2e6788536912703e11514cf691ef761 by=claude-auditor -->
+
+* `MVFBSDEJ.WellPosedness.System.clampDrift`. The context passage A:prop:strict defines, at n = m
+  = 1, the drift (3.6) `b(t, θ, μ) = −β₁y + ε g₀(y − m_Y(μ))` with `g₀(r) = max{−1, min{1, r}}`.
+  `clampDrift β₁ ε t θ μ` is `−(β₁ • θ.2.1) + ε • clampVec (θ.2.1 − meanY μ)`, where `clampVec`
+  applies `clamp01 r = max (−1) (min 1 r)` to the coordinate of ℝ¹ and `meanY` is `m_Y`; the time
+  argument is unused, as `b` does not depend on `t`. It is (3.6) at every `d` and `ν`. It now
+  elaborates with `Fin.fintype`; every `Fintype` structure on `Fin 1` is the same, so ℝ¹, its
+  coordinate and its operations, and the Frobenius norm of the `Z`-channel of `TupleH ν 1 1 d`, mean
+  what they did; the meaning is unchanged. Verdict: faithful.
+  <!-- def-review: MVFBSDEJ.WellPosedness.System.clampDrift 3bf835e228d1bde5351627bc15f77338 by=claude-auditor -->
+
+* `MVFBSDEJ.WellPosedness.Existence.clampAffineCoeffs`. The context passage A:ex:concrete takes n
+  = m = d = 1, `G = 1`, `σ_c ∈ ℝ`, `h_c ∈ L²(ν)`, `β₁, β₂ > 0`, the coefficients `b = −β₁y`, `σ =
+  σ_c − β₁z`, `h(e) = h_c(e) − β₁u(e)`, `f = β₂x`, `g(x, ρ) = x`, and the system obtained by
+  replacing the drift by (3.6). `clampAffineCoeffs β₁ β₂ ε σ_c h_c` is `affineCoeffs β₁ β₂ σ_c h_c`
+  at n = 1 with `b` replaced by `clampDrift β₁ ε`: that system. It is broader: every `d`, with `σ_c
+  ∈ ℝ^{1×d}`, and real constants without sign conditions (the statements assume the printed ones);
+  the printed system is its instance at d = 1. It now elaborates with `Fin.fintype`; every `Fintype`
+  structure on `Fin 1` is the same, so the channel spaces ℝ¹, ℝ^{1×d} and `L²(ν; ℝ¹)` carry the same
+  norms and the meaning is unchanged. Verdict: faithful with representation choices.
+  <!-- def-review: MVFBSDEJ.WellPosedness.Existence.clampAffineCoeffs 790587bb9ac7016aab019d17c1bb924f by=claude-auditor -->

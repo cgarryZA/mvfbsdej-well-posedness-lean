@@ -68,12 +68,11 @@ proposition depends on, reopens the review. `tools/acceptance.py hashes <name>` 
 current hashes, with the current passage digest of every claim that uses the name; a reviewer
 keeps only the `source=` entries of the passages actually read.
 
-The hashes also record which instance elaboration chose, so a change of imports alone can move a
-hash. A marker is carried to the new hash without a new reading only when its declaration's
-source is unchanged and one of two checks reproduces the recorded hash: elaborating that source
-again with the earlier imports, or re-resolving with the earlier imports each instance they supply
-in the declaration, every replacement being definitionally equal to the instance it replaces.
-Across a renaming of declarations, both checks hash each constant under its earlier name.
+The hashes include the names of the constants a declaration uses, so renaming declarations moves
+them. A marker is carried to the new hash without a new reading only across such a renaming: when
+the declaration's source is unchanged apart from the names, and hashing it with each constant
+under its earlier name reproduces the recorded hash. Any other change of hash, a change of imports
+included, reopens the review.
 
 The markers recorded before the digests existed carry the digest of each claim's passage at the
 manuscript revision pinned when the marker was added: `2608.23203v1`, `f598204` or `1f67672`.
