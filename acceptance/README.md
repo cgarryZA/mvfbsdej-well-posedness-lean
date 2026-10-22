@@ -5,18 +5,18 @@ This directory holds the acceptance test of the formalisation. The report is
 
 ## Three layers
 
-1. **The statements** (`Dissertation/PaperSpec/`). Each claim of the manuscript, or each clause
-   of one, is a closed proposition `Dissertation.PaperSpec.A.<label> : Prop`. It is written by
+1. **The statements** (`MVFBSDEJ/PaperSpec/`). Each claim of the manuscript, or each clause
+   of one, is a closed proposition `MVFBSDEJ.PaperSpec.<label> : Prop`. It is written by
    reading the manuscript at its pinned revision, with the manuscript's hypotheses, quantifiers and
    complete conclusion: a constant said to depend only on some parameters is quantified before
    everything else, as a function of those parameters. It may use definitions of the
    implementation (the coefficients, the filtration, the stochastic integrals, the laws) once
    they are reviewed. It is not obtained by renaming what the implementation proves.
-2. **The implementation** (the rest of `Dissertation/` and the dependency `LevyStochCalc`). It
+2. **The implementation** (the rest of `MVFBSDEJ/` and the dependency `LevyStochCalc`). It
    may use other representations, stronger intermediate hypotheses and different proofs. None of
    that counts towards acceptance until it is assembled into a proof of a statement of layer 1.
-3. **The proofs** (`Dissertation/Acceptance/`). For a proved statement, a theorem
-   `Dissertation.Acceptance.A.<label>` whose type is *exactly* the proposition of layer 1.
+3. **The proofs** (`MVFBSDEJ/Acceptance/`). For a proved statement, a theorem
+   `MVFBSDEJ.Acceptance.<label>` whose type is *exactly* the proposition of layer 1.
    Since the proposition is closed, the theorem takes no premise the manuscript does not state.
    A missing bridge between the implementation and the statement is a missing proof, not a
    caveat.
@@ -58,7 +58,7 @@ each claim whose passage the reading covers; a change of the printed text theref
 review for that claim, and `check` names the claim whose passage changed since its reading. `by=`
 names the reviewer, and the report shows it (`claude-author` marks a review by the session that
 wrote the statement, which is not an independent review). The meaning of a proposition also
-depends on the definitions it uses: every declaration of `Dissertation` or `LevyStochCalc` in its
+depends on the definitions it uses: every declaration of `MVFBSDEJ` or `LevyStochCalc` in its
 definition closure needs a marker `<!-- def-review: <name> <hash> by=<reviewer> -->` in
 `review/definitions.md` (Mathlib and the pinned upstream libraries are taken as foundations).
 A definition named by a definition claim is read against that claim's passage, and its marker
@@ -111,7 +111,7 @@ platform badge.
   false, it is refuted and a corrected statement is added beside it.
 * A proposition may be broader than the printed claim only when the printed claim is a recorded
   instance of it.
-* No module of `Dissertation/PaperSpec/` imports `Dissertation/Acceptance/` (checked).
+* No module of `MVFBSDEJ/PaperSpec/` imports `MVFBSDEJ/Acceptance/` (checked).
 
 ## The final check
 
@@ -119,7 +119,7 @@ On a clean clone at the release commit: `lake build`, then `python3 tools/accept
 cached results are reused: the probe elaborates every statement and proof afresh), then
 `bash tools/comparator_check.sh <dir>`: comparator (leanprover/comparator at the toolchain's tag)
 builds a challenge module holding each proved statement and the negation of each refuted one with a
-`sorry` proof, exports it and `Dissertation.Acceptance` with lean4export, checks that each proof has
+`sorry` proof, exports it and `MVFBSDEJ.Acceptance` with lean4export, checks that each proof has
 exactly the challenge's statement, every declaration the statement uses being the same in both
 environments, and that it uses only the three standard axioms, and replays the exported proofs into
 a fresh kernel. It rejects a proof whose type is another statement. A pass certifies that the listed

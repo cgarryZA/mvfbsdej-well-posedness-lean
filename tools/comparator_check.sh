@@ -5,9 +5,9 @@
 #
 # For every clause of acceptance/claims.json with a proof, `tools/acceptance.py comparator-inputs`
 # writes `AcceptanceChallenge.lean`: the theorem of the proof's name typed by the statement of
-# `Dissertation.PaperSpec` (by its negation for a refutation), proved by `sorry`, importing only
+# `MVFBSDEJ.PaperSpec` (by its negation for a refutation), proved by `sorry`, importing only
 # the statements. Comparator then builds
-# the challenge and `Dissertation.Acceptance` in a landrun sandbox, exports both with lean4export,
+# the challenge and `MVFBSDEJ.Acceptance` in a landrun sandbox, exports both with lean4export,
 # checks that each proof has the statement of its challenge (every declaration the statement uses
 # being the same in both environments) and uses only propext, Classical.choice and Quot.sound, and
 # replays the exported proofs into a fresh Lean kernel (and nanoda with --nanoda). The run is bound
@@ -73,7 +73,7 @@ print(l.syscall(444, None, ctypes.c_size_t(0), ctypes.c_uint32(1)))')"
   echo "comparator $(git -C "$TOOLS/comparator" rev-parse HEAD) ($TAG)"
   echo "landrun $(git -C "$TOOLS/landrun-src" rev-parse HEAD 2>/dev/null || echo prebuilt)"
   echo "landlock ABI $LANDLOCK_ABI ($(uname -r)), uid $(id -u)"
-  echo "Dissertation $(git -C "$ROOT" rev-parse HEAD)"
+  echo "MVFBSDEJ $(git -C "$ROOT" rev-parse HEAD)"
 } > "$EV/comparator_versions.txt"
 
 cd "$ROOT"
@@ -82,7 +82,7 @@ python3 tools/acceptance.py comparator-bind --evidence "$EV" --stage start
 python3 tools/acceptance.py comparator-inputs --out "$EV/comparator.json" $NANODA
 cp AcceptanceChallenge.lean "$EV/"
 # the solution is built before the check, so comparator does not rebuild it
-lake build Dissertation.PaperSpec Dissertation.Acceptance > "$EV/comparator_prebuild.log" 2>&1
+lake build MVFBSDEJ.PaperSpec MVFBSDEJ.Acceptance > "$EV/comparator_prebuild.log" 2>&1
 set +e
 COMPARATOR_LANDRUN="$TOOLS/landrun-wrap" \
 COMPARATOR_LEAN4EXPORT="$TOOLS/comparator/.lake/packages/lean4export/.lake/build/bin/lean4export" \
