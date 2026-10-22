@@ -22,7 +22,7 @@ rev = "81a5d257c8e410db227a6665ed08f64fea08e997"
 [[require]]
 name = "LevyStochCalc"
 git = "https://github.com/cgarryZA/LevyStochCalc"
-rev = "984dbf0b790031eac05d56fe5a84b65e15e1e932"
+rev = "e88d0e4d3a645fb45ddd4ae81c08890bc2b6cd87"
 
 [[lean_lib]]
 name = "MVFBSDEJ"
