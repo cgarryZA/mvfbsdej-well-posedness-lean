@@ -36,14 +36,6 @@ digest.
   one, gives the printed claim.
   <!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_mono ed839d34f480cba18bebeea12a1b6e30 by=claude-auditor source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 -->
 
-* `MVFBSDEJ.PaperSpec.ex_dealer_wp` (added: lines 31–48). Lines 45-47 say the dealer example
-  realises the U-law dependence 'non-perturbatively', monotone 'at every interaction strength'. That
-  is the content of ex_dealer_wp: for every eps >= 0 and every h_x, with no smallness condition, the
-  dealer system has a solution in the strong space, and it is unique. The infinite-activity mark
-  measure (line 48) is ex_dealer_marks. The earlier verdict, broader, stands: any sigma-finite nu,
-  nu = 0 included, with the instance nu != 0.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_wp ed839d34f480cba1169a2b8090bb4149 by=claude-auditor source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 -->
-
 * `MVFBSDEJ.PaperSpec.prop_strict` (added: lines 31–48). The added lines 39-40 ('expected
   diagonal monotonicity is strictly weaker than pointwise monotonicity') are Proposition 3.8 as
   prop_strict states it. The drift (3.6) is free-measure W2-Lipschitz with constant beta1 + eps, and
@@ -194,23 +186,6 @@ digest.
   drift multipliers, with exactly this convention. The earlier verdict, faithful with representation
   choices, stands.
   <!-- spec-review: MVFBSDEJ.PaperSpec.eq_Gid ed839d34f480cba1be665c86f064628a by=claude-auditor source=A:eq:Gid@e3e59eed648d77453dd17511b3b546a6abb04d571b7f574138b426e7b411f9ce -->
-
-## `A:eq:bwddiff` (paper/sections/04-proof-wellposedness.tex, lines 391–424)
-
-* `MVFBSDEJ.PaperSpec.eq_bwddiff` (added: lines 423–424). Lines 423–424 name the
-  justifications of the links of (4.12): the second link by (4.11) and (4.9), the fourth by (4.10),
-  and the last by λ⁴ ≤ λ² for λ ∈ [0, 1]. The proposition states every link with the printed
-  constants and assumes λ ∈ [0, 1]. The earlier report's reading listed these justifications, and
-  its coverage noted that 'lines 423–424 name justifications'. The verdict (faithful with
-  representation choices) stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.eq_bwddiff ed839d34f480cba18579ef83ba51d72e by=claude-auditor source=A:eq:bwddiff@ca58096655e5e6b70fd088ebf4b2b03e622b17d584f98ab52e438e1f35e7dfaa -->
-
-* `MVFBSDEJ.PaperSpec.eq_bwddiff_identity` (added: lines 423–424). Lines 423–424 justify links
-  of (4.12): the second by (4.11) and (4.9), the fourth by (4.10), the last by λ⁴ ≤ λ² on [0, 1].
-  They belong to the clause eq_bwddiff and say nothing about the backward difference identity of
-  lines 391–397, which this proposition states with the same λ ∈ [0, 1] and the same forcing for
-  both trials. The verdict (faithful with representation choices) stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.eq_bwddiff_identity ed839d34f480cba1a9d0fef012ee5fb2 by=claude-auditor source=A:eq:bwddiff@ca58096655e5e6b70fd088ebf4b2b03e622b17d584f98ab52e438e1f35e7dfaa -->
 
 ## `A:eq:bwdito` (paper/sections/04-proof-wellposedness.tex, lines 716–725)
 
@@ -529,14 +504,6 @@ digest.
   in the proof'). Against this passage the label is therefore broader; the reading stands.
   <!-- spec-review: MVFBSDEJ.PaperSpec.eq_uniq_fwd ed839d34f480cba157d3ed036c939145 by=claude-auditor source=A:eq:uniq-coeff@c5e7dae7414c6edbeb2afd8a9b9973a719f095ba7998511de1e2ebcb347197cb -->
 
-## `A:eq:zeromean` (paper/sections/02-model-assumptions.tex, lines 13–25)
-
-* `MVFBSDEJ.PaperSpec.eq_zeromean` (added: lines 13–20). Lines 13-20 add the definition Ntilde
-  = N - dt nu and the compensation formula (2.1); the earlier reading already used both (the
-  compensated integral of an L1 integrand as int psi dN - int int psi dnu ds, its integrability by
-  (2.1)). The earlier verdict (faithful with representation choices) stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.eq_zeromean ed839d34f480cba1ab4a0cb1d17ec7d1 by=claude-auditor source=A:eq:zeromean@4a8de4ef68a42a19524cd25d158243c45a32a31e55ce45fb91402f26631627ea -->
-
 ## `A:intro:contributions` (paper/sections/01-introduction.tex, lines 101–116)
 
 * `MVFBSDEJ.PaperSpec.cor_robust_wp` (added: lines 101–116 (a new formal claim: the whole
@@ -680,16 +647,6 @@ digest.
   <!-- spec-review: MVFBSDEJ.PaperSpec.thm_uniq ed839d34f480cba1c0edbd81a0b01a9e by=claude-auditor source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df -->
 
 ## `A:intro:limin-comparison` (paper/sections/01-introduction.tex, lines 58–66)
-
-* `MVFBSDEJ.PaperSpec.ex_expfunc_limin` (added: lines 59–66). The added lines describe the
-  cited interaction class: expectation-functional (independent-copy) type, a jump integrand that
-  enters pointwise, and finite total jump mass. They end with 'Example 5.3 details the embedding of
-  their interaction class' (line 66), which is this clause. ex_expfunc_limin states the
-  finite-activity embedding of independent-copy kernels, consistent with that description: nu
-  finite, psi-bar block-Lipschitz, phi-bar finite and independent of the representatives, and
-  Lipschitz on H x H with constant Lip(psi-bar) max{nu(E), nu(E)^(1/2)}. The earlier verdict,
-  broader, stands: measurability and time-square-integrability of psi-bar are dropped.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_limin ed839d34f480cba1f28bceb8fea3e945 by=claude-auditor source=A:intro:limin-comparison@28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998 -->
 
 * `MVFBSDEJ.PaperSpec.thm_cwp` (added: lines 59–66). Lines 59-63 describe the theorem of Li
   and Min; the scope note treats them as a statement about cited work. Lines 63-66 say the present
@@ -998,15 +955,6 @@ digest.
   rank, β₁, β₂ ≥ 0) stands.
   <!-- spec-review: MVFBSDEJ.PaperSpec.cor_margin_additive ed839d34f480cba1f6b25342c98f12fe by=claude-auditor source=A:sec3:margin-paragraph@23dc0984d55a23cd584d56a864ed5056b9fb123935603b3cc75fbe8fccdf422d -->
 
-* `MVFBSDEJ.PaperSpec.cor_margin_channels` (added: lines 281–290). The added lines 281–290
-  complete the paragraph after Corollary 3.6, which the earlier report read in full. Lines 280–282
-  (a margin in (2.13) forces every channel of the baseline to be strictly dissipative) are this
-  clause, stated for all four channels with the full right-hand side. 'A margin then needs feedback
-  dissipative on the whole of L²(ν)' is its jump-channel conjunct. Lines 282–290 are otherwise the
-  other clauses of the claim, and the example references are named in the scope note. The verdict
-  (broader; instantiation c > 0, β₁, β₂ ≥ 0, m = n, G of full rank) stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.cor_margin_channels ed839d34f480cba1ad6475a2826a7556 by=claude-auditor source=A:sec3:margin-paragraph@23dc0984d55a23cd584d56a864ed5056b9fb123935603b3cc75fbe8fccdf422d -->
-
 * `MVFBSDEJ.PaperSpec.cor_margin_continuous` (added: lines 281–290). Lines 283–288 are the
   sentence the earlier report read, in its general reading: with L²(ν) infinite-dimensional, jump
   feedback entering through finitely many continuous, possibly nonlinear, functionals of u, with any
@@ -1292,13 +1240,6 @@ digest.
   per the scope note. The earlier verdict (broader) stands.
   <!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_mono ed839d34f480cba18bebeea12a1b6e30 by=claude-auditor source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 
-* `MVFBSDEJ.PaperSpec.ex_dealer_wp` (added: line 9 and 11–22). Lines 17-21 add 'well-posedness
-  holds at every interaction strength', which is the proposition (existence and uniqueness in the
-  solution space for every eps >= 0 and every h_x); line 22's nu != 0 is the instantiation the
-  earlier report recorded (the proposition allows every sigma-finite nu). The rest is modelling
-  (scope note) or other examples. The earlier verdict (broader) stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_wp ed839d34f480cba1169a2b8090bb4149 by=claude-auditor source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
-
 * `MVFBSDEJ.PaperSpec.ex_expfunc` (added: line 9 and 11–22). Lines 13-14 add the overview
   sentence that Example 5.3 recovers the expectation-functional subclass as a special case, the
   sentence the earlier reading already took for this clause. The proposition states that mu -> int
@@ -1307,17 +1248,6 @@ digest.
   identification with the class of [LiMin] is cited work per the scope note. The earlier verdict
   (faithful with representation choices) stands.
   <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc ed839d34f480cba15a6f123acd31afd5 by=claude-auditor source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
-
-* `MVFBSDEJ.PaperSpec.ex_expfunc_limin` (added: line 9 and 11–22). Lines 13-14 add that
-  Example 5.3 recovers the expectation-functional subclass of [LiMin] as a special case. The
-  proposition states the embedding of the finite-activity two-point kernels psibar of their drift,
-  diffusion and driver (integrability, the Lipschitz bound with constant Lip(psibar) max{nu(E),
-  nu(E)^{1/2}}, independence of representatives), which is that inclusion; the identification with
-  their subclass is cited work per the scope note, and the added lines impose nothing the (broader)
-  proposition lacks. The earlier verdict (broader) stands. Observation: the Nemytskii embedding of
-  their jump coefficient is a separate clause of Example 5.3 (ex_expfunc_jump) not listed under this
-  overview; under the scope note it falls within the cited-work identification.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_limin ed839d34f480cba1f28bceb8fea3e945 by=claude-auditor source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 
 * `MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_U_corr` (added: line 9 and 11–22). The latest earlier
   report already read lines 15-16 and line 22. The hypothesis L2(nu; R^m) != {0} is exactly the nu

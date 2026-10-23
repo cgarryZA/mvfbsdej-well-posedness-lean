@@ -478,6 +478,19 @@ class ReviewMarkers(unittest.TestCase):
         rows, _ = self.status(marker("spec", SPEC, "r", ("A:t", NEW), h="f" * 32))
         self.assertEqual(rows["A:t"]["clauses"][0]["spec_review"], "changed since review")
 
+    def test_later_marker_at_older_hash_reopens(self):
+        """The last marker, in file order, is the current record: a reading at the current hash
+        followed by one at an older hash does not count."""
+        cur = marker("spec", SPEC, "r", ("A:t", NEW))
+        old = marker("spec", SPEC, "r", ("A:t", NEW), h="f" * 32)
+        spec, defs, _ = A.parse_reviews([("A.md", cur), ("rereads.md", old)])
+        st = A.build_status(self.inventory(NEW), self.probe(), spec, defs)
+        row = {r["id"]: r for r in st["claims"]}["A:t"]
+        self.assertEqual(row["clauses"][0]["spec_review"], "changed since review")
+        self.assertEqual(row["status"], "formal: proved, review pending")
+        rows, _ = self.status(old + cur)
+        self.assertEqual(rows["A:t"]["status"], "formal: accepted")
+
     def test_fresh_reading_beside_stale_one(self):
         text = (marker("spec", SPEC, "claude-author", ("A:t", NEW))
                 + marker("spec", SPEC, "r", ("A:t", OLD)))

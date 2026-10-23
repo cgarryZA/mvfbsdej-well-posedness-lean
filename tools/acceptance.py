@@ -238,8 +238,11 @@ def review_state(marks, h, claim=None, digest=None):
     """The review of a declaration at its current hash `h` from its markers: (`reviewed`,
     reviewer), preferring a reviewer other than the author; with a claim, only a reading of that
     claim's passage at its current `digest` counts, and (`passage changed`, reviewers) says that
-    the readings at hash `h` were of an earlier text of the passage. Otherwise (`changed`, None)
-    for markers at other hashes only, (`none`, None) for none."""
+    the readings at hash `h` were of an earlier text of the passage. The last marker, in file
+    order, is the declaration's current record: (`changed`, None) when it is at another hash,
+    (`none`, None) for no markers."""
+    if marks and marks[-1]["hash"] != h:
+        return "changed", None
     at = [m for m in marks if m["hash"] == h]
     cur = at if claim is None else [m for m in at if m["sources"].get(claim) == digest]
     if cur:
@@ -248,8 +251,6 @@ def review_state(marks, h, claim=None, digest=None):
     stale = [m["by"] for m in at if claim in m["sources"]]
     if stale:
         return "passage changed", sorted(set(stale))
-    if marks and not at:
-        return "changed", None
     return "none", None
 
 
