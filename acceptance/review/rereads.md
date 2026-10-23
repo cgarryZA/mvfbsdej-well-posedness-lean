@@ -42,7 +42,7 @@ digest.
   dealer system has a solution in the strong space, and it is unique. The infinite-activity mark
   measure (line 48) is ex_dealer_marks. The earlier verdict, broader, stands: any sigma-finite nu,
   nu = 0 included, with the instance nu != 0.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_wp ed839d34f480cba1169a2b8090bb4149 by=claude-auditor source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 -->
+  <!-- retired spec-review: MVFBSDEJ.PaperSpec.ex_dealer_wp ed839d34f480cba1169a2b8090bb4149 by=claude-auditor source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 -->
 
 * `MVFBSDEJ.PaperSpec.prop_strict` (added: lines 31–48). The added lines 39-40 ('expected
   diagonal monotonicity is strictly weaker than pointwise monotonicity') are Proposition 3.8 as
@@ -203,14 +203,14 @@ digest.
   constants and assumes λ ∈ [0, 1]. The earlier report's reading listed these justifications, and
   its coverage noted that 'lines 423–424 name justifications'. The verdict (faithful with
   representation choices) stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.eq_bwddiff ed839d34f480cba18579ef83ba51d72e by=claude-auditor source=A:eq:bwddiff@ca58096655e5e6b70fd088ebf4b2b03e622b17d584f98ab52e438e1f35e7dfaa -->
+  <!-- retired spec-review: MVFBSDEJ.PaperSpec.eq_bwddiff ed839d34f480cba18579ef83ba51d72e by=claude-auditor source=A:eq:bwddiff@ca58096655e5e6b70fd088ebf4b2b03e622b17d584f98ab52e438e1f35e7dfaa -->
 
 * `MVFBSDEJ.PaperSpec.eq_bwddiff_identity` (added: lines 423–424). Lines 423–424 justify links
   of (4.12): the second by (4.11) and (4.9), the fourth by (4.10), the last by λ⁴ ≤ λ² on [0, 1].
   They belong to the clause eq_bwddiff and say nothing about the backward difference identity of
   lines 391–397, which this proposition states with the same λ ∈ [0, 1] and the same forcing for
   both trials. The verdict (faithful with representation choices) stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.eq_bwddiff_identity ed839d34f480cba1a9d0fef012ee5fb2 by=claude-auditor source=A:eq:bwddiff@ca58096655e5e6b70fd088ebf4b2b03e622b17d584f98ab52e438e1f35e7dfaa -->
+  <!-- retired spec-review: MVFBSDEJ.PaperSpec.eq_bwddiff_identity ed839d34f480cba1a9d0fef012ee5fb2 by=claude-auditor source=A:eq:bwddiff@ca58096655e5e6b70fd088ebf4b2b03e622b17d584f98ab52e438e1f35e7dfaa -->
 
 ## `A:eq:bwdito` (paper/sections/04-proof-wellposedness.tex, lines 716–725)
 
@@ -535,7 +535,7 @@ digest.
   = N - dt nu and the compensation formula (2.1); the earlier reading already used both (the
   compensated integral of an L1 integrand as int psi dN - int int psi dnu ds, its integrability by
   (2.1)). The earlier verdict (faithful with representation choices) stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.eq_zeromean ed839d34f480cba1ab4a0cb1d17ec7d1 by=claude-auditor source=A:eq:zeromean@4a8de4ef68a42a19524cd25d158243c45a32a31e55ce45fb91402f26631627ea -->
+  <!-- retired spec-review: MVFBSDEJ.PaperSpec.eq_zeromean ed839d34f480cba1ab4a0cb1d17ec7d1 by=claude-auditor source=A:eq:zeromean@4a8de4ef68a42a19524cd25d158243c45a32a31e55ce45fb91402f26631627ea -->
 
 ## `A:intro:contributions` (paper/sections/01-introduction.tex, lines 101–116)
 
@@ -689,7 +689,7 @@ digest.
   finite, psi-bar block-Lipschitz, phi-bar finite and independent of the representatives, and
   Lipschitz on H x H with constant Lip(psi-bar) max{nu(E), nu(E)^(1/2)}. The earlier verdict,
   broader, stands: measurability and time-square-integrability of psi-bar are dropped.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_limin ed839d34f480cba1f28bceb8fea3e945 by=claude-auditor source=A:intro:limin-comparison@28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998 -->
+  <!-- retired spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_limin ed839d34f480cba1f28bceb8fea3e945 by=claude-auditor source=A:intro:limin-comparison@28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998 -->
 
 * `MVFBSDEJ.PaperSpec.thm_cwp` (added: lines 59–66). Lines 59-63 describe the theorem of Li
   and Min; the scope note treats them as a statement about cited work. Lines 63-66 say the present
@@ -1005,7 +1005,7 @@ digest.
   dissipative on the whole of L²(ν)' is its jump-channel conjunct. Lines 282–290 are otherwise the
   other clauses of the claim, and the example references are named in the scope note. The verdict
   (broader; instantiation c > 0, β₁, β₂ ≥ 0, m = n, G of full rank) stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.cor_margin_channels ed839d34f480cba1ad6475a2826a7556 by=claude-auditor source=A:sec3:margin-paragraph@23dc0984d55a23cd584d56a864ed5056b9fb123935603b3cc75fbe8fccdf422d -->
+  <!-- retired spec-review: MVFBSDEJ.PaperSpec.cor_margin_channels ed839d34f480cba1ad6475a2826a7556 by=claude-auditor source=A:sec3:margin-paragraph@23dc0984d55a23cd584d56a864ed5056b9fb123935603b3cc75fbe8fccdf422d -->
 
 * `MVFBSDEJ.PaperSpec.cor_margin_continuous` (added: lines 281–290). Lines 283–288 are the
   sentence the earlier report read, in its general reading: with L²(ν) infinite-dimensional, jump
@@ -1297,7 +1297,7 @@ digest.
   solution space for every eps >= 0 and every h_x); line 22's nu != 0 is the instantiation the
   earlier report recorded (the proposition allows every sigma-finite nu). The rest is modelling
   (scope note) or other examples. The earlier verdict (broader) stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_wp ed839d34f480cba1169a2b8090bb4149 by=claude-auditor source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
+  <!-- retired spec-review: MVFBSDEJ.PaperSpec.ex_dealer_wp ed839d34f480cba1169a2b8090bb4149 by=claude-auditor source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 
 * `MVFBSDEJ.PaperSpec.ex_expfunc` (added: line 9 and 11–22). Lines 13-14 add the overview
   sentence that Example 5.3 recovers the expectation-functional subclass as a special case, the
@@ -1317,7 +1317,7 @@ digest.
   proposition lacks. The earlier verdict (broader) stands. Observation: the Nemytskii embedding of
   their jump coefficient is a separate clause of Example 5.3 (ex_expfunc_jump) not listed under this
   overview; under the scope note it falls within the cited-work identification.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_limin ed839d34f480cba1f28bceb8fea3e945 by=claude-auditor source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
+  <!-- retired spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_limin ed839d34f480cba1f28bceb8fea3e945 by=claude-auditor source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 
 * `MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_U_corr` (added: line 9 and 11–22). The latest earlier
   report already read lines 15-16 and line 22. The hypothesis L2(nu; R^m) != {0} is exactly the nu
@@ -1445,3 +1445,85 @@ Six declarations whose source is unchanged now elaborate with the standard insta
   structure on `Fin 1` is the same, so the channel spaces ℝ¹, ℝ^{1×d} and `L²(ν; ℝ¹)` carry the same
   norms and the meaning is unchanged. Verdict: faithful with representation choices.
   <!-- def-review: MVFBSDEJ.WellPosedness.Existence.clampAffineCoeffs 790587bb9ac7016aab019d17c1bb924f by=claude-auditor -->
+
+## Readings of the difference notation against Assumptions 2.3 and 2.5 (issue #17)
+
+The definition-review markers of `A:sec2:difference-notation` for `Assumption23` and `Assumption25`
+above record readings whose text addresses Assumptions 2.3 and 2.5 rather than this paragraph. The
+two definitions are read here against the paragraph itself (lines 69–84), by the author and then
+independently.
+
+* Reading by claude-author of `MVFBSDEJ.WellPosedness.Spec.Assumption23` against the passage of
+  `A:sec2:difference-notation` (`02-model-assumptions.tex` lines 69–84, at `1f67672`). The
+  paragraph fixes, for two diagonal inputs (Θ, μ), (Θ′, μ′) at the same time t on the same
+  probability space, δX := X − X′ (with δY, δZ, δU the other channels of Θ − Θ′) and
+  δψ := ψ(t, Θ, μ) − ψ(t, Θ′, μ′) for ψ ∈ {b, σ, h, f} (lines 73–79), and, with the induced
+  terminal laws ρ := Law(X_T), ρ′ := Law(X′_T), δg_T := g(X_T, ρ) − g(X′_T, ρ′) (lines 80–84);
+  lines 69–70 impose every hypothesis along 𝒟_t only, the law never varied apart from its tuple.
+  `Assumption23` uses this notation as printed. Its field `interior` is `LipInteriorAt` for almost
+  every t ∈ [0, T]; `LipInteriorAt` takes p, p′ in `diagonalInputs ν n m d ℱ P t`, at the one time
+  t on the one probability space, and evaluates each coefficient at (p.1 ω, p.2) and
+  (p′.1 ω, p′.2), a tuple with its own law, so its differences of b, σ, h, f and of the four
+  channels are the paragraph's δψ and δX, δY, δZ, δU. Its field `terminal` is `LipTerminal`, over
+  strongly ℱ_T-measurable square-integrable X_T, X′_T, with g evaluated at
+  (X_T(ω), lawP2 P X_T) and (X′_T(ω), lawP2 P X′_T): the induced laws ρ, ρ′, never a free
+  measure, so its difference of g is the paragraph's δg_T. No field varies a law apart from its
+  tuple. Verdict: faithful to the passage.
+  <!-- def-review: MVFBSDEJ.WellPosedness.Spec.Assumption23 5ad9199da021d4760000000000000000 by=claude-author source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+
+* Reading by claude-auditor of `MVFBSDEJ.WellPosedness.Spec.Assumption23` against the passage of
+  `A:sec2:difference-notation` (`02-model-assumptions.tex` lines 69–84, at `1f67672`). The passage
+  fixes: every hypothesis is imposed along 𝒟_t only, the law never varied apart from its tuple
+  (69–70); θ is a point and Θ a random tuple of H (70–71); the two inputs are diagonal, at one time
+  t, on one probability space (74); δX := X − X′ and likewise the other channels (77);
+  δψ := ψ(t, Θ, μ) − ψ(t, Θ′, μ′) for ψ ∈ {b, σ, h, f} (78); the induced laws ρ := Law(X_T),
+  ρ′ := Law(X′_T) and δg_T := g(X_T, ρ) − g(X′_T, ρ′) (80–83). The field `interior` is
+  `LipInterior`, an a.e.-t quantifier over `LipInteriorAt`, which takes `p` and `p'` in
+  `diagonalInputs ν n m d ℱ P t` at the same t and on the one space (Ω, P); membership forces
+  `MemLp p.1 2 P` and `p.2 = lawP2 P p.1`, the image law `P.map p.1`, so each input is (Θ, Law Θ).
+  Its left side is `C.ψ t (p.1 ω) p.2 - C.ψ t (p'.1 ω) p'.2` for ψ = b, σ, h, f, each point with
+  its own law in the right slot; its right side takes the channels `.1`, `.2.1`, `.2.2.1`,
+  `.2.2.2` (X, Y, Z, U of `TupleH = ℝⁿ × ℝᵐ × ℝ^{m×d} × L²(ν; ℝᵐ)`) of `p.1 ω` minus those of
+  `p'.1 ω`, plus `w2H p.2 p'.2`, the distance of the two diagonal laws. The field `terminal` is
+  `LipTerminal ℱ P T L C.g`: for ℱ_T-measurable square-integrable `XT`, `XT'` on (Ω, P), it bounds
+  `g (XT ω) (lawP2 P XT) - g (XT' ω) (lawP2 P XT')` by `XT ω - XT' ω` and
+  `w2P (lawP2 P XT) (lawP2 P XT')`: g is taken at the induced laws, never at a free measure, and
+  any such `XT` is the X-channel of a diagonal input at T. `nonneg` involves no law. No field
+  varies a law independently of its tuple. Verdict: faithful to the passage.
+  <!-- def-review: MVFBSDEJ.WellPosedness.Spec.Assumption23 5ad9199da021d4760000000000000000 by=claude-auditor source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+
+* Reading by claude-author of `MVFBSDEJ.WellPosedness.Spec.Assumption25` against the passage of
+  `A:sec2:difference-notation` (`02-model-assumptions.tex` lines 69–84, at `1f67672`), the
+  paragraph read as in the entry above. Its field `interior` is `Mono27At` for almost every
+  t ∈ [0, T]; `Mono27At` takes p, p′ in `diagonalInputs ν n m d ℱ P t`, at the one time t on the
+  one probability space, and integrates `pairing27 G C t (p.1 ω) (p′.1 ω) p.2 p′.2`, whose
+  coefficient differences are δb, δσ, δf and δh(e) at the two inputs with their own laws and
+  whose channel differences are δX, δY, δZ, δU of Θ − Θ′, the paragraph's objects. Its field
+  `terminal` takes strongly ℱ_T-measurable square-integrable X_T, X′_T and pairs
+  g(X_T(ω), lawP2 P X_T) − g(X′_T(ω), lawP2 P X′_T), the paragraph's δg_T at the induced laws,
+  with G(X_T − X′_T), G δX_T. The constants α, β₁, β₂ and the matrix G carry no measure argument.
+  No field varies a law apart from its tuple. Verdict: faithful to the passage.
+  <!-- def-review: MVFBSDEJ.WellPosedness.Spec.Assumption25 a0fc1ba9071e126c0000000000000000 by=claude-author source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+
+* Reading by claude-auditor of `MVFBSDEJ.WellPosedness.Spec.Assumption25` against the passage of
+  `A:sec2:difference-notation` (`02-model-assumptions.tex` lines 69–84, at `1f67672`). The passage
+  fixes: every hypothesis is imposed along 𝒟_t only, the law never varied apart from its tuple
+  (69–70); θ is a point and Θ a random tuple of H (70–71); the two inputs are diagonal, at one time
+  t, on one probability space (74); δX := X − X′ and likewise the other channels (77);
+  δψ := ψ(t, Θ, μ) − ψ(t, Θ′, μ′) for ψ ∈ {b, σ, h, f} (78); the induced laws ρ := Law(X_T),
+  ρ′ := Law(X′_T) and δg_T := g(X_T, ρ) − g(X′_T, ρ′) (80–83). The field `terminal`, for
+  ℱ_T-measurable square-integrable `XT`, `XT'` on (Ω, P), pairs
+  `C.g (XT ω) (lawP2 P XT) - C.g (XT' ω) (lawP2 P XT')` with `GX G (XT ω - XT' ω)`: δg_T at the
+  induced laws, never a free measure, against G δX_T. The field `interior` is, for a.e. t,
+  `Mono27At ℱ P t G β₁ β₂ C`, which takes `p` and `p'` in `diagonalInputs ν n m d ℱ P t` at the
+  same t and on the one space (Ω, P), each with `p.2 = lawP2 P p.1`, and integrates
+  `pairing27 G C t (p.1 ω) (p'.1 ω) p.2 p'.2`. The argument order of `pairing27` (θ, θ′, μ, μ′)
+  puts each point with its own law: its δψ is `C.ψ t θ μ - C.ψ t θ' μ'` for b, σ, f, and for h
+  the mark-wise `C.h t θ μ e - C.h t θ' μ' e`, a ν-a.e. representative of δh(e), so the ν-integral
+  is that of ⟨δh(e), Gᵀ δU(e)⟩; its channel differences are `θ.2.1 - θ'.2.1` (δY),
+  `θ.2.2.1 - θ'.2.2.1` (δZ), `θ.1 - θ'.1` (δX) and `θ.2.2.2 e - θ'.2.2.2 e` (δU(e)), and the
+  right side of `Mono27At` uses the same channels of `p.1 ω` and `p'.1 ω`. `pairing27` is a
+  function of points θ, θ′ and of two laws, as the θ/Θ convention has it, and is evaluated only at
+  the diagonal laws `p.2`, `p'.2`; `constants` (`Constants n m α β₁ β₂`) involves no law. No field
+  varies a law independently of its tuple. Verdict: faithful to the passage.
+  <!-- def-review: MVFBSDEJ.WellPosedness.Spec.Assumption25 a0fc1ba9071e126c0000000000000000 by=claude-auditor source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
