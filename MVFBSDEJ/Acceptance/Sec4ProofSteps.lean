@@ -139,8 +139,8 @@ theorem eq_bwddiff_identity : PaperSpec.eq_bwddiff_identity.{u, v, w} := by
 
 /-- `λ_*` and the contraction by `1/2`, after (4.13). -/
 theorem eq_contract_half : PaperSpec.eq_contract_half.{u, v, w} := by
-  obtain ⟨c₀, hc₀, hC⟩ := eq_contract.{u, v, w}
-  refine ⟨c₀, hc₀, fun c hc => ?_⟩
+  have hC := eq_contract.{u, v, w}
+  intro c hc
   intro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ hn hm hd T hT L C ξ₀ hJ h22 h23 CΦ lamStar
     hCΦ hlam
   have hC1 : 1 ≤ CΦ := hCΦ ▸ le_max_left _ _

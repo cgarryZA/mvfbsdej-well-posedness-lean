@@ -17,7 +17,7 @@ import MVFBSDEJ.Acceptance.Solution
 
 * `MVFBSDEJ.Acceptance.lem_bpbsde` — Lemma 4.1, with `C_BP(T) = 13 e^T + 3T`.
 * `MVFBSDEJ.Acceptance.lem_bpbsde_explicit` — Lemma 4.1 with `C_BP = 2 e^T (5 + 4c) + 4T` for every
-  `c ≥ 1`.
+  `c ≥ 4`.
 * `MVFBSDEJ.Acceptance.lem_small` — Lemma 4.2, with `λ*(T, L) = smallCoupling T (2L)`.
 * `MVFBSDEJ.Acceptance.lem_pert` — Lemma 4.3, with
   `C_B = aprioriConst T (10 (2L)²) (4 (2L)²) ‖G‖ c_G α β₁ β₂ λ̲`.

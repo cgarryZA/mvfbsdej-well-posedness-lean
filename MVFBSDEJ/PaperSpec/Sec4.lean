@@ -91,15 +91,14 @@ def lem_bpbsde : Prop :=
       ≤ ENNReal.ofReal (CBP T)
         * (∫⁻ ω, (esq fun k => δξ ω k) ∂P + ∑ k, Brownian.Ito.energy P T (φ k))
 
-/-- Lemma 4.1 with the constant of its proof. For every `c ≥ 1`, in particular for every value of
-the constant `c_BDG` (at least `4`, the constant of Doob's inequality in `L²`), the conclusion of
-Lemma 4.1 holds with `C_BP = C₀ (5 + 4 c) + 4T`, `C₀ = 2 e^T`: in the standing setting, for `m ≥ 1`
-and `T > 0`,
+/-- Lemma 4.1 with the constant of its proof. For every `c ≥ 4`, the values of the constant
+`c_BDG` that Doob's constant `4` at `p = 2` admits, the conclusion of Lemma 4.1 holds with
+`C_BP = C₀ (5 + 4 c) + 4T`, `C₀ = 2 e^T`: in the standing setting, for `m ≥ 1` and `T > 0`,
 under the hypotheses of `lem_bpbsde`, `δY ∈ S²(ℝᵐ)` and
 `𝔼 sup_{t ≤ T} |δY_t|² + 𝔼 ∫_0^T (|δZ_s|²_F + ‖δU_s‖²_{L²(ν)}) ds
   ≤ (2 e^T (5 + 4c) + 4T) (𝔼|δξ|² + 𝔼 ∫_0^T |φ_s|² ds)`. -/
 def lem_bpbsde_explicit : Prop :=
-  ∀ c : ℝ, 1 ≤ c →
+  ∀ c : ℝ, 4 ≤ c →
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
     (m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]

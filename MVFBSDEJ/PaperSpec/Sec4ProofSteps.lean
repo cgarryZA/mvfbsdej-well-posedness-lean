@@ -278,18 +278,18 @@ def eq_bwddiff_identity : Prop :=
     ∧ Measurable[enlJoint 𝒢₀ D h𝒢₀ T]
         (fun ω => lam * (terminalVal P T C X₁' k ω - terminalVal P T C X₂' k ω))
 
-/-- **`λ_*` and the contraction by `1/2`, after (4.13).** There is `c₀ > 0` such that, for every
-value `c ≥ c₀` of the constant `c_BDG`: in the standing setting, under the hypotheses of Lemma 4.2
-— `T > 0`, coefficients with (2.3) and Assumptions 2.2–2.3 with constant `L` and initial datum
-`ξ₀` — with `C_Φ = max{1, C_X + C_Y}` the constant of (4.13) (`L⋆² = 10 L² max{T, 1}`,
-`C_X = 3 max{T, c} L⋆²`, `C_BP = 2 e^T (5 + 4c) + 4T`, `C_Y = C_BP (4 L² C_X + L⋆²)`) and
-`λ_* = (2 √C_Φ)⁻¹`: `λ_* ∈ (0, 1/2]`; and for every `λ ∈ [0, λ_*]`, `C_Φ λ² ≤ 1/4`, and for a
-forcing `q` of the class of (4.1), two trial tuples `Θ¹, Θ²` of `𝕊` and their frozen steps
-`Θ̄ᵏ = Φ_λ(Θᵏ)` (`FrozenStep`, with the same `λ`, `ξ₀` and `q`),
-`‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖_𝕊 ≤ (1/2) ‖Θ¹ − Θ²‖_𝕊`, `‖·‖_𝕊` the square root of `supSize` in
-`[0, ∞]`. -/
+/-- **`λ_*` and the contraction by `1/2`, after (4.13).** For every `c ≥ 4`, the values of the
+constant `c_BDG` that Doob's constant `4` at `p = 2` admits: in the standing setting, under the
+hypotheses of Lemma 4.2 — `T > 0`, coefficients with (2.3) and Assumptions 2.2–2.3 with constant `L`
+and initial datum `ξ₀` — with `C_Φ = max{1, C_X + C_Y}` the constant of (4.13)
+(`L⋆² = 10 L² max{T, 1}`, `C_X = 3 max{T, c} L⋆²`, `C_BP = 2 e^T (5 + 4c) + 4T`,
+`C_Y = C_BP (4 L² C_X + L⋆²)`) and `λ_* = (2 √C_Φ)⁻¹`: `λ_* ∈ (0, 1/2]`; and for every
+`λ ∈ [0, λ_*]`, `C_Φ λ² ≤ 1/4`, and for a forcing `q` of the class of (4.1), two trial tuples
+`Θ¹, Θ²` of `𝕊` and their frozen steps `Θ̄ᵏ = Φ_λ(Θᵏ)` (`FrozenStep`, with the same `λ`, `ξ₀` and
+`q`), `‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖_𝕊 ≤ (1/2) ‖Θ¹ − Θ²‖_𝕊`, `‖·‖_𝕊` the square root of `supSize` in `[0, ∞]`.
+-/
 def eq_contract_half : Prop :=
-  ∃ c₀ : ℝ, 0 < c₀ ∧ ∀ c : ℝ, c₀ ≤ c →
+  ∀ c : ℝ, 4 ≤ c →
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
     (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]

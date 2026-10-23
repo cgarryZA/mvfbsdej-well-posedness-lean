@@ -37,8 +37,9 @@ with `δξ̄ = λ [g(X̄¹_T, Law(X̄¹_T)) − g(X̄²_T, Law(X̄²_T))]`, and
     + 𝔼 ∫_0^T (|δZ̄_s|²_F + ‖δŪ_s‖²) ds
   ≤ (C_X + C_Y) λ² ‖Θ¹ − Θ²‖²_𝕊 ≤ C_Φ λ² ‖Θ¹ − Θ²‖²_𝕊`. (4.13)
 
-`c_BDG` is the constant of the Burkholder–Davis–Gundy inequality fixed in §4; each proposition
-asserts its chain for every value of it at least some `c₀ > 0`.
+`c_BDG` is the constant of the Burkholder–Davis–Gundy inequality fixed in §4; it enters these
+constants only at `p = 2`, and each proposition asserts its chain for every value `c ≥ 4` of it,
+the values that Doob's constant `4` at `p = 2` admits.
 
 ## Main definitions
 
@@ -140,14 +141,14 @@ def eq_fwddiff_identity : Prop :=
                   (fun ω s e => coeffJump P T C X₁ Y₁ Z₁ U₁ i s ω e
                     - coeffJump P T C X₂ Y₂ Z₂ U₂ i s ω e) (hhm i) (hhp i) (hhq i) t ω
 
-/-- **(4.10).** There is `c₀ > 0` such that, for every value `c ≥ c₀` of the constant `c_BDG`: in
-the standing setting, under the hypotheses of Lemma 4.2 — `T > 0`, coefficients with (2.3) and
-Assumptions 2.2–2.3 with constant `L` and initial datum `ξ₀` — for `λ ∈ [0, 1]`, a forcing `q` of
-the class of (4.1), two trial tuples `Θ¹, Θ²` of `𝕊` and their frozen steps `Θ̄ᵏ = Φ_λ(Θᵏ)`
-(`FrozenStep`, with the same `λ`, `ξ₀` and `q`), with `δb, δσ, δh` the coefficient differences at
-`(Θᵏ_s, Law(Θᵏ_s))` (the jump coefficient through its representative `coeffJump`): `δσ` and `δh`
-meet the conditions of the Itô and compensated integrals; `∫_0^t δσ_s dW_s` has a càdlàg version
-on `[0, T]`; and, with any such version,
+/-- **(4.10).** For every `c ≥ 4`, the values of the constant `c_BDG` that Doob's constant `4` at
+`p = 2` admits: in the standing setting, under the hypotheses of Lemma 4.2 — `T > 0`, coefficients
+with (2.3) and Assumptions 2.2–2.3 with constant `L` and initial datum `ξ₀` — for `λ ∈ [0, 1]`, a
+forcing `q` of the class of (4.1), two trial tuples `Θ¹, Θ²` of `𝕊` and their frozen steps
+`Θ̄ᵏ = Φ_λ(Θᵏ)` (`FrozenStep`, with the same `λ`, `ξ₀` and `q`), with `δb, δσ, δh` the coefficient
+differences at `(Θᵏ_s, Law(Θᵏ_s))` (the jump coefficient through its representative `coeffJump`):
+`δσ` and `δh` meet the conditions of the Itô and compensated integrals; `∫_0^t δσ_s dW_s` has a
+càdlàg version on `[0, T]`; and, with any such version,
 `𝔼 sup_{t ≤ T} |δX̄_t|² ≤ 3λ² [𝔼 (∫_0^T |δb_s| ds)² + 𝔼 sup_{t ≤ T} |∫_0^t δσ_s dW_s|²
     + 𝔼 sup_{t ≤ T} |∫_0^t ∫_E δh_s(e) Ñ(ds, de)|²]
   ≤ 3λ² [T 𝔼 ∫_0^T |δb_s|² ds + c 𝔼 ∫_0^T |δσ_s|²_F ds + c 𝔼 ∫_0^T ‖δh_s‖²_{L²(ν)} ds]
@@ -155,7 +156,7 @@ on `[0, T]`; and, with any such version,
   ≤ 3λ² max{T, c} 𝔼 ∫_0^T S_s² ds ≤ C_X λ² ‖Θ¹ − Θ²‖²_𝕊`,
 `C_X = 3 max{T, c} · 10 L² max{T, 1}`, the expectations read in `[0, ∞]`. -/
 def eq_fwddiff : Prop :=
-  ∃ c₀ : ℝ, 0 < c₀ ∧ ∀ c : ℝ, c₀ ≤ c →
+  ∀ c : ℝ, 4 ≤ c →
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
     (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
@@ -274,11 +275,11 @@ def eq_fwddiff : Prop :=
             * supSize P ν T (fun i t ω => X₁ i t ω - X₂ i t ω) (fun k t ω => Y₁ k t ω - Y₂ k t ω)
               (fun k t ω j => Z₁ k t ω j - Z₂ k t ω j) (fun k t ω e => U₁ k t ω e - U₂ k t ω e)
 
-/-- **(4.12).** There is `c₀ > 0` such that, for every value `c ≥ c₀` of the constant `c_BDG`: in
-the standing setting, under the hypotheses of Lemma 4.2 — `T > 0`, coefficients with (2.3) and
-Assumptions 2.2–2.3 with constant `L` and initial datum `ξ₀` — for `λ ∈ [0, 1]`, a forcing `q` of
-the class of (4.1), two trial tuples `Θ¹, Θ²` of `𝕊` and their frozen steps `Θ̄ᵏ = Φ_λ(Θᵏ)`
-(`FrozenStep`, with the same `λ`, `ξ₀` and `q`), with
+/-- **(4.12).** For every `c ≥ 4`, the values of the constant `c_BDG` that Doob's constant `4` at
+`p = 2` admits: in the standing setting, under the hypotheses of Lemma 4.2 — `T > 0`, coefficients
+with (2.3) and Assumptions 2.2–2.3 with constant `L` and initial datum `ξ₀` — for `λ ∈ [0, 1]`, a
+forcing `q` of the class of (4.1), two trial tuples `Θ¹, Θ²` of `𝕊` and their frozen steps
+`Θ̄ᵏ = Φ_λ(Θᵏ)` (`FrozenStep`, with the same `λ`, `ξ₀` and `q`), with
 `δξ̄ = λ [g(X̄¹_T, Law(X̄¹_T)) − g(X̄²_T, Law(X̄²_T))]` and `δf` the driver difference at
 `(Θᵏ_s, Law(Θᵏ_s))`,
 `𝔼 sup_{t ≤ T} |δȲ_t|² + 𝔼 ∫_0^T (|δZ̄_s|²_F + ‖δŪ_s‖²_{L²(ν)}) ds
@@ -289,7 +290,7 @@ the class of (4.1), two trial tuples `Θ¹, Θ²` of `𝕊` and their frozen ste
 with `C_BP = 2 e^T (5 + 4c) + 4T`, `C_g = 4 L²`, `L⋆² = 10 L² max{T, 1}`,
 `C_X = 3 max{T, c} L⋆²` and `C_Y = C_BP (C_g C_X + L⋆²)`, the expectations read in `[0, ∞]`. -/
 def eq_bwddiff : Prop :=
-  ∃ c₀ : ℝ, 0 < c₀ ∧ ∀ c : ℝ, c₀ ≤ c →
+  ∀ c : ℝ, 4 ≤ c →
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
     (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
@@ -360,18 +361,18 @@ def eq_bwddiff : Prop :=
         * supSize P ν T (fun i t ω => X₁ i t ω - X₂ i t ω) (fun k t ω => Y₁ k t ω - Y₂ k t ω)
           (fun k t ω j => Z₁ k t ω j - Z₂ k t ω j) (fun k t ω e => U₁ k t ω e - U₂ k t ω e)
 
-/-- **(4.13).** There is `c₀ > 0` such that, for every value `c ≥ c₀` of the constant `c_BDG`: in
-the standing setting, under the hypotheses of Lemma 4.2 — `T > 0`, coefficients with (2.3) and
-Assumptions 2.2–2.3 with constant `L` and initial datum `ξ₀` — for `λ ∈ [0, 1]`, a forcing `q` of
-the class of (4.1), two trial tuples `Θ¹, Θ²` of `𝕊` and their frozen steps `Θ̄ᵏ = Φ_λ(Θᵏ)`
-(`FrozenStep`, with the same `λ`, `ξ₀` and `q`),
+/-- **(4.13).** For every `c ≥ 4`, the values of the constant `c_BDG` that Doob's constant `4` at
+`p = 2` admits: in the standing setting, under the hypotheses of Lemma 4.2 — `T > 0`, coefficients
+with (2.3) and Assumptions 2.2–2.3 with constant `L` and initial datum `ξ₀` — for `λ ∈ [0, 1]`, a
+forcing `q` of the class of (4.1), two trial tuples `Θ¹, Θ²` of `𝕊` and their frozen steps
+`Θ̄ᵏ = Φ_λ(Θᵏ)` (`FrozenStep`, with the same `λ`, `ξ₀` and `q`),
 `‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖²_𝕊 = 𝔼 sup_{t ≤ T} |δX̄_t|² + 𝔼 sup_{t ≤ T} |δȲ_t|²
     + 𝔼 ∫_0^T (|δZ̄_s|²_F + ‖δŪ_s‖²_{L²(ν)}) ds
   ≤ (C_X + C_Y) λ² ‖Θ¹ − Θ²‖²_𝕊 ≤ C_Φ λ² ‖Θ¹ − Θ²‖²_𝕊`,
 with `L⋆² = 10 L² max{T, 1}`, `C_X = 3 max{T, c} L⋆²`, `C_BP = 2 e^T (5 + 4c) + 4T`,
 `C_Y = C_BP (4 L² C_X + L⋆²)` and `C_Φ = max{1, C_X + C_Y}`, the expectations read in `[0, ∞]`. -/
 def eq_contract : Prop :=
-  ∃ c₀ : ℝ, 0 < c₀ ∧ ∀ c : ℝ, c₀ ≤ c →
+  ∀ c : ℝ, 4 ≤ c →
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
     (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]

@@ -4064,7 +4064,7 @@
    "location": "paper/sections/04-proof-wellposedness.tex:188",
    "source_sha256": "69066031ecb004372ea47f44623161352a6f6ead47cb3d38fdb991579e47bd8f",
    "scope": "formal",
-   "scope_note": "the pinned region is lines 188–246; the second clause reads the display of lines 193–199, the expectation of (4.5) after Young's inequality, and the first the bound by R at every t (lines 200–205) and (4.6); the sentences of lines 188–192 and 206–207 name the justifications; lines 219–246, the upgrade of sup_t 𝔼|δY_t|² to 𝔼 sup_t |δY_t|² by the forward form, BDG and (4.6), prove the conclusion of Lemma 4.1 (A:lem:bpbsde) and define C_BP := C₀(5 + 4c_BDG) + 4T (line 244), the constant that A:eq:bwddiff states and A:eq:uniq-bwd uses; the conclusion of Lemma 4.1 with this constant is the third clause, and the display of lines 226–243 is a step of its proof",
+   "scope_note": "the pinned region is lines 188–246; the second clause reads the display of lines 193–199, the expectation of (4.5) after Young's inequality, and the first the bound by R at every t (lines 200–205) and (4.6); the sentences of lines 188–192 and 206–207 name the justifications; lines 219–246, the upgrade of sup_t 𝔼|δY_t|² to 𝔼 sup_t |δY_t|² by the forward form, BDG and (4.6), prove the conclusion of Lemma 4.1 (A:lem:bpbsde) and define C_BP := C₀(5 + 4c_BDG) + 4T (line 244), the constant that A:eq:bwddiff states and A:eq:uniq-bwd uses; the conclusion of Lemma 4.1 with this constant is the third clause, and the display of lines 226–243 is a step of its proof; c_BDG enters C_BP only through the BDG step at p = 2 (line 232), where Doob's constant 4 (line 33) is a valid value and every valid value is at least 4, so the third clause takes every c ≥ 4, as A:eq:fwddiff, A:eq:bwddiff and A:eq:contract do",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -4080,7 +4080,7 @@
      "witness": "MVFBSDEJ.Acceptance.lem_bpbsde_drift_hypotheses"
     },
     {
-     "name": "the conclusion of Lemma 4.1 with C_BP := C₀(5 + 4c) + 4T, C₀ = 2e^T (line 244), for every c ≥ 1, every value of c_BDG among them",
+     "name": "the conclusion of Lemma 4.1 with C_BP := C₀(5 + 4c) + 4T, C₀ = 2e^T (line 244), for every c ≥ 4, the values of c_BDG that Doob's constant 4 admits",
      "spec": "MVFBSDEJ.PaperSpec.lem_bpbsde_explicit",
      "accept": "MVFBSDEJ.Acceptance.lem_bpbsde_explicit",
      "witness": "MVFBSDEJ.Acceptance.lem_bpbsde_drift_hypotheses"
@@ -4360,7 +4360,7 @@
      "witness": "MVFBSDEJ.Acceptance.frozen_pair_window_hypotheses"
     },
     {
-     "name": "(4.10): for two trials Θ¹, Θ² ∈ 𝕊 and their frozen steps Θ̄ᵏ = Φ_λ(Θᵏ), 𝔼 sup_{t ≤ T} |δX̄_t|² ≤ 3λ² [𝔼(∫_0^T |δb_s| ds)² + 𝔼 sup_{t ≤ T} |∫_0^t δσ_s dW_s|² + 𝔼 sup_{t ≤ T} |∫_0^t ∫_E δh_s(e) Ñ(ds, de)|²] ≤ 3λ² [T 𝔼 ∫_0^T |δb_s|² ds + c_BDG 𝔼 ∫_0^T |δσ_s|²_F ds + c_BDG 𝔼 ∫_0^T ‖δh_s‖² ds] ≤ 3λ² max{T, c_BDG} 𝔼 ∫_0^T (|δb_s|² + |δσ_s|²_F + ‖δh_s‖²) ds ≤ 3λ² max{T, c_BDG} 𝔼 ∫_0^T S_s² ds ≤ C_X λ² ‖Θ¹ − Θ²‖²_𝕊, C_X = 3 max{T, c_BDG} L⋆², for every c_BDG ≥ c₀, some c₀ > 0",
+     "name": "(4.10): for two trials Θ¹, Θ² ∈ 𝕊 and their frozen steps Θ̄ᵏ = Φ_λ(Θᵏ), 𝔼 sup_{t ≤ T} |δX̄_t|² ≤ 3λ² [𝔼(∫_0^T |δb_s| ds)² + 𝔼 sup_{t ≤ T} |∫_0^t δσ_s dW_s|² + 𝔼 sup_{t ≤ T} |∫_0^t ∫_E δh_s(e) Ñ(ds, de)|²] ≤ 3λ² [T 𝔼 ∫_0^T |δb_s|² ds + c_BDG 𝔼 ∫_0^T |δσ_s|²_F ds + c_BDG 𝔼 ∫_0^T ‖δh_s‖² ds] ≤ 3λ² max{T, c_BDG} 𝔼 ∫_0^T (|δb_s|² + |δσ_s|²_F + ‖δh_s‖²) ds ≤ 3λ² max{T, c_BDG} 𝔼 ∫_0^T S_s² ds ≤ C_X λ² ‖Θ¹ − Θ²‖²_𝕊, C_X = 3 max{T, c_BDG} L⋆², for every c_BDG ≥ 4",
      "spec": "MVFBSDEJ.PaperSpec.eq_fwddiff",
      "accept": "MVFBSDEJ.Acceptance.eq_fwddiff",
      "witness": "MVFBSDEJ.Acceptance.frozen_pair_window_hypotheses"
@@ -4453,7 +4453,7 @@
    "scope_reviewed": true,
    "clauses": [
     {
-     "name": "(4.12): 𝔼 sup_{t ≤ T} |δȲ_t|² + 𝔼 ∫_0^T (|δZ̄_s|²_F + ‖δŪ_s‖²) ds ≤ C_BP (𝔼|δξ̄|² + λ² 𝔼 ∫_0^T |δf_s|² ds) ≤ C_BP (C_g λ² 𝔼|δX̄_T|² + L⋆² λ² ‖Θ¹ − Θ²‖²_𝕊) ≤ C_BP (C_g λ² 𝔼 sup_{t ≤ T} |δX̄_t|² + L⋆² λ² ‖Θ¹ − Θ²‖²_𝕊) ≤ C_BP (C_g C_X λ⁴ + L⋆² λ²) ‖Θ¹ − Θ²‖²_𝕊 ≤ C_Y λ² ‖Θ¹ − Θ²‖²_𝕊, C_BP = 2e^T (5 + 4 c_BDG) + 4T, C_Y = C_BP (C_g C_X + L⋆²), for every c_BDG ≥ c₀, some c₀ > 0",
+     "name": "(4.12): 𝔼 sup_{t ≤ T} |δȲ_t|² + 𝔼 ∫_0^T (|δZ̄_s|²_F + ‖δŪ_s‖²) ds ≤ C_BP (𝔼|δξ̄|² + λ² 𝔼 ∫_0^T |δf_s|² ds) ≤ C_BP (C_g λ² 𝔼|δX̄_T|² + L⋆² λ² ‖Θ¹ − Θ²‖²_𝕊) ≤ C_BP (C_g λ² 𝔼 sup_{t ≤ T} |δX̄_t|² + L⋆² λ² ‖Θ¹ − Θ²‖²_𝕊) ≤ C_BP (C_g C_X λ⁴ + L⋆² λ²) ‖Θ¹ − Θ²‖²_𝕊 ≤ C_Y λ² ‖Θ¹ − Θ²‖²_𝕊, C_BP = 2e^T (5 + 4 c_BDG) + 4T, C_Y = C_BP (C_g C_X + L⋆²), for every c_BDG ≥ 4",
      "spec": "MVFBSDEJ.PaperSpec.eq_bwddiff",
      "accept": "MVFBSDEJ.Acceptance.eq_bwddiff",
      "witness": "MVFBSDEJ.Acceptance.frozen_pair_hypotheses"
@@ -4516,17 +4516,17 @@
    "location": "paper/sections/04-proof-wellposedness.tex:426",
    "source_sha256": "98399235ee78b3677300d9820f13c5cb17179d50791de2e81a1c5597ff561eac",
    "scope": "formal",
-   "scope_note": "the pinned region is lines 426–454; the sentence after (4.13), lines 440–445, records the dependences L⋆ = L⋆(T, L), C_X = C_X(T, L, c_BDG), C_g = C_g(L), C_BP = C_BP(T, c_BDG) and C_Φ = C_Φ(T, L, c_BDG): the clause states every constant by its explicit formula in T, L and c, with c the value of c_BDG quantified before the data (∃ c₀ > 0, ∀ c ≥ c₀ first), so C_Φ = max{1, C_X + C_Y} is a fixed function of (T, L, c_BDG), chosen before everything else, as the sentence asserts; the same holds for the constants of (4.10) and (4.12) in A:eq:fwddiff and A:eq:bwddiff; 'the first inequality by (4.10) and (4.12)' (line 440) names a justification; the second clause reads lines 445–454: λ_* = (2 √C_Φ)⁻¹ with the C_Φ of the first clause, C_Φ λ² ≤ 1/4 on [0, λ_*] and the contraction by 1/2; the set-up of the proof of Lemma 4.2 (04-proof-wellposedness.tex lines 258–263) is pinned in A:eq:frozenfwd; the differences of the contraction step (04-proof-wellposedness.tex lines 312–323) are pinned in A:eq:coeffdiff; C_BP := C₀(5 + 4c_BDG) + 4T (04-proof-wellposedness.tex line 244) is pinned in A:eq:supE; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion",
+   "scope_note": "the pinned region is lines 426–454; the sentence after (4.13), lines 440–445, records the dependences L⋆ = L⋆(T, L), C_X = C_X(T, L, c_BDG), C_g = C_g(L), C_BP = C_BP(T, c_BDG) and C_Φ = C_Φ(T, L, c_BDG): the clause states every constant by its explicit formula in T, L and c, with c the value of c_BDG quantified before the data (∀ c ≥ 4 first, the values that Doob's constant 4 admits at p = 2, the only exponent at which c_BDG enters these constants), so C_Φ = max{1, C_X + C_Y} is a fixed function of (T, L, c_BDG), chosen before everything else, as the sentence asserts; the same holds for the constants of (4.10) and (4.12) in A:eq:fwddiff and A:eq:bwddiff; 'the first inequality by (4.10) and (4.12)' (line 440) names a justification; the second clause reads lines 445–454: λ_* = (2 √C_Φ)⁻¹ with the C_Φ of the first clause, C_Φ λ² ≤ 1/4 on [0, λ_*] and the contraction by 1/2; the set-up of the proof of Lemma 4.2 (04-proof-wellposedness.tex lines 258–263) is pinned in A:eq:frozenfwd; the differences of the contraction step (04-proof-wellposedness.tex lines 312–323) are pinned in A:eq:coeffdiff; C_BP := C₀(5 + 4c_BDG) + 4T (04-proof-wellposedness.tex line 244) is pinned in A:eq:supE; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
    "clauses": [
     {
-     "name": "(4.13): ‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖²_𝕊 = 𝔼 sup_{t ≤ T} |δX̄_t|² + 𝔼 sup_{t ≤ T} |δȲ_t|² + 𝔼 ∫_0^T (|δZ̄_s|²_F + ‖δŪ_s‖²) ds ≤ (C_X + C_Y) λ² ‖Θ¹ − Θ²‖²_𝕊 ≤ C_Φ λ² ‖Θ¹ − Θ²‖²_𝕊, C_Φ = max{1, C_X + C_Y}, for every c_BDG ≥ c₀, some c₀ > 0",
+     "name": "(4.13): ‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖²_𝕊 = 𝔼 sup_{t ≤ T} |δX̄_t|² + 𝔼 sup_{t ≤ T} |δȲ_t|² + 𝔼 ∫_0^T (|δZ̄_s|²_F + ‖δŪ_s‖²) ds ≤ (C_X + C_Y) λ² ‖Θ¹ − Θ²‖²_𝕊 ≤ C_Φ λ² ‖Θ¹ − Θ²‖²_𝕊, C_Φ = max{1, C_X + C_Y}, for every c_BDG ≥ 4",
      "spec": "MVFBSDEJ.PaperSpec.eq_contract",
      "accept": "MVFBSDEJ.Acceptance.eq_contract",
      "witness": "MVFBSDEJ.Acceptance.frozen_pair_hypotheses"
     },
     {
-     "name": "λ_* := (2 √C_Φ)⁻¹ ∈ (0, 1/2], C_Φ λ² ≤ 1/4 for λ ∈ [0, λ_*], and ‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖_𝕊 ≤ (1/2) ‖Θ¹ − Θ²‖_𝕊 for λ ∈ [0, λ_*]",
+     "name": "λ_* := (2 √C_Φ)⁻¹ ∈ (0, 1/2], C_Φ λ² ≤ 1/4 for λ ∈ [0, λ_*], and ‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖_𝕊 ≤ (1/2) ‖Θ¹ − Θ²‖_𝕊 for λ ∈ [0, λ_*], for every c_BDG ≥ 4",
      "spec": "MVFBSDEJ.PaperSpec.eq_contract_half",
      "accept": "MVFBSDEJ.Acceptance.eq_contract_half",
      "witness": "MVFBSDEJ.Acceptance.frozen_pair_window_lam_hypotheses"

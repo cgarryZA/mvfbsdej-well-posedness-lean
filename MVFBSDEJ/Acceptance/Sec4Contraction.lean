@@ -37,9 +37,6 @@ Statement and equation numbers refer to the well-posedness paper at `1f67672`.
   `13 e^T + 3T ≤ C_BP`) gives the first link; (4.11), (4.9) and (4.10) the others.
 * (4.13): the sum of (4.10) and (4.12).
 
-The constant `c₀` is `4` for (4.10), the largest of `4` and that of (4.10) for (4.12), and the
-largest of those of (4.10) and (4.12) for (4.13).
-
 ## Main statements
 
 * `MVFBSDEJ.Acceptance.sum_energy_le_coeffDiffNorm` — the energies of the coefficient
@@ -348,9 +345,9 @@ theorem eq_fwddiff_identity : PaperSpec.eq_fwddiff_identity.{u, v, w} := by
       (nhdsWithin_le_nhds (s := Set.Ioi t))
     exact ((hA.const_mul lam).add ((hM t ht).const_mul lam)).add ((hN t).1.const_mul lam)
 
-/-- (4.10), with `c₀ = 4`. -/
+/-- (4.10). -/
 theorem eq_fwddiff : PaperSpec.eq_fwddiff.{u, v, w} := by
-  refine ⟨4, by norm_num, fun c hc => ?_⟩
+  intro c hc
   rintro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ hn hm hd T hT L C ξ₀ hJ h22 h23 lam hl0 hl1
     qb qσ qh qf qg hq X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ hΘ₁ hΘ₂ X₁' X₂' Y₁' Y₂' Z₁' Z₂' U₁' U₂' hS₁ hS₂
   have hnull : ∀ s : Set Ω, MeasurableSet s → P s = 0 → MeasurableSet[enlJoint 𝒢₀ D h𝒢₀ 0] s :=
@@ -430,13 +427,13 @@ theorem mul_add_pow_four_le {B a b l : ℝ} (hB : 0 ≤ B) (ha : 0 ≤ a) (hl0 :
     nlinarith [sq_nonneg l]
   nlinarith [mul_le_mul_of_nonneg_left h4 (mul_nonneg hB ha)]
 
-/-- (4.12), with `c₀` the largest of `4` and the `c₀` of (4.10). -/
+/-- (4.12). -/
 theorem eq_bwddiff : PaperSpec.eq_bwddiff.{u, v, w} := by
-  obtain ⟨c₁, -, hfwd⟩ := eq_fwddiff.{u, v, w}
-  refine ⟨max c₁ 4, lt_max_of_lt_right (by norm_num), fun c hc => ?_⟩
+  have hfwd := eq_fwddiff.{u, v, w}
+  intro c hc
   rintro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ hn hm hd T hT L C ξ₀ hJ h22 h23 lam hl0 hl1
     qb qσ qh qf qg hq X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ hΘ₁ hΘ₂ X₁' X₂' Y₁' Y₂' Z₁' Z₂' U₁' U₂' hS₁ hS₂
-  have hc4 : 4 ≤ c := le_trans (le_max_right _ _) hc
+  have hc4 : 4 ≤ c := hc
   have hnull : ∀ s : Set Ω, MeasurableSet s → P s = 0 → MeasurableSet[enlJoint 𝒢₀ D h𝒢₀ 0] s :=
     fun _ hs h0 => measurableSet_enlJoint_of_null D h𝒢₀ hs h0
   have hℱ0 := hF0_enlJoint D h𝒢₀
@@ -447,7 +444,7 @@ theorem eq_bwddiff : PaperSpec.eq_bwddiff.{u, v, w} := by
   have hL : 0 ≤ L := h23.nonneg
   -- (4.10) at the same constant
   obtain ⟨_, _, _, _, _, _, ⟨Mσ, hMv, hMc⟩, hab, hl3, hl4, hl5⟩ :=
-    hfwd c (le_trans (le_max_left _ _) hc) 𝒢₀ ν n m d P D h𝒢₀ hind₀ hn hm hd T hT L C ξ₀ hJ h22
+    hfwd c hc 𝒢₀ ν n m d P D h𝒢₀ hind₀ hn hm hd T hT L C ξ₀ hJ h22
       h23 lam hl0 hl1 qb qσ qh qf qg hq X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ hΘ₁ hΘ₂ X₁' X₂' Y₁' Y₂' Z₁' Z₂'
       U₁' U₂' hS₁ hS₂
   obtain ⟨hl1', hl2⟩ := hab Mσ hMv hMc
@@ -614,23 +611,23 @@ theorem eq_bwddiff : PaperSpec.eq_bwddiff.{u, v, w} := by
     gcongr ?_ * _
     exact ENNReal.ofReal_le_ofReal (mul_add_pow_four_le hBP (by positivity) hl0 hl1)
 
-/-- (4.13), with `c₀` the largest of those of (4.10) and (4.12). -/
+/-- (4.13). -/
 theorem eq_contract : PaperSpec.eq_contract.{u, v, w} := by
-  obtain ⟨c₁, hc₁, hfwd⟩ := eq_fwddiff.{u, v, w}
-  obtain ⟨c₂, -, hbwd⟩ := eq_bwddiff.{u, v, w}
-  refine ⟨max c₁ c₂, lt_max_of_lt_left hc₁, fun c hc => ?_⟩
+  have hfwd := eq_fwddiff.{u, v, w}
+  have hbwd := eq_bwddiff.{u, v, w}
+  intro c hc
   rintro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ hn hm hd T hT L C ξ₀ hJ h22 h23 lam hl0 hl1
     qb qσ qh qf qg hq X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ hΘ₁ hΘ₂ X₁' X₂' Y₁' Y₂' Z₁' Z₂' U₁' U₂' hS₁ hS₂
-  have hc0 : 0 < c := lt_of_lt_of_le hc₁ (le_trans (le_max_left _ _) hc)
+  have hc0 : 0 < c := by linarith
   have hL : 0 ≤ L := h23.nonneg
   obtain ⟨_, _, _, _, _, _, ⟨Mσ, hMv, hMc⟩, hab, hl3, hl4, hl5⟩ :=
-    hfwd c (le_trans (le_max_left _ _) hc) 𝒢₀ ν n m d P D h𝒢₀ hind₀ hn hm hd T hT L C ξ₀ hJ h22
+    hfwd c hc 𝒢₀ ν n m d P D h𝒢₀ hind₀ hn hm hd T hT L C ξ₀ hJ h22
       h23 lam hl0 hl1 qb qσ qh qf qg hq X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ hΘ₁ hΘ₂ X₁' X₂' Y₁' Y₂' Z₁' Z₂'
       U₁' U₂' hS₁ hS₂
   obtain ⟨hl1', hl2⟩ := hab Mσ hMv hMc
   have hX := hl1'.trans (hl2.trans (hl3.trans (hl4.trans hl5)))
   obtain ⟨k1, k2, k3, k4, k5⟩ :=
-    hbwd c (le_trans (le_max_right _ _) hc) 𝒢₀ ν n m d P D h𝒢₀ hind₀ hn hm hd T hT L C ξ₀ hJ h22
+    hbwd c hc 𝒢₀ ν n m d P D h𝒢₀ hind₀ hn hm hd T hT L C ξ₀ hJ h22
       h23 lam hl0 hl1 qb qσ qh qf qg hq X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ hΘ₁ hΘ₂ X₁' X₂' Y₁' Y₂' Z₁' Z₂'
       U₁' U₂' hS₁ hS₂
   have hY := k1.trans (k2.trans (k3.trans (k4.trans k5)))
