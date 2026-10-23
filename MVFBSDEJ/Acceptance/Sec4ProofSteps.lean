@@ -91,10 +91,39 @@ theorem eq_coeffdiff_ae : PaperSpec.eq_coeffdiff_ae.{u, v, w} := by
   rw [tupleAt_sub h₁ h₂]
   exact ofReal_channelSq_tupleAt_le s ω
 
+/-- The tuples of `ℍ²` are diagonal inputs at almost every time, before (4.9) and (4.15). -/
+theorem sec4_diag_input : PaperSpec.sec4_diag_input.{u, v, w} := by
+  rintro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ _ T hT X Y Z U hw
+  filter_upwards [hw.ae_memLp_tupleAt hT.le, ae_restrict_mem measurableSet_Icc] with t hm ht
+  exact mk_mem_diagonalInputs (hw.stronglyMeasurable_tupleAt ht) hm
+
+/-- The pointwise bound before (4.9). -/
+theorem eq_coeffdiff_pointwise : PaperSpec.eq_coeffdiff_pointwise.{u, v, w} := by
+  rintro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ _ _ _ _ T hT L C ξ₀ _ _ h23 X₁ X₂ Y₁ Y₂ Z₁ Z₂
+    U₁ U₂ ⟨hw₁, -, -, -, -⟩ ⟨hw₂, -, -, -, -⟩
+  filter_upwards [h23.interior, hw₁.ae_memLp_tupleAt hT.le, hw₂.ae_memLp_tupleAt hT.le,
+    ae_restrict_mem measurableSet_Icc] with s hLs hm₁ hm₂ hs
+  exact hLs (tupleAt ν X₁ Y₁ Z₁ U₁ s, lawP2 P (tupleAt ν X₁ Y₁ Z₁ U₁ s))
+    (mk_mem_diagonalInputs (hw₁.stronglyMeasurable_tupleAt hs) hm₁)
+    (tupleAt ν X₂ Y₂ Z₂ U₂ s, lawP2 P (tupleAt ν X₂ Y₂ Z₂ U₂ s))
+    (mk_mem_diagonalInputs (hw₂.stronglyMeasurable_tupleAt hs) hm₂)
+
 /-- The backward difference before (4.12). -/
 theorem eq_bwddiff_identity : PaperSpec.eq_bwddiff_identity.{u, v, w} := by
-  rintro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ _ _ _ T hT L C ξ₀ _ _ _ lam _ _
+  rintro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ _ _ _ T hT L C ξ₀ hJ _ _ lam _ _
     qb qσ qh qf qg _ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ _ _ X₁' X₂' Y₁' Y₂' Z₁' Z₂' U₁' U₂' hS₁ hS₂ k
+  have hW₁ := hS₁.2.2.1
+  have hW₂ := hS₂.2.2.1
+  refine ⟨?_, fun j => (hW₁.Z_pred k j).sub (hW₂.Z_pred k j), (hW₁.U_pred k).sub (hW₂.U_pred k),
+    fun ω t ht => ?_, measurable_const.mul
+      ((stronglyMeasurable_terminalVal (P := P) hJ.measurable_g_section
+        (fun i => hW₁.X_adapted i T ⟨hT.le, le_rfl⟩) k).measurable.sub
+      (stronglyMeasurable_terminalVal (P := P) hJ.measurable_g_section
+        (fun i => hW₂.X_adapted i T ⟨hT.le, le_rfl⟩) k).measurable)⟩
+  rotate_left
+  · obtain ⟨l₁, h₁⟩ := hS₁.2.2.2.2.1 k ω t ht
+    obtain ⟨l₂, h₂⟩ := hS₂.2.2.2.2.1 k ω t ht
+    exact ⟨l₁ - l₂, h₁.sub h₂⟩
   have h := (hS₁.2.1 k).sub (hS₂.2.1 k)
   have e₁ : (fun ω => lam * terminalVal P T C X₁' k ω + qg k ω
       - (lam * terminalVal P T C X₂' k ω + qg k ω))
@@ -110,8 +139,8 @@ theorem eq_bwddiff_identity : PaperSpec.eq_bwddiff_identity.{u, v, w} := by
 
 /-- `λ_*` and the contraction by `1/2`, after (4.13). -/
 theorem eq_contract_half : PaperSpec.eq_contract_half.{u, v, w} := by
-  obtain ⟨c₀, hc₀, hC⟩ := eq_contract.{u, v, w}
-  refine ⟨c₀, hc₀, fun c hc => ?_⟩
+  have hC := eq_contract.{u, v, w}
+  intro c hc
   intro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ hn hm hd T hT L C ξ₀ hJ h22 h23 CΦ lamStar
     hCΦ hlam
   have hC1 : 1 ≤ CΦ := hCΦ ▸ le_max_left _ _

@@ -163,11 +163,16 @@ theorem ex_concrete_i_pairing : PaperSpec.ex_concrete_i_pairing.{u, v, w} := by
 
 /-- Example 5.1(i), well-posedness. -/
 theorem ex_concrete_i_wp : PaperSpec.ex_concrete_i_wp.{u, v, w} := by
+  obtain ⟨Cstab, hstab⟩ := thm_stab.{u, v, w}
+  refine ⟨Cstab, ?_⟩
   intro Ω 𝒢₀ mΩ E _ ν _ _ P _ D h𝒢₀ hind₀ T hT β₁ β₂ hβ₁ hβ₂ σc hc ξ₀ hξm hξ
   obtain ⟨hJ, h22, h23, hG, -, h25⟩ :=
     ex_concrete_i 𝒢₀ ν P D h𝒢₀ hind₀ T hT β₁ β₂ hβ₁ hβ₂ σc hc ξ₀ hξm hξ
-  exact thm_cwp 𝒢₀ ν 1 1 1 P D h𝒢₀ hind₀ one_pos one_pos one_pos T hT _ 1 β₁ β₂ 1 _ ξ₀ hJ h22
-    h23 hG h25
+  have hwp := thm_cwp 𝒢₀ ν 1 1 1 P D h𝒢₀ hind₀ one_pos one_pos one_pos T hT _ 1 β₁ β₂ 1 _ ξ₀ hJ
+    h22 h23 hG h25
+  exact ⟨hwp.1, hwp.2, fun L hL L₂ C₂ ξ₂ hJ₂ h22₂ h23₂ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ h₁ h₂ =>
+    hstab 𝒢₀ ν 1 1 1 P D h𝒢₀ hind₀ one_pos one_pos one_pos T hT L L₂ 1 β₁ β₂ 1 _ C₂ ξ₀ ξ₂ hJ
+      h22 hL hG h25 hJ₂ h22₂ h23₂ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ h₁ h₂⟩
 
 /-- Example 5.1(i) with the drift (3.6), the assumptions. -/
 theorem ex_concrete_i_clamp : PaperSpec.ex_concrete_i_clamp.{u, v, w} := by
@@ -187,11 +192,16 @@ theorem ex_concrete_i_clamp : PaperSpec.ex_concrete_i_clamp.{u, v, w} := by
 
 /-- Example 5.1(i) with the drift (3.6), well-posedness. -/
 theorem ex_concrete_i_clamp_wp : PaperSpec.ex_concrete_i_clamp_wp.{u, v, w} := by
+  obtain ⟨Cstab, hstab⟩ := thm_stab.{u, v, w}
+  refine ⟨Cstab, ?_⟩
   intro Ω 𝒢₀ mΩ E _ ν _ _ P _ D h𝒢₀ hind₀ T hT β₁ β₂ ε hβ₁ hβ₂ hε hεβ σc hc ξ₀ hξm hξ
   obtain ⟨hJ, h22, ⟨L, h23⟩, hG, h25⟩ :=
     ex_concrete_i_clamp 𝒢₀ ν P D h𝒢₀ hind₀ T hT β₁ β₂ ε hβ₁ hβ₂ hε hεβ σc hc ξ₀ hξm hξ
-  exact thm_cwp 𝒢₀ ν 1 1 1 P D h𝒢₀ hind₀ one_pos one_pos one_pos T hT L 1 (β₁ - ε) β₂ 1 _ ξ₀
-    hJ h22 h23 hG h25
+  have hwp := thm_cwp 𝒢₀ ν 1 1 1 P D h𝒢₀ hind₀ one_pos one_pos one_pos T hT L 1 (β₁ - ε) β₂ 1 _
+    ξ₀ hJ h22 h23 hG h25
+  exact ⟨hwp.1, hwp.2, fun L' hL' L₂ C₂ ξ₂ hJ₂ h22₂ h23₂ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ h₁ h₂ =>
+    hstab 𝒢₀ ν 1 1 1 P D h𝒢₀ hind₀ one_pos one_pos one_pos T hT L' L₂ 1 (β₁ - ε) β₂ 1 _ C₂ ξ₀
+      ξ₂ hJ h22 hL' hG h25 hJ₂ h22₂ h23₂ X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ h₁ h₂⟩
 
 /-- Example 5.1(ii), the mean and the barycentre. -/
 theorem ex_concrete_ii_mean : PaperSpec.ex_concrete_ii_mean.{v} := by
@@ -399,10 +409,11 @@ theorem norm_toL2_sub_eq_sqrt {HX HY HZY HV : Type*} [NormedAddCommGroup HX]
 
 /-- Example 5.3, the kernels of independent-copy interactions. -/
 theorem ex_expfunc_limin : PaperSpec.ex_expfunc_limin.{v} := by
-  intro E _ ν _ n m d k ψbar Lip hLip hψ t
+  intro E _ ν _ _ n m d k ψbar Lip hLip hψm hψ
   have hψ' : KernelLipschitzH Lip ψbar := fun t a b a' b' => by
     rw [norm_toL2_sub_eq_sqrt, norm_toL2_sub_eq_sqrt]
     exact hψ t a a' b b'
+  refine ⟨(stronglyMeasurable_markKernel (ν := ν) hLip hψ' hψm).measurable, fun t => ?_⟩
   exact ⟨fun θ θ' => integrable_markIntegrand hLip hψ' t θ θ',
     fun θ₁ θ₁' θ₂ θ₂' => kernelLipschitzH_markKernel hLip hψ' t θ₁ θ₂ θ₁' θ₂',
     fun θ θ' v v' hv hv' => markKernel_congr ψbar t θ θ' hv hv'⟩
@@ -478,21 +489,44 @@ theorem ex_fulllaw_wp : PaperSpec.ex_fulllaw_wp.{u, v, w} := by
 
 /-- Example 5.4, the affine cylindrical term. -/
 theorem ex_fulllaw_affineQ : PaperSpec.ex_fulllaw_affineQ.{v} := by
-  intro E _ ν _ _ n m d J Q φ K a c hφ hQ μ
+  intro E _ ν _ _ n m d J Q φ K a c hφ hQ
   have hs : ∀ j, StronglyMeasurable (φ j) := fun j => stronglyMeasurable_of_abs_sub_le (hφ j)
-  have hint : ∀ j, Integrable (fun θ' : TupleH ν n m d => φ j θ'.2.2.2) μ.law := fun j => by
+  have hint : ∀ (μ : MVFBSDEJ.Law.P2 (TupleH ν n m d)) j,
+      Integrable (fun θ' : TupleH ν n m d => φ j θ'.2.2.2) μ.law := fun μ j => by
     have h : Integrable (φ j) μ.margU.law := integrable_of_norm_sub_le (hs j) (K := K j)
       (fun x y => by simpa only [Real.norm_eq_abs] using hφ j x y) μ.margU.secondMoment_ne_top
     rw [margU_law] at h
     exact (integrable_map_measure (hs j).aestronglyMeasurable
       measurable_projUH.aemeasurable).mp h
-  have heq : ∀ j, ∫ u, φ j u ∂μ.margU.law = ∫ θ', φ j θ'.2.2.2 ∂μ.law := fun j => by
+  have heq : ∀ (μ : MVFBSDEJ.Law.P2 (TupleH ν n m d)) j,
+      ∫ u, φ j u ∂μ.margU.law = ∫ θ', φ j θ'.2.2.2 ∂μ.law := fun μ j => by
     rw [margU_law, integral_map measurable_projUH.aemeasurable (hs j).aestronglyMeasurable]
     rfl
-  rw [hQ μ, integral_add (integrable_const a)
-    (integrable_finsetSum _ fun j _ => (hint j).const_mul (c j)), integral_const,
-    integral_finsetSum _ fun j _ => (hint j).const_mul (c j)]
-  simp only [probReal_univ, one_smul, integral_const_mul, heq]
+  refine ⟨fun μ => ?_, measurable_const.add (Finset.measurable_sum _ fun j _ =>
+    measurable_const.mul ((hs j).measurable.comp measurable_projUH)), fun θ₁' θ₂' => ?_⟩
+  · rw [hQ μ, integral_add (integrable_const a)
+      (integrable_finsetSum _ fun j _ => (hint μ j).const_mul (c j)), integral_const,
+      integral_finsetSum _ fun j _ => (hint μ j).const_mul (c j)]
+    simp only [probReal_univ, one_smul, integral_const_mul, heq]
+  have hU : ‖θ₁'.2.2.2 - θ₂'.2.2.2‖ ≤ ‖toL2 θ₁' - toL2 θ₂'‖ := by
+    have h := norm_projUH_le_norm_toL2 (θ₁' - θ₂')
+    rw [toL2_sub, projUH_apply] at h
+    exact h
+  have hj : ∀ j, |c j * (φ j θ₁'.2.2.2 - φ j θ₂'.2.2.2)|
+      ≤ |c j| * |K j| * ‖toL2 θ₁' - toL2 θ₂'‖ := fun j => by
+    rw [abs_mul, mul_assoc]
+    refine mul_le_mul_of_nonneg_left ?_ (abs_nonneg _)
+    calc |φ j θ₁'.2.2.2 - φ j θ₂'.2.2.2| ≤ K j * ‖θ₁'.2.2.2 - θ₂'.2.2.2‖ := hφ j _ _
+      _ ≤ |K j| * ‖θ₁'.2.2.2 - θ₂'.2.2.2‖ :=
+        mul_le_mul_of_nonneg_right (le_abs_self _) (norm_nonneg _)
+      _ ≤ |K j| * ‖toL2 θ₁' - toL2 θ₂'‖ := mul_le_mul_of_nonneg_left hU (abs_nonneg _)
+  calc |(a + ∑ j, c j * φ j θ₁'.2.2.2) - (a + ∑ j, c j * φ j θ₂'.2.2.2)|
+      = |∑ j, c j * (φ j θ₁'.2.2.2 - φ j θ₂'.2.2.2)| := by
+        rw [add_sub_add_left_eq_sub, ← Finset.sum_sub_distrib]
+        simp only [mul_sub]
+    _ ≤ ∑ j, |c j * (φ j θ₁'.2.2.2 - φ j θ₂'.2.2.2)| := Finset.abs_sum_le_sum_abs _ _
+    _ ≤ ∑ j, |c j| * |K j| * ‖toL2 θ₁' - toL2 θ₂'‖ := Finset.sum_le_sum fun j _ => hj j
+    _ = (∑ j, |c j| * |K j|) * ‖toL2 θ₁' - toL2 θ₂'‖ := by rw [Finset.sum_mul]
 
 /-- Example 5.4, the radial statistic of the full law is no expectation functional. -/
 theorem ex_fulllaw_beyond_radial : PaperSpec.ex_fulllaw_beyond_radial.{v} := by

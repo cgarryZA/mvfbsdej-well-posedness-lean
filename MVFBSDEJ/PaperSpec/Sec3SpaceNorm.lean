@@ -114,4 +114,29 @@ def sec3_HH_norm : Prop :=
         (fun k t ω j => c * Z k t ω j) (fun k t ω e => c * U k t ω e) ^ (1 / 2 : ℝ)
       = ENNReal.ofReal |c| * supSize P ν T X Y Z U ^ (1 / 2 : ℝ)
 
+/-- §3, the solution space, `𝕊` is a linear space: over the filtration of §2, for tuples
+`Θ = (X, Y, Z, U)` and `Θ' = (X', Y', Z', U')` of `ℍ²` and `c ∈ ℝ`, the coordinatewise sum
+`Θ + Θ'` and the coordinatewise multiple `c Θ` are tuples of `ℍ²`, and `‖Θ + Θ'‖_𝕊` and `‖c Θ‖_𝕊`
+are finite when `‖Θ‖_𝕊` and `‖Θ'‖_𝕊` are. -/
+def sec3_HH_linear : Prop :=
+  ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
+    [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
+    (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
+    (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ) (T : ℝ)
+    (X X' : Fin n → ℝ → Ω → ℝ) (Y Y' : Fin m → ℝ → Ω → ℝ) (Z Z' : Fin m → ℝ → Ω → Fin d → ℝ)
+    (U U' : Fin m → ℝ → Ω → E → ℝ),
+    PaperWeakTuple (enlJoint 𝒢₀ D h𝒢₀) P ν T X Y Z U →
+    PaperWeakTuple (enlJoint 𝒢₀ D h𝒢₀) P ν T X' Y' Z' U' →
+    PaperWeakTuple (enlJoint 𝒢₀ D h𝒢₀) P ν T (fun i t ω => X i t ω + X' i t ω)
+        (fun k t ω => Y k t ω + Y' k t ω) (fun k t ω j => Z k t ω j + Z' k t ω j)
+        (fun k t ω e => U k t ω e + U' k t ω e)
+    ∧ (∀ c : ℝ, PaperWeakTuple (enlJoint 𝒢₀ D h𝒢₀) P ν T (fun i t ω => c * X i t ω)
+        (fun k t ω => c * Y k t ω) (fun k t ω j => c * Z k t ω j) (fun k t ω e => c * U k t ω e))
+    ∧ (supSize P ν T X Y Z U ≠ ⊤ → supSize P ν T X' Y' Z' U' ≠ ⊤ →
+        supSize P ν T (fun i t ω => X i t ω + X' i t ω) (fun k t ω => Y k t ω + Y' k t ω)
+          (fun k t ω j => Z k t ω j + Z' k t ω j) (fun k t ω e => U k t ω e + U' k t ω e) ≠ ⊤)
+    ∧ (supSize P ν T X Y Z U ≠ ⊤ → ∀ c : ℝ,
+        supSize P ν T (fun i t ω => c * X i t ω) (fun k t ω => c * Y k t ω)
+          (fun k t ω j => c * Z k t ω j) (fun k t ω e => c * U k t ω e) ≠ ⊤)
+
 end MVFBSDEJ.PaperSpec

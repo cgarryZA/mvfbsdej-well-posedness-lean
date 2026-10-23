@@ -105,8 +105,9 @@ variable [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
 variable (P T C X Y Z U) in
 /-- **The canonical representative of the jump coefficient along a tuple**:
 `γ_{i,s}(ω, e) = Φ(1_{[0, T]}(s) h(s, Θ_s(ω), μ_s), e)_i`, with `Θ_s` the tuple of the
-coordinate processes, `μ_s` its law and `Φ = lpRep` the jointly measurable representative of the
-elements of `L²(ν; ℝⁿ)`. -/
+coordinate processes, `μ_s = lawP2 P Θ_s` (its law when `Θ_s` is square integrable, `δ₀`
+otherwise) and `Φ = lpRep` the jointly measurable representative of the elements of
+`L²(ν; ℝⁿ)`. -/
 noncomputable def coeffJump : Fin n → ℝ → Ω → E → ℝ := fun i s ω e =>
   lpRep ν (EuclideanSpace ℝ (Fin n))
     ((Set.Icc (0 : ℝ) T).indicator

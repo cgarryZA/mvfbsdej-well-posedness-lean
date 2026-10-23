@@ -438,3 +438,53 @@ review. Manuscript: revision `1f67672`, sources in `manuscript/paper/`.
   without clauses, were widened as it proposed.
 
 Every claim's scope decision is recorded as reviewed (`scope_reviewed`).
+
+
+## The adversarial audit of 2026-10-22
+
+Eight auditors (`claude-auditor`, a model of the same family as the author) read every statement
+of the inventory against the manuscript at `1f67672` with the instruction to find a defect in
+each. No statement was found unfaithful, broader in meaning, vacuous or of the wrong object, and
+none of the paper's printed claims was found false. The findings were narrower statements and
+coverage gaps; the author's changes to the scope notes and clauses follow, the statements
+themselves being read again in `A.md`.
+
+* **Well-posedness.** "Theorem 3.5 yields well-posedness", "continues to apply" and "applies
+  directly" (Examples 5.1(i), 5.1(i) with (3.6) and 5.5) assert the conclusion of Theorem 3.5,
+  which includes the estimate (3.1); `ex_concrete_i_wp`, `ex_concrete_i_clamp_wp` and
+  `ex_dealer_wp` now state it, as `ex_fulllaw_wp` and `cor_robust_wp` did.
+* **New clauses for formal assertions no clause stated.** `lem_bpbsde_explicit` (`A:eq:supE`, the
+  constant `C_BP` of line 244 that the scope notes of `A:lem:bpbsde` and `A:eq:supE` called
+  pinned); `sec4_coeff_sq` (`A:sec4:coeffint`, `A:eq:coeffint`, the square integrability of the
+  coefficient processes (2.5), lines 72–73); `sec4_diag_input` (`A:eq:dX`, `A:eq:coeffdiff`, the
+  diagonal inputs "by Fubini") and `eq_coeffdiff_pointwise` (`A:eq:coeffdiff`, the bound of lines
+  329–332), which the notes had filed as steps of proofs or as instances; `sec3_HH_linear`
+  (`A:sec3:HH-banach`, the linear-space part of "Banach space"). The notes of these claims now
+  name the new clauses.
+* **The comparison with Li and Min.** `A:intro:limin-comparison` now carries `ex_expfunc` and
+  `ex_expfunc_jump` (the class the embedded kernels land in) and `ex_concrete_ii` (Assumption 2.5
+  at every σ-finite `ν`, witnessed on the infinite dealer marks); its note reads "removes all three
+  restrictions" as "does not impose them" and "their interaction class" as the
+  deterministic-coefficient, finite-activity subclass of line 223 of §5.
+* **Example 5.3.** The note of `A:ex:expfunc` records that the joint measurability of `ψ̄`, a
+  hypothesis of `ex_expfunc_limin`, is read from the cited interactions and not printed (raised on
+  the manuscript repository), and that the origin conditions of the embedding are not claimed for
+  the embedded coefficients.
+* **Examples 5.4 and 5.5.** The notes of `A:ex:fulllaw` and `A:ex:dealer` name the conjuncts that
+  state the class membership printed as "covered by Example 5.3" and "an expectation kernel in the
+  sense of Example 5.3".
+* **The abstract.** Its note reads the first sentence with the hypotheses the abstract names
+  (lines 38 and 42) and the countably generated mark space of §2; the wording was raised on the
+  manuscript repository, as were the "arbitrary σ-finite" phrasing and the integrability of the
+  pairings of Assumption 2.5.
+* **The constant `c_BDG`.** Wherever `c_BDG` enters a constant the clauses state (`C_BP` of
+  Lemma 4.1, `C_X`, `C_Y` and `C_Φ` of (4.10)–(4.13), and `λ_*`), it enters at `p = 2` only,
+  where Doob's constant `4` is a valid value and no smaller one is. `lem_bpbsde_explicit`,
+  `eq_fwddiff`, `eq_bwddiff`, `eq_contract` and `eq_contract_half` therefore take every `c ≥ 4`;
+  the last four had taken every value at least some `c₀ > 0`, which keeps the constants explicit
+  only above an unknown threshold. The bounds that use `c_BDG` at `p = 1` (the local martingales
+  of Lemma 4.1 and (4.18)) keep that reading, as the paper states no value at `p = 1`.
+* **Witnesses.** `lem_bpbsde` is now witnessed by `lem_bpbsde_drift_hypotheses`, whose
+  integrands do not vanish, instead of an instance solved by the zero tuple.
+
+No scope decision (`formal`, `part-of`, `proof-step` …) changed.

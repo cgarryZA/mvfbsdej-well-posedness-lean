@@ -97,24 +97,26 @@ variable (P : Measure Ω) [IsProbabilityMeasure P] (T : ℝ) (C : Coeffs ν n m 
   (U : Fin m → ℝ → Ω → E → ℝ)
 
 /-- The drift process: coordinate `i` of `b(s, Θ_s(ω), μ_s)`, with `Θ_s` the tuple of the
-coordinate processes and `μ_s` its law, for `s ∈ [0, T]`, and `0` off `[0, T]`. -/
+coordinate processes and `μ_s = lawP2 P Θ_s` (its law when `Θ_s` is square integrable, `δ₀`
+otherwise), for `s ∈ [0, T]`, and `0` off `[0, T]`. -/
 noncomputable def driftProc (i : Fin n) (ω : Ω) (s : ℝ) : ℝ :=
   (Set.Icc (0 : ℝ) T).indicator
     (fun s => C.b s (tupleAt ν X Y Z U s ω) (lawP2 P (tupleAt ν X Y Z U s)) i) s
 
-/-- The diffusion process: entry `(i, j)` of `σ(s, Θ_s(ω), μ_s)` for `s ∈ [0, T]`, and `0` off
-`[0, T]`. -/
+/-- The diffusion process: entry `(i, j)` of `σ(s, Θ_s(ω), μ_s)`, `μ_s = lawP2 P Θ_s`, for
+`s ∈ [0, T]`, and `0` off `[0, T]`. -/
 noncomputable def diffusionProc (i : Fin n) (s : ℝ) (ω : Ω) (j : Fin d) : ℝ :=
   (Set.Icc (0 : ℝ) T).indicator
     (fun s => C.σ s (tupleAt ν X Y Z U s ω) (lawP2 P (tupleAt ν X Y Z U s)) (i, j)) s
 
-/-- The driver process: coordinate `k` of `f(s, Θ_s(ω), μ_s)` for `s ∈ [0, T]`, and `0` off
-`[0, T]`. -/
+/-- The driver process: coordinate `k` of `f(s, Θ_s(ω), μ_s)`, `μ_s = lawP2 P Θ_s`, for
+`s ∈ [0, T]`, and `0` off `[0, T]`. -/
 noncomputable def driverProc (k : Fin m) (ω : Ω) (s : ℝ) : ℝ :=
   (Set.Icc (0 : ℝ) T).indicator
     (fun s => C.f s (tupleAt ν X Y Z U s ω) (lawP2 P (tupleAt ν X Y Z U s)) k) s
 
-/-- The terminal value: coordinate `k` of `g(X_T(ω), Law X_T)`. -/
+/-- The terminal value: coordinate `k` of `g(X_T(ω), lawP2 P X_T)`, the law of `X_T` when
+`X_T` is square integrable and `δ₀` otherwise. -/
 noncomputable def terminalVal (k : Fin m) (ω : Ω) : ℝ :=
   C.g (WithLp.toLp 2 fun i => X i T ω) (lawP2 P fun ω' => WithLp.toLp 2 fun i => X i T ω') k
 

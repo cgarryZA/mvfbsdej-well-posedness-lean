@@ -18,6 +18,7 @@ import MVFBSDEJ.Acceptance.Sec3Rem34
 import MVFBSDEJ.Acceptance.Sec3Rem34Translation
 import MVFBSDEJ.Acceptance.Sec3Remarks
 import MVFBSDEJ.Acceptance.Sec3Space
+import MVFBSDEJ.Acceptance.Sec3SpaceLinear
 import MVFBSDEJ.Acceptance.Sec3SpaceNorm
 import MVFBSDEJ.Acceptance.Sec3Stability
 import MVFBSDEJ.Acceptance.Sec3Uniqueness
@@ -27,6 +28,7 @@ import MVFBSDEJ.Acceptance.Sec4BDG
 import MVFBSDEJ.Acceptance.Sec4BackwardYoung
 import MVFBSDEJ.Acceptance.Sec4BrownianPoisson
 import MVFBSDEJ.Acceptance.Sec4Coeff
+import MVFBSDEJ.Acceptance.Sec4CoeffSq
 import MVFBSDEJ.Acceptance.Sec4Continuation
 import MVFBSDEJ.Acceptance.Sec4Contraction
 import MVFBSDEJ.Acceptance.Sec4Difference

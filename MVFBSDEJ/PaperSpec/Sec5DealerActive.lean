@@ -131,10 +131,11 @@ def ex_dealer_spec_marks : Prop :=
 `n = m = d = 1`, the mark measure `ex55Marks ϱ` for `0 < ϱ < 2`, `T > 0`, and `h_c, h_x ∈ L²(ν)`
 the classes of `ς q` and `q`: the linear equation `ex55Linear` has a solution `X0` with
 `𝔼 sup_{t ≤ T} |X0_t|² < ∞` and left limits on `(0, T]` along every path, and any two
-solutions are indistinguishable on `[0, T]`; for every solution `X0`, the tuple
+solutions are indistinguishable on `[0, T]`; for every solution `X0` with left limits on `(0, T]`
+along every path, the tuple
 `Θ⁰ = (X0, X0, ½, ½ (h_c + h_x X0_{t−}))` (`U⁰` taken on `(0, T]`) solves (1.1) with the
 coefficients of Example 5.5 for `β₁ = 1`, `β₂ = ½`, `σ_c = 1`, `ε = 0` and the initial datum
-`0`; `𝔼 X0_t = 0` and `v(t) = 𝔼|X0_t|²` has `v(t) = (2/7)(1 − e^{−7t/4})` and
+`0`; at each `t ∈ [0, T]`, `𝔼 X0_t = 0` and `v(t) = 𝔼|X0_t|² = (2/7)(1 − e^{−7t/4})`, and
 `v' = −(7/4) v + ½` at each `t ∈ (0, T)`; and at each `t ∈ (0, T]`,
 `U⁰_t = ½ (h_c + h_x X0_{t−})` has `𝔼‖U⁰_t − 𝔼 U⁰_t‖² = v(t)/4 = (1/14)(1 − e^{−7t/4})` and
 its law is not a Dirac mass. -/

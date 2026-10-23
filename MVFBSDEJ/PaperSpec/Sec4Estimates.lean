@@ -10,7 +10,8 @@ import MVFBSDEJ.PaperSpec.Sec4
 
 Statement and equation numbers refer to the well-posedness paper at `1f67672`. In the proof of
 Lemma 4.3 the forcings enter only through their difference `δq`, written `q`; `P` is the data size
-of (4.14), and `C` is a constant depending only on `T, L, ‖G‖, c_G, α, β₁, β₂` (§4). Step 3 bounds
+of (4.14), and `C` is a function of `(T, L, ‖G‖, c_G, α, β₁, β₂)` (the convention of §4 also
+allows the universal constant `c_BDG`). Step 3 bounds
 the forward difference,
 
 `𝔼 sup_{t ≤ T} |δX_t|² ≤ C (𝔼 ∫_0^T (|δY_t|² + |δZ_t|²_F + ‖δU_t‖²) dt + P)`, (4.23)

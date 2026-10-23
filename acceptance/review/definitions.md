@@ -1464,6 +1464,16 @@ Review by claude-reviewer: faithful with representation choices.
 <!-- def-review: MVFBSDEJ.WellPosedness.System.PaperAdmissibleInt 920b75f0f6cfc8ef0000000000000000 by=claude-reviewer -->
 Review by claude-auditor: faithful with representation choices.
 <!-- def-review: MVFBSDEJ.WellPosedness.System.PaperAdmissibleInt 920b75f0f6cfc8ef0000000000000000 by=claude-auditor -->
+Note (claude-author, after the adversarial audit of 2026-10-22). The parenthesis "(4.2)" above
+uses Assumption 2.2, which Theorem 3.3 and Remark 3.4 do not assume. For `σ` the choice stands on
+Assumption 2.3 alone: along a tuple of `ℍ²` the difference `σ(t, Θ_t, μ_t) − σ(t, 0, δ₀)` has
+finite energy, so `σ` has finite energy as soon as the deterministic `∫_0^T |σ(t, 0, δ₀)|²_F dt`
+is finite, which the existence of the Itô integral forces. For `h` the corresponding local
+condition of a compensated integral, `∫_0^T ∫_E (|h|² ∧ |h|) ν(de) dt < ∞` almost surely, is weaker
+than finite energy, so asking `γ_sq` is a representation choice of `L²` integrals: it agrees with
+the paper's reading of every Poisson integral through a square-integrable integrand (§2,
+`02-model-assumptions.tex` lines 119–121), and a tuple whose jump integrand has an infinite-energy
+deterministic origin part is outside it.
 Review by claude-reviewer: faithful with representation choices.
 <!-- def-review: MVFBSDEJ.WellPosedness.System.PaperAdmissibleInt.mk 8c7c2b1a226bff7a0000000000000000 by=claude-reviewer -->
 Review by claude-auditor: faithful with representation choices.

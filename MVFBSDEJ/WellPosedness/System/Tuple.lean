@@ -238,8 +238,8 @@ variable {Ω : Type*} {ν : Measure E} {n m d : ℕ}
   {Z Z' : Fin m → ℝ → Ω → Fin d → ℝ} {U U' : Fin m → ℝ → Ω → E → ℝ}
 
 /-- The tuple `(X_s(ω), Y_s(ω), Z_s(ω), U_s(ω, ·)) ∈ H` of the coordinate processes at time
-`s`, with the rows `Z_{k,s}(ω) ∈ ℝᵈ` forming the `m × d` channel and the jump channel the
-`L²(ν)` class of `e ↦ (U_{k,s}(ω, e))_k`. -/
+`s`, with the rows `Z_{k,s}(ω) ∈ ℝᵈ` forming the `m × d` channel and the jump channel `uLift` of
+`e ↦ (U_{k,s}(ω, e))_k`: its `L²(ν)` class when it is square integrable, `0` otherwise. -/
 noncomputable def tupleAt (ν : Measure E) (X : Fin n → ℝ → Ω → ℝ) (Y : Fin m → ℝ → Ω → ℝ)
     (Z : Fin m → ℝ → Ω → Fin d → ℝ) (U : Fin m → ℝ → Ω → E → ℝ) (s : ℝ) (ω : Ω) :
     TupleH ν n m d :=

@@ -13,6 +13,7 @@ import MVFBSDEJ.WellPosedness.Examples.MeanFieldMonotone
 import MVFBSDEJ.WellPosedness.Remarks.LinearMean
 import MVFBSDEJ.Acceptance.Sec4
 import MVFBSDEJ.WellPosedness.Stability.LinearCongr
+import Mathlib.MeasureTheory.Measure.SeparableMeasure
 
 /-!
 # Example 5.5 of the well-posedness paper: proofs
@@ -116,8 +117,11 @@ theorem ex_dealer_not_mean_corr : PaperSpec.ex_dealer_not_mean_corr.{v} := by
 /-- Example 5.5, the crowding correction is affine in the law and an expectation kernel. -/
 theorem ex_dealer_affine : PaperSpec.ex_dealer_affine.{v} := by
   intro E _ ν _ _
+  haveI : SecondCountableTopology (Lp (EuclideanSpace ℝ (Fin 1)) 2 ν) := Lp.SecondCountableTopology
   refine ⟨fun Λ₁ Λ₂ s hs u => crowdOp_smul_add_smul Λ₁.law Λ₂.law hs u, fun μ u => ?_,
-    fun θ₁ θ₁' θ₂ θ₂' => ?_⟩
+    (continuous_crowdGrad.comp ((continuous_snd.comp (continuous_snd.comp
+      (continuous_snd.comp continuous_fst))).sub (continuous_snd.comp (continuous_snd.comp
+        (continuous_snd.comp continuous_snd))))).measurable, fun θ₁ θ₁' θ₂ θ₂' => ?_⟩
   · rw [ex55Crowd_eq, crowdOp, margU_law, integral_map measurable_projUH.aemeasurable
       (stronglyMeasurable_crowdGrad_sub u).aestronglyMeasurable]
     rfl

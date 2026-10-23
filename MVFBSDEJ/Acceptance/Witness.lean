@@ -349,20 +349,28 @@ theorem ex_expfunc_hypotheses :
   linarith
 
 /-- **The hypotheses of Example 5.3, the kernels of independent-copy interactions, hold**: at
-the finite `ν = δ₀` on `ℝ` and `n = m = d = k = 1`, the kernel `ψ̄(t, p, p') = x − x'` is
-Lipschitz with constant `1` for the Euclidean norm on each block. -/
+the finite `ν = δ₀` on `ℝ`, a countably generated space, and `n = m = d = k = 1`, the kernel
+`ψ̄(t, p, p') = x − x'` is jointly measurable and Lipschitz with constant `1` for the Euclidean
+norm on each block. -/
 theorem ex_expfunc_limin_hypotheses :
     ∃ (ψbar : ℝ → (EuclideanSpace ℝ (Fin 1) × EuclideanSpace ℝ (Fin 1)
         × EuclideanSpace ℝ (Fin 1 × Fin 1) × EuclideanSpace ℝ (Fin 1))
       → (EuclideanSpace ℝ (Fin 1) × EuclideanSpace ℝ (Fin 1)
         × EuclideanSpace ℝ (Fin 1 × Fin 1) × EuclideanSpace ℝ (Fin 1))
       → EuclideanSpace ℝ (Fin 1)) (Lip : ℝ), 0 ≤ Lip
-      ∧ IsFiniteMeasure (Measure.dirac (0 : ℝ))
+      ∧ IsFiniteMeasure (Measure.dirac (0 : ℝ)) ∧ MeasurableSpace.CountablyGenerated ℝ
+      ∧ Measurable (fun p : ℝ × (EuclideanSpace ℝ (Fin 1) × EuclideanSpace ℝ (Fin 1)
+          × EuclideanSpace ℝ (Fin 1 × Fin 1) × EuclideanSpace ℝ (Fin 1))
+        × (EuclideanSpace ℝ (Fin 1) × EuclideanSpace ℝ (Fin 1)
+          × EuclideanSpace ℝ (Fin 1 × Fin 1) × EuclideanSpace ℝ (Fin 1)) =>
+        ψbar p.1 p.2.1 p.2.2)
       ∧ ∀ t a a' b b', ‖ψbar t a a' - ψbar t b b'‖ ≤ Lip * (Real.sqrt (‖a.1 - b.1‖ ^ 2
         + ‖a.2.1 - b.2.1‖ ^ 2 + ‖a.2.2.1 - b.2.2.1‖ ^ 2 + ‖a.2.2.2 - b.2.2.2‖ ^ 2)
         + Real.sqrt (‖a'.1 - b'.1‖ ^ 2 + ‖a'.2.1 - b'.2.1‖ ^ 2 + ‖a'.2.2.1 - b'.2.2.1‖ ^ 2
           + ‖a'.2.2.2 - b'.2.2.2‖ ^ 2)) := by
-  refine ⟨fun _ p p' => p.1 - p'.1, 1, zero_le_one, inferInstance, fun t a a' b b' => ?_⟩
+  refine ⟨fun _ p p' => p.1 - p'.1, 1, zero_le_one, inferInstance, inferInstance,
+    (measurable_fst.comp (measurable_fst.comp measurable_snd)).sub
+      (measurable_fst.comp (measurable_snd.comp measurable_snd)), fun t a a' b b' => ?_⟩
   have h := norm_sub_sub_sub_le a.1 a'.1 b.1 b'.1
   have h1 := norm_fst_sub_le_sqrt a b
   have h2 := norm_fst_sub_le_sqrt a' b'

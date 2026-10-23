@@ -46,8 +46,8 @@ variable {Ω : Type u} {𝒢₀ : MeasurableSpace Ω} [mΩ : MeasurableSpace Ω]
 `𝒢₀`: every path of `X` and of `Y` is càdlàg on `[0, T]`, both are adapted with
 `𝔼 ∫_0^T |·|² dt < ∞`, `Z` and `U` are predictable with finite energy and vanish off `[0, T]`,
 the integrals of (1.1) along `Θ` exist (the drift and driver integrals pathwise, the stochastic
-integrals in `L²`), `Law(X_T) ∈ P₂(ℝⁿ)`, and both identities of (1.1) hold almost surely for
-every `t ∈ [0, T]`, the Poisson integral read through a representative `γ` of
+integrals in `L²`), `Law(X_T) ∈ P₂(ℝⁿ)`, and, off one null set, both identities of (1.1) hold
+at every `t ∈ [0, T]`, the Poisson integral read through a representative `γ` of
 `h(t, Θ⁻_t, ·, μ⁻_t)`. -/
 def WeakSolution (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
     (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P) (T : ℝ) (C : Coeffs ν n m d)

@@ -65,9 +65,9 @@ def eq_compid : Prop :=
       = ∫⁻ ω, (∫⁻ s in Set.Ioc (0 : ℝ) T, ∫⁻ e, ψ (ω, s, e) ∂ν) ∂P
 
 /-- (2.2), the zero mean of the compensated integral: in the setting of §2, for `ψ` measurable for
-the marked predictable σ-algebra of `(ℱ_t)` with `𝔼 ∫_0^T ∫_E |ψ_s(e)| ν(de) ds < ∞`,
-`𝔼 ∫_0^T ∫_E ψ_s(e) Ñ(ds, de) = 0`, the compensated integral read pathwise as
-`∫_{(0, T] × E} ψ dN − ∫_0^T ∫_E ψ_s(e) ν(de) ds`. -/
+the marked predictable σ-algebra of `(ℱ_t)` with `𝔼 ∫_0^T ∫_E |ψ_s(e)| ν(de) ds < ∞`, the
+compensated integral `∫_0^T ∫_E ψ_s(e) Ñ(ds, de)`, read pathwise as
+`∫_{(0, T] × E} ψ dN − ∫_0^T ∫_E ψ_s(e) ν(de) ds`, is integrable and has mean `0`. -/
 def eq_zeromean : Prop :=
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] (d : ℕ) (P : Measure Ω)
@@ -75,7 +75,9 @@ def eq_zeromean : Prop :=
     (h𝒢₀ : 𝒢₀ ≤ mΩ), Indep 𝒢₀ (⨆ t, D.filtration t) P → ∀ (T : ℝ) (ψ : Ω × ℝ × E → ℝ),
     Measurable[LevyStochCalc.Probability.markedPredictableSigma (enlJoint 𝒢₀ D h𝒢₀) ν] ψ →
     ∫⁻ ω, (∫⁻ s in Set.Ioc (0 : ℝ) T, ∫⁻ e, ‖ψ (ω, s, e)‖ₑ ∂ν) ∂P < ⊤ →
-    ∫ ω, ((∫ p in Set.Ioc (0 : ℝ) T ×ˢ Set.univ, ψ (ω, p) ∂(D.N.N ω))
+    Integrable (fun ω => (∫ p in Set.Ioc (0 : ℝ) T ×ˢ Set.univ, ψ (ω, p) ∂(D.N.N ω))
+      - ∫ s in Set.Ioc (0 : ℝ) T, ∫ e, ψ (ω, s, e) ∂ν) P
+    ∧ ∫ ω, ((∫ p in Set.Ioc (0 : ℝ) T ×ˢ Set.univ, ψ (ω, p) ∂(D.N.N ω))
       - ∫ s in Set.Ioc (0 : ℝ) T, ∫ e, ψ (ω, s, e) ∂ν) ∂P = 0
 
 section Rep

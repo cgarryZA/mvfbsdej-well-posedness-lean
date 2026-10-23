@@ -45,12 +45,11 @@ open MVFBSDEJ.WellPosedness.System MVFBSDEJ.WellPosedness.Existence
 universe u v w
 
 /-- The paragraph after Corollary 3.6, every channel. In the standing setting, if (2.13) holds
-with the constants `β₁, β₂` and the margin `c`, then for almost every `t ∈ [0, T]` and all
-`(Θ, μ), (Θ', μ') ∈ 𝒟_t`: if `δY = δZ = δU = 0`, then
-`𝔼 ⟨−δf, G δX⟩ ≤ −β₂ 𝔼|G δX|² − c 𝔼|δX|²`; if `δX = δZ = δU = 0`, then
-`𝔼 ⟨δb, Gᵀ δY⟩ ≤ −β₁ 𝔼|Gᵀ δY|² − c 𝔼|δY|²`; if `δX = δY = δU = 0`, then
-`𝔼 ⟨δσ, Gᵀ δZ⟩_F ≤ −β₁ 𝔼|Gᵀ δZ|²_F − c 𝔼|δZ|²_F`; and if `δX = δY = δZ = 0`, then
-`𝔼 ∫_E ⟨δh(e), Gᵀ δU(e)⟩ ν(de) ≤ −β₁ 𝔼‖Gᵀ δU‖²_{L²(ν)} − c 𝔼‖δU‖²_{L²(ν)}`. -/
+with constants `β₁, β₂ ≥ 0` and a margin `c > 0`, then every channel is strictly dissipative with
+constant `c`: for almost every `t ∈ [0, T]` and all `(Θ, μ), (Θ', μ') ∈ 𝒟_t`, if
+`δY = δZ = δU = 0`, then `𝔼 ⟨−δf, G δX⟩ ≤ −c 𝔼|δX|²`; if `δX = δZ = δU = 0`, then
+`𝔼 ⟨δb, Gᵀ δY⟩ ≤ −c 𝔼|δY|²`; if `δX = δY = δU = 0`, then `𝔼 ⟨δσ, Gᵀ δZ⟩_F ≤ −c 𝔼|δZ|²_F`; and if
+`δX = δY = δZ = 0`, then `𝔼 ∫_E ⟨δh(e), Gᵀ δU(e)⟩ ν(de) ≤ −c 𝔼‖δU‖²_{L²(ν)}`. -/
 def cor_margin_channels : Prop :=
   ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
@@ -58,7 +57,7 @@ def cor_margin_channels : Prop :=
     (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ),
     Indep 𝒢₀ (⨆ t, D.filtration t) P →
     ∀ (T β₁ β₂ c : ℝ) (G : Matrix (Fin m) (Fin n) ℝ) (C : Coeffs ν n m d),
-    Margin213 (enlJoint 𝒢₀ D h𝒢₀) P T G β₁ β₂ c C →
+    0 ≤ β₁ → 0 ≤ β₂ → 0 < c → Margin213 (enlJoint 𝒢₀ D h𝒢₀) P T G β₁ β₂ c C →
     ∀ᵐ t ∂(volume.restrict (Set.Icc (0 : ℝ) T)),
       ∀ p ∈ diagonalInputs ν n m d (enlJoint 𝒢₀ D h𝒢₀) P t,
       ∀ p' ∈ diagonalInputs ν n m d (enlJoint 𝒢₀ D h𝒢₀) P t,
@@ -66,26 +65,22 @@ def cor_margin_channels : Prop :=
           ∧ (p.1 ω).2.2.2 = (p'.1 ω).2.2.2) →
         ∫ ω, inner ℝ (-(C.f t (p.1 ω) p.2 - C.f t (p'.1 ω) p'.2))
             (GX G ((p.1 ω).1 - (p'.1 ω).1)) ∂P
-          ≤ -β₂ * ∫ ω, ‖GX G ((p.1 ω).1 - (p'.1 ω).1)‖ ^ 2 ∂P
-            - c * ∫ ω, ‖(p.1 ω).1 - (p'.1 ω).1‖ ^ 2 ∂P)
+          ≤ -c * ∫ ω, ‖(p.1 ω).1 - (p'.1 ω).1‖ ^ 2 ∂P)
       ∧ ((∀ ω, (p.1 ω).1 = (p'.1 ω).1 ∧ (p.1 ω).2.2.1 = (p'.1 ω).2.2.1
           ∧ (p.1 ω).2.2.2 = (p'.1 ω).2.2.2) →
         ∫ ω, inner ℝ (C.b t (p.1 ω) p.2 - C.b t (p'.1 ω) p'.2)
             (GX Gᵀ ((p.1 ω).2.1 - (p'.1 ω).2.1)) ∂P
-          ≤ -β₁ * ∫ ω, ‖GX Gᵀ ((p.1 ω).2.1 - (p'.1 ω).2.1)‖ ^ 2 ∂P
-            - c * ∫ ω, ‖(p.1 ω).2.1 - (p'.1 ω).2.1‖ ^ 2 ∂P)
+          ≤ -c * ∫ ω, ‖(p.1 ω).2.1 - (p'.1 ω).2.1‖ ^ 2 ∂P)
       ∧ ((∀ ω, (p.1 ω).1 = (p'.1 ω).1 ∧ (p.1 ω).2.1 = (p'.1 ω).2.1
           ∧ (p.1 ω).2.2.2 = (p'.1 ω).2.2.2) →
         ∫ ω, inner ℝ (C.σ t (p.1 ω) p.2 - C.σ t (p'.1 ω) p'.2)
             (GZ Gᵀ ((p.1 ω).2.2.1 - (p'.1 ω).2.2.1)) ∂P
-          ≤ -β₁ * ∫ ω, ‖GZ Gᵀ ((p.1 ω).2.2.1 - (p'.1 ω).2.2.1)‖ ^ 2 ∂P
-            - c * ∫ ω, ‖(p.1 ω).2.2.1 - (p'.1 ω).2.2.1‖ ^ 2 ∂P)
+          ≤ -c * ∫ ω, ‖(p.1 ω).2.2.1 - (p'.1 ω).2.2.1‖ ^ 2 ∂P)
       ∧ ((∀ ω, (p.1 ω).1 = (p'.1 ω).1 ∧ (p.1 ω).2.1 = (p'.1 ω).2.1
           ∧ (p.1 ω).2.2.1 = (p'.1 ω).2.2.1) →
         ∫ ω, (∫ e, inner ℝ (C.h t (p.1 ω) p.2 e - C.h t (p'.1 ω) p'.2 e)
             (GX Gᵀ ((p.1 ω).2.2.2 e - (p'.1 ω).2.2.2 e)) ∂ν) ∂P
-          ≤ -β₁ * ∫ ω, ‖GU Gᵀ ν ((p.1 ω).2.2.2 - (p'.1 ω).2.2.2)‖ ^ 2 ∂P
-            - c * ∫ ω, ‖(p.1 ω).2.2.2 - (p'.1 ω).2.2.2‖ ^ 2 ∂P)
+          ≤ -c * ∫ ω, ‖(p.1 ω).2.2.2 - (p'.1 ω).2.2.2‖ ^ 2 ∂P)
 
 /-- The paragraph after Corollary 3.6, the additive jump coefficient. In the standing setting
 with `m ≥ 1`, for `T > 0` and `ν ≠ 0`: if `h(t, θ, μ)` depends on `t` and the forward state `x`

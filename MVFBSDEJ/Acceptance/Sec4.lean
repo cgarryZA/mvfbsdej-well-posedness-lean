@@ -16,6 +16,8 @@ import MVFBSDEJ.Acceptance.Solution
 ## Main statements
 
 * `MVFBSDEJ.Acceptance.lem_bpbsde` — Lemma 4.1, with `C_BP(T) = 13 e^T + 3T`.
+* `MVFBSDEJ.Acceptance.lem_bpbsde_explicit` — Lemma 4.1 with `C_BP = 2 e^T (5 + 4c) + 4T` for every
+  `c ≥ 4`.
 * `MVFBSDEJ.Acceptance.lem_small` — Lemma 4.2, with `λ*(T, L) = smallCoupling T (2L)`.
 * `MVFBSDEJ.Acceptance.lem_pert` — Lemma 4.3, with
   `C_B = aprioriConst T (10 (2L)²) (4 (2L)²) ‖G‖ c_G α β₁ β₂ λ̲`.
@@ -48,6 +50,31 @@ theorem lem_bpbsde : PaperSpec.lem_bpbsde.{u, v, w} := by
     (fun k => (hU k).mono (Probability.markedPredictableSigma_le _ ν) le_rfl)
     (fun k => (hU k).markedProgressivelyMeasurable) hUv hUs hφm hφs hξk hYa hYr heq
   refine ⟨?_, key⟩
+  have hξe : ∫⁻ ω, (esq fun k => δξ ω k) ∂P < ⊤ := by
+    simp only [esq]
+    rw [lintegral_finsetSum' _ fun k _ =>
+      (hξk k).aestronglyMeasurable.aemeasurable.nnnorm.coe_nnreal_ennreal.pow_const 2]
+    exact ENNReal.sum_lt_top.mpr fun k _ =>
+      Ito.SecondMoment.lintegral_sq_lt_top_of_memLp_two (hξk k)
+  refine lt_of_le_of_lt (le_trans le_self_add le_self_add) (key.trans_lt ?_)
+  exact ENNReal.mul_lt_top ENNReal.ofReal_lt_top (ENNReal.add_lt_top.mpr
+    ⟨hξe, ENNReal.sum_lt_top.mpr fun k _ => (hφs k).lt_top⟩)
+
+/-- Lemma 4.1 with the constant of its proof. -/
+theorem lem_bpbsde_explicit : PaperSpec.lem_bpbsde_explicit.{u, v, w} := by
+  intro c hc Ω 𝒢₀ mΩ E _ ν _ _ m d P _ D h𝒢₀ hind₀ _ _ T hT δξ φ δY δZ δU hZ hZv hZs hU hUv
+    hUs _ hξ hφm hφs hYa hYr _ heq
+  have hξk : ∀ k, MemLp (fun ω => δξ ω k) 2 P := memLp_iff_forall_coord.mp hξ
+  have key := brownianPoisson_estimate_vec_of_measurable (crossWitnessEnl D h𝒢₀ hind₀)
+    (hF0_enlJoint D h𝒢₀) (fun _ hs h0 => measurableSet_enlJoint_of_null D h𝒢₀ hs h0) hT
+    (ξ := fun k ω => δξ ω k)
+    (fun k j => Brownian.Ito.measurable_uncurry_of_predictable (hZ k j))
+    (fun k => progressivelyMeasurable_of_predictable_of_vanish (hZ k) (hZv k)) hZv hZs
+    (fun k => (hU k).mono (Probability.markedPredictableSigma_le _ ν) le_rfl)
+    (fun k => (hU k).markedProgressivelyMeasurable) hUv hUs hφm hφs hξk hYa hYr heq
+  have hC : 13 * Real.exp T + 3 * T ≤ 2 * Real.exp T * (5 + 4 * c) + 4 * T := by
+    nlinarith [Real.exp_pos T, mul_le_mul_of_nonneg_right hc (Real.exp_pos T).le]
+  refine ⟨?_, key.trans (mul_le_mul_of_nonneg_right (ENNReal.ofReal_le_ofReal hC) (zero_le))⟩
   have hξe : ∫⁻ ω, (esq fun k => δξ ω k) ∂P < ⊤ := by
     simp only [esq]
     rw [lintegral_finsetSum' _ fun k _ =>

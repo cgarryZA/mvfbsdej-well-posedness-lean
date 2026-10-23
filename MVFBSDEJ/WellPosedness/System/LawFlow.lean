@@ -73,7 +73,9 @@ variable {Ω : Type*} [MeasurableSpace Ω] {E : Type*} [MeasurableSpace E] {ν :
 
 section Measurability
 
-/-- The left-limit process `s ↦ X_{s−}(ω) = lim_{r ↑ s} X_r(ω)` of a family of real processes. -/
+/-- The left-limit process `s ↦ X_{s−}(ω) = Function.leftLim (X_·(ω)) s` of a family of real
+processes: `lim_{r ↑ s} X_r(ω)` where the limit exists, `X_s(ω)` otherwise; at `s = 0` it is the
+left limit of the values at negative times. -/
 noncomputable def leftLimProc {ι : Type*} (X : ι → ℝ → Ω → ℝ) : ι → ℝ → Ω → ℝ :=
   fun i s ω => Function.leftLim (fun r => X i r ω) s
 

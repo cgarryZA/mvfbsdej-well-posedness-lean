@@ -66,7 +66,8 @@ theorem eq_compid : PaperSpec.eq_compid.{u, v, w} := by
 /-- (2.2), the compensated integral has mean zero. -/
 theorem eq_zeromean : PaperSpec.eq_zeromean.{u, v, w} := by
   intro Ω 𝒢₀ mΩ E _ ν _ d P _ D h𝒢₀ hind₀ T ψ hψ hfin
-  exact integral_compensated_eq_zero (isPoissonFiltration_enlJoint D h𝒢₀ hind₀) T hψ hfin
+  exact integrable_and_integral_compensated_eq_zero (isPoissonFiltration_enlJoint D h𝒢₀ hind₀) T
+    hψ hfin
 
 /-- §2, the predictable representation property over the enlarged filtration. -/
 theorem sec2_prp : PaperSpec.sec2_prp.{u, v, w} := by
