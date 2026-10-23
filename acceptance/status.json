@@ -1183,7 +1183,7 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i_wp",
      "spec_hash": "ed839d34f480cba1a598137468ed549b",
      "spec_ok": true,
-     "spec_review": "changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
@@ -1219,7 +1219,7 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i_clamp_wp",
      "spec_hash": "ed839d34f480cba105f9b3fe120fab96",
      "spec_ok": true,
-     "spec_review": "changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses",
      "witness_ok": true
     },
@@ -1303,7 +1303,7 @@
    "scope": "formal",
    "scope_note": "the derivation of (1.1) from the control problem by the stochastic maximum principle for jump diffusions is cited work (Tang and Li) and is not stated; the clauses state the system and its properties; the attribution of (ii) to Example 3.1 of Li and Min is a statement about cited work; the reading of β₁ as the reciprocal of the quadratic actuation cost, of β₂ as the running state weight, of the terminal weight 1 and of σ_c, h_c as the uncontrolled baseline (lines 65–66) is the modelling interpretation, not stated; 'By Remark 2.10, every instance with β₁ > 0 must carry strictly U-dissipative jump feedback' (lines 100–101) is the content of A:rem:beta1-dich (rem_beta1_dich); 'The mean-field coupling costs nothing and supplies extra dissipation' (lines 187–188) comments on the constants α = β₁ = β₂ = 2 that ex_concrete_ii states; that the monotonicity hypothesis (H3.2) of Li and Min bounds the total mass of their Lévy measure (lines 191–193) is a statement about cited work; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -1441,7 +1441,7 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_expfunc_limin",
      "spec_hash": "ed839d34f480cba1953e11aa74b157a5",
      "spec_ok": true,
-     "spec_review": "changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.ex_expfunc_limin_hypotheses",
      "witness_ok": true
     },
@@ -1471,7 +1471,7 @@
    "scope": "formal",
    "scope_note": "'Their Lévy measure is the ν of the present setting' (line 224) and 'the counterpart of the origin integrability imposed in [LiMin, (H3.1)]' (lines 229–230) are statements about cited work; the joint measurability of ψ̄, a hypothesis of ex_expfunc_limin needed for the measurability of φ̄ that the class requires, is not printed among the hypotheses of lines 225–230 and is read from 'the deterministic-coefficient … interactions of [LiMin]' (line 223), whose coefficients are measurable; the standing countably generated mark space of §2 is assumed; the origin conditions of lines 228–230 and 264 and the joint Borel measurability of 𝐇 (line 258) are hypotheses of the embedding whose consequences for the embedded coefficients (the origin values of Assumption 2.2, (2.3) for h) are not claimed, lines 220–221 leaving the state-variable Lipschitz and integrability requirements to the full coefficient system",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -1597,7 +1597,7 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_affineQ",
      "spec_hash": "ed839d34f480cba1c1d675ce00419b85",
      "spec_ok": true,
-     "spec_review": "changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_affineQ_hypotheses",
      "witness_ok": true
     }
@@ -1609,7 +1609,7 @@
    "scope": "formal",
    "scope_note": "'Example 5.1(i) supplies such a baseline' (line 291) is the content of A:ex:concrete (ex_concrete_i_pairing, the margin of Example 5.1(i)); 'and beyond the linear jump-integrand expectations of the cited models' (lines 312–313) is a statement about cited work; the closing sentence on the smallness and the weak-coupling route (lines 345–347) is exposition; the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; 'an expectation functional already covered by Example 5.3' (lines 316–318) is ex_fulllaw_affineQ: the identity, and the measurability and the Lipschitz bound of the kernel θ' ↦ a + Σ_j c_j φ_j(u') that the class of Example 5.3 requires",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -1735,7 +1735,7 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_wp",
      "spec_hash": "ed839d34f480cba12a7e836c6aa08b45",
      "spec_ok": true,
-     "spec_review": "changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -1825,7 +1825,7 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_affine",
      "spec_hash": "ed839d34f480cba1408ee1757b6dd96f",
      "spec_ok": true,
-     "spec_review": "changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_unit_hypotheses",
      "witness_ok": true
     },
@@ -1963,7 +1963,7 @@
    "scope": "formal",
    "scope_note": "the dealer-market reading (requests for quotes, valuation curves, routing, quotes affine in the curve, the uncontrolled exposure change at an event) is modelling and is not stated; the finite-player inspiration (Cont and Xiong) is a statement about cited work; 'The computation uses only the joint law π; no auxiliary random variable on Ω is needed' (lines 436–438) is a remark on the proof of ex_dealer_mono; 'dependence nonlinear in the law itself is that of Example 5.4' (lines 461–462) refers to A:ex:fulllaw; the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; 'an expectation kernel in the sense of Example 5.3, with L²(ν) in the role of K' (lines 460–461) is ex_dealer_affine: the representation, the measurability and the Lipschitz bound of the kernel (θ, θ') ↦ ∇V(u − u'), whose origin value ∇V(0) = 0 makes the origin condition of the jump class of Example 5.3 hold trivially",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -2119,7 +2119,7 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_wp",
      "spec_hash": "ed839d34f480cba12a7e836c6aa08b45",
      "spec_ok": true,
-     "spec_review": "changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -2149,7 +2149,7 @@
    "scope": "formal",
    "scope_note": "the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -2341,7 +2341,7 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_wp",
      "spec_hash": "ed839d34f480cba12a7e836c6aa08b45",
      "spec_ok": true,
-     "spec_review": "changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -2389,7 +2389,7 @@
    "scope": "formal",
    "scope_note": "the descriptions of the setting (the law dependence of the coefficients in the relative clause of the first sentence, lines 30–34, the law dependence of the terminal function, lines 34–35, and the noise of σ-finite intensity, lines 35–37) and of the hypotheses (imposed along diagonal tuple–law pairs, lines 38–39) are exposition of the hypotheses of the clauses; 'by monotone continuation in the coupling strength from a small-coupling base case' (lines 44–45) describes the proof; the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; the first sentence (lines 30–34) is read with the hypotheses the abstract names: the Lipschitz and monotonicity hypotheses (line 38) and the jump-extended G-monotonicity condition under which the results are established (line 42), that is Assumptions 2.2–2.5 with the standing setting of §2, whose mark space is countably generated (02-model-assumptions.tex lines 5–7)",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -2453,7 +2453,7 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_expfunc_limin",
      "spec_hash": "ed839d34f480cba1953e11aa74b157a5",
      "spec_ok": true,
-     "spec_review": "changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.ex_expfunc_limin_hypotheses",
      "witness_ok": true
     },
@@ -2471,7 +2471,7 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_expfunc",
      "spec_hash": "ed839d34f480cba15a6f123acd31afd5",
      "spec_ok": true,
-     "spec_review": "not reviewed",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.ex_expfunc_hypotheses",
      "witness_ok": true
     },
@@ -2489,7 +2489,7 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_expfunc_jump",
      "spec_hash": "ed839d34f480cba1e4ed71c267b0a369",
      "spec_ok": true,
-     "spec_review": "not reviewed",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.ex_expfunc_jump_hypotheses",
      "witness_ok": true
     },
@@ -2507,7 +2507,7 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_concrete_ii",
      "spec_hash": "ed839d34f480cba15cf7f3328c0ad0e6",
      "spec_ok": true,
-     "spec_review": "not reviewed",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     }
@@ -2519,7 +2519,7 @@
    "scope": "formal",
    "scope_note": "the claims about this paper (lines 63–66); the description of the theorem of Li and Min, of their expectation-functional interaction, of their pointwise jump integrand and of the finite total jump mass their monotonicity hypothesis imposes (lines 58–63) is a statement about cited work; 'Example 5.3 details the embedding of their interaction class' (line 66) is ex_expfunc_limin (the deterministic-coefficient, finite-activity interactions of Example 5.3, line 223: the embedded kernel is measurable and Lipschitz) with ex_expfunc and ex_expfunc_jump (the class it lands in); that the present monotonicity hypothesis does not impose finite total jump mass ('removes all three restrictions … at arbitrary σ-finite activity', lines 63–65) is ex_concrete_ii, Example 5.1(ii) meeting Assumption 2.5 at every σ-finite ν; σ-finite intensities are on the countably generated mark space of the standing setting (02-model-assumptions.tex lines 5–7); 'removes all three restrictions' is read as 'does not impose them': the hypotheses of thm_cwp admit W₂-dependence on the full tuple law and on the law of U, beyond expectation functionals (ex_fulllaw_beyond_radial, ex_fulllaw_beyond_U_corr and ex_dealer_not_mean_corr, reviewed under Examples 5.4 and 5.5)",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [],
@@ -2998,7 +2998,7 @@
      "spec": "MVFBSDEJ.PaperSpec.sec3_HH_linear",
      "spec_hash": "ed839d34f480cba119d61911bc91e18d",
      "spec_ok": true,
-     "spec_review": "not reviewed",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.sec3_HH_norm_hypotheses",
      "witness_ok": true
     }
@@ -3010,7 +3010,7 @@
    "scope": "formal",
    "scope_note": "the region (lines 5–32) holds the definitions of the spaces L²_ad, S², H²_W, H²_N, ℍ, ℍ_weak and of the norm of ℍ (lines 5–25) and the identification of indistinguishable càdlàg components, of Z-components equal dt ⊗ dP-a.e. and of U-components equal dt ⊗ dP ⊗ ν-a.e. (lines 26–28), the solution spaces of every statement in ℍ or ℍ_weak, pinned here",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -3178,7 +3178,7 @@
      "spec": "MVFBSDEJ.PaperSpec.cor_margin_channels",
      "spec_hash": "ed839d34f480cba13af3fe1b29f300fd",
      "spec_ok": true,
-     "spec_review": "changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.cor_robust_hypotheses",
      "witness_ok": true
     },
@@ -3280,7 +3280,7 @@
    "scope": "formal",
    "scope_note": "'as in Examples 5.1(i) and 5.5' (lines 287–288) names instances, the content of A:ex:concrete (ex_concrete_i_pairing) and A:ex:dealer (ex_dealer_mono); 'as when ν is carried by finitely many atoms' (lines 288–289) is an example of the hypothesis of cor_margin_findim (L²(ν) finite-dimensional), not stated",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -3423,7 +3423,7 @@
      "spec": "MVFBSDEJ.PaperSpec.sec4_coeff_sq",
      "spec_hash": "ed839d34f480cba1bf34b869f35d92c1",
      "spec_ok": true,
-     "spec_review": "not reviewed",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.frozen_pair_window_hypotheses",
      "witness_ok": true
     }
@@ -3435,7 +3435,7 @@
    "scope": "formal",
    "scope_note": "the passage (lines 72–85) states (4.2) and (4.3), which are also the claims A:eq:coeffint and A:eq:termg, and that the coefficient processes (2.5) along any Θ ∈ 𝕊 are square integrable (lines 72–73), the third clause; the justifications (the Lipschitz bound with (2.8) at μ' = δ₀, and (2.6) with (2.9)) are steps of their proofs; every unnamed C follows the convention on constants of §4 (04-proof-wellposedness.tex lines 22–25), pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -3825,7 +3825,7 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_expfunc_limin",
      "spec_hash": "ed839d34f480cba1953e11aa74b157a5",
      "spec_ok": true,
-     "spec_review": "changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.ex_expfunc_limin_hypotheses",
      "witness_ok": true
     },
@@ -3897,7 +3897,7 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_wp",
      "spec_hash": "ed839d34f480cba12a7e836c6aa08b45",
      "spec_ok": true,
-     "spec_review": "changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_hypotheses",
      "witness_ok": true
     },
@@ -3927,7 +3927,7 @@
    "scope": "formal",
    "scope_note": "the first sentence, 'The examples illustrate both the scope of the law dependence and the role of the dissipativity assumption' (lines 9–10), is exposition; the identification of the subclasses of Examples 5.2 and 5.3 with those of [BYZ] and [LiMin] is a statement about cited work; the description of the dealer market (the population law on valuation curves entering the jump response through a crowding operator, lines 17–20) is modelling, not stated; 'In Examples 5.4 and 5.5, we take ν ≠ 0' (line 22) is the standing hypothesis of Examples 5.4 and 5.5, pinned here and read by A:ex:fulllaw, A:ex:dealer, A:rem:regimes and the Example 5.4–5.5 clauses of this claim and of A:abstract",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [],
@@ -4361,13 +4361,13 @@
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
-     "name": "the compensated integral has mean zero",
+     "name": "the compensated integral is integrable and has mean zero",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.eq_zeromean",
      "spec_hash": "ed839d34f480cba12cbf7dd6f90dc98c",
      "spec_ok": true,
-     "spec_review": "changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.sec2_compensation_nonzero_hypotheses",
      "witness_ok": true
     }
@@ -4379,7 +4379,7 @@
    "scope": "formal",
    "scope_note": "the region (lines 13–25) also holds the definition Ñ := N − dt ν (lines 13–14), the standing notation of every compensated integral, pinned here, and the compensation formula (2.1), the claim A:eq:compid",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -4912,7 +4912,7 @@
      "spec": "MVFBSDEJ.PaperSpec.sec4_coeff_sq",
      "spec_hash": "ed839d34f480cba1bf34b869f35d92c1",
      "spec_ok": true,
-     "spec_review": "not reviewed",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.frozen_pair_window_hypotheses",
      "witness_ok": true
     }
@@ -4924,7 +4924,7 @@
    "scope": "formal",
    "scope_note": "the region (lines 72–81) holds the square integrability of the coefficient processes (2.5) along any Θ ∈ 𝕊 (lines 72–73), the second clause, and the hypotheses and the justification of (4.2) (Assumptions 2.2–2.3, Θ ∈ ℍ, ψ ∈ {b, σ, h, f} in the norms of Assumption 2.3; the Lipschitz bound with (2.8) at μ' = δ₀) and, on its last line, the start of the sentence of (4.3), the claim A:eq:termg; every unnamed C follows the convention on constants of §4 (04-proof-wellposedness.tex lines 22–25), pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -5024,13 +5024,13 @@
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
-     "name": "the conclusion of Lemma 4.1 with C_BP := C₀(5 + 4c) + 4T, C₀ = 2e^T (line 244), for every c ≥ 1, every value of c_BDG among them",
+     "name": "the conclusion of Lemma 4.1 with C_BP := C₀(5 + 4c) + 4T, C₀ = 2e^T (line 244), for every c ≥ 4, the values of c_BDG that Doob's constant 4 admits",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.lem_bpbsde_explicit",
-     "spec_hash": "ed839d34f480cba1ebb63a18eb760785",
+     "spec_hash": "ed839d34f480cba14ca24ca0f7d3456f",
      "spec_ok": true,
-     "spec_review": "not reviewed",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.lem_bpbsde_drift_hypotheses",
      "witness_ok": true
     }
@@ -5040,9 +5040,9 @@
    "number": "(4.6)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the pinned region is lines 188–246; the second clause reads the display of lines 193–199, the expectation of (4.5) after Young's inequality, and the first the bound by R at every t (lines 200–205) and (4.6); the sentences of lines 188–192 and 206–207 name the justifications; lines 219–246, the upgrade of sup_t 𝔼|δY_t|² to 𝔼 sup_t |δY_t|² by the forward form, BDG and (4.6), prove the conclusion of Lemma 4.1 (A:lem:bpbsde) and define C_BP := C₀(5 + 4c_BDG) + 4T (line 244), the constant that A:eq:bwddiff states and A:eq:uniq-bwd uses; the conclusion of Lemma 4.1 with this constant is the third clause, and the display of lines 226–243 is a step of its proof",
+   "scope_note": "the pinned region is lines 188–246; the second clause reads the display of lines 193–199, the expectation of (4.5) after Young's inequality, and the first the bound by R at every t (lines 200–205) and (4.6); the sentences of lines 188–192 and 206–207 name the justifications; lines 219–246, the upgrade of sup_t 𝔼|δY_t|² to 𝔼 sup_t |δY_t|² by the forward form, BDG and (4.6), prove the conclusion of Lemma 4.1 (A:lem:bpbsde) and define C_BP := C₀(5 + 4c_BDG) + 4T (line 244), the constant that A:eq:bwddiff states and A:eq:uniq-bwd uses; the conclusion of Lemma 4.1 with this constant is the third clause, and the display of lines 226–243 is a step of its proof; c_BDG enters C_BP only through the BDG step at p = 2 (line 232), where Doob's constant 4 (line 33) is a valid value and every valid value is at least 4, so the third clause takes every c ≥ 4, as A:eq:fwddiff, A:eq:bwddiff and A:eq:contract do",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -5156,7 +5156,7 @@
      "spec": "MVFBSDEJ.PaperSpec.sec4_diag_input",
      "spec_hash": "ed839d34f480cba15bebe71c8fc292d1",
      "spec_ok": true,
-     "spec_review": "not reviewed",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.frozen_pair_window_hypotheses",
      "witness_ok": true
     },
@@ -5174,7 +5174,7 @@
      "spec": "MVFBSDEJ.PaperSpec.eq_coeffdiff_pointwise",
      "spec_hash": "ed839d34f480cba17f006ab36d1f6565",
      "spec_ok": true,
-     "spec_review": "not reviewed",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.frozen_pair_window_hypotheses",
      "witness_ok": true
     }
@@ -5186,7 +5186,7 @@
    "scope": "formal",
    "scope_note": "the pinned region is lines 312–348; the notation of the contraction step (lines 312–323: the trials Θ¹, Θ² ∈ ℍ, Θ̄ᵏ = Φ_λ(Θᵏ), δψ_s along (Θᵏ_s, μ^{Θᵏ}_s), δX, δX̄ and the other component differences, the cancellation of ξ₀ and q) is pinned here and used by A:eq:fwddiff, A:eq:terdiff, A:eq:bwddiff and A:eq:contract; the second clause reads lines 333–337, the bound at almost every time whose integral in time is the first link of (4.9); the pointwise bound of lines 329–332, the instance of Assumption 2.3 that the second clause integrates, is the fourth clause, the assertion that (Θᵏ_s, μ^{Θᵏ}_s) are diagonal inputs (lines 326–327) is the third, and S_s is defined at line 326; the set-up of the proof of Lemma 4.2 (04-proof-wellposedness.tex lines 258–263) is pinned in A:eq:frozenfwd",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -5216,11 +5216,11 @@
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
-     "name": "(4.10): for two trials Θ¹, Θ² ∈ 𝕊 and their frozen steps Θ̄ᵏ = Φ_λ(Θᵏ), 𝔼 sup_{t ≤ T} |δX̄_t|² ≤ 3λ² [𝔼(∫_0^T |δb_s| ds)² + 𝔼 sup_{t ≤ T} |∫_0^t δσ_s dW_s|² + 𝔼 sup_{t ≤ T} |∫_0^t ∫_E δh_s(e) Ñ(ds, de)|²] ≤ 3λ² [T 𝔼 ∫_0^T |δb_s|² ds + c_BDG 𝔼 ∫_0^T |δσ_s|²_F ds + c_BDG 𝔼 ∫_0^T ‖δh_s‖² ds] ≤ 3λ² max{T, c_BDG} 𝔼 ∫_0^T (|δb_s|² + |δσ_s|²_F + ‖δh_s‖²) ds ≤ 3λ² max{T, c_BDG} 𝔼 ∫_0^T S_s² ds ≤ C_X λ² ‖Θ¹ − Θ²‖²_𝕊, C_X = 3 max{T, c_BDG} L⋆², for every c_BDG ≥ c₀, some c₀ > 0",
+     "name": "(4.10): for two trials Θ¹, Θ² ∈ 𝕊 and their frozen steps Θ̄ᵏ = Φ_λ(Θᵏ), 𝔼 sup_{t ≤ T} |δX̄_t|² ≤ 3λ² [𝔼(∫_0^T |δb_s| ds)² + 𝔼 sup_{t ≤ T} |∫_0^t δσ_s dW_s|² + 𝔼 sup_{t ≤ T} |∫_0^t ∫_E δh_s(e) Ñ(ds, de)|²] ≤ 3λ² [T 𝔼 ∫_0^T |δb_s|² ds + c_BDG 𝔼 ∫_0^T |δσ_s|²_F ds + c_BDG 𝔼 ∫_0^T ‖δh_s‖² ds] ≤ 3λ² max{T, c_BDG} 𝔼 ∫_0^T (|δb_s|² + |δσ_s|²_F + ‖δh_s‖²) ds ≤ 3λ² max{T, c_BDG} 𝔼 ∫_0^T S_s² ds ≤ C_X λ² ‖Θ¹ − Θ²‖²_𝕊, C_X = 3 max{T, c_BDG} L⋆², for every c_BDG ≥ 4",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.eq_fwddiff",
-     "spec_hash": "ed839d34f480cba141d08b9826e80a76",
+     "spec_hash": "ed839d34f480cba195e809e38f3afe67",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.frozen_pair_window_hypotheses",
@@ -5276,11 +5276,11 @@
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
-     "name": "(4.12): 𝔼 sup_{t ≤ T} |δȲ_t|² + 𝔼 ∫_0^T (|δZ̄_s|²_F + ‖δŪ_s‖²) ds ≤ C_BP (𝔼|δξ̄|² + λ² 𝔼 ∫_0^T |δf_s|² ds) ≤ C_BP (C_g λ² 𝔼|δX̄_T|² + L⋆² λ² ‖Θ¹ − Θ²‖²_𝕊) ≤ C_BP (C_g λ² 𝔼 sup_{t ≤ T} |δX̄_t|² + L⋆² λ² ‖Θ¹ − Θ²‖²_𝕊) ≤ C_BP (C_g C_X λ⁴ + L⋆² λ²) ‖Θ¹ − Θ²‖²_𝕊 ≤ C_Y λ² ‖Θ¹ − Θ²‖²_𝕊, C_BP = 2e^T (5 + 4 c_BDG) + 4T, C_Y = C_BP (C_g C_X + L⋆²), for every c_BDG ≥ c₀, some c₀ > 0",
+     "name": "(4.12): 𝔼 sup_{t ≤ T} |δȲ_t|² + 𝔼 ∫_0^T (|δZ̄_s|²_F + ‖δŪ_s‖²) ds ≤ C_BP (𝔼|δξ̄|² + λ² 𝔼 ∫_0^T |δf_s|² ds) ≤ C_BP (C_g λ² 𝔼|δX̄_T|² + L⋆² λ² ‖Θ¹ − Θ²‖²_𝕊) ≤ C_BP (C_g λ² 𝔼 sup_{t ≤ T} |δX̄_t|² + L⋆² λ² ‖Θ¹ − Θ²‖²_𝕊) ≤ C_BP (C_g C_X λ⁴ + L⋆² λ²) ‖Θ¹ − Θ²‖²_𝕊 ≤ C_Y λ² ‖Θ¹ − Θ²‖²_𝕊, C_BP = 2e^T (5 + 4 c_BDG) + 4T, C_Y = C_BP (C_g C_X + L⋆²), for every c_BDG ≥ 4",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.eq_bwddiff",
-     "spec_hash": "ed839d34f480cba18579ef83ba51d72e",
+     "spec_hash": "ed839d34f480cba1fc89f467e79021ea",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.frozen_pair_hypotheses",
@@ -5294,13 +5294,13 @@
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
-     "name": "the backward difference before (4.12): δȲ_t = δξ̄ + ∫_t^T λ δf_s ds − ∫_t^T δZ̄_s dW_s − ∫_t^T ∫_E δŪ_s(e) Ñ(ds, de), the linear backward equation (4.4) with δξ = δξ̄ and φ_s = λ δf_s",
+     "name": "the backward difference before (4.12): δȲ_t = δξ̄ + ∫_t^T λ δf_s ds − ∫_t^T δZ̄_s dW_s − ∫_t^T ∫_E δŪ_s(e) Ñ(ds, de), the linear backward equation (4.4) with δξ = δξ̄ and φ_s = λ δf_s; δZ̄ predictable, δŪ marked predictable, left limits of δȲ and δξ̄ ℱ_T-measurable: the remaining hypotheses of Lemma 4.1 (lines 398–407)",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.eq_bwddiff_identity",
      "spec_hash": "ed839d34f480cba1f2119b522467db18",
      "spec_ok": true,
-     "spec_review": "changed since review",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.frozen_pair_window_hypotheses",
      "witness_ok": true
     }
@@ -5312,7 +5312,7 @@
    "scope": "formal",
    "scope_note": "the pinned region is lines 391–424; the second clause reads lines 391–397, the difference of (4.8) at the two trials, which is (4.4) with δξ = δξ̄ and φ_s = λ δf_s, with the hypotheses of Lemma 4.1 listed at lines 398–407 as its side conditions; the first clause reads (4.12); lines 423–424 name the justifications of its links; C_BP := C₀(5 + 4c_BDG) + 4T (04-proof-wellposedness.tex line 244) is pinned in A:eq:supE; the differences of the contraction step (04-proof-wellposedness.tex lines 312–323) are pinned in A:eq:coeffdiff; δξ̄ (lines 376–379) is pinned in A:eq:terdiff; the set-up of the proof of Lemma 4.2 (04-proof-wellposedness.tex lines 258–263) is pinned in A:eq:frozenfwd; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -5324,11 +5324,11 @@
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
-     "name": "(4.13): ‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖²_𝕊 = 𝔼 sup_{t ≤ T} |δX̄_t|² + 𝔼 sup_{t ≤ T} |δȲ_t|² + 𝔼 ∫_0^T (|δZ̄_s|²_F + ‖δŪ_s‖²) ds ≤ (C_X + C_Y) λ² ‖Θ¹ − Θ²‖²_𝕊 ≤ C_Φ λ² ‖Θ¹ − Θ²‖²_𝕊, C_Φ = max{1, C_X + C_Y}, for every c_BDG ≥ c₀, some c₀ > 0",
+     "name": "(4.13): ‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖²_𝕊 = 𝔼 sup_{t ≤ T} |δX̄_t|² + 𝔼 sup_{t ≤ T} |δȲ_t|² + 𝔼 ∫_0^T (|δZ̄_s|²_F + ‖δŪ_s‖²) ds ≤ (C_X + C_Y) λ² ‖Θ¹ − Θ²‖²_𝕊 ≤ C_Φ λ² ‖Θ¹ − Θ²‖²_𝕊, C_Φ = max{1, C_X + C_Y}, for every c_BDG ≥ 4",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.eq_contract",
-     "spec_hash": "ed839d34f480cba1c05bbddfa54523dc",
+     "spec_hash": "ed839d34f480cba13958e088ac52c83e",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.frozen_pair_hypotheses",
@@ -5342,11 +5342,11 @@
      "defs": [],
      "defs_changed": [],
      "defs_pending": [],
-     "name": "λ_* := (2 √C_Φ)⁻¹ ∈ (0, 1/2], C_Φ λ² ≤ 1/4 for λ ∈ [0, λ_*], and ‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖_𝕊 ≤ (1/2) ‖Θ¹ − Θ²‖_𝕊 for λ ∈ [0, λ_*]",
+     "name": "λ_* := (2 √C_Φ)⁻¹ ∈ (0, 1/2], C_Φ λ² ≤ 1/4 for λ ∈ [0, λ_*], and ‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖_𝕊 ≤ (1/2) ‖Θ¹ − Θ²‖_𝕊 for λ ∈ [0, λ_*], for every c_BDG ≥ 4",
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.eq_contract_half",
-     "spec_hash": "ed839d34f480cba14459b359e41961a4",
+     "spec_hash": "ed839d34f480cba1ef167711aaf92d12",
      "spec_ok": true,
      "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.frozen_pair_window_lam_hypotheses",
@@ -5358,7 +5358,7 @@
    "number": "(4.13)",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the pinned region is lines 426–454; the sentence after (4.13), lines 440–445, records the dependences L⋆ = L⋆(T, L), C_X = C_X(T, L, c_BDG), C_g = C_g(L), C_BP = C_BP(T, c_BDG) and C_Φ = C_Φ(T, L, c_BDG): the clause states every constant by its explicit formula in T, L and c, with c the value of c_BDG quantified before the data (∃ c₀ > 0, ∀ c ≥ c₀ first), so C_Φ = max{1, C_X + C_Y} is a fixed function of (T, L, c_BDG), chosen before everything else, as the sentence asserts; the same holds for the constants of (4.10) and (4.12) in A:eq:fwddiff and A:eq:bwddiff; 'the first inequality by (4.10) and (4.12)' (line 440) names a justification; the second clause reads lines 445–454: λ_* = (2 √C_Φ)⁻¹ with the C_Φ of the first clause, C_Φ λ² ≤ 1/4 on [0, λ_*] and the contraction by 1/2; the set-up of the proof of Lemma 4.2 (04-proof-wellposedness.tex lines 258–263) is pinned in A:eq:frozenfwd; the differences of the contraction step (04-proof-wellposedness.tex lines 312–323) are pinned in A:eq:coeffdiff; C_BP := C₀(5 + 4c_BDG) + 4T (04-proof-wellposedness.tex line 244) is pinned in A:eq:supE; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion",
+   "scope_note": "the pinned region is lines 426–454; the sentence after (4.13), lines 440–445, records the dependences L⋆ = L⋆(T, L), C_X = C_X(T, L, c_BDG), C_g = C_g(L), C_BP = C_BP(T, c_BDG) and C_Φ = C_Φ(T, L, c_BDG): the clause states every constant by its explicit formula in T, L and c, with c the value of c_BDG quantified before the data (∀ c ≥ 4 first, the values that Doob's constant 4 admits at p = 2, the only exponent at which c_BDG enters these constants), so C_Φ = max{1, C_X + C_Y} is a fixed function of (T, L, c_BDG), chosen before everything else, as the sentence asserts; the same holds for the constants of (4.10) and (4.12) in A:eq:fwddiff and A:eq:bwddiff; 'the first inequality by (4.10) and (4.12)' (line 440) names a justification; the second clause reads lines 445–454: λ_* = (2 √C_Φ)⁻¹ with the C_Φ of the first clause, C_Φ λ² ≤ 1/4 on [0, λ_*] and the contraction by 1/2; the set-up of the proof of Lemma 4.2 (04-proof-wellposedness.tex lines 258–263) is pinned in A:eq:frozenfwd; the differences of the contraction step (04-proof-wellposedness.tex lines 312–323) are pinned in A:eq:coeffdiff; C_BP := C₀(5 + 4c_BDG) + 4T (04-proof-wellposedness.tex line 244) is pinned in A:eq:supE; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -5407,7 +5407,7 @@
      "spec": "MVFBSDEJ.PaperSpec.sec4_diag_input",
      "spec_hash": "ed839d34f480cba15bebe71c8fc292d1",
      "spec_ok": true,
-     "spec_review": "not reviewed",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.frozen_pair_window_hypotheses",
      "witness_ok": true
     }
@@ -5419,7 +5419,7 @@
    "scope": "formal",
    "scope_note": "the region (lines 511–533) holds the set-up of the proof of Lemma 4.3, pinned here and used by its later steps (A:eq:bdg4, A:eq:Gid, A:eq:intmono, A:eq:termmono, A:eq:coerc, A:eq:fwd, A:eq:bwdito, A:eq:bwdyoung, A:eq:wgt, A:eq:bwd): q := δq (lines 511–512), the data quantity P (lines 513–516), δψ_t with μᵏ_t := Law(Θᵏ_t), δg_T and δh at the predictable tuples (lines 517–523); 'For a.e. t each pair (Θᵏ_t, μᵏ_t) is a diagonal input in the sense of Definition 2.1: Θᵏ_t ∈ L²(Ω, ℱ_t; H) for a.e. t by Fubini' (lines 523–525) is the second clause, stated for every tuple of ℍ², and 'μᵏ_t is the Borel law flow of Lemma A.1' (lines 525–526) is A:lem:lawflow; the region also holds (4.16), the claim A:eq:dY; the forcing class (04-proof-wellposedness.tex lines 39–53) is pinned in A:eq:forced and A:sec4:WP-def",
    "scope_reviewed": true,
-   "status": "formal: proved, review pending"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -5975,8 +5975,7 @@
  "summary": {
   "A": {
    "definition: reviewed": 14,
-   "formal: accepted": 59,
-   "formal: proved, review pending": 17,
+   "formal: accepted": 76,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
    "out of scope: proof-step": 2

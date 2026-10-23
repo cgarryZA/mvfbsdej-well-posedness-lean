@@ -7199,3 +7199,862 @@ Correspondence:
 * The last sentence names open questions and cited work.
 
 Verdict: each clause is the proposition named, reviewed in its own section.
+
+## Readings after the adversarial audit of 2026-10-22
+
+The statements restated or added after the audit recorded in `scope.md` ("The adversarial audit of
+2026-10-22"), at manuscript `1f67672`. Each was read by the author and then, independently, by
+`claude-auditor`, who was asked to find a defect in it; each reading carries its marker at the
+statement's current hash. The earlier readings of the restated statements, above, record their
+previous versions.
+
+* `MVFBSDEJ.PaperSpec.ex_concrete_i_wp` (`A:ex:concrete`). Reading at `1f67672`. A:ex:concrete
+  (`05-examples.tex` 93–94): "Assumption 2.5 holds with equality and α = 1, so Theorem 3.5 yields
+  well-posedness", the conclusion of Theorem 3.5 for the affine system of Example 5.1(i): a
+  solution in ℍ, unique, and depending continuously on the coefficients and data in the sense of
+  (3.1) (`03-main-results.tex` 198–203). The proposition quantifies first a function `C_stab` of
+  `(T, L, ‖G‖, c_G, α, β₁, β₂)`; then, in the setting of `ex_concrete_i` (β₁, β₂ > 0, any `σ_c`,
+  `h_c`, `ξ₀ ∈ L²(ℱ₀)`), it states existence of a `Solution`, equality in 𝕊 of any two solutions,
+  and, for every `L` with which the system satisfies Assumption 2.3, (3.1) with
+  `C_stab(T, L, ‖1‖, s_min(1)⁻², 1, β₁, β₂)` against the solutions of every system 2 with (2.3) and
+  Assumptions 2.2–2.3, the data differences those of `thm_stab`. Representation choices: (3.1) is
+  quantified over the constants `L` of Assumption 2.3, as in `ex_fulllaw_wp`, `cor_robust_wp` and
+  `thm_stab`; the inequality is read in `[0, ∞]`. The earlier statement lacked (3.1) and was
+  narrower than "Theorem 3.5 yields"; the conjunct now added closes that. Verdict: faithful with
+  representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i_wp ed839d34f480cba1a598137468ed549b by=claude-author source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 -->
+
+* Review by claude-auditor of `MVFBSDEJ.PaperSpec.ex_concrete_i_wp` (`A:ex:concrete`). Reading at
+  `1f67672`. A:ex:concrete
+  (05-examples.tex 24–94, the sentence at 93–94): in the setting of Example 5.1(i) (n = m = d = 1,
+  G = 1, ν σ-finite on the countably generated mark space of §2, ξ₀ ∈ L²(Ω, ℱ₀), σ_c ∈ ℝ,
+  h_c ∈ L²(ν), β₁, β₂ > 0), for b = −β₁y, σ = σ_c − β₁z, h = h_c − β₁u, f = β₂x, g(x, ρ) = x,
+  "Assumption 2.5 holds with equality and α = 1, so Theorem 3.5 yields well-posedness", that is,
+  existence in 𝕊, uniqueness and (3.1) with the constants (α, β₁, β₂) = (1, β₁, β₂), G = 1.
+  The proposition: one function Cstab of seven reals, chosen before every other quantifier, such
+  that for every Ω, 𝒢₀ independent of the driver, σ-finite ν on a countably generated E, Lévy
+  driver with d = 1, T > 0, β₁, β₂ > 0, σ_c, h_c, and ξ₀ strongly measurable for the time-0 field
+  of the augmented filtration and in L²: (a) a Solution (in 𝕊) of the affine system exists;
+  (b) any two Solutions have X and Y indistinguishable on [0, T] and zero Z- and U-difference
+  energies; (c) for every L with which the system satisfies Assumption 2.3, every system 2
+  (any L₂, C₂ : Coeffs ν 1 1 1, ξ₂) with (2.3), Assumption 2.2 for ξ₂ and Assumption 2.3 with L₂,
+  and all Solutions Θ¹ of the example and Θ² of system 2,
+  supSize(Θ¹ − Θ²) ≤ ofReal(Cstab(T, L, ‖1‖, s_min(1)⁻², 1, β₁, β₂)) · dataSize, the data being
+  δξ₀ and the coefficient differences evaluated along Θ² (h at the predictable tuple, g at
+  (X²_T, Law X²_T)), in [0, ∞]. Quantifier check against Theorems 3.1 and 3.5: ∃Cstab ∀setting
+  is "depends only on" (uniform in ν, including ν(E) = ∞, in σ_c, h_c, ξ₀ and in system 2);
+  α = 1 and β₁, β₂ are the constants the passage proves; L ranges over every admissible constant,
+  the printed max{β₁, β₂, 1} among them; system 2 carries exactly Theorem 3.1's hypotheses; (a)
+  and (b) are thm_cwp's conclusion at this system. Representation choices: uniqueness among
+  solutions in 𝕊, which is Theorem 3.5's "unique" (solutions are in 𝕊 by definition), not the
+  ℍ² uniqueness of Theorem 3.3's "more precisely" (cor_robust_wp states the ℍ² form; the
+  encodings differ but both are faithful to Theorem 3.5); equality in 𝕊 as indistinguishability
+  plus zero energies; (3.1) read in [0, ∞] with ofReal of a real Cstab, a nonpositive value
+  only strengthening it; ℝ^{1×1} as EuclideanSpace ℝ (Fin 1 × Fin 1). Neither broader nor
+  narrower. Since the earlier reading (faithful, then only existence and uniqueness): the (3.1)
+  conjunct is new; its quantifiers are right. Verdict: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i_wp ed839d34f480cba1a598137468ed549b by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 -->
+
+* `MVFBSDEJ.PaperSpec.ex_concrete_i_clamp_wp` (`A:ex:concrete`). Reading at `1f67672`.
+  A:ex:concrete (`05-examples.tex` 107–109): replacing the drift by (3.6) keeps (2.7) with the
+  constants `(β₁ − ε, β₂)`, "so Theorem 3.5 continues to apply". The proposition: a function
+  `C_stab` of the seven constants first; for `0 < ε < β₁` and the data of `ex_concrete_i_clamp`, a
+  solution in 𝕊, uniqueness in 𝕊, and (3.1) with `C_stab(T, L, ‖1‖, s_min(1)⁻², 1, β₁ − ε, β₂)`
+  for every `L` of Assumption 2.3, against every system 2 with (2.3) and Assumptions 2.2–2.3.
+  Representation choices: as for `ex_concrete_i_wp`. Verdict: faithful with representation
+  choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i_clamp_wp ed839d34f480cba105f9b3fe120fab96 by=claude-author source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 -->
+
+* Review by claude-auditor of `MVFBSDEJ.PaperSpec.ex_concrete_i_clamp_wp` (`A:ex:concrete`). Reading
+  at `1f67672`.
+  A:ex:concrete (05-examples.tex 107–109, with Proposition 3.8 at 03-main-results.tex 299–315):
+  replacing the drift −β₁y of Example 5.1(i) by (3.6), b = −β₁y + ε g₀(y − m_Y(μ)) with
+  0 < ε < β₁, "leaves (2.7) intact with constants (β₁ − ε, β₂), so Theorem 3.5 continues to
+  apply". The proposition has the shape of ex_concrete_i_wp for clampAffineCoeffs β₁ β₂ ε σ_c h_c
+  (the affine system with b := clampDrift, checked to be −β₁y + ε·clamp(y − ∫ y dμ)), under the
+  hypotheses of Example 5.1(i) and 0 < ε < β₁: existence in 𝕊, uniqueness in 𝕊, and (3.1) with
+  one uniform Cstab evaluated at (T, L, ‖1‖, s_min(1)⁻², 1, β₁ − ε, β₂) for every admissible L.
+  Quantifiers: as for ex_concrete_i_wp; the constants fed to Cstab are those the sentence names
+  (α = 1 from (i), (β₁ − ε, β₂)); the passage names no Lipschitz constant, and every admissible L
+  is taken. Representation choices: as for ex_concrete_i_wp; "Theorem 3.5 continues to apply" as
+  its conclusion, its hypotheses being ex_concrete_i_clamp. Since the earlier reading
+  (faithful): the (3.1) conjunct is new and correctly quantified. Verdict: faithful with
+  representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_i_clamp_wp ed839d34f480cba105f9b3fe120fab96 by=claude-auditor source=A:ex:concrete@1e2bfcc4d0a6c0d3ac3168b0c7042d0db4a93670e277d64901f8076820cef633 -->
+
+* `MVFBSDEJ.PaperSpec.ex_dealer_wp` (`A:ex:dealer`, `A:rem:regimes`, `A:abstract`,
+  `A:sec5:overview`). Reading at `1f67672`. A:ex:dealer (`05-examples.tex` 446–448): (2.7) holds
+  with `α = 1, β₁, β₂` for every `ε ≥ 0`, "Theorem 3.5 applies directly": existence, uniqueness
+  and (3.1) for the dealer system. A:sec5:overview (line 20) and A:abstract (lines 45–47):
+  "well-posedness holds at every interaction strength" and "monotone at every interaction
+  strength", the same conclusion. A:rem:regimes names the dealer as the non-perturbative regime of
+  Theorem 3.5. The proposition: a function `C_stab` of the seven constants first; for `T > 0`,
+  `β₁, β₂ > 0`, any `σ_c`, `h_c`, `h_x` and `ε ≥ 0`, and `ξ₀ ∈ L²(ℱ₀)`, a solution of (1.1) with
+  `ex55Coeffs` in 𝕊, uniqueness in 𝕊, and (3.1) with `C_stab(T, L, ‖1‖, s_min(1)⁻², 1, β₁, β₂)`
+  for every `L` of Assumption 2.3, against every system 2 with (2.3) and Assumptions 2.2–2.3.
+  Representation choices: as for `ex_concrete_i_wp`; `ν` is any σ-finite measure on a countably
+  generated space, `ν = 0` included (broader than the `ν ≠ 0` of §5, harmless). Verdict: faithful
+  with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_wp ed839d34f480cba12a7e836c6aa08b45 by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
+
+* Review by claude-auditor of `MVFBSDEJ.PaperSpec.ex_dealer_wp` (`A:ex:dealer`, `A:rem:regimes`,
+  `A:abstract`,
+  `A:sec5:overview`). Reading at `1f67672`. A:ex:dealer (05-examples.tex 350–448 and 513–518):
+  with the data of Example 5.1(i), any ε ≥ 0 and h_x ∈ L²(ν), the coefficients b = −β₁y,
+  σ = σ_c − β₁z, h = h_c + h_x x − β₁u − ε A_{μ^U}(u), f = β₂x + ⟨h_x, u⟩, g = x satisfy (2.7)
+  with α = 1, β₁, β₂ "for every ε ≥ 0 — no smallness condition and no margin. Theorem 3.5
+  applies directly"; the interaction strength "enlarges the Lipschitz constant only" (404–405);
+  lines 513–518 use the solution Θ^ε "given by Theorem 3.5" and uniqueness at ε = 0; ν ≠ 0 is the
+  standing hypothesis of Examples 5.4–5.5 (line 22). A:rem:regimes (549–554): a U-law interaction
+  "can have arbitrary strength when its geometry is itself monotone". A:abstract
+  (wellposedness.tex 30–48): existence, uniqueness and a continuous-dependence estimate for the
+  class (42–45), and the dealer interaction monotone at every strength, realising U-law
+  dependence non-perturbatively (45–48). A:sec5:overview (05-examples.tex 17–22): "so that
+  well-posedness holds at every interaction strength", with ν ≠ 0. The proposition: one uniform
+  Cstab such that for every setting with d = 1, T > 0, β₁, β₂ > 0, σ_c, h_c, h_x, ε ≥ 0 and
+  ξ₀ ∈ L²(ℱ₀): existence in 𝕊, uniqueness in 𝕊, and (3.1) at
+  Cstab(T, L, ‖1‖, s_min(1)⁻², 1, β₁, β₂) for every admissible L, against every system 2 under
+  (2.3) and Assumptions 2.2–2.3. ex55Coeffs checked against the printed coefficients (h_x x as
+  x₀ • h_x, ⟨h_x, u⟩ as a vector of ℝ¹, A_{μ^U} as ex55Crowd on the U-marginal). Quantifiers: as
+  for ex_concrete_i_wp; Cstab sees ε and h_x only through L, as "enlarges the Lipschitz constant
+  only" and the ε-free constants α = 1, β₁, β₂ require; no smallness on ε; the uses at 513–518
+  need existence at each ε > 0 and uniqueness in 𝕊 at ε = 0, both stated. Representation choices:
+  as for ex_concrete_i_wp. Broader only in hypotheses: ν ≠ 0 is not assumed (every σ-finite ν,
+  ν = 0 included); the printed claim is the instance ν ≠ 0. Since the earlier reading (broader,
+  for the same reason): the (3.1) conjunct is new and correctly quantified. Verdict:
+  BROADER-ONLY-IN-HYPOTHESES.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_wp ed839d34f480cba12a7e836c6aa08b45 by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:abstract@4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
+
+* `MVFBSDEJ.PaperSpec.cor_margin_channels` (`A:sec3:margin-paragraph`). Reading at `1f67672`.
+  A:sec3:margin-paragraph (`03-main-results.tex` 280–282): "by the reduction of Remark 2.10, a
+  margin in (2.13) forces every channel of the baseline to be strictly dissipative". A margin is
+  `c > 0` (`02-model-assumptions.tex` 289, 308) and the baseline's constants are those of
+  Assumption 2.5, `β₁, β₂ ≥ 0`. The proposition: in the standing setting, for `β₁, β₂ ≥ 0`, `c > 0`
+  and (2.13) with these constants, at almost every `t ∈ [0, T]` and for all diagonal inputs: with
+  `δY = δZ = δU = 0`, `𝔼⟨−δf, GδX⟩ ≤ −c 𝔼|δX|²`; with `δX = δZ = δU = 0`,
+  `𝔼⟨δb, GᵀδY⟩ ≤ −c 𝔼|δY|²`; with `δX = δY = δU = 0`, `𝔼⟨δσ, GᵀδZ⟩_F ≤ −c 𝔼|δZ|²_F`; with
+  `δX = δY = δZ = 0`, `𝔼 ∫_E ⟨δh, GᵀδU⟩ dν ≤ −c 𝔼‖δU‖²`: each channel strictly dissipative with
+  constant `c`, in the unweighted form of (2.13). Representation choices: "channel" is the pairing
+  with the other three differences zero, the reduction of Remark 2.10; the zero differences hold at
+  every `ω`, as in `rem_beta1_dich`. Verdict: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.cor_margin_channels ed839d34f480cba13af3fe1b29f300fd by=claude-author source=A:sec3:margin-paragraph@23dc0984d55a23cd584d56a864ed5056b9fb123935603b3cc75fbe8fccdf422d -->
+
+* Review by claude-auditor of `MVFBSDEJ.PaperSpec.cor_margin_channels` (`A:sec3:margin-paragraph`).
+  Reading at `1f67672`.
+  A:sec3:margin-paragraph (03-main-results.tex 280–290, first sentence 280–282): "by the
+  reduction of Remark 2.10, a margin in (2.13) forces every channel of the baseline to be
+  strictly dissipative"; the baseline is that of Corollary 3.6 (m = n, Assumptions 2.2–2.5 with
+  admissible β₁, β₂ ≥ 0, margin c_diss > 0 in (2.13)), and the reduction (Remark 2.10, 265–271)
+  sets the other three channel differences to zero. The proposition, in the standing setting
+  with general n, m, d, every T, β₁, β₂, c, every G and coefficient system C: if β₁, β₂ ≥ 0,
+  c > 0 and Margin213(G, β₁, β₂, c, C), then for a.e. t ∈ [0, T] and all
+  (Θ, μ), (Θ', μ') ∈ 𝒟_t: δY = δZ = δU = 0 gives 𝔼⟨−δf, GδX⟩ ≤ −c𝔼|δX|²; δX = δZ = δU = 0 gives
+  𝔼⟨δb, GᵀδY⟩ ≤ −c𝔼|δY|²; δX = δY = δU = 0 gives 𝔼⟨δσ, GᵀδZ⟩_F ≤ −c𝔼|δZ|²_F; δX = δY = δZ = 0
+  gives 𝔼∫_E⟨δh(e), GᵀδU(e)⟩ν(de) ≤ −c𝔼‖δU‖². Representation choices: "strictly dissipative" as
+  the channel inequality with the margin constant c > 0 (the weighted β-terms dropped using
+  β ≥ 0); "every channel" as the four channels; the other differences required to vanish at every
+  ω, equivalent to almost surely (redefining Θ' on the measurable set where they differ keeps it
+  in 𝒟_t with the same law and the same integrals). Broader only in hypotheses: m = n, the full
+  rank of G and Assumptions 2.2–2.5 of the baseline are not assumed, only (2.13) with admissible
+  constants. Since the earlier reading (broader, then stated with the full right-hand side for
+  all constants): it now assumes β₁, β₂ ≥ 0 and c > 0, both printed (admissible constants, a
+  margin), and concludes with −c only, still the printed sentence. Verdict:
+  BROADER-ONLY-IN-HYPOTHESES.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.cor_margin_channels ed839d34f480cba13af3fe1b29f300fd by=claude-auditor source=A:sec3:margin-paragraph@23dc0984d55a23cd584d56a864ed5056b9fb123935603b3cc75fbe8fccdf422d -->
+
+* `MVFBSDEJ.PaperSpec.eq_zeromean` (`A:eq:zeromean`). Reading at `1f67672`. A:eq:zeromean
+  (`02-model-assumptions.tex` 21–25): `𝔼 ∫_0^T ∫_E ψ_s(e) Ñ(ds, de) = 0` whenever
+  `𝔼 ∫_0^T ∫_E |ψ_s(e)| ν(de) ds < ∞`, for `ψ` predictable (the setting of (2.1)): the
+  expectation exists and vanishes. The proposition: for `ψ` measurable for the marked predictable
+  σ-algebra of the filtration of §2 with the finiteness hypothesis, the pathwise compensated
+  integral `∫_{(0, T] × E} ψ dN − ∫_0^T ∫_E ψ ν(de) ds` is integrable and its integral is `0`.
+  Representation choices: the compensated integral of an integrable integrand is read pathwise,
+  as the difference of the `N`-integral and the compensator. The integrability conjunct removes
+  the reading of the Bochner junk value `0`. Verdict: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.eq_zeromean ed839d34f480cba12cbf7dd6f90dc98c by=claude-author source=A:eq:zeromean@4a8de4ef68a42a19524cd25d158243c45a32a31e55ce45fb91402f26631627ea -->
+
+* Review by claude-auditor of `MVFBSDEJ.PaperSpec.eq_zeromean` (`A:eq:zeromean`). Reading at
+  `1f67672`. A:eq:zeromean
+  (02-model-assumptions.tex 13–25): in the setting of §2 (the filtration the usual augmentation
+  of the one generated by W, N and an independent ℱ₀; ν σ-finite), with Ñ := N − dt ν, for
+  predictable ψ (the "predictable ψ" of line 14, without its sign condition) with
+  𝔼 ∫_0^T ∫_E |ψ_s(e)| ν(de) ds < ∞, 𝔼 ∫_0^T ∫_E ψ_s(e) Ñ(ds, de) = 0. The proposition: for every
+  Lévy driver D, every 𝒢₀ ≤ ℱ independent of the driver, every T ∈ ℝ and every real ψ on
+  Ω × ℝ × E measurable for the marked predictable σ-algebra of enlJoint 𝒢₀ D (the usual
+  augmentation of ℱ^{W,N}_t ∨ 𝒢₀), if ∫⁻ ω ∫⁻_{(0,T]} ∫⁻_E |ψ| dν ds dP < ∞, then
+  ω ↦ ∫_{(0,T]×E} ψ dN(ω) − ∫_{(0,T]} ∫_E ψ dν ds is integrable and its mean is 0.
+  Representation choices: the compensated integral of an L¹ integrand is read pathwise, as the
+  integral against N minus its compensator, which is what Ñ := N − dt ν means for such
+  integrands and the form in which the proof of Lemma 4.1 uses (2.2) (M², lines 179–186 of
+  04-proof-wellposedness.tex); its agreement with the L² compensated integral when both exist is
+  not part of the claim and is not printed here; ψ is scalar (a vector ψ coordinatewise);
+  "predictable" is measurability for the σ-algebra generated by F × (r, q] × B, F ∈ ℱ_r, ν(B) <
+  ∞, which off time 0 is 𝒫 ⊗ ℰ for σ-finite ν; time runs over (0, T], and N does not charge
+  {0} × E almost surely. Broader than printed only by dropped hypotheses: any T ∈ ℝ, any d
+  (also 0), E not assumed countably generated. Earlier reading: the conclusion was the mean
+  alone; the restatement adds the integrability conjunct, which matters because the Bochner mean
+  of a non-integrable function is 0 by convention, so the mean alone could hold vacuously.
+  Verdict: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.eq_zeromean ed839d34f480cba12cbf7dd6f90dc98c by=claude-auditor source=A:eq:zeromean@4a8de4ef68a42a19524cd25d158243c45a32a31e55ce45fb91402f26631627ea -->
+
+* `MVFBSDEJ.PaperSpec.ex_expfunc_limin` (`A:ex:expfunc`, `A:intro:limin-comparison`,
+  `A:sec5:overview`). Reading at `1f67672`. A:ex:expfunc (`05-examples.tex` 223–250): the class
+  of Example 5.3 (measurable `φ̄`, Lipschitz in `(θ, θ')` uniformly in `t`, line 212) contains the
+  deterministic-coefficient, finite-activity independent-copy interactions of Li and Min: for
+  their kernel `ψ̄`, Lipschitz with a constant uniform in `t` for the Euclidean norm on each block,
+  `φ̄(t, θ, θ') = ∫_E ψ̄(t, x, y, z, u(e), x', y', z', u'(e)) ν(de)` is finite, Lipschitz on
+  `H × H` with constant `Lip(ψ̄) max{ν(E), ν(E)^{1/2}}`, and well defined on classes.
+  A:intro:limin-comparison (line 66): "Example 5.3 details the embedding of their interaction
+  class". A:sec5:overview: the kernels of the independent-copy interactions embed in the class.
+  The proposition: for `ν` finite on a countably generated space and `ψ̄` jointly measurable and
+  Lipschitz as printed, `(t, θ, θ') ↦ φ̄(t, θ, θ')` is measurable on `ℝ × H × H`, and at every `t`
+  the integrand is `ν`-integrable, the Lipschitz bound holds with the printed constant, and
+  changing `u, u'` on `ν`-null sets does not change `φ̄`. Representation choices: the time
+  interval `[0, T]` is extended to `ℝ`; the joint measurability of `ψ̄` is not printed among the
+  hypotheses of lines 225–230 and is read from the measurable coefficients of the cited
+  interactions (line 223), without it the measurability conclusion fails (a kernel `1_N(t)`, `N`
+  not Borel); the printed origin integrability of `ψ̄` is not assumed (the conclusions do not need
+  it). Verdict: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_limin ed839d34f480cba1953e11aa74b157a5 by=claude-author source=A:ex:expfunc@6ba8e9a8bd4a3a1d756a510bfc8571612af5e4c854e3bd45a28c1b5172afaaad source=A:intro:limin-comparison@28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
+
+* Review by claude-auditor of `MVFBSDEJ.PaperSpec.ex_expfunc_limin` (`A:ex:expfunc`,
+  `A:intro:limin-comparison`,
+  `A:sec5:overview`). Reading at `1f67672`. A:ex:expfunc (05-examples.tex 223–250): "this class
+  contains the deterministic-coefficient, finite-activity independent-copy interactions of
+  [LiMin]"; ψ̄, "the two-point kernel of their drift, diffusion or driver", is Lipschitz in all
+  arguments except t, uniformly in t, for the Euclidean norm on each block (x, y, z, u(e)),
+  (x', y', z', u'(e)), with ψ̄(·, 0, …, 0) ∈ L²(0, T); then φ̄(t, θ, θ') =
+  ∫_E ψ̄(t, x, y, z, u(e), x', y', z', u'(e)) ν(de) is finite at every (θ, θ'), Lipschitz with
+  constant Lip(ψ̄) max{ν(E), ν(E)^{1/2}} in the sum of the two H-distances (finite when
+  ν(E) < ∞), and well defined on equivalence classes. A:intro:limin-comparison
+  (01-introduction.tex 58–66): "Example 5.3 details the embedding of their interaction class".
+  A:sec5:overview (05-examples.tex 13–14): Example 5.3 recovers the expectation-functional
+  subclass of [LiMin]. The proposition, for finite ν on a countably generated E, all n, m, d, k,
+  ψ̄ : ℝ × B × B → ℝᵏ (B = ℝⁿ × ℝᵐ × ℝ^{m×d} × ℝᵐ) jointly measurable with
+  ‖ψ̄(t, a, a') − ψ̄(t, b, b')‖ ≤ Lip(|a − b|_B + |a' − b'|_B) for every t, Lip ≥ 0: φ̄ is
+  measurable on ℝ × H × H; and at every t the integrand is ν-integrable at all θ, θ', the printed
+  Lipschitz bound holds, and ν-a.e. equal representatives of u, u' give the same φ̄. That is the
+  membership of φ̄ in the class of ex_expfunc (measurable, Lipschitz uniformly in t), which is
+  what the intro and overview sentences take from it. Representation choices: t ∈ ℝ for [0, T];
+  values in ℝᵏ (ℝ^{n×d} as k = nd); the two block norms summed, as the printed constant and the
+  sum form of the conclusion indicate. Hypothesis read from context, not printed at 225–230: the
+  joint measurability of ψ̄ (disclosed in the scope note, taken from "their" coefficients). It is
+  needed for the measurability conjunct: ψ̄(t, a, a') = 1_N(t) min{|x|, 1} with N ⊂ ℝ not
+  Lebesgue measurable is Lipschitz with constant 1 off t, has origin value 0, and gives
+  φ̄ = ν(E) 1_N(t) min{|x|, 1}, not measurable; given the Lipschitz bound, joint measurability is
+  equivalent to measurability of t ↦ ψ̄(t, a, a') at each (a, a') (Carathéodory), so the reading
+  is the minimal one. Broader in printed hypotheses: ψ̄(·, 0, …, 0) ∈ L²(0, T) is not assumed
+  (it serves Assumption 2.2 of the full system, which line 220–221 leaves to that system). Since
+  the earlier reading (broader; no measurability of ψ̄ assumed, none of φ̄ concluded): the
+  joint-measurability hypothesis and the measurability conclusion are new. Verdict:
+  BROADER-ONLY-IN-HYPOTHESES as to the printed hypotheses, with one hypothesis (joint
+  measurability of ψ̄) read from the passage's reference to the coefficients of [LiMin].
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_limin ed839d34f480cba1953e11aa74b157a5 by=claude-auditor source=A:ex:expfunc@6ba8e9a8bd4a3a1d756a510bfc8571612af5e4c854e3bd45a28c1b5172afaaad source=A:intro:limin-comparison@28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
+
+* `MVFBSDEJ.PaperSpec.ex_fulllaw_affineQ` (`A:ex:fulllaw`). Reading at `1f67672`. A:ex:fulllaw
+  (`05-examples.tex` 314–318): if `Q(s) = a + Σ_j c_j s_j` on the attained range of the feature
+  vector, the `Q`-term equals `∫_H (a + Σ_j c_j φ_j(u')) μ(dθ')`, "an expectation functional
+  already covered by Example 5.3": its kernel belongs to the class of Example 5.3. The
+  proposition: for features `φ_j` with `|φ_j(u) − φ_j(u')| ≤ K_j ‖u − u'‖` and `Q` affine on the
+  attained range, the identity at every `μ ∈ P₂(H)`, the measurability of
+  `θ' ↦ a + Σ_j c_j φ_j(u')` on `H`, and its Lipschitz bound for `|·|_H` with constant
+  `Σ_j |c_j| |K_j|`. Representation choices: the kernel depends on `θ'` only, so the class
+  conditions of Example 5.3 reduce to measurability and the Lipschitz bound in `θ'`; `|K_j|` in
+  the constant covers a trivial `L²(ν)`. Verdict: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_affineQ ed839d34f480cba1c1d675ce00419b85 by=claude-author source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 -->
+
+* Review by claude-auditor of `MVFBSDEJ.PaperSpec.ex_fulllaw_affineQ` (`A:ex:fulllaw`). Reading at
+  `1f67672`. A:ex:fulllaw
+  (05-examples.tex 274–318, the sentence at 314–318): in Example 5.4 (m = n, ν ≠ 0, features
+  φ_j : L²(ν) → ℝ and Q : ℝ^J → ℝ bounded and Lipschitz), if Q(s) = a + Σ_j c_j s_j on the
+  attained range of the feature vector (∫ φ₁ dμ^U, …, ∫ φ_J dμ^U), "the Q-term equals
+  ∫_H (a + Σ_j c_j φ_j(u')) μ(dθ'), an expectation functional already covered by Example 5.3".
+  The proposition, for every σ-finite ν on a countably generated E and all n, m, d, J, Q, φ, K,
+  a, c: if each φ_j is K_j-Lipschitz on L²(ν; ℝᵐ) and Q((∫ φ_j dμ^U)_j) = a + Σ_j c_j ∫ φ_j dμ^U
+  for every μ ∈ P₂(H), then (a) Q((∫ φ_j dμ^U)_j) = ∫_H (a + Σ_j c_j φ_j(u')) μ(dθ') for every μ;
+  (b) the kernel θ' ↦ a + Σ_j c_j φ_j(u') is measurable on H; (c) it is Lipschitz for |·|_H with
+  constant Σ_j |c_j||K_j|. Representation choices: "attained range" as the feature vectors of
+  all μ ∈ P₂(H), the domain of the coefficient (a range attained only along a solution would not
+  make the coefficient an expectation functional); the Q-term as the scalar Q(…), the factor
+  ε w₁ being linear; "covered by Example 5.3" as (b)–(c), the class hypotheses of ex_expfunc for
+  a kernel constant in t and θ, with an explicit constant the passage does not print. Broader
+  only in hypotheses: the boundedness of the φ_j and of Q, the Lipschitz bound of Q, m = n and
+  ν ≠ 0 are not assumed. Since the earlier reading (broader; "already covered by Example 5.3"
+  then not a conjunct): (b) and (c) now state it. Verdict: BROADER-ONLY-IN-HYPOTHESES.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_affineQ ed839d34f480cba1c1d675ce00419b85 by=claude-auditor source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 -->
+
+* `MVFBSDEJ.PaperSpec.ex_dealer_affine` (`A:ex:dealer`). Reading at `1f67672`. A:ex:dealer
+  (`05-examples.tex` 457–461): the crowding correction is affine in the population law,
+  `A_{sλ₁ + (1 − s)λ₂} = s A_{λ₁} + (1 − s) A_{λ₂}`, and "an expectation kernel in the sense of
+  Example 5.3, with L²(ν) in the role of K". The proposition: the affinity in the law, for
+  `λ₁, λ₂ ∈ P₂(L²(ν))` and `s ∈ [0, 1]`; the representation `A_{μ^U}(u) = ∫_H ∇V(u − u') μ(dθ')`;
+  the measurability of the kernel `(θ, θ') ↦ ∇V(u − u')` on `H × H`; and its Lipschitz bound
+  `‖∇V(u₁ − u₁') − ∇V(u₂ − u₂')‖ ≤ |θ₁ − θ₂|_H + |θ₁' − θ₂'|_H`. Representation choices: the kernel
+  is time independent; the origin condition of the jump class of Example 5.3 holds since the
+  kernel at the origin is `∇V(0) = 0`, which the clause does not state separately. Verdict:
+  faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_affine ed839d34f480cba1408ee1757b6dd96f by=claude-author source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+
+* Review by claude-auditor of `MVFBSDEJ.PaperSpec.ex_dealer_affine` (`A:ex:dealer`). Reading at
+  `1f67672`. A:ex:dealer
+  (05-examples.tex 458–462, with A_λ at 363–364 and ν ≠ 0 from line 22): the crowding correction
+  A_λ(u) = ∫ ∇V(u − v) λ(dv), ∇V(w) = w/√(1 + ‖w‖²), is "affine in their population law:
+  A_{sλ₁+(1−s)λ₂} = s A_{λ₁} + (1 − s) A_{λ₂} for s ∈ [0, 1]", and "an expectation kernel in the
+  sense of Example 5.3, with L²(ν) in the role of K"; Example 5.3 (211–271) asks of such a kernel
+  measurability and Lipschitz continuity in (θ, θ'), (2.10) then applying with K = L²(ν). The
+  proposition, for every σ-finite ν on a countably generated E: (a) for all λ₁, λ₂ ∈ P₂(L²(ν)),
+  s ∈ [0, 1] and u, A at the mixture ofReal(s)λ₁ + ofReal(1 − s)λ₂ equals
+  s A_{λ₁}(u) + (1 − s) A_{λ₂}(u); (b) for μ ∈ P₂(H) (n = m = d = 1) and u,
+  A_{μ^U}(u) = ∫_H ∇V(u − u') μ(dθ'); (c) the kernel (θ, θ') ↦ ∇V(u − u') is measurable on H × H;
+  (d) ‖∇V(u₁ − u₁') − ∇V(u₂ − u₂')‖ ≤ |θ₁ − θ₂|_H + |θ₁' − θ₂'|_H. Representation choices: λ₁, λ₂
+  arbitrary laws (the passage reuses the names of its two-point laws, but "affine in the
+  population law" is the general identity, of which the two-point case is an instance); the
+  mixture as a measure; "expectation kernel in the sense of Example 5.3" as (b)–(d), the
+  hypotheses of the jump form of Example 5.3 (ex_expfunc_jump) with C = 1 and no time argument;
+  the origin value ∇V(0) = 0 named in the scope note is not stated, being immediate from the
+  definition. Broader only in hypotheses: ν ≠ 0 is not assumed. Since the earlier reading
+  (broader): conjunct (c), the measurability Example 5.3 asks, is new. Verdict:
+  BROADER-ONLY-IN-HYPOTHESES.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_dealer_affine ed839d34f480cba1408ee1757b6dd96f by=claude-auditor source=A:ex:dealer@08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b -->
+
+* `MVFBSDEJ.PaperSpec.eq_bwddiff_identity` (`A:eq:bwddiff`). Reading at `1f67672`. A:eq:bwddiff
+  (`04-proof-wellposedness.tex` 391–407): the difference of (4.8) at the two trials is (4.4) with
+  `δξ = δξ̄` and `φ_s = λ δf_s`; `δȲ` is càdlàg adapted, `(δZ̄, δŪ) ∈ H²_W × H²_N`,
+  `δξ̄ ∈ L²(ℱ_T)` and `λ δf ∈ L²(Ω × [0, T])`: the hypotheses of Lemma 4.1. The proposition: under
+  the hypotheses of Lemma 4.2, for `λ ∈ [0, 1]`, a forcing of (4.1), two trials of 𝕊 and their
+  frozen steps, for each coordinate `k`: the linear backward equation (`LinearBSDEJ`, with its
+  progressive integrands of finite energy, the square-integrable terminal value and the adapted
+  right-continuous `δȲ`), `δZ̄` predictable, `δŪ` marked predictable, left limits of every path of
+  `δȲ` on `(0, T]`, and `δξ̄` ℱ_T-measurable: each hypothesis of `lem_bpbsde`. Representation
+  choices: the coordinates are stated one at a time; `H²_W × H²_N` membership is predictability
+  and finite energy with vanishing off `[0, T]`. Verdict: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.eq_bwddiff_identity ed839d34f480cba1f2119b522467db18 by=claude-author source=A:eq:bwddiff@ca58096655e5e6b70fd088ebf4b2b03e622b17d584f98ab52e438e1f35e7dfaa -->
+
+* Review by claude-auditor of `MVFBSDEJ.PaperSpec.eq_bwddiff_identity` (`A:eq:bwddiff`). Reading at
+  `1f67672`.
+  A:eq:bwddiff (04-proof-wellposedness.tex 391–424), lines 391–407: in Step 4 of the proof of
+  Lemma 4.2 (Assumptions 2.2–2.3, λ ∈ [0, 1], a forcing q, trials Θ¹, Θ² ∈ 𝕊 and
+  Θ̄ᵏ = Φ_λ(Θᵏ) ∈ 𝕊), the difference of (4.8), q^g_T and q^f cancelling, is δȲ_t = δξ̄ +
+  ∫_t^T λ δf_s ds − ∫_t^T δZ̄_s dW_s − ∫_t^T ∫_E δŪ_s(e) Ñ(ds, de), which is (4.4) with
+  δξ = δξ̄ = λ[g(X̄¹_T, Law X̄¹_T) − g(X̄²_T, Law X̄²_T)] (line 378) and φ_s = λ δf_s; δȲ is
+  càdlàg adapted, (δZ̄, δŪ) ∈ H²_W × H²_N, δξ̄ ∈ L²(ℱ_T), λ δf ∈ L²(Ω × [0, T]). The proposition:
+  for every setting with 𝒢₀ independent, n, m, d ≥ 1, T > 0, JointBorel, Assumption22,
+  Assumption23 (L), λ ∈ [0, 1], a PredForcing q, Θ¹, Θ² with HTuple and FrozenStep Θᵏ ↦ Θ̄ᵏ
+  with the same λ, ξ₀, q: for each coordinate k, LinearBSDEJ holds for (δȲ_k, δZ̄_k, δŪ_k) with
+  terminal value λ(g(X̄¹_T, Law X̄¹_T)_k − g(X̄²_T, Law X̄²_T)_k) and drift λ(f¹ − f²)_k at the
+  trials and their laws (the identity almost surely at each t ∈ [0, T]; δZ̄, δŪ and the drift
+  jointly and progressively measurable, vanishing off [0, T], of finite energy; terminal value
+  in L²; δȲ adapted with every path right-continuous), and δZ̄ is predictable, δŪ marked
+  predictable, every path of δȲ has left limits on (0, T] and the terminal value is
+  ℱ_T-measurable. Representation choices: coordinatewise; the identity at each t almost surely;
+  Φ_λ(Θ) as any tuple solving (4.7) and (4.8) in 𝕊 (FrozenStep), the constructed one up to
+  indistinguishability; LinearBSDEJ asks adaptedness and right-continuity at every real time
+  (inherited from the LinearBSDEJ of each Ȳᵏ inside FrozenStep, a normalisation off [0, T]) and
+  progressive measurability of λ δf, which the passage does not ask. The conclusion supplies,
+  coordinatewise, every hypothesis of lem_bpbsde. Neither broader nor narrower. Earlier reading:
+  the earlier version stated LinearBSDEJ alone, and the second earlier reading recorded that the
+  predictability of δZ̄, δŪ, the left limits of δȲ and the ℱ_T-measurability of δξ̄ were left
+  implicit; the restatement adds the four as conjuncts, closing that difference. Verdict:
+  faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.eq_bwddiff_identity ed839d34f480cba1f2119b522467db18 by=claude-auditor source=A:eq:bwddiff@ca58096655e5e6b70fd088ebf4b2b03e622b17d584f98ab52e438e1f35e7dfaa -->
+
+* `MVFBSDEJ.PaperSpec.lem_bpbsde_explicit` (`A:eq:supE`). Reading at `1f67672`. A:eq:supE
+  (`04-proof-wellposedness.tex` 219–246, with 213–215): the proof of Lemma 4.1 ends with
+  `𝔼 sup|δY|² + 𝔼 ∫ (|δZ|²_F + ‖δU‖²) ≤ C_BP (𝔼|δξ|² + 𝔼 ∫ |φ|²)`,
+  `C_BP := C₀(5 + 4c_BDG) + 4T`, `C₀ = 2e^T`, "depends only on T and c_BDG", with `c_BDG` one
+  universal constant of the Burkholder–Davis–Gundy inequality at `p = 1` and `p = 2`, Doob's
+  inequality giving the constant `4` at `p = 2` (lines 29–35), so every admissible value is at
+  least `4`. The proposition: for every `c ≥ 4`, under the hypotheses of `lem_bpbsde`,
+  `𝔼 sup|δY|² < ∞` and the estimate holds with `2e^T(5 + 4c) + 4T`. Representation choices: the
+  value of `c_BDG` is not fixed by the paper; the proposition holds at every value the printed
+  argument admits; the estimate is read in `[0, ∞]`. Verdict: faithful with representation
+  choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.lem_bpbsde_explicit ed839d34f480cba14ca24ca0f7d3456f by=claude-author source=A:eq:supE@69066031ecb004372ea47f44623161352a6f6ead47cb3d38fdb991579e47bd8f -->
+
+* Review by claude-auditor of `MVFBSDEJ.PaperSpec.lem_bpbsde_explicit` (`A:eq:supE`). Reading at
+  `1f67672`, of the version
+  with `∀ c : ℝ, 4 ≤ c →`. A:eq:supE (paper/sections/04-proof-wellposedness.tex 188–246; this
+  clause reads 213–246, under Lemma 4.1 at 89–102 and the conventions at 27–35): under the
+  hypotheses of Lemma 4.1 — δY càdlàg adapted ℝᵐ-valued, δZ ∈ H²_W, δU ∈ H²_N, δξ ∈ L²(ℱ_T),
+  φ ∈ L²(Ω × [0, T]) with no adaptedness asked, and (4.4) δY_t = δξ + ∫_t^T φ_s ds
+  − ∫_t^T δZ_s dW_s − ∫_t^T ∫_E δU_s(e) Ñ(ds, de) — (4.6) gives sup_t 𝔼|δY_t|²
+  + 𝔼 ∫_0^T (|δZ_s|²_F + ‖δU_s‖²) ds ≤ C₀ (𝔼|δξ|² + 𝔼 ∫_0^T |φ_s|² ds), C₀ = 2e^T (lines
+  213–215); the forward form (line 222), Cauchy–Schwarz and BDG at p = 2 on the two martingales
+  (lines 226–233) and (4.6) (lines 234–243) give 𝔼 sup_{t≤T} |δY_t|² + 𝔼 ∫_0^T (|δZ_s|²_F
+  + ‖δU_s‖²) ds ≤ C_BP (𝔼|δξ|² + 𝔼 ∫_0^T |φ_s|² ds), C_BP := C₀(5 + 4 c_BDG) + 4T (line 244),
+  "depending only on T and c_BDG" (line 246). Lines 29–35: BDG in quadratic-variation form at
+  p = 1 (zero means) and p = 2 (squared suprema), "at p = 2 Doob's inequality gives the constant 4",
+  "with one universal constant c_BDG valid at both exponents"; no other value is given. The
+  proposition: for every real c ≥ 4, every basis of §2 (enlJoint over a Lévy driver, 𝒢₀
+  independent of the driver), m, d ≥ 1, T > 0 and δξ, φ, δY, δZ, δU under the hypotheses of
+  `lem_bpbsde` (the same term, constant aside, as I checked by comparing the two bodies),
+  𝔼 sup_{t∈[0,T]} |δY_t|² < ∞ and 𝔼 sup |δY|² + Σ_{k,j} 𝔼 ∫_0^T δZ_{kj}² ds
+  + Σ_k 𝔼 ∫_0^T ∫_E δU_k² ν(de) ds ≤ (2e^T (5 + 4c) + 4T) (𝔼|δξ|² + Σ_k 𝔼 ∫_0^T φ_k² ds) in
+  [0, ∞]. Representation choices: those of `lem_bpbsde` (coordinate processes; δY adapted at every
+  t ∈ [0, T], every path right-continuous on [0, T) with left limits on (0, T]; δZ predictable, δU
+  marked predictable, both zero off [0, T] with finite energies; δξ ℱ_T-measurable and in L²; φ
+  jointly measurable with finite energy and not adapted, as printed; (4.4) almost surely at each
+  t ∈ [0, T], ∫_t^T as the difference of the integrals at T and at t; expectations as lower
+  integrals); c_BDG, which has no definition, is read as any real c ≥ 4. The right-hand side
+  increases with c, so the proposition is its instance c = 4, C_BP = 42e^T + 4T, the constant of
+  line 244 with Doob's 4 (line 33) in the one step where c_BDG enters it (line 232). Every value
+  c_BDG can take is at least 4 (Doob's L² constant 4 is sharp, so no smaller constant is valid at
+  p = 2), so the proposition implies the printed claim whatever c_BDG is. Conversely it asks
+  nothing the passage's argument does not give: c_BDG enters C_BP only through the p = 2 step at
+  line 232, where every c ≥ 4 is valid by line 33, and the p = 1 uses (lines 153–172) serve only
+  the zero means, not the constant. The one gap from the literal wording is that c is not
+  required to be valid at p = 1. If the p = 1 constant exceeded 4, the values c below it would not
+  be values of c_BDG, yet the printed proof still gives the bound at them. So the proposition is
+  the passage's proof read at its own admissible constants, not a strengthening. Neither narrower
+  nor broader than printed beyond that reading. Against my earlier reading: the threshold is now
+  the passage's own number, and the c ∈ [1, 4) strengthening is gone. Docstring: matches the term;
+  "the values of the constant c_BDG that Doob's constant 4 at p = 2 admits" describes c ≥ 4
+  correctly for the p = 2 step (it is silent on p = 1, as the term is); "for m ≥ 1 and T > 0"
+  leaves d ≥ 1 to "in the standing setting" (§2 line 3), as `lem_bpbsde` does; the module-list
+  label "Lemma 4.1 with the constant C_BP of its proof" (Sec4.lean line 16) now fits. The clause
+  name in claims.json ("for every c ≥ 4, the values of c_BDG that Doob's constant 4 admits") agrees.
+  Verdict: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.lem_bpbsde_explicit ed839d34f480cba14ca24ca0f7d3456f by=claude-auditor source=A:eq:supE@69066031ecb004372ea47f44623161352a6f6ead47cb3d38fdb991579e47bd8f -->
+
+* `MVFBSDEJ.PaperSpec.sec4_diag_input` (`A:eq:dX`, `A:eq:coeffdiff`). Reading at `1f67672`.
+  A:eq:dX (`04-proof-wellposedness.tex` 523–525): for a.e. `t` each pair `(Θᵏ_t, μᵏ_t)` of the
+  solutions of Lemma 4.3, which lie in `ℍ²` (lines 492–498), is a diagonal input,
+  `Θᵏ_t ∈ L²(Ω, ℱ_t; H)` for a.e. `t` by Fubini. A:eq:coeffdiff (326–327): the pairs
+  `(Θᵏ_s, μ^{Θᵏ}_s)` of the trials of Lemma 4.2, in 𝕊, are diagonal inputs, to which
+  Assumption 2.3 is applied. The proposition: in the standing setting, for `T > 0` and every tuple
+  `Θ` of `ℍ²` (`PaperWeakTuple`), at almost every `t ∈ [0, T]` the pair `(Θ_t, lawP2 P Θ_t)` lies
+  in `𝒟_t`. Representation choices: stated for every tuple of `ℍ²`, which covers both the
+  solutions of Lemma 4.3 and the trials of Lemma 4.2 (`𝕊 ⊂ ℍ²`); `lawP2 P Θ_t` is the law where
+  `Θ_t ∈ L²`, which holds at those times. Verdict: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.sec4_diag_input ed839d34f480cba15bebe71c8fc292d1 by=claude-author source=A:eq:coeffdiff@dbfe072b5d719a544ec43b251110f77f32c3ceb9a4d075f5cbdefe4a901196bd source=A:eq:dX@9dd172cef01f1026aa495e51fb68721f4460fd5f4d55467771aae4ff86cab79b -->
+
+* Review by claude-auditor of `MVFBSDEJ.PaperSpec.sec4_diag_input` (`A:eq:coeffdiff`, `A:eq:dX`).
+  Reading at `1f67672`.
+  A:eq:coeffdiff (04-proof-wellposedness.tex 312–348; this clause reads 325–327, with the trials
+  of lines 258–260 and 312): in the contraction step of Lemma 4.2, for two trials Θ¹, Θ² ∈ 𝕊 with
+  μ^{Θᵏ}_s := Law(Θᵏ_s), Assumption 2.3 is "applied to the diagonal inputs (Θ¹_s, μ^{Θ¹}_s) and
+  (Θ²_s, μ^{Θ²}_s)". The sentence prints no "a.e.", but Definition 2.1 needs
+  Θᵏ_s ∈ L²(Ω, ℱ_s; H), which for the Z- and U-components of a tuple of 𝕊 holds only at a.e. s,
+  and Assumption 2.3 is itself imposed at a.e. t; the a.e. reading is the passage's content.
+  A:eq:dX (same file 511–533; this clause reads 517–526, under Lemma 4.3 at 490–509): for the two
+  solutions of Lemma 4.3 — X^k, Y^k càdlàg adapted with 𝔼 ∫_0^T (|X^k_t|² + |Y^k_t|²) dt < ∞,
+  X^k_T ∈ L², Z^k ∈ H²_W, U^k ∈ H²_N, that is Θᵏ ∈ ℍ² with X^k_T ∈ L² — "for a.e. t each pair
+  (Θᵏ_t, μᵏ_t) is a diagonal input in the sense of Definition 2.1: Θᵏ_t ∈ L²(Ω, ℱ_t; H) for a.e. t
+  by Fubini", with μᵏ_t := Law(Θᵏ_t) (line 522), "the Borel law flow of Lemma A.1" (lines
+  525–526). Definition 2.1 (02-model-assumptions.tex 58–67): (Θ, μ) ∈ 𝒟_t when
+  Θ ∈ L²(Ω, ℱ_t; H) and μ = Law(Θ) ∈ 𝒫₂(H). The proposition: in the standing setting (enlJoint
+  over a Lévy driver, 𝒢₀ independent of it), for T > 0, any n, m, d and every (X, Y, Z, U) with
+  `PaperWeakTuple` over enlJoint (X, Y adapted at every t ∈ [0, T], every path right-continuous on
+  [0, T), almost every path with left limits on (0, T], finite 𝔼 ∫_0^T |·|²; Z predictable and U
+  marked predictable, both zero off [0, T] with finite energies), for a.e. t ∈ [0, T] the pair
+  (tupleAt t, lawP2 (tupleAt t)) lies in `diagonalInputs` at t: tupleAt t is strongly
+  ℱ_t-measurable and in L²(P; H) (the third condition, μ = lawP2 Θ, holds by construction).
+  Representation choices: H = ℝⁿ × ℝᵐ × ℝ^{m×d} × L²(ν; ℝᵐ) with the maximum of the channel norms
+  (equivalent to the Hilbert norm, so L²-membership is unchanged); the U-channel is the L²(ν) class
+  of e ↦ U_t(ω, e), 0 where that is not square integrable; "Θ ∈ L²(Ω, ℱ_t; H)" is read as strong
+  ℱ_t-measurability of this representative (stronger than having an ℱ_t-measurable version); Law
+  is `lawP2`, and the identification of the paper's Borel flow μᵏ_t with Law(Θᵏ_t) at a.e. t is
+  A:lem:lawflow, not this clause; the "solve (4.1)", X^k_T ∈ L² and Θ¹ − Θ² ∈ 𝕊 of Lemma 4.3 are
+  dropped, only almost-sure left limits are asked and n, m, d are unconstrained — all weaker
+  hypotheses than printed; the §4 encoding of a tuple of 𝕊 (`HTuple`) is `PaperWeakTuple` plus
+  more, so the trials of Lemma 4.2 are covered. Neither narrower nor broader than either passage,
+  beyond hypotheses weaker than printed. Against the earlier reading: the hypothesis is now a
+  tuple of ℍ², the class of Lemma 4.3 (lines 492–498), not `HTuple`, so the narrowing is gone;
+  the docstring now says "before (4.9) and (4.15)", which is right — eq:coeffdiff is (4.9) and
+  eq:dX is (4.15), and the diagonal-input sentences sit at lines 326–327 and 523–526, before each.
+  The docstring matches the term. Verdict: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.sec4_diag_input ed839d34f480cba15bebe71c8fc292d1 by=claude-auditor source=A:eq:coeffdiff@dbfe072b5d719a544ec43b251110f77f32c3ceb9a4d075f5cbdefe4a901196bd source=A:eq:dX@9dd172cef01f1026aa495e51fb68721f4460fd5f4d55467771aae4ff86cab79b -->
+
+* `MVFBSDEJ.PaperSpec.eq_coeffdiff_pointwise` (`A:eq:coeffdiff`). Reading at `1f67672`.
+  A:eq:coeffdiff (`04-proof-wellposedness.tex` 326–332): with
+  `S_s = |δb_s| + |δσ_s|_F + ‖δh_s‖ + |δf_s|`, Assumption 2.3 at the diagonal inputs gives
+  `S_s ≤ L(|δX_s| + |δY_s| + |δZ_s|_F + ‖δU_s‖ + W₂(μ^{Θ¹}_s, μ^{Θ²}_s))`. The proposition: under
+  the hypotheses of Lemma 4.2, for two trials of 𝕊, at almost every `s ∈ [0, T]`, almost surely,
+  the four norms of the coefficient differences at `(Θᵏ_s, Law(Θᵏ_s))` sum to at most `L` times
+  the channel norms of `Θ¹_s − Θ²_s` plus `w2H` of the two laws. Representation choices: `δh` at
+  `Θ_s`, as the paper writes it in Lemma 4.2 (line 316); "almost every `s`" for the times at which
+  both pairs are diagonal inputs and Assumption 2.3 holds. Verdict: faithful with representation
+  choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.eq_coeffdiff_pointwise ed839d34f480cba17f006ab36d1f6565 by=claude-author source=A:eq:coeffdiff@dbfe072b5d719a544ec43b251110f77f32c3ceb9a4d075f5cbdefe4a901196bd -->
+
+* Review by claude-auditor of `MVFBSDEJ.PaperSpec.eq_coeffdiff_pointwise` (`A:eq:coeffdiff`).
+  Reading at `1f67672`.
+  A:eq:coeffdiff (04-proof-wellposedness.tex 312–348), lines 325–332: for the trials
+  Θ¹, Θ² ∈ 𝕊 of Lemma 4.2 (Assumptions 2.2–2.3), with δψ_s := ψ(s, Θ¹_s, μ^{Θ¹}_s) −
+  ψ(s, Θ²_s, μ^{Θ²}_s), ψ ∈ {b, σ, h, f} (line 316: h at Θ_s, not at the predictable tuple) and
+  S_s := |δb_s| + |δσ_s|_F + ‖δh_s‖ + |δf_s|, Assumption 2.3 at the diagonal inputs gives
+  S_s ≤ L(|δX_s| + |δY_s| + |δZ_s|_F + ‖δU_s‖ + W₂(μ^{Θ¹}_s, μ^{Θ²}_s)), which holds as Assumption
+  2.3 does: for a.e. s, almost surely. The proposition: for every setting with 𝒢₀ independent,
+  n, m, d ≥ 1, T > 0, every L, C, ξ₀ with JointBorel, Assumption22 and Assumption23 (L), and
+  Θ¹, Θ² with HTuple: for a.e. s ∈ [0, T], almost surely, the sum of the norms of the four
+  coefficient differences at (Θᵏ_s(ω), Law(Θᵏ_s)) is at most L times the sum of the four channel
+  norms of Θ¹_s(ω) − Θ²_s(ω) plus w2H of the two laws. Representation choices: w2H is W₂ for the
+  Hilbert norm of H, as printed; the jump channel is ‖[U¹_s] − [U²_s]‖_{L²(ν)} of the uLift
+  classes, which is ‖δU_s‖ wherever both sections are in L²(ν), for a.e. (s, ω); exact laws;
+  JointBorel and Assumption22 are hypotheses of Lemma 4.2 that the step does not use. Neither
+  broader nor narrower. No earlier reading of this declaration (earlier readings of eq_coeffdiff
+  and eq_coeffdiff_ae used this step in their proofs without stating it). Verdict: faithful with
+  representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.eq_coeffdiff_pointwise ed839d34f480cba17f006ab36d1f6565 by=claude-auditor source=A:eq:coeffdiff@dbfe072b5d719a544ec43b251110f77f32c3ceb9a4d075f5cbdefe4a901196bd -->
+
+* `MVFBSDEJ.PaperSpec.sec3_HH_linear` (`A:sec3:HH-banach`). Reading at `1f67672`.
+  A:sec3:HH-banach (`03-main-results.tex` 26–30): `(ℍ, ‖·‖_ℍ)` is a Banach space, so in
+  particular a linear space under coordinatewise operations. The proposition: for tuples `Θ, Θ'`
+  of `ℍ²` (`PaperWeakTuple`) and `c ∈ ℝ`, the coordinatewise sum and the multiple `cΘ` are
+  tuples of `ℍ²`, and `‖Θ + Θ'‖_𝕊` and `‖cΘ‖_𝕊` are finite when `‖Θ‖_𝕊` and `‖Θ'‖_𝕊` are: the
+  space `𝕊` (tuples of `ℍ²` of finite `‖·‖_𝕊`, the paper's `ℍ`) is closed under both operations.
+  Representation choices: closure is stated for representatives, the identification of classes
+  being `sec3_HH_definite`; the operations are coordinatewise. Verdict: faithful with
+  representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.sec3_HH_linear ed839d34f480cba119d61911bc91e18d by=claude-author source=A:sec3:HH-banach@551286dac540371b521169b6e6a0e861b596438fd0ab4b196a659438efe4df1d -->
+
+* Review by claude-auditor of `MVFBSDEJ.PaperSpec.sec3_HH_linear` (`A:sec3:HH-banach`). Reading at
+  `1f67672`.
+  A:sec3:HH-banach (paper/sections/03-main-results.tex 5–32; this clause reads 26–30, with the
+  definitions of lines 5–25): 𝕊 = S²(ℝⁿ) × S²(ℝᵐ) × H²_W × H²_N (S²: càdlàg adapted with
+  𝔼 sup_{t≤T} |V_t|² < ∞), ‖Θ‖²_𝕊 = 𝔼 sup |X|² + 𝔼 sup |Y|² + 𝔼 ∫_0^T (|Z_t|²_F + ‖U_t‖²) dt; the
+  elements are classes (X, Y up to indistinguishability, Z dt ⊗ dP-a.e., U dt ⊗ dP ⊗ ν-a.e.), and
+  "under this identification ‖·‖_𝕊 is a norm rather than a seminorm, and (𝕊, ‖·‖_𝕊) is a Banach
+  space" — which presupposes that 𝕊 is a real vector space, the part this clause reads. The
+  proposition: over the filtration of §2 (enlJoint; no independence of 𝒢₀, no sign of T and no
+  dimension bound asked), for all tuples Θ, Θ' with `PaperWeakTuple`: Θ + Θ' and, for every c ∈ ℝ,
+  cΘ (coordinatewise on representatives) satisfy `PaperWeakTuple`; supSize(Θ + Θ') ≠ ⊤ when
+  supSize Θ ≠ ⊤ and supSize Θ' ≠ ⊤; and supSize(cΘ) ≠ ⊤ for every c when supSize Θ ≠ ⊤.
+  Representation choices: a tuple of 𝕊 is read, as in `sec3_HH_complete`, as a `PaperWeakTuple`
+  (ℍ²) with supSize = ‖·‖²_𝕊 finite — adapted X, Y with every path right-continuous and almost
+  every path with left limits (the a.s.-càdlàg class, adequate up to indistinguishability), the
+  finite 𝔼 ∫ |X|², 𝔼 ∫ |Y|² of ℍ² being implied by finite supSize (`sec3_HH_inclusion`); supSize is
+  ‖·‖²_𝕊 in [0, ∞] (supremum over [0, T] of the squared Euclidean norm, Z- and U-energies on
+  [0, T]); the operations act on representatives, and their compatibility with the identification
+  (the zero class is a linear subspace) is not stated here but follows from `sec3_HH_norm` with
+  `sec3_HH_definite`; the §4 encoding of 𝕊 (`HTuple`) also asks every path to have left limits, a
+  property closed under both operations but not stated by this clause. With these, the class
+  `PaperWeakTuple` ∧ supSize ≠ ⊤ is closed under sums and real multiples, which is 𝕊 being a
+  linear space; neither narrower nor broader than printed. Against the earlier reading: finiteness
+  of ‖·‖_𝕊 under both operations is now a conjunct, so the term says what the docstring's "𝕊 is a
+  linear space" says. The docstring matches the term (the term needs only ‖Θ‖_𝕊 < ∞ for
+  ‖cΘ‖_𝕊 < ∞, slightly more than the docstring's "when ‖Θ‖_𝕊 and ‖Θ'‖_𝕊 are"). Verdict: faithful
+  with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.sec3_HH_linear ed839d34f480cba119d61911bc91e18d by=claude-auditor source=A:sec3:HH-banach@551286dac540371b521169b6e6a0e861b596438fd0ab4b196a659438efe4df1d -->
+
+* `MVFBSDEJ.PaperSpec.sec4_coeff_sq` (`A:sec4:coeffint`, `A:eq:coeffint`). Reading at `1f67672`.
+  A:sec4:coeffint and A:eq:coeffint (`04-proof-wellposedness.tex` 72–74): "By Assumptions 2.2–2.3,
+  the coefficient processes (2.5) along any Θ ∈ ℍ are square-integrable", with (2.5)
+  (`02-model-assumptions.tex` 124–131) `ψ(s, Θ_s, μ_s)` for `ψ ∈ {b, σ, f}` and
+  `h(s, Θ_{s−}, e, μ⁻_s)`. The proposition: under (2.3) and Assumptions 2.2–2.3, for every tuple of
+  𝕊, the energies of the drift, diffusion and driver processes are finite, coordinatewise, and the
+  marked energy of the canonical representative of the jump coefficient at the predictable tuple
+  is finite. Representation choices: square integrability is finite energy on `[0, T]`; the jump
+  coefficient is read through `coeffJump` at `(X_{s−}, Y_{s−}, Z_s, U_s)` with the law of that
+  tuple. Verdict: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.sec4_coeff_sq ed839d34f480cba1bf34b869f35d92c1 by=claude-author source=A:sec4:coeffint@9b4835a09d4a96730317d9a3f110c73d021c07f2818d46167bfef20bf557a734 source=A:eq:coeffint@c5122bd0c06b75cd49a895770b87c8f3418f7a1732d074261410c61a8a9d5aaf -->
+
+* Review by claude-auditor of `MVFBSDEJ.PaperSpec.sec4_coeff_sq` (`A:sec4:coeffint`,
+  `A:eq:coeffint`). Reading at
+  `1f67672`. A:sec4:coeffint (04-proof-wellposedness.tex 72–85) and A:eq:coeffint (72–81) read
+  the same sentence, lines 72–74: "By Assumptions 2.2–2.3, the coefficient processes (2.5) along
+  any Θ ∈ 𝕊 are square-integrable", before (4.2) and (4.3). The processes of (2.5)
+  (02-model-assumptions.tex 124–131) are (s, ω) ↦ ψ(s, Θ_s(ω), μ_s), ψ ∈ {b, σ, f}, and
+  (s, ω, e) ↦ h(s, Θ_{s−}(ω), e, μ⁻_s), with μ, μ⁻ the Borel law flows of Lemma A.1 (lines
+  41–45); standing: (2.3), n, m, d ≥ 1, T > 0; "square-integrable" in the norms of Assumption
+  2.3. The proposition: for every setting with 𝒢₀ independent of the driver, n, m, d ≥ 1, T > 0,
+  every L, C, ξ₀ with JointBorel ((2.3)), Assumption22 and Assumption23 (constant L), and every
+  Θ with HTuple (𝕊): the energy on [0, T] of each coordinate of driftProc (b(s, Θ_s, Law Θ_s)
+  cut to [0, T]), of each entry of diffusionProc and of each coordinate of driverProc is finite,
+  and so is the marked energy of each coordinate of coeffJump at (X_{s−}, Y_{s−}, Z_s, U_s)
+  (leftLimProc), a jointly measurable representative of h(s, Θ⁻_s, ·, Law Θ⁻_s) at every
+  s ∈ [0, T]. Representation choices: the exact laws Law(Θ_s), Law(Θ⁻_s) at every s for the
+  Borel flows (equal for a.e. s by Lemma A.1, so the time integrals agree); h through a
+  representative, coordinatewise, the sum over i of the marked energies being 𝔼 ∫ ‖h‖²_{L²(ν)};
+  Θ⁻_0 takes the left limit at 0 from negative times, which HTuple leaves free (one time, no
+  effect on an energy); "square-integrable" as finiteness of lower integrals, the measurability
+  being (2.5) itself (eq_coefmeas, eq_coefmeas_jump), not restated; 𝕊 as HTuple (every path
+  càdlàg). Neither broader nor narrower than the sentence. No earlier reading. Verdict: faithful
+  with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.sec4_coeff_sq ed839d34f480cba1bf34b869f35d92c1 by=claude-auditor source=A:sec4:coeffint@9b4835a09d4a96730317d9a3f110c73d021c07f2818d46167bfef20bf557a734 source=A:eq:coeffint@c5122bd0c06b75cd49a895770b87c8f3418f7a1732d074261410c61a8a9d5aaf -->
+
+* `MVFBSDEJ.PaperSpec.ex_expfunc` (`A:intro:limin-comparison`). Reading at `1f67672`.
+  A:intro:limin-comparison (`01-introduction.tex` 58–66): Example 5.3 details the embedding of the
+  interaction class of Li and Min. The class it embeds into is that of Example 5.3: a measurable
+  kernel Lipschitz in `(θ, θ')` gives a `W₂`-Lipschitz expectation functional. The proposition is
+  that class statement (reviewed under Example 5.3): for `φ̄` measurable on `ℝ × H × H` and
+  `L`-Lipschitz, at each `t, θ` the kernel `φ̄(t, θ, ·)` is `L`-Lipschitz and its means are
+  `L W₂`-Lipschitz. Verdict: faithful with representation choices, as under Example 5.3.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc ed839d34f480cba15a6f123acd31afd5 by=claude-author source=A:intro:limin-comparison@28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998 -->
+
+* Review by claude-auditor of `MVFBSDEJ.PaperSpec.ex_expfunc` (`A:ex:expfunc`,
+  `A:intro:limin-comparison`,
+  `A:sec5:overview`). Reading at `1f67672`. A:ex:expfunc (05-examples.tex 211–221): for
+  φ̄ : [0, T] × H × H → ℝᵏ measurable and Lipschitz in (θ, θ') uniformly in t,
+  φ(t, θ, μ) = ∫_H φ̄(t, θ, θ') μ(dθ') is at each (t, θ) the Bochner mean of φ̄(t, θ, ·), "whose
+  Lipschitz constant is at most Lip(φ̄)", so (2.10) supplies the law-dependence component of
+  Assumption 2.3; the state-variable Lipschitz and integrability requirements are left to the
+  full coefficient system. A:intro:limin-comparison (58–66): the class into which the kernels of
+  [LiMin] embed. A:sec5:overview (13–14): Example 5.3 recovers the expectation-functional
+  subclass. The proposition, for every σ-finite ν on a countably generated E, all n, m, d, k, and
+  φ̄ : ℝ × H × H → ℝᵏ jointly measurable with ‖φ̄(t, θ₁, θ₁') − φ̄(t, θ₂, θ₂')‖ ≤
+  L(|θ₁ − θ₂|_H + |θ₁' − θ₂'|_H) for every t, L ≥ 0: for every t and θ, φ̄(t, θ, ·) is L-Lipschitz
+  for |·|_H, and ‖∫ φ̄(t, θ, ·) dμ − ∫ φ̄(t, θ, ·) dμ'‖ ≤ L W₂(μ, μ'), W₂ of the Hilbert norm, for
+  all μ, μ' ∈ P₂(H). Representation choices: t ∈ ℝ for [0, T] (a kernel on [0, T] extends);
+  "Lipschitz in (θ, θ')" in the sum form, implied with the same constant by Lipschitz continuity
+  for any usual product norm (ℓ¹, ℓ², max), so no printed instance is lost; Lip(φ̄) as any
+  Lipschitz constant. Nothing printed is dropped and nothing is added; the state-variable part
+  is, as printed, not claimed. Since the earlier reading (faithful with representation choices):
+  only the attachment to A:intro:limin-comparison is new; that sentence takes the class from
+  this proposition, and its other half is ex_expfunc_limin / ex_expfunc_jump. Verdict: faithful
+  with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc ed839d34f480cba15a6f123acd31afd5 by=claude-auditor source=A:intro:limin-comparison@28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998 -->
+
+* `MVFBSDEJ.PaperSpec.ex_expfunc_jump` (`A:intro:limin-comparison`). Reading at `1f67672`.
+  A:intro:limin-comparison (line 66), read with Example 5.3 (lines 250–271): the embedding of the
+  pointwise jump coefficient of Li and Min through the Nemytskii map. The proposition is the
+  clause reviewed under Example 5.3: the Nemytskii map is well defined on classes, and a
+  representing `𝐇_t`, `C`-Lipschitz on `H × H`, gives a jump coefficient satisfying (2.10) with
+  `K = L²(ν; ℝⁿ)`. Verdict: faithful with representation choices, as under Example 5.3.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_jump ed839d34f480cba1e4ed71c267b0a369 by=claude-author source=A:intro:limin-comparison@28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998 -->
+
+* Review by claude-auditor of `MVFBSDEJ.PaperSpec.ex_expfunc_jump` (`A:ex:expfunc`,
+  `A:intro:limin-comparison`). Reading at
+  `1f67672`. A:ex:expfunc (05-examples.tex 252–271): the jump coefficient of [LiMin] embeds
+  through the Nemytskii map [𝐇_t(θ, θ')](e) = h̄(t, x, y, z, u(e), x', y', z', u'(e), e), "again
+  well defined on equivalence classes"; assuming it jointly Borel, with
+  ‖𝐇_t(θ₁, θ₁') − 𝐇_t(θ₂, θ₂')‖_{L²(ν)} ≤ C(|θ₁ − θ₂|_H + |θ₁' − θ₂'|_H) and
+  ∫_0^T ‖𝐇_t(0, 0)‖² dt < ∞, 𝐇_t is Lipschitz into L²(ν; ℝⁿ) and (2.10) applies with
+  K = L²(ν; ℝⁿ) to h(t, θ, μ) = ∫_H 𝐇_t(θ, θ') μ(dθ'). A:intro:limin-comparison (58–66): part of
+  "the embedding of their interaction class". The proposition, for every σ-finite ν on a
+  countably generated E, all n, m, d and every h̄ : ℝ × B × B × E → ℝⁿ: (a) ν-a.e. equal
+  representatives of u, u' change the Nemytskii function only on a ν-null set; (b) for every
+  𝐇 : ℝ × H × H → L²(ν; ℝⁿ) that represents the Nemytskii map at every (t, θ, θ') and satisfies
+  the printed Lipschitz bound with C ≥ 0 at every t,
+  ‖∫ 𝐇_t(θ, ·) dμ − ∫ 𝐇_t(θ, ·) dμ'‖ ≤ C W₂(μ, μ') for all t, θ, μ, μ'. Representation choices:
+  "𝐇_t maps into L²(ν)" as the existence of an L²-valued representative; t ∈ ℝ. Broader only in
+  hypotheses: the joint Borel measurability of 𝐇, the origin integrability
+  ∫_0^T ‖𝐇_t(0, 0)‖² dt < ∞ and the pointwise Lipschitz hypothesis on h̄ (line 226) are not
+  assumed; the printed conclusion (2.10) uses none of them, and (a) holds without hypotheses.
+  Since the earlier reading (broader): only the attachment to A:intro:limin-comparison is new.
+  Verdict: BROADER-ONLY-IN-HYPOTHESES.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_jump ed839d34f480cba1e4ed71c267b0a369 by=claude-auditor source=A:intro:limin-comparison@28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998 -->
+
+* `MVFBSDEJ.PaperSpec.ex_concrete_ii` (`A:intro:limin-comparison`). Reading at `1f67672`.
+  A:intro:limin-comparison (lines 62–65): the monotonicity hypothesis of Li and Min imposes finite
+  total jump mass, and the present theorem allows "arbitrary σ-finite activity". That the present
+  Assumption 2.5 does not impose finite mass is an instance at infinite `ν`. The proposition,
+  reviewed under Example 5.1(ii): for every σ-finite `ν` on a countably generated space (infinite
+  activity included), the mean-field system of Example 5.1(ii) satisfies (2.3), its origin value,
+  Assumptions 2.2–2.4 and Assumption 2.5 with `G = 1`. Verdict: faithful with representation
+  choices, as under Example 5.1(ii).
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_ii ed839d34f480cba15cf7f3328c0ad0e6 by=claude-author source=A:intro:limin-comparison@28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998 -->
+
+* Review by claude-auditor of `MVFBSDEJ.PaperSpec.ex_concrete_ii` (`A:ex:concrete`,
+  `A:intro:limin-comparison`,
+  `A:sec5:overview`). Reading at `1f67672`. A:ex:concrete (05-examples.tex 112–193): with
+  n = m = d = 1, G = 1 and the data of (i), the coefficients b = −2y − m_Y(μ),
+  σ = −2z − m_Z(μ), h(e) = −2u(e) − m_U(μ)(e), f = 2x + m_X(μ), g(x, ρ) = 2x + 𝔟(ρ) satisfy
+  Assumption 2.3 with L = 2, vanish at (0, δ₀) so that Assumption 2.2 holds, and satisfy
+  Assumption 2.5 with α = β₁ = β₂ = 2, at "an arbitrary σ-finite ν, including ν(E) = ∞".
+  A:intro:limin-comparison (58–66): unlike that of [LiMin], the present monotonicity hypothesis
+  does not impose finite total jump mass ("at arbitrary σ-finite activity"). A:sec5:overview
+  (10–12): Example 5.1(ii) meets every assumption exactly at arbitrary jump activity. The
+  proposition, for every σ-finite ν on a countably generated E, Lévy driver with d = 1, 𝒢₀
+  independent, T > 0 and ξ₀ ∈ L²(ℱ₀): meanFieldCoeffs ν 1 1 (checked: the four channels of the
+  Bochner mean ∫ θ μ(dθ), m_U a mean in L²(ν), 𝔟 the barycentre) satisfies (2.3), vanishes at
+  (t, 0, δ₀) for every t, and satisfies Assumption 2.2, Assumption 2.3 with L = 2, rank 1 = 1 and
+  Assumption 2.5 with G = 1, α = β₁ = β₂ = 2. For the intro sentence the quantifier over every
+  σ-finite ν, infinite mass included, is the content: Assumption 2.5 is met at infinite activity,
+  so it imposes no finite total mass. Representation choices: (2.3), a standing hypothesis the
+  example does not verify, is concluded (stronger); "exactly" in the overview means directly, not
+  perturbatively (the interior pairing is strictly below the bound); Assumption 2.4 as the rank
+  condition. Witness note: the recorded witness ex_concrete_hypotheses is at ν = δ₀, of finite
+  mass, while the intro clause is about ν(E) = ∞; that instance is not vacuous
+  (LevyDriver.exists holds for every σ-finite ν, and ex_dealer_hypotheses builds a driver on an
+  infinite ν), but no witness of this clause records it. Since the earlier reading (faithful):
+  only the attachment to A:intro:limin-comparison is new. Verdict: faithful with
+  representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_concrete_ii ed839d34f480cba15cf7f3328c0ad0e6 by=claude-auditor source=A:intro:limin-comparison@28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998 -->
+
+* `MVFBSDEJ.PaperSpec.eq_fwddiff` (`A:eq:fwddiff`). Reading at `1f67672`. A:eq:fwddiff
+  (`04-proof-wellposedness.tex` 357–372): (4.10), with `c_BDG` in the two BDG links and in
+  `C_X = 3 max{T, c_BDG} L⋆²`. The constant enters at `p = 2` only: the links bound
+  `𝔼 sup_t |∫_0^t δσ dW|²` and `𝔼 sup_t |∫_0^t ∫_E δh dÑ|²` by `c_BDG` times the energies. Lines
+  29–35 fix one universal `c_BDG` valid at `p = 1` and `p = 2` and say that Doob's inequality gives
+  `4` at `p = 2`; Doob's constant `4` is sharp, so every valid value is at least `4`. The
+  proposition now begins `∀ c : ℝ, 4 ≤ c →`; the body is the term read at the previous hash in the
+  section of (4.10), unchanged (the diff of the definition touches only the quantifier line), with
+  `c` in the same places: the two BDG links, `max{T, c}` and `C_X`. It therefore states (4.10) at
+  every value the paper's `c_BDG` can take, and at no value below `4`, where the BDG link would
+  fail for some martingale. The earlier `∃ c₀ > 0, ∀ c ≥ c₀` held the chain only above an unknown
+  threshold, narrower than the printed claim; the restatement closes that. Representation choices:
+  as at the previous hash (expectations in `[0, ∞]`, `HTuple` and `FrozenStep`, any version of
+  `∫ δσ dW` with the path conditions). Verdict: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.eq_fwddiff ed839d34f480cba195e809e38f3afe67 by=claude-author source=A:eq:fwddiff@e08118fabe499dad63b6b7e0f8f3ac048defa5e6b69622f418732ac1b59e9938 -->
+
+* Review by claude-auditor of `MVFBSDEJ.PaperSpec.eq_fwddiff` (`A:eq:fwddiff`). Reading at
+  `1f67672`, of the version with
+  `∀ c : ℝ, 4 ≤ c →`. A:eq:fwddiff (paper/sections/04-proof-wellposedness.tex 350–374, display
+  357–372, with the objects of the contraction step at 312–348): for Θ¹, Θ² ∈ 𝕊 and
+  Θ̄ᵏ = Φ_λ(Θᵏ), δψ_s := ψ(s, Θ¹_s, μ^{Θ¹}_s) − ψ(s, Θ²_s, μ^{Θ²}_s) for ψ ∈ {b, σ, h, f}
+  (line 316), S_s := |δb_s| + |δσ_s|_F + ‖δh_s‖ + |δf_s| (line 326) and L⋆² := 10L² max{T, 1}
+  (line 346), the difference of (4.7) (lines 353–354) gives (4.10): 𝔼 sup_{t≤T} |δX̄_t|²
+  ≤ 3λ² [𝔼(∫_0^T |δb_s| ds)² + 𝔼 sup |∫_0^t δσ dW|² + 𝔼 sup |∫_0^t ∫_E δh Ñ(ds, de)|²]
+  ≤ 3λ² [T 𝔼∫_0^T |δb|² + c_BDG 𝔼∫_0^T |δσ|²_F + c_BDG 𝔼∫_0^T ‖δh‖²]
+  ≤ 3λ² max{T, c_BDG} 𝔼∫_0^T (|δb|² + |δσ|²_F + ‖δh‖²) ≤ 3λ² max{T, c_BDG} 𝔼∫_0^T S_s² ds
+  ≤ C_X λ² ‖Θ¹ − Θ²‖²_𝕊, C_X := 3 max{T, c_BDG} L⋆² (line 370), "the jump term by (2.1)"
+  (line 373). The proposition: for every real c ≥ 4, in the standing setting (enlJoint over a
+  Lévy driver, 𝒢₀ independent of it), n, m, d ≥ 1, T > 0, under (2.3), Assumption 2.2 with ξ₀
+  and Assumption 2.3 with L, for λ ∈ [0, 1], a forcing with `PredForcing`, trials Θ¹, Θ² with
+  `HTuple` and images Θ̄¹, Θ̄² with `FrozenStep` (same λ, ξ₀, q), with δb_i, δσ_ij the
+  differences of `driftProc`, `diffusionProc` and δh_i those of `coeffJump`: (a) the
+  measurability, progressive measurability and finite-energy arguments of the Itô integral of
+  δσ and the compensated integral of δh exist; (b) some Mσ is, at each t ∈ [0, T], a version of
+  ∫_0^t δσ dW, almost every path right-continuous on [0, T) with left limits on (0, T]; (c) for
+  every such Mσ, ∫⁻ sup_{[0,T]} esq(δX̄) ≤ ofReal(3λ²) (∫⁻ (∫⁻_{[0,T]} ‖δb‖ₑ)² + ∫⁻ sup esq(Mσ)
+  + ∫⁻ sup esq(∫∫ δh dÑ)) ≤ ofReal(3λ²) (ofReal T ∑_i energy(δb_i) + ofReal c ∑_{i,j}
+  energy(δσ_ij) + ofReal c ∑_i markedEnergy(δh_i)); (d) ≤ ofReal(3λ² max{T, c}) (the three
+  energy sums) ≤ ofReal(3λ² max{T, c}) ∫_{[0,T]} ∫⁻ coeffDiffNorm² ≤ ofReal(3 max{T, c}
+  (10L² max{T, 1}) λ²) supSize(Θ¹ − Θ²). Where c occurs: ofReal c multiplies the σ- and
+  h-energies, the two places c_BDG is printed (lines 364–365), and c sits in max{T, c} at lines
+  366, 368, 370; the last constant is the printed C_X = 3 max{T, c_BDG} · 10L² max{T, 1}; I
+  checked the bracketing of each link. The quantifier: lines 30–33 fix c_BDG as "one universal
+  constant valid at both exponents" for BDG in quadratic-variation form, at p = 1 for zero means
+  and at p = 2 for squared suprema, "at p = 2 Doob's inequality gives the constant 4", and fix no
+  value. At p = 2 the form is 𝔼 sup|M|² ≤ c 𝔼[M]_T; Doob gives 𝔼 sup|M|² ≤ 4 𝔼|M_T|² = 4 𝔼[M]_T,
+  so every c ≥ 4 is valid there, and 4 is the best constant, already for Brownian motion stopped
+  at a bounded time (an Itô integral of the kind at line 361), so no c < 4 is valid at p = 2.
+  Every value c_BDG can take is therefore at least 4, and the proposition at c = c_BDG gives the
+  printed display whatever c_BDG is: it is not weaker. In this display c_BDG enters only at lines
+  364–365, the p = 2 bounds on the squared suprema of the Itô and compensated integrals (𝔼[M]_T
+  by the isometry and by (2.1)); no p = 1 step feeds C_X. So the printed argument proves every
+  link at every c ≥ 4. The one gap from the literal wording is that c is not required to be valid
+  at p = 1: if the best p = 1 constant exceeded 4, the c below it would not be values of c_BDG,
+  yet the printed argument still gives the chain at them, so the extra instances are the passage's
+  own argument and harmless. Every constant increases with c, so the content is the instance
+  c = 4. Representation choices: expectations as lower integrals in [0, ∞]; 𝔼∫_0^T S_s² read
+  time-outer (the left side of `eq_coeffdiff`); the Brownian supremum read through a càdlàg
+  version, since the library's Itô integral is defined time by time (the compensated integral has
+  almost surely càdlàg paths by construction and is used as it is); δh through the canonical
+  L²(ν) representative `coeffJump` at (Θ_s, μ_s), as δψ is defined at line 316; |δσ|_F as the
+  norm of `EuclideanSpace ℝ (Fin n × Fin d)`; the integrands' side conditions stated as (a);
+  c_BDG read as any real c ≥ 4. Docstring: matches the term ("(4.10)" is eq:fwddiff, the tenth
+  numbered display of §4; "a càdlàg version on [0, T]; and, with any such version" is (b)–(c);
+  `C_X = 3 max{T, c} · 10 L² max{T, 1}`); "the values of c_BDG that Doob's constant 4 at p = 2
+  admits" describes c ≥ 4 correctly. Against the earlier reading: the threshold was an unknown
+  c₀ > 0, so the term did not reach a valid c_BDG below c₀; it is now the paper's own number.
+  Verdict: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.eq_fwddiff ed839d34f480cba195e809e38f3afe67 by=claude-auditor source=A:eq:fwddiff@e08118fabe499dad63b6b7e0f8f3ac048defa5e6b69622f418732ac1b59e9938 -->
+
+* `MVFBSDEJ.PaperSpec.eq_bwddiff` (`A:eq:bwddiff`). Reading at `1f67672`. A:eq:bwddiff
+  (`04-proof-wellposedness.tex` 409–422): (4.12), with `C_BP = C₀(5 + 4c_BDG) + 4T`,
+  `C₀ = 2e^T` (line 244), and `C_X`, `C_Y = C_BP (C_g C_X + L⋆²)` built from `c_BDG`. In `C_BP` the
+  constant enters through the `p = 2` step of line 232 only; in `C_X` through the `p = 2` links of
+  (4.10). The proposition now begins `∀ c : ℝ, 4 ≤ c →`; the body is the term read at the previous
+  hash in the section of (4.12), unchanged, with `c` in `C_BP`, `C_X` and `C_Y` only. As for
+  (4.10), every valid value of `c_BDG` is at least `4`, so the proposition states (4.12) at every
+  value the paper's constant can take; it agrees with `lem_bpbsde_explicit`, which states the
+  conclusion of Lemma 4.1 with this `C_BP` for every `c ≥ 4`. Representation choices: as at the
+  previous hash. Verdict: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.eq_bwddiff ed839d34f480cba1fc89f467e79021ea by=claude-author source=A:eq:bwddiff@ca58096655e5e6b70fd088ebf4b2b03e622b17d584f98ab52e438e1f35e7dfaa -->
+
+* Review by claude-auditor of `MVFBSDEJ.PaperSpec.eq_bwddiff` (`A:eq:bwddiff`). Reading at
+  `1f67672`, of the version with
+  `∀ c : ℝ, 4 ≤ c →`. A:eq:bwddiff (same file 391–424, display 409–422): the difference of (4.8)
+  at the two trials (lines 394–395) is (4.4) with δξ = δξ̄ := λ [g(X̄¹_T, Law(X̄¹_T))
+  − g(X̄²_T, Law(X̄²_T))] (line 378) and φ_s = λ δf_s, and "By Lemma 4.1" (4.12):
+  𝔼 sup |δȲ|² + 𝔼∫_0^T (|δZ̄|²_F + ‖δŪ‖²) ≤ C_BP (𝔼|δξ̄|² + λ² 𝔼∫_0^T |δf|²)
+  ≤ C_BP (C_g λ² 𝔼|δX̄_T|² + L⋆² λ² ‖Θ¹ − Θ²‖²_𝕊) ≤ C_BP (C_g λ² 𝔼 sup |δX̄|² + L⋆² λ² ‖·‖²)
+  ≤ C_BP (C_g C_X λ⁴ + L⋆² λ²) ‖·‖² ≤ C_Y λ² ‖·‖², C_Y := C_BP (C_g C_X + L⋆²) (line 420), with
+  C_g := 4L² (line 386) and C_BP := C₀(5 + 4c_BDG) + 4T, C₀ := 2e^T, fixed in the proof of
+  Lemma 4.1 (lines 215, 244). The proposition: for every real c ≥ 4, under the hypotheses of
+  `eq_fwddiff`, with δf_k the differences of `driverProc`: ∫⁻ sup esq(δȲ) + (∑_{k,j}
+  energy(δZ̄_kj) + ∑_k markedEnergy(δŪ_k)) ≤ ofReal(2e^T(5 + 4c) + 4T) (∫⁻ esq(λ (terminalVal
+  X̄¹ − terminalVal X̄²)) + ofReal(λ²) ∑_k energy(δf_k)) ≤ ofReal(C_BP) (ofReal(4L²λ²)
+  ∫⁻ esq(δX̄_T) + ofReal(10L² max{T, 1} λ²) supSize(Θ¹ − Θ²)) ≤ (the same with
+  ∫⁻ sup_{[0,T]} esq(δX̄)) ≤ ofReal(C_BP) (ofReal(4L² · 3 max{T, c} · 10L² max{T, 1} · λ⁴
+  + 10L² max{T, 1} λ²) supSize(Θ¹ − Θ²)) ≤ ofReal(C_BP (4L² C_X + L⋆²) λ²) supSize(Θ¹ − Θ²).
+  Where c occurs: in C_BP = 2e^T (5 + 4c) + 4T in every link, which is C₀(5 + 4c_BDG) + 4T with
+  C₀ = 2e^T, and in C_X = 3 max{T, c} L⋆² in the fourth and fifth links, the places the printed
+  display has c_BDG (through C_BP and C_X); C_g = 4L², L⋆² and C_Y are the printed constants;
+  the bracketing puts C_g C_X λ⁴ + L⋆² λ² under one ofReal and λ² outside C_Y. The quantifier: as
+  for `eq_fwddiff`. c_BDG reaches C_BP only at line 232, BDG at p = 2 on the squared suprema of
+  the two martingales of the forward form; the p = 1 bounds of Lemma 4.1 (lines 153–172) serve
+  only the zero means of M^W and M¹ and put no constant into C_BP; C_X takes c_BDG at p = 2 only
+  (lines 364–365). So every link holds at every c ≥ 4, every valid c_BDG is at least 4, and the
+  one c serves C_BP and C_X together, as the paper's single c_BDG does; C_BP and C_X increase with
+  c, so the content is the instance c = 4 (C_BP = 42e^T + 4T). The term now quantifies c as
+  `lem_bpbsde_explicit` does, so the two clauses that carry C_BP agree. Representation choices:
+  C_BP read as the explicit constant of line 244 ("By Lemma 4.1" uses the C_BP fixed where it is
+  introduced, line 25; the statement of Lemma 4.1 only asserts some C_BP(T, c_BDG), so the
+  explicit value is the stronger reading); δξ̄ through `terminalVal`, g at X̄_T and the law
+  `lawP2` of X̄_T, q^g_T cancelling; λ² 𝔼∫|δf|² as ofReal(λ²) times the energies; C_g C_X λ⁴
+  written 4L² C_X λ⁴; ‖Θ¹ − Θ²‖²_𝕊 as `supSize`; expectations as lower integrals. Docstring:
+  matches the term ("(4.12)" is eq:bwddiff; constants as stated). Verdict: faithful with
+  representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.eq_bwddiff ed839d34f480cba1fc89f467e79021ea by=claude-auditor source=A:eq:bwddiff@ca58096655e5e6b70fd088ebf4b2b03e622b17d584f98ab52e438e1f35e7dfaa -->
+
+* `MVFBSDEJ.PaperSpec.eq_contract` (`A:eq:contract`). Reading at `1f67672`. A:eq:contract
+  (`04-proof-wellposedness.tex` 429–445): (4.13) with `C_Φ = max{1, C_X + C_Y}`, and the sentence
+  that `C_Φ = C_Φ(T, L, c_BDG)`. The proposition now begins `∀ c : ℝ, 4 ≤ c →`; the body is the
+  term read at the previous hash in the section of (4.13), unchanged, with `c` in `C_X`, `C_BP`,
+  `C_Y` and `C_Φ`. Every constant is a fixed expression in `T`, `L` and `c`, and `c` is quantified
+  before the data, so `C_Φ` is a function of `(T, L, c_BDG)` chosen before everything else, as the
+  sentence asserts; with `c ≥ 4` this holds at every value the paper's `c_BDG` can take.
+  Representation choices: as at the previous hash. Verdict: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.eq_contract ed839d34f480cba13958e088ac52c83e by=claude-author source=A:eq:contract@98399235ee78b3677300d9820f13c5cb17179d50791de2e81a1c5597ff561eac -->
+
+* Review by claude-auditor of `MVFBSDEJ.PaperSpec.eq_contract` (`A:eq:contract`). Reading at
+  `1f67672`, of the version with
+  `∀ c : ℝ, 4 ≤ c →`. A:eq:contract (same file 426–454; this clause reads (4.13) and the
+  sentence after it, 426–445): since Φ_λ(Θ¹) − Φ_λ(Θ²) = (δX̄, δȲ, δZ̄, δŪ) (lines 427–428),
+  (4.13): ‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖²_𝕊 = 𝔼 sup |δX̄|² + 𝔼 sup |δȲ|² + 𝔼∫_0^T (|δZ̄|²_F + ‖δŪ‖²)
+  ≤ (C_X + C_Y) λ² ‖Θ¹ − Θ²‖²_𝕊 ≤ C_Φ λ² ‖Θ¹ − Θ²‖²_𝕊, C_Φ := max{1, C_X + C_Y} (line 437),
+  "the first inequality by (4.10) and (4.12)" (line 440); "Here L⋆ = L⋆(T, L),
+  C_X = C_X(T, L, c_BDG), C_g = C_g(L), C_BP = C_BP(T, c_BDG), so C_Φ = C_Φ(T, L, c_BDG)" (lines
+  440–445). The proposition: for every real c ≥ 4, under the hypotheses of `eq_fwddiff`,
+  supSize(Θ̄¹ − Θ̄²) = ∫⁻ sup esq(δX̄) + ∫⁻ sup esq(δȲ) + (∑ energy(δZ̄) + ∑ markedEnergy(δŪ)),
+  and supSize(Θ̄¹ − Θ̄²) ≤ ofReal((C_X + C_Y) λ²) supSize(Θ¹ − Θ²)
+  ≤ ofReal(max{1, C_X + C_Y} λ²) supSize(Θ¹ − Θ²), with C_X = 3 max{T, c} · 10L² max{T, 1} and
+  C_Y = (2e^T (5 + 4c) + 4T)(4L² C_X + 10L² max{T, 1}) written out. Where c occurs: only inside
+  C_X and C_BP, at their printed places; C_Φ = max{1, C_X + C_Y} with λ² outside the max, as
+  printed (I checked the bracketing). The dependences of lines 440–445 hold by construction:
+  every constant is an explicit expression in T, L and c alone, and c is universally quantified
+  before the data, so C_Φ is a fixed function of (T, L, c_BDG). The quantifier: as for
+  `eq_fwddiff` and `eq_bwddiff`; the same c serves C_X and C_BP, the paper's one c_BDG, and both
+  take it only at p = 2; the content is the instance c = 4. Representation choices: the equality
+  is the definition of `supSize`, regrouped by associativity as the passage groups the δZ̄- and
+  δŪ-energies; Φ_λ(Θᵏ) is any `FrozenStep` image (two images of one trial are equal in 𝕊 by
+  (4.8)); the rest as for (4.10) and (4.12). Docstring: matches the term ("(4.13)" is
+  eq:contract; `C_Y = C_BP (4 L² C_X + L⋆²)` is C_BP (C_g C_X + L⋆²)). Verdict: faithful with
+  representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.eq_contract ed839d34f480cba13958e088ac52c83e by=claude-auditor source=A:eq:contract@98399235ee78b3677300d9820f13c5cb17179d50791de2e81a1c5597ff561eac -->
+
+* `MVFBSDEJ.PaperSpec.eq_contract_half` (`A:eq:contract`). Reading at `1f67672`. A:eq:contract
+  (`04-proof-wellposedness.tex` 445–454): `λ_* := (2 √C_Φ)⁻¹`, `C_Φ λ² ≤ 1/4` on `[0, λ_*]`, and
+  `Φ_λ` a contraction with constant `1/2` there. The proposition now begins `∀ c : ℝ, 4 ≤ c →`;
+  the body is the term read at the previous hash, unchanged, with `c` only in `C_Φ` (through
+  `C_X`, `C_BP`, `C_Y`) and so in `λ_*`. It states the passage at every value `c_BDG` can take;
+  `λ_*` depends on `(T, L, c_BDG)` only. Representation choices: as at the previous hash
+  (`‖·‖_𝕊` the square root of `supSize` in `[0, ∞]`). Verdict: faithful with representation
+  choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.eq_contract_half ed839d34f480cba1ef167711aaf92d12 by=claude-author source=A:eq:contract@98399235ee78b3677300d9820f13c5cb17179d50791de2e81a1c5597ff561eac -->
+
+* Review by claude-auditor of `MVFBSDEJ.PaperSpec.eq_contract_half` (`A:eq:contract`). Reading at
+  `1f67672`, of the version
+  with `∀ c : ℝ, 4 ≤ c →`. A:eq:contract, lines 445–454: "so C_Φ = C_Φ(T, L, c_BDG). Setting
+  λ_* := (2√C_Φ)⁻¹ ∈ (0, 1/2] gives C_Φ λ² ≤ 1/4 for λ ∈ [0, λ_*], so that (4.13) reads
+  ‖Φ_λ(Θ¹) − Φ_λ(Θ²)‖_𝕊 ≤ (1/2) ‖Θ¹ − Θ²‖_𝕊, λ ∈ [0, λ_*]." The proposition: for every real
+  c ≥ 4, in the standing setting, n, m, d ≥ 1, T > 0, under (2.3) and Assumptions 2.2–2.3 with
+  ξ₀ and L, for all reals C_Φ, λ_* with C_Φ = max{1, C_X + C_Y} (the explicit formulas of
+  `eq_contract` at the same c) and λ_* = (2√C_Φ)⁻¹: 0 < λ_* ≤ 1/2; and for every λ ∈ [0, λ_*],
+  C_Φ λ² ≤ 1/4 and, for every forcing with `PredForcing`, trials Θ¹, Θ² with `HTuple` and images
+  with `FrozenStep` at λ (same λ, ξ₀, q), supSize(Θ̄¹ − Θ̄²)^{1/2}
+  ≤ ofReal(1/2) supSize(Θ¹ − Θ²)^{1/2}. Where c occurs: only through C_Φ, the printed constant of
+  (4.13) at the same c; λ_* is the printed (2√C_Φ)⁻¹. The quantifier: as for (4.13). A larger c
+  enlarges C_Φ and shrinks λ_*, so the strongest instance is c = 4 (the widest [0, λ_*]); every
+  instance is the printed argument at that c; and since every valid c_BDG is at least 4, the
+  proposition at c = c_BDG is the printed claim, whatever c_BDG is. The gap of the earlier version
+  (no instance at a valid c_BDG below an unknown c₀) is closed. Representation choices: ‖·‖_𝕊 is
+  the square root of `supSize` in [0, ∞] (`ENNReal.rpow`); C_Φ and λ_* are reals equal to the
+  printed expressions; λ ≤ λ_* ≤ 1/2 keeps λ in [0, 1] implicitly; Φ_λ(Θᵏ) is any `FrozenStep`
+  image, as in (4.13); C_Φ λ² ≤ 1/4 stated for every λ ∈ [0, λ_*], as printed. Docstring:
+  matches the term ("after (4.13)"; λ_* ∈ (0, 1/2]; the contraction for every λ ∈ [0, λ_*];
+  `‖·‖_𝕊` the square root of `supSize`). Verdict: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.eq_contract_half ed839d34f480cba1ef167711aaf92d12 by=claude-auditor source=A:eq:contract@98399235ee78b3677300d9820f13c5cb17179d50791de2e81a1c5597ff561eac -->
