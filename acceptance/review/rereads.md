@@ -1375,3 +1375,85 @@ Six declarations whose source is unchanged now elaborate with the standard insta
   structure on `Fin 1` is the same, so the channel spaces ℝ¹, ℝ^{1×d} and `L²(ν; ℝ¹)` carry the same
   norms and the meaning is unchanged. Verdict: faithful with representation choices.
   <!-- def-review: MVFBSDEJ.WellPosedness.Existence.clampAffineCoeffs 790587bb9ac7016aab019d17c1bb924f by=claude-auditor -->
+
+## Readings of the difference notation against Assumptions 2.3 and 2.5 (issue #17)
+
+The definition-review markers of `A:sec2:difference-notation` for `Assumption23` and `Assumption25`
+above record readings whose text addresses Assumptions 2.3 and 2.5 rather than this paragraph. The
+two definitions are read here against the paragraph itself (lines 69–84), by the author and then
+independently.
+
+* Reading by claude-author of `MVFBSDEJ.WellPosedness.Spec.Assumption23` against the passage of
+  `A:sec2:difference-notation` (`02-model-assumptions.tex` lines 69–84, at `1f67672`). The
+  paragraph fixes, for two diagonal inputs (Θ, μ), (Θ′, μ′) at the same time t on the same
+  probability space, δX := X − X′ (with δY, δZ, δU the other channels of Θ − Θ′) and
+  δψ := ψ(t, Θ, μ) − ψ(t, Θ′, μ′) for ψ ∈ {b, σ, h, f} (lines 73–79), and, with the induced
+  terminal laws ρ := Law(X_T), ρ′ := Law(X′_T), δg_T := g(X_T, ρ) − g(X′_T, ρ′) (lines 80–84);
+  lines 69–70 impose every hypothesis along 𝒟_t only, the law never varied apart from its tuple.
+  `Assumption23` uses this notation as printed. Its field `interior` is `LipInteriorAt` for almost
+  every t ∈ [0, T]; `LipInteriorAt` takes p, p′ in `diagonalInputs ν n m d ℱ P t`, at the one time
+  t on the one probability space, and evaluates each coefficient at (p.1 ω, p.2) and
+  (p′.1 ω, p′.2), a tuple with its own law, so its differences of b, σ, h, f and of the four
+  channels are the paragraph's δψ and δX, δY, δZ, δU. Its field `terminal` is `LipTerminal`, over
+  strongly ℱ_T-measurable square-integrable X_T, X′_T, with g evaluated at
+  (X_T(ω), lawP2 P X_T) and (X′_T(ω), lawP2 P X′_T): the induced laws ρ, ρ′, never a free
+  measure, so its difference of g is the paragraph's δg_T. No field varies a law apart from its
+  tuple. Verdict: faithful to the passage.
+  <!-- def-review: MVFBSDEJ.WellPosedness.Spec.Assumption23 5ad9199da021d4760000000000000000 by=claude-author source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+
+* Reading by claude-auditor of `MVFBSDEJ.WellPosedness.Spec.Assumption23` against the passage of
+  `A:sec2:difference-notation` (`02-model-assumptions.tex` lines 69–84, at `1f67672`). The passage
+  fixes: every hypothesis is imposed along 𝒟_t only, the law never varied apart from its tuple
+  (69–70); θ is a point and Θ a random tuple of H (70–71); the two inputs are diagonal, at one time
+  t, on one probability space (74); δX := X − X′ and likewise the other channels (77);
+  δψ := ψ(t, Θ, μ) − ψ(t, Θ′, μ′) for ψ ∈ {b, σ, h, f} (78); the induced laws ρ := Law(X_T),
+  ρ′ := Law(X′_T) and δg_T := g(X_T, ρ) − g(X′_T, ρ′) (80–83). The field `interior` is
+  `LipInterior`, an a.e.-t quantifier over `LipInteriorAt`, which takes `p` and `p'` in
+  `diagonalInputs ν n m d ℱ P t` at the same t and on the one space (Ω, P); membership forces
+  `MemLp p.1 2 P` and `p.2 = lawP2 P p.1`, the image law `P.map p.1`, so each input is (Θ, Law Θ).
+  Its left side is `C.ψ t (p.1 ω) p.2 - C.ψ t (p'.1 ω) p'.2` for ψ = b, σ, h, f, each point with
+  its own law in the right slot; its right side takes the channels `.1`, `.2.1`, `.2.2.1`,
+  `.2.2.2` (X, Y, Z, U of `TupleH = ℝⁿ × ℝᵐ × ℝ^{m×d} × L²(ν; ℝᵐ)`) of `p.1 ω` minus those of
+  `p'.1 ω`, plus `w2H p.2 p'.2`, the distance of the two diagonal laws. The field `terminal` is
+  `LipTerminal ℱ P T L C.g`: for ℱ_T-measurable square-integrable `XT`, `XT'` on (Ω, P), it bounds
+  `g (XT ω) (lawP2 P XT) - g (XT' ω) (lawP2 P XT')` by `XT ω - XT' ω` and
+  `w2P (lawP2 P XT) (lawP2 P XT')`: g is taken at the induced laws, never at a free measure, and
+  any such `XT` is the X-channel of a diagonal input at T. `nonneg` involves no law. No field
+  varies a law independently of its tuple. Verdict: faithful to the passage.
+  <!-- def-review: MVFBSDEJ.WellPosedness.Spec.Assumption23 5ad9199da021d4760000000000000000 by=claude-auditor source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+
+* Reading by claude-author of `MVFBSDEJ.WellPosedness.Spec.Assumption25` against the passage of
+  `A:sec2:difference-notation` (`02-model-assumptions.tex` lines 69–84, at `1f67672`), the
+  paragraph read as in the entry above. Its field `interior` is `Mono27At` for almost every
+  t ∈ [0, T]; `Mono27At` takes p, p′ in `diagonalInputs ν n m d ℱ P t`, at the one time t on the
+  one probability space, and integrates `pairing27 G C t (p.1 ω) (p′.1 ω) p.2 p′.2`, whose
+  coefficient differences are δb, δσ, δf and δh(e) at the two inputs with their own laws and
+  whose channel differences are δX, δY, δZ, δU of Θ − Θ′, the paragraph's objects. Its field
+  `terminal` takes strongly ℱ_T-measurable square-integrable X_T, X′_T and pairs
+  g(X_T(ω), lawP2 P X_T) − g(X′_T(ω), lawP2 P X′_T), the paragraph's δg_T at the induced laws,
+  with G(X_T − X′_T), G δX_T. The constants α, β₁, β₂ and the matrix G carry no measure argument.
+  No field varies a law apart from its tuple. Verdict: faithful to the passage.
+  <!-- def-review: MVFBSDEJ.WellPosedness.Spec.Assumption25 a0fc1ba9071e126c0000000000000000 by=claude-author source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+
+* Reading by claude-auditor of `MVFBSDEJ.WellPosedness.Spec.Assumption25` against the passage of
+  `A:sec2:difference-notation` (`02-model-assumptions.tex` lines 69–84, at `1f67672`). The passage
+  fixes: every hypothesis is imposed along 𝒟_t only, the law never varied apart from its tuple
+  (69–70); θ is a point and Θ a random tuple of H (70–71); the two inputs are diagonal, at one time
+  t, on one probability space (74); δX := X − X′ and likewise the other channels (77);
+  δψ := ψ(t, Θ, μ) − ψ(t, Θ′, μ′) for ψ ∈ {b, σ, h, f} (78); the induced laws ρ := Law(X_T),
+  ρ′ := Law(X′_T) and δg_T := g(X_T, ρ) − g(X′_T, ρ′) (80–83). The field `terminal`, for
+  ℱ_T-measurable square-integrable `XT`, `XT'` on (Ω, P), pairs
+  `C.g (XT ω) (lawP2 P XT) - C.g (XT' ω) (lawP2 P XT')` with `GX G (XT ω - XT' ω)`: δg_T at the
+  induced laws, never a free measure, against G δX_T. The field `interior` is, for a.e. t,
+  `Mono27At ℱ P t G β₁ β₂ C`, which takes `p` and `p'` in `diagonalInputs ν n m d ℱ P t` at the
+  same t and on the one space (Ω, P), each with `p.2 = lawP2 P p.1`, and integrates
+  `pairing27 G C t (p.1 ω) (p'.1 ω) p.2 p'.2`. The argument order of `pairing27` (θ, θ′, μ, μ′)
+  puts each point with its own law: its δψ is `C.ψ t θ μ - C.ψ t θ' μ'` for b, σ, f, and for h
+  the mark-wise `C.h t θ μ e - C.h t θ' μ' e`, a ν-a.e. representative of δh(e), so the ν-integral
+  is that of ⟨δh(e), Gᵀ δU(e)⟩; its channel differences are `θ.2.1 - θ'.2.1` (δY),
+  `θ.2.2.1 - θ'.2.2.1` (δZ), `θ.1 - θ'.1` (δX) and `θ.2.2.2 e - θ'.2.2.2 e` (δU(e)), and the
+  right side of `Mono27At` uses the same channels of `p.1 ω` and `p'.1 ω`. `pairing27` is a
+  function of points θ, θ′ and of two laws, as the θ/Θ convention has it, and is evaluated only at
+  the diagonal laws `p.2`, `p'.2`; `constants` (`Constants n m α β₁ β₂`) involves no law. No field
+  varies a law independently of its tuple. Verdict: faithful to the passage.
+  <!-- def-review: MVFBSDEJ.WellPosedness.Spec.Assumption25 a0fc1ba9071e126c0000000000000000 by=claude-auditor source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->

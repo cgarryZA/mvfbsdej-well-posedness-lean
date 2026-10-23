@@ -478,18 +478,23 @@ class ReviewMarkers(unittest.TestCase):
         rows, _ = self.status(marker("spec", SPEC, "r", ("A:t", NEW), h="f" * 32))
         self.assertEqual(rows["A:t"]["clauses"][0]["spec_review"], "changed since review")
 
-    def test_later_marker_at_older_hash_reopens(self):
-        """The last marker, in file order, is the current record: a reading at the current hash
-        followed by one at an older hash does not count."""
-        cur = marker("spec", SPEC, "r", ("A:t", NEW))
-        old = marker("spec", SPEC, "r", ("A:t", NEW), h="f" * 32)
-        spec, defs, _ = A.parse_reviews([("A.md", cur), ("rereads.md", old)])
-        st = A.build_status(self.inventory(NEW), self.probe(), spec, defs)
+    def test_later_marker_at_another_hash_reopens(self):
+        """The last marker in file order is the declaration's record: a marker at a superseded
+        hash in a file that sorts later shadows the current reading, and a retired one does
+        not."""
+        old = marker("spec", SPEC, "s", ("A:t", NEW), h="f" * 32)
+        spec, defs, bad = A.parse_reviews([("A.md", marker("spec", SPEC, "r", ("A:t", NEW))),
+                                           ("rereads.md", old)])
+        self.assertEqual(bad, [])
+        st = A.build_status(self.inventory(), self.probe(), spec, defs)
         row = {r["id"]: r for r in st["claims"]}["A:t"]
         self.assertEqual(row["clauses"][0]["spec_review"], "changed since review")
-        self.assertEqual(row["status"], "formal: proved, review pending")
-        rows, _ = self.status(old + cur)
-        self.assertEqual(rows["A:t"]["status"], "formal: accepted")
+        retired = old.replace("<!-- spec-review:", "<!-- retired spec-review:")
+        spec, defs, bad = A.parse_reviews([("A.md", marker("spec", SPEC, "r", ("A:t", NEW))),
+                                           ("rereads.md", retired)])
+        st = A.build_status(self.inventory(), self.probe(), spec, defs)
+        row = {r["id"]: r for r in st["claims"]}["A:t"]
+        self.assertEqual(row["status"], "formal: accepted")
 
     def test_fresh_reading_beside_stale_one(self):
         text = (marker("spec", SPEC, "claude-author", ("A:t", NEW))
