@@ -39,7 +39,7 @@ jobs:
             machinechecked: "0.1.18"
           - audit: latest
             ref: ""
-            machinechecked: "0.1.18"
+            machinechecked: "0.1.21"
     steps:
       - uses: actions/checkout@v5
         with:
