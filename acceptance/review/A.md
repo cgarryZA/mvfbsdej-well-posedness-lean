@@ -730,7 +730,11 @@ a solution in `𝕊`, is unique in `ℍ²` and satisfies (3.1), so the reading s
 
 <!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust ed839d34f480cba158154e23787dfbca by=claude-author source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 -->
 <!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust_wp ed839d34f480cba1617ff136058ce573 by=claude-author source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
+Review by claude-auditor: faithful with representation choices.
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust_wp ed839d34f480cba1617ff136058ce573 by=claude-auditor source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
 <!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust_lip ed839d34f480cba129c3f998d5e8f786 by=claude-author source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 -->
+Review by claude-auditor: faithful with representation choices.
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust_lip ed839d34f480cba129c3f998d5e8f786 by=claude-auditor source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 -->
 Review by claude-reviewer: faithful with representation choices.
 <!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust ed839d34f480cba158154e23787dfbca by=claude-reviewer source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 -->
 Review by claude-auditor: faithful with representation choices.
@@ -3753,19 +3757,20 @@ Here `λ*` is "the small-coupling threshold of Lemma 4.2", as Lemma 4.4 calls it
 and uniqueness is the uniqueness half of `WP(λ)`: two solutions of (4.1) in `𝕊` with the same
 initial datum and forcing coincide.
 
-Proposition: `∃ λ*` of `(T, L)` such that, in the standing setting, for `T > 0`, under (2.3) and
-Assumptions 2.2–2.5 with `L, α, β₁, β₂` and a full-rank `G`: `0 < λ*(T, L) ≤ 1`; `WP(λ)` for every
-`λ ∈ [0, λ*]`; and for every `λ` with `λ* ≤ λ ≤ 1` or `0 ≤ λ ≤ λ*`, every forcing `q`
-(`PredForcing`) and any two `ForcedSolution`s at `λ` with the datum `ξ₀` and the forcing `q`,
-`X¹, X²` and `Y¹, Y²` are indistinguishable on `[0, T]` and the differences of `Z` and of `U` have
-zero energy.
+Proposition: `∃ λ*` of `(T, L)` such that (a) in the standing setting, for `T > 0`, under (2.3)
+and Assumptions 2.2–2.3 with `L`: `0 < λ*(T, L) ≤ 1` and `WP(λ)` for every `λ ∈ [0, λ*]`; and
+(b) under (2.3) and Assumptions 2.2–2.5 with `L, α, β₁, β₂` and a full-rank `G`: for every `λ`
+with `λ* ≤ λ ≤ 1` or `0 ≤ λ ≤ λ*`, every forcing `q` (`PredForcing`) and any two
+`ForcedSolution`s at `λ` with the datum `ξ₀` and the forcing `q`, `X¹, X²` and `Y¹, Y²` are
+indistinguishable on `[0, T]` and the differences of `Z` and of `U` have zero energy.
 
 Readings:
 
-* `λ*` is the threshold of Lemma 4.2: a function of `(T, L)` alone, chosen before everything, with
-  `0 < λ* ≤ 1` and `WP(λ)` for every `λ ∈ [0, λ*]`, which is what Lemma 4.2 (`lem_small`) asserts
-  of its threshold. The two ranges of the sentence cover `[0, 1]` for any `λ* ∈ (0, 1]`, so it is
-  this conjunct that makes `λ*` the threshold of Lemma 4.2 rather than an arbitrary point.
+* `λ*` is the threshold of Lemma 4.2: part (a) is the conclusion of `lem_small` word for word,
+  under that lemma's hypotheses alone (Assumptions 2.2–2.3, no monotonicity). A `λ*` meeting (a)
+  cannot be `≡ 1`: the system of `sec5_limin` meets (2.3) and Assumptions 2.2–2.3 and has no
+  solution on `T = 3π/4` when `𝔼ξ₀ ≠ 0`, so `WP(1)` fails there. The two ranges of (b) are the
+  ranges the sentence names.
 * The hypotheses are those of the continuation step, the hypotheses of Theorem 3.5 (as
   `thm_cwp`/`lem_cont`); Lemma 4.3 uses Assumptions 2.3–2.5 and Lemma 4.2 Assumptions 2.2–2.3.
   The two ranges of the sentence are the two disjuncts on `λ`.
@@ -3774,7 +3779,7 @@ Readings:
   one forcing `q` and one datum `ξ₀` for both solutions.
 * "It remains to prove existence up to `λ = 1`" (line 878) is exposition announcing Lemma 4.4.
 
-Proof: with `λ*` the constant of `lem_small`, whose conclusion is `WP(λ)` on `[0, λ*]`; on
+Proof: (a) is `lem_small` with `λ*` its constant; on
 `[λ*, 1]` by `lem_pert` at `λ̲ = λ*`, `ξ¹ = ξ² = ξ₀` (`ℱ₀`-measurable by Assumption 2.2) and
 `q¹ = q² = q`, whose difference of two solutions in `𝕊` lies in `𝕊`
 (`ForcedSolution.supSize_sub_lt_top`) and whose data size is `0`, so the size of the difference is
@@ -3785,7 +3790,9 @@ Assumptions 2.2–2.5 at `L = 1`, `G = 1`, `α = β₁ = β₂ = 1`).
 
 Verdict: faithful.
 
-<!-- spec-review: MVFBSDEJ.PaperSpec.sec4_uniq_homotopy ed839d34f480cba14793e355508eebf7 by=claude-author source=A:sec4:uniqueness-along-homotopy@c905216fdc8aa89607a10094617e291d697687be2ee987671adc2fdfc0e4c6a0 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec4_uniq_homotopy ed839d34f480cba1eb8d8eada21cae8e by=claude-author source=A:sec4:uniqueness-along-homotopy@c905216fdc8aa89607a10094617e291d697687be2ee987671adc2fdfc0e4c6a0 -->
+Review by claude-auditor: faithful with representation choices.
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec4_uniq_homotopy ed839d34f480cba1eb8d8eada21cae8e by=claude-auditor source=A:sec4:uniqueness-along-homotopy@c905216fdc8aa89607a10094617e291d697687be2ee987671adc2fdfc0e4c6a0 -->
 
 ## §4.5, the proof of Theorem 3.5: `MVFBSDEJ.PaperSpec.sec45_proof_thm35`, and `thm_cwp`
 
@@ -4190,6 +4197,8 @@ Re-readings at the widened passages:
 <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc ed839d34f480cba15a6f123acd31afd5 by=claude-author source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_limin ed839d34f480cba1f28bceb8fea3e945 by=claude-author source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 source=A:intro:limin-comparison@28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_jump ed839d34f480cba1e4ed71c267b0a369 by=claude-author source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 -->
+Review by claude-auditor: faithful with representation choices.
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_jump ed839d34f480cba1e4ed71c267b0a369 by=claude-auditor source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 -->
 Review by claude-reviewer: faithful with representation choices.
 <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc ed839d34f480cba15a6f123acd31afd5 by=claude-reviewer source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-auditor: faithful with representation choices.
@@ -4641,6 +4650,8 @@ Borel law flow `ρ`; the printed claim is its instance over the standing basis a
 of the paper and `ρ = μ⁻`, the Borel flow of Lemma A.1, with (b) the display read through (2.4).
 
 <!-- spec-review: MVFBSDEJ.PaperSpec.eq_coefmeas_jump ed839d34f480cba1c511e18d76164b66 by=claude-author source=A:eq:coefmeas@0109d50802d3c1896c48e997eef1423f9bb8bba68e798c4721fae63f388eccb2 -->
+Review by claude-auditor: faithful with representation choices.
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_coefmeas_jump ed839d34f480cba1c511e18d76164b66 by=claude-auditor source=A:eq:coefmeas@0109d50802d3c1896c48e997eef1423f9bb8bba68e798c4721fae63f388eccb2 -->
 
 ## Remark 3.2, the solution class: `MVFBSDEJ.PaperSpec.rem_cwp_class`
 
@@ -6600,6 +6611,8 @@ lines 9–22):
   the systems so carried are admissible. Witness: `MVFBSDEJ.Acceptance.ex_fulllaw_jump_hypotheses`.
   Verdict: faithful.
   <!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_wp ed839d34f480cba137d1cd6f707608d2 by=claude-author source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
+  Review by claude-auditor: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_wp ed839d34f480cba137d1cd6f707608d2 by=claude-auditor source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 
 * `ex_expfunc_jump` (`A:sec5:overview`). "Examples 5.2 and 5.3 recover the Brownian [BYZ] and the
   expectation-functional [LiMin] subclasses as special cases" (lines 13–14), for the jump
@@ -6614,6 +6627,8 @@ lines 9–22):
   subclass; the identification with the hypotheses of [LiMin] is a statement about cited work.
   Witness: `MVFBSDEJ.Acceptance.ex_expfunc_jump_hypotheses`. Verdict: faithful.
   <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_jump ed839d34f480cba1e4ed71c267b0a369 by=claude-author source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
+  Review by claude-auditor: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_jump ed839d34f480cba1e4ed71c267b0a369 by=claude-auditor source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 
 ## Example 5.4, nonlinear law functionals: `MVFBSDEJ.PaperSpec.ex_fulllaw_lip`, `ex_fulllaw_pert`, `ex_fulllaw_wp`, `ex_fulllaw_beyond_radial`, `ex_fulllaw_beyond_U_corr`, `ex_fulllaw_beyond_Q`, `ex_fulllaw_affineQ`
 
@@ -6814,6 +6829,8 @@ Re-readings at the widened passages:
 <!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_lip ed839d34f480cba1f75f47b92e7d0c68 by=claude-author source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 -->
 <!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_pert ed839d34f480cba1b980c331983389db by=claude-author source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
 <!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_wp ed839d34f480cba137d1cd6f707608d2 by=claude-author source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
+Review by claude-auditor: faithful with representation choices.
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_wp ed839d34f480cba137d1cd6f707608d2 by=claude-auditor source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
 <!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_radial ed839d34f480cba1e35b736319ec8895 by=claude-author source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 <!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_U_corr ed839d34f480cba10f66e794dcb439f4 by=claude-author source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 <!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_Q ed839d34f480cba1461519d3798ca6c4 by=claude-author source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 -->
@@ -7228,6 +7245,8 @@ lines 549–554):
   faithful to the general reading; the families of Example 5.4 are its instance `ex54Pert`
   (`ex_fulllaw_pert`).
   <!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust_lip ed839d34f480cba129c3f998d5e8f786 by=claude-author source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
+  Review by claude-auditor: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust_lip ed839d34f480cba129c3f998d5e8f786 by=claude-auditor source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
 
 * `cor_robust_wp` (`A:rem:regimes`). "Can be added when it is smaller than the dissipativity
   margin": with a baseline satisfying (2.3), Assumptions 2.2–2.5 (`m = n`, `G` of full rank) and
@@ -7239,6 +7258,8 @@ lines 549–554):
   Example 5.4 for its families. Witness: `MVFBSDEJ.Acceptance.cor_robust_hypotheses`. Verdict:
   faithful to the general reading; at the perturbation of Example 5.4 it is `ex_fulllaw_wp`.
   <!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust_wp ed839d34f480cba1617ff136058ce573 by=claude-author source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
+  Review by claude-auditor: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust_wp ed839d34f480cba1617ff136058ce573 by=claude-auditor source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
 
 ## Section 6, the conclusion (`A:conclusion`)
 
@@ -7879,6 +7900,8 @@ previous versions.
   representing `𝐇_t`, `C`-Lipschitz on `H × H`, gives a jump coefficient satisfying (2.10) with
   `K = L²(ν; ℝⁿ)`. Verdict: faithful with representation choices, as under Example 5.3.
   <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_jump ed839d34f480cba1e4ed71c267b0a369 by=claude-author source=A:intro:limin-comparison@28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998 -->
+  Review by claude-auditor: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_jump ed839d34f480cba1e4ed71c267b0a369 by=claude-auditor source=A:intro:limin-comparison@28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998 -->
 
 * Review by claude-auditor of `MVFBSDEJ.PaperSpec.ex_expfunc_jump` (`A:ex:expfunc`,
   `A:intro:limin-comparison`). Reading at

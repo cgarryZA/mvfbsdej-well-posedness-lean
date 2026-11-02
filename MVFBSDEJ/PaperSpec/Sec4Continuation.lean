@@ -32,15 +32,27 @@ open MVFBSDEJ.WellPosedness.System MVFBSDEJ.WellPosedness.Existence
 universe u v w
 
 /-- §4.4, before Lemma 4.4: uniqueness along the homotopy. There is a function `λ*` of `(T, L)`
-such that: in the standing setting, for `T > 0`, if the coefficients with initial datum `ξ₀`
+such that: (a) `λ*` is a small-coupling threshold of Lemma 4.2: in the standing setting, for
+`T > 0`, if the coefficients with initial datum `ξ₀` satisfy (2.3) and Assumptions 2.2–2.3 with the
+constant `L`, then `λ*(T, L) ∈ (0, 1]` and `WP(λ)` holds for every `λ ∈ [0, λ*]`; and (b) if they
 satisfy (2.3) and Assumptions 2.2–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, then
-`λ*(T, L) ∈ (0, 1]` is a small-coupling threshold of Lemma 4.2 (`WP(λ)` for every
-`λ ∈ [0, λ*]`), and for every `λ ∈ [λ*, 1]` and every `λ ∈ [0, λ*]`, every forcing `q` and any
-two solutions of (4.1) at `λ` in `𝕊` with the datum `ξ₀` and the forcing `q`, `X` and `Y` are
-indistinguishable on `[0, T]` and the differences of `Z` and of `U` have zero energy. -/
+for every `λ ∈ [λ*, 1]` and every `λ ∈ [0, λ*]`, every forcing `q` and any two solutions of (4.1)
+at `λ` in `𝕊` with the datum `ξ₀` and the forcing `q`, `X` and `Y` are indistinguishable on
+`[0, T]` and the differences of `Z` and of `U` have zero energy. -/
 def sec4_uniq_homotopy : Prop :=
   ∃ lamStar : ℝ → ℝ → ℝ,
-  ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
+  (∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
+    [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
+    (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
+    (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
+    (hind₀ : Indep 𝒢₀ (⨆ t, D.filtration t) P),
+    0 < n → 0 < m → 0 < d → ∀ T : ℝ, 0 < T →
+    ∀ (L : ℝ) (C : Coeffs ν n m d) (ξ₀ : Ω → EuclideanSpace ℝ (Fin n)),
+    JointBorel T C → Assumption22 (enlJoint 𝒢₀ D h𝒢₀) P T C ξ₀ →
+    Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C →
+    0 < lamStar T L ∧ lamStar T L ≤ 1
+      ∧ ∀ lam : ℝ, 0 ≤ lam → lam ≤ lamStar T L → WP D h𝒢₀ hind₀ T lam C ξ₀)
+  ∧ ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
     [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
     (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
     (D : LevyStochCalc.Driver.LevyDriver.{u, v, w} P d ν) (h𝒢₀ : 𝒢₀ ≤ mΩ)
@@ -51,9 +63,7 @@ def sec4_uniq_homotopy : Prop :=
     JointBorel T C → Assumption22 (enlJoint 𝒢₀ D h𝒢₀) P T C ξ₀ →
     Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C → G.rank = min m n →
     Assumption25 (enlJoint 𝒢₀ D h𝒢₀) P T G α β₁ β₂ C →
-    0 < lamStar T L ∧ lamStar T L ≤ 1
-    ∧ (∀ lam : ℝ, 0 ≤ lam → lam ≤ lamStar T L → WP D h𝒢₀ hind₀ T lam C ξ₀)
-    ∧ ∀ lam : ℝ, (lamStar T L ≤ lam ∧ lam ≤ 1 ∨ 0 ≤ lam ∧ lam ≤ lamStar T L) →
+    ∀ lam : ℝ, (lamStar T L ≤ lam ∧ lam ≤ 1 ∨ 0 ≤ lam ∧ lam ≤ lamStar T L) →
       ∀ (qb : Fin n → Ω → ℝ → ℝ) (qσ : Fin n → ℝ → Ω → Fin d → ℝ)
         (qh : Fin n → ℝ → Ω → E → ℝ) (qf : Fin m → Ω → ℝ → ℝ) (qg : Fin m → Ω → ℝ),
       PredForcing (enlJoint 𝒢₀ D h𝒢₀) P ν T qb qσ qh qf qg →

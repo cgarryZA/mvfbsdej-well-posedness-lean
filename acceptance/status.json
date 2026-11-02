@@ -2144,9 +2144,7 @@
     {
      "accept": "MVFBSDEJ.Acceptance.cor_robust_lip",
      "accept_ok": true,
-     "author_reviewed": [
-      "MVFBSDEJ.PaperSpec.cor_robust_lip"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -2157,16 +2155,14 @@
      "spec": "MVFBSDEJ.PaperSpec.cor_robust_lip",
      "spec_hash": "ed839d34f480cba129c3f998d5e8f786",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.cor_robust_lip_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "MVFBSDEJ.Acceptance.cor_robust_wp",
      "accept_ok": true,
-     "author_reviewed": [
-      "MVFBSDEJ.PaperSpec.cor_robust_wp"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -2177,7 +2173,7 @@
      "spec": "MVFBSDEJ.PaperSpec.cor_robust_wp",
      "spec_hash": "ed839d34f480cba1617ff136058ce573",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.cor_robust_hypotheses",
      "witness_ok": true
     }
@@ -2189,7 +2185,7 @@
    "scope": "formal",
    "scope_note": "the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; 'arbitrary nonlinear full-tuple law dependence' (lines 550–551) is read both as the three families of Example 5.4 with arbitrary bounded Lipschitz profiles, features and outer function (ex_fulllaw_pert, ex_fulllaw_wp) and, since Example 5.4 concludes through (3.5) and Corollary 3.6 (05-examples.tex lines 338–340), as any θ-independent W₂-Lipschitz perturbation with ‖G‖ L_p below the margin (cor_robust_lip, cor_robust_wp)",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -3656,9 +3652,7 @@
     {
      "accept": "MVFBSDEJ.Acceptance.sec4_uniq_homotopy",
      "accept_ok": true,
-     "author_reviewed": [
-      "MVFBSDEJ.PaperSpec.sec4_uniq_homotopy"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3667,9 +3661,9 @@
      "passage_changed": {},
      "refute": null,
      "spec": "MVFBSDEJ.PaperSpec.sec4_uniq_homotopy",
-     "spec_hash": "ed839d34f480cba14793e355508eebf7",
+     "spec_hash": "ed839d34f480cba1eb8d8eada21cae8e",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses",
      "witness_ok": true
     }
@@ -3681,7 +3675,7 @@
    "scope": "formal",
    "scope_note": "'It remains to prove existence up to λ = 1' (line 878) is exposition announcing Lemma 4.4; the forcing class (04-proof-wellposedness.tex lines 39–53) is pinned in A:eq:forced and A:sec4:WP-def; WP(λ) (04-proof-wellposedness.tex lines 66–68) is pinned in A:sec4:WP-def",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -3964,9 +3958,7 @@
     {
      "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_wp",
      "accept_ok": true,
-     "author_reviewed": [
-      "MVFBSDEJ.PaperSpec.ex_fulllaw_wp"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3977,16 +3969,14 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_wp",
      "spec_hash": "ed839d34f480cba137d1cd6f707608d2",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_jump_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "MVFBSDEJ.Acceptance.ex_expfunc_jump",
      "accept_ok": true,
-     "author_reviewed": [
-      "MVFBSDEJ.PaperSpec.ex_expfunc_jump"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3997,7 +3987,7 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_expfunc_jump",
      "spec_hash": "ed839d34f480cba1e4ed71c267b0a369",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.ex_expfunc_jump_hypotheses",
      "witness_ok": true
     }
@@ -4009,7 +3999,7 @@
    "scope": "formal",
    "scope_note": "the first sentence, 'The examples illustrate both the scope of the law dependence and the role of the dissipativity assumption' (lines 9–10), is exposition; the identification of the subclasses of Examples 5.2 and 5.3 with those of [BYZ] and [LiMin] is a statement about cited work; the description of the dealer market (the population law on valuation curves entering the jump response through a crowding operator, lines 17–20) is modelling, not stated; 'In Examples 5.4 and 5.5, we take ν ≠ 0' (line 22) is the standing hypothesis of Examples 5.4 and 5.5, pinned here and read by A:ex:fulllaw, A:ex:dealer, A:rem:regimes and the Example 5.4–5.5 clauses of this claim and of A:abstract",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [],
@@ -4544,9 +4534,7 @@
     {
      "accept": "MVFBSDEJ.Acceptance.eq_coefmeas_jump",
      "accept_ok": true,
-     "author_reviewed": [
-      "MVFBSDEJ.PaperSpec.eq_coefmeas_jump"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -4557,7 +4545,7 @@
      "spec": "MVFBSDEJ.PaperSpec.eq_coefmeas_jump",
      "spec_hash": "ed839d34f480cba1c511e18d76164b66",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses",
      "witness_ok": true
     }
@@ -4569,7 +4557,7 @@
    "scope": "formal",
    "scope_note": "the region (lines 123–134) also holds the end of the reading convention of (2.4) (line 123, pinned in A:eq:fubiniiso) and the deferral to Lemma A.1 of the well-definedness of the law flows t ↦ μ_t, μ⁻_t and of the independence of time-integrated coefficient identities from the predictable representatives of Z, U (lines 132–134), the content of A:lem:lawflow, pinned here as the standing reading of μ, μ⁻ in every coefficient evaluation; the coefficient signatures and their determinism (02-model-assumptions.tex lines 86–100) are pinned in A:eq:hborel",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [],
@@ -6059,8 +6047,7 @@
  "summary": {
   "A": {
    "definition: reviewed": 14,
-   "formal: accepted": 72,
-   "formal: proved, author-reviewed": 4,
+   "formal: accepted": 76,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
    "out of scope: proof-step": 2
