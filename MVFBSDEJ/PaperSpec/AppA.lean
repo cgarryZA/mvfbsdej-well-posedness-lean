@@ -33,7 +33,12 @@ universe u v w
 finite energy on `[0, T]`, the flows `s ↦ lawP2 P Θ_s` and `s ↦ lawP2 P Θ⁻_s`,
 `Θ⁻_s = (X_{s−}, Y_{s−}, Z_s, U_s)` (the law where the tuple is square integrable, `δ₀`
 elsewhere), are Borel into `(P₂(H), W₂)`, and for almost every `s ∈ [0, T]` they are the laws
-`P ∘ Θ_s⁻¹` and `P ∘ (Θ⁻_s)⁻¹` and coincide. -/
+`P ∘ Θ_s⁻¹` and `P ∘ (Θ⁻_s)⁻¹` and coincide. The hypothesis `CadlagPredTuple` asks for `X, Y`
+adapted with every path càdlàg at every `t ∈ ℝ` and for `U` marked predictable, hence constant
+in `(ω, e)` at the times `t ≤ 0`. A tuple on `[0, T]` meets it once `X, Y` are extended by `0`
+before time `0` and by their values at `T` after `T`, `Z, U` are set to `0` off `(0, T]` (for `U`
+a change at the null time `0`), and `X, Y` are replaced by indistinguishable versions with every
+path càdlàg; none of these changes `Law(Θ_s)` or `Law(Θ⁻_s)` at almost every `s ∈ [0, T]`. -/
 def lem_lawflow : Prop :=
   ∀ {Ω : Type u} [mΩ : MeasurableSpace Ω] (ℱ : Filtration ℝ mΩ)
     (P : Measure Ω) [IsProbabilityMeasure P] {E : Type v} [MeasurableSpace E]

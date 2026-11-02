@@ -207,7 +207,9 @@ alignment:
         - "MVFBSDEJ.Acceptance.ex_dealer_mono"
         - "MVFBSDEJ.Acceptance.ex_dealer_wp"
         - "MVFBSDEJ.Acceptance.ex_dealer_active"
-      status: "formal: accepted"
+        - "MVFBSDEJ.Acceptance.cor_robust_lip"
+        - "MVFBSDEJ.Acceptance.cor_robust_wp"
+      status: "formal: proved, author-reviewed"
     - source: "Lemma A.1"
       lean:
         - "MVFBSDEJ.Acceptance.lem_lawflow"

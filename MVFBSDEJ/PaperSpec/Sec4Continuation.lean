@@ -9,9 +9,9 @@ import MVFBSDEJ.PaperSpec.Sec4
 # Sections 4.4 and 4.5 of the well-posedness paper: the continuation
 
 Statement and equation numbers refer to the well-posedness paper at `1f67672`. Before Lemma 4.4,
-Lemma 4.3 with identical sources and initial datum gives uniqueness at each `λ ∈ [λ*, 1]` and
-Lemma 4.2 gives it on `[0, λ*]`. The proof of Theorem 3.5 steps along
-`λ_k = min{λ* + k ζ₀, 1}` with Lemma 4.4 from `WP(λ*)` to `WP(1)`.
+with `λ*` the small-coupling threshold of Lemma 4.2, Lemma 4.3 with identical sources and initial
+datum gives uniqueness at each `λ ∈ [λ*, 1]` and Lemma 4.2 gives it on `[0, λ*]`. The proof of
+Theorem 3.5 steps along `λ_k = min{λ* + k ζ₀, 1}` with Lemma 4.4 from `WP(λ*)` to `WP(1)`.
 
 ## Main definitions
 
@@ -34,8 +34,9 @@ universe u v w
 /-- §4.4, before Lemma 4.4: uniqueness along the homotopy. There is a function `λ*` of `(T, L)`
 such that: in the standing setting, for `T > 0`, if the coefficients with initial datum `ξ₀`
 satisfy (2.3) and Assumptions 2.2–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, then
-`λ*(T, L) ∈ (0, 1]`, and for every `λ ∈ [λ*, 1]` and every `λ ∈ [0, λ*]`, every forcing `q` and
-any two solutions of (4.1) at `λ` in `𝕊` with the datum `ξ₀` and the forcing `q`, `X` and `Y` are
+`λ*(T, L) ∈ (0, 1]` is a small-coupling threshold of Lemma 4.2 (`WP(λ)` for every
+`λ ∈ [0, λ*]`), and for every `λ ∈ [λ*, 1]` and every `λ ∈ [0, λ*]`, every forcing `q` and any
+two solutions of (4.1) at `λ` in `𝕊` with the datum `ξ₀` and the forcing `q`, `X` and `Y` are
 indistinguishable on `[0, T]` and the differences of `Z` and of `U` have zero energy. -/
 def sec4_uniq_homotopy : Prop :=
   ∃ lamStar : ℝ → ℝ → ℝ,
@@ -51,6 +52,7 @@ def sec4_uniq_homotopy : Prop :=
     Assumption23 (enlJoint 𝒢₀ D h𝒢₀) P T L C → G.rank = min m n →
     Assumption25 (enlJoint 𝒢₀ D h𝒢₀) P T G α β₁ β₂ C →
     0 < lamStar T L ∧ lamStar T L ≤ 1
+    ∧ (∀ lam : ℝ, 0 ≤ lam → lam ≤ lamStar T L → WP D h𝒢₀ hind₀ T lam C ξ₀)
     ∧ ∀ lam : ℝ, (lamStar T L ≤ lam ∧ lam ≤ 1 ∨ 0 ≤ lam ∧ lam ≤ lamStar T L) →
       ∀ (qb : Fin n → Ω → ℝ → ℝ) (qσ : Fin n → ℝ → Ω → Fin d → ℝ)
         (qh : Fin n → ℝ → Ω → E → ℝ) (qf : Fin m → Ω → ℝ → ℝ) (qg : Fin m → Ω → ℝ),

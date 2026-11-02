@@ -15,9 +15,9 @@ import MVFBSDEJ.WellPosedness.Examples.Dealer.MarkSizes
 
 Statement and equation numbers refer to the well-posedness paper at `1f67672`. The standing
 setting is that of §2 (see `MVFBSDEJ.PaperSpec.thm_cwp`), with `n = m = d = 1` and `G = 1` for
-Examples 5.1 and 5.2; Examples 5.3 and 5.4 are stated at general dimensions (`m = n` and a
-full-rank `G ∈ ℝ^{n×n}` for the perturbation of Example 5.4). Kernels and coefficients depend on
-a time `t ∈ ℝ`, the time interval `[0, T]` extended to `ℝ`.
+Example 5.1; Example 5.2 is stated at general dimensions with `ν = 0`, and Examples 5.3 and 5.4 at
+general dimensions (`m = n` and a full-rank `G ∈ ℝ^{n×n}` for the perturbation of Example 5.4).
+Kernels and coefficients depend on a time `t ∈ ℝ`, the time interval `[0, T]` extended to `ℝ`.
 
 ## Main definitions
 
@@ -505,7 +505,9 @@ an outer function `Q : ℝᴶ → ℝ`, features `φ_1, …, φ_J : L²(ν; ℝ�
 `p_f = ε 𝔮(W₂(μ, μ₀)) w₀ + ε Q(∫ φ_1 dμ^U, …, ∫ φ_J dμ^U) w₁`, `p_b = ε 𝔮̃(W₂(μ^U, Λ₀)) v₀`,
 `p_h = ε 𝔮̂(W₂(μ^U, Λ₀)) ĥ`, `p_σ = 0`, independent of the time and the tuple, with `W₂` the
 2-Wasserstein distance of the Hilbert norm on `P₂(H)` and of the norm on `P₂(L²(ν; ℝⁿ))`. The
-perturbed system is `C.perturb (ex54Pert …)`: `f = f₀ + p_f`, `b = b₀ + p_b`, `h = h₀ + p_h`. -/
+perturbed system is `C.perturb (ex54Pert …)`: `f = f₀ + p_f`, `b = b₀ + p_b`, `h = h₀ + p_h`.
+The profiles are defined on `ℝ`: a profile `𝔮` on `ℝ₊` extends by `r ↦ 𝔮(|r|)` with the same
+Lipschitz constant and bound, and only its values at `W₂ ≥ 0` enter. -/
 noncomputable def ex54Pert {E : Type v} [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν]
     [MeasurableSpace.CountablyGenerated E] (n d J : ℕ) (ε : ℝ) (q qb qh : ℝ → ℝ)
     (Q : EuclideanSpace ℝ (Fin J) → ℝ) (φ : Fin J → Lp (EuclideanSpace ℝ (Fin n)) 2 ν → ℝ)

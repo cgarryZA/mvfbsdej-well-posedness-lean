@@ -236,13 +236,6 @@ digest.
   time. The added lines narrow nothing. The verdict (broader) stands.
   <!-- spec-review: MVFBSDEJ.PaperSpec.eq_coefmeas ed839d34f480cba1c9dc5757782364d2 by=claude-auditor source=A:eq:coefmeas@0109d50802d3c1896c48e997eef1423f9bb8bba68e798c4721fae63f388eccb2 -->
 
-* `MVFBSDEJ.PaperSpec.eq_coefmeas_jump` (added: line 123 and 132–134). The earlier report read
-  lines 112–134, which include the added lines. Line 123 introduces (2.5) along diagonal inputs.
-  Lines 132–134 defer the Borel law flows μ, μ⁻ to Lemma A.1, and the proposition takes an arbitrary
-  Borel flow ρ and an arbitrary predictable tuple, instantiated at Θ⁻ and μ⁻. The verdict (broader)
-  stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.eq_coefmeas_jump ed839d34f480cba16b26e31f5be9d0e8 by=claude-auditor source=A:eq:coefmeas@0109d50802d3c1896c48e997eef1423f9bb8bba68e798c4721fae63f388eccb2 -->
-
 ## `A:eq:compid` (paper/sections/02-model-assumptions.tex, lines 14–25)
 
 * `MVFBSDEJ.PaperSpec.eq_compid` (added: lines 14–15 and 20–25). Lines 14–15 end the
@@ -1171,16 +1164,6 @@ digest.
   martingale with integrable running supremum has zero-mean increments. The earlier verdict,
   faithful with representation choices, stands.
   <!-- spec-review: MVFBSDEJ.PaperSpec.sec4_supremum_criterion ed839d34f480cba1f588c2071f5242ff by=claude-auditor source=A:sec4:supremum-criterion@dfbd28b0a591b82703f11cc1929876e5b2383e0b09afa7d4ae6331ec55b792a3 -->
-
-## `A:sec4:uniqueness-along-homotopy` (paper/sections/04-proof-wellposedness.tex, lines 875–878)
-
-* `MVFBSDEJ.PaperSpec.sec4_uniq_homotopy` (added: lines 876–878). Lines 876–878 complete the
-  sentence that the earlier report read in full (lines 875–878). Lemma 4.3 at lower bound λ* gives
-  uniqueness at each λ ∈ [λ*, 1], and Lemma 4.2 gives it on [0, λ*]. 'It remains to prove existence
-  up to λ = 1' is exposition, as the scope note says. The proposition states uniqueness on both
-  intervals under (2.3) and Assumptions 2.2–2.5, with λ* = λ*(T, L) ∈ (0, 1]. The verdict (faithful
-  with representation choices) stands.
-  <!-- spec-review: MVFBSDEJ.PaperSpec.sec4_uniq_homotopy ed839d34f480cba1f816b3d41c1d4166 by=claude-auditor source=A:sec4:uniqueness-along-homotopy@c905216fdc8aa89607a10094617e291d697687be2ee987671adc2fdfc0e4c6a0 -->
 
 ## `A:sec5:overview` (paper/sections/05-examples.tex, lines 9–22)
 

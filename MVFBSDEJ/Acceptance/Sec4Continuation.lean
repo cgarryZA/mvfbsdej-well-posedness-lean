@@ -130,7 +130,7 @@ theorem sec4_uniq_homotopy : PaperSpec.sec4_uniq_homotopy.{u, v, w} := by
   refine ⟨lamStar, ?_⟩
   intro Ω 𝒢₀ mΩ E _ ν _ _ n m d P _ D h𝒢₀ hind₀ hn hm hd T hT L α β₁ β₂ G C ξ₀ hJ h22 h23 hG h25
   obtain ⟨hpos, hle, hwp⟩ := hsmall 𝒢₀ ν n m d P D h𝒢₀ hind₀ hn hm hd T hT L C ξ₀ hJ h22 h23
-  refine ⟨hpos, hle, fun lam hlam qb qσ qh qf qg hq X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ hS₁ hS₂ => ?_⟩
+  refine ⟨hpos, hle, hwp, fun lam hlam qb qσ qh qf qg hq X₁ X₂ Y₁ Y₂ Z₁ Z₂ U₁ U₂ hS₁ hS₂ => ?_⟩
   rcases hlam with ⟨hl1, hl2⟩ | ⟨hl1, hl2⟩
   · have hξ : Measurable[enlJoint 𝒢₀ D h𝒢₀ 0] ξ₀ := h22.initial_meas.measurable
     have hsup := ForcedSolution.supSize_sub_lt_top hT hJ h22.origin h23 hJ h22.origin h23 hS₁ hS₂
