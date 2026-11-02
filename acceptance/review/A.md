@@ -730,7 +730,11 @@ a solution in `𝕊`, is unique in `ℍ²` and satisfies (3.1), so the reading s
 
 <!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust ed839d34f480cba158154e23787dfbca by=claude-author source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 -->
 <!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust_wp ed839d34f480cba1617ff136058ce573 by=claude-author source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
+Review by claude-auditor: faithful with representation choices.
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust_wp ed839d34f480cba1617ff136058ce573 by=claude-auditor source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 source=A:intro:contributions@6ee0736683d48f72fd199cb331cad8e2e8968f67f97c9826bccbcb140867b8df source=A:conclusion@730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5 -->
 <!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust_lip ed839d34f480cba129c3f998d5e8f786 by=claude-author source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 -->
+Review by claude-auditor: faithful with representation choices.
+<!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust_lip ed839d34f480cba129c3f998d5e8f786 by=claude-auditor source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 -->
 Review by claude-reviewer: faithful with representation choices.
 <!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust ed839d34f480cba158154e23787dfbca by=claude-reviewer source=A:cor:robust@3d1625968e85be99f1f27b950433c30d582746e8a2445900a724b8d565e7c757 -->
 Review by claude-auditor: faithful with representation choices.
@@ -3746,50 +3750,49 @@ Review by claude-auditor: broader.
 
 ## §4.4, uniqueness along the homotopy: `MVFBSDEJ.PaperSpec.sec4_uniq_homotopy`
 
-Manuscript (§4.4, before Lemma `lem:cont`, lines 875–878): "Taking identical sources and the common
-initial datum in Lemma 4.3 (at lower bound `λ̲ = λ*`) yields uniqueness at each `λ ∈ [λ*, 1]`;
-Lemma 4.2 gives it on `[0, λ*]`. It remains to prove existence up to `λ = 1`." Here `λ*` is the
-small-coupling threshold of Lemma 4.2 (as Lemma 4.4 says), and uniqueness is the uniqueness half
-of `WP(λ)`: two solutions of (4.1) in `𝕊` with the same initial datum and forcing coincide.
+Manuscript (§4.4, `04-proof-wellposedness.tex` lines 875–878): "Taking identical sources and the
+common initial datum in Lemma 4.3 (at lower bound `λ̲ = λ*`) yields uniqueness at each
+`λ ∈ [λ*, 1]`; Lemma 4.2 gives it on `[0, λ*]`. It remains to prove existence up to `λ = 1`."
+Here `λ*` is "the small-coupling threshold of Lemma 4.2", as Lemma 4.4 calls it (lines 881–882),
+and uniqueness is the uniqueness half of `WP(λ)`: two solutions of (4.1) in `𝕊` with the same
+initial datum and forcing coincide.
 
-Proposition: `∃ λ*` of `(T, L)` such that, in the standing setting, for `T > 0`, under (2.3) and
-Assumptions 2.2–2.5 with `L, α, β₁, β₂` and a full-rank `G`: `0 < λ*(T, L) ≤ 1`, and for every
-`λ` with `λ* ≤ λ ≤ 1` or `0 ≤ λ ≤ λ*`, every forcing `q` (`PredForcing`) and any two
+Proposition: `∃ λ*` of `(T, L)` such that (a) in the standing setting, for `T > 0`, under (2.3)
+and Assumptions 2.2–2.3 with `L`: `0 < λ*(T, L) ≤ 1` and `WP(λ)` for every `λ ∈ [0, λ*]`; and
+(b) under (2.3) and Assumptions 2.2–2.5 with `L, α, β₁, β₂` and a full-rank `G`: for every `λ`
+with `λ* ≤ λ ≤ 1` or `0 ≤ λ ≤ λ*`, every forcing `q` (`PredForcing`) and any two
 `ForcedSolution`s at `λ` with the datum `ξ₀` and the forcing `q`, `X¹, X²` and `Y¹, Y²` are
 indistinguishable on `[0, T]` and the differences of `Z` and of `U` have zero energy.
 
 Readings:
 
+* `λ*` is the threshold of Lemma 4.2: part (a) is the conclusion of `lem_small` word for word,
+  under that lemma's hypotheses alone (Assumptions 2.2–2.3, no monotonicity). A `λ*` meeting (a)
+  cannot be `≡ 1`: the system of `sec5_limin` meets (2.3) and Assumptions 2.2–2.3 and has no
+  solution on `T = 3π/4` when `𝔼ξ₀ ≠ 0`, so `WP(1)` fails there. The two ranges of (b) are the
+  ranges the sentence names.
 * The hypotheses are those of the continuation step, the hypotheses of Theorem 3.5 (as
   `thm_cwp`/`lem_cont`); Lemma 4.3 uses Assumptions 2.3–2.5 and Lemma 4.2 Assumptions 2.2–2.3.
-* `λ*` is chosen before everything, a function of `(T, L)`, as in `lem_small`; its range
-  `(0, 1]` is asserted in the situation of the statement. The two ranges of the sentence are the
-  two disjuncts on `λ`.
+  The two ranges of the sentence are the two disjuncts on `λ`.
 * Uniqueness in the sense of `WP(λ)` (reviewed in `definitions.md`): solutions in `𝕊`
   (`ForcedSolution`), the conclusion of `WP`. "Identical sources and the common initial datum":
   one forcing `q` and one datum `ξ₀` for both solutions.
+* "It remains to prove existence up to `λ = 1`" (line 878) is exposition announcing Lemma 4.4.
 
-Proof: with `λ*` the constant of `lem_small`; on `[λ*, 1]` by `lem_pert` at `λ̲ = λ*`,
-`ξ¹ = ξ² = ξ₀` (`ℱ₀`-measurable by Assumption 2.2) and `q¹ = q² = q`, whose difference of two
-solutions in `𝕊` lies in `𝕊` (`ForcedSolution.supSize_sub_lt_top`) and whose data size is `0`, so
-the size of the difference is `0` (`ForcedSolution.eq_of_supSize_sub_eq_zero`); on `[0, λ*]` by
-`WP(λ)` of `lem_small`.
+Proof: (a) is `lem_small` with `λ*` its constant; on
+`[λ*, 1]` by `lem_pert` at `λ̲ = λ*`, `ξ¹ = ξ² = ξ₀` (`ℱ₀`-measurable by Assumption 2.2) and
+`q¹ = q² = q`, whose difference of two solutions in `𝕊` lies in `𝕊`
+(`ForcedSolution.supSize_sub_lt_top`) and whose data size is `0`, so the size of the difference is
+`0` (`ForcedSolution.eq_of_supSize_sub_eq_zero`); on `[0, λ*]` by `WP(λ)` of `lem_small`.
 
 Witness: `MVFBSDEJ.Acceptance.thm_cwp_hypotheses` (Example 5.1(i): (2.3) and
 Assumptions 2.2–2.5 at `L = 1`, `G = 1`, `α = β₁ = β₂ = 1`).
 
 Verdict: faithful.
 
-Re-readings at the widened passages:
-
-* `sec4_uniq_homotopy` (`A:sec4:uniqueness-along-homotopy`): Re-read at the passage of lines 875–878
-  of `04-proof-wellposedness.tex` (formerly line 875): the added lines (lines 876–878, quoted in the
-  review above: the rest of the sentence and 'It remains to prove existence up to `λ = 1`') do not
-  change the reading.
-
-<!-- spec-review: MVFBSDEJ.PaperSpec.sec4_uniq_homotopy ed839d34f480cba1f816b3d41c1d4166 by=claude-author source=A:sec4:uniqueness-along-homotopy@c905216fdc8aa89607a10094617e291d697687be2ee987671adc2fdfc0e4c6a0 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec4_uniq_homotopy ed839d34f480cba1eb8d8eada21cae8e by=claude-author source=A:sec4:uniqueness-along-homotopy@c905216fdc8aa89607a10094617e291d697687be2ee987671adc2fdfc0e4c6a0 -->
 Review by claude-auditor: faithful with representation choices.
-<!-- spec-review: MVFBSDEJ.PaperSpec.sec4_uniq_homotopy ed839d34f480cba1f816b3d41c1d4166 by=claude-auditor source=A:sec4:uniqueness-along-homotopy@518b95da43921c8290496ba8c58a2f74ebe2bce2191c71305e264312b4786bd7 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.sec4_uniq_homotopy ed839d34f480cba1eb8d8eada21cae8e by=claude-auditor source=A:sec4:uniqueness-along-homotopy@c905216fdc8aa89607a10094617e291d697687be2ee987671adc2fdfc0e4c6a0 -->
 
 ## §4.5, the proof of Theorem 3.5: `MVFBSDEJ.PaperSpec.sec45_proof_thm35`, and `thm_cwp`
 
@@ -4194,6 +4197,8 @@ Re-readings at the widened passages:
 <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc ed839d34f480cba15a6f123acd31afd5 by=claude-author source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_limin ed839d34f480cba1f28bceb8fea3e945 by=claude-author source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 source=A:intro:limin-comparison@28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_jump ed839d34f480cba1e4ed71c267b0a369 by=claude-author source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 -->
+Review by claude-auditor: faithful with representation choices.
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_jump ed839d34f480cba1e4ed71c267b0a369 by=claude-auditor source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 -->
 Review by claude-reviewer: faithful with representation choices.
 <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc ed839d34f480cba15a6f123acd31afd5 by=claude-reviewer source=A:ex:expfunc@bd45b535010dec4f0a3fd33a96a52f00a138499f3145d6b0e5c89d643405ac28 source=A:sec5:overview@85ef567e93b2eddcbd19ae70a2daac18fc886c5303ea56d4b6dc281d39f4f3e9 -->
 Review by claude-auditor: faithful with representation choices.
@@ -4594,44 +4599,59 @@ Review by claude-auditor: broader.
 
 ## (2.5), the predictable jump coefficient: `MVFBSDEJ.PaperSpec.eq_coefmeas_jump`
 
-Manuscript (§2): the Fubini isometry (2.4) and "every Poisson
-integral below ... is read through such a representative ... Consequently, along any diagonal
-input, ... `(s, ω, e) ↦ h(s, Θ_{s−}(ω), e, μ⁻_s)`, predictable."
+Manuscript (`02-model-assumptions.tex`, the claim's passage lines 123–134, read with the
+convention of lines 112–121 that it concludes): the Fubini isometry (2.4),
+`L²(𝒫; L²(ν)) ≅ L²(𝒫 ⊗ ℰ)`, "which supplies a `𝒫 ⊗ ℰ`-measurable representative, unique up to
+`dt ⊗ dP ⊗ ν`-null sets; every Poisson integral below, and every square-integrable
+`L²(ν)`-valued predictable integrand appearing in one, is read through such a representative"
+(lines 117–121); "Consequently, along any diagonal input," (line 123) the second line of (2.5)
+(lines 128–129): "`(s, ω, e) ↦ h(s, Θ_{s−}(ω), e, μ⁻_s)`, predictable"; and "The
+well-definedness of the law flows `t ↦ μ_t, μ⁻_t` and the independence of all time-integrated
+coefficient identities from the choice of predictable representatives of `Z, U` are established in
+Lemma A.1" (lines 132–134).
 
-Proposition `eq_coefmeas_jump`: for coefficients satisfying (2.3), a predictable tuple `Θ` and a
-Borel law flow `ρ : ℝ → P₂(H)` (Hilbert-norm `W₂`), the process `s ↦ 1_{[0,T]}(s) h(s, Θ_s, ρ_s)`
-with values in `L²(ν; ℝⁿ)` is predictable.
+Proposition `eq_coefmeas_jump`: for every filtration `ℱ`, σ-finite `ν` on a countably generated
+mark space, `n, m, d`, `T`, coefficients `C` satisfying (2.3) (`JointBorel`), a predictable tuple
+`Θ : Ω → ℝ → H` (`Predictable ℱ Θ`) and a Borel law flow `ρ : ℝ → P₂(H)` (Hilbert-norm `W₂`):
+(a) the `L²(ν; ℝⁿ)`-valued process `s ↦ 1_{[0,T]}(s) h(s, Θ_s, ·, ρ_s)` is predictable; and (b)
+there are `γ_1, …, γ_n : Ω → ℝ → E → ℝ`, each measurable for the marked predictable σ-algebra
+(`MarkedPredictable ℱ ν`), such that at every `ω` and every `s ∈ (0, T]`,
+`e ↦ (γ_i(ω, s, e))_i` equals `h(s, Θ_s(ω), ·, ρ_s)` `ν`-almost everywhere.
 
 Readings:
 
-* The display's real-valued map of `(s, ω, e)` is read through (2.4): it is predictable as a map
-  into `L²(ν)` and has a `𝒫 ⊗ ℰ`-measurable representative, which is `eq_fubiniiso`.
-* The jump coefficient is evaluated at the predictable tuple `Θ⁻` and its law `μ⁻`, a
-  deterministic flow; the proposition takes any predictable tuple and any Borel flow, cut off to
-  the horizon. The Borel measurability of `s ↦ μ⁻_s` is part of Lemma A.1, not of (2.5).
+* The display's map of `(s, ω, e)` is a pointwise formula in `e` for an element of `L²(ν)`, which
+  lines 117–121 read through a `𝒫 ⊗ ℰ`-measurable representative. Conjunct (a) is the
+  predictability of the `L²(ν)`-valued process; conjunct (b) is the display itself: a
+  representative, measurable in `(s, ω, e)` for the marked predictable σ-algebra, generated by the
+  sets `F × (r, q] × B` with `F ∈ ℱ_r`, `r ≥ 0` and `ν(B) < ∞`, that is `𝒫 ⊗ ℰ` at the positive
+  times (`ν` σ-finite). It represents `h` at every `(s, ω)` of `(0, T] × Ω`, more than the
+  representation up to `dt ⊗ dP ⊗ ν`-null sets of (2.4).
+* The time `0` is left out of (b): the marked predictable σ-algebra is generated at positive times,
+  so every marked predictable process is constant on `{t ≤ 0}`, and `{0}` is `dt`-null, the
+  representative of (2.4) being unique only up to such sets.
+* The jump coefficient is evaluated at the predictable tuple `Θ⁻` and its law flow `μ⁻`, a
+  deterministic flow; the proposition takes any predictable tuple and any Borel flow. The
+  predictability of `Θ⁻` cut to `(0, T]` (for `X, Y` càdlàg adapted and `Z, U` predictable) is
+  `measurable_predictableSigma_tupleAt_leftLim_Ioc`, and the Borel measurability of `s ↦ μ⁻_s` is
+  part of Lemma A.1 (`lem_lawflow`), not of (2.5).
+* "Along any diagonal input": the tuples of the paper, here any predictable tuple.
+
+Proof: (a) is `JointBorel.predictable_jump`; for (b), `γ_i(ω, s, e)` is, at `s > 0`, the `i`-th
+coordinate of `lpRep(1_{[0,T]}(s) h(s, Θ_s(ω), ·, ρ_s), e)`, the jointly measurable representative
+of the elements of `L²(ν; ℝⁿ)` evaluated along the predictable tuple, and `0` at `s ≤ 0`
+(`exists_markedPredictable_jump`, through `markedPredictable_ite_comp`).
 
 Witness: `MVFBSDEJ.Acceptance.thm_cwp_hypotheses` ((2.3) at Example 5.1(i); a constant tuple
 and a constant law flow are predictable and Borel).
 
 Verdict: broader: the proposition holds for every filtration, every predictable tuple `Θ` and every
 Borel law flow `ρ`; the printed claim is its instance over the standing basis at `Θ = Θ⁻` of a tuple
-of the paper and `ρ = μ⁻`, the Borel flow of Lemma A.1, read through (2.4).
+of the paper and `ρ = μ⁻`, the Borel flow of Lemma A.1, with (b) the display read through (2.4).
 
-Re-readings at the widened passages:
-
-* `eq_coefmeas_jump` (`A:eq:coefmeas`): Re-read at the passage of lines 123–134 of
-  `02-model-assumptions.tex` (formerly lines 124–131): the added lines (line 123, the end of the
-  reading convention of (2.4) and 'Consequently, along any diagonal input,', quoted in the review
-  above, and lines 132–134, the well-definedness of the law flows and the independence of
-  representatives, deferred to Lemma A.1) do not change the reading: the proposition is stated for
-  every predictable tuple with a Borel law flow, which contains the diagonal inputs, and the law
-  flows of Lemma A.1 are the claim `A:lem:lawflow`.
-
-<!-- spec-review: MVFBSDEJ.PaperSpec.eq_coefmeas_jump ed839d34f480cba16b26e31f5be9d0e8 by=claude-author source=A:eq:coefmeas@0109d50802d3c1896c48e997eef1423f9bb8bba68e798c4721fae63f388eccb2 -->
-Review by claude-reviewer: broader.
-<!-- spec-review: MVFBSDEJ.PaperSpec.eq_coefmeas_jump ed839d34f480cba16b26e31f5be9d0e8 by=claude-reviewer source=A:eq:coefmeas@951bc71349ab7748916546e7dcfd8ef117078c5b8dcd1e5f4e035106ef459170 -->
-Review by claude-auditor: broader.
-<!-- spec-review: MVFBSDEJ.PaperSpec.eq_coefmeas_jump ed839d34f480cba16b26e31f5be9d0e8 by=claude-auditor source=A:eq:coefmeas@951bc71349ab7748916546e7dcfd8ef117078c5b8dcd1e5f4e035106ef459170 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_coefmeas_jump ed839d34f480cba1c511e18d76164b66 by=claude-author source=A:eq:coefmeas@0109d50802d3c1896c48e997eef1423f9bb8bba68e798c4721fae63f388eccb2 -->
+Review by claude-auditor: faithful with representation choices.
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_coefmeas_jump ed839d34f480cba1c511e18d76164b66 by=claude-auditor source=A:eq:coefmeas@0109d50802d3c1896c48e997eef1423f9bb8bba68e798c4721fae63f388eccb2 -->
 
 ## Remark 3.2, the solution class: `MVFBSDEJ.PaperSpec.rem_cwp_class`
 
@@ -5359,8 +5379,10 @@ Readings:
   Constant tuples are diagonal inputs on every basis, so no richness of the noise is used, and
   `ν = 0` is covered.
 
-Witness: `MVFBSDEJ.Acceptance.ex_concrete_hypotheses`: at its instance Assumption 2.5 holds
-with the system's own `β₁, β₂`, so (2.7) holds with `β₁' = β₁`, `β₂' = β₂`.
+Witness: `MVFBSDEJ.Acceptance.ex_concrete_i_sharp_hypotheses`: over a Lévy driver with `d = 1`,
+`ν = δ₀` and `𝒢₀ = ⊥`, at `T = 1`, `β₁ = β₂ = 1`, `σ_c = 0` and `h_c = 0`, (2.7) (`Mono27At`) holds
+for the coefficients of Example 5.1(i) with `G = 1` and `β₁' = β₂' = 1` at almost every
+`t ∈ [0, 1]`, taken from Assumption 2.5 of `ex_concrete_i`.
 
 Verdict: faithful.
 
@@ -6575,6 +6597,39 @@ Correspondence:
 
 Verdict: each clause is the proposition named, reviewed in its own section.
 
+Clauses attached at `1f67672`, read against the passage of the paragraph (`05-examples.tex`
+lines 9–22):
+
+* `ex_fulllaw_wp` (`A:sec5:overview`). "Example 5.4 then carries the law dependence beyond those
+  subclasses" (line 15): the systems it carries are in the scope of Theorem 3.5. The proposition:
+  with `C_stab` of `(T, L, ‖G‖, c_G, α, β₁, β₂)` quantified first, a baseline at `m = n` with
+  (2.3), Assumptions 2.2–2.5 and the margin `c_diss > 0` of (2.13), perturbed by `ex54Pert` (the
+  radial statistics of the full tuple and of the `U`-marginal, and the cylindrical term of the
+  `U`-marginal) under (5.1), satisfies (2.3), Assumptions 2.2–2.5 and (2.13) with margin
+  `c_diss − ‖G‖ L_p`, has a solution in `𝕊`, unique, with (3.1). "Beyond those subclasses" is
+  `ex_fulllaw_beyond_radial` and `ex_fulllaw_beyond_U_corr`, attached above; this clause gives that
+  the systems so carried are admissible. Witness: `MVFBSDEJ.Acceptance.ex_fulllaw_jump_hypotheses`.
+  Verdict: faithful.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_wp ed839d34f480cba137d1cd6f707608d2 by=claude-author source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
+  Review by claude-auditor: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_wp ed839d34f480cba137d1cd6f707608d2 by=claude-auditor source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
+
+* `ex_expfunc_jump` (`A:sec5:overview`). "Examples 5.2 and 5.3 recover the Brownian [BYZ] and the
+  expectation-functional [LiMin] subclasses as special cases" (lines 13–14), for the jump
+  coefficient of the interactions of [LiMin]: its two-point kernel `h̄`, whose mark is the
+  integrator's, embeds through the Nemytskii map (`05-examples.tex` lines 252–271). The
+  proposition: for σ-finite `ν` on a countably generated space and any kernel
+  `h̄ : ℝ × B × B × E → ℝⁿ`, the Nemytskii map is well defined on equivalence classes, and if
+  `𝐇_t : H × H → L²(ν; ℝⁿ)` represents it and is Lipschitz with constant `C ≥ 0` in the Hilbert
+  norms, then `h(t, θ, μ) = ∫ 𝐇_t(θ, θ') μ(dθ')` is `C`-Lipschitz in `μ` for `W₂`: (2.10) with
+  `K = L²(ν; ℝⁿ)`, the law-dependence part of Assumption 2.3 for the jump coefficient. With
+  `ex_expfunc` and `ex_expfunc_limin` (drift, diffusion and driver) it gives the recovery of that
+  subclass; the identification with the hypotheses of [LiMin] is a statement about cited work.
+  Witness: `MVFBSDEJ.Acceptance.ex_expfunc_jump_hypotheses`. Verdict: faithful.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_jump ed839d34f480cba1e4ed71c267b0a369 by=claude-author source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
+  Review by claude-auditor: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_jump ed839d34f480cba1e4ed71c267b0a369 by=claude-auditor source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
+
 ## Example 5.4, nonlinear law functionals: `MVFBSDEJ.PaperSpec.ex_fulllaw_lip`, `ex_fulllaw_pert`, `ex_fulllaw_wp`, `ex_fulllaw_beyond_radial`, `ex_fulllaw_beyond_U_corr`, `ex_fulllaw_beyond_Q`, `ex_fulllaw_affineQ`
 
 Manuscript (§5, Example `ex:fulllaw`): fix `μ₀ ∈ P₂(H)`, `Λ₀ ∈ P₂(L²(ν))`, `ε > 0`,
@@ -6774,6 +6829,8 @@ Re-readings at the widened passages:
 <!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_lip ed839d34f480cba1f75f47b92e7d0c68 by=claude-author source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 -->
 <!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_pert ed839d34f480cba1b980c331983389db by=claude-author source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
 <!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_wp ed839d34f480cba137d1cd6f707608d2 by=claude-author source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
+Review by claude-auditor: faithful with representation choices.
+<!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_wp ed839d34f480cba137d1cd6f707608d2 by=claude-auditor source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
 <!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_radial ed839d34f480cba1e35b736319ec8895 by=claude-author source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 <!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_U_corr ed839d34f480cba10f66e794dcb439f4 by=claude-author source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
 <!-- spec-review: MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_Q ed839d34f480cba1461519d3798ca6c4 by=claude-author source=A:ex:fulllaw@5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38 -->
@@ -7172,6 +7229,37 @@ The remark summarises the two examples; its clauses are propositions reviewed th
   solution" is `ex_dealer_active`, reviewed under Example 5.5.
 
 Verdict: covered by the clauses listed, each as reviewed under its example.
+
+Clauses attached at `1f67672`, read against the passage of the remark (`05-examples.tex`
+lines 549–554):
+
+* `cor_robust_lip` (`A:rem:regimes`). "Arbitrary nonlinear full-tuple law dependence" (lines
+  550–551), in its general reading: Example 5.4 concludes through (3.5) and Corollary 3.6
+  (lines 338–340), which apply to any perturbation independent of `θ` whose dependence on the law
+  `μ ∈ P₂(H)` is `W₂`-Lipschitz, however nonlinear. The proposition: on every filtered
+  probability space, for `n ≥ 1`, `T > 0`, `m = n` (the setting of Corollary 3.6 and of
+  Example 5.4) and every `G`, a perturbation `p` that does not depend on the tuple
+  (`TupleIndep`) and satisfies (3.5) with `L_p` (`LawLip35`, `W₂` of the Hilbert norm) satisfies
+  (3.4) with `c_pert = ‖G‖ L_p` (`PairingBound34`): the size of the added dependence, measured
+  against the dissipativity. Witness: `MVFBSDEJ.Acceptance.cor_robust_lip_hypotheses`. Verdict:
+  faithful to the general reading; the families of Example 5.4 are its instance `ex54Pert`
+  (`ex_fulllaw_pert`).
+  <!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust_lip ed839d34f480cba129c3f998d5e8f786 by=claude-author source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
+  Review by claude-auditor: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust_lip ed839d34f480cba129c3f998d5e8f786 by=claude-auditor source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
+
+* `cor_robust_wp` (`A:rem:regimes`). "Can be added when it is smaller than the dissipativity
+  margin": with a baseline satisfying (2.3), Assumptions 2.2–2.5 (`m = n`, `G` of full rank) and
+  (2.13) with `c_diss > 0`, and a perturbation with square-integrable origin values, the interior
+  bound of Assumption 2.3, (3.4) with `c_pert` and (2.3) for the perturbed system, `c_pert < c_diss`
+  gives a solution in `𝕊` of the perturbed system, uniqueness among the tuples of `ℍ²`, and (3.1)
+  with a constant `C_stab(T, L, ‖G‖, c_G, α, β₁, β₂)` quantified before everything. With
+  `cor_robust_lip`, "smaller than the margin" is `‖G‖ L_p < c_diss`, the condition (5.1) of
+  Example 5.4 for its families. Witness: `MVFBSDEJ.Acceptance.cor_robust_hypotheses`. Verdict:
+  faithful to the general reading; at the perturbation of Example 5.4 it is `ex_fulllaw_wp`.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust_wp ed839d34f480cba1617ff136058ce573 by=claude-author source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
+  Review by claude-auditor: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.cor_robust_wp ed839d34f480cba1617ff136058ce573 by=claude-auditor source=A:rem:regimes@2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5 -->
 
 ## Section 6, the conclusion (`A:conclusion`)
 
@@ -7812,6 +7900,8 @@ previous versions.
   representing `𝐇_t`, `C`-Lipschitz on `H × H`, gives a jump coefficient satisfying (2.10) with
   `K = L²(ν; ℝⁿ)`. Verdict: faithful with representation choices, as under Example 5.3.
   <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_jump ed839d34f480cba1e4ed71c267b0a369 by=claude-author source=A:intro:limin-comparison@28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998 -->
+  Review by claude-auditor: faithful with representation choices.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_jump ed839d34f480cba1e4ed71c267b0a369 by=claude-auditor source=A:intro:limin-comparison@28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998 -->
 
 * Review by claude-auditor of `MVFBSDEJ.PaperSpec.ex_expfunc_jump` (`A:ex:expfunc`,
   `A:intro:limin-comparison`). Reading at

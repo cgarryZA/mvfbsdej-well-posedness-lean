@@ -20,7 +20,7 @@
    "location": "paper/sections/02-model-assumptions.tex",
    "source_sha256": "952765bd095132205c2a2ed30a292f5a88840f96e56d5a877f906f6a21524a94",
    "scope": "definition",
-   "scope_note": "Definition 2.1 (lines 58–67); the standing setting (lines 2–8) is pinned in A:sec2:separable-L2nu and H, P₂(H) (01-introduction.tex lines 16–43) in A:intro:mvfbsdej and A:eq:mvfbsdej; the notation for the unknown printed before the definition (lines 27–45: the tuple Θ with values in H, the predictable tuple Θ⁻, the laws μ, μ⁻ as the Borel representatives of Lemma A.1, and the reading of coefficient expressions) is pinned in A:sec2:tuple-notation; the representation property (lines 47–56) is the claim A:sec2:prp; the conventions printed after the definition (lines 69–84: all hypotheses imposed along 𝒟_t only, θ a point of H and Θ a random tuple, and the difference notation δX, δψ, ρ, ρ′, δg_T for two diagonal inputs) are pinned in A:sec2:difference-notation",
+   "scope_note": "Definition 2.1 (lines 58–67); the standing setting (lines 2–8) is pinned in A:sec2:separable-L2nu; H with its channel norms and its Hilbert norm (01-introduction.tex lines 16–32) is pinned here and in A:ass:lip and A:ass:mono (TupleH, which carries the maximum of the channel norms; the Hilbert norm enters the assumptions through w2H), and the tuples, the predictable tuple and the law flows in P₂(H) (01-introduction.tex lines 34–43) in A:intro:mvfbsdej and A:eq:mvfbsdej; the notation for the unknown printed before the definition (lines 27–45: the tuple Θ with values in H, the predictable tuple Θ⁻, the laws μ, μ⁻ as the Borel representatives of Lemma A.1, and the reading of coefficient expressions) is pinned in A:sec2:tuple-notation; the representation property (lines 47–56) is the claim A:sec2:prp; the conventions printed after the definition (lines 69–84: all hypotheses imposed along 𝒟_t only, θ a point of H and Θ a random tuple, and the difference notation δX, δψ, ρ, ρ′, δg_T for two diagonal inputs) are pinned in A:sec2:difference-notation",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -107,7 +107,7 @@
    "location": "paper/sections/02-model-assumptions.tex",
    "source_sha256": "a60a526e8cdd9d0ae4441e25895e5af1cc39a45df41a9028fe0f60371ce998ff",
    "scope": "definition",
-   "scope_note": "the convention that all hypotheses are imposed along 𝒟_t only and the difference notation (02-model-assumptions.tex lines 69–84) are pinned in A:sec2:difference-notation",
+   "scope_note": "the convention that all hypotheses are imposed along 𝒟_t only and the difference notation (02-model-assumptions.tex lines 69–84) are pinned in A:sec2:difference-notation; Assumption25 and Mono27At ask the expectations of the terminal and interior pairings to exist (Integrable), which the printed inequalities presuppose; under (2.3) and Assumption 2.3 this holds for all inputs at almost every time (integrable_interiorPairing_of_diagonalLipschitzHAt, integrable_terminalPairing, Assumption25.of_monotone), and every theorem that takes Assumption 2.5 with Assumption 2.3 assumes both; Remarks 2.10 and 5.6 take Assumption 2.5 without Assumption 2.3, and there the integrability is part of their hypothesis",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -368,7 +368,7 @@
    "location": "paper/sections/03-main-results.tex",
    "source_sha256": "03292da4be100aa38ea90d55eff64159cf4e923c05926fa169ebba6ed2985189",
    "scope": "formal",
-   "scope_note": "the solution spaces and the norm of ℍ (03-main-results.tex lines 5–28) are pinned in A:sec3:HH-banach; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set",
+   "scope_note": "the solution spaces and the norm of ℍ (03-main-results.tex lines 5–28) are pinned in A:sec3:HH-banach; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; the solution notion (WeakSolution) reads the stochastic integrals of (1.1) as L² integrals: the diffusion along Θ and the jump coefficient at the predictable tuple have finite energy on [0, T] (PaperAdmissibleInt.σ_sq and γ_sq, in PaperWeakSolutionInt); for σ this restricts nothing under Assumption 2.3, whose bound against the diagonal input (0, δ₀) dominates |σ(t, Θ_t, μ_t) − σ(t, 0, δ₀)| by a square-integrable process for Θ ∈ ℍ_weak, so that σ along Θ has finite energy exactly when σ(·, 0, δ₀) ∈ L²(0, T), which the Itô integral already requires almost surely; for h it is the reading convention of §2, every Poisson integral and its integrand being read through a representative of an element of L²(𝒫; L²(ν)) (02-model-assumptions.tex lines 117–121), and by the same bound h at the predictable tuple, equal to Θ_t almost surely at almost every t, has finite energy exactly when h(·, 0, ·, δ₀) ∈ L²(0, T; L²(ν))",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -389,7 +389,7 @@
    "location": "paper/sections/03-main-results.tex",
    "source_sha256": "867ca613bdc7ff8b7ff2ba56fd6a8fa9594e1e7b57e69975069db081dd311798",
    "scope": "formal",
-   "scope_note": "\"the proof of Theorem 3.5 uses Assumption 2.2\" describes a proof and is not a separate claim; 'we only need to show that the difference Θ¹ − Θ² belongs to ℍ, using only the Lipschitz control of coefficient differences' is read in the proof of Theorem 3.3 (lines 110–174), whose steps the last four clauses state for two solutions in ℍ_weak with the same initial datum under (2.3) and Assumption 2.3 alone (no Assumption 2.2, no monotonicity): (3.2), the forward estimate of lines 144–156, (3.3) and Θ¹ − Θ² ∈ ℍ; the bound at almost every time before (3.2), and the backward difference and the terminal bound before (3.3), are clauses of A:eq:uniq-coeff and A:eq:uniq-bwd; 'the origin-value conditions are sufficient' (lines 189–190) is Theorem 3.5 (A:thm:cwp), under Assumptions 2.2–2.5; the proof passages the last four clauses read are pinned in A:eq:uniq-coeff (lines 110–156: (3.2), the bound before it and the forward estimate) and A:eq:uniq-bwd (lines 158–174: the backward difference, the terminal bound, (3.3) and δΘ ∈ ℍ); eq_uniq_coeff_lip and eq_uniq_fwd are also clauses of A:eq:uniq-coeff, and eq_uniq_bwd_lip and rem_uniq_lip_mem of A:eq:uniq-bwd, so a change of those passages reopens their reviews",
+   "scope_note": "\"the proof of Theorem 3.5 uses Assumption 2.2\" describes a proof and is not a separate claim; 'we only need to show that the difference Θ¹ − Θ² belongs to ℍ, using only the Lipschitz control of coefficient differences' is read in the proof of Theorem 3.3 (lines 110–174), whose steps the last four clauses state for two solutions in ℍ_weak with the same initial datum under (2.3) and Assumption 2.3 alone (no Assumption 2.2, no monotonicity): (3.2), the forward estimate of lines 144–156, (3.3) and Θ¹ − Θ² ∈ ℍ; the bound at almost every time before (3.2), and the backward difference and the terminal bound before (3.3), are clauses of A:eq:uniq-coeff and A:eq:uniq-bwd; 'the origin-value conditions are sufficient' (lines 189–190) is Theorem 3.5 (A:thm:cwp), under Assumptions 2.2–2.5; the proof passages the last four clauses read are pinned in A:eq:uniq-coeff (lines 110–156: (3.2), the bound before it and the forward estimate) and A:eq:uniq-bwd (lines 158–174: the backward difference, the terminal bound, (3.3) and δΘ ∈ ℍ); eq_uniq_coeff_lip and eq_uniq_fwd are also clauses of A:eq:uniq-coeff, and eq_uniq_bwd_lip and rem_uniq_lip_mem of A:eq:uniq-bwd, so a change of those passages reopens their reviews; the solution notion (WeakSolution) reads the stochastic integrals of (1.1) as L² integrals: the diffusion along Θ and the jump coefficient at the predictable tuple have finite energy on [0, T] (PaperAdmissibleInt.σ_sq and γ_sq, in PaperWeakSolutionInt); for σ this restricts nothing under Assumption 2.3, whose bound against the diagonal input (0, δ₀) dominates |σ(t, Θ_t, μ_t) − σ(t, 0, δ₀)| by a square-integrable process for Θ ∈ ℍ_weak, so that σ along Θ has finite energy exactly when σ(·, 0, δ₀) ∈ L²(0, T), which the Itô integral already requires almost surely; for h it is the reading convention of §2, every Poisson integral and its integrand being read through a representative of an element of L²(𝒫; L²(ν)) (02-model-assumptions.tex lines 117–121), and by the same bound h at the predictable tuple, equal to Θ_t almost surely at almost every t, has finite energy exactly when h(·, 0, ·, δ₀) ∈ L²(0, T; L²(ν)); of Assumption 2.2, the origin conditions on σ and h therefore follow from the existence of a solution in this reading (when σ(·, 0, δ₀) or h(·, 0, ·, δ₀) is not square integrable on [0, T], no tuple of ℍ_weak satisfies (1.1) with its integrals so read), and the uniqueness dispenses in effect with those on ξ₀, b and f",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -711,7 +711,7 @@
      "name": "(i) the displayed identity is sharp for β₁, β₂: (2.7) with β₁′, β₂′ forces β₁′ ≤ β₁, β₂′ ≤ β₂",
      "spec": "MVFBSDEJ.PaperSpec.ex_concrete_i_sharp",
      "accept": "MVFBSDEJ.Acceptance.ex_concrete_i_sharp",
-     "witness": "MVFBSDEJ.Acceptance.ex_concrete_hypotheses"
+     "witness": "MVFBSDEJ.Acceptance.ex_concrete_i_sharp_hypotheses"
     }
    ]
   },
@@ -860,7 +860,7 @@
    "location": "paper/sections/05-examples.tex",
    "source_sha256": "08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b",
    "scope": "formal",
-   "scope_note": "the dealer-market reading (requests for quotes, valuation curves, routing, quotes affine in the curve, the uncontrolled exposure change at an event) is modelling and is not stated; the finite-player inspiration (Cont and Xiong) is a statement about cited work; 'The computation uses only the joint law π; no auxiliary random variable on Ω is needed' (lines 436–438) is a remark on the proof of ex_dealer_mono; 'dependence nonlinear in the law itself is that of Example 5.4' (lines 461–462) refers to A:ex:fulllaw; the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; 'an expectation kernel in the sense of Example 5.3, with L²(ν) in the role of K' (lines 460–461) is ex_dealer_affine: the representation, the measurability and the Lipschitz bound of the kernel (θ, θ') ↦ ∇V(u − u'), whose origin value ∇V(0) = 0 makes the origin condition of the jump class of Example 5.3 hold trivially",
+   "scope_note": "the dealer-market reading (requests for quotes, valuation curves, routing, quotes affine in the curve, the uncontrolled exposure change at an event) is modelling and is not stated; the finite-player inspiration (Cont and Xiong) is a statement about cited work; 'The computation uses only the joint law π; no auxiliary random variable on Ω is needed' (lines 436–438) is a remark on the proof of ex_dealer_mono; 'dependence nonlinear in the law itself is that of Example 5.4' (lines 461–462) refers to A:ex:fulllaw; the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; 'an expectation kernel in the sense of Example 5.3, with L²(ν) in the role of K' (lines 460–461) is ex_dealer_affine: the representation, the measurability and the Lipschitz bound of the kernel (θ, θ') ↦ ∇V(u − u'), whose origin value ∇V(0) = 0 makes the origin condition of the jump class of Example 5.3 hold trivially; the symmetrisation in the proof of monotonicity (lines 414–436: the crowding pairing as the π ⊗ π-integral of Φ, its form with (u, u′) and (v, v′) exchanged, and their average, nonnegative because ∇V is monotone) is a step of the proof of ex_dealer_mono, whose first conjunct states its consequence 𝔼⟨A_{μ^U}(U) − A_{μ′^U}(U′), U − U′⟩ ≥ 0; the identity itself is stated only under λ ⊗ λ (lines 505–511), as ex_dealer_symm",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -989,7 +989,7 @@
    "location": "paper/sections/05-examples.tex",
    "source_sha256": "f13ee0338a04a13ffc7c298c326bbddd96efa2f48c9dc8e2a7281612c39beecb",
    "scope": "formal",
-   "scope_note": "'The proofs consume the tuple law through a single mechanism: the W₂ term of Assumption 2.3, dominated at every use by the synchronous coupling bound (2.8)' (lines 533–535) is a statement about the proofs, of which the clause eq_coupling states the bound (2.8); the closing sentence (lines 543–546: nothing is gained by restricting the coefficients to the (X, Y, Z)-marginal law, the estimates close at the full tuple law, and Example 5.5 exhibits that scope) is exposition, the scope it names being that of A:ex:dealer",
+   "scope_note": "'The proofs consume the tuple law through a single mechanism: the W₂ term of Assumption 2.3, dominated at every use by the synchronous coupling bound (2.8)' (lines 533–535) is a statement about the proofs, of which the clause eq_coupling states the bound (2.8); the closing sentence (lines 543–546: nothing is gained by restricting the coefficients to the (X, Y, Z)-marginal law, the estimates close at the full tuple law, and Example 5.5 exhibits that scope) is exposition, the scope it names being that of A:ex:dealer; the explicit pair of the argument (lines 538–542: for w ∈ L²(ν) with G*w ≠ 0 and a symmetric sign ξ independent of the other components, U = ξw and U′ = −ξw with equal other components have one law, so coefficients reading u only through the law make the left-hand side of (2.7) vanish, while its right-hand side is −4β₁‖G*w‖² < 0) is the proof of the stated consequence rem_freelaw (a pair of 𝒟_t with one law and the same (X, Y, Z) at which h differs with positive probability), not a separate clause",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -1016,7 +1016,7 @@
    "location": "paper/sections/05-examples.tex",
    "source_sha256": "2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5",
    "scope": "formal",
-   "scope_note": "the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview",
+   "scope_note": "the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; 'arbitrary nonlinear full-tuple law dependence' (lines 550–551) is read both as the three families of Example 5.4 with arbitrary bounded Lipschitz profiles, features and outer function (ex_fulllaw_pert, ex_fulllaw_wp) and, since Example 5.4 concludes through (3.5) and Corollary 3.6 (05-examples.tex lines 338–340), as any θ-independent W₂-Lipschitz perturbation with ‖G‖ L_p below the margin (cor_robust_lip, cor_robust_wp)",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -1060,6 +1060,18 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_active",
      "accept": "MVFBSDEJ.Acceptance.ex_dealer_active",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_spec_hypotheses"
+    },
+    {
+     "name": "arbitrary nonlinear full-tuple law dependence, read as any θ-independent W₂-Lipschitz perturbation (3.5) with constant L_p: (3.4) with c_pert = ‖G‖ L_p (Corollary 3.6)",
+     "spec": "MVFBSDEJ.PaperSpec.cor_robust_lip",
+     "accept": "MVFBSDEJ.Acceptance.cor_robust_lip",
+     "witness": "MVFBSDEJ.Acceptance.cor_robust_lip_hypotheses"
+    },
+    {
+     "name": "added below the dissipativity margin (c_pert < c_diss), any such perturbation keeps the system well-posed (Corollary 3.6)",
+     "spec": "MVFBSDEJ.PaperSpec.cor_robust_wp",
+     "accept": "MVFBSDEJ.Acceptance.cor_robust_wp",
+     "witness": "MVFBSDEJ.Acceptance.cor_robust_hypotheses"
     }
    ]
   },
@@ -1200,7 +1212,7 @@
    "location": "paper/sections/01-introduction.tex:3",
    "source_sha256": "5eb480b379a74b6cf3448b228b60d1dcb3f707265f25c5b1cbe6f82b684e917a",
    "scope": "definition",
-   "scope_note": "the system (1.1), stated through the solution notion of §3; the region (lines 3–48) also holds 'We prove existence, uniqueness, and stability … with no smallness restriction' (lines 3–5), the content of Theorems 3.1, 3.3 and 3.5 (A:thm:stab, A:thm:uniq, A:thm:cwp), and the standing passages pinned here: the Brownian motion W and the independent compensated Poisson random measure Ñ with σ-finite ν, ν(E) = ∞ admitted (lines 14–16), the state space H and its Euclidean, Frobenius and L²(ν) norms (lines 16–32), the tuple Θ, the predictable tuple Θ⁻ at which h is evaluated and the law flows μ, μ⁻ ∈ P₂(H) (lines 34–43), and the W₂-Lipschitz law dependence, both hypotheses imposed only along tuple–law pairs (lines 44–48, the hypotheses of Assumptions 2.3 and 2.5); the same passage is the region of A:eq:mvfbsdej; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set",
+   "scope_note": "the system (1.1), stated through the solution notion of §3; the region (lines 3–48) also holds 'We prove existence, uniqueness, and stability … with no smallness restriction' (lines 3–5), the content of Theorems 3.1, 3.3 and 3.5 (A:thm:stab, A:thm:uniq, A:thm:cwp), and the standing passages pinned here: the Brownian motion W and the independent compensated Poisson random measure Ñ with σ-finite ν, ν(E) = ∞ admitted (lines 14–16), and the tuple Θ, the predictable tuple Θ⁻ at which h is evaluated and the law flows μ, μ⁻ ∈ P₂(H) (lines 34–43); the state space H with its Euclidean, Frobenius and L²(ν) channel norms and its Hilbert norm |θ|²_H = |x|² + |y|² + |z|²_F + ‖u‖² (lines 16–32) is pinned in A:def:diag, A:ass:lip and A:ass:mono, whose definitions read H as TupleH: TupleH carries the printed channel norms and, as a type, the maximum of the four, and every W₂ on P₂(H) in the assumptions is w2H, the 2-Wasserstein distance of the Hilbert norm of line 23; the W₂-Lipschitz law dependence and the restriction of both the Lipschitz and the monotonicity hypotheses to tuple–law pairs (lines 44–48) are pinned in A:ass:lip and A:ass:mono, imposed along the diagonal inputs of A:def:diag; the same passage is the region of A:eq:mvfbsdej; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -2390,7 +2402,7 @@
    "scope_reviewed": true,
    "clauses": [
     {
-     "name": "with λ* the threshold of Lemma 4.2, uniqueness in 𝕊 at each λ ∈ [λ*, 1] (Lemma 4.3 with identical forcing and initial datum, λ̲ = λ*) and at each λ ∈ [0, λ*] (Lemma 4.2)",
+     "name": "with λ* the threshold of Lemma 4.2 (WP(λ) for every λ ∈ [0, λ*]), uniqueness in 𝕊 at each λ ∈ [λ*, 1] (Lemma 4.3 with identical forcing and initial datum, λ̲ = λ*) and at each λ ∈ [0, λ*] (Lemma 4.2)",
      "spec": "MVFBSDEJ.PaperSpec.sec4_uniq_homotopy",
      "accept": "MVFBSDEJ.Acceptance.sec4_uniq_homotopy",
      "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses"
@@ -2560,6 +2572,18 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_dealer_active",
      "accept": "MVFBSDEJ.Acceptance.ex_dealer_active",
      "witness": "MVFBSDEJ.Acceptance.ex_dealer_spec_hypotheses"
+    },
+    {
+     "name": "Example 5.4 carries the law dependence beyond those subclasses: the perturbed systems are admissible and well-posed below the margin",
+     "spec": "MVFBSDEJ.PaperSpec.ex_fulllaw_wp",
+     "accept": "MVFBSDEJ.Acceptance.ex_fulllaw_wp",
+     "witness": "MVFBSDEJ.Acceptance.ex_fulllaw_jump_hypotheses"
+    },
+    {
+     "name": "Example 5.3 recovers the expectation-functional subclass of [LiMin] in the jump coefficient: the Nemytskii embedding of their jump kernel satisfies (2.10) with K = L²(ν)",
+     "spec": "MVFBSDEJ.PaperSpec.ex_expfunc_jump",
+     "accept": "MVFBSDEJ.Acceptance.ex_expfunc_jump",
+     "witness": "MVFBSDEJ.Acceptance.ex_expfunc_jump_hypotheses"
     }
    ],
    "source_region": {
@@ -3011,7 +3035,7 @@
    "location": "paper/sections/01-introduction.tex:3",
    "source_sha256": "5eb480b379a74b6cf3448b228b60d1dcb3f707265f25c5b1cbe6f82b684e917a",
    "scope": "definition",
-   "scope_note": "the system (1.1) and its solutions in the space of Section 3; the region (lines 3–48) also holds 'We prove existence, uniqueness, and stability … with no smallness restriction' (lines 3–5), the content of Theorems 3.1, 3.3 and 3.5 (A:thm:stab, A:thm:uniq, A:thm:cwp), and the standing passages pinned here: the Brownian motion W and the independent compensated Poisson random measure Ñ with σ-finite ν, ν(E) = ∞ admitted (lines 14–16), the state space H and its Euclidean, Frobenius and L²(ν) norms (lines 16–32), the tuple Θ, the predictable tuple Θ⁻ at which h is evaluated and the law flows μ, μ⁻ ∈ P₂(H) (lines 34–43), and the W₂-Lipschitz law dependence, both hypotheses imposed only along tuple–law pairs (lines 44–48, the hypotheses of Assumptions 2.3 and 2.5); the same passage is the region of A:intro:mvfbsdej; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set",
+   "scope_note": "the system (1.1) and its solutions in the space of Section 3; the region (lines 3–48) also holds 'We prove existence, uniqueness, and stability … with no smallness restriction' (lines 3–5), the content of Theorems 3.1, 3.3 and 3.5 (A:thm:stab, A:thm:uniq, A:thm:cwp), and the standing passages pinned here: the Brownian motion W and the independent compensated Poisson random measure Ñ with σ-finite ν, ν(E) = ∞ admitted (lines 14–16), and the tuple Θ, the predictable tuple Θ⁻ at which h is evaluated and the law flows μ, μ⁻ ∈ P₂(H) (lines 34–43); the state space H with its Euclidean, Frobenius and L²(ν) channel norms and its Hilbert norm |θ|²_H = |x|² + |y|² + |z|²_F + ‖u‖² (lines 16–32) is pinned in A:def:diag, A:ass:lip and A:ass:mono, whose definitions read H as TupleH: TupleH carries the printed channel norms and, as a type, the maximum of the four, and every W₂ on P₂(H) in the assumptions is w2H, the 2-Wasserstein distance of the Hilbert norm of line 23; the W₂-Lipschitz law dependence and the restriction of both the Lipschitz and the monotonicity hypotheses to tuple–law pairs (lines 44–48) are pinned in A:ass:lip and A:ass:mono, imposed along the diagonal inputs of A:def:diag; the same passage is the region of A:intro:mvfbsdej; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -3262,7 +3286,7 @@
      "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses"
     },
     {
-     "name": "(2.5), the second line: the jump coefficient at the predictable tuple and its law is predictable",
+     "name": "(2.5), the second line: the jump coefficient at the predictable tuple and its law is predictable, with a 𝒫 ⊗ ℰ-measurable (marked predictable) representative of (s, ω, e) ↦ h(s, Θ_s(ω), e, ρ_s)",
      "spec": "MVFBSDEJ.PaperSpec.eq_coefmeas_jump",
      "accept": "MVFBSDEJ.Acceptance.eq_coefmeas_jump",
      "witness": "MVFBSDEJ.Acceptance.thm_cwp_hypotheses"
