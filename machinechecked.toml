@@ -117,6 +117,16 @@ spec_prefix = "MVFBSDEJ.PaperSpec"
 accept_prefix = "MVFBSDEJ.Acceptance"
 allowed_axioms = ["propext", "Classical.choice", "Quot.sound"]
 inventory = "acceptance/claims.json"
+dismissals = "acceptance/dismissals.json"
+# Code spans of the reviews that are notation, not Lean names: the two default patterns (a
+# one-letter symbol with a subscript or a field; two letters with a short subscript), a library
+# name with a time subscript (`energy_t`, `enlJoint_T`), and the fields of the inventory.
+review_citations_ignore = [
+  "^[^\\W\\d_]['′]*[._]",
+  "^[^\\W\\d_]{2}_[^\\W_]{1,6}$",
+  "^(energy|markedEnergy|enlJoint)_[A-Za-z]$",
+  "^scope_(note|reviewed)$",
+]
 reviews = ["acceptance/review"]
 statement_authors = ["claude-author"]
 ai_reviewers = ["claude*"]
