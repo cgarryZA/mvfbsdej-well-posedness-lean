@@ -1,0 +1,2996 @@
+[
+ {
+  "code": "module-doc-name",
+  "subject": "LevyStochCalc.Ito.VectorItoProcessDiff",
+  "trigger": "Ito",
+  "fingerprint": "pl-moddoc-v1:8e2c3422e85a5bad93e1b6286227fcf833ce4ee3ae7740b87f0f7e122e75dbd3",
+  "rationale": "A module docstring of the dependency LevyStochCalc; that repository's own audit covers it, and it is fixed there.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "module-doc-name",
+  "subject": "LevyStochCalc.Poisson.NaturalFiltration",
+  "trigger": "Martingale",
+  "fingerprint": "pl-moddoc-v1:d7254f6250cf823fe1e962f78e858ed6b5e2281d5bbdeed4c6d981986a29eb03",
+  "rationale": "A module docstring of the dependency LevyStochCalc; that repository's own audit covers it, and it is fixed there.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "module-doc-name",
+  "subject": "MVFBSDEJ.WellPosedness.Existence.Global",
+  "trigger": "Solves",
+  "fingerprint": "pl-moddoc-v1:0cd5ffb78efe24dca9c1d6cf63cdebc98900b92032b92c5b0f60ec609fe021df",
+  "rationale": "`Solves` is the declaration MVFBSDEJ.WellPosedness.System.Solves (an abbrev; the module opens MVFBSDEJ.WellPosedness.System), the predicate Theorem 3.5 is first stated for; the namespace Existence.Solves only holds lemmas about it. The name is current.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "module-doc-name",
+  "subject": "MVFBSDEJ.WellPosedness.Existence.GlobalEnl",
+  "trigger": "PaperSolution",
+  "fingerprint": "pl-moddoc-v1:c1c5e39b5e85b94f2a06a5dcf148ac30f059688c94888177e2b4ee112650ea39",
+  "rationale": "`PaperSolution` is the structure MVFBSDEJ.WellPosedness.System.PaperSolution (the module opens MVFBSDEJ.WellPosedness.System), the paper's solution notion; the module Existence.PaperSolution states Theorem 3.5 for it. The name is current.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "module-doc-name",
+  "subject": "MVFBSDEJ.WellPosedness.Existence.GlobalEnl",
+  "trigger": "PaperSolution",
+  "fingerprint": "pl-moddoc-v1:1e2debeffcc6df17d707a68bbf4d171fa436045facc817eaf1490d03dd42517e",
+  "rationale": "`PaperSolution` is the structure MVFBSDEJ.WellPosedness.System.PaperSolution (the module opens MVFBSDEJ.WellPosedness.System), the paper's solution notion; the module Existence.PaperSolution states Theorem 3.5 for it. The name is current.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "module-doc-name",
+  "subject": "MVFBSDEJ.WellPosedness.Existence.PaperSolution",
+  "trigger": "PaperSolution",
+  "fingerprint": "pl-moddoc-v1:7851714a33c0d9ae2ca4b418d4bb181103656758f634d40cb3ff43649125d314",
+  "rationale": "`PaperSolution` is the structure MVFBSDEJ.WellPosedness.System.PaperSolution (the module opens MVFBSDEJ.WellPosedness.System), the paper's solution notion; the module Existence.PaperSolution states Theorem 3.5 for it. The name is current.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "module-doc-name",
+  "subject": "MVFBSDEJ.WellPosedness.Existence.PaperSolution",
+  "trigger": "Solves",
+  "fingerprint": "pl-moddoc-v1:c371d34cde1e57b7b012e0a0feadf5b3d1ceabff8a24b9b5238ee42e9f11bfe2",
+  "rationale": "`Solves` is the declaration MVFBSDEJ.WellPosedness.System.Solves (an abbrev; the module opens MVFBSDEJ.WellPosedness.System), the predicate Theorem 3.5 is first stated for; the namespace Existence.Solves only holds lemmas about it. The name is current.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "module-doc-name",
+  "subject": "MVFBSDEJ.WellPosedness.Existence.PaperSolutionInt",
+  "trigger": "PaperSolution",
+  "fingerprint": "pl-moddoc-v1:460d1d97f98514b8d2daf43bd4ea141dbf1b58b4a1fe49bb0ae05989c5e6405c",
+  "rationale": "`PaperSolution` is the structure MVFBSDEJ.WellPosedness.System.PaperSolution (the module opens MVFBSDEJ.WellPosedness.System), the paper's solution notion; the module Existence.PaperSolution states Theorem 3.5 for it. The name is current.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "review-citation",
+  "subject": "acceptance/review/scope.md",
+  "trigger": "rem_margin_sharp",
+  "fingerprint": "pl-cite-v1:6ed16ae6f4ff94009f97ec0213f9e1107380b658278254387319e2230bd3cd6a",
+  "rationale": "Cited in the account of the original scope review, kept for the record; the clause was replaced by rem_margin_smaller when Remark 2.11 was corrected, as 'Changes made after the review' records (scope.md line 145).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-region",
+  "subject": "A:eq:coefmeas",
+  "trigger": "starts-mid-sentence",
+  "fingerprint": "tex-region-v1:0109d50802d3c1896c48e997eef1423f9bb8bba68e798c4721fae63f388eccb2",
+  "rationale": "The claim's sentence, 'Consequently, along any diagonal input, (2.5)', starts on line 123 and is whole in the region; line 123 also ends the reading convention of (2.4) that it follows from, pinned with lines 112–123 in A:eq:fubiniiso, as the scope note says.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-region",
+  "subject": "A:eq:compid",
+  "trigger": "starts-mid-sentence",
+  "fingerprint": "tex-region-v1:aafacd95e4ac38766dd8830cdd75ad754721232a5283759a5c9383f2d22943cd",
+  "rationale": "The claim's sentence, 'For predictable ψ ≥ 0 the compensation formula reads (2.1)', starts on line 14 and is whole; line 14 also ends the definition of Ñ (line 13), pinned with lines 13–25 in A:eq:zeromean, as the scope note says.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-region",
+  "subject": "A:eq:dYlin",
+  "trigger": "ends-mid-sentence",
+  "fingerprint": "tex-region-v1:59779e9843c18d710cf7e94a715f1de6c419794a7306c22bef138a69b2f4ddd2",
+  "rationale": "Out of scope (part-of A:lem:bpbsde): the display (4.4) with its hypotheses on δξ and φ ends at 'φ ∈ L²(Ω × [0, T]).' on line 95; the sentence begun there ('Then δY ∈ S²…') is the conclusion of Lemma 4.1, pinned whole by the environment claim A:lem:bpbsde.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-region",
+  "subject": "A:eq:pertpair",
+  "trigger": "starts-mid-sentence",
+  "fingerprint": "tex-region-v1:77fd318f00ec91fd4a695ce737e9aa9e56d23e92b09bad4743c41d3aad10f2fa",
+  "rationale": "Out of scope (part-of A:cor:robust): the region is the sentence of (3.4); the end of the baseline sentence at its start (lines 208–210) and the 'If c_pert < c_diss' sentence after it are pinned whole by the environment claim A:cor:robust.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-region",
+  "subject": "A:eq:stab",
+  "trigger": "ends-mid-sentence",
+  "fingerprint": "tex-region-v1:6e23b8a686481d2b119834e694218bca5a212581d487f7983d8b5b3d250a0e1b",
+  "rationale": "Out of scope (part-of A:thm:stab): the region is the inequality (3.1) with its constant dependence; the sentence begun on line 67 ('The dependence is on system 1 alone…') is pinned whole by the environment claim A:thm:stab.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-region",
+  "subject": "A:eq:termg",
+  "trigger": "starts-mid-sentence",
+  "fingerprint": "tex-region-v1:e5e65b5b630e579811ef01eae876fb0b8d2a6a7e480cc1b1489922be38a78fc2",
+  "rationale": "The claim's sentence, 'For the terminal function the analogous bound (4.3) follows…', starts on line 81 and is whole; line 81 also ends the sentence of (4.2), the claim A:eq:coeffint, and the passage's hypotheses (lines 72–74) are pinned in A:sec4:coeffint, as the scope note says.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-region",
+  "subject": "A:ex:concrete(i)",
+  "trigger": "cuts-environment",
+  "fingerprint": "tex-region-v1:47a6c1888bbdc4c119d3ad41878f15e1138b07cb6bcc74e56b1a412e9525b3e4",
+  "rationale": "Out of scope (part-of A:ex:concrete): the region is part (i) of Example 5.1 (lines 24–109), part (ii) being A:ex:concrete(ii); the environment claim A:ex:concrete pins the whole example (lines 24–195).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-region",
+  "subject": "A:intro:rsz-extension",
+  "trigger": "ends-mid-sentence",
+  "fingerprint": "tex-region-v1:eec3ffd2d2624f03271bdbb3df86d449c61d5c12b99a08e4f7aea0b6e3bbd2e0",
+  "rationale": "Out of scope (part-of A:ex:brownian): the claim is the sentence of lines 95–97, which ends on line 97; the sentence begun there (the full-tuple law, the law of the L²(ν) integrand entering, ν σ-finite with infinite activity) restates the setting pinned in A:intro:mvfbsdej (lines 14–16 and 40–48).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-region",
+  "subject": "A:lemA1:polish",
+  "trigger": "ends-mid-sentence",
+  "fingerprint": "tex-region-v1:4468f51e4d8fb85e1f6e3d35f1ed7799fb3dbe79faddc1003ff88fca9dc30d5d",
+  "rationale": "The claim's sentence (the law map 1-Lipschitz into (P₂(H), W₂), which inherits Polishness from H) is whole in lines 53–56; the sentence begun on line 56 ('Composing it with the Borel version of Step 1…') is Lemma A.1 itself, A:lem:lawflow, as the scope note says.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-region",
+  "subject": "A:sec2:coefmeas",
+  "trigger": "starts-mid-sentence",
+  "fingerprint": "tex-region-v1:2b8a679df60c6e585dcde3fa990195da1f01532bcb201779c08c16f21d443336",
+  "rationale": "A duplicate of A:eq:coefmeas: the (2.5) sentence starts on line 123 and is whole; the end of the reading convention on that line is pinned (lines 112–123) in A:eq:fubiniiso.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-region",
+  "subject": "A:sec3:HH-banach",
+  "trigger": "starts-mid-sentence",
+  "fingerprint": "tex-region-v1:551286dac540371b521169b6e6a0e861b596438fd0ab4b196a659438efe4df1d",
+  "rationale": "The region starts at 'Write' (line 5) after the run-in heading 'Solution space' of line 4, a paragraph title rather than part of the definitions it introduces; the passage (lines 5–32) holds every space, norm and identification the clauses read.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-region",
+  "subject": "A:sec4:horizon-not-contractive",
+  "trigger": "starts-mid-sentence",
+  "fingerprint": "tex-region-v1:db97ce8829bc98255bc1f6086bcedce457887bbe8d9dadbdf18ce129991aa390",
+  "rationale": "The claim's sentence, 'The continuation is in the coupling strength, not the horizon…', starts on line 12 and is whole; line 12 also ends the sentence on the mixed G-energy identity (lines 9–12), exposition of the proof of Lemma 4.3, as the scope note says.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.thm_stab",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:ce81af5142cb509388a7b6de5dd39810d0dcf783331db946865d1328005116ba",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/0/0/1",
+  "rationale": "G.rank = min m n with m, n ≥ 1 gives s_min(G) > 0 (the first clause of ass_G), so (s_min(G)²)⁻¹ is c_G = s_min(G)⁻² itself, an argument of the existentially chosen constant function.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.rem_diag_mono",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:82adcf974b5fefc090d3d6f70276c9b4befe1cbe54a5811443b64ecef70b69d8",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "The expectation of the pairing is taken only under the hypothesis that it is integrable, and the right sides are squares of G-images of differences of L² diagonal inputs.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.rem_diag_mono",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:8cab1d36f1f47c91e656a2ee8fd19ba68fec870a9177ecb3276947f4db8aa5d7",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1/1/1/1/1/1/1/0/1/1",
+  "rationale": "The expectation of the pairing is taken only under the hypothesis that it is integrable, and the right sides are squares of G-images of differences of L² diagonal inputs.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.rem_diag_mono",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:0e0781ed8c604d6d7b6379a62a42feec74e068b552e1aa79c5af2023e8745921",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "The expectation of the pairing is taken only under the hypothesis that it is integrable, and the right sides are squares of G-images of differences of L² diagonal inputs.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.prop_strict",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:db3cdf9cc7c1d38e273fe64b250a3ca281cc923eab2a1182fe53a938210da5c3",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "The pairing is asserted integrable in the same clause, and |δY|² is integrable as Θ, Θ' ∈ L² (MemLp hypotheses).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.prop_strict",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:bc7640e9d170004cd4e885c8ec1ff65286770097533cff4bca82ec480e876f95",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "The pairing is asserted integrable in the same clause, and |δY|² is integrable as Θ, Θ' ∈ L² (MemLp hypotheses).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_mono",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:4b254ae0ffa3f67bf8abb0906ac35c74fd1861c5c021c561b7a0d20d142d104e",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1",
+  "rationale": "Along L² diagonal inputs, ‖A_λ(u)‖ ≤ 1 bounds the crowding pairing by 2‖δU‖; the ν-integral pairs δh = h_x δX − β₁δU − ε(A − A') with δU in L²(ν); ⟨−δf, δX⟩ = −β₂|δX|² − ⟨h_x, δU⟩δX: every integrand is integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_mono",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:d6a07e44cb0ee36cbf8933c5ff71bd7cadb1943be876cd1094ab340d35773c4c",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/0/1",
+  "rationale": "Along L² diagonal inputs, ‖A_λ(u)‖ ≤ 1 bounds the crowding pairing by 2‖δU‖; the ν-integral pairs δh = h_x δX − β₁δU − ε(A − A') with δU in L²(ν); ⟨−δf, δX⟩ = −β₂|δX|² − ⟨h_x, δU⟩δX: every integrand is integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_mono",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:8b7ead0b0b0a322acaedbc7cc240d45010400056e5541a4d68f809c585487636",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/0/1/1/1/0/1",
+  "rationale": "Along L² diagonal inputs, ‖A_λ(u)‖ ≤ 1 bounds the crowding pairing by 2‖δU‖; the ν-integral pairs δh = h_x δX − β₁δU − ε(A − A') with δU in L²(ν); ⟨−δf, δX⟩ = −β₂|δX|² − ⟨h_x, δU⟩δX: every integrand is integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_mono",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:1db6bd7d5cc18b91e9747d38a34f57084f047f40591210d1d48a3a4f99999c14",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/0/1/1",
+  "rationale": "Along L² diagonal inputs, ‖A_λ(u)‖ ≤ 1 bounds the crowding pairing by 2‖δU‖; the ν-integral pairs δh = h_x δX − β₁δU − ε(A − A') with δU in L²(ν); ⟨−δf, δX⟩ = −β₂|δX|² − ⟨h_x, δU⟩δX: every integrand is integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_mono",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:4a0e3a3043d15360aa66baa1f30da875c0a043c9695baa865025f0ca50f441eb",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1",
+  "rationale": "Along L² diagonal inputs, ‖A_λ(u)‖ ≤ 1 bounds the crowding pairing by 2‖δU‖; the ν-integral pairs δh = h_x δX − β₁δU − ε(A − A') with δU in L²(ν); ⟨−δf, δX⟩ = −β₂|δX|² − ⟨h_x, δU⟩δX: every integrand is integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_wp",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:83dd9e517ae17c3e388791889307d11b1e7f82ae51754e0d0e8911c62fb5cf79",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/0/0/1",
+  "rationale": "G = 1 ∈ ℝ^{1×1} has s_min(1) = 1, so (s_min(1)²)⁻¹ = 1 = c_G, an argument of the existentially chosen C_stab.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_active",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:bd84c99b7ad9182a96b6776f7aeda76e4d6bb07aaeeb6641bc6e1bbc112a8d39",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "The division is the literal 1/2.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ass_G",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:1b2bbd5ef5eeca14528a767a2aec56f17b64810040ce41e57b4b72fecea65c7b",
+  "at": "/1/1/1/1/1/1/1/1/1/0/1/1/1/1/0/1",
+  "rationale": "The first clause proves 0 < s_min(G) from G.rank = min m n with m, n ≥ 1, so (s_min(G)²)⁻¹ is c_G = s_min(G)⁻² in every bound.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.cor_robust_wp",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:df5395e496093a27c6aadc8e64db786357c3c1cbc3e5d134de95f88ef229dea6",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/0/0/1",
+  "rationale": "G.rank = min n n with n ≥ 1 gives s_min(G) > 0 (the first clause of ass_G), so (s_min(G)²)⁻¹ is c_G = s_min(G)⁻² itself, an argument of the existentially chosen constant function.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.rem_beta1_dich",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:ebf00e946294ea43832c154c8d05b5c09e456382dc9ef45e32eeada27901004f",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1/1/1/1/1/0/1",
+  "rationale": "When δX = δY = δZ = 0 everywhere, pairing27 is the jump pairing, integrable at a.e. t by Assumption 2.5; the inner ν-integral pairs the L²(ν) elements δh and Gᵀ δU, and ‖Gᵀ δU‖² is integrable along L² diagonal inputs.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.rem_beta1_dich",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:f9478fdac93a42bea8015c8227a291487b004c581d495f003a941fe2e6d19515",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1/1/1/1/1/0/1/1/1",
+  "rationale": "When δX = δY = δZ = 0 everywhere, pairing27 is the jump pairing, integrable at a.e. t by Assumption 2.5; the inner ν-integral pairs the L²(ν) elements δh and Gᵀ δU, and ‖Gᵀ δU‖² is integrable along L² diagonal inputs.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.rem_beta1_dich",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:b36856701560fe3e7a17a12cfeefe94686cb760307a85433ce000fdb88aa5b34",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1/1/1/1/1/1/1",
+  "rationale": "When δX = δY = δZ = 0 everywhere, pairing27 is the jump pairing, integrable at a.e. t by Assumption 2.5; the inner ν-integral pairs the L²(ν) elements δh and Gᵀ δU, and ‖Gᵀ δU‖² is integrable along L² diagonal inputs.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_Gid",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:9255cc7e0e8340e7250ea298b99e5278696246437963e5623ddbff58e9433421",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/0/1/1",
+  "rationale": "The conclusion asserts each integrand integrable (the Ω × [0, T] one jointly, so its time sections a.s. by Fubini); the ν-integrals pair λδh + q^h with Gᵀ δU, in L²(ν) at a.e. (ω, s): coeffJump represents an element of L²(ν) at every point, and q^h (PredForcing) and δU (supSize < ⊤) have finite marked energy.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_Gid",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:3d1bb59d3cd63f927e799608bd1b3dc6584983c7eddf0027cb8835127749cbbf",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1",
+  "rationale": "The conclusion asserts each integrand integrable (the Ω × [0, T] one jointly, so its time sections a.s. by Fubini); the ν-integrals pair λδh + q^h with Gᵀ δU, in L²(ν) at a.e. (ω, s): coeffJump represents an element of L²(ν) at every point, and q^h (PredForcing) and δU (supSize < ⊤) have finite marked energy.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_Gid",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:eae9f767523fa9b791501f6d639d0bb292b71d091e96df2accaa6d4da99dbf64",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1",
+  "rationale": "The conclusion asserts each integrand integrable (the Ω × [0, T] one jointly, so its time sections a.s. by Fubini); the ν-integrals pair λδh + q^h with Gᵀ δU, in L²(ν) at a.e. (ω, s): coeffJump represents an element of L²(ν) at every point, and q^h (PredForcing) and δU (supSize < ⊤) have finite marked energy.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_Gid",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:1bce158c8ab253b1893dd67d44a4901a5005912fe632a72617424d787709ecd5",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "The conclusion asserts each integrand integrable (the Ω × [0, T] one jointly, so its time sections a.s. by Fubini); the ν-integrals pair λδh + q^h with Gᵀ δU, in L²(ν) at a.e. (ω, s): coeffJump represents an element of L²(ν) at every point, and q^h (PredForcing) and δU (supSize < ⊤) have finite marked energy.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_Gid",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:03393352012db5a298e01346fafd76ab6f610cd0331a9a83d9762e638fb49168",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "The conclusion asserts each integrand integrable (the Ω × [0, T] one jointly, so its time sections a.s. by Fubini); the ν-integrals pair λδh + q^h with Gᵀ δU, in L²(ν) at a.e. (ω, s): coeffJump represents an element of L²(ν) at every point, and q^h (PredForcing) and δU (supSize < ⊤) have finite marked energy.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_Gid",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:6e618883a29dc1cfbc157de41217da98cad25405cc74146a39d2d1364b84c587",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1",
+  "rationale": "The conclusion asserts each integrand integrable (the Ω × [0, T] one jointly, so its time sections a.s. by Fubini); the ν-integrals pair λδh + q^h with Gᵀ δU, in L²(ν) at a.e. (ω, s): coeffJump represents an element of L²(ν) at every point, and q^h (PredForcing) and δU (supSize < ⊤) have finite marked energy.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bdg4_XZ",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:bd84c99b7ad9182a96b6776f7aeda76e4d6bb07aaeeb6641bc6e1bbc112a8d39",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1/1/1",
+  "rationale": "The only division is the literal exponent (1 / 2 : ℝ), denominator 2.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bdg4_XZ",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:6cdb2501611731ec25178aeb7322bb59939b19323f7e7be67e895161be031ba4",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "The integral is 𝔼[M_T − M_t], whose integrand the same clause asserts integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bdg4_sigmaY",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:bd84c99b7ad9182a96b6776f7aeda76e4d6bb07aaeeb6641bc6e1bbc112a8d39",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1/1/1",
+  "rationale": "The only division is the literal exponent (1 / 2 : ℝ), denominator 2.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bdg4_sigmaY",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:bf29488702e2296d9547f24d424e8458ce599bfd4424e5a29f5e7abe5f23436b",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "The integral is 𝔼[M_T − M_t], whose integrand the same clause asserts integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bdg4_XU",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:bd84c99b7ad9182a96b6776f7aeda76e4d6bb07aaeeb6641bc6e1bbc112a8d39",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1/1/1",
+  "rationale": "The only division is the literal exponent (1 / 2 : ℝ), denominator 2.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bdg4_XU",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:d79cc8556b2b341aeff3424753549b9e9517f08a6ca536e1986942ba13e1db02",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "The integral is 𝔼[M_T − M_t], whose integrand the same clause asserts integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bdg4_hY",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:bd84c99b7ad9182a96b6776f7aeda76e4d6bb07aaeeb6641bc6e1bbc112a8d39",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1/1/1",
+  "rationale": "The only division is the literal exponent (1 / 2 : ℝ), denominator 2.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bdg4_hY",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:f3a32289f599010ecfedcdaee91b65c51f572bae66257bbd6e594248141313ae",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "The integral is 𝔼[M_T − M_t], whose integrand the same clause asserts integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bdg4_fifth",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:bd84c99b7ad9182a96b6776f7aeda76e4d6bb07aaeeb6641bc6e1bbc112a8d39",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1/1/1",
+  "rationale": "The only division is the literal exponent (1 / 2 : ℝ), denominator 2.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bdg4_fifth_mean",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:3817608c1a377513fc94c9b575ea283f7f287a5021c25807259c4ecdf4e1863f",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "The conclusion bounds 𝔼∫|·| dN(ω) and 𝔼∫∫|·| ν(de) ds (finite lintegrals) of a marked predictable, hence jointly measurable, integrand, so the N(ω)-integral, the ds and ν integrals and the outer expectation are integrals of integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bdg4_fifth_mean",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:a7720faabc46a75b21662ff64866fe79626ee00d915d9b7d17b4728738ddba41",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1",
+  "rationale": "The conclusion bounds 𝔼∫|·| dN(ω) and 𝔼∫∫|·| ν(de) ds (finite lintegrals) of a marked predictable, hence jointly measurable, integrand, so the N(ω)-integral, the ds and ν integrals and the outer expectation are integrals of integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bdg4_fifth_mean",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:0268b1e3bdb92700d0dbafe176965abf624923dc0b8bc35a5baaa3f8c68ee9db",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1",
+  "rationale": "The conclusion bounds 𝔼∫|·| dN(ω) and 𝔼∫∫|·| ν(de) ds (finite lintegrals) of a marked predictable, hence jointly measurable, integrand, so the N(ω)-integral, the ds and ν integrals and the outer expectation are integrals of integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bdg4_fifth_mean",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:6cdd658da6188006540839274f5b2002602438ceac07d845e7d78cbf98483995",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1",
+  "rationale": "The conclusion bounds 𝔼∫|·| dN(ω) and 𝔼∫∫|·| ν(de) ds (finite lintegrals) of a marked predictable, hence jointly measurable, integrand, so the N(ω)-integral, the ds and ν integrals and the outer expectation are integrals of integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bwd",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:d99d9697e7cef3700b471c8ebdf8ea7ee6111a147a07102602a48e206f89b440",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/0/0/1",
+  "rationale": "G.rank = min m n with m, n ≥ 1 gives s_min(G) > 0 (the first clause of ass_G), so (s_min(G)²)⁻¹ is c_G = s_min(G)⁻² itself, an argument of the existentially chosen constant function.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bwd_chain",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:d99d9697e7cef3700b471c8ebdf8ea7ee6111a147a07102602a48e206f89b440",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1/1/0/0/0/1",
+  "rationale": "G.rank = min m n with m, n ≥ 1 gives s_min(G) > 0 (the first clause of ass_G), so (s_min(G)²)⁻¹ is c_G = s_min(G)⁻² itself, an argument of the existentially chosen constant function.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bwdito",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:2cfa1e286c528763f7336721534224c54d5763061a6f5749e88a5c89cabac120",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1/1/1/1",
+  "rationale": "The conclusion asserts the integrands integrable (|δY_t|², |λδg_T + q^g_T|² on Ω; the weighted energy and the pairing on Ω × [t, T], so their time sections a.s. by Fubini); ∫(δU)² dν is finite at a.e. (ω, s) because supSize(δΘ) < ⊤ bounds the marked energy of δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bwdito",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:2e666beb316fda8c6eb3373c9d3852377134fd2c93385254bc5963ab2eab2775",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1",
+  "rationale": "The conclusion asserts the integrands integrable (|δY_t|², |λδg_T + q^g_T|² on Ω; the weighted energy and the pairing on Ω × [t, T], so their time sections a.s. by Fubini); ∫(δU)² dν is finite at a.e. (ω, s) because supSize(δΘ) < ⊤ bounds the marked energy of δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bwdito",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:19d2bbc65e889fc000463e0a8f686207052b96a9a01c0e1ece3faba0fce101a8",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1",
+  "rationale": "The conclusion asserts the integrands integrable (|δY_t|², |λδg_T + q^g_T|² on Ω; the weighted energy and the pairing on Ω × [t, T], so their time sections a.s. by Fubini); ∫(δU)² dν is finite at a.e. (ω, s) because supSize(δΘ) < ⊤ bounds the marked energy of δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bwdito",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:d48c2dd72b1215907e3ef8a15d20cf7a618439526933916e5bde4987422bfddb",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1",
+  "rationale": "The conclusion asserts the integrands integrable (|δY_t|², |λδg_T + q^g_T|² on Ω; the weighted energy and the pairing on Ω × [t, T], so their time sections a.s. by Fubini); ∫(δU)² dν is finite at a.e. (ω, s) because supSize(δΘ) < ⊤ bounds the marked energy of δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bwdito",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:20f1288f88d5374e3c1d0a004b5e0134b5ef0d663c8ac49af4c43366aa74e9d6",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "The conclusion asserts the integrands integrable (|δY_t|², |λδg_T + q^g_T|² on Ω; the weighted energy and the pairing on Ω × [t, T], so their time sections a.s. by Fubini); ∫(δU)² dν is finite at a.e. (ω, s) because supSize(δΘ) < ⊤ bounds the marked energy of δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bwdito",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:f8642f1b789aa470787e32f3006cb26d9c582ae1f1aa65d5251e1138aef5e2e7",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1",
+  "rationale": "The conclusion asserts the integrands integrable (|δY_t|², |λδg_T + q^g_T|² on Ω; the weighted energy and the pairing on Ω × [t, T], so their time sections a.s. by Fubini); ∫(δU)² dν is finite at a.e. (ω, s) because supSize(δΘ) < ⊤ bounds the marked energy of δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bwdito",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:598b46b9c1bc724cc175336fcf04daaba7244c9f58930d20088d2d964b39859b",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "The conclusion asserts the integrands integrable (|δY_t|², |λδg_T + q^g_T|² on Ω; the weighted energy and the pairing on Ω × [t, T], so their time sections a.s. by Fubini); ∫(δU)² dν is finite at a.e. (ω, s) because supSize(δΘ) < ⊤ bounds the marked energy of δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bwdito",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:3d911e249f20eafbd4579f50f28a05e1e3e122e2e1c1949a44355fadbe6ec271",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "The conclusion asserts the integrands integrable (|δY_t|², |λδg_T + q^g_T|² on Ω; the weighted energy and the pairing on Ω × [t, T], so their time sections a.s. by Fubini); ∫(δU)² dν is finite at a.e. (ω, s) because supSize(δΘ) < ⊤ bounds the marked energy of δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bwdyoung",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:5cc12c694eea77f198a6c7946cbbe85f090fdda68617c9814071be176bb64f3f",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1/0/1/0/1/1",
+  "rationale": "The denominator is ε with the hypothesis 0 < ε.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bwdyoung",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:d99d9697e7cef3700b471c8ebdf8ea7ee6111a147a07102602a48e206f89b440",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1/0/1/0/1/1/0/1/0/0/0/1",
+  "rationale": "G.rank = min m n with m, n ≥ 1 gives s_min(G) > 0 (the first clause of ass_G), so (s_min(G)²)⁻¹ is c_G = s_min(G)⁻² itself, an argument of the existentially chosen constant function.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_bwdyoung",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:50cdbab5a31e04dac79ffda554ada7550a0b1a0abfd9dda3fd352b52b57fe637",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1/1/1",
+  "rationale": "At a.e. s, δY_s ∈ L² (supSize(δΘ) < ⊤), δq^f_s ∈ L² (PredForcing energies) and δf_s ∈ L² by Assumption 2.3 at the L² tuples Θᵏ_s, so the pairing is integrable at a.e. s, all that the ∀ᵐ s statement reads.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:751c293398d7afbc717973b0b4934de034c32091515a8614020581ef55f7069d",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1",
+  "rationale": "The conclusion asserts every integrand integrable (on Ω, on Ω × [0, T] and on Ω × [0, T] × E), so the iterated time and ν integrals are those of integrable functions (Fubini).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:2c8c52835b30c101ca658b5b988fc7e967866b0dfb424d84c6c0ef2ef91fbff3",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1",
+  "rationale": "The conclusion asserts every integrand integrable (on Ω, on Ω × [0, T] and on Ω × [0, T] × E), so the iterated time and ν integrals are those of integrable functions (Fubini).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:1429612852fff9d14a65a6d6df40825c73efe2badfb3366d973b66bd4f598ced",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/0/1/1",
+  "rationale": "The conclusion asserts every integrand integrable (on Ω, on Ω × [0, T] and on Ω × [0, T] × E), so the iterated time and ν integrals are those of integrable functions (Fubini).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:07ae36e558604c679a554f51946f4f743ea5407ac1bdf469b23e3c127c4e0c5e",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1",
+  "rationale": "The conclusion asserts every integrand integrable (on Ω, on Ω × [0, T] and on Ω × [0, T] × E), so the iterated time and ν integrals are those of integrable functions (Fubini).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:eae9f767523fa9b791501f6d639d0bb292b71d091e96df2accaa6d4da99dbf64",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1",
+  "rationale": "The conclusion asserts every integrand integrable (on Ω, on Ω × [0, T] and on Ω × [0, T] × E), so the iterated time and ν integrals are those of integrable functions (Fubini).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:69c2a141e678166d807587037684322788d8813d0fd96579e3caadbc6c3ab452",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1",
+  "rationale": "The conclusion asserts every integrand integrable (on Ω, on Ω × [0, T] and on Ω × [0, T] × E), so the iterated time and ν integrals are those of integrable functions (Fubini).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:120d6222a776a3daadb5e0840dd1e271b60badd51564cf56f2aa2d552484b7b0",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1/1",
+  "rationale": "The conclusion asserts every integrand integrable (on Ω, on Ω × [0, T] and on Ω × [0, T] × E), so the iterated time and ν integrals are those of integrable functions (Fubini).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:139618623f034aaf2c986c36c5245c9b06c8c1ca19d67e028397988d06133f19",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1/1/1/1/1",
+  "rationale": "The conclusion asserts every integrand integrable (on Ω, on Ω × [0, T] and on Ω × [0, T] × E), so the iterated time and ν integrals are those of integrable functions (Fubini).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:89e00fa2391bb1cb510e18fba5558aea99d37556b536ce66b59a0246f4b85e2b",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1",
+  "rationale": "The conclusion asserts every integrand integrable (on Ω, on Ω × [0, T] and on Ω × [0, T] × E), so the iterated time and ν integrals are those of integrable functions (Fubini).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:61ce5c5de07a5a843d2de99d57e6b12f33d9bc498387d30f0ba7308fe43082e6",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1",
+  "rationale": "The conclusion asserts every integrand integrable (on Ω, on Ω × [0, T] and on Ω × [0, T] × E), so the iterated time and ν integrals are those of integrable functions (Fubini).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:f841b5f6e86830343d1e81969ad49cb1f895bf0f880bfe59c3d48faddc7cde0a",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "The conclusion asserts every integrand integrable (on Ω, on Ω × [0, T] and on Ω × [0, T] × E), so the iterated time and ν integrals are those of integrable functions (Fubini).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:808b54e6d481bc6c3c6ca632d97b0db0946b610304fb88b58b6a3dc6ea005812",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "The conclusion asserts every integrand integrable (on Ω, on Ω × [0, T] and on Ω × [0, T] × E), so the iterated time and ν integrals are those of integrable functions (Fubini).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:3de75910eff99b65ebaf024894b176023ac52d16ee9b92af383d9caf0d49fb88",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "The conclusion asserts every integrand integrable (on Ω, on Ω × [0, T] and on Ω × [0, T] × E), so the iterated time and ν integrals are those of integrable functions (Fubini).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc",
+  "trigger": "ENNReal.toReal",
+  "fingerprint": "pl-occ-v1:8100aca1262ecc9dfc41b5675770065c6405866d33f596606ab6207bd3156b29",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1",
+  "rationale": "The first two clauses assert N' ≠ ⊤ and dataSize ≠ ⊤, so both toReal are the finite values.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc",
+  "trigger": "ENNReal.toReal",
+  "fingerprint": "pl-occ-v1:33c4d476245abc9aaceaed710e32d8e169f8f84f9e19a35ce9fcb79dd8c103a6",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "The first two clauses assert N' ≠ ⊤ and dataSize ≠ ⊤, so both toReal are the finite values.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:f9a7f1d59abd508af14edac37bc21b9fe18ba4a02938e8120d8d2008f0aaee19",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "The denominator is 4η with the hypothesis 0 < η.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:1429612852fff9d14a65a6d6df40825c73efe2badfb3366d973b66bd4f598ced",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/0/1/0/1/1",
+  "rationale": "The left integrands are squares of G-images of δX_T, δX, δY, δZ, δU, finite in expectation (N' ≠ ⊤, asserted); the right ones pair the L² data differences (dataSize ≠ ⊤, asserted) with L² differences, the ν-integrals two L²(ν) elements at a.e. (ω, s).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:89e00fa2391bb1cb510e18fba5558aea99d37556b536ce66b59a0246f4b85e2b",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/0/1/1/1",
+  "rationale": "The left integrands are squares of G-images of δX_T, δX, δY, δZ, δU, finite in expectation (N' ≠ ⊤, asserted); the right ones pair the L² data differences (dataSize ≠ ⊤, asserted) with L² differences, the ν-integrals two L²(ν) elements at a.e. (ω, s).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:61ce5c5de07a5a843d2de99d57e6b12f33d9bc498387d30f0ba7308fe43082e6",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/0/1/1/1/1/1",
+  "rationale": "The left integrands are squares of G-images of δX_T, δX, δY, δZ, δU, finite in expectation (N' ≠ ⊤, asserted); the right ones pair the L² data differences (dataSize ≠ ⊤, asserted) with L² differences, the ν-integrals two L²(ν) elements at a.e. (ω, s).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:69c2a141e678166d807587037684322788d8813d0fd96579e3caadbc6c3ab452",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1",
+  "rationale": "The left integrands are squares of G-images of δX_T, δX, δY, δZ, δU, finite in expectation (N' ≠ ⊤, asserted); the right ones pair the L² data differences (dataSize ≠ ⊤, asserted) with L² differences, the ν-integrals two L²(ν) elements at a.e. (ω, s).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:120d6222a776a3daadb5e0840dd1e271b60badd51564cf56f2aa2d552484b7b0",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1/1/1",
+  "rationale": "The left integrands are squares of G-images of δX_T, δX, δY, δZ, δU, finite in expectation (N' ≠ ⊤, asserted); the right ones pair the L² data differences (dataSize ≠ ⊤, asserted) with L² differences, the ν-integrals two L²(ν) elements at a.e. (ω, s).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:139618623f034aaf2c986c36c5245c9b06c8c1ca19d67e028397988d06133f19",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1/1/1/1/1/1",
+  "rationale": "The left integrands are squares of G-images of δX_T, δX, δY, δZ, δU, finite in expectation (N' ≠ ⊤, asserted); the right ones pair the L² data differences (dataSize ≠ ⊤, asserted) with L² differences, the ν-integrals two L²(ν) elements at a.e. (ω, s).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:eae9f767523fa9b791501f6d639d0bb292b71d091e96df2accaa6d4da99dbf64",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1/0/1/0/1/1",
+  "rationale": "The left integrands are squares of G-images of δX_T, δX, δY, δZ, δU, finite in expectation (N' ≠ ⊤, asserted); the right ones pair the L² data differences (dataSize ≠ ⊤, asserted) with L² differences, the ν-integrals two L²(ν) elements at a.e. (ω, s).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:07ae36e558604c679a554f51946f4f743ea5407ac1bdf469b23e3c127c4e0c5e",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1/0/1/1/1",
+  "rationale": "The left integrands are squares of G-images of δX_T, δX, δY, δZ, δU, finite in expectation (N' ≠ ⊤, asserted); the right ones pair the L² data differences (dataSize ≠ ⊤, asserted) with L² differences, the ν-integrals two L²(ν) elements at a.e. (ω, s).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:7c0877f586af84a58e6a41c3da6ed2188c8b385323713c3da2e94cab11d8b531",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1/1",
+  "rationale": "The left integrands are squares of G-images of δX_T, δX, δY, δZ, δU, finite in expectation (N' ≠ ⊤, asserted); the right ones pair the L² data differences (dataSize ≠ ⊤, asserted) with L² differences, the ν-integrals two L²(ν) elements at a.e. (ω, s).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:262d11d3302cea3e0ae32baea9d28f4ff5e0bb4a5a604e78209390ba44824ab3",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1/1/1/1",
+  "rationale": "The left integrands are squares of G-images of δX_T, δX, δY, δZ, δU, finite in expectation (N' ≠ ⊤, asserted); the right ones pair the L² data differences (dataSize ≠ ⊤, asserted) with L² differences, the ν-integrals two L²(ν) elements at a.e. (ω, s).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:d8910efbfbd4e520e52c79e3ba4c9c21f4b26b79daab8c0160513e5fae64a76a",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1",
+  "rationale": "The left integrands are squares of G-images of δX_T, δX, δY, δZ, δU, finite in expectation (N' ≠ ⊤, asserted); the right ones pair the L² data differences (dataSize ≠ ⊤, asserted) with L² differences, the ν-integrals two L²(ν) elements at a.e. (ω, s).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:a249e1b5a756fce292745a0482569d4c5357c7f15f993f0eef16f2518207e291",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1",
+  "rationale": "The left integrands are squares of G-images of δX_T, δX, δY, δZ, δU, finite in expectation (N' ≠ ⊤, asserted); the right ones pair the L² data differences (dataSize ≠ ⊤, asserted) with L² differences, the ν-integrals two L²(ν) elements at a.e. (ω, s).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:3de75910eff99b65ebaf024894b176023ac52d16ee9b92af383d9caf0d49fb88",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/0/1/1",
+  "rationale": "The left integrands are squares of G-images of δX_T, δX, δY, δZ, δU, finite in expectation (N' ≠ ⊤, asserted); the right ones pair the L² data differences (dataSize ≠ ⊤, asserted) with L² differences, the ν-integrals two L²(ν) elements at a.e. (ω, s).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc_blocks",
+  "trigger": "ENNReal.toReal",
+  "fingerprint": "pl-occ-v1:8100aca1262ecc9dfc41b5675770065c6405866d33f596606ab6207bd3156b29",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1/1",
+  "rationale": "supSize(δΘ) < ⊤ (hypothesis) bounds N', and the data differences are square integrable (PredForcing; δξ₀ through supSize), so N' and dataSize are finite; a ⊤ would only shrink the right side.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc_blocks",
+  "trigger": "ENNReal.toReal",
+  "fingerprint": "pl-occ-v1:33c4d476245abc9aaceaed710e32d8e169f8f84f9e19a35ce9fcb79dd8c103a6",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1",
+  "rationale": "supSize(δΘ) < ⊤ (hypothesis) bounds N', and the data differences are square integrable (PredForcing; δξ₀ through supSize), so N' and dataSize are finite; a ⊤ would only shrink the right side.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc_blocks",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:f9a7f1d59abd508af14edac37bc21b9fe18ba4a02938e8120d8d2008f0aaee19",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1",
+  "rationale": "The denominator is 4η with the hypothesis 0 < η.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc_blocks",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:1429612852fff9d14a65a6d6df40825c73efe2badfb3366d973b66bd4f598ced",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1",
+  "rationale": "The integrands are squares of G-images of δX_T, δX, δY, δZ, δU, finite in expectation because supSize(δΘ) < ⊤; the inner ν-integral is finite at a.e. (ω, s).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc_blocks",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:89e00fa2391bb1cb510e18fba5558aea99d37556b536ce66b59a0246f4b85e2b",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1",
+  "rationale": "The integrands are squares of G-images of δX_T, δX, δY, δZ, δU, finite in expectation because supSize(δΘ) < ⊤; the inner ν-integral is finite at a.e. (ω, s).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc_blocks",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:61ce5c5de07a5a843d2de99d57e6b12f33d9bc498387d30f0ba7308fe43082e6",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1/1",
+  "rationale": "The integrands are squares of G-images of δX_T, δX, δY, δZ, δU, finite in expectation because supSize(δΘ) < ⊤; the inner ν-integral is finite at a.e. (ω, s).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc_blocks",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:69c2a141e678166d807587037684322788d8813d0fd96579e3caadbc6c3ab452",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1",
+  "rationale": "The integrands are squares of G-images of δX_T, δX, δY, δZ, δU, finite in expectation because supSize(δΘ) < ⊤; the inner ν-integral is finite at a.e. (ω, s).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc_blocks",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:120d6222a776a3daadb5e0840dd1e271b60badd51564cf56f2aa2d552484b7b0",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1",
+  "rationale": "The integrands are squares of G-images of δX_T, δX, δY, δZ, δU, finite in expectation because supSize(δΘ) < ⊤; the inner ν-integral is finite at a.e. (ω, s).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coerc_blocks",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:139618623f034aaf2c986c36c5245c9b06c8c1ca19d67e028397988d06133f19",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1",
+  "rationale": "The integrands are squares of G-images of δX_T, δX, δY, δZ, δU, finite in expectation because supSize(δΘ) < ⊤; the inner ν-integral is finite at a.e. (ω, s).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_contract_half",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:bd84c99b7ad9182a96b6776f7aeda76e4d6bb07aaeeb6641bc6e1bbc112a8d39",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1",
+  "rationale": "The divisions are the literals 1/2 and 1/4.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_contract_half",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:d54e2c172eb7769ec80351bc799b39e088578f4bc408e81eb13c394bb8274559",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1",
+  "rationale": "The divisions are the literals 1/2 and 1/4.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_contract_half",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:e19d5f9f020f4f131efb05cef0439d0f010f2b8ea226f7f35d65d8ebb801a8e1",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "C_Φ = max 1 (…) ≥ 1, so 2√C_Φ ≥ 2 > 0 and λ* = (2√C_Φ)⁻¹ is the printed one.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_contract_half",
+  "trigger": "Real.sqrt",
+  "fingerprint": "pl-occ-v1:6e40bae19897e32d1e857bf5ac547a930d2befc5bcf53edf99ac2c58fe3f7c67",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1",
+  "rationale": "C_Φ = max 1 (…) ≥ 1 ≥ 0.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_dX",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:b4b688200dcb06752d406457a1f77e0eaebb0ecd60dd9adfa136a7f557380d56",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1/0/1/1",
+  "rationale": "The first clause asserts the path integrable on [0, T] for a.e. ω, so the integral over [0, t] or [t, T] (t ∈ [0, T]) in the a.s. identity is the Lebesgue integral.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_dY",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:f541c85152f1988cfd2b7fb09687604389de6623748efe4ce48fa918097f0e27",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1/0/1/1",
+  "rationale": "The first clause asserts the path integrable on [0, T] for a.e. ω, so the integral over [0, t] or [t, T] (t ∈ [0, T]) in the a.s. identity is the Lebesgue integral.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_frozenbwd",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:7bf09255dca1c85a4685cf075d079b8de2cdfad39377a0e7b842838d5b3a8894",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/0/1/1/1/1",
+  "rationale": "By Assumptions 2.2 (origin values in L²(0, T)) and 2.3, f(s, Θ_s, μ_s) along the trial tuple Θ has finite energy, as has q^f (PredForcing), so the path of λf + q^f is integrable on [0, T] for a.e. ω and Ξ is the paper's terminal value off a null set.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_fwd",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:d99d9697e7cef3700b471c8ebdf8ea7ee6111a147a07102602a48e206f89b440",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/0/0/1",
+  "rationale": "G.rank = min m n with m, n ≥ 1 gives s_min(G) > 0 (the first clause of ass_G), so (s_min(G)²)⁻¹ is c_G = s_min(G)⁻² itself, an argument of the existentially chosen constant function.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_fwd_chain",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:d99d9697e7cef3700b471c8ebdf8ea7ee6111a147a07102602a48e206f89b440",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1/1/0/1/1/0/0/0/1",
+  "rationale": "G.rank = min m n with m, n ≥ 1 gives s_min(G) > 0 (the first clause of ass_G), so (s_min(G)²)⁻¹ is c_G = s_min(G)⁻² itself, an argument of the existentially chosen constant function.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_fwddiff_identity",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:7ee23159798df1665664f50274fac528af4162070ac5d3f5d3bc3df48e2ef978",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/0/1/1/1/0/1/0/1/1",
+  "rationale": "The first clause asserts the path integrable on [0, T] for a.e. ω, so the integral over [0, t] or [t, T] (t ∈ [0, T]) in the a.s. identity is the Lebesgue integral.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_fwddiff_identity",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:eae4adb25770dfcfeb45bb6c13ab6e2d6da845e3988126f0cb72cd367661d6a7",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/0/1/0/1/1",
+  "rationale": "The first clause asserts the path integrable on [0, T] for a.e. ω, so the integral over [0, t] or [t, T] (t ∈ [0, T]) in the a.s. identity is the Lebesgue integral.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_intmono",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:cfaed43bfd5207421263258e688291631ed682cf2540244d35d2c4b86c5ac338",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1/0/1/1/0/1/1",
+  "rationale": "The conclusion asserts the pairing integrable at a.e. t; the right sides are squares of G-images of differences of the tuples Θᵏ_t, L² at a.e. t (ℍ²); the inner ν-integral pairs δh at the predictable tuples with Gᵀ δU, elements of L²(ν).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_intmono",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:3fd253041ef4fceb226053086d853277c66839566430b36ba5a202e6a7742c8b",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1/1",
+  "rationale": "The conclusion asserts the pairing integrable at a.e. t; the right sides are squares of G-images of differences of the tuples Θᵏ_t, L² at a.e. t (ℍ²); the inner ν-integral pairs δh at the predictable tuples with Gᵀ δU, elements of L²(ν).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_intmono",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:8442d46f53ea5651bed9c8f036372def565352a941bc91648a4ffd7fb255b6d4",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/0/1/1",
+  "rationale": "The conclusion asserts the pairing integrable at a.e. t; the right sides are squares of G-images of differences of the tuples Θᵏ_t, L² at a.e. t (ℍ²); the inner ν-integral pairs δh at the predictable tuples with Gᵀ δU, elements of L²(ν).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_intmono",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:5bfc6c7708ef73454280bcf14fbfe09e8e36869243121d7c454c039f315357a5",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1",
+  "rationale": "The conclusion asserts the pairing integrable at a.e. t; the right sides are squares of G-images of differences of the tuples Θᵏ_t, L² at a.e. t (ℍ²); the inner ν-integral pairs δh at the predictable tuples with Gᵀ δU, elements of L²(ν).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_supE",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:d69cdce3b00bc27b2e2cd1bde9ace3a69131218179cd6de1b74824e6bea27637",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1/1/1/0/1/0/1/1",
+  "rationale": "The integral is the drift of the hypothesis (4.4): φ is jointly measurable with 𝔼∫_0^T|φ|² < ∞, so for a.e. ω its path is square-, hence Lebesgue-, integrable on [t, T] ⊆ [0, T], and the a.s. identity is the printed one.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_supE_weighted",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:93a1b6ba57c16827f00bdd26c50252fab6e5c928ed0d905d81c98e91afb7bed0",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1/1/1/0/1/0/1/1",
+  "rationale": "The integral is the drift of the hypothesis (4.4): φ is jointly measurable with 𝔼∫_0^T|φ|² < ∞, so for a.e. ω its path is square-, hence Lebesgue-, integrable on [t, T] ⊆ [0, T], and the a.s. identity is the printed one.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem_bpbsde_explicit",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:d69cdce3b00bc27b2e2cd1bde9ace3a69131218179cd6de1b74824e6bea27637",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1/1/1/0/1/0/1/1",
+  "rationale": "The integral is the drift of the hypothesis (4.4): φ is jointly measurable with 𝔼∫_0^T|φ|² < ∞, so for a.e. ω its path is square-, hence Lebesgue-, integrable on [t, T] ⊆ [0, T], and the a.s. identity is the printed one.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_termmono",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:3d1bb59d3cd63f927e799608bd1b3dc6584983c7eddf0027cb8835127749cbbf",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1",
+  "rationale": "The first three clauses assert the three terminal pairings integrable; the fourth integrand |G δX_T|² is integrable as δX_T ∈ L² (supSize(δΘ) < ⊤).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_termmono",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:47f48d7f9a41c75927d551c253473738b831fa0e6977e33d494b6a0dd20746be",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1/1",
+  "rationale": "The first three clauses assert the three terminal pairings integrable; the fourth integrand |G δX_T|² is integrable as δX_T ∈ L² (supSize(δΘ) < ⊤).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_termmono",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:07ae36e558604c679a554f51946f4f743ea5407ac1bdf469b23e3c127c4e0c5e",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1",
+  "rationale": "The first three clauses assert the three terminal pairings integrable; the fourth integrand |G δX_T|² is integrable as δX_T ∈ L² (supSize(δΘ) < ⊤).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_termmono",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:1429612852fff9d14a65a6d6df40825c73efe2badfb3366d973b66bd4f598ced",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1",
+  "rationale": "The first three clauses assert the three terminal pairings integrable; the fourth integrand |G δX_T|² is integrable as δX_T ∈ L² (supSize(δΘ) < ⊤).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_uniq_bwd_eq",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:83a3a56d49f3a534b324bd3515664f09918c1c25385f2779b66b1b898f7bd605",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1/0/1/1",
+  "rationale": "The first clause asserts the path integrable on [0, T] for a.e. ω, so the integral over [0, t] or [t, T] (t ∈ [0, T]) in the a.s. identity is the Lebesgue integral.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_uniq_fwd",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:a8afcaf6b3ce20c1c828ab4fc9fd2918b74c31d1d4c93436c1066a02f57e28b5",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1/0/1",
+  "rationale": "The first clause asserts the path integrable on [0, T] for a.e. ω, so the integral over [0, t] or [t, T] (t ∈ [0, T]) in the a.s. identity is the Lebesgue integral.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_wgt",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:d99d9697e7cef3700b471c8ebdf8ea7ee6111a147a07102602a48e206f89b440",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/0/0/1",
+  "rationale": "G.rank = min m n with m, n ≥ 1 gives s_min(G) > 0 (the first clause of ass_G), so (s_min(G)²)⁻¹ is c_G = s_min(G)⁻² itself, an argument of the existentially chosen constant function.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_wgt_insert",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:4db63ea96da2c7f15b0ec5068e7d263e873363be6fbdc0e052a1dfc464e9f842",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1/0/1/0/1/1",
+  "rationale": "The denominator is ε with the hypothesis 0 < ε.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_wgt_insert",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:0e1326069f5a2ee101202ec7c5be3b665ae20ee82c864b6568d775b4130ed973",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/0/1",
+  "rationale": "The denominator is ε with the hypothesis 0 < ε.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_wgt_insert",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:d99d9697e7cef3700b471c8ebdf8ea7ee6111a147a07102602a48e206f89b440",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1/0/1/0/1/1/0/1/0/0/0/1",
+  "rationale": "G.rank = min m n with m, n ≥ 1 gives s_min(G) > 0 (the first clause of ass_G), so (s_min(G)²)⁻¹ is c_G = s_min(G)⁻² itself, an argument of the existentially chosen constant function.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_wgt_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:2cfa1e286c528763f7336721534224c54d5763061a6f5749e88a5c89cabac120",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1/1/1/1/1/1",
+  "rationale": "The clauses assert each integrand integrable on Ω and on Ω × [t, T] (|δY_t|² at every t by the first part), so its time sections are integrable a.s. (Fubini); ∫(δU)² dν is finite at a.e. (ω, s) because supSize(δΘ) < ⊤ bounds the marked energy of δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_wgt_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:2e666beb316fda8c6eb3373c9d3852377134fd2c93385254bc5963ab2eab2775",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1",
+  "rationale": "The clauses assert each integrand integrable on Ω and on Ω × [t, T] (|δY_t|² at every t by the first part), so its time sections are integrable a.s. (Fubini); ∫(δU)² dν is finite at a.e. (ω, s) because supSize(δΘ) < ⊤ bounds the marked energy of δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_wgt_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:fe987f2aa3f98a77ae0f1192639a6a8ac04aa9b78fbb10cb6c4ae6979350bde3",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1",
+  "rationale": "The clauses assert each integrand integrable on Ω and on Ω × [t, T] (|δY_t|² at every t by the first part), so its time sections are integrable a.s. (Fubini); ∫(δU)² dν is finite at a.e. (ω, s) because supSize(δΘ) < ⊤ bounds the marked energy of δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_wgt_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:38671b7990d5d24099b2f151620e582683181a7bad670aca0a909161e8ad12cb",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1",
+  "rationale": "The clauses assert each integrand integrable on Ω and on Ω × [t, T] (|δY_t|² at every t by the first part), so its time sections are integrable a.s. (Fubini); ∫(δU)² dν is finite at a.e. (ω, s) because supSize(δΘ) < ⊤ bounds the marked energy of δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_wgt_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:20f1288f88d5374e3c1d0a004b5e0134b5ef0d663c8ac49af4c43366aa74e9d6",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "The clauses assert each integrand integrable on Ω and on Ω × [t, T] (|δY_t|² at every t by the first part), so its time sections are integrable a.s. (Fubini); ∫(δU)² dν is finite at a.e. (ω, s) because supSize(δΘ) < ⊤ bounds the marked energy of δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_wgt_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:f8642f1b789aa470787e32f3006cb26d9c582ae1f1aa65d5251e1138aef5e2e7",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1",
+  "rationale": "The clauses assert each integrand integrable on Ω and on Ω × [t, T] (|δY_t|² at every t by the first part), so its time sections are integrable a.s. (Fubini); ∫(δU)² dν is finite at a.e. (ω, s) because supSize(δΘ) < ⊤ bounds the marked energy of δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_wgt_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:3d04039830e27b161bfd9ea6a8b44a98c0ded70a8602dc30713e64b4b9c21806",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "The clauses assert each integrand integrable on Ω and on Ω × [t, T] (|δY_t|² at every t by the first part), so its time sections are integrable a.s. (Fubini); ∫(δU)² dν is finite at a.e. (ω, s) because supSize(δΘ) < ⊤ bounds the marked energy of δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_wgt_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:bd07646465ef11f3be4d7f4b988a0ff3d8d072be239ebae0ff9179c252feef93",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "The clauses assert each integrand integrable on Ω and on Ω × [t, T] (|δY_t|² at every t by the first part), so its time sections are integrable a.s. (Fubini); ∫(δU)² dν is finite at a.e. (ω, s) because supSize(δΘ) < ⊤ bounds the marked energy of δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_wgt_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:0e6071d79fe62cb44febb507c3e4c7825848c0576436a54f45dfc48bb576cf6c",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1/1/1",
+  "rationale": "The clauses assert each integrand integrable on Ω and on Ω × [t, T] (|δY_t|² at every t by the first part), so its time sections are integrable a.s. (Fubini); ∫(δU)² dν is finite at a.e. (ω, s) because supSize(δΘ) < ⊤ bounds the marked energy of δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_wgt_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:dcceacebe11e3a9f07af0e59c9f7d360904cd3b214b3c68ac806a901621060fa",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1",
+  "rationale": "The clauses assert each integrand integrable on Ω and on Ω × [t, T] (|δY_t|² at every t by the first part), so its time sections are integrable a.s. (Fubini); ∫(δU)² dν is finite at a.e. (ω, s) because supSize(δΘ) < ⊤ bounds the marked energy of δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_wgt_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:e19cde6d3859b5dc4f452acdfb000d666dfe41b296156883165e11a8b22ef35c",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1",
+  "rationale": "The clauses assert each integrand integrable on Ω and on Ω × [t, T] (|δY_t|² at every t by the first part), so its time sections are integrable a.s. (Fubini); ∫(δU)² dν is finite at a.e. (ω, s) because supSize(δΘ) < ⊤ bounds the marked energy of δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_wgt_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:41ade187fb6b512e3d54089a2725e9eb9526d1eebad76e06c062d312b7939633",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1",
+  "rationale": "The clauses assert each integrand integrable on Ω and on Ω × [t, T] (|δY_t|² at every t by the first part), so its time sections are integrable a.s. (Fubini); ∫(δU)² dν is finite at a.e. (ω, s) because supSize(δΘ) < ⊤ bounds the marked energy of δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_wgt_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:76d88587ba91f27e94c449325c90ef89c5dcf10ccb2ece337b5ef251fd368f1a",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1",
+  "rationale": "The clauses assert each integrand integrable on Ω and on Ω × [t, T] (|δY_t|² at every t by the first part), so its time sections are integrable a.s. (Fubini); ∫(δU)² dν is finite at a.e. (ω, s) because supSize(δΘ) < ⊤ bounds the marked energy of δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_wgt_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:01dc22ef77b3f02933e60da5e84a6ee75fa6f05171520b2edc981f1bd5c147e5",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "The clauses assert each integrand integrable on Ω and on Ω × [t, T] (|δY_t|² at every t by the first part), so its time sections are integrable a.s. (Fubini); ∫(δU)² dν is finite at a.e. (ω, s) because supSize(δΘ) < ⊤ bounds the marked energy of δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_wgt_insert",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:638ea777d08084e664905a08ee7cf00ead3034abb7e0d219b2cfafccaf63b380",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "The clauses assert each integrand integrable on Ω and on Ω × [t, T] (|δY_t|² at every t by the first part), so its time sections are integrable a.s. (Fubini); ∫(δU)² dν is finite at a.e. (ω, s) because supSize(δΘ) < ⊤ bounds the marked energy of δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_wgt_terminal",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:d99d9697e7cef3700b471c8ebdf8ea7ee6111a147a07102602a48e206f89b440",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/0/0/1",
+  "rationale": "G.rank = min m n with m, n ≥ 1 gives s_min(G) > 0 (the first clause of ass_G), so (s_min(G)²)⁻¹ is c_G = s_min(G)⁻² itself, an argument of the existentially chosen constant function.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_zeromean",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:1022a3ddad9116e46a64fffbd1f195a8fbd733b1acb5ece62fba2e9c78a8e416",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/0/1",
+  "rationale": "The hypothesis 𝔼∫∫|ψ| ν(de) ds < ∞ for a marked predictable, so jointly measurable, ψ gives 𝔼∫|ψ| dN < ∞ by (2.1), so the N(ω)-integral, the ds ν(de) integral and the expectation are of integrable functions; integrability is also asserted.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_zeromean",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:f783ca693c86bb1d5c85125e109ae0f455b6f69eaf5e4e5a727f746f4b0f0c91",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1",
+  "rationale": "The hypothesis 𝔼∫∫|ψ| ν(de) ds < ∞ for a marked predictable, so jointly measurable, ψ gives 𝔼∫|ψ| dN < ∞ by (2.1), so the N(ω)-integral, the ds ν(de) integral and the expectation are of integrable functions; integrability is also asserted.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_zeromean",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:994bfc430c6614daf3bf7aa6860525b7be7d8760349b7d5fb6247ccb9b14c98c",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1/1/1",
+  "rationale": "The hypothesis 𝔼∫∫|ψ| ν(de) ds < ∞ for a marked predictable, so jointly measurable, ψ gives 𝔼∫|ψ| dN < ∞ by (2.1), so the N(ω)-integral, the ds ν(de) integral and the expectation are of integrable functions; integrability is also asserted.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_zeromean",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:35718c2d0ca4d5b41a45637e34899037d9b8a654fe76d95de387c3c68c6d51bc",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "The hypothesis 𝔼∫∫|ψ| ν(de) ds < ∞ for a marked predictable, so jointly measurable, ψ gives 𝔼∫|ψ| dN < ∞ by (2.1), so the N(ω)-integral, the ds ν(de) integral and the expectation are of integrable functions; integrability is also asserted.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_i_ham",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:ba9bd156f29bcbba0722bb8366c76882e0a4a24b4c4cdfcca5fe6954adfc54a7",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1",
+  "rationale": "β₂/2 has the literal denominator 2, and 1/(2β₁) has 2β₁ > 0 by the hypothesis 0 < β₁.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_i_ham",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:88a003264e343e1a472c57a0bc23763f496e84b2f15dbf7c238be857becff01b",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "β₂/2 has the literal denominator 2, and 1/(2β₁) has 2β₁ > 0 by the hypothesis 0 < β₁.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_i_ham",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:51b517fea90aa8c2820daa0d64c6f9af623ddad6aa4ca8dd65b387409d64594a",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1",
+  "rationale": "h_c, a^h and u lie in L²(ν), so the pointwise inner product of their representatives is ν-integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_i",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:83dd9e517ae17c3e388791889307d11b1e7f82ae51754e0d0e8911c62fb5cf79",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1",
+  "rationale": "The clause asserts (s_min(1)²)⁻¹ = 1, which a junk 0⁻¹ = 0 would falsify; s_min(1) = 1 for the identity of ℝ^{1×1}.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_i_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:b890a388104e7261adce175d7dfea4c1a53b5cbe6102add8932fc74ed33424b0",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/0/1",
+  "rationale": "For the affine coefficients δb = −β₁δY, δσ = −β₁δZ, δh = −β₁δU, δf = β₂δX and δg = δX_T, so every integrand is a combination of squares of differences of L² inputs (diagonalInputs, MemLp X_T 2) or −β₁|δU(e)|² with δU ∈ L²(ν): all integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_i_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:da957732ab3e5be5d146e43e7404ef552c2071e4800b5cc6be8a3d97a8d73a7c",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/0/1/1",
+  "rationale": "For the affine coefficients δb = −β₁δY, δσ = −β₁δZ, δh = −β₁δU, δf = β₂δX and δg = δX_T, so every integrand is a combination of squares of differences of L² inputs (diagonalInputs, MemLp X_T 2) or −β₁|δU(e)|² with δU ∈ L²(ν): all integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_i_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:4a0e3a3043d15360aa66baa1f30da875c0a043c9695baa865025f0ca50f441eb",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1",
+  "rationale": "For the affine coefficients δb = −β₁δY, δσ = −β₁δZ, δh = −β₁δU, δf = β₂δX and δg = δX_T, so every integrand is a combination of squares of differences of L² inputs (diagonalInputs, MemLp X_T 2) or −β₁|δU(e)|² with δU ∈ L²(ν): all integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_i_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:f0767e4f6732d8b37c2867fb6c02e75b217bdd985d0f3f9e04ea6b42b868ebb1",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/0/1",
+  "rationale": "For the affine coefficients δb = −β₁δY, δσ = −β₁δZ, δh = −β₁δU, δf = β₂δX and δg = δX_T, so every integrand is a combination of squares of differences of L² inputs (diagonalInputs, MemLp X_T 2) or −β₁|δU(e)|² with δU ∈ L²(ν): all integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_i_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:a77429895f27742a47e3c922b0059a721b5b5396cb9a0db176aa070d439d125a",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1",
+  "rationale": "For the affine coefficients δb = −β₁δY, δσ = −β₁δZ, δh = −β₁δU, δf = β₂δX and δg = δX_T, so every integrand is a combination of squares of differences of L² inputs (diagonalInputs, MemLp X_T 2) or −β₁|δU(e)|² with δU ∈ L²(ν): all integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_i_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:25b2e6d3c7e07d987e7aae131636fa0f15e7ef86a4315237f4fa74eeb6c47744",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "For the affine coefficients δb = −β₁δY, δσ = −β₁δZ, δh = −β₁δU, δf = β₂δX and δg = δX_T, so every integrand is a combination of squares of differences of L² inputs (diagonalInputs, MemLp X_T 2) or −β₁|δU(e)|² with δU ∈ L²(ν): all integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_i_wp",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:83dd9e517ae17c3e388791889307d11b1e7f82ae51754e0d0e8911c62fb5cf79",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/0/0/1",
+  "rationale": "G = 1 ∈ ℝ^{1×1} has s_min(1) = 1, so (s_min(1)²)⁻¹ = 1 = c_G, an argument of the existentially chosen C_stab.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_i_clamp_wp",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:83dd9e517ae17c3e388791889307d11b1e7f82ae51754e0d0e8911c62fb5cf79",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/0/0/1",
+  "rationale": "G = 1 ∈ ℝ^{1×1} has s_min(1) = 1, so (s_min(1)²)⁻¹ = 1 = c_G, an argument of the existentially chosen C_stab.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_ii_mean",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:012f1ca983dde26bd5bf13b323dd1c3e095258d6c8e78ddf188ccfabf6feffd5",
+  "at": "/1/1/1/1/1/0/1/1/1/0/1/1/0/1",
+  "rationale": "μ ∈ P₂(H) is a probability law with finite second moment, so each channel projection, continuous into a separable space, is μ-integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_ii_mean",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:0518a971ab7ba0c206fbca14d5fff44712afe135e8ef31aa8f58487ccf91c9ae",
+  "at": "/1/1/1/1/1/0/1/1/1/0/1/1/1/0/1",
+  "rationale": "μ ∈ P₂(H) is a probability law with finite second moment, so each channel projection, continuous into a separable space, is μ-integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_ii_mean",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:e51c74e9ff0d828d6da050e6a85eec050629c4300ce06074dc457b4d0a38cd45",
+  "at": "/1/1/1/1/1/0/1/1/1/0/1/1/1/1/0/1",
+  "rationale": "μ ∈ P₂(H) is a probability law with finite second moment, so each channel projection, continuous into a separable space, is μ-integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_ii_mean",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:d553a7391df4c7da2343d6dcabb8b9744eb55dd1bf80a3f81e5c7ae6024be3aa",
+  "at": "/1/1/1/1/1/0/1/1/1/0/1/1/1/1/1",
+  "rationale": "μ ∈ P₂(H) is a probability law with finite second moment, so each channel projection, continuous into a separable space, is μ-integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:889311ba225bd6c51770f7b135d21e7f7cb8fdaa3de725f6e4cda8dc7f87a6d5",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/0/1/1",
+  "rationale": "Along L² diagonal inputs (and MemLp X_T 2) the mean-field differences are δψ = 2δΨ + δm_Ψ (δg = 2δX_T + δ𝔟) with deterministic δm_Ψ, so the tuple, its channels, the channel pairings, the ν-pairing of L²(ν) elements and the terminal pairing are integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:762272091a47f7c4bc5b612b69f7ac3b440f64138e0a7439161dc9e4f31a4b4f",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/0/1/0/1",
+  "rationale": "Along L² diagonal inputs (and MemLp X_T 2) the mean-field differences are δψ = 2δΨ + δm_Ψ (δg = 2δX_T + δ𝔟) with deterministic δm_Ψ, so the tuple, its channels, the channel pairings, the ν-pairing of L²(ν) elements and the terminal pairing are integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:4a0e3a3043d15360aa66baa1f30da875c0a043c9695baa865025f0ca50f441eb",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/0/1/1/0/1/1",
+  "rationale": "Along L² diagonal inputs (and MemLp X_T 2) the mean-field differences are δψ = 2δΨ + δm_Ψ (δg = 2δX_T + δ𝔟) with deterministic δm_Ψ, so the tuple, its channels, the channel pairings, the ν-pairing of L²(ν) elements and the terminal pairing are integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:a7f3fb79d09599f233cd621fd447890c70f2ce313688dd4bfb6fa898bb262eeb",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/0/1/1/1/0/1/1",
+  "rationale": "Along L² diagonal inputs (and MemLp X_T 2) the mean-field differences are δψ = 2δΨ + δm_Ψ (δg = 2δX_T + δ𝔟) with deterministic δm_Ψ, so the tuple, its channels, the channel pairings, the ν-pairing of L²(ν) elements and the terminal pairing are integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:17960ca3d4f28ca0e5fa798e512ab957748eb142923acc5aa12f6f95892f941a",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/0/1/0/1",
+  "rationale": "Along L² diagonal inputs (and MemLp X_T 2) the mean-field differences are δψ = 2δΨ + δm_Ψ (δg = 2δX_T + δ𝔟) with deterministic δm_Ψ, so the tuple, its channels, the channel pairings, the ν-pairing of L²(ν) elements and the terminal pairing are integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:5dab1086706b6a509cd2e064927718012de8b3feb12ccdd75f843162858ffd39",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/0/1/1/0/1/1",
+  "rationale": "Along L² diagonal inputs (and MemLp X_T 2) the mean-field differences are δψ = 2δΨ + δm_Ψ (δg = 2δX_T + δ𝔟) with deterministic δm_Ψ, so the tuple, its channels, the channel pairings, the ν-pairing of L²(ν) elements and the terminal pairing are integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:55e1fbdf799cbe6902b2217a6d3f0e98381dc4f22b8a78153e321be6f231d50c",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/0/1/1/1/0/1/1",
+  "rationale": "Along L² diagonal inputs (and MemLp X_T 2) the mean-field differences are δψ = 2δΨ + δm_Ψ (δg = 2δX_T + δ𝔟) with deterministic δm_Ψ, so the tuple, its channels, the channel pairings, the ν-pairing of L²(ν) elements and the terminal pairing are integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:ef56a6eb6401876f64d2b628b67f88850a6dd5f3f11ce4cbb51b31dacbc203b3",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/0/1/0/1",
+  "rationale": "Along L² diagonal inputs (and MemLp X_T 2) the mean-field differences are δψ = 2δΨ + δm_Ψ (δg = 2δX_T + δ𝔟) with deterministic δm_Ψ, so the tuple, its channels, the channel pairings, the ν-pairing of L²(ν) elements and the terminal pairing are integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:a752833cfc64ae1767b2acc56991131b6cb2331f859e6a03f856086bf8135675",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/0/1/1/0/1/1",
+  "rationale": "Along L² diagonal inputs (and MemLp X_T 2) the mean-field differences are δψ = 2δΨ + δm_Ψ (δg = 2δX_T + δ𝔟) with deterministic δm_Ψ, so the tuple, its channels, the channel pairings, the ν-pairing of L²(ν) elements and the terminal pairing are integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:32ef7d722ac322aef3962e6b43fde5ddf2f409aa63f89a4061e53989f8502591",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1/1",
+  "rationale": "Along L² diagonal inputs (and MemLp X_T 2) the mean-field differences are δψ = 2δΨ + δm_Ψ (δg = 2δX_T + δ𝔟) with deterministic δm_Ψ, so the tuple, its channels, the channel pairings, the ν-pairing of L²(ν) elements and the terminal pairing are integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:2376ab775751b395a014f01bd20c469005fe918ad7efe6dc20647f7f14d2326d",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/0/1/0/1",
+  "rationale": "Along L² diagonal inputs (and MemLp X_T 2) the mean-field differences are δψ = 2δΨ + δm_Ψ (δg = 2δX_T + δ𝔟) with deterministic δm_Ψ, so the tuple, its channels, the channel pairings, the ν-pairing of L²(ν) elements and the terminal pairing are integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:d6360ac024989f4af6b6b9c7684e9196bf64771184ca1170d7ff365d84e1953e",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1",
+  "rationale": "Along L² diagonal inputs (and MemLp X_T 2) the mean-field differences are δψ = 2δΨ + δm_Ψ (δg = 2δX_T + δ𝔟) with deterministic δm_Ψ, so the tuple, its channels, the channel pairings, the ν-pairing of L²(ν) elements and the terminal pairing are integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:1db6bd7d5cc18b91e9747d38a34f57084f047f40591210d1d48a3a4f99999c14",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1/1",
+  "rationale": "Along L² diagonal inputs (and MemLp X_T 2) the mean-field differences are δψ = 2δΨ + δm_Ψ (δg = 2δX_T + δ𝔟) with deterministic δm_Ψ, so the tuple, its channels, the channel pairings, the ν-pairing of L²(ν) elements and the terminal pairing are integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:d8e4564c58aecbbe73712f3a2cd90481b4a3f2ee6ee9ef2b143ae477e66d396b",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1/1",
+  "rationale": "Along L² diagonal inputs (and MemLp X_T 2) the mean-field differences are δψ = 2δΨ + δm_Ψ (δg = 2δX_T + δ𝔟) with deterministic δm_Ψ, so the tuple, its channels, the channel pairings, the ν-pairing of L²(ν) elements and the terminal pairing are integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:4576165980dbc65a3514b0f76b72b45f2b10662f164ec859702195a98a4e8f7c",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "Along L² diagonal inputs (and MemLp X_T 2) the mean-field differences are δψ = 2δΨ + δm_Ψ (δg = 2δX_T + δ𝔟) with deterministic δm_Ψ, so the tuple, its channels, the channel pairings, the ν-pairing of L²(ν) elements and the terminal pairing are integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:42f1a2b8fb6424e62b02dc34fc01b187348971eb8f8fc07a84af9b420d05dd1a",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1",
+  "rationale": "Along L² diagonal inputs (and MemLp X_T 2) the mean-field differences are δψ = 2δΨ + δm_Ψ (δg = 2δX_T + δ𝔟) with deterministic δm_Ψ, so the tuple, its channels, the channel pairings, the ν-pairing of L²(ν) elements and the terminal pairing are integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:a975ff1ed899f67940be0cf7e3b7e1a11f919e98646a88a2124df5d1b67d06d9",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "Along L² diagonal inputs (and MemLp X_T 2) the mean-field differences are δψ = 2δΨ + δm_Ψ (δg = 2δX_T + δ𝔟) with deterministic δm_Ψ, so the tuple, its channels, the channel pairings, the ν-pairing of L²(ν) elements and the terminal pairing are integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:a77429895f27742a47e3c922b0059a721b5b5396cb9a0db176aa070d439d125a",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1",
+  "rationale": "Along L² diagonal inputs (and MemLp X_T 2) the mean-field differences are δψ = 2δΨ + δm_Ψ (δg = 2δX_T + δ𝔟) with deterministic δm_Ψ, so the tuple, its channels, the channel pairings, the ν-pairing of L²(ν) elements and the terminal pairing are integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_concrete_ii_pairing",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:01a22978f4ec73a2586fc7eebe763fa2320d075ddf68d714eb887d9e62e9cccc",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1",
+  "rationale": "Along L² diagonal inputs (and MemLp X_T 2) the mean-field differences are δψ = 2δΨ + δm_Ψ (δg = 2δX_T + δ𝔟) with deterministic δm_Ψ, so the tuple, its channels, the channel pairings, the ν-pairing of L²(ν) elements and the terminal pairing are integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_potential",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:69ed7870d34187824ef5bfcfebf6e0279eb2ccaff988d94080a177fbd8674ed7",
+  "at": "/1/1/1/2/1/1/0/1",
+  "rationale": "√(1 + ‖w‖²) ≥ 1 > 0 for every w, so the inverse is genuine.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_potential",
+  "trigger": "Real.sqrt",
+  "fingerprint": "pl-occ-v1:c54df8c17ef70246cc7407afe8d9dafc84b511039124773bea65d8cd2fd53485",
+  "at": "/1/1/1/1/1/0/1",
+  "rationale": "The arguments 1 + ‖w‖² are at least 1.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_potential",
+  "trigger": "Real.sqrt",
+  "fingerprint": "pl-occ-v1:c54df8c17ef70246cc7407afe8d9dafc84b511039124773bea65d8cd2fd53485",
+  "at": "/1/1/1/2/1/1/0/1/1",
+  "rationale": "The arguments 1 + ‖w‖² are at least 1.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_not_mean_corr",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:071b1e165a4f13cd0b3d12b25a0c4b3c3e97442e4d2fdd2ab9aedea99dd6f607",
+  "at": "/1/1/1/1/1/1/0/1/1/1/1/1/1/1/0/1",
+  "rationale": "Λ ∈ P₂(L²(ν)) is a probability law with finite first moment, so the identity of the separable L²(ν) is Λ-integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_affine",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:ba976c252f70b347f6f55023e4fa8c9b79b334d4bd6175bd9f76d111dc014ae1",
+  "at": "/1/1/1/1/1/1/0/1/1/1/1/1/1/0/1",
+  "rationale": "√(1 + ‖w‖²) ≥ 1 > 0 for every w, so the inverse is genuine.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_affine",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:84223b3de63a69d554b61c1e36d6a64b959cfcf3b430f4ed003f87e230027911",
+  "at": "/1/1/1/1/1/1/1/0/1/1/1/0/1",
+  "rationale": "√(1 + ‖w‖²) ≥ 1 > 0 for every w, so the inverse is genuine.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_affine",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:e75d4f581a7e526be38b787c023632607f7fbc8f6bb3c7b0abe69f1d02a23de5",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1/0/1",
+  "rationale": "√(1 + ‖w‖²) ≥ 1 > 0 for every w, so the inverse is genuine.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_affine",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:57e50b53a4dc77de037f17b4d23d41865ea68d6b1dcecda8756ecd737fc02050",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1",
+  "rationale": "√(1 + ‖w‖²) ≥ 1 > 0 for every w, so the inverse is genuine.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_affine",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:fc6e452687c3198600c2d8c01f5e4079768b44f98510b8e5f506e051b9a78c34",
+  "at": "/1/1/1/1/1/1/0/1/1/1/1",
+  "rationale": "∇V(u − u') has norm at most 1 and is continuous in θ' into the separable L²(ν), so it is integrable against the probability law μ.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_affine",
+  "trigger": "Real.sqrt",
+  "fingerprint": "pl-occ-v1:f9b1f65bdc41190a2d3f5dc145e974ac7b9789c38f9b51500166b280a720478a",
+  "at": "/1/1/1/1/1/1/0/1/1/1/1/1/1/0/1/1",
+  "rationale": "The arguments 1 + ‖w‖² are at least 1.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_affine",
+  "trigger": "Real.sqrt",
+  "fingerprint": "pl-occ-v1:36c4833aff47752693c466b15ec9def968b70897f4cd70e4d35e63c0b2e3346f",
+  "at": "/1/1/1/1/1/1/1/0/1/1/1/0/1/1",
+  "rationale": "The arguments 1 + ‖w‖² are at least 1.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_affine",
+  "trigger": "Real.sqrt",
+  "fingerprint": "pl-occ-v1:38c9a1b802828c3ae47a10bb4d544bbeb6a88758c77c47edbacecb6de29f7e85",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1/0/1/1",
+  "rationale": "The arguments 1 + ‖w‖² are at least 1.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_affine",
+  "trigger": "Real.sqrt",
+  "fingerprint": "pl-occ-v1:61b1a275cd1e3c34e4f83b4b2dfb831ddf8950d67f26c56e7a858f8777d7358a",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1/1",
+  "rationale": "The arguments 1 + ‖w‖² are at least 1.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_inert",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:8f8ffe4cac86447ec258afc65deed9602f9c20a3306020b21f3bc7b3b6a335de",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1/1/1",
+  "rationale": "The denominators 1 + β₁ p(s) exceed 1 for s ∈ [0, T] (0 < β₁ and 0 < p on [0, T] by hypothesis), and they enter only through the energy on [0, T] and a.e. s ∈ [0, T].",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_inert",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:82ac01d43f1d33d3f060dc5e29974a99dd6aba37fcc1cb107b72c1f8510f2ac8",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/0/1/1/1/0/1",
+  "rationale": "The denominators 1 + β₁ p(s) exceed 1 for s ∈ [0, T] (0 < β₁ and 0 < p on [0, T] by hypothesis), and they enter only through the energy on [0, T] and a.e. s ∈ [0, T].",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_inert",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:82ac01d43f1d33d3f060dc5e29974a99dd6aba37fcc1cb107b72c1f8510f2ac8",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/0/1/1/1/0/1",
+  "rationale": "The denominators 1 + β₁ p(s) exceed 1 for s ∈ [0, T] (0 < β₁ and 0 < p on [0, T] by hypothesis), and they enter only through the energy on [0, T] and a.e. s ∈ [0, T].",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_spec_marks",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:fabaa0317e2794c033abfb7dcee3c135555d25854a69c9221cec31ace841fed9",
+  "at": "/1/1/1/1/1/0/1/0/1",
+  "rationale": "The first two clauses assert both functions in L²(ex55Marks ϱ), so their squares and their product are integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_spec_marks",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:76d49083987c914e44851daeeadae800e662061eb03a9366f0307a7ab9f961dc",
+  "at": "/1/1/1/1/1/1/0/1/0/1",
+  "rationale": "The first two clauses assert both functions in L²(ex55Marks ϱ), so their squares and their product are integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_spec_marks",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:c1b2ed132588f4ff4cce845c235b7a7896a3a95d698d34dec6d2b8ee2fcf7c8e",
+  "at": "/1/1/1/1/1/1/1/0/1",
+  "rationale": "The first two clauses assert both functions in L²(ex55Marks ϱ), so their squares and their product are integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_zero",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:bd84c99b7ad9182a96b6776f7aeda76e4d6bb07aaeeb6641bc6e1bbc112a8d39",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "Every division has a literal denominator (2, 4, 7, 14).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_zero",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:89eb785c591dae5ff56ee9c46c1caf469fe25957dc2c1f3a0044fa16223c3b4a",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/2/2/1/1/0/1/1/1/1/0/1",
+  "rationale": "Every division has a literal denominator (2, 4, 7, 14).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_zero",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:10393c89a6d307275d5d9be8774f035fcd93e412168dedba1fcf9fad1cf70284",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/2/2/1/1/0/1/1/1/1/1/1/1/0/1/1",
+  "rationale": "Every division has a literal denominator (2, 4, 7, 14).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_zero",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:c61efecc5ebc9aecb81326c1285a7409ba6509616ce9509149489b4b7f258261",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/2/2/1/1/1/1/1/1/0/1/1",
+  "rationale": "Every division has a literal denominator (2, 4, 7, 14).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_zero",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:bf31a4a4a01960a79ccc0bd02f4026cfa003ce408619522ab596781ac9281b79",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/2/2/1/1/1/1/1/1/1/0/1/1/0/1",
+  "rationale": "Every division has a literal denominator (2, 4, 7, 14).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_zero",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:91c872ed8c63a30736bdb135acb9dd2454b364cd410b2747accf1e6805fdf245",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/2/1/1",
+  "rationale": "Every solution X0 is indistinguishable from the one with 𝔼 sup_{[0,T]} X0² < ∞ (first two clauses), so X0_t and X0_{t−} are square integrable and U0_t = ½(h_c + X0_{t−} h_x) lies in L²(Ω; L²(ν)): each expectation is of an integrable function.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_zero",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:b46a1d1956184ed2fd559e6b1e2bf58b7439db571cac1d3829dd97fa7c353cd4",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/2/2/1/0/1/1/1/0/1",
+  "rationale": "Every solution X0 is indistinguishable from the one with 𝔼 sup_{[0,T]} X0² < ∞ (first two clauses), so X0_t and X0_{t−} are square integrable and U0_t = ½(h_c + X0_{t−} h_x) lies in L²(Ω; L²(ν)): each expectation is of an integrable function.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_zero",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:47322b63cf9067e736cf0cf8cffbd2cabec15c7b8db97f794bbf81146e3d0002",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/2/2/1/1/1/1/1/1/0/1/0/1",
+  "rationale": "Every solution X0 is indistinguishable from the one with 𝔼 sup_{[0,T]} X0² < ∞ (first two clauses), so X0_t and X0_{t−} are square integrable and U0_t = ½(h_c + X0_{t−} h_x) lies in L²(Ω; L²(ν)): each expectation is of an integrable function.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_zero",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:958007f32e5775cdaac6a8215574f74b48fe6a178c699329e3285f0e1ff1212e",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/2/2/1/1/1/1/1/1/0/1/0/1/1/1/0/1/1/1",
+  "rationale": "Every solution X0 is indistinguishable from the one with 𝔼 sup_{[0,T]} X0² < ∞ (first two clauses), so X0_t and X0_{t−} are square integrable and U0_t = ½(h_c + X0_{t−} h_x) lies in L²(Ω; L²(ν)): each expectation is of an integrable function.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_symm",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:bd84c99b7ad9182a96b6776f7aeda76e4d6bb07aaeeb6641bc6e1bbc112a8d39",
+  "at": "/1/1/1/1/1/1/0/1/1/0/1",
+  "rationale": "1/2 is a literal, and ‖u − v‖²/√(1 + ‖u − v‖²) has denominator at least 1.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_symm",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:e647213b4f89722506cdd00df038ce92fa60daa997f72fd1223597c3d57e7246",
+  "at": "/1/1/1/1/1/1/0/1/1/1/1/1/1/1",
+  "rationale": "1/2 is a literal, and ‖u − v‖²/√(1 + ‖u − v‖²) has denominator at least 1.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_symm",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:2b52e6d48b7cf9ff13ac15b5ddf41d510a92d1b5682b9c35b9e408b5d2dbadfe",
+  "at": "/1/1/1/1/1/1/0/1/0/1",
+  "rationale": "‖A_λ(u)‖ ≤ 1 and Λ ∈ P₂ make ⟨A_λ(u), u⟩ Λ-integrable, and ‖u − v‖²/√(1 + ‖u − v‖²) ≤ 2‖u‖² + 2‖v‖² is Λ ⊗ Λ-integrable by the second moments.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_symm",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:5c60f8b942f9d37bc0aeca84cc6d585c7ed7eb040b4c69befc380df3e8aee93d",
+  "at": "/1/1/1/1/1/1/0/1/1/1",
+  "rationale": "‖A_λ(u)‖ ≤ 1 and Λ ∈ P₂ make ⟨A_λ(u), u⟩ Λ-integrable, and ‖u − v‖²/√(1 + ‖u − v‖²) ≤ 2‖u‖² + 2‖v‖² is Λ ⊗ Λ-integrable by the second moments.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_symm",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:71ceb1dcc91b184a16b5d2b225e64b6b926bec1093d981165325d576eba7adde",
+  "at": "/1/1/1/1/1/1/0/1/1/1/1/1",
+  "rationale": "‖A_λ(u)‖ ≤ 1 and Λ ∈ P₂ make ⟨A_λ(u), u⟩ Λ-integrable, and ‖u − v‖²/√(1 + ‖u − v‖²) ≤ 2‖u‖² + 2‖v‖² is Λ ⊗ Λ-integrable by the second moments.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_symm",
+  "trigger": "Real.sqrt",
+  "fingerprint": "pl-occ-v1:ff295e47095a6ab6f9465f011522b75600e5b6fc6be90ef759db65516475b3d1",
+  "at": "/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1",
+  "rationale": "The arguments 1 + ‖u − v‖² are at least 1.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_depends",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:bd84c99b7ad9182a96b6776f7aeda76e4d6bb07aaeeb6641bc6e1bbc112a8d39",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/0/0/0/0/1/0/0/0/0/1",
+  "rationale": "The division is the literal 1/2.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_ham",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:ba9bd156f29bcbba0722bb8366c76882e0a4a24b4c4cdfcca5fe6954adfc54a7",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/0/0/1/1/0/1/1/0/1",
+  "rationale": "β₂/2 has the literal denominator 2; 1/(2β₁) multiplies a term constant in x, so its value, junk at β₁ = 0 included, does not enter the x-derivative the statement asserts.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_ham",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:f6b34b5ccecf537433de82f18097fef324bd7a2185c1b6cd46c4c87f735a484c",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/0/0/1/1/1/0/1",
+  "rationale": "β₂/2 has the literal denominator 2; 1/(2β₁) multiplies a term constant in x, so its value, junk at β₁ = 0 included, does not enter the x-derivative the statement asserts.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_ham",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:51b517fea90aa8c2820daa0d64c6f9af623ddad6aa4ca8dd65b387409d64594a",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/0/0/1/1/0/1/0/1/0/1/1",
+  "rationale": "h_c, a^h and u lie in L²(ν), so the integrand is ν-integrable; the term is constant in x.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:83dd9e517ae17c3e388791889307d11b1e7f82ae51754e0d0e8911c62fb5cf79",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "The clause asserts (s_min(1)²)⁻¹ = 1, which a junk 0⁻¹ = 0 would falsify; s_min(1) = 1 for the identity of ℝ^{1×1}.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_twopoint",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:a583170ae558c052d5a4019fe6227d86743b8106f1edb446ff51db1ba471b973",
+  "at": "/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "The divisions are 1/2 in ℝ≥0∞ and ℝ, 1/√5, 3/√10 and 1/√2, all with positive denominators.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_twopoint",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:a70b6a3b4f39e0bcc6a4c6ac183e85bf93975bd00a12b6c273995e18dd363413",
+  "at": "/1/1/1/1/1/1/1/2/2/1/0/1/1/0/1",
+  "rationale": "The divisions are 1/2 in ℝ≥0∞ and ℝ, 1/√5, 3/√10 and 1/√2, all with positive denominators.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_twopoint",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:bd84c99b7ad9182a96b6776f7aeda76e4d6bb07aaeeb6641bc6e1bbc112a8d39",
+  "at": "/1/1/1/1/1/1/1/2/2/1/1/1/0/1/0/1",
+  "rationale": "The divisions are 1/2 in ℝ≥0∞ and ℝ, 1/√5, 3/√10 and 1/√2, all with positive denominators.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_twopoint",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:a9c9c7136b2d7f5c52985a8560ad22596a5de43b0939e6ed40b35a57532e08db",
+  "at": "/1/1/1/1/1/1/1/2/2/1/1/1/0/1/1/0/1",
+  "rationale": "The divisions are 1/2 in ℝ≥0∞ and ℝ, 1/√5, 3/√10 and 1/√2, all with positive denominators.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_twopoint",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:f5b2317b3c628df9d4e49c5e7edbc374ca31f20651add8a0b0d51b03527e1263",
+  "at": "/1/1/1/1/1/1/1/2/2/1/1/1/0/1/1/1",
+  "rationale": "The divisions are 1/2 in ℝ≥0∞ and ℝ, 1/√5, 3/√10 and 1/√2, all with positive denominators.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_twopoint",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:52e3e72b270a8111b0c7bbfeff2b03f95e51480733ed2cd569b82dd111306238",
+  "at": "/1/1/1/1/1/1/1/2/2/0/1/0/1",
+  "rationale": "Λ₁, Λ₂ are probability laws with two atoms, against which the identity of the separable L²(ν) is integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_twopoint",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:02e2120122d23afd89696ebe677d8873c856c2a1d4b05ce79c776ef744aac394",
+  "at": "/1/1/1/1/1/1/1/2/2/0/1/1",
+  "rationale": "Λ₁, Λ₂ are probability laws with two atoms, against which the identity of the separable L²(ν) is integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_twopoint",
+  "trigger": "Real.sqrt",
+  "fingerprint": "pl-occ-v1:235131cbf4af9fc2e7b7617301a902806e812dc6a2bfb25eda9684f6e2f40ee5",
+  "at": "/1/1/1/1/1/1/1/2/2/1/0/1/1/0/1/1",
+  "rationale": "√5, √10 and √2 are of positive literals.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_twopoint",
+  "trigger": "Real.sqrt",
+  "fingerprint": "pl-occ-v1:0960f5af530719b00dac2c1483c649c9900ad846ded41a3224d2222a27e8bda6",
+  "at": "/1/1/1/1/1/1/1/2/2/1/1/1/0/1/1/0/1/1",
+  "rationale": "√5, √10 and √2 are of positive literals.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_twopoint",
+  "trigger": "Real.sqrt",
+  "fingerprint": "pl-occ-v1:ce7922df5beabb8dad3ae9bf52c97a5ff5beff9dd57640d650910f58ee9e485e",
+  "at": "/1/1/1/1/1/1/1/2/2/1/1/1/0/1/1/1/1",
+  "rationale": "√5, √10 and √2 are of positive literals.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_dealer_mean_corr",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:071b1e165a4f13cd0b3d12b25a0c4b3c3e97442e4d2fdd2ab9aedea99dd6f607",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "Λ ∈ P₂(L²(ν)) is a probability law with finite first moment, so the identity of the separable L²(ν) is Λ-integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_expfunc",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:355e1b6915d24e7ec0c23ff8f8cce83ec8d8831083fa73a78daade2503e3dd9a",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1",
+  "rationale": "φ̄(t, θ, ·) is measurable (a section of the jointly measurable φ̄) and of linear growth (L-Lipschitz in θ'), and μ, μ' ∈ P₂(H) have finite first moments, so both integrals are of integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_expfunc",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:9c5d4e89f9699039d6d83c76dab18a0144e8b711bc429e11c8c9b64deb91ee1e",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1",
+  "rationale": "φ̄(t, θ, ·) is measurable (a section of the jointly measurable φ̄) and of linear growth (L-Lipschitz in θ'), and μ, μ' ∈ P₂(H) have finite first moments, so both integrals are of integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_expfunc_limin",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:5320a40b2905a688d1eb6029ea309e1732a817f0e7bb903650542bb703b666cd",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1",
+  "rationale": "The conclusion asserts the integrand ν-integrable at every (t, θ, θ'), and v, v' agree ν-a.e. with θ.2.2.2, θ'.2.2.2, so the ν-integrals with v, v' are of a.e.-equal integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_expfunc_limin",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:3071bf6646080de6a38db968f4c25f02c75527ca71192f6b8f7870ba4c9f845c",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/0/1/1/0/1",
+  "rationale": "The conclusion asserts the integrand ν-integrable at every (t, θ, θ'), and v, v' agree ν-a.e. with θ.2.2.2, θ'.2.2.2, so the ν-integrals with v, v' are of a.e.-equal integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_expfunc_limin",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:6a33228dfded0d36940b3e88cd7fdb1d6d423ee8de8b4450b9786b7e3f093c94",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/0/1/1/1",
+  "rationale": "The conclusion asserts the integrand ν-integrable at every (t, θ, θ'), and v, v' agree ν-a.e. with θ.2.2.2, θ'.2.2.2, so the ν-integrals with v, v' are of a.e.-equal integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_expfunc_limin",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:768707972860914d08698d56a48bb3a9113132e4ddb341d0ae71290d1d0a7f41",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "The conclusion asserts the integrand ν-integrable at every (t, θ, θ'), and v, v' agree ν-a.e. with θ.2.2.2, θ'.2.2.2, so the ν-integrals with v, v' are of a.e.-equal integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_expfunc_limin",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:6855879eee37025c8795dded8bfec548d5463cd677fef8ab7dbc1b12d2bf57a2",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "The conclusion asserts the integrand ν-integrable at every (t, θ, θ'), and v, v' agree ν-a.e. with θ.2.2.2, θ'.2.2.2, so the ν-integrals with v, v' are of a.e.-equal integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_expfunc_limin",
+  "trigger": "Real.sqrt",
+  "fingerprint": "pl-occ-v1:0210a9deb37ba2fb13ecefda5b21a2f48507e6e2b435459929fd4aa14b8a67ac",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/0/1",
+  "rationale": "The arguments are sums of squared norms and ν(E) ≥ 0.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_expfunc_limin",
+  "trigger": "Real.sqrt",
+  "fingerprint": "pl-occ-v1:5652881c7d2b29a7c2537e5e96f78be844659475eb4786cc9ef9b7a6f03aad0d",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1",
+  "rationale": "The arguments are sums of squared norms and ν(E) ≥ 0.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_expfunc_limin",
+  "trigger": "Real.sqrt",
+  "fingerprint": "pl-occ-v1:13ba182f9f578f887f354439632a4158ea432c17727f0967a8360cb6189316da",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/0/1/1/1",
+  "rationale": "The arguments are sums of squared norms and ν(E) ≥ 0.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_expfunc_jump",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:5e254944c3e4e1a4f48d74595927f22f44cb28dc1f915aac3d7b2ad9a1c1f723",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1",
+  "rationale": "θ' ↦ 𝐇_t(θ, θ') is C-Lipschitz, hence continuous into the separable L²(ν; ℝⁿ) with linear growth, and so integrable against μ, μ' ∈ P₂(H).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_expfunc_jump",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:c1994265ce599805f76f7aca15fb9e19cf6f7a808fb675655cbb7700c4a828a5",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1",
+  "rationale": "θ' ↦ 𝐇_t(θ, θ') is C-Lipschitz, hence continuous into the separable L²(ν; ℝⁿ) with linear growth, and so integrable against μ, μ' ∈ P₂(H).",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_fulllaw_lip",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:e8f1de64ecc5550452218bbf36a1c8eceeff09be192dbd913f01b7ee31deff81",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1/1/1/1",
+  "rationale": "Each φ_j is Lipschitz, hence continuous with linear growth on L²(ν), and μ^U, μ'^U ∈ P₂ have finite first moments, so the feature integrals are of integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_fulllaw_lip",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:e77b3725a6b9641cbb1a5071166b9bf0640164a1515d44454b954d42ed44474c",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1",
+  "rationale": "Each φ_j is Lipschitz, hence continuous with linear growth on L²(ν), and μ^U, μ'^U ∈ P₂ have finite first moments, so the feature integrals are of integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_fulllaw_lip",
+  "trigger": "Real.sqrt",
+  "fingerprint": "pl-occ-v1:4ec8ffa1c9b01f20a7c907f6fb94550cba3197eed7c6f45b9f72a5ab445ac17f",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1",
+  "rationale": "The argument Σ_j K_j² is nonnegative.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_fulllaw_pert",
+  "trigger": "Real.sqrt",
+  "fingerprint": "pl-occ-v1:36ecd675804dbb9a2ed7f02a8b7b25090d10a0ee49a348f4427cf84d8df20289",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/0/1/1/1/1",
+  "rationale": "The argument Σ_j K_j² is nonnegative.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_fulllaw_wp",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:bcb66dcedf00014cfe38011e0dd0dcd4fb2bb0f2d934152e25fc77090d072c93",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/0/0/1",
+  "rationale": "G.rank = min n n with n ≥ 1 gives s_min(G) > 0 (the first clause of ass_G), so (s_min(G)²)⁻¹ is c_G = s_min(G)⁻² itself, an argument of the existentially chosen constant function.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_fulllaw_wp",
+  "trigger": "Real.sqrt",
+  "fingerprint": "pl-occ-v1:ded5624ce5d6ac9fb3d0693efb28576e93f1598d1cac8a21d69274ca4057c150",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/0/1/1/0/1/1/1/1",
+  "rationale": "The argument Σ_j K_j² is nonnegative.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_radial",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:257f9e13a8798ce865507125cae1df190b60e76172989ccd3d98311c51a2a209",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "φ is integrable against every law of P₂(H) by hypothesis.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_U_corr",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:d534526ef521265934eceafcbe48ad548da5abf311e067969585b8cd1f10cc69",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "φ is integrable against every law of P₂(H) by hypothesis.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_Q",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:de1f9b601165f240ec4dbdad362feed9ddedce9bfbb082fe92bf02a9d7e652d3",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/0/1/1/1/1",
+  "rationale": "The features φ_j are bounded and Lipschitz, so integrable against the probability law μ^U, and φ' is integrable against every law of P₂(H) by hypothesis.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_Q",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:23e061e198c0ae322a696e68e85121a51b0885afbf2d7c7cc9d2d653da493aed",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "The features φ_j are bounded and Lipschitz, so integrable against the probability law μ^U, and φ' is integrable against every law of P₂(H) by hypothesis.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_Q",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:de1f9b601165f240ec4dbdad362feed9ddedce9bfbb082fe92bf02a9d7e652d3",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1",
+  "rationale": "The features φ_j are bounded and Lipschitz, so integrable against the probability law μ^U, and φ' is integrable against every law of P₂(H) by hypothesis.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_fulllaw_beyond_Q",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:e35bd87c032219f5d730643f649a56214400ab8ee2cbf5ec025a0164f0fd97d5",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "The features φ_j are bounded and Lipschitz, so integrable against the probability law μ^U, and φ' is integrable against every law of P₂(H) by hypothesis.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_fulllaw_affineQ",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:0ef23ae6e1310bbad61c113e830a7c8971ceb7d471a3d617117806f2954b3e5f",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1/1",
+  "rationale": "Each φ_j is Lipschitz, hence continuous with linear growth on L²(ν), and μ^U, μ ∈ P₂ have finite first moments, so the feature integrals and that of a + Σ_j c_j φ_j(u') are of integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_fulllaw_affineQ",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:4c204dd16182f3d63a1a5bcc9a0eb0924355605552ddbf12fee71d74dd98fe25",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1",
+  "rationale": "Each φ_j is Lipschitz, hence continuous with linear growth on L²(ν), and μ^U, μ ∈ P₂ have finite first moments, so the feature integrals and that of a + Σ_j c_j φ_j(u') are of integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_fulllaw_affineQ",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:0ef23ae6e1310bbad61c113e830a7c8971ceb7d471a3d617117806f2954b3e5f",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1/1/1/1",
+  "rationale": "Each φ_j is Lipschitz, hence continuous with linear growth on L²(ν), and μ^U, μ ∈ P₂ have finite first moments, so the feature integrals and that of a + Σ_j c_j φ_j(u') are of integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.ex_fulllaw_affineQ",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:4b03323c5ce82751e078b0120692c347f8dbbabeaadbd26e352771aaf16e6620",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1",
+  "rationale": "Each φ_j is Lipschitz, hence continuous with linear growth on L²(ν), and μ^U, μ ∈ P₂ have finite first moments, so the feature integrals and that of a + Σ_j c_j φ_j(u') are of integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.rem_generalrank_wp",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:672a4626320f782fd551cc1f99670f28e5f6b2e881684fc90d027febccf9992f",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/0/0/1",
+  "rationale": "G.rank = min m n with m, n ≥ 1 gives s_min(G) > 0 (the first clause of ass_G), so (s_min(G)²)⁻¹ is c_G = s_min(G)⁻² itself, an argument of the existentially chosen constant function.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M2_integrand",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:d69cdce3b00bc27b2e2cd1bde9ace3a69131218179cd6de1b74824e6bea27637",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1/1/1/0/1/0/1/1",
+  "rationale": "The integral is the drift of the hypothesis (4.4): φ is jointly measurable with 𝔼∫_0^T|φ|² < ∞, so for a.e. ω its path is square-, hence Lebesgue-, integrable on [t, T] ⊆ [0, T], and the a.s. identity is the printed one.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M2_zero_mean",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:d69cdce3b00bc27b2e2cd1bde9ace3a69131218179cd6de1b74824e6bea27637",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1/1/1/0/1/0/1/1",
+  "rationale": "The drift of the hypothesis is that of a φ with finite energy; the conclusion asserts 𝔼∫ e^s|δU|² dN < ∞ and 𝔼∫∫ e^s|δU|² ν ds < ∞ over (t, T], so the N(ω)-integral, the ds ν(de) integral and the expectation are of integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M2_zero_mean",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:b834e0fe026dc4c56085181ef5f3b0d41f4ae98e695c82a1096d8e30080e2124",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "The drift of the hypothesis is that of a φ with finite energy; the conclusion asserts 𝔼∫ e^s|δU|² dN < ∞ and 𝔼∫∫ e^s|δU|² ν ds < ∞ over (t, T], so the N(ω)-integral, the ds ν(de) integral and the expectation are of integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M2_zero_mean",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:154b446dd8854ddbc8035597a4fe466541f9de8f969ce436ba03980ce81e058b",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1",
+  "rationale": "The drift of the hypothesis is that of a φ with finite energy; the conclusion asserts 𝔼∫ e^s|δU|² dN < ∞ and 𝔼∫∫ e^s|δU|² ν ds < ∞ over (t, T], so the N(ω)-integral, the ds ν(de) integral and the expectation are of integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M2_zero_mean",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:d61f082792f992e47bb6c1b80a550114f9001b8fd82dc1f6a0791a26dbe64e07",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1",
+  "rationale": "The drift of the hypothesis is that of a φ with finite energy; the conclusion asserts 𝔼∫ e^s|δU|² dN < ∞ and 𝔼∫∫ e^s|δU|² ν ds < ∞ over (t, T], so the N(ω)-integral, the ds ν(de) integral and the expectation are of integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M2_zero_mean",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:29eefab6822995dfb3bc794f913f6015c97a3313a02fc64df490a5b084b76dd1",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1",
+  "rationale": "The drift of the hypothesis is that of a φ with finite energy; the conclusion asserts 𝔼∫ e^s|δU|² dN < ∞ and 𝔼∫∫ e^s|δU|² ν ds < ∞ over (t, T], so the N(ω)-integral, the ds ν(de) integral and the expectation are of integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M2_martingale",
+  "trigger": "MeasureTheory.condExp",
+  "fingerprint": "pl-occ-v1:200a59485b67d621930a348903f88cdf68bddb66e32d86fe61b1e7d8fe2ca4d5",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "M²_t is asserted integrable (and ℱ_t-a.e. strongly measurable) in the first clause for every t ∈ [0, T], so its conditional expectation is not the junk 0.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M2_martingale",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:d69cdce3b00bc27b2e2cd1bde9ace3a69131218179cd6de1b74824e6bea27637",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1/1/1/0/1/0/1/1",
+  "rationale": "The drift of the hypothesis is that of a φ with finite energy; the N(ω)-integral over (0, t] has finite expectation (asserted, t ≤ T), and 𝔼∫∫ e^r|δU|² ν dr ≤ e^T Σ markedEnergy(δU) < ∞ (hUs), so both pathwise integrals are a.s. of integrable functions, and M²_t is asserted integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M2_martingale",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:1eee5f2e007bdcfb0213a04d7784cb316fe82d75a2f1806abdba45cd572626b2",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/0/1/0/1/1/0/1",
+  "rationale": "The drift of the hypothesis is that of a φ with finite energy; the N(ω)-integral over (0, t] has finite expectation (asserted, t ≤ T), and 𝔼∫∫ e^r|δU|² ν dr ≤ e^T Σ markedEnergy(δU) < ∞ (hUs), so both pathwise integrals are a.s. of integrable functions, and M²_t is asserted integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M2_martingale",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:14287a79c9167ab2183af39c6d3d72309a0e3dea058f9c3e192c003a059a8ac2",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/0/1/0/1/1/1",
+  "rationale": "The drift of the hypothesis is that of a φ with finite energy; the N(ω)-integral over (0, t] has finite expectation (asserted, t ≤ T), and 𝔼∫∫ e^r|δU|² ν dr ≤ e^T Σ markedEnergy(δU) < ∞ (hUs), so both pathwise integrals are a.s. of integrable functions, and M²_t is asserted integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M2_martingale",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:8392c352bec0143b9910ee5667e192667b050e155c5d5f75ef6bdc13f388196b",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/0/1/0/1/1/1/1/1",
+  "rationale": "The drift of the hypothesis is that of a φ with finite energy; the N(ω)-integral over (0, t] has finite expectation (asserted, t ≤ T), and 𝔼∫∫ e^r|δU|² ν dr ≤ e^T Σ markedEnergy(δU) < ∞ (hUs), so both pathwise integrals are a.s. of integrable functions, and M²_t is asserted integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M2_martingale",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:fb73f178e407f178c92f369aa97abb968efa9d1d1366cc98be768d8c607ce94d",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1",
+  "rationale": "The drift of the hypothesis is that of a φ with finite energy; the N(ω)-integral over (0, t] has finite expectation (asserted, t ≤ T), and 𝔼∫∫ e^r|δU|² ν dr ≤ e^T Σ markedEnergy(δU) < ∞ (hUs), so both pathwise integrals are a.s. of integrable functions, and M²_t is asserted integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M2_martingale",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:40667382f11d19e681ed1b777b95b6d922d316c99be0cd461ed0da15117c3d40",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1",
+  "rationale": "The drift of the hypothesis is that of a φ with finite energy; the N(ω)-integral over (0, t] has finite expectation (asserted, t ≤ T), and 𝔼∫∫ e^r|δU|² ν dr ≤ e^T Σ markedEnergy(δU) < ∞ (hUs), so both pathwise integrals are a.s. of integrable functions, and M²_t is asserted integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M2_martingale",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:8392c352bec0143b9910ee5667e192667b050e155c5d5f75ef6bdc13f388196b",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1",
+  "rationale": "The drift of the hypothesis is that of a φ with finite energy; the N(ω)-integral over (0, t] has finite expectation (asserted, t ≤ T), and 𝔼∫∫ e^r|δU|² ν dr ≤ e^T Σ markedEnergy(δU) < ∞ (hUs), so both pathwise integrals are a.s. of integrable functions, and M²_t is asserted integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M2_martingale",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:79348bf8a28e7ab9715c6073100acbf5b9668dd8158414707d52811aabc6687b",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "The drift of the hypothesis is that of a φ with finite energy; the N(ω)-integral over (0, t] has finite expectation (asserted, t ≤ T), and 𝔼∫∫ e^r|δU|² ν dr ≤ e^T Σ markedEnergy(δU) < ∞ (hUs), so both pathwise integrals are a.s. of integrable functions, and M²_t is asserted integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M2_martingale",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:dc4e02064f6580d49b45d601a9485aad125c4db6799131db5c7c6486198114e6",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "The drift of the hypothesis is that of a φ with finite energy; the N(ω)-integral over (0, t] has finite expectation (asserted, t ≤ T), and 𝔼∫∫ e^r|δU|² ν dr ≤ e^T Σ markedEnergy(δU) < ∞ (hUs), so both pathwise integrals are a.s. of integrable functions, and M²_t is asserted integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M2_martingale",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:8392c352bec0143b9910ee5667e192667b050e155c5d5f75ef6bdc13f388196b",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "The drift of the hypothesis is that of a φ with finite energy; the N(ω)-integral over (0, t] has finite expectation (asserted, t ≤ T), and 𝔼∫∫ e^r|δU|² ν dr ≤ e^T Σ markedEnergy(δU) < ∞ (hUs), so both pathwise integrals are a.s. of integrable functions, and M²_t is asserted integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_MW",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:bd84c99b7ad9182a96b6776f7aeda76e4d6bb07aaeeb6641bc6e1bbc112a8d39",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1/1/1",
+  "rationale": "The only division is the literal exponent (1 / 2 : ℝ), denominator 2.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_MW",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:d69cdce3b00bc27b2e2cd1bde9ace3a69131218179cd6de1b74824e6bea27637",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1/1/1/0/1/0/1/1",
+  "rationale": "One integral is the drift of the hypothesis (4.4), of a jointly measurable φ with 𝔼∫_0^T|φ|² < ∞, so a.s. Lebesgue-integrable on [t, T]; the other is 𝔼[M_T − M_t], whose integrand the same clause asserts integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_MW",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:e1923acf34f447582e6bba7ebc3af508b980a8c5ff52651878d92e1d5e110213",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "One integral is the drift of the hypothesis (4.4), of a jointly measurable φ with 𝔼∫_0^T|φ|² < ∞, so a.s. Lebesgue-integrable on [t, T]; the other is 𝔼[M_T − M_t], whose integrand the same clause asserts integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M1",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:bd84c99b7ad9182a96b6776f7aeda76e4d6bb07aaeeb6641bc6e1bbc112a8d39",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1/1/1",
+  "rationale": "The only division is the literal exponent (1 / 2 : ℝ), denominator 2.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M1",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:d69cdce3b00bc27b2e2cd1bde9ace3a69131218179cd6de1b74824e6bea27637",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1/1/1/0/1/0/1/1",
+  "rationale": "One integral is the drift of the hypothesis (4.4), of a jointly measurable φ with 𝔼∫_0^T|φ|² < ∞, so a.s. Lebesgue-integrable on [t, T]; the other is 𝔼[M_T − M_t], whose integrand the same clause asserts integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M1",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:e174e1da1c84b7496245a2c2ace812ce70e346efe7188028d0a301ffb8e0c11f",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "One integral is the drift of the hypothesis (4.4), of a jointly measurable φ with 𝔼∫_0^T|φ|² < ∞, so a.s. Lebesgue-integrable on [t, T]; the other is 𝔼[M_T − M_t], whose integrand the same clause asserts integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M1_bdg",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:bd84c99b7ad9182a96b6776f7aeda76e4d6bb07aaeeb6641bc6e1bbc112a8d39",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "The only division is the literal exponent (1 / 2 : ℝ), denominator 2.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M1_bdg",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:b35a8a6fe85b1c68517ddace5f88857385ae45bf6b2de12ed129c8492fc364e7",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1/1/1/0/1/0/1/1",
+  "rationale": "The integral is the drift of the hypothesis (4.4): φ is jointly measurable with 𝔼∫_0^T|φ|² < ∞, so for a.e. ω its path is square-, hence Lebesgue-, integrable on [t, T] ⊆ [0, T], and the a.s. identity is the printed one.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M1_chain",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:bd84c99b7ad9182a96b6776f7aeda76e4d6bb07aaeeb6641bc6e1bbc112a8d39",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1/1/1",
+  "rationale": "The only division is the literal exponent (1 / 2 : ℝ), denominator 2.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem41_M1_chain",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:d69cdce3b00bc27b2e2cd1bde9ace3a69131218179cd6de1b74824e6bea27637",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1/1/1/0/1/0/1/1",
+  "rationale": "The integral is the drift of the hypothesis (4.4): φ is jointly measurable with 𝔼∫_0^T|φ|² < ∞, so for a.e. ω its path is square-, hence Lebesgue-, integrable on [t, T] ⊆ [0, T], and the a.s. identity is the printed one.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem_bpbsde",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:d69cdce3b00bc27b2e2cd1bde9ace3a69131218179cd6de1b74824e6bea27637",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/0/1/1/1/0/1/0/1/1",
+  "rationale": "The integral is the drift of the hypothesis (4.4): φ is jointly measurable with 𝔼∫_0^T|φ|² < ∞, so for a.e. ω its path is square-, hence Lebesgue-, integrable on [t, T] ⊆ [0, T], and the a.s. identity is the printed one.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem_cont",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:fb33d4d49a0bbe0b9f51156b9dd1affcfe6f30db0a4ee4c49f55377558f6a365",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/0/0/0/1",
+  "rationale": "G.rank = min m n with m, n ≥ 1 gives s_min(G) > 0 (the first clause of ass_G), so (s_min(G)²)⁻¹ is c_G = s_min(G)⁻² itself, an argument of the existentially chosen constant function.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.lem_pert",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:d99d9697e7cef3700b471c8ebdf8ea7ee6111a147a07102602a48e206f89b440",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/0/0/0/1",
+  "rationale": "G.rank = min m n with m, n ≥ 1 gives s_min(G) > 0 (the first clause of ass_G), so (s_min(G)²)⁻¹ is c_G = s_min(G)⁻² itself, an argument of the existentially chosen constant function.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_coupling",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:9a54a51d4220cc42450d16c05a2ebff4d6d1f81dc30ba7ab988770f43c1a9b18",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "MemLp Θ 2 and MemLp Θ' 2 make each squared channel difference integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.rem_margin_unweighted",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:1eeea9c52797084e792575f046894aa12c396b40feda903c9c86756c6906d17e",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "G.rank = min n n with n ≥ 1 gives s_min(G) > 0, so c_G = (s_min(G)²)⁻¹ > 0 and c / c_G is the printed margin.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.rem_margin_unweighted",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:1d8756a2ef93a7fe9d4803835f4efdd52524d5b6a6a788ed90040fc82d646775",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1",
+  "rationale": "G.rank = min n n with n ≥ 1 gives s_min(G) > 0, so (s_min(G)²)⁻¹ is c_G = s_min(G)⁻².",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.rem_margin_smaller",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:80a74dd45f3c93288328d93285e3c5cadba6d9101b29149a505cb10fc2ce704a",
+  "at": "/1/1/1/1/1/1/1/0/1",
+  "rationale": "The hypothesis 1 < (s_min(G)²)⁻¹ makes the denominator positive.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.rem_margin_smaller",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:0fcf01f1b3ca383f748215b41773a0f2743f7b1d7872d7bf7557d61bb37ccf38",
+  "at": "/1/1/1/1/1/1/0/1",
+  "rationale": "G.rank = min n n with n ≥ 1 gives s_min(G) > 0, so (s_min(G)²)⁻¹ is c_G; the hypothesis 1 < c_G is then the printed one.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.rem_uniq_translation",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:668db6478b824ce98e164127cd7a2429e979f2a8c9f4ab5c4455f386a948960e",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/0/1",
+  "rationale": "(√t)⁻¹ is t^{−1/2} at t > 0; its junk value 0 at t = 0, and at t < 0 outside [0, T], is on a Lebesgue-null set of times, which (2.3), Assumptions 2.2–2.5 (a.e. t; origin values on (0, T)) and the time integrals of the solution identities do not see.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.rem_uniq_translation",
+  "trigger": "Real.sqrt",
+  "fingerprint": "pl-occ-v1:bd157f289c3b1d05860275c693f8246713de6f7bea643c94277c46ffa535b9db",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/0/1/1",
+  "rationale": "√ is applied to times t; on [0, T] these are nonnegative, so √t and 2√t are the printed ones; negative times lie outside the horizon on which coefficients, assumptions and solutions are read.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.rem_uniq_translation",
+  "trigger": "Real.sqrt",
+  "fingerprint": "pl-occ-v1:bd157f289c3b1d05860275c693f8246713de6f7bea643c94277c46ffa535b9db",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1/1/0/1/1",
+  "rationale": "√ is applied to times t; on [0, T] these are nonnegative, so √t and 2√t are the printed ones; negative times lie outside the horizon on which coefficients, assumptions and solutions are read.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.rem_uniq_translation",
+  "trigger": "Real.sqrt",
+  "fingerprint": "pl-occ-v1:bd157f289c3b1d05860275c693f8246713de6f7bea643c94277c46ffa535b9db",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/0/0/1/1/1/1/1/0/1/1",
+  "rationale": "√ is applied to times t; on [0, T] these are nonnegative, so √t and 2√t are the printed ones; negative times lie outside the horizon on which coefficients, assumptions and solutions are read.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_couplingT",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:2807b711ab1ef4e05cfb118af611518e6ee4e875064fdbf1771274e5dd6ebb12",
+  "at": "/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "MemLp X 2 and MemLp X' 2 make |X − X'|² integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_lipfun",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:78fe5c74f1efd510d4a35f36a25779d0235a4743362cc115d447e7824be1a816",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/1",
+  "rationale": "φ is L-Lipschitz for the Hilbert norm (equivalent to the norm of TupleH), hence Borel, of linear growth, into the separable K; μ, μ' ∈ P₂(H) have finite first moments, so both Bochner integrals are of integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.eq_lipfun",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:81e6498faa7e1aa8cc8e01f73a1b80a12da85ca24943c1380c7c1f134c315fc2",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1",
+  "rationale": "φ is L-Lipschitz for the Hilbert norm (equivalent to the norm of TupleH), hence Borel, of linear growth, into the separable K; μ, μ' ∈ P₂(H) have finite first moments, so both Bochner integrals are of integrable functions.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.sec3_HH_norm",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:bd84c99b7ad9182a96b6776f7aeda76e4d6bb07aaeeb6641bc6e1bbc112a8d39",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1/1",
+  "rationale": "The only division is the literal exponent (1 / 2 : ℝ), denominator 2.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.cor_margin_channels",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:ec64415dae8bb77891af932cacf68ad485e59280862eade8e9bffdf725a75d19",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/0/1/1/0/1",
+  "rationale": "Diagonal inputs are L² (diagonalInputs), so each 𝔼|δ·|² is integrable; when the other three channels agree everywhere, the one-channel pairing is pairing27, integrable at a.e. t by Margin213, as the conclusion is; the inner ν-integral pairs the L²(ν) elements δh and Gᵀ δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.cor_margin_channels",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:3eeedefdd2b6f7eb9e2170cb7164d561ae507322a597a2abd57e6b5d73bace0d",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/0/1/1/1/1",
+  "rationale": "Diagonal inputs are L² (diagonalInputs), so each 𝔼|δ·|² is integrable; when the other three channels agree everywhere, the one-channel pairing is pairing27, integrable at a.e. t by Margin213, as the conclusion is; the inner ν-integral pairs the L²(ν) elements δh and Gᵀ δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.cor_margin_channels",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:8a427fbceff17a1ad27663ac7a7e7f48ed44b56b8b9a80143cb892cfdb739cbe",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/0/1/1/0/1",
+  "rationale": "Diagonal inputs are L² (diagonalInputs), so each 𝔼|δ·|² is integrable; when the other three channels agree everywhere, the one-channel pairing is pairing27, integrable at a.e. t by Margin213, as the conclusion is; the inner ν-integral pairs the L²(ν) elements δh and Gᵀ δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.cor_margin_channels",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:84f242d2006530ed8511015da5ffb4c46a9a1348f7dce9228bd235e77a141046",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/0/1/1/1/1",
+  "rationale": "Diagonal inputs are L² (diagonalInputs), so each 𝔼|δ·|² is integrable; when the other three channels agree everywhere, the one-channel pairing is pairing27, integrable at a.e. t by Margin213, as the conclusion is; the inner ν-integral pairs the L²(ν) elements δh and Gᵀ δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.cor_margin_channels",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:0d2705910d9a8abcc17e04892562acf8c1ba40642a3068435288cd3da14814b7",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/0/1/1/0/1",
+  "rationale": "Diagonal inputs are L² (diagonalInputs), so each 𝔼|δ·|² is integrable; when the other three channels agree everywhere, the one-channel pairing is pairing27, integrable at a.e. t by Margin213, as the conclusion is; the inner ν-integral pairs the L²(ν) elements δh and Gᵀ δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.cor_margin_channels",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:7510d79669370d262e22e8e66e9bc34e1e6b0b83e2cd1a4c57acd504f2dcbef5",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/0/1/1/1/1",
+  "rationale": "Diagonal inputs are L² (diagonalInputs), so each 𝔼|δ·|² is integrable; when the other three channels agree everywhere, the one-channel pairing is pairing27, integrable at a.e. t by Margin213, as the conclusion is; the inner ν-integral pairs the L²(ν) elements δh and Gᵀ δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.cor_margin_channels",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:32efc15bdf55df51b382530153a7e4deb256f7578b1a6db136e19a49250f64e7",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "Diagonal inputs are L² (diagonalInputs), so each 𝔼|δ·|² is integrable; when the other three channels agree everywhere, the one-channel pairing is pairing27, integrable at a.e. t by Margin213, as the conclusion is; the inner ν-integral pairs the L²(ν) elements δh and Gᵀ δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.cor_margin_channels",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:ad9fe1aa9a8829a80476ffa3576cc9870c5680676789fa369c32482594b301c2",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/0/1/1/1",
+  "rationale": "Diagonal inputs are L² (diagonalInputs), so each 𝔼|δ·|² is integrable; when the other three channels agree everywhere, the one-channel pairing is pairing27, integrable at a.e. t by Margin213, as the conclusion is; the inner ν-integral pairs the L²(ν) elements δh and Gᵀ δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.cor_margin_channels",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:a92803fecda026095fbc78ca96d6b3607b36abb75e4d859adaacd071421168e5",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/1/1/1/1/1/1/1",
+  "rationale": "Diagonal inputs are L² (diagonalInputs), so each 𝔼|δ·|² is integrable; when the other three channels agree everywhere, the one-channel pairing is pairing27, integrable at a.e. t by Margin213, as the conclusion is; the inner ν-integral pairs the L²(ν) elements δh and Gᵀ δU.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.sec3_one_null_set",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:8bc8e0a03c8816459a52f3ee737fcdb2e71b8ab78199e7f1e6ae920e051f703b",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/0/1/1/1/1/1/0/1/0/1/1",
+  "rationale": "PaperAdmissibleInt (hA) gives a.s. integrability of the drift and driver paths on [0, T] (b_int, f_int), so the integrals over [0, t] and [t, T] are Lebesgue integrals for a.e. ω.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.sec3_one_null_set",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:ac0b19d601c9989997bb7b1aa17ce5ed5eec5ad173b135a3b9211635c1de8dd2",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/0/1/1/1/1/1/0/1/0/1/1",
+  "rationale": "PaperAdmissibleInt (hA) gives a.s. integrability of the drift and driver paths on [0, T] (b_int, f_int), so the integrals over [0, t] and [t, T] are Lebesgue integrals for a.e. ω.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.sec3_one_null_set",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:6956b6637c68f92b90ba7bc7ab28b467c02fec65604022f921a06dac36a8a4c6",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/0/1/0/1/1",
+  "rationale": "PaperAdmissibleInt (hA) gives a.s. integrability of the drift and driver paths on [0, T] (b_int, f_int), so the integrals over [0, t] and [t, T] are Lebesgue integrals for a.e. ω.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.sec3_one_null_set",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:4daf57480db528734f8e981722064d4155265fb034bd783294a8dc91284cb419",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/1/1/1/0/1/0/1/1",
+  "rationale": "PaperAdmissibleInt (hA) gives a.s. integrability of the drift and driver paths on [0, T] (b_int, f_int), so the integrals over [0, t] and [t, T] are Lebesgue integrals for a.e. ω.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.sec45_proof_thm35",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:ab347f1a8639f770f9e263ca0ed473446da6f416c6c97aa79e4321759306a01b",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/0/1/1",
+  "rationale": "The denominator of (1 − λ*)/ζ₀ is ζ₀ > 0, asserted by the third clause.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.sec45_proof_thm35",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:fb33d4d49a0bbe0b9f51156b9dd1affcfe6f30db0a4ee4c49f55377558f6a365",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/0/0/0/1",
+  "rationale": "G.rank = min m n with m, n ≥ 1 gives s_min(G) > 0 (the first clause of ass_G), so (s_min(G)²)⁻¹ is c_G = s_min(G)⁻² itself, an argument of the existentially chosen constant function.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.sec4_supremum_criterion",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:5eb3b4f244d59c7b98e77219166ab431858556dc70a1d6d85a96a4ac33248514",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1",
+  "rationale": "The first clause asserts M_t integrable for every t ≤ T, so M_t − M_s (s ≤ t ≤ T) is integrable.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.sec5_limin",
+  "trigger": "HDiv.hDiv",
+  "fingerprint": "pl-occ-v1:3e8dc6cc511f8987d44291a9e8a039dcaf57963a66f326b555d394e0e8c47695",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/0/1",
+  "rationale": "3π/4 has the literal denominator 4.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.sec5_limin",
+  "trigger": "MeasureTheory.integral",
+  "fingerprint": "pl-occ-v1:6674be327cda6a223fc34cbdbe74a28d4c9b10242c6629e938aa8cce7b7d1b3b",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/0/1",
+  "rationale": "The hypothesis 𝔼ξ₀ ≠ 0 is false at the junk value 0, so the claim covers exactly the integrable ξ₀ with nonzero mean; a non-integrable ξ₀ has no mean and is outside the printed 'from an initial datum with 𝔼ξ₀ ≠ 0'.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.thm_stab_companion",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:4e636636a993c30cd575022c51dc4143d00a42b2d3dbb5233d1faab31f23bebc",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/0/0/1",
+  "rationale": "G.rank = min m n with m, n ≥ 1 gives s_min(G) > 0 (the first clause of ass_G), so (s_min(G)²)⁻¹ is c_G = s_min(G)⁻² itself, an argument of the existentially chosen constant function.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.thm_stab_data",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:498edccba0f6872563136016d9282a7ed1df236ada09c0cd032c199f26fc6742",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/0/0/1",
+  "rationale": "G.rank = min m n with m, n ≥ 1 gives s_min(G) > 0 (the first clause of ass_G), so (s_min(G)²)⁻¹ is c_G = s_min(G)⁻² itself, an argument of the existentially chosen constant function.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "totalised",
+  "subject": "MVFBSDEJ.PaperSpec.thm_stab_minimal",
+  "trigger": "Inv.inv",
+  "fingerprint": "pl-occ-v1:d9749f9306ccd4c5e13973eec0dd2b7d6be8af77426713e6a1f1da8feeaf6e79",
+  "at": "/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/0/1/1/0/0/0/1",
+  "rationale": "G.rank = min m n with m, n ≥ 1 gives s_min(G) > 0 (the first clause of ass_G), so (s_min(G)²)⁻¹ is c_G = s_min(G)⁻² itself, an argument of the existentially chosen constant function.",
+  "by": "claude-auditor"
+ }
+]

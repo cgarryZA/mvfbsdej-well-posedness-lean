@@ -1391,7 +1391,7 @@ Manuscript (§3): `S²(ℝʲ)` is the space of càdlàg adapted `V` with `𝔼 s
 identities of (1.1) almost surely for every `t ∈ [0, T]`, with `h` evaluated at the predictable
 tuple `(Θ⁻_t, μ⁻_t)`"; `𝕊 ⊂ ℍ²`.
 
-* `PaperSpec.A.Solution D h𝒢₀ hind₀ T C ξ₀ X Y Z U`: `WeakSolution` together with
+* `PaperSpec.Solution D h𝒢₀ hind₀ T C ξ₀ X Y Z U`: `WeakSolution` together with
   `𝔼 sup_{t ≤ T} |X_t|² < ∞` and `𝔼 sup_{t ≤ T} |Y_t|² < ∞` (`esq` the squared Euclidean norm in
   `[0, ∞]`, the supremum over `[0, T]` inside the lower integral). As `S² ⊂ L²_ad`
   (`sec3_HH_inclusion`), this is the paper's notion: a tuple of `𝕊` satisfying (1.1), with the
@@ -1499,7 +1499,7 @@ Review by claude-reviewer: faithful with representation choices.
 <!-- def-review: MVFBSDEJ.WellPosedness.Spec.PaperWeakSolutionIntEnl fee486406b67239ed77b642b59569585 by=claude-reviewer -->
 Review by claude-auditor: faithful with representation choices.
 <!-- def-review: MVFBSDEJ.WellPosedness.Spec.PaperWeakSolutionIntEnl fee486406b67239ed77b642b59569585 by=claude-auditor -->
-* `PaperSpec.A.WeakSolution D h𝒢₀ hind₀ T C ξ₀ X Y Z U`: some `γ` with
+* `PaperSpec.WeakSolution D h𝒢₀ hind₀ T C ξ₀ X Y Z U`: some `γ` with
   `PaperWeakSolutionIntEnl`, and every path of `X` and of `Y` with left limits on `(0, T]` (with
   the every-path right-continuity, every path càdlàg on `[0, T]`), over `enlJoint 𝒢₀ D h𝒢₀`, the
   usual augmentation of `ℱ^{W,N}_t ∨ 𝒢₀` with `𝒢₀` independent of the driver (`hind₀`). This is
@@ -1696,7 +1696,7 @@ Review by claude-reviewer: faithful with representation choices.
 <!-- def-review: MVFBSDEJ.WellPosedness.System.PaperWeakSolutionForcedInt.mk d748d1e1231aa2640000000000000000 by=claude-reviewer -->
 Review by claude-auditor: faithful with representation choices.
 <!-- def-review: MVFBSDEJ.WellPosedness.System.PaperWeakSolutionForcedInt.mk d748d1e1231aa2640000000000000000 by=claude-auditor -->
-* `PaperSpec.A.WeakForcedSolution`: some `γ` with `PaperWeakSolutionForcedInt` over
+* `PaperSpec.WeakForcedSolution`: some `γ` with `PaperWeakSolutionForcedInt` over
   `enlJoint 𝒢₀ D h𝒢₀`, and every path of `X` and of `Y` with left limits on `(0, T]`: (4.1) in
   `ℍ²` with `X_T ∈ L²`, the class of Lemma 4.3.
 
@@ -1714,7 +1714,7 @@ Review by claude-reviewer: faithful with representation choices.
 <!-- def-review: MVFBSDEJ.PaperSpec.WeakForcedSolution bde81c401c9ac90991383a009c3a500d by=claude-reviewer source=A:sec4:WP-def@17962fe037ff7de888f26d2b0c9f51427d790ab6422e549a1d661ef69141a32e -->
 Review by claude-auditor: faithful with representation choices.
 <!-- def-review: MVFBSDEJ.PaperSpec.WeakForcedSolution bde81c401c9ac90991383a009c3a500d by=claude-auditor source=A:sec4:WP-def@17962fe037ff7de888f26d2b0c9f51427d790ab6422e549a1d661ef69141a32e -->
-* `PaperSpec.A.ForcedSolution`: `WeakForcedSolution` together with `𝔼 sup_{t ≤ T} |X_t|² < ∞`
+* `PaperSpec.ForcedSolution`: `WeakForcedSolution` together with `𝔼 sup_{t ≤ T} |X_t|² < ∞`
   and `𝔼 sup_{t ≤ T} |Y_t|² < ∞`: a tuple of `𝕊` satisfying (4.1), as `Solution` is for (1.1). The
   forced drift and driver integrals are pathwise; under (2.3) and Assumptions 2.2–2.3 the notion
   coincides with the implementation's `PaperSolutionForced`, which asks them finite energy
@@ -1735,7 +1735,7 @@ Re-readings at the widened passages:
 <!-- def-review: MVFBSDEJ.PaperSpec.ForcedSolution bde81c401c9ac909f447baae21c89992 by=claude-author source=A:eq:forced@6e95d16ec0d43e3e59ac4b392a3ff8d5d36e8ba90636e0d6c6af2f8419322135 -->
 Review by claude-auditor: faithful with representation choices.
 <!-- def-review: MVFBSDEJ.PaperSpec.ForcedSolution bde81c401c9ac909f447baae21c89992 by=claude-auditor source=A:eq:forced@134e01a0256ffc7a16425886631cfe88968f942fb53d500c263ce1cf361b3cf8 -->
-* `PaperSpec.A.WP D h𝒢₀ hind₀ T λ C ξ₀`: for every `PredForcing` `q` over `enlJoint 𝒢₀ D h𝒢₀`,
+* `PaperSpec.WP D h𝒢₀ hind₀ T λ C ξ₀`: for every `PredForcing` `q` over `enlJoint 𝒢₀ D h𝒢₀`,
   a `ForcedSolution` exists, and any two have `X` and `Y` indistinguishable on `[0, T]` and the
   energies of the differences of `Z` and of `U` equal to zero: uniqueness in `𝕊` up to its
   identifications.
@@ -1850,7 +1850,7 @@ Manuscript (Example 5.4): with `m = n`, `f = f₀ + ε q(W₂(μ, μ₀)) w₀ +
 w₁`, `b = b₀ + ε q̃(W₂(μ^U, Λ₀)) v₀`, `h = h₀ + ε q̂(W₂(μ^U, Λ₀)) ĥ`, for `q, q̃, q̂ : ℝ₊ → ℝ`,
 `Q : ℝᴶ → ℝ` and features `φ_j : L²(ν) → ℝ`, bounded and Lipschitz.
 
-* `PaperSpec.A.ex54Pert ν n d J ε q qb qh Q φ μ₀ Λ₀ w₀ w₁ v₀ ĥ`: `Coeffs.ofLaw` of
+* `PaperSpec.ex54Pert ν n d J ε q qb qh Q φ μ₀ Λ₀ w₀ w₁ v₀ ĥ`: `Coeffs.ofLaw` of
   `p_b = ε qb(W₂(μ^U, Λ₀)) v₀`, `p_σ = 0`, `p_h = ε qh(W₂(μ^U, Λ₀)) ĥ` and `p_f = ε q(W₂(μ, μ₀))
   w₀ + ε Q(∫ φ_1 dμ^U, …, ∫ φ_J dμ^U) w₁`, with `W₂(μ, μ₀)` the Hilbert-norm `w2H` and `W₂(μ^U, Λ₀)`
   that of `L²(ν; ℝⁿ)`; `qb`, `qh` are the printed `q̃`, `q̂`, and `C.perturb (ex54Pert …)` is the
@@ -1880,7 +1880,7 @@ Verdict: faithful with representation choices.
 Manuscript (Example 5.5): `𝒜_λ(u) = ∫_{L²(ν)} ∇V(u − v) λ(dv)`, `∇V(w) = w / √(1 + ‖w‖²)`,
 `λ ∈ P₂(L²(ν))`.
 
-* `PaperSpec.A.ex55Crowd Λ u = ∫_F (1 + ‖u − v‖²)^{−1/2} (u − v) Λ(dv)` (Bochner), for a measure `Λ`
+* `PaperSpec.ex55Crowd Λ u = ∫_F (1 + ‖u − v‖²)^{−1/2} (u − v) Λ(dv)` (Bochner), for a measure `Λ`
   on a real Hilbert space `F`: `𝒜_Λ(u)`. Choices: `F` and `Λ` are general, and the integral is
   Lean's Bochner integral, `0` when the integrand is not integrable (an infinite `Λ`, or an `F` on
   which the integrand is not almost everywhere strongly measurable). The statements take
@@ -1896,7 +1896,7 @@ Verdict: faithful with representation choices.
 
 ## The coefficients of Example 5.5 (`PaperSpec/Sec5Dealer.lean`)
 
-* `PaperSpec.A.ex55Coeffs ν β₁ β₂ σ_c h_c h_x ε`: the coefficient system of Example 5.5 at
+* `PaperSpec.ex55Coeffs ν β₁ β₂ σ_c h_c h_x ε`: the coefficient system of Example 5.5 at
   `n = m = d = 1`, at `θ = (x, y, z, u)` and a law `μ` of `P₂(H)`: `b = −β₁ y`,
   `σ = σ_c − β₁ z` (`σ_c ∈ ℝ^{1×1}`), `h = h_c + x h_x − β₁ u − ε A_{μ^U}(u)` in `L²(ν)` (`x` the
   single coordinate of the forward state), `f = β₂ x + ⟨h_x, u⟩_{L²(ν)}` (as a vector of `ℝ¹`)
@@ -1909,12 +1909,12 @@ Verdict: faithful with representation choices.
   <!-- def-review: MVFBSDEJ.PaperSpec.ex55Coeffs cad9f6a453fea8b2448eb82f1bab2f5a by=claude-author -->
   Review by claude-auditor: faithful with representation choices.
   <!-- def-review: MVFBSDEJ.PaperSpec.ex55Coeffs cad9f6a453fea8b2448eb82f1bab2f5a by=claude-auditor -->
-* `PaperSpec.A.ex55Marks ϱ`: `dealerMarks` with `c_{±1} = (2 − ϱ)/2` and exponent `ϱ`, the mark
+* `PaperSpec.ex55Marks ϱ`: `dealerMarks` with `c_{±1} = (2 − ϱ)/2` and exponent `ϱ`, the mark
   measure `c_ς q^{−1−ϱ} dq` on `{−1, +1} × (0, 1]` of the specialisation ("`c_{±1} = (2 − ϱ)/2`").
   <!-- def-review: MVFBSDEJ.PaperSpec.ex55Marks 0a7cd5acabebe270a7faa508a4fc53a1 by=claude-author -->
   Review by claude-auditor: faithful with representation choices.
   <!-- def-review: MVFBSDEJ.PaperSpec.ex55Marks 0a7cd5acabebe270a7faa508a4fc53a1 by=claude-auditor -->
-* `PaperSpec.A.ex55Linear 𝒢₀ ϱ P D h𝒢₀ hind₀ T X`: `LinearFSDEJ` (reviewed below) over
+* `PaperSpec.ex55Linear 𝒢₀ ϱ P D h𝒢₀ hind₀ T X`: `LinearFSDEJ` (reviewed below) over
   `enlJoint 𝒢₀ D h𝒢₀` on `[0, T]` with initial value `0`, drift `−X_s` on `[0, T]`, diffusion `½`
   on `[0, T]` and Poisson integrand `½ (ς q + q X_{s−})` on `(0, T]`, the left limit taken by
   `leftLimProc`: the printed linear equation
@@ -1976,7 +1976,7 @@ Verdict: faithful with representation choices.
 
 Manuscript (Remark 2.11): (2.7) holds with margin `c > 0` if (2.12) holds.
 
-* `PaperSpec.A.Margin212 ℱ P T G β₁ β₂ c C`: for almost every `t ∈ [0, T]` and all pairs of `𝒟_t`,
+* `PaperSpec.Margin212 ℱ P T G β₁ β₂ c C`: for almost every `t ∈ [0, T]` and all pairs of `𝒟_t`,
   `pairing27` is integrable and its expectation is at most `−β₁ 𝔼[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²]
   − β₂ 𝔼|G δX|² − c 𝔼[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖² + |G δX|²]`: (2.12), with the integrability
   choice of `Mono27At`.
@@ -2003,7 +2003,7 @@ Manuscript (§2): every square-integrable `(ℱ_t)`-martingale `M` can be writte
 Z_s dW_s + ∫_0^t ∫_E U_s(e) Ñ(ds, de)` for every `t ∈ [0, T]`, for an `ℱ₀`-measurable `M_0` and a
 predictable square-integrable pair `(Z, U)`.
 
-* `PaperSpec.A.RepresentsMart D h𝒢₀ hind₀ T M Z U`: the coordinates of `Z` predictable for
+* `PaperSpec.RepresentsMart D h𝒢₀ hind₀ T M Z U`: the coordinates of `Z` predictable for
   `enlJoint 𝒢₀ D h𝒢₀` and `U` marked predictable, both vanishing off `[0, T]` and of finite energy
   there, and for every `t ∈ [0, T]`, almost surely `M_t = M_0 + ∫_0^t Z dW + ∫_0^t ∫_E U Ñ`, with
   the library's integrals: `(Z, U)` represents `M` on `[0, T]`. Choices: the identity holds almost
@@ -2126,7 +2126,7 @@ Verdict: faithful with representation choices.
 
 ## the weighted pairing bound of Remark 3.7 (`MVFBSDEJ/PaperSpec/Sec3GeneralRank.lean`)
 
-* `PaperSpec.A.PairingBound34W ℱ P T G c p`: for almost every `t ∈ [0, T]` and all
+* `PaperSpec.PairingBound34W ℱ P T G c p`: for almost every `t ∈ [0, T]` and all
   `(Θ, μ), (Θ', μ') ∈ 𝒟_t`, the pairing `pairing27 G p` of the perturbation differences (the
   left side of (3.4)) is integrable and its expectation is at most
   `c 𝔼[|Gᵀ δY|² + |Gᵀ δZ|²_F + ‖Gᵀ δU‖²_{L²(ν)} + |G δX|²]`: (3.4) with its right side recorded in
@@ -2164,12 +2164,12 @@ Verdict: faithful with representation choices.
   <!-- def-review: MVFBSDEJ.WellPosedness.System.singularCoeffs 7e516c47c5a521634ba3c7cf935a2ca7 by=claude-reviewer -->
   Review by claude-auditor: faithful with representation choices.
   <!-- def-review: MVFBSDEJ.WellPosedness.System.singularCoeffs 7e516c47c5a521634ba3c7cf935a2ca7 by=claude-auditor -->
-* `PaperSpec.A.translateTuple r θ = (θ.1 + r, θ.2)`: the translation
+* `PaperSpec.translateTuple r θ = (θ.1 + r, θ.2)`: the translation
   `(x, y, z, u) ↦ (x + r, y, z, u)` of the forward coordinate of `H`.
   <!-- def-review: MVFBSDEJ.PaperSpec.translateTuple 05a266e9013def67cdd0b97424fd4e8c by=claude-author -->
   Review by claude-auditor: faithful.
   <!-- def-review: MVFBSDEJ.PaperSpec.translateTuple 05a266e9013def67cdd0b97424fd4e8c by=claude-auditor -->
-* `PaperSpec.A.translatedCoeffs C r T`: `ψ̃(t, θ, μ) = ψ(t, θ + r_t, lawP2 μ (translateTuple r_t))`
+* `PaperSpec.translatedCoeffs C r T`: `ψ̃(t, θ, μ) = ψ(t, θ + r_t, lawP2 μ (translateTuple r_t))`
   for `ψ ∈ {b, σ, h, f}` and `g̃(x, ρ) = g(x + r_T, lawP2 ρ (· + r_T))`. For `μ ∈ P₂` the
   translation is square integrable under `μ`, so `lawP2` returns the push-forward
   `μ ∘ (· + r)⁻¹` and not its fallback value: the coefficients of the state `X − r` when `X` solves
@@ -2199,7 +2199,7 @@ Verdict: faithful with representation choices.
   <!-- def-review: MVFBSDEJ.WellPosedness.BrownianPoisson.LinearBSDEJ.mk 0257a8785c1bb61f0000000000000000 by=claude-reviewer -->
   Review by claude-auditor: faithful with representation choices.
   <!-- def-review: MVFBSDEJ.WellPosedness.BrownianPoisson.LinearBSDEJ.mk 0257a8785c1bb61f0000000000000000 by=claude-auditor -->
-* `PaperSpec.A.BrownianFrozenStep 𝒢₀ D h𝒢₀ hind₀ T C X Y Z U X' Y' Z' U'`, for `n = m = d = 1`, `E`
+* `PaperSpec.BrownianFrozenStep 𝒢₀ D h𝒢₀ hind₀ T C X Y Z U X' Y' Z' U'`, for `n = m = d = 1`, `E`
   a point and `ν = 0`, over `enlJoint 𝒢₀ D h𝒢₀`: each coordinate of `X'` solves `LinearFSDEJ` with
   initial value `0`, drift `driftProc` and diffusion `diffusionProc` of `C` along the trial
   `(X, Y, Z, U)` and Poisson integrand `0`, and each coordinate of `(Y', Z', U')` solves
@@ -2216,7 +2216,7 @@ Verdict: faithful with representation choices.
 
 ## The trial space, the frozen step and the coefficient differences of Lemma 4.2 (`MVFBSDEJ/PaperSpec/Sec4Frozen.lean`)
 
-* `PaperSpec.A.HTuple ℱ P ν T X Y Z U`: `PaperWeakTuple ℱ P ν T X Y Z U` (reviewed with the weak
+* `PaperSpec.HTuple ℱ P ν T X Y Z U`: `PaperWeakTuple ℱ P ν T X Y Z U` (reviewed with the weak
   solution notion), every path of each coordinate of `X` and `Y` with a left limit at every
   `t ∈ (0, T]`, and `𝔼 sup_{t ∈ [0, T]} |X_t|² < ∞`, `𝔼 sup_{t ∈ [0, T]} |Y_t|² < ∞` (lower
   integrals of the suprema of `esq`): `Θ ∈ 𝕊 = S²(ℝⁿ) × S²(ℝᵐ) × H²_W × H²_N` of §3, the `S²`
@@ -2227,7 +2227,7 @@ Verdict: faithful with representation choices.
   <!-- def-review: MVFBSDEJ.PaperSpec.HTuple f8659178ce727655964d17009b0b0d03 by=claude-author -->
   Review by claude-auditor: faithful with representation choices.
   <!-- def-review: MVFBSDEJ.PaperSpec.HTuple f8659178ce727655964d17009b0b0d03 by=claude-auditor -->
-* `PaperSpec.A.coeffDiffNorm P C Θ₁ Θ₂ s ω = ‖δb‖ₑ + ‖δσ‖ₑ + ‖δh‖ₑ + ‖δf‖ₑ` in `[0, ∞]`, with
+* `PaperSpec.coeffDiffNorm P C Θ₁ Θ₂ s ω = ‖δb‖ₑ + ‖δσ‖ₑ + ‖δh‖ₑ + ‖δf‖ₑ` in `[0, ∞]`, with
   `δψ = ψ(s, Θ₁ s ω, lawP2 P (Θ₁ s)) − ψ(s, Θ₂ s ω, lawP2 P (Θ₂ s))`: `S_s` of Step 1 of the proof
   of Lemma 4.2 for two random tuples `Θᵏ_s` and their laws in `P₂(H)`. `‖δσ‖` is the Euclidean
   norm on `ℝ^{n × d}` (the Frobenius norm) and `‖δh‖` the norm of `L²(ν; ℝⁿ)`, the norms of
@@ -2235,7 +2235,7 @@ Verdict: faithful with representation choices.
   <!-- def-review: MVFBSDEJ.PaperSpec.coeffDiffNorm a713956f60b3d4619acbf34d649a9a0f by=claude-author -->
   Review by claude-auditor: faithful with representation choices.
   <!-- def-review: MVFBSDEJ.PaperSpec.coeffDiffNorm a713956f60b3d4619acbf34d649a9a0f by=claude-auditor -->
-* `PaperSpec.A.FrozenForward D h𝒢₀ hind₀ T λ C ξ₀ q^b q^σ q^h X Y Z U X'`: there is
+* `PaperSpec.FrozenForward D h𝒢₀ hind₀ T λ C ξ₀ q^b q^σ q^h X Y Z U X'`: there is
   `γ : Fin n → ℝ → Ω → E → ℝ` with `e ↦ (γ_i s ω e)_i` equal `ν`-almost everywhere to
   `h(s, Θ⁻_s(ω), ·, Law(Θ⁻_s))` for almost every `s ∈ [0, T]`, almost surely, where
   `Θ⁻_s = tupleAt ν (leftLimProc X) (leftLimProc Y) Z U s` is the predictable tuple of
@@ -2251,7 +2251,7 @@ Verdict: faithful with representation choices.
   <!-- def-review: MVFBSDEJ.PaperSpec.FrozenForward 2f02c0693ffb6740e91bfbf75c541010 by=claude-author -->
   Review by claude-auditor: faithful with representation choices.
   <!-- def-review: MVFBSDEJ.PaperSpec.FrozenForward 2f02c0693ffb6740e91bfbf75c541010 by=claude-auditor -->
-* `PaperSpec.A.FrozenStep D h𝒢₀ hind₀ T λ C ξ₀ q X Y Z U X' Y' Z' U'`: `FrozenForward … X'`; each
+* `PaperSpec.FrozenStep D h𝒢₀ hind₀ T λ C ξ₀ q X Y Z U X' Y' Z' U'`: `FrozenForward … X'`; each
   coordinate `(Y'_k, Z'_k, U'_k)` solves `LinearBSDEJ` over `enlJoint` with terminal value
   `λ terminalVal P T C X' k + q^g_k`, which is `λ g(X'_T, Law(X'_T)) + q^g_T`, and drift
   `λ driverProc_k + q^f_k` along the trial; and `HTuple … X' Y' Z' U'`. This is
@@ -2351,8 +2351,8 @@ Verdict: faithful with representation choices.
   <!-- def-review: MVFBSDEJ.WellPosedness.Spec.BrownianPaperWeakSolution.mk 9f60bcd4483b94d90000000000000000 by=claude-reviewer -->
   Review by claude-auditor: faithful with representation choices.
   <!-- def-review: MVFBSDEJ.WellPosedness.Spec.BrownianPaperWeakSolution.mk 9f60bcd4483b94d90000000000000000 by=claude-auditor -->
-* `PaperSpec.A.BrownianSolution W h𝒢₀ hW T C ξ₀ X Y Z`: `BrownianWeakSolution` together with
-  `𝔼 sup_{t ≤ T} |X_t|² < ∞` and `𝔼 sup_{t ≤ T} |Y_t|² < ∞`: `PaperSpec.A.Solution` with the jump
+* `PaperSpec.BrownianSolution W h𝒢₀ hW T C ξ₀ X Y Z`: `BrownianWeakSolution` together with
+  `𝔼 sup_{t ≤ T} |X_t|² < ∞` and `𝔼 sup_{t ≤ T} |Y_t|² < ∞`: `PaperSpec.Solution` with the jump
   channel deleted, over the Brownian filtration. It is a notion of its own over a Brownian basis
   (the usual augmentation of the filtration generated by `W` and `𝒢₀`), not (1.1) at `h = 0` over
   a Brownian–Poisson basis. The coefficients keep the trivial channel `L²(0) = {0}` of
@@ -2361,14 +2361,14 @@ Verdict: faithful with representation choices.
   <!-- def-review: MVFBSDEJ.PaperSpec.BrownianSolution 4f65aba6aba7ed1f3790f3246b35f308 by=claude-author -->
   Review by claude-auditor: faithful with representation choices.
   <!-- def-review: MVFBSDEJ.PaperSpec.BrownianSolution 4f65aba6aba7ed1f3790f3246b35f308 by=claude-auditor -->
-* `PaperSpec.A.BrownianWeakSolution W h𝒢₀ hW T C ξ₀ X Y Z`: the same with
-  `BrownianPaperWeakSolution`: `PaperSpec.A.WeakSolution` with the jump channel deleted.
+* `PaperSpec.BrownianWeakSolution W h𝒢₀ hW T C ξ₀ X Y Z`: the same with
+  `BrownianPaperWeakSolution`: `PaperSpec.WeakSolution` with the jump channel deleted.
   <!-- def-review: MVFBSDEJ.PaperSpec.BrownianWeakSolution 4f65aba6aba7ed1f1c8fd0d2955d1a89 by=claude-author -->
   Review by claude-reviewer: faithful with representation choices.
   <!-- def-review: MVFBSDEJ.PaperSpec.BrownianWeakSolution 4f65aba6aba7ed1f1c8fd0d2955d1a89 by=claude-reviewer -->
   Review by claude-auditor: faithful with representation choices.
   <!-- def-review: MVFBSDEJ.PaperSpec.BrownianWeakSolution 4f65aba6aba7ed1f1c8fd0d2955d1a89 by=claude-auditor -->
-* `PaperSpec.A.RepresentsMartBrownian W h𝒢₀ hW T M Z`: `PaperSpec.A.RepresentsMart` with `U`, its
+* `PaperSpec.RepresentsMartBrownian W h𝒢₀ hW T M Z`: `PaperSpec.RepresentsMart` with `U`, its
   three conditions and the compensated Poisson integral deleted, over `enlBrownian 𝒢₀ W h𝒢₀`:
   `Z` predictable, vanishing off `[0, T]`, of finite energy, and `M_t = M_0 + ∫_0^t Z dW`
   almost surely for every `t ∈ [0, T]`.
@@ -2579,3 +2579,67 @@ definition to be that object; the marker records the digest of every passage rea
   of H (lines 16–32) enters only through square integrability. Verdict: faithful with representation
   choices.
   <!-- def-review: MVFBSDEJ.PaperSpec.Solution 3220c6ff72b9eb8278fda8b917b2b13b by=claude-auditor source=A:eq:mvfbsdej@5eb480b379a74b6cf3448b228b60d1dcb3f707265f25c5b1cbe6f82b684e917a source=A:intro:mvfbsdej@5eb480b379a74b6cf3448b228b60d1dcb3f707265f25c5b1cbe6f82b684e917a -->
+
+## The instances of the witnesses (`MVFBSDEJ/Acceptance/WitnessNonzero.lean`, `MVFBSDEJ/Acceptance/AppASteps.lean`, `MVFBSDEJ/Acceptance/Sec3Margin.lean`)
+
+These definitions occur in no proposition: they fix the instance a witness exhibits. Each reading
+says what the definition is and that it is the instance the witness's docstring and its review in
+`A.md` describe.
+
+* `MVFBSDEJ.Acceptance.unitWindow`. `unitWindow s = 1_{(0, 1]}(s)`, the real indicator of the time
+  window `(0, 1]`: `1` on `(0, 1]` and `0` elsewhere, in particular `0` off `[0, 1]` and at `s = 0`.
+  It is the window `1_{(0, 1]}` the witnesses describe: the integrand `ψ_s(e) = 1_{(0, 1]}(s)` of
+  `sec2_compensation_nonzero_hypotheses`, where both sides of (2.1) on `(0, 1]` equal `1`; the
+  representing pair `Z = U = 1_{(0, 1]}`, both of energy `1`, of `sec2_prp_nonzero_hypotheses`;
+  `Z = U = 1_{(0, 1]}` of the moving tuple of `lemA1_hypotheses` and `lemA1_coin_hypotheses`; the
+  `Z`, `U` channels of the trial tuple `(1, 1, 1_{(0, 1]}, 1_{(0, 1]})` of
+  `frozen_pair_window_hypotheses` and `frozen_pair_window_lam_hypotheses`, through which
+  `δσ = δh = 1_{(0, 1]}` have energy `1` on `[0, 1]`; and `δZ = δU = 1_{(0, 1]}`,
+  `δq^σ = δq^h = 1_{(0, 1]}` and the Brownian and compensated integrals of `1_{(0, 1]}` of
+  `lem_pert_data_forcing_hypotheses`. As a function of time alone it is deterministic, hence
+  predictable for every filtration and marked predictable at a finite mark measure, with
+  `∫_0^1 1_{(0, 1]}(s)² ds = 1`. Verdict: the instance described.
+  <!-- def-review: MVFBSDEJ.Acceptance.unitWindow 29fbc050c7ff42ca546df9b112816915 by=claude-author -->
+
+* `MVFBSDEJ.Acceptance.coinStep`. `coinStep i t ω = ξ(ω) 1_{t ≥ 1/2}` on `Bool`, with
+  `ξ(true) = 1`, `ξ(false) = −1`, the same for the one coordinate `i : Fin 1`: `0` before `1/2` and
+  the sign `ξ` from `1/2` on. It is the process `X = Y = ξ 1_{t ≥ 1/2}` of `lemA1_hypotheses` and
+  `lemA1_coin_hypotheses`, the fair sign revealed at `t = 1/2`: its paths are right-continuous
+  with left limits, and at `t = 1/2` the left limit `0` differs from the value `1` at
+  `ω = true`; `X_1 = ξ` takes the two values `1`, `−1`, so it is not almost surely constant under
+  the uniform law. Verdict: the instance described.
+  <!-- def-review: MVFBSDEJ.Acceptance.coinStep 92e555e6cf02efbd62088e434a4048c7 by=claude-author -->
+
+* `MVFBSDEJ.Acceptance.coinFiltration`. The filtration on `Bool` (with its discrete σ-algebra)
+  equal to the trivial σ-algebra `⊥` at times `t < 1/2` and to the full σ-algebra `⊤` from `1/2`
+  on: monotone, and below the σ-algebra of `Bool`. It is the filtration of the fair sign revealed
+  at `1/2` of `lemA1_coin_hypotheses`, the natural filtration of `coinStep`: before `1/2` the
+  process is the constant `0`, and from `1/2` on it is `ξ`, which separates the two points of
+  `Bool`. Being trivial at `0`, it does not contain the event `{ξ = 1}` at time `0`, as the
+  witness asserts. Verdict: the instance described.
+  <!-- def-review: MVFBSDEJ.Acceptance.coinFiltration 8dd68c0637fb3b9518d02cc32d36ec6f by=claude-author -->
+
+* `MVFBSDEJ.Acceptance.unitDirac`. The element `indicatorConstLp 2 univ e₁` of
+  `L²(δ₀; ℝ¹)`, the class of the constant function `e₁`; `δ₀` being a probability measure, it has
+  norm `1`, and `L²(δ₀; ℝ¹)` is one dimensional, spanned by it. It is the constant unit vector `e₁`
+  of `sec2_hborel_nonzero_hypotheses`: there `H((t, θ, μ), e) = −⟨e₁, u⟩_{L²(δ₀)} e₁`, and since
+  `⟨e₁, u⟩ = u(0)` for `u ∈ L²(δ₀; ℝ¹)`, `H` represents the jump coefficient `h(t, θ, μ) = −u` of
+  Example 5.1(i) at `β₁ = 1`, `h_c = 0`, and is not the zero function. Verdict: the instance
+  described.
+  <!-- def-review: MVFBSDEJ.Acceptance.unitDirac 0eb2b896c98b713d85ed15b4196201fd by=claude-author -->
+
+* `MVFBSDEJ.Acceptance.unitIndicator`. The element `φ = indicatorConstLp 2 [0, 1] e₁` of
+  `L²(Lebesgue; ℝ¹)`, the class of `1_{[0, 1]} e₁`, of norm `1`. It is the function
+  `φ = 1_{[0, 1]}` of `cor_margin_finite_hypotheses` and `cor_margin_continuous_hypotheses` (the
+  review in `A.md` writes `φ = 1_{[0,1]}`), through which the jump coefficient of `rankOneCoeffs`
+  depends on `u`. Verdict: the instance described.
+  <!-- def-review: MVFBSDEJ.Acceptance.unitIndicator 0be8e79f8e2d00831493014e6c6363b6 by=claude-author -->
+
+* `MVFBSDEJ.Acceptance.rankOneCoeffs`. The coefficient system with `n = m = d = 1` and `ν`
+  Lebesgue measure on `ℝ` given by `b = σ = f = 0`, `g = 0` and `h(t, θ, μ) = −⟨φ, u⟩ φ` at
+  `θ = (x, y, z, u)`, with `φ = unitIndicator`: rank-one jump feedback, independent of `t`, `x`,
+  `y`, `z` and the law. It is the system of `cor_margin_finite_hypotheses` and
+  `cor_margin_continuous_hypotheses`, whose docstrings and review describe exactly this: its jump
+  coefficient depends on `u` only through the single linear, continuous functional
+  `ℓ u = ⟨φ, u⟩`, the functional both witnesses exhibit. Verdict: the instance described.
+  <!-- def-review: MVFBSDEJ.Acceptance.rankOneCoeffs f37db4faf09b47e1f7a186a0d06a1359 by=claude-author -->
