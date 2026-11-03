@@ -72,6 +72,582 @@
   "by": "claude-auditor"
  },
  {
+  "code": "source-macro-unpinned",
+  "subject": "A:abstract",
+  "trigger": "\\Law \\Lnu",
+  "fingerprint": "4698dc07f7b17ef066bf70072b872f20edb0da7f972ce4c1a8edc13f34c35ab3",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\Law = \\mathrm{Law}, \\Lnu = L^2(\\nu); none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:conclusion",
+  "trigger": "\\Law \\Lnu",
+  "fingerprint": "730a6134cc7015b366900c995805b60c092012e31b44602037a39984c2a91da5",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\Law = \\mathrm{Law}, \\Lnu = L^2(\\nu); none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:Gid-path",
+  "trigger": "\\Gstar \\Nt \\diff \\inner",
+  "fingerprint": "e46e5f47c6dc2fe10eb89fb5414a790c92985346ffc3abbf7528ca715e207d4c",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\Gstar = G^{\\!\\top}, \\Nt = \\widetilde{N}, \\diff = \\mathrm{d}, \\inner{a}{b} = \\langle a,\\,b\\rangle; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:Gid",
+  "trigger": "\\E \\Gstar \\diff \\inner",
+  "fingerprint": "e3e59eed648d77453dd17511b3b546a6abb04d571b7f574138b426e7b411f9ce",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\Gstar = G^{\\!\\top}, \\diff = \\mathrm{d}, \\inner{a}{b} = \\langle a,\\,b\\rangle; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:bdg4",
+  "trigger": "\\E \\Gstar \\HH \\Lnorm \\Nt \\diff \\inner",
+  "fingerprint": "ed04d85188f60f8074a858e1e8398a47cf0ee28ab2aa22b0e03fecdcca1cf810",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\Gstar = G^{\\!\\top}, \\HH = \\mathbb{S}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\Nt = \\widetilde{N}, \\diff = \\mathrm{d}, \\inner{a}{b} = \\langle a,\\,b\\rangle; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:bmean",
+  "trigger": "\\E \\diff \\inner",
+  "fingerprint": "6614f51ad9612b2d25878186e076ae17101a7b78427b8fc3fc80025ce2eef370",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\diff = \\mathrm{d}, \\inner{a}{b} = \\langle a,\\,b\\rangle; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:bwd",
+  "trigger": "\\E \\Lnorm \\diff",
+  "fingerprint": "c405fcc448aaf50172632c84e6a2b00969a5ee7af6e4c71d0593cd50d339eaf2",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:bwddiff",
+  "trigger": "\\E \\F \\HH \\HN \\HW \\Lnorm \\Nt \\diff",
+  "fingerprint": "ca58096655e5e6b70fd088ebf4b2b03e622b17d584f98ab52e438e1f35e7dfaa",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\F = \\mathcal{F}, \\HH = \\mathbb{S}, \\HN = \\mathcal{H}^2_N, \\HW = \\mathcal{H}^2_W, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\Nt = \\widetilde{N}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:bwdito",
+  "trigger": "\\E \\Lnorm \\diff \\inner",
+  "fingerprint": "d6302cd9ce59f4a74c314e331a8684638c6d9c76831a024f322a74d59192785e",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\diff = \\mathrm{d}, \\inner{a}{b} = \\langle a,\\,b\\rangle; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:bwdyoung",
+  "trigger": "\\E \\Lnorm \\inner",
+  "fingerprint": "6de6e9ca136a07fe246605603408e399b279d06e2d18e1d458a34b7b82ce829c",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\inner{a}{b} = \\langle a,\\,b\\rangle; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:coeffdiff",
+  "trigger": "\\E \\HH \\Lnorm \\R \\diff",
+  "fingerprint": "dbfe072b5d719a544ec43b251110f77f32c3ceb9a4d075f5cbdefe4a901196bd",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\HH = \\mathbb{S}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\R = \\mathbb{R}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:coeffint",
+  "trigger": "\\E \\HH \\Lnorm \\diff",
+  "fingerprint": "c5122bd0c06b75cd49a895770b87c8f3418f7a1732d074261410c61a8a9d5aaf",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\HH = \\mathbb{S}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:coerc",
+  "trigger": "\\E \\Gstar \\Lnorm \\diff \\inner",
+  "fingerprint": "7be911d61cc73e6295d60563640cf466008e0adc9b5d7abd8b809d3a7135e9b7",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\Gstar = G^{\\!\\top}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\diff = \\mathrm{d}, \\inner{a}{b} = \\langle a,\\,b\\rangle; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:compid",
+  "trigger": "\\E \\Nt \\diff",
+  "fingerprint": "aafacd95e4ac38766dd8830cdd75ad754721232a5283759a5c9383f2d22943cd",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\Nt = \\widetilde{N}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:contpert",
+  "trigger": "\\E \\F \\HH \\HN \\HW \\Lnorm \\R \\diff",
+  "fingerprint": "ecb00e5151e90e56e1250e70c9fe47d9516335c2cb4fa4d008858d5dabc87a02",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\F = \\mathcal{F}, \\HH = \\mathbb{S}, \\HN = \\mathcal{H}^2_N, \\HW = \\mathcal{H}^2_W, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\R = \\mathbb{R}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:contract",
+  "trigger": "\\E \\HH \\Lnorm \\diff",
+  "fingerprint": "98399235ee78b3677300d9820f13c5cb17179d50791de2e81a1c5597ff561eac",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\HH = \\mathbb{S}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:coupling",
+  "trigger": "\\E \\Lnorm",
+  "fingerprint": "eb67cae030719cbd8258ee88d69c48555c990224b901dab4612db666990003a6",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:couplingT",
+  "trigger": "\\E \\Lnorm",
+  "fingerprint": "eb67cae030719cbd8258ee88d69c48555c990224b901dab4612db666990003a6",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:dX",
+  "trigger": "\\E \\F \\Law \\Lnorm \\Nt \\diff",
+  "fingerprint": "9dd172cef01f1026aa495e51fb68721f4460fd5f4d55467771aae4ff86cab79b",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\F = \\mathcal{F}, \\Law = \\mathrm{Law}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\Nt = \\widetilde{N}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:dY",
+  "trigger": "\\E \\F \\Law \\Lnorm \\Nt \\diff",
+  "fingerprint": "9dd172cef01f1026aa495e51fb68721f4460fd5f4d55467771aae4ff86cab79b",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\F = \\mathcal{F}, \\Law = \\mathrm{Law}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\Nt = \\widetilde{N}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:dYlin",
+  "trigger": "\\F \\HN \\HW \\Nt \\diff",
+  "fingerprint": "59779e9843c18d710cf7e94a715f1de6c419794a7306c22bef138a69b2f4ddd2",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\F = \\mathcal{F}, \\HN = \\mathcal{H}^2_N, \\HW = \\mathcal{H}^2_W, \\Nt = \\widetilde{N}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:diagdrift",
+  "trigger": "\\E \\diff \\inner",
+  "fingerprint": "6614f51ad9612b2d25878186e076ae17101a7b78427b8fc3fc80025ce2eef370",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\diff = \\mathrm{d}, \\inner{a}{b} = \\langle a,\\,b\\rangle; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:forced",
+  "trigger": "\\F \\Law \\Nt \\Prob \\R \\diff",
+  "fingerprint": "6e95d16ec0d43e3e59ac4b392a3ff8d5d36e8ba90636e0d6c6af2f8419322135",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\F = \\mathcal{F}, \\Law = \\mathrm{Law}, \\Nt = \\widetilde{N}, \\Prob = \\mathbb{P}, \\R = \\mathbb{R}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:frozenbwd",
+  "trigger": "\\E \\F \\HH \\HN \\HW \\Law \\Nt \\R \\Ssp \\diff",
+  "fingerprint": "ef8aee719aa929ad43ce7610eae6de7be530924d8737e8c03fff1f1112349d65",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\F = \\mathcal{F}, \\HH = \\mathbb{S}, \\HN = \\mathcal{H}^2_N, \\HW = \\mathcal{H}^2_W, \\Law = \\mathrm{Law}, \\Nt = \\widetilde{N}, \\R = \\mathbb{R}, \\Ssp{X} = \\mathcal{S}^2(0,T;X), \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:frozenfwd",
+  "trigger": "\\E \\HH \\Law \\Nt \\Prob \\R \\Ssp \\diff",
+  "fingerprint": "a72c0729408b846798089067eac3f1966ae9f7df239c8d2e944157592fc2390a",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\HH = \\mathbb{S}, \\Law = \\mathrm{Law}, \\Nt = \\widetilde{N}, \\Prob = \\mathbb{P}, \\R = \\mathbb{R}, \\Ssp{X} = \\mathcal{S}^2(0,T;X), \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:fubiniiso",
+  "trigger": "\\Lnu \\Prob \\diff",
+  "fingerprint": "afa161dc6583c6a35e577920f56a78d2ffa2160398278a7afcd025eaeee73dfd",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\Lnu = L^2(\\nu), \\Prob = \\mathbb{P}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:fulllaw-eps",
+  "trigger": "\\Lnorm",
+  "fingerprint": "5625facc3e3fe8a79b95a0a6d48592984d682ed7375f010f98e23f8e0b234662",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:fwd",
+  "trigger": "\\E \\HH \\Lnorm \\diff",
+  "fingerprint": "50cbc07e1eefc3af9e60a6cf881a0b28184e43ec4a81275851891a3e4498d60d",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\HH = \\mathbb{S}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:fwddiff",
+  "trigger": "\\E \\HH \\Lnorm \\Nt \\diff",
+  "fingerprint": "e08118fabe499dad63b6b7e0f8f3ac048defa5e6b69622f418732ac1b59e9938",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\HH = \\mathbb{S}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\Nt = \\widetilde{N}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:hborel",
+  "trigger": "\\R",
+  "fingerprint": "f3d81f78d89578cf0708f975cb8c81d7c791427d8c9187ffca569edf249c1840",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\R = \\mathbb{R}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:intmono",
+  "trigger": "\\E \\Gstar \\Lnorm \\diff \\inner",
+  "fingerprint": "9d221f3b9e56232ce7594196244b4b7c26ce6508017ae6136ed16c7526aae86e",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\Gstar = G^{\\!\\top}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\diff = \\mathrm{d}, \\inner{a}{b} = \\langle a,\\,b\\rangle; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:itoY2",
+  "trigger": "\\Lnorm \\Nt \\diff \\inner",
+  "fingerprint": "0d38007d7cdf69c16bc91cd8975f35bdee6098b6b05e8ec872e54ff5a7376397",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\Nt = \\widetilde{N}, \\diff = \\mathrm{d}, \\inner{a}{b} = \\langle a,\\,b\\rangle; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:lipT",
+  "trigger": "\\F \\Lnorm \\R",
+  "fingerprint": "d7364901c25930fe4a5b31150457637d28473252f2875b5e5d35cb35747fd99b",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\F = \\mathcal{F}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\R = \\mathbb{R}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:lipfun",
+  "trigger": "\\diff",
+  "fingerprint": "a8927d20c6fa1463cc0e2cb8ac5b7ed3f06c6761531b28ea9ad95680e47f8347",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:margproj",
+  "trigger": "\\Lnorm \\Lnu \\diff",
+  "fingerprint": "6e78e59e86a35ba7c0ddd83e39bfd7f92c5287e187028db18979fc85740c0b9a",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\Lnu = L^2(\\nu), \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:mono",
+  "trigger": "\\E \\F \\Gstar \\Lnorm \\R \\diff \\inner",
+  "fingerprint": "3174f6abcc90245694c235ba18c9e49401abd752241d875c182077fd1b8da6dd",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\F = \\mathcal{F}, \\Gstar = G^{\\!\\top}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\R = \\mathbb{R}, \\diff = \\mathrm{d}, \\inner{a}{b} = \\langle a,\\,b\\rangle; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:monomargin",
+  "trigger": "\\E \\Gstar \\Lnorm \\diff \\inner",
+  "fingerprint": "93d5988c3689252f9d5fece5709d721eb8ab08c6b2ef6c2ef46c7da2598c2099",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\Gstar = G^{\\!\\top}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\diff = \\mathrm{d}, \\inner{a}{b} = \\langle a,\\,b\\rangle; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:monomarginu",
+  "trigger": "\\E \\Gstar \\Lnorm \\diff \\inner",
+  "fingerprint": "7a54aa98ecce9d453337bd582ab01fa94492a3ede87c7f372e4197062861568b",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\Gstar = G^{\\!\\top}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\diff = \\mathrm{d}, \\inner{a}{b} = \\langle a,\\,b\\rangle; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:mvfbsdej",
+  "trigger": "\\Law \\Lnorm \\Lnu \\Nt \\R \\diff",
+  "fingerprint": "5eb480b379a74b6cf3448b228b60d1dcb3f707265f25c5b1cbe6f82b684e917a",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\Law = \\mathrm{Law}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\Lnu = L^2(\\nu), \\Nt = \\widetilde{N}, \\R = \\mathbb{R}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:pertlip",
+  "trigger": "\\Lnorm",
+  "fingerprint": "0335152d84f396aa44381d7cc9ab706558ad240be85c01ad0540717b79783ebf",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:pertpair",
+  "trigger": "\\E \\Gstar \\Lnorm \\diff \\inner",
+  "fingerprint": "77fd318f00ec91fd4a695ce737e9aa9e56d23e92b09bad4743c41d3aad10f2fa",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\Gstar = G^{\\!\\top}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\diff = \\mathrm{d}, \\inner{a}{b} = \\langle a,\\,b\\rangle; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:stab",
+  "trigger": "\\E \\HH \\Lnorm \\diff",
+  "fingerprint": "6e23b8a686481d2b119834e694218bca5a212581d487f7983d8b5b3d250a0e1b",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\HH = \\mathbb{S}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:supE",
+  "trigger": "\\E \\Lnorm \\Nt \\diff \\inner",
+  "fingerprint": "69066031ecb004372ea47f44623161352a6f6ead47cb3d38fdb991579e47bd8f",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\Nt = \\widetilde{N}, \\diff = \\mathrm{d}, \\inner{a}{b} = \\langle a,\\,b\\rangle; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:terdiff",
+  "trigger": "\\E \\Law",
+  "fingerprint": "116673203b4e630139746461480f29ec99df5f9a0b1c2b65182172d52b7c6663",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\Law = \\mathrm{Law}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:termg",
+  "trigger": "\\E \\Law",
+  "fingerprint": "e5e65b5b630e579811ef01eae876fb0b8d2a6a7e480cc1b1489922be38a78fc2",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\Law = \\mathrm{Law}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:termmono",
+  "trigger": "\\E \\inner",
+  "fingerprint": "1ff3c48770a8bbe244b9a0a64dc92f938b6ba1357952a47e23573c7ccccdf7c1",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\inner{a}{b} = \\langle a,\\,b\\rangle; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:uniq-bwd",
+  "trigger": "\\E \\HH \\Law \\Nt \\R \\Ssp \\diff",
+  "fingerprint": "2299c84c37bf6e6d07e5bf1079800d77af7ce8de795c426b59b69acde29e973a",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\HH = \\mathbb{S}, \\Law = \\mathrm{Law}, \\Nt = \\widetilde{N}, \\R = \\mathbb{R}, \\Ssp{X} = \\mathcal{S}^2(0,T;X), \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:uniq-coeff",
+  "trigger": "\\E \\F \\HH \\Law \\Lnorm \\Nt \\R \\Ssp \\diff",
+  "fingerprint": "c5e7dae7414c6edbeb2afd8a9b9973a719f095ba7998511de1e2ebcb347197cb",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\F = \\mathcal{F}, \\HH = \\mathbb{S}, \\Law = \\mathrm{Law}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\Nt = \\widetilde{N}, \\R = \\mathbb{R}, \\Ssp{X} = \\mathcal{S}^2(0,T;X), \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:wgt",
+  "trigger": "\\E \\Lnorm \\diff",
+  "fingerprint": "89423b84d237fc8987ae2907a0af9b11b3606cf9e003618e99ac88dce07ccceb",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:eq:zeromean",
+  "trigger": "\\E \\Nt \\diff",
+  "fingerprint": "4a8de4ef68a42a19524cd25d158243c45a32a31e55ce45fb91402f26631627ea",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\Nt = \\widetilde{N}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:ex:concrete(i)",
+  "trigger": "\\E \\F \\Lnorm \\Lnu \\Nt \\R \\diff \\inner",
+  "fingerprint": "47a6c1888bbdc4c119d3ad41878f15e1138b07cb6bcc74e56b1a412e9525b3e4",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\F = \\mathcal{F}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\Lnu = L^2(\\nu), \\Nt = \\widetilde{N}, \\R = \\mathbb{R}, \\diff = \\mathrm{d}, \\inner{a}{b} = \\langle a,\\,b\\rangle; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:ex:concrete(ii)",
+  "trigger": "\\E \\Law \\Lnorm \\Lnu \\R \\diff \\inner",
+  "fingerprint": "3851ab63dbd704ca842a0e2e02f04f1106382b47421c7c2cf9044c55c5a0b916",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\Law = \\mathrm{Law}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\Lnu = L^2(\\nu), \\R = \\mathbb{R}, \\diff = \\mathrm{d}, \\inner{a}{b} = \\langle a,\\,b\\rangle; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:intro:mvfbsdej",
+  "trigger": "\\Law \\Lnorm \\Lnu \\Nt \\R \\diff",
+  "fingerprint": "5eb480b379a74b6cf3448b228b60d1dcb3f707265f25c5b1cbe6f82b684e917a",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\Law = \\mathrm{Law}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\Lnu = L^2(\\nu), \\Nt = \\widetilde{N}, \\R = \\mathbb{R}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:lem4.1:M2-infinite-activity",
+  "trigger": "\\E \\HN \\Lnorm \\Nt \\Prob \\diff \\inner",
+  "fingerprint": "a168d5c6b06b44afdce89e7b9de59219c5b0dca171c0a39da0bdadc228abe72e",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\HN = \\mathcal{H}^2_N, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\Nt = \\widetilde{N}, \\Prob = \\mathbb{P}, \\diff = \\mathrm{d}, \\inner{a}{b} = \\langle a,\\,b\\rangle; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:lemA1:pettis",
+  "trigger": "\\E \\Lnu \\Prob \\diff",
+  "fingerprint": "de5e663b5d7477134ab526ec981d0698551c612b4d3b24167d7ef3055e928acb",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\Lnu = L^2(\\nu), \\Prob = \\mathbb{P}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:lemA1:polish",
+  "trigger": "\\Law",
+  "fingerprint": "4468f51e4d8fb85e1f6e3d35f1ed7799fb3dbe79faddc1003ff88fca9dc30d5d",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\Law = \\mathrm{Law}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:rem2.6",
+  "trigger": "\\E \\Lnorm \\Lnu \\diff",
+  "fingerprint": "1c6f81b1bc658601b16d67131ff7cce182012f93026fae46eec274064e374eba",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\Lnu = L^2(\\nu), \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:sec2:difference-notation",
+  "trigger": "\\Law",
+  "fingerprint": "cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\Law = \\mathrm{Law}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:sec2:fubini-iso",
+  "trigger": "\\Lnu \\Prob \\diff",
+  "fingerprint": "afa161dc6583c6a35e577920f56a78d2ffa2160398278a7afcd025eaeee73dfd",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\Lnu = L^2(\\nu), \\Prob = \\mathbb{P}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:sec2:hborel-derivation",
+  "trigger": "\\R",
+  "fingerprint": "8974ddb463b86c2b7de75d6a70740d5ae4b014aeb8b7b59208d0238e8cd4c9f3",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\R = \\mathbb{R}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:sec2:prp",
+  "trigger": "\\F \\Nt \\diff",
+  "fingerprint": "db17ef09e29aaba5ae130b07f16da1d350bfcff9cfd551c68b79000b5b09063d",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\F = \\mathcal{F}, \\Nt = \\widetilde{N}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:sec2:separable-L2nu",
+  "trigger": "\\F \\Prob \\R \\diff",
+  "fingerprint": "90cbae8104b2345566337d2982f21d3bb10b2f024139bb058c19423bb1296d42",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\F = \\mathcal{F}, \\Prob = \\mathbb{P}, \\R = \\mathbb{R}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:sec2:tuple-notation",
+  "trigger": "\\Law \\R \\diff",
+  "fingerprint": "ab7fbc983e17a5b9235886da443a4e1a98f9283a09fcfb891dc85e6b092fc256",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\Law = \\mathrm{Law}, \\R = \\mathbb{R}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:sec3:HH-banach",
+  "trigger": "\\E \\HH \\HN \\HW \\Hweak \\Lnorm \\Lsp \\Prob \\R \\Ssp \\diff",
+  "fingerprint": "551286dac540371b521169b6e6a0e861b596438fd0ab4b196a659438efe4df1d",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\HH = \\mathbb{S}, \\HN = \\mathcal{H}^2_N, \\HW = \\mathcal{H}^2_W, \\Hweak = \\mathbb{H}^2, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\Lsp{X} = L^2(0,T;X), \\Prob = \\mathbb{P}, \\R = \\mathbb{R}, \\Ssp{X} = \\mathcal{S}^2(0,T;X), \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:sec3:margin-paragraph",
+  "trigger": "\\Lnu",
+  "fingerprint": "23dc0984d55a23cd584d56a864ed5056b9fb123935603b3cc75fbe8fccdf422d",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\Lnu = L^2(\\nu); none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:sec3:one-null-set",
+  "trigger": "\\HH",
+  "fingerprint": "50a645fe0ae55998cb3c0ee4547c990dc06667c7e43810173776909d6022b341",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\HH = \\mathbb{S}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:sec3:two-system-notation",
+  "trigger": "\\Law",
+  "fingerprint": "a3362603389cfff07f713ce49fedd731d218672220d998b1975cf2bdc3a128d6",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\Law = \\mathrm{Law}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:sec4:WP-def",
+  "trigger": "\\F \\HH \\Law \\Nt \\Prob \\R \\diff",
+  "fingerprint": "7a46d2596d9c1ba2c84b823eceaf0f8c0f3e90b8af99f5f252c9fad34e87413c",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\F = \\mathcal{F}, \\HH = \\mathbb{S}, \\Law = \\mathrm{Law}, \\Nt = \\widetilde{N}, \\Prob = \\mathbb{P}, \\R = \\mathbb{R}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:sec4:coeffint",
+  "trigger": "\\E \\HH \\Law \\Lnorm \\diff",
+  "fingerprint": "9b4835a09d4a96730317d9a3f110c73d021c07f2818d46167bfef20bf557a734",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\E = \\mathbb{E}, \\HH = \\mathbb{S}, \\Law = \\mathrm{Law}, \\Lnorm{u} = \\lVert u\\rVert_{L^2(\\nu)}, \\diff = \\mathrm{d}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:sec4:proof-thm35",
+  "trigger": "\\HH",
+  "fingerprint": "b2ec171b301f7adcfcd1839bdf9f892a2d35c3e631135d347dc9506cdf473a56",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\HH = \\mathbb{S}; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:sec4:supremum-criterion",
+  "trigger": "\\Prob \\diff \\inner",
+  "fingerprint": "dfbd28b0a591b82703f11cc1929876e5b2383e0b09afa7d4ae6331ec55b792a3",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\Prob = \\mathbb{P}, \\diff = \\mathrm{d}, \\inner{a}{b} = \\langle a,\\,b\\rangle; none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
+  "code": "source-macro-unpinned",
+  "subject": "A:sec5:overview",
+  "trigger": "\\Lnu",
+  "fingerprint": "8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52",
+  "rationale": "Each macro is notation, a symbol, font, operator or space name defined in paper/macros.tex: \\Lnu = L^2(\\nu); none carries a value of the claim.",
+  "by": "claude-auditor"
+ },
+ {
   "code": "source-region",
   "subject": "A:eq:coefmeas",
   "trigger": "starts-mid-sentence",
