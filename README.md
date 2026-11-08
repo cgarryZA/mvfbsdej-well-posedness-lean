@@ -8,14 +8,14 @@
 A Lean 4 + Mathlib formalisation of the paper *Well-posedness of fully coupled McKean–Vlasov
 FBSDEs with jumps under full-tuple law dependence* (Chunrong Feng and Christian Garry), in its
 revision of [arXiv:2608.23203v1](https://arxiv.org/abs/2608.23203v1) at commit
-[`1f67672`](https://github.com/cgarryZA/mvfbsdej-well-posedness/tree/1f67672).
+[`c89cc20`](https://github.com/cgarryZA/mvfbsdej-well-posedness/tree/c89cc20).
 
 **The audits.** Open the paper with its Lean beside it, in
 [MachineChecked](https://github.com/cgarryZA/MachineChecked)'s reader: every claim of the paper,
 the Lean statement and proof linked to it, and what is established.
 
 - [The latest manuscript](https://cgarryza.github.io/mvfbsdej-well-posedness-lean/latest/)
-  (commit `1f67672`), built from `main`.
+  (commit `c89cc20`), built from `main`.
 - [arXiv v1](https://cgarryza.github.io/mvfbsdej-well-posedness-lean/v1/), built from the branch
   `audit-v1`: the Lean of commit `ba94c06`, frozen, with its audit configuration (the paper's
   published identity and its claims' source regions pinned at arXiv v1).
@@ -97,7 +97,7 @@ evidence and publishes the evidence directory as the run's `comparator-evidence`
 
 The paper is by Chunrong Feng and Christian Garry. This repository formalises its revision of
 [arXiv:2608.23203v1](https://arxiv.org/abs/2608.23203v1) at commit
-[`1f67672`](https://github.com/cgarryZA/mvfbsdej-well-posedness/tree/1f67672) of the manuscript
+[`c89cc20`](https://github.com/cgarryZA/mvfbsdej-well-posedness/tree/c89cc20) of the manuscript
 repository, whose LaTeX source is vendored in `manuscript/paper/` (the main file
 `wellposedness.tex` and its sections).
 

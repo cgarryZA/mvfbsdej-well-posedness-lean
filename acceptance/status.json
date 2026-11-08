@@ -118,7 +118,9 @@
    "clauses": [
     {
      "accept": null,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "MVFBSDEJ.WellPosedness.Spec.Assumption25"
+     ],
      "corrects": null,
      "defs": [
       "MVFBSDEJ.WellPosedness.Spec.Assumption25"
@@ -139,8 +141,8 @@
    "paper": "A",
    "scope": "definition",
    "scope_note": "the convention that all hypotheses are imposed along 𝒟_t only and the difference notation (02-model-assumptions.tex lines 69–84) are pinned in A:sec2:difference-notation; Assumption25 and Mono27At ask the expectations of the terminal and interior pairings to exist (Integrable), which the printed inequalities presuppose; under (2.3) and Assumption 2.3 this holds for all inputs at almost every time (integrable_interiorPairing_of_diagonalLipschitzHAt, integrable_terminalPairing, Assumption25.of_monotone), and every theorem that takes Assumption 2.5 with Assumption 2.3 assumes both; Remarks 2.10 and 5.6 take Assumption 2.5 without Assumption 2.3, and there the integrability is part of their hypothesis",
-   "scope_reviewed": true,
-   "status": "definition: reviewed"
+   "scope_reviewed": false,
+   "status": "definition: author-reviewed"
   },
   {
    "clauses": [
@@ -1412,7 +1414,9 @@
     {
      "accept": "MVFBSDEJ.Acceptance.ex_expfunc",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "MVFBSDEJ.PaperSpec.ex_expfunc"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1423,14 +1427,16 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_expfunc",
      "spec_hash": "ed839d34f480cba15a6f123acd31afd5",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "MVFBSDEJ.Acceptance.ex_expfunc_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "MVFBSDEJ.Acceptance.ex_expfunc_limin",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "MVFBSDEJ.PaperSpec.ex_expfunc_limin"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1441,14 +1447,16 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_expfunc_limin",
      "spec_hash": "ed839d34f480cba1953e11aa74b157a5",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "MVFBSDEJ.Acceptance.ex_expfunc_limin_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "MVFBSDEJ.Acceptance.ex_expfunc_jump",
      "accept_ok": true,
-     "author_reviewed": [],
+     "author_reviewed": [
+      "MVFBSDEJ.PaperSpec.ex_expfunc_jump"
+     ],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1459,7 +1467,7 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_expfunc_jump",
      "spec_hash": "ed839d34f480cba1e4ed71c267b0a369",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-auditor",
+     "spec_review": "reviewed by claude-author",
      "witness": "MVFBSDEJ.Acceptance.ex_expfunc_jump_hypotheses",
      "witness_ok": true
     }
@@ -1469,9 +1477,9 @@
    "number": "Example 5.3",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "'Their Lévy measure is the ν of the present setting' (line 224) and 'the counterpart of the origin integrability imposed in [LiMin, (H3.1)]' (lines 229–230) are statements about cited work; the joint measurability of ψ̄, a hypothesis of ex_expfunc_limin needed for the measurability of φ̄ that the class requires, is not printed among the hypotheses of lines 225–230 and is read from 'the deterministic-coefficient … interactions of [LiMin]' (line 223), whose coefficients are measurable; the standing countably generated mark space of §2 is assumed; the origin conditions of lines 228–230 and 264 and the joint Borel measurability of 𝐇 (line 258) are hypotheses of the embedding whose consequences for the embedded coefficients (the origin values of Assumption 2.2, (2.3) for h) are not claimed, lines 220–221 leaving the state-variable Lipschitz and integrability requirements to the full coefficient system",
-   "scope_reviewed": true,
-   "status": "formal: accepted"
+   "scope_note": "'Their Lévy measure is the ν of the present setting' (line 224) and 'the counterpart of the origin integrability imposed in [LiMin, (H3.1)]' (lines 230–231) are statements about cited work; the joint measurability of ψ̄ is printed among its hypotheses (line 226), and the joint measurability of φ̄ that the class requires is the sentence of lines 248–250, both in ex_expfunc_limin; the standing countably generated mark space of §2 is assumed; the origin conditions of lines 229–231 and 267 and the joint Borel measurability of 𝐇 (line 261) are hypotheses of the embedding whose consequences for the embedded coefficients (the origin values of Assumption 2.2, (2.3) for h) are not claimed, lines 220–221 leaving the state-variable Lipschitz and integrability requirements to the full coefficient system",
+   "scope_reviewed": false,
+   "status": "formal: proved, author-reviewed"
   },
   {
    "clauses": [
@@ -1607,7 +1615,7 @@
    "number": "Example 5.4",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "'Example 5.1(i) supplies such a baseline' (line 291) is the content of A:ex:concrete (ex_concrete_i_pairing, the margin of Example 5.1(i)); 'and beyond the linear jump-integrand expectations of the cited models' (lines 312–313) is a statement about cited work; the closing sentence on the smallness and the weak-coupling route (lines 345–347) is exposition; the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; 'an expectation functional already covered by Example 5.3' (lines 316–318) is ex_fulllaw_affineQ: the identity, and the measurability and the Lipschitz bound of the kernel θ' ↦ a + Σ_j c_j φ_j(u') that the class of Example 5.3 requires",
+   "scope_note": "'Example 5.1(i) supplies such a baseline' (line 294) is the content of A:ex:concrete (ex_concrete_i_pairing, the margin of Example 5.1(i)); 'and beyond the linear jump-integrand expectations of the cited models' (lines 315–316) is a statement about cited work; the closing sentence on the smallness and the weak-coupling route (lines 348–350) is exposition; the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; 'an expectation functional already covered by Example 5.3' (lines 319–321) is ex_fulllaw_affineQ: the identity, and the measurability and the Lipschitz bound of the kernel θ' ↦ a + Σ_j c_j φ_j(u') that the class of Example 5.3 requires",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -1961,7 +1969,7 @@
    "number": "Example 5.5",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the dealer-market reading (requests for quotes, valuation curves, routing, quotes affine in the curve, the uncontrolled exposure change at an event) is modelling and is not stated; the finite-player inspiration (Cont and Xiong) is a statement about cited work; 'The computation uses only the joint law π; no auxiliary random variable on Ω is needed' (lines 436–438) is a remark on the proof of ex_dealer_mono; 'dependence nonlinear in the law itself is that of Example 5.4' (lines 461–462) refers to A:ex:fulllaw; the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; 'an expectation kernel in the sense of Example 5.3, with L²(ν) in the role of K' (lines 460–461) is ex_dealer_affine: the representation, the measurability and the Lipschitz bound of the kernel (θ, θ') ↦ ∇V(u − u'), whose origin value ∇V(0) = 0 makes the origin condition of the jump class of Example 5.3 hold trivially; the symmetrisation in the proof of monotonicity (lines 414–436: the crowding pairing as the π ⊗ π-integral of Φ, its form with (u, u′) and (v, v′) exchanged, and their average, nonnegative because ∇V is monotone) is a step of the proof of ex_dealer_mono, whose first conjunct states its consequence 𝔼⟨A_{μ^U}(U) − A_{μ′^U}(U′), U − U′⟩ ≥ 0; the identity itself is stated only under λ ⊗ λ (lines 505–511), as ex_dealer_symm",
+   "scope_note": "the dealer-market reading (requests for quotes, valuation curves, routing, quotes affine in the curve, the uncontrolled exposure change at an event) is modelling and is not stated; the finite-player inspiration (Cont and Xiong) is a statement about cited work; 'The computation uses only the joint law π; no auxiliary random variable on Ω is needed' (lines 439–441) is a remark on the proof of ex_dealer_mono; 'dependence nonlinear in the law itself is that of Example 5.4' (lines 464–465) refers to A:ex:fulllaw; the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; 'an expectation kernel in the sense of Example 5.3, with L²(ν) in the role of K' (lines 463–464) is ex_dealer_affine: the representation, the measurability and the Lipschitz bound of the kernel (θ, θ') ↦ ∇V(u − u'), whose origin value ∇V(0) = 0 makes the origin condition of the jump class of Example 5.3 hold trivially; the symmetrisation in the proof of monotonicity (lines 417–439: the crowding pairing as the π ⊗ π-integral of Φ, its form with (u, u′) and (v, v′) exchanged, and their average, nonnegative because ∇V is monotone) is a step of the proof of ex_dealer_mono, whose first conjunct states its consequence 𝔼⟨A_{μ^U}(U) − A_{μ′^U}(U′), U − U′⟩ ≥ 0; the identity itself is stated only under λ ⊗ λ (lines 508–514), as ex_dealer_symm",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -2009,7 +2017,7 @@
    "number": "Remark 5.6",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "'The proofs consume the tuple law through a single mechanism: the W₂ term of Assumption 2.3, dominated at every use by the synchronous coupling bound (2.8)' (lines 533–535) is a statement about the proofs, of which the clause eq_coupling states the bound (2.8); the closing sentence (lines 543–546: nothing is gained by restricting the coefficients to the (X, Y, Z)-marginal law, the estimates close at the full tuple law, and Example 5.5 exhibits that scope) is exposition, the scope it names being that of A:ex:dealer; the explicit pair of the argument (lines 538–542: for w ∈ L²(ν) with G*w ≠ 0 and a symmetric sign ξ independent of the other components, U = ξw and U′ = −ξw with equal other components have one law, so coefficients reading u only through the law make the left-hand side of (2.7) vanish, while its right-hand side is −4β₁‖G*w‖² < 0) is the proof of the stated consequence rem_freelaw (a pair of 𝒟_t with one law and the same (X, Y, Z) at which h differs with positive probability), not a separate clause",
+   "scope_note": "'The proofs consume the tuple law through a single mechanism: the W₂ term of Assumption 2.3, dominated at every use by the synchronous coupling bound (2.8)' (lines 536–538) is a statement about the proofs, of which the clause eq_coupling states the bound (2.8); the closing sentence (lines 546–549: nothing is gained by restricting the coefficients to the (X, Y, Z)-marginal law, the estimates close at the full tuple law, and Example 5.5 exhibits that scope) is exposition, the scope it names being that of A:ex:dealer; the explicit pair of the argument (lines 541–545: for w ∈ L²(ν) with G*w ≠ 0 and a symmetric sign ξ independent of the other components, U = ξw and U′ = −ξw with equal other components have one law, so coefficients reading u only through the law make the left-hand side of (2.7) vanish, while its right-hand side is −4β₁‖G*w‖² < 0) is the proof of the stated consequence rem_freelaw (a pair of 𝒟_t with one law and the same (X, Y, Z) at which h differs with positive probability), not a separate clause",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -2183,7 +2191,7 @@
    "number": "Remark 5.7",
    "paper": "A",
    "scope": "formal",
-   "scope_note": "the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; 'arbitrary nonlinear full-tuple law dependence' (lines 550–551) is read both as the three families of Example 5.4 with arbitrary bounded Lipschitz profiles, features and outer function (ex_fulllaw_pert, ex_fulllaw_wp) and, since Example 5.4 concludes through (3.5) and Corollary 3.6 (05-examples.tex lines 338–340), as any θ-independent W₂-Lipschitz perturbation with ‖G‖ L_p below the margin (cor_robust_lip, cor_robust_wp)",
+   "scope_note": "the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; 'arbitrary nonlinear full-tuple law dependence' (lines 553–554) is read both as the three families of Example 5.4 with arbitrary bounded Lipschitz profiles, features and outer function (ex_fulllaw_pert, ex_fulllaw_wp) and, since Example 5.4 concludes through (3.5) and Corollary 3.6 (05-examples.tex lines 341–343), as any θ-independent W₂-Lipschitz perturbation with ‖G‖ L_p below the margin (cor_robust_lip, cor_robust_wp)",
    "scope_reviewed": true,
    "status": "formal: accepted"
   },
@@ -6067,9 +6075,10 @@
  ],
  "summary": {
   "A": {
-   "definition: reviewed": 14,
-   "formal: accepted": 74,
-   "formal: proved, author-reviewed": 2,
+   "definition: author-reviewed": 1,
+   "definition: reviewed": 13,
+   "formal: accepted": 73,
+   "formal: proved, author-reviewed": 3,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
    "out of scope: proof-step": 2
