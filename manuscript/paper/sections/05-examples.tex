@@ -223,7 +223,8 @@ system.
 This class contains the deterministic-coefficient, finite-activity independent-copy
 interactions of~\cite{LiMin}. Their L\'evy measure is the $\nu$ of the present setting. Let
 $\bar\psi$ be the two-point kernel of their drift, diffusion or driver, and $\bar h$ that of
-their jump coefficient. Both are assumed Lipschitz in all arguments except $t$, with
+their jump coefficient. Both are assumed jointly measurable and Lipschitz in all arguments
+except $t$, with
 constant uniform in $t$ and taken with respect to the Euclidean norm on each argument block
 $(x,y,z,u(e))$ and $(x',y',z',u'(e))$, and with square-integrable origin values,
 $\bar\psi(\cdot,0,\dots,0)\in L^2(0,T)$, the counterpart of the origin integrability
@@ -244,8 +245,10 @@ with a constant finite when $\nu(E)<\infty$,
 \bigl(|\theta_1-\theta_2|_{\mathcal H}+|\theta_1'-\theta_2'|_{\mathcal H}\bigr),
 \end{aligned}
 \]
-so $\bar\phi$ is Lipschitz on $\mathcal H\times\mathcal H$. The pointwise values $u(e),u'(e)$ of the
-$L^2(\nu)$-components enter only under the $\nu$-integral, so the functional is
+so $\bar\phi$ is Lipschitz on $\mathcal H\times\mathcal H$. At each $(\theta,\theta')$ it is
+measurable in $t$ by Fubini's theorem, and it is continuous in $(\theta,\theta')$, so it is
+jointly measurable on $[0,T]\times\mathcal H\times\mathcal H$, $\mathcal H$ being separable.
+The pointwise values $u(e),u'(e)$ of the $L^2(\nu)$-components enter only under the $\nu$-integral, so the functional is
 well defined on equivalence classes: changing $u$ on a $\nu$-null set changes the
 integrand on a $\nu$-null set of marks.
 

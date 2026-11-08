@@ -31,8 +31,7 @@ inequality.
 
 * `exists_isLocalBrownianIntegral`, `exists_isLocalCompensatedIntegral` — existence along a
   localising sequence.
-* `IsLocalBrownianIntegral.lintegral_biSup_le`, `IsLocalCompensatedIntegral.lintegral_biSup_le` —
-  `𝔼 sup_{t ≤ T} |M_t| ≤ 9 𝔼 (∫_0^T |H|²)^{1/2}`.
+* `IsLocalBrownianIntegral.lintegral_biSup_le` — `𝔼 sup_{t ≤ T} |M_t| ≤ 9 𝔼 (∫_0^T |H|²)^{1/2}`.
 * `IsLocalBrownianIntegral.integral_sub_eq_zero`,
   `IsLocalCompensatedIntegral.integral_sub_eq_zero` — `𝔼[M_T − M_t] = 0`.
 -/
@@ -740,83 +739,6 @@ theorem exists_isLocalCompensatedIntegral [ℱ.IsRightContinuous]
     · exact (hω (K ω)).1 hKk
         ((WithTop.coe_le_coe.mpr ht.2).trans (hKspec ω hωG))
     · exact ((hω (K ω)).2 hkK hle).symm
-
-/-- **The Burkholder–Davis–Gundy inequality at `p = 1` for a local compensated integral.** Over a
-right-continuous filtration whose null sets lie in its time-`0` field,
-`𝔼 sup_{t ≤ T} |M_t| ≤ 9 𝔼 (∫_0^T ∫_E φ_s(e)² ν(de) ds)^{1/2}`. -/
-theorem IsLocalCompensatedIntegral.lintegral_biSup_le [ℱ.IsRightContinuous]
-    (hℱ0 : ∀ t : ℝ, t ≤ 0 → ℱ.rightCont 0 ≤ ℱ.rightCont t)
-    (hnull : ∀ s : Set Ω, MeasurableSet s → P s = 0 → MeasurableSet[ℱ 0] s)
-    {T : ℝ} (hT : 0 < T) {φ : Ω → ℝ → E → ℝ} {M : ℝ → Ω → ℝ}
-    (hM : IsLocalCompensatedIntegral N ℱ hℱ T φ M) :
-    ∫⁻ ω, ⨆ t ∈ Icc (0 : ℝ) T, (‖M t ω‖₊ : ℝ≥0∞) ∂P
-      ≤ 9 * ∫⁻ ω, (∫⁻ s in Icc (0 : ℝ) T, ∫⁻ e, (‖φ ω s e‖₊ : ℝ≥0∞) ^ 2 ∂ν) ^ (1 / 2 : ℝ)
-        ∂P := by
-  obtain ⟨-, hMr, -, τ, hτ, hmono, hex, hk⟩ := hM
-  set A : ℕ → Set Ω := fun k => {ω | ((T : ℝ) : WithTop ℝ) ≤ τ k ω} with hAdef
-  have hAm : ∀ k, MeasurableSet (A k) := fun k => by
-    have : A k = {ω | τ k ω < ((T : ℝ) : WithTop ℝ)}ᶜ := by
-      ext ω
-      simp [hAdef, not_lt]
-    rw [this]
-    exact (ℱ.le T _ ((hτ k).measurableSet_lt T)).compl
-  have hAdir : Directed (· ⊆ ·) A :=
-    Monotone.directed_le fun k k' hkk' ω hω => le_trans hω (hmono ω hkk')
-  have hAunion : ∀ᵐ ω ∂P, ω ∈ ⋃ k, A k := by
-    filter_upwards [hex] with ω hω
-    obtain ⟨k, hk⟩ := hω
-    exact mem_iUnion.2 ⟨k, hk⟩
-  have hbound : ∀ k, ∫⁻ ω in A k, ⨆ t ∈ Icc (0 : ℝ) T, (‖M t ω‖₊ : ℝ≥0∞) ∂P
-      ≤ 9 * ∫⁻ ω, (∫⁻ s in Icc (0 : ℝ) T, ∫⁻ e, (‖φ ω s e‖₊ : ℝ≥0∞) ^ 2 ∂ν) ^ (1 / 2 : ℝ)
-        ∂P := by
-    intro k
-    obtain ⟨hm, hp, hq, hagree⟩ := hk k
-    obtain ⟨V, -, hVae, hVr, -⟩ := Poisson.Compensated.exists_everywhere_cadlag_stochasticIntegral
-      N ℱ hℱ _ hm hp hq hℱ0 hnull
-    have hBDG := lintegral_biSup_le_compensated N ℱ hℱ hm hp hq hT (M := V)
-      (fun t _ => hVae t) (ae_of_all _ fun ω t _ => hVr ω t)
-    have hD : ∀ᵐ ω ∂P, (∀ q : ℚ, (q : ℝ) ∈ Icc (0 : ℝ) T →
-        (((q : ℝ) : ℝ) : WithTop ℝ) ≤ τ k ω → M q ω = V q ω)
-        ∧ (((T : ℝ) : WithTop ℝ) ≤ τ k ω → M T ω = V T ω) := by
-      have hloc : ∀ t ∈ Icc (0 : ℝ) T, ∀ᵐ ω ∂P,
-          ((t : ℝ) : WithTop ℝ) ≤ τ k ω → M t ω = V t ω := by
-        intro t ht
-        filter_upwards [hagree t ht, hVae t] with ω h1 h2 hle
-        rw [h1 hle, h2]
-      refine (ae_all_iff.2 fun q => ?_).and (hloc T ⟨hT.le, le_rfl⟩)
-      by_cases hq : (q : ℝ) ∈ Icc (0 : ℝ) T
-      · filter_upwards [hloc q hq] with ω hω _ hle
-        exact hω hle
-      · exact ae_of_all _ fun ω h => absurd h hq
-    have hle : ∀ᵐ ω ∂P, ω ∈ A k →
-        ⨆ t ∈ Icc (0 : ℝ) T, (‖M t ω‖₊ : ℝ≥0∞) ≤ ⨆ t ∈ Icc (0 : ℝ) T, (‖V t ω‖₊ : ℝ≥0∞) := by
-      filter_upwards [hD] with ω hω hωA
-      have hωA' : ((T : ℝ) : WithTop ℝ) ≤ τ k ω := hωA
-      have heq : ∀ t ∈ Icc (0 : ℝ) T, M t ω = V t ω := by
-        intro t ht
-        rcases eq_or_lt_of_le ht.2 with htT | htT
-        · rw [htT]
-          exact hω.2 hωA'
-        · refine eq_of_rightCont_of_eq_rat (f := fun s => M s ω) (g := fun s => V s ω) htT
-            (hMr ω t ⟨ht.1, htT⟩) (hVr ω t) fun q hq1 hq2 => ?_
-          exact hω.1 q ⟨ht.1.trans hq1.le, hq2.le⟩
-            ((WithTop.coe_le_coe.mpr hq2.le).trans hωA')
-      exact le_of_eq (iSup_congr fun t => iSup_congr fun ht => by rw [heq t ht])
-    calc ∫⁻ ω in A k, ⨆ t ∈ Icc (0 : ℝ) T, (‖M t ω‖₊ : ℝ≥0∞) ∂P
-        ≤ ∫⁻ ω in A k, ⨆ t ∈ Icc (0 : ℝ) T, (‖V t ω‖₊ : ℝ≥0∞) ∂P :=
-          lintegral_mono_ae ((ae_restrict_iff' (hAm k)).2 hle)
-      _ ≤ ∫⁻ ω, ⨆ t ∈ Icc (0 : ℝ) T, (‖V t ω‖₊ : ℝ≥0∞) ∂P := setLIntegral_le_lintegral _ _
-      _ ≤ _ := hBDG
-      _ ≤ 9 * ∫⁻ ω, (∫⁻ s in Icc (0 : ℝ) T, ∫⁻ e, (‖φ ω s e‖₊ : ℝ≥0∞) ^ 2 ∂ν) ^ (1 / 2 : ℝ)
-            ∂P := by
-          gcongr with ω s e
-          split_ifs <;> simp
-  calc ∫⁻ ω, ⨆ t ∈ Icc (0 : ℝ) T, (‖M t ω‖₊ : ℝ≥0∞) ∂P
-      = ∫⁻ ω in ⋃ k, A k, ⨆ t ∈ Icc (0 : ℝ) T, (‖M t ω‖₊ : ℝ≥0∞) ∂P := by
-        rw [Measure.restrict_eq_self_of_ae_mem hAunion]
-    _ = ⨆ k, ∫⁻ ω in A k, ⨆ t ∈ Icc (0 : ℝ) T, (‖M t ω‖₊ : ℝ≥0∞) ∂P :=
-        setLIntegral_iUnion_of_directed _ hAdir
-    _ ≤ _ := iSup_le hbound
 
 /-- **The increments of a local compensated integral have mean zero** when
 `𝔼 (∫_0^T ∫_E φ_s(e)² ν(de) ds)^{1/2} < ∞`: for `t ∈ [0, T]`, `M_T − M_t` is integrable with mean

@@ -4,7 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.PaperSpec.Sec4Difference
-import MVFBSDEJ.WellPosedness.Martingale.LocalIntegral
+import MVFBSDEJ.PaperSpec.Sec4Davis
 
 /-!
 # The four stochastic integrals of the `G`-energy identity of Lemma 4.3 and (4.18)
@@ -29,8 +29,9 @@ bounds are finite, so the supremum criterion gives the four local martingales ze
 increments. The fifth integrand `⟨λ δh + q^h, Gᵀ δU⟩` is integrable against `dP ⊗ ds ⊗ ν` by the
 Cauchy–Schwarz inequality.
 
-`c_BDG` is the constant of the Burkholder–Davis–Gundy inequality fixed in §4; each bound holds for
-every value of it at least some `c₀ > 0`. `‖G‖` is the operator norm, `q = δq`, and `δh` is
+`c_BDG` is the constant of the Burkholder–Davis–Gundy inequality fixed in §4, used here at `p = 1`;
+each bound holds for every constant `c` of that inequality (`MVFBSDEJ.PaperSpec.DavisValid`).
+`‖G‖` is the operator norm, `q = δq`, and `δh` is
 evaluated at the predictable tuples, through the canonical representative
 `MVFBSDEJ.WellPosedness.Existence.coeffJump`; `λ δh + q^h` enters the integrals through any
 jointly measurable, marked progressively measurable integrand of finite energy that agrees with it
@@ -61,17 +62,17 @@ open MVFBSDEJ.WellPosedness.System MVFBSDEJ.WellPosedness.Existence
 
 universe u v w
 
-/-- **The first bound of (4.18).** There is `c₀ > 0` such that, for every value `c ≥ c₀` of the
-constant `c_BDG`, under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3) and
-Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`,
-`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with `X^k_T ∈ L²`, `ℱ₀`-measurable
-initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` — the integrand `⟨G δX_{s−}, δZ_s ·⟩` has a
-local Itô integral `M_t = ∫_0^t ⟨G δX_{s−}, δZ_s dW_s⟩` on `[0, T]`, and every such `M` satisfies `𝔼
-sup_{t ≤ T} |M_t| ≤ c ‖G‖ (𝔼 sup_{t ≤ T} |δX_t|²)^{1/2} (𝔼 ∫_0^T |δZ_t|²_F dt)^{1/2} < ∞` and, for
-every `t ∈ [0, T]`, `𝔼[M_T − M_t] = 0` with `M_T − M_t` integrable; the expectations of nonnegative
-quantities are read in `[0, ∞]`. -/
+/-- **The first bound of (4.18).** For every constant `c` of the Burkholder–Davis–Gundy inequality
+at `p = 1` (`DavisValid c`), under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3)
+and Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`,
+`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with `X^k_T ∈ L²`, `ℱ₀`-measurable initial
+data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` — the integrand `⟨G δX_{s−}, δZ_s ·⟩` has a local Itô
+integral `M_t = ∫_0^t ⟨G δX_{s−}, δZ_s dW_s⟩` on `[0, T]`, and every such `M` satisfies
+`𝔼 sup_{t ≤ T} |M_t| ≤ c ‖G‖ (𝔼 sup_{t ≤ T} |δX_t|²)^{1/2} (𝔼 ∫_0^T |δZ_t|²_F dt)^{1/2} < ∞` and,
+for every `t ∈ [0, T]`, `𝔼[M_T − M_t] = 0` with `M_T − M_t` integrable; the expectations of
+nonnegative quantities are read in `[0, ∞]`. -/
 def eq_bdg4_XZ : Prop :=
-  ∃ c₀ : ℝ, 0 < c₀ ∧ ∀ c : ℝ, c₀ ≤ c →
+  ∀ c : ℝ, DavisValid.{u, v, w} c →
     ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
       [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
       (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
@@ -117,18 +118,18 @@ def eq_bdg4_XZ : Prop :=
         ∧ ∀ t ∈ Set.Icc (0 : ℝ) T, Integrable (fun ω => M T ω - M t ω) P
           ∧ ∫ ω, (M T ω - M t ω) ∂P = 0
 
-/-- **The second bound of (4.18).** There is `c₀ > 0` such that, for every value `c ≥ c₀` of the
-constant `c_BDG`, under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3) and
-Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`,
-`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with `X^k_T ∈ L²`, `ℱ₀`-measurable
-initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` — the integrand
-`⟨G (λ δσ_s + q^σ_s) ·, δY_{s−}⟩` has a local Itô integral
-`M_t = ∫_0^t ⟨G (λ δσ_s + q^σ_s) dW_s, δY_{s−}⟩` on `[0, T]`, and every such `M` satisfies `𝔼 sup_{t
-≤ T} |M_t| ≤ c ‖G‖ (𝔼 sup_{t ≤ T} |δY_t|²)^{1/2} (𝔼 ∫_0^T |λ δσ_t + q^σ_t|²_F dt)^{1/2} < ∞` and,
-for every `t ∈ [0, T]`, `𝔼[M_T − M_t] = 0` with `M_T − M_t` integrable, with `q = δq`; the
-expectations of nonnegative quantities are read in `[0, ∞]`. -/
+/-- **The second bound of (4.18).** For every constant `c` of the Burkholder–Davis–Gundy inequality
+at `p = 1` (`DavisValid c`), under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3)
+and Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`,
+`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with `X^k_T ∈ L²`, `ℱ₀`-measurable initial
+data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` — the integrand `⟨G (λ δσ_s + q^σ_s) ·, δY_{s−}⟩` has
+a local Itô integral `M_t = ∫_0^t ⟨G (λ δσ_s + q^σ_s) dW_s, δY_{s−}⟩` on `[0, T]`, and every such
+`M` satisfies
+`𝔼 sup_{t ≤ T} |M_t| ≤ c ‖G‖ (𝔼 sup_{t ≤ T} |δY_t|²)^{1/2} (𝔼 ∫_0^T |λ δσ_t + q^σ_t|²_F dt)^{1/2}
+< ∞` and, for every `t ∈ [0, T]`, `𝔼[M_T − M_t] = 0` with `M_T − M_t` integrable, with `q = δq`;
+the expectations of nonnegative quantities are read in `[0, ∞]`. -/
 def eq_bdg4_sigmaY : Prop :=
-  ∃ c₀ : ℝ, 0 < c₀ ∧ ∀ c : ℝ, c₀ ≤ c →
+  ∀ c : ℝ, DavisValid.{u, v, w} c →
     ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
       [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
       (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
@@ -180,17 +181,18 @@ def eq_bdg4_sigmaY : Prop :=
         ∧ ∀ t ∈ Set.Icc (0 : ℝ) T, Integrable (fun ω => M T ω - M t ω) P
           ∧ ∫ ω, (M T ω - M t ω) ∂P = 0
 
-/-- **The third bound of (4.18).** There is `c₀ > 0` such that, for every value `c ≥ c₀` of the
-constant `c_BDG`, under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3) and
-Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`,
-`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with `X^k_T ∈ L²`, `ℱ₀`-measurable
-initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` — the marked integrand `⟨G δX_{s−}, δU_s(e)⟩`
-has a local compensated Poisson integral `M_t = ∫_0^t ∫_E ⟨G δX_{s−}, δU_s(e)⟩ Ñ(ds, de)` on
-`[0, T]`, and every such `M` satisfies `𝔼 sup_{t ≤ T} |M_t| ≤ c ‖G‖ (𝔼 sup_{t ≤ T} |δX_t|²)^{1/2} (𝔼
-∫_0^T ‖δU_t‖²_{L²(ν)} dt)^{1/2} < ∞` and, for every `t ∈ [0, T]`, `𝔼[M_T − M_t] = 0` with
-`M_T − M_t` integrable; the expectations of nonnegative quantities are read in `[0, ∞]`. -/
+/-- **The third bound of (4.18).** For every constant `c` of the Burkholder–Davis–Gundy inequality
+at `p = 1` (`DavisValid c`), under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3)
+and Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`,
+`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with `X^k_T ∈ L²`, `ℱ₀`-measurable initial
+data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` — the marked integrand `⟨G δX_{s−}, δU_s(e)⟩` has a
+local compensated Poisson integral `M_t = ∫_0^t ∫_E ⟨G δX_{s−}, δU_s(e)⟩ Ñ(ds, de)` on `[0, T]`, and
+every such `M` satisfies
+`𝔼 sup_{t ≤ T} |M_t| ≤ c ‖G‖ (𝔼 sup_{t ≤ T} |δX_t|²)^{1/2} (𝔼 ∫_0^T ‖δU_t‖²_{L²(ν)} dt)^{1/2} < ∞`
+and, for every `t ∈ [0, T]`, `𝔼[M_T − M_t] = 0` with `M_T − M_t` integrable; the expectations of
+nonnegative quantities are read in `[0, ∞]`. -/
 def eq_bdg4_XU : Prop :=
-  ∃ c₀ : ℝ, 0 < c₀ ∧ ∀ c : ℝ, c₀ ≤ c →
+  ∀ c : ℝ, DavisValid.{u, v, w} c →
     ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
       [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
       (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
@@ -236,20 +238,21 @@ def eq_bdg4_XU : Prop :=
         ∧ ∀ t ∈ Set.Icc (0 : ℝ) T, Integrable (fun ω => M T ω - M t ω) P
           ∧ ∫ ω, (M T ω - M t ω) ∂P = 0
 
-/-- **The fourth bound of (4.18).** There is `c₀ > 0` such that, for every value `c ≥ c₀` of the
-constant `c_BDG`, under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3) and
-Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`,
-`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with `X^k_T ∈ L²`, `ℱ₀`-measurable
-initial data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` — the forced jump integrand `λ δh + q^h` (with
+/-- **The fourth bound of (4.18).** For every constant `c` of the Burkholder–Davis–Gundy inequality
+at `p = 1` (`DavisValid c`), under the hypotheses of Lemma 4.3 — `T > 0`, coefficients with (2.3)
+and Assumptions 2.3–2.5 with constants `L, α, β₁, β₂` and coupling matrix `G`, `λ̲ ∈ (0, 1]`,
+`λ ∈ [λ̲, 1]`, and `Θ¹, Θ²` solving (4.1) at `λ` in `ℍ²` with `X^k_T ∈ L²`, `ℱ₀`-measurable initial
+data `ξ₀^k`, forcings `q^k` and `Θ¹ − Θ² ∈ 𝕊` — the forced jump integrand `λ δh + q^h` (with
 `q = δq` and `δh` at the predictable tuples) agrees almost everywhere on `Ω × [0, T] × E` with an
 integrand `H` meeting the conditions of the compensated integral, and for every such `H` the marked
 integrand `⟨G H_s(e), δY_{s−}⟩` has a local compensated Poisson integral
 `M_t = ∫_0^t ∫_E ⟨G (λ δh_s + q^h_s)(e), δY_{s−}⟩ Ñ(ds, de)` on `[0, T]`, and every such `M`
-satisfies `𝔼 sup_{t ≤ T} |M_t| ≤ c ‖G‖ (𝔼 sup_{t ≤ T} |δY_t|²)^{1/2} (𝔼 ∫_0^T ‖λ δh_t +
-q^h_t‖²_{L²(ν)} dt)^{1/2} < ∞` and, for every `t ∈ [0, T]`, `𝔼[M_T − M_t] = 0` with `M_T − M_t`
-integrable; the expectations of nonnegative quantities are read in `[0, ∞]`. -/
+satisfies `𝔼 sup_{t ≤ T} |M_t|
+≤ c ‖G‖ (𝔼 sup_{t ≤ T} |δY_t|²)^{1/2} (𝔼 ∫_0^T ‖λ δh_t + q^h_t‖²_{L²(ν)} dt)^{1/2} < ∞` and,
+for every `t ∈ [0, T]`, `𝔼[M_T − M_t] = 0` with `M_T − M_t` integrable; the expectations of
+nonnegative quantities are read in `[0, ∞]`. -/
 def eq_bdg4_hY : Prop :=
-  ∃ c₀ : ℝ, 0 < c₀ ∧ ∀ c : ℝ, c₀ ≤ c →
+  ∀ c : ℝ, DavisValid.{u, v, w} c →
     ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
       [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
       (n m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]

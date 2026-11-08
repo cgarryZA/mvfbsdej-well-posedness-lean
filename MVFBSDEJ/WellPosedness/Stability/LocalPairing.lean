@@ -27,6 +27,8 @@ Cauchy–Schwarz inequality, `𝔼 ∫_0^T ∫_E |⟨h, Gᵀ u⟩| ν(de) ds ≤
 ## Main statements
 
 * `MVFBSDEJ.WellPosedness.Stability.matLeftLimWeight_props` — its properties.
+* `MVFBSDEJ.WellPosedness.Stability.markedPredictable_matLeftLimWeight_mul` — a marked
+  predictable integrand weighted by it is marked predictable.
 * `MVFBSDEJ.WellPosedness.Stability.sum_mulVec_mul_eq` — `⟨G v, y⟩ = ⟨Gᵀ y, v⟩`.
 * `MVFBSDEJ.WellPosedness.Stability.lintegral_abs_dotProduct_le` — the Cauchy–Schwarz bound
   of the pairing of two marked integrands.
@@ -130,6 +132,49 @@ theorem matLeftLimWeight_props (hℱneg : ∀ r : ℝ, r ≤ 0 → ℱ 0 ≤ ℱ
       funext fun i => if_neg hs'
     rw [matLeftLimWeight, hx0, mulVec_zero]
     rfl
+
+omit [MeasurableSpace Ω] in
+/-- The weight `G Y_{s−}` vanishes at the nonpositive times. -/
+theorem matLeftLimWeight_of_nonpos (G : Matrix (Fin m) (Fin n) ℝ) (Y : Fin n → ℝ → Ω → ℝ)
+    (k : Fin m) {s : ℝ} (hs : s ≤ 0) (ω : Ω) : matLeftLimWeight G Y T k s ω = 0 := by
+  have hx0 : (fun i => if s ∈ Ioc (0 : ℝ) T then leftLimProc Y i s ω else 0) = 0 :=
+    funext fun i => if_neg fun h => absurd h.1 (not_lt.mpr hs)
+  rw [matLeftLimWeight, hx0, mulVec_zero]
+  rfl
+
+/-- **A marked integrand weighted by `G Y_{s−}` is marked predictable.** For `Y` adapted on
+`[0, T]` with left limits on `(0, T]` and a marked predictable `U`, the marked integrand
+`∑_k (G Y_{s−})_k U_k(s, e)`, the weight cut to `(0, T]`, is marked predictable. -/
+theorem markedPredictable_matLeftLimWeight_mul {E : Type*} [MeasurableSpace E] {ν : Measure E}
+    [SigmaFinite ν] (G : Matrix (Fin m) (Fin n) ℝ) {Y : Fin n → ℝ → Ω → ℝ}
+    (hYad : ∀ i, ∀ t ∈ Icc (0 : ℝ) T, Measurable[ℱ t] (Y i t))
+    (hYl : ∀ i ω, ∀ t ∈ Ioc (0 : ℝ) T, ∃ l : ℝ, Tendsto (fun s => Y i s ω) (𝓝[<] t) (𝓝 l))
+    {U : Fin m → ℝ → Ω → E → ℝ}
+    (hU : ∀ k, Probability.MarkedPredictable ℱ ν fun ω s e => U k s ω e) :
+    Probability.MarkedPredictable ℱ ν fun ω s e =>
+      ∑ k, matLeftLimWeight G Y T k s ω * U k s ω e := by
+  classical
+  have hterm : ∀ k i, Probability.MarkedPredictable ℱ ν fun ω s e =>
+      if 0 < s then G k i * (if s ∈ Ioc (0 : ℝ) T then Function.leftLim (fun r => Y i r ω) s
+        else 0) * U k s ω e else 0 := fun k i =>
+    (hU k).comp_measurable (F := fun p : ℝ × ℝ × ℝ => G k i * p.2.1 * p.2.2)
+      ((measurable_const.mul measurable_snd.fst).mul measurable_snd.snd)
+      (predictable_leftLim_Ioc (hYad i) (hYl i)).measurable
+  have heq : (fun ω s e => ∑ k, matLeftLimWeight G Y T k s ω * U k s ω e)
+      = fun ω s e => ∑ k, ∑ i, (if 0 < s then G k i * (if s ∈ Ioc (0 : ℝ) T then
+          Function.leftLim (fun r => Y i r ω) s else 0) * U k s ω e else 0) := by
+    funext ω s e
+    refine Finset.sum_congr rfl fun k _ => ?_
+    rw [matLeftLimWeight_eq, Finset.sum_mul]
+    refine Finset.sum_congr rfl fun i _ => ?_
+    by_cases hs : 0 < s
+    · rw [if_pos hs]
+    · have hs' : s ∉ Ioc (0 : ℝ) T := fun h => hs h.1
+      simp [hs, hs']
+  rw [heq]
+  unfold Probability.MarkedPredictable at hterm ⊢
+  letI : MeasurableSpace (Ω × ℝ × E) := Probability.markedPredictableSigma ℱ ν
+  exact Finset.measurable_sum _ fun k _ => Finset.measurable_sum _ fun i _ => hterm k i
 
 end Weight
 

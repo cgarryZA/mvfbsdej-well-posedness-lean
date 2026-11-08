@@ -1,4 +1,4 @@
-# MachineChecked: the audit of this repository against the latest manuscript (commit 1f67672),
+# MachineChecked: the audit of this repository against the latest manuscript (commit c89cc20),
 # published at /latest/ of the repository's GitHub Pages (and at its root) by the Audit workflow,
 # beside the audit of arXiv v1 at /v1/ (built from the branch audit-v1).
 # `machinechecked build` reads the inventory and reviews of acceptance/ (the same inputs as
@@ -35,6 +35,7 @@ modules = [
   "MVFBSDEJ.PaperSpec.Sec4Coeff",
   "MVFBSDEJ.PaperSpec.Sec4Continuation",
   "MVFBSDEJ.PaperSpec.Sec4Contraction",
+  "MVFBSDEJ.PaperSpec.Sec4Davis",
   "MVFBSDEJ.PaperSpec.Sec4Difference",
   "MVFBSDEJ.PaperSpec.Sec4Estimates",
   "MVFBSDEJ.PaperSpec.Sec4Frozen",
@@ -99,6 +100,7 @@ modules = [
   "MVFBSDEJ.Acceptance.Solution",
   "MVFBSDEJ.Acceptance.Witness",
   "MVFBSDEJ.Acceptance.WitnessContraction",
+  "MVFBSDEJ.Acceptance.WitnessDavis",
   "MVFBSDEJ.Acceptance.WitnessForced",
   "MVFBSDEJ.Acceptance.WitnessFrozen",
   "MVFBSDEJ.Acceptance.WitnessFrozenLam",
@@ -140,6 +142,6 @@ title = "Well-posedness of fully coupled McKean-Vlasov FBSDEs with jumps under f
 # The vendored manuscript is the manuscript repository at this commit; the audit pins that
 # unpublished revision, and `build` checks that the inventory is pinned to the same one.
 version = "manuscript"
-source = { path = "manuscript", rev = "1f676720d35765628a63892fecd1744fbbd69f00" }
+source = { path = "manuscript", rev = "c89cc20682aee6c176a768e07158d6ca7e256f3b" }
 root = "paper/wellposedness.tex"
 publish = { pdf = true, source_text = true, lean = true, reviews = true }

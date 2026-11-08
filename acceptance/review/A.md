@@ -1059,7 +1059,8 @@ quadratic-variation form, at `p = 1` for the zero-mean arguments, with one unive
 
 Propositions (hypotheses: those of Lemma 4.1, `lem_bpbsde`, verbatim):
 
-* `lem41_MW`: there is `c₀ > 0` such that for every `c ≥ c₀`: the integrand
+* `lem41_MW`: for every real `c` with `DavisValid c` (`c` a constant of Davis's inequality for the
+  local stochastic integrals of the setting, reviewed in `definitions.md`): the integrand
   `H_s(j) = e^s ∑_k δY^k_{s−} δZ^{kj}_s` (with `δY^k_{s−}` = `leftLimProc δY k s ω` for `s > 0`
   and `0` for `s ≤ 0`) has a local Itô integral `M^W` on `[0, T]`
   (`IsLocalBrownianIntegral D.W (enlJoint …) _ T H M^W`), and every such `M^W` satisfies
@@ -1097,16 +1098,23 @@ Readings:
   lower integral of the supremum of `esq`, as in `lem_bpbsde`. Expectations of nonnegative
   quantities are lower integrals in `[0, ∞]`; "`< ∞`" is the finiteness of the right side, which
   with the bound puts the running suprema in `L¹` (line 171).
-* `c_BDG`: one universal constant in the paper, unspecified; each proposition asserts its bound
-  for every value of it at least some `c₀ > 0` (here `c₀ = 9`), as the other propositions with
-  `c_BDG` do, so all of them hold together for every `c_BDG` at least the largest `c₀`. The
-  reading is that `c_BDG` is a sufficiently large universal constant, every value at least `c₀`;
-  it is not every constant for which Davis's inequality holds: the best constant of that
-  inequality may be smaller than `9`, and at such a value the propositions say nothing. The paper
-  fixes `c_BDG` only as one universal constant valid at `p = 1` and `p = 2` (lines 29–33) and
-  states no value of it; its later uses (the finiteness of the bounds, the supremum criterion,
-  constants such as `C_Φ = C_Φ(T, L, c_BDG)`) need only some universal value, which any value at
-  least the largest `c₀` is.
+* `c_BDG`: one universal constant in the paper, "valid at both exponents" of BDG in
+  quadratic-variation form and "valid for càdlàg local martingales" (lines 29–35), with no value
+  stated at `p = 1`. These bounds use it at `p = 1` only, and each proposition takes every real `c`
+  with `DavisValid c`: `𝔼 sup_{t ≤ T} |M_t| ≤ c 𝔼 [M]_T^{1/2}` for every local Itô integral and
+  every local compensated integral of a marked predictable integrand vanishing at the nonpositive
+  times, for the filtration of the setting, with `[M]_T` written out as `∑_j ∫_0^T H_j(s)² ds`,
+  resp. `∫_{(0, T] × E} φ_s(e)² N(ds, de)`. Every value `c_BDG` can take satisfies
+  `DavisValid c_BDG`: those integrals are càdlàg local martingales for that filtration and the
+  written expressions are their quadratic variations (the reading of `DavisValid` in
+  `definitions.md`), so the proposition at `c = c_BDG` is the printed bound whatever the value of
+  `c_BDG`. `DavisValid` restricts the class of martingales, so it may hold at a constant that is
+  not valid for every càdlàg local martingale; there the proposition says more than the paper.
+  The bound on `M^W` takes Davis's inequality for the local Itô integral `M^W`; the bound on
+  `M^1` is the composite of `lem41_M1_bdg` (Davis's inequality for the local compensated
+  integral `M^1`, whose integrand is marked predictable) and `lem41_M1_chain`, the printed chain.
+  The later uses of `c_BDG` (the finiteness of the bounds, the supremum criterion) need some valid
+  value, and `DavisValid 24` holds (the witness below).
 * The filtration. The local integrals are local martingales for `enlJoint 𝒢₀ D h𝒢₀`, the usual
   augmentation of `ℱ^{W,N}_t ∨ ℱ₀` (right-continuous, with the `P`-null sets), the filtration of
   the paper (reviewed in `definitions.md`). The `L²` integrals cut off at the localising times
@@ -1137,9 +1145,8 @@ Readings:
   `𝔼 sup |M^1| ≤ c_BDG 𝔼[(∫_0^T ∫_E e^{2s} |δY_{s−}|² |δU_s(e)|² N(ds, de))^{1/2}]`, the paper's
   application of BDG at `p = 1` in quadratic-variation form to `M^1` with the Cauchy–Schwarz
   inequality in `ℝᵐ`, is `lem41_M1_bdg`, reviewed in the next section. The composite bound,
-  `lem41_M1`, is proved on its own, through the predictable quadratic variation
-  `⟨M^1⟩_T = ∫_0^T ∫_E e^{2s} |δY_{s−}|² |δU|² ν ds` (Lenglart's inequality), with the same
-  right-hand side. The later links are
+  `lem41_M1`, is proved as the chain: `lem41_M1_bdg` followed by `lem41_M1_chain`. The later links
+  are
   `lem41_M1_chain`: the Cauchy–Schwarz link, stated without the common factor `c_BDG ≥ 0` of both
   sides (equivalent); the compensation link (2.1) with `∫_0^T` read over `(0, T]`; and the norm
   link, the definition of `‖δU_s‖_{L²(ν)}` (energies on `[0, T]`, which differ from `(0, T]` by
@@ -1149,19 +1156,17 @@ Readings:
   `M²` paragraph (`lem41_M2_zero_mean`, read pathwise), and that it is a local martingale is
   `lem41_M2_martingale`.
 
-Proofs: BDG at `p = 1` for the `L²` integrals (`lintegral_biSup_le_brownian`,
-`lintegral_biSup_le_compensated`, constant `9`) by Lenglart's argument
-(`lintegral_le_of_good_lambda`): the integral of the integrand cut off when its energy reaches `δ`
-(`energyHit`, a stopping time) agrees with the integral up to that time (the library's locality),
-Doob's `L²` inequality bounds its squared supremum by `4 𝔼 (A_T ∧ δ)`, and the tail bounds integrate
-over `δ`. The local integrals exist along the exit times of `δY` from balls (`exitSeq`), up to which
+Proofs: the local integrals exist along the exit times of `δY` from balls (`exitSeq`), up to which
 `|δY_{s−}|` is bounded and the cut-off integrands have finite energy
-(`exists_isLocalBrownianIntegral`); BDG passes to them by monotone convergence
-(`IsLocalBrownianIntegral.lintegral_biSup_le`), and with `|e^s δY_{s−}|² ≤ e^{2T} sup |δY|²` and
-Cauchy–Schwarz (`localBrownian_weight`, `localCompensated_weight`) gives the bounds, with
-`𝔼 sup |δY|² < ∞` from `lem_bpbsde`. The zero means: the increments of the cut-off integrals have
+(`exists_isLocalBrownianIntegral`, through `localBrownian_weight` and `localCompensated_weight`).
+The bound on `M^W`: the Brownian clause of `DavisValid c` at the integrand of `M^W`, then
+`|e^s δY_{s−}|² ≤ e^{2T} sup |δY|²` and Cauchy–Schwarz (`localBrownian_weight`, which takes the
+inequality at `c` as a hypothesis), with `𝔼 sup |δY|² < ∞` from `lem_bpbsde`. The bound on `M^1`:
+`lem41_M1_bdg` at `c`, then the three links of `lem41_M1_chain`. The zero means: the increments of the cut-off integrals have
 mean zero, converge almost surely to `M_T − M_t`, and are Cauchy in `L¹` by BDG applied to the
-differences (`integrable_and_integral_eq_zero_of_cauchy`). The chain: pathwise
+differences (`integrable_and_integral_eq_zero_of_cauchy`), with the library's BDG at `p = 1`
+for the `L²` integrals (`lintegral_biSup_le_brownian`, `lintegral_biSup_le_compensated`,
+constant `9`, by Lenglart's argument), which needs no value of `c_BDG`. The chain: pathwise
 `e^{2s} |δY_{s−}|² ≤ e^{2T} sup |δY|²` and Hölder (`sqrt_setLIntegral_leftLim_le`,
 `lintegral_mul_sqrt_le`), (2.1) at the marked predictable `|δU|²` cut to the positive times
 (`poisson_sumSq_compensation`), and `Ioc` and `Icc` differing by a null set
@@ -1171,29 +1176,64 @@ Witness: `MVFBSDEJ.Acceptance.lem_bpbsde_nonzero_hypotheses` — a Lévy driver 
 `ν = δ₀`, `𝒢₀ = ⊥`, `m = 1`, `T = 1`, `δZ = δU = 1_{(0, 1]}` (energy `1` each, stated), `φ = 0`,
 `δY` the sum of everywhere-càdlàg versions of `∫_0^t δZ dW` and `∫_0^t ∫ δU dÑ`, `δξ = δY_1`: every
 hypothesis of Lemma 4.1 holds, and the integrands of `M^W`, `M^1` are not zero (the existing
-witness of Lemma 4.1, `lem_bpbsde_hypotheses`, is the zero solution of Example 5.1(i)).
+witness of Lemma 4.1, `lem_bpbsde_hypotheses`, is the zero solution of Example 5.1(i)). For
+`lem41_MW` and `lem41_M1`, whose first hypothesis is `DavisValid c`, the witness is
+`MVFBSDEJ.Acceptance.lem_bpbsde_nonzero_davis_hypotheses`: `DavisValid 24`
+(`davisValid_twentyFour`, `definitions.md`) together with that instance; `lem41_M1_chain` keeps
+`lem_bpbsde_nonzero_hypotheses`.
 
 Verdict: `lem41_MW` and `lem41_M1` faithful with representation choices (local stochastic
-integrals for the local martingales; the integrand at `s ≤ 0`; `c_BDG` as every value at least
-`c₀`); `lem41_M1_chain` faithful with representation choices (the common factor `c_BDG` dropped,
+integrals for the local martingales; the integrand at `s ≤ 0`; `c_BDG` as every constant `c` of
+Davis's inequality for the local stochastic integrals of the setting, `DavisValid c`);
+`lem41_M1_chain` faithful with representation choices (the common factor `c_BDG` dropped,
 `(0, T]` for `∫_0^T`); the first link of the `M^1` chain is `lem41_M1_bdg`, reviewed in the
 next section.
 
-<!-- spec-review: MVFBSDEJ.PaperSpec.lem41_MW ed839d34f480cba15feb62f452376aa4 by=claude-author source=A:lem4.1:M2-infinite-activity@a168d5c6b06b44afdce89e7b9de59219c5b0dca171c0a39da0bdadc228abe72e -->
-<!-- spec-review: MVFBSDEJ.PaperSpec.lem41_M1 ed839d34f480cba1cac62e8945131e64 by=claude-author source=A:lem4.1:M2-infinite-activity@a168d5c6b06b44afdce89e7b9de59219c5b0dca171c0a39da0bdadc228abe72e -->
 <!-- spec-review: MVFBSDEJ.PaperSpec.lem41_M1_chain ed839d34f480cba11d12bc7f03e13986 by=claude-author source=A:lem4.1:M2-infinite-activity@a168d5c6b06b44afdce89e7b9de59219c5b0dca171c0a39da0bdadc228abe72e -->
-Review by claude-auditor: faithful with representation choices.
-<!-- spec-review: MVFBSDEJ.PaperSpec.lem41_MW ed839d34f480cba15feb62f452376aa4 by=claude-auditor source=A:lem4.1:M2-infinite-activity@89a434caa7c84ed5e2143713d1483dde1e7fa2001de1f51afe467a70f3c9fe8f -->
-Review by claude-auditor: faithful with representation choices.
-<!-- spec-review: MVFBSDEJ.PaperSpec.lem41_MW ed839d34f480cba15feb62f452376aa4 by=claude-auditor source=A:lem4.1:M2-infinite-activity@a168d5c6b06b44afdce89e7b9de59219c5b0dca171c0a39da0bdadc228abe72e -->
-Review by claude-auditor: faithful with representation choices.
-<!-- spec-review: MVFBSDEJ.PaperSpec.lem41_M1 ed839d34f480cba1cac62e8945131e64 by=claude-auditor source=A:lem4.1:M2-infinite-activity@89a434caa7c84ed5e2143713d1483dde1e7fa2001de1f51afe467a70f3c9fe8f -->
-Review by claude-auditor: faithful with representation choices.
-<!-- spec-review: MVFBSDEJ.PaperSpec.lem41_M1 ed839d34f480cba1cac62e8945131e64 by=claude-auditor source=A:lem4.1:M2-infinite-activity@a168d5c6b06b44afdce89e7b9de59219c5b0dca171c0a39da0bdadc228abe72e -->
 Review by claude-auditor: faithful with representation choices.
 <!-- spec-review: MVFBSDEJ.PaperSpec.lem41_M1_chain ed839d34f480cba11d12bc7f03e13986 by=claude-auditor source=A:lem4.1:M2-infinite-activity@89a434caa7c84ed5e2143713d1483dde1e7fa2001de1f51afe467a70f3c9fe8f -->
 Review by claude-auditor: faithful with representation choices.
 <!-- spec-review: MVFBSDEJ.PaperSpec.lem41_M1_chain ed839d34f480cba11d12bc7f03e13986 by=claude-auditor source=A:lem4.1:M2-infinite-activity@a168d5c6b06b44afdce89e7b9de59219c5b0dca171c0a39da0bdadc228abe72e -->
+
+Reading of `lem41_MW` and `lem41_M1` at their current hashes, after the quantifier over `c_BDG`
+became `∀ c, DavisValid c →` (issue #19). I compared the two definitions with their previous
+versions: the bodies are unchanged term for term, and `c` occurs where it did, in
+`ofReal (c * e^T)`; only the prefix changed. Against lines 29–35 and 153–172: the printed bounds
+are BDG at `p = 1` in quadratic-variation form with Cauchy–Schwarz, and for `M^1` (2.1); the
+proposition at a real `c` assumes Davis's inequality at `c` for the local Itô integrals and the
+local compensated integrals of marked predictable integrands of the setting, which every valid
+`c_BDG` satisfies (the reading of `DavisValid` in `definitions.md`, with the quadratic variations
+`∑_j ∫_0^T H_j² ds` of `M^W` and `∫∫ e^{2s} ⟨δY_{s−}, δU_s(e)⟩² dN` of `M^1`); so each states its
+printed bound at every value `c_BDG` can take, and no longer only above an unknown threshold. The
+proofs apply the hypothesis to `M^W` itself and, through `lem41_M1_bdg`, to `M^1`, whose
+integrand `e^s ⟨δY_{s−}, δU_s(e)⟩` is marked predictable and zero at `s ≤ 0`, as the
+compensated clause asks. The witness gives `DavisValid 24`; `24` is the constant of the
+library's Davis decomposition for compensated integrals, and the library proves no smaller
+valid constant in the quadratic-variation form, so a valid `c_BDG` below `24` enters only as
+the hypothesis. The rest of the reading above stands. Verdict: faithful with representation
+choices.
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem41_MW ed839d34f480cba17888784b7423c40b by=claude-author source=A:lem4.1:M2-infinite-activity@a168d5c6b06b44afdce89e7b9de59219c5b0dca171c0a39da0bdadc228abe72e -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem41_M1 ed839d34f480cba133c55b965e1237a9 by=claude-author source=A:lem4.1:M2-infinite-activity@a168d5c6b06b44afdce89e7b9de59219c5b0dca171c0a39da0bdadc228abe72e -->
+
+Review by claude-auditor of `lem41_MW` and `lem41_M1` at their current hashes (issue #19), read
+against `04-proof-wellposedness.tex` lines 29–35 and 139–172 at `c89cc20`. I compared each term
+with its version on `main` (`git diff main...bdg-valid-c`): the only change is the prefix
+`∃ c₀, 0 < c₀ ∧ ∀ c, c₀ ≤ c →`, now `∀ c : ℝ, DavisValid c →`; the binders, the hypotheses of
+Lemma 4.1 and the conclusions are the terms read before, and `c` occurs only in
+`ofReal (c * e^T)`, in the bound and in its finiteness. The printed bounds (lines 153–158 and
+159–170) are BDG at `p = 1` in quadratic-variation form with the universal `c_BDG` of lines 30–35,
+then Cauchy–Schwarz, and for `M¹` (2.1). My reading of `DavisValid` (`definitions.md`) is that
+every constant valid in the paper's sense satisfies it, so the proposition at `c = c_BDG` is the
+printed bound at every value `c_BDG` can take, with no threshold. The proofs
+(`Acceptance/Sec4LocalMartingales.lean`) apply the Brownian clause of the hypothesis to the local
+integral `M^W` itself (through `localBrownian_weight`) and the compensated clause, through
+`lem41_M1_bdg`, to `M¹`, followed by `lem41_M1_chain`; the zero means use the library's bound with
+constant `9` and no value of `c`. The witness `lem_bpbsde_nonzero_davis_hypotheses` pairs
+`davisValid_twentyFour` with the instance of `lem_bpbsde_nonzero_hypotheses` (`δZ`, `δU` of energy
+`1`), so `DavisValid c` is met at `c = 24` together with the hypotheses of Lemma 4.1. Verdict:
+faithful with representation choices.
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem41_MW ed839d34f480cba17888784b7423c40b by=claude-auditor source=A:lem4.1:M2-infinite-activity@a168d5c6b06b44afdce89e7b9de59219c5b0dca171c0a39da0bdadc228abe72e -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem41_M1 ed839d34f480cba133c55b965e1237a9 by=claude-auditor source=A:lem4.1:M2-infinite-activity@a168d5c6b06b44afdce89e7b9de59219c5b0dca171c0a39da0bdadc228abe72e -->
 
 ## The first link of the chain for `M¹`, in the proof of Lemma 4.1: `MVFBSDEJ.PaperSpec.lem41_M1_bdg`
 
@@ -1207,8 +1247,8 @@ suprema […], with one universal constant `c_BDG` valid at both exponents; vali
 martingales, the inequality covers the compensated-Poisson martingales below without a separate
 jump statement."
 
-Proposition: `∃ c₀ > 0` such that for every `c ≥ c₀`, under the hypotheses of Lemma 4.1 (those
-of `lem_bpbsde`, verbatim): every `M^1` with
+Proposition: for every real `c` with `DavisValid c` (reviewed in `definitions.md`), under the
+hypotheses of Lemma 4.1 (those of `lem_bpbsde`, verbatim): every `M^1` with
 `IsLocalCompensatedIntegral D.N (enlJoint …) _ T φ M^1`, where
 `φ_s(e) = e^s ∑_k δY^k_{s−} δU^k_s(e)` (`δY^k_{s−}` = `leftLimProc δY k s ω` for `s > 0` and `0`
 for `s ≤ 0`), satisfies `∫⁻ sup_{t ∈ [0, T]} ‖M^1_t‖ dP ≤ ofReal c ·
@@ -1221,9 +1261,11 @@ Readings:
   filtration, and "every such `M^1`" are read as in `lem41_M1` (the section before this one); the
   hypotheses are those of Lemma 4.1, in force in the proof. The proposition does not assert that
   `M^1` exists; `lem41_M1` does.
-* `c_BDG`: as in `lem41_MW` and `lem41_M1`, every value at least some `c₀ > 0` (here `c₀ = 24`),
-  so all the propositions with `c_BDG` hold together for every `c_BDG` at least the largest `c₀`;
-  the paper states no value of `c_BDG`.
+* `c_BDG`: as in `lem41_MW` and `lem41_M1`, every real `c` with `DavisValid c`, which every value
+  of `c_BDG` satisfies (`definitions.md`); the paper states no value of `c_BDG` at `p = 1`. The
+  clause is the instance of the compensated clause of `DavisValid c` at `M^1`, whose integrand is
+  marked predictable and zero at `s ≤ 0`, followed by the pointwise Cauchy–Schwarz inequality
+  below.
 * The right side is the printed one: `|δY_{s−}|² |δU_s(e)|²`, the product of the squared
   Euclidean norms in `ℝᵐ`, not the square `⟨δY_{s−}, δU_s(e)⟩²` of the integrand of `M^1`. The
   quadratic variation `[M^1]_T = ∫∫ e^{2s} ⟨δY_{s−}, δU_s(e)⟩² N(ds, de)` is at most it by the
@@ -1236,9 +1278,15 @@ Readings:
   `s ≤ 0`. The expectations are lower integrals in `[0, ∞]`, `|M^1_t|` is `‖M^1_t‖₊`, and the
   square root is `x ↦ x^{1/2}` on `[0, ∞]`.
 * "BDG" names the proof. The passage asserts the inequality for this `M^1`, which is stated; the
-  general inequality for càdlàg local martingales, which the preamble cites, is not.
+  general inequality for càdlàg local martingales, which the preamble cites, is not stated as a
+  theorem: it enters as the hypothesis `DavisValid c`, for the local stochastic integrals of the
+  setting.
 
-Proof: Davis's decomposition (`DavisCompensated.lean`). For an `L²` compensated integral `M` of a
+Proof: the compensated clause of `DavisValid c` at the integrand `e^s ∑_k δY^k_{s−} δU^k_s(e)`,
+marked predictable (`predictable_leftLim_Ioc`, `MarkedPredictable.comp_measurable`) and zero at
+`s ≤ 0`, and the Cauchy–Schwarz inequality in `ℝᵐ` (`Finset.sum_mul_sq_le_sq_mul_sq`) for the
+printed integrand. The witness `DavisValid 24` comes from Davis's decomposition
+(`DavisCompensated.lean`). For an `L²` compensated integral `M` of a
 marked predictable integrand `φ` vanishing at times `≤ 0`, with paths right-continuous on
 `[0, T)`, `𝔼 sup_{t ≤ T} |M_t| ≤ 24 𝔼 A_T^{1/2}`, `A_t = ∫_{(0, t] × E} φ² dN`
 (`lintegral_biSup_le_compensated_count`). `A_{s−}` is predictable (`CountIntegral.lean`), and the
@@ -1250,12 +1298,11 @@ mean. The rest has jumps at most `A_{s−}`; stopped when `A` reaches `δ`, its 
 at most `2 (A_T ∧ δ)`, and Doob's inequality with Lenglart's argument over the levels `δ`
 (`lintegral_le_of_good_lambda`) bounds its supremum by `17 𝔼 A_T^{1/2}`. The local integral
 follows along its localising times by monotone convergence
-(`IsLocalCompensatedIntegral.lintegral_biSup_le_count`); the integrand is marked predictable
-(`predictable_leftLim_Ioc`, `MarkedPredictable.comp_measurable`), and the Cauchy–Schwarz
-inequality in `ℝᵐ` (`Finset.sum_mul_sq_le_sq_mul_sq`) gives the printed integrand.
+(`IsLocalCompensatedIntegral.lintegral_biSup_le_count`).
 
-Witness: `MVFBSDEJ.Acceptance.lem_bpbsde_nonzero_hypotheses`, the instance of `lem41_MW`
-and `lem41_M1`: a Lévy driver with `d = 1`, `ν = δ₀`, `𝒢₀ = ⊥`, `m = 1`, `T = 1`,
+Witness: `MVFBSDEJ.Acceptance.lem_bpbsde_nonzero_davis_hypotheses`, `DavisValid 24`
+(`davisValid_twentyFour`) with the instance of `lem_bpbsde_nonzero_hypotheses`, that of
+`lem41_MW` and `lem41_M1`: a Lévy driver with `d = 1`, `ν = δ₀`, `𝒢₀ = ⊥`, `m = 1`, `T = 1`,
 `δZ = δU = 1_{(0, 1]}` (energy `1` each, stated), `φ = 0`, `δY = M^W + M^N` with `M^W`, `M^N`
 everywhere-càdlàg versions of `∫_0^t δZ dW` and `∫_0^t ∫ δU dÑ`, and `δξ = δY_1`. Both sides are
 positive, by hand. The right side: `N` on `(0, 1] × E` is a Poisson process of rate `1`; on the
@@ -1267,13 +1314,35 @@ almost surely its `L²` compensated integral (the limit of the cut-off integrals
 moment at `1` is that energy: `M^1_1 ≠ 0` with positive probability. Both sides are finite
 (`lem41_M1`, `lem41_M1_chain`).
 
-Verdict: faithful with representation choices (`c_BDG` as every value at least `c₀`; the
-integrand at `s ≤ 0`; the Poisson integral as a lower integral over `(0, T] × E`; the local
-compensated integral as in `lem41_M1`).
+Verdict: faithful with representation choices (`c_BDG` as every constant `c` with
+`DavisValid c`; the integrand at `s ≤ 0`; the Poisson integral as a lower integral over
+`(0, T] × E`; the local compensated integral as in `lem41_M1`).
 
-<!-- spec-review: MVFBSDEJ.PaperSpec.lem41_M1_bdg ed839d34f480cba1dc09922a08199505 by=claude-author source=A:lem4.1:M2-infinite-activity@a168d5c6b06b44afdce89e7b9de59219c5b0dca171c0a39da0bdadc228abe72e -->
-Review by claude-auditor: faithful with representation choices.
-<!-- spec-review: MVFBSDEJ.PaperSpec.lem41_M1_bdg ed839d34f480cba1dc09922a08199505 by=claude-auditor source=A:lem4.1:M2-infinite-activity@a168d5c6b06b44afdce89e7b9de59219c5b0dca171c0a39da0bdadc228abe72e -->
+Reading of `lem41_M1_bdg` at its current hash (issue #19). The body is the term read at the previous
+hash, unchanged; only the quantifier over the constant changed, to `∀ c, DavisValid c →`, and `c`
+occurs in `ofReal c` alone. Against lines 29–35 and 159–163: the first link is Davis's inequality
+for `M^1` in quadratic-variation form, `[M^1]_T = ∫∫ e^{2s} ⟨δY_{s−}, δU_s(e)⟩² dN`, with
+Cauchy–Schwarz in `ℝᵐ`; `DavisValid c` asserts the inequality at `c` for exactly this kind of
+integral (a local compensated integral of a marked predictable integrand vanishing at `s ≤ 0`, the
+right side written as `∫∫ φ² dN`), and every valid `c_BDG` satisfies it. The proposition is
+therefore the printed link at every value of `c_BDG`. The witness is
+`lem_bpbsde_nonzero_davis_hypotheses`, `DavisValid 24` with the instance above. Verdict: faithful
+with representation choices.
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem41_M1_bdg ed839d34f480cba1c81cabab3cf7555b by=claude-author source=A:lem4.1:M2-infinite-activity@a168d5c6b06b44afdce89e7b9de59219c5b0dca171c0a39da0bdadc228abe72e -->
+
+Review by claude-auditor of `lem41_M1_bdg` at its current hash (issue #19), read against lines
+29–35 and 159–163 at `c89cc20`. The term differs from its version on `main` only in the prefix,
+now `∀ c : ℝ, DavisValid c →`; `c` occurs only in `ofReal c`, and the right side is the printed
+`∫∫ e^{2s} |δY_{s−}|² |δU_s(e)|² N(ds, de)` over `(0, T] × E`. The printed first link is BDG at
+`p = 1` for `M¹` with Cauchy–Schwarz in `ℝᵐ`. The integrand `e^s ∑_k δY^k_{s−} δU^k_s(e)` (left
+limit `0` at `s ≤ 0`) is marked predictable (the left limit of an adapted path with left limits is
+predictable, `δU` is marked predictable and zero off `[0, T]`) and zero at `s ≤ 0`, so `M¹` is in
+the class of the compensated clause of `DavisValid`, whose right side
+`∫_{(0, T] × E} φ² dN` is `[M¹]_T`; the proof applies that clause at this integrand and then the
+pointwise Cauchy–Schwarz inequality `(∑_k a_k b_k)² ≤ ∑ a_k² ∑ b_k²`. At every valid `c_BDG` the
+proposition is the printed link. The witness `lem_bpbsde_nonzero_davis_hypotheses` is as for
+`lem41_M1`. Verdict: faithful with representation choices.
+<!-- spec-review: MVFBSDEJ.PaperSpec.lem41_M1_bdg ed839d34f480cba1c81cabab3cf7555b by=claude-auditor source=A:lem4.1:M2-infinite-activity@a168d5c6b06b44afdce89e7b9de59219c5b0dca171c0a39da0bdadc228abe72e -->
 
 ## `M²` is a local martingale, in the proof of Lemma 4.1: `MVFBSDEJ.PaperSpec.lem41_M2_martingale`
 
@@ -2549,7 +2618,7 @@ zero expectation." The §4 preamble (lines 30–35) fixes BDG in quadratic-varia
 for the zero-mean arguments, with one universal constant `c_BDG`.
 
 Propositions (hypotheses: those of Lemma 4.3, `lem_pert`, verbatim, as in `eq_dX`; the bounds
-first fix `c₀ > 0` and take every `c ≥ c₀`):
+first take every real `c` with `DavisValid c`, reviewed in `definitions.md`):
 
 * `eq_bdg4_XZ`: with `L^X_s = (δX_{s−} for s ∈ (0, T], 0 otherwise)` (`leftLimProc` of
   `X¹ − X²`), the integrand `H_s(j) = ∑_k (G L^X_s)_k δZ^{kj}_s` has a local Itô integral `M` on
@@ -2620,13 +2689,14 @@ Readings:
   among those admitted. The first and third integrands are predictable (`δZ`, `δU` and the
   weights cut to `(0, T]`); the second carries `Σ`, which is progressively measurable (as `q^σ`
   is, by `Forcing`), the usual condition for an Itô integrand.
-* `c_BDG`: as for `lem41_MW`, each bound holds for every value at least some `c₀ > 0` (here
-  `c₀ = 9`), so the bounds hold together with the paper's other uses of `c_BDG` for every value at
-  least the largest `c₀`. The reading is that `c_BDG` is a sufficiently large universal constant,
-  every value at least `c₀`, not every constant for which Davis's inequality holds: the best
-  constant of that inequality may be smaller than `9`, and at such a value the propositions say
-  nothing. The paper fixes `c_BDG` only as one universal constant (lines 29–33) and states no
-  value of it; its uses need only some universal value.
+* `c_BDG`: as for `lem41_MW`, each bound takes every real `c` with `DavisValid c`, Davis's
+  inequality at `c` for the local Itô integrals and the local compensated integrals of marked
+  predictable integrands of the setting, with the quadratic variations written out. Every value
+  `c_BDG` can take satisfies `DavisValid c_BDG` (`definitions.md`), so each proposition at
+  `c = c_BDG` is the printed bound whatever the value of `c_BDG`, which the paper does not state
+  at `p = 1` (lines 29–35). `DavisValid` restricts the class of martingales, so it may hold at a
+  constant not valid for every càdlàg local martingale; there the bounds say more than the
+  paper.
 * The filtration. The four local integrals are local martingales for `enlJoint 𝒢₀ D h𝒢₀`, the
   usual augmentation of `ℱ^{W,N}_t ∨ ℱ₀` (right-continuous, with the `P`-null sets), the filtration
   of the paper and of the hypotheses: the cut-off `L²` integrals are the library's for it, and
@@ -2641,10 +2711,14 @@ Readings:
   `Θ¹ − Θ² ∈ 𝕊`; it enters through that hypothesis. The display at lines 606–610 is
   `eq_bdg4_fifth`'s first conjunct and its `∑_i markedEnergy H_i < ⊤`.
 * The first link of each bound, BDG at `p = 1` in quadratic-variation form for the local martingale
-  (Davis's inequality), is cited (He, Wang and Yan) and not stated; each bound is proved through
-  the predictable quadratic variation (Lenglart's inequality) with the paper's right-hand side.
-  (2.1) "in the jump terms" turns `𝔼 ∫∫ |·|² N(ds, de)` into `𝔼 ∫∫ |·|² ν(de) ds`; the predictable
-  quadratic variation is the latter already, so the proofs do not need it.
+  (Davis's inequality), is cited (He, Wang and Yan) and not stated as a theorem: it is the
+  hypothesis `DavisValid c`, applied to each of the four local integrals. For the jump terms the
+  proofs then follow the printed route: Cauchy–Schwarz pathwise against `N`, then (2.1) "in the
+  jump terms", which turns `𝔼 ∫∫ |·|² N(ds, de)` into `𝔼 ∫∫ |·|² ν(de) ds`. For the fourth, the
+  integral of an admitted representative `H` is, up to indistinguishability on `[0, T]`, that of
+  the marked predictable representative of `λ δh + q^h` (`eq_bdg4_fifth_mean`), and Davis's
+  inequality is applied to the latter integrand, whose quadratic variation is the paper's
+  `∫∫ ⟨G (λ δh_s + q^h_s)(e), δY_{s−}⟩² dN`.
 * Not formalised here (recorded in `scope_note`): that the four integrals and the fifth term are
   the stochastic terms of (4.17) (the decomposition belongs to (4.17), `A:eq:Gid-path`). "The
   fifth has predictable integrand" and the zero mean of the fifth term by (2.2) (lines 612–613
@@ -2654,11 +2728,17 @@ Proofs: the weights `G δX_{s−}` and `Gᵀ δY_{s−}` cut to `(0, T]` (`matLe
 predictable, at most `(∑ |G_{ki}|) R` before the path leaves the ball of radius `R`, and
 `|w_s|² ≤ ‖G‖² sup_{t ≤ T} |·|²` (`matLeftLimWeight_props`, with `‖Gᵀ‖ = ‖G‖`); `⟨G v, y⟩ =
 ⟨Gᵀ y, v⟩` (`sum_mulVec_mul_eq`) writes the second and fourth integrands with the weight
-`Gᵀ δY_{s−}`. `localBrownian_weight` and `localCompensated_weight` (BDG at `p = 1` with constant
-`9` by Lenglart's argument, the local integral along the exit times of the frozen path, and the
-zero means by `L¹`-Cauchy convergence; see `lem41_MW`) give the existence, the bounds with
-`c₀ = 9` and the zero means, with the integrability of `δZ`, `δU` from `eq_dY`, of
-`Σ` and `H` from `eq_dX`, and `𝔼 sup |δX|², 𝔼 sup |δY|² < ∞` from `supSize < ⊤`. The fifth
+`Gᵀ δY_{s−}`. `localBrownian_weight` and `localCompensated_weight` (the local integral along the
+exit times of the frozen path, and the zero means by `L¹`-Cauchy convergence; see `lem41_MW`) give
+the existence and the zero means, and `localBrownian_weight` with the Brownian clause of
+`DavisValid c` the first two bounds, with the integrability of `δZ`, `δU` from `eq_dY`, of `Σ` and
+`H` from `eq_dX`, and `𝔼 sup |δX|², 𝔼 sup |δY|² < ∞` from `supSize < ⊤`. The third and fourth
+bounds: the weighted integrand is marked predictable (`markedPredictable_matLeftLimWeight_mul`,
+with `δU` predictable by `WeakForcedSolution`, and for the fourth through the predictable
+representative `K` of `eq_bdg4_fifth_mean`, `isLocalCompensatedIntegral_of_ae_eq` carrying the
+local integral to it) and zero at `s ≤ 0` (`matLeftLimWeight_of_nonpos`); the compensated clause
+of `DavisValid c`, then Cauchy–Schwarz pathwise and in `Ω` and (2.1)
+(`lintegral_sqrt_count_weight_le`) give the bound, and the energies of `K` and `H` agree. The fifth
 integrand: `|⟨h, Gᵀ u⟩| ≤ ‖G‖ |h| |u|` pointwise and the Cauchy–Schwarz inequality on
 `Ω × [0, T] × E` (`lintegral_abs_dotProduct_le`).
 
@@ -2676,7 +2756,10 @@ coefficient processes along the tuple (`SolvesForced.of_zero_sub_coeff`); `q` is
 class of the paper (its jump component `(c + c') 1_{(0, 1]}` is marked predictable), and the
 forced diffusion and jump integrands of the solution are `a 1_{(0, 1]}` and `c 1_{(0, 1]}`. Each
 witness pairs this solution with the one at the parameters `0`, the zero tuple from the datum
-`0`; the difference lies in `𝕊`.
+`0`; the difference lies in `𝕊`. For the four bounds, whose first hypothesis is `DavisValid c`,
+the attached witnesses are `lem_pert_backward_window_davis_hypotheses` and
+`lem_pert_forward_window_davis_hypotheses`: `DavisValid 24` (`davisValid_twentyFour`,
+`definitions.md`) together with the instances below.
 
 * `MVFBSDEJ.Acceptance.lem_pert_backward_window_hypotheses` for `eq_bdg4_XZ` and
   `eq_bdg4_XU`: `x₀ = 1`, `a' = c' = 1`, the rest `0`, from the data `1` and `0`. The difference
@@ -2699,35 +2782,64 @@ witness pairs this solution with the one at the parameters `0`, the zero tuple f
 
 Verdict: faithful with representation choices (local stochastic integrals for the four
 integrals, for the filtration `enlJoint`; the left limits cut to `(0, T]`; `λ δh + q^h` through
-representatives, as in (4.15), which include the paper's predictable one; `c_BDG` as every value
-at least `c₀`); the first link of each bound is recorded in `scope_note`; the predictability of
+representatives, as in (4.15), which include the paper's predictable one; `c_BDG` as every
+constant `c` with `DavisValid c`); the first link of each bound is the hypothesis `DavisValid c`,
+recorded in `scope_note`; the predictability of
 the fifth integrand and the zero mean of the fifth term are `eq_bdg4_fifth_mean`.
 
-<!-- spec-review: MVFBSDEJ.PaperSpec.eq_bdg4_XZ ed839d34f480cba12340abc4b7f8f8fd by=claude-author source=A:eq:bdg4@ed04d85188f60f8074a858e1e8398a47cf0ee28ab2aa22b0e03fecdcca1cf810 -->
-<!-- spec-review: MVFBSDEJ.PaperSpec.eq_bdg4_sigmaY ed839d34f480cba1179071de24972563 by=claude-author source=A:eq:bdg4@ed04d85188f60f8074a858e1e8398a47cf0ee28ab2aa22b0e03fecdcca1cf810 -->
-<!-- spec-review: MVFBSDEJ.PaperSpec.eq_bdg4_XU ed839d34f480cba12ec45d490a6bf65f by=claude-author source=A:eq:bdg4@ed04d85188f60f8074a858e1e8398a47cf0ee28ab2aa22b0e03fecdcca1cf810 -->
-<!-- spec-review: MVFBSDEJ.PaperSpec.eq_bdg4_hY ed839d34f480cba1a5cef6c8973a7dad by=claude-author source=A:eq:bdg4@ed04d85188f60f8074a858e1e8398a47cf0ee28ab2aa22b0e03fecdcca1cf810 -->
 <!-- spec-review: MVFBSDEJ.PaperSpec.eq_bdg4_fifth ed839d34f480cba11d7eb0b3b787f13c by=claude-author source=A:eq:bdg4@ed04d85188f60f8074a858e1e8398a47cf0ee28ab2aa22b0e03fecdcca1cf810 -->
-Review by claude-auditor: faithful with representation choices.
-<!-- spec-review: MVFBSDEJ.PaperSpec.eq_bdg4_XZ ed839d34f480cba12340abc4b7f8f8fd by=claude-auditor source=A:eq:bdg4@5d58d75e0ff64d35f9d623ce18ac9506f4664d0ce027e18e70d50e5e24c79b67 -->
-Review by claude-auditor: faithful with representation choices.
-<!-- spec-review: MVFBSDEJ.PaperSpec.eq_bdg4_XZ ed839d34f480cba12340abc4b7f8f8fd by=claude-auditor source=A:eq:bdg4@ed04d85188f60f8074a858e1e8398a47cf0ee28ab2aa22b0e03fecdcca1cf810 -->
-Review by claude-auditor: faithful with representation choices.
-<!-- spec-review: MVFBSDEJ.PaperSpec.eq_bdg4_sigmaY ed839d34f480cba1179071de24972563 by=claude-auditor source=A:eq:bdg4@5d58d75e0ff64d35f9d623ce18ac9506f4664d0ce027e18e70d50e5e24c79b67 -->
-Review by claude-auditor: faithful with representation choices.
-<!-- spec-review: MVFBSDEJ.PaperSpec.eq_bdg4_sigmaY ed839d34f480cba1179071de24972563 by=claude-auditor source=A:eq:bdg4@ed04d85188f60f8074a858e1e8398a47cf0ee28ab2aa22b0e03fecdcca1cf810 -->
-Review by claude-auditor: faithful with representation choices.
-<!-- spec-review: MVFBSDEJ.PaperSpec.eq_bdg4_XU ed839d34f480cba12ec45d490a6bf65f by=claude-auditor source=A:eq:bdg4@5d58d75e0ff64d35f9d623ce18ac9506f4664d0ce027e18e70d50e5e24c79b67 -->
-Review by claude-auditor: faithful with representation choices.
-<!-- spec-review: MVFBSDEJ.PaperSpec.eq_bdg4_XU ed839d34f480cba12ec45d490a6bf65f by=claude-auditor source=A:eq:bdg4@ed04d85188f60f8074a858e1e8398a47cf0ee28ab2aa22b0e03fecdcca1cf810 -->
-Review by claude-auditor: faithful with representation choices.
-<!-- spec-review: MVFBSDEJ.PaperSpec.eq_bdg4_hY ed839d34f480cba1a5cef6c8973a7dad by=claude-auditor source=A:eq:bdg4@5d58d75e0ff64d35f9d623ce18ac9506f4664d0ce027e18e70d50e5e24c79b67 -->
-Review by claude-auditor: faithful with representation choices.
-<!-- spec-review: MVFBSDEJ.PaperSpec.eq_bdg4_hY ed839d34f480cba1a5cef6c8973a7dad by=claude-auditor source=A:eq:bdg4@ed04d85188f60f8074a858e1e8398a47cf0ee28ab2aa22b0e03fecdcca1cf810 -->
 Review by claude-auditor: faithful with representation choices.
 <!-- spec-review: MVFBSDEJ.PaperSpec.eq_bdg4_fifth ed839d34f480cba11d7eb0b3b787f13c by=claude-auditor source=A:eq:bdg4@5d58d75e0ff64d35f9d623ce18ac9506f4664d0ce027e18e70d50e5e24c79b67 -->
 Review by claude-auditor: faithful with representation choices.
 <!-- spec-review: MVFBSDEJ.PaperSpec.eq_bdg4_fifth ed839d34f480cba11d7eb0b3b787f13c by=claude-auditor source=A:eq:bdg4@ed04d85188f60f8074a858e1e8398a47cf0ee28ab2aa22b0e03fecdcca1cf810 -->
+
+Reading of `eq_bdg4_XZ`, `eq_bdg4_sigmaY`, `eq_bdg4_XU` and `eq_bdg4_hY` at their current hashes,
+after the quantifier over `c_BDG` became `∀ c, DavisValid c →` (issue #19). I compared each
+definition with its previous version: the bodies are unchanged, and `c` occurs only in
+`ofReal (c * ‖GX G‖)`, in the bound and in its finiteness. Against lines 29–35 and 579–612: the
+printed bounds are "bounded by BDG and Cauchy–Schwarz, with (2.1) in the jump terms", BDG at
+`p = 1` in quadratic-variation form for the four local martingales, with the universal
+`c_BDG`. `DavisValid c` is Davis's inequality at `c` for the local Itô integrals and the local
+compensated integrals of marked predictable integrands of the setting, which every valid
+`c_BDG` satisfies (`definitions.md`); the four local integrals are of that kind, the jump
+integrands once `δU` and the predictable representative of `λ δh + q^h` are used (the integral of
+any admitted `H` agrees with the latter's on `[0, T]`), so each proposition states its printed
+bound at every value of `c_BDG` and no longer only above an unknown threshold. The existence
+conjuncts, the finiteness of the right sides and the zero means do not involve `c`. The witnesses
+give `DavisValid 24` with the instances above; the library proves no valid constant below `24`
+in the quadratic-variation form, so a smaller valid `c_BDG` enters only as the hypothesis. The
+rest of the reading above stands. Verdict: faithful with representation choices.
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_bdg4_XZ ed839d34f480cba1f6e216c468c283a2 by=claude-author source=A:eq:bdg4@ed04d85188f60f8074a858e1e8398a47cf0ee28ab2aa22b0e03fecdcca1cf810 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_bdg4_sigmaY ed839d34f480cba1bf17d6c31647e641 by=claude-author source=A:eq:bdg4@ed04d85188f60f8074a858e1e8398a47cf0ee28ab2aa22b0e03fecdcca1cf810 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_bdg4_XU ed839d34f480cba12fc8ad28c4e5521a by=claude-author source=A:eq:bdg4@ed04d85188f60f8074a858e1e8398a47cf0ee28ab2aa22b0e03fecdcca1cf810 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_bdg4_hY ed839d34f480cba1ab2019e3218c5274 by=claude-author source=A:eq:bdg4@ed04d85188f60f8074a858e1e8398a47cf0ee28ab2aa22b0e03fecdcca1cf810 -->
+
+Review by claude-auditor of `eq_bdg4_XZ`, `eq_bdg4_sigmaY`, `eq_bdg4_XU` and `eq_bdg4_hY` at their
+current hashes (issue #19), read against `04-proof-wellposedness.tex` lines 29–35 and 579–612 at
+`c89cc20`. Each term differs from its version on `main` only in the prefix, now
+`∀ c : ℝ, DavisValid c →`; `c` occurs only in `ofReal (c * ‖GX G‖)`, in the bound and in its
+finiteness, so the existence conjuncts, the representatives of `λ δh + q^h` and the zero means are
+the terms read before. The printed bounds (lines 579–598) are "bounded by BDG and Cauchy–Schwarz,
+with (2.1) in the jump terms", BDG at `p = 1` in quadratic-variation form with the universal
+`c_BDG`. I checked that each of the four local integrals is in the class of `DavisValid`: the first
+two are local Itô integrals (the Brownian clause); the third has the integrand
+`∑_k (G δX_{s−})_k δU^k_s(e)`, the weight cut to `(0, T]`, which is marked predictable and zero at
+`s ≤ 0` (`markedPredictable_matLeftLimWeight_mul`, `matLeftLimWeight_of_nonpos`); for the fourth,
+the integral of an admitted progressive representative `H` of `λ δh + q^h` is carried, on `[0, T]`,
+to that of the marked predictable representative `K` that `eq_bdg4_fifth_mean` provides
+(`isLocalCompensatedIntegral_of_ae_eq`), and the compensated clause is applied to `K`, whose
+`∫∫ ⟨G K_s(e), δY_{s−}⟩² dN` is the quadratic variation; the right side of the bound, an energy for
+`ds ν(de)`, is the same for `H` and `K`. The jump bounds then follow the printed route,
+Cauchy–Schwarz pathwise against `N` and in `Ω`, then (2.1) (`lintegral_sqrt_count_weight_le`).
+With my reading of `DavisValid` (`definitions.md`), every valid `c_BDG` satisfies it, so each
+proposition at `c = c_BDG` is its printed bound, at every value `c_BDG` can take. Witnesses:
+`lem_pert_backward_window_davis_hypotheses` (first and third bounds) and
+`lem_pert_forward_window_davis_hypotheses` (second and fourth), each `davisValid_twentyFour`
+paired with the instance read above. Verdict: faithful with representation choices.
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_bdg4_XZ ed839d34f480cba1f6e216c468c283a2 by=claude-auditor source=A:eq:bdg4@ed04d85188f60f8074a858e1e8398a47cf0ee28ab2aa22b0e03fecdcca1cf810 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_bdg4_sigmaY ed839d34f480cba1bf17d6c31647e641 by=claude-auditor source=A:eq:bdg4@ed04d85188f60f8074a858e1e8398a47cf0ee28ab2aa22b0e03fecdcca1cf810 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_bdg4_XU ed839d34f480cba12fc8ad28c4e5521a by=claude-auditor source=A:eq:bdg4@ed04d85188f60f8074a858e1e8398a47cf0ee28ab2aa22b0e03fecdcca1cf810 -->
+<!-- spec-review: MVFBSDEJ.PaperSpec.eq_bdg4_hY ed839d34f480cba1ab2019e3218c5274 by=claude-auditor source=A:eq:bdg4@ed04d85188f60f8074a858e1e8398a47cf0ee28ab2aa22b0e03fecdcca1cf810 -->
 
 ## The fifth term of (4.17), its predictable integrand and its zero mean: `MVFBSDEJ.PaperSpec.eq_bdg4_fifth_mean`
 
