@@ -26,6 +26,7 @@ import MVFBSDEJ.PaperSpec.Sec4BrownianPoisson
 import MVFBSDEJ.PaperSpec.Sec4Coeff
 import MVFBSDEJ.PaperSpec.Sec4Continuation
 import MVFBSDEJ.PaperSpec.Sec4Contraction
+import MVFBSDEJ.PaperSpec.Sec4Davis
 import MVFBSDEJ.PaperSpec.Sec4Difference
 import MVFBSDEJ.PaperSpec.Sec4Estimates
 import MVFBSDEJ.PaperSpec.Sec4Frozen

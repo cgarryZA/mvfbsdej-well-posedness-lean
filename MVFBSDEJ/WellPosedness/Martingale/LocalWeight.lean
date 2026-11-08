@@ -14,12 +14,13 @@ Let `Y` be an `ℝᵐ`-valued process, adapted on `[0, T]` with càdlàg paths t
 `𝔼 sup_{t ≤ T} |Y_t|² < ∞`, and let `w_s` be a progressively measurable weight controlled by the
 left limits of `Y` (as `e^s Y_{s−}` or `G Y_{s−}` are). For an integrand `Z` of finite energy the
 product `∑_k w_k Z_k` need not have finite energy, but it does up to the exit times of `Y` from
-balls, which localise it: it has a local stochastic integral `M`, and
+balls, which localise it: it has a local stochastic integral `M`, and the increments of `M` have
+mean zero. For the Itô integral, when `|w_s|² ≤ C² sup_{t ≤ T} |Y_t|²` and the
+Burkholder–Davis–Gundy inequality at `p = 1` holds for `M` with a constant `c`,
 
-`𝔼 sup_{t ≤ T} |M_t| ≤ 9 C (𝔼 sup_{t ≤ T} |Y_t|²)^{1/2} (𝔼 ∫_0^T |Z_s|² ds)^{1/2}`
+`𝔼 sup_{t ≤ T} |M_t| ≤ c C (𝔼 sup_{t ≤ T} |Y_t|²)^{1/2} (𝔼 ∫_0^T |Z_s|² ds)^{1/2}`
 
-when `|w_s|² ≤ C² sup_{t ≤ T} |Y_t|²`, by the Burkholder–Davis–Gundy inequality at `p = 1` and the
-Cauchy–Schwarz inequality; the increments of `M` then have mean zero.
+by the Cauchy–Schwarz inequality.
 
 ## Main statements
 
@@ -337,8 +338,9 @@ with paths right-continuous on `[0, T)` and `𝔼 sup_{t ≤ T} |Y_t|² < ∞`; 
 progressively measurable, bounded by `C₁ R` at a time `s ≤ T` before which `|Y| ≤ R`, with
 `|w_s|² ≤ C² sup_{t ≤ T} |Y_t|²` on `[0, T]`; and let `Z` be of finite energy, with `w_k` or
 `Z_k` vanishing at each time off `[0, T]`. Then `H = ∑_k w_k Z_k` has a local Itô integral `M`
-on `[0, T]`; every such `M` has
-`𝔼 sup_{t ≤ T} |M_t| ≤ 9 C (𝔼 sup_{t ≤ T} |Y_t|²)^{1/2} (𝔼 ∫_0^T |Z_s|² ds)^{1/2}`, and its
+on `[0, T]`; if every such `M` satisfies
+`𝔼 sup_{t ≤ T} |M_t| ≤ c 𝔼 (∑_j ∫_0^T H_j(s)² ds)^{1/2}`, every such `M` has
+`𝔼 sup_{t ≤ T} |M_t| ≤ c C (𝔼 sup_{t ≤ T} |Y_t|²)^{1/2} (𝔼 ∫_0^T |Z_s|² ds)^{1/2}`, and its
 increments `M_T − M_t` are integrable with mean zero. -/
 theorem localBrownian_weight [ℱ.IsRightContinuous]
     (hℱ0 : ∀ t : ℝ, t ≤ 0 → ℱ.rightCont 0 ≤ ℱ.rightCont t)
@@ -361,11 +363,15 @@ theorem localBrownian_weight [ℱ.IsRightContinuous]
     (hZp : ∀ k j, ProgressivelyMeasurable ℱ fun ω s => Z k s ω j)
     (hZq : ∀ k j (T' : ℝ), 0 < T' →
       ∫⁻ ω, ∫⁻ s in Icc (0 : ℝ) T', (‖Z k s ω j‖₊ : ℝ≥0∞) ^ 2 ∂volume ∂P < ⊤)
-    (hZv : ∀ k ω s, s ∉ Icc (0 : ℝ) T → w k s ω = 0 ∨ Z k s ω = 0) :
+    (hZv : ∀ k ω s, s ∉ Icc (0 : ℝ) T → w k s ω = 0 ∨ Z k s ω = 0) {c : ℝ≥0∞}
+    (hc : ∀ M, IsLocalBrownianIntegral W ℱ hℱ T (fun s ω j => ∑ k, w k s ω * Z k s ω j) M →
+      ∫⁻ ω, ⨆ t ∈ Icc (0 : ℝ) T, (‖M t ω‖₊ : ℝ≥0∞) ∂P
+        ≤ c * ∫⁻ ω, (∑ j, ∫⁻ s in Icc (0 : ℝ) T, (‖∑ k, w k s ω * Z k s ω j‖₊ : ℝ≥0∞) ^ 2)
+          ^ (1 / 2 : ℝ) ∂P) :
     (∃ M, IsLocalBrownianIntegral W ℱ hℱ T (fun s ω j => ∑ k, w k s ω * Z k s ω j) M)
     ∧ ∀ M, IsLocalBrownianIntegral W ℱ hℱ T (fun s ω j => ∑ k, w k s ω * Z k s ω j) M →
       ∫⁻ ω, ⨆ t ∈ Icc (0 : ℝ) T, (‖M t ω‖₊ : ℝ≥0∞) ∂P
-          ≤ 9 * ENNReal.ofReal C
+          ≤ c * ENNReal.ofReal C
             * (∫⁻ ω, ⨆ t ∈ Icc (0 : ℝ) T, ∑ i, (‖Y i t ω‖₊ : ℝ≥0∞) ^ 2 ∂P) ^ (1 / 2 : ℝ)
             * (∑ k, ∑ j, ∫⁻ ω, ∫⁻ s in Icc (0 : ℝ) T, (‖Z k s ω j‖₊ : ℝ≥0∞) ^ 2 ∂volume ∂P)
               ^ (1 / 2 : ℝ)
@@ -513,9 +519,9 @@ theorem localBrownian_weight [ℱ.IsRightContinuous]
       (lintegral_mul_sqrt_le hSm.aemeasurable hBm.aemeasurable _)
   refine ⟨?_, fun t ht => ?_⟩
   · calc ∫⁻ ω, ⨆ t ∈ Icc (0 : ℝ) T, (‖M t ω‖₊ : ℝ≥0∞) ∂P
-        ≤ 9 * ∫⁻ ω, (∑ j, ∫⁻ s in Icc (0 : ℝ) T, (‖H s ω j‖₊ : ℝ≥0∞) ^ 2) ^ (1 / 2 : ℝ) ∂P :=
-          hM.lintegral_biSup_le W ℱ hℱ hℱ0 hnull hT
-      _ ≤ 9 * (ENNReal.ofReal C * (∫⁻ ω, S ω ∂P) ^ (1 / 2 : ℝ)
+        ≤ c * ∫⁻ ω, (∑ j, ∫⁻ s in Icc (0 : ℝ) T, (‖H s ω j‖₊ : ℝ≥0∞) ^ 2) ^ (1 / 2 : ℝ) ∂P :=
+          hc M hM
+      _ ≤ c * (ENNReal.ofReal C * (∫⁻ ω, S ω ∂P) ^ (1 / 2 : ℝ)
           * (∑ k, ∑ j, ∫⁻ ω, ∫⁻ s in Icc (0 : ℝ) T, (‖Z k s ω j‖₊ : ℝ≥0∞) ^ 2 ∂volume ∂P)
             ^ (1 / 2 : ℝ)) := by gcongr
       _ = _ := by simp only [hSdef]; ring
@@ -578,9 +584,7 @@ variable (N : Poisson.PoissonRandomMeasure P ν) (ℱ : Filtration ℝ ‹Measur
 /-- **Local compensated integrals of marked integrands weighted by left limits.** With `Y` and the
 weight `w` as in `localBrownian_weight`, and a marked integrand `U` of finite energy, with `w_k` or
 `U_k` vanishing at each time off `[0, T]`, `φ = ∑_k w_k U_k` has a local compensated integral `M`
-on `[0, T]`; every such `M` has
-`𝔼 sup_{t ≤ T} |M_t| ≤ 9 C (𝔼 sup_{t ≤ T} |Y_t|²)^{1/2} (𝔼 ∫_0^T ‖U_s‖²_{L²(ν)} ds)^{1/2}`, and
-its increments `M_T − M_t` are integrable with mean zero. -/
+on `[0, T]`, and the increments `M_T − M_t` of every such `M` are integrable with mean zero. -/
 theorem localCompensated_weight [ℱ.IsRightContinuous]
     (hℱ0 : ∀ t : ℝ, t ≤ 0 → ℱ.rightCont 0 ≤ ℱ.rightCont t)
     (hnull : ∀ s : Set Ω, MeasurableSet s → P s = 0 → MeasurableSet[ℱ 0] s)
@@ -606,13 +610,8 @@ theorem localCompensated_weight [ℱ.IsRightContinuous]
     (∃ M, IsLocalCompensatedIntegral N ℱ hℱ T
       (fun ω s e => ∑ k, w k s ω * U k s ω e) M)
     ∧ ∀ M, IsLocalCompensatedIntegral N ℱ hℱ T (fun ω s e => ∑ k, w k s ω * U k s ω e) M →
-      ∫⁻ ω, ⨆ t ∈ Icc (0 : ℝ) T, (‖M t ω‖₊ : ℝ≥0∞) ∂P
-          ≤ 9 * ENNReal.ofReal C
-            * (∫⁻ ω, ⨆ t ∈ Icc (0 : ℝ) T, ∑ i, (‖Y i t ω‖₊ : ℝ≥0∞) ^ 2 ∂P) ^ (1 / 2 : ℝ)
-            * (∑ k, ∫⁻ ω, ∫⁻ s in Icc (0 : ℝ) T, ∫⁻ e, (‖U k s ω e‖₊ : ℝ≥0∞) ^ 2
-                ∂ν ∂volume ∂P) ^ (1 / 2 : ℝ)
-        ∧ ∀ t ∈ Icc (0 : ℝ) T, Integrable (fun ω => M T ω - M t ω) P
-          ∧ ∫ ω, (M T ω - M t ω) ∂P = 0 := by
+      ∀ t ∈ Icc (0 : ℝ) T, Integrable (fun ω => M T ω - M t ω) P
+        ∧ ∫ ω, (M T ω - M t ω) ∂P = 0 := by
   classical
   set φ : Ω → ℝ → E → ℝ := fun ω s e => ∑ k, w k s ω * U k s ω e with hφdef
   have hφm : Measurable fun p : Ω × ℝ × E => φ p.1 p.2.1 p.2.2 :=
@@ -767,21 +766,14 @@ theorem localCompensated_weight [ℱ.IsRightContinuous]
     rw [← hBint]
     exact (lintegral_mono hpt).trans
       (lintegral_mul_sqrt_le hSm.aemeasurable hBm.aemeasurable _)
-  refine ⟨?_, fun t ht => ?_⟩
-  · calc ∫⁻ ω, ⨆ t ∈ Icc (0 : ℝ) T, (‖M t ω‖₊ : ℝ≥0∞) ∂P
-        ≤ 9 * ∫⁻ ω, (∫⁻ s in Icc (0 : ℝ) T, ∫⁻ e, (‖φ ω s e‖₊ : ℝ≥0∞) ^ 2 ∂ν)
-            ^ (1 / 2 : ℝ) ∂P := hM.lintegral_biSup_le N ℱ hℱ hℱ0 hnull hT
-      _ ≤ 9 * (ENNReal.ofReal C * (∫⁻ ω, S ω ∂P) ^ (1 / 2 : ℝ)
-          * (∑ k, ∫⁻ ω, ∫⁻ s in Icc (0 : ℝ) T, ∫⁻ e, (‖U k s ω e‖₊ : ℝ≥0∞) ^ 2
-            ∂ν ∂volume ∂P) ^ (1 / 2 : ℝ)) := by gcongr
-      _ = _ := by simp only [hSdef]; ring
-  · have hfin : ∫⁻ ω, (∫⁻ s in Icc (0 : ℝ) T, ∫⁻ e, (‖φ ω s e‖₊ : ℝ≥0∞) ^ 2 ∂ν)
-        ^ (1 / 2 : ℝ) ∂P < ⊤ := by
-      refine hroot.trans_lt (ENNReal.mul_lt_top (ENNReal.mul_lt_top ENNReal.ofReal_lt_top
-        (ENNReal.rpow_lt_top_of_nonneg (by norm_num) hYS.ne))
-        (ENNReal.rpow_lt_top_of_nonneg (by norm_num) ?_))
-      exact (ENNReal.sum_lt_top.2 fun k _ => hUq k T hT).ne
-    exact hM.integral_sub_eq_zero N ℱ hℱ hT hφm hfin ht
+  intro t ht
+  have hfin : ∫⁻ ω, (∫⁻ s in Icc (0 : ℝ) T, ∫⁻ e, (‖φ ω s e‖₊ : ℝ≥0∞) ^ 2 ∂ν)
+      ^ (1 / 2 : ℝ) ∂P < ⊤ := by
+    refine hroot.trans_lt (ENNReal.mul_lt_top (ENNReal.mul_lt_top ENNReal.ofReal_lt_top
+      (ENNReal.rpow_lt_top_of_nonneg (by norm_num) hYS.ne))
+      (ENNReal.rpow_lt_top_of_nonneg (by norm_num) ?_))
+    exact (ENNReal.sum_lt_top.2 fun k _ => hUq k T hT).ne
+  exact hM.integral_sub_eq_zero N ℱ hℱ hT hφm hfin ht
 
 end CompensatedWeight
 

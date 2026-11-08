@@ -30,6 +30,8 @@ The integrands `e^s ⟨δY_{s−}, δZ_s ·⟩` and `e^s ⟨δY_{s−}, δU_s(e)
 * `MVFBSDEJ.WellPosedness.BrownianPoisson.sqrt_setLIntegral_leftLim_le`,
   `MVFBSDEJ.WellPosedness.BrownianPoisson.poisson_sumSq_compensation` — the Cauchy–Schwarz and
   compensation links for the quadratic variation of `M¹`.
+* `MVFBSDEJ.WellPosedness.BrownianPoisson.lintegral_sqrt_count_weight_le` — the same links for
+  a compensated integrand `∑_k w_k U_k` with any weight bounded by the supremum of a path.
 -/
 
 open MeasureTheory Filter Set
@@ -250,6 +252,74 @@ theorem poisson_sumSq_compensation (hℱN : Poisson.IsPoissonFiltration N ℱ) (
       show (fun ω => ∫⁻ s in Ioc (0 : ℝ) T, ∫⁻ e, ENNReal.ofReal (∑ k, U k s ω e ^ 2) ∂ν)
         = _ from (funext hνeq).symm]
     exact h3
+
+/-- **The square root of the quadratic variation of a weighted compensated integral.** For `Y`
+adapted on `[0, T]` with paths right-continuous on `[0, T)`, a weight `w` with
+`|w_s|² ≤ C² sup_{t ≤ T} |Y_t|²` on `[0, T]` and a marked predictable `U`,
+`𝔼 (∫_{(0, T] × E} |∑_k w_k(s) U_k(s, e)|² N(ds, de))^{1/2}
+  ≤ C (𝔼 sup_{t ≤ T} |Y_t|²)^{1/2} (𝔼 ∫_0^T ‖U_s‖²_{L²(ν)} ds)^{1/2}`,
+by the Cauchy–Schwarz inequality in `ℝⁿ` and in `Ω` and the compensation formula (2.1). -/
+theorem lintegral_sqrt_count_weight_le (hℱN : Poisson.IsPoissonFiltration N ℱ) {T : ℝ}
+    (hT : 0 ≤ T) {m n : ℕ} {Y : Fin m → ℝ → Ω → ℝ}
+    (hYad : ∀ i, ∀ t ∈ Icc (0 : ℝ) T, Measurable[ℱ t] (Y i t))
+    (hYr : ∀ i ω, ∀ t ∈ Ico (0 : ℝ) T, Tendsto (fun s => Y i s ω) (𝓝[>] t) (𝓝 (Y i t ω)))
+    {w : Fin n → ℝ → Ω → ℝ} {C : ℝ} (hC : 0 ≤ C)
+    (hwsq : ∀ ω, ∀ s ∈ Icc (0 : ℝ) T, ENNReal.ofReal (∑ k, w k s ω ^ 2)
+      ≤ ENNReal.ofReal (C ^ 2) * ⨆ t ∈ Icc (0 : ℝ) T, ∑ i, (‖Y i t ω‖₊ : ℝ≥0∞) ^ 2)
+    {U : Fin n → ℝ → Ω → E → ℝ}
+    (hU : ∀ k, Probability.MarkedPredictable ℱ ν fun ω s e => U k s ω e) :
+    ∫⁻ ω, (∫⁻ x in Ioc (0 : ℝ) T ×ˢ (univ : Set E),
+        ‖∑ k, w k x.1 ω * U k x.1 ω x.2‖ₑ ^ 2 ∂(N.N ω)) ^ (1 / 2 : ℝ) ∂P
+      ≤ ENNReal.ofReal C
+        * (∫⁻ ω, ⨆ t ∈ Icc (0 : ℝ) T, ∑ i, (‖Y i t ω‖₊ : ℝ≥0∞) ^ 2 ∂P) ^ (1 / 2 : ℝ)
+        * (∑ k, Poisson.Compensated.markedEnergy P ν T (fun ω s e => U k s ω e))
+          ^ (1 / 2 : ℝ) := by
+  set S : Ω → ℝ≥0∞ := fun ω => ⨆ t ∈ Icc (0 : ℝ) T, ∑ i, (‖Y i t ω‖₊ : ℝ≥0∞) ^ 2 with hSdef
+  have hSm : Measurable S := by
+    refine measurable_biSup_Icc_ennreal hT (fun t ht => Finset.measurable_sum _ fun i _ =>
+      ((hYad i t ht).mono (ℱ.le t) le_rfl).nnnorm.coe_nnreal_ennreal.pow_const 2)
+      fun ω t ht => ?_
+    refine tendsto_finsetSum _ fun i _ => ?_
+    exact ((ENNReal.continuous_pow 2).comp (ENNReal.continuous_coe.comp
+      continuous_nnnorm)).continuousAt.tendsto.comp (hYr i ω t ht)
+  have hUm : ∀ k, Measurable fun p : Ω × ℝ × E => U k p.2.1 p.1 p.2.2 := fun k =>
+    (hU k).mono (Probability.markedPredictableSigma_le _ ν) le_rfl
+  obtain ⟨hBm, hB⟩ := poisson_sumSq_compensation (N := N) hℱN T hU
+  set B : Ω → ℝ≥0∞ := fun ω => ∫⁻ x in Ioc (0 : ℝ) T ×ˢ (univ : Set E),
+    ENNReal.ofReal (∑ k, U k x.1 ω x.2 ^ 2) ∂(N.N ω) with hBdef
+  have hpt : ∀ ω, (∫⁻ x in Ioc (0 : ℝ) T ×ˢ (univ : Set E),
+      ‖∑ k, w k x.1 ω * U k x.1 ω x.2‖ₑ ^ 2 ∂(N.N ω)) ^ (1 / 2 : ℝ)
+      ≤ ENNReal.ofReal C * S ω ^ (1 / 2 : ℝ) * B ω ^ (1 / 2 : ℝ) := by
+    intro ω
+    have hUω : Measurable fun x : ℝ × E => ENNReal.ofReal (∑ k, U k x.1 ω x.2 ^ 2) :=
+      ENNReal.measurable_ofReal.comp (Finset.measurable_sum _ fun k _ =>
+        ((hUm k).comp (measurable_const.prodMk measurable_id)).pow_const 2)
+    have hle : ∫⁻ x in Ioc (0 : ℝ) T ×ˢ (univ : Set E),
+        ‖∑ k, w k x.1 ω * U k x.1 ω x.2‖ₑ ^ 2 ∂(N.N ω)
+        ≤ ∫⁻ x in Ioc (0 : ℝ) T ×ˢ (univ : Set E), ENNReal.ofReal (C ^ 2) * S ω
+          * ENNReal.ofReal (∑ k, U k x.1 ω x.2 ^ 2) ∂(N.N ω) := by
+      refine setLIntegral_mono' (measurableSet_Ioc.prod MeasurableSet.univ) fun x hx => ?_
+      have hx1 : x.1 ∈ Icc (0 : ℝ) T := Ioc_subset_Icc_self hx.1
+      rw [Real.enorm_eq_ofReal_abs, ← ENNReal.ofReal_pow (abs_nonneg _), sq_abs]
+      calc ENNReal.ofReal ((∑ k, w k x.1 ω * U k x.1 ω x.2) ^ 2)
+          ≤ ENNReal.ofReal ((∑ k, w k x.1 ω ^ 2) * ∑ k, U k x.1 ω x.2 ^ 2) :=
+            ENNReal.ofReal_le_ofReal (Finset.sum_mul_sq_le_sq_mul_sq _ _ _)
+        _ = ENNReal.ofReal (∑ k, w k x.1 ω ^ 2) * ENNReal.ofReal (∑ k, U k x.1 ω x.2 ^ 2) :=
+            ENNReal.ofReal_mul (Finset.sum_nonneg fun k _ => sq_nonneg _)
+        _ ≤ ENNReal.ofReal (C ^ 2) * S ω * ENNReal.ofReal (∑ k, U k x.1 ω x.2 ^ 2) := by
+            gcongr
+            exact hwsq ω x.1 hx1
+    calc _ ≤ (ENNReal.ofReal (C ^ 2) * S ω * B ω) ^ (1 / 2 : ℝ) := by
+          refine ENNReal.rpow_le_rpow (hle.trans_eq ?_) (by norm_num)
+          exact lintegral_const_mul _ hUω
+      _ = ENNReal.ofReal C * S ω ^ (1 / 2 : ℝ) * B ω ^ (1 / 2 : ℝ) := by
+          rw [ENNReal.mul_rpow_of_nonneg _ _ (by norm_num),
+            ENNReal.mul_rpow_of_nonneg _ _ (by norm_num), ofReal_sq_rpow_half hC]
+  calc _ ≤ ∫⁻ ω, ENNReal.ofReal C * S ω ^ (1 / 2 : ℝ) * B ω ^ (1 / 2 : ℝ) ∂P :=
+        lintegral_mono hpt
+    _ ≤ ENNReal.ofReal C * (∫⁻ ω, S ω ∂P) ^ (1 / 2 : ℝ) * (∫⁻ ω, B ω ∂P) ^ (1 / 2 : ℝ) :=
+        lintegral_mul_sqrt_le hSm.aemeasurable hBm _
+    _ = _ := by rw [hB, lintegral_Ioc_sumSq_eq_markedEnergy hUm]
 
 end Chain
 

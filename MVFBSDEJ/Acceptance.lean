@@ -50,6 +50,7 @@ import MVFBSDEJ.Acceptance.Sec5Sharp
 import MVFBSDEJ.Acceptance.Solution
 import MVFBSDEJ.Acceptance.Witness
 import MVFBSDEJ.Acceptance.WitnessContraction
+import MVFBSDEJ.Acceptance.WitnessDavis
 import MVFBSDEJ.Acceptance.WitnessForced
 import MVFBSDEJ.Acceptance.WitnessFrozen
 import MVFBSDEJ.Acceptance.WitnessFrozenLam

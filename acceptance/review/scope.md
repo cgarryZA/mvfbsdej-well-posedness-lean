@@ -483,8 +483,26 @@ themselves being read again in `A.md`.
   `eq_fwddiff`, `eq_bwddiff`, `eq_contract` and `eq_contract_half` therefore take every `c ≥ 4`;
   the last four had taken every value at least some `c₀ > 0`, which keeps the constants explicit
   only above an unknown threshold. The bounds that use `c_BDG` at `p = 1` (the local martingales
-  of Lemma 4.1 and (4.18)) keep that reading, as the paper states no value at `p = 1`.
+  of Lemma 4.1 and (4.18)) were restated later; see the section on Davis's inequality below.
 * **Witnesses.** `lem_bpbsde` is now witnessed by `lem_bpbsde_drift_hypotheses`, whose
   integrands do not vanish, instead of an instance solved by the zero tuple.
 
 No scope decision (`formal`, `part-of`, `proof-step` …) changed.
+
+
+## The constant of Davis's inequality (issue #19)
+
+The seven clauses that use `c_BDG` at `p = 1`, `lem41_MW`, `lem41_M1` and `lem41_M1_bdg`
+(`A:lem4.1:M2-infinite-activity`) and `eq_bdg4_XZ`, `eq_bdg4_sigmaY`, `eq_bdg4_XU` and
+`eq_bdg4_hY` (`A:eq:bdg4`), take every real `c` with `DavisValid c`: Davis's inequality, BDG at
+`p = 1` in quadratic-variation form, at `c` for the local Itô integrals and the local compensated
+integrals of marked predictable integrands of the filtration of the setting (`Sec4Davis.lean`,
+reviewed in `definitions.md`). Every value the paper's `c_BDG` can take satisfies it, so the
+clauses state the printed bounds at that value. They are witnessed by
+`lem_bpbsde_nonzero_davis_hypotheses`, `lem_pert_backward_window_davis_hypotheses` and
+`lem_pert_forward_window_davis_hypotheses`, `DavisValid 24` with the earlier instances. The note of
+`A:eq:bdg4` now records that the first link of each bound is that hypothesis and that the jump
+bounds go through (2.1), and the note of `A:sec4:supremum-criterion` the two readings of `c_BDG`.
+`lem41_M1_chain`, `eq_bdg4_fifth` and `eq_bdg4_fifth_mean` do not use the constant.
+
+No scope decision changed.

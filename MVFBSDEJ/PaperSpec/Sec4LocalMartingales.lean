@@ -4,7 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Christian Garry
 -/
 import MVFBSDEJ.PaperSpec.Sec4BrownianPoisson
-import MVFBSDEJ.WellPosedness.Martingale.LocalIntegral
+import MVFBSDEJ.PaperSpec.Sec4Davis
 
 /-!
 # The local martingales `M^W` and `M¹` of the proof of Lemma 4.1
@@ -29,8 +29,9 @@ and the Cauchy–Schwarz inequality give
 `𝔼 sup_{t ≤ T} |M¹_t| ≤ c_BDG e^T (𝔼 sup_{t ≤ T} |δY_t|²)^{1/2} (𝔼 ∫_0^T ‖δU_s‖² ds)^{1/2}`,
 
 both finite, and the supremum criterion gives `𝔼[M_T − M_t] = 0` for `M ∈ {M^W, M¹}`.
-`c_BDG` is the constant of the Burkholder–Davis–Gundy inequality fixed in §4; each proposition
-asserts its bound for every value of it at least some `c₀ > 0`. In the integrands `δY_{s−}` is the
+`c_BDG` is the constant of the Burkholder–Davis–Gundy inequality fixed in §4, used here at `p = 1`;
+each proposition asserts its bound for every constant `c` of that inequality
+(`MVFBSDEJ.PaperSpec.DavisValid`). In the integrands `δY_{s−}` is the
 left limit of `δY` at `s ∈ (0, T]`, and `0` at `s ≤ 0`, a time set of Lebesgue measure zero
 within `[0, T]`.
 
@@ -55,15 +56,15 @@ open MVFBSDEJ.WellPosedness.System MVFBSDEJ.WellPosedness.Existence
 
 universe u v w
 
-/-- **`M^W` in the proof of Lemma 4.1.** There is `c₀ > 0` such that, for every value `c ≥ c₀`
-of the constant `c_BDG`: under the hypotheses of Lemma 4.1 (those of `lem_bpbsde`), the integrand
-`e^s ⟨δY_{s−}, δZ_s ·⟩` has a local Itô integral `M^W_t = ∫_0^t e^s ⟨δY_{s−}, δZ_s dW_s⟩` on
-`[0, T]`, and every such `M^W` satisfies
+/-- **`M^W` in the proof of Lemma 4.1.** For every constant `c` of the Burkholder–Davis–Gundy
+inequality at `p = 1` (`DavisValid c`): under the hypotheses of Lemma 4.1 (those of `lem_bpbsde`),
+the integrand `e^s ⟨δY_{s−}, δZ_s ·⟩` has a local Itô integral
+`M^W_t = ∫_0^t e^s ⟨δY_{s−}, δZ_s dW_s⟩` on `[0, T]`, and every such `M^W` satisfies
 `𝔼 sup_{t ≤ T} |M^W_t| ≤ c e^T (𝔼 sup_{t ≤ T} |δY_t|²)^{1/2} (𝔼 ∫_0^T |δZ_s|²_F ds)^{1/2} < ∞`
 and, for every `t ∈ [0, T]`, `𝔼[M^W_T − M^W_t] = 0` with `M^W_T − M^W_t` integrable; the
 expectations of nonnegative quantities are read in `[0, ∞]`. -/
 def lem41_MW : Prop :=
-  ∃ c₀ : ℝ, 0 < c₀ ∧ ∀ c : ℝ, c₀ ≤ c →
+  ∀ c : ℝ, DavisValid.{u, v, w} c →
     ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
       [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
       (m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
@@ -124,15 +125,15 @@ def lem41_MW : Prop :=
         ∧ ∀ t ∈ Set.Icc (0 : ℝ) T, Integrable (fun ω => MW T ω - MW t ω) P
           ∧ ∫ ω, (MW T ω - MW t ω) ∂P = 0
 
-/-- **`M¹` in the proof of Lemma 4.1.** There is `c₀ > 0` such that, for every value `c ≥ c₀`
-of the constant `c_BDG`: under the hypotheses of Lemma 4.1 (those of `lem_bpbsde`), the marked
-integrand `e^s ⟨δY_{s−}, δU_s(e)⟩` has a local compensated Poisson integral
+/-- **`M¹` in the proof of Lemma 4.1.** For every constant `c` of the Burkholder–Davis–Gundy
+inequality at `p = 1` (`DavisValid c`): under the hypotheses of Lemma 4.1 (those of `lem_bpbsde`),
+the marked integrand `e^s ⟨δY_{s−}, δU_s(e)⟩` has a local compensated Poisson integral
 `M¹_t = ∫_0^t ∫_E e^s ⟨δY_{s−}, δU_s(e)⟩ Ñ(ds, de)` on `[0, T]`, and every such `M¹` satisfies
 `𝔼 sup_{t ≤ T} |M¹_t| ≤ c e^T (𝔼 sup_{t ≤ T} |δY_t|²)^{1/2} (𝔼 ∫_0^T ‖δU_s‖²_{L²(ν)} ds)^{1/2}
 < ∞` and, for every `t ∈ [0, T]`, `𝔼[M¹_T − M¹_t] = 0` with `M¹_T − M¹_t` integrable; the
 expectations of nonnegative quantities are read in `[0, ∞]`. -/
 def lem41_M1 : Prop :=
-  ∃ c₀ : ℝ, 0 < c₀ ∧ ∀ c : ℝ, c₀ ≤ c →
+  ∀ c : ℝ, DavisValid.{u, v, w} c →
     ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
       [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
       (m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
@@ -195,15 +196,14 @@ def lem41_M1 : Prop :=
         ∧ ∀ t ∈ Set.Icc (0 : ℝ) T, Integrable (fun ω => M1 T ω - M1 t ω) P
           ∧ ∫ ω, (M1 T ω - M1 t ω) ∂P = 0
 
-/-- **The first link of the chain for `M¹` in the proof of Lemma 4.1**, the
-Burkholder–Davis–Gundy inequality at `p = 1` in quadratic-variation form. There is `c₀ > 0` such
-that, for every value `c ≥ c₀` of the constant `c_BDG`: under the hypotheses of Lemma 4.1 (those of
-`lem_bpbsde`), every local compensated Poisson integral
-`M¹_t = ∫_0^t ∫_E e^s ⟨δY_{s−}, δU_s(e)⟩ Ñ(ds, de)` on `[0, T]` satisfies
-`𝔼 sup_{t ≤ T} |M¹_t| ≤ c 𝔼 (∫_0^T ∫_E e^{2s} |δY_{s−}|² |δU_s(e)|² N(ds, de))^{1/2}`,
-with the Poisson integral over `(0, T] × E`; the expectations are read in `[0, ∞]`. -/
+/-- **The first link of the chain for `M¹` in the proof of Lemma 4.1**, the Burkholder–Davis–Gundy
+inequality at `p = 1` in quadratic-variation form. For every constant `c` of that inequality
+(`DavisValid c`): under the hypotheses of Lemma 4.1 (those of `lem_bpbsde`), every local compensated
+Poisson integral `M¹_t = ∫_0^t ∫_E e^s ⟨δY_{s−}, δU_s(e)⟩ Ñ(ds, de)` on `[0, T]` satisfies
+`𝔼 sup_{t ≤ T} |M¹_t| ≤ c 𝔼 (∫_0^T ∫_E e^{2s} |δY_{s−}|² |δU_s(e)|² N(ds, de))^{1/2}`, with the
+Poisson integral over `(0, T] × E`; the expectations are read in `[0, ∞]`. -/
 def lem41_M1_bdg : Prop :=
-  ∃ c₀ : ℝ, 0 < c₀ ∧ ∀ c : ℝ, c₀ ≤ c →
+  ∀ c : ℝ, DavisValid.{u, v, w} c →
     ∀ {Ω : Type u} (𝒢₀ : MeasurableSpace Ω) [mΩ : MeasurableSpace Ω] {E : Type v}
       [MeasurableSpace E] (ν : Measure E) [SigmaFinite ν] [MeasurableSpace.CountablyGenerated E]
       (m d : ℕ) (P : Measure Ω) [IsProbabilityMeasure P]
