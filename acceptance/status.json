@@ -138,8 +138,8 @@
    "number": "Assumption 2.5",
    "paper": "A",
    "scope": "definition",
-   "scope_note": "the convention that all hypotheses are imposed along 𝒟_t only and the difference notation (02-model-assumptions.tex lines 69–84) are pinned in A:sec2:difference-notation; Assumption25 and Mono27At ask the expectations of the terminal and interior pairings to exist (Integrable), which the printed inequalities presuppose; under (2.3) and Assumption 2.3 this holds for all inputs at almost every time (integrable_interiorPairing_of_diagonalLipschitzHAt, integrable_terminalPairing, Assumption25.of_monotone), and every theorem that takes Assumption 2.5 with Assumption 2.3 assumes both; Remarks 2.10 and 5.6 take Assumption 2.5 without Assumption 2.3, and there the integrability is part of their hypothesis",
-   "scope_reviewed": false,
+   "scope_note": "the convention that all hypotheses are imposed along 𝒟_t only and the difference notation (02-model-assumptions.tex lines 69–84) are pinned in A:sec2:difference-notation; the Integrable conjuncts of Assumption25.terminal and Mono27At are the printed clause 'with the pairings on the left of both inequalities integrable' (line 194); under (2.3) and Assumption 2.3 the integrability holds for all inputs at almost every time (integrable_interiorPairing_of_diagonalLipschitzHAt, integrable_terminalPairing, Assumption25.of_monotone), and every theorem that takes Assumption 2.5 with Assumption 2.3 assumes both; Remarks 2.10 and 5.6 take Assumption 2.5 without Assumption 2.3, and there the integrability is part of their hypothesis",
+   "scope_reviewed": true,
    "status": "definition: reviewed"
   },
   {

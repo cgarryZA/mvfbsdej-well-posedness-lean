@@ -537,8 +537,8 @@ was read sentence by sentence against the vendored text.
   printed clause; its account of where the integrability comes from under (2.3) and Assumption 2.3
   (`integrable_interiorPairing_of_diagonalLipschitzHAt`, `integrable_terminalPairing`,
   `Assumption25.of_monotone`, read and found as stated) and of Remarks 2.10 and 5.6 (whose
-  propositions `rem_beta1_dich`, `rem_beta1_zero` and `rem_freelaw` take `Assumption25` without
-  `Assumption23`) is then a consequence, no longer a justification. The reference "lines 69–84" is
+  propositions `rem_beta1_dich` and `rem_freelaw` take `Assumption25` without `Assumption23`;
+  `rem_beta1_zero` concludes it) is then a consequence, no longer a justification. The reference "lines 69–84" is
   right. `scope_reviewed` stays `false` until the note is updated.
 * **Notes changed without a change of scope.** The notes of `A:eq:bdg4` and
   `A:sec4:supremum-criterion` changed with issue #19 and keep their reviewed scopes; I read the new
@@ -555,3 +555,20 @@ was read sentence by sentence against the vendored text.
   417–439 and 508–514; in `A:rem:freelaw` 536–538, 546–549 and 541–545; in `A:rem:regimes` 553–554
   and 341–343; and the region of `A:eq:fulllaw-eps`, now 341–347. Each points at the quoted or
   described text. `02-model-assumptions.tex` changed within one line, so no reference into it moved.
+* **`A:ass:mono`, the note as updated: accepted.** The author replaced the second sentence; I read
+  the whole note again against `02-model-assumptions.tex` at `c89cc20`. "All hypotheses below are
+  imposed along 𝒟_t only" and the difference notation are lines 69–84, the region of
+  `A:sec2:difference-notation`. The quoted clause "with the pairings on the left of both
+  inequalities integrable" is line 194, verbatim, and it is what the `Integrable` conjuncts of
+  `Assumption25.terminal` (for all `X_T, X′_T`) and of `Mono27At` (for almost every `t` and all
+  pairs of 𝒟_t) state. Under (2.3) (lines 100–105, the joint Borel measurability of the
+  coefficients, `JointBorel`) and Assumption 2.3 the integrability holds:
+  `integrable_terminalPairing` for every terminal input,
+  `integrable_interiorPairing_of_diagonalLipschitzHAt` at every time of the Lipschitz bound, and
+  `Assumption25.of_monotone` assembles them. Among the
+  propositions of `MVFBSDEJ/PaperSpec/` that take `Assumption25` as a hypothesis, every one also
+  takes `JointBorel` and `Assumption23` except `rem_beta1_dich` and `rem_freelaw`, the propositions
+  of Remarks 2.10 and 5.6, which reason from (2.7) alone (lines 265–286 of
+  `02-model-assumptions.tex`, lines 535–549 of `05-examples.tex`), so there the integrability
+  comes with Assumption 2.5 itself, as the note says (a search of the statements, by
+  pattern, not a proof). `scope_reviewed` is now `true`.
