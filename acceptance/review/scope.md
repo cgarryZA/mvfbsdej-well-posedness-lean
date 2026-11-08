@@ -506,3 +506,52 @@ bounds go through (2.1), and the note of `A:sec4:supremum-criterion` the two rea
 `lem41_M1_chain`, `eq_bdg4_fifth` and `eq_bdg4_fifth_mean` do not use the constant.
 
 No scope decision changed.
+
+
+## The scope decisions reopened by the pin at `c89cc20`, reviewed
+
+Reviewer: `claude-auditor`, a model of the same family as the author of the decisions. Manuscript:
+revision `c89cc20`, sources in `manuscript/paper/`. Two scope decisions are recorded as unreviewed
+(`scope_reviewed: false`), those of the two claims whose passages the revision changed; each note
+was read sentence by sentence against the vendored text.
+
+* **`A:ex:expfunc` (`formal`, three clauses): accepted.** The scope is right: the passage makes
+  three mathematical claims, the class (`ex_expfunc`), the embedding of the two-point kernels
+  (`ex_expfunc_limin`) and of the jump coefficient (`ex_expfunc_jump`). Every reference of the note
+  points at its text: "Their Lévy measure is the ν of the present setting" is line 224; "the
+  counterpart of the origin integrability imposed in [LiMin, (H3.1)]" lines 230–231; the joint
+  measurability of ψ̄ is printed at line 226 and that of φ̄ at lines 248–250, a hypothesis and a
+  conclusion of `ex_expfunc_limin`; the standing countably generated mark space is §2, line 6; the
+  origin conditions are lines 229–231 and 267 and the joint Borel measurability of 𝐇 line 261; the
+  state-variable requirements are left to the full system in the sentence ending at line 221 (it
+  begins at the end of line 219). One remark, not an error: line 226 now also prints the joint
+  measurability of h̄, which `ex_expfunc_jump` does not assume (nor h̄'s Lipschitz bound of the same
+  line, unnamed in the note before the revision too); the note could list it with the hypotheses of
+  the embedding whose consequences are not claimed.
+* **`A:ass:mono` (`definition`): the scope decision is right, the note is not accepted.** Its
+  second sentence, "Assumption25 and Mono27At ask the expectations of the terminal and interior
+  pairings to exist (Integrable), which the printed inequalities presuppose", is the account of an
+  unprinted condition, accurate at `1f67672`. At `c89cc20` the condition is printed: "with the
+  pairings on the left of both inequalities integrable" (`02-model-assumptions.tex` line 194). The
+  note should say that the `Integrable` conjuncts of `Assumption25.terminal` and `Mono27At` are that
+  printed clause; its account of where the integrability comes from under (2.3) and Assumption 2.3
+  (`integrable_interiorPairing_of_diagonalLipschitzHAt`, `integrable_terminalPairing`,
+  `Assumption25.of_monotone`, read and found as stated) and of Remarks 2.10 and 5.6 (whose
+  propositions `rem_beta1_dich`, `rem_beta1_zero` and `rem_freelaw` take `Assumption25` without
+  `Assumption23`) is then a consequence, no longer a justification. The reference "lines 69–84" is
+  right. `scope_reviewed` stays `false` until the note is updated.
+* **Notes changed without a change of scope.** The notes of `A:eq:bdg4` and
+  `A:sec4:supremum-criterion` changed with issue #19 and keep their reviewed scopes; I read the new
+  text. `A:eq:bdg4`: the first link of each bound is cited work, taken as the hypothesis
+  `DavisValid c`, and the proofs go through it, Cauchy–Schwarz and (2.1) in the jump terms
+  (`Acceptance/Sec4BDG.lean`), as stated. `A:sec4:supremum-criterion`: the statements that use
+  `c_BDG` at `p = 2` take every `c ≥ 4` (Doob's `4` is valid, and no smaller constant is, Doob's
+  `L²` inequality being sharp), those at `p = 1` every `c` with `DavisValid c`; the constant `C_BP`
+  of Lemma 4.1 uses `c_BDG` at `p = 2` only (lines 219–246), as the earlier section says.
+* **Renumbered references.** The revision adds one line at line 226 and two at lines 248–250 of
+  `05-examples.tex`, so later lines move by one (227–247) or three (from 249). Every renumbered
+  reference was checked against the text: in `A:ex:expfunc` 230–231, 229–231, 261 and 267; in
+  `A:ex:fulllaw` 294, 315–316, 348–350 and 319–321; in `A:ex:dealer` 439–441, 464–465, 463–464,
+  417–439 and 508–514; in `A:rem:freelaw` 536–538, 546–549 and 541–545; in `A:rem:regimes` 553–554
+  and 341–343; and the region of `A:eq:fulllaw-eps`, now 341–347. Each points at the quoted or
+  described text. `02-model-assumptions.tex` changed within one line, so no reference into it moved.

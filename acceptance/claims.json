@@ -771,7 +771,7 @@
    "source_sha256": "09fe49d6a5105a29ecd298dd8db3cbf58a78d9eab343a9cb044fc2f4e9e663da",
    "scope": "formal",
    "scope_note": "'Their Lévy measure is the ν of the present setting' (line 224) and 'the counterpart of the origin integrability imposed in [LiMin, (H3.1)]' (lines 230–231) are statements about cited work; the joint measurability of ψ̄ is printed among its hypotheses (line 226), and the joint measurability of φ̄ that the class requires is the sentence of lines 248–250, both in ex_expfunc_limin; the standing countably generated mark space of §2 is assumed; the origin conditions of lines 229–231 and 267 and the joint Borel measurability of 𝐇 (line 261) are hypotheses of the embedding whose consequences for the embedded coefficients (the origin values of Assumption 2.2, (2.3) for h) are not claimed, lines 220–221 leaving the state-variable Lipschitz and integrability requirements to the full coefficient system",
-   "scope_reviewed": false,
+   "scope_reviewed": true,
    "clauses": [
     {
      "name": "the expectation-functional class",

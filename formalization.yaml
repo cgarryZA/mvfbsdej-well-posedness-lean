@@ -40,7 +40,7 @@ alignment:
     - source: "Assumption 2.5"
       lean:
         - "MVFBSDEJ.WellPosedness.Spec.Assumption25"
-      status: "definition: author-reviewed"
+      status: "definition: reviewed"
     - source: "Remark 2.6"
       lean:
         - "MVFBSDEJ.Acceptance.eq_coupling"
@@ -160,7 +160,7 @@ alignment:
         - "MVFBSDEJ.Acceptance.ex_expfunc"
         - "MVFBSDEJ.Acceptance.ex_expfunc_limin"
         - "MVFBSDEJ.Acceptance.ex_expfunc_jump"
-      status: "formal: proved, author-reviewed"
+      status: "formal: accepted"
     - source: "Example 5.4"
       lean:
         - "MVFBSDEJ.Acceptance.ex_fulllaw_lip"

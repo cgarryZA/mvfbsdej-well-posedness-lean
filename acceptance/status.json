@@ -118,9 +118,7 @@
    "clauses": [
     {
      "accept": null,
-     "author_reviewed": [
-      "MVFBSDEJ.WellPosedness.Spec.Assumption25"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [
       "MVFBSDEJ.WellPosedness.Spec.Assumption25"
@@ -142,7 +140,7 @@
    "scope": "definition",
    "scope_note": "the convention that all hypotheses are imposed along 𝒟_t only and the difference notation (02-model-assumptions.tex lines 69–84) are pinned in A:sec2:difference-notation; Assumption25 and Mono27At ask the expectations of the terminal and interior pairings to exist (Integrable), which the printed inequalities presuppose; under (2.3) and Assumption 2.3 this holds for all inputs at almost every time (integrable_interiorPairing_of_diagonalLipschitzHAt, integrable_terminalPairing, Assumption25.of_monotone), and every theorem that takes Assumption 2.5 with Assumption 2.3 assumes both; Remarks 2.10 and 5.6 take Assumption 2.5 without Assumption 2.3, and there the integrability is part of their hypothesis",
    "scope_reviewed": false,
-   "status": "definition: author-reviewed"
+   "status": "definition: reviewed"
   },
   {
    "clauses": [
@@ -1414,9 +1412,7 @@
     {
      "accept": "MVFBSDEJ.Acceptance.ex_expfunc",
      "accept_ok": true,
-     "author_reviewed": [
-      "MVFBSDEJ.PaperSpec.ex_expfunc"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1427,16 +1423,14 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_expfunc",
      "spec_hash": "ed839d34f480cba15a6f123acd31afd5",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.ex_expfunc_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "MVFBSDEJ.Acceptance.ex_expfunc_limin",
      "accept_ok": true,
-     "author_reviewed": [
-      "MVFBSDEJ.PaperSpec.ex_expfunc_limin"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1447,16 +1441,14 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_expfunc_limin",
      "spec_hash": "ed839d34f480cba1953e11aa74b157a5",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.ex_expfunc_limin_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "MVFBSDEJ.Acceptance.ex_expfunc_jump",
      "accept_ok": true,
-     "author_reviewed": [
-      "MVFBSDEJ.PaperSpec.ex_expfunc_jump"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -1467,7 +1459,7 @@
      "spec": "MVFBSDEJ.PaperSpec.ex_expfunc_jump",
      "spec_hash": "ed839d34f480cba1e4ed71c267b0a369",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.ex_expfunc_jump_hypotheses",
      "witness_ok": true
     }
@@ -1478,8 +1470,8 @@
    "paper": "A",
    "scope": "formal",
    "scope_note": "'Their Lévy measure is the ν of the present setting' (line 224) and 'the counterpart of the origin integrability imposed in [LiMin, (H3.1)]' (lines 230–231) are statements about cited work; the joint measurability of ψ̄ is printed among its hypotheses (line 226), and the joint measurability of φ̄ that the class requires is the sentence of lines 248–250, both in ex_expfunc_limin; the standing countably generated mark space of §2 is assumed; the origin conditions of lines 229–231 and 267 and the joint Borel measurability of 𝐇 (line 261) are hypotheses of the embedding whose consequences for the embedded coefficients (the origin values of Assumption 2.2, (2.3) for h) are not claimed, lines 220–221 leaving the state-variable Lipschitz and integrability requirements to the full coefficient system",
-   "scope_reviewed": false,
-   "status": "formal: proved, author-reviewed"
+   "scope_reviewed": true,
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -3576,10 +3568,7 @@
     {
      "accept": "MVFBSDEJ.Acceptance.lem41_MW",
      "accept_ok": true,
-     "author_reviewed": [
-      "MVFBSDEJ.PaperSpec.DavisValid",
-      "MVFBSDEJ.PaperSpec.lem41_MW"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3590,17 +3579,14 @@
      "spec": "MVFBSDEJ.PaperSpec.lem41_MW",
      "spec_hash": "ed839d34f480cba17888784b7423c40b",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.lem_bpbsde_nonzero_davis_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "MVFBSDEJ.Acceptance.lem41_M1",
      "accept_ok": true,
-     "author_reviewed": [
-      "MVFBSDEJ.PaperSpec.DavisValid",
-      "MVFBSDEJ.PaperSpec.lem41_M1"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3611,17 +3597,14 @@
      "spec": "MVFBSDEJ.PaperSpec.lem41_M1",
      "spec_hash": "ed839d34f480cba133c55b965e1237a9",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.lem_bpbsde_nonzero_davis_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "MVFBSDEJ.Acceptance.lem41_M1_bdg",
      "accept_ok": true,
-     "author_reviewed": [
-      "MVFBSDEJ.PaperSpec.DavisValid",
-      "MVFBSDEJ.PaperSpec.lem41_M1_bdg"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -3632,7 +3615,7 @@
      "spec": "MVFBSDEJ.PaperSpec.lem41_M1_bdg",
      "spec_hash": "ed839d34f480cba1c81cabab3cf7555b",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.lem_bpbsde_nonzero_davis_hypotheses",
      "witness_ok": true
     },
@@ -3662,7 +3645,7 @@
    "scope": "formal",
    "scope_note": "the clauses read lines 139–187 of the proof, the paragraph on the zero-mean terms: the sentence of line 151, where the claim is anchored (lines 148–152), the local martingales M^W and M¹ (lines 139–148 and 153–172) and the paragraph on M² (lines 173–187); the first clause reads the sentence's first assertion, that membership in H²_N does not give the quadratic integrand of M² square moments, for ν ≠ 0, the degenerate case ν = 0, in which every marked integrand vanishes, being the one Remark 2.10 sets aside; M^W and M¹ are read as local stochastic integrals (IsLocalBrownianIntegral, IsLocalCompensatedIntegral) for the filtration of the setting, which carries their local-martingale property, not stated separately; that M² is a local martingale (lines 139–141) is the clause on M² read pathwise, stated as a martingale on [0, T] (stronger), adapted up to a null set; that the stochastic-integral terms of (4.5) are M^W, M¹ and M² belongs to (4.5) (A:eq:itoY2); the first link of the chain for M¹ (line 162), the Burkholder–Davis–Gundy inequality at p = 1 in quadratic-variation form for M¹ with the Cauchy–Schwarz inequality in ℝᵐ, is the eighth clause, the links after it the ninth, and the composite bound the seventh; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -5556,10 +5539,7 @@
     {
      "accept": "MVFBSDEJ.Acceptance.eq_bdg4_XZ",
      "accept_ok": true,
-     "author_reviewed": [
-      "MVFBSDEJ.PaperSpec.DavisValid",
-      "MVFBSDEJ.PaperSpec.eq_bdg4_XZ"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -5570,17 +5550,14 @@
      "spec": "MVFBSDEJ.PaperSpec.eq_bdg4_XZ",
      "spec_hash": "ed839d34f480cba1f6e216c468c283a2",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.lem_pert_backward_window_davis_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "MVFBSDEJ.Acceptance.eq_bdg4_sigmaY",
      "accept_ok": true,
-     "author_reviewed": [
-      "MVFBSDEJ.PaperSpec.DavisValid",
-      "MVFBSDEJ.PaperSpec.eq_bdg4_sigmaY"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -5591,17 +5568,14 @@
      "spec": "MVFBSDEJ.PaperSpec.eq_bdg4_sigmaY",
      "spec_hash": "ed839d34f480cba1bf17d6c31647e641",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.lem_pert_forward_window_davis_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "MVFBSDEJ.Acceptance.eq_bdg4_XU",
      "accept_ok": true,
-     "author_reviewed": [
-      "MVFBSDEJ.PaperSpec.DavisValid",
-      "MVFBSDEJ.PaperSpec.eq_bdg4_XU"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -5612,17 +5586,14 @@
      "spec": "MVFBSDEJ.PaperSpec.eq_bdg4_XU",
      "spec_hash": "ed839d34f480cba12fc8ad28c4e5521a",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.lem_pert_backward_window_davis_hypotheses",
      "witness_ok": true
     },
     {
      "accept": "MVFBSDEJ.Acceptance.eq_bdg4_hY",
      "accept_ok": true,
-     "author_reviewed": [
-      "MVFBSDEJ.PaperSpec.DavisValid",
-      "MVFBSDEJ.PaperSpec.eq_bdg4_hY"
-     ],
+     "author_reviewed": [],
      "corrects": null,
      "defs": [],
      "defs_changed": [],
@@ -5633,7 +5604,7 @@
      "spec": "MVFBSDEJ.PaperSpec.eq_bdg4_hY",
      "spec_hash": "ed839d34f480cba1ab2019e3218c5274",
      "spec_ok": true,
-     "spec_review": "reviewed by claude-author",
+     "spec_review": "reviewed by claude-auditor",
      "witness": "MVFBSDEJ.Acceptance.lem_pert_forward_window_davis_hypotheses",
      "witness_ok": true
     },
@@ -5681,7 +5652,7 @@
    "scope": "formal",
    "scope_note": "the clauses read lines 579–622: the four bounds of (4.18) (lines 579–598), each with the existence of its local martingale as a local stochastic integral (IsLocalBrownianIntegral, IsLocalCompensatedIntegral), the finiteness of the bounds and the zero means the supremum criterion gives (lines 600–612), the finiteness of 𝔼∫|λδσ + q^σ|²_F and 𝔼∫‖λδh + q^h‖² (lines 606–610), the integrability of the fifth integrand (lines 612–621), and its predictability and the zero mean of the fifth term by (2.2) (lines 612–613 and 622), the last clause, with a marked predictable representative of λδh + q^h and the fifth term read pathwise, the Poisson integral minus its compensator, as for M² in A:lem4.1:M2-infinite-activity (the bounds read λδh + q^h through any representative meeting the conditions of the compensated integral, marked progressively measurable, as in (4.15)); the display at lines 600–605 is the definition of the norm of ℍ at the hypothesis Θ¹ − Θ² ∈ ℍ, whose finiteness enters each bound; not stated: that the four local martingales and the fifth term are the stochastic terms of (4.17), which belongs to (4.17) (A:eq:Gid-path, a proof step not stated); the first link of each bound, the Burkholder–Davis–Gundy inequality at p = 1 in quadratic-variation form (Davis's inequality), is cited work (He, Wang and Yan, as in A:sec4:supremum-criterion) and is not stated as a theorem: each bound takes it as the hypothesis DavisValid c on its constant, for the local stochastic integrals of the setting, and is proved through it, the Cauchy–Schwarz inequality and, in the jump terms, (2.1); the set-up of the proof of Lemma 4.3 (04-proof-wellposedness.tex lines 511–526: q := δq, P, δψ_t, δg_T, δh at the predictable tuples) is pinned in A:eq:dX and A:eq:dY; the universal constant c_BDG (04-proof-wellposedness.tex lines 27–35) is pinned in A:sec4:supremum-criterion",
    "scope_reviewed": true,
-   "status": "formal: proved, author-reviewed"
+   "status": "formal: accepted"
   },
   {
    "clauses": [
@@ -6075,10 +6046,8 @@
  ],
  "summary": {
   "A": {
-   "definition: author-reviewed": 1,
-   "definition: reviewed": 13,
-   "formal: accepted": 73,
-   "formal: proved, author-reviewed": 3,
+   "definition: reviewed": 14,
+   "formal: accepted": 76,
    "out of scope: duplicate": 4,
    "out of scope: part-of": 17,
    "out of scope: proof-step": 2
