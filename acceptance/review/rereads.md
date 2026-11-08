@@ -1440,3 +1440,60 @@ independently.
   the diagonal laws `p.2`, `p'.2`; `constants` (`Constants n m α β₁ β₂`) involves no law. No field
   varies a law independently of its tuple. Verdict: faithful to the passage.
   <!-- def-review: MVFBSDEJ.WellPosedness.Spec.Assumption25 a0fc1ba9071e126c0000000000000000 by=claude-auditor source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+
+## Readings at manuscript `c89cc20` (Example 5.3 and Assumption 2.5)
+
+The revision `c89cc20` adds joint measurability to the kernels of Example 5.3 with the sentence that
+makes the embedded kernel jointly measurable, and requires the pairings of Assumption 2.5 to be
+integrable. The passages of `A:ex:expfunc` and `A:ass:mono` change; every other passage is
+unchanged or moved.
+
+* Reading by claude-author of `MVFBSDEJ.WellPosedness.Spec.Assumption25` against the passages of
+  `A:ass:mono` (`02-model-assumptions.tex` lines 183–201, at `c89cc20`) and
+  `A:sec2:difference-notation` (lines 69–84, unchanged). The assumption now reads "with the
+  pairings on the left of both inequalities integrable" after (2.7). The field `terminal` takes
+  ℱ_T-measurable X_T, X′_T in L² and asserts that the terminal pairing ⟨δg_T, G δX_T⟩ is
+  integrable and that its integral is at least α 𝔼|G δX_T|²; the field `interior` is, for almost
+  every t ∈ [0, T], `Mono27At`, which asserts for all p, p′ ∈ 𝒟_t that `pairing27` is integrable
+  and that its integral is at most the right side of (2.7). Both integrability conjuncts are the
+  printed clause, and the inequalities, the diagonal inputs, the laws and the constants are as in
+  the readings above. Verdict: faithful to the passage.
+  <!-- def-review: MVFBSDEJ.WellPosedness.Spec.Assumption25 a0fc1ba9071e126c0000000000000000 by=claude-author source=A:ass:mono@b9c81353c2d9c84d34be5639729892672d8aa632432a46d3499a60c96cc1cba7 source=A:sec2:difference-notation@cc7023eaeddb4fce3219878053990aa52a93f791b1237a293424f653545642ca -->
+
+* Reading by claude-author of `MVFBSDEJ.PaperSpec.ex_expfunc` against the passage of
+  `A:ex:expfunc` (`05-examples.tex` lines 211–270, at `c89cc20`), with those of
+  `A:intro:limin-comparison` and `A:sec5:overview` (unchanged). The class is printed as kernels
+  φ̄ : [0, T] × 𝓗 × 𝓗 → ℝᵏ "measurable and Lipschitz in (θ, θ′) uniformly in t" (lines 212–213);
+  the proposition assumes φ̄ jointly measurable on ℝ × H × H and L-Lipschitz in (θ, θ′) at every
+  t, and concludes that φ̄(t, θ, ·) is L-Lipschitz and that the Bochner mean
+  φ(t, θ, μ) = ∫ φ̄(t, θ, θ′) μ(dθ′) moves by at most L W₂(μ, μ′): the law-dependence component of
+  Assumption 2.3 through (2.10). The time interval is extended to ℝ. Lines 211–222 are unchanged
+  by the revision. Verdict: faithful to the passage.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc ed839d34f480cba15a6f123acd31afd5 by=claude-author source=A:ex:expfunc@09fe49d6a5105a29ecd298dd8db3cbf58a78d9eab343a9cb044fc2f4e9e663da source=A:intro:limin-comparison@28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
+
+* Reading by claude-author of `MVFBSDEJ.PaperSpec.ex_expfunc_limin` against the same passages.
+  The kernels ψ̄ and h̄ are now printed "jointly measurable and Lipschitz in all arguments except
+  t" (line 226), the constant uniform in t and taken for the Euclidean norm on each argument block
+  (lines 227–229). The proposition takes ν finite (finite activity, line 223), ψ̄ jointly
+  measurable on ℝ × B × B and Lipschitz with constant Lip for the sum of the block-wise Euclidean
+  norms √(|δx|² + |δy|² + |δz|² + |δu|²) of the two argument blocks, uniformly in t. Its
+  conclusions are the printed ones: φ̄(t, θ, θ′) = ∫_E ψ̄(t, …, u(e), …, u′(e)) ν(de) is measurable
+  on ℝ × H × H, the sentence of lines 248–250; its integrand is ν-integrable at every (θ, θ′), the
+  finiteness of line 236; the Lipschitz bound with constant Lip max{ν(E), ν(E)^{1/2}}, lines
+  241–248; and changing u, u′ on a ν-null set does not change φ̄, lines 251–253. The origin
+  condition ψ̄(·, 0, …, 0) ∈ L²(0, T) (line 230) is not a hypothesis: the conclusions hold
+  without it, so the proposition states more than the passage there. Verdict: faithful to the
+  passage.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_limin ed839d34f480cba1953e11aa74b157a5 by=claude-author source=A:ex:expfunc@09fe49d6a5105a29ecd298dd8db3cbf58a78d9eab343a9cb044fc2f4e9e663da source=A:intro:limin-comparison@28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->
+
+* Reading by claude-author of `MVFBSDEJ.PaperSpec.ex_expfunc_jump` against the same passages.
+  The jump coefficient embeds through the Nemytskii map [𝐇_t(θ, θ′)](e) = h̄(t, …, u(e), …, u′(e), e)
+  (lines 255–260), "again well defined on equivalence classes" (line 261), and under the
+  L²(ν)-Lipschitz bound of lines 264–266 (2.10) applies with K = L²(ν; ℝⁿ) (line 270). The
+  proposition states that changing u, u′ on a ν-null set changes the map on a ν-null set, and that
+  a representative 𝐇_t : H × H → L²(ν; ℝⁿ) that is C-Lipschitz gives
+  ‖h(t, θ, μ) − h(t, θ, μ′)‖ ≤ C W₂(μ, μ′) for h = ∫ 𝐇_t(θ, θ′) μ(dθ′). It assumes neither the
+  joint measurability of h̄ (line 226) nor that of 𝐇 (line 261) nor the origin condition (line
+  267), which its conclusions do not need. The passage's lines 255–270 are unchanged by the
+  revision. Verdict: faithful to the passage.
+  <!-- spec-review: MVFBSDEJ.PaperSpec.ex_expfunc_jump ed839d34f480cba1e4ed71c267b0a369 by=claude-author source=A:ex:expfunc@09fe49d6a5105a29ecd298dd8db3cbf58a78d9eab343a9cb044fc2f4e9e663da source=A:intro:limin-comparison@28e759aa0429025c3c31ed5e4adc1fdd423b38202635e9fa80e52cc98bb13998 source=A:sec5:overview@8e465cf926145c437fd799ed11d7a0aaaa89f28e2b5f5562f8ceedf17465af52 -->

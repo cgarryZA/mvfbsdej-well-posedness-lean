@@ -1,11 +1,11 @@
 {
- "note": "The frozen inventory of the claims of the manuscript. Edit only the scope and clause fields; the source fields are checked against the pinned version (1f67672, vendored in manuscript/paper/).",
+ "note": "The frozen inventory of the claims of the manuscript. Edit only the scope and clause fields; the source fields are checked against the pinned version (c89cc20, vendored in manuscript/paper/).",
  "papers": {
   "A": {
    "key": "WP",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "title": "well-posedness",
-   "source": "https://github.com/cgarryZA/mvfbsdej-well-posedness/tree/1f67672",
+   "source": "https://github.com/cgarryZA/mvfbsdej-well-posedness/tree/c89cc20",
    "path": "paper/wellposedness.tex"
   }
  },
@@ -13,7 +13,7 @@
   {
    "id": "A:def:diag",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "definition",
    "number": "Definition 2.1",
    "title": "Diagonal input",
@@ -35,7 +35,7 @@
   {
    "id": "A:ass:integ",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "assumption",
    "number": "Assumption 2.2",
    "title": "Integrability at the origin",
@@ -57,7 +57,7 @@
   {
    "id": "A:ass:lip",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "assumption",
    "number": "Assumption 2.3",
    "title": "Lipschitz coefficients",
@@ -79,7 +79,7 @@
   {
    "id": "A:ass:G",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "assumption",
    "number": "Assumption 2.4",
    "title": "Coupling matrix",
@@ -100,15 +100,15 @@
   {
    "id": "A:ass:mono",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "assumption",
    "number": "Assumption 2.5",
    "title": "Terminal and interior jump-extended $G$-monotonicity",
    "location": "paper/sections/02-model-assumptions.tex",
-   "source_sha256": "a60a526e8cdd9d0ae4441e25895e5af1cc39a45df41a9028fe0f60371ce998ff",
+   "source_sha256": "b9c81353c2d9c84d34be5639729892672d8aa632432a46d3499a60c96cc1cba7",
    "scope": "definition",
    "scope_note": "the convention that all hypotheses are imposed along 𝒟_t only and the difference notation (02-model-assumptions.tex lines 69–84) are pinned in A:sec2:difference-notation; Assumption25 and Mono27At ask the expectations of the terminal and interior pairings to exist (Integrable), which the printed inequalities presuppose; under (2.3) and Assumption 2.3 this holds for all inputs at almost every time (integrable_interiorPairing_of_diagonalLipschitzHAt, integrable_terminalPairing, Assumption25.of_monotone), and every theorem that takes Assumption 2.5 with Assumption 2.3 assumes both; Remarks 2.10 and 5.6 take Assumption 2.5 without Assumption 2.3, and there the integrability is part of their hypothesis",
-   "scope_reviewed": true,
+   "scope_reviewed": false,
    "clauses": [
     {
      "name": "definition",
@@ -122,7 +122,7 @@
   {
    "id": "A:rem:wasserstein-bounds",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "remark",
    "number": "Remark 2.6",
    "title": "Wasserstein bounds",
@@ -161,7 +161,7 @@
   {
    "id": "A:rem:G-pairing",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "remark",
    "number": "Remark 2.7",
    "title": "The coupling matrix $G$",
@@ -175,7 +175,7 @@
   {
    "id": "A:rem:diag-mono",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "remark",
    "number": "Remark 2.8",
    "title": "Expected diagonal monotonicity",
@@ -202,7 +202,7 @@
   {
    "id": "A:rem:intrinsic",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "remark",
    "number": "Remark 2.9",
    "title": "Coupling formulation",
@@ -235,7 +235,7 @@
   {
    "id": "A:rem:beta1-dich",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "remark",
    "number": "Remark 2.10",
    "title": "The $\\beta_1$ dichotomy in the jump channel",
@@ -280,7 +280,7 @@
   {
    "id": "A:rem:margin",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "remark",
    "number": "Remark 2.11",
    "title": "Dissipativity margin",
@@ -319,7 +319,7 @@
   {
    "id": "A:thm:stab",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "theorem",
    "number": "Theorem 3.1",
    "title": "Stability under coefficient and data perturbation",
@@ -340,7 +340,7 @@
   {
    "id": "A:rem:cwp-class",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "remark",
    "number": "Remark 3.2",
    "title": "Solution class",
@@ -361,7 +361,7 @@
   {
    "id": "A:thm:uniq",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "theorem",
    "number": "Theorem 3.3",
    "title": "Uniqueness",
@@ -382,7 +382,7 @@
   {
    "id": "A:rem:uniq-no-integ",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "remark",
    "number": "Remark 3.4",
    "title": "Uniqueness without origin integrability",
@@ -451,7 +451,7 @@
   {
    "id": "A:thm:cwp",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "theorem",
    "number": "Theorem 3.5",
    "title": "Global well-posedness",
@@ -478,7 +478,7 @@
   {
    "id": "A:cor:robust",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "corollary",
    "number": "Corollary 3.6",
    "title": "Robustness of well-posedness",
@@ -511,7 +511,7 @@
   {
    "id": "A:rem:generalrank",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "remark",
    "number": "Remark 3.7",
    "title": "General rank",
@@ -538,7 +538,7 @@
   {
    "id": "A:prop:strict",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "proposition",
    "number": "Proposition 3.8",
    "title": "Strictness of expected diagonal monotonicity",
@@ -559,7 +559,7 @@
   {
    "id": "A:lem:bpbsde",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "lemma",
    "number": "Lemma 4.1",
    "title": "Brownian--Poisson $L^2$ estimate",
@@ -580,7 +580,7 @@
   {
    "id": "A:lem:small",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "lemma",
    "number": "Lemma 4.2",
    "title": "Small-coupling base case",
@@ -601,7 +601,7 @@
   {
    "id": "A:lem:pert",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "lemma",
    "number": "Lemma 4.3",
    "title": "Continuous perturbation stability along the homotopy",
@@ -622,7 +622,7 @@
   {
    "id": "A:lem:cont",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "lemma",
    "number": "Lemma 4.4",
    "title": "Continuation",
@@ -643,7 +643,7 @@
   {
    "id": "A:ex:concrete",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "example",
    "number": "Example 5.1",
    "title": "Dissipative models",
@@ -718,7 +718,7 @@
   {
    "id": "A:ex:brownian",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "example",
    "number": "Example 5.2",
    "title": "Brownian reduction",
@@ -763,15 +763,15 @@
   {
    "id": "A:ex:expfunc",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "example",
    "number": "Example 5.3",
    "title": "Expectation-functional interactions",
    "location": "paper/sections/05-examples.tex",
-   "source_sha256": "6ba8e9a8bd4a3a1d756a510bfc8571612af5e4c854e3bd45a28c1b5172afaaad",
+   "source_sha256": "09fe49d6a5105a29ecd298dd8db3cbf58a78d9eab343a9cb044fc2f4e9e663da",
    "scope": "formal",
-   "scope_note": "'Their Lévy measure is the ν of the present setting' (line 224) and 'the counterpart of the origin integrability imposed in [LiMin, (H3.1)]' (lines 229–230) are statements about cited work; the joint measurability of ψ̄, a hypothesis of ex_expfunc_limin needed for the measurability of φ̄ that the class requires, is not printed among the hypotheses of lines 225–230 and is read from 'the deterministic-coefficient … interactions of [LiMin]' (line 223), whose coefficients are measurable; the standing countably generated mark space of §2 is assumed; the origin conditions of lines 228–230 and 264 and the joint Borel measurability of 𝐇 (line 258) are hypotheses of the embedding whose consequences for the embedded coefficients (the origin values of Assumption 2.2, (2.3) for h) are not claimed, lines 220–221 leaving the state-variable Lipschitz and integrability requirements to the full coefficient system",
-   "scope_reviewed": true,
+   "scope_note": "'Their Lévy measure is the ν of the present setting' (line 224) and 'the counterpart of the origin integrability imposed in [LiMin, (H3.1)]' (lines 230–231) are statements about cited work; the joint measurability of ψ̄ is printed among its hypotheses (line 226), and the joint measurability of φ̄ that the class requires is the sentence of lines 248–250, both in ex_expfunc_limin; the standing countably generated mark space of §2 is assumed; the origin conditions of lines 229–231 and 267 and the joint Borel measurability of 𝐇 (line 261) are hypotheses of the embedding whose consequences for the embedded coefficients (the origin values of Assumption 2.2, (2.3) for h) are not claimed, lines 220–221 leaving the state-variable Lipschitz and integrability requirements to the full coefficient system",
+   "scope_reviewed": false,
    "clauses": [
     {
      "name": "the expectation-functional class",
@@ -796,14 +796,14 @@
   {
    "id": "A:ex:fulllaw",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "example",
    "number": "Example 5.4",
    "title": "Nonlinear law functionals",
    "location": "paper/sections/05-examples.tex",
    "source_sha256": "5f21b4ec1722cc0bcf4a3113d8782610d06e4e035be63d4b232c314fbc92da38",
    "scope": "formal",
-   "scope_note": "'Example 5.1(i) supplies such a baseline' (line 291) is the content of A:ex:concrete (ex_concrete_i_pairing, the margin of Example 5.1(i)); 'and beyond the linear jump-integrand expectations of the cited models' (lines 312–313) is a statement about cited work; the closing sentence on the smallness and the weak-coupling route (lines 345–347) is exposition; the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; 'an expectation functional already covered by Example 5.3' (lines 316–318) is ex_fulllaw_affineQ: the identity, and the measurability and the Lipschitz bound of the kernel θ' ↦ a + Σ_j c_j φ_j(u') that the class of Example 5.3 requires",
+   "scope_note": "'Example 5.1(i) supplies such a baseline' (line 294) is the content of A:ex:concrete (ex_concrete_i_pairing, the margin of Example 5.1(i)); 'and beyond the linear jump-integrand expectations of the cited models' (lines 315–316) is a statement about cited work; the closing sentence on the smallness and the weak-coupling route (lines 348–350) is exposition; the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; 'an expectation functional already covered by Example 5.3' (lines 319–321) is ex_fulllaw_affineQ: the identity, and the measurability and the Lipschitz bound of the kernel θ' ↦ a + Σ_j c_j φ_j(u') that the class of Example 5.3 requires",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -853,14 +853,14 @@
   {
    "id": "A:ex:dealer",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "example",
    "number": "Example 5.5",
    "title": "A non-perturbative full $U$-law model: the mean-field dealer market",
    "location": "paper/sections/05-examples.tex",
    "source_sha256": "08e7f11942ef37bd28c33d6517d5be2e155483a056ed1db445cfd0e697e7f90b",
    "scope": "formal",
-   "scope_note": "the dealer-market reading (requests for quotes, valuation curves, routing, quotes affine in the curve, the uncontrolled exposure change at an event) is modelling and is not stated; the finite-player inspiration (Cont and Xiong) is a statement about cited work; 'The computation uses only the joint law π; no auxiliary random variable on Ω is needed' (lines 436–438) is a remark on the proof of ex_dealer_mono; 'dependence nonlinear in the law itself is that of Example 5.4' (lines 461–462) refers to A:ex:fulllaw; the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; 'an expectation kernel in the sense of Example 5.3, with L²(ν) in the role of K' (lines 460–461) is ex_dealer_affine: the representation, the measurability and the Lipschitz bound of the kernel (θ, θ') ↦ ∇V(u − u'), whose origin value ∇V(0) = 0 makes the origin condition of the jump class of Example 5.3 hold trivially; the symmetrisation in the proof of monotonicity (lines 414–436: the crowding pairing as the π ⊗ π-integral of Φ, its form with (u, u′) and (v, v′) exchanged, and their average, nonnegative because ∇V is monotone) is a step of the proof of ex_dealer_mono, whose first conjunct states its consequence 𝔼⟨A_{μ^U}(U) − A_{μ′^U}(U′), U − U′⟩ ≥ 0; the identity itself is stated only under λ ⊗ λ (lines 505–511), as ex_dealer_symm",
+   "scope_note": "the dealer-market reading (requests for quotes, valuation curves, routing, quotes affine in the curve, the uncontrolled exposure change at an event) is modelling and is not stated; the finite-player inspiration (Cont and Xiong) is a statement about cited work; 'The computation uses only the joint law π; no auxiliary random variable on Ω is needed' (lines 439–441) is a remark on the proof of ex_dealer_mono; 'dependence nonlinear in the law itself is that of Example 5.4' (lines 464–465) refers to A:ex:fulllaw; the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; the solution notion (03-main-results.tex lines 34–36) is pinned in A:sec3:one-null-set; 'an expectation kernel in the sense of Example 5.3, with L²(ν) in the role of K' (lines 463–464) is ex_dealer_affine: the representation, the measurability and the Lipschitz bound of the kernel (θ, θ') ↦ ∇V(u − u'), whose origin value ∇V(0) = 0 makes the origin condition of the jump class of Example 5.3 hold trivially; the symmetrisation in the proof of monotonicity (lines 417–439: the crowding pairing as the π ⊗ π-integral of Φ, its form with (u, u′) and (v, v′) exchanged, and their average, nonnegative because ∇V is monotone) is a step of the proof of ex_dealer_mono, whose first conjunct states its consequence 𝔼⟨A_{μ^U}(U) − A_{μ′^U}(U′), U − U′⟩ ≥ 0; the identity itself is stated only under λ ⊗ λ (lines 508–514), as ex_dealer_symm",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -982,14 +982,14 @@
   {
    "id": "A:rem:freelaw",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "remark",
    "number": "Remark 5.6",
    "title": "Scope of the measure argument",
    "location": "paper/sections/05-examples.tex",
    "source_sha256": "f13ee0338a04a13ffc7c298c326bbddd96efa2f48c9dc8e2a7281612c39beecb",
    "scope": "formal",
-   "scope_note": "'The proofs consume the tuple law through a single mechanism: the W₂ term of Assumption 2.3, dominated at every use by the synchronous coupling bound (2.8)' (lines 533–535) is a statement about the proofs, of which the clause eq_coupling states the bound (2.8); the closing sentence (lines 543–546: nothing is gained by restricting the coefficients to the (X, Y, Z)-marginal law, the estimates close at the full tuple law, and Example 5.5 exhibits that scope) is exposition, the scope it names being that of A:ex:dealer; the explicit pair of the argument (lines 538–542: for w ∈ L²(ν) with G*w ≠ 0 and a symmetric sign ξ independent of the other components, U = ξw and U′ = −ξw with equal other components have one law, so coefficients reading u only through the law make the left-hand side of (2.7) vanish, while its right-hand side is −4β₁‖G*w‖² < 0) is the proof of the stated consequence rem_freelaw (a pair of 𝒟_t with one law and the same (X, Y, Z) at which h differs with positive probability), not a separate clause",
+   "scope_note": "'The proofs consume the tuple law through a single mechanism: the W₂ term of Assumption 2.3, dominated at every use by the synchronous coupling bound (2.8)' (lines 536–538) is a statement about the proofs, of which the clause eq_coupling states the bound (2.8); the closing sentence (lines 546–549: nothing is gained by restricting the coefficients to the (X, Y, Z)-marginal law, the estimates close at the full tuple law, and Example 5.5 exhibits that scope) is exposition, the scope it names being that of A:ex:dealer; the explicit pair of the argument (lines 541–545: for w ∈ L²(ν) with G*w ≠ 0 and a symmetric sign ξ independent of the other components, U = ξw and U′ = −ξw with equal other components have one law, so coefficients reading u only through the law make the left-hand side of (2.7) vanish, while its right-hand side is −4β₁‖G*w‖² < 0) is the proof of the stated consequence rem_freelaw (a pair of 𝒟_t with one law and the same (X, Y, Z) at which h differs with positive probability), not a separate clause",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -1009,14 +1009,14 @@
   {
    "id": "A:rem:regimes",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "remark",
    "number": "Remark 5.7",
    "title": "Perturbative and non-perturbative law dependence",
    "location": "paper/sections/05-examples.tex",
    "source_sha256": "2fd005374f04e994d90588bd134885c30eabc9f355464ae64a4c76eeda7b97a5",
    "scope": "formal",
-   "scope_note": "the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; 'arbitrary nonlinear full-tuple law dependence' (lines 550–551) is read both as the three families of Example 5.4 with arbitrary bounded Lipschitz profiles, features and outer function (ex_fulllaw_pert, ex_fulllaw_wp) and, since Example 5.4 concludes through (3.5) and Corollary 3.6 (05-examples.tex lines 338–340), as any θ-independent W₂-Lipschitz perturbation with ‖G‖ L_p below the margin (cor_robust_lip, cor_robust_wp)",
+   "scope_note": "the standing hypothesis ν ≠ 0 of Examples 5.4 and 5.5 (05-examples.tex line 22) is pinned in A:sec5:overview; 'arbitrary nonlinear full-tuple law dependence' (lines 553–554) is read both as the three families of Example 5.4 with arbitrary bounded Lipschitz profiles, features and outer function (ex_fulllaw_pert, ex_fulllaw_wp) and, since Example 5.4 concludes through (3.5) and Corollary 3.6 (05-examples.tex lines 341–343), as any θ-independent W₂-Lipschitz perturbation with ‖G‖ L_p below the margin (cor_robust_lip, cor_robust_wp)",
    "scope_reviewed": true,
    "clauses": [
     {
@@ -1078,7 +1078,7 @@
   {
    "id": "A:lem:lawflow",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "lemma",
    "number": "Lemma A.1",
    "title": "Predictable representatives and the full-tuple law flow",
@@ -1105,7 +1105,7 @@
   {
    "id": "A:abstract",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "prose-claim",
    "number": "abstract",
    "title": "Existence, uniqueness, stability for fully coupled MV-FBSDEJ with W2 full-tuple law dependence, sigma-finite nu (infinite activity), diagonal-only hypotheses; expected diagonal monotonicity strictly weaker than pointwise; dealer-market example monotone at every strength, with infinite-activity marks",
@@ -1205,7 +1205,7 @@
   {
    "id": "A:intro:mvfbsdej",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "definition",
    "number": "(1.1)",
    "title": "The MV-FBSDEJ (1.1): h evaluated at predictable tuple and predictable law flow; coefficients W2-Lipschitz on P2(H) along diagonal pairs",
@@ -1279,7 +1279,7 @@
   {
    "id": "A:intro:limin-comparison",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "literature",
    "number": "§1 ¶3",
    "title": "Li-Min: expectation-functional interactions, jump integrand only pointwise, monotonicity imposes finite total jump mass; the present theorem removes all three restrictions",
@@ -1339,7 +1339,7 @@
   {
    "id": "A:intro:rsz-extension",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "literature",
    "number": "§1 ¶7",
    "title": "Assumption 2.5 adjoins a jump term to RSZ (H.1)(1) / BYZ (A1) posed on the joint law of (X,Y,Z) with rectangular full-rank G",
@@ -1362,7 +1362,7 @@
   {
    "id": "A:intro:contributions",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "prose-claim",
    "number": "§1 ¶8",
    "title": "Contributions (i)-(v): the a priori stability estimate (Thm 3.1), uniqueness in the natural class (Thm 3.3), global existence by monotone continuation (Thm 3.5), robustness below the dissipativity margin at m=n (Cor 3.6; Remark 3.7 for general rank), strictness of expected diagonal monotonicity (Prop 3.8)",
@@ -1447,7 +1447,7 @@
   {
    "id": "A:sec2:separable-L2nu",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "prose-claim",
    "number": "§2 ¶1",
    "title": "nu sigma-finite on a countably generated (E,E) implies L^2(nu;R^j) separable for every j",
@@ -1481,7 +1481,7 @@
   {
    "id": "A:sec2:infinite-activity-atoms",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "prose-claim",
    "number": "§2 ¶1",
    "title": "If nu(E)=infinity then N has infinitely many atoms on every nondegenerate time interval (a.s.)",
@@ -1511,7 +1511,7 @@
   {
    "id": "A:sec2:tuple-notation",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "definition",
    "number": "§2 ¶ before Definition 2.1",
    "title": "The unknown Theta=(X,Y,Z,U) with values in H; the predictable tuple Theta^- and the laws mu_t, mu_t^- as the Borel representatives of Lemma A.1; coefficient expressions defined at every t, every claim about them dt-a.e. or time-integrated",
@@ -1565,7 +1565,7 @@
   {
    "id": "A:sec2:prp",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "prose-claim",
    "number": "§2 PRP ¶",
    "title": "Brownian-Poisson predictable representation property, passing to the independent initial enlargement; representing pair unique up to null sets",
@@ -1602,7 +1602,7 @@
   {
    "id": "A:sec2:difference-notation",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "definition",
    "number": "§2 ¶ after Definition 2.1",
    "title": "All hypotheses imposed along D_t only; theta a point and Theta a random tuple of H; the difference notation dX, dpsi, the induced terminal laws rho, rho' and dg_T for two diagonal inputs",
@@ -1652,7 +1652,7 @@
   {
    "id": "A:sec2:hborel-derivation",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "prose-claim",
    "number": "(2.3) + ¶",
    "title": "Joint pointwise Borel measurability of (t,theta,e,mu)->h implies Borel measurability of (t,theta,mu)->h(t,theta,.,mu) into L2(nu) (Tonelli + Pettis [HNVW 1.1.6])",
@@ -1683,7 +1683,7 @@
   {
    "id": "A:sec2:fubini-iso",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "prose-claim",
    "number": "(2.4)",
    "title": "Fubini isometry L2(P;L2(nu)) = L2(P x E) with a P x E-measurable representative unique up to null sets; every Poisson integral read through it",
@@ -1715,7 +1715,7 @@
   {
    "id": "A:sec2:coefmeas",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "prose-claim",
    "number": "(2.5)",
    "title": "Along any diagonal input / tuple, b,sigma,f evaluations are progressively measurable and the h evaluation is predictable",
@@ -1744,7 +1744,7 @@
   {
    "id": "A:rem2.6",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "remark",
    "number": "Remark 2.6 (no label)",
    "title": "(2.8)-(2.9) synchronous coupling bounds; (2.10) Lipschitz law functionals are W2-Lipschitz with same constant (via an optimal coupling); (2.11) U-marginal projection 1-Lipschitz",
@@ -1797,7 +1797,7 @@
   {
    "id": "A:sec3:HH-banach",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "prose-claim",
    "number": "§3 \"Solution space\"",
    "title": "Under indistinguishability / a.e. identification, ||.||_HH is a norm and (HH,||.||) is a Banach space; HH subset of Hweak since E int |V|^2 <= T E sup |V|^2",
@@ -1876,7 +1876,7 @@
   {
    "id": "A:sec3:one-null-set",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "prose-claim",
    "number": "§3 solution definition",
    "title": "Both sides of each identity are cadlag in t, so a solution holding a.s. for each t holds off one null set for all t",
@@ -1913,7 +1913,7 @@
   {
    "id": "A:sec3:two-system-notation",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "definition",
    "number": "§3 ¶ before Theorem 3.1",
    "title": "Two coefficient systems k=1,2: delta = (.)^1 - (.)^2, mu^k_t = Law(Theta^k_t), the coefficient differences evaluated along solution 2 (delta h at Theta^{2,-}_t, mu^{2,-}_t) and hat delta g_T at (X^2_T, Law(X^2_T))",
@@ -1960,7 +1960,7 @@
   {
    "id": "A:thm3.1:companion",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "prose-claim",
    "number": "¶ after Thm 3.1",
    "title": "(a) companion bound with roles exchanged; (b) shared interior coefficients give continuous dependence on initial/terminal data; (c) the hypotheses on system 2 only make the RHS finite: the estimate holds whenever the displayed differences are square-integrable",
@@ -2006,7 +2006,7 @@
   {
    "id": "A:sec3:margin-paragraph",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "prose-claim",
    "number": "¶ after Cor 3.6",
    "title": "Margin forces every baseline channel strictly dissipative; an additive h0 cannot be a baseline; finitely many functionals of u supply no margin",
@@ -2074,7 +2074,7 @@
   {
    "id": "A:sec4:horizon-not-contractive",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "prose-claim",
    "number": "§4 intro",
    "title": "Continuation must be in the coupling strength: shortening the horizon does not make the frozen-coefficient map contractive because (z,u)-dependence of sigma,h and the full-tuple law enter the contraction constant with no T-factor",
@@ -2105,7 +2105,7 @@
   {
    "id": "A:sec4:supremum-criterion",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "§4 preamble",
    "title": "A cadlag local martingale whose running supremum is integrable has zero-mean increments (localisation + DCT); BDG at p=1 covers compensated-Poisson martingales",
@@ -2153,7 +2153,7 @@
   {
    "id": "A:sec4:WP-def",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "definition",
    "number": "(4.1) + WP(lambda)",
    "title": "lambda-scaled forced system (4.1) and WP(lambda): unique HH solution for every square-integrable forcing (q^h predictable)",
@@ -2214,7 +2214,7 @@
   {
    "id": "A:sec4:coeffint",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(4.2)-(4.3)",
    "title": "Along any Theta in HH, coefficient processes are square-integrable with the bound (4.2); terminal bound (4.3)",
@@ -2267,7 +2267,7 @@
   {
    "id": "A:lem4.1:M2-infinite-activity",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "proof of Lemma 4.1",
    "title": "With nu(E)=infinity localisation along jump times fails to exhaust [0,T]; M^2 handled through the compensation formula which needs only integrability",
@@ -2391,7 +2391,7 @@
   {
    "id": "A:sec4:uniqueness-along-homotopy",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "¶ before Lemma 4.4",
    "title": "Lemma 4.3 with identical sources gives uniqueness on [lambda*,1]; Lemma 4.2 on [0,lambda*]",
@@ -2422,7 +2422,7 @@
   {
    "id": "A:sec4:proof-thm35",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "§4.5",
    "title": "Finitely many steps lambda_k=min{lambda*+k zeta0,1} reach WP(1)",
@@ -2465,7 +2465,7 @@
   {
    "id": "A:sec:examples",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "prose-claim",
    "number": "§5 preamble",
    "title": "Li-Min Ex 3.2 is Lipschitz with no solution at T=3pi/4; dissipativity cannot be traded for Lipschitz continuity",
@@ -2497,7 +2497,7 @@
   {
    "id": "A:sec5:overview",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "prose-claim",
    "number": "§5 ¶2",
    "title": "Overview: Ex 5.1 two models at arbitrary activity; Ex 5.2/5.3 recover Brownian and expectation-functional subclasses; Ex 5.4 beyond them; Ex 5.5 well-posed at every interaction strength",
@@ -2610,7 +2610,7 @@
   {
    "id": "A:ex:concrete(i)",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "example",
    "number": "Example 5.1(i)",
    "title": "Affine base (n=m=d=1): Hamiltonian convex with minimiser, SMP [TangLi] gives optimality system = (1.1); L=max{b1,b2,1}; c_G=1; pairings exact; alpha=1; margin; U-dissipative; clamp variant keeps (2.7) with (b1-eps,b2)",
@@ -2716,7 +2716,7 @@
   {
    "id": "A:ex:concrete(ii)",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "example",
    "number": "Example 5.1(ii)",
    "title": "Mean-field coefficients: Ass 2.3 at L=2, Ass 2.2 immediate, Ass 2.5 with alpha=beta1=beta2=2; Li-Min Ex 3.1 coefficients carried to arbitrary sigma-finite nu (their (H3.2) bounds total mass)",
@@ -2818,7 +2818,7 @@
   {
    "id": "A:conclusion",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "prose-claim",
    "number": "§6",
    "title": "Summary of Thms 3.1/3.3/3.5, Cor 3.6, Prop 3.8, Remark 2.10",
@@ -2901,7 +2901,7 @@
   {
    "id": "A:lemA1:polish",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "proof of Lemma A.1, step 2",
    "title": "(P2(H),W2) inherits Polishness from H [Villani Ch. 6]; law map is 1-Lipschitz from L2(Omega;H)",
@@ -2938,7 +2938,7 @@
   {
    "id": "A:lemA1:pettis",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "proof of Lemma A.1, step 1",
    "title": "Fubini isometry L2([0,T]x Omega;H) = L2(0,T;L2(Omega;H)) and Pettis give a Borel version of t->Theta_t^- off a null set",
@@ -3028,7 +3028,7 @@
   {
    "id": "A:eq:mvfbsdej",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(1.1)",
    "title": "equation eq:mvfbsdej [def]",
@@ -3102,7 +3102,7 @@
   {
    "id": "A:eq:compid",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(2.1)",
    "title": "equation eq:compid [claim]",
@@ -3141,7 +3141,7 @@
   {
    "id": "A:eq:zeromean",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(2.2)",
    "title": "equation eq:zeromean [claim]",
@@ -3181,7 +3181,7 @@
   {
    "id": "A:eq:hborel",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(2.3)",
    "title": "equation eq:hborel [def]",
@@ -3230,7 +3230,7 @@
   {
    "id": "A:eq:fubiniiso",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(2.4)",
    "title": "equation eq:fubiniiso [claim]",
@@ -3269,7 +3269,7 @@
   {
    "id": "A:eq:coefmeas",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(2.5)",
    "title": "equation eq:coefmeas [claim]",
@@ -3314,7 +3314,7 @@
   {
    "id": "A:eq:lipT",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(2.6)",
    "title": "equation eq:lipT [stmt:Ass 2.3]",
@@ -3345,7 +3345,7 @@
   {
    "id": "A:eq:mono",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(2.7)",
    "title": "equation eq:mono [stmt:Ass 2.5]",
@@ -3375,7 +3375,7 @@
   {
    "id": "A:eq:coupling",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(2.8)",
    "title": "equation eq:coupling [stmt:Remark 2.6]",
@@ -3404,7 +3404,7 @@
   {
    "id": "A:eq:couplingT",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(2.9)",
    "title": "equation eq:couplingT [stmt:Remark 2.6]",
@@ -3433,7 +3433,7 @@
   {
    "id": "A:eq:lipfun",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(2.10)",
    "title": "equation eq:lipfun [stmt:Remark 2.6]",
@@ -3464,7 +3464,7 @@
   {
    "id": "A:eq:margproj",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(2.11)",
    "title": "equation eq:margproj [stmt:Remark 2.6]",
@@ -3494,7 +3494,7 @@
   {
    "id": "A:eq:monomargin",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(2.12)",
    "title": "equation eq:monomargin [stmt:Remark 2.11]",
@@ -3531,7 +3531,7 @@
   {
    "id": "A:eq:monomarginu",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(2.13)",
    "title": "equation eq:monomarginu [stmt:Remark 2.11]",
@@ -3570,7 +3570,7 @@
   {
    "id": "A:eq:stab",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(3.1)",
    "title": "equation eq:stab [stmt:Thm 3.1]",
@@ -3606,7 +3606,7 @@
   {
    "id": "A:eq:uniq-coeff",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(3.2)",
    "title": "equation eq:uniq-coeff [proof:Thm 3.3]",
@@ -3698,7 +3698,7 @@
   {
    "id": "A:eq:uniq-bwd",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(3.3)",
    "title": "equation eq:uniq-bwd [proof:Thm 3.3]",
@@ -3766,7 +3766,7 @@
   {
    "id": "A:eq:pertpair",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(3.4)",
    "title": "equation eq:pertpair [stmt:Cor 3.6]",
@@ -3796,7 +3796,7 @@
   {
    "id": "A:eq:pertlip",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(3.5)",
    "title": "equation eq:pertlip [stmt:Cor 3.6]",
@@ -3823,7 +3823,7 @@
   {
    "id": "A:eq:bmean",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(3.6)",
    "title": "equation eq:bmean [stmt:Prop 3.8]",
@@ -3858,7 +3858,7 @@
   {
    "id": "A:eq:diagdrift",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(3.7)",
    "title": "equation eq:diagdrift [stmt:Prop 3.8]",
@@ -3893,7 +3893,7 @@
   {
    "id": "A:eq:forced",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(4.1)",
    "title": "equation eq:forced [def]",
@@ -3948,7 +3948,7 @@
   {
    "id": "A:eq:coeffint",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(4.2)",
    "title": "equation eq:coeffint [claim]",
@@ -3991,7 +3991,7 @@
   {
    "id": "A:eq:termg",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(4.3)",
    "title": "equation eq:termg [claim]",
@@ -4023,7 +4023,7 @@
   {
    "id": "A:eq:dYlin",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(4.4)",
    "title": "equation eq:dYlin [stmt:Lemma 4.1]",
@@ -4049,7 +4049,7 @@
   {
    "id": "A:eq:itoY2",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(4.5)",
    "title": "equation eq:itoY2 [proof]",
@@ -4081,7 +4081,7 @@
   {
    "id": "A:eq:supE",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(4.6)",
    "title": "equation eq:supE [proof]",
@@ -4179,7 +4179,7 @@
   {
    "id": "A:eq:frozenfwd",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(4.7)",
    "title": "equation eq:frozenfwd [proof]",
@@ -4234,7 +4234,7 @@
   {
    "id": "A:eq:frozenbwd",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(4.8)",
    "title": "equation eq:frozenbwd [proof]",
@@ -4285,7 +4285,7 @@
   {
    "id": "A:eq:coeffdiff",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(4.9)",
    "title": "equation eq:coeffdiff [proof]",
@@ -4367,7 +4367,7 @@
   {
    "id": "A:eq:fwddiff",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(4.10)",
    "title": "equation eq:fwddiff [proof]",
@@ -4425,7 +4425,7 @@
   {
    "id": "A:eq:terdiff",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(4.11)",
    "title": "equation eq:terdiff [proof]",
@@ -4466,7 +4466,7 @@
   {
    "id": "A:eq:bwddiff",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(4.12)",
    "title": "equation eq:bwddiff [proof]",
@@ -4533,7 +4533,7 @@
   {
    "id": "A:eq:contract",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(4.13)",
    "title": "equation eq:contract [proof]",
@@ -4595,7 +4595,7 @@
   {
    "id": "A:eq:contpert",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(4.14)",
    "title": "equation eq:contpert [stmt:Lemma 4.3]",
@@ -4633,7 +4633,7 @@
   {
    "id": "A:eq:dX",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(4.15)",
    "title": "equation eq:dX [proof]",
@@ -4689,7 +4689,7 @@
   {
    "id": "A:eq:dY",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(4.16)",
    "title": "equation eq:dY [proof]",
@@ -4739,7 +4739,7 @@
   {
    "id": "A:eq:Gid-path",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(4.17)",
    "title": "equation eq:Gid-path [proof]",
@@ -4775,7 +4775,7 @@
   {
    "id": "A:eq:bdg4",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(4.18)",
    "title": "equation eq:bdg4 [proof]",
@@ -4876,7 +4876,7 @@
   {
    "id": "A:eq:Gid",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(4.19)",
    "title": "equation eq:Gid [proof]",
@@ -4912,7 +4912,7 @@
   {
    "id": "A:eq:intmono",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(4.20)",
    "title": "equation eq:intmono [proof]",
@@ -4952,7 +4952,7 @@
   {
    "id": "A:eq:termmono",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(4.21)",
    "title": "equation eq:termmono [proof]",
@@ -4988,7 +4988,7 @@
   {
    "id": "A:eq:coerc",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(4.22)",
    "title": "equation eq:coerc [proof]",
@@ -5066,7 +5066,7 @@
   {
    "id": "A:eq:fwd",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(4.23)",
    "title": "equation eq:fwd [proof]",
@@ -5117,7 +5117,7 @@
   {
    "id": "A:eq:bwdito",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(4.24)",
    "title": "equation eq:bwdito [proof]",
@@ -5154,7 +5154,7 @@
   {
    "id": "A:eq:bwdyoung",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(4.25)",
    "title": "equation eq:bwdyoung [proof]",
@@ -5189,7 +5189,7 @@
   {
    "id": "A:eq:wgt",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(4.26)",
    "title": "equation eq:wgt [proof]",
@@ -5254,7 +5254,7 @@
   {
    "id": "A:eq:bwd",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "embedded-in-proof",
    "number": "(4.27)",
    "title": "equation eq:bwd [proof]",
@@ -5305,18 +5305,18 @@
   {
    "id": "A:eq:fulllaw-eps",
    "paper": "A",
-   "commit": "1f67672",
+   "commit": "c89cc20",
    "kind": "equation",
    "number": "(5.1)",
    "title": "equation eq:fulllaw-eps [stmt:Example 5.4]",
-   "location": "paper/sections/05-examples.tex:338",
+   "location": "paper/sections/05-examples.tex:341",
    "source_sha256": "5625facc3e3fe8a79b95a0a6d48592984d682ed7375f010f98e23f8e0b234662",
    "scope": "part-of",
    "scope_note": "A:ex:fulllaw",
    "scope_reviewed": true,
    "clauses": [],
    "source_region": {
-    "end_line": 344
+    "end_line": 347
    },
    "source_hash_scheme": "tex-region-v1",
    "source_line_sha256": [
